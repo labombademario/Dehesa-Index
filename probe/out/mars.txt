@@ -1,0 +1,209 @@
+=== MARS
+GET https://marsapi.ams.usda.gov/services/v1.2/reports -> 200 application/json 405650
+reports 1051
+REP 1662 SC National Shipping Point Trends Report | ['Trends'] |  | 10/20/2026 13:26:42
+REP 1791 Show-Me-Select Special - Fruitland, MO | ['Auction Livestock (Special Graded)'] |  | 05/03/2026 09:48:28
+REP 1806 Producers Auction Yards Sheep/Goat - Norwood, MO | ['Auction Livestock'] |  | 09/28/2026 06:58:24
+REP 1888 Pocahontas Producers Co-Op Association Special Graded Sale - Marlington, WV | ['Auction Livestock (Special Graded)'] |  | 09/15/2025 19:12:03
+REP 1965 United Producers Inc. Livestock Auction - Vincennes, IN | ['Auction Livestock'] |  | 06/05/2025 07:15:02
+REP 2013 Producers Livestock Special Feeder Calf Auction - San Angelo, TX | ['Auction Livestock (Special)'] |  | 10/12/2020 12:43:36
+REP 2014 Producers Livestock Sheep and Goat Auction - San Angelo, TX | ['Auction Livestock'] |  | 10/21/2026 07:34:16
+REP 2015 Producers Livestock Cattle Auction - San Angelo, TX | ['Auction Livestock'] |  | 10/15/2026 17:28:29
+REP 2037 Producers Livestock Auction - Salina, UT | ['Auction Livestock'] |  | 10/20/2026 23:57:12
+REP 2188 United Producers Inc. - Bowling Green, KY | ['Auction Livestock'] |  | 10/20/2026 14:00:27
+REP 2203 United Producers, Inc. - Owenton, KY | ['Auction Livestock'] |  | 10/21/2026 18:35:50
+REP 2205 United Producers Inc. - Special Feeder Cattle Sale - Harned, KY (Discontinued) | ['Auction Livestock (Special)'] |  | 01/06/2023 16:26:00
+REP 2207 United Producers Inc. - Harned, KY | ['Auction Livestock'] |  | 10/19/2026 18:26:58
+REP 2215 United Producers Inc. Graded Sheep/Goat Sale - Bowling Green, KY | ['Auction Livestock (Special Graded)'] |  | 10/11/2026 17:40:49
+REP 2277 Atlanta Terminal Market Fruit Prices (AJ_FV010) | ['Terminal'] |  | 10/21/2026 10:42:17
+REP 2278 Atlanta Terminal Market Vegetables Prices (AJ_FV020) | ['Terminal'] |  | 10/21/2026 10:43:39
+REP 2279 Atlanta Terminal Market Onions and Potatoes Prices (AJ_FV030) | ['Terminal'] |  | 10/21/2026 10:43:08
+REP 2280 Atlanta Terminal Market Nuts Prices (AJ_FV040) | ['Terminal'] |  | 10/21/2026 10:42:41
+REP 2281 Baltimore Terminal Market Fruit Prices (BP_FV010) | ['Terminal'] |  | 10/21/2026 14:03:06
+REP 2282 Baltimore Terminal Market Vegetables Prices (BP_FV020) | ['Terminal'] |  | 10/21/2026 14:03:15
+REP 2283 Baltimore Terminal Market Onions and Potatoes Prices (BP_FV030) | ['Terminal'] |  | 10/21/2026 14:03:23
+REP 2284 Baltimore Terminal Market Nuts Prices (BP_FV040) | ['Terminal'] |  | 10/21/2026 14:03:31
+REP 2285 Boston Terminal Market Fruit Prices (BH_FV010) | ['Terminal'] |  | 10/21/2026 11:01:46
+REP 2286 Boston Terminal Market Vegetables Prices (BH_FV020) | ['Terminal'] |  | 10/21/2026 10:47:41
+REP 2287 Boston Terminal Market Onions and Potatoes Prices (BH_FV030) | ['Terminal'] |  | 10/21/2026 11:02:12
+REP 2288 Boston Terminal Market Nuts Prices (BH_FV040) | ['Terminal'] |  | 10/21/2026 11:02:03
+REP 2289 Boston Terminal Market Ornamentals Prices (BH_FV201) | ['Terminal'] |  | 10/20/2026 07:06:10
+REP 2290 Chicago Terminal Market Fruit Prices (HX_FV010) | ['Terminal'] |  | 10/21/2026 11:05:08
+REP 2291 Chicago Terminal Market Vegetables Prices (HX_FV020) | ['Terminal'] |  | 10/21/2026 11:02:33
+REP 2292 Chicago Terminal Market Onions and Potatoes Prices (HX_FV030) | ['Terminal'] |  | 10/21/2026 11:01:12
+REP 2293 Chicago Terminal Market Nuts Prices (HX_FV040) | ['Terminal'] |  | 10/21/2026 11:00:32
+REP 2294 Columbia Terminal Market Fruit Prices (CA_FV010) | ['Terminal'] |  | 10/21/2026 11:51:05
+REP 2295 Columbia Terminal Market Vegetables Prices (CA_FV020) | ['Terminal'] |  | 10/21/2026 11:52:24
+REP 2296 Columbia Terminal Market Onions and Potatoes Prices (CA_FV030) | ['Terminal'] |  | 10/21/2026 11:52:45
+REP 2297 Columbia Terminal Market Nuts Prices (CA_FV040) | ['Terminal'] |  | 10/21/2026 11:52:58
+REP 2298 Dallas Terminal Market Fruit Prices (DA_FV010) (Discontinued) | ['Terminal'] |  | 05/26/2022 13:01:07
+REP 2299 Dallas Terminal Market Vegetables Prices (DA_FV020) (Discontinued) | ['Terminal'] |  | 05/26/2022 13:01:08
+REP 2300 Dallas Terminal Market Onions and Potatoes Prices (DA_FV030) (Discontinued) | ['Terminal'] |  | 05/26/2022 13:01:08
+REP 2301 Dallas Terminal Market Nuts Prices (DA_FV040) (Discontinued) | ['Terminal'] |  | 05/26/2022 13:01:08
+REP 2302 Detroit Terminal Market Fruit Prices (DU_FV010) | ['Terminal'] |  | 10/21/2026 12:01:22
+REP 2303 Detroit Terminal Market Vegetables Prices (DU_FV020) | ['Terminal'] |  | 10/21/2026 12:12:57
+REP 2304 Detroit Terminal Market Onions and Potatoes Prices (DU_FV030) | ['Terminal'] |  | 10/21/2026 12:01:39
+REP 2305 Detroit Terminal Market Nuts Prices (DU_FV040) | ['Terminal'] |  | 10/21/2026 12:01:53
+REP 2306 Los Angeles Terminal Market Fruit Prices (HC_FV010) | ['Terminal'] |  | 10/21/2026 12:44:03
+REP 2307 Los Angeles Terminal Market Vegetables Prices (HC_FV020) | ['Terminal'] |  | 10/21/2026 12:43:17
+REP 2308 Los Angeles Terminal Market Onions and Potatoes Prices (HC_FV030) | ['Terminal'] |  | 10/21/2026 12:43:31
+REP 2309 Los Angeles Terminal Market Nuts Prices (HC_FV040) | ['Terminal'] |  | 10/21/2026 12:43:44
+REP 2310 Miami Terminal Market Fruit Prices (MH_FV010) | ['Terminal'] |  | 10/21/2026 11:06:44
+REP 2311 Miami Terminal Market Vegetables Prices (MH_FV020) | ['Terminal'] |  | 10/21/2026 11:07:36
+REP 2312 Miami Terminal Market Onions and Potatoes Prices (MH_FV030) | ['Terminal'] |  | 10/21/2026 11:07:19
+REP 2313 Miami Terminal Market Nuts Prices (MH_FV040) | ['Terminal'] |  | 10/21/2026 11:07:01
+REP 2314 New York Terminal Market Fruit Prices (NX_FV010) | ['Terminal'] |  | 10/21/2026 12:32:33
+REP 2315 New York Terminal Market Vegetables Prices (NX_FV020) | ['Terminal'] |  | 10/21/2026 12:36:07
+REP 2316 New York Terminal Market Onions and Potatoes Prices (NX_FV030) | ['Terminal'] |  | 10/21/2026 12:33:54
+REP 2317 New York Terminal Market Nuts Prices (NX_FV040) | ['Terminal'] |  | 10/21/2026 12:33:17
+REP 2318 Philadelphia Terminal Market Fruit Prices (NA_FV010) | ['Terminal'] |  | 10/21/2026 10:35:53
+REP 2319 Philadelphia Terminal Market Vegetables Prices (NA_FV020) | ['Terminal'] |  | 10/21/2026 10:30:27
+REP 2320 Philadelphia Terminal Market Onions and Potatoes Prices (NA_FV030) | ['Terminal'] |  | 10/21/2026 10:36:47
+REP 2321 Philadelphia Terminal Market Nuts Prices (NA_FV040) | ['Terminal'] |  | 10/21/2026 08:50:47
+REP 2322 San Francisco Terminal Market Fruit Prices (SX_FV010) (Discontinued) | ['Terminal'] |  | 05/01/2025 14:48:21
+REP 2323 San Francisco Terminal Market Vegetables Prices (SX_FV020) (Discontinued) | ['Terminal'] |  | 05/01/2025 14:49:09
+REP 2324 San Francisco Terminal Market Onions and Potatoes Prices (SX_FV030) (Discontinued) | ['Terminal'] |  | 05/01/2025 14:48:50
+REP 2325 San Francisco Terminal Market Nuts Prices (SX_FV040) (Discontinued) | ['Terminal'] |  | 05/01/2025 14:48:33
+REP 2326 SAINT LOUIS Terminal Market Fruit Prices (Discontinued) | ['Terminal'] |  | 12/29/2017 00:00:00
+REP 2327 SAINT LOUIS Terminal Market Vegetables Prices (Discontinued) | ['Terminal'] |  | 12/29/2017 00:00:00
+REP 2328 SAINT LOUIS Terminal Market Onions and Potatoes Prices (Discontinued) | ['Terminal'] |  | 12/29/2017 00:00:00
+REP 2329 SAINT LOUIS Terminal Market Nuts Prices (Discontinued) | ['Terminal'] |  | 12/29/2017 00:00:00
+REP 2330 Birmingham, United Kingdom Terminal Market Fruit Prices (BI_FV010) (Discontinued) | ['Terminal'] |  | 02/02/2016 00:00:00
+REP 2331 Birmingham, United Kingdom Terminal Market Vegetables Prices (BI_FV020) (Discontinued) | ['Terminal'] |  | 02/02/2016 00:00:00
+REP 2332 Birmingham, United Kingdom Terminal Market Onions and Potatoes Prices (BI_FV030) (Discontinued) | ['Terminal'] |  | 02/02/2016 00:00:00
+REP 2333 Guadalajara, Mexico Terminal Market Fruit Prices (GU_FV010) (Discontinued) | ['Terminal'] |  | 02/08/2024 18:38:47
+REP 2334 Guadalajara, Mexico Terminal Market Vegetables Prices (GU_FV020) (Discontinued) | ['Terminal'] |  | 02/08/2024 18:40:45
+REP 2335 Guadalajara, Mexico Terminal Market Onions and Potatoes Prices (GU_FV030) (Discontinued) | ['Terminal'] |  | 02/08/2024 18:42:15
+REP 2336 Mexico City, Mexico Terminal Market Fruit Prices (MX_FV010) (Discontinued) | ['Terminal'] |  | 02/08/2024 16:36:05
+REP 2337 Mexico City, Mexico Terminal Market Vegetables Prices (MX_FV020) (Discontinued) | ['Terminal'] |  | 02/08/2024 16:38:08
+REP 2338 Mexico City, Mexico Terminal Market Onions and Potatoes Prices (MX_FV030) (Discontinued) | ['Terminal'] |  | 02/08/2024 16:39:56
+REP 2339 Monterrey, Mexico Terminal Market Fruit Prices (MT_FV010) (Discontinued) | ['Terminal'] |  | 02/08/2024 17:25:20
+REP 2340 Monterrey, Mexico Terminal Market Vegetables Prices (MT_FV020) (Discontinued) | ['Terminal'] |  | 02/08/2024 17:27:11
+REP 2341 Monterrey, Mexico Terminal Market Onions and Potatoes Prices (MT_FV030) (Discontinued) | ['Terminal'] |  | 02/08/2024 17:28:38
+REP 2342 Montreal, Canada Terminal Market Fruit Prices (MO_FV010) (Discontinued) | ['Terminal'] |  | 01/17/2023 07:04:19
+REP 2343 Montreal, Canada Terminal Market Vegetables Prices (MO_FV020) (Discontinued) | ['Terminal'] |  | 12/18/2017 00:00:00
+REP 2344 Montreal, Canada Terminal Market Onions and Potatoes Prices (MO_FV030) (Discontinued) | ['Terminal'] |  | 12/18/2017 00:00:00
+REP 2345 New Covent Garden, United Kingdom Terminal Market Fruit Prices (NC_FV010) (Discontinued) | ['Terminal'] |  | 06/22/2018 00:00:00
+REP 2346 New Covent Garden, United Kingdom Terminal Market Vegetables Prices (NC_FV020) (Discontinued) | ['Terminal'] |  | 06/22/2018 00:00:00
+REP 2347 New Covent Garden, United Kingdom Terminal Market Onions and Potatoes Prices (NC_FV030) (Discontinued) | ['Terminal'] |  | 06/22/2018 00:00:00
+REP 2348 New Spitalfields, United Kingdom Terminal Market Fruit Prices (NS_FV010) (Discontinued) | ['Terminal'] |  | 06/22/2018 00:00:00
+REP 2349 New Spitalfields, United Kingdom Terminal Market Vegetables Prices (NS_FV020) (Discontinued) | ['Terminal'] |  | 06/22/2018 00:00:00
+REP 2350 New Spitalfields, United Kingdom Terminal Market Onions and Potatoes Prices (NS_FV030) (Discontinued) | ['Terminal'] |  | 06/22/2018 00:00:00
+REP 2351 Paris (Rungis), France Terminal Market Fruit Prices (PA_FV010) (Discontinued) | ['Terminal'] |  | 05/03/2018 00:00:00
+REP 2352 Paris (Rungis), France Terminal Market Vegetables Prices (PA_FV020) (Discontinued) | ['Terminal'] |  | 05/03/2018 00:00:00
+REP 2353 Paris (Rungis), France Terminal Market Onions and Potatoes Prices (PA_FV030) (Discontinued) | ['Terminal'] |  | 05/03/2018 00:00:00
+REP 2354 Plovdiv, Bulgaria Terminal Market Fruit Prices (PL_FV010) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2355 Plovdiv, Bulgaria Terminal Market Vegetables Prices (PL_FV020) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2356 Plovdiv, Bulgaria Terminal Market Onions and Potatoes Prices (PL_FV030) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2357 Poznan, Poland Terminal Market Fruit Prices (PZ_FV010) (Discontinued) | ['Terminal'] |  | 06/13/2018 00:00:00
+REP 2358 Poznan, Poland Terminal Market Vegetables Prices (PZ_FV020) (Discontinued) | ['Terminal'] |  | 09/09/2020 07:51:51
+REP 2359 Poznan, Poland Terminal Market Onions and Potatoes Prices (PZ_FV030) (Discontinued) | ['Terminal'] |  | 06/13/2018 00:00:00
+REP 2360 Rotterdam, The Netherlands Terminal Market Fruit Prices (RO_FV010) (Discontinued) | ['Terminal'] |  | 02/02/2024 16:48:43
+REP 2361 Rotterdam, The Netherlands Terminal Market Vegetables Prices (RO_FV020) (Discontinued) | ['Terminal'] |  | 02/02/2024 16:51:43
+REP 2362 Rotterdam, The Netherlands Terminal Market Onions and Potatoes Prices (RO_FV030) (Discontinued) | ['Terminal'] |  | 12/01/2023 09:39:37
+REP 2363 Sofia, Bulgaria Terminal Market Fruit Prices (SO_FV010) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2364 Sofia, Bulgaria Terminal Market Vegetables Prices (SO_FV020) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2365 Sofia, Bulgaria Terminal Market Onions and Potatoes Prices (SO_FV030) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2366 Toronto, Canada Terminal Market Fruit Prices (TO_FV010) (Discontinued) | ['Terminal'] |  | 02/05/2024 17:46:41
+REP 2367 Toronto, Canada Terminal Market Vegetables Prices (TO_FV020) (Discontinued) | ['Terminal'] |  | 02/05/2024 17:49:57
+REP 2368 Toronto, CanadaTerminal Market Onions and Potatoes Prices (TO_FV030) (Discontinued) | ['Terminal'] |  | 02/05/2024 17:51:21
+REP 2369 Varna, Bulgaria Terminal Market Fruit Prices (VR_FV010) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2370 Varna, Bulgaria Terminal Market Vegetables Prices (VR_FV020) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2371 Varna, Bulgaria Terminal Market Onions and Potatoes Prices (VR_FV030) (Discontinued) | ['Terminal'] |  | 05/22/2018 00:00:00
+REP 2372 Warsaw, Poland Terminal Market Fruit Prices (WR_FV010) (Discontinued) | ['Terminal'] |  | 06/14/2018 00:00:00
+REP 2373 Warsaw, Poland Terminal Terminal Market Vegetables Prices (WR_FV020) (Discontinued) | ['Terminal'] |  | 06/14/2018 00:00:00
+REP 2374 Warsaw, Poland Terminal Terminal Market Onions and Potatoes Prices (WR_FV030) (Discontinued) | ['Terminal'] |  | 06/14/2018 00:00:00
+REP 2378 Producers Livestock Auction Feeder Cattle Special - Salina, UT | ['Auction Livestock (Special)'] |  | 10/01/2024 12:26:03
+REP 2386 Benton Harbor Shipping Point Fruit Prices (BR_FV110) | ['Shipping Point'] |  | 10/21/2026 11:33:53
+REP 2387 Benton Harbor Shipping Point Vegetables Prices (BR_FV120) | ['Shipping Point'] |  | 10/21/2026 11:32:50
+REP 2388 Benton Harbor Shipping Point Onions and Potatoes Prices (BR_FV130) | ['Shipping Point'] |  | 10/21/2026 11:33:36
+REP 2389 Columbia Shipping Point Vegetables Prices (CA_FV120) | ['Shipping Point'] |  | 10/20/2026 13:35:09
+REP 2390 Fresno Shipping Point Fruit Prices (FR_FV110) | ['Shipping Point'] |  | 10/21/2026 14:01:41
+REP 2391 Fresno Shipping Point Vegetables Prices (FR_FV120) | ['Shipping Point'] |  | 10/21/2026 13:35:13
+REP 2392 Idaho Falls Shipping Point Fruit Prices (IF_FV110) | ['Shipping Point'] |  | 10/21/2026 12:30:21
+REP 2393 Idaho Falls Shipping Point Onions and Potatoes Prices (IF_FV130) | ['Shipping Point'] |  | 10/21/2026 14:08:28
+REP 2394 Inwood Shipping Point Fruit Prices (MB_FV110) | ['Shipping Point'] |  | 10/21/2026 14:35:02
+REP 2395 Miami Shipping Point Fruit Prices (MH_FV111) | ['Shipping Point'] |  | 10/21/2026 13:04:27
+REP 2396 Miami Shipping Point Vegetables Prices (MH_FV121) | ['Shipping Point'] |  | 10/21/2026 13:20:44
+REP 2397 Onley Shipping Point Vegetables Prices (ON_FV120) (Discontinued) | ['Shipping Point'] |  | 07/15/2020 11:04:19
+REP 2398 Onley Shipping Point Onions and Potatoes Prices (ON_FV130) | ['Shipping Point'] |  | 07/29/2025 12:24:07
+REP 2399 Orlando Shipping Point Fruit Prices (OR_FV110) | ['Shipping Point'] |  | 10/08/2026 12:01:56
+REP 2400 Orlando Shipping Point Vegetables Prices (OR_FV120) | ['Shipping Point'] |  | 10/21/2026 14:13:03
+REP 2401 Orlando Shipping Point Fruit Imports Prices (OR_FV111) | ['Shipping Point'] |  | 10/21/2026 12:31:35
+REP 2402 Phoenix Shipping Point Fruit Prices (IX_FV110) | ['Shipping Point'] |  | 10/21/2026 15:52:49
+REP 2403 Phoenix Shipping Point Vegetables Prices (IX_FV120) | ['Shipping Point'] |  | 10/21/2026 16:50:08
+REP 2404 Raleigh Shipping Point Fruit Prices (RA_FV110) | ['Shipping Point'] |  | 07/02/2026 11:30:06
+REP 2405 Raleigh Shipping Point Vegetables Prices (RA_FV120) | ['Shipping Point'] |  | 10/19/2026 12:41:40
+REP 2406 Raleigh Shipping Point Onions and Potatoes Prices (RA_FV130) | ['Shipping Point'] |  | 07/26/2022 08:48:47
+REP 2407 Seattle Shipping Point Fruit Prices (AR_FV110) (Discontinued) | ['Shipping Point'] |  | 09/15/2023 14:51:19
+REP 2409 Thomasville Shipping Point Fruit Prices (TV_FV110) | ['Shipping Point'] |  | 08/14/2023 14:03:22
+REP 2410 Thomasville Shipping Point Vegetables Prices (TV_FV120) | ['Shipping Point'] |  | 10/21/2026 13:30:14
+REP 2411 Thomasville Shipping Point Vegetables Prices (TH_FV120) | ['Shipping Point'] |  | 10/19/2026 12:55:46
+REP 2412 YAKIMA Shipping Point Fruit Prices (YA_FV110) | ['Shipping Point'] |  | 10/21/2026 15:49:32
+REP 2413 YAKIMA Shipping Point Vegetables Prices (YA_FV120) | ['Shipping Point'] |  | 09/10/2026 12:56:29
+REP 2720 Shipping Point Pecan Report - Baton Rouge, LA (BO_FV140) | ['Shipping Point'] |  | 07/24/2025 10:06:02
+REP 2721 Shipping Point Pecan Report - Thomasville, GA (TV_FV140) | ['Shipping Point'] |  | 07/24/2025 10:05:40
+REP 2723 Wholesale Market Asian Vegetable Report - Atlanta, GA (AJ_FV057) (Discontinued) | ['Terminal'] |  | 01/10/2024 10:35:55
+REP 2724 Wholesale Market Misc Herbs Report - Atlanta, GA (AJ_FV055) (Discontinued) | ['Terminal'] |  | 01/10/2024 10:35:55
+REP 2725 Wholesale Market Tropical F&V Report - Atlanta, GA (AJ_FV056) (Discontinued) | ['Terminal'] |  | 01/10/2024 10:35:55
+REP 2763 Wholesale Market Asian Vegetable Report - Baltimore, MD (BP_FV057) (Discontinued) | ['Terminal'] |  | 01/11/2024 14:40:16
+REP 2764 Wholesale Market Misc Herbs Report - Baltimore, MD (BP_FV055) (Discontinued) | ['Terminal'] |  | 01/11/2024 14:45:29
+REP 2765 Wholesale Market Tropical F&V Report - Baltimore, MD (BP_FV056) (Discontinued) | ['Terminal'] |  | 01/11/2024 14:40:52
+REP 2776 Wholesale Market Asian Vegetable Report - Boston, MA (BH_FV057) (Discontinued) | ['Terminal'] |  | 01/03/2024 10:54:59
+REP 2777 Wholesale Market Misc Herbs Report - Boston, MA (BH_FV055) (Discontinued) | ['Terminal'] |  | 01/03/2024 10:54:58
+REP 2778 Wholesale Market Tropical F&V Report - Boston, MA (BH_FV056) (Discontinued) | ['Terminal'] |  | 01/03/2024 10:54:29
+REP 2782 Wholesale Market Asian Vegetable Report - Chicago, IL (HX_FV057) (Discontinued) | ['Terminal'] |  | 01/11/2024 11:07:57
+REP 2783 Wholesale Market Misc Herbs Report - Chicago, IL (HX_FV055) (Discontinued) | ['Terminal'] |  | 01/11/2024 11:07:18
+REP 2784 Wholesale Market Tropical F&V Report - Chicago, IL (HX_FV056) (Discontinued) | ['Terminal'] |  | 01/10/2024 11:17:21
+REP 2794 Wholesale Market Asian Vegetable Report - Columbia, SC (CA_FV057) (Discontinued) | ['Terminal'] |  | 01/03/2024 09:30:26
+REP 2795 Wholesale Market Misc Herbs Report - Columbia, SC (CA_FV055) (Discontinued) | ['Terminal'] |  | 01/03/2024 09:30:26
+REP 2796 Wholesale Market Tropical F&V Report - Columbia, SC (CA_FV056) (Discontinued) | ['Terminal'] |  | 01/03/2024 09:30:26
+REP 2801 Wholesale Market Asian Vegetable Report - Dallas, TX (DA_FV057) (Discontinued) | ['Terminal'] |  | 05/26/2022 13:01:09
+REP 2802 Wholesale Market Misc Herbs Report - Dallas, TX (DA_FV055) (Discontinued) | ['Terminal'] |  | 05/26/2022 13:01:08
+REP 2803 Wholesale Market Tropical F&V Report - Dallas, TX (DA_FV056) (Discontinued) | ['Terminal'] |  | 05/26/2022 13:01:09
+REP 2882 Wholesale Market Asian Vegetable Report - Detroit, MI (DU_FV057) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:08:54
+REP 2883 Wholesale Market Misc Herbs Report - Detroit, MI (DU_FV055) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:08:54
+REP 2884 Wholesale Market Tropical F&V Report - Detroit, MI (DU_FV056) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:08:53
+REP 2963 Wholesale Market Asian Vegetable Report - Los Angeles, CA (HC_FV057) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:27:31
+REP 2964 Wholesale Market Misc Herbs Report - Los Angeles, CA (HC_FV055) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:27:40
+REP 2965 Wholesale Market Tropical F&V Report - Los Angeles, CA (HC_FV056) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:27:49
+REP 3034 Import Ornamental Shipping Point Report - Miami, FL (MH_FV221) | ['Shipping Point'] |  | 10/19/2026 14:36:21
+REP 3036 Wholesale Market Asian Vegetable Report - Miami, FL (MH_FV057) (Discontinued) | ['Terminal'] |  | 01/10/2024 11:36:10
+REP 3037 Wholesale Market Misc Herbs Report - Miami, FL (MH_FV055) (Discontinued) | ['Terminal'] |  | 01/10/2024 11:36:10
+REP 3038 Wholesale Market Tropical F&V Report - Miami, FL (MH_FV056) (Discontinued) | ['Terminal'] |  | 01/10/2024 11:36:10
+REP 3043 Iowa-Southern Minnesota Barge Terminal Grain Bids | ['Point of Sale - Grain'] |  | 10/21/2026 13:48:07
+REP 3092 Wholesale Market Asian Vegetable Report - New York, NY (NX_FV057) (Discontinued) | ['Terminal'] |  | 01/03/2024 11:10:00
+REP 3093 Wholesale Market Misc Herbs Report - New York, NY (NX_FV055) (Discontinued) | ['Terminal'] |  | 01/03/2024 11:10:00
+REP 3094 Wholesale Market Tropical F&V Report - New York, NY (NX_FV056) (Discontinued) | ['Terminal'] |  | 01/03/2024 11:10:00
+REP 3116 Wholesale Market Asian Vegetable Report - Philadelphia, PA (NA_FV057) (Discontinued) | ['Terminal'] |  | 01/10/2024 10:37:11
+REP 3117 Wholesale Market Misc Herbs Report - Philadelphia, PA (NA_FV055) (Discontinued) | ['Terminal'] |  | 01/10/2024 10:33:57
+REP 3118 Wholesale Market Tropical F&V Report - Philadelphia, PA (NA_FV056) (Discontinued) | ['Terminal'] |  | 01/10/2024 10:47:56
+REP 3133 Shipping Point Pecan Report - Austin, TX (US_FV140) | ['Shipping Point'] |  | 07/24/2025 10:33:33
+REP 3134 Shipping Point Pecan Report - Oklahoma City, OK (KO_FV140) | ['Shipping Point'] |  | 07/24/2025 10:06:22
+REP 3135 Shipping Point Pecan Report - Phoenix, AZ (IX_FV140) | ['Shipping Point'] |  | 07/24/2025 10:06:40
+REP 3177 Wholesale Market Asian Vegetable Report - San Francisco, CA (SX_FV057) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:44:54
+REP 3178 Wholesale Market Misc Herbs Report - San Francisco, CA (SX_FV055) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:44:54
+REP 3179 Wholesale Market Tropical F&V Report - San Francisco, CA (SX_FV056) (Discontinued) | ['Terminal'] |  | 01/10/2024 13:44:54
+REP 3368 Producers Livestock Video/Internet Auction - Okeechobee, FL | ['Video Auction Livestock'] |  | 06/25/2026 14:07:58
+REP 3414 United Producers, Inc. Cattle Video/Internet Auction - Owenton, KY | ['Video Auction Livestock'] |  | 11/18/2022 09:25:17
+REP 3460 United Producers Inc Special Graded Feeder and Replacement Cattle Sale - Columbia, TN | ['Auction Livestock (Special Graded)'] |  | 08/02/2022 15:29:38
+REP 3670 United Producers, Inc. Special Graded Sheep and Goat Sale - Owenton, KY | ['Auction Livestock (Special Graded)'] |  | 10/06/2023 18:02:26
+REP 3677 United Producers Inc - Fayetteville, TN | ['Auction Livestock'] |  | 10/20/2026 16:45:42
+REP 3694 Producers Monthly Hay Auction - Greeley, CO | ['Auction Hay'] |  | 07/18/2025 12:31:36
+REP 3703 Hamburg, Germany Terminal Fruit Prices (HA_FV010) (Discontinued) | ['Terminal'] |  | 04/27/2009 00:00:00
+REP 3704 Hamburg, Germany Terminal Vegetable Prices (HA_FV020) (Discontinued) | ['Terminal'] |  | 04/27/2009 00:00:00
+REP 3705 Hamburg, Germany Terminal Onions and Potatoes Prices (HA_FV030) (Discontinued) | ['Terminal'] |  | 04/27/2009 00:00:00
+REP 3706 Hamburg, Germany Terminal Nut Prices (HA_FV201) (Discontinued) | ['Terminal'] |  | 02/02/2006 00:00:00
+REP 3715 San Francisco Ornamental Terminal Prices (SX_FV201) (Discontinued) | ['Terminal'] |  | 02/03/2006 00:00:00
+REP 3716 Tokyo, Japan  Terminal Market Fruit Prices (TK_FV010) (Discontinued) | ['Terminal'] |  | 02/14/2005 00:00:00
+REP 3717 Tokyo, Japan Terminal Market Vegetable Prices (TK_FV020) (Discontinued) | ['Terminal'] |  | 02/14/2005 00:00:00
+REP 3718 Tokyo, Japan Terminal Market Onions and Potatoes Prices (TK_FV030) (Discontinued) | ['Terminal'] |  | 02/14/2005 00:00:00
+REP 3719 Tokyo, Japan Ornamental Terminal Prices (TK_FV201) (Discontinued) | ['Terminal'] |  | 09/11/2004 00:00:00
+REP 3720 Wholesale Market Misc Herbs Report - St. Louis, MO (XX_FV055) (Discontinued) | ['Terminal'] |  | 12/29/2017 00:00:00
+REP 3721 Wholesale Market Tropical F&V Report - St. Louis, MO (XX_FV056) (Discontinued) | ['Terminal'] |  | 12/29/2017 00:00:00
+REP 3722 Wholesale Market Asian Vegetable Report - St. Louis, MO (XX_FV057) (Discontinued) | ['Terminal'] |  | 12/29/2017 00:00:00
+REP 3880 Producers Livestock Stock Show Sale - Greeley, CO | ['Auction Livestock (Special)'] |  | 01/06/2026 17:24:11
+REP 3913 Asheville, NC Terminal Market Fruit Prices (AS_FV010) | ['Terminal'] |  | 10/19/2026 12:00:47
+REP 3914 Asheville, NC Terminal Market Vegetables Prices (AS_FV020) | ['Terminal'] |  | 10/19/2026 12:01:08
+REP 3915 Asheville, NC Terminal Market Onions and Potatoes Prices (AS_FV030) | ['Terminal'] |  | 10/19/2026 12:00:57
+REP 3921 Producers Livestock Auction Sheep & Goat Sale (1st and 3rd Monday) - Salina, UT | ['Auction Livestock'] |  | 10/20/2026 09:33:44

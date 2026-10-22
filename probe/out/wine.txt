@@ -1,0 +1,27 @@
+=== WINE (Comisión) y resto de vino
+GET https://api.tech.ec.europa.eu/agrifood/api/wine/prices -> 200 application/json 1069080
+[ {   "memberStateCode" : "FR",   "memberStateName" : "France",   "beginDate" : "27/10/2025",   "endDate" : "02/11/2025",   "price" : "€139.12",   "unit" : "Euro / HL.",   "weekNumber" : 13,   "description" : "Blancs / Vin AOP" }, {   "memberStateCode" : "FR",   "memberStateName" : "France",   "beginDate" : "27/10/2025",   "endDate" : "02/11/2025",   "price" : "€113.68",   "unit" : "Euro / HL.",   "weekNumber" : 13,   "description" : "Blancs / Vin IGP" }, {   "memberStateCode" : "FR",   "mem
+GET https://api.tech.ec.europa.eu/agrifood/api/wine/production -> 404 application/json; charset=UTF-8 128
+{"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+GET https://api.tech.ec.europa.eu/agrifood/api/wine/stocks -> 404 application/json; charset=UTF-8 128
+{"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+GET https://api.tech.ec.europa.eu/agrifood/swagger/index.html -> 404 application/json; charset=UTF-8 128
+{"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+GET https://api.tech.ec.europa.eu/agrifood/swagger/v1/swagger.json -> 404 application/json; charset=UTF-8 128
+{"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+GET https://www.ivv.gov.pt/np4/estatisticas/ -> 200 text/html; charset=UTF-8 115271
+<!DOCTYPE html> <html lang="pt-PT"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /> <meta property="og:title" content="Estatíst
+GET https://www.ivv.gov.pt/np4/home -> 404 text/html; charset=UTF-8 400
+<!DOCTYPE html> <html lang="pt-PT"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name='robots' content='noindex, follow' /> <!-- This site is optimized with the Yoast SEO plugin v28.7 - https://yoast.com/product/yoast-seo-wordp
+GET https://www.ismeamercati.it/vino -> 0 None 128
+<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)>
+GET https://www.elstat.gr/ -> 0 None 52
+<urlopen error [Errno -2] Name or service not known>
+GET https://www.oiv.int/what-we-do/data-discovery-report -> 200 text/html; charset=UTF-8 45118
+<!DOCTYPE html> <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# schema: http://schema.org/ sioc: http://rdfs.org/sioc/ns# sioct:
+GET https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/dataflow/ESTAT/apro_acs_a/latest?detail=allstubs -> 404 application/xml 245
+<?xml version="1.0" encoding="UTF-8"?><S:Fault xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>100</faultcode><faultstring>ERR_NOT_FOUND_4: APRO_ACS_A (DATA_FLOW:ESTAT,*) is not available for dissemination.</faultstring></S:Fault>
+GET https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/dataflow/ESTAT/vit_t1/latest?detail=allstubs -> 200 application/vnd.sdmx.structure+xml;version=2.1 963
+<?xml version="1.0" encoding="UTF-8"?><m:Structure xmlns:m="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:s="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:c="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"><m:Header><m:ID>DF1785641428</m:ID><m:Test>f
+GET https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/dataflow/ESTAT/apro_cpsh1/latest?detail=allstubs -> 200 application/vnd.sdmx.structure+xml;version=2.1 1010
+<?xml version="1.0" encoding="UTF-8"?><m:Structure xmlns:m="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:s="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:c="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"><m:Header><m:ID>DF1792333749</m:ID><m:Test>f

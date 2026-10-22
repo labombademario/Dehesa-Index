@@ -1,0 +1,14 @@
+=== STATCAN
+GET https://www150.statcan.gc.ca/t1/wds/rest/getAllCubesListLite -> 200 text/html 92815
+ERR cubes Expecting value: line 1 column 1 (char 0)
+GET https://www.statcan.gc.ca/en/terms-conditions/open-licence -> 403 text/html; charset=UTF-8 400
+GET https://www150.statcan.gc.ca/robots.txt -> 200 text/html 92815
+<!--Last modified Dec 16, 2021 by Hasan Skaiky-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistics Canada - We're sorry! The website is currently unavailable / Statistique Canada : Nous sommes
+        désolés! Le site Web n'est pas disponible pour le moment</title>
+    <meta charset="
