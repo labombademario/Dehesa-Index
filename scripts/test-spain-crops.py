@@ -56,7 +56,7 @@ eq(r.returncode, 0, "repetido igual se tolera")
 html = '<a href="/dam/mapa/x/reglamento-n--543-2009/re1_olivar_formato_tabla_global-0.xlsx">OLIVAR DATOS PROVISIONALES CAMPAÑA 2025</a><a href="/dam/mapa/x/reglamento-n--543-2009/re1_vinedo_formato_tabla_global.xlsx">VIÑEDO sin año</a>'
 it = M.page_files(html); eq([(i[1], i[3]) for i in it], [("re1_olivar_formato_tabla_global-0.xlsx", 2025)], "campaña desde la etiqueta; sin etiqueta se ignora")
 p = M.pick_files([("u1", "re1_cereales_formato_tabla_global-0.xlsx", "l", 2024), ("u2", "re1_olivar_formato_tabla_global.xlsx", "l", 2024), ("u3", "re1_olivar_formato_tabla_global-0.xlsx", "l", 2025)])
-eq([x[1] for x in p[2024]["shared"]], ["re1_cereales_formato_tabla_global-0.xlsx"], "BD compartida: solo cereales"); eq(p[2024]["own"], [], "2024 no relee los demas libros (misma BD)"); eq([x[1] for x in p[2025]["own"]], ["re1_olivar_formato_tabla_global-0.xlsx"], "2025 BD propia")
+eq([x[1] for x in p[2024]["shared"]], ["re1_cereales_formato_tabla_global-0.xlsx"], "BD compartida: solo cereales"); eq([x[1] for x in p[2024]["own"]], ["re1_olivar_formato_tabla_global.xlsx"], "2024: se lee tambien el libro propio (solo aporta cultivos que la BD compartida no trae)"); eq([x[1] for x in p[2025]["own"]], ["re1_olivar_formato_tabla_global-0.xlsx"], "2025 BD propia")
 if bad:
     print("\n".join("FALLA " + b for b in bad)); sys.exit(1)
 print("OK test-spain-crops")
