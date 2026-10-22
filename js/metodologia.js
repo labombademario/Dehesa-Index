@@ -292,6 +292,33 @@
     });
   })();
   window.DehesaTextPage(STRINGS, 'informacion');
+  // Fuentes y frecuencia: buscador y desplegable (como el glosario); la elección de ocultar se recuerda en este navegador.
+  (function () {
+    var T = { es: ['Buscar una fuente o un país…', 'Ocultar fuentes', 'Mostrar fuentes', 'Ninguna fuente coincide.', 'Fuentes ocultas. Pulsa «Mostrar fuentes» para verlas.'], en: ['Search a source or country…', 'Hide sources', 'Show sources', 'No source matches.', 'Sources hidden. Press “Show sources” to see them.'], fr: ['Chercher une source ou un pays…', 'Masquer les sources', 'Afficher les sources', 'Aucune source ne correspond.', 'Sources masquées. Appuyez sur « Afficher les sources » pour les voir.'], it: ['Cerca una fonte o un paese…', 'Nascondi le fonti', 'Mostra le fonti', 'Nessuna fonte corrisponde.', 'Fonti nascoste. Premi «Mostra le fonti» per vederle.'] };
+    var RX = /^(Fuentes y frecuencia|Sources and frequency|Sources et fréquence|Fonti e frequenza)$/, prev = window.DehesaShared.onLangChange;
+    function norm(s) { return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function off() { try { return localStorage.getItem('dehesaFuentesOff') === '1'; } catch (e) { return false; } }
+    function setOff(v) { try { if (v) localStorage.setItem('dehesaFuentesOff', '1'); else localStorage.removeItem('dehesaFuentesOff'); } catch (e) { } }
+    function enhance() {
+      var lg = window.DehesaShared.getLang(); if (!T[lg]) lg = 'es'; var t = T[lg];
+      var h2 = [].filter.call(document.querySelectorAll('#pg-body h2'), function (h) { return RX.test(h.textContent.trim()); })[0];
+      if (!h2 || document.getElementById('src-q')) return;
+      var sec = h2.closest('section') || h2.parentNode, ul = sec.querySelector('ul'); if (!ul) return;
+      var head = document.createElement('div'); head.className = 'gl-head'; h2.parentNode.insertBefore(head, h2); head.appendChild(h2);
+      var tg = document.createElement('button'); tg.type = 'button'; tg.className = 'di-btn-sec gl-toggle'; tg.id = 'src-toggle'; tg.setAttribute('aria-controls', 'src-wrap'); head.appendChild(tg);
+      var wrap = document.createElement('div'); wrap.id = 'src-wrap'; ul.parentNode.insertBefore(wrap, ul);
+      var q = document.createElement('input'); q.type = 'search'; q.id = 'src-q'; q.className = 'di-compare-select'; q.style.cssText = 'width:100%;max-width:360px;margin:0 0 10px'; q.placeholder = t[0]; q.setAttribute('aria-label', t[0]);
+      var none = document.createElement('p'); none.hidden = true; none.textContent = t[3];
+      wrap.appendChild(q); wrap.appendChild(ul); wrap.appendChild(none);
+      var note = document.createElement('p'); note.className = 'gl-off-note'; note.hidden = true; note.textContent = t[4]; sec.appendChild(note);
+      q.oninput = function () { var v = norm(q.value.trim()), any = false; [].forEach.call(ul.children, function (li) { var ok = !v || norm(li.textContent).indexOf(v) >= 0; li.style.display = ok ? '' : 'none'; if (ok) any = true; }); none.hidden = any; };
+      function paint(o) { wrap.hidden = o; note.hidden = !o; tg.textContent = o ? t[2] : t[1]; tg.setAttribute('aria-expanded', o ? 'false' : 'true'); }
+      paint(off()); tg.onclick = function () { var o = !wrap.hidden; setOff(o); paint(o); };
+    }
+    window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); setTimeout(enhance, 0); };
+    enhance();
+  })();
   // Glosario: siglas, términos de precio y términos de Dehesa (data/glosario-<idioma>.json, generado por scripts/build-glosario.py)
   (function () {
     var GT = { es: ['Glosario', 'Qué significan las siglas y los términos técnicos que aparecen en las páginas. En las páginas, tócalos o pasa el cursor por encima para verlos.', 'Buscar un término…', 'Ningún término coincide.'], en: ['Glossary', 'What the acronyms and technical terms used across the pages mean. On the pages, tap or hover over them to see them.', 'Search a term…', 'No term matches.'], fr: ['Glossaire', 'Ce que signifient les sigles et termes techniques des pages. Sur les pages, touchez-les ou survolez-les pour les voir.', 'Chercher un terme…', 'Aucun terme ne correspond.'], it: ['Glossario', 'Cosa significano le sigle e i termini tecnici delle pagine. Nelle pagine, toccali o passaci sopra per vederli.', 'Cerca un termine…', 'Nessun termine corrisponde.'] };
