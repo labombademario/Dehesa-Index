@@ -329,6 +329,18 @@ if sec == 'ersreg2':
             for r in range(min(8, sh.nrows)): p(sh.row_values(r))
     except Exception as e: p('ERR xls', e)
 
+if sec == 'uk5':
+    p('=== UK5')
+    N = 'https://www.nomisweb.co.uk/api/v01/dataset/'
+    st, h, b = head(N + 'def.sdmx.json?search=*gva*', timeout=60)
+    try:
+        for k in json.loads(b)['structure']['keyfamilies']['keyfamily']:
+            p('DS', k['id'], k['name']['value'], [a['annotationtext'] for a in k['annotations']['annotation'] if a['annotationtitle'] in ('Units', 'Mnemonic', 'LastUpdated')])
+    except Exception as e: p('ERR', e)
+    st, h, b = head(N + 'NM_17_1.data.csv?geography=TYPE480&cell=402720257,402719233&date=latest&measures=20100&select=date_name,geography_name,cell_name,obs_value', timeout=60); p(b[:1500].decode('utf-8', 'replace'))
+    st, h, b = head(N + 'NM_17_1.data.csv?geography=2013265921&cell=402720257&date=latest-12,latest-8,latest-4,latest&measures=20100&select=date_name,geography_name,obs_value', timeout=60); p(b[:600].decode('utf-8', 'replace'))
+    st, h, b = head(N + 'NM_17_1/date.def.sdmx.json', timeout=60); p(b[-700:].decode('utf-8', 'replace'))
+
 if sec == 'wds':
     W = 'https://www150.statcan.gc.ca/t1/wds/rest/'
     body = json.dumps([{"productId": 32100077}]).encode()
