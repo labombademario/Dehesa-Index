@@ -149,5 +149,20 @@ if sec == 'aafc':
             for r in json.loads(b)['result']['results']:
                 p('SSN', r.get('id'), '|', str(r.get('title'))[:100], '|', r.get('license_id'), '|', [x.get('url') for x in r.get('resources', [])][:2])
         except Exception as e: p('ERR', e, b[:150])
+if sec == 'aafc2':
+    import csv, io, collections
+    st, h, b = head('https://od-do.agr.gc.ca/WeeklyWholesalePrices_PrixDeGrossistesHebdomadaires55.csv', timeout=120)
+    rd = csv.DictReader(io.StringIO(b.decode('utf-8-sig', 'ignore')))
+    R = list(rd); p('HEADER', list(R[0].keys()))
+    last = max(r['Date'] for r in R); p('LAST', last, 'rows', len(R))
+    C = collections.Counter(r['CmdtyEn_PrdtAn'] for r in R); p('COMMODITIES', len(C))
+    p(' | '.join('%s:%d' % kv for kv in sorted(C.items())))
+    p('CENTRES', collections.Counter(r['CentreEn_CentreAn'] for r in R).most_common())
+    p('CENTRES last wk', collections.Counter(r['CentreEn_CentreAn'] for r in R if r['Date'] == last).most_common())
+    p('DATES last 6', sorted(set(r['Date'] for r in R))[-6:])
+    p('CNTR', collections.Counter(r['Cntry_Pays'] for r in R).most_common(8))
+    p('PKGUNITS', collections.Counter((r['PkgWtUnitEn_PqtPoidsUniteAn'] if 'PkgWtUnitEn_PqtPoidsUniteAn' in r else '') for r in R).most_common(8))
+    ex = [r for r in R if r['Date'] == last and r['CentreEn_CentreAn'] == 'Wholesale-Toronto' and r['CmdtyEn_PrdtAn'] in ('Potatoes', 'Apples', 'Tomatoes')]
+    for r in ex[:8]: p('EX', json.dumps(r, ensure_ascii=False)[:600])
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
