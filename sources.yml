@@ -210,6 +210,15 @@ sources:
     continue: true
     data: [eu-fv-farm.json]
     message: Precios agricolas de fruta, hortaliza y patata de la UE-27 (Eurostat)
+  - id: eu-wood-prices
+    name: Update EU timber prices (Eurostat wood industry producer prices, Swedish Forest Agency roundwood prices)
+    cron: ['40 7 * * 3']
+    script: scripts/update-eu-wood-prices.py
+    timeout: 15
+    script_timeout: 8
+    continue: true
+    data: [eu-wood-prices.json]
+    message: Precios de la madera en la UE (Eurostat, Skogsstyrelsen)
   - id: wood-prices-de
     name: Update Germany state-forest timber price index (Destatis 61231)
     cron: ['25 7 * * 3']

@@ -1,0 +1,45 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Precios de la madera en la UE (Eurostat sts_inpp_m y Skogsstyrelsen)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "ppi",
+  "national"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "ppi": {
+   "type": "object",
+   "required": [
+    "source",
+    "unit",
+    "products",
+    "countries"
+   ],
+   "properties": {
+    "unit": {
+     "type": "string"
+    },
+    "products": {
+     "type": "object",
+     "minProperties": 1
+    },
+    "countries": {
+     "type": "object",
+     "minProperties": 20
+    }
+   }
+  },
+  "national": {
+   "type": "object"
+  }
+ }
+}

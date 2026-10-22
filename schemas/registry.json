@@ -1216,6 +1216,12 @@
     "wood_prices_de"
    ]
   ],
+  "eu-wood-prices.json": [
+   "eu-wood-prices",
+   [
+    "eu_wood_prices"
+   ]
+  ],
   "eu-fv-farm.json": [
    "eu-fv-farm",
    [

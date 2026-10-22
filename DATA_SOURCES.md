@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 152 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 32046 series en el catalogo unificado.
+Resumen: 153 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 32046 series en el catalogo unificado.
 
-## VERIFIED (152)
+## VERIFIED (153)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -129,6 +129,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `sejm_eli` | Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia) | PL | PUBLIC-LAW | si/si | si | 0 | Cifras y reglas son extractos transcritos a mano; manda el texto publicado en el Dziennik Ustaw. No se leyeron los términos de uso de la API… |
 | `sima_gpp` | Portugal — SIMA (GPP) weekly prices | PT | CUSTOM | unclear/unclear | si | 0 | Written authorisation from the GPP would be required before use. |
 | `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 38 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
+| `skogsstyrelsen` | Sweden — Skogsstyrelsen (Swedish Forest Agency): official forestry statistics database (roundwood prices) | SE | CC0-1.0 | si/si | si | 0 | Terms page: statistical database data is CC0; the API section asks for the source to be cited, so credit is given anyway. Commercial reuse i… |
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
 | `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 123 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |

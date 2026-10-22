@@ -1,18 +1,18 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T17:01:50Z",
+ "generatedAt": "2026-10-22T17:13:22Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 151,
-  "sourcesApto": 138,
+  "sources": 152,
+  "sourcesApto": 139,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 326,
+  "datasets": 327,
   "datasets_apto": 196,
-  "datasets_condiciones": 120,
+  "datasets_condiciones": 121,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -1977,6 +1977,23 @@
    "redistribution": "yes",
    "attribution": "Source: Jordbruksverket (Swedish Board of Agriculture), statistics database.",
    "conditions": "The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is given anyway so the CC BY case is also met."
+  },
+  {
+   "id": "skogsstyrelsen",
+   "name": "Sweden — Skogsstyrelsen (Swedish Forest Agency): official forestry statistics database (roundwood prices)",
+   "url": "https://www.skogsstyrelsen.se/statistik/",
+   "country": "SE",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Skogsstyrelsen terms of use: data in the statistical database is CC0 (reports and documents CC BY)",
+   "licenseUrl": "https://skogsstyrelsen.se/en/statistics/good-to-know-about-the-statistics/terms-of-use/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Skogsstyrelsen (Swedish Forest Agency), statistical database.",
+   "conditions": "Terms page: statistical database data is CC0; the API section asks for the source to be cited, so credit is given anyway. Commercial reuse is not addressed explicitly."
   },
   {
    "id": "snice_mx",
@@ -4147,6 +4164,15 @@
    "verdict": "apto",
    "sources": [
     "tedb"
+   ]
+  },
+  {
+   "path": "data/eu-wood-prices.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat",
+    "skogsstyrelsen"
    ]
   },
   {

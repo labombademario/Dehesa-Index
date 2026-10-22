@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T17:01:50Z",
+ "generatedAt": "2026-10-22T17:13:22Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 181,
+  "total": 182,
   "byStatus": {
-   "ACTIVE": 151,
+   "ACTIVE": 152,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -6413,6 +6413,45 @@
    "derivatives": "yes",
    "attribution": "Source: Jordbruksverket (Swedish Board of Agriculture), statistics database.",
    "lastChecked": "2026-10-10",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "skogsstyrelsen",
+   "registryId": "skogsstyrelsen",
+   "country": "SE",
+   "scope": "integrated",
+   "institution": "Sweden — Skogsstyrelsen (Swedish Forest Agency): official forestry statistics database (roundwood prices)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC0-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Skogsstyrelsen (Swedish Forest Agency), statistical database.",
+   "lastChecked": "2026-10-22",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

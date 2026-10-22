@@ -3742,6 +3742,29 @@ def eu_fv_farm(doc, errs, warns, stats):
         ly = max(p[-1][0] for p in c.values())
         if int(ly) < _dt.date.today().year - 4: warns.append("eu-fv-farm %s: ultimo año %s" % (cc, ly))
     stats["paises"] = len(doc["countries"]); stats["series"] = n
+# Precios de la madera en la UE (Eurostat sts_inpp_m y Skogsstyrelsen)
+def eu_wood_prices(doc, errs, warns, stats):
+    import datetime as _dt
+    p = doc["ppi"]; prods = p["products"]; n = 0
+    for cc, c in p["countries"].items():
+        for code, pts in c.items():
+            if code not in prods: errs.append("eu-wood-prices %s: codigo %s sin nombre" % (cc, code)); return
+            last = None
+            for ym, v in pts:
+                if not (isinstance(v, (int, float)) and 20 <= v <= 500): errs.append("eu-wood-prices %s %s %s: indice fuera de rango (%s)" % (cc, code, ym, v)); return
+                if last is not None and not ym > last: errs.append("eu-wood-prices %s %s: meses no ascendentes en %s" % (cc, code, ym)); return
+                last = ym
+            n += 1
+        ly = max(x[-1][0] for x in c.values())
+        if ly < (_dt.date.today() - _dt.timedelta(days=200)).strftime("%Y-%m"): warns.append("eu-wood-prices %s: ultimo mes %s, con retraso" % (cc, ly))
+    for cc, s in doc["national"].items():
+        for x in s["series"]:
+            last = None
+            for q, v in x["pts"]:
+                if not (isinstance(v, (int, float)) and 50 <= v <= 3000): errs.append("eu-wood-prices %s %s %s: precio fuera de rango (%s)" % (cc, x["id"], q, v)); return
+                if last is not None and not q > last: errs.append("eu-wood-prices %s %s: trimestres no ascendentes en %s" % (cc, x["id"], q)); return
+                last = q
+    stats["paises"] = len(p["countries"]); stats["series"] = n
 # Argentina: cultivos por provincia (MAGyP)
 def ar_provinces(doc, errs, warns, stats):
     cs = doc["campaigns"]
