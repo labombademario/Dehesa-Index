@@ -223,6 +223,17 @@ sources:
     data: [france-rica/index.json, france-rica-stats.json, france-rica-log.txt]
     extra: ['!data/france-rica']
     message: Cuentas de las explotaciones de Francia por orientacion, tamano y region (Agreste RICA)
+  - id: fr-infosrapides
+    name: Update France monthly Infos Rapides of Agreste (milk, crop estimates by region, trade by zone)
+    cron: ['40 9 * * 2']
+    script: scripts/update-fr-infosrapides.py
+    timeout: 45
+    script_timeout: 35
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/france-infosrapides) data/france-infosrapides-stats.json
+    data: [france-infosrapides/index.json, france-infosrapides-stats.json, france-infosrapides-log.txt]
+    extra: ['!data/france-infosrapides']
+    message: Infos Rapides mensuales de Francia, leche, estimaciones de cosecha por region y comercio por zona (Agreste)
   - id: fr-bulconj
     name: Update France monthly agricultural bulletin of Agreste (prices, quotations, indices and trade by sector)
     cron: ['20 9 * * 2']

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T21:52:01Z",
+ "generatedAt": "2026-10-22T22:33:55Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 186,
+  "total": 187,
   "byStatus": {
-   "ACTIVE": 156,
+   "ACTIVE": 157,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1668,6 +1668,52 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Source : Agreste (SSP) – Direction générale des douanes et droits indirects (DGDDI), sous Licence Ouverte",
+   "lastChecked": "2026-10-22",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "agreste_infosrapides",
+   "registryId": "agreste_infosrapides",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "France — Agreste / SSP, Infos Rapides (lait, grandes cultures, commerce extérieur)",
+   "dataset": "Ya integrada (26 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "milk",
+    "sheep"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "production",
+    "trade"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "etalab-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source : Agreste (SSP), Infos Rapides, sous Licence Ouverte",
    "lastChecked": "2026-10-22",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
@@ -4082,7 +4128,7 @@
    "country": "FR",
    "scope": "integrated",
    "institution": "FranceAgriMer (VISIONet)",
-   "dataset": "Ya integrada (215 series en el catalogo unificado)",
+   "dataset": "Ya integrada (214 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",

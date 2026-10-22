@@ -1,0 +1,42 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update France monthly Infos Rapides of Agreste (milk, crop estimates by region, trade by zone)
+on:
+  schedule:
+    - cron: '40 9 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-fr-infosrapides
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-fr-infosrapides.py
+        timeout-minutes: 35
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/france-infosrapides/index.json data/france-infosrapides-stats.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/france-infosrapides/index.json data/france-infosrapides-stats.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/france-infosrapides) data/france-infosrapides-stats.json
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Infos Rapides mensuales de Francia, leche, estimaciones de cosecha por region y comercio por zona (Agreste)" data/france-infosrapides/index.json data/france-infosrapides-stats.json data/france-infosrapides-log.txt data/france-infosrapides data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T21:39:06Z",
+ "generatedAt": "2026-10-22T22:33:56Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 156,
-  "sourcesApto": 143,
+  "sources": 157,
+  "sourcesApto": 144,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 339,
-  "datasets_apto": 208,
+  "datasets": 342,
+  "datasets_apto": 211,
   "datasets_condiciones": 121,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -137,6 +137,23 @@
    "redistribution": "yes",
    "attribution": "Source : Agreste (SSP) – Direction générale des douanes et droits indirects (DGDDI), sous Licence Ouverte",
    "conditions": "Citar Agreste/SSP y la DGDDI; las cifras de aduanas se revisan, por eso cada edición sustituye a la anterior."
+  },
+  {
+   "id": "agreste_infosrapides",
+   "name": "France — Agreste / SSP, Infos Rapides (lait, grandes cultures, commerce extérieur)",
+   "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/IraLai26133/detail/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : Agreste (SSP), Infos Rapides, sous Licence Ouverte",
+   "conditions": "Citar Agreste/SSP; la leche procede de la encuesta mensual lechera FranceAgriMer/SSP y el comercio exterior de aduanas, que Agreste publica tal cual."
   },
   {
    "id": "agreste_rica",
@@ -5194,6 +5211,37 @@
      "sourceId": "eurostat",
      "verdict": "condiciones"
     }
+   ]
+  },
+  {
+   "path": "data/france-infosrapides-log.txt",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "agreste_infosrapides"
+   ]
+  },
+  {
+   "path": "data/france-infosrapides-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "agreste_infosrapides"
+   ],
+   "parts": [
+    {
+     "scope": "pais:FR",
+     "sourceId": "agreste_infosrapides",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/france-infosrapides/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "agreste_infosrapides"
    ]
   },
   {

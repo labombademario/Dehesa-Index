@@ -5182,3 +5182,43 @@ def france_bulconj(doc, errs, warns, stats):
             if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or abs(v) > 1e12: errs.append("france-bulconj %s %s %s: valor %r" % (doc["sheet"], s["id"], p, v)); return
             n += 1
     stats["series"] = len(doc["series"]); stats["puntos"] = n
+
+
+# Infos Rapides de Francia (Agreste)
+def _ira_pts(pts, where, errs):
+    import re as _re
+    for p, v in pts.items():
+        if not _re.fullmatch(r"\d{4}-(0[1-9]|1[0-2])", p) or not 1990 <= int(p[:4]) <= 2100: errs.append("%s: periodo %r" % (where, p)); return False
+        if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or abs(v) > 1e12: errs.append("%s %s: valor %r" % (where, p, v)); return False
+    return True
+
+
+def france_infosrapides_index(doc, errs, warns, stats):
+    bad = [k for k, e in doc["editions"].items() if e.get("kind") not in ("Lai", "Gcu", "Cex") or e.get("status") not in ("ok", "error")]
+    if bad: errs.append("france-infosrapides index: ediciones con tipo o estado raro: %s" % bad[:3]); return
+    nerr = sum(1 for e in doc["editions"].values() if e["status"] == "error")
+    if nerr: warns.append("france-infosrapides index: %d ediciones ilegibles" % nerr)
+    stats["ediciones"] = len(doc["editions"])
+
+
+def france_infosrapides_series(doc, errs, warns, stats):
+    n = 0
+    for k, s in doc["series"].items():
+        if not s.get("label") or not s.get("unit") or not s.get("pts"): errs.append("france-infosrapides %s: serie incompleta" % k); return
+        if not _ira_pts(s["pts"], "france-infosrapides " + k, errs): return
+        n += len(s["pts"])
+    stats["series"] = len(doc["series"]); stats["puntos"] = n
+
+
+def france_infosrapides_cultivos(doc, errs, warns, stats):
+    import re as _re
+    eds = set(doc["editions"]); n = 0
+    for y, regs in doc["est"].items():
+        if not _re.fullmatch(r"\d{4}", y): errs.append("france-infosrapides cultivos: cosecha %r" % y); return
+        for rg, cult in regs.items():
+            if rg not in doc["regions"]: errs.append("france-infosrapides cultivos: region %r sin nombre" % rg); return
+            for c, byed in cult.items():
+                for ed, t in byed.items():
+                    if ed not in eds or not isinstance(t, list) or len(t) != 3 or any(v is not None and (isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or v < 0) for v in t): errs.append("france-infosrapides cultivos %s/%s/%s/%s: %r" % (y, rg, c, ed, t)); return
+                    n += 1
+    stats["estimaciones"] = n

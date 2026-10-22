@@ -4789,6 +4789,32 @@
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr; mentions légales no leídas por completo; el boletín incluye cotizaciones de terceros.",
    "aliases": []
+  },
+  "agreste_infosrapides": {
+   "name": "France — Agreste / SSP, Infos Rapides (lait, grandes cultures, commerce extérieur)",
+   "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/IraLai26133/detail/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Agreste (SSP), Infos Rapides, sous Licence Ouverte",
+   "short": "Agreste · Infos Rapides",
+   "additionalRestrictions": "Citar Agreste/SSP; la leche procede de la encuesta mensual lechera FranceAgriMer/SSP y el comercio exterior de aduanas, que Agreste publica tal cual.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Datos de la encuesta mensual lechera FranceAgriMer/SSP y de aduanas (DGDDI) publicados por Agreste bajo Licence Ouverte.",
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Los conjuntos «Agreste - Infos Rapides» de data.gouv.fr declaran «Licence Ouverte / Open Licence» (fr-lo); las fichas IraLai, IraGcu e IraCex ofrecen los libros Excel. No se ha leído el texto íntegro de las mentions légales del sitio, por eso la confianza es media.",
+   "used": true,
+   "notes": "Informes mensuales con libros de datos: histórico lechero, estimaciones de cosecha por región y saldo agroalimentario por zona.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr; mentions légales no leídas por completo; el boletín incluye cotizaciones de terceros.",
+   "aliases": []
   }
  },
  "files": {
@@ -7038,6 +7064,24 @@
     "agreste_bulconj"
    ],
    "notes": "Registro de la última ejecución de update-fr-bulconj.py."
+  },
+  "data/france-infosrapides/": {
+   "sources": [
+    "agreste_infosrapides"
+   ],
+   "notes": "Infos Rapides de Francia (scripts/update-fr-infosrapides.py): leche mensual, estimaciones de cosecha por región y edición, y comercio exterior por zona. Se conservan los puntos que el libro ya no trae."
+  },
+  "data/france-infosrapides-stats.json": {
+   "byCountry": {
+    "FR": "agreste_infosrapides"
+   },
+   "notes": "Series seleccionadas de los Infos Rapides (scripts/update-fr-infosrapides.py), para el catálogo."
+  },
+  "data/france-infosrapides-log.txt": {
+   "sources": [
+    "agreste_infosrapides"
+   ],
+   "notes": "Registro de la última ejecución de update-fr-infosrapides.py."
   }
  },
  "derived": [

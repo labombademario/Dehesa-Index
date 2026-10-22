@@ -196,6 +196,8 @@ jobs:
       - name: Spain CAP (BOE RD 1048/2022 annex parser, change tracking, refusal on corrupted text, rules vs watched articles; extract of the BOE text as fixture, no network)
         run: python3 scripts/test-cap-es.py
 
+      - name: France Infos Rapides of Agreste (milk tables, crop estimates by edition, trade graphs; no network)
+        run: python3 scripts/test-fr-infosrapides.py
       - name: France monthly bulletin of Agreste (tables, periods, units, series kept when the source drops them; no network)
         run: python3 scripts/test-fr-bulconj.py
       - name: France foreign trade of Agreste (periods, units, partner names, years kept when the source drops them; no network)

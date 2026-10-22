@@ -1639,6 +1639,30 @@
    [
     "france_bulconj_index"
    ]
+  ],
+  "france-infosrapides/index.json": [
+   "france-infosrapides-index",
+   [
+    "france_infosrapides_index"
+   ]
+  ],
+  "france-infosrapides/lait.json": [
+   "france-infosrapides-series",
+   [
+    "france_infosrapides_series"
+   ]
+  ],
+  "france-infosrapides/comercio.json": [
+   "france-infosrapides-series",
+   [
+    "france_infosrapides_series"
+   ]
+  ],
+  "france-infosrapides/cultivos.json": [
+   "france-infosrapides-cultivos",
+   [
+    "france_infosrapides_cultivos"
+   ]
   ]
  },
  "globs": {

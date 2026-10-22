@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 157 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36502 series en el catalogo unificado.
+Resumen: 158 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36527 series en el catalogo unificado.
 
-## VERIFIED (157)
+## VERIFIED (158)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -19,6 +19,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `agence_bio` | Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr) | FR | etalab-2.0 | si/si | si | 155 | Citar la fuente y la fecha de la última actualización. Solo se usan los ficheros por departamento: la ficha «par région» de data.gouv.fr no … |
 | `agreste_bulconj` | France — Agreste / SSP, Bulletin de conjoncture mensuel (BulConj) | FR | etalab-1.0 | si/si | si | 69 | Citar Agreste/SSP; el boletín recoge cotizaciones y datos de terceros (FranceAgriMer, Eurostat, INSEE, bolsas), que se publican tal cual los… |
 | `agreste_comex` | France — Agreste / SSP con datos de la DGDDI (aduanas), Échanges extérieurs de céréales, produits laitiers, œufs et produits des IAA | FR | etalab-1.0 | si/si | si | 152 | Citar Agreste/SSP y la DGDDI; las cifras de aduanas se revisan, por eso cada edición sustituye a la anterior. |
+| `agreste_infosrapides` | France — Agreste / SSP, Infos Rapides (lait, grandes cultures, commerce extérieur) | FR | etalab-1.0 | si/si | si | 26 | Citar Agreste/SSP; la leche procede de la encuesta mensual lechera FranceAgriMer/SSP y el comercio exterior de aduanas, que Agreste publica … |
 | `agreste_rica` | France — Agreste / SSP (ministère de l'Agriculture), Réseau d'information comptable agricole (RICA), séries longues 1988-2024 | FR | etalab-1.0 | si/si | si | 133 | Citar Agreste/SSP y la edición; los cruces con menos de 20 explotaciones en la muestra no se difunden y quedan vacíos. |
 | `agreste_saa` | France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département | FR | etalab-1.0 | si/si | si | 4100 | Citar Agreste/SSP y la edición; el último año es provisional y se marca como tal. |
 | `agreste_ssp` | France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer) | FR | etalab-1.0 | si/si | si | 0 | Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer. |
@@ -73,7 +74,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `fek_gr` | Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023 | EL | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y e… |
 | `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 118 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
 | `forest_research` | Forest Research (UK), Timber Price Indices (official statistics) | GB | OGL-UK-3.0 | si/si | si | 0 |  |
-| `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 215 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
+| `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 214 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
 | `geosphere_austria` | GeoSphere Austria — Data Hub (WINFORE v2, SPEI) | AT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar los cambios. |
 | `gesetze_im_internet` | Gesetze im Internet (BMJ / Bundesamt für Justiz) — GAPDZG and GAPDZV | DE | CUSTOM | si/si | si | 0 | The site's Impressum (read 2026-10-08) states no licence or reuse terms and disclaims liability for completeness and correctness; the basis … |
 | `gisco_nuts` | Eurostat GISCO — NUTS 2021 administrative boundaries (© EuroGeographics) | EU | EC-REUSE-EUROGEOGRAPHICS | si/si | si | 0 | The administrative boundaries are free to use for any purpose with the attribution above (GISCO statistical units terms). We simplify the po… |
