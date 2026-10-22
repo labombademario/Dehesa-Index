@@ -1,0 +1,15 @@
+name: tmp-probe-ukage
+on:
+  push:
+    branches: [research/probe-ukage-1022]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          python3 probe/p.py || true
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/out; git commit -qm "probe out"; git push
