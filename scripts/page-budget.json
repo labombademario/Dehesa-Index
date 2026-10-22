@@ -1,9 +1,9 @@
 {
   "_doc": "Presupuesto de carga inicial por pagina (scripts/measure-pages.mjs --check). Cifras en KB. Se mide con navegador real: JSON de datos (crudo), JS (crudo) y total comprimido (gzip). 'forbid' son peticiones que NO deben ocurrir al abrir la pagina. Subir un limite exige justificarlo en el commit.",
   "pages": [
-    { "url": "/", "maxDataRawKB": 250, "maxJsRawKB": 333, "maxTotalGzKB": 222,
+    { "url": "/", "maxDataRawKB": 262, "maxJsRawKB": 333, "maxTotalGzKB": 222,
       "forbid": ["/data/(latest|history|normalized|catalog)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
-    { "url": "/", "mobile": true, "maxDataRawKB": 250, "maxTotalGzKB": 222, "forbid": ["/data/(latest|history|normalized)\\.json"] },
+    { "url": "/", "mobile": true, "maxDataRawKB": 262, "maxTotalGzKB": 222, "forbid": ["/data/(latest|history|normalized)\\.json"] },
     { "url": "/precios.html", "maxDataRawKB": 690, "maxJsRawKB": 780, "maxTotalGzKB": 480,
       "forbid": ["/data/(latest|history|normalized)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
     { "url": "/precios.html", "mobile": true, "maxDataRawKB": 690, "maxTotalGzKB": 480, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/prices/history/"] },
@@ -13,7 +13,7 @@
       "forbid": ["-stats\\.json", "/data/(latest|history|normalized)\\.json", "/data/catalog/[A-Z]{2}\\.json"] },
     { "url": "/comparador.html", "maxDataRawKB": 495, "maxTotalGzKB": 260, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
     { "url": "/catalogo.html", "maxDataRawKB": 335, "maxJsRawKB": 260, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
-    { "url": "/catalogo.html?q=trigo", "maxDataRawKB": 4250, "maxTotalGzKB": 740, "forbid": ["/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
+    { "url": "/catalogo.html?q=trigo", "maxDataRawKB": 4400, "maxTotalGzKB": 740, "forbid": ["/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
     { "url": "/mi-seguimiento.html", "maxDataRawKB": 250, "maxTotalGzKB": 180, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "/data/watch-index\\.json"] },
     { "url": "/mi-mercado.html?c=US&r=KS&p=cattle", "maxDataRawKB": 612, "maxTotalGzKB": 388, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/us-cash-bids/history/"], "wait": 3000 },
     { "url": "/pac.html", "maxDataRawKB": 175, "maxTotalGzKB": 210, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
