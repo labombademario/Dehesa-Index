@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T23:27:00Z",
+ "generatedAt": "2026-10-22T23:41:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 243,
+  "ok": 244,
   "late": 2,
   "error": 4,
   "not_run": 0,
@@ -14,15 +14,15 @@
   "status": "error",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "ccc15ee3",
+   "sha": "72fb0d68",
    "conclusion": "failure",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/7e14bd92-9bfa-4089-8802-20648fcf64a7",
-   "completedAt": "2026-10-22T23:17:17Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/9748bac5-60e3-4e0d-8d39-11cf10c144a0",
+   "completedAt": "2026-10-22T23:31:00Z"
   },
   "lagHours": 2.9,
   "prodGeneratedAt": "2026-10-22T18:48:38.533010+00:00",
   "repoGeneratedAt": "2026-10-22T21:41:46.421107+00:00",
-  "checkedAt": "2026-10-22T23:27:00Z"
+  "checkedAt": "2026-10-22T23:41:00Z"
  },
  "pipelines": [
   {
@@ -89,7 +89,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-22T00:22:02Z"
+     "lastChange": "2026-10-22T23:38:22Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -629,7 +629,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-10-22T23:40:00Z",
+   "nextRun": "2026-10-23T23:40:00Z",
    "files": [
     {
      "path": "data/ca"
@@ -2539,6 +2539,29 @@
    "expectedEveryHours": 146.0
   },
   {
+   "workflow": "update-fr-agreste-more.yml",
+   "name": "Update France farm employment, land use (TERUTI), input price indices by region (IPAMPA) and wine harvest of Agreste",
+   "crons": [
+    "50 9 * * 2"
+   ],
+   "nextRun": "2026-10-27T09:50:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T23:31:56Z",
+    "durationSec": 171,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39872402134"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-fr-bulconj.yml",
    "name": "Update France monthly agricultural bulletin of Agreste (prices, quotations, indices and trade by sector)",
    "crons": [
@@ -3591,18 +3614,19 @@
    "nextRun": "2026-10-26T20:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "cancelled",
+    "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T23:10:52Z",
-    "durationSec": 13,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39870072854"
+    "startedAt": "2026-10-22T23:11:03Z",
+    "durationSec": 1189,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39870093645",
+    "reason": "no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 3,
-    "failed": 3
+    "failed": 4
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -3880,14 +3904,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/product-compare.json",
@@ -3904,7 +3928,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/products"
@@ -3915,19 +3939,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T23:03:36Z"
+     "lastChange": "2026-10-22T23:29:50Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-22T22:35:22Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-22T22:35:22Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/pack"
@@ -3943,7 +3967,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/country-pending.json",
@@ -3951,18 +3975,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/fv-products.json",
@@ -3974,7 +3998,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-22T23:19:28Z"
+     "lastChange": "2026-10-22T23:30:06Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5132,7 +5156,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-10-22T23:30:00Z",
+   "nextRun": "2026-10-23T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5712,19 +5736,18 @@
    "nextRun": "2026-10-23T02:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "cancelled",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T20:45:35Z",
-    "durationSec": 547,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39851611269",
-    "reason": "no se pudo publicar tras 10 intentos"
+    "startedAt": "2026-10-22T23:42:41Z",
+    "durationSec": 13,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39873574810"
    },
    "recent": {
-    "runs": 10,
-    "success": 4,
+    "runs": 9,
+    "success": 3,
     "failed": 3
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 24.0
   },
   {
