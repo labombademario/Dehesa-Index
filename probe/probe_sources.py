@@ -341,6 +341,19 @@ if sec == 'uk5':
     st, h, b = head(N + 'NM_17_1.data.csv?geography=2013265921&cell=402720257&date=latest-12,latest-8,latest-4,latest&measures=20100&select=date_name,geography_name,obs_value', timeout=60); p(b[:600].decode('utf-8', 'replace'))
     st, h, b = head(N + 'NM_17_1/date.def.sdmx.json', timeout=60); p(b[-700:].decode('utf-8', 'replace'))
 
+if sec == 'uk6':
+    p('=== UK6')
+    N = 'https://www.nomisweb.co.uk/api/v01/dataset/NM_2400_1'
+    st, h, b = head(N + '.def.sdmx.json', timeout=60)
+    try:
+        j = json.loads(b); kf = j['structure']['keyfamilies']['keyfamily'][0]
+        p('DIMS', [d['conceptref'] for d in kf['components']['dimension']])
+    except Exception as e: p('ERR', e)
+    for dim in ('geography', 'industry', 'measures'):
+        st, h, b = head(N + '/' + dim + '.def.sdmx.json?search=*' + ('region*' if dim == 'geography' else '*'), timeout=60); p(b[:900].decode('utf-8', 'replace'))
+    st, h, b = head(N + '.data.csv?geography=TYPE480&date=latest&measures=20100&select=date_name,geography_name,geography_code,industry_name,obs_value', timeout=60); p(b[:900].decode('utf-8', 'replace'))
+    st, h, b = head(N + '.data.csv?geography=2013265921&date=latest&select=date_name,geography_name,geography_code,measures_name,industry_name,obs_value', timeout=60); p(b[:900].decode('utf-8', 'replace'))
+
 if sec == 'wds':
     W = 'https://www150.statcan.gc.ca/t1/wds/rest/'
     body = json.dumps([{"productId": 32100077}]).encode()
