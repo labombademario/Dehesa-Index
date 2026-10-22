@@ -1,5 +1,7 @@
-empleo: leido (Dos2602)
-teruti: leido (TERUTI)
+empleo: NO se pudo leer (empleo: sin enlace); se conserva lo publicado
+teruti: NO se pudo leer (TERUTI: sin enlace); se conserva lo publicado
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/VINCONJ/FDS_VINCONJ.zip
 vinconj: leido (VINCONJ)
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/IPAMPA/FDS_IPAMPA.zip
 ipampa: leido (IPAMPA)
 escrito: 5 ficheros, 29 series en las estadisticas
