@@ -1,0 +1,16 @@
+name: tmp-probe-fvw
+on:
+  push:
+    branches: [research/probe-fvwood-1022]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          python3 probe/p40.py > probe/p40.log 2>&1 || true
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/p40.log probe/files; git commit -qm "probe out" || true; git pull -q --rebase; git push || true
