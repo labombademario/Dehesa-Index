@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T03:12:00Z",
+ "generatedAt": "2026-10-22T03:16:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 227,
+  "ok": 228,
   "late": 2,
   "error": 2,
   "not_run": 0,
@@ -13,11 +13,16 @@
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "e06eb45c",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/3d251380-cbc6-47ed-9683-6e4d4c695be5",
+   "completedAt": "2026-10-22T03:18:12Z"
+  },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T00:54:04.376277+00:00",
   "repoGeneratedAt": "2026-10-22T00:54:04.376277+00:00",
-  "checkedAt": "2026-10-22T03:12:00Z"
+  "checkedAt": "2026-10-22T03:16:00Z"
  },
  "pipelines": [
   {
@@ -804,6 +809,33 @@
    },
    "status": "ok",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-chile-fv.yml",
+   "name": "Dehesa Data — Chile fruta y hortaliza (ODEPA)",
+   "crons": [
+    "20 4 * * 2-6"
+   ],
+   "nextRun": "2026-10-22T04:20:00Z",
+   "files": [
+    {
+     "path": "data/cl"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T03:11:32Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39715480344"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-chile.yml",
@@ -3720,7 +3752,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T02:41:54Z"
+     "lastChange": "2026-10-22T03:14:00Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -3808,8 +3840,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39710835001"
    },
    "recent": {
-    "runs": 10,
-    "success": 7,
+    "runs": 9,
+    "success": 6,
     "failed": 3
    },
    "status": "error",
