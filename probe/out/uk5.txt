@@ -1,0 +1,336 @@
+FILE https://assets.publishing.service.gov.uk/media/69e0b39f53469bbcdf408f75/structure-england-june-county-16apr26.ods ['Contents', '1905', '1915', '1925', '1935', '1945', '1950', '1955', '1965', '1975', '1985', '1995', '2000', '2005', '2010', '2013', '2016', '2021', '2024', '2025', 'Metadata']
+--- SHEET 2025 163
+  H0 ['Land use, crop areas, livestock and workforce']
+  H1 ['', '', '', '', '', '', 'Farm size (number of holdings)', '', '', '', '', '', '', 'Farm size areas (hectares)', '', '', '', '', '', '', '', '', '', '', '', 'Farm type(2)(number of holdings)', '', '', '', '', '', '', '', '', '', '', '', 'Farm type(2)areas (hectares)', '', '', '', '', '', '', '', '', 'Land use areas (hectares)', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Arable crop areas (hectares)', '', '', '', '', '', '', '', 'Horticultural crop areas (hectares)', '', '', '', '', '', '', '', '', '', '', '', 'Number of cattle(8)', '', '', '', 'Number of pigs', '', '', '', '', '', 'Number of sheep', '', '', '', 'Number of animals', '', '', '', '', '', '', '', '', 'Number of birds', '', '', '', '', '', '', '', 'Agricultural workforce (number of people)(9)']
+  H2 ['England 2025 County / Unitary Authority', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total holdings', '', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total area on holdings', '', 'Cereals', 'General cropping', 'Horticulture', 'Specialist pigs', 'Specialist poultry', 'Dairy', 'Grazing Livestock (LFA)(3)', 'Grazing Livestock (Lowland)', 'Mixed', 'Unclassified', 'Total holdings', '', 'Cereals', 'General cropping', 'Horticulture', 'Specialist pigs', 'Specialist poultry', 'Dairy', 'Grazing Livestock (LFA)(3)', 'Grazing Livestock (Lowland)', 'Mixed', 'Unclassified', 'Total area on holdings', '', 'Total area on holdings', 'Area rented in (1 year or more)', 'Area owned', 'Arable crops & uncropped arable land', 'Temporary grass (under 5 years)', 'Permanent pasture (over 5 years)', 'Sole right rough grazing', 'Farm woodland', '', 'Wheat', 'Winter barley', 'Spring barley', 'Oats', 'Minor cereals', 'Total cereals', 'Potatoes', 'Sugar beet(not for stockfeed)', 'Field beans', 'Peas for harvesting dry', 'Oilseed rape', 'Crops for stockfeed', 'Maize(4)', 'Uncropped arable land(5)', '', 'Peas and beans', 'All other veg and salad', 'Glasshouse and protected crops(6)', 'Top fruit', 'Small fruit(7)', 'Hardy nursery stock,bulbs and flowers', 'Total horticultural crops', '', 'Dairy breeding herd', 'Beef breeding herd', 'Dairy female 2 years+ no offspring', 'Beef female 2 years+ no offspring', 'Dairy female 1 to 2 years', 'Beef female 1 to 2 years', 'Dairy female less than 1 year', 'Beef female less than 1 year', 'Male 2 years and over', 'Male less than 2 years', 'Total cattle', '', 'Breeding pigs', 'Fattening pigs', 'Total pigs', '', 'Female breeding flock', 'Rams', 'Lambs under 1 year', 'Other sheep (1 year and over)', 'Total sheep', '', 'Goats', 'Horses', 'Farmed deer', '', 'Laying flock', 'Breeding flock', 'Broilers', 'Ducks', 'Geese', 'Turkeys', 'All other poultry', 'Total poultry', '', 'Farmers, partners, directors and spouses full', 'Farmers, partners, directors and spouses part', 'Salaried managers', 'Regular workers full time', 'Regular workers part time', 'Casual workers', 'Total people']
+  H3 ['Hartlepool and Stockton-on-Tees', '27.0', '24.0', '36.0', '32.0', '51.0', '170.0', '', '50.53173128900001', '237.10713525699998', '1184.21027564', '2219.1123314600004', '10734.999437299999', '14425.960910946002', '', '64.0', '18.0', '0.0', '#', '9.0', '#', '0.0', '52.0', '21.0', '#', '170.0', '', '9054.415302159998', '547.669281062', '0.0', '#', '6.209740174999999', '#', '0.0', '2217.609462233', '2082.2283280369998', '#', '14425.960910946002', '', '14425.960910946002', '3408.34348735', '11092.399778856998', '8437.020008702', '1674.3059202480003', '3164.6293957139987', '180.73206774300002', '460.954714943', '', '4425.998805538', '1053.5525631710002', '406.624496046', '#', '#', '6111.691760529003', '0.0', '#', '358.36557644100003', '#', '792.3494814299999', '#', '#', '968.9906891820001', '', '#', '#', '#', '#', '0.0', '0.0', '#', '', '#', '1219.9673913000001', '#', '213.0', '#', '655.0', '#', '837.0', '164.0', '1438.0', '5301.0', '', '41.469989137', '13758.500887929998', '13799.970877029', '', '6532.458178329999', '139.90488858', '7758.246151942001', '116.63196023099997', '14547.241180010002', '', '#', '375.9170802560001', '0.0', '', '5443.410255131001', '#', '567818.5503199999', '33.151079597999995', '#', '#', '0.0', '573355.640603066', '', '196.33016899599997', '108.13896480100003', '#', '26.951694513999996', '#', '#', '369.00346399399984']
+  H4 ['South Teesside', '#', '#', '26.0', '24.0', '34.0', '132.0', '', '#', '#', '855.0591080300001', '1863.5250881600002', '9169.842683899999', '12340.640066200993', '', '39.0', '17.0', '#', '7.0', '#', '5.0', '22.0', '25.0', '#', '#', '132.0', '', '4429.2316075829995', '858.4579086939999', '#', '885.78203627', '#', '938.8927103799999', '975.010029945', '692.8385630149997', '#', '#', '12340.640066200993', '', '12340.640066200993', '3625.4169031200004', '8454.665837202', '5884.962131297999', '1273.5751879030004', '4179.9399447939995', '97.047424617', '723.7373429689998', '', '2424.5363276609996', '1075.542350909', '338.50165020099996', '#', '#', '3931.342140246', '#', '#', '532.9611317760001', '#', '504.24101448400006', '#', '#', '790.2547946359999', '', '0.0', '0.0', '#', '#', '0.0', '0.0', '#', '', '817.0', '1599.0', '134.509107459', '112.490892538', '285.0', '702.0', '291.0', '941.0', '132.0', '2197.0', '7211.0', '', '1223.014824148', '14416.199112477', '15639.213935210999', '', '4995.505818813999', '132.73390165200001', '5487.516206084', '55.162104283999994', '10670.918031428', '', '41.127290782', '573.475995542', '#', '', '2917.6451143150002', '321.654059866', '0.0', '#', '27.169074392', '#', '#', '3324.2511854339996', '', '105.24165644100003', '110.47319101', '12.366395053', '27.789700971999995', '25.023503737', '10.689804929', '291.584252143']
+  H5 ['Darlington', '25.0', '27.0', '30.0', '44.0', '50.0', '176.0', '', '48.92341246700001', '292.705091165', '1048.62631596', '3183.1885152999985', '8907.6663885', '13481.109723392012', '', '56.0', '18.0', '#', '6.0', '#', '#', '0.0', '54.0', '27.0', '#', '176.0', '', '5331.499442714001', '1776.818989697', '#', '435.25593953', '#', '#', '0.0', '1557.249086027', '3311.3736150329996', '#', '13481.109723392012', '', '13481.109723392012', '5271.594134457001', '8244.855255273002', '7916.614431465003', '1695.6830180090003', '3352.231492106', '96.262626046', '238.578110197', '', '3543.7063461029998', '1034.7940353720003', '438.073547704', '#', '#', '5281.623870378998', '#', '#', '282.5557850889999', '#', '656.7695517660002', '117.00989371200001', '#', '1296.830648817', '', '#', '0.0', '#', '#', '#', '0.0', '#', '', '1279.248594602', '1473.751405356', '82.66562487399999', '863.33437512', '225.056872038', '1888.943128', '178.53164557', '1004.46835443', '569.0', '2434.0', '9999.0', '', '#', '#', '12463.753792139', '', '8894.440302334002', '181.59625325200003', '8184.135203882998', '237.69284249899997', '17497.864602164', '', '#', '265.816534315', '0.0', '', '33242.922168524994', '#', '#', '#', '78.34870301800001', '#', '0.0', '508116.256566751', '', '191.17055553199998', '103.84415701799996', '4.86034643', '36.70372935', '29.886676941999998', '18.87148003', '385.33694530699984']
+   ['Durham', '218.0', '439.0', '318.0', '289.0', '372.0'] 113
+   ['Northumberland', '155.0', '287.0', '232.0', '254.0', '926.0'] 113
+   ['Tyneside', '16.0', '24.0', '23.0', '30.0', '21.0'] 113
+   ['Sunderland', '#', '#', '8.0', '12.0', '12.0'] 113
+   ['North East', '457.0', '841.0', '673.0', '685.0', '1466.0'] 113
+   ['Cumberland', '298.0', '504.0', '441.0', '500.0', '652.0'] 113
+   ['Westmorland and Furness', '327.0', '573.0', '526.0', '514.0', '782.0'] 113
+   ['Manchester', '0.0', '0.0', '#', '#', '0.0'] 113
+   ['Greater Manchester South West', '6.0', '21.0', '9.0', '15.0', '10.0'] 113
+   ['Greater Manchester South East', '24.0', '59.0', '38.0', '13.0', '8.0'] 113
+   ['Greater Manchester North West', '26.0', '81.0', '55.0', '46.0', '17.0'] 113
+   ['Greater Manchester North East', '64.0', '127.0', '93.0', '32.0', '22.0'] 113
+   ['Blackburn with Darwen', '15.0', '39.0', '31.0', '12.0', '13.0'] 113
+   ['Blackpool', '#', '#', '0.0', '0.0', '0.0'] 113
+   ['Lancaster and Wyre', '141.0', '202.0', '203.0', '154.0', '199.0'] 113
+   ['Mid Lancashire', '171.0', '282.0', '275.0', '197.0', '211.0'] 113
+   ['East Lancashire', '103.0', '260.0', '146.0', '87.0', '66.0'] 113
+   ['Chorley and West Lancashire', '78.0', '165.0', '153.0', '91.0', '105.0'] 113
+   ['Warrington', '8.0', '45.0', '29.0', '23.0', '20.0'] 113
+   ['Cheshire East', '233.0', '380.0', '296.0', '279.0', '245.0'] 113
+   ['Cheshire West and Chester', '129.0', '262.0', '206.0', '212.0', '162.0'] 113
+   ['East Merseyside', '8.0', '25.0', '34.0', '30.0', '33.0'] 113
+   ['Liverpool', '0.0', '#', '#', '0.0', '#'] 113
+   ['Sefton', '#', '#', '#', '#', '#'] 113
+   ['Wirral', '8.0', '16.0', '11.0', '15.0', '8.0'] 113
+   ['North West and Merseyside', '1646.0', '3052.0', '2558.0', '2230.0', '2568.0'] 113
+   ['Kingston upon Hull, City of', '#', '#', '0.0', '0.0', '#'] 113
+   ['East Riding of Yorkshire', '260.0', '302.0', '275.0', '330.0', '598.0'] 113
+   ['North and North East Lincolnsh', '92.0', '96.0', '77.0', '71.0', '176.0'] 113
+   ['York', '23.0', '72.0', '43.0', '48.0', '47.0'] 113
+   ['North Yorkshire', '848.0', '1406.0', '1203.0', '1211.0', '1830.0'] 113
+   ['Sheffield', '29.0', '57.0', '43.0', '22.0', '24.0'] 113
+   ['Barnsley', '31.0', '74.0', '57.0', '47.0', '53.0'] 113
+   ['Rotherham', '#', '#', '30.0', '21.0', '#'] 113
+   ['Doncaster', '27.0', '86.0', '60.0', '55.0', '95.0'] 113
+   ['Bradford', '73.0', '149.0', '98.0', '51.0', '32.0'] 113
+   ['Leeds', '53.0', '92.0', '70.0', '43.0', '78.0'] 113
+   ['Calderdale and Kirklees', '153.0', '336.0', '157.0', '108.0', '74.0'] 113
+   ['Wakefield', '16.0', '50.0', '38.0', '42.0', '46.0'] 113
+   ['Yorkshire and The Humber', '1617.0', '2752.0', '2151.0', '2049.0', '3090.0'] 113
+   ['Derby', '#', '#', '#', '0.0', '#'] 113
+   ['East Derbyshire', '62.0', '187.0', '116.0', '74.0', '77.0'] 113
+   ['South and West Derbyshire', '309.0', '689.0', '536.0', '384.0', '381.0'] 113
+   ['Nottingham', '#', '#', '0.0', '#', '#'] 113
+   ['North Nottinghamshire', '122.0', '182.0', '158.0', '120.0', '286.0'] 113
+   ['South Nottinghamshire', '38.0', '101.0', '87.0', '72.0', '113.0'] 113
+   ['Leicester', '#', '#', '#', '0.0', '#'] 113
+   ['Leicestershire CC and Rutland', '253.0', '499.0', '414.0', '340.0', '537.0'] 113
+   ['West Northamptonshire', '133.0', '303.0', '190.0', '166.0', '310.0'] 113
+   ['North Northamptonshire', '67.0', '107.0', '#', '#', '210.0'] 113
+   ['Lincolnshire CC', '476.0', '645.0', '498.0', '523.0', '1198.0'] 113
+   ['East Midlands', '1465.0', '2727.0', '2078.0', '1753.0', '3118.0'] 113
+   ['Herefordshire, County of', '396.0', '720.0', '525.0', '491.0', '536.0'] 113
+   ['Worcestershire CC', '283.0', '584.0', '395.0', '318.0', '342.0'] 113
+   ['Warwickshire CC', '199.0', '415.0', '332.0', '296.0', '408.0'] 113
+   ['Telford and Wrekin', '28.0', '49.0', '33.0', '22.0', '44.0'] 113
+   ['Shropshire', '500.0', '894.0', '679.0', '623.0', '822.0'] 113
+   ['Stoke-on-Trent', '6.0', '12.0', '5.0', '#', '#'] 113
+   ['Staffordshire CC', '462.0', '969.0', '678.0', '553.0', '513.0'] 113
+   ['Birmingham', '#', '5.0', '5.0', '#', '#'] 113
+   ['Solihull', '22.0', '36.0', '30.0', '17.0', '21.0'] 113
+   ['Coventry', '#', '8.0', '6.0', '#', '#'] 113
+   ['Dudley', '#', '#', '#', '0.0', '#'] 113
+   ['Sandwell', '0.0', '#', '0.0', '#', '#'] 113
+   ['Walsall', '#', '10.0', '9.0', '5.0', '#'] 113
+   ['Wolverhampton', '#', '#', '#', '#', '#'] 113
+   ['West Midlands', '1910.0', '3708.0', '2706.0', '2336.0', '2704.0'] 113
+   ['Luton', '#', '#', '0.0', '0.0', '#'] 113
+   ['Bedford', '30.0', '45.0', '32.0', '38.0', '109.0'] 113
+   ['Central Bedfordshire', '31.0', '107.0', '81.0', '90.0', '119.0'] 113
+   ['North and East Hertfordshire', '40.0', '98.0', '77.0', '69.0', '182.0'] 113
+   ['South West Hertfordshire', '28.0', '80.0', '52.0', '43.0', '76.0'] 113
+   ['Southend-on-Sea', '0.0', '0.0', '0.0', '#', '0.0'] 113
+   ['Thurrock', '#', '#', '#', '#', '#'] 113
+   ['Essex Haven Gateway', '65.0', '155.0', '152.0', '116.0', '273.0'] 113
+   ['West Essex', '46.0', '88.0', '57.0', '83.0', '238.0'] 113
+   ['Heart of Essex', '56.0', '109.0', '71.0', '81.0', '163.0'] 113
+   ['Essex Thames Gateway', '15.0', '27.0', '23.0', '12.0', '47.0'] 113
+   ['Peterborough', '15.0', '20.0', '20.0', '25.0', '51.0'] 113
+   ['Cambridgeshire CC', '135.0', '289.0', '267.0', '288.0', '628.0'] 113
+   ['Norwich and East Norfolk', '86.0', '104.0', '92.0', '78.0', '128.0'] 113
+   ['North and West Norfolk', '182.0', '225.0', '168.0', '160.0', '421.0'] 113
+   ['Breckland and South Norfolk', '275.0', '316.0', '235.0', '218.0', '435.0'] 113
+   ['Babergh and Mid Suffolk', '135.0', '251.0', '184.0', '195.0', '358.0'] 113
+   ['Ipswich', '0.0', '0.0', '#', '0.0', '#'] 113
+   ['East Suffolk', '97.0', '183.0', '143.0', '114.0', '225.0'] 113
+   ['West Suffolk', '57.0', '90.0', '76.0', '80.0', '178.0'] 113
+   ['Eastern', '1299.0', '2207.0', '1741.0', '1699.0', '3644.0'] 113
+   ['Kensington & Chelsea and Hamme', '0.0', '#', '0.0', '0.0', '0.0'] 113
+   ['Wandsworth', '#', '#', '0.0', '#', '0.0'] 113
+   ['Westminster and City of London', '#', '0.0', '0.0', '0.0', '0.0'] 113
+   ['Camden', '0.0', '#', '#', '#', '0.0'] 113
+   ['Hackney and Newham', '0.0', '0.0', '0.0', '0.0', '0.0'] 113
+   ['Tower Hamlets', '0.0', '#', '0.0', '0.0', '0.0'] 113
+   ['Haringey and Islington', '0.0', '0.0', '#', '0.0', '0.0'] 113
+   ['Lewisham and Southwark', '#', '0.0', '0.0', '0.0', '0.0'] 113
+   ['Lambeth', '0.0', '0.0', '0.0', '0.0', '0.0'] 113
+   ['Bexley and Greenwich', '#', '#', '#', '0.0', '0.0'] 113
+   ['Barking & Dagenham and Haverin', '#', '7.0', '6.0', '#', '9.0'] 113
+   ['Redbridge and Waltham Forest', '#', '#', '#', '#', '#'] 113
+   ['Enfield', '#', '#', '#', '#', '#'] 113
+   ['Bromley', '6.0', '20.0', '14.0', '6.0', '9.0'] 113
+   ['Croydon', '#', '#', '#', '0.0', '0.0'] 113
+   ['Merton, Kingston upon Thames a', '0.0', '#', '#', '0.0', '#'] 113
+   ['Barnet', '#', '#', '#', '#', '#'] 113
+   ['Brent', '0.0', '#', '0.0', '0.0', '0.0'] 113
+   ['Ealing', '0.0', '0.0', '#', '0.0', '0.0'] 113
+   ['Harrow and Hillingdon', '#', '10.0', '7.0', '#', '5.0'] 113
+   ['Hounslow and Richmond upon Tha', '#', '#', '#', '#', '#'] 113
+   ['Milton Keynes', '15.0', '40.0', '24.0', '19.0', '54.0'] 113
+   ['Buckinghamshire', '164.0', '320.0', '243.0', '165.0', '291.0'] 113
+   ['Oxfordshire CC', '172.0', '375.0', '297.0', '235.0', '522.0'] 113
+   ['Berkshire East', '21.0', '30.0', '16.0', '13.0', '24.0'] 113
+   ['Berkshire West', '48.0', '119.0', '90.0', '63.0', '143.0'] 113
+   ['Brighton and Hove', '#', '#', '0.0', '0.0', '#'] 113
+   ['East Sussex CC', '206.0', '545.0', '369.0', '194.0', '283.0'] 113
+   ['West Surrey', '52.0', '172.0', '87.0', '49.0', '76.0'] 113
+   ['East Surrey', '59.0', '128.0', '80.0', '52.0', '84.0'] 113
+   ['West Sussex (South West)', '51.0', '158.0', '111.0', '84.0', '168.0'] 113
+   ['West Sussex (North East)', '74.0', '249.0', '177.0', '93.0', '138.0'] 113
+   ['Portsmouth', '#', '#', '#', '0.0', '0.0'] 113
+   ['Southampton', '0.0', '0.0', '0.0', '#', '0.0'] 113
+   ['Isle of Wight', '37.0', '74.0', '61.0', '55.0', '57.0'] 113
+   ['South Hampshire', '14.0', '40.0', '19.0', '6.0', '17.0'] 113
+   ['Central Hampshire', '203.0', '458.0', '276.0', '178.0', '377.0'] 113
+   ['North Hampshire', '39.0', '109.0', '88.0', '62.0', '127.0'] 113
+   ['Medway', '#', '8.0', '#', '6.0', '21.0'] 113
+   ['Kent Thames Gateway', '33.0', '72.0', '49.0', '48.0', '65.0'] 113
+   ['East Kent', '79.0', '160.0', '91.0', '87.0', '174.0'] 113
+   ['Mid Kent', '113.0', '246.0', '186.0', '107.0', '156.0'] 113
+   ['West Kent', '85.0', '236.0', '135.0', '88.0', '120.0'] 113
+   ['South East (incl. London)', '1495.0', '3601.0', '2451.0', '1631.0', '2937.0'] 113
+   ['Cornwall and Isles of Scilly', '468.0', '1263.0', '961.0', '767.0', '763.0'] 113
+   ['Plymouth', '#', '5.0', '#', '#', '#'] 113
+   ['Torbay', '0.0', '6.0', '#', '#', '#'] 113
+   ['Devon CC', '1040.0', '2447.0', '1857.0', '1440.0', '1481.0'] 113
+   ['Bristol, City of', '#', '7.0', '#', '0.0', '#'] 113
+   ['Bath & North East Somerset and', '122.0', '268.0', '177.0', '147.0', '158.0'] 113
+   ['North Somerset', '83.0', '155.0', '92.0', '78.0', '48.0'] 113
+   ['Somerset', '685.0', '1251.0', '867.0', '588.0', '807.0'] 113
+   ['Bournemouth, Christchurch and ', '#', '6.0', '#', '10.0', '6.0'] 113
+   ['Dorset', '306.0', '579.0', '414.0', '311.0', '533.0'] 113
+   ['Swindon', '11.0', '24.0', '21.0', '17.0', '40.0'] 113
+   ['Wiltshire', '254.0', '525.0', '335.0', '338.0', '648.0'] 113
+   ['Gloucestershire CC', '293.0', '690.0', '489.0', '399.0', '514.0'] 113
+   ['South West', '3268.0', '7226.0', '5230.0', '4097.0', '5006.0'] 113
+   ['England', '13157.0', '26114.0', '19588.0', '16480.0', '24533.0'] 113
+   ['Data notes:'] 1
+   ['(1) All data in these tables r'] 1
+   ['(2) From 2010 onwards, farm ty'] 1
+   ['(3) LFA = Less Favoured Area.'] 1
+   ['(4) Includes maize for fodder,'] 1
+   ['(5) Uncropped arable land incl'] 1
+   ['(6) Includes any fixed or mobi'] 1
+   ['(7) Includes crops grown in Sp'] 1
+   ['(8) Cattle figures relate to c'] 1
+   ['(9) Part time workers are thos'] 1
+--- SHEET Metadata 56
+  H0 ['Data Sources']
+  H1 ['All results with the exception of cattle are ']
+  H2 ['representative sample of holdings across Engl']
+  H3 ['sampling error and do not take into account o']
+  H4 ['Cattle results are sourced from the Cattle Tr']
+  H5 ['figures do not match those published in the J']
+   ['Commercial Holdings'] 1
+   ['Commercial holdings are those '] 1
+   ['levels of farming activity. Co'] 1
+   ['Characteristics', '', 'Threshold'] 3
+   ['Utilised agricultural area', 'Arable land, permanent grassla', '>5 ha'] 3
+   ['Permanent outdoor crops', 'Fruit, berries, vineyards and ', '>1 ha'] 3
+   ['Crops grown outdoors or under ', 'Fresh vegetables, melons and s', '>0.5 ha'] 3
+   ['Crops under glass or other', 'Fresh vegetables, melons and s', '>0.1 ha'] 3
+   ['(accessible) protective cover', 'Flowers and ornamental plants ', '>0.1 ha'] 3
+   ['Bovine animals', 'All', '>10 Head'] 3
+   ['Pigs', 'All', '>50 Head'] 3
+   ['', 'Breeding sows', '>10 Head'] 3
+   ['Sheep', 'All', '>20 Head'] 3
+   ['Goats', 'All', '>20 Head'] 3
+   ['Poultry', 'All', '>1,000 Head'] 3
+   ['Hardy nursery stock', '', '>1 ha'] 3
+   ['Mushrooms', 'All mushroom holdings to be in', '>0'] 3
+   ['Additional survey population n'] 1
+   ['Holdings with >5ha temporary l'] 1
+   ['From 2023 onwards, newly regis'] 1
+   ['farming activity levels throug'] 1
+   ['farming population each year.'] 1
+   ['Further information'] 1
+   ['Further details on the June Su', '', 'Notes and guidance'] 3
+   ['Data suppression'] 1
+   ['Where figures relate to less t'] 1
+   ['individual holdings. If only o'] 1
+   ['required to preserve confident'] 1
+   ['second smallest number of hold'] 1
+   ['breakdowns) and the "<5ha size'] 1
+   ['Farm Typology'] 1
+   ['Farm typology is the system us'] 1
+   ['the diversity of farm producti'] 1
+   ['The classification of farm ‘ty'] 1
+   ['(e.g. per head of livestock an'] 1
+   ['value of the agricultural outp'] 1
+   ['are taken over a five-year per'] 1
+   ['Periodically (every 3 to 4 yea'] 1
+   ['most up to date data in farmin'] 1
+   ['on 2010 coefficients, 2018 to '] 1
+   ['Farm types prior to 2009 were '] 1
+   ['The farm type is determined by'] 1
+   ['● If the SO of one enterprise '] 1
+   ['● If a holding comprises both '] 1
+   ['it is allocated to a mixed cat'] 1
+   ['You can find additional inform'] 1
+   ['June Survey of Agriculture not'] 1
+   ['Farm Business Survey notes and'] 1
+   ['Rounding'] 1
+   ['Totals may not equal the sum o'] 1
+FILE https://assets.publishing.service.gov.uk/media/69e0b1fb6c6ccf244be42e2e/structure-england-june-regions-16apr26.ods ['Contents', 'Total_number_of_holdings', 'Total_farmed_area', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2021', '2022', '2023', '2024', '2025', 'Metadata']
+--- SHEET 2025 22
+  H0 ['Land use, crop areas, livestock and workforce']
+  H1 ['', '', '', '', '', '', 'Farm size (number of holdings)', '', '', '', '', '', '', 'Farm size areas (hectares)', '', '', '', '', '', '', '', '', '', '', '', 'Farm type (number of holdings)', '', '', '', '', '', '', '', '', '', '', '', 'Farm type areas (hectares)', '', '', '', '', '', '', '', '', 'Land use areas (hectares)', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Arable crop areas (hectares)', '', '', '', '', '', '', '', 'Horticultural crop areas (hectares)', '', '', '', '', '', '', '', '', '', '', '', 'Number of cattle(8)', '', '', '', 'Number of pigs', '', '', '', '', '', 'Number of sheep', '', '', '', 'Number of animals', '', '', '', '', '', '', '', '', 'Number of birds', '', '', '', '', '', '', '', 'Agricultural workforce (number of people)(9)']
+  H2 ['England 2025 Region', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total holdings', '', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total area on holdings', '', 'Cereals', 'General cropping', 'Horticulture', 'Specialist pigs', 'Specialist poultry', 'Dairy', 'Grazing Livestock (LFA)(2)', 'Grazing Livestock (Lowland)', 'Mixed', 'Unclassified', 'Total holdings', '', 'Cereals', 'General cropping', 'Horticulture', 'Specialist pigs', 'Specialist poultry', 'Dairy', 'Grazing Livestock (LFA)(2)', 'Grazing Livestock (lowland)', 'Mixed', 'Unclassified', 'Total area on holdings', '', 'Total area on holdings', 'Area rented in\n(1 year or more)', 'Area owned', 'Arable crops and uncropped arable land', 'Temporary grass\n(under 5 years)', 'Permanent pasture (over 5 years)', 'Sole right rough grazing', 'Farm woodland', '', 'Wheat', 'Winter barley', 'Spring barley', 'Oats', 'Minor cereals', 'Total cereals', 'Potatoes', 'Sugar beet(not for stockfeed)', 'Field beans', 'Peas for harvesting dry', 'Oilseed rape', 'Crops for stockfeed', 'Maize(3)', 'Uncropped arable land(4)', '', 'Peas and beans', 'All other veg and salad', 'Glasshouse and protected crops(5)', 'Orchards', 'Small fruit(6)', 'Hardy nursery stock(7)', 'Total Horticultural crops', '', 'Dairy breeding herd', 'Beef breeding herd', 'Dairy female\n2yr+ no offspring', 'Beef female 2yr+ no offspring', 'Dairy female\n1-2yr', 'Beef female\n1-2yr', 'Dairy female\n<1yr', 'Beef female <1yr', 'Male 2 years and over', 'Male less than 2 years', 'Total cattle', '', 'Breeding pigs', 'Fattening pigs', 'Total pigs', '', 'Female breeding flock', 'Rams', 'Lambs under 1yr', 'Other sheep (1 year and over)', 'Total sheep', '', 'Goats', 'Horses', 'Farmed deer', '', 'Laying flock', 'Breeding flock', 'Broilers', 'Ducks', 'Geese', 'Turkeys', 'All other poultry', 'Total poultry', '', 'Farmers, partners, directors and spouses full', 'Farmers, partners, directors and spouses part', 'Salaried managers', 'Regular workers full time', 'Regular workers part time', 'Casual workers', 'Total people']
+  H3 ['North East', '457.0', '841.0', '673.0', '685.0', '1466.0', '4122.0', '', '899.5976552809993', '9276.000119938002', '22630.982538629985', '50173.92610078996', '501712.42701050057', '584692.9334251405', '', '709.0', '564.0', '38.0', '65.0', '56.0', '58.0', '1348.0', '820.0', '374.0', '90.0', '4122.0', '', '126456.85213509596', '48600.862698411984', '2677.979497897001', '4131.010686275', '2217.7608511050007', '11207.217629633004', '250116.94920936986', '49220.42325423996', '89005.02429293399', '1058.8531701769998', '584692.9334251387', '', '584692.9334251405', '238160.75343184813', '336601.48984658223', '154309.14395169207', '40251.01007152102', '262828.7309354374', '94146.05619659393', '22688.076685574983', '', '61299.00886103902', '20531.961686843002', '13018.208603330995', '9885.146047666003', '1634.4376085039999', '106368.76280738298', '1232.2467246259996', '174.455679759', '4866.199530021', '841.6372392310001', '12926.276750921992', '1260.6825803829997', '533.0176370070001', '24737.686701853036', '', '908.697661533', '342.52379849199997', '2.5686667709999997', '24.037416511000004', '11.760556659999999', '36.445196461', '1326.0332964299996', '', '12710.978913722', '57865.02108642302', '1423.855050279', '10422.144949717002', '3533.009155076', '27511.990845025994', '3487.2862321269995', '33114.71376784799', '8720.0', '64611.0', '223400.0', '', '5814.984040543001', '121180.71269636296', '126995.69673561503', '', '781990.0113594757', '18825.074772257', '861746.0631232852', '14265.98877028901', '1676827.1380133417', '', '1371.5549521879996', '6238.92595293799', '446.480923385', '', '561292.7542001067', '3763.5841386759994', '1395179.2316747752', '1202.773760778', '708.516278352', '368.433410876', '19583.006883298003', '1982098.3003534887', '', '4079.8521715260003', '2850.140537560996', '322.08527324', '1138.445735763001', '610.6925127290003', '540.8718186859998', '9542.088049555003']
+  H4 ['North West and Merseyside', '1646.0', '3052.0', '2558.0', '2230.0', '2568.0', '12054.0', '', '3209.538531864999', '33798.449000715', '84987.02857453017', '160549.6581813295', '615546.2130302987', '898090.8873187396', '', '528.0', '2187.0', '251.0', '87.0', '233.0', '1232.0', '3536.0', '3264.0', '459.0', '277.0', '12054.0', '', '52031.57701107001', '103217.503534033', '8114.719316806004', '1402.4425624720006', '7889.997657041999', '168996.1192606271', '365683.66952783766', '152071.75199437674', '37212.44595647003', '1470.6604980060001', '898090.8873187406', '', '898090.8873187396', '328634.8417896538', '552398.5718115817', '116544.50995668522', '94231.13953525112', '535622.6238738141', '110695.76346339111', '23122.831905735035', '', '28662.009810302', '11967.19335985599', '24134.789444518025', '5392.742837565997', '1459.7022969630007', '71616.43774920491', '5359.939906684997', '427.464831517', '1689.4753976630002', '2244.6769726029997', '2771.6421087830004', '3117.910733013', '16581.623133052995', '11462.394381990003', '', '25.650886384', '3690.266655278998', '142.79475372199997', '92.28349424500004', '52.418558370999996', '217.74089487900002', '4221.155243082997', '', '267836.61383800756', '65724.38616126499', '29913.961527353014', '24491.03847283699', '84168.230211578', '58197.76978852095', '86477.95858871102', '75395.04141129396', '23394.0', '149333.0', '864932.0', '', '8488.223596404006', '64966.072669712', '73454.29626679803', '', '1297979.7300044417', '31818.8734274508', '1341904.144903979', '40990.841417035066', '2712693.589755874', '', '6630.226892753998', '12818.61244655897', '694.6528259879999', '', '2773556.7439425914', '506451.035740743', '6032990.110925736', '42464.04410028701', '2337.5912703269996', '133230.91131378605', '278527.48034787993', '9769557.917691259', '', '12328.096240396015', '8930.510638593983', '845.603131246', '4529.6578063760035', '2420.1537569230004', '2065.498573430001', '31119.5201471252']
+  H5 ['Yorkshire and The Humber', '1617.0', '2752.0', '2151.0', '2049.0', '3090.0', '11659.0', '', '3178.845391091002', '30441.054600042025', '71685.10537192992', '146738.32817912975', '829457.7605429011', '1081501.0940850943', '', '2332.0', '1922.0', '189.0', '517.0', '282.0', '399.0', '2494.0', '2312.0', '1014.0', '198.0', '11659.0', '', '348515.5017981973', '165516.14097842702', '8720.338785839', '31241.825830905997', '10197.631368052002', '55730.839750584004', '246188.1250451701', '82247.89406324289', '131179.5358227801', '1963.2606418950004', '1081501.0940850934', '', '1081501.0940850943', '361136.71424753126', '705449.4241656781', '507361.9989712285', '70450.57940749421', '354859.6238989197', '89595.05035088093', '31261.679445407066', '', '215207.54719908437', '57418.74645311886', '55707.54534491', '12443.314483362994', '6003.399610741', '346780.55309121776', '17461.333342643997', '7093.939697232004', '15406.108009350992', '5418.667549007999', '31747.639199387035', '5376.417391663997', '15774.260975583988', '57415.57277572201', '', '10672.137171230997', '1694.5425137919992', '115.34098829300004', '87.65909122099998', '117.76913349600002', '296.45341021499996', '12983.902307596985', '', '75462.86543315896', '68401.13456697302', '9065.953722718003', '21511.04627729199', '23622.285284201025', '57841.71471584793', '22952.759403151005', '61383.24059674195', '19933.0', '142042.0', '502216.0', '', '78338.88778114002', '1408874.1685623573', '1487213.0563479015', '', '880286.4891446886', '21102.220037623938', '938163.2477775875', '22973.680910748928', '1862525.6378679075', '', '19443.991285222008', '10477.100160055992', '3032.937195498', '', '3038867.7812550603', '1170383.7725931057', '12978298.384282129', '261254.86214021206', '2940.4540917039994', '426885.84454158676', '218516.16366520518', '18097147.26250859', '', '11298.35839221902', '8656.356322761978', '1108.7199809650003', '3957.298243732005', '2233.354383984002', '2000.1889703820018', '29254.276294300413']
+   ['East Midlands', '1465.0', '2727.0', '2078.0', '1753.0', '3118.0'] 113
+   ['West Midlands', '1910.0', '3708.0', '2706.0', '2336.0', '2704.0'] 113
+   ['Eastern', '1299.0', '2207.0', '1741.0', '1699.0', '3644.0'] 113
+   ['South East (incl. London)', '1495.0', '3601.0', '2451.0', '1631.0', '2937.0'] 113
+   ['South West', '3268.0', '7226.0', '5230.0', '4097.0', '5006.0'] 113
+   ['England', '13157.0', '26114.0', '19588.0', '16480.0', '24533.0'] 113
+   ['Data notes'] 1
+   ['(1) Data relates to commercial'] 1
+   ['(2) LFA = Less Favoured Area.'] 1
+   ['(3) Includes maize for fodder,'] 1
+   ['(4) Uncropped arable land incl'] 1
+   ['(5) Includes any fixed or mobi'] 1
+   ['(6) Includes crops grown in Sp'] 1
+   ['(7) Includes bulbs and flowers'] 1
+   ['(8) Cattle figures in this dat'] 1
+   ['(9) Part-time workers are thos'] 1
+--- SHEET Metadata 56
+  H0 ['Data Sources']
+  H1 ['All results with the exception of cattle are ']
+  H2 ['representative sample of holdings across Engl']
+  H3 ['sampling error and do not take into account o']
+  H4 ['Cattle results are sourced from the Cattle Tr']
+  H5 ['figures do not match those published in the J']
+   ['Commercial Holdings'] 1
+   ['Commercial holdings are those '] 1
+   ['levels of farming activity. Co'] 1
+   ['Characteristics', '', 'Threshold'] 3
+   ['Utilised agricultural area', 'Arable land, permanent grassla', '>5 ha'] 3
+   ['Permanent outdoor crops', 'Fruit, berries, vineyards and ', '>1 ha'] 3
+   ['Crops grown outdoors or under ', 'Fresh vegetables, melons and s', '>0.5 ha'] 3
+   ['Crops under glass or other', 'Fresh vegetables, melons and s', '>0.1 ha'] 3
+   ['(accessible) protective cover', 'Flowers and ornamental plants ', '>0.1 ha'] 3
+   ['Bovine animals', 'All', '>10 Head'] 3
+   ['Pigs', 'All', '>50 Head'] 3
+   ['', 'Breeding sows', '>10 Head'] 3
+   ['Sheep', 'All', '>20 Head'] 3
+   ['Goats', 'All', '>20 Head'] 3
+   ['Poultry', 'All', '>1,000 Head'] 3
+   ['Hardy nursery stock', '', '>1 ha'] 3
+   ['Mushrooms', 'All mushroom holdings to be in', '>0'] 3
+   ['Additional survey population n'] 1
+   ['Holdings with >5ha temporary l'] 1
+   ['From 2023 onwards, newly regis'] 1
+   ['farming activity levels throug'] 1
+   ['farming population each year.'] 1
+   ['Further information'] 1
+   ['Further details on the June Su', '', 'Notes and guidance'] 3
+   ['Data suppression'] 1
+   ['Where figures relate to less t'] 1
+   ['individual holdings. If only o'] 1
+   ['required to preserve confident'] 1
+   ['second smallest number of hold'] 1
+   ['breakdowns) and the "<5ha size'] 1
+   ['Farm Typology'] 1
+   ['Farm typology is the system us'] 1
+   ['the diversity of farm producti'] 1
+   ['The classification of farm ‘ty'] 1
+   ['(e.g. per head of livestock an'] 1
+   ['value of the agricultural outp'] 1
+   ['are taken over a five-year per'] 1
+   ['Periodically (every 3 to 4 yea'] 1
+   ['most up to date data in farmin'] 1
+   ['on 2010 coefficients, 2018 to '] 1
+   ['Farm types prior to 2009 were '] 1
+   ['The farm type is determined by'] 1
+   ['● If the SO of one enterprise '] 1
+   ['● If a holding comprises both '] 1
+   ['it is allocated to a mixed cat'] 1
+   ['You can find additional inform'] 1
+   ['June Survey of Agriculture not'] 1
+   ['Farm Business Survey notes and'] 1
+   ['Rounding'] 1
+   ['Totals may not equal the sum o'] 1
+== fae_tables_csv_format_20260122/fae_table1_2024_25.csv 961
+"survey_year","typology","prices","fbs_variable","farm_type","measure","sample_size","value","lower_ci","upper_ci"
+"2015/16","2010SO","Current","farm.business.income","Cereals","FBI","360","35,500","28,600","42,400"
+"2015/16","2010SO","Current","farm.business.income","General cropping","FBI","143","62,600","45,500","79,700"
+"2015/16","2010SO","Current","farm.business.income","Dairy","FBI","255","43,900","31,100","56,800"
+   survey_year ['2015/16', '2016/17', '2017/18', '2018/19', '2019/20', '2020/21', '2021/22', '2022/23', '2023/24', '2024/25']
+   typology ['2010SO', '2013SO', '2017SO']
+   prices ['Current', 'Real']
+   fbs_variable ['cash.income', 'farm.business.income', 'ffi', 'nfi']
+   farm_type ['All Types', 'Cereals', 'Dairy', 'General cropping', 'Horticulture', 'LFA grazing livestock', 'Lowland grazing livestock', 'Mixed', 'Specialist pigs', 'Specialist poultry']
+   measure ['CI', 'FBI', 'FFI', 'NFI']
+== fae_tables_csv_format_20260122/fae_table2_2024_25.csv 641
+survey_year,typology,fbs_variable,farm_type,region,measure,sample_size,value,lower_ci,upper_ci
+2023/24,2017SO,farm.business.income,Cereals,"North East, Yorkshire & Humber",FBI,51,"52,200","27,800","76,500"
+2023/24,2017SO,nfi,Cereals,"North East, Yorkshire & Humber",NFI,51,"33,300","8,800","57,800"
+2023/24,2017SO,cash.income,Cereals,"North East, Yorkshire & Humber",CI,51,"122,400","77,500","167,200"
+   survey_year ['2023/24', '2024/25']
+   typology ['2017SO']
+   fbs_variable ['cash.income', 'farm.business.income', 'ffi', 'nfi']
+   farm_type ['All Types', 'Cereals', 'Dairy', 'General cropping', 'Horticulture', 'LFA grazing livestock', 'Lowland grazing livestock', 'Mixed', 'Specialist pigs', 'Specialist poultry']
+   region ['East', 'East Midlands', 'England', 'London & South East', 'North East, Yorkshire & Humber', 'North West', 'South West', 'West Midlands']
+   measure ['CI', 'FBI', 'FFI', 'NFI']
+== fae_tables_csv_format_20260122/fae_table5c_2024_25.csv 1297
+"survey_year","typology","measure","fbs_variable","farm_type","sda_status","sample_size","value","lower_ci","upper_ci"
+"2023/24","2017SO","Agricultural costs","agriculture.input.costs","Cereals","All Farms","272","314,100","291,500","336,700"
+"2023/24","2017SO","Variable agricultural costs","agriculture.variable.costs","Cereals","All Farms","272","155,900","144,400","167,400"
+"2023/24","2017SO","Crop specific costs","agriculture.crop.costs","Cereals","All Farms","272","118,600","109,800","127,400"
+   survey_year ['2023/24', '2024/25']
+   typology ['2017SO']
+   measure ['Agri-environment general farming costs (including share of interest)', 'Agri-environment labour costs', 'Agri-environment land and property costs', 'Agri-environment machinery costs', 'Agricultural costs', 'BPS general farming costs (including share of interest)', 'BPS labour costs', 'BPS land and property costs', 'BPS machinery costs', 'Bank charges & professional fees', 'Casual labour', 'Contract costs', 'Costs of Basic Payment Scheme', 'Costs of agri-environment activities and other payments', 'Costs of diversification out of agriculture', 'Crop protection', 'Crop specific costs', 'Depreciation of buildings and works', 'Depreciation of glasshouses & permanent crops', 'Diversification general farming costs (including share of interest)', 'Diversification labour costs', 'Diversification land and property costs', 'Diversification machinery costs', 'Electricity', 'Fertilisers', 'Fixed BPS costs', 'Fixed agri-environment costs', 'Fixed agricultural costs', 'Fixed diversification costs', 'General farming costs', 'Heating fuel', 'Home grown feed & fodder', 'Land and property costs', 'Livestock specific costs', 'Machinery costs', 'Machinery depreciation', 'Machinery fuels and oils', 'Maintenance, repairs and insurance', 'Miscellaneous fixed costs (including for work done on other farms)', 'Miscellaneous variable costs (including for work done on other farms)']
+   fbs_variable ['agri.environment.costs', 'agri.environment.fixed.costs', 'agri.environment.fixed.labour.costs', 'agri.environment.machinery.costs', 'agri.environment.other.fixed.costs', 'agri.environment.property.costs', 'agri.environment.variable.costs', 'agriculture.bank.professional.fees', 'agriculture.casual.labour.cost', 'agriculture.contract.costs', 'agriculture.crop.costs', 'agriculture.crop.protection.costs', 'agriculture.depreciation.bw', 'agriculture.depreciation.glasshouses.perm.crops', 'agriculture.depreciation.machinery', 'agriculture.electricity.costs', 'agriculture.fertiliser.costs', 'agriculture.fixed.costs', 'agriculture.fixed.labour.costs', 'agriculture.general.farming.costs', 'agriculture.heating.fuel.costs', 'agriculture.input.costs', 'agriculture.insurance.repairs', 'agriculture.land.expenses', 'agriculture.livestock.costs', 'agriculture.machinery.costs', 'agriculture.machinery.fuels.oils', 'agriculture.machinery.repairs.and.other', 'agriculture.net.interest.payments', 'agriculture.other.crop.costs', 'agriculture.other.livestock.costs', 'agriculture.property.costs', 'agriculture.seed.costs', 'agriculture.variable.costs', 'agriculture.vet.med.costs', 'bad.debts.write.offs', 'bps.costs', 'bps.fixed.costs', 'bps.general.farming.costs', 'bps.labour.costs']
+   farm_type ['All Types', 'Cereals', 'Dairy', 'General cropping', 'Horticulture', 'LFA grazing livestock', 'Lowland grazing livestock', 'Mixed', 'Specialist pigs', 'Specialist poultry']
+   sda_status ['All Farms', 'Non-SDA', 'SDA']
