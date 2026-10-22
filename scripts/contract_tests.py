@@ -3720,7 +3720,7 @@ def wood_removals(doc, errs, warns, stats):
             for i, x in enumerate(v):
                 if x is not None and not 0 <= x <= 300000: errs.append("madera %s %s %s: valor fuera de rango (%s)" % (cc, k, doc["years"][i], x))
         t = c["series"].get("TOTAL.RW"); 
-        if not t or t[-1] is None and t[-2] is None: errs.append("madera %s: sin total reciente" % cc)
+        if not t or all(x is None for x in t): errs.append("madera %s: sin ningun total" % cc)   # un pais que Eurostat dejo de actualizar (p. ej. BE hasta 2020) se publica con su ultimo año y el aviso de abajo
         if c["last"] < _dt.date.today().year - 4: warns.append("madera %s: ultimo año %d" % (cc, c["last"]))
     stats["paises"] = len(doc["countries"])
 # Argentina: cultivos por provincia (MAGyP)
