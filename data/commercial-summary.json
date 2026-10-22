@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-21T18:47:19Z",
+ "generatedAt": "2026-10-22T00:51:42Z",
  "summary": {
   "sources": 145,
   "sourcesApto": 132,
@@ -12,7 +12,7 @@
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
-  "derived": 43
+  "derived": 47
  },
  "sources": {
   "aafc_drought": {
