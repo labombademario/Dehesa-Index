@@ -48,11 +48,11 @@ def unemployment():
         if d.get("u") is not None and d.get("a"): out.setdefault(k, []).append([per, round(d["u"] / d["a"] * 100, 1)])
     return out
 def gva():
-    rows = nomis("NM_2400_1.data.csv?geography=TYPE480&date=2010-latest&measures=20100&select=date_name,geography_code,obs_value,industry_name")
+    rows = nomis("NM_2400_1.data.csv?geography=TYPE480&date=2010-latest&measures=20100&select=date_name,geography_code,obs_value")
     out = {}
     for r in rows:
         k = CODES.get(r["GEOGRAPHY_CODE"]); v = num(r["OBS_VALUE"])
-        if k and v is not None and r["DATE_NAME"].isdigit() and re.search(r"(?i)^total|all industries|all (sic|industry)", r.get("INDUSTRY_NAME", "")): out.setdefault(k, []).append([int(r["DATE_NAME"]), round(v, 1)])
+        if k and v is not None and r["DATE_NAME"].isdigit(): out.setdefault(k, []).append([int(r["DATE_NAME"]), round(v, 1)])
     return {k: sorted(v) for k, v in out.items()}
 def main():
     args = sys.argv[1:]; outdir = ROOT / "data"
