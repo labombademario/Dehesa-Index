@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T20:44:00Z",
+ "generatedAt": "2026-10-22T20:56:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 239,
+  "ok": 238,
   "late": 2,
-  "error": 5,
+  "error": 6,
   "not_run": 0,
   "unknown": 0
  },
@@ -14,15 +14,15 @@
   "status": "error",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "e03af4ca",
+   "sha": "00463db6",
    "conclusion": "failure",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/b35b7de0-a936-484c-80d3-d880485072ae",
-   "completedAt": "2026-10-22T20:43:19Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/6a0cb49f-120a-466b-9496-864da5083b06",
+   "completedAt": "2026-10-22T20:47:06Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T18:48:38.533010+00:00",
   "repoGeneratedAt": "2026-10-22T18:48:38.533010+00:00",
-  "checkedAt": "2026-10-22T20:44:00Z"
+  "checkedAt": "2026-10-22T20:56:00Z"
  },
  "pipelines": [
   {
@@ -3847,7 +3847,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T20:42:06Z"
+     "lastChange": "2026-10-22T20:46:59Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -3930,14 +3930,14 @@
    "last": {
     "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T20:15:52Z",
-    "durationSec": 347,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39847318290"
+    "startedAt": "2026-10-22T20:43:28Z",
+    "durationSec": 265,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39851306388"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 7,
-    "failed": 2
+    "failed": 3
    },
    "status": "error",
    "expectedEveryHours": 3.0
@@ -5644,18 +5644,19 @@
    "nextRun": "2026-10-23T02:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "cancelled",
+    "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T20:45:24Z",
-    "durationSec": 13,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39851583828"
+    "startedAt": "2026-10-22T20:45:35Z",
+    "durationSec": 547,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39851611269",
+    "reason": "no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 4,
-    "failed": 2
+    "failed": 3
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 24.0
   },
   {
