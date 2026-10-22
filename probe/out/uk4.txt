@@ -1,0 +1,525 @@
+GET https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1990&Dateto=now&SeriesCodes=IUDBEDR,IUMABEDR&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N 200 application/csv 175967
+DATE,IUDBEDR,IUMABEDR
+02 Jan 1990,14.875,
+03 Jan 1990,14.875,
+04 Jan 1990,14.875,
+05 Jan 1990,14.875,
+08 Jan 1990,14.875,
+...
+16 Oct 2026,3.75,
+19 Oct 2026,3.75,
+20 Oct 2026,3.75,
+21 Oct 2026,3.75,
+GET https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1990&Dateto=now&SeriesCodes=IUMABEDR&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N 200 application/csv 7941
+DATE,IUMABEDR
+31 Jan 1990,14.875
+28 Feb 1990,14.875
+31 Mar 1990,14.875
+30 Apr 1990,14.875
+31 May 1990,14.875
+...
+30 Jun 2026,3.75
+31 Jul 2026,3.75
+31 Aug 2026,3.75
+30 Sep 2026,3.75
+GET https://assets.publishing.service.gov.uk/media/6ad63e7d49ba86d6c953cc40/CSV__2018_-__.csv 200 text/csv 20502
+Date,ULSP (Ultra low sulphur unleaded petrol) Pump price in pence/litre,ULSD (Ultra low sulphur diesel) Pump price in pence/litre,ULSP (Ultra low sulphur unleaded petrol) Duty rate in pence/litre,ULSD (Ultra low sulphur diesel) Duty rate in pence/litre,ULSP (Ultra low sulphur unleaded petrol) VAT percentage rate,ULSD (Ultra low sulphur diesel) VAT percentage rate
+01/01/2018,120.19,123.51,57.95,57.95,20,20
+08/01/2018,120.52,123.97,57.95,57.95,20,20
+15/01/2018,120.96,124.58,57.95,57.95,20,20
+22/01/2018,121.5,125.07,57.95,57.95,20,20
+29/01/2018,121.69,125.32,57.95,57.95,20,20
+05/02/2018,121.73,125.36,57.95,57.95,20,20
+12/02/2018,121.58,125.02,57.95,57.95,20,20
+...
+05/10/2026,174.88,199.52,52.95,52.95,20,20
+12/10/2026,175.28,200.04,52.95,52.95,20,20
+19/10/2026,174.57,199.33,52.95,52.95,20,20
+GET https://assets.publishing.service.gov.uk/media/68a3326b32d2c63f869343a3/weekly_road_fuel_prices_2003_to_2017.csv 200 text/csv 34088
+Date,ULSP (Ultra low sulphur unleaded petrol) Pump price in pence/litre,ULSD (Ultra low sulphur diesel) Pump price in pence/litre,ULSP (Ultra low sulphur unleaded petrol) Duty rate in pence/litre,ULSD (Ultra low sulphur diesel) Duty rate in pence/litre,ULSP (Ultra low sulphur unleaded petrol) VAT percentage rate,ULSD (Ultra low sulphur diesel) VAT percentage rate
+09/06/2003,74.59,76.77,45.82,45.82,17.5,17.5
+16/06/2003,74.47,76.69,45.82,45.82,17.5,17.5
+23/06/2003,74.42,76.62,45.82,45.82,17.5,17.5
+30/06/2003,74.35,76.51,45.82,45.82,17.5,17.5
+07/07/2003,74.28,76.46,45.82,45.82,17.5,17.5
+14/07/2003,74.21,76.41,45.82,45.82,17.5,17.5
+21/07/2003,75.07,76.9,45.82,45.82,17.5,17.5
+...
+11/12/2017,119.91,123.69,57.95,57.95,20,20
+18/12/2017,119.98,123.81,57.95,57.95,20,20
+25/12/2017,120,123.43,57.95,57.95,20,20
+GET https://www.gov.uk/api/content/government/statistics/weekly-road-fuel-prices 200 application/json; charset=utf-8 43608
+API links ['https://assets.publishing.service.gov.uk/media/5a37dab9ed915d5a5f965fd5/s300_beis-sign-1vs.jpg', 'https://assets.publishing.service.gov.uk/media/5a37dab9ed915d5a62fdc6b1/s960_beis-sign-1vs.jpg', 'https://assets.publishing.service.gov.uk/media/656df1fd0f12ef07a53e01be/s300_whitehall-place-exterior-960x640.jpg', 'https://assets.publishing.service.gov.uk/media/656df1fd1104cf000dfa74a1/s960_whitehall-place-exterior-960x640.jpg', 'https://assets.publishing.service.gov.uk/media/68a3326b32d2c63f869343a3/weekly_road_fuel_prices_2003_to_2017.csv', 'https://assets.publishing.service.gov.uk/media/6ad63e71e5db84746b479882/Weekly_Fuel_Prices_19-10-26.xlsx', 'https://assets.publishing.service.gov.uk/media/6ad63e7d49ba86d6c953cc40/CSV__2018_-__.csv', 'https://assets.publishing.service.gov.uk/media/6ad63e8b49ba86d6c953cc41/XML.xml']
+GET https://assets.publishing.service.gov.uk/media/696a0d2fcbe2202b3842489f/fae_tables_csv_format_20260122.zip 200 application/zip 364939
+ZIP 26 ['fae_tables_csv_format_20260122/', 'fae_tables_csv_format_20260122/fae_table10_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table11_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table12_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table13_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table14a_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table14b_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table15a_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table15b_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table15c_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table15d_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table15e_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table16_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table1_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table2_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table3_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table4_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table5a_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table5b_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table5c_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table6a_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table6b_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table7a_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table7b_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table8_2024_25.csv', 'fae_tables_csv_format_20260122/fae_table9_2024_25.csv']
+==  fae_tables_csv_format_20260122/fae_table5a_2024_25.csv 1441
+"survey_year","typology","fbs_variable","farm_type","sda_status","cost_centre","measure","sample_size","value","lower_ci","upper_ci"
+"2023/24","2017SO","output.from.agriculture","Cereals","All Farms","Agriculture","A: Total output","272","293,100","268,800","317,300"
+"2023/24","2017SO","agriculture.variable.costs","Cereals","All Farms","Agriculture","B: Variable costs","272","155,900","144,400","167,400"
+"2023/24","2017SO","agriculture.gross.margin","Cereals","All Farms","Agriculture","C: Total Gross Margin (A - B)","272","137,200","120,400","153,900"
+"2023/24","2017SO","agriculture.fixed.costs","Cereals","All Farms","Agriculture","D: Fixed costs","272","158,200","143,900","172,500"
+"2023/24","2017SO","agriculture.input.costs","Cereals","All Farms","Agriculture","E: Total costs (B + D)","272","314,100","291,500","336,700"
+"2023/24","2017SO","farm.business.tenant.capital.sale.profits","Cereals","All Farms","Agriculture","F: Profit/(loss) on sale of machinery, glasshouses and permanent crops","272","1,400","600","2,300"
+"2023/24","2017SO","agriculture.net.margin","Cereals","All Farms","Agriculture","G: Farm Business Income (A - E + F)","272","-19,600","-29,500","-9,700"
+"2023/24","2017SO","agriculture.unpaid.labour","Cereals","All Farms","Agriculture","H: Adjustment for unpaid manual labour","272","28,400","25,700","31,100"
+"2023/24","2017SO","agriculture.economic.profit","Cereals","All Farms","Agriculture","I: Farm Corporate Income (G - H)","272","-48,000","-58,400","-37,700"
+"2023/24","2017SO","agriculture.net.interest.payments","Cereals","All Farms","Agriculture","J: Interest payments on borrowing (net of interest received)","272","8,500","5,900","11,100"
+"2023/24","2017SO","agriculture.investment.income","Cereals","All Farms","Agriculture","K: Farm Investment Income (I + J)","272","-39,600","-49,600","-29,500"
+"2023/24","2017SO","agri.environment.payments","Cereals","All Farms","Agri-environment and other Payments","A: Total output","272","14,700","12,000","17,400"
+"2023/24","2017SO","agri.environment.variable.costs","Cereals","All Farms","Agri-environment and other Payments","B: Variable costs","272","900","600","1,300"
+"2023/24","2017SO","agri.environment.gross.margin","Cereals","All Farms","Agri-environment and other Payments","C: Total Gross Margin (A - B)","272","13,800","11,200","16,300"
+...
+"2024/25","2017SO","director.remuneration","All Types","All Farms","Farm Business","P: Director remuneration","1,426","2,900","2,000","3,700"
+"2024/25","2017SO","net.imputed.rent","All Types","All Farms","Farm Business","Q: Imputed rent","1,426","32,900","29,900","35,800"
+"2024/25","2017SO","occupiers.expenses","All Types","All Farms","Farm Business","R: Ownership charges","1,426","15,700","13,600","17,800"
+"2024/25","2017SO","unpaid.labour.farmer.spouse","All Types","All Farms","Farm Business","S: Unpaid labour of principal farmer and spouse","1,426","30,300","29,400","31,300"
+"2024/25","2017SO","nfi","All Types","All Farms","Farm Business","T: Net Farm Income (K + P + R + S - Q)","1,426","60,300","53,400","67,100"
+==  fae_tables_csv_format_20260122/fae_table5b_2024_25.csv 983
+"survey_year","typology","measure","fbs_variable","farm_type","sda_status","sample_size","value","lower_ci","upper_ci"
+"2023/24","2017SO","Output from agriculture","output.from.agriculture","Cereals","All Farms","272","293,100","268,800","317,300"
+"2023/24","2017SO","Crop output (excluding subsidies)","crop.output.excl.subsidies","Cereals","All Farms","272","253,500","232,500","274,400"
+"2023/24","2017SO","Winter wheat","winter.wheat.output.excl.subsidies","Cereals","All Farms","272","129,900","116,900","142,800"
+"2023/24","2017SO","Winter barley","winter.barley.output.excl.subsidies","Cereals","All Farms","272","24,400","19,200","29,700"
+"2023/24","2017SO","Spring barley","spring.barley.output.excl.subsidies","Cereals","All Farms","272","18,400","14,100","22,700"
+"2023/24","2017SO","Other cereals","other.cereals.excl.subsidies","Cereals","All Farms","272","9,500","6,900","12,100"
+"2023/24","2017SO","Oilseed rape","oilseed.rape.output.excl.subsidies","Cereals","All Farms","272","24,000","20,200","27,800"
+"2023/24","2017SO","Peas and beans","peas.beans.output.excl.subsidies","Cereals","All Farms","272","9,100","7,600","10,600"
+"2023/24","2017SO","Potatoes","potatoes.output.excl.subsidies","Cereals","All Farms","272","1,700","-100","3,600"
+"2023/24","2017SO","Sugar beet","sugar.beet.output.excl.subsidies","Cereals","All Farms","272","8,000","5,200","10,800"
+"2023/24","2017SO","Other crops","other.crops.incl.hort.output","Cereals","All Farms","272","5,700","2,700","8,600"
+"2023/24","2017SO","By-products, forage and cultivations (excluding set-aside)","byproducts.forage.cultivations.output","Cereals","All Farms","272","20,200","15,400","24,900"
+"2023/24","2017SO","Disposal of previous crops","disposal.previous.crops","Cereals","All Farms","272","2,600","700","4,500"
+"2023/24","2017SO","Livestock output (excluding subsidies and payments to agriculture)","livestock.output.excl.subsidies","Cereals","All Farms","272","14,300","9,100","19,600"
+...
+"2024/25","2017SO","Recreation","recreation.output","All Types","All Farms","1,426","1,800","1,300","2,300"
+"2024/25","2017SO","Rental income","diversified.rent.receipts","All Types","All Farms","1,426","19,900","17,000","22,900"
+"2024/25","2017SO","Other diversified output","other.diversified.output","All Types","All Farms","1,426","9,600","7,200","11,900"
+"2024/25","2017SO","Renewable energy","sectioni.renewable.energy.output","All Types","All Farms","1,426","7,400","5,200","9,600"
+"2024/25","2017SO","Output from Basic Payment Scheme","basic.payment.scheme","All Types","All Farms","1,426","14,800","14,100","15,500"
+==  fae_tables_csv_format_20260122/fae_table5c_2024_25.csv 1297
+"survey_year","typology","measure","fbs_variable","farm_type","sda_status","sample_size","value","lower_ci","upper_ci"
+"2023/24","2017SO","Agricultural costs","agriculture.input.costs","Cereals","All Farms","272","314,100","291,500","336,700"
+"2023/24","2017SO","Variable agricultural costs","agriculture.variable.costs","Cereals","All Farms","272","155,900","144,400","167,400"
+"2023/24","2017SO","Crop specific costs","agriculture.crop.costs","Cereals","All Farms","272","118,600","109,800","127,400"
+"2023/24","2017SO","Seed","agriculture.seed.costs","Cereals","All Farms","272","16,500","15,100","18,000"
+"2023/24","2017SO","Fertilisers","agriculture.fertiliser.costs","Cereals","All Farms","272","57,300","52,400","62,200"
+"2023/24","2017SO","Crop protection","agriculture.crop.protection.costs","Cereals","All Farms","272","36,400","33,800","39,000"
+"2023/24","2017SO","Other crop costs","agriculture.other.crop.costs","Cereals","All Farms","272","8,300","7,400","9,200"
+"2023/24","2017SO","Livestock specific costs","agriculture.livestock.costs","Cereals","All Farms","272","7,700","5,000","10,300"
+"2023/24","2017SO","Purchased feed & fodder","purchased.feed.fodder","Cereals","All Farms","272","2,200","1,400","2,900"
+"2023/24","2017SO","Home grown feed & fodder","home.produced.feed.fodder","Cereals","All Farms","272","1,700","600","2,800"
+"2023/24","2017SO","Veterinary fees & medicines","agriculture.vet.med.costs","Cereals","All Farms","272","800","500","1,000"
+"2023/24","2017SO","Other livestock costs","agriculture.other.livestock.costs","Cereals","All Farms","272","3,000","1,800","4,200"
+"2023/24","2017SO","Contract costs","agriculture.contract.costs","Cereals","All Farms","272","26,800","22,900","30,700"
+"2023/24","2017SO","Casual labour","agriculture.casual.labour.cost","Cereals","All Farms","272","2,300","1,800","2,900"
+...
+"2024/25","2017SO","Fixed BPS costs","bps.fixed.costs","All Types","All Farms","1,426","1,400","1,300","1,400"
+"2024/25","2017SO","BPS labour costs","bps.labour.costs","All Types","All Farms","1,426","1.9","0.8","3.0"
+"2024/25","2017SO","BPS machinery costs","bps.machinery.costs","All Types","All Farms","1,426","31","29","33"
+"2024/25","2017SO","BPS general farming costs (including share of interest)","bps.general.farming.costs","All Types","All Farms","1,426","300","300","300"
+"2024/25","2017SO","BPS land and property costs","bps.land.and.property.costs","All Types","All Farms","1,426","1,100","1,000","1,100"
+==  fae_tables_csv_format_20260122/ 0
+
+==  fae_tables_csv_format_20260122/fae_table10_2024_25.csv 241
+"survey_year","typology","farm_type","tenure_type","fbs_variable","band","sample_size","value","lower_ci","upper_ci"
+"2024/25","2017SO","Cereals","Owner Occupied","liabilities.cv","0 (no liabilities)","c","c","c","c"
+"2024/25","2017SO","Cereals","Owner Occupied","liabilities.cv","0.01 to 19,999.99","22","27%","19%","39%"
+"2024/25","2017SO","Cereals","Owner Occupied","liabilities.cv","20,000 to 49,999.99","22","25%","17%","36%"
+"2024/25","2017SO","Cereals","Owner Occupied","liabilities.cv","50,000 to 99,999.99","c","c","c","c"
+"2024/25","2017SO","Cereals","Owner Occupied","liabilities.cv","100,000 and over","41","31%","23%","41%"
+==  fae_tables_csv_format_20260122/fae_table11_2024_25.csv 561
+"survey_year","typology","region","measure","enterprise","sample_size","fbs_variable","value","lower_ci","upper_ci"
+"2023/24","2017SO","North East, Yorkshire & Humber","Number of farms in sample","NA","220","nobs","220","0","0"
+"2023/24","2017SO","North West","Number of farms in sample","NA","168","nobs","168","0","0"
+"2023/24","2017SO","East Midlands","Number of farms in sample","NA","156","nobs","156","0","0"
+"2023/24","2017SO","West Midlands","Number of farms in sample","NA","204","nobs","204","0","0"
+"2023/24","2017SO","East","Number of farms in sample","NA","147","nobs","147","0","0"
+GET https://assets.publishing.service.gov.uk/media/696a0d480c654a0ec44022d6/fae_table_lookup_20260122.csv 200 text/csv 17988
+Table number,Table title,ODS file,CSV file
+Table_1_1,Farm Business Income by farm type (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table1
+Table_1_2,Net Farm Income by farm type (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table1
+Table_1_3,Cash Income by farm type (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table1
+Table_1_4,Family Farm Income by farm type (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table1
+Table_2_1,Farm Business Income by farm type and region (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table2
+Table_2_2,Net Farm Income by farm type and region (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table2
+Table_2_3,Cash Income by farm type and region (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table2
+Table_2_4,Family Farm Income by farm type and region (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table2
+Table_3_1,Farm Business Income by farm type and size (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table3
+Table_3_2,Net Farm Income by farm type and size (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table3
+Table_3_3,Cash Income by farm type and size (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table3
+Table_3_4,Family Farm Income by farm type and size (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table3
+Table_4,Farm Business Income by farm type and tenure (£ per farm),fbs_farmaccountsengland_table1_to_4,fae_table4
+Table_5_1,"Cereal farms: Business output, input costs and income by cost centre (£ per farm)",fbs_farmaccountsengland_table5,fae_table5a
+Table_5_2,Cereal farms: Detailed output (£ per farm),fbs_farmaccountsengland_table5,fae_table5b
+Table_5_3,Cereal farms: Detailed input costs (£ per farm),fbs_farmaccountsengland_table5,fae_table5c
+Table_5_4,"General cropping farms: Business output, input costs and income by cost centre (£ per farm)",fbs_farmaccountsengland_table5,fae_table5a
+Table_5_5,General cropping farms: Detailed output (£ per farm),fbs_farmaccountsengland_table5,fae_table5b
+Table_5_6,General cropping farms: Detailed input costs (£ per farm),fbs_farmaccountsengland_table5,fae_table5c
+Table_5_7,"Dairy farms: Business output, input costs and income by cost centre (£ per farm)",fbs_farmaccountsengland_table5,fae_table5a
+Table_5_8,Dairy farms: Detailed output (£ per farm),fbs_farmaccountsengland_table5,fae_table5b
+Table_5_9,Dairy farms: Detailed input costs (£ per farm),fbs_farmaccountsengland_table5,fae_table5c
+Table_5_10,"Lowland grazing livestock farms: Business output, input costs and income by cost centre (£ per farm)",fbs_farmaccountsengland_table5,fae_table5a
+Table_5_11,Lowland grazing livestock farms: Detailed output (£ per farm),fbs_farmaccountsengland_table5,fae_table5b
+Table_5_12,Lowland grazing livestock farms: Detailed input costs (£ per farm),fbs_farmaccountsengland_table5,fae_table5c
+Table_5_13,"LFA grazing livestock farms: Business output, input costs and income by cost centre (£ per farm)",fbs_f
+GET https://assets.publishing.service.gov.uk/media/69e0b39f53469bbcdf408f75/structure-england-june-county-16apr26.ods 200 application/vnd.oasis.opendocument.spreadsheet 2318659
+--- SHEET Contents 28
+   []
+   ['Numbers of holdings and agricultural act']
+   ['This dataset includes the number of hold']
+   ['More detailed breakdowns of key crop are']
+   ['Contents']
+   ['1905.0']
+   ['1915.0']
+   ['1925.0']
+   ['1935.0']
+   ['1945.0']
+   ['1950.0']
+   ['1955.0']
+   ['1965.0']
+   ['1975.0']
+--- SHEET 1905 50
+   []
+   ['England 1905', '', '', 'Land use', '', '', '', '', '', '', 'Corn crops', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Total area of England (excluding water)', 'Total area under crops and grass(1)', 'Arable land', 'Permanent grass', '', 'Wheat', 'Barley or bere', 'Oats', 'Rye', 'Beans', 'Peas', 'Total corn crops', '', 'Potatoes']
+   ['Bedford', '', '122150.95103197086', '103951.031970862', '60426.14326183731', '43524.888709024686', '', '15428.571428571428', '6051.800890327802', '8059.894779441522', '113.31444759206798', '3895.588830433023', '1134.7632537434238', '34683.93363010927', '', '3332.2541481181706']
+   ['Berkshire', '', '185917.84702549575', '145136.78672602185', '74817.48280048562', '70319.30392553622', '', '14822.339133953865', '8783.488466208013', '13460.542290570618', '510.72440307567786', '1547.9562929987858', '926.7503035208417', '40051.8008903278', '', '668.1505463375152']
+   ['Buckingham', '', '193163.49656009712', '161305.94900849857', '58693.241602590046', '102612.70740590854', '', '13464.184540671793', '5830.433023067584', '10785.916632942128', '270.33589639821935', '2158.640226628895', '1255.362201537839', '33764.872521246456', '', '700.9307972480776']
+   ['Cambridge', '', '223175.232699312', '198411.9789558883', '148709.42938081748', '49702.54957507082', '', '38057.06191825172', '21305.949008498585', '20286.928369081343', '562.5252934034803', '6416.025900445164', '2386.078510724403', '89014.56900040469', '', '10537.838931606637']
+   ['Chester', '', '262167.54350465396', '216618.37312828813', '82331.04006475111', '134287.33306353702', '', '5139.214892755969', '461.3516794819911', '25834.075273168757', '936.0582760016188', '122.21772561715905', '103.60178065560501', '32596.5196276811', '', '10781.869688385268']
+   ['Cornwall', '', '350566.57223796035', '245772.56171590448', '142686.36179684338', '103086.19991906111', '', '8518.41359773371', '12025.09105625253', '26864.022662889518', '112.50505868069607', '15.783083771752326', '19.42533387292594', '47555.240793201134', '', '1951.436665317685']
+   ['Cumberland', '', '389131.52569809795', '233845.00202347228', '88766.89599352489', '145078.10602994738', '', '692.4322136786726', '605.4229057061918', '28828.004856333468', '159.04492108458115', '4.046944556859571', '13.354917037636584', '30302.306758397408', '', '3542.2905706191823']
+   ['Derby', '', '261599.3524888709', '197903.68271954675', '35343.990287333065', '162559.69243221366', '', '6037.231889923108', '1834.8846620801294', '9066.774585188183', '70.41683528935653', '38.445973290165924', '125.85997571833265', '17173.613921489276', '', '1033.1849453662485']
+   ['Devon', '', '674560.501821125', '489732.90165924723', '215680.2913800081', '274052.6102792392', '', '19358.559287737757', '13840.550384459733', '50363.0109267503', '176.04208822339135', '311.210036422501', '128.2881424524484', '84177.66086604614', '', '4873.735329825981']
+   ['Dorset', '', '252541.8858761635', '193827.60016187778', '69794.41521651154', '124033.18494536624', '', '8790.772966410359', '8360.987454471873', '12271.549979765277', '476.3253743423715', '511.9384864427357', '305.13961958721166', '30716.71388101983', '', '673.4115742614326']
+   ['Durham', '', '261402.67098340753', '175972.48077701335', '61182.11250505868', '114790.36827195466', '', '5800.485633346823', '6524.079320113314', '13209.631728045326', '53.419668150546336', '396.60056657223794', '53.419668150546336', '26037.636584378793', '', '4774.989882638608']
+--- SHEET 1915 51
+   []
+   ['England 1915', '', '', '', 'Land use', '', '', '', '', '', '', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Total area of England (excluding water)', 'Total area under crops and grass', 'Arable land', 'Permanent grass', 'Mountain and health land used for grazin', '', 'Wheat', 'Barley and bere', 'Oats', 'Rye', 'Beans', 'Peas', 'Potatoes', 'Turnips and swedes']
+   ['Bedford', '', '122148.52286523674', '103056.25252934035', '58286.11898016997', '44770.13354917037', '771.3476325374343', '', '19451.234318089842', '3361.7968433832457', '8031.970861999191', '92.27033589639822', '4481.586402266289', '799.2715499797653', '3822.339133953865', '1284.0955078915417']
+   ['Berkshire', '', '186454.87656819102', '139248.88709024686', '70549.17037636584', '68699.71671388102', '6131.525698097936', '', '17734.520437070012', '6869.688385269122', '13930.392553622014', '287.33306353702955', '1537.8389316066368', '468.6361796843383', '783.4884662080129', '5184.945366248482']
+   ['Buckingham', '', '193163.9012545528', '159374.3423715095', '52125.05058680696', '107249.29178470255', '755.5645487656819', '', '16118.98016997167', '4295.022258195063', '9962.363415621207', '116.55200323755564', '2523.2699312019427', '569.0004046944557', '859.5710238769728', '2243.626062322946']
+   ['Cambridge (Ex Of Ely)', '', '127278.42978551194', '111075.67786321328', '85966.81505463374', '2510.724403075678', '720.3561311210036', '', '25157.02144880615', '10992.310805341966', '10348.846620801294', '405.908539053015', '4935.248887090247', '845.4067179279643', '1855.9287737757993', '3687.1711857547552']
+   ['Isle Of Ely', '', '95896.80291380007', '87072.0356131121', '65908.53905301497', '21163.496560097126', '99.55483609874544', '', '22385.673816268718', '6515.985430999595', '9074.05908539053', '274.78753541076486', '2334.2776203966005', '938.4864427357345', '12718.332658842573', '156.61675435046538']
+   ['Chester', '', '262099.95953055442', '214654.79562929986', '78162.28247673006', '136492.5131525698', '5512.747875354107', '', '9850.66774585188', '452.85309591258596', '24901.254552812625', '400.6475111290975', '60.299473897207605', '81.34358559287737', '8767.300687980574', '3099.9595305544312']
+   ['Cornwall', '', '350594.90084985836', '247629.70457304735', '127208.41764467827', '120421.28692836908', '27476.32537434237', '', '9454.471873735329', '13022.258195062726', '26369.890732496962', '62.32294617563739', '19.8300283286119', '17.806556050182113', '2081.3435855928774', '4775.394577094294']
+   ['Cumberland', '', '389131.52569809795', '223468.23148522864', '75019.02063941724', '148449.2108458114', '123957.91177660866', '', '758.3974099554836', '507.4868474301902', '27645.4876568191', '118.17078106029948', '6.879805746661271', '12.545528126264669', '3003.2375556454876', '10668.555240793201']
+   ['Derby', '', '261599.3524888709', '195518.008903278', '32664.103601780655', '162853.90530149738', '15094.698502630514', '', '7588.830433023068', '1661.2707405908538', '8058.276001618778', '35.20841764467826', '59.08539053014974', '122.622420072845', '1075.677863213274', '3198.300283286119']
+   ['Devon', '', '674543.5046539862', '487343.58559287735', '192205.18008903277', '295138.4055038446', '67702.54957507082', '', '22577.903682719545', '14369.081343585593', '46828.004856333464', '165.52003237555644', '360.1780655605018', '97.1266693646297', '4467.826790772966', '15721.570214488062']
+   ['Dorset', '', '252541.8858761635', '192881.8292189397', '64227.03358963982', '128654.79562929987', '10220.963172804531', '', '9721.974908943746', '7566.167543504654', '12208.417644678268', '413.59773371104814', '414.0024281667341', '116.14730878186968', '725.6171590449211', '10477.539457709428']
+--- SHEET 1925 54
+   []
+   ['England 1925', '', '', '', 'Land use', '', '', '', '', '', '', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Total area of England (excluding water)', 'Total area under crops and grass(1)', 'Arable land', 'Perm grass for hay', 'Perm grass not for hay', 'Rough grazings', '', 'Wheat', 'Barley', 'Oats', 'Mixed corn', 'Rye', 'Beans', 'Peas']
+   ['Bedford', '', '122148.52286523674', '101166.32942128692', '57019.425333872925', '11234.318089842169', '32912.585997571834', '1794.4152165115338', '', '12964.386887899635', '4277.620396600566', '8195.06272764063', '209.63172804532576', '55.44314042897612', '2318.0898421691622', '1213.2739781464993']
+   ['Berkshire', '', '186454.87656819102', '133400.24281667342', '64293.40348037232', '26847.83488466208', '42259.00445163901', '9401.052205584783', '', '12390.530149736947', '7302.30675839741', '11846.216106839336', '269.1218130311615', '277.62039660056655', '1014.9736948603804', '313.23350870093077']
+   ['Buckingham', '', '193163.9012545528', '151724.40307567787', '45817.887494941315', '36261.432618373125', '69645.08296236342', '3424.5244840145688', '', '9609.065155807366', '3773.371104815864', '9321.732092270335', '258.5997571833266', '60.299473897207605', '1524.8887090246862', '441.92634560906515']
+   ['Cambridge (Ex. Isle Of Ely)', '', '127278.42978551194', '108644.27357345204', '86695.26507486847', '7033.184945366248', '14915.82355321732', '2022.6628895184135', '', '19590.853905301497', '15373.937677053824', '9528.935653581546', '300.2832861189802', '489.27559692432214', '3143.261837312829', '1224.605422905706']
+   ['Isle Of Ely', '', '95896.80291380007', '84432.2136786726', '66660.86604613517', '4925.131525698098', '12846.216106839336', '360.1780655605018', '', '18974.504249291786', '7362.2015378389315', '7144.0712262242005', '219.7490894374747', '698.9073249696479', '1983.8122217725615', '1138.0008093889114']
+   ['Chester', '', '262063.5370295427', '206787.53541076486', '74111.69566976932', '32666.53176851477', '100009.30797248078', '6741.804937272359', '', '4626.062322946175', '471.0643464184541', '23247.673006879806', '725.6171590449211', '304.33023067583974', '50.58680696074464', '70.01214083367057']
+   ['Cornwall', '', '350594.90084985836', '246535.8154593282', '135391.744233104', '16080.534196681505', '95063.5370295427', '44466.612707405904', '', '4832.8611898017', '5169.971671388102', '20645.892351274786', '15524.079320113315', '35.20841764467826', '19.42533387292594', '23.067583974099556']
+   ['Cumberland', '', '389131.52569809795', '214444.35451234318', '72787.53541076487', '34288.1424524484', '107368.6766491299', '141391.744233104', '', '148.1181707810603', '182.9218939700526', '24460.946985026305', '517.6042088223392', '63.1323350870093', '2.4281667341157425', '4.856333468231485']
+   ['Derby', '', '261500.6070416835', '187190.2063941724', '35050.182112505056', '48760.825576689596', '103379.19870497774', '31075.677863213274', '', '6616.349656009713', '1689.5993524888709', '8664.103601780655', '291.3800080938891', '28.328611898016995', '76.08255766895994', '108.4581141238365']
+   ['Devon', '', '674543.5046539862', '458584.7834884662', '188532.9825981384', '54287.33306353703', '215764.46782679076', '121821.12505058681', '', '11483.205180089033', '10513.557264265479', '42916.632942128694', '5473.8972076082555', '27.519222986645083', '301.0926750303521', '73.65439093484419']
+   ['Dorset', '', '252541.8858761635', '174660.0566572238', '59356.131121003644', '38965.19627681101', '76338.72925940914', '24353.29825981384', '', '6541.076487252124', '6404.289761230271', '10843.78794010522', '858.356940509915', '222.5819506272764', '242.4119789558883', '83.36705787130715']
+--- SHEET 1935 56
+   []
+   ['England 1935', '', '', '', 'Land use', '', '', '', '', '', '', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Total area of England (excluding water)', 'Total hectarage under crops and grass(1)', 'Arable land', 'Perm grass for hay', 'Perm grass not for hay', 'Rough grazings', '', 'Wheat', 'Barley', 'Oats', 'Mixed corn', 'Rye', 'Beans', 'Peas']
+   ['Bedford', '', '122148.52286523674', '98043.3023067584', '48680.696074463776', '13825.171995143666', '35537.43423715095', '3084.581141238365', '', '13199.919061108862', '2617.5637393767706', '5539.457709429381', '69.20275192229866', '19.8300283286119', '2270.7405908539054', '1870.4977741804937']
+   ['Berkshire', '', '186454.87656819102', '127447.99676244435', '51006.87980574666', '30076.08255766896', '46365.03439902873', '12073.654390934844', '', '13242.411978955888', '3934.4394981788746', '8148.11817078106', '184.1359773371105', '116.14730878186968', '768.5147713476325', '147.30878186968837']
+   ['Buckingham', '', '193182.51719951435', '147069.2027519223', '31171.995143666532', '42726.83124241198', '73170.37636584378', '4683.528935653581', '', '8587.61634965601', '1305.9490084985835', '5564.144071226224', '87.8186968838527', '59.89477944152165', '1298.6645082962364', '244.4354512343181']
+   ['Cambridge (Excl. Isle Of Ely)', '', '127278.42978551194', '104402.67098340753', '78530.55443140429', '7847.025495750708', '18025.091056252528', '4125.859975718333', '', '12793.201133144476', '7566.976932416025', '110.48158640226629', '83.77175232699312', '2430.5949008498583', '651.9627681100769', '1437.0700121408336']
+   ['Isle Of Ely', '', '96656.00971266693', '84666.12707405908', '68324.16025900445', '4203.966005665722', '12138.00080938891', '647.5111290975314', '', '19870.902468636177', '1932.0113314447592', '5755.159854309995', '76.08255766895994', '162.68717118575475', '818.6968838526911', '1194.2533387292594']
+   ['Chester', '', '259083.77175232698', '199583.16471064347', '66540.26709834074', '32659.24726831242', '100383.65034399029', '8472.278429785512', '', '8975.313638203157', '148.52286523674624', '15283.690813435855', '131.52569809793604', '63.537029542695265', '46.94455685957102', '93.88911371914205']
+   ['Cornwall', '', '350594.90084985836', '246505.05868069606', '134021.44880615134', '17716.309186564144', '94767.30068798058', '45609.87454471874', '', '6326.183731282881', '2992.7154997976527', '18473.49251315257', '15251.315256980979', '67.58397409955484', '33.184945366248485', '67.98866855524079']
+   ['Cumberland', '', '389135.57264265476', '208477.94415216512', '72678.26790772966', '33933.6301092675', '101866.04613516794', '138014.164305949', '', '344.3949817887495', '108.05341966815054', '19823.55321732092', '300.2832861189802', '23.47227842978551', '15.37838931606637', '14.973694860380412']
+   ['Derby', '', '258148.11817078106', '179567.3816268717', '30866.855524079318', '48340.34803723189', '100364.22501011736', '29633.34682314852', '', '7940.91460946985', '347.6325374342371', '6231.485228652367', '133.1444759206799', '29.947389720760825', '86.19991906110886', '137.19142047753945']
+   ['Devon', '', '674543.5046539862', '457310.4006475111', '176934.0348037232', '65275.59692432213', '215100.7689194658', '123531.76851477135', '', '14361.796843383245', '6715.904492108458', '35497.774180493725', '3589.2351274787534', '19.42533387292594', '266.2889518413598', '133.9538648320518']
+   ['Dorset', '', '251429.3808174828', '170246.45892351275', '45095.91258599757', '46853.50060704168', '78297.04573047349', '27277.21570214488', '', '7221.367867260218', '3165.1153379198704', '7048.563334682314', '428.1667341157426', '117.76608660461352', '129.50222581950626', '68.39336301092675']
+--- SHEET 1945 54
+   []
+   ['England 1945', '', '', '', 'Land use', '', '', '', '', '', '', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Crops, grass and rough grazings: Total', 'Crops and grass: Total', 'Arable land', 'Permanent grass', 'Rough grazings', '', 'Wheat', 'Barley', 'Oats', 'Mixed corn', 'Rye for threshing', 'Rye for green fodder', 'Beans for stockfeeding', 'Peas for stockfeeding']
+   ['Bedford', '', '98915.01416430595', '97289.35653581546', '74737.35329825981', '22552.003237555644', '1625.6576284904895', '', '18605.827600161876', '9705.382436260623', '8422.501011736138', '842.1691622824767', '179.279643868879', '5.665722379603399', '2506.2727640631324', '162.68717118575475']
+   ['Berkshire', '', '135262.6467017402', '127826.38607851072', '88746.2565762849', '39080.12950222582', '7436.260623229461', '', '18233.508700930797', '15149.332254148117', '12234.722784297855', '1915.418858761635', '381.6268717118575', '33.184945366248485', '1363.8203156616753', '223.79603399433427']
+   ['Buckingham', '', '149966.41036017807', '146477.5394577094', '86335.49170376366', '60142.04775394577', '3488.870902468636', '', '21762.039660056656', '8284.904896802913', '15132.739781464994', '1445.5685957102387', '265.4795629299879', '65.15580736543909', '2365.439093484419', '237.15095103197086']
+   ['Cambridge (Exc. Isle Of Ely)', '', '107976.52772157021', '106267.09834075272', '91838.5269121813', '14428.571428571428', '1709.4293808174828', '', '16961.95872116552', '24719.951436665317', '8466.612707405908', '435.85592877377576', '684.7430190206394', '49.77741804937272', '2545.123431808984', '577.9036827195467']
+   ['Ilse Of Ely', '', '87293.40348037232', '85381.62687171185', '75662.08012950222', '9719.546742209632', '1911.7766086604613', '', '18476.730068798057', '6853.90530149737', '5810.198300283286', '119.7895588830433', '693.6462970457304', '5.2610279239174425', '907.7296641036017', '97.93605827600162']
+   ['Chester', '', '208061.91825171994', '193853.50060704167', '100766.08660461352', '93087.41400242817', '14208.417644678268', '', '7402.670983407527', '1188.587616349656', '29181.707810602995', '5449.210845811413', '127.07405908539053', '31.97086199919061', '352.0841764467827', '114.93322541481182']
+   ['Cornwall', '', '292328.2072035613', '249597.32901659247', '169274.78753541075', '80322.5414811817', '42730.87818696884', '', '10344.39498178875', '12306.758397409954', '21079.724807770133', '29117.766086604614', '248.8870902468636', '29.947389720760825', '27.114528530959124', '47.753945770942934']
+   ['Cumberland', '', '341875.7588021044', '194979.36058276', '108349.65600971266', '86629.70457304735', '132327.39781464994', '', '2325.7790368271953', '1838.122217725617', '31489.275596924323', '1545.1234318089842', '46.53986240388507', '8.903278025091057', '101.57830837717523', '19.8300283286119']
+   ['Derby', '', '213444.75920679886', '168507.0821529745', '68498.58356940509', '100008.4985835694', '44937.67705382436', '', '9841.76446782679', '2248.8870902468634', '18218.535006070415', '2430.999595305544', '233.9133953864832', '47.753945770942934', '218.13031161473086', '116.9566976932416']
+   ['Devon', '', '594274.7875354107', '461236.3415621206', '242195.46742209632', '219040.87414002427', '133038.44597329016', '', '20627.681100768918', '27841.359773371103', '46231.88992310805', '14508.700930797248', '199.10967219749088', '39.6600566572238', '452.04370700121405', '95.50789154188587']
+   ['Dorset', '', '193523.67462565762', '171325.77903682718', '81995.95305544314', '89329.82598138406', '22197.895588830434', '', '14929.98785916633', '10515.176042088224', '11103.197086199918', '2290.570619182517', '223.3913395386483', '29.13800080938891', '268.7171185754755', '153.37919870497774']
+--- SHEET 1950 52
+   []
+   ['England 1950', '', '', '', 'Land use', '', '', '', '', '', '', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Total crops, grass and rough grazing', 'Total crops and grass', 'Arable land', 'Permanent grass', 'Rough grazing', '', 'Wheat', 'Barley', 'Oats', 'Mixed corn', 'Rye for threshing', 'Rye for green fodder', 'Beans for stockfeeding', 'Peas for stockfeeding']
+   ['Bedford', '', '99008.90327802509', '97528.12626467017', '72836.90813435856', '24691.218130311612', '1480.777013354917', '', '20861.189801699715', '10084.581141238365', '6264.670174018615', '2132.3350870093077', '100.36422501011735', '7.284500202347227', '615.5402670983407', '250.10117361392147']
+   ['Berkshire', '', '136578.71307163092', '130033.99433427761', '87921.08458114123', '42112.90975313638', '6544.718737353298', '', '17477.53945770943', '14951.031970861999', '9586.402266288951', '5735.329825981384', '146.0946985026305', '78.10602994738971', '324.96964791582354', '149.7369486038041']
+   ['Buckingham', '', '151035.61311210037', '147439.90287333063', '77565.76284904896', '69874.14002428166', '3595.7102387697287', '', '17920.679886685553', '7172.399838122217', '12087.414002428166', '4608.660461351679', '64.75111290975313', '61.108862808579524', '803.3184945366248', '93.88911371914205']
+   ['Cambridge (excl. Isle of Ely)', '', '109033.58963982193', '107465.39862403885', '92515.98543099959', '14949.413193039254', '1568.1910157830837', '', '20880.615135572643', '24206.798866855523', '7318.494536624848', '1195.8721165520033', '724.4030756778632', '12.950222581950626', '1201.9425333872925', '775.3945770942938']
+   ['Isle of Ely', '', '87467.42209631727', '85582.76001618778', '76246.45892351275', '9336.30109267503', '1884.662080129502', '', '24594.091460946984', '4736.948603804128', '3877.377579927155', '320.922703358964', '575.475515985431', '6.475111290975313', '392.1489275596924', '112.10036422501011']
+   ['Chester', '', '206695.66976932416', '192672.60218535006', '97053.41966815054', '95619.18251719952', '14023.0675839741', '', '11982.598138405503', '685.1477134763254', '18634.156212059894', '11155.402670983407', '184.9453662484824', '104.41116956697692', '114.52853095912586', '25.091056252529338']
+   ['Cornwall (excl. Scilly Isles)', '', '293895.58883043303', '250984.21691622824', '155127.47875354107', '95856.73816268716', '42911.37191420477', '', '4216.916228247673', '3467.8267907729664', '14219.344394981788', '36773.371104815866', '55.038445973290166', '19.020639417239984', '39.6600566572238', '16.997167138810198']
+   ['Cumberland', '', '340391.744233104', '195859.16632942128', '100994.3342776204', '94864.83205180088', '144532.57790368272', '', '1393.7677053824361', '300.2832861189802', '27795.62929987859', '2832.0518008903277', '13.354917037636584', '10.117361392148927', '107.24403075677863', '6.070416835289357']
+   ['Derby', '', '212128.69283690813', '167076.48725212464', '63396.60056657223', '103679.88668555241', '45052.205584783485', '', '11459.732901659247', '1581.1412383650343', '12995.95305544314', '5421.286928369082', '106.43464184540672', '91.86564144071225', '128.69283690813435', '20.234722784297855']
+   ['Devon', '', '594947.7944152165', '460701.74018615944', '220924.7268312424', '239777.01335491703', '134246.05422905704', '', '11204.775394577095', '17113.314447592067', '34217.32092270336', '25387.29259409146', '98.74544718737353', '72.03561311210036', '251.31525698097934', '70.41683528935653']
+   ['Dorset', '', '196377.579927155', '174919.46580331848', '75424.52448401456', '99494.94131930392', '21458.1141238365', '', '10252.12464589235', '9242.007284500201', '7722.784297855119', '5928.773775799272', '146.49939295831646', '65.56050182112504', '176.4467826790773', '124.24119789558883']
+--- SHEET 1955 56
+   []
+   ['England 1955', '', '', '', 'Land use', '', '', '', '', '', '', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Crops, grass and rough grazings: Total (', 'Crops and grass: Total', 'Arable land', 'Permanent grass', 'Rough grazings', '', 'Wheat', 'Barley', 'Oats', 'Mixed Corn', 'Rye for Threshing', 'Beans for Stockfeeding', 'Peas for Stockfeeding', 'Potatoes, First Earlies']
+   ['Bedford', '', '97256.57628490489', '96386.48320518009', '70706.19182517199', '25680.291380008093', '870.0930797248077', '', '16508.29623634156', '14234.722784297855', '4930.392553622015', '640.63132335087', '6.879805746661271', '491.2990692027519', '180.49372723593686', '1722.3796033994333']
+   ['Berkshire', '', '135488.87090246862', '129314.44759206798', '87090.24686361797', '42224.20072845002', '6174.423310400647', '', '14608.255766895993', '19342.776203966005', '8605.018211250506', '1855.1193848644273', '23.067583974099556', '226.62889518413596', '35.20841764467826', '197.895588830433']
+   ['Buckingham', '', '150282.88142452447', '147252.12464589236', '70318.89923108053', '76933.22541481181', '3030.7567786321324', '', '13121.813031161473', '10191.420477539457', '9466.208012950223', '2184.5406717927963', '15.37838931606637', '354.10764872521247', '16.592472683124242', '142.4524484014569']
+   ['Cambridge (Exc. Isle Of Ely)', '', '108328.20720356131', '106740.99554836098', '91679.07729664103', '15061.918251719952', '1587.2116552003238', '', '20184.540671792794', '28268.312424119787', '5632.537434237151', '491.2990692027519', '56.65722379603399', '1379.6033994334277', '700.1214083367057', '231.8899231080534']
+   ['Isle Of Ely', '', '87549.97976527721', '85456.09065155807', '77087.00930797248', '8369.081343585593', '2093.889113719142', '', '23794.415216511534', '6931.606636989073', '3741.8049372723594', '312.8288142452448', '165.52003237555644', '794.0105220558478', '94.69850263051396', '1230.2711452853096']
+   ['Chester', '', '203414.8118170781', '189560.50182112504', '88732.0922703359', '100828.40955078915', '13854.309995953055', '', '5736.139214892756', '1698.097936058276', '17095.912585997572', '7369.486038041278', '38.04127883447997', '33.184945366248485', '16.187778227438283', '2519.222986645083']
+   ['Cornwall', '', '294411.9789558883', '253293.808174828', '154566.57223796032', '98727.23593686766', '41118.1707810603', '', '2341.9668150546336', '5704.1683528935655', '7184.945366248482', '27800.890327802506', '42.08822339133954', '17.401861594496154', '18.615944961554025', '1959.9352488870902']
+   ['Cumberland', '', '343330.2306758397', '197681.91015783083', '94085.39053014973', '103596.5196276811', '145648.3205180089', '', '428.1667341157426', '337.1104815864023', '20168.757588021042', '1585.59287737758', '2.8328611898016995', '8.903278025091057', '4.046944556859571', '333.87292594091457']
+   ['Derby', '', '211610.27923917442', '168456.49534601375', '57910.157830837714', '110546.33751517604', '43153.78389316066', '', '7594.091460946985', '2535.0060704168354', '11439.093484419263', '4246.054229057062', '16.997167138810198', '52.610279239174425', '4.046944556859571', '111.2909753136382']
+   ['Devon', '', '592671.388101983', '461915.8235532173', '213867.66491299067', '248048.1586402266', '130755.56454876567', '', '4665.7223796033995', '17092.2703358964', '19987.049777418048', '19370.29542695265', '23.067583974099556', '65.965196276811', '42.08822339133954', '792.79643868879']
+   ['Dorset', '', '199270.7405908539', '178536.62484823956', '75944.15216511533', '102592.47268312424', '20734.115742614325', '', '5932.820720356131', '11757.992715499797', '5673.411574261432', '1971.671388101983', '16.187778227438283', '99.55483609874544', '26.305139619587212', '202.34722784297855']
+--- SHEET 1965 54
+   []
+   ['England 1965', '', '', '', '', '', 'Land use', '', '', '', '', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Crops, grass and rough grazings (inc. co', '', 'Crops And Grass: Total', 'Arable Land', 'Permanent Grass', 'Rough Grazings: Total', 'Sole Rights', 'Common(1)', '', 'Wheat', 'Barley', 'Oats', 'Mixed Corn for Threshing', 'Rye for Threshing']
+   ['Bedfordshire', '', '93739.78146499392', '', '92766.08660461352', '72978.95588830432', '19787.130716309184', '973.6948603804127', '811.007689194658', '162.68717118575475', '', '17874.140024281667', '29790.368271954674', '1306.3537029542695', '34.39902873330635', '12.950222581950626']
+   ['Berkshire', '', '131968.83852691218', '', '127435.85592877377', '93665.3176851477', '33770.53824362606', '4532.982598138406', '3954.6742209631725', '578.3083771752326', '', '16831.64710643464', '40977.74180493727', '1624.4435451234317', '135.57264265479563', '35.613112100364226']
+   ['Buckinghamshire', '', '146183.32658842573', '', '143883.44799676244', '75721.97490894374', '68088.62808579522', '2372.7235936867664', '1550.7891541885876', '821.9344394981788', '', '20228.247673006877', '26012.95022258195', '2297.4504249291786', '154.5932820720356', '23.47227842978551']
+   ['Cambridgeshire And Isle Of Ely', '', '187246.86361796843', '', '184547.95629299877', '165770.94293808175', '18777.01335491704', '2698.907324969648', '2622.420072845002', '76.48725212464589', '', '51210.84581141238', '45784.70254957507', '2867.664912990692', '153.7838931606637', '419.2634560906515']
+   ['Cheshire', '', '195136.78672602185', '', '183072.44030756777', '87476.73006879806', '95595.71023876972', '12064.346418454066', '11956.292998785917', '108.05341966815054', '', '7796.843383245649', '20504.653986240388', '4398.219344394982', '1437.4747065965196', '23.876972885471467']
+   ['Cornwall', '', '292246.8636179684', '', '254783.48846620801', '157329.82598138406', '97453.25779036827', '37463.37515176042', '28515.985430999594', '8947.389720760826', '', '1259.0044516390126', '41261.02792391744', '2068.393363010927', '6388.506677458518', '25.495750708215297']
+   ['Cumberland', '', '335377.1752326993', '', '198049.37272359367', '85682.71954674221', '112366.65317685147', '137327.80250910562', '91800.08093889113', '45507.48684743019', '', '978.1464993929583', '11168.757588021044', '8008.093889113718', '1400.6475111290974', '8.093889113719142']
+   ['Derbyshire', '', '207572.23796033993', '', '164407.12262242008', '62473.49251315257', '101933.6301092675', '43144.880615135575', '32023.87697288547', '11141.238365034398', '', '8722.78429785512', '17817.078106029945', '4046.135167948199', '533.3872925940915', '12.140833670578713']
+   ['Devon', '', '591305.1396195872', '', '469387.29259409144', '230412.78834479966', '238974.5042492918', '121917.84702549575', '58721.570214488056', '63196.27681100769', '', '6223.391339538648', '64588.42573856738', '4954.269526507486', '2170.7810602994737', '81.74828004856333']
+   ['Dorset', '', '198485.22865236746', '', '182757.5880210441', '98430.99959530555', '84326.58842573856', '15727.640631323351', '14768.919465803318', '958.7211655200323', '', '11104.006475111291', '34535.81545932821', '1640.2266288951841', '94.69850263051396', '81.74828004856333']
+   ['Durham', '', '189755.96924322136', '', '144581.9506272764', '83226.62889518413', '61355.32173209227', '45174.01861594496', '26854.309995953055', '18319.708619991907', '', '8101.983002832861', '28759.206798866853', '6679.077296641036', '191.4204775394577', '5.665722379603399']
+--- SHEET 1975 54
+   []
+   ['England 1975', '', '', '', '', '', '', 'Land use', '', '', '', '', '', '', '', '']
+   ['Hectarage under crops and grass: and num', '', 'Total Agricultural Area', '', 'Crops and grass: Total', 'Arable land', 'All grasses five years old and over', 'Rough grazings: Total', 'Sole rights', 'Common(1)', 'Total woodland on agricultural holdings', 'All other land on agricultural holdings', '', 'Wheat', 'Barley', 'Oats']
+   ['Avon', '', '91997.57183326589', '', '87235.12747875354', '32129.502225819506', '55105.625252934035', '3183.7312828814242', '1982.1934439498177', '1201.5378389316065', '985.8356940509915', '592.8773775799272', '', '3890.3278025091054', '10459.732901659247', '878.1869688385269']
+   ['Bedfordshire', '', '91078.10602994739', '', '87740.99554836098', '73586.40226628895', '14154.593282072035', '927.9643868878996', '742.6143261837312', '185.35006070416836', '1312.019425333873', '1097.1266693646296', '', '18133.953864832052', '31004.04694455686', '1285.7142857142858']
+   ['Berkshire', '', '76515.17604208822', '', '70278.83447996763', '51248.88709024686', '19029.94738972076', '2617.1590449210844', '1956.6976932416026', '660.4613516794819', '2610.2792391744233', '1008.903278025091', '', '10579.117766086605', '19673.816268717117', '1530.5544314042897']
+   ['Buckinghamshire', '', '138166.7341157426', '', '132865.23674625656', '75819.10157830837', '57046.539862403886', '2380.0080938891138', '1657.2237960339942', '722.7842978551193', '1918.2517199514366', '1003.2375556454876', '', '16301.092675030352', '29424.11978955888', '2526.912181303116']
+   ['Cambridgeshire And Isle Of Ely', '', '291271.95467422093', '', '283020.63941724', '258074.05908539053', '24946.580331849455', '3280.4532577903683', '2719.9514366653175', '560.5018211250506', '1736.139214892756', '3234.722784297855', '', '91378.79401052205', '71434.23715095103', '3411.9789558883044']
+   ['Cheshire', '', '174596.1149332254', '', '163664.912990692', '72128.69283690813', '91536.22015378388', '7799.676244435451', '7697.69324160259', '101.98300283286119', '1428.9761230271145', '1702.5495750708214', '', '2566.167543504654', '25460.54229057062', '1535.0060704168352']
+   ['Cleveland', '', '34271.549979765274', '', '29535.815459328205', '20630.51396195872', '8905.301497369486', '4238.769728854714', '2358.154593282072', '1880.6151355726427', '265.4795629299879', '231.48522865236745', '', '2510.3197086199916', '10555.645487656819', '765.2772157021449']
+   ['Cornwall', '', '292687.57588021044', '', '254116.95669769324', '116317.68514771348', '137799.27154997975', '32354.917037636584', '23447.996762444352', '8906.92027519223', '3617.5637393767706', '2598.1384055038443', '', '1842.9785511938485', '25993.524888709024', '3080.938891137191']
+   ['Cumbria', '', '580197.8955888305', '', '311746.2565762849', '84705.7871307163', '227040.4694455686', '262915.01416430593', '149328.2072035613', '113586.80696074464', '3545.123431808984', '1991.5014164305949', '', '571.0238769728854', '24832.8611898017', '1962.3634156212058']
+   ['Derbyshire', '', '203763.2537434237', '', '154016.18777822744', '54125.45528126264', '99890.73249696479', '47443.94981788749', '36346.013759611495', '11097.936058276002', '1254.957507082153', '1048.158640226629', '', '4922.2986645082965', '22730.87818696884', '1849.4536624848238']
+   ['Devon', '', '587745.4471873735', '', '461902.4686361797', '172911.37191420476', '288991.0967219749', '110659.65196276811', '47355.32173209227', '63304.330230675834', '11010.92675030352', '4172.399838122217', '', '4674.220963172805', '51377.579927155', '7581.950627276406']
+--- SHEET 1985 51
+   []
+   ['', '', '', '', 'Total Agricultural Area - number of hold', '', 'Total Agricultural Area - area (hectares', '', '', 'Farm size - number of holdings', '', '', '', 'Farm size - area (hectares)', '', '']
+   ['England 1985 County Statistics Source: J', '', 'Total England Land Area (excluding water', '', 'All holdings', 'Significant holdings only', 'All holdings', 'Significant holdings only', '', '<20ha', '20<100 ha', '100<300ha', '>=300ha', '<20ha', '20<100 ha', '100<300ha']
+   ['Avon', '', '133718.0', '', '3073.0', '2263.0', '89201.0', '87352.0', '', '1061.0', '994.0', '200.0', '8.0', '7835.0', '46935.0', '29218.0']
+   ['Bedfordshire', '', '122671.0', '', '1674.0', '1354.0', '93443.0', '92762.0', '', '637.0', '449.0', '210.0', '58.0', '3993.0', '21808.0', '35557.0']
+   ['Berkshire', '', '124451.0', '', '1151.0', '991.0', '74855.0', '74396.0', '', '481.0', '302.0', '158.0', '50.0', '3590.0', '14724.0', '28415.0']
+   ['Buckinghamshire', '', '187183.0', '', '2381.0', '2061.0', '134304.0', '133378.0', '', '838.0', '784.0', '385.0', '54.0', '7000.0', '39482.0', '62822.0']
+   ['Cambridgeshire', '', '338736.0', '', '4972.0', '4002.0', '290844.0', '288909.0', '', '1563.0', '1594.0', '653.0', '192.0', '10995.0', '74107.0', '111301.0']
+   ['Cheshire', '', '230121.0', '', '5994.0', '4494.0', '175524.0', '172260.0', '', '1954.0', '2238.0', '286.0', '16.0', '15642.0', '106607.0', '40823.0']
+   ['Cleveland', '', '58383.0', '', '584.0', '474.0', '32132.0', '31903.0', '', '170.0', '206.0', '86.0', '12.0', '1419.0', '11473.0', '12813.0']
+   ['Cornwall', '', '353935.0', '', '9911.0', '7121.0', '285077.0', '278801.0', '', '3300.0', '3185.0', '604.0', '32.0', '26105.0', '151882.0', '87959.0']
+   ['Cumbria', '', '672210.0', '', '7379.0', '6459.0', '463953.0', '461605.0', '', '1624.0', '3609.0', '1064.0', '162.0', '14637.0', '189372.0', '161998.0']
+   ['Derbyshire', '', '261164.0', '', '5131.0', '3991.0', '185807.0', '183189.0', '', '1650.0', '1986.0', '324.0', '31.0', '14994.0', '93531.0', '47692.0']
+   ['Devon', '', '669133.0', '', '13399.0', '10969.0', '526126.0', '519984.0', '', '3883.0', '5909.0', '1112.0', '65.0', '35057.0', '289531.0', '163421.0']
+--- SHEET 1995 115
+   []
+   ['', '', '', '', '', 'Farm size', '', '', '', '', '', '', '', 'Farm Types', '', '']
+   ['England 1995 County Statistics', 'Total', '', '', '', 'Number of holdings', '', '', '', '', '', '', '', 'Number of holdings', '', '']
+   ['Source: June Survey of Agriculture', 'number of holdings', '', '<5 ha', '5<20 ha', '20<50 ha', '50<100 ha', '>=100 ha', '', 'Cereals', 'General Cropping', 'Horticulture', 'Pigs & Poultry', 'Dairy', 'Cattle and Sheep (LFA)', 'Cattle and Sheep (lowland)']
+   ['Hartlepool And Stockton-On-Tees', '237.0', '', '51.0', '46.0', '47.0', '58.0', '35.0', '', '86.0', '10.0', '#', '#', '14.0', '0.0', '37.0']
+   ['South Teesside', '192.0', '', '38.0', '43.0', '37.0', '44.0', '30.0', '', '41.0', '13.0', '8.0', '9.0', '27.0', '#', '#']
+   ['Darlington', '232.0', '', '32.0', '53.0', '45.0', '49.0', '53.0', '', '50.0', '25.0', '#', '#', '25.0', '0.0', '48.0']
+   ['Durham Cc', '1935.0', '', '296.0', '458.0', '481.0', '429.0', '271.0', '', '236.0', '31.0', '22.0', '40.0', '182.0', '671.0', '239.0']
+   ['Northumberland', '2335.0', '', '239.0', '346.0', '411.0', '506.0', '833.0', '', '408.0', '59.0', '34.0', '32.0', '100.0', '940.0', '275.0']
+   ['Tyneside', '208.0', '', '83.0', '39.0', '29.0', '32.0', '25.0', '', '50.0', '#', '#', '#', '3.0', '#', '39.0']
+   ['Sunderland', '63.0', '', '19.0', '9.0', '13.0', '10.0', '12.0', '', '27.0', '#', '#', '#', '3.0', '0.0', '#']
+   ['North East', '5202.0', '', '758.0', '994.0', '1063.0', '1128.0', '1259.0', '', '898.0', '146.0', '95.0', '101.0', '354.0', '1642.0', '655.0']
+   []
+   ['West Cumbria', '1981.0', '', '226.0', '390.0', '548.0', '568.0', '249.0', '', '18.0', '11.0', '22.0', '29.0', '603.0', '392.0', '573.0']
+--- SHEET 2000 116
+   []
+   ['', '', '', '', '', 'Farm size', '', '', '', '', '', '', '', 'Farm Types', '', '']
+   ['England 2000 County Statistics', 'Total', '', '', '', 'Number of holdings', '', '', '', '', '', '', '', 'Number of holdings', '', '']
+   ['Source: June Survey of Agriculture', 'number of holdings', '', '<5 ha', '5<20 ha', '20<50 ha', '50<100 ha', '>=100 ha', '', 'Cereals', 'General Cropping', 'Horticulture', 'Pigs & Poultry', 'Dairy', 'Cattle and Sheep (LFA)', 'Cattle and Sheep (lowland)']
+   ['Hartlepool & Stockton-On-Tees', '273.0', '', '105.0', '42.0', '43.0', '53.0', '30.0', '', '85.0', '#', '12.0', '#', '#', '0.0', '42.0']
+   ['South Teesside', '214.0', '', '76.0', '41.0', '29.0', '34.0', '34.0', '', '36.0', '12.0', '#', '10.0', '24.0', '#', '19.0']
+   ['Darlington', '253.0', '', '78.0', '40.0', '37.0', '45.0', '53.0', '', '53.0', '18.0', '#', '#', '18.0', '0.0', '47.0']
+   ['Durham Cc', '2174.0', '', '698.0', '419.0', '375.0', '383.0', '299.0', '', '241.0', '38.0', '28.0', '69.0', '127.0', '635.0', '268.0']
+   ['Northumberland', '2461.0', '', '574.0', '316.0', '322.0', '397.0', '852.0', '', '390.0', '66.0', '41.0', '42.0', '66.0', '817.0', '310.0']
+   ['Tyneside', '231.0', '', '103.0', '43.0', '31.0', '27.0', '27.0', '', '47.0', '#', '10.0', '5.0', '#', '#', '39.0']
+   ['Sunderland', '65.0', '', '24.0', '6.0', '16.0', '10.0', '9.0', '', '25.0', '#', '5.0', '#', '#', '0.0', '11.0']
+   ['North East', '5671.0', '', '1658.0', '907.0', '853.0', '949.0', '1304.0', '', '877.0', '145.0', '113.0', '143.0', '252.0', '1475.0', '736.0']
+   []
+   ['West Cumbria', '2318.0', '', '762.0', '351.0', '422.0', '483.0', '300.0', '', '#', '#', '29.0', '37.0', '515.0', '391.0', '604.0']
+--- SHEET 2005 114
+   []
+   ['', '', '', '', '', 'Farm size', '', '', '', '', '', '', '', 'Farm Types', '', '']
+   ['England 2005 County Statistics', 'Total', '', '', '', 'Number of holdings', '', '', '', '', '', '', '', 'Number of holdings', '', '']
+   ['Source: June Survey of Agriculture', 'holdings', '', '<5 ha', '5<20 ha', '20<50 ha', '50<100 ha', '>=100 ha', '', 'Cereals', 'General Cropping', 'Horticulture', 'Specialist Pigs', 'Specialist Poultry', 'Dairy', 'Grazing Livestock (LFA)']
+   ['Hartlepool And Stockton-On-Tees', '293.0', '', '120.0', '50.0', '34.0', '52.0', '37.0', '', '84.0', '3.0', '12.0', '#', '14.0', '#', '0.0']
+   ['South Teesside', '276.0', '', '123.0', '45.0', '32.0', '33.0', '43.0', '', '52.0', '#', '#', '8.0', '6.0', '17.0', '23.0']
+   ['Darlington', '281.0', '', '109.0', '39.0', '35.0', '33.0', '65.0', '', '69.0', '14.0', '10.0', '#', '9.0', '14.0', '0.0']
+   ['Durham Cc', '2655.0', '', '1039.0', '466.0', '361.0', '369.0', '420.0', '', '298.0', '26.0', '32.0', '18.0', '93.0', '88.0', '622.0']
+   ['Northumberland', '2777.0', '', '758.0', '387.0', '269.0', '321.0', '1042.0', '', '443.0', '50.0', '43.0', '15.0', '51.0', '60.0', '779.0']
+   ['Tyneside', '282.0', '', '133.0', '50.0', '37.0', '21.0', '41.0', '', '52.0', '#', '10.0', '#', '14.0', '#', '3.0']
+   ['Sunderland', '72.0', '', '25.0', '12.0', '8.0', '11.0', '16.0', '', '28.0', '0.0', '#', '#', '3.0', '0.0', '0.0']
+   ['North East', '6636.0', '', '2307.0', '1049.0', '776.0', '840.0', '1664.0', '', '1026.0', '102.0', '121.0', '53.0', '190.0', '189.0', '1427.0']
+   []
+   ['West Cumbria', '2572.0', '', '979.0', '358.0', '370.0', '444.0', '421.0', '', '60.0', '16.0', '40.0', '15.0', '60.0', '432.0', '422.0']
+--- SHEET 2010 96
+   ['', 'Table 1. Commercial holding counts and h', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+   ['', '', '', '', '', '', '', '', 'Farm size - counts', '', '', '', '', '', '', '']
+   ['', '', '<5ha', '', '', '5<20ha', '', '', '20<50ha', '', '', '50<100ha', '', '', '>=100ha', '']
+   ['England 2010 County / Unitary Authority(', '', 'Number of holdings', '', '', 'Number of holdings', '', '', 'Number of holdings', '', '', 'Number of holdings', '', '', 'Number of holdings', '']
+   ['', '2009.0', '2010.0', '% difference', '2009.0', '2010.0', '% difference', '2009.0', '2010.0', '% difference', '2009.0', '2010.0', '% difference', '2009.0', '2010.0', '% difference']
+   ['Hartlepool and Stockton-on-Tees', '23.0', '20.0', '-13.043478260869568', '34.0', '36.0', '5.882352941176472', '39.0', '31.0', '-20.512820512820518', '47.0', '43.0', '-8.510638297872342', '34.0', '35.0', '2.941176470588225']
+   ['South Teesside', '15.0', '13.0', '-13.33333333333333', '39.0', '39.0', '0.0', '39.0', '31.0', '-20.512820512820518', '27.0', '29.0', '7.407407407407418', '43.0', '44.0', '2.3255813953488413']
+   ['Darlington', '#', '12.0', 'n/a', '#', '35.0', 'n/a', '42.0', '42.0', '0.0', '36.0', '34.0', '-5.555555555555558', '57.0', '57.0', '0.0']
+   ['Durham CC', '197.0', '114.0', '-42.131979695431475', '442.0', '404.0', '-8.597285067873306', '341.0', '290.0', '-14.956011730205276', '348.0', '336.0', '-3.4482758620689613', '419.0', '420.0', '0.23866348448686736']
+   ['Northumberland', '187.0', '111.0', '-40.64171122994652', '326.0', '297.0', '-8.895705521472397', '258.0', '224.0', '-13.178294573643413', '311.0', '279.0', '-10.289389067524112', '1013.0', '1012.0', '-0.09871668311944859']
+   ['Tyneside', '16.0', '#', 'n/a', '53.0', '#', 'n/a', '32.0', '36.0', '12.5', '24.0', '24.0', '0.0', '38.0', '37.0', '-2.631578947368418']
+   ['Sunderland', '#', '#', 'n/a', '#', '#', 'n/a', '10.0', '11.0', '10.000000000000009', '10.0', '8.0', '-19.999999999999996', '14.0', '15.0', '7.14285714285714']
+   ['North East', '462.0', '283.0', '-38.74458874458875', '936.0', '861.0', '-8.012820512820518', '761.0', '665.0', '-12.614980289093303', '803.0', '753.0', '-6.226650062266503', '1618.0', '1620.0', '0.12360939431397266']
+   []
+--- SHEET 2013 96
+   ['', 'Table 1. Commercial holding counts and h', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+   ['', '', '', '', '', '', '', '', 'Farm size - counts', '', '', '', '', '', '', '']
+   ['', '', '<5ha', '', '', '5<20ha', '', '', '20<50ha', '', '', '50<100ha', '', '', '>=100ha', '']
+   ['England 2013 County / Unitary Authority(', '', 'Number of holdings', '', '', 'Number of holdings', '', '', 'Number of holdings', '', '', 'Number of holdings', '', '', 'Number of holdings', '']
+   ['', '2010.0', '2013.0', '% difference', '2010.0', '2013.0', '% difference', '2010.0', '2013.0', '% difference', '2010.0', '2013.0', '% difference', '2010.0', '2013.0', '% difference']
+   ['Hartlepool and Stockton-on-Tees', '20.0', '20.0', '0.0', '36.0', '35.0', '-2.7777777777777777', '31.0', '33.0', '6.451612903225806', '43.0', '42.0', '-2.3255813953488373', '35.0', '35.0', '0.0']
+   ['South Teesside', '13.0', '14.0', '7.6923076923076925', '39.0', '38.0', '-2.564102564102564', '31.0', '28.0', '-9.67741935483871', '29.0', '29.0', '0.0', '44.0', '41.0', '-6.8181818181818175']
+   ['Darlington', '12.0', '13.0', '8.333333333333332', '35.0', '37.0', '5.714285714285714', '42.0', '37.0', '-11.904761904761903', '34.0', '36.0', '5.88235294117647', '57.0', '60.0', '5.263157894736842']
+   ['Durham CC', '114.0', '124.0', '8.771929824561402', '404.0', '406.0', '0.49504950495049505', '290.0', '295.0', '1.7241379310344827', '336.0', '320.0', '-4.761904761904762', '420.0', '434.0', '3.3333333333333335']
+   ['Northumberland', '111.0', '122.0', '9.90990990990991', '297.0', '297.0', '0.0', '224.0', '214.0', '-4.464285714285714', '279.0', '274.0', '-1.7921146953405016', '1012.0', '1013.0', '0.09881422924901186']
+   ['Tyneside', '#', '#', '#', '#', '38.0', '#', '36.0', '#', '#', '24.0', '22.0', '-8.333333333333332', '37.0', '37.0', '0.0']
+   ['Sunderland', '#', '#', '#', '#', '7.0', '#', '11.0', '#', '#', '8.0', '9.0', '12.5', '15.0', '17.0', '13.333333333333334']
+   ['North East', '283.0', '305.0', '7.773851590106007', '861.0', '858.0', '-0.34843205574912894', '665.0', '642.0', '-3.4586466165413534', '753.0', '732.0', '-2.788844621513944', '1620.0', '1637.0', '1.0493827160493827']
+   []
+--- SHEET 2016 94
+   ['', 'Table 1. Commercial holding counts and h', '', '', '', '', '', '', '', '', '', '', '', '', 'Table 2. Commercial holding counts by fa', '']
+   ['', '', '', 'Farm size - number of holdings', '', '', '', '', '', 'Farm size - areas (hectares)', '', '', '', '', '', '']
+   ['England 2016 County / Unitary Authority(', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total holdings', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total farmed area', '', 'Cereals', 'General Cropping']
+   ['Hartlepool and Stockton-on-Tees', '16.0', '39.0', '26.0', '40.0', '45.0', '166.0', '39.74988011612696', '465.8782311090865', '960.0488761336568', '2986.361053914648', '8575.263144705264', '13027.301185978782', '', '65.0', '12.0']
+   ['South Teesside', '10.0', '41.0', '28.0', '32.0', '36.0', '147.0', '22.89937491478903', '423.26324038950054', '906.3068543911413', '2340.419945918404', '9050.56603548271', '12743.455451096543', '', '40.0', '11.0']
+   ['Darlington', '15.0', '40.0', '40.0', '38.0', '56.0', '189.0', '26.11777096654122', '410.35210944387984', '1343.2973088616347', '2796.979607818755', '9690.99282666849', '14267.739623759295', '', '57.0', '20.0']
+   ['Durham CC', '160.0', '437.0', '315.0', '325.0', '426.0', '1663.0', '399.4280558518633', '4770.097734217156', '10476.59969890498', '23707.008888471362', '118562.43886505201', '157915.57324249734', '', '226.0', '178.0']
+   ['Northumberland', '121.0', '328.0', '274.0', '284.0', '991.0', '1998.0', '292.62248383173966', '3473.9644124334222', '9310.521635219895', '20857.925050144502', '358266.8408204835', '392201.87440211273', '', '373.0', '205.0']
+   ['Tyneside', '#', '#', '24.0', '25.0', '30.0', '124.0', '#', '#', '801.0549675807454', '1891.5208866142923', '6779.036817181681', '9897.71956600829', '', '37.0', '9.0']
+   ['Sunderland', '#', '#', '11.0', '10.0', '11.0', '42.0', '#', '#', '415.49874342924403', '784.6034363605014', '1986.3874185098339', '3286.8570247209254', '', '18.0', '7.0']
+   ['North East', '334.0', '928.0', '718.0', '754.0', '1595.0', '4329.0', '816.9184577093155', '10033.929156617703', '24213.328084521298', '55364.81886924246', '512911.5259280835', '603340.5204961739', '', '816.0', '442.0']
+   []
+   ['West Cumbria', '139.0', '320.0', '329.0', '400.0', '465.0', '1653.0', '256.133223368622', '3562.7552377872894', '11338.077524093638', '29374.3084830124', '114330.99280095262', '158862.26726921476', '', '44.0', '179.0']
+   ['East Cumbria', '274.0', '706.0', '695.0', '730.0', '1076.0', '3481.0', '603.3631066633694', '7875.947277932638', '23277.10829757372', '53273.120679017076', '264112.4925000633', '349142.0318612498', '', '89.0', '384.0']
+--- SHEET 2021 150
+   ['', 'Table 1. Commercial holding counts and h', '', '', '', '', '', '', '', '', '', '', '', '', 'Table 2. Commercial holding counts by fa', '']
+   ['', '', '', 'Farm size - number of holdings', '', '', '', '', '', 'Farm size - areas (hectares)', '', '', '', '', '', '']
+   ['England 2021 County / Unitary Authority(', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total holdings', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total farmed area', '', 'Cereals', 'General Cropping']
+   ['Hartlepool and Stockton-on-Tees', '30.0', '28.0', '32.0', '30.0', '51.0', '171.0', '56.34915977000001', '292.7784103839813', '1103.59706969', '2189.7762001399997', '10825.14136795', '14467.64220793398', '', '62.0', '18.0']
+   ['South Teesside', '14.0', '40.0', '22.0', '24.0', '35.0', '135.0', '20.628350459491', '458.5978365', '703.4514350000001', '1691.6349834999999', '9242.10071841', '12116.41332386949', '', '38.0', '18.0']
+   ['Darlington', '23.0', '32.0', '29.0', '39.0', '55.0', '178.0', '33.25951953', '369.5066775261973', '1022.87119652', '2792.05510643', '9616.51885696', '13834.211356966196', '', '57.0', '23.0']
+   ['Durham', '242.0', '423.0', '303.0', '314.0', '387.0', '1669.0', '398.50621304493643', '4635.370580797232', '10012.461900949178', '22777.26498391398', '108183.54395186927', '146007.1476305746', '', '196.0', '210.0']
+   ['Northumberland', '227.0', '294.0', '257.0', '243.0', '904.0', '1925.0', '341.0285198733272', '3088.3163750715157', '8838.376356461618', '18022.27953379035', '351381.70912973525', '381671.709914932', '', '322.0', '228.0']
+   ['Tyneside', '#', '#', '23.0', '31.0', '23.0', '123.0', '#', '#', '757.360392812012', '2273.2827160500005', '4437.29520943', '7822.635602075121', '', '33.0', '18.0']
+   ['Sunderland', '#', '#', '9.0', '11.0', '11.0', '38.0', '#', '#', '296.99', '864.54579475', '2624.0976058', '3828.8268457344484', '', '19.0', '6.0']
+   ['North East', '554.0', '852.0', '675.0', '692.0', '1466.0', '4239.0', '883.8633522553114', '9208.369019668926', '22735.10835143281', '50610.83931857434', '496310.4068401545', '579748.5868820859', '', '727.0', '521.0']
+   []
+   ['West Cumbria', '237.0', '357.0', '328.0', '346.0', '452.0', '1720.0', '361.6253978403597', '3931.405332073497', '10977.000826629355', '25593.833870680493', '108572.19733480006', '149436.06276202376', '', '38.0', '231.0']
+   ['East Cumbria', '475.0', '730.0', '671.0', '676.0', '970.0', '3522.0', '717.2629961349605', '8104.008188151033', '22287.19166807594', '49223.304056058325', '245403.39106750814', '325735.1579759284', '', '42.0', '442.0']
+--- SHEET 2024 153
+   ['Land use, crop areas, livestock and work']
+   ['', '', '', '', '', '', 'Farm size (number of holdings)', '', '', '', '', '', '', 'Farm size areas (hectares)', '', '']
+   ['England 2024 County / Unitary Authority', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total holdings', '', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total area on holdings', '', 'Cereals']
+   ['Hartlepool and Stockton-on-Tees', '28.0', '25.0', '41.0', '29.0', '48.0', '171.0', '', '53.11293909799703', '259.4664895156498', '1355.4065190451695', '2088.1721479483426', '10195.429796774335', '13951.587892381489', '', '64.0']
+   ['South Teesside', '12.0', '40.0', '26.0', '23.0', '34.0', '135.0', '', '29.522468169720447', '460.6976376359807', '836.3470663614626', '1757.0633232264488', '9268.70955706128', '12352.340052454898', '', '39.0']
+   ['Darlington', '26.0', '27.0', '40.0', '37.0', '51.0', '181.0', '', '51.781800203252', '284.8248743292842', '1340.5918351212651', '2703.237099798397', '8968.708452063416', '13349.144061515612', '', '56.0']
+   ['Durham', '228.0', '462.0', '319.0', '279.0', '376.0', '1664.0', '', '454.9654825327453', '5118.404938300983', '10919.866276797364', '20074.39471937852', '110031.44907268148', '146599.08048969106', '', '198.0']
+   ['Northumberland', '162.0', '299.0', '247.0', '261.0', '913.0', '1882.0', '', '313.13377677498954', '3246.9432030094886', '8256.066334474404', '19162.361426572224', '351986.5661608753', '382965.07090170635', '', '323.0']
+   ['Tyneside', '#', '#', '27.0', '27.0', '20.0', '120.0', '', '#', '#', '893.3483634670233', '2002.3291646039495', '4156.10454041138', '7361.955190737127', '', '30.0']
+   ['Sunderland', '#', '#', '9.0', '11.0', '12.0', '42.0', '', '#', '#', '290.05836903027335', '826.31581434858', '2901.650622011893', '4096.853047093741', '', '20.0']
+   ['North East', '483.0', '882.0', '709.0', '667.0', '1454.0', '4195.0', '', '965.9730040655681', '9695.881969462293', '23891.684764296962', '48613.87369587646', '497508.61820187914', '580676.0316355804', '', '730.0']
+   ['West Cumbria', '224.0', '366.0', '313.0', '363.0', '439.0', '1705.0', '', '439.2597629808281', '4143.789726837665', '10696.338373842455', '26793.561409616053', '106655.4921432554', '148728.44141653267', '', '31.0']
+   ['East Cumbria', '414.0', '751.0', '681.0', '660.0', '981.0', '3487.0', '', '837.7605992737614', '8294.21826345716', '22518.76562757745', '47759.85240124065', '250092.00538393183', '329502.6022754816', '', '58.0']
+   ['Manchester', '0.0', '0.0', '#', '#', '0.0', '#', '', '0.0', '0.0', '#', '#', '0.0', '#', '', '0.0']
+--- SHEET 2025 163
+   ['Land use, crop areas, livestock and work']
+   ['', '', '', '', '', '', 'Farm size (number of holdings)', '', '', '', '', '', '', 'Farm size areas (hectares)', '', '']
+   ['England 2025 County / Unitary Authority', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total holdings', '', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total area on holdings', '', 'Cereals']
+   ['Hartlepool and Stockton-on-Tees', '27.0', '24.0', '36.0', '32.0', '51.0', '170.0', '', '50.53173128900001', '237.10713525699998', '1184.21027564', '2219.1123314600004', '10734.999437299999', '14425.960910946002', '', '64.0']
+   ['South Teesside', '#', '#', '26.0', '24.0', '34.0', '132.0', '', '#', '#', '855.0591080300001', '1863.5250881600002', '9169.842683899999', '12340.640066200993', '', '39.0']
+   ['Darlington', '25.0', '27.0', '30.0', '44.0', '50.0', '176.0', '', '48.92341246700001', '292.705091165', '1048.62631596', '3183.1885152999985', '8907.6663885', '13481.109723392012', '', '56.0']
+   ['Durham', '218.0', '439.0', '318.0', '289.0', '372.0', '1636.0', '', '428.8792588170002', '4866.9568633880035', '10820.205718439995', '21087.05251731002', '109036.76251889997', '146239.85687685513', '', '187.0']
+   ['Northumberland', '155.0', '287.0', '232.0', '254.0', '926.0', '1854.0', '', '298.10403244599996', '3156.641436096', '7754.348752540002', '18720.627112119993', '357048.09131060005', '386977.812643802', '', '312.0']
+   ['Tyneside', '16.0', '24.0', '23.0', '30.0', '21.0', '114.0', '', '38.928972527999996', '270.33135127', '747.03725651', '2227.0213705399997', '4328.7336957', '7612.052646548003', '', '31.0']
+   ['Sunderland', '#', '#', '8.0', '12.0', '12.0', '40.0', '', '#', '#', '221.49511151', '873.3991659000002', '2486.3309756', '3615.5005573949993', '', '20.0']
+   ['North East', '457.0', '841.0', '673.0', '685.0', '1466.0', '4122.0', '', '899.5976552810002', '9276.000119938004', '22630.98253863', '50173.92610079001', '501712.4270105', '584692.9334251393', '', '709.0']
+   ['Cumberland', '298.0', '504.0', '441.0', '500.0', '652.0', '2395.0', '', '523.8268404969998', '5686.681945768994', '14744.639343109999', '36900.06128351998', '159366.69701699994', '217221.90642989625', '', '45.0']
+   ['Westmorland and Furness', '327.0', '573.0', '526.0', '514.0', '782.0', '2722.0', '', '637.7624403020002', '6234.444505572', '17357.944592399996', '37442.223893120055', '199386.6537240001', '261059.029155394', '', '35.0']
+   ['Manchester', '0.0', '0.0', '#', '#', '0.0', '#', '', '0.0', '0.0', '#', '#', '0.0', '#', '', '0.0']
+--- SHEET Metadata 56
+   ['Data Sources']
+   ['All results with the exception of cattle']
+   ['representative sample of holdings across']
+   ['sampling error and do not take into acco']
+   ['Cattle results are sourced from the Catt']
+   ['figures do not match those published in ']
+   ['Commercial Holdings']
+   ['Commercial holdings are those registered']
+   ['levels of farming activity. Commercial h']
+   ['Characteristics', '', 'Threshold']
+   ['Utilised agricultural area', 'Arable land, permanent grassland and per', '>5 ha']
+   ['Permanent outdoor crops', 'Fruit, berries, vineyards and nurseries', '>1 ha']
+   ['Crops grown outdoors or under low (non a', 'Fresh vegetables, melons and strawberrie', '>0.5 ha']
+   ['Crops under glass or other', 'Fresh vegetables, melons and strawberrie', '>0.1 ha']
+GET https://assets.publishing.service.gov.uk/media/69e0b1fb6c6ccf244be42e2e/structure-england-june-regions-16apr26.ods 200 application/vnd.oasis.opendocument.spreadsheet 381909
+--- RSHEET Contents 30
+   []
+   ['Numbers of holdings and agricultural act']
+   ['This dataset includes a timeseries of th']
+   ['More detailed breakdowns of key crop are']
+   ['These data relate to commercial holdings']
+   ['Contents']
+   ['Total number of holdings by region 2010 ']
+   ['Total farmed area by region 2010 to 2025']
+   ['2010.0']
+   ['2011.0']
+--- RSHEET Total_number_of_holdings 15
+   ['Total number of holdings by region(1,2)']
+   ['England Region', '2010.0', '2011.0', '2012.0', '2013.0', '2014.0', '2015.0', '2016.0', '2017.0', '2018.0', '2019.0', '2020(3)', '2021.0', '2022.0', '2023.0', '2024.0']
+   ['North East', '4182.0', '4155.0', '4109.0', '4174.0', '4198.0', '4259.0', '4329.0', '4280.0', '4291.0', '4320.0', '', '4239.0', '4260.0', '4189.0', '4195.0']
+   ['North West and Merseyside', '12336.0', '12245.0', '12131.0', '12198.0', '12247.0', '12488.0', '12592.0', '12602.0', '12578.0', '12621.0', '', '12658.0', '12547.0', '12350.0', '12328.0']
+   ['Yorkshire and The Humber', '12143.0', '12084.0', '12008.0', '12035.0', '12066.0', '12171.0', '12346.0', '12305.0', '12329.0', '12177.0', '', '12126.0', '12116.0', '11927.0', '11910.0']
+   ['East Midlands', '11866.0', '11798.0', '11688.0', '11471.0', '11413.0', '11666.0', '11984.0', '11863.0', '11827.0', '11748.0', '', '11614.0', '11584.0', '11357.0', '11369.0']
+   ['West Midlands', '13689.0', '13616.0', '13474.0', '13441.0', '13528.0', '13724.0', '14208.0', '14141.0', '14213.0', '14133.0', '', '14043.0', '14017.0', '13685.0', '13655.0']
+   ['Eastern', '12223.0', '12165.0', '12063.0', '11678.0', '11541.0', '11703.0', '12051.0', '11836.0', '11793.0', '11690.0', '', '11408.0', '11318.0', '11033.0', '10914.0']
+   ['South East (incl. London)', '13589.0', '13487.0', '13337.0', '12996.0', '12950.0', '12936.0', '13252.0', '13078.0', '13092.0', '13288.0', '', '13015.0', '12752.0', '12526.0', '12511.0']
+   ['South West', '25421.0', '25239.0', '24994.0', '24843.0', '24950.0', '25283.0', '26091.0', '25820.0', '25912.0', '26123.0', '', '26117.0', '25882.0', '25338.0', '25379.0']
+--- RSHEET Total_farmed_area 14
+   ['Total farmed area by region(1)', 'hectares']
+   ['England Region', '2010.0', '2011.0', '2012.0', '2013.0', '2014.0', '2015.0', '2016.0', '2017.0', '2018.0', '2019.0', '2020(2)', '2021.0', '2022.0', '2023.0', '2024.0']
+   ['North East', '570420.0', '572366.2615409037', '575348.7070532702', '588368.7235056855', '587576.0475512381', '593362.0815175353', '603340.5204961739', '656386.0690999869', '631312.3127589788', '623578.4522350738', '', '579748.5868820859', '622122.9361123823', '606236.8002498571', '580676.0316355793']
+   ['North West and Merseyside', '878791.0', '884916.0937313756', '878282.0898016847', '908915.1098976426', '903901.7046720714', '902711.1588510519', '939559.2135146742', '984612.8604416692', '981398.8354774022', '972205.7256603049', '', '902680.0046904674', '963398.8623373442', '941147.2137826801', '892739.8443207085']
+   ['Yorkshire and The Humber', '1066077.0', '1073723.1213566528', '1086216.0549417709', '1091407.1641287943', '1087318.276695669', '1086199.9771606605', '1114935.5289852605', '1160785.5755815334', '1146071.5931197598', '1136416.0837719135', '', '1098678.3906451692', '1120706.5118456874', '1125007.5350529286', '1086057.0908967908']
+   ['East Midlands', '1176807.0', '1185461.3938963318', '1197980.2728561834', '1181621.0249698178', '1193021.6695610222', '1187970.6652897636', '1203410.5191383753', '1190793.824245868', '1191288.8898282296', '1192499.1702683368', '', '1177690.1801425638', '1176757.1926637355', '1172079.154916282', '1164589.8052657666']
+   ['West Midlands', '915412.0', '918117.2236072933', '929706.7340471951', '952969.3611442699', '942635.0305735054', '931104.5160719845', '932381.8263758463', '909552.6300530136', '943114.3052743144', '943725.603573783', '', '928370.0117009827', '930636.6247488029', '911577.2686458466', '897114.076652246']
+   ['Eastern', '1380809.0', '1383072.2706054805', '1398119.3774632935', '1370168.3197918874', '1387580.6446455286', '1382372.1282050824', '1397544.9601180032', '1400187.5684439568', '1389772.917302968', '1411232.9336068088', '', '1398306.1753535797', '1393706.3606287327', '1396737.8882684328', '1417285.9706495998']
+   ['South East (incl. London)', '1140878.0', '1138285.2348911487', '1150055.6476071356', '1158018.7699333907', '1139546.806669249', '1131394.7563022075', '1138669.745059043', '1105259.8341237814', '1112773.3148446863', '1136908.0114240583', '', '1133816.2420761553', '1114131.6733542492', '1099446.0827099255', '1118594.6014092292']
+   ['South West', '1758096.0', '1759305.8058707225', '1769426.0135002146', '1835011.7583164119', '1791292.3209164315', '1776709.7986017303', '1790780.8657125589', '1768679.0255102203', '1763963.2342936455', '1788998.8872596817', '', '1756259.234512235', '1776792.4727671584', '1746379.83857403', '1720416.3986700675']
+--- RSHEET 2010 21
+   ['', 'Table 1. Commercial holding counts and h', '', '', '', '', '', '', '', '', '', '', '', '', 'Table 2. Commercial holding counts by fa', '']
+   ['', '', '', 'Farm size - number of holdings', '', '', '', '', '', 'Farm size - areas (hectares)', '', '', '', '', '', '']
+   ['England 2010 Region', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total holdings', '<5ha', '5<20ha', '20<50ha', '50<100ha', '>=100ha', 'Total farmed area', '', 'Cereals', 'General Cropping']
+   ['North East', '283.0', '861.0', '665.0', '753.0', '1620.0', '4182.0', '529.862', '9420.09', '22755.4', '55083.9', '482631.0', '570420.0', '', '732.0', '316.0']
+   ['North West and Merseyside', '1136.0', '3169.0', '2766.0', '2667.0', '2598.0', '12336.0', '2014.58', '35518.1', '92258.0', '192772.0', '556229.0', '878791.0', '', '425.0', '1563.0']
+   ['Yorkshire and The Humber', '1068.0', '3043.0', '2444.0', '2355.0', '3233.0', '12143.0', '2208.19', '33661.2', '82469.8', '170457.0', '777281.0', '1066077.0', '', '2499.0', '1560.0']
+   ['East Midlands', '983.0', '3003.0', '2384.0', '2035.0', '3461.0', '11866.0', '1905.88', '32953.1', '79819.7', '146996.0', '915132.0', '1176807.0', '', '3139.0', '2013.0']
+   ['West Midlands', '1271.0', '3928.0', '3014.0', '2605.0', '2871.0', '13689.0', '2539.22', '43440.8', '99728.1', '187853.0', '581851.0', '915412.0', '', '1563.0', '2110.0']
+   ['Eastern', '1117.0', '2825.0', '2319.0', '1949.0', '4013.0', '12223.0', '2124.91', '30802.0', '76975.3', '140957.0', '1129950.0', '1380809.0', '', '4243.0', '3157.0']
+   ['South East (incl. London)', '1112.0', '4391.0', '2974.0', '1910.0', '3202.0', '13589.0', '2126.87', '48713.6', '96965.4', '135833.0', '857239.0', '1140878.0', '', '2329.0', '2422.0']
