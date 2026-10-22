@@ -43,4 +43,7 @@ st = fi.stats(lait, {}, est, {"FR": "France"}, "2026-10-22T00:00:00Z")["countrie
 ids = {s["id"] for s in st}
 check("fr-ira-lait-prix-reel-conv" in ids and "fr-ira-lait-corto" not in ids and "fr-ira-gcu-barley-production-2026" in ids and not any("rapeseed" in i for i in ids), "stats: %r" % sorted(ids))
 check(next(s for s in st if s["id"] == "fr-ira-lait-prix-reel-conv")["changePct"] is not None, "variacion interanual")
+fruw = {"fru-poire-prod-france-metropolitaine": {"label": "Pear production, France", "unit": "1000 t", "pts": {"2025": 157.1, "2026": 144.1}}}
+sf = fi.stats({}, {}, {}, {}, "2026-10-22T00:00:00Z", fruw)["countries"]["FR"]["series"]
+check(len(sf) == 1 and sf[0]["frequency"] == "annual" and sf[0]["changePct"] == -8.27, "fruta: %r" % sf)
 print("ok: test-fr-infosrapides")

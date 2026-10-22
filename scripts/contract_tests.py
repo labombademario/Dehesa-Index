@@ -5188,13 +5188,13 @@ def france_bulconj(doc, errs, warns, stats):
 def _ira_pts(pts, where, errs):
     import re as _re
     for p, v in pts.items():
-        if not _re.fullmatch(r"\d{4}-(0[1-9]|1[0-2])", p) or not 1990 <= int(p[:4]) <= 2100: errs.append("%s: periodo %r" % (where, p)); return False
+        if not _re.fullmatch(r"\d{4}(-(0[1-9]|1[0-2]))?", p) or not 1990 <= int(p[:4]) <= 2100: errs.append("%s: periodo %r" % (where, p)); return False
         if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or abs(v) > 1e12: errs.append("%s %s: valor %r" % (where, p, v)); return False
     return True
 
 
 def france_infosrapides_index(doc, errs, warns, stats):
-    bad = [k for k, e in doc["editions"].items() if e.get("kind") not in ("Lai", "Gcu", "Cex") or e.get("status") not in ("ok", "error")]
+    bad = [k for k, e in doc["editions"].items() if e.get("kind") not in ("Lai", "Gcu", "Cex", "Fru") or e.get("status") not in ("ok", "error")]
     if bad: errs.append("france-infosrapides index: ediciones con tipo o estado raro: %s" % bad[:3]); return
     nerr = sum(1 for e in doc["editions"].values() if e["status"] == "error")
     if nerr: warns.append("france-infosrapides index: %d ediciones ilegibles" % nerr)

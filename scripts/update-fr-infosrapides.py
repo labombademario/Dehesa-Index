@@ -11,7 +11,7 @@ La pipeline descubre las ediciones nuevas probando los numeros siguientes (y, la
     (El comercio mensual por producto ya lo trae el boletin de coyuntura: no se duplica.)
 Nada se inventa: una celda vacia, «s.», «nd» o «**» no existe. Se CONSERVA todo punto de ediciones anteriores que la actual ya no trae; una edicion nueva reemplaza los puntos que vuelve a traer.
 Si la descarga falla se conserva lo publicado."""
-import concurrent.futures, datetime, io, json, re, sys, time, unicodedata, zipfile
+import concurrent.futures, datetime, io, json, re, sys, time, unicodedata, urllib.parse, zipfile
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib_agreste import DL, H, ERR_MARK, XL, _get, clean_html, fetch, num, pick, quote_url
@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "france-infosrapides"
 LOG = []
 SRC = {"name": "Agreste (SSP) - Infos Rapides", "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/IraLai26133/detail/", "license": "Licence Ouverte 2.0 (Etalab)"}
-SEED = {"Lai": (26, 133), "Gcu": (26, 131), "Cex": (26, 132)}   # ultima edicion conocida al escribir el script: punto de partida del escaneo
+SEED = {"Lai": (26, 133), "Gcu": (26, 131), "Cex": (26, 132), "Fru": (26, 130)}   # ultima edicion conocida al escribir el script: punto de partida del escaneo
 MONTHS = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"]
 
 
@@ -286,6 +286,56 @@ def read_cex(blob):
     return out
 
 
+# ---- Fruits (pera y manzana) -------------------------------------------------------------------------------------------------------------------------
+def read_fru(blob, fname):
+    """Libro de pera o manzana: hoja «annexe» (superficie y produccion por region y año, 6 campañas) y «Figure 2» (produccion del año por variedad, solo Francia).
+    -> {id: {label, unit, pts{AAAA: valor}}}. El año de cada fila se lee de su celda, no de «n-1»."""
+    sp, en = ("poire", "Pear") if "poire" in fold(fname) else (("pomme", "Apple") if "pomme" in fold(fname) else (None, None))
+    if not sp:
+        raise RuntimeError("el fichero %r no es de pera ni de manzana" % fname)
+    x = XL(blob)
+    out = {}
+    sh = next((n for n in x.names() if fold(n).startswith("annexe")), None)
+    if not sh:
+        raise RuntimeError("falta la hoja annexe")
+    rows = list(x.rows(sh))
+    hdr = rows[0]
+    for r in rows[1:]:
+        kind = fold(r[0]) if r else ""
+        m = re.match(r"(surf|prod)\s+n", kind)
+        yr = str(r[1]).strip() if len(r) > 1 else ""
+        if not m or not re.fullmatch(r"\d{4}", yr):
+            continue
+        what, unit, nm = (("surf", "1000 ha", "area"), ("prod", "1000 t", "production"))[0 if m.group(1) == "surf" else 1]
+        for j in range(2, min(len(hdr), len(r))):
+            v = val(r[j])
+            reg = str(hdr[j]).strip()
+            if v is None or not reg:
+                continue
+            out.setdefault("fru-%s-%s-%s" % (sp, what, slug(reg)), {"label": "%s %s, %s" % (en, nm, reg), "unit": unit, "pts": {}})["pts"][yr] = rnd(v)
+    f2 = next((n for n in x.names() if fold(n).replace(" ", "") == "figure2"), None)
+    if f2:
+        rows = list(x.rows(f2))
+        hi = next((i for i, r in enumerate(rows[:5]) if any(fold(c) == "france" for c in r)), None)
+        if hi is not None:
+            jf = [fold(c) for c in rows[hi]].index("france")
+            ed = re.search(r"(\d{4})", str(rows[hi][0]))
+            on = False
+            for r in rows[hi + 1:]:
+                if len(r) > jf and fold(r[0]) == "production":
+                    on = True
+                    continue
+                if on and len(r) > jf and r[1] and not fold(r[1]).startswith(("evol", "total")) and ed:
+                    v = val(r[jf])
+                    if v is not None:
+                        out["fru-%s-prod-var-%s" % (sp, slug(r[1]))] = {"label": "%s production, variety %s, France" % (en, str(r[1]).strip()), "unit": "1000 t", "pts": {ed.group(1): rnd(v)}}
+                elif on and r and fold(r[1] if len(r) > 1 else "").startswith("evol"):
+                    break
+    if not any(k.startswith("fru-%s-prod-france" % sp) for k in out):
+        raise RuntimeError("sin produccion nacional en el libro")
+    return out
+
+
 # ---- almacen --------------------------------------------------------------------------------------------------------------------------------------
 def load(f, default):
     try:
@@ -330,6 +380,7 @@ def main():
     lait = load(OUT / "lait.json", {}).get("series", {})
     cult = load(OUT / "cultivos.json", {})
     com = load(OUT / "comercio.json", {}).get("series", {})
+    fru = load(OUT / "fruta.json", {}).get("series", {})
     est, names, editions = cult.get("est", {}), cult.get("regions", {}), set(cult.get("editions", []))
     try:
         found, unk = discover(state)
@@ -357,6 +408,11 @@ def main():
                 names.update(nm)
                 editions.add(ed)
                 ent["edition"] = ed
+            elif kind == "Fru":
+                u = pick(urls, r"\.xlsx$") or no_file(urls)
+                new = read_fru(fetch(quote_url(u), "bin", tries=4, wait=20, timeout=180, log=log), urllib.parse.unquote(u).split("/")[-1])
+                fru = merge_series(fru, new)
+                ent["series"] = len(new)
             elif kind == "Cex":
                 u = pick(urls, r"compl.*\.xlsx$") or no_file(urls)
                 new = read_cex(fetch(quote_url(u), "bin", tries=4, wait=20, timeout=180, log=log))
@@ -382,7 +438,8 @@ def main():
     write(OUT / "lait.json", doc(now, series=lait))
     write(OUT / "cultivos.json", doc(now, editions=sorted(editions), regions=names, est=est))
     write(OUT / "comercio.json", doc(now, series=com))
-    st = stats(lait, com, est, names, now)
+    write(OUT / "fruta.json", doc(now, series=fru))
+    st = stats(lait, com, est, names, now, fru)
     log("series de catalogo:", len(st["countries"]["FR"]["series"]))
     write(ROOT / "data" / "france-infosrapides-stats.json", st)
     (ROOT / "data" / "france-infosrapides-log.txt").write_text("\n".join(LOG) + "\n", encoding="utf-8")
@@ -399,10 +456,10 @@ def series_pts(s):
     return [[k, v] for k, v in p]
 
 
-def stats(lait, com, est, names, now):
+def stats(lait, com, est, names, now, fru=None):
     out = []
 
-    def add(sid, grp, label, unit, pts, minpts, yoy=True):
+    def add(sid, grp, label, unit, pts, minpts, yoy=True, freq="monthly"):
         if len(pts) < minpts:
             return
         last = pts[-1]
@@ -411,13 +468,20 @@ def stats(lait, com, est, names, now):
             prev = next((v for p, v in pts if p == "%d-%s" % (int(last[0][:4]) - 1, last[0][5:])), None)
             if prev not in (None, 0) and prev > 0 and last[1] > 0:
                 ch = round((last[1] / prev - 1) * 100, 2)
-        out.append({"id": sid, "group": grp, "label": label, "unit": unit, "frequency": "monthly", "latestPeriod": last[0], "latest": last[1], "changePct": ch, "points": pts, "sourceGroup": "agreste-infosrapides"})
+        out.append({"id": sid, "group": grp, "label": label, "unit": unit, "frequency": freq, "latestPeriod": last[0], "latest": last[1], "changePct": ch, "points": pts, "sourceGroup": "agreste-infosrapides"})
 
     for k, s in sorted(lait.items()):
         hist = k[5:] in {c[0] for cols in LAIT_HIST.values() for c in cols.values()}
         add("fr-ira-" + k, "milk", s["label"] + " (Infos Rapides)", s["unit"], series_pts(s), 24 if hist else 12)
     for k, s in sorted(com.items()):
         add("fr-ira-" + k, "trade", s["label"] + " (Infos Rapides)", s["unit"], series_pts(s), 24)
+    for k, s in sorted((fru or {}).items()):
+        if k.endswith("-france-metropolitaine") or "-var-" in k:
+            pts = series_pts(s)
+            ch = None
+            add("fr-ira-" + k, "crops", s["label"] + " (Infos Rapides)", s["unit"], pts, 1, yoy=False, freq="annual")
+            if out and out[-1]["id"] == "fr-ira-" + k and len(pts) > 1 and pts[-2][1]:
+                out[-1]["changePct"] = round((pts[-1][1] / pts[-2][1] - 1) * 100, 2)
     ys = sorted(est)
     for y in ys[-1:]:
         fr = est[y].get("FR", {})

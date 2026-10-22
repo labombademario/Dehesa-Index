@@ -1663,6 +1663,12 @@
    [
     "france_infosrapides_cultivos"
    ]
+  ],
+  "france-infosrapides/fruta.json": [
+   "france-infosrapides-series",
+   [
+    "france_infosrapides_series"
+   ]
   ]
  },
  "globs": {
