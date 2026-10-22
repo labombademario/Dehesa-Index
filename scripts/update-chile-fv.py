@@ -100,7 +100,8 @@ def consumer(years):
         lo, hi = num(r.get('Precio minimo')), num(r.get('Precio maximo'))
         if lo is None and hi is None: continue
         rg = (r.get('ID region') or '').strip(); names[rg] = (r.get('Region') or '').strip()
-        k = (rg, (r.get('Producto') or '').strip(), (r.get('Unidad') or '').strip(), 'fruit' if r['Grupo'] == 'Frutas' else 'veg')
+        pp = [z.strip() for z in (r.get('Producto') or '').split('|')] + ['', '']   # 'Producto|Variedad|Calidad'
+        k = (rg, (pp[0], '' if pp[1].lower() == 'sin especificar' else pp[1], pp[2]), (r.get('Unidad') or '').strip(), 'fruit' if r['Grupo'] == 'Frutas' else 'veg')
         wk.setdefault(k, {}).setdefault(r['Fecha termino'], []).append((lo, hi, (r.get('Tipo de punto monitoreo') or '').strip()))
     idx = []
     for rg in sorted(names, key=lambda x: int(x) if x.isdigit() else 99):
@@ -113,13 +114,13 @@ def consumer(years):
             kk = k[1]; sc = (ds[-1], len(v[ds[-1]]))
             if kk not in best or sc > best[kk][0]: best[kk] = (sc, k, v, ds)
         out = []
-        for pr, (sc, k, v, ds) in sorted(best.items()):
+        for (pr, var, gr), (sc, k, v, ds) in sorted(best.items()):
             def agg(d):
                 x = v[d]; los = [a for a, b, c in x if a is not None]; his = [b for a, b, c in x if b is not None]
                 return (min(los) if los else None, max(his) if his else None)
             lo, hi = agg(ds[-1]); pv = agg(ds[-2]) if len(ds) > 1 else (None, None)
             kinds = ', '.join(sorted({c for a, b, c in v[ds[-1]] if c}))
-            out.append([k[3], pr, '', kinds, k[2], '', lo, hi, pv[0], pv[1], ds[-1], 1.0 if re.match(r'^\$/kilo$', k[2].lower()) else None])
+            out.append([k[3], pr, var, kinds, k[2], gr, lo, hi, pv[0], pv[1], ds[-1], 1.0 if re.match(r'^\$/kilo$', k[2].lower()) else None])
         write(OUT / ('consumer-%s.json' % rg), {'schemaVersion': 1, 'generatedAt': now(), 'code': rg, 'city': names[rg], 'date': latest, 'ccy': 'CLP', 'cols': COLS, 'source': SRC['co'], 'rows': out})
         idx.append({'code': rg, 'city': names[rg], 'date': latest, 'n': len(out)})
     if len(idx) < 6: raise SystemExit('consumidor: pocas regiones (%d)' % len(idx))
