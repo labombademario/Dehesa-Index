@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T16:32:00Z",
+ "generatedAt": "2026-10-22T16:52:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 237,
+  "ok": 236,
   "late": 2,
-  "error": 3,
+  "error": 4,
   "not_run": 0,
   "unknown": 0
  },
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "f26cdefe",
+   "sha": "19784b2d",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/6df95a0b-c9a5-4362-9f39-f61b47b862d5",
-   "completedAt": "2026-10-22T16:22:44Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e739e643-da8e-4301-ae1c-bc24ce2133d0",
+   "completedAt": "2026-10-22T16:54:22Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T15:47:01.186042+00:00",
   "repoGeneratedAt": "2026-10-22T15:47:01.186042+00:00",
-  "checkedAt": "2026-10-22T16:32:00Z"
+  "checkedAt": "2026-10-22T16:52:00Z"
  },
  "pipelines": [
   {
@@ -535,7 +535,7 @@
    "crons": [
     "40 16 * * 3,4,5"
    ],
-   "nextRun": "2026-10-22T16:40:00Z",
+   "nextRun": "2026-10-23T16:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3719,7 +3719,7 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-22T15:22:10Z"
+     "lastChange": "2026-10-22T16:51:32Z"
     },
     {
      "path": "data/watch"
@@ -3754,7 +3754,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T16:19:55Z"
+     "lastChange": "2026-10-22T16:33:58Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -3842,8 +3842,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39807015017"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5766,18 +5766,19 @@
    "nextRun": "2026-10-28T07:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-21T07:59:53Z",
-    "durationSec": 24,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39565959684"
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T16:39:52Z",
+    "durationSec": 239,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39815824306",
+    "reason": "hubo datos invalidos descartados · datos invalidos: se descarta el cambio de data/wood-removals.json · ERROR    wood-removals.json                 madera BE: sin total reciente; madera DK: sin total reciente; madera BE: ultimo año 2020"
    },
    "recent": {
-    "runs": 3,
+    "runs": 4,
     "success": 3,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
