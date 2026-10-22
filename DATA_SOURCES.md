@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 149 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31805 series en el catalogo unificado.
+Resumen: 150 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31805 series en el catalogo unificado.
 
-## VERIFIED (149)
+## VERIFIED (150)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -41,6 +41,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `csp_lv` | Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk) | LV | CC-BY-4.0 | si/si | si | 51 |  |
 | `csu_cz` | Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area) | CZ | CZ-OPENDATA-FREE | si/si | si | 75 | None declared. Credit is given anyway. |
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 718 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
+| `desnz_fuel_prices` | UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito. |
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 340 | Modifications must be marked as such. |
 | `dgec_prix_petroliers` | Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `dila_jorf` | DILA — Journal officiel de la République française (données ouvertes JORF) | FR | CUSTOM | si/si | si | 0 | The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse … |

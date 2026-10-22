@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T10:45:18Z",
+ "generatedAt": "2026-10-22T10:47:49Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 148,
-  "sourcesApto": 135,
+  "sources": 149,
+  "sourcesApto": 136,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 318,
-  "datasets_apto": 189,
+  "datasets": 319,
+  "datasets_apto": 190,
   "datasets_condiciones": 119,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -495,6 +495,23 @@
    "redistribution": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
    "conditions": "Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agricultural Price Index, leche (UK milk prices and composition), sacrificio y producción de carne (cattle, sheep and pig slaughter), Farm Business Income, censos de ganado, producción de cereales y colza, huevos (incluido el comercio), aves, lácteos (disponibilidad, uso, producción y suministros) y Agriculture in the United Kingdom (capítulos 2 a 10 y 12 a 14; queda fuera el 11): todos «OGL v3.0 salvo indicación contraria» en GOV.UK. NO cubre las capas geoespaciales de Natural England/Defra con Non-Commercial Government Licence, las parcelas RPA para otros usuarios ni la Second Land Utilisation Survey (CC BY-NC-SA): ver defra_ncgl_geo y defra_rpa_land."
+  },
+  {
+   "id": "desnz_fuel_prices",
+   "name": "UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices",
+   "url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Department for Energy Security and Net Zero.",
+   "conditions": "Sin respaldo oficial implícito."
   },
   {
    "id": "destatis",
@@ -6175,6 +6192,21 @@
    "verdict": "apto",
    "sources": [
     "defra"
+   ]
+  },
+  {
+   "path": "data/uk-fuel-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "desnz_fuel_prices"
+   ],
+   "parts": [
+    {
+     "scope": "pais:UK",
+     "sourceId": "desnz_fuel_prices",
+     "verdict": "apto"
+    }
    ]
   },
   {

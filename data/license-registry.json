@@ -4579,6 +4579,32 @@
    "short": "Banco de Inglaterra",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Texto oficial explícito que remite a la OGL."
+  },
+  "desnz_fuel_prices": {
+   "name": "UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices",
+   "url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Department for Energy Security and Net Zero.",
+   "additionalRestrictions": "Sin respaldo oficial implícito.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "La página de GOV.UK de Weekly road fuel prices se publica bajo la Open Government Licence v3.0 salvo indicación contraria (22 oct 2026).",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "DESNZ (Reino Unido)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia OGL declarada en GOV.UK."
   }
  },
  "files": {
@@ -6701,6 +6727,12 @@
     "met_office"
    ],
    "notes": "Lluvia y temperatura media mensual por nacion y region climatica del Reino Unido (Met Office, HadUK-Grid, OGL v3.0). Normales 1991-2020 calculadas por Dehesa Index."
+  },
+  "data/uk-fuel-stats.json": {
+   "byCountry": {
+    "UK": "desnz_fuel_prices"
+   },
+   "notes": "Precio medio semanal de surtidor del gasóleo y la gasolina en el Reino Unido, con impuesto especial e IVA (DESNZ, OGL v3.0)."
   }
  },
  "derived": [
