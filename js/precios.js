@@ -338,7 +338,8 @@
   function productEmoji(nameKey) { return PRODUCT_EMOJI[nameKey] ? '<span class="di-emoji" aria-hidden="true">' + PRODUCT_EMOJI[nameKey] + '</span> ' : ''; }
   // En la UE la Comisión no publica DAP ni MOP sino un precio agregado por nutriente: con ubicación Europa se nombra así
   var EU_FERT = { dap: { es: 'Abonos fosfatados (P), agregado UE', en: 'Phosphate fertilisers (P), EU aggregate', fr: 'Engrais phosphatés (P), agrégat UE', it: 'Fertilizzanti fosfatici (P), aggregato UE' }, potasa: { es: 'Abonos potásicos (K), agregado UE', en: 'Potash fertilisers (K), EU aggregate', fr: 'Engrais potassiques (K), agrégat UE', it: 'Fertilizzanti potassici (K), aggregato UE' } };
-  function productName(nameKey) { if (EU_FERT[nameKey] && state.location === 'eu') return EU_FERT[nameKey][lang()] || EU_FERT[nameKey].es; return (D.NAMES[lang()] || D.NAMES.es)[nameKey] || nameKey; }
+  var GAS_NAME = { us: { es: 'Gas natural · Henry Hub (EE. UU.)', en: 'Natural gas · Henry Hub (US)', fr: 'Gaz naturel · Henry Hub (États-Unis)', it: 'Gas naturale · Henry Hub (USA)' }, eu: { es: 'Gas natural · TTF (Europa)', en: 'Natural gas · TTF (Europe)', fr: 'Gaz naturel · TTF (Europe)', it: 'Gas naturale · TTF (Europa)' } };
+  function productName(nameKey, reg) { if (nameKey === 'gas_natural') { var g = GAS_NAME[(reg || state.location) === 'eu' ? 'eu' : 'us']; return g[lang()] || g.es; } if (EU_FERT[nameKey] && state.location === 'eu') return EU_FERT[nameKey][lang()] || EU_FERT[nameKey].es; return (D.NAMES[lang()] || D.NAMES.es)[nameKey] || nameKey; }
   function catLabel(catId) { var c = (D.CATS[lang()] || D.CATS.es)[catId]; return c ? c.label : catId; }
   function productsInCat(catId) {
     return PRODUCTS.filter(function (e) { return e.catId === catId; });
@@ -1391,7 +1392,7 @@
     var cu = l.c || 'EUR', f = function (v) { return D.fmtNumber(v) + ' ' + cu + '/t'; };
     lockProductModal();
     var chart = window.DehesaChart.render({ series: [{ name: productName(entry.nameKey), color: '#2f6b4a', pts: pts }], xMode: 'time', yTitle: (l.c || 'EUR') + '/t', aria: productName(entry.nameKey) + ' · ' + lonjaLabel(l), noLegend: true, vFmt: function (v) { return D.fmtNumber(v); } });
-    document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(lonjaLabel(l)) + ' · ' + esc(X[0]) + '</h2><button type="button" class="di-modal-close" id="di-history-close" aria-label="' + esc(X[4]) + '">✕</button></div>' + chart +
+    document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey, h.region)) + ' · ' + esc(lonjaLabel(l)) + ' · ' + esc(X[0]) + '</h2><button type="button" class="di-modal-close" id="di-history-close" aria-label="' + esc(X[4]) + '">✕</button></div>' + chart +
       '<p class="di-field-hint" style="margin:10px 0 2px">' + esc(X[1]) + ': <strong>' + esc(f(last[1])) + '</strong> (' + esc(l.f === 'm' ? monthTxt(last[0]) : S.fmtDate(last[0], lang())) + ') · ' + esc(X[2]) + ': ' + esc(f(mn)) + ' · ' + esc(X[3]) + ': ' + esc(f(mx)) + '</p><p class="di-field-hint" style="margin:2px 0 0">' + esc(l.o && l.c === 'PLN' ? ({ es: 'Serie mensual de GUS (Statistics Poland, BDL) en zlotys, tal como la publica la fuente.', en: 'Monthly series from GUS (Statistics Poland, BDL) in zlotys, as published by the source.', fr: 'Série mensuelle de GUS (Statistics Poland, BDL) en zlotys, telle que publiée par la source.', it: 'Serie mensile di GUS (Statistics Poland, BDL) in złoty, come pubblicata dalla fonte.' })[lang()] : l.o ? ({ es: 'Serie mensual de GUS (Statistics Poland, BDL) en ' + l.o + ', convertida a euros con la media mensual del BCE de cada mes.', en: 'Monthly series from GUS (Statistics Poland, BDL) in ' + l.o + ', converted to euros with the ECB monthly average of each month.', fr: 'Série mensuelle de GUS (Statistics Poland, BDL) en ' + l.o + ', convertie en euros avec la moyenne mensuelle de la BCE de chaque mois.', it: 'Serie mensile di GUS (Statistics Poland, BDL) in ' + l.o + ', convertita in euro con la media mensile della BCE di ogni mese.' })[lang()] : X[5]) + '</p></div></div>';
     var ov = document.getElementById('di-history-overlay'); ov.addEventListener('mousedown', function (e) { if (e.target === ov) closeLonjaHistory(); });
     document.getElementById('di-history-close').addEventListener('click', closeLonjaHistory); bindModalKeyboard(closeLonjaHistory);
@@ -1419,7 +1420,7 @@
     // el histórico completo de este producto (y del de comparación) se descarga ahora, no al cargar la página
     var needHist = historyRegions([entry, PRODUCT_BY_KEY[h.compareKey]].filter(Boolean)).filter(function (r) { return !r.histDone; });
     if (needHist.length) {
-      document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(t.historyButtonTitle) + '</h2><button type="button" class="di-modal-close" id="di-history-close">✕</button></div><div class="di-field-hint" style="padding:40px 12px;text-align:center" role="status">…</div></div></div>';
+      document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey, h.region)) + ' · ' + esc(t.historyButtonTitle) + '</h2><button type="button" class="di-modal-close" id="di-history-close">✕</button></div><div class="di-field-hint" style="padding:40px 12px;text-align:center" role="status">…</div></div></div>';
       var ov = document.getElementById('di-history-overlay'); ov.addEventListener('mousedown', function (e) { if (e.target === ov) closeHistory(); }); document.getElementById('di-history-close').addEventListener('click', closeHistory); bindModalKeyboard(closeHistory);
       Promise.all(needHist.map(loadHistory)).then(function () { if (state.history === h) renderHistoryModal(); });
       return;
@@ -1531,7 +1532,7 @@
     var html =
       '<div class="di-modal-overlay" id="di-history-overlay">' +
         '<div class="di-big-modal-card">' +
-          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(t.historyButtonTitle) + '</h2>' +
+          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey, h.region)) + ' · ' + esc(t.historyButtonTitle) + '</h2>' +
             '<button type="button" class="di-modal-close" id="di-history-close">✕</button></div>' +
           '<div class="di-region-btns">' + regionBtns + '</div>' +
           '<div class="di-range-btns">' + rangeBtns + '</div>' +
@@ -1619,7 +1620,7 @@
     var html =
       '<div class="di-modal-overlay" id="di-calc-overlay">' +
         '<div class="di-big-modal-card" style="max-width:440px;">' +
-          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(t.calcButtonTitle) + '</h2>' +
+          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey, h.region)) + ' · ' + esc(t.calcButtonTitle) + '</h2>' +
             '<button type="button" class="di-modal-close" id="di-calc-close">✕</button></div>' +
           '<div class="di-region-btns">' + regionBtns + '</div>' +
           '<div class="di-field-hint" style="margin-bottom:12px;">' + esc(t.calcTodayPriceLabel) + ' <b>' + esc(up.priceLabel) + esc(up.unit) + '</b></div>' +
@@ -1735,7 +1736,7 @@
     var html =
       '<div class="di-modal-overlay" id="di-alert-overlay">' +
         '<div class="di-big-modal-card" style="max-width:440px;">' +
-          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(t.alertButtonTitle) + '</h2>' +
+          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey, h.region)) + ' · ' + esc(t.alertButtonTitle) + '</h2>' +
             '<button type="button" class="di-modal-close" id="di-alert-close">✕</button></div>' +
           bodyHtml +
         '</div>' +
