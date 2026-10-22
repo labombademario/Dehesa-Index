@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T16:16:00Z",
+ "generatedAt": "2026-10-22T16:32:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 237,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "0f16595e",
+   "sha": "f26cdefe",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/92b81fcd-ca4b-43ea-a8d5-576c94ba07cb",
-   "completedAt": "2026-10-22T16:11:20Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/6df95a0b-c9a5-4362-9f39-f61b47b862d5",
+   "completedAt": "2026-10-22T16:22:44Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T15:47:01.186042+00:00",
   "repoGeneratedAt": "2026-10-22T15:47:01.186042+00:00",
-  "checkedAt": "2026-10-22T16:16:00Z"
+  "checkedAt": "2026-10-22T16:32:00Z"
  },
  "pipelines": [
   {
@@ -3754,7 +3754,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T16:00:21Z"
+     "lastChange": "2026-10-22T16:19:55Z"
     },
     {
      "path": "data/source-candidates.json",
