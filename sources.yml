@@ -1440,6 +1440,35 @@ sources:
     data: [uk-fuel-stats.json]
     log: uk-fuel-log.txt
     message: Precio semanal del gasoleo y la gasolina en el Reino Unido (DESNZ)
+  - id: uk-fv-wholesale
+    name: Update England and Wales wholesale fruit and vegetable prices (Defra)
+    cron: ['25 13 * * 2,5']
+    script: scripts/update-uk-fv-wholesale.py
+    timeout: 10
+    continue: true
+    data: [uk-fv-stats.json]
+    log: uk-fv-log.txt
+    message: Precios mayoristas de fruta y hortaliza de Inglaterra y Gales (Defra)
+  - id: uk-ni-market
+    name: Update Northern Ireland weekly livestock prices (DAERA Agricultural Market Report)
+    cron: ['10 14 * * 5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-uk-ni-market.py
+    timeout: 20
+    continue: true
+    data: [uk-ni-market-stats.json]
+    log: uk-ni-market-log.txt
+    message: Precios semanales del ganado de Irlanda del Norte (DAERA)
+  - id: uk-scotland
+    name: Update Scotland June agricultural census (Scottish Government)
+    cron: ['45 9 * * 1']
+    pre: ['pip install openpyxl']
+    script: scripts/update-uk-scotland.py
+    timeout: 15
+    continue: true
+    data: [uk-scotland-stats.json]
+    log: uk-scotland-log.txt
+    message: Censo agrario de junio de Escocia (Gobierno de Escocia)
   - id: us-ppi
     name: Update US producer price indices for farm and food products (BLS PPI)
     cron: ['20 14 * * 4']

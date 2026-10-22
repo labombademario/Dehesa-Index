@@ -1,0 +1,37 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Scotland June agricultural census (Scottish Government)
+on:
+  schedule:
+    - cron: '45 9 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-uk-scotland
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - run: pip install openpyxl
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-uk-scotland.py
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/uk-scotland-stats.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/uk-scotland-stats.json
+      - name: Publicar
+        if: always()
+        run: bash scripts/publish-data.sh "Censo agrario de junio de Escocia (Gobierno de Escocia)" data/uk-scotland-stats.json data/uk-scotland-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

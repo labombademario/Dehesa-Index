@@ -1,0 +1,37 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Northern Ireland weekly livestock prices (DAERA Agricultural Market Report)
+on:
+  schedule:
+    - cron: '10 14 * * 5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-uk-ni-market
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - run: pip install openpyxl
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-uk-ni-market.py
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/uk-ni-market-stats.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/uk-ni-market-stats.json
+      - name: Publicar
+        if: always()
+        run: bash scripts/publish-data.sh "Precios semanales del ganado de Irlanda del Norte (DAERA)" data/uk-ni-market-stats.json data/uk-ni-market-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

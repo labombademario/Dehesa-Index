@@ -4605,6 +4605,58 @@
    "short": "DESNZ (Reino Unido)",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Licencia OGL declarada en GOV.UK."
+  },
+  "scottish_government": {
+   "name": "Scottish Government (RESAS) — agricultural statistics",
+   "url": "https://www.gov.scot/collections/agriculture-fisheries-and-rural-statistics/",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.gov.scot/crown-copyright/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Gobierno de Escocia.",
+   "additionalRestrictions": "Excluye logotipos y elementos gráficos.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Las publicaciones de gov.scot se ofrecen bajo la Open Government Licence v3.0 salvo los elementos gráficos y lo indicado (22 oct 2026).",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "Gobierno de Escocia",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia OGL declarada por el organismo."
+  },
+  "daera_ni": {
+   "name": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "url": "https://www.daera-ni.gov.uk/articles/agricultural-market-reports",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.daera-ni.gov.uk/articles/crown-copyright-daera",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "additionalRestrictions": "Excluye logotipos, datos personales y mapas de OSNI.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Página de copyright de DAERA: «Information featured on this website, excluding logos, can be re-used under the OGL» (22 oct 2026). La página del informe no repite la licencia.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "DAERA",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "OGL declarada para el sitio web; la publicacion no la repite."
   }
  },
  "files": {
@@ -6745,6 +6797,24 @@
     "defra"
    ],
    "notes": "Estructura de la industria agraria de Inglaterra en junio por condado / autoridad unitaria (OGL v3.0); celdas confidenciales '#' como vacias."
+  },
+  "data/uk-fv-stats.json": {
+   "byCountry": {
+    "UK": "defra"
+   },
+   "notes": "Precios mayoristas de fruta, hortaliza y flor de produccion local en Inglaterra y Gales (Defra, OGL v3.0)."
+  },
+  "data/uk-ni-market-stats.json": {
+   "byCountry": {
+    "UK": "daera_ni"
+   },
+   "notes": "Precio medio semanal en canal de vacuno y cordero en Irlanda del Norte (DAERA, Agricultural Market Report)."
+  },
+  "data/uk-scotland-stats.json": {
+   "byCountry": {
+    "UK": "scottish_government"
+   },
+   "notes": "Censo agrario de junio de Escocia: cultivos, ganado y mano de obra desde 2016 (Gobierno de Escocia, OGL v3.0)."
   }
  },
  "derived": [
