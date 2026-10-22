@@ -313,6 +313,22 @@ if sec == 'uk4':
             open('probe/out/aib760.txt', 'w').write(t)
         except Exception as e: p('ERR pdf', e)
 
+if sec == 'ersreg2':
+    import subprocess
+    p('=== ERSREG2')
+    for u in ['https://www.ers.usda.gov/sites/default/files/images/reglink.xls', 'https://ers.usda.gov/sites/default/files/images/reglink.xls', 'https://www.ers.usda.gov/sites/default/files/_laserfiche/DataFiles/42298/reglink.xls']:
+        st, h, b = head(u, timeout=90)
+        if st == 200 and len(b) > 5000:
+            os.makedirs('probe/out', exist_ok=True); open('probe/out/reglink.xls', 'wb').write(b); p('SAVED', len(b), b[:8]); break
+    try:
+        subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', 'xlrd'], check=False)
+        import xlrd
+        wb = xlrd.open_workbook('probe/out/reglink.xls')
+        for sh in wb.sheets():
+            p('SHEET', sh.name, sh.nrows, sh.ncols)
+            for r in range(min(8, sh.nrows)): p(sh.row_values(r))
+    except Exception as e: p('ERR xls', e)
+
 if sec == 'wds':
     W = 'https://www150.statcan.gc.ca/t1/wds/rest/'
     body = json.dumps([{"productId": 32100077}]).encode()
