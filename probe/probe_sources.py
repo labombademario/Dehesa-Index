@@ -248,6 +248,17 @@ if sec == 'ukmacro2':
               'https://www.gov.uk/api/search.json?q=regional+gross+value+added+ITL1&count=8&fields=title&fields=link']:
         st, h, b = head(u, timeout=90); p(b[:1500].decode('utf-8', 'replace'))
 
+if sec == 'ersreg':
+    p('=== ERSREG')
+    for u in ['https://www.ers.usda.gov/data-products/arms-farm-financial-and-crop-production-practices/documentation',
+              'https://www.ers.usda.gov/webdocs/publications/42298/32489_aib760_002.pdf',
+              'https://www.ers.usda.gov/topics/farm-economy/farm-structure-and-organization/farm-resource-regions',
+              'https://www.ers.usda.gov/data-products/arms-farm-financial-and-crop-production-practices/']:
+        st, h, b = head(u, timeout=90)
+        t = b.decode('utf-8', 'replace')
+        for m in sorted(set(re.findall(r'href="([^"]*(?:egion|county|county-to)[^"]*\.(?:xlsx?|csv|zip|pdf))"', t, re.I)))[:20]: p('LINK', m)
+        p(t[:300].replace('\n', ' '))
+
 if sec == 'wds':
     W = 'https://www150.statcan.gc.ca/t1/wds/rest/'
     body = json.dumps([{"productId": 32100077}]).encode()
