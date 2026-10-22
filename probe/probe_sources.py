@@ -281,6 +281,38 @@ if sec == 'uk3':
     st, h, b = head('https://www.ers.usda.gov/webdocs/DataFiles/Farm_Resource_Regions/Farm_Resource_Regions.xlsx', timeout=60)
     st, h, b = head('https://www.ers.usda.gov/data-products/arms-farm-financial-and-crop-production-practices/documentation/', timeout=60)
 
+if sec == 'uk4':
+    import zipfile, io, subprocess
+    p('=== UK4')
+    N = 'https://www.nomisweb.co.uk/api/v01/dataset/'
+    st, h, b = head(N + 'NM_17_1/cell.def.sdmx.json', timeout=60)
+    try:
+        for c in json.loads(b)['structure']['codelists']['codelist'][0]['code']:
+            d = c['description']['value']
+            if re.search(r'(?i)unemploy|economically active|employment rate', d): p('CELL', c['value'], d[:110])
+    except Exception as e: p('ERR', e, b[:300])
+    st, h, b = head('https://assets.publishing.service.gov.uk/media/6ab2606dfceb6fb3a6500fa9/Agricultural_Workforce_in_England-20260924.ods', timeout=120)
+    try:
+        z = zipfile.ZipFile(io.BytesIO(b)); x = z.read('content.xml').decode('utf-8')
+        for m in re.finditer(r'<table:table table:name="([^"]*)"', x): p('SHEET', m.group(1))
+        os.makedirs('probe/out', exist_ok=True); open('probe/out/workforce_content.xml', 'w').write(x[:0])
+        for name in re.findall(r'<table:table table:name="([^"]*)"', x):
+            if re.search(r'(?i)age', name):
+                blk = x[x.index('<table:table table:name="%s"' % name):]; blk = blk[:blk.index('</table:table>')]
+                rows = re.findall(r'<table:table-row[^>]*>(.*?)</table:table-row>', blk, re.S)[:25]
+                p('== SHEET', name)
+                for r in rows: p(' | '.join(re.sub(r'<[^>]+>', '', c) for c in re.findall(r'<table:table-cell[^>]*>(.*?)</table:table-cell>', r, re.S))[:230])
+    except Exception as e: p('ERR ods', e)
+    st, h, b = head('https://ers.usda.gov/webdocs/publications/42298/32489_aib-760_002.pdf?v=9694.8', timeout=120)
+    if st == 200:
+        open('/tmp/aib.pdf', 'wb').write(b)
+        try:
+            t = subprocess.run(['pdftotext', '-layout', '/tmp/aib.pdf', '-'], capture_output=True, text=True).stdout
+            p('PDFLEN', len(t)); i = t.find('Heartland'); p(t[:0])
+            for m in re.finditer(r'(?i)(county|counties) (list|by)|appendix', t): p('KW', t[max(0, m.start() - 60):m.start() + 120].replace('\n', ' '))
+            open('probe/out/aib760.txt', 'w').write(t)
+        except Exception as e: p('ERR pdf', e)
+
 if sec == 'wds':
     W = 'https://www150.statcan.gc.ca/t1/wds/rest/'
     body = json.dumps([{"productId": 32100077}]).encode()
