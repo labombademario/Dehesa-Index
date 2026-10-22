@@ -1,0 +1,1 @@
+semilla desde la ejecucion de prueba; la pipeline la sustituye en su primera ejecucion

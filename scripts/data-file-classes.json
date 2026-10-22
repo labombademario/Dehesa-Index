@@ -409,6 +409,10 @@
     "file": "js/perfil-agrario.js",
     "pattern": "data/worldbank-agri.json"
    }
+  },
+  "data/france-saa-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de catalogo de la SAA de Francia; las lee build-series-registry y el catalogo, no el navegador."
   }
  },
  "prefixes": {
@@ -443,6 +447,22 @@
     "file": "js/watchlist.js",
     "pattern": "data/watch/"
    }
+  },
+  "data/france-saa/": {
+   "class": "BUILD_ONLY",
+   "note": "Estadisticas agrarias anuales de Francia por departamento y region (Agreste SAA): solo lo leen la pipeline y las pruebas; el navegador usa el catalogo (data/catalog) y aun no hay pagina que lo cargue."
+  },
+  "data/france-rica/": {
+   "class": "BUILD_ONLY",
+   "note": "Cuentas de las explotaciones de Francia (Agreste RICA): solo lo leen la pipeline y las pruebas; el navegador usa el catalogo (data/catalog) y aun no hay pagina que lo cargue."
+  },
+  "data/france-comex/": {
+   "class": "BUILD_ONLY",
+   "note": "Comercio exterior de Francia por producto y pais (Agreste, aduanas): solo lo leen la pipeline y las pruebas; el navegador usa el catalogo (data/catalog) y aun no hay pagina que lo cargue."
+  },
+  "data/france-bulconj/": {
+   "class": "BUILD_ONLY",
+   "note": "Boletin mensual de coyuntura de Francia, una hoja por fichero (Agreste BulConj): solo lo leen la pipeline y las pruebas; el navegador usa el catalogo (data/catalog) y aun no hay pagina que lo cargue."
   }
  }
 }

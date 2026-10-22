@@ -4763,6 +4763,32 @@
    "notes": "Cuatro conjuntos de CSV anuales (COMEXCOP, COMEXLAIT, COMEXOEUFS, COMEXIAA) por indicador, producto, periodo y socio comercial.",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr para los conjuntos Agreste; mentions légales del dominio no leídas por completo; los datos de origen son de aduanas."
+  },
+  "agreste_bulconj": {
+   "name": "France — Agreste / SSP, Bulletin de conjoncture mensuel (BulConj)",
+   "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/BulConj/detail/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Agreste (SSP), Bulletin de conjoncture, sous Licence Ouverte",
+   "short": "Agreste · BulConj",
+   "additionalRestrictions": "Citar Agreste/SSP; el boletín recoge cotizaciones y datos de terceros (FranceAgriMer, Eurostat, INSEE, bolsas), que se publican tal cual los reúne Agreste.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Algunas tablas reproducen cotizaciones de FranceAgriMer, Eurostat o bolsas; la Licence Ouverte del conjunto es la declarada por Agreste.",
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "El conjunto «Agreste - Bulletin de conjoncture» de data.gouv.fr declara «Licence Ouverte / Open Licence» (fr-lo); la ficha BulConj ofrece el libro Excel. No se ha leído el texto íntegro de las mentions légales del sitio, por eso la confianza es media.",
+   "used": true,
+   "notes": "Libro mensual de 40 hojas con tablas de precios, cotizaciones, índices, producción y comercio por sector.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr; mentions légales no leídas por completo; el boletín incluye cotizaciones de terceros.",
+   "aliases": []
   }
  },
  "files": {
@@ -6994,6 +7020,24 @@
     "agreste_comex"
    ],
    "notes": "Registro de la última ejecución de update-fr-comex.py."
+  },
+  "data/france-bulconj/": {
+   "sources": [
+    "agreste_bulconj"
+   ],
+   "notes": "Boletín mensual de coyuntura de Francia (scripts/update-fr-bulconj.py): una hoja por fichero, series mensuales, de campaña y anuales; se conservan los puntos que el libro ya no trae."
+  },
+  "data/france-bulconj-stats.json": {
+   "byCountry": {
+    "FR": "agreste_bulconj"
+   },
+   "notes": "Precios y cotizaciones mensuales seleccionados del boletín (scripts/update-fr-bulconj.py), para el catálogo."
+  },
+  "data/france-bulconj-log.txt": {
+   "sources": [
+    "agreste_bulconj"
+   ],
+   "notes": "Registro de la última ejecución de update-fr-bulconj.py."
   }
  },
  "derived": [

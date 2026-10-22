@@ -1633,6 +1633,12 @@
    [
     "france_comex"
    ]
+  ],
+  "france-bulconj/index.json": [
+   "france-bulconj-index",
+   [
+    "france_bulconj_index"
+   ]
   ]
  },
  "globs": {
@@ -1842,6 +1848,12 @@
    "france-saa",
    [
     "france_saa"
+   ]
+  ],
+  "france-bulconj/*.json": [
+   "france-bulconj",
+   [
+    "france_bulconj"
    ]
   ]
  },

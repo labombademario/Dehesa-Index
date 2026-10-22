@@ -5158,3 +5158,27 @@ def indices_index(doc, errs, warns, stats):
     for b in doc["baskets"]:
         if b["url"] != "/data/indices/%s.json" % b["id"]: errs.append("%s: enlace incorrecto" % b["id"])
     stats["baskets"] = len(ids)
+
+
+# Boletin mensual de coyuntura de Francia (Agreste BulConj)
+def france_bulconj_index(doc, errs, warns, stats):
+    for k, d in doc["sheets"].items():
+        if not d.get("file", "").endswith(".json") or d.get("series", 0) < 1: errs.append("france-bulconj index: hoja %s sin fichero o sin series" % k); return
+    stats["hojas"] = len(doc["sheets"])
+
+
+def france_bulconj(doc, errs, warns, stats):
+    """Cada serie trae periodos AAAA-MM, AAAA-AAAA (campaña, consecutiva) o AAAA, valores numericos finitos, ids unicos y la hoja no queda vacia."""
+    import re as _re
+    ids = set(); n = 0
+    for s in doc["series"]:
+        if s["id"] in ids: errs.append("france-bulconj %s: id repetido %s" % (doc["sheet"], s["id"])); return
+        ids.add(s["id"])
+        for p, v in s["pts"].items():
+            m = _re.fullmatch(r"(\d{4})(?:-(\d{2}|\d{4}))?", p)
+            if not m or not (1950 <= int(m.group(1)) <= 2100): errs.append("france-bulconj %s %s: periodo %r" % (doc["sheet"], s["id"], p)); return
+            if len(p) == 9 and int(p[5:]) != int(p[:4]) + 1: errs.append("france-bulconj %s %s: campaña %r no consecutiva" % (doc["sheet"], s["id"], p)); return
+            if len(p) == 7 and not 1 <= int(p[5:]) <= 12: errs.append("france-bulconj %s %s: mes %r" % (doc["sheet"], s["id"], p)); return
+            if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or abs(v) > 1e12: errs.append("france-bulconj %s %s %s: valor %r" % (doc["sheet"], s["id"], p, v)); return
+            n += 1
+    stats["series"] = len(doc["series"]); stats["puntos"] = n

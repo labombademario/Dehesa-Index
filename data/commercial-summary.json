@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T21:07:22Z",
+ "generatedAt": "2026-10-22T21:39:06Z",
  "summary": {
-  "sources": 155,
-  "sourcesApto": 142,
+  "sources": 156,
+  "sourcesApto": 143,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 336,
-  "datasets_apto": 205,
+  "datasets": 339,
+  "datasets_apto": 208,
   "datasets_condiciones": 121,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -33,6 +33,10 @@
   },
   "agence_bio": {
    "name": "Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr)",
+   "verdict": "apto"
+  },
+  "agreste_bulconj": {
+   "name": "France — Agreste / SSP, Bulletin de conjoncture mensuel (BulConj)",
    "verdict": "apto"
   },
   "agreste_comex": {

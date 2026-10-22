@@ -1,0 +1,43 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update France monthly agricultural bulletin of Agreste (prices, quotations, indices and trade by sector)
+on:
+  schedule:
+    - cron: '20 9 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-fr-bulconj
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+      - run: pip install xlrd
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-fr-bulconj.py
+        timeout-minutes: 35
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/france-bulconj/index.json data/france-bulconj-stats.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/france-bulconj/index.json data/france-bulconj-stats.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/france-bulconj) data/france-bulconj-stats.json
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Boletin mensual de coyuntura agraria de Francia, precios y cotizaciones por sector (Agreste)" data/france-bulconj/index.json data/france-bulconj-stats.json data/france-bulconj-log.txt data/france-bulconj data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}
