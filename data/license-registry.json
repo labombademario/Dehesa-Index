@@ -6613,6 +6613,12 @@
     "aafc_wholesale"
    ],
    "notes": "Canadá: precios mayoristas de fruta y hortaliza por ciudad (scripts/update-canada-wholesale.py)"
+  },
+  "data/cl/": {
+   "sources": [
+    "odepa_chile"
+   ],
+   "notes": "Chile: precios mayoristas y de consumidor de fruta y hortaliza (scripts/update-chile-fv.py)"
   }
  },
  "derived": [

@@ -1,0 +1,27 @@
+name: Dehesa Data — Chile fruta y hortaliza (ODEPA)
+on:
+  schedule:
+    - cron: '20 4 * * 2-6'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Precios mayoristas y de consumidor de fruta y hortaliza de Chile (ODEPA, CC BY)
+        run: python scripts/update-chile-fv.py
+      - name: Publicar
+        uses: ./.github/actions/publish
+        with:
+          optional: data/cl
+          message: "data: Chile fruta y hortaliza (ODEPA)"
+          user: "Dehesa Index Bot"
