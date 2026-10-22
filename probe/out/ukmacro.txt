@@ -1,0 +1,87 @@
+=== UKMACRO
+GET https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=TYPE480&date=latest&gender=0&c_age=200&measures=20100&select=date_name,geography_name,geography_code,obs_value -> 200 text/csv 547
+"DATE_NAME","GEOGRAPHY_NAME","GEOGRAPHY_CODE","OBS_VALUE"
+"2025","North East","E12000001",2762746
+"2025","North West","E12000002",7772854
+"2025","Yorkshire and The Humber","E12000003",5672166
+"2025","East Midlands","E12000004",5085641
+"2025","West Midlands","E12000005",6205854
+"2025","East","E12000006",6613801
+"2025","London","E12000007",9122909
+"2025","South East","E12000008",9691844
+"2025","South West","E12000009",5906997
+"2025","Wales","W92000004",3175181
+"2025","Scotland","S92000003",5545500
+"2025","Northern Ireland","N92000002",1928446
+
+GET https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=2092957699&date=2010,latest&gender=0&c_age=200&measures=20100&select=date_name,geography_name,obs_value -> 200 text/csv 93
+"DATE_NAME","GEOGRAPHY_NAME","OBS_VALUE"
+"2010","England",52642452
+"2025","England",58834812
+
+GET https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.data.csv?geography=TYPE480&date=latest&variable=83,84,45&measures=20599&select=date_name,geography_name,variable_name,obs_value -> 200 text/csv 0
+
+GET https://www.nomisweb.co.uk/api/v01/dataset/NM_17_1.data.csv?geography=TYPE480&date=latest-5,latest&variable=84&measures=20599&select=date_name,geography_name,variable_name,obs_value -> 200 text/csv 0
+
+GET https://api.beta.ons.gov.uk/v1/datasets?limit=200 -> 200 application/json 298742
+DS wellbeing-local-authority Personal well-being estimates by local authority
+DS weekly-deaths-region Deaths registered weekly in England and Wales by region
+DS uk-business-by-enterprises-and-local-units UK Business: Activity, Size and Location
+DS sexual-orientation-by-region Sexual orientation by English regions and UK countries
+DS regional-gdp-by-year Annual GDP for England, Wales and the English regions
+DS regional-gdp-by-quarter Quarterly GDP for England, Wales and the English regions
+DS older-people-net-internal-migration Local authority ageing statistics, net internal migration people aged 65 and over and 85 and over
+DS older-people-economic-activity Local authority ageing statistics, older people economic activity
+DS gva-by-industry-by-local-authority GVA by industry by local authority
+DS gdp-to-four-decimal-places GDP monthly estimate (incorporating the Index of Services and Index of Production)
+DS gdp-by-local-authority GDP by local authority
+DS ashe-tables-9-and-10 Earnings and hours worked, place of work and place of residence by Parliamentary constituency: ASHE Tables 9 and 10
+DS ashe-tables-7-and-8 Earnings and hours worked, place of work and residence by local authority: ASHE Tables 7 and 8 
+DS ashe-tables-3 Earnings and hours worked, region by occupation by two-digit SOC: ASHE Table 3
+DS ashe-tables-27-and-28 Earnings and hours worked, place of work and place of residence by local enterprise partnerships: ASHE Tables 27 and 28
+DS ashe-tables-26 Earnings and hours worked, care workers: ASHE Table 26
+DS ashe-tables-25 Earnings and hours worked, UK region by public and private sector: ASHE Table 25
+DS ashe-tables-20 Earnings and hours worked, age group by occupation by two-digit SOC: ASHE Table 20
+DS ashe-tables-11-and-12 Earnings and Hours Worked, Work and Residence-Based Travel to Work Area: ASHE Tables 11 and 12
+DS ashe-table-5 Earnings and Hours Worked, UK Region by Industry by Two-Digit SIC: ASHE Table 5
+GET https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/regionalgrossdomesticproductallitlregions/current/data -> 404 text/html 400
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Page not found - Office for National Statistics</title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1.0,user-scalable=1" name="viewport">
+        <meta name="theme-color" content="#58595B">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#58595B">
+
+        
+
+        
+        
+GET https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/regionalgrossdomesticproductallnutslevelregions/current/data -> 404 text/html 400
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Page not found - Office for National Statistics</title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1.0,user-scalable=1" name="viewport">
+        <meta name="theme-color" content="#58595B">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#58595B">
+
+        
+
+        
+        
+GET https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/regionaleconomicactivitybygrossdomesticproductuk/1998to2023/data -> 429 text/html; charset=UTF-8 400
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+            Rate limited - too many HTTP requests
+        </title>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,user-scalable=1" name="viewport">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#58595B">
+<meta name="apple-mobile-web-app-status-bar-style" content="#58595B">
+<style>/
