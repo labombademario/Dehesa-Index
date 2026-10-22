@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T03:07:15Z",
+ "generatedAt": "2026-10-22T04:27:54Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,8 +10,8 @@
   "sourcesApto": 133,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 313,
-  "datasets_apto": 184,
+  "datasets": 316,
+  "datasets_apto": 187,
   "datasets_condiciones": 119,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -1727,7 +1727,7 @@
   },
   {
    "id": "ons",
-   "name": "UK Office for National Statistics (consumer price index)",
+   "name": "UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS)",
    "url": "https://www.ons.gov.uk/economy/inflationandpriceindices",
    "country": "UK",
    "licenseId": "OGL-UK-3.0",
@@ -1740,7 +1740,7 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
-   "conditions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice de precios de consumo (CPI, D7BT)."
+   "conditions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de precios de consumo (CPI, D7BT) y, vía NOMIS (servicio del ONS), la población, la tasa de paro y el valor añadido bruto por región (mismo régimen OGL v3.0)."
   },
   {
    "id": "pl_akcyza_rm",
@@ -2735,14 +2735,6 @@
    ]
   },
   {
-   "path": "data/uk-regions-macro.json",
-   "scope": "fichero",
-   "verdict": "apto",
-   "sources": [
-    "ons"
-   ]
-  },
-  {
    "path": "data/australia-trade-stats.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -2908,6 +2900,14 @@
    "verdict": "apto",
    "sources": [
     "aafc_drought"
+   ]
+  },
+  {
+   "path": "data/canada-farm-prices-prov.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statcan"
    ]
   },
   {
@@ -6122,6 +6122,14 @@
    ]
   },
   {
+   "path": "data/uk-regions-macro.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "ons"
+   ]
+  },
+  {
    "path": "data/uk-stats.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -6488,6 +6496,21 @@
    "verdict": "apto",
    "sources": [
     "usbr_rise"
+   ]
+  },
+  {
+   "path": "data/us-resource-regions.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    }
    ]
   },
   {

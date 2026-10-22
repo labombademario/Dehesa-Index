@@ -35,27 +35,17 @@
    "type": "object",
    "required": [
     "pop",
-    "age",
-    "unemp",
-    "epop"
+    "unemp"
    ]
   },
   "regions": {
    "type": "object",
-   "minProperties": 8,
+   "minProperties": 12,
    "additionalSchema": {
     "type": "object",
     "minProperties": 2,
     "properties": {
      "pop": {
-      "type": "array",
-      "items": {
-       "type": "array",
-       "minItems": 2,
-       "maxItems": 2
-      }
-     },
-     "age": {
       "type": "array",
       "items": {
        "type": "array",
@@ -71,7 +61,15 @@
        "maxItems": 2
       }
      },
-     "epop": {
+     "gva": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     },
+     "gvapc": {
       "type": "array",
       "items": {
        "type": "array",
