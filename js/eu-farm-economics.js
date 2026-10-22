@@ -51,13 +51,19 @@
     root.innerHTML = '<h2 class="cof-h2">' + esc(t.h) + '</h2><p class="cof-sub">' + esc(t.sub) + '</p><h3 class="cof-h3">' + esc(cname(SEL)) + '</h3>' + cards + chart(SEL, t) + tbl + '<p class="cof-note">' + esc(t.note) + '</p><p class="cof-note">' + esc(t.src) + '</p>' + (window.DICite ? window.DICite.html('eurostat', {}) : '');
     Array.prototype.forEach.call(root.querySelectorAll('.eucs-b'), function (b) { b.onclick = function () { SEL = b.getAttribute('data-c'); render(); var h = root.querySelector('h3'); if (h && h.scrollIntoView) h.scrollIntoView({ block: 'start' }); }; });
   }
+  var HT = { es: 'Costes y renta agraria de {c}', en: '{c}: farm costs and income', fr: 'Coûts et revenu agricoles : {c}', it: 'Costi e reddito agricolo: {c}' };
+  function heading(cn) { var L = lang(), t = T[L] || T.es, ttl = cn ? (HT[L] || HT.es).replace('{c}', cn) : t.h, h = document.getElementById('pg-h1'), sb = document.getElementById('pg-sub'); if (h) h.textContent = ttl; if (sb) sb.textContent = t.sub; document.title = ttl + ' | Dehesa Index'; }
   function boot() {
     if (!document.getElementById('eucs')) return;
     Promise.all([fetch('data/eu-farm-economics.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), window.DICite ? window.DICite.load().catch(function () { return null; }) : Promise.resolve(null)]).then(function (a) { D = a[0]; render(); });
     var prev = window.DehesaShared && window.DehesaShared.onLangChange;
     if (window.DehesaShared) window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
     /* En costes.html el bloque de la UE es una pestaña propia (junto a EE. UU., Canadá y España): ya no cuelga debajo de los datos de EE. UU. */
-    if (document.getElementById('cs-eu') && window.CASeries && window.CASeries.custom) window.CASeries.custom({ id: 'cs-eu', tabsHost: 'cs-ca-tabs', usBody: 'cs-body', usRender: function () { if (window.__csUsRender) window.__csUsRender(); }, country: 'EU', tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea'], onShow: function () { var t = T[lang()] || T.es, h = document.getElementById('pg-h1'), sb = document.getElementById('pg-sub'); if (h) h.textContent = t.h; if (sb) sb.textContent = t.sub; document.title = t.h + ' | Dehesa Index'; render(); } });
+    if (document.getElementById('cs-eu') && window.CASeries && window.CASeries.custom) window.CASeries.custom({ id: 'cs-eu', tabsHost: 'cs-ca-tabs', usBody: 'cs-body', usRender: function () { if (window.__csUsRender) window.__csUsRender(); }, country: 'EU', tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea'], onShow: function () { SEL = 'EU27_2020'; heading(null); render(); } });
+    /* Países con pestaña propia junto a EE. UU., Canadá, España y la UE: mismas cuentas de Eurostat, preseleccionado ese país */
+    if (document.getElementById('cs-eu') && window.CASeries && window.CASeries.custom) [['FR', ['Francia', 'France', 'France', 'Francia']], ['DE', ['Alemania', 'Germany', 'Allemagne', 'Germania']], ['IT', ['Italia', 'Italy', 'Italie', 'Italia']], ['PT', ['Portugal', 'Portugal', 'Portugal', 'Portogallo']], ['BE', ['Bélgica', 'Belgium', 'Belgique', 'Belgio']], ['NL', ['Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi']]].forEach(function (c) {
+      window.CASeries.custom({ id: 'cs-eu', tabsHost: 'cs-ca-tabs', usBody: 'cs-body', usRender: function () { if (window.__csUsRender) window.__csUsRender(); }, country: c[0], tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: c[1], onShow: function () { SEL = c[0]; heading(c[1][LI[lang()] || 0]); render(); } });
+    });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
