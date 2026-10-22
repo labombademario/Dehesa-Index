@@ -1,0 +1,346 @@
+{
+"names": {
+"Aceituna Amarga": [
+"Bitter olive",
+"Olive amère",
+"Oliva amara"
+],
+"Aceituna Negra": [
+"Black olive",
+"Olive noire",
+"Oliva nera"
+],
+"Aceituna Sevillana": [
+"Manzanilla olive",
+"Olive sévillane",
+"Oliva sivigliana"
+],
+"Acelga": [
+"Swiss chard",
+"Blette",
+"Bietola"
+],
+"Ajo": [
+"Garlic",
+"Ail",
+"Aglio"
+],
+"Ají": [
+"Chili pepper",
+"Piment",
+"Peperoncino"
+],
+"Albahaca": [
+"Basil",
+"Basilic",
+"Basilico"
+],
+"Alcachofa": [
+"Artichoke",
+"Artichaut",
+"Carciofo"
+],
+"Apio": [
+"Celery",
+"Céleri",
+"Sedano"
+],
+"Arveja Verde": [
+"Green peas",
+"Petits pois",
+"Piselli"
+],
+"Arándano (blue)": [
+"Blueberry",
+"Myrtille",
+"Mirtillo"
+],
+"Berenjena": [
+"Aubergine",
+"Aubergine",
+"Melanzana"
+],
+"Betarraga": [
+"Beetroot",
+"Betterave",
+"Barbabietola"
+],
+"Bruselas (repollito)": [
+"Brussels sprouts",
+"Choux de Bruxelles",
+"Cavoletti di Bruxelles"
+],
+"Brócoli": [
+"Broccoli",
+"Brocoli",
+"Broccoli"
+],
+"Caigua": [
+"Caigua",
+"Caigua",
+"Caigua"
+],
+"Camote": [
+"Sweet potato",
+"Patate douce",
+"Patata dolce"
+],
+"Cebolla": [
+"Onion",
+"Oignon",
+"Cipolla"
+],
+"Cebollín": [
+"Spring onion",
+"Ciboule",
+"Cipollotto"
+],
+"Cebollín baby": [
+"Baby spring onion",
+"Petite ciboule",
+"Cipollotto baby"
+],
+"Cereza": [
+"Cherry",
+"Cerise",
+"Ciliegia"
+],
+"Chirimoya": [
+"Cherimoya",
+"Chérimole",
+"Cherimoya"
+],
+"Choclo": [
+"Sweet corn",
+"Maïs doux",
+"Mais dolce"
+],
+"Ciboulette": [
+"Chives",
+"Ciboulette",
+"Erba cipollina"
+],
+"Cilantro": [
+"Coriander",
+"Coriandre",
+"Coriandolo"
+],
+"Coco": [
+"Coconut",
+"Noix de coco",
+"Cocco"
+],
+"Coliflor": [
+"Cauliflower",
+"Chou-fleur",
+"Cavolfiore"
+],
+"Espinaca": [
+"Spinach",
+"Épinards",
+"Spinaci"
+],
+"Espárragos": [
+"Asparagus",
+"Asperges",
+"Asparagi"
+],
+"Frutilla": [
+"Strawberry",
+"Fraise",
+"Fragola"
+],
+"Granada": [
+"Pomegranate",
+"Grenade",
+"Melograno"
+],
+"Guayaba": [
+"Guava",
+"Goyave",
+"Guava"
+],
+"Haba": [
+"Broad bean",
+"Fève",
+"Fava"
+],
+"Jengibre": [
+"Ginger",
+"Gingembre",
+"Zenzero"
+],
+"Kiwi": [
+"Kiwi",
+"Kiwi",
+"Kiwi"
+],
+"Lechuga": [
+"Lettuce",
+"Laitue",
+"Lattuga"
+],
+"Limón": [
+"Lemon",
+"Citron",
+"Limone"
+],
+"Mandarina": [
+"Mandarin",
+"Mandarine",
+"Mandarino"
+],
+"Mango": [
+"Mango",
+"Mangue",
+"Mango"
+],
+"Manzana": [
+"Apple",
+"Pomme",
+"Mela"
+],
+"Maracuyá": [
+"Passion fruit",
+"Fruit de la passion",
+"Frutto della passione"
+],
+"Melón": [
+"Melon",
+"Melon",
+"Melone"
+],
+"Membrillo": [
+"Quince",
+"Coing",
+"Mela cotogna"
+],
+"Naranja": [
+"Orange",
+"Orange",
+"Arancia"
+],
+"Níspero": [
+"Loquat",
+"Nèfle du Japon",
+"Nespola giapponese"
+],
+"Orégano": [
+"Oregano",
+"Origan",
+"Origano"
+],
+"Palta": [
+"Avocado",
+"Avocat",
+"Avocado"
+],
+"Papa": [
+"Potato",
+"Pomme de terre",
+"Patata"
+],
+"Pepino dulce": [
+"Pepino melon",
+"Poire-melon",
+"Pepino"
+],
+"Pepino ensalada": [
+"Cucumber",
+"Concombre",
+"Cetriolo"
+],
+"Pera": [
+"Pear",
+"Poire",
+"Pera"
+],
+"Perejil": [
+"Parsley",
+"Persil",
+"Prezzemolo"
+],
+"Pimiento": [
+"Bell pepper",
+"Poivron",
+"Peperone"
+],
+"Piña": [
+"Pineapple",
+"Ananas",
+"Ananas"
+],
+"Plátano": [
+"Banana",
+"Banane",
+"Banana"
+],
+"Pomelo": [
+"Grapefruit",
+"Pamplemousse",
+"Pompelmo"
+],
+"Poroto verde": [
+"Green bean",
+"Haricot vert",
+"Fagiolino"
+],
+"Puerro": [
+"Leek",
+"Poireau",
+"Porro"
+],
+"Rabanito": [
+"Radish",
+"Radis",
+"Ravanello"
+],
+"Repollo": [
+"Cabbage",
+"Chou",
+"Cavolo"
+],
+"Sandia": [
+"Watermelon",
+"Pastèque",
+"Anguria"
+],
+"Tomate": [
+"Tomato",
+"Tomate",
+"Pomodoro"
+],
+"Tuna": [
+"Prickly pear",
+"Figue de Barbarie",
+"Fico d'India"
+],
+"Uva": [
+"Grape",
+"Raisin",
+"Uva"
+],
+"Zanahoria": [
+"Carrot",
+"Carotte",
+"Carota"
+],
+"Zapallo": [
+"Squash",
+"Courge",
+"Zucca"
+],
+"Zapallo italiano": [
+"Courgette",
+"Courgette",
+"Zucchina"
+]
+},
+"alias": {
+"swiss chard": "chard",
+"green peas": "green pea",
+"bell pepper": "pepper",
+"grape": "table grape",
+"kiwi": "kiwifruit"
+}
+}

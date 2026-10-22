@@ -56,6 +56,8 @@ def write(path, doc):
             if a == b: return
         except Exception: pass
     path.write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+STD = {'wh': [], 'co': []}   # lineas para el formato estandar (un precio por kilo y producto), ver standard()
+REF = {'wh': 'Mercado Mayorista Lo Valledor de Santiago', 'co': '13'}   # mercado y region de referencia (Santiago / Region Metropolitana)
 COLS = ['cat', 'product', 'variety', 'origin', 'package', 'grade', 'low', 'high', 'prevLow', 'prevHigh', 'date', 'kg']
 
 
@@ -70,6 +72,8 @@ def wholesale(years):
         k = (mk, pr, (r.get('Variedad / Tipo') or '').strip(), (r.get('Calidad') or '').strip(), (r.get('Unidad de comercializacion') or '').strip(), (r.get('Origen') or '').strip())
         lines.setdefault(k, []).append((r['Fecha'], lo, hi)); meta[mk] = (r.get('Region') or '').strip()
         if k not in meta: meta[k] = 'fruit' if (r.get('Subsector') or '').startswith('Fruta') else 'veg'
+    for k, v in lines.items():
+        if k[0] == REF['wh']: STD['wh'].append((k[1], kg_of(k[4]), sorted(set(v)), 'fruit' if meta[k] == 'fruit' else 'veg'))
     idx = []
     for mk in sorted({k[0] for k in lines}):
         mine = {k: sorted(set(v)) for k, v in lines.items() if k[0] == mk}
@@ -103,6 +107,8 @@ def consumer(years):
         pp = [z.strip() for z in (r.get('Producto') or '').split('|')] + ['', '']   # 'Producto|Variedad|Calidad'
         k = (rg, (pp[0], '' if pp[1].lower() == 'sin especificar' else pp[1], pp[2]), (r.get('Unidad') or '').strip(), 'fruit' if r['Grupo'] == 'Frutas' else 'veg')
         wk.setdefault(k, {}).setdefault(r['Fecha termino'], []).append((lo, hi, (r.get('Tipo de punto monitoreo') or '').strip()))
+    for k, v in wk.items():
+        if k[0] == REF['co']: STD['co'].append((k[1][0], 1.0 if re.match(r'^\$/kilo$', k[2].lower()) else None, sorted((d, min(x[0] for x in z if x[0] is not None) if any(x[0] is not None for x in z) else None, max(x[1] for x in z if x[1] is not None) if any(x[1] is not None for x in z) else None) for d, z in v.items()), k[3]))
     idx = []
     for rg in sorted(names, key=lambda x: int(x) if x.isdigit() else 99):
         mine = {k: v for k, v in wk.items() if k[0] == rg}
@@ -128,10 +134,51 @@ def consumer(years):
     print('consumidor', [(c['city'], c['date'], c['n']) for c in idx])
 
 
+def base_name(p):
+    return re.sub(r'\s*\((extra|primera|segunda|tercera)\)$', '', p, flags=re.I).strip()
+def median(xs):
+    xs = sorted(xs); n = len(xs)
+    return None if not n else xs[n // 2] if n % 2 else (xs[n // 2 - 1] + xs[n // 2]) / 2
+def standard():
+    """Formato estandar de la web (como EE. UU. y la UE): un precio por producto y etapa, en CLP/kg, con la variacion sobre el dato anterior y sobre el ano anterior.
+    Solo entran las lineas cuya unidad dice el peso (nunca se inventa un peso). Precio = mediana de los puntos medios (minimo y maximo) por kilo de las lineas
+    cotizadas del producto en el mercado de referencia; el dato anterior y el del ano anterior usan las mismas lineas."""
+    R = json.loads((Path(__file__).parent / 'ref' / 'cl-fv-names.json').read_text(encoding='utf-8')); NM, AL = R['names'], R['alias']
+    cat = {p['name']['en'].lower(): p for p in json.loads((ROOT / 'data' / 'fv-products.json').read_text(encoding='utf-8'))['products']}
+    items = []
+    for stage, win, label in (('wholesale', 7, 'wh'), ('retail', 14, 'co')):
+        by = {}
+        for pr, kg, pts, g in STD[label]:
+            if not kg or not pts: continue
+            by.setdefault(base_name(pr), []).append((g, kg, pts))
+        latest = max((p[-1][0] for v in by.values() for g, kg, p in v), default=None)
+        if not latest: continue
+        cut = (datetime.date.fromisoformat(latest) - datetime.timedelta(days=win)).isoformat()
+        for pr, L in sorted(by.items()):
+            fresh = [(g, kg, p) for g, kg, p in L if p[-1][0] >= cut and p[-1][1] is not None and p[-1][2] is not None]
+            if not fresh: continue
+            mid = lambda q, kg: (q[1] + q[2]) / 2 / kg
+            v = median([mid(p[-1], kg) for g, kg, p in fresh]); d = max(p[-1][0] for g, kg, p in fresh)
+            pv = median([mid(p[-2], kg) for g, kg, p in fresh if len(p) > 1 and p[-2][1] is not None and p[-2][2] is not None])
+            ty = (datetime.date.fromisoformat(d) - datetime.timedelta(days=365))
+            def near(p):
+                c = [q for q in p if q[1] is not None and q[2] is not None and abs((datetime.date.fromisoformat(q[0]) - ty).days) <= 10]
+                return min(c, key=lambda q: abs((datetime.date.fromisoformat(q[0]) - ty).days)) if c else None
+            yy = median([mid(near(p), kg) for g, kg, p in fresh if near(p)])
+            nm = NM.get(pr) or NM.get(pr.split(' (')[0])
+            if not nm: continue
+            c = cat.get((nm[0]).lower()) or cat.get(AL.get(nm[0].lower(), ''))
+            names = [c['name'][k] for k in ('es', 'en', 'fr', 'it')] if c else [pr] + nm
+            items.append({'id': c['id'] if c else 'cl-' + slug(pr), 'g': c['group'] if c else fresh[0][0], 'n': names, 'e': c['emoji'] if c else '', 'stage': stage, 'v': round(v, 1), 'p': round(pv, 1) if pv else None, 'y': round(yy, 1) if yy else None, 'd': d, 'nl': len(fresh)})
+    if len(items) < 30: raise SystemExit('formato estandar: pocos productos (%d)' % len(items))
+    write(OUT / 'fv.json', {'schemaVersion': 1, 'generatedAt': now(), 'ccy': 'CLP', 'unit': 'kg', 'ref': {'wholesale': 'Lo Valledor (Santiago)', 'retail': 'Región Metropolitana'}, 'source': SRC['wh'], 'sourceRetail': SRC['co'], 'items': items})
+    print('estandar', len(items), 'filas')
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    y = datetime.date.today().year; years = [y] if datetime.date.today().timetuple().tm_yday > 14 else [y - 1, y]
-    wholesale(years); consumer(years)
+    y = datetime.date.today().year; years = [y - 1, y]   # el ano anterior da la comparacion de hace un ano
+    wholesale(years); consumer(years); standard()
 
 
 if __name__ == '__main__': main()
