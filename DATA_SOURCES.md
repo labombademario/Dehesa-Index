@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 154 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36143 series en el catalogo unificado.
+Resumen: 155 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36281 series en el catalogo unificado.
 
-## VERIFIED (154)
+## VERIFIED (155)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -17,6 +17,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `abares` | Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences) | AU | CC-BY-4.0 | si/si | si | 58 | Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth C… |
 | `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 158 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
 | `agence_bio` | Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr) | FR | etalab-2.0 | si/si | si | 155 | Citar la fuente y la fecha de la última actualización. Solo se usan los ficheros por departamento: la ficha «par région» de data.gouv.fr no … |
+| `agreste_rica` | France — Agreste / SSP (ministère de l'Agriculture), Réseau d'information comptable agricole (RICA), séries longues 1988-2024 | FR | etalab-1.0 | si/si | si | 133 | Citar Agreste/SSP y la edición; los cruces con menos de 20 explotaciones en la muestra no se difunden y quedan vacíos. |
 | `agreste_saa` | France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département | FR | etalab-1.0 | si/si | si | 4100 | Citar Agreste/SSP y la edición; el último año es provisional y se marca como tal. |
 | `agreste_ssp` | France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer) | FR | etalab-1.0 | si/si | si | 0 | Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer. |
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 9 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
@@ -154,7 +155,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_fas_gats` | USDA FAS — Global Agricultural Trade System (GATS) | US | CC-BY-4.0 | si/si | si | 16 | The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims. |
 | `usda_fas_psd` | USDA FAS — Production, Supply and Distribution (PSD Online) | US | CC-BY-4.0 | si/si | si | 0 | Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos. |
 | `usda_fsa` | USDA Farm Service Agency (ARC/PLC program data) | US | US-PD | si/si | no | 0 | Byline requested. Some FSA web materials are copyrighted and labelled as such; the ARC/PLC program data files are FSA's own publications. No… |
-| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 601 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
+| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 606 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
 | `usda_nrcs` | USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API) | US | US-PD | si/si | si | 12 | No implied USDA endorsement. Provisional data: NRCS notes SNOTEL data are not quality controlled in real time. |
 | `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |

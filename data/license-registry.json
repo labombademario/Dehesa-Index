@@ -4711,6 +4711,32 @@
    "notes": "Cuadros de séries longues 2010-2025 (datos provisionales el último año) por región y departamento, leídos de dos libros Excel dentro de un zip.",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr para los conjuntos Agreste; mentions légales del dominio no leídas por completo."
+  },
+  "agreste_rica": {
+   "name": "France — Agreste / SSP (ministère de l'Agriculture), Réseau d'information comptable agricole (RICA), séries longues 1988-2024",
+   "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/RICA-SeriesLongues/detail/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Agreste (SSP, ministère de l'Agriculture), RICA, sous Licence Ouverte",
+   "short": "Agreste · RICA",
+   "additionalRestrictions": "Citar Agreste/SSP y la edición; los cruces con menos de 20 explotaciones en la muestra no se difunden y quedan vacíos.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Los conjuntos «Agreste - …» de data.gouv.fr (organización: ministère de l'Agriculture) declaran «Licence Ouverte / Open Licence» (fr-lo); la SAA es una publicación de la misma serie y el fichero se descarga de agreste.agriculture.gouv.fr (© Agreste). No se ha leído el texto íntegro de las mentions légales del sitio, por eso la confianza es media.",
+   "used": true,
+   "aliases": [],
+   "notes": "Libro de séries longues del RICA: indicadores económicos y contables por orientación técnico-económica, clase de dimensión económica y antigua región.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr para los conjuntos Agreste; mentions légales del dominio no leídas por completo."
   }
  },
  "files": {
@@ -6906,6 +6932,24 @@
     "agreste_saa"
    ],
    "notes": "Registro de la última ejecución de update-fr-saa.py."
+  },
+  "data/france-rica/": {
+   "sources": [
+    "agreste_rica"
+   ],
+   "notes": "Cuentas de las explotaciones de Francia (scripts/update-fr-rica.py): 83 indicadores económicos y contables por orientación técnico-económica (16), clase de dimensión económica (3) y antigua región (22), 1988-2024, en euros corrientes y constantes de 2024, del libro de séries longues del RICA de Agreste (SSP)."
+  },
+  "data/france-rica-stats.json": {
+   "byCountry": {
+    "FR": "agreste_rica"
+   },
+   "notes": "Series nacionales, por orientación, por tamaño y por antigua región seleccionadas del RICA (scripts/update-fr-rica.py), para el catálogo."
+  },
+  "data/france-rica-log.txt": {
+   "sources": [
+    "agreste_rica"
+   ],
+   "notes": "Registro de la última ejecución de update-fr-rica.py."
   }
  },
  "derived": [

@@ -3754,6 +3754,51 @@ def france_saa(doc, errs, warns, stats):
     if odd: warns.append("france-saa %s %s: %d valores atipicos de la fuente (negativos de redondeo o cocientes absurdos)" % (doc["sheet"], doc["level"], odd))
     if doc.get("provisionalYear") is not None and doc["provisionalYear"] != doc["years"][-1]: warns.append("france-saa %s: el año provisional no es el ultimo" % doc["sheet"])
     stats["france-saa series"] = stats.get("france-saa series", 0) + sum(len(p["d"]) for p in doc["products"])
+# Cuentas de las explotaciones de Francia (Agreste RICA)
+def _rica_series(v, n, tag, errs, lo=-1e9, hi=1e12):
+    if len(v) != n: errs.append("france-rica %s: %d valores para %d años" % (tag, len(v), n)); return False
+    for x in v:
+        if x is None: continue
+        if not isinstance(x, (int, float)) or x < lo or x > hi: errs.append("france-rica %s: valor fuera de rango %r" % (tag, x)); return False
+    return True
+
+
+def france_rica_index(doc, errs, warns, stats):
+    ys = doc["years"]
+    if ys != sorted(set(ys)) or ys[0] < 1988: errs.append("france-rica index: años invalidos"); return
+    ids = [i["id"] for i in doc["indicators"]]
+    if len(ids) != len(set(ids)): errs.append("france-rica index: indicadores repetidos"); return
+    for need in ("rcai", "ebe", "output", "uaa", "farms"):
+        if need not in ids: errs.append("france-rica index: falta el indicador %s" % need); return
+    stats["indicadores"] = len(ids); stats["regiones"] = len(doc["regions"])
+
+
+def france_rica_national(doc, errs, warns, stats):
+    """Francia metropolitana, OTEX x CDEX: cada serie tiene un valor por año o null; la muestra es un entero positivo; el RCAI total existe y es plausible."""
+    n = len(doc["years"]); k = 0
+    for basis in ("current", "constant"):
+        for o, cs in doc[basis].items():
+            for c, inds in cs.items():
+                for i, v in inds.items():
+                    if not _rica_series(v, n, "%s %s %s %s" % (basis, o, c, i), errs): return
+                    k += 1
+    tot = doc["current"].get("all", {}).get("all", {})
+    for need in ("rcai", "sample", "farms"):
+        if need not in tot or sum(1 for x in tot[need] if x is not None) < 30: errs.append("france-rica: falta la serie nacional %s" % need); return
+    if any(x is not None and x < 1000 for x in tot["sample"]): errs.append("france-rica: muestra nacional implausible"); return
+    if tot["rcai"][-1] is not None and not (0 < tot["rcai"][-1] < 500000): errs.append("france-rica: RCAI nacional fuera de rango"); return
+    stats["series"] = k
+
+
+def france_rica_regional(doc, errs, warns, stats):
+    n = len(doc["years"]); k = 0
+    for g, a in doc["data"].items():
+        for o, inds in a.items():
+            for i, v in inds.items():
+                if not _rica_series(v, n, "%s %s %s" % (g, o, i), errs): return
+                k += 1
+    if "France hors DROM" not in doc["data"]: errs.append("france-rica: falta Francia metropolitana"); return
+    stats["series"] = k
 # Precios agricolas de fruta, hortaliza y patata de la UE-27 (Eurostat apri_ap_crpouta)
 def eu_fv_farm(doc, errs, warns, stats):
     import datetime as _dt

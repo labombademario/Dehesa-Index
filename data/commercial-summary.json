@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T20:07:43Z",
+ "generatedAt": "2026-10-22T20:39:49Z",
  "summary": {
-  "sources": 153,
-  "sourcesApto": 140,
+  "sources": 154,
+  "sourcesApto": 141,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 330,
-  "datasets_apto": 199,
+  "datasets": 333,
+  "datasets_apto": 202,
   "datasets_condiciones": 121,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -33,6 +33,10 @@
   },
   "agence_bio": {
    "name": "Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr)",
+   "verdict": "apto"
+  },
+  "agreste_rica": {
+   "name": "France — Agreste / SSP (ministère de l'Agriculture), Réseau d'information comptable agricole (RICA), séries longues 1988-2024",
    "verdict": "apto"
   },
   "agreste_saa": {

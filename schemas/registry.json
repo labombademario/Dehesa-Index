@@ -1579,6 +1579,30 @@
    [
     "france_saa_index"
    ]
+  ],
+  "france-rica/index.json": [
+   "france-rica-index",
+   [
+    "france_rica_index"
+   ]
+  ],
+  "france-rica/national.json": [
+   "france-rica-national",
+   [
+    "france_rica_national"
+   ]
+  ],
+  "france-rica/regional.json": [
+   "france-rica-regional",
+   [
+    "france_rica_regional"
+   ]
+  ],
+  "france-rica/by-size.json": [
+   "france-rica-regional",
+   [
+    "france_rica_regional"
+   ]
   ]
  },
  "globs": {
