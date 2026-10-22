@@ -534,6 +534,9 @@
       var elU = document.createElement('div'); elU.id = 'pp-managers'; elU.style.minHeight = '1px'; trU.parentNode.insertBefore(elU, trU.nextSibling);
       var goU = function () { if (window.DIUkFarmersAge && ST.c === ccU) window.DIUkFarmersAge.mount(elU, lang()); };
       nearView(elU, function () { if (window.DIUkFarmersAge) goU(); else { var scU = document.createElement('script'); scU.src = 'js/uk-farmers-age.js?v=0'; scU.onload = goU; document.head.appendChild(scU); } });
+      var elS = document.createElement('div'); elS.id = 'pp-uk-structure'; elS.style.minHeight = '1px'; elU.parentNode.insertBefore(elS, elU.nextSibling);
+      var goS = function () { if (window.DIUkStructure && ST.c === ccU) window.DIUkStructure.mount(elS, lang()); };
+      nearView(elS, function () { if (window.DIUkStructure) goS(); else { var scS = document.createElement('script'); scS.src = 'js/uk-structure.js?v=0'; scS.onload = goS; document.head.appendChild(scS); } });
       return;
     }
     if (MGRCC.indexOf(ST.c) < 0) return;
