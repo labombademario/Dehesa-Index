@@ -1,0 +1,18 @@
+name: tmp-probe-sources
+on:
+  push:
+    branches: [research/probe-sources-1021]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - env:
+          MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
+        run: |
+          for s in statcan mars wine ssn; do python3 probe/probe_sources.py $s > /tmp/$s.log 2>&1 || true; done
+          git config user.name probe; git config user.email probe@x
+          git add -f probe/out; git commit -qm "probe out"; git push
