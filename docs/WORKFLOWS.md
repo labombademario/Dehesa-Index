@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-254 workflows (211 generados desde `sources.yml`, 43 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+255 workflows (212 generados desde `sources.yml`, 43 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -167,6 +167,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-fr-insee.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-fr-insee.py | france-insee-stats.json | finish, validate-files |
 | update-fr-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fr-nitrates.py | fr-nitrates.json | finish, validate-files |
 | update-fr-onde.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-onde.py | fr-onde.json | finish, validate-files |
+| update-fr-saa.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-saa.py | france-saa-stats.json, france-saa/index.json | finish, validate-files |
 | update-fr-vigieau.yml | generado | semanal (1,3,5) | detect-revisions.py, gen-workflows.py, update-fr-vigieau.py | france-vigieau.json | finish, validate-files |
 
 ## IE

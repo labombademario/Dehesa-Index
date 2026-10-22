@@ -4685,6 +4685,32 @@
    "short": "Skogsstyrelsen (Suecia)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Condiciones de uso de Skogsstyrelsen: datos de la base estadistica en CC0 y API abierta; el uso comercial no se menciona de forma explicita."
+  },
+  "agreste_saa": {
+   "name": "France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département",
+   "url": "https://agreste.agriculture.gouv.fr/agreste-web/disaron/SAA-SeriesLongues/detail/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Agreste (SSP, ministère de l'Agriculture), Statistique agricole annuelle, sous Licence Ouverte",
+   "short": "Agreste · SAA",
+   "additionalRestrictions": "Citar Agreste/SSP y la edición; el último año es provisional y se marca como tal.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Los conjuntos «Agreste - …» de data.gouv.fr (organización: ministère de l'Agriculture) declaran «Licence Ouverte / Open Licence» (fr-lo); la SAA es una publicación de la misma serie y el fichero se descarga de agreste.agriculture.gouv.fr (© Agreste). No se ha leído el texto íntegro de las mentions légales del sitio, por eso la confianza es media.",
+   "used": true,
+   "aliases": [],
+   "notes": "Cuadros de séries longues 2010-2025 (datos provisionales el último año) por región y departamento, leídos de dos libros Excel dentro de un zip.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr para los conjuntos Agreste; mentions légales del dominio no leídas por completo."
   }
  },
  "files": {
@@ -6862,6 +6888,24 @@
     "defra"
    ],
    "notes": "Total income from farming for the regions of England: 9 regiones ITL1 (cuenta completa y por hectarea) y 133 territorios ITL3; millones de libras a precios corrientes (OGL v3.0). Reparto oficial de Defra, no recalculado."
+  },
+  "data/france-saa/": {
+   "sources": [
+    "agreste_saa"
+   ],
+   "notes": "Estadística agrícola anual de Francia por región y departamento (scripts/update-fr-saa.py): superficie, rendimiento y producción de cereales, oleaginosas, hortalizas, frutas, viñedo, flores, praderas, ganado, leche, huevos y miel, 2010-2025 (último año provisional), de los cuadros séries longues de Agreste (SSP)."
+  },
+  "data/france-saa-stats.json": {
+   "byCountry": {
+    "FR": "agreste_saa"
+   },
+   "notes": "Series nacionales y regionales seleccionadas de la SAA de Agreste (scripts/update-fr-saa.py), para el catálogo."
+  },
+  "data/france-saa-log.txt": {
+   "sources": [
+    "agreste_saa"
+   ],
+   "notes": "Registro de la última ejecución de update-fr-saa.py."
   }
  },
  "derived": [

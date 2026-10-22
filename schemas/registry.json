@@ -1573,6 +1573,12 @@
    [
     "wood_prices_na"
    ]
+  ],
+  "france-saa/index.json": [
+   "france-saa-index",
+   [
+    "france_saa_index"
+   ]
   ]
  },
  "globs": {
@@ -1770,6 +1776,18 @@
    "indices-basket",
    [
     "indices_basket"
+   ]
+  ],
+  "france-saa/reg-*.json": [
+   "france-saa",
+   [
+    "france_saa"
+   ]
+  ],
+  "france-saa/dep-*.json": [
+   "france-saa",
+   [
+    "france_saa"
    ]
   ]
  },

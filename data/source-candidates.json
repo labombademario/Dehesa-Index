@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T18:53:21Z",
+ "generatedAt": "2026-10-22T20:07:42Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 182,
+  "total": 183,
   "byStatus": {
-   "ACTIVE": 152,
+   "ACTIVE": 153,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1558,6 +1558,67 @@
    "lastChecked": "2026-10-14",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "agreste_saa",
+   "registryId": "agreste_saa",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département",
+   "dataset": "Ya integrada (4100 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "fruit",
+    "maize",
+    "milk",
+    "oats",
+    "olive",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rice",
+    "sheep",
+    "soy",
+    "sugar",
+    "wheat",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "etalab-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source : Agreste (SSP, ministère de l'Agriculture), Statistique agricole annuelle, sous Licence Ouverte",
+   "lastChecked": "2026-10-22",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

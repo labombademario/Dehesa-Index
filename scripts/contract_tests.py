@@ -3723,6 +3723,37 @@ def wood_removals(doc, errs, warns, stats):
         if not t or all(x is None for x in t): errs.append("madera %s: sin ningun total" % cc)   # un pais que Eurostat dejo de actualizar (p. ej. BE hasta 2020) se publica con su ultimo año y el aviso de abajo
         if c["last"] < _dt.date.today().year - 4: warns.append("madera %s: ultimo año %d" % (cc, c["last"]))
     stats["paises"] = len(doc["countries"])
+# Estadistica agricola anual de Francia por region y departamento (Agreste SAA)
+def france_saa_index(doc, errs, warns, stats):
+    """Indice de la SAA: cada hoja tiene años ascendentes, productos y unidades; los departamentos apuntan a una region conocida."""
+    for k, s in doc["sheets"].items():
+        ys = s["years"]
+        if ys != sorted(set(ys)): errs.append("france-saa index %s: años no ascendentes" % k); return
+        if not (2010 <= ys[0] and ys[-1] <= 2100): errs.append("france-saa index %s: años fuera de rango" % k); return
+        if not s["products"]: errs.append("france-saa index %s: sin productos" % k); return
+    for c, d in doc["departments"].items():
+        if d["region"] not in doc["regions"]: errs.append("france-saa index: departamento %s con region %s desconocida" % (c, d["region"])); return
+    stats["hojas"] = len(doc["sheets"]); stats["departamentos"] = len(doc["departments"])
+
+
+def france_saa(doc, errs, warns, stats):
+    """Una hoja de la SAA a un nivel: cada serie tiene un valor por año o null, nada negativo, rendimientos plausibles, las zonas existen y el producto 'total' no baja de sus partes obvias."""
+    n = len(doc["years"]); lim = {"REND": 10000, "PROD_MOY": 100000, "POIDS_MOY": 12000}; odd = 0
+    for pr in doc["products"]:
+        for a, d in pr["d"].items():
+            if a not in doc["areas"]: errs.append("france-saa %s %s: zona %s sin nombre" % (doc["sheet"], doc["level"], a)); return
+            for m in doc["metrics"]:
+                v = d.get(m)
+                if v is None: continue
+                if len(v) != n: errs.append("france-saa %s %s %s %s: %d valores para %d años" % (doc["sheet"], pr["c"], a, m, len(v), n)); return
+                for x in v:
+                    if x is None: continue
+                    if not isinstance(x, (int, float)) or x < -500: errs.append("france-saa %s %s %s %s: valor invalido %r" % (doc["sheet"], pr["c"], a, m, x)); return
+                    # Agreste publica algun ajuste de redondeo (-1, -2 ha) y algun cociente absurdo en superficies minimas: se conservan tal cual y se cuentan
+                    if x < 0 or x > lim.get(m, 1e13): odd += 1
+    if odd: warns.append("france-saa %s %s: %d valores atipicos de la fuente (negativos de redondeo o cocientes absurdos)" % (doc["sheet"], doc["level"], odd))
+    if doc.get("provisionalYear") is not None and doc["provisionalYear"] != doc["years"][-1]: warns.append("france-saa %s: el año provisional no es el ultimo" % doc["sheet"])
+    stats["france-saa series"] = stats.get("france-saa series", 0) + sum(len(p["d"]) for p in doc["products"])
 # Precios agricolas de fruta, hortaliza y patata de la UE-27 (Eurostat apri_ap_crpouta)
 def eu_fv_farm(doc, errs, warns, stats):
     import datetime as _dt

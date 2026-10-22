@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 153 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 32043 series en el catalogo unificado.
+Resumen: 154 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36143 series en el catalogo unificado.
 
-## VERIFIED (153)
+## VERIFIED (154)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -17,6 +17,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `abares` | Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences) | AU | CC-BY-4.0 | si/si | si | 58 | Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth C… |
 | `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 158 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
 | `agence_bio` | Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr) | FR | etalab-2.0 | si/si | si | 155 | Citar la fuente y la fecha de la última actualización. Solo se usan los ficheros por departamento: la ficha «par région» de data.gouv.fr no … |
+| `agreste_saa` | France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département | FR | etalab-1.0 | si/si | si | 4100 | Citar Agreste/SSP y la edición; el último año es provisional y se marca como tal. |
 | `agreste_ssp` | France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer) | FR | etalab-1.0 | si/si | si | 0 | Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer. |
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 9 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `ama_agrardiesel` | AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG | AT | PUBLIC-LAW | si/si | si | 0 |  |

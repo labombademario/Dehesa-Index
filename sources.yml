@@ -201,6 +201,17 @@ sources:
     continue: true
     data: [wood-removals.json]
     message: Cortas de madera en rollo (Eurostat)
+  - id: fr-saa
+    name: Update France annual agricultural statistics by region and department (Agreste SAA)
+    cron: ['20 8 * * 2']
+    script: scripts/update-fr-saa.py
+    timeout: 45
+    script_timeout: 35
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/france-saa) data/france-saa-stats.json
+    data: [france-saa/index.json, france-saa-stats.json, france-saa-log.txt]
+    extra: ['!data/france-saa']
+    message: Estadistica agricola anual de Francia por region y departamento (Agreste SAA)
   - id: eu-fv-farm
     name: Update EU fruit, vegetable and potato farm-gate prices (Eurostat apri_ap_crpouta)
     cron: ['35 7 * * 3']

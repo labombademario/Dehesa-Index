@@ -1,0 +1,33 @@
+descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/SAA-SeriesLongues/SAA-SeriesLongues-2010-2025_DonneesProvisoires-DepartementalesRegionales.zip
+ok reg COP 45 productos 21 areas
+ok reg FOU 18 productos 21 areas
+ok reg IND 19 productos 21 areas
+ok reg PDT 12 productos 21 areas
+ok reg LEG 60 productos 21 areas
+ok reg FRT 57 productos 21 areas
+ok reg FLR 5 productos 21 areas
+ok reg VIG 3 productos 21 areas
+ok reg VIN 11 productos 21 areas
+ok reg TER 34 productos 21 areas
+ok reg EFA 35 productos 21 areas
+ok reg EFV 12 productos 21 areas
+ok reg EQU 5 productos 21 areas
+ok reg PRA 29 productos 21 areas
+ok reg PRV 12 productos 21 areas
+ok reg LAI 15 productos 21 areas
+ok reg OEU 2 productos 21 areas
+ok reg MIE 1 productos 21 areas
+ok dep COP 45 productos 118 areas
+ok dep FOU 18 productos 118 areas
+ok dep IND 19 productos 118 areas
+ok dep PDT 12 productos 118 areas
+ok dep LEG 60 productos 118 areas
+ok dep FRT 57 productos 118 areas
+ok dep FLR 5 productos 118 areas
+ok dep VIG 3 productos 118 areas
+ok dep VIN 11 productos 118 areas
+ok dep TER 34 productos 118 areas
+ok dep EFA 35 productos 118 areas
+ok dep PRA 29 productos 118 areas
+ok dep LAI 15 productos 118 areas
+series de catalogo: 4160

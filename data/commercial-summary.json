@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T17:13:22Z",
+ "generatedAt": "2026-10-22T20:07:43Z",
  "summary": {
-  "sources": 152,
-  "sourcesApto": 139,
+  "sources": 153,
+  "sourcesApto": 140,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 327,
-  "datasets_apto": 196,
+  "datasets": 330,
+  "datasets_apto": 199,
   "datasets_condiciones": 121,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -33,6 +33,10 @@
   },
   "agence_bio": {
    "name": "Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr)",
+   "verdict": "apto"
+  },
+  "agreste_saa": {
+   "name": "France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département",
    "verdict": "apto"
   },
   "agreste_ssp": {
