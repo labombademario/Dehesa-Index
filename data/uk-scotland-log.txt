@@ -1,2 +1,4 @@
 ano 2026 https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2026/10/results-from-the-scottish-agricultural-census-june-2026/documents/june-agricultural-census-2026---main-tables/june-agricultural-census-2026---main-tables/govscot%3Adocument/June%2BAgricultural%2BCensus%2B2026%2B-%2BMain%2Bdata%2Btables.xlsx
-series 125
+cosecha https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2025/12/cereal-and-oilseed-rape-harvest-final-estimates---2025/documents/first-published-11-december-2025/timeseries-for-cereal-and-oilseed-rape-harvest-final-estimates-1991-to-2025/timeseries-for-cereal-and-oilseed-rape-harvest-final-estimates-1991-to-2025/govscot%3Adocument/Cereal%2Band%2BOilseed%2BRape%2BHarvest%2B-%2B2025-26%2B-%2BFinal%2BEstimates%2B-%2BPublication%2B-%2BTables%2B-%2BCereals%2BTimeseries%2B1991-2025.xlsx
+series de cosecha 18
+series 143
