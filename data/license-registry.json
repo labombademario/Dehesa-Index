@@ -4858,6 +4858,11 @@
     "statcan"
    ]
   },
+  "data/canada-provinces.json": {
+   "sources": [
+    "statcan"
+   ]
+  },
   "data/us-tariffs.json": {
    "sources": [
     "us_tariffs"

@@ -86,10 +86,10 @@ def months_back(ym, n):
     return "%04d-%02d" % (t // 12, t % 12 + 1)
 
 min_recent = months_back(table_max, 3)
-coverage, observations = {}, []
+coverage, observations, provs_out = {}, [], {}
 for key, (sc_prod, provs, uom, unit, conv) in SPEC.items():
     rep = {"statcanProduct": sc_prod, "candidates": {}}
-    chosen = None
+    chosen = None; okprov = []
     for prov in provs:
         s = series.get((sc_prod, prov, uom))
         if not s:
@@ -99,8 +99,9 @@ for key, (sc_prod, provs, uom, unit, conv) in SPEC.items():
         last = periods[-1]
         recent36 = sum(1 for p in periods if p > months_back(table_max, 36))
         rep["candidates"][prov] = {"last": last, "points": len(periods), "last36m": recent36}
-        if chosen is None and last >= min_recent and recent36 >= 24:
-            chosen = (prov, s)
+        if last >= min_recent and recent36 >= 24:
+            okprov.append((prov, s))
+            if chosen is None: chosen = (prov, s)
     if not chosen:
         rep["result"] = "SIN DATO: ninguna provincia cumple (último dato <= 3 meses y >= 24 meses de los últimos 36)"
         coverage[key] = rep
@@ -113,6 +114,13 @@ for key, (sc_prod, provs, uom, unit, conv) in SPEC.items():
     change = round((val / prev - 1) * 100, 4) if prev else None
     rep["result"] = {"province": prov, "last": last, "value": val, "unit": unit}
     coverage[key] = rep
+    if len(okprov) > 1:   # varias provincias con dato al dia: se publican todas para el selector de provincia de la tarjeta
+        lst = []
+        for pv, sv in okprov:
+            pp = sorted(sv); pts_ = [(q, round(sv[q] * conv, 4)) for q in pp if q >= months_back(table_max, 59)]
+            lq, lv = pts_[-1]; pq = pts_[-2][1] if len(pts_) > 1 and months_back(lq, 1) == pts_[-2][0] else None
+            lst.append({"province": pv, "last": lq, "value": lv, "changePct": round((lv / pq - 1) * 100, 4) if pq else None, "points": [[q, v_] for q, v_ in pts_]})
+        provs_out[key] = {"unit": unit, "default": prov, "provinces": lst}
     observations.append({
         "id": "di_%s_%s_ca" % (CAT[key], key), "product": key, "region": "ca", "sourceId": "statcan",
         "observationDate": last, "publicationDate": pub_date, "status": "verified", "verifiedAt": verified_at,
@@ -126,6 +134,7 @@ for key, (sc_prod, provs, uom, unit, conv) in SPEC.items():
 
 (ROOT / "data").mkdir(exist_ok=True)
 (ROOT / "data" / "canada-coverage.json").write_text(json.dumps({"generatedAt": verified_at, "table": PID, "tableMax": table_max, "publicationDate": pub_date, "products": coverage}, indent=1, ensure_ascii=False) + "\n")
+(ROOT / "data" / "canada-provinces.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": verified_at, "table": PID, "tableMax": table_max, "publicationDate": pub_date, "source": {"name": "Statistics Canada, table 32-10-0077-01", "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007701", "license": "Open Government Licence - Canada"}, "products": provs_out}, ensure_ascii=False, separators=(",", ":")) + "\n")
 if not observations:
     sys.exit("Sin observaciones de Canadá")
 SNAP_DIR.mkdir(parents=True, exist_ok=True)
