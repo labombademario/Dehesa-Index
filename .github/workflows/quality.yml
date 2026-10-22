@@ -350,7 +350,12 @@ jobs:
       - name: Auditoria UX responsive (375/390/430/768/1280)
         env:
           CHROMIUM: ''
-        run: node scripts/ux-audit.mjs --strict
+        run: |
+          set +e
+          node scripts/ux-audit.mjs --strict 2>&1 | tee ux.log; s=${PIPESTATUS[0]}
+          # los avisos tambien como anotaciones: se leen en la API sin descargar el log
+          if [ $s -ne 0 ]; then head -30 ux.log | cut -c1-400 | while IFS= read -r l; do echo "::error::$l"; done; fi
+          exit $s
       - name: Seguro agrario (cifras exactas, tablas, citas, 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''
