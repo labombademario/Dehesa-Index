@@ -63,7 +63,7 @@
   function ccFlag(c) { var i = c === 'el' ? 'GR' : c.toUpperCase(); return String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)); }
   function ccName(c) { try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(c === 'el' ? 'GR' : c.toUpperCase()); } catch (e) { return c.toUpperCase(); } }
   var state = {
-    location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk' || v === 'ca') ? v : null; })(),
+    location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk' || v === 'ca' || v === 'sa') ? v : null; })(),
     euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return EU_CC.indexOf(v) >= 0 ? v : 'es'; })(),
     activeTab: 'cereales', wantTab: 'cereales',
     favorites: readFavorites(),
@@ -410,6 +410,7 @@
       }
       return { region: region, regionCode: 'eu', targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false, derived: derived, unverified: unverified };
     }
+    if (loc === 'sa') return { region: null, regionCode: 'sa', targetCcy: 'USD', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: null, ukGap: true };   // Sudamérica: solo frutas y hortalizas (ODEPA, Chile); el resto de productos aún sin fuente con licencia
     if (loc === 'ca') {
       var caUnit = p.caUnitKey || p.metricUnitKey;
       if (p.ca) return { region: p.ca, regionCode: 'ca', targetCcy: 'CAD', targetKgPerUnit: p.caKgPerUnit || p.metricKgPerUnit, targetUnitLabel: UL[caUnit], quoteType: p.quoteTypes && p.quoteTypes.ca, ukGap: false };
@@ -555,7 +556,8 @@
       '<button type="button" class="di-location-btn' + (state.location === 'us' ? ' active' : '') + '" data-loc="us">🇺🇸 ' + esc(t.locationUsLabel) + '</button>' +
       '<button type="button" class="di-location-btn' + (state.location === 'eu' ? ' active' : '') + '" data-loc="eu">🇪🇺 ' + esc(t.locationEuLabel) + '</button>' +
       '<button type="button" class="di-location-btn' + (state.location === 'uk' ? ' active' : '') + '" data-loc="uk">🇬🇧 ' + esc(t.locationUkLabel) + '</button>' +
-      '<button type="button" class="di-location-btn' + (state.location === 'ca' ? ' active' : '') + '" data-loc="ca">🇨🇦 ' + esc(t.locationCaLabel) + '</button>';
+      '<button type="button" class="di-location-btn' + (state.location === 'ca' ? ' active' : '') + '" data-loc="ca">🇨🇦 ' + esc(t.locationCaLabel) + '</button>' +
+      '<button type="button" class="di-location-btn' + (state.location === 'sa' ? ' active' : '') + '" data-loc="sa">🌎 ' + esc(t.locationSaLabel) + '</button>';
     if (state.location === 'eu') {
       // todos los países de la UE con precios propios en la Comisión (antes solo España, Alemania, Francia e Italia)
       var countries = EU_CC.map(function (c) { return { code: c, flag: ccFlag(c), label: ccName(c) }; });
@@ -627,6 +629,7 @@
   }
   var EU_ONLY = { vino: true };   // madera: UE y Reino Unido (Forest Research), EE. UU. (BLS) y Canada (StatCan) desde el 21-oct-2026 // solo hay datos de países europeos: con ubicación EE. UU., Reino Unido o Canadá no se enseñan
   function catHasData(catId) {
+    if (state.location === 'sa') return catId === 'hortalizas';   // Sudamérica: solo Chile (ODEPA, frutas y hortalizas)
     if (EU_ONLY[catId]) return state.location === 'eu';
     if (catId === 'hortalizas') return state.location === 'eu' || state.location === 'us' || state.location === 'ca';   // EE. UU.: USDA NASS y AMS; Canadá: AAFC mayoristas (data/ca/); Reino Unido, aún sin fuente
     if (INFO_CATS[catId]) return true;
@@ -1750,6 +1753,7 @@
             '<button data-wloc="eu">🇪🇺 ' + esc(t.locationEuLabel) + '</button>' +
             '<button data-wloc="uk">🇬🇧 ' + esc(t.locationUkLabel) + '</button>' +
             '<button data-wloc="ca">🇨🇦 ' + esc(t.locationCaLabel) + '</button>' +
+            '<button data-wloc="sa">🌎 ' + esc(t.locationSaLabel) + '</button>' +
           '</div>' +
           '<p style="font-size:11.5px;color:var(--welcome-text);opacity:0.7;margin:16px 0 0;">' + esc(t.welcomeHint) + '</p>' +
         '</div>' +
@@ -1784,6 +1788,7 @@
     var p = e.product;
     if (state.location === 'eu' && !p.eu && !p.uk) state.location = p.us ? 'us' : state.location;
     else if (state.location === 'uk' && !p.uk && !p.eu) state.location = p.us ? 'us' : state.location;
+    else if (state.location === 'sa') state.location = p.us ? 'us' : (p.eu ? 'eu' : state.location);
     else if (state.location === 'ca' && !p.ca) state.location = p.us ? 'us' : (p.eu ? 'eu' : state.location);
   }
 
@@ -1800,7 +1805,7 @@
     } else {
       state.deepLinkProduct = null;
     }
-    if (region === 'us' || region === 'eu' || region === 'uk' || region === 'ca') {
+    if (region === 'us' || region === 'eu' || region === 'uk' || region === 'ca' || region === 'sa') {
       state.location = region;
       writeLS('dehesaIndexLocation', region);
     }
@@ -1810,7 +1815,7 @@
   }
 
   function setLocation(nextLocation, opts) {
-    if (['us', 'eu', 'uk', 'ca'].indexOf(nextLocation) === -1) return;
+    if (['us', 'eu', 'uk', 'ca', 'sa'].indexOf(nextLocation) === -1) return;
     state.location = nextLocation;
     showLocationWelcome = false;
     writeLS('dehesaIndexLocation', nextLocation);
@@ -1935,7 +1940,7 @@
       state.activeTab = state.wantTab = PRODUCT_BY_KEY[deepKey].catId;
       state.deepLinkProduct = deepKey;
     }
-    if (requestedRegion === 'us' || requestedRegion === 'eu' || requestedRegion === 'uk' || requestedRegion === 'ca') {
+    if (requestedRegion === 'us' || requestedRegion === 'eu' || requestedRegion === 'uk' || requestedRegion === 'ca' || requestedRegion === 'sa') {
       state.location = requestedRegion;
       writeLS('dehesaIndexLocation', requestedRegion);
     }
