@@ -13,7 +13,7 @@ SRC = {'name': 'Agriculture and Agri-Food Canada, Daily Wholesale Prices Report'
 CITY = {'Montreal': 'MO', 'Toronto': 'TO', 'Vancouver': 'VA', 'Calgary': 'CA', 'Edmonton': 'ED', 'Winnipeg': 'WI'}
 FRUIT_NAMES = {'Apples', 'Apricots', 'Avocados', 'Bananas', 'Blackberries', 'Blueberries', 'Cherries', 'Coconuts', 'Cranberries', 'Currants Gooseberry', 'Dates', 'Figs', 'Granadilla', 'Grapefruit',
                'Grapes (Table)', 'Guava', 'Jackfruit', 'Kiwi Fruit', 'Kumquat', 'Lemons', 'Limes', 'Lychee', 'Mandarines', 'Mangoes', 'Mangosteen', 'Melons', 'Nectarines', 'Oranges', 'Papaya',
-               'Passion Fruit', 'Peaches', 'Pears', 'Persimmons', 'Physalis', 'Pineapples', 'Pitahaya', 'Plums', 'Pomegranates', 'Pummelo', 'Rambutan', 'Raspberries', 'Strawberries', 'Sweet Sop', 'Tamarind'}
+               'Passion Fruit', 'Peaches', 'Atemoya', 'Carambola', 'Cherimoya', 'Longan', 'Quinces', 'Tamarillo', 'Ugly Fruit', 'Pears', 'Persimmons', 'Physalis', 'Pineapples', 'Pitahaya', 'Plums', 'Pomegranates', 'Pummelo', 'Rambutan', 'Raspberries', 'Strawberries', 'Sweet Sop', 'Tamarind'}
 NUT_NAMES = {'Nuts'}
 KG = {'lb': 0.45359237, 'lbs': 0.45359237, 'kg': 1.0, 'kgs': 1.0, 'gr': 0.001, 'g': 0.001, 'oz': 0.028349523}   # unidades de peso del envase; cualquier otra (litros, unidades) => sin $/kg
 
