@@ -1,30 +1,17 @@
-import os, sys, io, re, urllib.request, html
-sys.path.insert(0, 'scripts')
-from lib_ods import read_ods
-import openpyxl
-OUT = []
-def p(*a):
-    s = ' '.join(str(x) for x in a); OUT.append(s); print(s, flush=True)
-UA = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) DehesaIndex/1.0 (+https://dehesaindex.com)'}
-def get(u):
-    with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=120) as r: return r.read()
-wb = openpyxl.load_workbook(io.BytesIO(get('https://www.daera-ni.gov.uk/sites/default/files/2026-10/Vol%2089%20Quarter%204%20Reports.xlsx')), read_only=True, data_only=True)
-p('SHEETS', wb.sheetnames)
-ws = wb[wb.sheetnames[-1]]
-for i, r in enumerate(ws.iter_rows(values_only=True)):
-    if i < 38: continue
-    if any(c not in (None, '') for c in r): p(i, [str(c)[:26] if c is not None else '' for c in r][:17])
-t = html.unescape(get('https://www.gov.scot/publications/results-from-the-scottish-agricultural-census-june-2026/documents/').decode('utf8', 'ignore'))
-u = [x for x in re.findall(r'href="([^"]+)"', t) if 'main-tables/' in x and 'ods' not in x.split('main-tables')[1][:6]][0]
-u = u if u.startswith('http') else 'https://www.gov.scot' + u
-wb = openpyxl.load_workbook(io.BytesIO(get(u)), read_only=True, data_only=True)
-for n in ['Table_3', 'Table_8', 'Table_13']:
-    if n not in wb.sheetnames: continue
-    p('--- ', n)
-    for i, r in enumerate(wb[n].iter_rows(values_only=True)):
-        if i > 40: break
-        p(i, [str(c)[:30] if c is not None else '' for c in r][:5])
-S = read_ods(get('https://assets.publishing.service.gov.uk/media/6aad019ece3f006bd4346c7d/ITL3_Regional_Accounts_Current_Prices-20260924.ods'), max_cols=30)
-rows = S['North_East']
-for i, r in enumerate(rows[:30]): p(i, [str(c)[:30] if c is not None else '' for c in r][:3], len(r), r[-2:] if r else '')
-os.makedirs('probe/out', exist_ok=True); open('probe/out/uk7.txt', 'w').write('\n'.join(OUT))
+import urllib.request, io, openpyxl
+B='https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2025/12/cereal-and-oilseed-rape-harvest-final-estimates---2025/documents/first-published-11-december-2025/'
+U={'ts':B+'timeseries-for-cereal-and-oilseed-rape-harvest-final-estimates-1991-to-2025/timeseries-for-cereal-and-oilseed-rape-harvest-final-estimates-1991-to-2025/govscot%3Adocument/Cereal%2Band%2BOilseed%2BRape%2BHarvest%2B-%2B2025-26%2B-%2BFinal%2BEstimates%2B-%2BPublication%2B-%2BTables%2B-%2BCereals%2BTimeseries%2B1991-2025.xlsx',
+   'coll':'https://www.gov.scot/collections/scottish-cereal-harvest-estimates/'}
+out=open('probe/out/sco.txt','w')
+def get(u): return urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 DehesaIndex'}),timeout=60).read()
+try:
+    wb=openpyxl.load_workbook(io.BytesIO(get(U['ts'])),read_only=True,data_only=True)
+    for ws in wb.worksheets:
+        out.write('=== %s\n'%ws.title)
+        for i,r in enumerate(ws.iter_rows(values_only=True)):
+            if i>45: break
+            out.write(repr(r[:14])+'\n')
+except Exception as e: out.write('ERR ts %r\n'%e)
+try:
+    import re; h=get(U['coll']).decode('utf8','replace'); out.write('\n'.join(sorted(set(re.findall(r'href="(/publications/cereal[^"]+)"',h))))+'\n')
+except Exception as e: out.write('ERR coll %r\n'%e)
