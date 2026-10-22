@@ -121,7 +121,8 @@ if (man.search) {
   // 16-oct-2026: 4 -> 5 MB. search.json solo lo bajan versiones antiguas de la app; la actual baja search-<idioma>.json (~2,7 MB). Crecio por las 3.500 series nuevas de Eurostat (RO, SI y 18 paises con tierra y estructura).
   // 18-oct-2026: 5 -> 6 MB. Crecio por las series de los 7 bloques nuevos de Eurostat (despiece, vivos, aves, ecologico, produccion por pais, arroz/azucar/aceite y precios mensuales); las versiones por idioma siguen por debajo de 3,5 MB.
   ok(man.search.bytes < 6 * 1024 * 1024, 'search: fichero demasiado grande (' + man.search.bytes + ')');
-  for (const lg of Object.keys(man.searchL || {})) ok(man.searchL[lg].bytes < 3.5 * 1024 * 1024, 'search-' + lg + ': fichero demasiado grande (' + man.searchL[lg].bytes + ')');
+  // 22-oct-2026: 3,5 -> 4,5 MB. Crecio por las series de Francia (SAA departamental y regional, RICA, comercio exterior y boletin de coyuntura: unas 4.500 series). Cada idioma baja solo el suyo.
+  for (const lg of Object.keys(man.searchL || {})) ok(man.searchL[lg].bytes < 4.5 * 1024 * 1024, 'search-' + lg + ': fichero demasiado grande (' + man.searchL[lg].bytes + ')');
   const cats = new Set(C.map(c => c.code)); const seen = new Set();
   d.rows.forEach(r => { ok(r.length === 5 && cats.has(r[0]) && r[1] && r[2], 'search: fila mal formada'); const k = r[0] + '/' + r[1]; ok(!seen.has(k), 'search: repetida ' + k); seen.add(k); });
 }
