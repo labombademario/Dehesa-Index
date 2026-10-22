@@ -27,12 +27,16 @@ def clean(s): return re.sub(r'\s+', ' ', re.sub(r'\(\d+\)', '', str(s or ''))).s
 def sheet(rows, year):
     hi = next((i for i, r in enumerate(rows[:12]) if r and isinstance(r[0], str) and r[0].startswith('England %s' % year)), None)
     if hi is None: raise SystemExit('cabecera no encontrada en la hoja %s' % year)
-    grp, cur, cols = rows[hi - 1] if hi else [], '', []
-    for j, lab in enumerate(rows[hi]):
-        if j == 0: continue
-        g = grp[j] if j < len(grp) else None
-        if g: cur = clean(g)
-        if lab and clean(lab): cols.append((j, cur, clean(lab)))
+    # bloques de columnas separados por una columna vacia; el titulo del bloque (fila de arriba, celda combinada) puede caer en cualquier columna del bloque
+    grp, head, cols, block = rows[hi - 1] if hi else [], rows[hi], [], []
+    def flush():
+        g = next((clean(grp[j]) for j in block if j < len(grp) and grp[j] and clean(grp[j])), '')
+        for j in block: cols.append((j, g, clean(head[j])))
+        del block[:]
+    for j in range(1, len(head)):
+        if head[j] and clean(head[j]): block.append(j)
+        elif block: flush()
+    if block: flush()
     areas, conf = [], 0
     for r in rows[hi + 1:]:
         if not r or not isinstance(r[0], str) or not r[0].strip(): continue
