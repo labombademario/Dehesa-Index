@@ -74,5 +74,25 @@ if sec == 'more':
     st, h, b = get('https://www.argentina.gob.ar/superintendencia-de-seguros/estadisticas'); t = b.decode('utf8', 'ignore')
     for m in re.findall(r'href="([^"]+)"[^>]*>([^<]{3,120})<', t):
         if re.search(r'(?i)agro|seguro|estad|riesgo|forest', m[0] + m[1]): p('  A', m[0], '|', m[1].strip())
+if sec == 'third':
+    p('=== THIRD')
+    key = os.environ.get('MARS_API_KEY', '')
+    auth = {'Authorization': 'Basic ' + base64.b64encode((key + ':').encode()).decode()}
+    for sid in (2314, 2315, 2316):
+        st, h, b = get('https://marsapi.ams.usda.gov/services/v1.2/reports/%d?q=report_begin_date=10/21/2026&allSections=true' % sid, headers=auth, timeout=120)
+        p('REPORT', sid, st, len(b))
+        try:
+            d = json.loads(b); 
+            for sec_ in (d if isinstance(d, list) else [d]):
+                p(' section', sec_.get('reportSection'), sec_.get('stats'))
+                rs = sec_.get('results') or []
+                for r in rs[:6]: p('  ', json.dumps(r)[:700])
+        except Exception as e: p('ERR', e, b[:300])
+    for u in ['https://www150.statcan.gc.ca/t1/wds/rest/getAllCubesListLite', 'https://www150.statcan.gc.ca/n1/en/type/data']:
+        st, h, b = head(u); p(re.sub(r'\s+', ' ', b[:200].decode('utf8', 'ignore')))
+    for u in ['https://www.argentina.gob.ar/superintendencia-de-seguros/mercado-asegurador', 'https://www.argentina.gob.ar/superintendencia-de-seguros/estadisticas/informes']:
+        st, h, b = get(u); t = b.decode('utf8', 'ignore'); p(u, st, len(t))
+        for m in re.findall(r'href="([^"]+)"[^>]*>([^<]{3,140})<', t):
+            if re.search(r'(?i)agro|forest|riesgos|xls|estadist|seguros-', m[0] + m[1]): p('  A', m[0], '|', m[1].strip())
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
