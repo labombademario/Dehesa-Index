@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-21",
+ "generatedAt": "2026-10-22",
  "policy": "Solo fuentes con veredicto comercial apto o con condiciones (data/commercial-summary.json). Sin estimaciones ni relleno.",
  "columns": [
   "product_key",
@@ -18,7 +18,7 @@
  "summary": {
   "files": 87,
   "excluded": 0,
-  "rows": 39864
+  "rows": 39873
  },
  "files": [
   {
@@ -820,12 +820,12 @@
    "currency": "EUR",
    "frequency": "weekly",
    "rows": 1039,
-   "first": "2006-10-29",
-   "last": "2026-10-11",
+   "first": "2006-11-05",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/oliva.csv",
    "xlsx": "data/pack/eu/oliva.xlsx",
    "csvBytes": 193215,
-   "xlsxBytes": 55113
+   "xlsxBytes": 55132
   },
   {
    "product": "arroz",
@@ -851,12 +851,12 @@
    "currency": "EUR",
    "frequency": "weekly",
    "rows": 954,
-   "first": "2006-10-29",
-   "last": "2026-10-11",
+   "first": "2006-11-05",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/arroz.csv",
    "xlsx": "data/pack/eu/arroz.xlsx",
    "csvBytes": 170536,
-   "xlsxBytes": 48642
+   "xlsxBytes": 48638
   },
   {
    "product": "avena",
@@ -881,13 +881,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 10,
+   "rows": 11,
    "first": "2026-08-09",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/avena.csv",
    "xlsx": "data/pack/eu/avena.xlsx",
-   "csvBytes": 1880,
-   "xlsxBytes": 7390
+   "csvBytes": 2059,
+   "xlsxBytes": 7441
   },
   {
    "product": "azucar",
@@ -943,13 +943,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 559,
+   "rows": 560,
    "first": "2015-11-22",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/cebada.csv",
    "xlsx": "data/pack/eu/cebada.xlsx",
-   "csvBytes": 99594,
-   "xlsxBytes": 31338
+   "csvBytes": 99772,
+   "xlsxBytes": 31364
   },
   {
    "product": "centeno",
@@ -974,13 +974,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 14,
+   "rows": 15,
    "first": "2023-07-23",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/centeno.csv",
    "xlsx": "data/pack/eu/centeno.xlsx",
-   "csvBytes": 2653,
-   "xlsxBytes": 7623
+   "csvBytes": 2836,
+   "xlsxBytes": 7674
   },
   {
    "product": "cerdo",
@@ -1005,13 +1005,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 640,
+   "rows": 641,
    "first": "2014-07-13",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/cerdo.csv",
    "xlsx": "data/pack/eu/cerdo.xlsx",
-   "csvBytes": 112642,
-   "xlsxBytes": 36257
+   "csvBytes": 112818,
+   "xlsxBytes": 36298
   },
   {
    "product": "colza",
@@ -1036,13 +1036,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 285,
+   "rows": 286,
    "first": "2021-04-25",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/colza.csv",
    "xlsx": "data/pack/eu/colza.xlsx",
-   "csvBytes": 51058,
-   "xlsxBytes": 20186
+   "csvBytes": 51237,
+   "xlsxBytes": 20226
   },
   {
    "product": "cordero",
@@ -1067,13 +1067,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 615,
+   "rows": 616,
    "first": "2015-01-04",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/cordero.csv",
    "xlsx": "data/pack/eu/cordero.xlsx",
-   "csvBytes": 110687,
-   "xlsxBytes": 35235
+   "csvBytes": 110867,
+   "xlsxBytes": 35272
   },
   {
    "product": "gas_natural",
@@ -1160,13 +1160,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 297,
+   "rows": 298,
    "first": "2021-02-07",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/harina_soja.csv",
    "xlsx": "data/pack/eu/harina_soja.xlsx",
-   "csvBytes": 57654,
-   "xlsxBytes": 21003
+   "csvBytes": 57848,
+   "xlsxBytes": 21045
   },
   {
    "product": "huevos",
@@ -1192,12 +1192,12 @@
    "currency": "EUR",
    "frequency": "weekly",
    "rows": 871,
-   "first": "2006-10-29",
-   "last": "2026-10-11",
+   "first": "2006-11-05",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/huevos.csv",
    "xlsx": "data/pack/eu/huevos.xlsx",
-   "csvBytes": 154736,
-   "xlsxBytes": 47086
+   "csvBytes": 154737,
+   "xlsxBytes": 47070
   },
   {
    "product": "leche",
@@ -1254,12 +1254,12 @@
    "currency": "EUR",
    "frequency": "weekly",
    "rows": 1042,
-   "first": "2006-10-29",
-   "last": "2026-10-11",
+   "first": "2006-11-05",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/leche_polvo.csv",
    "xlsx": "data/pack/eu/leche_polvo.xlsx",
-   "csvBytes": 208928,
-   "xlsxBytes": 54889
+   "csvBytes": 208931,
+   "xlsxBytes": 54879
   },
   {
    "product": "mantequilla",
@@ -1285,12 +1285,12 @@
    "currency": "EUR",
    "frequency": "weekly",
    "rows": 1042,
-   "first": "2006-10-29",
-   "last": "2026-10-11",
+   "first": "2006-11-05",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/mantequilla.csv",
    "xlsx": "data/pack/eu/mantequilla.xlsx",
-   "csvBytes": 195404,
-   "xlsxBytes": 55373
+   "csvBytes": 195405,
+   "xlsxBytes": 55363
   },
   {
    "product": "maiz",
@@ -1315,13 +1315,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 549,
+   "rows": 550,
    "first": "2015-11-22",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/maiz.csv",
    "xlsx": "data/pack/eu/maiz.xlsx",
-   "csvBytes": 96167,
-   "xlsxBytes": 30807
+   "csvBytes": 96342,
+   "xlsxBytes": 30682
   },
   {
    "product": "petroleo_brent",
@@ -1378,12 +1378,12 @@
    "currency": "EUR",
    "frequency": "weekly",
    "rows": 1042,
-   "first": "2006-10-29",
-   "last": "2026-10-11",
+   "first": "2006-11-05",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/pollo.csv",
    "xlsx": "data/pack/eu/pollo.xlsx",
    "csvBytes": 180249,
-   "xlsxBytes": 53688
+   "xlsxBytes": 53683
   },
   {
    "product": "trigo",
@@ -1408,13 +1408,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 452,
+   "rows": 453,
    "first": "2015-11-22",
-   "last": "2026-10-11",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/trigo.csv",
    "xlsx": "data/pack/eu/trigo.xlsx",
-   "csvBytes": 79739,
-   "xlsxBytes": 26693
+   "csvBytes": 79918,
+   "xlsxBytes": 26731
   },
   {
    "product": "urea",
@@ -1471,12 +1471,12 @@
    "currency": "EUR",
    "frequency": "weekly",
    "rows": 1042,
-   "first": "2006-10-29",
-   "last": "2026-10-11",
+   "first": "2006-11-05",
+   "last": "2026-10-18",
    "csv": "data/pack/eu/vaca.csv",
    "xlsx": "data/pack/eu/vaca.xlsx",
-   "csvBytes": 190658,
-   "xlsxBytes": 55270
+   "csvBytes": 190657,
+   "xlsxBytes": 55271
   },
   {
    "product": "eurostat_energy_input_index",
