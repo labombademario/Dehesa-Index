@@ -25,7 +25,8 @@
   function n0(v, lg) { return v == null ? '—' : Math.round(v).toLocaleString(LOC[lg]); }
   function pct(v, lg, d) { if (v == null) return '—'; return v.toLocaleString(LOC[lg], { minimumFractionDigits: d, maximumFractionDigits: d, signDisplay: 'exceptZero' }).replace('-', '−') + ' %'; }
   function readLS(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
-  function home() { var loc = readLS('dehesaIndexLocation'), c = (readLS('dehesaIndexEuCountry') || '').toUpperCase(); return loc === 'eu' && { ES: 1, FR: 1, DE: 1, IT: 1 }[c] ? c : 'ES'; }
+  function home() { var loc = readLS('dehesaIndexLocation'), c = (readLS('dehesaIndexEuCountry') || '').toUpperCase(); return loc === 'eu' && /^[A-Z]{2}$/.test(c) ? c : 'ES'; }
+  function nm(code, lg) { try { return new Intl.DisplayNames([lg || lang()], { type: 'region' }).of(code === 'EL' ? 'GR' : code); } catch (e) { return code; } }
   function row(l, v) { return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(l) + '</span><span class="di-info-stat-value">' + v + '</span></div>'; }
   function lastIdx(v) { for (var i = v.length - 1; i >= 0; i--) if (v[i] != null) return i; return -1; }
   function build(d, cc, lg) {
@@ -38,9 +39,9 @@
     var xt = ''; for (i = 0; i < n; i++) if (y[i] % 5 === 0) xt += '<line class="wp-grid wp-grid-v" x1="' + X(i).toFixed(1) + '" x2="' + X(i).toFixed(1) + '" y1="' + Tp + '" y2="' + (H - B) + '"/><text class="wp-tick" x="' + X(i).toFixed(1) + '" y="' + (H - 7) + '" text-anchor="middle">' + y[i] + '</text>';
     var line = function (k) { var p = '', open = false; s[k].forEach(function (v, j) { if (v == null) { open = false; return; } p += (open ? 'L' : 'M') + X(j).toFixed(1) + ' ' + Y(v).toFixed(1); open = true; }); return p; };
     var dot = function (k, cls) { var j = lastIdx(s[k]); return j < 0 ? '' : '<circle class="wp-dot ' + cls + '" cx="' + X(j).toFixed(1) + '" cy="' + Y(s[k][j]).toFixed(1) + '" r="3.5"/>'; };
-    var sel = '<label class="wp-sel"><span>' + esc(t.country) + '</span><select class="di-compare-select wr-cc" data-chips aria-label="' + esc(t.country) + '">' + ['ES', 'FR', 'DE', 'IT'].sort(function (a, b) { return a === home() ? -1 : b === home() ? 1 : 0; }).map(function (k) { return '<option value="' + k + '"' + (k === cc ? ' selected' : '') + '>' + esc(t.names[k]) + '</option>'; }).join('') + '</select></label>';
+    var sel = '<label class="wp-sel"><span>' + esc(t.country) + '</span><select class="di-compare-select wr-cc" data-chips aria-label="' + esc(t.country) + '">' + Object.keys(d.countries).sort(function (a, b) { return nm(a, lg).localeCompare(nm(b, lg), LOC[lg]); }).map(function (k) { return '<option value="' + k + '"' + (k === cc ? ' selected' : '') + '>' + esc(nm(k, lg)) + '</option>'; }).join('') + '</select></label>';
     var ind = s['TOTAL.RW_IN'][li], fw = s['TOTAL.RW_FW'][li], first = 0; while (tot[first] == null) first++;
-    var html = '<div class="di-card di-info-card wp-card wr-card"><div class="di-info-card-title">' + esc(t.h + ' — ' + t.names[cc] + ' (' + y[li] + ')') + '</div>' + sel + '<div class="di-info-stat-list">' +
+    var html = '<div class="di-card di-info-card wp-card wr-card"><div class="di-info-card-title">' + esc(t.h + ' — ' + nm(cc, lg) + ' (' + y[li] + ')') + '</div>' + sel + '<div class="di-info-stat-list">' +
       row(t.total + ' · ' + y[li] + (est ? ' *' : ''), '<b>' + n0(tot[li], lg) + '</b> ' + esc(t.unit)) +
       row(t.yoy, pct(pi >= 0 && tot[pi] ? (tot[li] / tot[pi] - 1) * 100 : null, lg, 1)) +
       row(t.conif, n0(s['CONIF.RW'][li], lg)) + row(t.broad, n0(s['NCONIF.RW'][li], lg)) +
@@ -88,8 +89,12 @@
         bind(el, b, lg);
         if (code === 'ES') esLoad().then(function (f) { if (f && f.wood && el.querySelector('.wr-card')) el.insertAdjacentHTML('beforeend', esBlock(f, lg)); });
       }
-      draw(cc);
-      el.addEventListener('change', function (ev) { if (ev.target && ev.target.className.indexOf('wr-cc') >= 0) { draw(ev.target.value); var s2 = el.querySelector('.wr-cc'); if (s2) s2.focus(); } });
+      if (!d.countries[cc]) {
+        var NO = { es: ['No tenemos datos de cortas de madera de {c}.', 'Elige otro país para ver sus cifras:'], en: ['We have no roundwood removals data for {c}.', 'Pick another country to see its figures:'], fr: ['Nous n’avons pas de données de récolte de bois pour {c}.', 'Choisissez un autre pays pour voir ses chiffres :'], it: ['Non abbiamo dati sui tagli di legname per {c}.', 'Scegli un altro paese per vedere le sue cifre:'] }[lg];
+        var ks = Object.keys(d.countries).sort(function (a, b) { return nm(a, lg).localeCompare(nm(b, lg), LOC[lg]); });
+        el.innerHTML = '<div class="di-info-scope-note">' + esc(NO[0].replace('{c}', nm(cc, lg))) + '</div><label class="wp-sel"><span>' + esc(NO[1]) + '</span><select class="di-compare-select wr-cc" aria-label="' + esc(t.country) + '"><option value="">—</option>' + ks.map(function (k) { return '<option value="' + k + '">' + esc(nm(k, lg)) + '</option>'; }).join('') + '</select></label>';
+      } else draw(cc);
+      el.addEventListener('change', function (ev) { if (ev.target && ev.target.className.indexOf('wr-cc') >= 0 && ev.target.value) { draw(ev.target.value); var s2 = el.querySelector('.wr-cc'); if (s2) s2.focus(); } });
     });
   }
   global.DehesaWood = { render: render };

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Cortas de madera en rollo por pais -> data/wood-removals.json
 Eurostat, conjunto for_remov (Joint Forest Sector Questionnaire): cortas anuales en miles de m3 sin corteza, por tipo de arbol (conifera / frondosa)
-y destino (industrial: troza, trituracion, otros; lena). Paises: Alemania, Italia, Espana, Francia (el agregado UE-27 de Eurostat no pasa de 2016). No es un precio: es el volumen que se corta cada ano.
+y destino (industrial: troza, trituracion, otros; lena). Paises: los de la UE-27 que publican (el agregado UE-27 de Eurostat no pasa de 2016). No es un precio: es el volumen que se corta cada ano.
 Uso: python3 scripts/update-wood-removals.py"""
 import datetime, json, sys, time, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'data' / 'wood-removals.json'
-GEOS = ['DE', 'IT', 'ES', 'FR']  # el agregado UE-27 de este conjunto solo llega a 2016: no se publica
+GEOS = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'EL', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE']  # UE-27; antes solo DE, IT, ES, FR. el agregado UE-27 de este conjunto solo llega a 2016: no se publica
 URL = 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/for_remov?format=TSV&' + '&'.join('geo=' + g for g in GEOS)
 KEYS = [('TOTAL', 'RW'), ('TOTAL', 'RW_IN'), ('TOTAL', 'RW_IN_LG'), ('TOTAL', 'RW_IN_PW'), ('TOTAL', 'RW_IN_O'), ('TOTAL', 'RW_FW'), ('CONIF', 'RW'), ('NCONIF', 'RW')]
 def get():
@@ -32,7 +32,8 @@ def main():
             except ValueError: vals.append(None); continue
             if ' ' in t and 'e' in t.split(' ', 1)[1] and want[sub] == ('TOTAL', 'RW'): est.setdefault(geo, set()).add(years[j])
         data.setdefault(geo, {})['%s.%s' % want[sub]] = vals
-    if set(data) != set(GEOS): print('ERROR: faltan paises', sorted(data)); return 1
+    if not {'DE', 'IT', 'ES', 'FR'} <= set(data): print('ERROR: faltan paises base', sorted(data)); return 1
+    print('paises con datos:', len(data), 'sin datos:', sorted(set(GEOS) - set(data)))
     first = min(i for cc in data.values() for v in cc.values() for i, x in enumerate(v) if x is not None)
     out = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'unit': 'THS_M3',
            'source': {'name': 'Eurostat, for_remov (Joint Forest Sector Questionnaire)', 'url': 'https://ec.europa.eu/eurostat/databrowser/view/for_remov/default/table', 'license': 'Eurostat copyright notice (reutilizable citando la fuente)'},
