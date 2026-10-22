@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T18:46:07Z",
+ "generatedAt": "2026-10-22T18:53:21Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1705,12 +1705,11 @@
    "country": "AR",
    "scope": "integrated",
    "institution": "Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca",
-   "dataset": "Ya integrada (91 series en el catalogo unificado)",
+   "dataset": "Ya integrada (89 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
     "eggs",
-    "energy",
     "fruit",
     "maize",
     "milk",
@@ -1727,7 +1726,6 @@
    ],
    "productsConfirmed": true,
    "metrics": [
-    "input_price",
     "price",
     "production",
     "trade"
