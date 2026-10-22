@@ -6733,6 +6733,18 @@
     "UK": "desnz_fuel_prices"
    },
    "notes": "Precio medio semanal de surtidor del gasóleo y la gasolina en el Reino Unido, con impuesto especial e IVA (DESNZ, OGL v3.0)."
+  },
+  "data/uk-farm-accounts.json": {
+   "sources": [
+    "defra"
+   ],
+   "notes": "Farm Accounts in England (Farm Business Survey), tablas 1, 2, 5a y 5c del ZIP CSV oficial; libras por explotacion (OGL v3.0). Solo Inglaterra."
+  },
+  "data/uk-structure.json": {
+   "sources": [
+    "defra"
+   ],
+   "notes": "Estructura de la industria agraria de Inglaterra en junio por condado / autoridad unitaria (OGL v3.0); celdas confidenciales '#' como vacias."
   }
  },
  "derived": [

@@ -1,0 +1,60 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Cuentas de las explotaciones de Inglaterra (Defra FBS)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "years",
+  "income",
+  "costs"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    },
+    "license": {
+     "type": "string"
+    },
+    "file": {
+     "type": "string"
+    }
+   }
+  },
+  "years": {
+   "type": "array",
+   "minItems": 5
+  },
+  "income": {
+   "type": "object",
+   "required": [
+    "All Types"
+   ]
+  },
+  "costs": {
+   "type": "object"
+  },
+  "regions": {
+   "type": "object"
+  }
+ }
+}

@@ -1307,6 +1307,24 @@ sources:
     continue: true
     data: [uk-climate.json, uk-climate-log.txt]
     message: Lluvia y temperatura mensual del Reino Unido por region (Met Office)
+  - id: uk-farm-accounts
+    name: Update England farm accounts (Defra Farm Business Survey)
+    cron: ['20 9 * * 1']
+    script: scripts/update-uk-farm-accounts.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [uk-farm-accounts.json, uk-farm-accounts-log.txt]
+    message: Cuentas de las explotaciones de Inglaterra (Defra, Farm Business Survey)
+  - id: uk-structure
+    name: Update England farm structure by county (Defra June survey)
+    cron: ['35 9 * * 1']
+    script: scripts/update-uk-structure.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [uk-structure.json, uk-structure-log.txt]
+    message: Estructura agraria de Inglaterra por condado (Defra, encuesta de junio)
   - id: uk-farmers-age
     name: Update England farm holders by age and sex (Defra)
     cron: ['40 8 * * 5']
