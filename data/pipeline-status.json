@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T05:05:00Z",
+ "generatedAt": "2026-10-22T05:19:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 230,
+  "ok": 231,
   "late": 2,
   "error": 2,
   "not_run": 0,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "49d436b5",
+   "sha": "5a246ee7",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/463861d0-d73b-40f3-8a48-c63e60caa795",
-   "completedAt": "2026-10-22T05:04:12Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/a3be4841-1217-4d55-990e-a9f9688e1662",
+   "completedAt": "2026-10-22T05:18:58Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T03:44:22.655717+00:00",
   "repoGeneratedAt": "2026-10-22T03:44:22.655717+00:00",
-  "checkedAt": "2026-10-22T05:05:00Z"
+  "checkedAt": "2026-10-22T05:19:00Z"
  },
  "pipelines": [
   {
@@ -3753,19 +3753,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T04:56:54Z"
+     "lastChange": "2026-10-22T05:08:07Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-22T04:58:06Z"
+     "lastChange": "2026-10-22T05:18:02Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-22T04:48:25Z"
+     "lastChange": "2026-10-22T05:12:46Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-22T04:48:25Z"
+     "lastChange": "2026-10-22T05:12:46Z"
     },
     {
      "path": "data/pack"
@@ -3841,9 +3841,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39724648566"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 8,
-    "failed": 2
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 3.0
@@ -4153,7 +4153,7 @@
    "crons": [
     "10 5 * * *"
    ],
-   "nextRun": "2026-10-22T05:10:00Z",
+   "nextRun": "2026-10-23T05:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4629,6 +4629,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-uk-climate.yml",
+   "name": "Update UK monthly rainfall and temperature by nation and region (Met Office)",
+   "crons": [
+    "50 9 3,12 * *"
+   ],
+   "nextRun": "2026-11-03T09:50:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T05:18:06Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39727230992"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 504.0
   },
   {
    "workflow": "update-uk-defra.yml",
