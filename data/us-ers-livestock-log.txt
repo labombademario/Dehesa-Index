@@ -1,4 +1,4 @@
-ZIP: https://www.ers.usda.gov/media/5539/livestock-domestic-data-machine-readable-files.zip?v=98700
+ZIP: https://www.ers.usda.gov/media/5539/livestock-domestic-data-machine-readable-files.zip?v=31921
 descartada us-erslm-veal-exports-a: 19 puntos, ultimo 1988
 descartada us-erslm-veal-imports-a: 19 puntos, ultimo 1988
 oferta y utilizacion: 70 series
