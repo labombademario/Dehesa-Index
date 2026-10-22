@@ -1785,7 +1785,7 @@
    "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "ons": {
-   "name": "UK Office for National Statistics (consumer price index)",
+   "name": "UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS)",
    "url": "https://www.ons.gov.uk/economy/inflationandpriceindices",
    "country": "UK",
    "licenseId": "OGL-UK-3.0",
@@ -1796,7 +1796,7 @@
    "redistribution": "yes",
    "attributionRequired": true,
    "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
-   "additionalRestrictions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice de precios de consumo (CPI, D7BT).",
+   "additionalRestrictions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de precios de consumo (CPI, D7BT) y, vía NOMIS (servicio del ONS), la población, la tasa de paro y el valor añadido bruto por región (mismo régimen OGL v3.0).",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
    "verifiedAt": "2026-10-04",
@@ -5538,6 +5538,12 @@
     "US": "usda_ers"
    },
    "notes": "Asignacion de condados a las 9 regiones agricolas del USDA ERS (Farm Resource Regions, fichero reglink.xls), sin cambiar valores; sirve para colorear el mapa de regiones de costes."
+  },
+  "data/uk-regions-macro.json": {
+   "sources": [
+    "ons"
+   ],
+   "notes": "Poblacion a mitad de ano, tasa de paro (calculada por Dehesa Index como parados / poblacion activa de 16+, Encuesta Anual de Poblacion) y valor anadido bruto por region y nacion del Reino Unido, via NOMIS (ONS, OGL v3.0)."
   },
   "data/us-ers-stats.json": {
    "byCountry": {

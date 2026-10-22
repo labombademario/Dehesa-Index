@@ -2735,6 +2735,14 @@
    ]
   },
   {
+   "path": "data/uk-regions-macro.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "ons"
+   ]
+  },
+  {
    "path": "data/australia-trade-stats.json",
    "scope": "fichero",
    "verdict": "apto",

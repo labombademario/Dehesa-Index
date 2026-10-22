@@ -1289,6 +1289,15 @@ sources:
     continue: true
     data: [australia-states-macro.json, australia-states-macro-log.txt]
     message: Poblacion, edad mediana, paro y tasa de empleo por estado de Australia (ABS)
+  - id: uk-regions-macro
+    name: Update UK regions population, unemployment and gross value added (ONS via NOMIS)
+    cron: ['25 8 * * 4']
+    script: scripts/update-uk-regions-macro.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    data: [uk-regions-macro.json, uk-regions-macro-log.txt]
+    message: Poblacion, paro y valor anadido bruto por region del Reino Unido (ONS via NOMIS)
   - id: canada-provinces
     name: Update Canada by province (Statistics Canada)
     cron: ['50 15 * * 3']
