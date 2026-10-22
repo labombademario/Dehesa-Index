@@ -1,1 +1,13 @@
-semilla desde las ediciones de octubre de 2026; la pipeline la sustituye en su primera ejecucion
+escaneo: 1173 numeros probados, 3 ediciones,  0 sin respuesta
+agreste: intento 1/4 fallido (unknown url type: "b''")
+agreste: intento 2/4 fallido (unknown url type: "b''")
+agreste: intento 3/4 fallido (unknown url type: "b''")
+agreste: intento 4/4 fallido (unknown url type: "b''")
+EDICION ILEGIBLE IraLai25147 b'' -> unknown url type: "b''"
+agreste: intento 1/4 fallido (unknown url type: "b''")
+agreste: intento 2/4 fallido (unknown url type: "b''")
+agreste: intento 3/4 fallido (unknown url type: "b''")
+agreste: intento 4/4 fallido (unknown url type: "b''")
+EDICION ILEGIBLE IraCex25150 b'' -> unknown url type: "b''"
+ok IraGcu26114 {'kind': 'Gcu', 'published': '2026-09-15', 'status': 'ok', 'edition': '2026-09'}
+series de catalogo: 50
