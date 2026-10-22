@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T13:47:00Z",
+ "generatedAt": "2026-10-22T14:11:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 234,
+  "ok": 235,
   "late": 2,
-  "error": 6,
+  "error": 5,
   "not_run": 0,
   "unknown": 0
  },
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "e13e6fb9",
+   "sha": "ee04f406",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e53499b8-8481-40bb-a06d-ba3389e3322e",
-   "completedAt": "2026-10-22T13:38:09Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/0d43a568-bc9a-4484-8efe-4caeefcb9f3c",
+   "completedAt": "2026-10-22T14:02:51Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T12:53:44.472438+00:00",
   "repoGeneratedAt": "2026-10-22T12:53:44.472438+00:00",
-  "checkedAt": "2026-10-22T13:47:00Z"
+  "checkedAt": "2026-10-22T14:11:00Z"
  },
  "pipelines": [
   {
@@ -562,16 +562,16 @@
    "files": [],
    "last": {
     "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-22T09:13:19Z",
-    "durationSec": 851,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39747253175",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · no se pudo publicar tras 10 intentos · FALLO gdp RuntimeError('36100222: WDS no devolvio JSON (HTTP 200, 92815 bytes): b\"<!--Last modified Dec 16, 2021 by Hasan Skaiky-->\\\\r\\\\n\\\\r\\\\n\\\\r\\\\n<!DOCTYPE html>\\\\r\\\\n<html>\\\\r\\\\n<head>\\\\r\\\\n  "
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T14:00:38Z",
+    "durationSec": 388,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39791984121",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO gdp RuntimeError('36100222: WDS no devolvio JSON (HTTP 200, 92815 bytes): b\"<!--Last modified Dec 16, 2021 by Hasan Skaiky-->\\\\r\\\\n\\\\r\\\\n\\\\r\\\\n<!DOCTYPE html>\\\\r\\\\n<html>\\\\r\\\\n<head>\\\\r\\\\n    <title>Statistics Canada - We\\'re sor"
    },
    "recent": {
-    "runs": 5,
+    "runs": 6,
     "success": 3,
-    "failed": 1
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 168.0
@@ -1734,7 +1734,7 @@
    "crons": [
     "0 14 * * 4"
    ],
-   "nextRun": "2026-10-22T14:00:00Z",
+   "nextRun": "2026-10-29T14:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3754,7 +3754,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T12:50:34Z"
+     "lastChange": "2026-10-22T13:49:50Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4825,19 +4825,18 @@
    "nextRun": "2026-10-26T09:45:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T12:19:08Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39777354203",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · no se encontraron las Main Tables del censo de Escocia"
+    "startedAt": "2026-10-22T14:00:39Z",
+    "durationSec": 152,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39791987804"
    },
    "recent": {
-    "runs": 4,
-    "success": 2,
+    "runs": 5,
+    "success": 3,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -5630,8 +5629,8 @@
     "reason": "no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "error",
