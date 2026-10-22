@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T18:50:39Z",
+ "generatedAt": "2026-10-22T20:12:31Z",
  "summary": {
-  "files": 81,
+  "files": 82,
   "errors": 0,
-  "warnings": 25
+  "warnings": 26
  },
  "files": [
   {
@@ -133,6 +133,36 @@
    "generatedAt": "2026-10-08T04:57:49Z",
    "info": [],
    "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "france-saa-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "FR/fr-saa-r11-cop33-surf: salto 930 -> 1990 en 2019 (mediana previa 60)",
+    "FR/fr-saa-r11-cop33-prod: salto 2604.0 -> 5572.0 en 2019 (mediana previa 168)",
+    "FR/fr-saa-r53-ind05-surf: salto 15 -> 306 en 2022 (mediana previa 9)",
+    "FR/fr-saa-r53-ind05-surf: salto 306 -> 921 en 2023 (mediana previa 15)",
+    "FR/fr-saa-r53-ind05-surf: salto 921 -> 2542 en 2024 (mediana previa 15)",
+    "FR/fr-saa-r53-ind05-surf: salto 2542 -> 2507 en 2025 (mediana previa 15)",
+    "FR/fr-saa-r53-ind05-prod: salto 91.5 -> 1791.9 en 2022 (mediana previa 60.7)",
+    "FR/fr-saa-r53-ind05-prod: salto 1791.9 -> 5986.5 en 2023 (mediana previa 72)",
+    "FR/fr-saa-r53-ind05-prod: salto 5986.5 -> 15506.2 en 2024 (mediana previa 91.5)",
+    "FR/fr-saa-r53-ind05-prod: salto 15506.2 -> 15292.7 en 2025 (mediana previa 91.5)",
+    "FR/fr-saa-r28-vin11-prod-tt: salto 427 -> 264 en 2024 (mediana previa 1)",
+    "FR/fr-saa-r28-vin11-prod-tt: salto 264 -> 649 en 2025 (mediana previa 1)",
+    "FR/fr-saa-r28-vin11-prod-rouge: salto 91 -> 183 en 2025 (mediana previa 1)"
+   ],
+   "stats": {
+    "series": 4160,
+    "points": 65812,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-22T19:58:19Z",
+   "info": [],
+   "nWarnings": 13,
    "nErrors": 0
   },
   {
@@ -589,11 +619,11 @@
     "AR/ar-lecheria-wmp-exports-value: salto 8206.934 -> 15706.055 en 1997-06 (mediana previa 470)"
    ],
    "stats": {
-    "series": 134,
-    "points": 24373,
+    "series": 132,
+    "points": 24346,
     "lines": 0
    },
-   "generatedAt": "2026-10-15T18:48:06Z",
+   "generatedAt": "2026-10-22T18:52:04Z",
    "info": [],
    "nWarnings": 26,
    "nErrors": 0
@@ -608,10 +638,10 @@
    ],
    "stats": {
     "series": 30,
-    "points": 5970,
+    "points": 5961,
     "lines": 0
    },
-   "generatedAt": "2026-10-19T02:45:14Z",
+   "generatedAt": "2026-10-22T19:50:59Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
