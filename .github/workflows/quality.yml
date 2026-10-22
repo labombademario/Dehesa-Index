@@ -205,7 +205,7 @@ jobs:
         run: |
           set -e
           for s in build-us-trade-partners build-cl-trade-partners build-series-registry build-watch-index build-data-catalog build-us-trade-products build-trade-sections build-freshness build-views build-product-compare build-product-profiles build-relationships build-daily-brief build-observatory build-source-candidates build-commercial-catalog build-coverage-gaps build-country-pending build-premium-tracker build-ers-cost-reference build-sowing build-home-tape build-home-explore build-cap-index build-dehesa; do
-            python3 scripts/$s.py > /dev/null
+            python3 scripts/$s.py > /tmp/builder.out 2>&1 || { echo "::error::el constructor $s fallo: $(tail -n 6 /tmp/builder.out | tr '\n' ' ' | cut -c1-600)"; exit 1; }
           done
 
       - name: Data catalog integrity (manifest, catalogs, shards)
