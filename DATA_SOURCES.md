@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 150 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31805 series en el catalogo unificado.
+Resumen: 150 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31813 series en el catalogo unificado.
 
 ## VERIFIED (150)
 
@@ -22,7 +22,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `ama_agrardiesel` | AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG | AT | PUBLIC-LAW | si/si | si | 0 |  |
 | `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 91 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
 | `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 1 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
-| `bank_of_england` | Bank of England — Statistical Interactive Database (Bank Rate) | UK | OGL-UK-3.0 | si/si | si | 0 | La página legal excluye algunos datos de tipos de cambio de terceros; solo se usa Bank Rate (IUDBEDR), que es dato propio del Banco. |
+| `bank_of_england` | Bank of England — Statistical Interactive Database (Bank Rate) | UK | OGL-UK-3.0 | si/si | si | 1 | La página legal excluye algunos datos de tipos de cambio de terceros; solo se usa Bank Rate (IUDBEDR), que es dato propio del Banco. |
 | `bea` | U.S. Bureau of Economic Analysis | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bfs_ch_open` | Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices | CH | OPENDATA-SWISS-TERMS-BY | si/si | si | 87 | Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each… |
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 0 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
@@ -41,7 +41,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `csp_lv` | Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk) | LV | CC-BY-4.0 | si/si | si | 51 |  |
 | `csu_cz` | Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area) | CZ | CZ-OPENDATA-FREE | si/si | si | 75 | None declared. Credit is given anyway. |
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 718 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
-| `desnz_fuel_prices` | UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito. |
+| `desnz_fuel_prices` | UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices | UK | OGL-UK-3.0 | si/si | si | 4 | Sin respaldo oficial implícito. |
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 340 | Modifications must be marked as such. |
 | `dgec_prix_petroliers` | Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `dila_jorf` | DILA — Journal officiel de la République française (données ouvertes JORF) | FR | CUSTOM | si/si | si | 0 | The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse … |
@@ -63,7 +63,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
 | `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17302 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
-| `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 2238 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
+| `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 2241 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |
 | `fek_gr` | Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023 | EL | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y e… |
 | `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 118 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |

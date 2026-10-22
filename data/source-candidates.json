@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T10:47:49Z",
+ "generatedAt": "2026-10-22T11:02:29Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1806,11 +1806,11 @@
    "country": "UK",
    "scope": "integrated",
    "institution": "Bank of England — Statistical Interactive Database (Bank Rate)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "dataset": "Ya integrada (1 series en el catalogo unificado)",
    "products": [],
-   "productsConfirmed": false,
+   "productsConfirmed": true,
    "metrics": [],
-   "frequency": "unknown",
+   "frequency": "monthly",
    "access": {
     "api": null,
     "csv": null,
@@ -2650,11 +2650,15 @@
    "country": "UK",
    "scope": "integrated",
    "institution": "UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (4 series en el catalogo unificado)",
+   "products": [
+    "energy"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price"
+   ],
+   "frequency": "weekly",
    "access": {
     "api": null,
     "csv": null,
@@ -3622,7 +3626,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat — Comext international trade in goods",
-   "dataset": "Ya integrada (2238 series en el catalogo unificado)",
+   "dataset": "Ya integrada (2241 series en el catalogo unificado)",
    "products": [
     "eggs",
     "fertilizer",
