@@ -21,7 +21,7 @@
     var pe = String(h.period), y = +h.year, m;
     if (/^\d\d-\d\d$/.test(pe)) return Date.UTC(y, +pe.slice(0, 2) - 1, +pe.slice(3));
     if (MONS[pe]) return Date.UTC(y, MONS[pe] - 1, 1);
-    if (/^\d\d$/.test(pe)) return Date.UTC(y, +pe - 1, 1);
+    if (/^\d{1,2}$/.test(pe) && +pe >= 1 && +pe <= 12) return Date.UTC(y, +pe - 1, 1);   // mes numerico 1-12 (Banco Mundial mensual: antes los meses 1-9 caian todos en enero)
     m = /^Q(\d)$/.exec(pe); if (m) return Date.UTC(y, (+m[1] - 1) * 3, 1);
     return Date.UTC(y, 0, 1);
   }

@@ -142,7 +142,7 @@
     var p = String(h.period), y = h.year;
     if (/^\d\d-\d\d$/.test(p)) return dfmt(y + '-' + p, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
     if (MON[p]) return mfmt(y, MON[p]);
-    if (/^\d\d$/.test(p)) return mfmt(y, +p);
+    if (/^\d{1,2}$/.test(p) && +p >= 1 && +p <= 12) return mfmt(y, +p);
     if (/^Q\d$/.test(p)) return p + ' ' + y;
     return p + ' ' + y;
   }

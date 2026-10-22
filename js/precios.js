@@ -1503,7 +1503,7 @@
           '<span>' + esc(t.historyMin) + ' <b>' + esc(money(mn)) + '</b></span>' +
           '<span>' + esc(t.historyAvg) + ' <b>' + esc(money(av)) + '</b></span>' +
           '<span>' + esc(t.historyMax) + ' <b>' + esc(money(mx)) + '</b></span>' +
-          '<span style="margin-left:auto;color:' + D.changeColor(chg, T()) + ';font-weight:700;">' + esc(D.fmtChange(chg)) + '</span>' +
+          '<span style="margin-left:auto;color:' + D.changeColor(chg, T()) + ';font-weight:700;">' + esc(D.fmtChange(chg)) + ' <small style="font-weight:400;color:var(--text-faint);">' + esc(t.historyChangeOver || '') + '</small></span>' +
         '</div>';
     }
 
