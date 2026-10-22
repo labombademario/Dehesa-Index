@@ -55,5 +55,24 @@ if sec in ('all', 'ssn'):
     for u in ['https://www.argentina.gob.ar/superintendencia-de-seguros', 'https://www.argentina.gob.ar/superintendencia-de-seguros/estadisticas', 'https://www.argentina.gob.ar/superintendencia-de-seguros/estadisticas/seguros-agropecuarios', 'https://www.argentina.gob.ar/robots.txt', 'https://datos.gob.ar/dataset?q=seguros+agropecuarios', 'https://www.argentina.gob.ar/aviso-legal']:
         st, h, b = head(u); t = b[:2500].decode('utf8', 'ignore'); p(re.sub(r'\s+', ' ', t)[:500])
         for m in re.findall(r'href="([^"]+\.(?:xls|xlsx|pdf|csv)[^"]*)"', b.decode('utf8', 'ignore') if st == 200 else ''): p('  LINK', m)
+if sec == 'more':
+    p('=== MORE')
+    key = os.environ.get('MARS_API_KEY', '')
+    auth = {'Authorization': 'Basic ' + base64.b64encode((key + ':').encode()).decode()}
+    st, h, b = get('https://marsapi.ams.usda.gov/services/v1.2/reports', headers=auth, timeout=120)
+    L = json.loads(b)
+    for r in L:
+        t = (r.get('report_title') or '')
+        if re.search(r'(?i)retail|national', t) and re.search(r'(?i)fruit|veg|produce|specialty|organic', t): p('REP', r.get('slug_id'), t, '|', r.get('published_date'))
+    for sid in (2315, 2314, 2316, 1662):
+        st, h, b = get('https://marsapi.ams.usda.gov/services/v1.2/reports/%d' % sid, headers=auth, timeout=120)
+        p('REPORT', sid, st, len(b)); p(b[:1800].decode('utf8', 'ignore').replace('\n', ' '))
+    st, h, b = head('https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata', data=json.dumps([{'productId': 32100364}]).encode(), headers={'Content-Type': 'application/json'})
+    p(b[:600].decode('utf8', 'ignore'))
+    for u in ['https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210036401', 'https://www.statcan.gc.ca/en/terms-conditions/open-licence', 'https://open.canada.ca/en/open-government-licence-canada']:
+        st, h, b = head(u); p(re.sub(r'\s+', ' ', b[:600].decode('utf8', 'ignore')))
+    st, h, b = get('https://www.argentina.gob.ar/superintendencia-de-seguros/estadisticas'); t = b.decode('utf8', 'ignore')
+    for m in re.findall(r'href="([^"]+)"[^>]*>([^<]{3,120})<', t):
+        if re.search(r'(?i)agro|seguro|estad|riesgo|forest', m[0] + m[1]): p('  A', m[0], '|', m[1].strip())
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
