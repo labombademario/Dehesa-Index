@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T14:26:00Z",
+ "generatedAt": "2026-10-22T14:42:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 235,
+  "ok": 236,
   "late": 2,
-  "error": 5,
+  "error": 4,
   "not_run": 0,
   "unknown": 0
  },
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "4d5d4b5e",
+   "sha": "c5494c4c",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/f521ba3d-0f0e-4266-811f-6ece10767cb6",
-   "completedAt": "2026-10-22T14:22:20Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/be99872c-3218-436f-a71d-20e968a14de0",
+   "completedAt": "2026-10-22T14:35:18Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T12:53:44.472438+00:00",
   "repoGeneratedAt": "2026-10-22T12:53:44.472438+00:00",
-  "checkedAt": "2026-10-22T14:26:00Z"
+  "checkedAt": "2026-10-22T14:42:00Z"
  },
  "pipelines": [
   {
@@ -1205,7 +1205,7 @@
     "40 14 * * 4",
     "40 12 * * 5"
    ],
-   "nextRun": "2026-10-22T14:40:00Z",
+   "nextRun": "2026-10-23T12:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1738,10 +1738,10 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-16T04:35:42Z",
-    "durationSec": 55,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38851429757"
+    "event": "schedule",
+    "startedAt": "2026-10-22T14:31:41Z",
+    "durationSec": 250,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39796408118"
    },
    "recent": {
     "runs": 10,
@@ -2475,7 +2475,7 @@
     "30 14 * * 4",
     "30 12 * * 5"
    ],
-   "nextRun": "2026-10-22T14:30:00Z",
+   "nextRun": "2026-10-23T12:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3743,7 +3743,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-22T13:36:49Z"
+     "lastChange": "2026-10-22T14:32:38Z"
     },
     {
      "path": "data/products"
@@ -3754,7 +3754,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T14:13:19Z"
+     "lastChange": "2026-10-22T14:29:05Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4203,19 +4203,18 @@
    "nextRun": "2026-10-29T06:50:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T14:00:35Z",
-    "durationSec": 934,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39791975990",
-    "reason": "hubo datos invalidos descartados · datos invalidos: se descarta el cambio de data/spain-crops/index.json · ERROR    spain-crops/index.json             spain-crops index: cereales tiene campanas que ningun libro leido respalda"
+    "startedAt": "2026-10-22T14:21:06Z",
+    "durationSec": 1247,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39794906564"
    },
    "recent": {
-    "runs": 6,
-    "success": 4,
+    "runs": 7,
+    "success": 5,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -4982,8 +4981,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39696229406"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
