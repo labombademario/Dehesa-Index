@@ -4501,6 +4501,32 @@
    "short": "Junta de Castilla y León",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+  },
+  "aafc_wholesale": {
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licensed under the Open Government Licence – Canada.",
+   "additionalRestrictions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Rights the provider is not authorised to license are excluded.",
+   "verifiedAt": "2026-10-21",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "Agriculture and Agri-Food Canada — Weekly and Daily Wholesale Prices Reports",
+   "url": "https://open.canada.ca/data/en/dataset/920bc8e2-de26-4bf6-ac41-ed47962d0ff6",
+   "evidence": "El catálogo de open.canada.ca (API CKAN, leída el 2026-10-21 desde un runner de GitHub) lista «Daily Wholesale Prices Report» y «Weekly Wholesale Prices Reports» (AAFC) con licencia «Open Government Licence - Canada»; los CSV están en od-do.agr.gc.ca. La licencia permite uso, adaptación y distribución, también comercial, con la frase de atribución. Son precios que piden los mayoristas encuestados (rangos por envase), no precio del agricultor.",
+   "short": "AAFC Wholesale Prices",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia OGL-Canada indicada en el catálogo oficial para estos conjuntos."
   }
  },
  "files": {
@@ -6581,6 +6607,12 @@
     "statcan"
    ],
    "notes": "Indices de precios de la madera: EE. UU. = BLS Producer Price Index (WPU081 madera aserrada, WPU0811 coniferas, WPU0812 frondosas, WPU083 contrachapado, WPU085 trozas y madera para pasta; 1982=100; dominio publico). Canada = Statistics Canada, tabla 18-10-0266-01 (IPPI, productos de madera aserrada y en rollo; Open Government Licence - Canada). Son indices, no precios en dolares."
+  },
+  "data/ca/": {
+   "sources": [
+    "aafc_wholesale"
+   ],
+   "notes": "Canadá: precios mayoristas de fruta y hortaliza por ciudad (scripts/update-canada-wholesale.py)"
   }
  },
  "derived": [
