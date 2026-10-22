@@ -904,7 +904,7 @@
           '<div class="di-product-icons">' +
             '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
             (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮 <span class="di-ib-l">' + esc(IBL[0]) + '</span></button>' : '') +
-            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈 <span class="di-ib-l">' + esc(IBL[1]) + '</span></button>' : '') +
+            (showValue ? '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈 <span class="di-ib-l">' + esc(IBL[1]) + '</span></button>' : '') +
             (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔 <span class="di-ib-l">' + esc(IBL[2]) + '</span></button>' : '') +
             '<button type="button" class="di-fav-star' + (fav ? ' active' : '') + '" data-action="fav" data-key="' + key + '" title="' + esc(fav ? t.favRemoveTitle : t.favAddTitle) + '">★</button>' +
           '</div>' +
@@ -920,7 +920,7 @@
           '<span class="di-product-unit">' + esc(unit) + '</span>' +
           '<span class="di-product-change" style="color:' + (showValue ? built.changeColor : 'var(--text-faint)') + ';">' + esc(change) + '</span>' +
         '</div>' + (origTxt ? '<div class="di-product-meta">' + esc(origTxt) + '</div>' : '') +
-        (showValue && lonja ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none" aria-hidden="true"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '') + (showValue && !lonja ? '<svg class="di-product-spark di-spark-link" data-action="spark-history" data-key="' + key + '" role="button" tabindex="0" aria-label="' + esc(t.historyButtonTitle) + '" viewBox="0 0 120 36" preserveAspectRatio="none"><title>' + esc(t.historyButtonTitle) + '</title><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : (showValue ? '' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>')) +
+        (showValue && lonja ? '<svg class="di-product-spark di-spark-link" data-action="spark-history" data-key="' + key + '" role="button" tabindex="0" aria-label="' + esc(t.historyButtonTitle) + '" viewBox="0 0 120 36" preserveAspectRatio="none"><title>' + esc(t.historyButtonTitle) + '</title><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '') + (showValue && !lonja ? '<svg class="di-product-spark di-spark-link" data-action="spark-history" data-key="' + key + '" role="button" tabindex="0" aria-label="' + esc(t.historyButtonTitle) + '" viewBox="0 0 120 36" preserveAspectRatio="none"><title>' + esc(t.historyButtonTitle) + '</title><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : (showValue ? '' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>')) +
         (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(state.location === 'ca' ? t.caGapNote : t.ukGapNote) + ' <a href="precios.html?region=eu&amp;product=' + encodeURIComponent(key) + '">' + esc(({ es: 'Ver en la vista de la UE', en: 'See it in the EU view', fr: 'Voir dans la vue UE', it: 'Vedi nella vista UE' })[lang()] || 'Ver en la vista de la UE') + '</a></div>' : '') +
         relatedNewsHtml(entry) +
         (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
@@ -1240,13 +1240,13 @@
     });
     var historyBtns = root.querySelectorAll('[data-action="history"]');
     Array.prototype.forEach.call(historyBtns, function (btn) {
-      btn.addEventListener('click', function () { openHistory(btn.getAttribute('data-key')); });
+      btn.addEventListener('click', function () { var k = btn.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else openHistory(k); });
     });
     // El minigrafico de la tarjeta tambien abre el historico ampliado (como el boton 📈): raton, teclado (Intro/Espacio) y tactil
     var sparks = root.querySelectorAll('[data-action="spark-history"]');
     Array.prototype.forEach.call(sparks, function (sp) {
-      sp.addEventListener('click', function (ev) { ev.stopPropagation(); openHistory(sp.getAttribute('data-key')); });
-      sp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); ev.stopPropagation(); openHistory(sp.getAttribute('data-key')); } });
+      sp.addEventListener('click', function (ev) { ev.stopPropagation(); var k = sp.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else openHistory(k); });
+      sp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); ev.stopPropagation(); var k = sp.getAttribute('data-key'); if (lonjaPick(PRODUCT_BY_KEY[k] || {})) openLonjaHistory(k); else openHistory(k); } });
     });
     var alertBtns = root.querySelectorAll('[data-action="alert"]');
     Array.prototype.forEach.call(alertBtns, function (btn) {
@@ -1295,6 +1295,23 @@
     state.history = { key: key, region: defaultRegionFor(entry), range: '1y', compareMode: false, compareKey: '', yoy: false };
     lockProductModal();
     renderHistoryModal();
+  }
+
+  // Historico de un mercado local de la UE (lonja): la serie semanal publicada por la Comision, sin conversion.
+  var LH_T = { es: ['Histórico del mercado', 'Último', 'Mínimo', 'Máximo', 'Cerrar', 'Serie semanal publicada por la Comisión Europea (Agri-food Data Portal), EUR/t, sin convertir.'], en: ['Market history', 'Latest', 'Low', 'High', 'Close', 'Weekly series published by the European Commission (Agri-food Data Portal), EUR/t, not converted.'], fr: ['Historique du marché', 'Dernier', 'Plus bas', 'Plus haut', 'Fermer', 'Série hebdomadaire publiée par la Commission européenne (Agri-food Data Portal), EUR/t, sans conversion.'], it: ['Storico del mercato', 'Ultimo', 'Minimo', 'Massimo', 'Chiudi', 'Serie settimanale pubblicata dalla Commissione europea (Agri-food Data Portal), EUR/t, senza conversione.'] };
+  function closeLonjaHistory() { var r = document.getElementById('pr-modal-root'); if (r) r.innerHTML = ''; unlockProductModal(); }
+  function openLonjaHistory(key) {
+    var entry = PRODUCT_BY_KEY[key]; if (!entry) return;
+    var l = lonjaPick(entry); if (!l || !l.p || l.p.length < 2 || !window.DehesaChart) return;
+    var X = LH_T[lang()] || LH_T.es, pts = l.p.map(function (q) { return { x: Date.parse(q[0] + 'T00:00:00Z'), y: q[1], l: S.fmtDate(q[0], lang()) }; });
+    var vals = l.p.map(function (q) { return q[1]; }), mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), last = l.p[l.p.length - 1];
+    var f = function (v) { return D.fmtNumber(v) + ' EUR/t'; };
+    lockProductModal();
+    var chart = window.DehesaChart.render({ series: [{ name: productName(entry.nameKey), color: '#2f6b4a', pts: pts }], xMode: 'time', yTitle: 'EUR/t', aria: productName(entry.nameKey) + ' · ' + lonjaLabel(l), noLegend: true, vFmt: function (v) { return D.fmtNumber(v); } });
+    document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(lonjaLabel(l)) + ' · ' + esc(X[0]) + '</h2><button type="button" class="di-modal-close" id="di-history-close" aria-label="' + esc(X[4]) + '">✕</button></div>' + chart +
+      '<p class="di-field-hint" style="margin:10px 0 2px">' + esc(X[1]) + ': <strong>' + esc(f(last[1])) + '</strong> (' + esc(S.fmtDate(last[0], lang())) + ') · ' + esc(X[2]) + ': ' + esc(f(mn)) + ' · ' + esc(X[3]) + ': ' + esc(f(mx)) + '</p><p class="di-field-hint" style="margin:2px 0 0">' + esc(X[5]) + '</p></div></div>';
+    var ov = document.getElementById('di-history-overlay'); ov.addEventListener('mousedown', function (e) { if (e.target === ov) closeLonjaHistory(); });
+    document.getElementById('di-history-close').addEventListener('click', closeLonjaHistory); bindModalKeyboard(closeLonjaHistory);
   }
   function closeHistory() { state.history = null; renderModalRoot(); unlockProductModal(); }
 
