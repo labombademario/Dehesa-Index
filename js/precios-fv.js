@@ -174,10 +174,45 @@
     el.innerHTML = '<section class="di-card fv-card"><div class="fv-wh"></div></section>';
     renderWH(el.querySelector('.fv-wh'), lg, 'ca'); return Promise.resolve(true);
   }
+  /* Reino Unido: precio mayorista de producto local en Inglaterra y Gales (Defra), cada dos semanas, en libras y en la unidad publicada; data/views/fv-uk.json (scripts/build-views.py). */
+  var UKT = {
+    es: { intro: '{n} frutas, hortalizas y flores cultivadas en el Reino Unido. Precio medio mayorista en Inglaterra y Gales (Defra), en libras y en la unidad que publica la fuente. Defra lo publica cada dos semanas.', find: 'Buscar producto', all: 'Todos', veg: 'Hortalizas', fruit: 'Frutas', flower: 'Flores', cols: ['Producto', 'Precio', 'Dato anterior', 'Hace un año', 'Fecha'], none: 'Ningún producto coincide.', old: 'fuera de temporada', u: { kg: 'kg', head: 'pieza', stem: 'tallo', 'twin pack': 'pack de 2', bunch: 'manojo', each: 'unidad' }, note: 'Precio mayorista: lo que paga el comprador en el mercado mayorista por producto cultivado en el Reino Unido, no lo que cobra el agricultor ni el precio en tienda. Un producto fuera de temporada muestra su último precio con la fecha en gris. «Hace un año» es el dato publicado la misma semana del año pasado (si existe).', src: 'Fuente' },
+    en: { intro: '{n} fruits, vegetables and flowers grown in the UK. Average wholesale price in England and Wales (Defra), in pounds and in the unit the source publishes. Defra publishes it every two weeks.', find: 'Find a product', all: 'All', veg: 'Vegetables', fruit: 'Fruit', flower: 'Flowers', cols: ['Product', 'Price', 'Previous figure', 'A year ago', 'Date'], none: 'No product matches.', old: 'out of season', u: { kg: 'kg', head: 'head', stem: 'stem', 'twin pack': 'twin pack', bunch: 'bunch', each: 'each' }, note: 'Wholesale price: what buyers pay at wholesale markets for UK-grown produce, not what the farmer gets or the shop price. A product out of season shows its last price with the date in grey. “A year ago” is the figure published in the same week last year (if any).', src: 'Source' },
+    fr: { intro: '{n} fruits, légumes et fleurs cultivés au Royaume-Uni. Prix de gros moyen en Angleterre et au pays de Galles (Defra), en livres et dans l’unité publiée par la source. Defra le publie toutes les deux semaines.', find: 'Chercher un produit', all: 'Tous', veg: 'Légumes', fruit: 'Fruits', flower: 'Fleurs', cols: ['Produit', 'Prix', 'Donnée précédente', 'Il y a un an', 'Date'], none: 'Aucun produit ne correspond.', old: 'hors saison', u: { kg: 'kg', head: 'pièce', stem: 'tige', 'twin pack': 'lot de 2', bunch: 'botte', each: 'unité' }, note: 'Prix de gros : ce que paie l’acheteur sur les marchés de gros pour un produit cultivé au Royaume-Uni, ni le prix payé à l’agriculteur ni le prix en magasin. Un produit hors saison affiche son dernier prix avec la date en gris. « Il y a un an » est la donnée publiée la même semaine l’an dernier (s’il y en a une).', src: 'Source' },
+    it: { intro: '{n} tra frutta, ortaggi e fiori coltivati nel Regno Unito. Prezzo medio all’ingrosso in Inghilterra e Galles (Defra), in sterline e nell’unità pubblicata dalla fonte. Defra lo pubblica ogni due settimane.', find: 'Cerca un prodotto', all: 'Tutti', veg: 'Ortaggi', fruit: 'Frutta', flower: 'Fiori', cols: ['Prodotto', 'Prezzo', 'Dato precedente', 'Un anno fa', 'Data'], none: 'Nessun prodotto corrisponde.', old: 'fuori stagione', u: { kg: 'kg', head: 'pezzo', stem: 'stelo', 'twin pack': 'confezione da 2', bunch: 'mazzo', each: 'unità' }, note: 'Prezzo all’ingrosso: quanto paga l’acquirente nei mercati all’ingrosso per prodotti coltivati nel Regno Unito, non quanto incassa l’agricoltore né il prezzo in negozio. Un prodotto fuori stagione mostra l’ultimo prezzo con la data in grigio. «Un anno fa» è il dato pubblicato nella stessa settimana dell’anno scorso (se c’è).', src: 'Fonte' }
+  };
+  var UKDOC = null;
+  function renderUK(el, opt) {
+    var lg = UKT[opt.lang] ? opt.lang : 'es', t = UKT[lg], L = LOC[lg], li = LI[lg];
+    function n(v, d) { return v == null || !isFinite(v) ? '—' : v.toLocaleString(L, { minimumFractionDigits: d, maximumFractionDigits: d }); }
+    function chg(a, b) { if (a == null || b == null || !b) return '—'; var p = (a / b - 1) * 100; return '£' + n(b, 2) + ' <small class="' + (p > 0.5 ? 'fv-up' : p < -0.5 ? 'fv-dn' : '') + '">' + (p > 0 ? '+' : p < 0 ? '−' : '') + n(Math.abs(p), 1) + ' %</small>'; }
+    var go = function (D) {
+      if (!D || !D.items) return false;
+      var newest = D.items.reduce(function (m, p) { return p.d > m ? p.d : m; }, ''), lim = new Date(newest + 'T12:00:00Z').getTime() - 35 * 864e5;
+      var grp = [['all', t.all], ['veg', t.veg], ['fruit', t.fruit], ['flower', t.flower]];
+      var head = '<p class="fv-intro">' + esc(t.intro.replace('{n}', D.items.length)) + '</p><div class="fv-ctl"><label><span>' + esc(t.find) + '</span><input type="search" class="di-compare-select fv-q" value="' + esc(ST.quk || '') + '" placeholder="' + esc(t.find) + '"></label><div class="fv-chips" role="group">' + grp.map(function (g) { return '<button type="button" class="fv-chip' + (ST.g === g[0] ? ' on' : '') + '" data-g="' + g[0] + '" aria-pressed="' + (ST.g === g[0]) + '">' + esc(g[1]) + '</button>'; }).join('') + '</div></div>';
+      var qn = norm(ST.quk || ''), groups = ST.g === 'all' || ST.g === 'nut' ? ['veg', 'fruit', 'flower'] : [ST.g], body = '', shown = 0;
+      groups.forEach(function (g) {
+        var L2 = D.items.filter(function (p) { return p.g === g && (!qn || norm(p.n.join(' ')).indexOf(qn) >= 0); }).sort(function (a, b) { return a.n[li].localeCompare(b.n[li], L); });
+        if (!L2.length) return; shown += L2.length;
+        body += '<tbody><tr class="fv-gh"><th colspan="5" scope="colgroup">' + esc(t[g]) + '</th></tr>' + L2.map(function (p) {
+          var old = new Date(p.d + 'T12:00:00Z').getTime() < lim;
+          return '<tr><th scope="row">' + (p.e ? '<span class="fv-emo" aria-hidden="true">' + p.e + '</span>' : '') + esc(p.n[li]) + '</th><td class="cof-n"><b>£' + n(p.v, 2) + '</b> <small>/' + esc(t.u[p.u] || p.u) + '</small></td><td class="cof-n">' + (old ? '—' : chg(p.v, p.p)) + '</td><td class="cof-n">' + chg(p.v, p.y) + '</td><td class="fv-d"' + (old ? ' style="color:var(--text-faint)" title="' + esc(t.old) + '"' : '') + '>' + esc(new Date(p.d + 'T12:00:00Z').toLocaleDateString(L, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })) + '</td></tr>';
+        }).join('') + '</tbody>';
+      });
+      var table = shown ? '<div style="overflow-x:auto"><table class="cof-tbl fv-tbl"><thead><tr>' + t.cols.map(function (c, i) { return '<th scope="col"' + (i && i < 4 ? ' class="cof-n"' : '') + '>' + esc(c) + '</th>'; }).join('') + '</tr></thead>' + body + '</table></div>' : '<p class="di-field-hint">' + esc(t.none) + '</p>';
+      el.innerHTML = '<section class="di-card fv-card">' + head + table + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.note) + '</p><p class="di-field-hint" style="margin:6px 0 0">' + esc(t.src) + ': <a href="' + esc(D.source.url) + '" rel="noopener">' + esc(D.source.name) + '</a> · ' + esc(D.source.license) + '</p></section>';
+      var qi = el.querySelector('.fv-q'); if (qi) qi.oninput = function () { ST.quk = qi.value; var pos = qi.selectionStart; renderUK(el, opt).then(function () { var f = el.querySelector('.fv-q'); if (f) { f.focus(); try { f.setSelectionRange(pos, pos); } catch (e) {} } }); };
+      Array.prototype.forEach.call(el.querySelectorAll('.fv-chip'), function (b) { b.onclick = function () { ST.g = b.getAttribute('data-g'); renderUK(el, opt).then(function () { var f = el.querySelector('.fv-chip[data-g="' + ST.g + '"]'); if (f) f.focus(); }); }; });
+      return true;
+    };
+    return (UKDOC || (UKDOC = fetch('data/views/fv-uk.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }))).then(go);
+  }
   function render(el, opt) {
     if (!el) return Promise.resolve(false); opt = opt || {};
     if (opt.location === 'us') return renderUS(el, opt);
     if (opt.location === 'ca') return renderCA(el, opt);
+    if (opt.location === 'uk') return renderUK(el, opt);
     if (opt.location === 'cl') return renderCL(el, opt);
     if (opt.location === 'sa') return renderSA(el, opt);
     var lg = T[opt.lang] ? opt.lang : 'es', t = T[lg], L = LOC[lg];

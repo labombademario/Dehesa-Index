@@ -1,6 +1,6 @@
 /* Dehesa Index — explorador por provincia de Canadá (mapa, tabla y evolución nacional) sobre data/canada-provinces.json (Statistics Canada).
    Lo usan rendimientos.html y ganaderia.html como segunda pestaña junto a la vista de EE. UU.
-   CAExplorer.create(cfg): cfg = { id, usBody, texts:{es,en,fr,it}, items:[{id,label:[es,en,fr,it]}], defaultItem, defaultMeasure, measures(item)->[ids],
+   CAExplorer.create(cfg): cfg = { id, usBody, render(el, data, texts, lang) opcional para una vista propia, texts:{es,en,fr,it}, items:[{id,label:[es,en,fr,it]}], defaultItem, defaultMeasure, measures(item)->[ids],
    series(prov,item,measure)->[[periodo,valor]], fmt(measure,v), yTitle(measure), shareMeasure(measure)->bool, cite:'statcan', usRender:function, palette:{line,line2,seq} }. ES5. */
 (function () {
   'use strict';
@@ -55,6 +55,7 @@
     }
     function render() {
       var el = document.getElementById(cfg.id); if (!el || !ACTIVE) return; var t = tr();
+      if (cfg.render) { cfg.render(el, getD(), t, lang()); return; }   /* pestaña con contenido propio (p. ej. Reino Unido en ganaderia.html): solo usa las pestañas y la carga */
       var DATA = getD(); if (!DATA || !DATA.provinces || !DATA.provinces[NAT]) { el.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
       var items = cfg.items.map(function (i) { return i.id; }).filter(function (id) { return cfg.measures(getD(), id).length; });
       if (items.indexOf(SEL.item) < 0) SEL.item = items[0];

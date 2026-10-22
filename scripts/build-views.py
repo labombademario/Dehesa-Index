@@ -340,6 +340,67 @@ def fv_us():
                     'h': [q[1] for q in pts[-24:]] if monthly else [q[1] for q in pts[-10:]]})
     return {'schemaVersion': 1, 'generatedAt': now(), 'source': {'name': 'USDA NASS, Quick Stats (price received by farmers, national)', 'url': 'https://quickstats.nass.usda.gov/', 'license': 'Public domain (U.S. government work)'}, 'items': out}
 
+# Reino Unido: precios mayoristas de fruta, hortaliza y flor de produccion local en Inglaterra y Gales (Defra), de data/uk-fv-stats.json; semanal, en la unidad publicada.
+FVUK_ITEM = {
+ 'apples': ('fruit', ['Manzana', 'Apples', 'Pommes', 'Mele'], '🍎'), 'blackberries': ('fruit', ['Mora', 'Blackberries', 'Mûres', 'More'], ''), 'blueberries': ('fruit', ['Arándano', 'Blueberries', 'Myrtilles', 'Mirtilli'], '🫐'),
+ 'cherries': ('fruit', ['Cereza', 'Cherries', 'Cerises', 'Ciliegie'], '🍒'), 'currants': ('fruit', ['Grosella', 'Currants', 'Groseilles', 'Ribes'], ''), 'gooseberries': ('fruit', ['Grosella espinosa', 'Gooseberries', 'Groseilles à maquereau', 'Uva spina'], ''),
+ 'pears': ('fruit', ['Pera', 'Pears', 'Poires', 'Pere'], '🍐'), 'plums': ('fruit', ['Ciruela', 'Plums', 'Prunes', 'Susine'], ''), 'raspberries': ('fruit', ['Frambuesa', 'Raspberries', 'Framboises', 'Lamponi'], ''),
+ 'strawberries': ('fruit', ['Fresa', 'Strawberries', 'Fraises', 'Fragole'], '🍓'), 'asparagus': ('veg', ['Espárrago', 'Asparagus', 'Asperges', 'Asparagi'], ''), 'beans': ('veg', ['Judía', 'Beans', 'Haricots', 'Fagioli'], '🫛'),
+ 'beetroot': ('veg', ['Remolacha de mesa', 'Beetroot', 'Betterave rouge', 'Barbabietola rossa'], ''), 'brussels-sprouts': ('veg', ['Col de Bruselas', 'Brussels sprouts', 'Choux de Bruxelles', 'Cavoletti di Bruxelles'], ''),
+ 'cabbage': ('veg', ['Col', 'Cabbage', 'Chou', 'Cavolo'], '🥬'), 'calabrese': ('veg', ['Brócoli', 'Broccoli (calabrese)', 'Brocoli', 'Broccoli'], '🥦'), 'capsicum': ('veg', ['Pimiento', 'Peppers', 'Poivrons', 'Peperoni'], '🫑'),
+ 'carrots': ('veg', ['Zanahoria', 'Carrots', 'Carottes', 'Carote'], '🥕'), 'cauliflower': ('veg', ['Coliflor', 'Cauliflower', 'Chou-fleur', 'Cavolfiore'], ''), 'celeriac': ('veg', ['Apionabo', 'Celeriac', 'Céleri-rave', 'Sedano rapa'], ''),
+ 'celery': ('veg', ['Apio', 'Celery', 'Céleri', 'Sedano'], ''), 'chinese-leaf': ('veg', ['Col china', 'Chinese leaf', 'Chou chinois', 'Cavolo cinese'], ''), 'coriander': ('veg', ['Cilantro', 'Coriander', 'Coriandre', 'Coriandolo'], ''),
+ 'courgettes': ('veg', ['Calabacín', 'Courgettes', 'Courgettes', 'Zucchine'], ''), 'cucumbers': ('veg', ['Pepino', 'Cucumbers', 'Concombres', 'Cetrioli'], '🥒'), 'curly-kale': ('veg', ['Col rizada (kale)', 'Curly kale', 'Chou frisé', 'Cavolo riccio'], ''),
+ 'leeks': ('veg', ['Puerro', 'Leeks', 'Poireaux', 'Porri'], ''), 'lettuce': ('veg', ['Lechuga', 'Lettuce', 'Laitue', 'Lattuga'], '🥬'), 'mixed-babyleaf-salad': ('veg', ['Brotes tiernos de ensalada', 'Mixed baby-leaf salad', 'Jeunes pousses', 'Insalata baby leaf'], ''),
+ 'onion': ('veg', ['Cebolla', 'Onions', 'Oignons', 'Cipolle'], '🧅'), 'pak-choi': ('veg', ['Pak choi', 'Pak choi', 'Pak-choï', 'Pak choi'], ''), 'parsnips': ('veg', ['Chirivía', 'Parsnips', 'Panais', 'Pastinaca'], ''),
+ 'peas': ('veg', ['Guisante', 'Peas', 'Petits pois', 'Piselli'], ''), 'rhubarb': ('veg', ['Ruibarbo', 'Rhubarb', 'Rhubarbe', 'Rabarbaro'], ''), 'rocket': ('veg', ['Rúcula', 'Rocket', 'Roquette', 'Rucola'], ''),
+ 'spinach-leaf': ('veg', ['Espinaca', 'Spinach', 'Épinards', 'Spinaci'], ''), 'spring-greens': ('veg', ['Col tierna (spring greens)', 'Spring greens', 'Jeunes choux', 'Cavolo primaverile'], ''), 'swede': ('veg', ['Colinabo', 'Swede', 'Rutabaga', 'Rutabaga'], ''),
+ 'sweetcorn': ('veg', ['Maíz dulce', 'Sweetcorn', 'Maïs doux', 'Mais dolce'], '🌽'), 'tomatoes': ('veg', ['Tomate', 'Tomatoes', 'Tomates', 'Pomodori'], '🍅'), 'turnip': ('veg', ['Nabo', 'Turnip', 'Navet', 'Rapa'], ''),
+ 'gladioli': ('flower', ['Gladiolo', 'Gladioli', 'Glaïeuls', 'Gladioli'], ''), 'tulips': ('flower', ['Tulipán', 'Tulips', 'Tulipes', 'Tulipani'], '🌷'), 'daffodils': ('flower', ['Narciso', 'Daffodils', 'Jonquilles', 'Narcisi'], ''),
+ 'chrysanthemums': ('flower', ['Crisantemo', 'Chrysanthemums', 'Chrysanthèmes', 'Crisantemi'], ''), 'lilies': ('flower', ['Lirio', 'Lilies', 'Lys', 'Gigli'], ''), 'stocks': ('flower', ['Alhelí', 'Stocks', 'Giroflées', 'Violacciocche'], ''),
+ 'sweet-williams': ('flower', ['Clavel del poeta', 'Sweet williams', 'Œillets de poète', 'Garofani dei poeti'], ''), 'pinks': ('flower', ['Clavellina', 'Pinks', 'Œillets mignardise', 'Garofanini'], ''),
+}
+FVUK_VAR = {'all': None, 'all varieties': None, 'red': ['roja', 'red', 'rouge', 'rosso'], 'white': ['blanca', 'white', 'blanc', 'bianco'], 'black': ['negra', 'black', 'noire', 'nero'], 'green': ['verde', 'green', 'vert', 'verde'],
+ 'savoy': ['de Milán', 'Savoy', 'de Milan', 'verza'], 'broad': ['haba', 'broad', 'fèves', 'fave'], 'dwarf french or kidney': ['verde (enana)', 'French (dwarf)', 'verts (nains)', 'fagiolini (nani)'], 'runner climbing': ['de enrame', 'runner', 'à rames', 'rampicanti'],
+ 'round green other': ['repollo verde', 'round green', 'pommé vert', 'cappuccio verde'], 'summer autumn pointed': ['puntiaguda', 'pointed (summer/autumn)', 'pointu', 'a punta'], 'elongated': ['alargado', 'elongated', 'allongé', 'allungato'],
+ 'yelloworange': ['amarillo o naranja', 'yellow or orange', 'jaune ou orange', 'giallo o arancione'], 'topped washed': ['lavada sin hojas', 'topped and washed', 'lavées équeutées', 'lavate senza foglie'], 'all washed': ['lavado', 'washed', 'lavé', 'lavato'],
+ 'trimmed': ['limpio', 'trimmed', 'paré', 'mondato'], 'butterhead indoor': ['mantecosa de invernadero', 'butterhead (indoor)', 'beurre (sous serre)', 'cappuccio (serra)'], 'cos': ['romana', 'cos', 'romaine', 'romana'],
+ 'crisp iceberg type': ['iceberg', 'iceberg', 'iceberg', 'iceberg'], 'little gem': ['cogollo (little gem)', 'little gem', 'little gem', 'little gem'], 'pillow pack': ['en bolsa', 'pillow pack', 'en sachet', 'in busta'],
+ 'bulb brown': ['seca, marrón', 'brown bulb', 'jaune', 'dorata'], 'bulb red': ['seca, roja', 'red bulb', 'rouge', 'rossa'], 'saladspring': ['tierna (cebolleta)', 'spring/salad', 'nouvelle', 'cipollotto'],
+ 'shelling all varieties': ['para desgranar', 'for shelling', 'à écosser', 'da sgranare'], 'forced': ['forzado', 'forced', 'forcée', 'forzato'], 'outdoor': ['al aire libre', 'outdoor', 'plein champ', 'pieno campo'],
+ 'loose bunches': ['en manojo', 'loose bunches', 'en bottes', 'a mazzi'], 'prepacked': ['envasada', 'prepacked', 'préemballés', 'confezionato'], 'cherry': ['cherry', 'cherry', 'cerise', 'ciliegino'], 'plum': ['pera', 'plum', 'allongée', 'perino'],
+ 'round': ['redondo', 'round', 'ronde', 'tondo'], 'vine': ['en rama', 'on the vine', 'en grappe', 'a grappolo'], 'conference': ['Conference', 'Conference', 'Conférence', 'Conference'], 'doyenne du comice': ['Doyenné du Comice', 'Doyenné du Comice', 'Doyenné du Comice', 'Doyenné du Comice'],
+ 'other': ['otras', 'other', 'autres', 'altre'], 'all other': ['otras', 'other', 'autres', 'altre'], 'victoria': ['Victoria', 'Victoria', 'Victoria', 'Victoria'], 'other early season': ['otras tempranas', 'other early', 'autres précoces', 'altre precoci'],
+ 'other mid season': ['otras de media estación', 'other mid-season', 'autres de mi-saison', 'altre di media stagione'], 'other late season': ['otras tardías', 'other late', 'autres tardives', 'altre tardive'], 'bramleys seedling': ['Bramley (de cocinar)', 'Bramley (cooking)', 'Bramley (à cuire)', 'Bramley (da cucina)'],
+ 'coxs orange group': ['Cox', 'Cox’s Orange group', 'Cox', 'Cox'], 'egremont russet': ['Egremont Russet', 'Egremont Russet', 'Egremont Russet', 'Egremont Russet'], 'braeburn': ['Braeburn', 'Braeburn', 'Braeburn', 'Braeburn'], 'gala': ['Gala', 'Gala', 'Gala', 'Gala']}
+FVUK_UNIT = {'GBP/kg': 'kg', 'GBP/head': 'head', 'GBP/stem': 'stem', 'GBP/twin pack': 'twin pack', 'GBP/bunch': 'bunch', 'GBP/each': 'each'}
+def fv_uk():
+    try: S = load('uk-fv-stats.json')['countries']['UK']['series']
+    except Exception: return None
+    from datetime import date as _d, timedelta as _td
+    out, miss = [], []
+    for s in S:
+        m = re.match(r'^(.+?), (.+?): wholesale', s['label'])
+        if not m: continue
+        it, var = m.group(1), m.group(2).strip().lower()
+        k = re.sub(r'[^a-z0-9]+', '-', it.lower()).strip('-'); base = FVUK_ITEM.get(k)
+        if not base: miss.append(k); continue
+        grp, names, emo = base
+        if var == it.lower() or var in ('all', 'all varieties'): q = None
+        else: q = FVUK_VAR.get(var); q = q if q is not None else [var] * 4
+        n = [names[i] + (' · ' + q[i] if q else '') for i in range(4)]
+        pts = [p for p in s['points'] if p[1] is not None]
+        if len(pts) < 2: continue
+        last = pts[-1]; ld = _d.fromisoformat(last[0])
+        prev = pts[-2] if (ld - _d.fromisoformat(pts[-2][0])).days <= 21 else None   # Defra publica cada dos semanas; un hueco mayor no se compara
+        ya = None
+        for p in reversed(pts):
+            dd = abs((_d.fromisoformat(p[0]) - (ld - _td(days=364))).days)
+            if dd <= 4: ya = p; break
+        out.append({'id': s['id'], 'g': grp, 'n': n, 'e': emo, 'u': FVUK_UNIT.get(s['unit'], s['unit'].replace('GBP/', '')), 'd': last[0], 'v': last[1], 'p': prev[1] if prev else None, 'pd': prev[0] if prev else None, 'y': ya[1] if ya else None, 'h': [p[1] for p in pts[-26:]]})
+    if miss: print('fv-uk: productos sin traducir', sorted(set(miss)))
+    return {'schemaVersion': 1, 'generatedAt': now(), 'source': {'name': 'Defra, Wholesale fruit and vegetable prices (England and Wales)', 'url': 'https://www.gov.uk/government/statistics/wholesale-fruit-and-vegetable-prices', 'license': 'Open Government Licence v3.0'}, 'items': out}
+
 # EE. UU.: precios mayoristas de frutas y hortalizas en los mercados terminales del USDA AMS (Market News). Se lee lo ya descargado en data/ams/<id>.json (scripts/update-ams.mjs);
 # un fichero por ciudad con el ultimo dia publicado. Valor publicado tal cual por envase; el $/lb solo se calcula si el envase dice un peso en libras ("50 lb cartons").
 WH_CITIES = [('NY', 'New York', (2314, 2315, 2316)), ('CH', 'Chicago', (2290, 2291, 2292)), ('LA', 'Los Angeles', (2306, 2307, 2308)), ('AT', 'Atlanta', (2277, 2278, 2279)),
@@ -529,6 +590,8 @@ def main():
     write('lonjas.json', lonjas())
     write('fv-us.json', fv_us())
     write('fv-us-wh-index.json', fv_us_wholesale())
+    fu = fv_uk()
+    if fu and fu['items']: write('fv-uk.json', fu)
     trade_products()
     diesel_eu_more()
     farm_headlines()

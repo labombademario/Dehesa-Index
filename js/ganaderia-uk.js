@@ -1,0 +1,66 @@
+/* Dehesa Index — Pestaña «Reino Unido» de ganaderia.html: mercado semanal de vacuno y corderos de Irlanda del Norte (DAERA; data/uk-ni-market-stats.json)
+   y cabaña ganadera de Escocia según el censo de junio (Gobierno de Escocia; data/uk-scotland-stats.json). Sobre js/ca-explorer.js (cfg.render). ES5. */
+(function () {
+  'use strict';
+  if (!window.CAExplorer) return;
+  var CATS = ['steers', 'heifers', 'young-bulls', 'cows', 'lambs'];
+  var CN = { steers: ['Añojos y novillos', 'Steers', 'Bouvillons', 'Manzi castrati'], heifers: ['Novillas', 'Heifers', 'Génisses', 'Manze'], 'young-bulls': ['Toros jóvenes', 'Young bulls', 'Jeunes bovins', 'Vitelloni'], cows: ['Vacas', 'Cows', 'Vaches', 'Vacche'], lambs: ['Corderos', 'Lambs', 'Agneaux', 'Agnelli'] };
+  var SCO = [['uk-sco-cattle-total-cattle', ['Vacuno, total', 'Cattle, total', 'Bovins, total', 'Bovini, totale']], ['uk-sco-cattle-total-female-dairy-cattle', ['Hembras de aptitud lechera', 'Female dairy cattle', 'Femelles laitières', 'Femmine da latte']],
+    ['uk-sco-cattle-total-female-beef-cattle', ['Hembras de aptitud cárnica', 'Female beef cattle', 'Femelles allaitantes', 'Femmine da carne']], ['uk-sco-sheep-total-sheep', ['Ovino, total', 'Sheep, total', 'Ovins, total', 'Ovini, totale']],
+    ['uk-sco-sheep-lambs', ['Corderos', 'Lambs', 'Agneaux', 'Agnelli']], ['uk-sco-pigs-total-pigs', ['Porcino, total', 'Pigs, total', 'Porcins, total', 'Suini, totale']], ['uk-sco-poultry-total-poultry', ['Aves, total', 'Poultry, total', 'Volailles, total', 'Pollame, totale']],
+    ['uk-sco-other-livestock-goats', ['Cabras', 'Goats', 'Chèvres', 'Capre']], ['uk-sco-other-livestock-deer', ['Ciervos', 'Deer', 'Cerfs', 'Cervi']]];
+  var LI = { es: 0, en: 1, fr: 2, it: 3 };
+  var T = {
+    es: { tabUS: 'EE. UU.', tabCA: 'Reino Unido', title: 'Ganadería del Reino Unido', sub: 'Precios semanales del vacuno y los corderos en Irlanda del Norte (DAERA) y la cabaña ganadera de Escocia (censo de junio).', ni: 'Irlanda del Norte: mercado semanal', niSub: 'Precio medio en canal que pagan los mataderos de Irlanda del Norte, en peniques por kilo, y número de animales con precio esa semana. Datos del Departamento de Agricultura (DAERA), tal como los publica.', cat: 'Categoría', all: 'Todas las clases', r3: 'Clase R3', heads: 'Animales', week: 'Semana', prev: 'Semana anterior', yago: 'Hace un año', price: 'Precio (p/kg canal)', chart: 'Evolución semanal, peniques por kilo en canal', r3n: 'R3 es la clasificación de referencia de la canal (conformación R, engrasamiento 3). «Todas las clases» es la media de todos los animales con precio.', sco: 'Escocia: cabaña ganadera', scoSub: 'Animales censados en junio según el censo agrario del Gobierno de Escocia.', item: 'Ganado', n: 'Cabezas', vsPrev: 'frente al año anterior', noData: 'No se han podido cargar los datos.', gbp: '1 penique = 0,01 libras' },
+    en: { tabUS: 'United States', tabCA: 'United Kingdom', title: 'UK livestock', sub: 'Weekly cattle and lamb prices in Northern Ireland (DAERA) and Scotland’s livestock numbers (June census).', ni: 'Northern Ireland: weekly market', niSub: 'Average deadweight price paid by Northern Ireland abattoirs, in pence per kilo, and the number of animals priced that week. Department of Agriculture (DAERA) data, as published.', cat: 'Category', all: 'All grades', r3: 'Grade R3', heads: 'Animals', week: 'Week', prev: 'Previous week', yago: 'A year ago', price: 'Price (p/kg dw)', chart: 'Weekly trend, pence per kilo deadweight', r3n: 'R3 is the reference carcass grade (conformation R, fat class 3). “All grades” is the average of all animals priced.', sco: 'Scotland: livestock numbers', scoSub: 'Animals counted in June in the Scottish Government’s agricultural census.', item: 'Livestock', n: 'Head', vsPrev: 'vs previous year', noData: 'The data could not be loaded.', gbp: '1 penny = £0.01' },
+    fr: { tabUS: 'États-Unis', tabCA: 'Royaume-Uni', title: 'Élevage au Royaume-Uni', sub: 'Prix hebdomadaires des bovins et des agneaux en Irlande du Nord (DAERA) et cheptel de l’Écosse (recensement de juin).', ni: 'Irlande du Nord : marché hebdomadaire', niSub: 'Prix moyen en carcasse payé par les abattoirs d’Irlande du Nord, en pence par kilo, et nombre d’animaux cotés dans la semaine. Données du ministère de l’Agriculture (DAERA), telles que publiées.', cat: 'Catégorie', all: 'Toutes classes', r3: 'Classe R3', heads: 'Animaux', week: 'Semaine', prev: 'Semaine précédente', yago: 'Il y a un an', price: 'Prix (p/kg carcasse)', chart: 'Évolution hebdomadaire, pence par kilo de carcasse', r3n: 'R3 est la classe de référence de la carcasse (conformation R, engraissement 3). « Toutes classes » est la moyenne de tous les animaux cotés.', sco: 'Écosse : cheptel', scoSub: 'Animaux recensés en juin selon le recensement agricole du gouvernement écossais.', item: 'Cheptel', n: 'Têtes', vsPrev: 'par rapport à l’an dernier', noData: 'Les données n’ont pas pu être chargées.', gbp: '1 penny = 0,01 £' },
+    it: { tabUS: 'Stati Uniti', tabCA: 'Regno Unito', title: 'Zootecnia del Regno Unito', sub: 'Prezzi settimanali di bovini e agnelli in Irlanda del Nord (DAERA) e consistenze zootecniche della Scozia (censimento di giugno).', ni: 'Irlanda del Nord: mercato settimanale', niSub: 'Prezzo medio a carcassa pagato dai macelli dell’Irlanda del Nord, in pence al chilo, e numero di capi quotati nella settimana. Dati del Dipartimento dell’Agricoltura (DAERA), come pubblicati.', cat: 'Categoria', all: 'Tutte le classi', r3: 'Classe R3', heads: 'Capi', week: 'Settimana', prev: 'Settimana precedente', yago: 'Un anno fa', price: 'Prezzo (p/kg carcassa)', chart: 'Andamento settimanale, pence al chilo a carcassa', r3n: 'R3 è la classe di riferimento della carcassa (conformazione R, ingrassamento 3). «Tutte le classi» è la media di tutti i capi quotati.', sco: 'Scozia: consistenze', scoSub: 'Capi censiti a giugno secondo il censimento agricolo del governo scozzese.', item: 'Bestiame', n: 'Capi', vsPrev: 'rispetto all’anno scorso', noData: 'Non è stato possibile caricare i dati.', gbp: '1 penny = 0,01 £' }
+  };
+  var CAT = 'steers';
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function get(u) { return fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
+  function byId(d) { var o = {}; ((d && d.countries && d.countries.UK && d.countries.UK.series) || []).forEach(function (s) { o[s.id] = s; }); return o; }
+  function day(s, l) { try { return new Date(s + 'T12:00:00Z').toLocaleDateString(l, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return s; } }
+  function at(pts, date, tol) { var t0 = Date.parse(date + 'T12:00:00Z'), best = null, bd = 1e15; (pts || []).forEach(function (p) { var dd = Math.abs(Date.parse(p[0] + 'T12:00:00Z') - t0); if (dd < bd) { bd = dd; best = p; } }); return best && bd <= tol * 864e5 ? best : null; }
+  function render(el, D, t, l) {
+    if (!D) { el.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
+    var li = LI[l] == null ? 0 : LI[l], N = D.ni, S = D.sco;
+    var nf = function (v, d) { try { return v.toLocaleString(l, { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } };
+    var pc = function (a, b) { if (a == null || b == null || !b) return '<span style="color:var(--text-faint)">—</span>'; var p = (a / b - 1) * 100, c = p > 0.05 ? 'var(--positive)' : p < -0.05 ? 'var(--negative)' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0 ? '+' : p < 0 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; };
+    var pid = function (c, g) { return c === 'lambs' ? 'uk-ni-lambs-all-' + g : 'uk-ni-' + c + '-' + (g === 'r3' ? 'r3-price' : 'all-grades-' + g); };
+    var th = function (x, r) { return '<th scope="col" style="padding:8px 6px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:' + (r ? 'right' : 'left') + '">' + esc(x) + '</th>'; };
+    var td = function (x, r) { return '<td style="padding:8px 6px;' + (r ? 'text-align:right;font-variant-numeric:tabular-nums' : '') + '">' + x + '</td>'; };
+    var html = '';
+    var cats = CATS.filter(function (c) { return N[pid(c, 'price')]; });
+    if (cats.length) {
+      if (cats.indexOf(CAT) < 0) CAT = cats[0];
+      var rows = cats.map(function (c) {
+        var s = N[pid(c, 'price')], last = s.points[s.points.length - 1], pv = s.points.length > 1 ? s.points[s.points.length - 2] : null, ya = at(s.points, new Date(Date.parse(last[0] + 'T12:00:00Z') - 364 * 864e5).toISOString().slice(0, 10), 4), r3 = N[pid(c, 'r3')], hd = N[pid(c, 'head')];
+        var r3l = r3 && r3.points.length ? r3.points[r3.points.length - 1] : null, hl = hd && hd.points.length ? hd.points[hd.points.length - 1] : null;
+        return '<tr data-cat="' + c + '" tabindex="0" style="border-top:1px solid var(--border);cursor:pointer;' + (c === CAT ? 'font-weight:700;background:var(--surface-alt)' : '') + '">' + td(esc(CN[c][li])) + td(nf(last[1], 1), 1) + td(pc(last[1], pv && pv[1]), 1) + td(pc(last[1], ya && ya[1]), 1) + td(r3l && r3l[0] === last[0] ? nf(r3l[1], 1) : '—', 1) + td(hl && hl[0] === last[0] ? nf(hl[1], 0) : '—', 1) + '</tr>';
+      }).join('');
+      var s0 = N[pid(CAT, 'price')], lw = s0.points[s0.points.length - 1][0], cut = Date.parse(lw + 'T12:00:00Z') - 3 * 365 * 864e5;
+      var mk = function (s) { return s ? s.points.filter(function (p) { return p[1] != null && Date.parse(p[0] + 'T12:00:00Z') >= cut; }).map(function (p) { return { x: Date.parse(p[0] + 'T12:00:00Z'), y: p[1], l: day(p[0], l) }; }) : []; };
+      var ser = [{ name: t.all, color: '#8a2d2d', pts: mk(s0) }], r3s = N[pid(CAT, 'r3')]; if (r3s) ser.push({ name: t.r3, color: '#b8a98a', pts: mk(r3s) });
+      var ch = window.DehesaChart ? window.DehesaChart.render({ series: ser, xMode: 'time', yTitle: 'p/kg', aria: CN[CAT][li] + ' · ' + t.chart, noLegend: ser.length < 2, vFmt: function (v) { return nf(v, 1); }, yFmt: function (v) { return nf(v, 0); }, xFmt: function (v) { try { return new Date(v).toLocaleDateString(l, { month: 'short', year: '2-digit', timeZone: 'UTC' }); } catch (e) { return new Date(v).getUTCFullYear(); } } }) : '';
+      html += '<section class="di-card" style="padding:16px 18px;margin-top:14px"><h2 class="cof-h2" style="margin:0 0 4px">' + esc(t.ni) + ' · ' + esc(day(lw, l)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.niSub) + '</p>' +
+        '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:560px;font-size:14px"><thead><tr>' + th(t.cat) + th(t.price, 1) + th(t.prev, 1) + th(t.yago, 1) + th(t.r3, 1) + th(t.heads, 1) + '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
+        '<div style="font-weight:600;margin:16px 0 6px">' + esc(CN[CAT][li]) + ' · ' + esc(t.chart) + '</div>' + ch +
+        '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.r3n) + ' ' + esc(t.gbp) + '.</p>' + (window.DICite && window.DICite.html ? window.DICite.html('daera_ni', { period: lw }) : '') + '</section>';
+    }
+    var sr = SCO.filter(function (x) { return S[x[0]]; });
+    if (sr.length) {
+      var yr = S[sr[0][0]].latestPeriod;
+      html += '<section class="di-card" style="padding:16px 18px;margin-top:14px"><h2 class="cof-h2" style="margin:0 0 4px">' + esc(t.sco) + ' · ' + esc(yr) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.scoSub) + '</p><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:420px;font-size:14px"><thead><tr>' + th(t.item) + th(t.n + ' ' + yr, 1) + th(t.vsPrev, 1) + '</tr></thead><tbody>' +
+        sr.map(function (x) { var s = S[x[0]], p = s.points, a = p[p.length - 1], b = p.length > 1 ? p[p.length - 2] : null; return '<tr style="border-top:1px solid var(--border)">' + td(esc(x[1][li])) + td(nf(a[1], 0), 1) + td(pc(a[1], b && b[1]), 1) + '</tr>'; }).join('') +
+        '</tbody></table></div>' + (window.DICite && window.DICite.html ? window.DICite.html('scottish_government', { period: yr }) : '') + '</section>';
+    }
+    el.innerHTML = html || '<p class="di-movers-hint">' + esc(t.noData) + '</p>';
+    Array.prototype.forEach.call(el.querySelectorAll('[data-cat]'), function (r) { r.onclick = function () { CAT = r.getAttribute('data-cat'); render(el, D, t, l); var f = el.querySelector('[data-cat="' + CAT + '"]'); if (f) f.focus(); }; r.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); r.onclick(); } }; });
+  }
+  window.GNUK = window.CAExplorer.create({
+    id: 'gn-uk', tabsHost: 'gn-ca-tabs', usBody: 'gn-body', usExtra: '#cof, #nd, #nl', country: 'UK', tabKey: 'UK', texts: T, items: [], cite: 'daera_ni', render: render,
+    load: function () { return Promise.all([get('data/uk-ni-market-stats.json'), get('data/uk-scotland-stats.json')]).then(function (a) { return a[0] || a[1] ? { ni: byId(a[0]), sco: byId(a[1]) } : null; }); },
+    measures: function () { return []; }, series: function () { return null; }, fmt: function (m, v) { return String(v); }, yTitle: function () { return ''; }, shareMeasure: function () { return false; }
+  });
+})();

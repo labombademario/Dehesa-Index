@@ -638,7 +638,7 @@
   function catHasData(catId) {
     if (state.location === 'sa') return catId === 'hortalizas';   // Sudamérica: solo Chile (ODEPA, frutas y hortalizas)
     if (EU_ONLY[catId]) return state.location === 'eu';
-    if (catId === 'hortalizas') return state.location === 'eu' || state.location === 'us' || state.location === 'ca';   // EE. UU.: USDA NASS y AMS; Canadá: AAFC mayoristas (data/ca/); Reino Unido, aún sin fuente
+    if (catId === 'hortalizas') return state.location === 'eu' || state.location === 'us' || state.location === 'ca' || state.location === 'uk';   // EE. UU.: USDA NASS y AMS; Canadá: AAFC mayoristas (data/ca/); Reino Unido: Defra mayoristas (data/views/fv-uk.json)
     if (INFO_CATS[catId]) return true;
     if (ukIdxList(catId).length) return true;
     var list = productsInCat(catId);
