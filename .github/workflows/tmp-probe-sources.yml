@@ -1,7 +1,7 @@
 name: tmp-probe-sources
 on:
   push:
-    branches: [research/probe-sources-1021]
+    branches: [research/probe-rates-1022]
 permissions:
   contents: write
 jobs:
