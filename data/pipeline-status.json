@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T17:10:00Z",
+ "generatedAt": "2026-10-22T17:19:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 237,
+  "ok": 239,
   "late": 2,
   "error": 3,
   "not_run": 0,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "c8eb6c33",
+   "sha": "14dd75ab",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/1ec964d2-6a3c-40e0-a2df-d8731cd0945f",
-   "completedAt": "2026-10-22T17:03:31Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/182ea711-fb47-4226-bbc5-488380c9a234",
+   "completedAt": "2026-10-22T17:18:36Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T15:47:01.186042+00:00",
   "repoGeneratedAt": "2026-10-22T15:47:01.186042+00:00",
-  "checkedAt": "2026-10-22T17:10:00Z"
+  "checkedAt": "2026-10-22T17:19:00Z"
  },
  "pipelines": [
   {
@@ -1986,6 +1986,29 @@
    "expectedEveryHours": 744.0
   },
   {
+   "workflow": "update-eu-fv-farm.yml",
+   "name": "Update EU fruit, vegetable and potato farm-gate prices (Eurostat apri_ap_crpouta)",
+   "crons": [
+    "35 7 * * 3"
+   ],
+   "nextRun": "2026-10-28T07:35:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T17:02:18Z",
+    "durationSec": 22,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39819137590"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-eu-gapfill.yml",
    "name": "Update coverage gaps with harmonised official data (Eurostat, Destatis)",
    "crons": [
@@ -2283,6 +2306,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-eu-wood-prices.yml",
+   "name": "Update EU timber prices (Eurostat wood industry producer prices, Swedish Forest Agency roundwood prices)",
+   "crons": [
+    "40 7 * * 3"
+   ],
+   "nextRun": "2026-10-28T07:40:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T17:14:20Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39820876095"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-eurostat-census.yml",
@@ -2779,9 +2825,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-21T17:18:23Z",
-    "durationSec": 62,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39642614073"
+    "startedAt": "2026-10-22T17:17:23Z",
+    "durationSec": 75,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39821312564"
    },
    "recent": {
     "runs": 10,
@@ -3437,8 +3483,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39819494290"
    },
    "recent": {
-    "runs": 8,
-    "success": 3,
+    "runs": 9,
+    "success": 4,
     "failed": 2
    },
    "status": "ok",
@@ -3754,19 +3800,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T16:55:44Z"
+     "lastChange": "2026-10-22T17:12:09Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-22T17:02:08Z"
+     "lastChange": "2026-10-22T17:14:09Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-22T17:02:08Z"
+     "lastChange": "2026-10-22T17:14:09Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-22T17:02:08Z"
+     "lastChange": "2026-10-22T17:14:09Z"
     },
     {
      "path": "data/pack"
@@ -3842,8 +3888,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39817596205"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
