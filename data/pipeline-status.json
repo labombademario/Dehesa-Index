@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T21:44:00Z",
+ "generatedAt": "2026-10-22T21:49:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 240,
@@ -14,15 +14,15 @@
   "status": "error",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "d39bbcaa",
+   "sha": "01e8f7c4",
    "conclusion": "failure",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/664f9904-a0f9-4ddd-88c4-83078404c3cb",
-   "completedAt": "2026-10-22T21:43:24Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/9f5f28a1-1b8c-41d3-af4d-06f97adc3129",
+   "completedAt": "2026-10-22T21:48:34Z"
   },
   "lagHours": 2.9,
   "prodGeneratedAt": "2026-10-22T18:48:38.533010+00:00",
   "repoGeneratedAt": "2026-10-22T21:41:46.421107+00:00",
-  "checkedAt": "2026-10-22T21:44:00Z"
+  "checkedAt": "2026-10-22T21:49:00Z"
  },
  "pipelines": [
   {
@@ -3589,7 +3589,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-22T21:47:00Z",
+   "nextRun": "2026-10-23T00:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3893,7 +3893,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T21:39:10Z"
+     "lastChange": "2026-10-22T21:46:40Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -3975,15 +3975,15 @@
    ],
    "last": {
     "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-22T21:36:08Z",
-    "durationSec": 221,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39858586184"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T21:43:36Z",
+    "durationSec": 224,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39859557605"
    },
    "recent": {
     "runs": 9,
-    "success": 4,
-    "failed": 5
+    "success": 3,
+    "failed": 6
    },
    "status": "error",
    "expectedEveryHours": 3.0
@@ -5595,7 +5595,7 @@
    "crons": [
     "45 21 * * 1-5"
    ],
-   "nextRun": "2026-10-22T21:45:00Z",
+   "nextRun": "2026-10-23T21:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
