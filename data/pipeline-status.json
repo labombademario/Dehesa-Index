@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T04:04:00Z",
+ "generatedAt": "2026-10-22T04:30:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 228,
+  "ok": 229,
   "late": 2,
   "error": 2,
   "not_run": 0,
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "02a10f82",
+   "sha": "236fc1d2",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c74fa273-55e7-4e63-a457-07814f1e9f81",
-   "completedAt": "2026-10-22T03:55:35Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c519447f-d7c2-48e0-bbb7-efb8eccd0f84",
+   "completedAt": "2026-10-22T04:14:58Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T03:44:22.655717+00:00",
   "repoGeneratedAt": "2026-10-22T03:44:22.655717+00:00",
-  "checkedAt": "2026-10-22T04:04:00Z"
+  "checkedAt": "2026-10-22T04:30:00Z"
  },
  "pipelines": [
   {
@@ -817,7 +817,7 @@
    "crons": [
     "20 4 * * 2-6"
    ],
-   "nextRun": "2026-10-22T04:20:00Z",
+   "nextRun": "2026-10-23T04:20:00Z",
    "files": [
     {
      "path": "data/cl"
@@ -3454,9 +3454,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T01:17:38Z",
-    "durationSec": 102,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39704835476"
+    "startedAt": "2026-10-22T04:16:06Z",
+    "durationSec": 75,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39721423491"
    },
    "recent": {
     "runs": 10,
@@ -3753,7 +3753,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T03:41:38Z"
+     "lastChange": "2026-10-22T04:06:19Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -3761,11 +3761,11 @@
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-22T03:07:21Z"
+     "lastChange": "2026-10-22T04:28:53Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-22T03:07:21Z"
+     "lastChange": "2026-10-22T04:28:53Z"
     },
     {
      "path": "data/pack"
@@ -3841,8 +3841,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39717934051"
    },
    "recent": {
-    "runs": 10,
-    "success": 7,
+    "runs": 9,
+    "success": 6,
     "failed": 3
    },
    "status": "ok",
@@ -4652,6 +4652,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-uk-regions-macro.yml",
+   "name": "Update UK regions population, unemployment and gross value added (ONS via NOMIS)",
+   "crons": [
+    "25 8 * * 4"
+   ],
+   "nextRun": "2026-10-22T08:25:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T04:29:42Z",
+    "durationSec": 28,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39722680271"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-uk-trade.yml",
