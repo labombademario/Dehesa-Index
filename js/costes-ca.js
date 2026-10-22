@@ -16,7 +16,7 @@
       note: 'Sono aggregati dell’intero settore (milioni di dollari canadesi), non il costo di una singola azienda né un punto di pareggio per coltura. Le spese di esercizio sono pubblicate per il Canada e cinque province (Saskatchewan, Alberta, Manitoba, Ontario e Québec); per provincia solo cinque voci: totale, fertilizzanti e calce, mangimi, carburante per macchine e interessi. Statistics Canada può rivedere gli anni recenti. Un vuoto è un vuoto, mai zero.', src: 'Fonte: Statistics Canada, tabelle 32-10-0049, 32-10-0045, 32-10-0046, 32-10-0052, 32-10-0050 e 32-10-0051 (Open Government Licence – Canada).' }
   };
   window.CSCanada = window.CASeries.create({
-    id: 'cs-ca', usBody: 'cs-body', usExtra: '#eucs', texts: T, defaultGroup: 'exp', cite: 'statcan',
+    id: 'cs-ca', usBody: 'cs-body', texts: T, defaultGroup: 'exp', cite: 'statcan',
     groups: [
       { id: 'exp', label: ['Gastos de explotación (Canadá)', 'Operating expenses (Canada)', 'Dépenses d’exploitation (Canada)', 'Spese di esercizio (Canada)'], pick: function (s) { return /^ca-exp-canada-/.test(s.id); } },
       { id: 'prov', label: ['Gastos por provincia', 'Expenses by province', 'Dépenses par province', 'Spese per provincia'], pick: function (s) { return /^ca-exp-(?!canada-)/.test(s.id); } },

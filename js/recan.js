@@ -252,5 +252,5 @@
       .catch(function () { var b = document.getElementById('recan-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
   }
   if (!EMB) loadData();
-  if (EMB && window.CASeries && window.CASeries.custom) window.RECANTab = window.CASeries.custom({ id: 'cs-es', tabsHost: 'cs-ca-tabs', usBody: 'cs-body', usExtra: '#eucs', usRender: function () { if (window.__csUsRender) window.__csUsRender(); }, country: 'ES', tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: ['España (RECAN)', 'Spain (RECAN)', 'Espagne (RECAN)', 'Spagna (RECAN)'], onShow: function () { ON = true; shell(); loadData(); } });
+  if (EMB && window.CASeries && window.CASeries.custom) window.RECANTab = window.CASeries.custom({ id: 'cs-es', tabsHost: 'cs-ca-tabs', usBody: 'cs-body', usRender: function () { if (window.__csUsRender) window.__csUsRender(); }, country: 'ES', tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: ['España (RECAN)', 'Spain (RECAN)', 'Espagne (RECAN)', 'Spagna (RECAN)'], onShow: function () { ON = true; shell(); loadData(); } });
 })();
