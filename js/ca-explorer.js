@@ -19,9 +19,14 @@
   var REG = {};
   function drawTabs(G) {
     var host = null; Object.keys(REG).forEach(function (k) { if (REG[k] === G) host = document.getElementById(k); }); if (!host) return;
-    var any = G.list.some(function (o) { return o.isOn(); });
-    host.innerHTML = '<div class="pt-tabs" role="tablist"><button type="button" class="pt-chip" role="tab" data-catab="us" aria-selected="' + !any + '">' + flg('US') + esc(G.usLabel()) + '</button>' + G.list.map(function (o) { return '<button type="button" class="pt-chip" role="tab" data-catab="' + o.key.toLowerCase() + '" aria-selected="' + o.isOn() + '">' + flg(o.key) + esc(o.label()) + '</button>'; }).join('') + '</div>';
-    Array.prototype.forEach.call(host.querySelectorAll('[data-catab]'), function (b) { b.onclick = function () { var k = b.getAttribute('data-catab'); if (k === 'us') { G.list.forEach(function (o) { if (o.isOn()) o.setTab(false); }); } else G.list.forEach(function (o) { if (o.key.toLowerCase() === k) o.setTab(true); }); }; });
+    var any = G.list.some(function (o) { return o.isOn(); }), groups = [], CNM = { ES: ['España', 'Spain', 'Espagne', 'Spagna'], PT: ['Portugal', 'Portugal', 'Portugal', 'Portogallo'], FR: ['Francia', 'France', 'France', 'Francia'], IT: ['Italia', 'Italy', 'Italie', 'Italia'], DE: ['Alemania', 'Germany', 'Allemagne', 'Germania'], NL: ['Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'], BE: ['Bélgica', 'Belgium', 'Belgique', 'Belgio'], EL: ['Grecia', 'Greece', 'Grèce', 'Grecia'] }, L4 = { es: 0, en: 1, fr: 2, it: 3 }[window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'] || 0;
+    G.list.forEach(function (o) { var c = o.key.slice(0, 2).toUpperCase(), g = null; groups.forEach(function (x) { if (x.c === c) g = x; }); if (!g) { g = { c: c, items: [] }; groups.push(g); } g.items.push(o); });
+    var cur = null; groups.forEach(function (g) { if (g.items.some(function (o) { return o.isOn(); })) cur = g; });
+    var chip = function (k, on, txt) { return '<button type="button" class="pt-chip" role="tab" data-catab="' + k + '" aria-selected="' + on + '">' + txt + '</button>'; };
+    var row1 = chip('us', !any, flg('US') + esc(G.usLabel())) + groups.map(function (g) { var one = g.items.length === 1; return chip(g.items[0].key.toLowerCase(), g.items.some(function (o) { return o.isOn(); }), flg(g.c) + esc(one ? g.items[0].label() : (CNM[g.c] ? CNM[g.c][L4] : g.items[0].label()))); }).join('');
+    var row2 = cur && cur.items.length > 1 ? '<div class="pt-tabs" role="tablist" style="margin-top:8px">' + cur.items.map(function (o) { var m = /\((.*)\)\s*$/.exec(o.label()), t2 = m ? m[1].charAt(0).toUpperCase() + m[1].slice(1) : o.label(); return chip(o.key.toLowerCase(), o.isOn(), esc(t2)); }).join('') + '</div>' : '';
+    host.innerHTML = '<div class="pt-tabs" role="tablist">' + row1 + '</div>' + row2;
+    Array.prototype.forEach.call(host.querySelectorAll('[data-catab]'), function (b) { b.onclick = function () { var k = b.getAttribute('data-catab'); if (k === 'us') { G.list.forEach(function (o) { if (o.isOn()) o.setTab(false); }); } else { var cg = null; groups.forEach(function (g) { if (g.items.some(function (o) { return o.key.toLowerCase() === k; })) cg = g; }); if (cg && cg.items.some(function (o) { return o.isOn(); }) && cg.items[0].key.toLowerCase() === k && cg.items.length > 1) return; G.list.forEach(function (o) { if (o.key.toLowerCase() === k) o.setTab(true); }); } }; });
   }
   var DATA = null, LOADING = null;
   function load() {

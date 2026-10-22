@@ -1,6 +1,14 @@
 /* Dehesa Index — Ganadería y lácteo de EE. UU. (USDA NASS Quick Stats): cerdos, vacuno, leche y existencias en frío. */
 (function () {
   'use strict';
+  var TABEMO = { hogs: '🐖', cattle: '🐄', dairy: '🥛', cold: '❄️' };
+  /* emoji de cada serie a partir de su nombre NASS (solo para reconocerla de un vistazo; no cambia ninguna cifra) */
+  function emo(k) {
+    var u = String(k).toUpperCase(), tab = SEL.tab;
+    var m = [[/CHEESE/, '🧀'], [/BUTTER/, '🧈'], [/EGG/, '🥚'], [/TURKEY/, '🦃'], [/CHICKEN|BROILER|POULTRY/, '🍗'], [/PORK|BACON|HAM/, '🥓'], [/BEEF|STEAK|VEAL/, '🥩'], [/LAMB|MUTTON/, '🐑'], [/MILK|DAIRY|DRY WHEY|WHEY|YOGURT|CREAM|CURD/, '🥛'], [/CALVES|CALF/, '🐮'], [/COWS|CATTLE|BULLS|HEIFER|STEER/, '🐄'], [/HOG|PIG|SOW|BOAR/, '🐖']];
+    for (var i = 0; i < m.length; i++) if (m[i][0].test(u)) return m[i][1] + ' ';
+    return (TABEMO[tab] || '') ? TABEMO[tab] + ' ' : '';
+  }
   var D = null;
   var SEL = { tab: 'hogs', key: null, state: null, span: 0 };
   var C1 = '#1d5178', SEQ = ['#eef2f5', '#c6d5e0', '#8fb0c8', '#4f82a6', '#1d5178'];
@@ -142,8 +150,8 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     if (tabs.indexOf(SEL.tab) < 0) SEL.tab = tabs[0];
     var keys = groupKeys(SEL.tab); if (keys.indexOf(SEL.key) < 0) SEL.key = keys[0];
     var s = D.series[SEL.key], a = pts(s.n, SEL.key), last = a[a.length - 1], prev = a.length > 1 ? a[a.length - 2] : null, py = lookup(a, prevYear(last[0]));
-    var tabHtml = tabs.map(function (g) { return '<button type="button" class="di-link-btn" data-tab="' + g + '" aria-pressed="' + (SEL.tab === g) + '" style="' + (SEL.tab === g ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:18px;font-size:15px">' + esc(t[g]) + '</button>'; }).join('');
-    var opts = keys.map(function (k) { return '<option value="' + esc(k) + '"' + (k === SEL.key ? ' selected' : '') + '>' + esc(label(k)) + '</option>'; }).join('');
+    var tabHtml = tabs.map(function (g) { return '<button type="button" class="di-link-btn" data-tab="' + g + '" aria-pressed="' + (SEL.tab === g) + '" style="' + (SEL.tab === g ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:18px;font-size:15px">' + (TABEMO[g] ? TABEMO[g] + ' ' : '') + esc(t[g]) + '</button>'; }).join('');
+    var opts = keys.map(function (k) { return '<option value="' + esc(k) + '"' + (k === SEL.key ? ' selected' : '') + '>' + esc(emo(k) + label(k)) + '</option>'; }).join('');
     var cards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:14px 0">' + card(t.latest + ' · ' + last[0], esc(fmt(s.u, last[1], t)), '<span style="color:var(--text-faint)">' + esc(unitNote(s.u, t)) + '</span>') +
       card(t.vsPrev, prev ? chgHtml(pct(last[1], prev[1])) : '—', prev ? '<span style="color:var(--text-faint)">' + esc(prev[0] + ': ' + fmt(s.u, prev[1], t)) + '</span>' : '') +
       card(t.vsYear, py !== null ? chgHtml(pct(last[1], py)) : '—', py !== null ? '<span style="color:var(--text-faint)">' + esc(prevYear(last[0]) + ': ' + fmt(s.u, py, t)) + '</span>' : '') + '</div>';
