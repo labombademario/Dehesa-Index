@@ -1,7 +1,6 @@
-import urllib.request
-out=open('probe/out/sco2.txt','w')
-for ua in ['Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)','Mozilla/5.0 DehesaIndex']:
-  for u in ['https://www.gov.scot/publications/results-from-the-scottish-agricultural-census-june-2026/documents/','https://www.gov.scot/collections/scottish-cereal-harvest-estimates/']:
-    try:
-        r=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':ua}),timeout=60); b=r.read(); out.write('%s %s %s %d %s\n'%(ua[:10],u[-50:],r.status,len(b),b[:200]))
-    except Exception as e: out.write('%s %s ERR %r\n'%(ua[:10],u[-50:],e))
+import urllib.request, re
+out=open('probe/out/mapa.txt','w')
+u='https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/'
+h=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)'}),timeout=90).read().decode('utf-8','replace')
+for m in re.finditer(r'reglamento-n--543-2009/[^"]+\.xlsx', h):
+    a=max(0,m.start()-900); out.write('-----\n'+re.sub(r'\s+',' ',h[a:m.end()+300])+'\n')
