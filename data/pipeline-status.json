@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T10:57:00Z",
+ "generatedAt": "2026-10-22T11:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 228,
+  "ok": 231,
   "late": 2,
   "error": 5,
   "not_run": 0,
@@ -13,16 +13,11 @@
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": {
-   "sha": "20b006f7",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/42b0044c-b274-4e8c-b6fc-f3dcae3fa6b2",
-   "completedAt": "2026-10-22T10:47:50Z"
-  },
+  "build": null,
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T09:47:46.988837+00:00",
   "repoGeneratedAt": "2026-10-22T09:47:46.988837+00:00",
-  "checkedAt": "2026-10-22T10:57:00Z"
+  "checkedAt": "2026-10-22T11:00:00Z"
  },
  "pipelines": [
   {
@@ -3754,7 +3749,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T10:33:35Z"
+     "lastChange": "2026-10-22T10:59:19Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4679,6 +4674,29 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-uk-farm-accounts.yml",
+   "name": "Update England farm accounts (Defra Farm Business Survey)",
+   "crons": [
+    "20 9 * * 1"
+   ],
+   "nextRun": "2026-10-26T09:20:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T10:54:20Z",
+    "durationSec": 18,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39766575748"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-uk-farmers-age.yml",
    "name": "Update England farm holders by age and sex (Defra)",
    "crons": [
@@ -4692,6 +4710,29 @@
     "startedAt": "2026-10-22T04:48:44Z",
     "durationSec": 22,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39724449310"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-uk-fuel.yml",
+   "name": "Update UK weekly road fuel prices (DESNZ)",
+   "crons": [
+    "15 13 * * 2"
+   ],
+   "nextRun": "2026-10-27T13:15:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T10:48:13Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39765821062"
    },
    "recent": {
     "runs": 1,
@@ -4720,6 +4761,29 @@
     "runs": 3,
     "success": 2,
     "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-uk-structure.yml",
+   "name": "Update England farm structure by county (Defra June survey)",
+   "crons": [
+    "35 9 * * 1"
+   ],
+   "nextRun": "2026-10-26T09:35:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-22T10:51:27Z",
+    "durationSec": 29,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39766224223"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 168.0
