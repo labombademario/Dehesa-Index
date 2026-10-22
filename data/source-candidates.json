@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T03:42:06Z",
+ "generatedAt": "2026-10-22T04:33:38Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -5805,7 +5805,7 @@
    "registryId": "ons",
    "country": "UK",
    "scope": "integrated",
-   "institution": "UK Office for National Statistics (consumer price index)",
+   "institution": "UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS)",
    "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
    "products": [],
    "productsConfirmed": false,
