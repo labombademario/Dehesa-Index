@@ -288,6 +288,57 @@ def lonjas():
     LONJA_T['st']['gus_mkt'] = ['precio en mercados locales', 'local-market price', 'prix sur les marchés locaux', 'prezzo nei mercati locali']
     return {'schemaVersion': 2, 'generatedAt': now(), 'unit': 'EUR/t', 'labels': LONJA_T,
             'source': {'name': 'Comisión Europea, Agri-food Data Portal', 'url': 'https://agridata.ec.europa.eu/', 'license': 'Commission Decision 2011/833/EU'}, 'countries': out}
+
+# EE. UU.: frutas, hortalizas y frutos secos (precio recibido por el agricultor, USDA NASS Quick Stats). Valor publicado tal cual en su unidad; nada se convierte ni se estima.
+# (clave, grupo, nombres es/en/fr/it, emoji, fuente: ('R', serie de nass-received.json) o ('X', id de us-nass-extra-stats.json))
+FVUS = [
+ ('apple', 'fruit', ['Manzana (mercado en fresco)', 'Apples (fresh market)', 'Pommes (marché du frais)', 'Mele (mercato fresco)'], '🍎', ('R', 'APPLES, FRESH MARKET - PRICE RECEIVED, MEASURED IN $ / LB')),
+ ('orange', 'fruit', ['Naranja (en el árbol)', 'Oranges (on tree)', 'Oranges (sur l’arbre)', 'Arance (sull’albero)'], '🍊', ('X', 'us-nass-x-oranges-on-tree-equiv-price-received-monthly-usd-box')),
+ ('lemon', 'fruit', ['Limón (en el árbol)', 'Lemons (on tree)', 'Citrons (sur l’arbre)', 'Limoni (sull’albero)'], '🍋', ('X', 'us-nass-x-lemons-on-tree-equiv-price-received-monthly-usd-box')),
+ ('grapefruit', 'fruit', ['Pomelo (en el árbol)', 'Grapefruit (on tree)', 'Pamplemousses (sur l’arbre)', 'Pompelmi (sull’albero)'], '', ('X', 'us-nass-x-grapefruit-on-tree-equiv-price-received-monthly-usd-box')),
+ ('grape', 'fruit', ['Uva de mesa (mercado en fresco)', 'Grapes (fresh market)', 'Raisin de table (marché du frais)', 'Uva da tavola (mercato fresco)'], '🍇', ('R', 'GRAPES, FRESH MARKET - PRICE RECEIVED, MEASURED IN $ / TON')),
+ ('peach', 'fruit', ['Melocotón', 'Peaches', 'Pêches', 'Pesche'], '🍑', ('X', 'us-nass-x-peaches-price-received-usd-short-ton')),
+ ('strawberry', 'fruit', ['Fresa', 'Strawberries', 'Fraises', 'Fragole'], '🍓', ('X', 'us-nass-x-strawberries-price-received-usd-cwt')),
+ ('blueberry', 'fruit', ['Arándano cultivado', 'Blueberries (cultivated)', 'Myrtilles (cultivées)', 'Mirtilli (coltivati)'], '🫐', ('X', 'us-nass-x-blueberries-tame-price-received-usd-lb')),
+ ('cranberry', 'fruit', ['Arándano rojo', 'Cranberries', 'Canneberges', 'Mirtilli rossi'], '', ('X', 'us-nass-x-cranberries-price-received-usd-barrel')),
+ ('potato', 'veg', ['Patata (mercado en fresco)', 'Potatoes (fresh market)', 'Pommes de terre (marché du frais)', 'Patate (mercato fresco)'], '🥔', ('R', 'POTATOES, FRESH MARKET - PRICE RECEIVED, MEASURED IN $ / CWT')),
+ ('tomato', 'veg', ['Tomate (mercado en fresco)', 'Tomatoes (fresh market)', 'Tomates (marché du frais)', 'Pomodori (mercato fresco)'], '🍅', ('X', 'us-nass-x-tomatoes-fresh-market-price-received-usd-cwt')),
+ ('onion', 'veg', ['Cebolla seca', 'Onions (dry)', 'Oignons secs', 'Cipolle secche'], '🧅', ('X', 'us-nass-x-onions-dry-price-received-usd-cwt')),
+ ('lettuce_head', 'veg', ['Lechuga iceberg', 'Lettuce (head)', 'Laitue pommée', 'Lattuga a cappuccio'], '🥬', ('X', 'us-nass-x-lettuce-head-price-received-usd-cwt')),
+ ('lettuce_romaine', 'veg', ['Lechuga romana', 'Lettuce (romaine)', 'Laitue romaine', 'Lattuga romana'], '🥬', ('X', 'us-nass-x-lettuce-romaine-price-received-usd-cwt')),
+ ('lettuce_leaf', 'veg', ['Lechuga de hoja', 'Lettuce (leaf)', 'Laitue feuille', 'Lattuga a foglia'], '🥬', ('X', 'us-nass-x-lettuce-leaf-price-received-usd-cwt')),
+ ('mushroom', 'veg', ['Champiñón', 'Mushrooms (agaricus)', 'Champignons de Paris', 'Champignon'], '🍄', ('X', 'us-nass-x-mushrooms-agaricus-price-received-usd-lb')),
+ ('almond', 'nut', ['Almendra', 'Almonds', 'Amandes', 'Mandorle'], '', ('X', 'us-nass-x-almonds-price-received-usd-lb')),
+ ('walnut', 'nut', ['Nuez', 'Walnuts (English)', 'Noix', 'Noci'], '', ('X', 'us-nass-x-walnuts-english-price-received-usd-short-ton')),
+ ('pecan', 'nut', ['Nuez pecana', 'Pecans', 'Noix de pécan', 'Noci pecan'], '', ('X', 'us-nass-x-pecans-price-received-usd-lb')),
+ ('pistachio', 'nut', ['Pistacho', 'Pistachios', 'Pistaches', 'Pistacchi'], '', ('X', 'us-nass-x-pistachios-price-received-usd-lb')),
+]
+FVUS_UNIT = {'LB': 'lb', 'CWT': 'cwt', 'TON': 'short ton', 'BOX': 'box', 'BARREL': 'barrel'}
+def fv_us():
+    rec = load('nass-received.json')['series']
+    ex = {x['id']: x for x in load('us-nass-extra-stats.json')['countries']['US']['series']}
+    out = []
+    for key, grp, names, emo, (kind, sid) in FVUS:
+        if kind == 'R':
+            sr = rec.get(sid)
+            if not sr: continue
+            pts = [[str(a), b] for a, b in sr['n'] if b is not None]; unit = sr['u'].replace('$ / ', '').strip()
+        else:
+            sr = ex.get(sid)
+            if not sr: continue
+            pts = [[str(a), b] for a, b in sr['points'] if b is not None]; unit = sid.rsplit('-usd-', 1)[1].replace('-', ' ')
+        if len(pts) < 2: continue
+        u = FVUS_UNIT.get(unit.upper().replace(' ', ''), None) or FVUS_UNIT.get(unit.upper()) or unit.lower()
+        if unit.lower() == 'short ton' or unit.upper() == 'TON': u = 'short ton'
+        monthly = len(pts[-1][0]) == 7; last = pts[-1]
+        prev = pts[-2]
+        yago = None
+        if monthly:
+            y, m = last[0].split('-'); t = '%d-%s' % (int(y) - 1, m); yago = next((q for q in pts if q[0] == t), None)
+            if pts[-2][0] != '%s-%02d' % (y, int(m) - 1) and not (m == '01' and pts[-2][0] == '%d-12' % (int(y) - 1)): prev = None   # mes anterior sin dato (serie con huecos): no se sustituye por otro mes
+        out.append({'id': key, 'g': grp, 'n': names, 'e': emo, 'u': u, 'm': 1 if monthly else 0, 'd': last[0], 'v': last[1], 'p': prev[1] if prev else None, 'pd': prev[0] if prev else None, 'y': yago[1] if yago else None,
+                    'h': [q[1] for q in pts[-24:]] if monthly else [q[1] for q in pts[-10:]]})
+    return {'schemaVersion': 1, 'generatedAt': now(), 'source': {'name': 'USDA NASS, Quick Stats (price received by farmers, national)', 'url': 'https://quickstats.nass.usda.gov/', 'license': 'Public domain (U.S. government work)'}, 'items': out}
 def price_revisions():
     """data/views/price-revisions.json: solo las revisiones de precios del panel (series 'P/<id>') de los ultimos 90 dias. La ficha de producto
     las enseña; antes descargaba data/revisions.json entero (315 KB, 1.500 revisiones de estadisticas de todos los paises)."""
@@ -441,6 +492,7 @@ def main():
     write('eu-preview.json', eu_preview())
     write('region-metrics.json', region_metrics())
     write('lonjas.json', lonjas())
+    write('fv-us.json', fv_us())
     trade_products()
     diesel_eu_more()
     farm_headlines()

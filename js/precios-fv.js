@@ -25,8 +25,47 @@
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
   function load() { return DOC || (DOC = fetch('data/fv-products.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  /* EE. UU.: precio recibido por el agricultor (USDA NASS), tal cual en su unidad publicada; data/views/fv-us.json (scripts/build-views.py). */
+  var US = {
+    es: { intro: '{n} frutas, hortalizas y frutos secos de EE. UU. Precio que recibe el agricultor (USDA NASS), media nacional, en dólares y en la unidad en que lo publica la fuente.', find: 'Buscar producto', all: 'Todos', veg: 'Hortalizas', fruit: 'Frutas', nut: 'Frutos secos',
+      cols: ['Producto', 'Precio', 'Periodo anterior', 'Hace un año', 'Frecuencia', 'Periodo'], m: 'mensual', a: 'anual', none: 'Ningún producto coincide.', note: 'Unidades de la fuente: lb = libra (0,4536 kg); cwt = 100 libras (45,36 kg); short ton = tonelada corta (907 kg); box = caja (el peso varía según el producto); barrel = barril de arándano rojo (100 libras). «En el árbol» es el precio de la fruta sin recolectar ni envasar. Las series anuales son del año natural (o de la campaña) y se actualizan cuando NASS las publica.', src: 'Fuente' },
+    en: { intro: '{n} U.S. fruits, vegetables and nuts. Price received by farmers (USDA NASS), national average, in dollars and in the unit the source publishes.', find: 'Find a product', all: 'All', veg: 'Vegetables', fruit: 'Fruit', nut: 'Nuts',
+      cols: ['Product', 'Price', 'Previous period', 'A year ago', 'Frequency', 'Period'], m: 'monthly', a: 'annual', none: 'No product matches.', note: 'Source units: lb = pound (0.4536 kg); cwt = 100 pounds (45.36 kg); short ton = 2,000 pounds (907 kg); box = box (weight varies by product); barrel = cranberry barrel (100 pounds). “On tree” is the price of unharvested, unpacked fruit. Annual series cover the calendar year (or the marketing season) and update when NASS publishes them.', src: 'Source' },
+    fr: { intro: '{n} fruits, légumes et fruits à coque des États-Unis. Prix reçu par l’agriculteur (USDA NASS), moyenne nationale, en dollars et dans l’unité publiée par la source.', find: 'Chercher un produit', all: 'Tous', veg: 'Légumes', fruit: 'Fruits', nut: 'Fruits à coque',
+      cols: ['Produit', 'Prix', 'Période précédente', 'Il y a un an', 'Fréquence', 'Période'], m: 'mensuel', a: 'annuel', none: 'Aucun produit ne correspond.', note: 'Unités de la source : lb = livre (0,4536 kg) ; cwt = 100 livres (45,36 kg) ; short ton = tonne courte (907 kg) ; box = caisse (le poids varie selon le produit) ; barrel = baril de canneberges (100 livres). « Sur l’arbre » est le prix du fruit non récolté ni emballé. Les séries annuelles couvrent l’année civile (ou la campagne) et se mettent à jour quand NASS les publie.', src: 'Source' },
+    it: { intro: '{n} tra frutta, ortaggi e frutta secca degli Stati Uniti. Prezzo ricevuto dall’agricoltore (USDA NASS), media nazionale, in dollari e nell’unità pubblicata dalla fonte.', find: 'Cerca un prodotto', all: 'Tutti', veg: 'Ortaggi', fruit: 'Frutta', nut: 'Frutta secca',
+      cols: ['Prodotto', 'Prezzo', 'Periodo precedente', 'Un anno fa', 'Frequenza', 'Periodo'], m: 'mensile', a: 'annuale', none: 'Nessun prodotto corrisponde.', note: 'Unità della fonte: lb = libbra (0,4536 kg); cwt = 100 libbre (45,36 kg); short ton = tonnellata corta (907 kg); box = cassa (il peso varia per prodotto); barrel = barile di mirtilli rossi (100 libbre). «Sull’albero» è il prezzo della frutta non raccolta né imballata. Le serie annuali coprono l’anno solare (o la campagna) e si aggiornano quando NASS le pubblica.', src: 'Fonte' }
+  };
+  var USDOC = null;
+  function renderUS(el, opt) {
+    var lg = US[opt.lang] ? opt.lang : 'es', t = US[lg], L = LOC[lg], li = LI[lg];
+    function n(v, d) { return v == null || !isFinite(v) ? '—' : v.toLocaleString(L, { minimumFractionDigits: d, maximumFractionDigits: d }); }
+    function per(s) { return s.length === 7 ? new Date(s + '-15T12:00:00Z').toLocaleDateString(L, { month: 'short', year: 'numeric', timeZone: 'UTC' }) : s; }
+    function chg(a, b) { if (a == null || b == null || !b) return '—'; var p = (a / b - 1) * 100; return '$' + n(b, b < 10 ? 3 : b < 1000 ? 2 : 0) + ' <small class="' + (p > 0.5 ? 'fv-up' : p < -0.5 ? 'fv-dn' : '') + '">' + (p > 0 ? '+' : p < 0 ? '−' : '') + n(Math.abs(p), 1) + ' %</small>'; }
+    var go = function (D) {
+      if (!D || !D.items) return false;
+      var grp = [['all', t.all], ['veg', t.veg], ['fruit', t.fruit], ['nut', t.nut]];
+      var head = '<p class="fv-intro">' + esc(t.intro.replace('{n}', D.items.length)) + '</p><div class="fv-ctl"><label><span>' + esc(t.find) + '</span><input type="search" class="di-compare-select fv-q" value="' + esc(ST.q) + '" placeholder="' + esc(t.find) + '"></label><div class="fv-chips" role="group">' + grp.map(function (g) { return '<button type="button" class="fv-chip' + (ST.g === g[0] ? ' on' : '') + '" data-g="' + g[0] + '">' + esc(g[1]) + '</button>'; }).join('') + '</div></div>';
+      var qn = norm(ST.q), groups = ST.g === 'all' ? ['veg', 'fruit', 'nut'] : [ST.g], body = '', shown = 0;
+      groups.forEach(function (g) {
+        var L2 = D.items.filter(function (p) { return p.g === g && (!qn || norm(p.n.join(' ')).indexOf(qn) >= 0); }).sort(function (a, b) { return a.n[li].localeCompare(b.n[li], L); });
+        if (!L2.length) return; shown += L2.length;
+        body += '<tbody><tr class="fv-gh"><th colspan="6" scope="colgroup">' + esc(t[g]) + '</th></tr>' + L2.map(function (p) {
+          var d = p.v < 10 ? 3 : p.v < 1000 ? 2 : 0;
+          return '<tr><th scope="row">' + (p.e ? '<span class="fv-emo" aria-hidden="true">' + p.e + '</span>' : '') + esc(p.n[li]) + '</th><td class="cof-n"><b>$' + n(p.v, d) + '</b> <small>/' + esc(p.u) + '</small></td><td class="cof-n">' + chg(p.v, p.p) + '</td><td class="cof-n">' + chg(p.v, p.y) + '</td><td class="fv-k">' + esc(p.m ? t.m : t.a) + '</td><td class="fv-d">' + esc(per(p.d)) + '</td></tr>';
+        }).join('') + '</tbody>';
+      });
+      var table = shown ? '<div style="overflow-x:auto"><table class="cof-tbl fv-tbl"><thead><tr>' + t.cols.map(function (c, i) { return '<th scope="col"' + (i && i < 4 ? ' class="cof-n"' : '') + '>' + esc(c) + '</th>'; }).join('') + '</tr></thead>' + body + '</table></div>' : '<p class="di-field-hint">' + esc(t.none) + '</p>';
+      el.innerHTML = '<section class="di-card fv-card">' + head + table + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.note) + '</p><p class="di-field-hint" style="margin:6px 0 0">' + esc(t.src) + ': <a href="' + esc(D.source.url) + '" rel="noopener">' + esc(D.source.name) + '</a></p></section>';
+      var qi = el.querySelector('.fv-q'); if (qi) qi.oninput = function () { ST.q = qi.value; var pos = qi.selectionStart; renderUS(el, opt).then(function () { var f = el.querySelector('.fv-q'); if (f) { f.focus(); try { f.setSelectionRange(pos, pos); } catch (e) {} } }); };
+      Array.prototype.forEach.call(el.querySelectorAll('.fv-chip'), function (b) { b.onclick = function () { ST.g = b.getAttribute('data-g'); renderUS(el, opt).then(function () { var f = el.querySelector('.fv-chip[data-g="' + ST.g + '"]'); if (f) f.focus(); }); }; });
+      return true;
+    };
+    return (USDOC || (USDOC = fetch('data/views/fv-us.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }))).then(go);
+  }
   function render(el, opt) {
     if (!el) return Promise.resolve(false); opt = opt || {};
+    if (opt.location === 'us') return renderUS(el, opt);
     var lg = T[opt.lang] ? opt.lang : 'es', t = T[lg], L = LOC[lg];
     function n(v, d) { return v == null || !isFinite(v) ? '—' : v.toLocaleString(L, { minimumFractionDigits: d, maximumFractionDigits: d }); }
     function day(s) { return new Date(s + 'T12:00:00Z').toLocaleDateString(L, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); }
