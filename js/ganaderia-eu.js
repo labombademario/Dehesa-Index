@@ -41,8 +41,9 @@
       if (prov !== cc) return D.regions[prov] ? regSeries(D.regions[prov], id) : null;
       var ids = Object.keys(D.regions), by = {}, n = ids.length;
       ids.forEach(function (k) { (regSeries(D.regions[k], id) || []).forEach(function (p) { var e = by[p[0]] || (by[p[0]] = { s: 0, n: 0 }); e.s += p[1]; e.n++; }); });
-      var out = Object.keys(by).sort().filter(function (y) { return by[y].n === n; }).map(function (y) { return [y, Math.round(by[y].s * 10) / 10]; });
-      return out.length ? out : null;
+      /* todos los años con dato en alguna región (para poder ver las regiones); el total nacional solo cuando todas tienen dato, si no queda vacío (nunca se completa un hueco) */
+      var out = Object.keys(by).sort().map(function (y) { return [y, by[y].n === n ? Math.round(by[y].s * 10) / 10 : null]; });
+      return out.some(function (p) { return p[1] != null; }) ? out : null;
     };
   }
   function script(src, glob) { return new Promise(function (ok) { if (window[glob]) return ok(); var s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = ok; document.head.appendChild(s); }); }

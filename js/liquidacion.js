@@ -115,7 +115,8 @@
   function refLabel(r) { return (r.market ? nm(r.market) : '') + (r.stage ? (r.market ? ' · ' : '') + nm(r.stage) : ''); }
   function refShort(r) { return r.market ? nm(r.market) : nm(r.stage) || nm(r.product); }
   function unitOf() { var r = REFS && SEL.length ? REFS.filter(function (x) { return refKey(x) === SEL[0]; })[0] : null; return r ? r.unit : '€/t'; }
-  function perT(u) { u = String(u || '').replace(/\s/g, ''); return /\/t$/.test(u) ? 1 : /\/100kg$/.test(u) ? 10 : null; } // € por tonelada = precio × factor
+  function perT(u) { u = String(u || '').replace(/\s/g, ''); return /\/(t|tonne|tonelada|metricton)$/i.test(u) ? 1 : /\/100kg$/i.test(u) ? 10 : null; }
+  function curOf(u) { var c = String(u || '').split('/')[0].trim(); return c || '€'; }   /* moneda de la propia referencia: € en la UE, GBP, CAD o USD fuera */ // € por tonelada = precio × factor
   // ---- lectura de números y fechas tal como llegan de Excel en español o en inglés ----
   function pnum(s) {
     s = String(s == null ? '' : s).replace(/[€\s]|EUR/gi, '').replace(/[^\d.,-]/g, '');
@@ -158,11 +159,13 @@
   }
   function products() {
     var seen = {}, out = [];
-    (REFS || []).forEach(function (r) { var k = r.fam + '|' + r.product.en; if (!seen[k]) { seen[k] = 1; out.push({ k: k, r: r, n: 0 }); } });
-    (REFS || []).forEach(function (r) { var k = r.fam + '|' + r.product.en; out.forEach(function (o) { if (o.k === k) o.n++; }); });
+    (REFS || []).forEach(function (r) { var k = pkey(r); if (!seen[k]) { seen[k] = 1; out.push({ k: k, r: r, n: 0 }); } });
+    (REFS || []).forEach(function (r) { var k = pkey(r); out.forEach(function (o) { if (o.k === k) o.n++; }); });
     return out;
   }
-  function prodRefs() { return (REFS || []).filter(function (r) { return r.fam + '|' + r.product.en === PROD; }).sort(function (a, b) { return a.last < b.last ? 1 : a.last > b.last ? -1 : refLabel(a) < refLabel(b) ? -1 : 1; }); }
+  /* fuera de la UE un mismo producto puede venir en unidades distintas (dólares por bushel o por tonelada): cada unidad es un producto aparte y nunca se comparan entre sí */
+  function pkey(r) { return r.fam + '|' + r.product.en + (r.sid ? '|' + r.unit : ''); }
+  function prodRefs() { return (REFS || []).filter(function (r) { return pkey(r) === PROD; }).sort(function (a, b) { return a.last < b.last ? 1 : a.last > b.last ? -1 : refLabel(a) < refLabel(b) ? -1 : 1; }); }
   function autoSel() { var pr = prodRefs(); SEL = pr.length ? [refKey(pr[0])] : []; ensurePts(); }
   function ensurePts() {
     SEL.forEach(function (k) {
@@ -246,7 +249,7 @@
     var h = '<section class="di-card lq-sec no-print"><h2>' + esc(w.s1) + '</h2><div class="lq-row">';
     h += '<div class="lq-zone" role="group" aria-label="' + esc(zt()[0]) + '" style="flex-basis:100%"><span style="display:block;font-size:13px;margin-bottom:4px">' + esc(zt()[0]) + '</span>' + ZONES.map(function (z) { var on = z[0] === ZONE; return '<button type="button" data-zone="' + z[0] + '" aria-pressed="' + on + '" style="font:inherit;font-size:13.5px;cursor:pointer;padding:5px 14px;margin:0 6px 6px 0;border-radius:999px;border:1px solid ' + (on ? 'var(--text)' : 'var(--border)') + ';background:' + (on ? 'var(--text);color:var(--bg,#fff)' : 'none;color:inherit') + ';font-weight:' + (on ? 700 : 400) + '">' + esc(z[1][{ es: 0, en: 1, fr: 2, it: 3 }[lang()] || 0]) + '</button>'; }).join('') + '<small style="display:block;color:var(--text-faint)">' + esc(zt()[1]) + '</small></div>';
     if (ZONE === 'eu') h += '<label>' + esc(w.country) + ' <select data-cpick="1" id="lq-c" class="di-compare-select">' + (IDX ? IDX.countries.filter(function (c) { return !ZONECC[c.c] && c.c !== 'EU-UK' && c.c !== 'US' && c.c !== 'CA'; }) : [{ c: 'ES' }]).map(function (c) { return { c: c.c, n: cname(c.c) }; }).sort(function (a, b) { return a.c === 'ES' ? -1 : b.c === 'ES' ? 1 : a.n < b.n ? -1 : 1; }).map(function (c) { return '<option value="' + c.c + '"' + (c.c === CC ? ' selected' : '') + '>' + esc(c.n) + '</option>'; }).join('') + '</select></label>';
-    if (REFS) h += '<label>' + esc(w.product) + ' <select id="lq-p" class="di-compare-select">' + products().map(function (o) { return '<option value="' + esc(o.k) + '"' + (o.k === PROD ? ' selected' : '') + '>' + esc(nm(o.r.product)) + ' (' + o.n + ')</option>'; }).join('') + '</select></label>';
+    if (REFS) h += '<label>' + esc(w.product) + ' <select id="lq-p" class="di-compare-select">' + products().map(function (o) { return '<option value="' + esc(o.k) + '"' + (o.k === PROD ? ' selected' : '') + '>' + esc(nm(o.r.product) + (o.r.sid ? ' · ' + o.r.unit : '')) + ' (' + o.n + ')</option>'; }).join('') + '</select></label>';
     h += '</div>';
     if (REFS) {
       var refHtml = function (r) {
@@ -285,7 +288,7 @@
       h += '<div class="lq-cmp" style="border-left-color:' + x.color + '"><div class="lq-cmp-h">' + esc(refLabel(x.r)) + '</div><div class="lq-cards">' +
         '<div><span>' + esc(w.refAt) + '</span><strong>' + esc(num(x.ref, 2)) + ' ' + esc(u) + '</strong></div>' +
         '<div><span>' + esc(w.diff) + '</span><strong style="color:' + col + '">' + (d > 0 ? '+' : d < 0 ? '−' : '') + esc(num(Math.abs(d), 2)) + ' ' + esc(u) + '</strong><small>' + (dp > 0 ? '+' : dp < 0 ? '−' : '') + esc(num(Math.abs(dp), 1)) + ' %</small></div>' +
-        (f ? '<div><span>' + esc(w.total) + '</span><strong style="color:' + col + '">' + (d > 0 ? '+' : d < 0 ? '−' : '') + esc(num(Math.abs(d) * f * x.q, 0)) + ' €</strong><small>' + esc(num(x.q, 0)) + ' t</small></div>' : '') + '</div>';
+        (f ? '<div><span>' + esc(w.total) + '</span><strong style="color:' + col + '">' + (d > 0 ? '+' : d < 0 ? '−' : '') + esc(num(Math.abs(d) * f * x.q, 0) + ' ' + curOf(u)) + '</strong><small>' + esc(num(x.q, 0)) + ' t</small></div>' : '') + '</div>';
       var s = dir === 'eq' ? fill(w.sentEq, { c: camp, q: num(x.q, 0), p: num(x.own, 2) + ' ' + u, r: refShort(x.r) }) :
         fill(w.sent, { c: camp, q: num(x.q, 0), p: num(x.own, 2) + ' ' + u, r: refShort(x.r), rv: num(x.ref, 2) + ' ' + u, d: num(Math.abs(d), 2) + ' ' + u, dir: dir === 'up' ? w.above : w.below, dp: (dp > 0 ? '+' : '−') + num(Math.abs(dp), 1) + ' %' });
       h += '<p class="lq-sent">' + esc(s) + '</p>';

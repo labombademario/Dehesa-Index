@@ -23,7 +23,7 @@
       r6m: '6 mesi', r1: '1 anno', r3: '3 anni', r5: '5 anni', r10: '10 anni', r20: '20 anni', rmax: 'Massimo', date: 'Data', table: 'Vedi tutte le serie', src: 'Fonte', lic: 'Licenza', updated: 'Aggiornato', note: 'Dati ufficiali come pubblicati da ciascuna fonte; i nomi delle serie restano in inglese. Le esportazioni australiane sono in valore (dollari australiani), non in volume. L’ultimo periodo può essere provvisorio.', none: 'Nessun dato disponibile.',
       countries: { US: 'Stati Uniti', EU: 'Unione europea', ES: 'Spagna', FR: 'Francia', DE: 'Germania', BE: 'Belgio', AT: 'Austria', PT: 'Portugal', IT: 'Italia', CA: 'Canada', DK: 'Danimarca', NL: 'Paesi Bassi', AU: 'Australia', UK: 'Regno Unito', AR: 'Argentina', CL: 'Cile', UY: 'Uruguay', PL: 'Polonia', BG: 'Bulgaria', EL: 'Grecia', FI: 'Finlandia', HR: 'Croazia', IE: 'Irlanda', LT: 'Lituania', SK: 'Slovacchia', CZ: 'Cechia', EE: 'Estonia', HU: 'Ungheria', LV: 'Lettonia', RO: 'Romania', SE: 'Svezia', SI: 'Slovenia', CH: 'Svizzera' }, freq: { monthly: 'mensile', weekly: 'settimanale', quarterly: 'trimestrale', annual: 'annuale', semiannual: 'semestrale' } }
   };
-  var MACRO = null, WAGES = null, DATA = null, ST = { c: 'ES', g: 'all', s: null, r: 'max', fx: false, real: false };
+  var MACRO = null, WAGES = null, ECBR = null, DATA = null, ST = { c: 'ES', g: 'all', s: null, r: 'max', fx: false, real: false };
   /* Bloques largos de la ficha (comercio por socio, mapa IFAP): se pliegan en un <details> cerrado con título y una línea que explica qué son.
      El contenedor interior conserva su id, así el módulo se monta igual y sus repintados no pierden el pliegue. */
   var FOLD_T = {
@@ -781,7 +781,7 @@
     var cnt = {}; c.series.forEach(function (x) { cnt[x.group] = (cnt[x.group] || 0) + 1; });
     var themes = GROUPS.filter(function (g) { return cnt[g] && t[g] && !/^(idx_perc|idx_pag|rates)$/.test(g); });
     var themeHtml = themes.length > 1 ? '<section id="ps-themes" class="pp-anchor"><h2 style="margin:14px 0 4px;font-size:19px">' + esc(TH[0].replace('{c}', t.countries[ST.c] || ST.c)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(TH[2]) + '</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px">' + themes.map(function (g) { return '<a class="di-card" href="paises.html?c=' + ST.c + '&amp;g=' + g + '#ps-explorer" style="display:block;padding:10px 12px;text-decoration:none;color:inherit">' + (TEMO[g] ? '<span aria-hidden="true" style="display:block;font-size:24px;line-height:1.1;margin-bottom:4px">' + TEMO[g] + '</span>' : '') + '<b>' + esc(t[g]) + '</b><div class="di-movers-hint" style="margin:2px 0 0">' + nf(cnt[g], 0) + ' ' + esc(TH[1]) + '</div></a>'; }).join('') + '</div></section>' : '';
-    var prof = window.DIProfile ? window.DIProfile.html(ST.c, c, { lang: lang(), t: t, groups: groups, esc: esc, nf: nf, dec: dec, plabel: plabel, macro: MACRO && MACRO.countries[ST.c], wage: WAGES && WAGES.countries[ST.c], rate: window.DIProfile.rateOf(c), afterHero: themeHtml + '<div class="ps-secgrp">' + (window.DehesaSector ? '<div id="ps-sector"></div>' : '') + '<div id="ps-regmap" class="pp-anchor"></div></div>' }) : '';
+    var prof = window.DIProfile ? window.DIProfile.html(ST.c, c, { lang: lang(), t: t, groups: groups, esc: esc, nf: nf, dec: dec, plabel: plabel, macro: MACRO && MACRO.countries[ST.c], wage: WAGES && WAGES.countries[ST.c], rate: window.DIProfile.rateOf(c) || (/^(AT|BE|BG|CY|DE|EE|EL|ES|FI|FR|HR|IE|IT|LT|LU|LV|MT|NL|PT|SI|SK)$/.test(ST.c) && ECBR ? (function (r) { if (!r) return null; var o = {}, k, P = r.points || []; for (k in r) o[k] = r[k]; o.ecb = true; if (o.latest == null && P.length) { o.latest = P[P.length - 1][1]; o.latestPeriod = P[P.length - 1][0]; } return o.latest == null ? null : o; })(window.DIProfile.rateOf(ECBR)) : null), afterHero: themeHtml + '<div class="ps-secgrp">' + (window.DehesaSector ? '<div id="ps-sector"></div>' : '') + '<div id="ps-regmap" class="pp-anchor"></div></div>' }) : '';
     var EXC = window.DIExplorer ? xctx(c, list, cur0, cur, t, countries, opt, groups, rng) : null;
     if (SNOTE && SNOTE.s && SNOTE.s !== ST.s) SNOTE = null; if (SNOTE && !SNOTE.s) SNOTE.s = ST.s;
     var SN = { es: ['Esta serie cambió de identificador: te mostramos la misma con su nombre actual.', 'La serie del enlace ({id}) ya no se publica en este país; te mostramos otra. Busca arriba la que quieres.'],
@@ -912,8 +912,8 @@
     DATA = { countries: {}, generatedAt: m.generatedAt };
     CCODES.forEach(function (k) { var e = m.countries[k]; AVAIL[k] = !!(e && e.metrics && Object.keys(e.metrics).some(function (g) { return g !== 'product' && g.indexOf('eu_') !== 0; })); });
     if (!AVAIL[ST.c]) ST.c = 'ES';
-    return Promise.all([fetch('data/country-macro.json'), fetch('data/country-wages.json')].map(function (f) { return f.then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }));
-  }).then(function (m) { MACRO = m[0]; WAGES = m[1];
+    return Promise.all([fetch('data/country-macro.json'), fetch('data/country-wages.json'), fetch('data/series/EU/rates.json')].map(function (f) { return f.then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }));
+  }).then(function (m) { MACRO = m[0]; WAGES = m[1]; ECBR = m[2] && m[2].series ? m[2] : null;
     if (!REQS) return build();
     return fetch('data/series-renames.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
       var to = d && d.renames && d.renames[REQS]; if (to) { ST.s = to; REQS = to; SNOTE = { k: 'ren', id: to, s: to }; } build(); });

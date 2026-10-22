@@ -46,6 +46,7 @@
     function ser(prov, item, m) { return cfg.series(getD(), prov, item, m); }
     function card(l, v, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(l).toUpperCase() + '</div><div style="font-size:26px;font-weight:700;margin:6px 0 2px" class="serif">' + v + '</div><div class="di-movers-hint" style="margin:0">' + sub + '</div></div>'; }
     function chartHtml(t, nat, prov) {
+      nat = nat.filter(function (p) { return p[1] != null; });   /* años sin total nacional completo: sin punto en el gráfico */
       if (nat.length < 2) return '<p class="di-movers-hint">' + esc(t.oneYear || t.noData) + '</p>';
       var S = [{ name: t.ca, color: C1, pts: nat.map(function (p) { return { x: tsOf(p[0]), y: p[1], l: p[0] }; }) }];
       if (prov) { var ps = ser(prov, SEL.item, SEL.measure); if (ps) S.push({ name: pnm(prov), color: C2, pts: ps.map(function (p) { return { x: tsOf(p[0]), y: p[1], l: p[0] }; }) }); }
