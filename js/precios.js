@@ -896,15 +896,16 @@
     if (lonja && showValue) { mk = (lonjaCC() === 'ES' ? (LONJA_T[lang()] || LONJA_T.es)[2] : (ccName(lonjaCC().toLowerCase()) || lonjaCC())) + ' · ' + lonjaLabel(lonja); od = S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); }
     var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
     var meta = [est, mk, od ? (/^\d/.test(od) ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') : (({ es: 'dato de ', en: 'as of ', fr: 'donnée de ', it: 'dato di ' })[lang()] || '')) + od : ''].filter(Boolean).join(' · ');
+    var IBL = ({ es: ['Calcular', 'Gráfico', 'Aviso'], en: ['Calculate', 'Chart', 'Alert'], fr: ['Calculer', 'Graphique', 'Alerte'], it: ['Calcola', 'Grafico', 'Avviso'] })[lang()] || ['Calcular', 'Gráfico', 'Aviso'];
     return (
       '<div class="di-card di-product-card di-product-state-' + dataState.key + '" data-key="' + key + '">' +
         '<div class="di-product-head">' +
           '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + (showValue ? lonjaSelectHtml(entry) : '') + '</div>' +
           '<div class="di-product-icons">' +
             '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
-            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮</button>' : '') +
-            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈</button>' : '') +
-            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔</button>' : '') +
+            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮 <span class="di-ib-l">' + esc(IBL[0]) + '</span></button>' : '') +
+            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈 <span class="di-ib-l">' + esc(IBL[1]) + '</span></button>' : '') +
+            (showValue && !lonja ? '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔 <span class="di-ib-l">' + esc(IBL[2]) + '</span></button>' : '') +
             '<button type="button" class="di-fav-star' + (fav ? ' active' : '') + '" data-action="fav" data-key="' + key + '" title="' + esc(fav ? t.favRemoveTitle : t.favAddTitle) + '">★</button>' +
           '</div>' +
         '</div>' +
@@ -913,7 +914,7 @@
         (disp.unverified ? '<div class="di-derived-note">' + esc(UNVERIFIED_NOTE[lang()] || UNVERIFIED_NOTE.es) + '</div>' : '') +
         (disp.derived ? '<div class="di-derived-note">' + esc(DERIVED_NOTE[lang()] || DERIVED_NOTE.es) + '</div>' : '') +
         (showValue ? productCiteHtml(entry, disp, observation) : '') +
-        (showValue && observation ? '<div style="margin:2px 0 4px">' + S.reportLink({ id: observation.obsId, label: productName(entry.nameKey) + (meta ? ' · ' + meta : ''), period: observation.observationDate, value: price + ' ' + unit }) + '</div>' : '') +
+        (showValue && observation ? '<div class="di-product-report" style="margin:2px 0 4px">' + S.reportLink({ id: observation.obsId, label: productName(entry.nameKey) + (meta ? ' · ' + meta : ''), period: observation.observationDate, value: price + ' ' + unit }) + '</div>' : '') +
         '<div class="di-product-price-row">' +
           '<span class="di-product-price">' + esc(price) + '</span>' +
           '<span class="di-product-unit">' + esc(unit) + '</span>' +
