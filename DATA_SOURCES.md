@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 152 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 31813 series en el catalogo unificado.
+Resumen: 152 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 32018 series en el catalogo unificado.
 
 ## VERIFIED (152)
 
@@ -40,8 +40,8 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `cso_ie` | Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05), Intake of Cows Milk (AKA01), Agricultural Land Sales (ARA02) | IE | CC-BY-4.0 | si/si | si | 127 | El logotipo del CSO tiene límites de uso propios; Dehesa Index no lo usa. |
 | `csp_lv` | Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk) | LV | CC-BY-4.0 | si/si | si | 51 |  |
 | `csu_cz` | Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area) | CZ | CZ-OPENDATA-FREE | si/si | si | 75 | None declared. Credit is given anyway. |
-| `daera_ni` | DAERA (Northern Ireland) — Agricultural Market Report | UK | OGL-UK-3.0 | si/si | si | 0 | Excluye logotipos, datos personales y mapas de OSNI. |
-| `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 718 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
+| `daera_ni` | DAERA (Northern Ireland) — Agricultural Market Report | UK | OGL-UK-3.0 | si/si | si | 14 | Excluye logotipos, datos personales y mapas de OSNI. |
+| `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 784 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
 | `desnz_fuel_prices` | UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices | UK | OGL-UK-3.0 | si/si | si | 4 | Sin respaldo oficial implícito. |
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 340 | Modifications must be marked as such. |
 | `dgec_prix_petroliers` | Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
@@ -125,7 +125,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `ris_at` | Rechtsinformationssystem des Bundes (RIS) — MOG 2021 y GAP-Strategieplan-Anwendungsverordnung | AT | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el RIS. Parte del texto se leyó en copias (AMA, gesetzefinden.at, jusline.at) y los imp… |
 | `rivm_lmm` | RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit | NL | CC-BY-4.0 | si/si | si | 0 |  |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
-| `scottish_government` | Scottish Government (RESAS) — agricultural statistics | UK | OGL-UK-3.0 | si/si | si | 0 | Excluye logotipos y elementos gráficos. |
+| `scottish_government` | Scottish Government (RESAS) — agricultural statistics | UK | OGL-UK-3.0 | si/si | si | 125 | Excluye logotipos y elementos gráficos. |
 | `sejm_eli` | Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia) | PL | PUBLIC-LAW | si/si | si | 0 | Cifras y reglas son extractos transcritos a mano; manda el texto publicado en el Dziennik Ustaw. No se leyeron los términos de uso de la API… |
 | `sima_gpp` | Portugal — SIMA (GPP) weekly prices | PT | CUSTOM | unclear/unclear | si | 0 | Written authorisation from the GPP would be required before use. |
 | `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 38 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
