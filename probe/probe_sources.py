@@ -109,5 +109,16 @@ if sec == 'keys':
                     for k in ('commodity',): p(' commodities', sorted(collections.Counter(r.get(k) for r in rs).items(), key=lambda x: -x[1])[:80])
                     p(' packages', sorted(set(r.get('package') for r in rs))[:40])
         except Exception as e: p('ERR', sid, e, b[:200])
+if sec == 'ckan':
+    for u in ['https://open.canada.ca/data/api/action/package_search?q=fruit+vegetable+prices&rows=20', 'https://open.canada.ca/data/api/action/package_search?q=horticulture+wholesale+prices&rows=10', 'https://datos.gob.ar/api/3/action/package_search?q=seguros+agropecuarios&rows=10', 'https://datos.gob.ar/api/3/action/package_search?q=superintendencia+de+seguros&rows=10']:
+        st, h, b = head(u, timeout=90)
+        try:
+            d = json.loads(b)
+            for r in d['result']['results']:
+                p('DS', r.get('id'), '|', (r.get('title') or r.get('title_translated', {}).get('en') or '')[:100] if isinstance(r.get('title'), str) or r.get('title') is None else str(r.get('title'))[:100], '|', r.get('license_title') or r.get('license_id'), '|', r.get('metadata_modified'))
+                for x in (r.get('resources') or [])[:4]: p('    RES', (x.get('format') or ''), x.get('url'), '|', str(x.get('name'))[:70])
+        except Exception as e: p('ERR', e, b[:200])
+    for u in ['https://www150.statcan.gc.ca/t1/wds/rest/getAllCubesListLite', 'https://www150.statcan.gc.ca/n1/en/catalogue/32100364']:
+        st, h, b = head(u); p(re.sub(r'\s+', ' ', b[:160].decode('utf8', 'ignore')))
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
