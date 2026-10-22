@@ -52,6 +52,14 @@ def load_stats():
                 else: continue
                 old = tgt.get(key)
                 if not old or str(pts[-1][0]) > str(old['points'][-1][0]): tgt[key] = s
+    # precios anuales de TODA la UE-27 (update-eu-fv-farm.py): los pipelines por pais solo guardan unos pocos productos
+    try:
+        eu = json.loads((D / 'eu-fv-farm.json').read_text())
+        for cc, prods in eu.get('countries', {}).items():
+            for code, pts in prods.items():
+                old = ab.get((cc, code))
+                if not old or str(pts[-1][0]) >= str(old['points'][-1][0]): ab[(cc, code)] = {'points': pts}
+    except Exception: pass
     return idx, ab
 
 def main():

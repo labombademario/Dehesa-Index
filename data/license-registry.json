@@ -5897,6 +5897,12 @@
    ],
    "notes": "Precio medio semanal nacional del vino blanco y del vino tinto en España (Boletín semanal de precios del vino del MAPA, PDF, €/hl; el aviso legal del boletín permite reutilizarlo citando la fuente y la fecha) y precios medios mensuales de compra a granel de Francia (FranceAgriMer, VISIONet, Licence Ouverte 2.0), por tipo (AOP, IGP, sin IG con y sin mención de variedad), €/hl. scripts/update-wine-prices.py. Los valores marcados como no disponibles o no significativos quedan como hueco; los aislados e incompatibles con su entorno se descartan y se anotan en el log."
   },
+  "data/eu-fv-farm.json": {
+   "sources": [
+    "eurostat"
+   ],
+   "notes": "Precio de venta que cobra el agricultor (EUR por 100 kg, anual desde 2005) de todas las hortalizas frescas, la patata y la fruta que cada pais de la UE-27 envia a Eurostat, conjunto apri_ap_crpouta (datos de cada instituto nacional). Un pais sin dato de un producto no lo tiene: nunca se rellena con el de otro. scripts/update-eu-fv-farm.py."
+  },
   "data/wood-removals.json": {
    "sources": [
     "eurostat"

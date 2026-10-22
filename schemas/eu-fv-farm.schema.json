@@ -1,0 +1,56 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Precios agricolas de fruta, hortaliza y patata de la UE-27 (Eurostat apri_ap_crpouta)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "unit",
+  "source",
+  "products",
+  "countries"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "unit": {
+   "type": "string",
+   "enum": [
+    "EUR/100 kg"
+   ]
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https://"
+    },
+    "license": {
+     "type": "string"
+    }
+   }
+  },
+  "products": {
+   "type": "object",
+   "minProperties": 20
+  },
+  "countries": {
+   "type": "object",
+   "minProperties": 24
+  }
+ }
+}

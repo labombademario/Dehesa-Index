@@ -1216,6 +1216,12 @@
     "wood_prices_de"
    ]
   ],
+  "eu-fv-farm.json": [
+   "eu-fv-farm",
+   [
+    "eu_fv_farm"
+   ]
+  ],
   "wood-removals.json": [
    "wood-removals",
    [

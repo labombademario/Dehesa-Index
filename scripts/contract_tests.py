@@ -3723,6 +3723,25 @@ def wood_removals(doc, errs, warns, stats):
         if not t or all(x is None for x in t): errs.append("madera %s: sin ningun total" % cc)   # un pais que Eurostat dejo de actualizar (p. ej. BE hasta 2020) se publica con su ultimo año y el aviso de abajo
         if c["last"] < _dt.date.today().year - 4: warns.append("madera %s: ultimo año %d" % (cc, c["last"]))
     stats["paises"] = len(doc["countries"])
+# Precios agricolas de fruta, hortaliza y patata de la UE-27 (Eurostat apri_ap_crpouta)
+def eu_fv_farm(doc, errs, warns, stats):
+    import datetime as _dt
+    prods = doc["products"]; n = 0
+    for code in prods:
+        if code[:2] not in ("04", "05", "06"): errs.append("eu-fv-farm: codigo %s no es fruta, hortaliza ni patata" % code); return
+    for cc, c in doc["countries"].items():
+        if not c: errs.append("eu-fv-farm %s: sin ningun producto" % cc); continue
+        for code, pts in c.items():
+            if code not in prods: errs.append("eu-fv-farm %s: codigo %s sin nombre" % (cc, code)); return
+            last = None
+            for y, v in pts:
+                if not (isinstance(v, (int, float)) and 0 < v <= 20000): errs.append("eu-fv-farm %s %s %s: valor fuera de rango (%s)" % (cc, code, y, v)); return
+                if last is not None and not y > last: errs.append("eu-fv-farm %s %s: años no ascendentes en %s" % (cc, code, y)); return
+                last = y
+            n += 1
+        ly = max(p[-1][0] for p in c.values())
+        if int(ly) < _dt.date.today().year - 4: warns.append("eu-fv-farm %s: ultimo año %s" % (cc, ly))
+    stats["paises"] = len(doc["countries"]); stats["series"] = n
 # Argentina: cultivos por provincia (MAGyP)
 def ar_provinces(doc, errs, warns, stats):
     cs = doc["campaigns"]
