@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T17:38:00Z",
+ "generatedAt": "2026-10-22T17:52:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 238,
+  "ok": 237,
   "late": 2,
-  "error": 4,
+  "error": 5,
   "not_run": 0,
   "unknown": 0
  },
@@ -14,15 +14,15 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "2142dd83",
+   "sha": "fd7bd3a9",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/d36e0bbe-9ebf-4849-bc99-4b74b407201c",
-   "completedAt": "2026-10-22T17:33:37Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/ba68529e-9786-4abb-9557-7b027e0c5e2d",
+   "completedAt": "2026-10-22T17:41:26Z"
   },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-22T15:47:01.186042+00:00",
   "repoGeneratedAt": "2026-10-22T15:47:01.186042+00:00",
-  "checkedAt": "2026-10-22T17:38:00Z"
+  "checkedAt": "2026-10-22T17:52:00Z"
  },
  "pipelines": [
   {
@@ -3801,7 +3801,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-22T17:26:16Z"
+     "lastChange": "2026-10-22T17:40:19Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5598,18 +5598,19 @@
    "nextRun": "2026-10-23T02:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "cancelled",
+    "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T17:32:07Z",
-    "durationSec": 14,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39823553322"
+    "startedAt": "2026-10-22T17:32:19Z",
+    "durationSec": 531,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39823582499",
+    "reason": "no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 4,
-    "failed": 2
+    "failed": 3
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 24.0
   },
   {
