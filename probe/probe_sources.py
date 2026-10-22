@@ -365,8 +365,6 @@ if sec == 'wds':
         st, h, b = get(W + 'getFullTableDownloadCSV/32100077/en', headers={'User-Agent': ua, 'Accept': 'application/json'}, tries=1); p('CSVINFO', nm, st, b[:200])
     st, h, b = get('https://www150.statcan.gc.ca/n1/tbl/csv/32100077-eng.zip', timeout=200, tries=1); p('DIRECTZIP', st, h.get('Content-Type'), len(b), b[:60])
     st, h, b = get('https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=3210007701&latestN=0&startDate=&endDate=&csvLocale=en&selectedMembers=%5B%5B%5D%5D', timeout=100, tries=1); p('DLACTION', st, h.get('Content-Type'), len(b), b[:80])
-os.makedirs('probe/out', exist_ok=True)
-open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
 if sec in ('all', 'rates'):
     p('=== RATES')
     for u in ['https://api.bcra.gob.ar/estadisticas/v3.0/monetarias', 'https://api.bcra.gob.ar/estadisticas/v4.0/monetarias']:
@@ -390,3 +388,6 @@ if sec in ('all', 'rates'):
         p(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', t))[:300])
     for u in ['https://www.bcu.gub.uy/', 'https://www.bcu.gub.uy/Paginas/Terminos-y-Condiciones.aspx', 'https://api.bcra.gob.ar/', 'https://www.bcentral.cl/web/banco-central/terminos-de-uso']:
         st, h, b = head(u); p(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', b.decode('utf8', 'ignore')))[:400])
+
+os.makedirs('probe/out', exist_ok=True)
+open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
