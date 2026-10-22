@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T02:16:14Z",
+ "generatedAt": "2026-10-22T02:35:56Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 175,
+  "total": 176,
   "byStatus": {
-   "ACTIVE": 145,
+   "ACTIVE": 146,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1358,6 +1358,45 @@
    "derivatives": "yes",
    "attribution": "Contains information licensed under the Open Government Licence – Canada.",
    "lastChecked": "2026-10-02",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "aafc_wholesale",
+   "registryId": "aafc_wholesale",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Agriculture and Agri-Food Canada — Weekly and Daily Wholesale Prices Reports",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-Canada",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "lastChecked": "2026-10-21",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

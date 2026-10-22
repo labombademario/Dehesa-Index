@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T00:51:42Z",
+ "generatedAt": "2026-10-22T02:37:11Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 145,
-  "sourcesApto": 132,
+  "sources": 146,
+  "sourcesApto": 133,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 311,
-  "datasets_apto": 182,
+  "datasets": 312,
+  "datasets_apto": 183,
   "datasets_condiciones": 119,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -23,6 +23,23 @@
    "id": "aafc_drought",
    "name": "Agriculture and Agri-Food Canada — Canadian Drought Monitor",
    "url": "https://agriculture.canada.ca/en/agricultural-production/weather/canadian-drought-monitor",
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "conditions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos."
+  },
+  {
+   "id": "aafc_wholesale",
+   "name": "Agriculture and Agri-Food Canada — Weekly and Daily Wholesale Prices Reports",
+   "url": "https://open.canada.ca/data/en/dataset/920bc8e2-de26-4bf6-ac41-ed47962d0ff6",
    "country": "CA",
    "licenseId": "OGL-Canada",
    "licenseName": "Open Government Licence – Canada",
@@ -2859,6 +2876,14 @@
    "verdict": "apto",
    "sources": [
     "statcan"
+   ]
+  },
+  {
+   "path": "data/ca/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "aafc_wholesale"
    ]
   },
   {
