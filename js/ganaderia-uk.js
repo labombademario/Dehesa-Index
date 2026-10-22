@@ -35,9 +35,9 @@
     if (cats.length) {
       if (cats.indexOf(CAT) < 0) CAT = cats[0];
       var rows = cats.map(function (c) {
-        var s = N[pid(c, 'price')], last = s.points[s.points.length - 1], pv = s.points.length > 1 ? s.points[s.points.length - 2] : null, ya = at(s.points, new Date(Date.parse(last[0] + 'T12:00:00Z') - 364 * 864e5).toISOString().slice(0, 10), 4), r3 = N[pid(c, 'r3')], hd = N[pid(c, 'head')];
+        var s = N[pid(c, 'price')], last = s.points[s.points.length - 1], pv = s.points.length > 1 && Date.parse(last[0] + 'T12:00:00Z') - Date.parse(s.points[s.points.length - 2][0] + 'T12:00:00Z') <= 10 * 864e5 ? s.points[s.points.length - 2] : null,   /* corderos: sin comparar con la última semana de la campaña anterior */ ya = at(s.points, new Date(Date.parse(last[0] + 'T12:00:00Z') - 364 * 864e5).toISOString().slice(0, 10), 4), r3 = N[pid(c, 'r3')], hd = N[pid(c, 'head')];
         var r3l = r3 && r3.points.length ? r3.points[r3.points.length - 1] : null, hl = hd && hd.points.length ? hd.points[hd.points.length - 1] : null;
-        return '<tr data-cat="' + c + '" tabindex="0" style="border-top:1px solid var(--border);cursor:pointer;' + (c === CAT ? 'font-weight:700;background:var(--surface-alt)' : '') + '">' + td(esc(CN[c][li])) + td(nf(last[1], 1), 1) + td(pc(last[1], pv && pv[1]), 1) + td(pc(last[1], ya && ya[1]), 1) + td(r3l && r3l[0] === last[0] ? nf(r3l[1], 1) : '—', 1) + td(hl && hl[0] === last[0] ? nf(hl[1], 0) : '—', 1) + '</tr>';
+        return '<tr data-cat="' + c + '" tabindex="0" role="button" aria-pressed="' + (c === CAT) + '" style="border-top:1px solid var(--border);cursor:pointer;' + (c === CAT ? 'font-weight:700;background:var(--surface-alt)' : '') + '">' + td(esc(CN[c][li])) + td(nf(last[1], 1), 1) + td(pc(last[1], pv && pv[1]), 1) + td(pc(last[1], ya && ya[1]), 1) + td(r3l && r3l[0] === last[0] ? nf(r3l[1], 1) : '—', 1) + td(hl && hl[0] === last[0] ? nf(hl[1], 0) : '—', 1) + '</tr>';
       }).join('');
       var s0 = N[pid(CAT, 'price')], lw = s0.points[s0.points.length - 1][0], cut = Date.parse(lw + 'T12:00:00Z') - 3 * 365 * 864e5;
       var mk = function (s) { return s ? s.points.filter(function (p) { return p[1] != null && Date.parse(p[0] + 'T12:00:00Z') >= cut; }).map(function (p) { return { x: Date.parse(p[0] + 'T12:00:00Z'), y: p[1], l: day(p[0], l) }; }) : []; };

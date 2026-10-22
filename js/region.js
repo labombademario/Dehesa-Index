@@ -725,7 +725,7 @@
       var byNo = function (no) { for (var k in R.items) if (R.items.hasOwnProperty(k) && new RegExp('^' + no + ' ').test(k)) return R.items[k]; return null; };
       var tf = byNo(36); if (!tf || tf[n - 1] == null) return null;
       var ch = function (a, b) { return a != null && b != null && b > 0 ? pct((a / b - 1) * 100) : ''; };
-      var m = function (v) { return v == null ? '' : '£' + nf(v, v >= 100 || v <= -100 ? 0 : 1) + u.mn; };
+      var m = function (v) { return v == null ? '' : (v < 0 ? '−' : '') + '£' + nf(Math.abs(v), Math.abs(v) >= 100 ? 0 : 1) + u.mn; };
       u.mn = lang() === 'en' ? 'm' : ' M';
       var ha = R.perHa && R.perHa['Total income from farming'];
       var head = '<p style="margin:0 0 10px;font-size:15px"><b>' + esc(u.lead) + ' ' + esc(yl) + ': ' + m(tf[n - 1]) + '</b>' + (ch(tf[n - 1], tf[n - 2]) ? ' <span style="color:var(--text-faint)">(' + esc(ch(tf[n - 1], tf[n - 2])) + ' ' + esc(u.vs) + ')</span>' : '') + (ha && ha[n - 1] != null ? ' · £' + nf(ha[n - 1], 0) + ' ' + esc(u.ha) : '') + '</p>';
@@ -737,7 +737,7 @@
       var pre = code === 'TLIJ' ? (x.r === 'UKI' ? ['TLI'] : ['TLJ', 'TLI']) : [code];
       var it = Object.keys(d.itl3 || {}).map(function (k) { var a = d.itl3[k]; return { n: a.n, r: a.r, t: a.items['Total income from farming'], o: a.items['Output at market prices'] }; }).filter(function (a) { return pre.indexOf(a.r) >= 0 && a.t && a.t[n - 1] != null; });
       it.sort(function (a, b) { return b.t[n - 1] - a.t[n - 1]; });
-      var terr = it.length ? '<h3 class="cof-h2" style="font-size:15px;margin:16px 0 4px">' + esc(u.terr) + '</h3><p class="di-movers-hint" style="margin:0 0 8px">' + esc(u.terrSub) + '</p>' + table([u.area, u.out + ' ' + yl, u.tiff + ' ' + yl, u.share, u.vs], it.map(function (a) { return [esc(a.n), m(a.o && a.o[n - 1]), m(a.t[n - 1]), nf(a.t[n - 1] / tf[n - 1] * 100, 1) + ' %', esc(ch(a.t[n - 1], a.t[n - 2]))]; }), 560) : '';
+      var terr = it.length ? '<h3 class="cof-h2" style="font-size:15px;margin:16px 0 4px">' + esc(u.terr) + '</h3><p class="di-movers-hint" style="margin:0 0 8px">' + esc(u.terrSub) + '</p>' + table([u.area, u.out + ' ' + yl, u.tiff + ' ' + yl, u.share, u.vs], it.map(function (a) { return [esc(a.n), m(a.o && a.o[n - 1]), m(a.t[n - 1]), nf(a.t[n - 1] / tf[n - 1] * 100, 1) + ' %', esc(a.t[n - 2] != null && a.t[n - 2] >= 1 ? ch(a.t[n - 1], a.t[n - 2]) : '')]; }), 560) : '';
       var body = head + '<h3 class="cof-h2" style="font-size:15px;margin:8px 0 4px">' + esc(u.acc) + '</h3>' + table([u.item, yl, yp, u.chg], acc, 460) + chart + '<h3 class="cof-h2" style="font-size:15px;margin:16px 0 4px">' + esc(u.prod) + '</h3>' + prod + terr + '<p class="di-movers-hint" style="margin:10px 0 0">' + (code === 'TLIJ' ? esc(u.ij) + ' ' : '') + esc(u.note) + '</p>';
       return card(u.t + ' · ' + yl, u.sub, body, cite('defra', yl));
     });

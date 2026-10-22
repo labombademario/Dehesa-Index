@@ -73,10 +73,11 @@ def main():
             sid = 'uk-sco-' + re.sub(r'[^a-z0-9]+', '-', ('%s-%s' % (pre, lab)).lower()).strip('-')[:70]
             out.append(series(sid, grp, '%s: %s, Scotland (June census)' % (pre, lab), unit, 'annual', pts, 'Scottish Government'))
     try: out += harvest()
-    except SystemExit as e: log('cosecha omitida:', e)
+    except (SystemExit, Exception) as e: log('cosecha omitida:', repr(e))
     if len(out) < 40: raise SystemExit('muy pocas series (%d)' % len(out))
     ids = [s['id'] for s in out]; dup = {i for i in ids if ids.count(i) > 1}
-    if dup: out = [s for s in out if s['id'] not in dup] + []; log('ids duplicados omitidos', sorted(dup))
+    if dup:
+        seen = set(); out = [s for s in out if not (s['id'] in seen or seen.add(s['id']))]; log('ids duplicados: se conserva el primero', sorted(dup))
     log('series', len(out))
     write(ROOT / 'data/uk-scotland-stats.json', {'name': 'Scottish Government (RESAS), Results from the Scottish Agricultural Census (June)', 'url': 'https://www.gov.scot/collections/june-scottish-agricultural-census/', 'license': 'Open Government Licence v3.0'}, out, LOG)
     (ROOT / 'data/uk-scotland-log.txt').write_text('\n'.join(LOG) + '\n', encoding='utf-8')
