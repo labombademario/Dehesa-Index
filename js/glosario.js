@@ -32,7 +32,11 @@
     });
     return best;
   }
+  function isOff() { try { return window.localStorage.getItem('dehesaGlosarioOff') === '1'; } catch (e) { return false; } }
+  function unwrap() { hide(); [].forEach.call(document.querySelectorAll('abbr.gl'), function (a) { var t = document.createTextNode(a.textContent); a.parentNode.replaceChild(t, a); }); if (document.body && document.body.normalize) document.body.normalize(); }
+  function setOff(v) { try { if (v) window.localStorage.setItem('dehesaGlosarioOff', '1'); else window.localStorage.removeItem('dehesaGlosarioOff'); } catch (e) { } if (v) { if (obs) obs.disconnect(); unwrap(); } else scan(); }
   function scan() {
+    if (isOff()) return;
     if (!DATA || LANG !== lang()) { if (LOADING !== lang()) load(lang(), scan); return; }
     busy = true; if (obs) obs.disconnect();
     try {
@@ -74,5 +78,5 @@
   document.addEventListener('mouseout', function (ev) { var a = ev.target.closest && ev.target.closest('abbr.gl'); if (a && window.matchMedia && window.matchMedia('(hover: hover)').matches && !(ev.relatedTarget && ev.relatedTarget.closest && ev.relatedTarget.closest('.gl-pop'))) hide(); });
   function start() { (window.requestIdleCallback || function (f) { setTimeout(f, 900); })(function () { scan(); }, { timeout: 2500 }); }
   if (document.readyState === 'complete') start(); else window.addEventListener('load', start);
-  window.DehesaGlosario = { rescan: scan };
+  window.DehesaGlosario = { rescan: scan, isOff: isOff, setOff: setOff };
 })();

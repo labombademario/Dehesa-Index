@@ -44,7 +44,7 @@
     var S = (o.series || []).filter(function (s) { return s.pts && s.pts.length; });
     if (!S.length) return '';
     var time = o.xMode === 'time';
-    var W = Math.max(320, Math.min(o.width || 720, (window.innerWidth || 720) - 48)), H = o.height || 250;
+    var vw0 = window.innerWidth || 720, W = Math.max(320, Math.min(o.width || Math.min(960, vw0 - 96), vw0 - 48)), H = o.height || (o.width ? 250 : Math.round(Math.max(250, Math.min(320, W * 0.32))));
     var L = o.yTitle ? 66 : 54, R = 14, Tp = 12, Bt = o.xTitle ? 46 : 28;
     var xmin = Infinity, xmax = -Infinity, ymin = Infinity, ymax = -Infinity;
     S.forEach(function (s) { s.pts.forEach(function (p) { if (p.x < xmin) xmin = p.x; if (p.x > xmax) xmax = p.x; if (p.y !== null && p.y !== undefined && isFinite(p.y)) { if (p.y < ymin) ymin = p.y; if (p.y > ymax) ymax = p.y; } }); });
@@ -103,7 +103,7 @@
     var leg = !o.noLegend && (S.length > 1 || o.legend) ? '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;margin:6px 0 0 4px">' + S.map(function (s) { return '<span><span style="display:inline-block;width:14px;height:3px;background:' + s.color + ';vertical-align:middle;margin-right:6px' + (s.dash ? ';opacity:.7' : '') + '"></span>' + esc(s.name) + '</span>'; }).join('') + '</div>' : '';
     var gapNote = '';
     if (breaks.length && time) { var bl = function (t) { return annual ? String(new Date(t).getUTCFullYear()) : fmtMonth(t); }, gw = GAPW[lang()] || GAPW.es; gapNote = '<div style="margin:6px 0 0 4px;font-size:11.5px;color:var(--text-faint,#7a7466)">' + esc(gw[0] + ' ' + bl(breaks[0][0]) + ' ' + gw[1] + ' ' + bl(breaks[0][1]) + '.' + (annual ? ' ' + gw[2] : '')) + '</div>'; }
-    return '<div class="di-card di-ch" style="padding:10px 10px 8px"><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img" tabindex="0" aria-label="' + esc((o.aria ? o.aria + '. ' : '') + summaryText(S, time, vFmt)) + '" data-dh="' + attrJson(spec) + '">' + g + '</svg>' + leg + gapNote + '</div>';
+    return '<div class="di-card di-ch" style="padding:10px 10px 8px"><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;max-width:' + W + 'px;margin:0 auto;height:auto;display:block;touch-action:pan-y" role="img" tabindex="0" aria-label="' + esc((o.aria ? o.aria + '. ' : '') + summaryText(S, time, vFmt)) + '" data-dh="' + attrJson(spec) + '">' + g + '</svg>' + leg + gapNote + '</div>';
   }
 
   /* ---------- atributo para gráficas ya existentes ----------

@@ -3123,3 +3123,9 @@ abbr.gl:focus-visible { outline: 2px solid var(--accent, #2f6f4e); outline-offse
 .gl-row dt span + span { font-weight: 400; font-size: 13px; color: var(--muted, #5b6a60); }
 .gl-row dd { margin: 0; font-size: 15px; line-height: 1.55; max-width: 70ch; }
 @media (max-width: 640px) { .gl-row { grid-template-columns: 1fr; gap: 2px; } }
+
+.gl-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.gl-head h2 { margin: 0; }
+.gl-toggle { min-height: 44px; }
+.gl-off-note { color: var(--muted, #5b6a60); margin: 8px 0 0; }
+#gl-wrap[hidden], .gl-off-note[hidden] { display: none; }

@@ -3,10 +3,18 @@
 export const BRAND = 'Dehesa Index';
 const OG = { es: 'og-es.png', en: 'og-en.png', fr: 'og-fr.png', it: 'og-it.png' };
 const ORIGIN = 'https://dehesaindex.com';
-// Titulo: el nucleo sin marca; la marca solo se anade si cabe en 65 caracteres (la marca ya va en og:site_name y en el dominio).
+// Titulo: el nucleo sin marca; la marca solo se anade si cabe en 60 caracteres (la marca ya va en og:site_name y en el dominio).
 export function seoTitle(core) {
-  const c = String(core).replace(/\s+/g, ' ').trim();
-  return (c + ' | ' + BRAND).length <= 65 ? c + ' | ' + BRAND : c;
+  let c = String(core).replace(/\s+/g, ' ').trim();
+  // Si el nucleo pasa de 60, se acorta sin perder el dato principal: primero la segunda cifra (tras " · "), despues formulas largas.
+  const SHORT = [
+    [/ · [^·]+$/, ''],
+    [/estadísticas oficiales$/, 'datos oficiales'], [/official statistics$/, 'official data'], [/statistiques officielles$/, 'données officielles'], [/statistiche ufficiali$/, 'dati ufficiali'],
+    [/sequía moderada o peor/, 'sequía'], [/moderate drought or worse/, 'drought'], [/sécheresse modérée ou pire/, 'sécheresse'], [/siccità moderata o peggiore/, 'siccità'],
+    [/producción de soja/, 'soja'], [/soybean production/, 'soybeans'], [/production de soja/, 'soja'], [/produzione di soia/, 'soia']
+  ];
+  for (const [rx, to] of SHORT) { if (c.length <= 60) break; const n = c.replace(rx, to); if (n.length >= 40) c = n; }
+  return (c + ' | ' + BRAND).length <= 60 ? c + ' | ' + BRAND : c;
 }
 // Descripcion: frases completas mientras quepan en `max`; si ni la primera cabe, corta en palabra y cierra con puntos suspensivos.
 export function seoDesc(text, max = 158) {
