@@ -133,7 +133,7 @@ descartada ar-indec-retail-gba-vino-comun ultimo 2020-07
 descartada ar-indec-retail-gba-yerba-mate ultimo 2020-07
 precios minoristas INDEC 89
 SIPM INDEC 13
-gasoil agro ok
+ERROR fuel RuntimeError('http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/1259e17f-aee6-4858-9811-ba8efb7f4b9f/d -> <urlopen error [Errno 110] Connection timed out>')
 Lecheria: fecha repetida en la cabecera de totales; se usa la del detalle (mismas columnas)
 lecheria ok
-series 134
+series 132
