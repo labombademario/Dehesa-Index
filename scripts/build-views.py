@@ -339,6 +339,41 @@ def fv_us():
         out.append({'id': key, 'g': grp, 'n': names, 'e': emo, 'u': u, 'm': 1 if monthly else 0, 'd': last[0], 'v': last[1], 'p': prev[1] if prev else None, 'pd': prev[0] if prev else None, 'y': yago[1] if yago else None,
                     'h': [q[1] for q in pts[-24:]] if monthly else [q[1] for q in pts[-10:]]})
     return {'schemaVersion': 1, 'generatedAt': now(), 'source': {'name': 'USDA NASS, Quick Stats (price received by farmers, national)', 'url': 'https://quickstats.nass.usda.gov/', 'license': 'Public domain (U.S. government work)'}, 'items': out}
+
+# EE. UU.: precios mayoristas de frutas y hortalizas en los mercados terminales del USDA AMS (Market News). Se lee lo ya descargado en data/ams/<id>.json (scripts/update-ams.mjs);
+# un fichero por ciudad con el ultimo dia publicado. Valor publicado tal cual por envase; el $/lb solo se calcula si el envase dice un peso en libras ("50 lb cartons").
+WH_CITIES = [('NY', 'New York', (2314, 2315, 2316)), ('CH', 'Chicago', (2290, 2291, 2292)), ('LA', 'Los Angeles', (2306, 2307, 2308)), ('AT', 'Atlanta', (2277, 2278, 2279)),
+             ('BO', 'Boston', (2285, 2286, 2287)), ('PH', 'Philadelphia', (2318, 2319, 2320)), ('MI', 'Miami', (2310, 2311, 2312)), ('DT', 'Detroit', (2302, 2303, 2304)), ('BA', 'Baltimore', (2281, 2282, 2283))]
+def fv_us_wholesale():
+    idx = []
+    for code, name, ids in WH_CITIES:
+        rows = []; latest = ''
+        for i in ids:
+            d = load('ams/%d.json' % i); cat = {0: 'fruit', 1: 'veg', 2: 'veg'}[ids.index(i)]
+            if d.get('lastDate', '') > latest: latest = d['lastDate']
+            for x in d.get('series', []):
+                pts = [q for q in x['p'] if q and (q[2] is not None or q[3] is not None)]
+                if not pts: continue
+                v = dict(zip(d.get('dn') or [], x['v']))
+                if 'per package' not in x.get('u', '') and 'package' not in x.get('u', ''): continue
+                rows.append((cat, v, pts))
+        best = {}
+        for cat, v, pts in rows:
+            if pts[-1][0] < (datetime.date.fromisoformat(latest) - datetime.timedelta(days=3)).isoformat(): continue   # linea sin cotizar estos dias
+            k = (cat, v.get('commodity', ''), v.get('variety', ''))
+            sc = (pts[-1][0], len(pts))
+            if k not in best or sc > best[k][0]: best[k] = (sc, v, pts)
+        out = []
+        for (cat, com, var), (sc, v, pts) in sorted(best.items()):
+            lo, hi = pts[-1][2], pts[-1][3]
+            pv = pts[-2] if len(pts) > 1 else None
+            pk = v.get('package') or ''; m = re.match(r'^(\d+(?:\.\d+)?)\s*lb\b', pk)
+            lb = float(m.group(1)) if m else None
+            out.append([cat, com, var if var != 'N/A' else '', v.get('origin') or '', pk, ' · '.join(z for z in (v.get('grade'), v.get('condition'), v.get('item_size')) if z and z != 'N/A'), lo, hi, pv[2] if pv else None, pv[3] if pv else None, pts[-1][0], lb])
+        write('fv-us-wh-%s.json' % code, {'schemaVersion': 1, 'generatedAt': now(), 'code': code, 'city': name, 'date': latest, 'cols': ['cat', 'commodity', 'variety', 'origin', 'package', 'grade', 'low', 'high', 'prevLow', 'prevHigh', 'date', 'lb'],
+              'source': {'name': 'USDA AMS, Market News (terminal markets)', 'url': 'https://www.ams.usda.gov/market-news', 'license': 'Public domain (U.S. government work)'}, 'rows': out})
+        idx.append({'code': code, 'city': name, 'date': latest, 'n': len(out)})
+    return {'schemaVersion': 1, 'generatedAt': now(), 'cities': idx}
 def price_revisions():
     """data/views/price-revisions.json: solo las revisiones de precios del panel (series 'P/<id>') de los ultimos 90 dias. La ficha de producto
     las enseña; antes descargaba data/revisions.json entero (315 KB, 1.500 revisiones de estadisticas de todos los paises)."""
@@ -493,6 +528,7 @@ def main():
     write('region-metrics.json', region_metrics())
     write('lonjas.json', lonjas())
     write('fv-us.json', fv_us())
+    write('fv-us-wh-index.json', fv_us_wholesale())
     trade_products()
     diesel_eu_more()
     farm_headlines()

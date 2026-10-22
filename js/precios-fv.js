@@ -36,7 +36,33 @@
     it: { intro: '{n} tra frutta, ortaggi e frutta secca degli Stati Uniti. Prezzo ricevuto dall’agricoltore (USDA NASS), media nazionale, in dollari e nell’unità pubblicata dalla fonte.', find: 'Cerca un prodotto', all: 'Tutti', veg: 'Ortaggi', fruit: 'Frutta', nut: 'Frutta secca',
       cols: ['Prodotto', 'Prezzo', 'Periodo precedente', 'Un anno fa', 'Frequenza', 'Periodo'], m: 'mensile', a: 'annuale', none: 'Nessun prodotto corrisponde.', note: 'Unità della fonte: lb = libbra (0,4536 kg); cwt = 100 libbre (45,36 kg); short ton = tonnellata corta (907 kg); box = cassa (il peso varia per prodotto); barrel = barile di mirtilli rossi (100 libbre). «Sull’albero» è il prezzo della frutta non raccolta né imballata. Le serie annuali coprono l’anno solare (o la campagna) e si aggiornano quando NASS le pubblica.', src: 'Fonte' }
   };
-  var USDOC = null;
+  var WH = {
+    es: { h: 'Mercados mayoristas (USDA AMS)', intro: 'Lo que se paga en el mercado mayorista de cada ciudad, por envase, en dólares (entre el precio más bajo y el más alto del último día publicado). No es el precio del agricultor.', city: 'Ciudad', cols: ['Producto', 'Origen', 'Envase', 'Precio (envase)', 'Anterior', '$/libra'], day: 'Último día', none: 'Ningún producto coincide.', note: 'Cada línea es un producto, variedad y envase tal como lo publica AMS (Market News); el $/libra solo se calcula si el envase dice su peso en libras. Los mercados publican solo los días con operaciones.' },
+    en: { h: 'Wholesale markets (USDA AMS)', intro: 'What is paid at each city’s wholesale market, per package, in dollars (from the lowest to the highest price of the latest published day). It is not the farmer’s price.', city: 'City', cols: ['Product', 'Origin', 'Package', 'Price (package)', 'Previous', '$/lb'], day: 'Latest day', none: 'No product matches.', note: 'Each line is a product, variety and package as published by AMS (Market News); the $/lb is calculated only when the package states its weight in pounds. Markets publish only on days with trading.' },
+    fr: { h: 'Marchés de gros (USDA AMS)', intro: 'Ce qui est payé au marché de gros de chaque ville, par emballage, en dollars (du prix le plus bas au plus haut du dernier jour publié). Ce n’est pas le prix de l’agriculteur.', city: 'Ville', cols: ['Produit', 'Origine', 'Emballage', 'Prix (emballage)', 'Précédent', '$/livre'], day: 'Dernier jour', none: 'Aucun produit ne correspond.', note: 'Chaque ligne est un produit, une variété et un emballage tels que publiés par AMS (Market News) ; le $/livre n’est calculé que si l’emballage indique son poids en livres. Les marchés ne publient que les jours de transactions.' },
+    it: { h: 'Mercati all’ingrosso (USDA AMS)', intro: 'Quanto si paga al mercato all’ingrosso di ogni città, per confezione, in dollari (dal prezzo più basso al più alto dell’ultimo giorno pubblicato). Non è il prezzo dell’agricoltore.', city: 'Città', cols: ['Prodotto', 'Origine', 'Confezione', 'Prezzo (confezione)', 'Precedente', '$/libbra'], day: 'Ultimo giorno', none: 'Nessun prodotto corrisponde.', note: 'Ogni riga è un prodotto, una varietà e una confezione come pubblicati da AMS (Market News); il $/libbra è calcolato solo se la confezione indica il peso in libbre. I mercati pubblicano solo nei giorni di contrattazione.' }
+  };
+  var USDOC = null, WHIDX = null, WHCACHE = {};
+  function whLoad(code) { return WHCACHE[code] || (WHCACHE[code] = fetch('data/views/fv-us-wh-' + code + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function renderWH(box, lg) {
+    if (!box) return; var t = WH[lg], L = LOC[lg];
+    function n(v, d) { return v == null || !isFinite(v) ? '—' : v.toLocaleString(L, { minimumFractionDigits: d, maximumFractionDigits: d }); }
+    function rng(a, b) { return a == null && b == null ? '—' : a === b || b == null ? '$' + n(a, a < 10 ? 2 : 0) : '$' + n(a, a < 10 ? 2 : 0) + ' – $' + n(b, b < 10 ? 2 : 0); }
+    (WHIDX || (WHIDX = fetch('data/views/fv-us-wh-index.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }))).then(function (I) {
+      if (!I || !I.cities || !I.cities.length) { box.style.display = 'none'; return; }
+      if (!ST.wh || !I.cities.some(function (c) { return c.code === ST.wh; })) ST.wh = I.cities[0].code;
+      whLoad(ST.wh).then(function (D) {
+        if (!D) { box.style.display = 'none'; return; }
+        var qn = norm(ST.q), rows = D.rows.filter(function (r) { var g = r[0]; return (ST.g === 'all' || ST.g === g) && (!qn || norm(r[1] + ' ' + r[2]).indexOf(qn) >= 0); });
+        var day = new Date(D.date + 'T12:00:00Z').toLocaleDateString(L, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+        var tb = rows.map(function (r) { var lb = r[11]; return '<tr><th scope="row">' + esc(r[1]) + (r[2] ? ' <small>' + esc(r[2].toLowerCase()) + '</small>' : '') + '</th><td class="fv-k">' + esc(r[3]) + '</td><td class="fv-k">' + esc(r[4]) + (r[5] ? ' <small>· ' + esc(r[5]) + '</small>' : '') + '</td><td class="cof-n"><b>' + rng(r[6], r[7]) + '</b></td><td class="cof-n">' + (r[8] == null && r[9] == null ? '—' : rng(r[8], r[9])) + '</td><td class="cof-n">' + (lb && r[6] != null ? '$' + n(r[6] / lb, 2) + (r[7] != null && r[7] !== r[6] ? ' – $' + n(r[7] / lb, 2) : '') : '—') + '</td></tr>'; }).join('');
+        box.innerHTML = '<h3 class="fv-h" style="margin:0 0 6px">' + esc(t.h) + '</h3><p class="fv-intro">' + esc(t.intro) + '</p><div class="fv-ctl"><label><span>' + esc(t.city) + '</span><select class="di-compare-select fv-wh-sel">' + I.cities.map(function (c) { return '<option value="' + c.code + '"' + (c.code === ST.wh ? ' selected' : '') + '>' + esc(c.city) + '</option>'; }).join('') + '</select></label><span class="di-field-hint">' + esc(t.day) + ': ' + esc(day) + ' · ' + rows.length + '</span></div>' +
+          (rows.length ? '<div style="overflow-x:auto"><table class="cof-tbl fv-tbl"><thead><tr>' + t.cols.map(function (c, i) { return '<th scope="col"' + (i > 2 ? ' class="cof-n"' : '') + '>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' + tb + '</tbody></table></div>' : '<p class="di-field-hint">' + esc(t.none) + '</p>') +
+          '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.note) + '</p><p class="di-field-hint" style="margin:6px 0 0"><a href="' + esc(D.source.url) + '" rel="noopener">' + esc(D.source.name) + '</a></p>';
+        var sel = box.querySelector('.fv-wh-sel'); if (sel) sel.onchange = function () { ST.wh = sel.value; renderWH(box, lg); };
+      });
+    });
+  }
   function renderUS(el, opt) {
     var lg = US[opt.lang] ? opt.lang : 'es', t = US[lg], L = LOC[lg], li = LI[lg];
     function n(v, d) { return v == null || !isFinite(v) ? '—' : v.toLocaleString(L, { minimumFractionDigits: d, maximumFractionDigits: d }); }
@@ -56,7 +82,8 @@
         }).join('') + '</tbody>';
       });
       var table = shown ? '<div style="overflow-x:auto"><table class="cof-tbl fv-tbl"><thead><tr>' + t.cols.map(function (c, i) { return '<th scope="col"' + (i && i < 4 ? ' class="cof-n"' : '') + '>' + esc(c) + '</th>'; }).join('') + '</tr></thead>' + body + '</table></div>' : '<p class="di-field-hint">' + esc(t.none) + '</p>';
-      el.innerHTML = '<section class="di-card fv-card">' + head + table + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.note) + '</p><p class="di-field-hint" style="margin:6px 0 0">' + esc(t.src) + ': <a href="' + esc(D.source.url) + '" rel="noopener">' + esc(D.source.name) + '</a></p></section>';
+      el.innerHTML = '<section class="di-card fv-card">' + head + table + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.note) + '</p><p class="di-field-hint" style="margin:6px 0 0">' + esc(t.src) + ': <a href="' + esc(D.source.url) + '" rel="noopener">' + esc(D.source.name) + '</a></p></section><section class="di-card fv-card fv-wh" style="margin-top:14px"></section>';
+      renderWH(el.querySelector('.fv-wh'), lg);
       var qi = el.querySelector('.fv-q'); if (qi) qi.oninput = function () { ST.q = qi.value; var pos = qi.selectionStart; renderUS(el, opt).then(function () { var f = el.querySelector('.fv-q'); if (f) { f.focus(); try { f.setSelectionRange(pos, pos); } catch (e) {} } }); };
       Array.prototype.forEach.call(el.querySelectorAll('.fv-chip'), function (b) { b.onclick = function () { ST.g = b.getAttribute('data-g'); renderUS(el, opt).then(function () { var f = el.querySelector('.fv-chip[data-g="' + ST.g + '"]'); if (f) f.focus(); }); }; });
       return true;
