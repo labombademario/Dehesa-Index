@@ -87,16 +87,21 @@ def probe(pub, tries=3):
     return ("unk",)
 
 
+def no_file(urls):
+    import urllib.parse
+    raise RuntimeError("la ficha no trae el fichero esperado; ficheros: %s" % [urllib.parse.unquote(u).split("/")[-1] for u in urls])
+
+
 def pid(kind, yy, n):
     return "Ira%s%02d%03d" % (kind, yy, n)
 
 
 def discover(state):
     """Prueba los numeros nuevos de cada informe. Devuelve {id: (urls, html)} de ediciones nuevas."""
-    known = state["editions"]
+    known = {k: e for k, e in state["editions"].items() if e["status"] == "ok" or e.get("tries", 1) >= 3}   # las ilegibles se reintentan hasta 3 veces
     jobs = []
     for kind, (yy0, n0) in SEED.items():
-        mine = [(int(k[-5:-3]), int(k[-3:])) for k, e in known.items() if e["kind"] == kind]
+        mine = [(int(k[-5:-3]), int(k[-3:])) for k, e in state["editions"].items() if e["kind"] == kind]
         last = max(mine + [(yy0, n0)])
         if not state.get("backfilled"):
             rng = [(25, n) for n in range(1, 221)] + [(26, n) for n in range(1, last[1] + 41)]
@@ -105,6 +110,7 @@ def discover(state):
             if datetime.date.today().month <= 3:
                 rng += [(last[0] + 1, n) for n in range(1, 41)]
         jobs += [(kind, yy, n) for yy, n in rng if pid(kind, yy, n) not in known]
+    jobs += [(state["editions"][k]["kind"], int(k[-5:-3]), int(k[-3:])) for k in state["editions"] if k not in known and (state["editions"][k]["kind"], int(k[-5:-3]), int(k[-3:])) not in jobs]
     found, unk = {}, []
     with concurrent.futures.ThreadPoolExecutor(6) as ex:
         for (kind, yy, n), r in zip(jobs, ex.map(lambda j: probe(pid(*j)), jobs)):
@@ -337,22 +343,22 @@ def main():
         urls, html = found[pub]
         kind = pub[3:6]
         m = re.search(r"Paru le\s*:\s*(\d{2})/(\d{2})/(\d{4})", clean_html(html))
-        ent = {"kind": kind, "published": "%s-%s-%s" % (m.group(3), m.group(2), m.group(1)) if m else None, "status": "ok"}
+        ent = {"kind": kind, "tries": state["editions"].get(pub, {}).get("tries", 0) + 1, "published": "%s-%s-%s" % (m.group(3), m.group(2), m.group(1)) if m else None, "status": "ok"}
         try:
             if kind == "Lai":
-                u = pick(urls, r"\.zip$")
+                u = pick(urls, r"\.zip$") or no_file(urls)
                 new = read_lait(fetch(quote_url(u), "bin", tries=4, wait=20, timeout=180, log=log))
                 lait = merge_series(lait, new)
                 ent["series"] = len(new)
             elif kind == "Gcu":
-                u = pick(urls, r"regions.*\.xlsx$")
+                u = pick(urls, r"regions.*\.xlsx$") or no_file(urls)
                 ed, e2, nm = read_gcu(fetch(quote_url(u), "bin", tries=4, wait=20, timeout=180, log=log))
                 est = merge_est(est, ed, e2)
                 names.update(nm)
                 editions.add(ed)
                 ent["edition"] = ed
             elif kind == "Cex":
-                u = pick(urls, r"compl.*\.xlsx$")
+                u = pick(urls, r"compl.*\.xlsx$") or no_file(urls)
                 new = read_cex(fetch(quote_url(u), "bin", tries=4, wait=20, timeout=180, log=log))
                 com = merge_series(com, new)
                 ent["series"] = len(new)
