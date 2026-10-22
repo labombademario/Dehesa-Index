@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T20:12:31Z",
+ "generatedAt": "2026-10-22T20:17:16Z",
  "summary": {
   "files": 82,
   "errors": 0,
@@ -160,7 +160,7 @@
     "points": 65812,
     "lines": 0
    },
-   "generatedAt": "2026-10-22T19:58:19Z",
+   "generatedAt": "2026-10-22T20:11:59Z",
    "info": [],
    "nWarnings": 13,
    "nErrors": 0
@@ -1617,11 +1617,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 283,
-    "points": 18420,
+    "series": 288,
+    "points": 18476,
     "lines": 0
    },
-   "generatedAt": "2026-10-22T17:32:20Z",
+   "generatedAt": "2026-10-22T20:13:50Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
