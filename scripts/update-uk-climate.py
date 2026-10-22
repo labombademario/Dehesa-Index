@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Lluvia y temperatura media mensual del Reino Unido, sus cuatro naciones y regiones climaticas -> data/uk-climate.json
 Fuente: Met Office, series areales de HadUK-Grid ("UK and regional series", ficheros .txt ordenados por fecha; Open Government Licence v3.0).
-Se guardan los valores mensuales desde 1961 tal como los publica el Met Office y, aparte, la media 1991-2020 de cada mes (calculada aqui).
+Se guardan los valores mensuales desde 1991 tal como los publica el Met Office y, aparte, la media 1991-2020 de cada mes (calculada aqui).
 Los porcentajes sobre lo normal y las anomalias los calcula la pagina (sequia.html) y se rotulan como calculo de Dehesa Index."""
 import datetime, json, re, sys, time, urllib.request
 from pathlib import Path
@@ -11,7 +11,7 @@ REG = [('UK', 'UK'), ('England', 'ENG'), ('Wales', 'WAL'), ('Scotland', 'SCO'), 
        ('England_N', 'ENG_N'), ('England_S', 'ENG_S'), ('England_E_and_NE', 'ENG_ENE'), ('England_NW_and_N_Wales', 'ENG_NW'), ('England_SW_and_S_Wales', 'ENG_SW'),
        ('England_SE_and_Central_S', 'ENG_SE'), ('Midlands', 'MID'), ('East_Anglia', 'EAN'), ('Scotland_N', 'SCO_N'), ('Scotland_E', 'SCO_E'), ('Scotland_W', 'SCO_W')]
 VARS = [('Rainfall', 'rain'), ('Tmean', 'tmean')]
-FROM = 1961
+FROM = 1991   # basta para la media 1991-2020 y mantiene el fichero ligero
 LOG = []
 def log(*a):
     s = ' '.join(str(x) for x in a); LOG.append(s); print(s, flush=True)
