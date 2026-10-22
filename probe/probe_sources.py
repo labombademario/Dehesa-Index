@@ -176,5 +176,18 @@ if sec == 'ssn':
     st, h, b = head('https://datosabiertos.ssn.gob.ar/api/3/action/package_show?id=aff081fd-65fc-45b9-99cc-fd67e25e9848', timeout=60)
     try: r = json.loads(b)['result']; p('NOTES', str(r.get('notes'))[:800], '| LIC', r.get('license_id'))
     except Exception as e: p('ERR', e)
+if sec == 'fvsa':
+    def ck(base, q, rows=15):
+        st, h, b = head('%s/api/3/action/package_search?q=%s&rows=%d' % (base, q, rows), timeout=90)
+        try:
+            for r in json.loads(b)['result']['results']:
+                p('DS', r.get('id'), '|', str(r.get('title'))[:110], '|', r.get('license_id') or r.get('license_title'), '|', (r.get('organization') or {}).get('title'), '|', r.get('metadata_modified'))
+                for x in (r.get('resources') or [])[:5]: p('    RES', x.get('format'), x.get('url'), '|', str(x.get('name'))[:60])
+        except Exception as e: p('ERR', e, b[:150])
+    for q in ['precios+frutas+hortalizas', 'precio+mayorista', 'vega+central', 'precios+consumidor+frutas']: ck('https://datos.odepa.gob.cl', q)
+    for q in ['frutas+hortalizas', 'UAM+precios', 'precios+mayoristas', 'mercado+modelo']: ck('https://catalogodatos.gub.uy', q, 10)
+    for q in ['mercado+central', 'frutas+hortalizas+precios', 'precios+mayoristas+frutas']: ck('https://datos.gob.ar', q, 10)
+    for u in ['https://www.odepa.gob.cl/precios/frutas-y-hortalizas', 'https://www.mercadocentral.gob.ar/', 'https://www.mercadocentral.gob.ar/informaciones/precios-mayoristas', 'https://www.uam.com.uy/']:
+        st, h, b = head(u, timeout=60); p(re.sub(r'\s+', ' ', b[:200].decode('utf8', 'ignore')))
 os.makedirs('probe/out', exist_ok=True)
 open('probe/out/%s.txt' % sec, 'w').write('\n'.join(OUT))
