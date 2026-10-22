@@ -62,7 +62,9 @@
   var EU_CC = ['es', 'at', 'be', 'bg', 'cy', 'cz', 'de', 'dk', 'ee', 'el', 'fi', 'fr', 'hr', 'hu', 'ie', 'it', 'lt', 'lv', 'nl', 'pl', 'pt', 'ro', 'se', 'si', 'sk'];
   function ccFlag(c) { var i = c === 'el' ? 'GR' : c.toUpperCase(); return String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)); }
   function ccName(c) { try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(c === 'el' ? 'GR' : c.toUpperCase()); } catch (e) { return c.toUpperCase(); } }
+  var SA_CC = ['ar', 'cl', 'uy'];   // países de Sudamérica con ficha en Dehesa Index
   var state = {
+    saCountry: (function () { var v = readLS('dehesaIndexSaCountry'); return SA_CC.indexOf(v) >= 0 ? v : 'cl'; })(),
     location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk' || v === 'ca' || v === 'sa') ? v : null; })(),
     euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return EU_CC.indexOf(v) >= 0 ? v : 'es'; })(),
     activeTab: 'cereales', wantTab: 'cereales',
@@ -565,6 +567,11 @@
         return '<option value="' + c.code + '"' + (c.code === state.euCountry ? ' selected' : '') + '>' + c.flag + ' ' + esc(c.label) + '</option>';
       }).join('') + '</select>';
       html += '<details class="di-eu-country-hint"><summary>' + esc(({ es: 'Cómo se fijan los precios por país', en: 'How country prices are set', fr: 'Comment sont fixés les prix par pays', it: 'Come si fissano i prezzi per paese' })[lang()] || 'Cómo se fijan los precios por país') + '</summary>' + esc(t.euCountryHint) + '</details>';
+    }
+    if (state.location === 'sa') {
+      html += '<select data-cpick="1" class="di-eu-country-select" id="pr-sa-country" aria-label="' + ({ es: 'País de Sudamérica', en: 'South American country', fr: 'Pays d’Amérique du Sud', it: 'Paese del Sud America' }[lang()] || 'Country') + '">' + SA_CC.map(function (c) {
+        return '<option value="' + c + '"' + (c === state.saCountry ? ' selected' : '') + '>' + ccFlag(c) + ' ' + esc(ccName(c)) + '</option>';
+      }).join('') + '</select>';
     }
     var fxTxt = fxLabelText(t);
     if (fxTxt) html += '<div class="di-fx-label">' + esc(fxTxt) + '</div>';
@@ -1270,7 +1277,7 @@
       if (state.activeTab === 'hortalizas') {
         // Frutas, hortalizas y frutos secos: precio semanal por país (Comisión Europea) y precio percibido (MAPA); ver js/precios-fv.js y data/fv-products.json
         root.innerHTML = '<div id="pr-fv"></div>';
-        var fvGo = function () { global.DehesaFV.render(document.getElementById('pr-fv'), { location: state.location, euCountry: state.euCountry, lang: lang() }); };
+        var fvGo = function () { global.DehesaFV.render(document.getElementById('pr-fv'), { location: state.location, euCountry: state.euCountry, saCountry: state.saCountry, lang: lang() }); };
         if (global.DehesaFV) fvGo(); else { var fs = document.createElement('script'); fs.src = 'js/precios-fv.js?v=0'; fs.onload = fvGo; document.head.appendChild(fs); }
         return;
       }
@@ -1928,6 +1935,16 @@
     });
   }
 
+  function wireSaCountrySelect() {
+    var sel = document.getElementById('pr-sa-country');
+    if (!sel) return;
+    sel.addEventListener('change', function (e) {
+      state.saCountry = e.target.value;
+      writeLS('dehesaIndexSaCountry', state.saCountry);
+      renderAll();
+    });
+  }
+
   function wireEuCountrySelect() {
     var sel = document.getElementById('pr-eu-country');
     if (!sel) return;
@@ -1967,6 +1984,7 @@
     renderLocationBar();
     wireLocationButtons();
     wireEuCountrySelect();
+    wireSaCountrySelect();
     renderFavorites();
     if (global.DehesaPreciosIntel) global.DehesaPreciosIntel.render();
     renderTabsAndCategory();
