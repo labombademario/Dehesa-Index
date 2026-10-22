@@ -280,9 +280,10 @@ def lonjas():
         for stc, pat, alt in PLM:
             sr = gus.get(pat % alt.get(prod, en))
             if not sr: continue
-            pts = [[m + '-15', round(v / fx[m], 1)] for m, v in sr.get('points', []) if v is not None and m in fx][-26:]
+            raw = [(m, v) for m, v in sr.get('points', []) if v is not None and m in fx][-26:]
+            pts = [[m + '-15', round(v / fx[m], 1)] for m, v in raw]
             if len(pts) < 2: continue
-            out.setdefault('PL', {}).setdefault(prod, []).append({'m': 'GUS', 'src': 'GUS', 'var': '', 'st': stc, 'p': pts, 'o': 'PLN', 'f': 'm'})
+            out.setdefault('PL', {}).setdefault(prod, []).append({'m': 'GUS', 'src': 'GUS', 'var': '', 'st': stc, 'p': pts, 'po': [[m + '-15', v] for m, v in raw], 'o': 'PLN', 'f': 'm'})
     LONJA_T['st']['gus_buy'] = ['precio de compra (skup)', 'procurement price (skup)', 'prix d’achat (skup)', 'prezzo di acquisto (skup)']
     LONJA_T['st']['gus_mkt'] = ['precio en mercados locales', 'local-market price', 'prix sur les marchés locaux', 'prezzo nei mercati locali']
     return {'schemaVersion': 2, 'generatedAt': now(), 'unit': 'EUR/t', 'labels': LONJA_T,

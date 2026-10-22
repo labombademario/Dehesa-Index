@@ -14,7 +14,7 @@
   var CADUSD = 0.712;
   var DKKUSD = 0.1503; // corona danesa (ERM II, ~7,46 por EUR); la actualiza scripts/update-fx.mjs
   var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD, CAD: CADUSD, DKK: DKKUSD };
-  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', CAD: 'C$', DKK: 'kr ' };
+  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', CAD: 'C$', DKK: 'kr ', PLN: 'zł ' };
 
   // Nombres de mes abreviados por idioma, para mostrar FX_DATE en el panel
   // sin depender de Intl (coherencia con el resto del sitio, que es ES5

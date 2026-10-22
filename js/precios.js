@@ -795,7 +795,7 @@
   function loadLonjas() {
     if (LONJAS || typeof global.fetch !== 'function') return;
     LONJAS = {};
-    global.fetch('data/views/lonjas.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.countries) { LONJAS = d; if (state.location === 'eu') renderAll(); } }).catch(function () {});
+    global.fetch('data/views/lonjas.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.countries) { LONJAS = d; applyPlMode(); if (state.location === 'eu') renderAll(); } }).catch(function () {});
   }
   function lonjaCC() { return String(state.euCountry || 'es').toUpperCase(); }
   function lonjaKey(x) { return x.m + '|' + (x['var'] || '') + '|' + (x.st || ''); }
@@ -833,9 +833,26 @@
     return cc === 'ES' ? null : d;
   }
   function monthTxt(d) { try { return new Date(d + 'T12:00:00Z').toLocaleDateString({ es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }[lang()] || 'es-ES', { month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return d.slice(0, 7); } }
+  // Polonia: GUS publica en zlotys; se guarda la serie en EUR (media mensual del BCE) y la original en PLN, y el lector elige (se recuerda).
+  function plMode() { return readLS('dehesaIndexPlCcy') === 'PLN' ? 'PLN' : 'EUR'; }
+  function applyPlMode() {
+    var m = plMode(), C = LONJAS && LONJAS.countries || {};
+    Object.keys(C).forEach(function (cc) { Object.keys(C[cc]).forEach(function (pr) { C[cc][pr].forEach(function (x) {
+      if (!x.po) return; if (!x.pe) x.pe = x.p; x.p = m === 'PLN' ? x.po : x.pe; x.c = m === 'PLN' ? 'PLN' : 'EUR';
+    }); }); });
+  }
+  function lonjaCcyHtml(entry) {
+    var L = lonjaList(entry), cur = lonjaPick(entry); if (!L || !cur || !cur.po) return '';
+    var m = plMode(), X = { es: ['Moneda', 'Zloty (PLN)', 'Euro'], en: ['Currency', 'Zloty (PLN)', 'Euro'], fr: ['Monnaie', 'Zloty (PLN)', 'Euro'], it: ['Valuta', 'Złoty (PLN)', 'Euro'] }[lang()];
+    return '<label class="di-lonja" style="display:inline-flex;gap:6px;align-items:center;font-size:12.5px;margin:2px 0;color:var(--text-muted)">' + esc(X[0]) + ' <select class="di-lonja-ccy di-compare-select" style="padding:2px 6px;font-size:12.5px;width:auto"><option value="EUR"' + (m === 'EUR' ? ' selected' : '') + '>' + esc(X[2]) + '</option><option value="PLN"' + (m === 'PLN' ? ' selected' : '') + '>' + esc(X[1]) + '</option></select></label>';
+  }
+  if (global.document) global.document.addEventListener('change', function (ev) {
+    var el = ev.target; if (!el || !el.classList || !el.classList.contains('di-lonja-ccy')) return;
+    writeLS('dehesaIndexPlCcy', el.value); applyPlMode(); renderAll();
+  });
   function lonjaRegion(x) {
     var p = x.p, last = p[p.length - 1][1], prev = p.length > 1 ? p[p.length - 2][1] : null;
-    return { price: last, changePct: prev ? Math.round((last / prev - 1) * 1e6) / 1e4 : 0, history: p.slice(-12).map(function (q) { return q[1]; }), currency: 'EUR', kgPerUnit: 1000 };
+    return { price: last, changePct: prev ? Math.round((last / prev - 1) * 1e6) / 1e4 : 0, history: p.slice(-12).map(function (q) { return q[1]; }), currency: x.c || 'EUR', kgPerUnit: 1000 };
   }
   function lonjaSelectHtml(entry) {
     var L = lonjaList(entry); if (!L) return '';
@@ -865,7 +882,7 @@
     var lonja = lonjaPick(entry), observation0 = disp.ukGap ? null : trustObservationFor(entry, disp);
     var disp0 = disp;
     if (lonja) {
-      var d2 = {}; for (var kk in disp) d2[kk] = disp[kk]; d2.region = lonjaRegion(lonja); d2.derived = false; disp = d2;
+      var d2 = {}; for (var kk in disp) d2[kk] = disp[kk]; d2.region = lonjaRegion(lonja); d2.derived = false; if (lonja.c === 'PLN') d2.targetCcy = 'PLN'; disp = d2;
       // país sin media nacional (o parada): el mercado es una observación oficial de la Comisión, con su propia fecha
       { var b0 = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-eu']; observation0 = {}; if (b0) for (var k0 in b0) observation0[k0] = b0[k0]; observation0.status = 'verified'; observation0.value = lonja.p[lonja.p.length - 1][1]; observation0.observationDate = lonja.p[lonja.p.length - 1][0]; }
     }
@@ -894,14 +911,14 @@
     var mk = showValue && observation ? S.marketLabel({ id: observation.obsId, sourceId: observation.obsSource }, lang()) : '';
     var od = showValue && observation && observation.observationDate ? S.fmtDate(observation.observationDate, lang()) : '';
     if (disp.cty && showValue && observation && observation.ctyLabel) mk = (observation.ctyLabel[lang()] || observation.ctyLabel.es) + ' · ' + (({ es: 'media nacional', en: 'national average', fr: 'moyenne nationale', it: 'media nazionale' })[lang()]);
-    if (lonja && showValue) { mk = (lonjaCC() === 'ES' ? (LONJA_T[lang()] || LONJA_T.es)[2] : (ccName(lonjaCC().toLowerCase()) || lonjaCC())) + ' · ' + lonjaLabel(lonja); od = lonja.f === 'm' ? monthTxt(lonja.p[lonja.p.length - 1][0]) : S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); if (lonja.o) origTxt = ({ es: 'Precio original en ', en: 'Original price in ', fr: 'Prix d’origine en ', it: 'Prezzo originale in ' })[lang()] + lonja.o + ({ es: ', convertido con la media mensual del BCE de cada mes', en: ', converted with the ECB monthly average of each month', fr: ', converti avec la moyenne mensuelle de la BCE de chaque mois', it: ', convertito con la media mensile della BCE di ogni mese' })[lang()]; }
+    if (lonja && showValue) { mk = (lonjaCC() === 'ES' ? (LONJA_T[lang()] || LONJA_T.es)[2] : (ccName(lonjaCC().toLowerCase()) || lonjaCC())) + ' · ' + lonjaLabel(lonja); od = lonja.f === 'm' ? monthTxt(lonja.p[lonja.p.length - 1][0]) : S.fmtDate(lonja.p[lonja.p.length - 1][0], lang()); if (lonja.o && lonja.c !== 'PLN') origTxt = ({ es: 'Precio original en ', en: 'Original price in ', fr: 'Prix d’origine en ', it: 'Prezzo originale in ' })[lang()] + lonja.o + ({ es: ', convertido con la media mensual del BCE de cada mes', en: ', converted with the ECB monthly average of each month', fr: ', converti avec la moyenne mensuelle de la BCE de chaque mois', it: ', convertito con la media mensile della BCE di ogni mese' })[lang()]; }
     var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
     var meta = [est, mk, od ? (/^\d/.test(od) ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') : (({ es: 'dato de ', en: 'as of ', fr: 'donnée de ', it: 'dato di ' })[lang()] || '')) + od : ''].filter(Boolean).join(' · ');
     var IBL = ({ es: ['Calcular', 'Gráfico', 'Aviso'], en: ['Calculate', 'Chart', 'Alert'], fr: ['Calculer', 'Graphique', 'Alerte'], it: ['Calcola', 'Grafico', 'Avviso'] })[lang()] || ['Calcular', 'Gráfico', 'Aviso'];
     return (
       '<div class="di-card di-product-card di-product-state-' + dataState.key + '" data-key="' + key + '">' +
         '<div class="di-product-head">' +
-          '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + (showValue ? lonjaSelectHtml(entry) : '') + '</div>' +
+          '<div><h3 class="di-product-name">' + productEmoji(entry.nameKey) + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + (showValue ? lonjaSelectHtml(entry) + lonjaCcyHtml(entry) : '') + '</div>' +
           '<div class="di-product-icons">' +
             '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
             (showValue ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮 <span class="di-ib-l">' + esc(IBL[0]) + '</span></button>' : '') +
@@ -1306,11 +1323,11 @@
     var l = lonjaPick(entry); if (!l || !l.p || l.p.length < 2 || !window.DehesaChart) return;
     var X = LH_T[lang()] || LH_T.es, pts = l.p.map(function (q) { return { x: Date.parse(q[0] + 'T00:00:00Z'), y: q[1], l: l.f === 'm' ? monthTxt(q[0]) : S.fmtDate(q[0], lang()) }; });
     var vals = l.p.map(function (q) { return q[1]; }), mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), last = l.p[l.p.length - 1];
-    var f = function (v) { return D.fmtNumber(v) + ' EUR/t'; };
+    var cu = l.c || 'EUR', f = function (v) { return D.fmtNumber(v) + ' ' + cu + '/t'; };
     lockProductModal();
-    var chart = window.DehesaChart.render({ series: [{ name: productName(entry.nameKey), color: '#2f6b4a', pts: pts }], xMode: 'time', yTitle: 'EUR/t', aria: productName(entry.nameKey) + ' · ' + lonjaLabel(l), noLegend: true, vFmt: function (v) { return D.fmtNumber(v); } });
+    var chart = window.DehesaChart.render({ series: [{ name: productName(entry.nameKey), color: '#2f6b4a', pts: pts }], xMode: 'time', yTitle: (l.c || 'EUR') + '/t', aria: productName(entry.nameKey) + ' · ' + lonjaLabel(l), noLegend: true, vFmt: function (v) { return D.fmtNumber(v); } });
     document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(lonjaLabel(l)) + ' · ' + esc(X[0]) + '</h2><button type="button" class="di-modal-close" id="di-history-close" aria-label="' + esc(X[4]) + '">✕</button></div>' + chart +
-      '<p class="di-field-hint" style="margin:10px 0 2px">' + esc(X[1]) + ': <strong>' + esc(f(last[1])) + '</strong> (' + esc(l.f === 'm' ? monthTxt(last[0]) : S.fmtDate(last[0], lang())) + ') · ' + esc(X[2]) + ': ' + esc(f(mn)) + ' · ' + esc(X[3]) + ': ' + esc(f(mx)) + '</p><p class="di-field-hint" style="margin:2px 0 0">' + esc(l.o ? ({ es: 'Serie mensual de GUS (Statistics Poland, BDL) en ' + l.o + ', convertida a euros con la media mensual del BCE de cada mes.', en: 'Monthly series from GUS (Statistics Poland, BDL) in ' + l.o + ', converted to euros with the ECB monthly average of each month.', fr: 'Série mensuelle de GUS (Statistics Poland, BDL) en ' + l.o + ', convertie en euros avec la moyenne mensuelle de la BCE de chaque mois.', it: 'Serie mensile di GUS (Statistics Poland, BDL) in ' + l.o + ', convertita in euro con la media mensile della BCE di ogni mese.' })[lang()] : X[5]) + '</p></div></div>';
+      '<p class="di-field-hint" style="margin:10px 0 2px">' + esc(X[1]) + ': <strong>' + esc(f(last[1])) + '</strong> (' + esc(l.f === 'm' ? monthTxt(last[0]) : S.fmtDate(last[0], lang())) + ') · ' + esc(X[2]) + ': ' + esc(f(mn)) + ' · ' + esc(X[3]) + ': ' + esc(f(mx)) + '</p><p class="di-field-hint" style="margin:2px 0 0">' + esc(l.o && l.c === 'PLN' ? ({ es: 'Serie mensual de GUS (Statistics Poland, BDL) en zlotys, tal como la publica la fuente.', en: 'Monthly series from GUS (Statistics Poland, BDL) in zlotys, as published by the source.', fr: 'Série mensuelle de GUS (Statistics Poland, BDL) en zlotys, telle que publiée par la source.', it: 'Serie mensile di GUS (Statistics Poland, BDL) in złoty, come pubblicata dalla fonte.' })[lang()] : l.o ? ({ es: 'Serie mensual de GUS (Statistics Poland, BDL) en ' + l.o + ', convertida a euros con la media mensual del BCE de cada mes.', en: 'Monthly series from GUS (Statistics Poland, BDL) in ' + l.o + ', converted to euros with the ECB monthly average of each month.', fr: 'Série mensuelle de GUS (Statistics Poland, BDL) en ' + l.o + ', convertie en euros avec la moyenne mensuelle de la BCE de chaque mois.', it: 'Serie mensile di GUS (Statistics Poland, BDL) in ' + l.o + ', convertita in euro con la media mensile della BCE di ogni mese.' })[lang()] : X[5]) + '</p></div></div>';
     var ov = document.getElementById('di-history-overlay'); ov.addEventListener('mousedown', function (e) { if (e.target === ov) closeLonjaHistory(); });
     document.getElementById('di-history-close').addEventListener('click', closeLonjaHistory); bindModalKeyboard(closeLonjaHistory);
   }
@@ -1318,7 +1335,7 @@
 
   function regionObjFor(entry, regionCode, country) {
     var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
-    if (regionCode === 'lonja') { var lj = lonjaPick(entry); if (lj) return { region: lonjaRegion(lj), ccy: 'EUR', kg: 1000, unit: UL[entry.product.metricUnitKey] }; }
+    if (regionCode === 'lonja') { var lj = lonjaPick(entry); if (lj) return { region: lonjaRegion(lj), ccy: lj.c || 'EUR', kg: 1000, unit: UL[entry.product.metricUnitKey] }; }
     if (regionCode === 'us') return { region: entry.product.us, ccy: 'USD', kg: entry.product.imperialKgPerUnit, unit: UL[entry.product.imperialUnitKey] };
     if (regionCode === 'eu') {
       var disp = resolveDisplay(entry, 'eu', country || state.euCountry);
