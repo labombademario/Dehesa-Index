@@ -529,6 +529,13 @@
   /* Edad de los jefes de explotación (js/farm-managers.js, data/views/farm-managers.json): 26 países de la UE, Eurostat ef_fsi_agesex */
   var MGRCC = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'EL', 'IE', 'FI', 'BG', 'HR', 'LT', 'SK', 'CZ', 'EE', 'HU', 'LV', 'RO', 'SE', 'SI'];
   function mgrUp() {
+    if (ST.c === 'UK') {   /* Reino Unido: solo Inglaterra (Defra), proporciones por tramo de edad */
+      var trU = document.getElementById('pp-trade'), ccU = ST.c; if (!trU || !trU.parentNode) return;
+      var elU = document.createElement('div'); elU.id = 'pp-managers'; elU.style.minHeight = '1px'; trU.parentNode.insertBefore(elU, trU.nextSibling);
+      var goU = function () { if (window.DIUkFarmersAge && ST.c === ccU) window.DIUkFarmersAge.mount(elU, lang()); };
+      nearView(elU, function () { if (window.DIUkFarmersAge) goU(); else { var scU = document.createElement('script'); scU.src = 'js/uk-farmers-age.js?v=0'; scU.onload = goU; document.head.appendChild(scU); } });
+      return;
+    }
     if (MGRCC.indexOf(ST.c) < 0) return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var el = document.createElement('div'); el.id = 'pp-managers'; el.style.minHeight = '1px'; tr.parentNode.insertBefore(el, tr.nextSibling);

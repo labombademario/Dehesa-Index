@@ -23,7 +23,7 @@
    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
   },
   "scope": {
-   "const": "England"
+   "type": "string"
   },
   "source": {
    "type": "object",
@@ -64,13 +64,175 @@
    }
   },
   "all": {
-   "$ref": "#/$defs/bands"
+   "type": "object",
+   "required": [
+    "u35",
+    "a35",
+    "a45",
+    "a55",
+    "o65"
+   ],
+   "properties": {
+    "u35": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a35": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a45": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a55": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "o65": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    }
+   }
   },
   "male": {
-   "$ref": "#/$defs/bands"
+   "type": "object",
+   "required": [
+    "u35",
+    "a35",
+    "a45",
+    "a55",
+    "o65"
+   ],
+   "properties": {
+    "u35": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a35": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a45": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a55": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "o65": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    }
+   }
   },
   "female": {
-   "$ref": "#/$defs/bands"
+   "type": "object",
+   "required": [
+    "u35",
+    "a35",
+    "a45",
+    "a55",
+    "o65"
+   ],
+   "properties": {
+    "u35": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a35": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a45": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "a55": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "o65": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    }
+   }
   },
   "sex": {
    "type": "object"
@@ -80,27 +242,6 @@
   },
   "notes": {
    "type": "object"
-  }
- },
- "$defs": {
-  "bands": {
-   "type": "object",
-   "required": [
-    "u35",
-    "a35",
-    "a45",
-    "a55",
-    "o65"
-   ],
-   "additionalProperties": {
-    "type": "array",
-    "items": {
-     "type": [
-      "number",
-      "null"
-     ]
-    }
-   }
   }
  }
 }
