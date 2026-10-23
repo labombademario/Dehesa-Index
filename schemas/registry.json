@@ -1681,6 +1681,12 @@
    [
     "netherlands_more_index"
    ]
+  ],
+  "belgium-more/index.json": [
+   "belgium-more-index",
+   [
+    "belgium_more_index"
+   ]
   ]
  },
  "globs": {
@@ -1908,6 +1914,12 @@
    "netherlands-more",
    [
     "netherlands_more"
+   ]
+  ],
+  "belgium-more/*.json": [
+   "belgium-more",
+   [
+    "belgium_more"
    ]
   ]
  },

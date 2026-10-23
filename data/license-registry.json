@@ -7340,6 +7340,24 @@
     "cbs_nl"
    ],
    "notes": "Registro de la ultima ejecucion de update-nl-cbs-more.py."
+  },
+  "data/belgium-more/": {
+   "sources": [
+    "statbel"
+   ],
+   "notes": "Censo agrario de mayo (DBREF-L05 tabla A y L05-PROV-WEB), cosecha definitiva (L06), IPC por grupo de producto, pesca maritima (fishkind), productos lacteos (milk_monthly/yearly) y balances de carne (delmeat) de Statbel (scripts/update-belgium-more.py). Cita obligatoria de la fuente; conversiones exactas de unidad (are->ha, kg->t, EUR->miles de EUR, litros->miles de litros, 100 kg/ha->t/ha). El precio medio de lonja es un cociente valor/cantidad calculado aqui."
+  },
+  "data/belgium-more-stats.json": {
+   "byCountry": {
+    "BE": "statbel"
+   },
+   "notes": "Series seleccionadas de los seis conjuntos (scripts/update-belgium-more.py), para el catalogo."
+  },
+  "data/belgium-more-log.txt": {
+   "sources": [
+    "statbel"
+   ],
+   "notes": "Registro de la ultima ejecucion de update-belgium-more.py."
   }
  },
  "derived": [

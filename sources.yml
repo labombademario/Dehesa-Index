@@ -1988,6 +1988,18 @@ sources:
     data: [netherlands-more/index.json, netherlands-more-stats.json, netherlands-more-log.txt]
     extra: ['!data/netherlands-more']
     message: Datos Países Bajos facturacion trimestral, invernaderos, nitrogeno y estiercol, cadena de precios y otras series (CBS)
+  - id: be-statbel-more
+    name: Update Belgium livestock and land census, harvest, food CPI, fishing, dairy products and meat balances (Statbel)
+    cron: ['20 9 * * 4']
+    pre: ['pip install openpyxl xlrd']
+    script: scripts/update-belgium-more.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/belgium-more) data/belgium-more-stats.json
+    data: [belgium-more/index.json, belgium-more-stats.json, belgium-more-log.txt]
+    extra: ['!data/belgium-more']
+    message: Datos Bélgica censo ganadero, cosecha, IPC de alimentos, pesca, lácteos y balances de carne (Statbel)
   - id: nl-rvo
     name: Update Netherlands pig and cattle prices and pig slaughter (RVO)
     cron: ['40 8 * * 2,5']

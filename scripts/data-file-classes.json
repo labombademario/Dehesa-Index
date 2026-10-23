@@ -507,6 +507,14 @@
   "data/blog/countries/ledger/": {
    "class": "BUILD_ONLY",
    "note": "Registro por pais (ultimo periodo y valor de cada serie) que usa build-country-weeks.py para detectar cambios; no se sirve al navegador."
+  },
+  "data/belgium-more/": {
+   "class": "RUNTIME",
+   "via": {
+    "file": "js/belgium.js",
+    "pattern": "data/belgium-more/"
+   },
+   "note": "Censo ganadero y de superficies, cosecha, IPC de alimentos, pesca, lacteos y balances de carne de Belgica (Statbel): la pagina belgium.html descarga cada fichero solo al abrir su pestaña."
   }
  }
 }

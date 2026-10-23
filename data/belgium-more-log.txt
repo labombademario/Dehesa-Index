@@ -1,0 +1,11 @@
+ganado: anos [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+ganado: avance provisional de 2026 (L05-2026-PROV-WEB-NL.xlsx)
+ganado: leido (edicion 2026, 49 tablas, 632 series)
+cosecha: leido (edicion 2025, 9 tablas, 194 series)
+ipc: leido (edicion 2026-09, 1 tablas, 23 series)
+pesca: 23 anos, 84 meses
+pesca: leido (edicion 2025-12, 6 tablas, 168 series)
+lacteos: 102 meses, 21 anos
+lacteos: leido (edicion 2026-06, 4 tablas, 30 series)
+carne: leido (edicion 2023, 7 tablas, 56 series)
+escrito: 6 ficheros, 96 series en las estadisticas
