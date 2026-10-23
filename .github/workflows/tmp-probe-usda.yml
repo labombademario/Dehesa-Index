@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: |
-          mkdir -p probe/out; python3 probe/p.py || true
+          mkdir -p probe/out; pip install -q xlrd openpyxl; python3 probe/p.py || true; python3 probe/p2.py || true
           git config user.name probe; git config user.email probe@x
           git add -f probe/out; git commit -qm "probe out"; git push
