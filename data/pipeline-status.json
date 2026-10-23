@@ -6,7 +6,7 @@
     "ok": 252,
     "late": 2,
     "error": 5,
-    "not_run": 2,
+    "not_run": 4,
     "unknown": 0
   },
   "global": "error",
@@ -6283,6 +6283,48 @@
       },
       "status": "not_run",
       "expectedEveryHours": 84.0
+    },
+    {
+      "workflow": "update-wb-panel-prices.yml",
+      "name": "Dehesa Data — Banco Mundial Pink Sheet panel (materias primas)",
+      "crons": [
+        "40 9 4 * *"
+      ],
+      "nextRun": "2026-11-04T09:40:00Z",
+      "files": [
+        {
+          "path": "data/snapshots"
+        }
+      ],
+      "last": null,
+      "recent": {
+        "runs": 0,
+        "success": 0,
+        "failed": 0
+      },
+      "status": "not_run",
+      "expectedEveryHours": 744.0
+    },
+    {
+      "workflow": "update-us-panel-prices.yml",
+      "name": "Dehesa Data — EE. UU. panel (lácteos, bioenergía, carne y ganado AMS)",
+      "crons": [
+        "10 20 * * 1-5"
+      ],
+      "nextRun": "2026-10-26T20:10:00Z",
+      "files": [
+        {
+          "path": "data/snapshots"
+        }
+      ],
+      "last": null,
+      "recent": {
+        "runs": 0,
+        "success": 0,
+        "failed": 0
+      },
+      "status": "not_run",
+      "expectedEveryHours": 72.0
     }
   ]
 }

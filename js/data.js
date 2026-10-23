@@ -153,7 +153,8 @@
       pienso: { label: 'Pienso', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'índices regionales UE', url: SRC_URL.ecPrices }, { name: 'Comisión Europea (oleaginosas)', url: SRC_URL.ecPrices }] },
       fertilizantes: { label: 'Fertilizantes', sources: [{ name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'referencia internacional (Banco Mundial)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Azúcar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Comisión Europea', url: SRC_URL.ecSugar }] },
-      aceite: { label: 'Aceite de oliva', sources: [{ name: 'Comisión Europea', url: SRC_URL.ecOliveOil }] },
+      aceite: { label: "Aceites", sources: [{ name: "Comisión Europea", url: SRC_URL.ecOliveOil }, { name: "Banco Mundial (referencia internacional)", url: SRC_URL.worldBank }] },
+      tropicales: { label: "Café, cacao y otros", sources: [{ name: "Banco Mundial (referencia internacional)", url: SRC_URL.worldBank }] },
       hortalizas: { label: 'Frutas y hortalizas', sources: [{ name: 'Comisión Europea', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energía', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin }] },
       seguro: { label: 'Seguro agrario', sources: [{ name: 'ENESA (MAPA)', url: SRC_URL.enesa }, { name: 'USDA RMA', url: SRC_URL.rma }] },
@@ -170,7 +171,8 @@
       pienso: { label: 'Feed', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'EU regional indices', url: SRC_URL.ecPrices }, { name: 'European Commission (oilseeds)', url: SRC_URL.ecPrices }] },
       fertilizantes: { label: 'Fertilizer', sources: [{ name: 'European Commission (Agri-food)', url: SRC_URL.ecPrices }, { name: 'international reference (World Bank)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Sugar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'European Commission', url: SRC_URL.ecSugar }] },
-      aceite: { label: 'Olive Oil', sources: [{ name: 'European Commission', url: SRC_URL.ecOliveOil }] },
+      aceite: { label: "Oils", sources: [{ name: "European Commission", url: SRC_URL.ecOliveOil }, { name: "World Bank (international reference)", url: SRC_URL.worldBank }] },
+      tropicales: { label: "Coffee, cocoa & more", sources: [{ name: "World Bank (international reference)", url: SRC_URL.worldBank }] },
       hortalizas: { label: 'Fruit and vegetables', sources: [{ name: 'European Commission', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energy', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Weekly Oil Bulletin (EC)', url: SRC_URL.euOilBulletin }] },
       seguro: { label: 'Crop insurance', sources: [{ name: 'ENESA (MAPA)', url: SRC_URL.enesa }, { name: 'USDA RMA', url: SRC_URL.rma }] },
@@ -187,7 +189,8 @@
       pienso: { label: 'Aliments', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'indices régionaux UE', url: SRC_URL.ecPrices }, { name: 'Commission européenne (oléagineux)', url: SRC_URL.ecPrices }] },
       fertilizantes: { label: 'Engrais', sources: [{ name: 'Commission européenne (Agri-food)', url: SRC_URL.ecPrices }, { name: 'référence internationale (Banque mondiale)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Sucre', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commission européenne', url: SRC_URL.ecSugar }] },
-      aceite: { label: "Huile d'olive", sources: [{ name: 'Commission européenne', url: SRC_URL.ecOliveOil }] },
+      aceite: { label: "Huiles", sources: [{ name: "Commission européenne", url: SRC_URL.ecOliveOil }, { name: "Banque mondiale (référence internationale)", url: SRC_URL.worldBank }] },
+      tropicales: { label: "Café, cacao et autres", sources: [{ name: "Banque mondiale (référence internationale)", url: SRC_URL.worldBank }] },
       hortalizas: { label: 'Fruits et légumes', sources: [{ name: 'Commission européenne', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Énergie', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bulletin pétrolier hebdomadaire (CE)', url: SRC_URL.euOilBulletin }] },
       seguro: { label: 'Assurance agricole', sources: [{ name: 'ENESA (MAPA)', url: SRC_URL.enesa }, { name: 'USDA RMA', url: SRC_URL.rma }] },
@@ -204,7 +207,8 @@
       pienso: { label: 'Mangimi', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'indici regionali UE', url: SRC_URL.ecPrices }, { name: 'Commissione europea (semi oleosi)', url: SRC_URL.ecPrices }] },
       fertilizantes: { label: 'Fertilizzanti', sources: [{ name: 'Commissione europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'riferimento internazionale (Banca Mondiale)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Zucchero', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commissione europea', url: SRC_URL.ecSugar }] },
-      aceite: { label: "Olio d'oliva", sources: [{ name: 'Commissione europea', url: SRC_URL.ecOliveOil }] },
+      aceite: { label: "Oli", sources: [{ name: "Commissione europea", url: SRC_URL.ecOliveOil }, { name: "Banca mondiale (riferimento internazionale)", url: SRC_URL.worldBank }] },
+      tropicales: { label: "Caffè, cacao e altro", sources: [{ name: "Banca mondiale (riferimento internazionale)", url: SRC_URL.worldBank }] },
       hortalizas: { label: 'Frutta e verdura', sources: [{ name: 'Commissione europea', url: 'https://agridata.ec.europa.eu/' }, { name: 'MAPA', url: 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido' }] },
       energia: { label: 'Energia', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bollettino Petrolifero Settimanale (CE)', url: SRC_URL.euOilBulletin }] },
       seguro: { label: 'Assicurazione agricola', sources: [{ name: 'ENESA (MAPA)', url: SRC_URL.enesa }, { name: 'USDA RMA', url: SRC_URL.rma }] },
@@ -1275,19 +1279,94 @@
     ['huevos_jaula_uk', 'avicultura', 'Huevos de jaula enriquecida, precio al productor (Reino Unido)', 'Eggs, enriched cages, producer price (UK)', 'Œufs, cages aménagées, prix producteur (Royaume-Uni)', 'Uova, gabbie arricchite, prezzo al produttore (Regno Unito)', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Defra (precio medio trimestral de la empaquetadora al productor)', 'defra', 'quarterly'],
     ['huevos_campero_uk', 'avicultura', 'Huevos camperos, precio al productor (Reino Unido)', 'Eggs, free range, producer price (UK)', 'Œufs plein air, prix producteur (Royaume-Uni)', 'Uova allevate all\'aperto, prezzo al produttore (Regno Unito)', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Defra (precio medio trimestral de la empaquetadora al productor)', 'defra', 'quarterly']
   ];
+  // --- Banco Mundial (Pink Sheet) en el panel: aceites vegetales, café, cacao, té, banana, algodón, caucho, carnes y arroz internacionales... (23-oct-2026) ---
+  // Mismas columnas que UK_PANEL. Región 'eu' (como la urea y el gas del Banco Mundial), USD, mensual. Cifras: scripts/build-wb-panel-obs.py.
+  var WB_PANEL = [
+    ['aceite_palma', 'aceite', 'Aceite de palma', 'Palm oil', 'Huile de palme', 'Olio di palma', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌴', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['aceite_palmiste', 'aceite', 'Aceite de palmiste', 'Palm kernel oil', 'Huile de palmiste', 'Olio di palmisti', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌴', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['aceite_coco', 'aceite', 'Aceite de coco', 'Coconut oil', 'Huile de coco', 'Olio di cocco', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌴', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['aceite_cacahuete', 'aceite', 'Aceite de cacahuete', 'Groundnut oil', 'Huile d\'arachide', 'Olio di arachidi', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌴', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['aceite_soja', 'aceite', 'Aceite de soja', 'Soybean oil', 'Huile de soja', 'Olio di soia', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🫘', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['aceite_colza', 'aceite', 'Aceite de colza', 'Rapeseed oil', 'Huile de colza', 'Olio di colza', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌼', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['aceite_girasol', 'aceite', 'Aceite de girasol', 'Sunflower oil', 'Huile de tournesol', 'Olio di girasole', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌻', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['harina_pescado', 'pienso', 'Harina de pescado', 'Fish meal', 'Farine de poisson', 'Farina di pesce', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🐟', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['cacao', 'tropicales', 'Cacao', 'Cocoa', 'Cacao', 'Cacao', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🍫', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['cafe_arabica', 'tropicales', 'Café arábica', 'Coffee, Arabica', 'Café arabica', 'Caffè arabica', 'kg', 1, 'lb', 0.453592, 'kg', 1, '☕', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['cafe_robusta', 'tropicales', 'Café robusta', 'Coffee, Robusta', 'Café robusta', 'Caffè robusta', 'kg', 1, 'lb', 0.453592, 'kg', 1, '☕', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['te_subastas', 'tropicales', 'Té (media de 3 subastas)', 'Tea (average of 3 auctions)', 'Thé (moyenne de 3 ventes)', 'Tè (media di 3 aste)', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🍵', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['banana_ue', 'tropicales', 'Banana, Europa', 'Banana, Europe', 'Banane, Europe', 'Banana, Europa', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🍌', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['banana_us', 'tropicales', 'Banana, EE. UU.', 'Banana, U.S.', 'Banane, États-Unis', 'Banana, Stati Uniti', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🍌', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['naranja', 'tropicales', 'Naranja', 'Orange', 'Orange', 'Arancia', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🍊', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['algodon_a', 'tropicales', 'Algodón (índice A)', 'Cotton (A Index)', 'Coton (indice A)', 'Cotone (indice A)', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🌱', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['caucho_rss3', 'tropicales', 'Caucho RSS3', 'Rubber RSS3', 'Caoutchouc RSS3', 'Gomma RSS3', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🌳', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['caucho_tsr20', 'tropicales', 'Caucho TSR20', 'Rubber TSR20', 'Caoutchouc TSR20', 'Gomma TSR20', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🌳', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['cacahuete', 'tropicales', 'Cacahuete', 'Groundnuts', 'Arachides', 'Arachidi', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🥜', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['tabaco_us', 'tropicales', 'Tabaco (valor unitario de importación de EE. UU.)', 'Tobacco (U.S. import unit value)', 'Tabac (valeur unitaire à l\'importation, É.-U.)', 'Tabacco (valore unitario d\'importazione USA)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌿', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['ternera_mundo', 'ganado', 'Vacuno, referencia internacional', 'Beef, international reference', 'Bœuf, référence internationale', 'Manzo, riferimento internazionale', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐄', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['cordero_mundo', 'ovino', 'Cordero, referencia internacional', 'Lamb, international reference', 'Agneau, référence internationale', 'Agnello, riferimento internazionale', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐑', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['pollo_mundo', 'avicultura', 'Pollo, referencia internacional', 'Chicken, international reference', 'Poulet, référence internationale', 'Pollo, riferimento internazionale', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐔', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['tsp', 'fertilizantes', 'Superfosfato triple (TSP)', 'Triple superphosphate (TSP)', 'Superphosphate triple (TSP)', 'Perfosfato triplo (TSP)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🧪', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['roca_fosforica', 'fertilizantes', 'Roca fosfórica', 'Phosphate rock', 'Phosphate naturel', 'Roccia fosfatica', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🧪', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['trigo_srw_us', 'cereales', 'Trigo blando rojo de invierno de EE. UU. (SRW), exportación', 'U.S. soft red winter wheat (SRW), export', 'Blé tendre rouge d\'hiver américain (SRW), export', 'Grano tenero rosso invernale USA (SRW), export', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['trigo_hrw_us', 'cereales', 'Trigo duro rojo de invierno de EE. UU. (HRW), exportación', 'U.S. hard red winter wheat (HRW), export', 'Blé dur rouge d\'hiver américain (HRW), export', 'Grano duro rosso invernale USA (HRW), export', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['arroz_tai_5', 'cereales', 'Arroz de Tailandia 5 %', 'Rice, Thai 5%', 'Riz thaï 5 %', 'Riso thailandese 5%', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🍚', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['arroz_tai_25', 'cereales', 'Arroz de Tailandia 25 %', 'Rice, Thai 25%', 'Riz thaï 25 %', 'Riso thailandese 25%', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🍚', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['arroz_tai_a1', 'cereales', 'Arroz de Tailandia A.1', 'Rice, Thai A.1', 'Riz thaï A.1', 'Riso thailandese A.1', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🍚', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['arroz_viet_5', 'cereales', 'Arroz de Vietnam 5 %', 'Rice, Vietnamese 5%', 'Riz vietnamien 5 %', 'Riso vietnamita 5%', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🍚', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['azucar_mundo', 'azucar', 'Azúcar, precio mundial', 'Sugar, world price', 'Sucre, prix mondial', 'Zucchero, prezzo mondiale', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🍬', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['azucar_ue', 'azucar', 'Azúcar, precio de la UE', 'Sugar, EU price', 'Sucre, prix UE', 'Zucchero, prezzo UE', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🍬', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly'],
+    ['azucar_us', 'azucar', 'Azúcar, precio de EE. UU.', 'Sugar, U.S. price', 'Sucre, prix américain', 'Zucchero, prezzo USA', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🍬', 'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)', 'world_bank', 'monthly']
+  ];
+  // --- EE. UU. en el panel: lácteos de AMS (mantequilla, cheddar, suero) y bioenergía de ERS (gasolina base, DDGS, coste del maíz) (23-oct-2026) ---
+  // Mismas columnas que UK_PANEL. Cifras: scripts/build-us-panel-obs.py. 'mantequilla' ya existe (Europa): se le añade la región EE. UU.
+  var US_PANEL = [
+    ['mantequilla', 'lacteos', 'Mantequilla', 'Butter', 'Beurre', 'Burro', 'lb', 0.453592, 'lb', 0.453592, '100kg', 100, '🧈', 'USDA AMS (National Dairy Products Sales Report, precio semanal medio ponderado)', 'usda_ams_mars', 'weekly'],
+    ['cheddar', 'lacteos', 'Queso cheddar de bloque (40 lb)', 'Cheddar cheese, 40-lb block', 'Cheddar en bloc de 40 lb', 'Formaggio cheddar, blocco da 40 lb', 'lb', 0.453592, 'lb', 0.453592, '100kg', 100, '🧀', 'USDA AMS (National Dairy Products Sales Report, precio semanal medio ponderado)', 'usda_ams_mars', 'weekly'],
+    ['suero', 'lacteos', 'Suero seco', 'Dry whey', 'Lactosérum sec', 'Siero di latte in polvere', 'lb', 0.453592, 'lb', 0.453592, '100kg', 100, '🥛', 'USDA AMS (National Dairy Products Sales Report, precio semanal medio ponderado)', 'usda_ams_mars', 'weekly'],
+    ['gasolina_base_us', 'energia', 'Gasolina base para mezcla (RBOB, Los Ángeles)', 'Gasoline blendstock (RBOB, Los Angeles)', 'Essence de base pour mélange (RBOB, Los Angeles)', 'Benzina base per miscela (RBOB, Los Angeles)', 'gal', 'GAL_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'USDA ERS (estadísticas de bioenergía, mensual)', 'usda_ers', 'monthly'],
+    ['ddgs_us', 'pienso', 'Granos secos de destilería (DDGS), Illinois', 'Distillers dried grains (DDGS), Illinois', 'Drêches de distillerie séchées (DDGS), Illinois', 'Distillers dried grains (DDGS), Illinois', 'ton_corta', 907.185, 'ton_corta', 907.185, 'tonelada', 1000, '🌽', 'USDA ERS (estadísticas de bioenergía, mensual)', 'usda_ers', 'monthly'],
+    ['coste_maiz_etanol_us', 'energia', 'Coste del maíz por galón de etanol', 'Corn cost per gallon of ethanol', 'Coût du maïs par gallon d\'éthanol', 'Costo del mais per gallone di etanolo', 'gal', 'GAL_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '🌽', 'USDA ERS (estadísticas de bioenergía, mensual)', 'usda_ers', 'monthly']
+  ];
+  var US_LMR_PANEL = [
+    ['cutout_vacuno_choice', 'ganado', 'Corte de vacuno en caja, Choice', 'Boxed beef cutout, Choice', 'Découpe de bœuf en carton, Choice', 'Taglio di manzo in scatola, Choice', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🥩', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['cutout_vacuno_select', 'ganado', 'Corte de vacuno en caja, Select', 'Boxed beef cutout, Select', 'Découpe de bœuf en carton, Select', 'Taglio di manzo in scatola, Select', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🥩', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['novillo_vivo_us', 'ganado', 'Novillos de sacrificio, vivo (EE. UU., 5 zonas)', 'Slaughter steers, live (U.S., 5-area)', 'Bœufs d\'abattage, vif (É.-U., 5 zones)', 'Manzi da macello, vivo (USA, 5 aree)', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐄', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['novillo_canal_us', 'ganado', 'Novillos de sacrificio, en canal (EE. UU., 5 zonas)', 'Slaughter steers, dressed (U.S., 5-area)', 'Bœufs d\'abattage, en carcasse (É.-U., 5 zones)', 'Manzi da macello, in carcassa (USA, 5 aree)', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐄', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['novilla_vivo_us', 'ganado', 'Novillas de sacrificio, vivo (EE. UU., 5 zonas)', 'Slaughter heifers, live (U.S., 5-area)', 'Génisses d\'abattage, vif (É.-U., 5 zones)', 'Giovenche da macello, vivo (USA, 5 aree)', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐄', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['novilla_canal_us', 'ganado', 'Novillas de sacrificio, en canal (EE. UU., 5 zonas)', 'Slaughter heifers, dressed (U.S., 5-area)', 'Génisses d\'abattage, en carcasse (É.-U., 5 zones)', 'Giovenche da macello, in carcassa (USA, 5 aree)', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐄', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['vacuno_vivo_us', 'ganado', 'Vacuno de sacrificio, vivo (EE. UU., 5 zonas)', 'Slaughter cattle, live (U.S., 5-area)', 'Bovins d\'abattage, vif (É.-U., 5 zones)', 'Bovini da macello, vivo (USA, 5 aree)', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐄', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['vacuno_canal_us', 'ganado', 'Vacuno de sacrificio, en canal (EE. UU., 5 zonas)', 'Slaughter cattle, dressed (U.S., 5-area)', 'Bovins d\'abattage, en carcasse (É.-U., 5 zones)', 'Bovini da macello, in carcassa (USA, 5 aree)', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐄', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['cutout_cerdo', 'porcino', 'Corte de cerdo (cutout), FOB planta', 'Pork cutout, FOB plant', 'Découpe de porc (cutout), FOB usine', 'Taglio di maiale (cutout), FOB stabilimento', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐖', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['lomo_cerdo', 'porcino', 'Lomo de cerdo, FOB planta', 'Pork loin, FOB plant', 'Longe de porc, FOB usine', 'Lombata di maiale, FOB stabilimento', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🥓', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['paleta_cerdo', 'porcino', 'Aguja/paleta (butt) de cerdo, FOB planta', 'Pork butt, FOB plant', 'Échine de porc (butt), FOB usine', 'Spalla di maiale (butt), FOB stabilimento', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🥓', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['picnic_cerdo', 'porcino', 'Paleta delantera (picnic) de cerdo, FOB planta', 'Pork picnic, FOB plant', 'Épaule de porc (picnic), FOB usine', 'Spalla anteriore di maiale (picnic), FOB stabilimento', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🥓', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['costilla_cerdo', 'porcino', 'Costillar de cerdo, FOB planta', 'Pork ribs, FOB plant', 'Travers de porc, FOB usine', 'Costine di maiale, FOB stabilimento', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🥓', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['jamon_cerdo', 'porcino', 'Jamón fresco de cerdo, FOB planta', 'Pork ham, FOB plant', 'Jambon frais de porc, FOB usine', 'Prosciutto fresco di maiale, FOB stabilimento', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🥓', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['panceta_cerdo', 'porcino', 'Panceta de cerdo (belly), FOB planta', 'Pork belly, FOB plant', 'Poitrine de porc (belly), FOB usine', 'Pancetta di maiale (belly), FOB stabilimento', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🥓', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['cerdo_base_us', 'porcino', 'Cerdos sacrificados, precio base de la canal (EE. UU.)', 'Slaughtered hogs, carcass base price (U.S.)', 'Porcs abattus, prix de base de la carcasse (É.-U.)', 'Suini macellati, prezzo base della carcassa (USA)', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐖', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily'],
+    ['cerdo_neto_us', 'porcino', 'Cerdos sacrificados, precio neto de la canal (EE. UU.)', 'Slaughtered hogs, carcass net price (U.S.)', 'Porcs abattus, prix net de la carcasse (É.-U.)', 'Suini macellati, prezzo netto della carcassa (USA)', 'cwt', 45.359, 'cwt', 45.359, '100kg', 100, '🐖', 'USDA AMS (Livestock Mandatory Reporting, diario)', 'usda_ams_lmr', 'daily']
+  ];
+  US_PANEL = US_PANEL.concat(US_LMR_PANEL);
   var CA_PANEL_LABELS = { gj: { es: 'GJ', en: 'GJ', fr: 'GJ', it: 'GJ' }, kwh: { es: 'kWh', en: 'kWh', fr: 'kWh', it: 'kWh' } };
   (function () {
     var LK = LITRO_KG, GK = GAL_KG;
     ['es', 'en', 'fr', 'it'].forEach(function (l) { Object.keys(CA_PANEL_LABELS).forEach(function (u) { UNIT_LABELS[l][u] = CA_PANEL_LABELS[u][l]; }); });
     var nm = function (v) { return v === 'LITRO_KG' ? LK : v === 'GAL_KG' ? GK : v; };
-    [[CA_PANEL, 'ca', 'CAD'], [UK_PANEL, 'uk', 'GBP']].forEach(function (set) { set[0].forEach(function (row) {
+    var TROP = { es: 'Café, cacao y otros', en: 'Coffee, cocoa & more', fr: 'Café, cacao et autres', it: 'Caffè, cacao e altro' };
+    ['es', 'en', 'fr', 'it'].forEach(function (l) { NAMES[l].tropicales = TROP[l]; });
+    var hasTrop = false; RAW.forEach(function (c) { if (c.id === 'tropicales') hasTrop = true; });
+    if (!hasTrop) RAW.push({ id: 'tropicales', nameKey: 'tropicales', products: [] });
+    [[CA_PANEL, 'ca', 'CAD'], [UK_PANEL, 'uk', 'GBP'], [WB_PANEL, 'eu', 'USD'], [US_PANEL, 'us', 'USD']].forEach(function (set) { set[0].forEach(function (row) {
       var key = row[0], catId = row[1], unit = row[6], kg = nm(row[7]);
-      ['es', 'en', 'fr', 'it'].forEach(function (l, i) { NAMES[l][key] = row[2 + i]; });
       var cat = null; RAW.forEach(function (c) { if (c.id === catId) cat = c; });
       if (!cat) return;
-      cat.products.push({ nameKey: key, caUnitKey: unit, caKgPerUnit: kg, imperialUnitKey: row[8], imperialKgPerUnit: nm(row[9]), metricUnitKey: row[10], metricKgPerUnit: nm(row[11]),
-        quoteTypes: {} });
-      var prod = cat.products[cat.products.length - 1]; prod[set[1]] = { price: 0, changePct: 0, history: [0, 0], currency: set[2], kgPerUnit: kg }; prod.quoteTypes[set[1]] = { type: 'referencia', market: row[13] };
+      var prod = null; cat.products.forEach(function (x) { if (x.nameKey === key) prod = x; });
+      if (!prod) {
+        ['es', 'en', 'fr', 'it'].forEach(function (l, i) { NAMES[l][key] = row[2 + i]; });
+        prod = { nameKey: key, caUnitKey: unit, caKgPerUnit: kg, imperialUnitKey: row[8], imperialKgPerUnit: nm(row[9]), metricUnitKey: row[10], metricKgPerUnit: nm(row[11]), quoteTypes: {} };
+        cat.products.push(prod);
+      }
+      prod[set[1]] = { price: 0, changePct: 0, history: [0, 0], currency: set[2], kgPerUnit: kg }; prod.quoteTypes = prod.quoteTypes || {}; prod.quoteTypes[set[1]] = { type: 'referencia', market: row[13] };
       DATA_TRUST_PILOT[catId + '-' + key + '-' + set[1]] = { sourceId: row[14], frequency: row[15] || 'monthly',
         methodology: row[13] + '. Pendiente de la primera ejecución automática.',
         comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null };
@@ -1331,6 +1410,8 @@
     DATA_TRUST_SCHEMA_VERSION: DATA_TRUST_SCHEMA_VERSION, DATA_TRUST: DATA_TRUST, DATA_TRUST_SOURCES: DATA_TRUST_SOURCES, DATA_TRUST_HEALTH: DATA_TRUST_HEALTH, validateDataTrustRegistry: validateDataTrustRegistry,
     CA_PANEL: CA_PANEL,
     UK_PANEL: UK_PANEL,
+    WB_PANEL: WB_PANEL,
+    US_PANEL: US_PANEL,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
     WOOD: WOOD,

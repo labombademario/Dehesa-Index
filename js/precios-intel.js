@@ -359,10 +359,10 @@
   };
   var PROD_EMO = { maiz:'🌽', trigo:'🌾', arroz:'🍚', cebada:'🍺', avena:'🥣', centeno:'🌾', sorgo:'🌿', colza:'🌼', canola_elevador:'🌼', trigo_pienso_ab:'🌾', cebada_pienso_ab:'🍺', avena_pienso_ab:'🥣', trigo_cwrs_ab:'🌾', lenteja_laird_ab:'🫘', guisante_verde_ab:'🫛', soja_grano:'🫘', lenteja:'🫘', guisante_seco:'🫛', lino:'🌱', leche:'🥛', mantequilla:'🧈', leche_polvo:'🥛', vaca:'🐄', novillo_ab:'🐄', cabra:'🐐', cerdo:'🐖', cerdo_ab:'🐖', cordero:'🐑', huevos:'🥚', pollo:'🐔', pienso:'🌽', harina_soja:'🌱', urea:'🧪', dap:'🧪', potasa:'🧪', azucar:'🍬', oliva:'🫒', diesel:'⛽', gas_natural:'🔥', petroleo_wti:'🛢️', petroleo_brent:'🛢️' };
   // Canadá: emoticono y grupo del mapa de cada producto de DehesaData.CA_PANEL
-  (D && (D.CA_PANEL || []).concat(D.UK_PANEL || []) || []).forEach(function (r) { PROD_EMO[r[0]] = r[12]; MAP_GROUP[r[1] + '-' + r[0]] = ({ porcino: 'ganaderia', ganado: 'ganaderia', avicultura: 'ganaderia', ovino: 'ganaderia' })[r[1]] || r[1]; });
+  (D && (D.CA_PANEL || []).concat(D.UK_PANEL || [], D.WB_PANEL || [], D.US_PANEL || []) || []).forEach(function (r) { PROD_EMO[r[0]] = r[12]; MAP_GROUP[r[1] + '-' + r[0]] = ({ porcino: 'ganaderia', ganado: 'ganaderia', avicultura: 'ganaderia', ovino: 'ganaderia' })[r[1]] || r[1]; });
   function prodEmo(nameKey) { return PROD_EMO[nameKey] ? PROD_EMO[nameKey] + ' ' : ''; }
-  var MAP_GROUP_EMOJI = { cereales: '🌾', ganaderia: '🐄', lacteos: '🥛', pienso: '🌽', fertilizantes: '🌱', azucar: '🍬', aceite: '🫒', energia: '⚡' };
-  var MAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
+  var MAP_GROUP_EMOJI = { cereales: '🌾', ganaderia: '🐄', lacteos: '🥛', pienso: '🌽', fertilizantes: '🌱', azucar: '🍬', aceite: '🫒', tropicales: '☕', energia: '⚡' };
+  var MAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'tropicales', 'energia'];
 
   // Variación del último dato frente al de ~1 mes antes, con fechas reales
   function mapChange(pts, days) {
@@ -520,7 +520,7 @@
   var MOMENTUM_MARGIN_LEFT = 50, MOMENTUM_MARGIN_RIGHT = 16, MOMENTUM_MARGIN_TOP = 18, MOMENTUM_MARGIN_BOTTOM = 42;
   var MOMENTUM_GROUP_COLORS = {
     cereales: '#C99A2E', ganaderia: '#B15E3B', lacteos: '#3B6EA8', pienso: '#9C8552',
-    fertilizantes: '#7B5EA7', azucar: '#C06B92', aceite: '#A69026', energia: '#5C7080'
+    fertilizantes: '#7B5EA7', azucar: '#C06B92', aceite: '#A69026', tropicales: '#7A5230', energia: '#5C7080'
   };
   function niceStep(rawStep) {
     if (!(rawStep > 0)) return 1;

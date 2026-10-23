@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-272 workflows (226 generados desde `sources.yml`, 46 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+274 workflows (226 generados desde `sources.yml`, 48 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -302,6 +302,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-uruguay.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-uruguay.py | uruguay-departments.json, uruguay-stats.json, uy-ghg-agri.json | finish, validate-files |
 | update-usda-calendar.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-usda-calendar.py | usda-calendar.json | finish, validate-files |
 | update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json, world-production.json | finish, validate-files |
+| update-wb-panel-prices.yml | a mano | mensual | build-wb-panel-obs.py | - | price-engine, publish |
 | update-wine-prices.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-wine-prices.py | wine-prices.json | finish, validate-files |
 | update-wood-prices-de.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-prices-de.py | wood-prices-de.json | finish, validate-files |
 | update-wood-prices-na.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-wood-prices-na.py | wood-prices-na.json | finish, validate-files |
@@ -380,6 +381,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-nass-extra.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-nass-extra.py | us-nass-extra-stats.json | finish, validate-files |
 | update-us-nass-processing.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-nass-processing.py | us-nass-processing-ledger.json, us-nass-processing-stats.json | finish, validate-files |
 | update-us-noaa-fish.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-noaa-fish.py | us-noaa-fish-stats.json | finish, validate-files |
+| update-us-panel-prices.yml | a mano | semanal (1-5) | build-us-panel-obs.py | - | price-engine, publish |
 | update-us-ppi.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-ppi.py | us-ppi.json | finish, validate-files |
 | update-us-reservoirs.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-us-reservoirs.py | us-reservoirs-normals.json, us-reservoirs.json | finish, validate-files |
 | update-us-sap.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-sap.py | us-markets/sap-forecasts.json | finish, validate-files |

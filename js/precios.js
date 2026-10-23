@@ -53,7 +53,7 @@
   // ---------------------------------------------------------------------
   // Estado
   // ---------------------------------------------------------------------
-  var CAT_ORDER = ['cereales', 'lacteos', 'ganado', 'porcino', 'ovino', 'avicultura', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'hortalizas', 'energia', 'seguro', 'vino', 'madera'];
+  var CAT_ORDER = ['cereales', 'lacteos', 'ganado', 'porcino', 'ovino', 'avicultura', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'tropicales', 'hortalizas', 'energia', 'seguro', 'vino', 'madera'];
   // Categorías informativas propias: no son "productos" con precio diario/
   // semanal (sin favoritos/histórico/calculadora/alertas) -- estadísticas
   // oficiales reales anuales o de campaña, ver renderInfoCategoryHtml().
@@ -204,6 +204,12 @@
 
   // Reino Unido (combustible DESNZ, vacuno y cordero en canal de Irlanda del Norte DAERA, huevos Defra): una entrada por fila de DehesaData.UK_PANEL, misma clave que scripts/build-uk-panel-obs.py
   (global.DehesaData && global.DehesaData.UK_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':uk'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'GBP', unit: r[6], frequency: r[15] }; });
+
+  // Banco Mundial (Pink Sheet): una entrada por fila de DehesaData.WB_PANEL, región 'eu', USD, mensual; misma clave que scripts/build-wb-panel-obs.py
+  (global.DehesaData && global.DehesaData.WB_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':eu'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'USD', unit: r[6], frequency: r[15] }; });
+
+  // EE. UU. (lácteos de AMS, bioenergía de ERS): una entrada por fila de DehesaData.US_PANEL; misma clave que scripts/build-us-panel-obs.py
+  (global.DehesaData && global.DehesaData.US_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':us'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'USD', unit: r[6], frequency: r[15] }; });
 
   function numericHistory(observation) {
     // El minigráfico de la tarjeta usa solo los últimos 104 valores (`spark`, ya recortados en data/prices/latest/<region>.json);
@@ -1870,7 +1876,7 @@
 
   function restorePriceUrl() {
     var qs = new URLSearchParams(window.location.search);
-    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','hortalizas','energia','seguro','vino','madera'];
+    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','tropicales','hortalizas','energia','seguro','vino','madera'];
     var tab = qs.get('tab');
     var productKey = queryProductKey();
     var region = qs.get('region');
@@ -2022,7 +2028,7 @@
     var qs = new URLSearchParams(window.location.search);
     var requestedTab = qs.get('tab');
     var requestedRegion = qs.get('region');
-    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','hortalizas','energia','seguro','vino','madera'];
+    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','tropicales','hortalizas','energia','seguro','vino','madera'];
     if (validTabs.indexOf(requestedTab) !== -1) state.activeTab = state.wantTab = requestedTab;
     if (deepKey && PRODUCT_BY_KEY[deepKey]) {
       state.activeTab = state.wantTab = PRODUCT_BY_KEY[deepKey].catId;

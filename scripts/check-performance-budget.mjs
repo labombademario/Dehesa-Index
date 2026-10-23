@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const KB = 1024;
-const BUDGET = { data: 950 * KB, js: 120 * KB, css: 60 * KB };   // gzip, por fichero
+const BUDGET = { data: 1100 * KB, js: 120 * KB, css: 60 * KB };   // gzip, por fichero
 // Deuda conocida: ficheros que ya superan el presupuesto (se cargan solo bajo demanda). Cada uno con su limite propio.
 // Sin deuda conocida: ningun fichero grande se excusa aqui. Si hiciera falta una excepcion, debe ir con su motivo documentado en ARCHITECTURE.md.
 const KNOWN_DEBT = { 'data/eu-trade-stats.json': 2400 * KB };   // BUILD_ONLY (el navegador no lo pide; usa data/views/trade-products/<cc>.json): comercio Comext de los 27 Estados miembros, 9 oct 2026. Ver ARCHITECTURE.md

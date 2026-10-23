@@ -1,0 +1,34 @@
+name: Dehesa Data — Banco Mundial Pink Sheet panel (materias primas)
+on:
+  schedule:
+    - cron: '40 9 4 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install openpyxl
+      - name: Construir observaciones para el panel
+        run: python scripts/build-wb-panel-obs.py
+      - uses: ./.github/actions/price-engine
+      - name: Publicar
+        uses: ./.github/actions/publish
+        with:
+          paths: >-
+            data/snapshots
+          preset: price-engine
+          message: "data: Banco Mundial Pink Sheet panel (materias primas)"
+          user: "Dehesa Index Bot"

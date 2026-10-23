@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-23T04:24:20.164Z",
+  "generatedAt": "2026-10-23T04:55:46.732Z",
   "status": "informational",
   "rules": [
     {
@@ -8,6 +8,22 @@
       "product": "azucar",
       "region": "eu",
       "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "coste_maiz_etanol_us",
+      "region": "us",
+      "sourceId": "usda_ers",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "tabaco_us",
+      "region": "eu",
+      "sourceId": "world_bank",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -94,6 +110,42 @@
     },
     {
       "type": "period_move",
+      "product": "aceite_coco",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": 5.15,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "azucar_mundo",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": 7.89,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cafe_arabica",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": -8.91,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cafe_robusta",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": -7.29,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "diesel_calgary",
       "region": "ca",
       "sourceId": "statcan",
@@ -157,6 +209,51 @@
     },
     {
       "type": "period_move",
+      "product": "harina_pescado",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "high",
+      "changePct": 11.94,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "pollo_mundo",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": 7.1,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "ternera_mundo",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": -5.77,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "trigo_hrw_us",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": 5.15,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "trigo_srw_us",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": 5.85,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "diesel_saskatoon",
       "region": "ca",
       "sourceId": "statcan",
@@ -175,6 +272,33 @@
     },
     {
       "type": "period_move",
+      "product": "caucho_tsr20",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": 7.59,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "ddgs_us",
+      "region": "us",
+      "sourceId": "usda_ers",
+      "severity": "watch",
+      "changePct": 6.97,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "aceite_girasol",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "changePct": -6.33,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "lenteja",
       "region": "us",
       "sourceId": "usda_nass",
@@ -190,6 +314,15 @@
       "severity": "high",
       "changePct": -16.04,
       "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "gasolina_base_us",
+      "region": "us",
+      "sourceId": "usda_ers",
+      "severity": "high",
+      "changePct": 17.09,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -247,6 +380,15 @@
     },
     {
       "type": "period_move",
+      "product": "cheddar",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "severity": "watch",
+      "changePct": -9.57,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
       "product": "diesel_uk",
       "region": "uk",
       "sourceId": "desnz_fuel_prices",
@@ -261,6 +403,15 @@
       "sourceId": "desnz_fuel_prices",
       "severity": "watch",
       "changePct": 6.37,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "mantequilla",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "severity": "watch",
+      "changePct": -7.36,
       "observationDate": "2026-10-01"
     },
     {
@@ -382,11 +533,83 @@
     },
     {
       "type": "period_move",
+      "product": "cerdo_base_us",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "watch",
+      "changePct": -9.01,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cerdo_neto_us",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "watch",
+      "changePct": -9.18,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "costilla_cerdo",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "watch",
+      "changePct": -9.08,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cutout_cerdo",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "high",
+      "changePct": -12.88,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "jamon_cerdo",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "watch",
+      "changePct": 9.95,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
       "product": "leche_polvo",
       "region": "us",
       "sourceId": "usda_ams_mars",
       "severity": "high",
       "changePct": 15.22,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "lomo_cerdo",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "watch",
+      "changePct": -6.9,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "panceta_cerdo",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "high",
+      "changePct": -42.17,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "picnic_cerdo",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "watch",
+      "changePct": -5.21,
       "observationDate": "2026-10-01"
     },
     {
