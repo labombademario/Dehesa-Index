@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T01:40:06Z",
+ "generatedAt": "2026-10-23T01:56:55Z",
  "summary": {
-  "files": 86,
+  "files": 87,
   "errors": 0,
-  "warnings": 27
+  "warnings": 28
  },
  "files": [
   {
@@ -924,6 +924,34 @@
    "nErrors": 0
   },
   {
+   "file": "us-nass-cdl-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "US/us-cdl-spring-wheat-20-a: salto 164.3 -> 5828.7 en 2020 (mediana previa 219)",
+    "US/us-cdl-spring-wheat-20-a: salto 4816.6 -> 6141.7 en 2022 (mediana previa 234)",
+    "US/us-cdl-spring-wheat-20-a: salto 5462.2 -> 14586.2 en 2025 (mediana previa 427)",
+    "US/us-cdl-canola-21-a: salto 87.2 -> 17268.3 en 2025 (mediana previa 70.1)",
+    "US/us-cdl-sorghum-23-a: salto 10.9 -> 460.1 en 2017 (mediana previa 5.8)",
+    "US/us-cdl-sorghum-23-a: salto 354.9 -> 3011.7 en 2022 (mediana previa 38)",
+    "US/us-cdl-sorghum-23-a: salto 258.0 -> 2943.2 en 2024 (mediana previa 102)",
+    "US/us-cdl-sorghum-23-a: salto 2943.2 -> 4020.7 en 2025 (mediana previa 126)",
+    "US/us-cdl-soybeans-30-a: salto 10766.8 -> 106393.6 en 2019 (mediana previa 4.02e+03)",
+    "US/us-cdl-rice-37-a: salto 571.6 -> 1486.9 en 2025 (mediana previa 58)",
+    "US/us-cdl-sorghum-53-a: salto 350.0 -> 5477.8 en 2024 (mediana previa 84.1)"
+   ],
+   "stats": {
+    "series": 515,
+    "points": 9086,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T01:52:11Z",
+   "info": [],
+   "nWarnings": 11,
+   "nErrors": 0
+  },
+  {
    "file": "us-ers-productivity-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -946,11 +974,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 740,
-    "points": 24150,
+    "series": 716,
+    "points": 23406,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T01:38:49Z",
+   "generatedAt": "2026-10-23T01:40:51Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0

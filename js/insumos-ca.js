@@ -16,7 +16,7 @@
       note: 'L’indice dei prezzi degli input (base 2012 = 100) misura quanto cambiano i prezzi pagati dagli agricoltori, non il loro livello: 130 significa il 30% in più del 2012. Le consegne di fertilizzanti sono tonnellate consegnate all’agricoltura per campagna (luglio-giugno), non prezzi: il Canada non ha una serie aperta dei prezzi dei fertilizzanti. Il carburante è il prezzo alla pompa per città (centesimi al litro), non il prezzo pagato da un’azienda. Un vuoto è un vuoto, mai zero.', src: 'Fonte: Statistics Canada, tabelle 18-10-0258, 32-10-0038 e 18-10-0001 (Open Government Licence – Canada).' }
   };
   window.INCanada = window.CASeries.create({
-    id: 'in-ca', usBody: 'in-body', texts: T, defaultGroup: 'index', cite: 'statcan',
+    id: 'in-ca', usBody: 'in-body', usExtra: '#fer', texts: T, defaultGroup: 'index', cite: 'statcan',
     groups: [
       { id: 'index', label: ['Índice de precios de insumos', 'Input price index', 'Indice des prix des intrants', 'Indice dei prezzi degli input'], pick: function (s) { return s.group === 'idx_pag'; } },
       { id: 'fert', label: ['Fertilizantes (envíos)', 'Fertilizers (shipments)', 'Engrais (livraisons)', 'Fertilizzanti (consegne)'], pick: function (s) { return s.group === 'inputs_f'; } },

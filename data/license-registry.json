@@ -7184,6 +7184,18 @@
     "UY": "usda_ers"
    },
    "notes": "Productividad agraria (USDA ERS, Agricultural Productivity in the U.S. e International Agricultural Productivity): PTF, produccion e insumos, sin cambiar valores."
+  },
+  "data/us-nass-cdl-stats.json": {
+   "byCountry": {
+    "US": "usda_nass"
+   },
+   "notes": "Superficie de cultivos por estado del Cropland Data Layer (USDA NASS, CropScape): estimacion por satelite (suma de pixeles clasificados), no cifra de encuesta oficial, sin cambiar valores."
+  },
+  "data/us-nass-cdl-cache.json": {
+   "byCountry": {
+    "US": "usda_nass"
+   },
+   "notes": "Cache de la descarga incremental del Cropland Data Layer (USDA NASS): superficie por estado, ano y cultivo tal como la devuelve CropScape; solo la lee el script de actualizacion."
   }
  },
  "derived": [

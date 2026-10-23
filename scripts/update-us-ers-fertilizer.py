@@ -76,7 +76,7 @@ def read_indices(rows):
     names = {1: "Index of prices paid by farmers for fertilizer", 2: "Index of prices received by farmers for crops", 4: "Producer price index: all fertilizers", 5: "Producer price index: nitrogen", 6: "Producer price index: phosphate", 7: "Producer price index: potash"}
     d = by_year(rows, 0, list(names), names); ser = []
     for c, n in names.items():
-        s = U.mk_series("us-ersfert-index-%s-a" % U.slug(n, 40), "prices", "%s (ERS, 2011=100)" % n, "index 2011=100", "annual", d[c], SG, min_points=10, max_age_years=15, note=NOTE % last(d[c]))
+        s = U.mk_series("us-ersfert-index-%s-a" % U.slug(n, 40), "prices", "Fertilizer price index: %s (ERS, 2011=100)" % n, "index 2011=100", "annual", d[c], SG, min_points=10, max_age_years=15, note=NOTE % last(d[c]))
         if s: ser.append(s)
     return ser
 def read_states(rows, sid, label, unit):
@@ -88,7 +88,7 @@ def read_states(rows, sid, label, unit):
             continue
         pts = [(str(y), U.fnum(r[i + 1])) for i, y in enumerate(years) if y and i + 1 < len(r)]
         n = re.sub(r"\s*\d/$", "", n)
-        s = U.mk_series("us-ersfert-%s-%s-a" % (sid, U.slug(n, 24)), "inputs", "%s, %s (ERS)" % (label, n), unit, "annual", pts, SG, min_points=5, max_age_years=15, note="Archivo histórico de ERS (encuestas de ARMS/NASS): la serie termina en %s." % last(pts))
+        s = U.mk_series("us-ersfert-%s-%s-a" % (sid, U.slug(n, 24)), "inputs", "%s: %s (ERS)" % (label, n), unit, "annual", pts, SG, min_points=5, max_age_years=15, note="Archivo histórico de ERS (encuestas de ARMS/NASS): la serie termina en %s." % last(pts))
         if s: ser.append(s)
     return ser
 def build(sheet):
