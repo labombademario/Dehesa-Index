@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T13:31:00Z",
+ "generatedAt": "2026-10-23T13:47:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 250,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T12:50:41.241181+00:00",
   "repoGeneratedAt": "2026-10-23T12:50:41.241181+00:00",
-  "checkedAt": "2026-10-23T13:31:00Z"
+  "checkedAt": "2026-10-23T13:47:00Z"
  },
  "pipelines": [
   {
@@ -4041,7 +4041,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-23T13:14:27Z"
+     "lastChange": "2026-10-23T13:33:20Z"
     },
     {
      "path": "data/products"
@@ -4052,7 +4052,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T13:18:51Z"
+     "lastChange": "2026-10-23T13:34:21Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4135,14 +4135,15 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-23T12:45:12Z",
-    "durationSec": 221,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39955700425"
+    "startedAt": "2026-10-23T10:12:15Z",
+    "durationSec": 727,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39933386961",
+    "reason": "no se pudo publicar el estado · no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 3,
-    "failed": 7
+    "failed": 6
    },
    "status": "error",
    "expectedEveryHours": 3.0
