@@ -32,4 +32,12 @@ assert.equal(D.realHistory(old2, 'USD', 1, D.FX).pts.length, 4);
 assert.equal(D.realHistory(Object.assign({}, old2, { histPts: old2.histPts.slice(0, 2) }), 'EUR', 1, D.FX), null);
 // 6) misma moneda: factor 1
 near(D.buildRegion({ price: 5, changePct: 0, history: [5, 5], currency: 'EUR', kgPerUnit: 1 }, 'x', 'EUR', 1, 'u', D.FX, T).priceValue, 5);
+// 7) TTF: dato del Banco Mundial (USD/MMBtu) -> EUR/MWh con el cambio del mes; contraste con la Comision Europea (TTF day-ahead anual: 2022 132, 2023 41, 2024 35 EUR/MWh)
+const gas = D.RAW.flatMap(c => c.products).find(p => p.nameKey === 'gas_natural');
+assert.equal(gas.metricUnitKey, 'mwh'); near(gas.metricKgPerUnit, 3.412142);
+const wb = JSON.parse(fs.readFileSync(fs.readdirSync('data/snapshots').sort().reverse().map(f => 'data/snapshots/' + f).find(f => JSON.parse(fs.readFileSync(f, 'utf8')).observations.some(o => o.product === 'gas_natural' && o.region === 'eu' && o.history)), 'utf8')).observations.find(o => o.product === 'gas_natural' && o.region === 'eu' && o.history);
+const ann = {};
+wb.history.filter(q => q.year >= 2022 && q.year <= 2024).forEach(q => { const m = q.year + '-' + String(q.period).padStart(2, '0'); (ann[q.year] = ann[q.year] || []).push(q.value * gas.metricKgPerUnit / usd[m]); });
+const avg = y => ann[y].reduce((a, b) => a + b, 0) / ann[y].length;
+[[2022, 132], [2023, 41], [2024, 35]].forEach(([y, ref]) => assert.ok(Math.abs(avg(y) - ref) < 1.2, y + ': ' + avg(y).toFixed(1) + ' vs ' + ref));
 console.log('test-fx-monthly: OK');

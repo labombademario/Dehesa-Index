@@ -252,13 +252,20 @@
       return { ts: window.DehesaChart ? window.DehesaChart.histTs(point) : NaN, value: Number(point && point.value) };
     }).filter(function (point) { return Number.isFinite(point.ts) && Number.isFinite(point.value); }).sort(function (a, b) { return a.ts - b.ts; });
   }
+  // La serie «Natural gas, Europe» del Banco Mundial es el TTF solo desde abril de 2015; antes es un precio de importación en frontera (no es TTF
+  // ni cotiza en euros por MWh). Esos meses no se muestran: la tarjeta se llama TTF y se convierte a €/MWh.
+  function usableHistory(region, pts) {
+    var src = region && region.histSrc;
+    if (src && src.product === 'gas_natural' && src.region === 'eu') { var from = Date.UTC(2015, 3, 1); return pts.filter(function (p) { return p.ts >= from; }); }
+    return pts;
+  }
   // Histórico completo con fechas de UNA región de producto (data/prices/history/<region>/<producto>.json), solo cuando hace falta.
   function loadHistory(region) {
     if (!region || !region.histSrc) return Promise.resolve();
     if (region.histFull) return Promise.resolve();
     if (region.histP) return region.histP;
     return region.histP = window.DIPrices.history(region.histSrc.region, region.histSrc.product).then(function (doc) {
-      var dated = datedPoints(doc && doc.history);
+      var dated = usableHistory(region, datedPoints(doc && doc.history));
       if (dated.length >= 2) { region.histPts = dated; region.histFull = true; }
       region.histDone = true;
     }).catch(function () { region.histDone = true; });
@@ -286,7 +293,7 @@
     return window.DIPrices.histories(list).then(function (docs) {
       docs.forEach(function (doc, i) {
         var region = pending[i]; if (!doc) { region.histP = null; return; }
-        var dated = datedPoints(doc.history);
+        var dated = usableHistory(region, datedPoints(doc.history));
         if (dated.length >= 2) { region.histPts = dated; region.histFull = true; region.histP = Promise.resolve(); }
         region.histDone = true;
       });

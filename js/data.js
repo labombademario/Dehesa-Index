@@ -35,10 +35,10 @@
   }
 
   var UNIT_LABELS = {
-    es: { bushel: 'bushel', mmbtu: 'MMBtu', barril: 'barril', cwt: 'cwt', lb: 'lb', ton_corta: 'ton corta', tonelada: 'tonelada', kg: 'kg', '100kg': '100 kg', gal: 'galón', docena: 'docena', litro: 'litro' },
-    en: { bushel: 'bushel', mmbtu: 'MMBtu', barril: 'barrel', cwt: 'cwt', lb: 'lb', ton_corta: 'short ton', tonelada: 'tonne', kg: 'kg', '100kg': '100 kg', gal: 'gallon', docena: 'dozen', litro: 'liter' },
-    fr: { bushel: 'bushel', mmbtu: 'MMBtu', barril: 'baril', cwt: 'cwt', lb: 'lb', ton_corta: 'tonne courte', tonelada: 'tonne', kg: 'kg', '100kg': '100 kg', gal: 'gallon', docena: 'douzaine', litro: 'litre' },
-    it: { bushel: 'bushel', mmbtu: 'MMBtu', barril: 'barile', cwt: 'cwt', lb: 'lb', ton_corta: 'tonnellata corta', tonelada: 'tonnellata', kg: 'kg', '100kg': '100 kg', gal: 'gallone', docena: 'dozzina', litro: 'litro' }
+    es: { bushel: 'bushel', mmbtu: 'MMBtu', mwh: 'MWh', barril: 'barril', cwt: 'cwt', lb: 'lb', ton_corta: 'ton corta', tonelada: 'tonelada', kg: 'kg', '100kg': '100 kg', gal: 'galón', docena: 'docena', litro: 'litro' },
+    en: { bushel: 'bushel', mmbtu: 'MMBtu', mwh: 'MWh', barril: 'barrel', cwt: 'cwt', lb: 'lb', ton_corta: 'short ton', tonelada: 'tonne', kg: 'kg', '100kg': '100 kg', gal: 'gallon', docena: 'dozen', litro: 'liter' },
+    fr: { bushel: 'bushel', mmbtu: 'MMBtu', mwh: 'MWh', barril: 'baril', cwt: 'cwt', lb: 'lb', ton_corta: 'tonne courte', tonelada: 'tonne', kg: 'kg', '100kg': '100 kg', gal: 'gallon', docena: 'douzaine', litro: 'litre' },
+    it: { bushel: 'bushel', mmbtu: 'MMBtu', mwh: 'MWh', barril: 'barile', cwt: 'cwt', lb: 'lb', ton_corta: 'tonnellata corta', tonelada: 'tonnellata', kg: 'kg', '100kg': '100 kg', gal: 'gallone', docena: 'dozzina', litro: 'litro' }
   };
 
   var REGION = {
@@ -541,10 +541,10 @@
       // data/latest.json aporta una observación verificada (EIA / Banco Mundial). kgPerUnit=1:
       // MMBtu y barril no son unidades de masa, así que no se aplica conversión de unidad.
       products: [
-        { nameKey: 'gas_natural', imperialUnitKey: 'mmbtu', imperialKgPerUnit: 1, metricUnitKey: 'mmbtu', metricKgPerUnit: 1,
+        { nameKey: 'gas_natural', imperialUnitKey: 'mmbtu', imperialKgPerUnit: 1, metricUnitKey: 'mwh', metricKgPerUnit: 3.412142,   // en Europa el gas se cotiza en €/MWh: 1 MWh = 3,412142 MMBtu
           us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
           eu: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
-          quoteTypes: { us: { type: 'referencia', market: 'EIA · Henry Hub (EE. UU., precio al contado, diario)' }, eu: { type: 'referencia', market: 'Banco Mundial · TTF (Europa, media mensual publicada con ~1 mes de retraso, USD/MMBtu)' } } },
+          quoteTypes: { us: { type: 'referencia', market: 'EIA · Henry Hub (EE. UU., precio al contado, diario)' }, eu: { type: 'referencia', market: 'Banco Mundial · TTF (Europa, media mensual con ~1 mes de retraso; el Banco Mundial lo publica en USD/MMBtu y aquí se pasa a €/MWh, la unidad original del TTF, con el cambio medio del BCE de cada mes; desde abril de 2015)' } } },
         { nameKey: 'petroleo_wti', imperialUnitKey: 'barril', imperialKgPerUnit: 1, metricUnitKey: 'barril', metricKgPerUnit: 1,
           us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
           quoteTypes: { us: { type: 'referencia', market: 'EIA (WTI Cushing, spot)' } } },
@@ -821,7 +821,7 @@
     },
     'energia-gas_natural-eu': {
       sourceId: 'world_bank', frequency: 'monthly',
-      methodology: 'World Bank Pink Sheet, Natural gas, Europe (TTF); USD/MMBtu, monthly average. Wholesale benchmark, not a farm-gate price.',
+      methodology: 'World Bank Pink Sheet, Natural gas, Europe (TTF); USD/MMBtu, monthly average (TTF from April 2015; earlier months are an import border price). Shown on the site in EUR/MWh, the TTF native unit, converting at the ECB monthly average of each month (1 MWh = 3.412142 MMBtu). Wholesale benchmark, not a farm-gate price.',
       comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
     },
     'energia-petroleo_wti-us': {
