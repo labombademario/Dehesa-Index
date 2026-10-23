@@ -26,6 +26,6 @@ for i, d in enumerate(wk):
         rows.append({"EndDt_DtFin": d + "T00:00:00-05:00", "MjrCmdtyEn_PrdtPrncplAn": c, "CtgryEn_CtgrieAn": k, "NumHd_NmbTetes": "1,%03d" % i})
 rows.append({"EndDt_DtFin": wk[-1] + "T00:00:00-05:00", "MjrCmdtyEn_PrdtPrncplAn": "Cattle", "CtgryEn_CtgrieAn": "Cows", "NumHd_NmbTetes": "x"})
 s = {x["id"]: x for x in A.series_from({"data": rows})}
-eq(sorted(s), ["ca-aafc-slaughter-calves-female-w", "ca-aafc-slaughter-cattle-cows-w", "ca-aafc-slaughter-cattle-steers-w", "ca-aafc-slaughter-hogs-total-approved-hogs-slaughtere-w"], "ids")
+eq(sorted(s), ["ca-aafc-slaughter-calves-female-w", "ca-aafc-slaughter-cattle-cows-w", "ca-aafc-slaughter-cattle-steers-w"], "ids")
 eq(s["ca-aafc-slaughter-cattle-steers-w"]["latest"], 1119.0, "miles con coma"); eq(s["ca-aafc-slaughter-cattle-cows-w"]["latest"], 1119.0, "fila no numerica ignorada")
 print("OK test-ca-boc-aafc" if not bad else "\n".join(bad)); sys.exit(1 if bad else 0)

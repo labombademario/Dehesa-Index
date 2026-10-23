@@ -24,7 +24,8 @@ def series_from(doc):
     for (c, k, d), v in by.items(): cats.setdefault((c, k), []).append((d, v))
     out = []
     for (c, k), pts in sorted(cats.items()):
-        label = "Federally inspected slaughter: %s, %s (weekly, head)" % (c.lower(), k.lower().replace("total approved hogs slaughtered", "total approved"))
+        if "total approved" in k.lower(): continue  # categoria antigua que ya viene a 0
+        label = "Federally inspected slaughter: %s, %s (weekly, head)" % (c.lower(), k.lower())
         s = U.mk_series("ca-aafc-slaughter-%s-%s-w" % (U.slug(c, 20), U.slug(k, 30)), "livestock", label, "head", "weekly", pts, SRC, min_points=52, max_age_years=1, keep=520)
         if s: out.append(s)
     return out

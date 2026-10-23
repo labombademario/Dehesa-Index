@@ -4841,6 +4841,32 @@
    "legalConfidenceReason": "Licencia abierta inferida del editor y de otros conjuntos de Agreste, sin verificación ficha a ficha; la confianza de la evidencia se declara baja.",
    "aliases": [],
    "thirdPartyNote": "Sin excepciones de terceros conocidas en estos conjuntos."
+  },
+  "aafc_slaughter": {
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licensed under the Open Government Licence – Canada.",
+   "additionalRestrictions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Rights the provider is not authorised to license are excluded.",
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "Agriculture and Agri-Food Canada — Weekly Red Meat Slaughter",
+   "url": "https://open.canada.ca/data/en/dataset/43ea3719-f2ea-4c30-91d2-c8cf9b9b1cef",
+   "evidence": "Ficha del conjunto de datos abiertos en open.canada.ca (Open Government Licence - Canada), JSON en od-do.agr.gc.ca; descargado desde el runner el 2026-10-22.",
+   "short": "AAFC",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia OGL-Canada indicada en el catálogo oficial para estos conjuntos."
   }
  },
  "files": {
@@ -7196,6 +7222,18 @@
     "US": "usda_nass"
    },
    "notes": "Cache de la descarga incremental del Cropland Data Layer (USDA NASS): superficie por estado, ano y cultivo tal como la devuelve CropScape; solo la lee el script de actualizacion."
+  },
+  "data/ca-boc-bcpi-stats.json": {
+   "byCountry": {
+    "CA": "bank_of_canada"
+   },
+   "notes": "Bank of Canada BCPI via Valet API; US-dollar indices 1972=100."
+  },
+  "data/ca-aafc-slaughter-stats.json": {
+   "byCountry": {
+    "CA": "aafc_slaughter"
+   },
+   "notes": "AAFC weekly red meat slaughter (Open Government Licence - Canada)."
   }
  },
  "derived": [
