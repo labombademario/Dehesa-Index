@@ -415,12 +415,20 @@
    "note": "Series de catalogo de la SAA de Francia; las lee build-series-registry y el catalogo, no el navegador."
   },
   "data/us-ers-food-stats.json": {
-   "class": "BUILD_ONLY",
-   "note": "Gasto en alimentos de EE. UU. (USDA ERS): alimenta el catalogo y el explorador. Ninguna pagina descarga este fichero."
+   "class": "RUNTIME",
+   "note": "Lo descarga bajo demanda el bloque de series de EE. UU./Canada (us-series-block.js) en las paginas que lo montan. Gasto en alimentos de EE. UU. (USDA ERS): alimenta el catalogo y el explorador. Ninguna pagina descarga este fichero.",
+   "via": {
+    "file": "js/us-series-block.js",
+    "pattern": "data/us-ers-food-stats.json"
+   }
   },
   "data/ca-statcan-more-stats.json": {
-   "class": "BUILD_ONLY",
-   "note": "Estadisticas de StatCan (aserraderos, IPPI, materias primas, IPC, acuicultura); lo leen el catalogo y las fichas de pais, no una pagina concreta."
+   "class": "RUNTIME",
+   "note": "Lo descarga bajo demanda el bloque de series de EE. UU./Canada (us-series-block.js) en las paginas que lo montan. Estadisticas de StatCan (aserraderos, IPPI, materias primas, IPC, acuicultura); lo leen el catalogo y las fichas de pais, no una pagina concreta.",
+   "via": {
+    "file": "js/us-series-block.js",
+    "pattern": "data/ca-statcan-more-stats.json"
+   }
   },
   "data/catalog/CA.json": {
    "class": "RUNTIME",
@@ -495,6 +503,10 @@
     "pattern": "data/netherlands-more/"
    },
    "note": "Facturacion trimestral, invernaderos y flores, nitrogeno y estiercol, cadena de precios y otras series de Paises Bajos (CBS): la pagina netherlands.html descarga cada fichero solo al abrir su pestaña."
+  },
+  "data/blog/countries/ledger/": {
+   "class": "BUILD_ONLY",
+   "note": "Registro por pais (ultimo periodo y valor de cada serie) que usa build-country-weeks.py para detectar cambios; no se sirve al navegador."
   }
  }
 }

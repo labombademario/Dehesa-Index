@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-275 workflows (226 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+276 workflows (227 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -205,6 +205,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-nl-cbs-more.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-nl-cbs-more.py | netherlands-more-stats.json, netherlands-more/index.json | finish, validate-files |
 | update-nl-cbs.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-nl-cbs.py | netherlands-farm.json | finish, validate-files |
 | update-nl-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-nl-diesel.py | nl-diesel.json | finish, validate-files |
 | update-nl-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-nl-drought.py | nl-drought.json | finish, validate-files |
