@@ -7132,6 +7132,12 @@
     "US": "usda_ers"
    },
    "notes": "Bioenergia de EE. UU. (USDA ERS, U.S. Bioenergy Statistics): etanol, biodiesel, diesel renovable, materias primas y precios, sin cambiar valores."
+  },
+  "data/us-ers-fertilizer-stats.json": {
+   "byCountry": {
+    "US": "usda_ers"
+   },
+   "notes": "Uso y precio de fertilizantes de EE. UU. (USDA ERS, Fertilizer Use and Price): consumo de nutrientes y materiales, precios pagados, indices y dosis en maiz por estado; archivo historico sin actualizar, sin cambiar valores."
   }
  },
  "derived": [

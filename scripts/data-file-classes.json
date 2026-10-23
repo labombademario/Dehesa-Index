@@ -476,5 +476,9 @@
  "data/us-ers-bioenergy-stats.json": {
   "class": "BUILD_ONLY",
   "note": "Bioenergia de EE. UU. (USDA ERS): alimenta el catalogo y el explorador. Ninguna pagina descarga este fichero."
+ },
+ "data/us-ers-fertilizer-stats.json": {
+  "class": "BUILD_ONLY",
+  "note": "Fertilizantes de EE. UU. (USDA ERS): alimenta el catalogo y el explorador. Ninguna pagina descarga este fichero."
  }
 }

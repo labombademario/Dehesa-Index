@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T01:28:30Z",
+ "generatedAt": "2026-10-23T01:34:54Z",
  "summary": {
-  "files": 83,
+  "files": 84,
   "errors": 0,
   "warnings": 27
  },
@@ -919,6 +919,22 @@
     "lines": 0
    },
    "generatedAt": "2026-10-22T15:17:26Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-ers-fertilizer-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 136,
+    "points": 5755,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T01:32:07Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
