@@ -6,6 +6,7 @@ version en en/fr/it. Si una nota contiene una frase que no esta en la tabla (por
 traduce: se queda solo en espanol y build-api.py avisa de la frase que falta. Asi nunca se publica una traduccion que no corresponde
 a lo que dice la nota."""
 import re
+from api_notes_i18n_more import translate_more
 
 LANGS = ('en', 'fr', 'it')
 _EEUU = 'EE·UU·'
@@ -234,7 +235,7 @@ def translate_sentence(s, lang):
     r = _statcan(s, lang)
     if r: return r
     if s.startswith(_AB) and s[len(_AB):] in _ABP: return _AB + _ABP[s[len(_AB):]][i]
-    return None
+    return translate_more(s, i)
 
 def translate_note(es):
     """-> ({'en':..,'fr':..,'it':..}, [frases que faltan]). Si falta alguna frase, no se devuelve traduccion alguna de esa nota."""
