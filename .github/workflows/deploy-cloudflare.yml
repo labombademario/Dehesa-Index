@@ -1,0 +1,35 @@
+name: Deploy to Cloudflare Workers
+# Publica la web con `wrangler deploy` desde GitHub, en vez de las compilaciones de Cloudflare (Workers Builds), cuyo cupo gratuito se agoto.
+# - Cambios de codigo o paginas (todo salvo data/): se publican al llegar a main.
+# - Datos (data/): los commits de los pipelines no disparan otros workflows, asi que se publican cada 3 horas.
+# - A mano: pestana Actions -> Run workflow.
+# Requiere el secreto de repositorio CLOUDFLARE_API_TOKEN (token con permiso "Edit Cloudflare Workers"). Sin el, el workflow se salta con un aviso.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['data/**']
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+concurrency:
+  group: deploy-cloudflare
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: fcf03818f175b00a72f7a4392a8a2dd0
+    steps:
+      - name: Comprobar el secreto
+        id: tk
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then echo "::warning::Falta el secreto CLOUDFLARE_API_TOKEN: no se publica."; echo "ok=no" >> "$GITHUB_OUTPUT"; else echo "ok=yes" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v6
+        if: steps.tk.outputs.ok == 'yes'
+      - name: Publicar
+        if: steps.tk.outputs.ok == 'yes'
+        run: npx --yes wrangler@4 deploy
