@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-260 workflows (217 generados desde `sources.yml`, 43 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+261 workflows (218 generados desde `sources.yml`, 43 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -356,6 +356,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-county-yields.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-county-yields.py | us-county/status.json | finish, validate-files |
 | update-us-crop-progress-states.yml | a mano | 2 veces/semana | update-us-crop-progress-states.mjs | us-crop-progress/*.json | finish, validate-files |
 | update-us-dairy.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-dairy.py | us-dairy.json | finish, validate-files |
+| update-us-ers-bioenergy.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-ers-bioenergy.py | us-ers-bioenergy-stats.json | finish, validate-files |
 | update-us-ers-livestock.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-ers-livestock.py | us-ers-livestock-stats.json | finish, validate-files |
 | update-us-ers.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-us-ers.py | us-ers-stats.json, us-ttb-stats.json | finish, validate-files |
 | update-us-fed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-fed.py | us-fed-stats.json | finish, validate-files |

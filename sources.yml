@@ -2097,6 +2097,14 @@ sources:
     data: [us-ers-livestock-stats.json]
     log: us-ers-livestock-log.txt
     message: Carne y ganado de EE. UU. - oferta, pesos, precios y cebadero (USDA ERS)
+  - id: us-ers-bioenergy
+    name: Update US bioenergy statistics (USDA ERS)
+    cron: ['20 15 * * 5']
+    script: scripts/update-us-ers-bioenergy.py
+    timeout: 15
+    data: [us-ers-bioenergy-stats.json]
+    log: us-ers-bioenergy-log.txt
+    message: Bioenergia de EE. UU. - etanol, biodiesel, diesel renovable, materias primas y precios (USDA ERS)
   - id: us-nass-processing
     name: Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)
     cron: ['40 16 1-8,20 * *']
