@@ -7,6 +7,8 @@
   - cadena.json        : 85770NED PPI de la industria alimentaria (mensual) y 86141NED IPC de alimentos (mensual).
   - otros.json         : 37738 hortalizas por especie, 85303NED pastoreo del vacuno de leche, 86338NED huevos, 84448NED finanzas (ecologico/convencional), 85676NED cosecha provisional frente a definitiva.
 
+  - natura2000.json    : RIVM (Monitor Stikstofdepositie, no del CBS) deposicion de nitrogeno en las zonas Natura 2000, por sector y pais de origen, y % de habitat por encima del valor critico (foto del ultimo año calculado de la edicion mas reciente; no se mezclan ediciones).
+
 Todo se guarda como lo publica el CBS (solo conversiones exactas de unidad: are->ha, m2->ha, mln kg->kt, 1 000 kg->t); un valor vacio o confidencial se omite, nada se estima. Cada bloque es independiente:
 si uno falla se conserva lo publicado de ese bloque y se sigue con los demas. Formato comun: {schemaVersion, generatedAt, source, edition, tables:[{id, label, l, unit, note, series:[{id, label, l, nl, points, provisional?}]}]}
 donde label es el nombre en espanol, l = {en, fr, it} y nl = el titulo neerlandes original del CBS. Modo sin red: NL_MORE_FIXTURES=<carpeta con <clave>.json>."""
@@ -22,11 +24,14 @@ BASE = "https://opendata.cbs.nl/ODataApi/odata/"
 FIX = os.environ.get("NL_MORE_FIXTURES")
 LOG = []
 SRC = {"name": "Statistics Netherlands (CBS) - StatLine", "url": "https://opendata.cbs.nl/", "license": "CC BY 4.0 (CBS)"}
+SRC_RIVM = {"name": "RIVM - Monitor Stikstofdepositie (Natura 2000)", "url": "https://data.rivm.nl/data/stikstof/", "license": "Dominio publico (Public Domain Mark, RIVM)"}
+RIVM_DIR = "https://data.rivm.nl/data/stikstof/Stikstof%20Natuur/"
 FILES = {
     "omzet.json": ("Facturacion de las explotaciones por trimestre", "Facturacion y numero de explotaciones por trimestre desde 2018, por provincia y 42 tipos de explotacion (volumen de negocio, no precio)"),
     "horticultura.json": ("Invernaderos, flores, setas y bulbos", "Superficie de horticultura bajo cristal y al aire libre desde 2000 (tomate, pimiento, pepino, flor cortada, plantas de maceta, bulbos, viveros) y champiñon, endibia y forzado de bulbos"),
     "nitrogeno.json": ("Nitrogeno, estiercol y politica agraria", "Balance de minerales, estiercol y amoniaco por tipo de explotacion, provincia y animal, fitosanitarios vendidos y derechos de produccion de cerdos y aves"),
     "cadena.json": ("Cadena de precios: industria y consumo", "Indice de precios de productor de la industria alimentaria y IPC de alimentos, mensual"),
+    "natura2000.json": ("Nitrogeno en la naturaleza (RIVM)", "Deposicion de nitrogeno en las zonas Natura 2000 (mol N/ha/año) por zona, por sector y por pais de origen, y porcentaje de habitat sensible por encima del valor critico (RIVM, Monitor Stikstofdepositie)"),
     "otros.json": ("Hortalizas, pastoreo, huevos y finanzas", "Hortalizas por especie, pastoreo del vacuno de leche, huevos de consumo, finanzas de las explotaciones y cosecha provisional frente a definitiva"),
 }
 
@@ -162,8 +167,8 @@ def T(es, en, fr, it):
     return [es, en, fr, it]
 
 
-def doc(tabs, edition, now):
-    return {"schemaVersion": 1, "generatedAt": now, "source": SRC, "edition": edition, "tables": tabs}
+def doc(tabs, edition, now, source=None):
+    return {"schemaVersion": 1, "generatedAt": now, "source": source or SRC, "edition": edition, "tables": tabs}
 
 
 def modified(*tables):
@@ -505,6 +510,139 @@ def otros():
 
 
 # ------------------------------------------------------------ estadisticas (catalogo de series)
+# ------------------------------------------------------------ 6. RIVM: nitrogeno en Natura 2000
+def rget(url, key, binary=True):
+    if FIX:
+        b = (Path(FIX) / key).read_bytes()
+    else:
+        last = None
+        for i in range(3):
+            try:
+                with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "DehesaIndex/1.0 (+https://dehesaindex.com)"}), timeout=180) as r:
+                    b = r.read()
+                break
+            except Exception as e:
+                last = e
+                time.sleep(4 * (i + 1))
+        else:
+            raise RuntimeError("RIVM %s: %s" % (url, str(last)[:160]))
+    return b if binary else b.decode("utf-8", "replace")
+
+
+def rivm_files():
+    """(año de la edicion, url deposicion media, url sobrecarga) de la edicion mas reciente que traiga los dos Excel."""
+    if FIX:
+        return 2026, "dep", "ovr"
+    years = sorted((int(y) for y in re.findall(r'href="(\d{4})/"', rget(RIVM_DIR, "", False))), reverse=True)
+    for y in years[:3]:
+        h = rget("%s%d/" % (RIVM_DIR, y), "", False)
+        dep = re.findall(r'href="(RIVM-MIL_Depositieverdeling-gemiddeld_M%d_[0-9]+\.xlsx)"' % y, h)
+        ovr = re.findall(r'href="(RIVM-MIL_PercentageOverschrijdingGekarteerdOppervlak-M%d_[0-9]+\.xlsx)"' % y, h)
+        if dep and ovr:
+            return y, "%s%d/%s" % (RIVM_DIR, y, dep[-1]), "%s%d/%s" % (RIVM_DIR, y, ovr[-1])
+    raise RuntimeError("RIVM: ninguna edicion reciente con los dos ficheros")
+
+
+def xrows(blob, sheet):
+    import io, openpyxl
+    wb = openpyxl.load_workbook(io.BytesIO(blob), data_only=True, read_only=True)
+    out = [list(r) for r in wb[sheet].iter_rows(values_only=True)]
+    wb.close()
+    return out
+
+
+def natura():
+    ed, udep, uovr = rivm_files()
+    bd = rget(udep, "dep")
+    bo = rget(uovr, "ovr")
+    # año calculado: el mas reciente anterior al de la edicion (los posteriores son proyecciones, no se publican)
+    tot = xrows(bd, "DepositieTotaal")[1:]
+    years = sorted({int(r[0]) for r in tot if r[0] is not None and int(r[0]) < ed})
+    if not years:
+        raise RuntimeError("RIVM: sin año calculado anterior a la edicion %d" % ed)
+    y = years[-1]
+    py = str(y)
+    log("natura2000: edicion M%d, año calculado %d" % (ed, y))
+
+    def ser(sid, lab, v, nl=None):
+        return mk_series(sid, lab, {py: v}, None, nl)
+
+    def pts_of(rows, keyf, valf):
+        out = {}
+        for r in rows:
+            if r[0] is None or int(r[0]) != y or r[-1] is None:
+                continue
+            k = keyf(r)
+            if k is not None and k not in out:
+                out[k] = valf(r)
+        return out
+
+    names = {}
+    for r in tot:
+        if r[0] is not None and int(r[0]) == y and r[3] is not None:
+            names[int(r[1])] = str(r[2]).strip()
+    tabs = []
+    nat = [mk_series("nl-n2k-%d" % n, [nm, nm, nm, nm], {py: float(r[3])}, None, nm) for r in tot if r[0] is not None and int(r[0]) == y and r[3] is not None for n, nm in [(int(r[1]), str(r[2]).strip())]]
+    for s in nat:
+        if s["id"] == "nl-n2k-0":
+            s["label"] = LB.NATURA_NL[0]; s["l"] = {"en": LB.NATURA_NL[1], "fr": LB.NATURA_NL[2], "it": LB.NATURA_NL[3]}
+    if len(nat) < 50:
+        raise RuntimeError("RIVM: solo %d zonas" % len(nat))
+    tabs.append(mk_table("natura-total", T("Deposición total de nitrógeno por zona Natura 2000", "Total nitrogen deposition by Natura 2000 area", "Dépôt total d’azote par zone Natura 2000", "Deposizione totale di azoto per area Natura 2000"), "mol N/ha/año",
+                         "Media sobre la superficie cartografiada de hábitat y zona de vida sensibles al nitrógeno, en mol de nitrógeno por hectárea y año, redondeada a un decimal. Año calculado %d (Monitor Stikstofdepositie %d). «Países Bajos» es la media nacional." % (y, ed), nat))
+
+    rows_s = xrows(bd, "DepositiePerSectorgroep")[1:]
+    ag = []
+    for r in rows_s:
+        if r[0] is not None and int(r[0]) == y and str(r[3]).strip() == "Nederland" and str(r[4]).strip() == "Landbouw" and r[5] is not None:
+            n, nm = int(r[1]), str(r[2]).strip()
+            ag.append(mk_series("nl-n2k-ag-%d" % n, list(LB.NATURA_NL) if n == 0 else [nm, nm, nm, nm], {py: float(r[5])}, None, nm))
+    tabs.append(mk_table("natura-agricultura", T("Parte de la deposición que viene de la agricultura neerlandesa, por zona", "Deposition from Dutch agriculture, by area", "Dépôt provenant de l’agriculture néerlandaise, par zone", "Deposizione dall’agricoltura olandese, per area"), "mol N/ha/año",
+                         "Solo las emisiones de la agricultura de los Países Bajos (grupo de sectores «Landbouw»); no incluye la que llega de otros países. Año calculado %d." % y, ag))
+
+    nat_sec = [mk_series("nl-n2k-sec-" + k, LB.SECTORS[k], {py: float(r[5])}, None, k) for r in rows_s for k in [str(r[4]).strip()]
+               if r[0] is not None and int(r[0]) == y and int(r[1]) == 0 and str(r[3]).strip() == "Nederland" and r[5] is not None and k in LB.SECTORS]
+    tabs.append(mk_table("natura-sectores", T("Media nacional por sector (emisiones neerlandesas)", "National average by sector (Dutch emissions)", "Moyenne nationale par secteur (émissions néerlandaises)", "Media nazionale per settore (emissioni olandesi)"), "mol N/ha/año",
+                         "Deposición media en todas las zonas Natura 2000 que procede de cada grupo de sectores de los Países Bajos. Año calculado %d." % y, nat_sec))
+
+    rows_l = xrows(bd, "DepositiePerLand")[1:]
+    ori = [mk_series("nl-n2k-orig-" + k, LB.ORIGIN[k], {py: float(r[6])}, None, k) for r in rows_l for k in [str(r[4]).strip()]
+           if r[0] is not None and int(r[0]) == y and int(r[1]) == 0 and r[6] is not None and k in LB.ORIGIN]
+    tabs.append(mk_table("natura-origen", T("Media nacional por país de origen", "National average by country of origin", "Moyenne nationale par pays d’origine", "Media nazionale per paese di origine"), "mol N/ha/año",
+                         "De dónde viene el nitrógeno que cae en las zonas Natura 2000 de los Países Bajos. «Corrección de medida» es el ajuste negativo de la Monitor para acercar el modelo a las mediciones. Año calculado %d." % y, ori))
+
+    # % de la superficie de hábitat relevante con la deposición por encima del valor crítico (suma de las hectáreas publicadas)
+    dat = xrows(bo, "data")
+    hdr = [str(c).strip() if c is not None else "" for c in dat[0]]
+    ix = {h: i for i, h in enumerate(hdr)}
+    for need in ("nummer", "gebied", "relevant", "jaar", "overbelast", "oppervlak (ha)"):
+        if need not in ix:
+            raise RuntimeError("RIVM sobrecarga: falta la columna %s" % need)
+    ha_all, ha_over, nom = {}, {}, {}
+    for r in dat[1:]:
+        if r[ix["nummer"]] is None or r[ix["jaar"]] is None or int(r[ix["jaar"]]) != y or str(r[ix["relevant"]]).strip() != "ja" or r[ix["oppervlak (ha)"]] is None:
+            continue
+        n = int(r[ix["nummer"]])
+        nom[n] = str(r[ix["gebied"]]).strip()
+        ha = float(r[ix["oppervlak (ha)"]])
+        ha_all[n] = ha_all.get(n, 0.0) + ha
+        if str(r[ix["overbelast"]]).strip() == "ja":
+            ha_over[n] = ha_over.get(n, 0.0) + ha
+    over = []
+    for n in sorted(ha_all):
+        if ha_all[n] > 0:
+            over.append(mk_series("nl-n2k-over-%d" % n, [nom[n], nom[n], nom[n], nom[n]], {py: round(100.0 * ha_over.get(n, 0.0) / ha_all[n], 1)}, None, nom[n]))
+    if ha_all:
+        tn, to = sum(ha_all.values()), sum(ha_over.values())
+        over.append(mk_series("nl-n2k-over-0", list(LB.NATURA_NL), {py: round(100.0 * to / tn, 1)}, None, "Nederland"))
+    tabs.append(mk_table("natura-sobrecarga", T("Hábitat sensible por encima del valor crítico de deposición", "Sensitive habitat above the critical deposition value", "Habitat sensible au-dessus de la valeur critique de dépôt", "Habitat sensibile sopra il valore critico di deposizione"), "% de la superficie",
+                         "Porcentaje de la superficie cartografiada de hábitats relevantes para permisos en que la deposición supera el valor crítico (KDW). Calculado sumando las hectáreas que publica el RIVM por hábitat (clase «overbelast = ja»), sin ponderar ni estimar. Año calculado %d." % y, over))
+    for t in tabs:
+        if not t["series"]:
+            raise RuntimeError("RIVM: tabla %s vacia" % t["id"])
+    return "Monitor %d, año calculado %d" % (ed, y), tabs
+
+
 def load(name):
     try:
         return json.loads((OUT / name).read_text(encoding="utf-8"))
@@ -607,12 +745,12 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     docs = {n: load(n) for n in FILES}
-    jobs = [("omzet", omzet), ("horticultura", horticultura), ("nitrogeno", nitrogeno), ("cadena", cadena), ("otros", otros)]
+    jobs = [("omzet", omzet), ("horticultura", horticultura), ("nitrogeno", nitrogeno), ("cadena", cadena), ("otros", otros), ("natura2000", natura)]
     for name, fn in jobs:
         try:
             ed, tabs = fn()
-            docs[name + ".json"] = doc(tabs, ed, now)
-            log("%s: leido (CBS al %s, %d tablas, %d series)" % (name, ed, len(tabs), sum(len(t["series"]) for t in tabs)))
+            docs[name + ".json"] = doc(tabs, ed, now, SRC_RIVM if name == "natura2000" else None)
+            log("%s: leido (fuente al %s, %d tablas, %d series)" % (name, ed, len(tabs), sum(len(t["series"]) for t in tabs)))
         except Exception as ex:
             log("%s: NO se pudo leer (%s); se conserva lo publicado" % (name, str(ex)[:200]))
     files = []

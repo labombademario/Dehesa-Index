@@ -18,4 +18,6 @@ otros: huevos 4 anos
 otros: finanzas 18 combinaciones
 otros: cosecha provisional 26 cultivos
 otros: leido (CBS al 2026-09-30, 21 tablas, 271 series)
-escrito: 5 ficheros, 62 series en las estadisticas
+natura2000: edicion M2026, año calculado 2024
+natura2000: leido (CBS al Monitor 2026, año calculado 2024, 5 tablas, 411 series)
+escrito: 6 ficheros, 62 series en las estadisticas

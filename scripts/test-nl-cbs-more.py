@@ -63,6 +63,38 @@ doc = nm.doc(tabs, ed, "2026-10-23T00:00:00Z")
 st = nm.stats({"omzet.json": doc}, "2026-10-23T00:00:00Z")
 ss = [x for x in st["countries"]["NL"]["series"] if x["id"] == "nl-omzet-" + tn[0].lower()]
 check(len(ss) == 1 and ss[0]["changePct"] == 20.0 and ss[0]["latestPeriod"] == "2026-Q2" and ss[0]["frequency"] == "quarterly", "variacion trimestral sobre el mismo trimestre: %s" % ss)
+# ---- RIVM: nitrogeno en Natura 2000 con Excel sinteticos
+import io, openpyxl
+def xl(sheets):
+    wb = openpyxl.Workbook(); wb.remove(wb.active)
+    for n, rows in sheets.items():
+        ws = wb.create_sheet(n)
+        for r in rows: ws.append(r)
+    b = io.BytesIO(); wb.save(b); return b.getvalue()
+Y = 2024
+dep = xl({"DepositieTotaal": [["jaar", "nummer", "gebied", "depositie"], [Y, 0, "Nederland", 1293.9], [Y, 1, "Waddenzee", 1200.5], [Y, 2, "Veluwe", 1500.0], [2030, 2, "Veluwe", 900.0], [2026, 2, "Veluwe", 1400.0]] + [[Y, 10 + i, "Zona %d" % i, 800.0 + i] for i in range(60)],
+          "DepositiePerSectorgroep": [["jaar", "nummer", "gebied", "land", "sectorgroep", "depositie"], [Y, 0, "Nederland", "Nederland", "Landbouw", 676.5], [Y, 0, "Nederland", "Nederland", "Mobiliteit", 162.0], [Y, 0, "Nederland", "Duitsland", "Landbouw", 5.0], [Y, 2, "Veluwe", "Nederland", "Landbouw", 700.0]],
+          "DepositiePerLand": [["jaar", "nummer", "gebied", "herkomst", "land", "sectorgroep", "depositie"], [Y, 0, "Nederland", "Nederlandse bijdrage", "Nederland", "Totaal", 918.8], [Y, 0, "Nederland", "Overige bijdrage", "-", "Meetcorrectie", -118.2], [Y, 0, "Nederland", "Buitenlandse bijdrage", "Raro", "Totaal", 1.0]]})
+ovr = xl({"data": [["nummer", "gebied", "habitattype", "omschrijving", "KDW", "relevant", "jaar", "overbelast", "overbelasting klasse volgnummer", "overbelasting klasse", "oppervlak (ha)", "oppervlak (%)"],
+          [2, "Veluwe", "H1", "a", 1000, "ja", Y, "ja", 3, "x", 30.0, 0.3], [2, "Veluwe", "H2", "b", 1000, "ja", Y, "nee", 1, "x", 70.0, 0.7], [2, "Veluwe", "H3", "c", 1000, "nee", Y, "ja", 3, "x", 999.0, 0.0],
+          [1, "Waddenzee", "H4", "d", 1000, "ja", Y, "naderend", 2, "x", 10.0, 1.0]]})
+nm.rivm_files = lambda: (2026, "dep", "ovr")
+nm.rget = lambda url, key, binary=True: dep if url == "dep" else ovr
+ed, tabs = nm.natura()
+check(ed == "Monitor 2026, año calculado 2024" and [t["id"] for t in tabs] == ["natura-total", "natura-agricultura", "natura-sectores", "natura-origen", "natura-sobrecarga"], "tablas RIVM: %s %s" % (ed, [t["id"] for t in tabs]))
+tot = {s["id"]: s for s in tabs[0]["series"]}
+check(tot["nl-n2k-2"]["points"] == [["2024", 1500.0]] and tot["nl-n2k-0"]["label"].startswith("Países Bajos"), "total por zona, sin proyecciones ni años distintos: %s" % tot["nl-n2k-2"]["points"])
+check({s["id"] for s in tabs[1]["series"]} == {"nl-n2k-ag-0", "nl-n2k-ag-2"} and [s for s in tabs[1]["series"] if s["id"] == "nl-n2k-ag-0"][0]["points"] == [["2024", 676.5]], "agricultura neerlandesa: solo el origen Nederland")
+check(sorted(s["id"] for s in tabs[2]["series"]) == ["nl-n2k-sec-Landbouw", "nl-n2k-sec-Mobiliteit"], "sectores")
+check(sorted(s["id"] for s in tabs[3]["series"]) == ["nl-n2k-orig--", "nl-n2k-orig-Nederland"] and [s for s in tabs[3]["series"] if s["id"] == "nl-n2k-orig--"][0]["points"] == [["2024", -118.2]], "origen: pais desconocido fuera, correccion negativa conservada")
+ov = {s["id"]: s["points"][0][1] for s in tabs[4]["series"]}
+check(ov["nl-n2k-over-2"] == 30.0 and ov["nl-n2k-over-1"] == 0.0 and ov["nl-n2k-over-0"] == round(100 * 30.0 / 110.0, 1), "sobrecarga: solo habitats relevantes, ha publicadas: %s" % ov)
+check(all(set(s["l"]) == {"en", "fr", "it"} for t in tabs for s in t["series"]), "cuatro idiomas")
+sys.path.insert(0, str(HERE)); import contract_tests as CT
+errs, warns = [], []
+CT.netherlands_more(nm.doc(tabs, ed, "2026-10-23T00:00:00Z", nm.SRC_RIVM), errs, warns, {})
+check(not errs, "contrato: %s" % errs)
+
 # un bloque que falla conserva lo publicado
 tmp = Path(tempfile.mkdtemp())
 (tmp / "data" / "netherlands-more").mkdir(parents=True)
@@ -76,10 +108,10 @@ def boom():
     raise RuntimeError("CBS caido")
 
 
-nm.omzet = ok; nm.horticultura = ok; nm.nitrogeno = ok; nm.cadena = ok; nm.otros = boom
+nm.omzet = ok; nm.horticultura = ok; nm.nitrogeno = ok; nm.cadena = ok; nm.otros = boom; nm.natura = ok
 nm.main()
 idx = json.loads((nm.OUT / "index.json").read_text(encoding="utf-8"))
-check(len(idx["files"]) == 5, "el indice debe listar los cinco ficheros: %d" % len(idx["files"]))
+check(len(idx["files"]) == 6, "el indice debe listar los seis ficheros: %d" % len(idx["files"]))
 check(json.loads((nm.OUT / "otros.json").read_text(encoding="utf-8"))["tables"][0]["id"] == "viejo", "otros.json debe conservar lo publicado cuando falla")
 check((tmp / "data" / "netherlands-more-stats.json").exists(), "estadisticas escritas")
 print("ok: test-nl-cbs-more")

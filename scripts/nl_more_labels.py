@@ -311,3 +311,28 @@ EGGS = [
     ("ConsumptieEierenGangbaar_2", "conventional", L("Huevos convencionales", "Conventional eggs", "Œufs conventionnels", "Uova convenzionali")),
     ("ConsumptieEierenBiologisch_3", "organic", L("Huevos ecológicos", "Organic eggs", "Œufs biologiques", "Uova biologiche")),
 ]
+
+
+# RIVM (nitrogeno en Natura 2000): grupos de sectores y paises de origen, como los nombra el RIVM
+NATURA_NL = L("Países Bajos (media nacional)", "Netherlands (national average)", "Pays-Bas (moyenne nationale)", "Paesi Bassi (media nazionale)")
+
+SECTORS = {
+    "Landbouw": L("Agricultura", "Agriculture", "Agriculture", "Agricoltura"),
+    "Mobiliteit": L("Movilidad y transporte", "Mobility and transport", "Mobilité et transports", "Mobilità e trasporti"),
+    "Industrie": L("Industria", "Industry", "Industrie", "Industria"),
+    "Huishoudens": L("Hogares", "Households", "Ménages", "Famiglie"),
+    "Dienst en Bouw": L("Servicios y construcción", "Services and construction", "Services et construction", "Servizi ed edilizia"),
+    "Energie": L("Energía", "Energy", "Énergie", "Energia"),
+    "Overig": L("Otros", "Other", "Autres", "Altri"),
+}
+
+ORIGIN = {
+    "Nederland": L("Países Bajos", "Netherlands", "Pays-Bas", "Paesi Bassi"),
+    "België": L("Bélgica", "Belgium", "Belgique", "Belgio"),
+    "Duitsland": L("Alemania", "Germany", "Allemagne", "Germania"),
+    "Frankrijk": L("Francia", "France", "France", "Francia"),
+    "Verenigd Koninkrijk": L("Reino Unido", "United Kingdom", "Royaume-Uni", "Regno Unito"),
+    "Internationale zeeen": L("Mares internacionales (navegación)", "International seas (shipping)", "Mers internationales (navigation)", "Mari internazionali (navigazione)"),
+    "Overige landen": L("Otros países", "Other countries", "Autres pays", "Altri paesi"),
+    "-": L("Corrección de medida (ajuste del modelo)", "Measurement correction (model adjustment)", "Correction de mesure (ajustement du modèle)", "Correzione di misura (aggiustamento del modello)"),
+}

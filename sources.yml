@@ -1978,16 +1978,17 @@ sources:
     log: netherlands-farm-log.txt
     message: Datos Países Bajos cultivos, explotaciones y sacrificios (CBS)
   - id: nl-cbs-more
-    name: Update Netherlands farm turnover by quarter, glasshouses and flowers, nitrogen and manure, food price chain and other series (CBS StatLine)
+    name: Update Netherlands farm turnover by quarter, glasshouses and flowers, nitrogen and manure, food price chain, other series (CBS StatLine) and nitrogen deposition in Natura 2000 (RIVM)
     cron: ['50 8 * * 3']
     script: scripts/update-nl-cbs-more.py
+    pre: ['pip install openpyxl']
     timeout: 25
     script_timeout: 20
     continue: true
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/netherlands-more) data/netherlands-more-stats.json
     data: [netherlands-more/index.json, netherlands-more-stats.json, netherlands-more-log.txt]
     extra: ['!data/netherlands-more']
-    message: Datos Países Bajos facturacion trimestral, invernaderos, nitrogeno y estiercol, cadena de precios y otras series (CBS)
+    message: Datos Países Bajos facturacion trimestral, invernaderos, nitrogeno y estiercol, cadena de precios, otras series (CBS) y nitrogeno en Natura 2000 (RIVM)
   - id: be-statbel-more
     name: Update Belgium livestock and land census, harvest, food CPI, fishing, dairy products and meat balances (Statbel)
     cron: ['20 9 * * 4']

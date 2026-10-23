@@ -4943,6 +4943,32 @@
    "notes": null,
    "legalConfidence": "NOT_APPLICABLE",
    "legalConfidenceReason": "Fuente BLOCKED: no se usa."
+  },
+  "rivm_stikstof": {
+   "name": "RIVM — Monitor Stikstofdepositie in Natura 2000-gebieden",
+   "url": "https://data.rivm.nl/data/stikstof/Stikstof%20Natuur/",
+   "country": "NL",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Public Domain Mark 1.0 (sin restricciones)",
+   "licenseUrl": "http://creativecommons.org/publicdomain/mark/1.0/deed.nl",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "RIVM, Monitor Stikstofdepositie in Natura 2000-gebieden",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-23",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "El registro de metadatos del RIVM (data.rivm.nl/meta, id 15674553-55d5-41ed-ba52-fd8588e73099, leido 2026-10-23) declara en otherConstraints «Geen beperkingen» con la URL de Public Domain Mark 1.0. El conjunto «Historische reeks» (CC BY 4.0) no se usa.",
+   "used": true,
+   "aliases": [],
+   "notes": "Excel Depositieverdeling-gemiddeld y PercentageOverschrijdingGekarteerdOppervlak de la edicion mas reciente; solo el ultimo año calculado (los posteriores son proyecciones). scripts/update-nl-cbs-more.py (natura2000.json).",
+   "short": "RIVM Monitor N",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia CC BY 4.0 en el catálogo de datos abiertos para el conjunto agregado; el fichero descargado no lleva la licencia dentro."
   }
  },
  "files": {
@@ -7325,9 +7351,10 @@
   },
   "data/netherlands-more/": {
    "sources": [
-    "cbs_nl"
+    "cbs_nl",
+    "rivm_stikstof"
    ],
-   "notes": "Facturacion trimestral de las explotaciones (85159NED), invernaderos y flores (81302NED, 80783NED), balance de minerales y estiercol (83475NED, 83983NED, 83982NED, 83655NED), fitosanitarios (83566NED), derechos de produccion (80240NED), PPI de alimentacion (85770NED), IPC (86141NED), hortalizas (37738), pastoreo (85303NED), huevos (86338NED), finanzas (84448NED) y estimacion de cosecha (85676NED) del CBS (scripts/update-nl-cbs-more.py). Cita obligatoria de la fuente; conversiones exactas de unidad (are->ha, m2->ha, mln kg->kt)."
+   "notes": "Facturacion trimestral de las explotaciones (85159NED), invernaderos y flores (81302NED, 80783NED), balance de minerales y estiercol (83475NED, 83983NED, 83982NED, 83655NED), fitosanitarios (83566NED), derechos de produccion (80240NED), PPI de alimentacion (85770NED), IPC (86141NED), hortalizas (37738), pastoreo (85303NED), huevos (86338NED), finanzas (84448NED) y estimacion de cosecha (85676NED) del CBS (scripts/update-nl-cbs-more.py). Cita obligatoria de la fuente; conversiones exactas de unidad (are->ha, m2->ha, mln kg->kt). Nitrogeno en Natura 2000 (natura2000.json): RIVM Monitor Stikstofdepositie, dominio publico."
   },
   "data/netherlands-more-stats.json": {
    "byCountry": {
@@ -7337,7 +7364,8 @@
   },
   "data/netherlands-more-log.txt": {
    "sources": [
-    "cbs_nl"
+    "cbs_nl",
+    "rivm_stikstof"
    ],
    "notes": "Registro de la ultima ejecucion de update-nl-cbs-more.py."
   },

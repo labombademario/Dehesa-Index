@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update Netherlands farm turnover by quarter, glasshouses and flowers, nitrogen and manure, food price chain and other series (CBS StatLine)
+name: Update Netherlands farm turnover by quarter, glasshouses and flowers, nitrogen and manure, food price chain, other series (CBS StatLine) and nitrogen deposition in Natura 2000 (RIVM)
 on:
   schedule:
     - cron: '50 8 * * 3'
@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v6
+      - run: pip install openpyxl
       - id: fetch
         run: bash scripts/annotate-failure.sh python3 scripts/update-nl-cbs-more.py
         timeout-minutes: 20
@@ -34,7 +35,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Datos Países Bajos facturacion trimestral, invernaderos, nitrogeno y estiercol, cadena de precios y otras series (CBS)" data/netherlands-more/index.json data/netherlands-more-stats.json data/netherlands-more-log.txt data/netherlands-more data/revisions.json
+        run: bash scripts/publish-data.sh "Datos Países Bajos facturacion trimestral, invernaderos, nitrogeno y estiercol, cadena de precios, otras series (CBS) y nitrogeno en Natura 2000 (RIVM)" data/netherlands-more/index.json data/netherlands-more-stats.json data/netherlands-more-log.txt data/netherlands-more data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
