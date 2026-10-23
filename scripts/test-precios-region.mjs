@@ -21,7 +21,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const loc of ['us', 'eu', 'uk'
   await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 100)); } });
   await page.waitForFunction(() => document.querySelector('#pr-intel .di-relationships'), null, { timeout: 15000 }).catch(() => {});
   const r = await page.evaluate(() => ({ rel: Array.from(document.querySelectorAll('#pr-intel .di-rel-series')).filter(n => !/^\s*(Shock|Choc)/.test(n.textContent)).map(n => n.textContent.replace(/\s+/g, ' ').trim()), eng: document.querySelectorAll('#pr-intel .di-intel-engine-card').length, txt: (document.getElementById('pr-intel') || { innerText: '' }).innerText }));
-  const want = { eu: 'EU', uk: 'UK' }[loc];
+  const want = { eu: 'EU', uk: 'UK', us: 'US' }[loc];
   ok(tag + ': relaciones solo del mercado elegido', want ? r.rel.length > 0 && r.rel.every(x => new RegExp(want + '\\b.*→.*' + want + '\\s*$').test(x)) : r.rel.length === 0);
   ok(tag + ': Engine 2.0 solo en la UE', loc === 'eu' ? r.eng === 4 : r.eng === 0);
   if (lang !== 'es') ok(tag + ': sin frases en español', !ES.test(r.txt));

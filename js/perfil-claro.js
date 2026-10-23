@@ -402,6 +402,7 @@
     'loan renewals or extensions': ['renovaciones o prórrogas de préstamos', 'renouvellements ou prolongations de prêts', 'rinnovi o proroghe dei prestiti'], 'collateral required': ['garantías exigidas', 'garanties exigées', 'garanzie richieste'], 'farm income': ['renta agraria', 'revenu agricole', 'reddito agricolo'],
     'household spending': ['gasto de los hogares', 'dépenses des ménages', 'spesa delle famiglie'], 'capital spending': ['gasto de capital', 'dépenses d’investissement', 'spesa in conto capitale'] };
   function usxSt(n, k) { var l = n.toLowerCase(); if (USX_PL[l]) return USX_PL[l][k]; var f = USX_ST[l]; return f ? f[k] : n; }
+  var CDL_C = { 'Corn': ['maíz', 'maïs', 'mais'], 'Other Hay/Non Alfalfa': ['otro heno (no alfalfa)', 'autre foin (hors luzerne)', 'altro fieno (non erba medica)'], 'Winter Wheat': ['trigo de invierno', 'blé d’hiver', 'frumento invernale'], 'Sorghum': ['sorgo', 'sorgho', 'sorgo'], 'Alfalfa': ['alfalfa', 'luzerne', 'erba medica'], 'Oats': ['avena', 'avoine', 'avena'], 'Soybeans': ['soja', 'soja', 'soia'], 'Potatoes': ['patata', 'pommes de terre', 'patate'], 'Dry Beans': ['judías secas', 'haricots secs', 'fagioli secchi'], 'Barley': ['cebada', 'orge', 'orzo'], 'Spring Wheat': ['trigo de primavera', 'blé de printemps', 'frumento primaverile'], 'Cotton': ['algodón', 'coton', 'cotone'], 'Canola': ['colza', 'colza', 'colza'], 'Sugarbeets': ['remolacha azucarera', 'betterave sucrière', 'barbabietola da zucchero'], 'Peanuts': ['cacahuete', 'arachide', 'arachidi'], 'Rice': ['arroz', 'riz', 'riso'], 'Durum Wheat': ['trigo duro', 'blé dur', 'grano duro'], 'Sunflower': ['girasol', 'tournesol', 'girasole'] };
   function usxTl(s, k) { // k: 1=es, 2=fr, 3=it
     var m = /^(.+): (mean temperature|precipitation|Palmer Drought Severity Index) \(NOAA\)$/.exec(s);
     if (m) return usxSt(m[1], k) + ': ' + USX_W[m[2].toLowerCase()][k - 1] + ' (NOAA)';
@@ -413,6 +414,8 @@
     if (m) return usxSt('Tenth District', k) + ': ' + ['variación anual del valor de la tierra, ', 'variation annuelle de la valeur des terres, ', 'variazione annua del valore dei terreni, '][k - 1] + USX_W[m[1]][k - 1] + ' (' + ['Fed de Kansas City', 'Fed de Kansas City', 'Fed di Kansas City'][k - 1] + ')';
     m = /^Tenth District: (loan demand|loan fund availability|loan repayment rates|loan renewals or extensions|collateral required|farm income|household spending|capital spending) diffusion index \(KC Fed\)$/.exec(s);
     if (m) return usxSt('Tenth District', k) + ': ' + ['índice de difusión de ', 'indice de diffusion : ', 'indice di diffusione: '][k - 1] + USX_W[m[1]][k - 1] + ' (' + ['Fed de Kansas City', 'Fed de Kansas City', 'Fed di Kansas City'][k - 1] + ')';
+    m = /^Cropland Data Layer \(satellite estimate\): (.+) acreage, (.+)$/.exec(s);
+    if (m && CDL_C[m[1]]) return ['Cropland Data Layer (estimación por satélite)', 'Cropland Data Layer (estimation par satellite)', 'Cropland Data Layer (stima da satellite)'][k - 1] + ': ' + CDL_C[m[1]][k - 1] + ', ' + ['superficie', 'superficie', 'superficie'][k - 1] + ', ' + usxSt(m[2], k);
     return null;
   }
   function nassTl(s, k) { // k: 1=es, 2=fr, 3=it; s sin la frecuencia final
