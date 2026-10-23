@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T01:56:55Z",
+ "generatedAt": "2026-10-23T03:39:13Z",
  "summary": {
-  "files": 87,
+  "files": 91,
   "errors": 0,
-  "warnings": 28
+  "warnings": 29
  },
  "files": [
   {
@@ -924,6 +924,72 @@
    "nErrors": 0
   },
   {
+   "file": "ca-statcan-more-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "CA/ca-sc-aqua-canada-other-shellfish-cad-a: salto 69.0 -> 1783.0 en 2000 (mediana previa 69)"
+   ],
+   "stats": {
+    "series": 264,
+    "points": 56136,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T02:33:18Z",
+   "info": [],
+   "nWarnings": 1,
+   "nErrors": 0
+  },
+  {
+   "file": "ca-alberta-inputs-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 54,
+    "points": 1752,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T02:34:40Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "ca-aafc-slaughter-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 11,
+    "points": 5720,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T02:18:46Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "ca-boc-bcpi-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 13,
+    "points": 7719,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T02:16:10Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
    "file": "us-nass-cdl-stats.json",
    "schema": "country-stats",
    "status": "warning",
@@ -994,7 +1060,7 @@
     "points": 5755,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T01:32:07Z",
+   "generatedAt": "2026-10-23T01:58:39Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
