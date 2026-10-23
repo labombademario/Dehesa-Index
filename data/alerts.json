@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-23T12:04:15.339Z",
+  "generatedAt": "2026-10-23T12:23:57.524Z",
   "status": "informational",
   "rules": [
     {
@@ -272,6 +272,24 @@
     },
     {
       "type": "period_move",
+      "product": "us_cereals_output_index",
+      "region": "us",
+      "sourceId": "bls_ppi",
+      "severity": "high",
+      "changePct": 17.15,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "us_milk_output_index",
+      "region": "us",
+      "sourceId": "bls_ppi",
+      "severity": "watch",
+      "changePct": -9.17,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "caucho_tsr20",
       "region": "eu",
       "sourceId": "world_bank",
@@ -485,6 +503,15 @@
       "severity": "watch",
       "changePct": 5.19,
       "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "us_energy_input_index",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "changePct": 7.16,
+      "observationDate": "2026-08-01"
     },
     {
       "type": "period_move",

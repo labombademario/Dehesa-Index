@@ -34834,7 +34834,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:14:44Z",
       "comparability": "directional",
-      "methodology": "Statistics Canada (Open Government Licence - Canada): Diésel en surtidor (autoservicio) en Calgary; la fuente da céntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
+      "methodology": "Statistics Canada (Open Government Licence - Canada): Di\u00e9sel en surtidor (autoservicio) en Calgary; la fuente da c\u00e9ntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
       "value": 2.408,
       "currency": "CAD",
       "unit": "litro",
@@ -37059,7 +37059,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:14:44Z",
       "comparability": "directional",
-      "methodology": "Statistics Canada (Open Government Licence - Canada): Diésel en surtidor (autoservicio) en Edmonton; la fuente da céntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
+      "methodology": "Statistics Canada (Open Government Licence - Canada): Di\u00e9sel en surtidor (autoservicio) en Edmonton; la fuente da c\u00e9ntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
       "value": 2.36,
       "currency": "CAD",
       "unit": "litro",
@@ -39284,7 +39284,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:14:44Z",
       "comparability": "directional",
-      "methodology": "Statistics Canada (Open Government Licence - Canada): Diésel en surtidor (autoservicio) en Regina; la fuente da céntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
+      "methodology": "Statistics Canada (Open Government Licence - Canada): Di\u00e9sel en surtidor (autoservicio) en Regina; la fuente da c\u00e9ntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
       "value": 2.41,
       "currency": "CAD",
       "unit": "litro",
@@ -41509,7 +41509,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:14:44Z",
       "comparability": "directional",
-      "methodology": "Statistics Canada (Open Government Licence - Canada): Diésel en surtidor (autoservicio) en Saskatoon; la fuente da céntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
+      "methodology": "Statistics Canada (Open Government Licence - Canada): Di\u00e9sel en surtidor (autoservicio) en Saskatoon; la fuente da c\u00e9ntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
       "value": 2.367,
       "currency": "CAD",
       "unit": "litro",
@@ -43674,7 +43674,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:14:44Z",
       "comparability": "directional",
-      "methodology": "Statistics Canada (Open Government Licence - Canada): Diésel en surtidor (autoservicio) en Winnipeg; la fuente da céntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
+      "methodology": "Statistics Canada (Open Government Licence - Canada): Di\u00e9sel en surtidor (autoservicio) en Winnipeg; la fuente da c\u00e9ntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
       "value": 2.422,
       "currency": "CAD",
       "unit": "litro",
@@ -45899,7 +45899,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:14:44Z",
       "comparability": "directional",
-      "methodology": "Statistics Canada (Open Government Licence - Canada): Diésel en surtidor (autoservicio) en Toronto; la fuente da céntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
+      "methodology": "Statistics Canada (Open Government Licence - Canada): Di\u00e9sel en surtidor (autoservicio) en Toronto; la fuente da c\u00e9ntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
       "value": 2.494,
       "currency": "CAD",
       "unit": "litro",
@@ -48124,13 +48124,13 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:14:44Z",
       "comparability": "directional",
-      "methodology": "Statistics Canada (Open Government Licence - Canada): Diésel en surtidor (autoservicio) en Montréal; la fuente da céntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
+      "methodology": "Statistics Canada (Open Government Licence - Canada): Di\u00e9sel en surtidor (autoservicio) en Montr\u00e9al; la fuente da c\u00e9ntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
       "value": 2.871,
       "currency": "CAD",
       "unit": "litro",
       "frequency": "monthly",
       "changePct": 11.8862,
-      "province": "Montréal",
+      "province": "Montr\u00e9al",
       "history": [
         {
           "period": "01",
@@ -50349,7 +50349,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:14:44Z",
       "comparability": "directional",
-      "methodology": "Statistics Canada (Open Government Licence - Canada): Diésel en surtidor (autoservicio) en Vancouver; la fuente da céntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
+      "methodology": "Statistics Canada (Open Government Licence - Canada): Di\u00e9sel en surtidor (autoservicio) en Vancouver; la fuente da c\u00e9ntimos por litro. Serie mensual en dolares canadienses. Cambio de unidad hecho por Dehesa Index con aritmetica exacta, sin estimar nada.",
       "value": 2.853,
       "currency": "CAD",
       "unit": "litro",
@@ -122040,7 +122040,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:55:27Z",
       "comparability": "directional",
-      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Jamón de cerdo (pieza fresca), FOB planta (informe LM_PK602). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
+      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Jam\u00f3n de cerdo (pieza fresca), FOB planta (informe LM_PK602). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
       "value": 61.2,
       "currency": "USD",
       "unit": "cwt",
@@ -127238,7 +127238,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:55:27Z",
       "comparability": "directional",
-      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Cerdos sacrificados el día anterior, precio base de la canal, compra directa (informe LM_HG201). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
+      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Cerdos sacrificados el d\u00eda anterior, precio base de la canal, compra directa (informe LM_HG201). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
       "value": 72.03,
       "currency": "USD",
       "unit": "cwt",
@@ -129837,7 +129837,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T04:55:27Z",
       "comparability": "directional",
-      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Cerdos sacrificados el día anterior, precio neto de la canal, compra directa (informe LM_HG201). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
+      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Cerdos sacrificados el d\u00eda anterior, precio neto de la canal, compra directa (informe LM_HG201). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
       "value": 73.44,
       "currency": "USD",
       "unit": "cwt",
@@ -204326,7 +204326,7 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:21.218559Z",
-      "methodology": "Defra (Open Government Licence v3.0): precio medio en granja de la leche en el Reino Unido, hoja Prices_Monthly, en peniques por litro; se expresa en GBP/100 kg con una densidad de 1,03 kg/l (estándar de la leche de vaca).",
+      "methodology": "Defra (Open Government Licence v3.0): precio medio en granja de la leche en el Reino Unido, hoja Prices_Monthly, en peniques por litro; se expresa en GBP/100 kg con una densidad de 1,03 kg/l (est\u00e1ndar de la leche de vaca).",
       "comparability": "directional",
       "value": 35.82,
       "currency": "GBP",
@@ -207740,7 +207740,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (trigo, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (trigo, precios percibidos), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": 2.1926,
       "history": [
         {
@@ -208514,7 +208514,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (cebada, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (cebada, precios percibidos), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": 2.5693,
       "history": [
         {
@@ -209288,7 +209288,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (colza, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (colza, precios percibidos), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": -0.9899,
       "history": [
         {
@@ -210062,7 +210062,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (ganado vacuno y terneros, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (ganado vacuno y terneros, precios percibidos), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": 2.0606,
       "history": [
         {
@@ -210836,7 +210836,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (cerdos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (cerdos, precios percibidos), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": 0.3199,
       "history": [
         {
@@ -211610,7 +211610,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (ovino y corderos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (ovino y corderos, precios percibidos), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": -10.993,
       "history": [
         {
@@ -212384,7 +212384,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (huevos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (huevos, precios percibidos), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": 0.0,
       "history": [
         {
@@ -213158,7 +213158,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (leche, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (leche, precios percibidos), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": 1.7206,
       "history": [
         {
@@ -213932,7 +213932,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (fertilizantes y enmiendas, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (fertilizantes y enmiendas, precios pagados), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": -9.0934,
       "history": [
         {
@@ -214706,7 +214706,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (piensos, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (piensos, precios pagados), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": -0.3892,
       "history": [
         {
@@ -215480,7 +215480,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-23T10:02:22.719494Z",
       "comparability": "directional",
-      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (energía y lubricantes, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (energ\u00eda y lubricantes, precios pagados), base 2020=100. Es un \u00edndice de precios, no un precio en libras.",
       "changePct": -4.6918,
       "history": [
         {
@@ -221203,6 +221203,4692 @@
           "period": "10-18",
           "year": 2026,
           "value": 543.82
+        }
+      ]
+    },
+    {
+      "id": "di_us_fertilizer_input_index",
+      "product": "us_fertilizer_input_index",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-22",
+      "value": 133.2,
+      "currency": "INDEX",
+      "unit": "index_2011_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-10-23T12:23:45.881887Z",
+      "comparability": "directional",
+      "methodology": "USDA NASS (Agricultural Prices): indice de precios pagados por los agricultores de EE. UU. (fertilizantes (totales, incluida cal y enmiendas)), base 2011=100. Es un indice de precios, no un precio en dolares.",
+      "changePct": -4.5161,
+      "history": [
+        {
+          "period": "01",
+          "year": 2021,
+          "value": 71.8
+        },
+        {
+          "period": "02",
+          "year": 2021,
+          "value": 75.1
+        },
+        {
+          "period": "03",
+          "year": 2021,
+          "value": 77.6
+        },
+        {
+          "period": "04",
+          "year": 2021,
+          "value": 80.5
+        },
+        {
+          "period": "05",
+          "year": 2021,
+          "value": 83.8
+        },
+        {
+          "period": "06",
+          "year": 2021,
+          "value": 89.3
+        },
+        {
+          "period": "07",
+          "year": 2021,
+          "value": 92.6
+        },
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 93.3
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 95.7
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 102.4
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 109.8
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 119.1
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 139.8
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 144.2
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 150.6
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 158
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 157.6
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 152
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 141.9
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 145.2
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 144.3
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 147.7
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 149.8
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 145.5
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 135
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 126.9
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 120.5
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 115.9
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 111.4
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 104.4
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 99.5
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 99.5
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 98.9
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 102.8
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 104.1
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 107.1
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 102.6
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 100.4
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 102.6
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 103.2
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 102.5
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 100.7
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 100
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 99
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 98.9
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 100.2
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 100.1
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 103.6
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 111.7
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 112.5
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 115
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 115.9
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 118.5
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 118.1
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 118.2
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 119.6
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 121
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 122.1
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 124.4
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 123.6
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 125.6
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 127.6
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 131.3
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 140
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 147.3
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 146.8
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 139.5
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 133.2
+        }
+      ]
+    },
+    {
+      "id": "di_us_energy_input_index",
+      "product": "us_energy_input_index",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-10-22",
+      "value": 116.7,
+      "currency": "INDEX",
+      "unit": "index_2011_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-10-23T12:23:45.881971Z",
+      "comparability": "directional",
+      "methodology": "USDA NASS (Agricultural Prices): indice de precios pagados por los agricultores de EE. UU. (combustibles), base 2011=100. Es un indice de precios, no un precio en dolares.",
+      "changePct": 7.1625,
+      "history": [
+        {
+          "period": "01",
+          "year": 2021,
+          "value": 62.5
+        },
+        {
+          "period": "02",
+          "year": 2021,
+          "value": 66.3
+        },
+        {
+          "period": "03",
+          "year": 2021,
+          "value": 72.4
+        },
+        {
+          "period": "04",
+          "year": 2021,
+          "value": 71
+        },
+        {
+          "period": "05",
+          "year": 2021,
+          "value": 72.7
+        },
+        {
+          "period": "06",
+          "year": 2021,
+          "value": 76.3
+        },
+        {
+          "period": "07",
+          "year": 2021,
+          "value": 79.2
+        },
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 79.8
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 82.9
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 89
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 88.3
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 83.5
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 91
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 98.3
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 120.2
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 117.3
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 124
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 129.1
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 122.1
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 111.4
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 107.9
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 109.3
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 109.1
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 96.2
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 102.9
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 100.6
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 97.1
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 96.9
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 90.9
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 87.5
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 89.9
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 99.4
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 103.3
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 100.1
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 94
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 89.9
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 90.7
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 95.9
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 94.6
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 95.4
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 90.6
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 89.6
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 91.8
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 88.8
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 83.7
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 86.1
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 85.4
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 84.1
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 89.1
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 90.5
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 87.9
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 87.6
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 84.4
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 86
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 87.6
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 86.2
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 86.9
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 84.3
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 85.6
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 82.6
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 80.3
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 83.5
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 107.3
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 119.1
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 123.9
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 111.7
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 108.9
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 116.7
+        }
+      ]
+    },
+    {
+      "id": "di_us_milk_output_index",
+      "product": "us_milk_output_index",
+      "region": "us",
+      "sourceId": "bls_ppi",
+      "observationDate": "2026-09",
+      "publicationDate": "2026-10-23",
+      "value": 137.205,
+      "currency": "INDEX",
+      "unit": "index_1982_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-10-23T12:23:45.884950Z",
+      "comparability": "directional",
+      "methodology": "BLS Producer Price Index (leche cruda, serie WPU016), base 1982=100, sin ajuste estacional. Es un indice de precios de productor, no un precio en dolares.",
+      "changePct": -9.1688,
+      "history": [
+        {
+          "period": "01",
+          "year": 1994,
+          "value": 99.3
+        },
+        {
+          "period": "02",
+          "year": 1994,
+          "value": 98.2
+        },
+        {
+          "period": "03",
+          "year": 1994,
+          "value": 99.3
+        },
+        {
+          "period": "04",
+          "year": 1994,
+          "value": 99.7
+        },
+        {
+          "period": "05",
+          "year": 1994,
+          "value": 95.3
+        },
+        {
+          "period": "06",
+          "year": 1994,
+          "value": 94.0
+        },
+        {
+          "period": "07",
+          "year": 1994,
+          "value": 90.9
+        },
+        {
+          "period": "08",
+          "year": 1994,
+          "value": 92.1
+        },
+        {
+          "period": "09",
+          "year": 1994,
+          "value": 94.9
+        },
+        {
+          "period": "10",
+          "year": 1994,
+          "value": 95.9
+        },
+        {
+          "period": "11",
+          "year": 1994,
+          "value": 95.2
+        },
+        {
+          "period": "12",
+          "year": 1994,
+          "value": 93.5
+        },
+        {
+          "period": "01",
+          "year": 1995,
+          "value": 92.1
+        },
+        {
+          "period": "02",
+          "year": 1995,
+          "value": 91.6
+        },
+        {
+          "period": "03",
+          "year": 1995,
+          "value": 92.8
+        },
+        {
+          "period": "04",
+          "year": 1995,
+          "value": 90.7
+        },
+        {
+          "period": "05",
+          "year": 1995,
+          "value": 90.8
+        },
+        {
+          "period": "06",
+          "year": 1995,
+          "value": 89.9
+        },
+        {
+          "period": "07",
+          "year": 1995,
+          "value": 89.3
+        },
+        {
+          "period": "08",
+          "year": 1995,
+          "value": 92.3
+        },
+        {
+          "period": "09",
+          "year": 1995,
+          "value": 94.1
+        },
+        {
+          "period": "10",
+          "year": 1995,
+          "value": 98.0
+        },
+        {
+          "period": "11",
+          "year": 1995,
+          "value": 100.7
+        },
+        {
+          "period": "12",
+          "year": 1995,
+          "value": 101.4
+        },
+        {
+          "period": "01",
+          "year": 1996,
+          "value": 101.4
+        },
+        {
+          "period": "02",
+          "year": 1996,
+          "value": 101.1
+        },
+        {
+          "period": "03",
+          "year": 1996,
+          "value": 99.9
+        },
+        {
+          "period": "04",
+          "year": 1996,
+          "value": 101.7
+        },
+        {
+          "period": "05",
+          "year": 1996,
+          "value": 104.9
+        },
+        {
+          "period": "06",
+          "year": 1996,
+          "value": 108.0
+        },
+        {
+          "period": "07",
+          "year": 1996,
+          "value": 113.3
+        },
+        {
+          "period": "08",
+          "year": 1996,
+          "value": 116.0
+        },
+        {
+          "period": "09",
+          "year": 1996,
+          "value": 119.6
+        },
+        {
+          "period": "10",
+          "year": 1996,
+          "value": 116.9
+        },
+        {
+          "period": "11",
+          "year": 1996,
+          "value": 109.1
+        },
+        {
+          "period": "12",
+          "year": 1996,
+          "value": 102.5
+        },
+        {
+          "period": "01",
+          "year": 1997,
+          "value": 97.0
+        },
+        {
+          "period": "02",
+          "year": 1997,
+          "value": 97.8
+        },
+        {
+          "period": "03",
+          "year": 1997,
+          "value": 98.7
+        },
+        {
+          "period": "04",
+          "year": 1997,
+          "value": 97.6
+        },
+        {
+          "period": "05",
+          "year": 1997,
+          "value": 95.6
+        },
+        {
+          "period": "06",
+          "year": 1997,
+          "value": 91.0
+        },
+        {
+          "period": "07",
+          "year": 1997,
+          "value": 90.6
+        },
+        {
+          "period": "08",
+          "year": 1997,
+          "value": 93.7
+        },
+        {
+          "period": "09",
+          "year": 1997,
+          "value": 97.0
+        },
+        {
+          "period": "10",
+          "year": 1997,
+          "value": 101.3
+        },
+        {
+          "period": "11",
+          "year": 1997,
+          "value": 104.1
+        },
+        {
+          "period": "12",
+          "year": 1997,
+          "value": 105.4
+        },
+        {
+          "period": "01",
+          "year": 1998,
+          "value": 105.9
+        },
+        {
+          "period": "02",
+          "year": 1998,
+          "value": 106.7
+        },
+        {
+          "period": "03",
+          "year": 1998,
+          "value": 103.0
+        },
+        {
+          "period": "04",
+          "year": 1998,
+          "value": 101.4
+        },
+        {
+          "period": "05",
+          "year": 1998,
+          "value": 98.1
+        },
+        {
+          "period": "06",
+          "year": 1998,
+          "value": 104.1
+        },
+        {
+          "period": "07",
+          "year": 1998,
+          "value": 105.9
+        },
+        {
+          "period": "08",
+          "year": 1998,
+          "value": 115.8
+        },
+        {
+          "period": "09",
+          "year": 1998,
+          "value": 123.3
+        },
+        {
+          "period": "10",
+          "year": 1998,
+          "value": 127.7
+        },
+        {
+          "period": "11",
+          "year": 1998,
+          "value": 130.5
+        },
+        {
+          "period": "12",
+          "year": 1998,
+          "value": 132.4
+        },
+        {
+          "period": "01",
+          "year": 1999,
+          "value": 127.8
+        },
+        {
+          "period": "02",
+          "year": 1999,
+          "value": 113.4
+        },
+        {
+          "period": "03",
+          "year": 1999,
+          "value": 110.1
+        },
+        {
+          "period": "04",
+          "year": 1999,
+          "value": 93.4
+        },
+        {
+          "period": "05",
+          "year": 1999,
+          "value": 94.8
+        },
+        {
+          "period": "06",
+          "year": 1999,
+          "value": 97.3
+        },
+        {
+          "period": "07",
+          "year": 1999,
+          "value": 103.4
+        },
+        {
+          "period": "08",
+          "year": 1999,
+          "value": 112.6
+        },
+        {
+          "period": "09",
+          "year": 1999,
+          "value": 117.4
+        },
+        {
+          "period": "10",
+          "year": 1999,
+          "value": 109.8
+        },
+        {
+          "period": "11",
+          "year": 1999,
+          "value": 104.6
+        },
+        {
+          "period": "12",
+          "year": 1999,
+          "value": 91.0
+        },
+        {
+          "period": "01",
+          "year": 2000,
+          "value": 89.5
+        },
+        {
+          "period": "02",
+          "year": 2000,
+          "value": 88.6
+        },
+        {
+          "period": "03",
+          "year": 2000,
+          "value": 89.3
+        },
+        {
+          "period": "04",
+          "year": 2000,
+          "value": 89.3
+        },
+        {
+          "period": "05",
+          "year": 2000,
+          "value": 90.0
+        },
+        {
+          "period": "06",
+          "year": 2000,
+          "value": 91.5
+        },
+        {
+          "period": "07",
+          "year": 2000,
+          "value": 94.5
+        },
+        {
+          "period": "08",
+          "year": 2000,
+          "value": 93.8
+        },
+        {
+          "period": "09",
+          "year": 2000,
+          "value": 96.1
+        },
+        {
+          "period": "10",
+          "year": 2000,
+          "value": 93.8
+        },
+        {
+          "period": "11",
+          "year": 2000,
+          "value": 90.1
+        },
+        {
+          "period": "12",
+          "year": 2000,
+          "value": 97.4
+        },
+        {
+          "period": "01",
+          "year": 2001,
+          "value": 98.1
+        },
+        {
+          "period": "02",
+          "year": 2001,
+          "value": 97.5
+        },
+        {
+          "period": "03",
+          "year": 2001,
+          "value": 103.6
+        },
+        {
+          "period": "04",
+          "year": 2001,
+          "value": 108.2
+        },
+        {
+          "period": "05",
+          "year": 2001,
+          "value": 115.2
+        },
+        {
+          "period": "06",
+          "year": 2001,
+          "value": 121.2
+        },
+        {
+          "period": "07",
+          "year": 2001,
+          "value": 121.9
+        },
+        {
+          "period": "08",
+          "year": 2001,
+          "value": 123.4
+        },
+        {
+          "period": "09",
+          "year": 2001,
+          "value": 126.8
+        },
+        {
+          "period": "10",
+          "year": 2001,
+          "value": 117.5
+        },
+        {
+          "period": "11",
+          "year": 2001,
+          "value": 108.0
+        },
+        {
+          "period": "12",
+          "year": 2001,
+          "value": 100.3
+        },
+        {
+          "period": "01",
+          "year": 2002,
+          "value": 100.2
+        },
+        {
+          "period": "02",
+          "year": 2002,
+          "value": 98.0
+        },
+        {
+          "period": "03",
+          "year": 2002,
+          "value": 94.9
+        },
+        {
+          "period": "04",
+          "year": 2002,
+          "value": 94.2
+        },
+        {
+          "period": "05",
+          "year": 2002,
+          "value": 91.2
+        },
+        {
+          "period": "06",
+          "year": 2002,
+          "value": 87.4
+        },
+        {
+          "period": "07",
+          "year": 2002,
+          "value": 83.6
+        },
+        {
+          "period": "08",
+          "year": 2002,
+          "value": 85.1
+        },
+        {
+          "period": "09",
+          "year": 2002,
+          "value": 86.7
+        },
+        {
+          "period": "10",
+          "year": 2002,
+          "value": 90.5
+        },
+        {
+          "period": "11",
+          "year": 2002,
+          "value": 88.9
+        },
+        {
+          "period": "12",
+          "year": 2002,
+          "value": 88.9
+        },
+        {
+          "period": "01",
+          "year": 2003,
+          "value": 88.2
+        },
+        {
+          "period": "02",
+          "year": 2003,
+          "value": 85.2
+        },
+        {
+          "period": "03",
+          "year": 2003,
+          "value": 82.2
+        },
+        {
+          "period": "04",
+          "year": 2003,
+          "value": 82.9
+        },
+        {
+          "period": "05",
+          "year": 2003,
+          "value": 83.0
+        },
+        {
+          "period": "06",
+          "year": 2003,
+          "value": 83.0
+        },
+        {
+          "period": "07",
+          "year": 2003,
+          "value": 89.9
+        },
+        {
+          "period": "08",
+          "year": 2003,
+          "value": 99.0
+        },
+        {
+          "period": "09",
+          "year": 2003,
+          "value": 107.9
+        },
+        {
+          "period": "10",
+          "year": 2003,
+          "value": 112.4
+        },
+        {
+          "period": "11",
+          "year": 2003,
+          "value": 108.6
+        },
+        {
+          "period": "12",
+          "year": 2003,
+          "value": 103.2
+        },
+        {
+          "period": "01",
+          "year": 2004,
+          "value": 98.8
+        },
+        {
+          "period": "02",
+          "year": 2004,
+          "value": 101.8
+        },
+        {
+          "period": "03",
+          "year": 2004,
+          "value": 115.4
+        },
+        {
+          "period": "04",
+          "year": 2004,
+          "value": 136.8
+        },
+        {
+          "period": "05",
+          "year": 2004,
+          "value": 145.4
+        },
+        {
+          "period": "06",
+          "year": 2004,
+          "value": 136.9
+        },
+        {
+          "period": "07",
+          "year": 2004,
+          "value": 119.5
+        },
+        {
+          "period": "08",
+          "year": 2004,
+          "value": 112.2
+        },
+        {
+          "period": "09",
+          "year": 2004,
+          "value": 115.3
+        },
+        {
+          "period": "10",
+          "year": 2004,
+          "value": 116.0
+        },
+        {
+          "period": "11",
+          "year": 2004,
+          "value": 120.6
+        },
+        {
+          "period": "12",
+          "year": 2004,
+          "value": 122.9
+        },
+        {
+          "period": "01",
+          "year": 2005,
+          "value": 119.0
+        },
+        {
+          "period": "02",
+          "year": 2005,
+          "value": 116.1
+        },
+        {
+          "period": "03",
+          "year": 2005,
+          "value": 116.8
+        },
+        {
+          "period": "04",
+          "year": 2005,
+          "value": 113.9
+        },
+        {
+          "period": "05",
+          "year": 2005,
+          "value": 110.8
+        },
+        {
+          "period": "06",
+          "year": 2005,
+          "value": 108.6
+        },
+        {
+          "period": "07",
+          "year": 2005,
+          "value": 111.6
+        },
+        {
+          "period": "08",
+          "year": 2005,
+          "value": 110.7
+        },
+        {
+          "period": "09",
+          "year": 2005,
+          "value": 114.5
+        },
+        {
+          "period": "10",
+          "year": 2005,
+          "value": 116.1
+        },
+        {
+          "period": "11",
+          "year": 2005,
+          "value": 113.1
+        },
+        {
+          "period": "12",
+          "year": 2005,
+          "value": 110.9
+        },
+        {
+          "period": "01",
+          "year": 2006,
+          "value": 108.6
+        },
+        {
+          "period": "02",
+          "year": 2006,
+          "value": 101.0
+        },
+        {
+          "period": "03",
+          "year": 2006,
+          "value": 94.2
+        },
+        {
+          "period": "04",
+          "year": 2006,
+          "value": 91.3
+        },
+        {
+          "period": "05",
+          "year": 2006,
+          "value": 89.8
+        },
+        {
+          "period": "06",
+          "year": 2006,
+          "value": 89.1
+        },
+        {
+          "period": "07",
+          "year": 2006,
+          "value": 88.2
+        },
+        {
+          "period": "08",
+          "year": 2006,
+          "value": 90.5
+        },
+        {
+          "period": "09",
+          "year": 2006,
+          "value": 96.6
+        },
+        {
+          "period": "10",
+          "year": 2006,
+          "value": 101.0
+        },
+        {
+          "period": "11",
+          "year": 2006,
+          "value": 104.2
+        },
+        {
+          "period": "12",
+          "year": 2006,
+          "value": 105.7
+        },
+        {
+          "period": "01",
+          "year": 2007,
+          "value": 108.6
+        },
+        {
+          "period": "02",
+          "year": 2007,
+          "value": 111.6
+        },
+        {
+          "period": "03",
+          "year": 2007,
+          "value": 116.9
+        },
+        {
+          "period": "04",
+          "year": 2007,
+          "value": 124.3
+        },
+        {
+          "period": "05",
+          "year": 2007,
+          "value": 134.9
+        },
+        {
+          "period": "06",
+          "year": 2007,
+          "value": 151.4
+        },
+        {
+          "period": "07",
+          "year": 2007,
+          "value": 162.5
+        },
+        {
+          "period": "08",
+          "year": 2007,
+          "value": 161.7
+        },
+        {
+          "period": "09",
+          "year": 2007,
+          "value": 162.4
+        },
+        {
+          "period": "10",
+          "year": 2007,
+          "value": 160.1
+        },
+        {
+          "period": "11",
+          "year": 2007,
+          "value": 163.9
+        },
+        {
+          "period": "12",
+          "year": 2007,
+          "value": 161.1
+        },
+        {
+          "period": "01",
+          "year": 2008,
+          "value": 153.5
+        },
+        {
+          "period": "02",
+          "year": 2008,
+          "value": 143.1
+        },
+        {
+          "period": "03",
+          "year": 2008,
+          "value": 135.0
+        },
+        {
+          "period": "04",
+          "year": 2008,
+          "value": 134.9
+        },
+        {
+          "period": "05",
+          "year": 2008,
+          "value": 138.0
+        },
+        {
+          "period": "06",
+          "year": 2008,
+          "value": 144.8
+        },
+        {
+          "period": "07",
+          "year": 2008,
+          "value": 145.4
+        },
+        {
+          "period": "08",
+          "year": 2008,
+          "value": 137.8
+        },
+        {
+          "period": "09",
+          "year": 2008,
+          "value": 136.3
+        },
+        {
+          "period": "10",
+          "year": 2008,
+          "value": 132.7
+        },
+        {
+          "period": "11",
+          "year": 2008,
+          "value": 128.1
+        },
+        {
+          "period": "12",
+          "year": 2008,
+          "value": 116.9
+        },
+        {
+          "period": "01",
+          "year": 2009,
+          "value": 99.6
+        },
+        {
+          "period": "02",
+          "year": 2009,
+          "value": 86.8
+        },
+        {
+          "period": "03",
+          "year": 2009,
+          "value": 88.3
+        },
+        {
+          "period": "04",
+          "year": 2009,
+          "value": 89.1
+        },
+        {
+          "period": "05",
+          "year": 2009,
+          "value": 86.8
+        },
+        {
+          "period": "06",
+          "year": 2009,
+          "value": 84.6
+        },
+        {
+          "period": "07",
+          "year": 2009,
+          "value": 84.5
+        },
+        {
+          "period": "08",
+          "year": 2009,
+          "value": 89.8
+        },
+        {
+          "period": "09",
+          "year": 2009,
+          "value": 96.6
+        },
+        {
+          "period": "10",
+          "year": 2009,
+          "value": 106.3
+        },
+        {
+          "period": "11",
+          "year": 2009,
+          "value": 114.6
+        },
+        {
+          "period": "12",
+          "year": 2009,
+          "value": 123.6
+        },
+        {
+          "period": "01",
+          "year": 2010,
+          "value": 120.6
+        },
+        {
+          "period": "02",
+          "year": 2010,
+          "value": 119.0
+        },
+        {
+          "period": "03",
+          "year": 2010,
+          "value": 110.7
+        },
+        {
+          "period": "04",
+          "year": 2010,
+          "value": 109.2
+        },
+        {
+          "period": "05",
+          "year": 2010,
+          "value": 113.0
+        },
+        {
+          "period": "06",
+          "year": 2010,
+          "value": 115.9
+        },
+        {
+          "period": "07",
+          "year": 2010,
+          "value": 119.6
+        },
+        {
+          "period": "08",
+          "year": 2010,
+          "value": 124.9
+        },
+        {
+          "period": "09",
+          "year": 2010,
+          "value": 132.5
+        },
+        {
+          "period": "10",
+          "year": 2010,
+          "value": 138.5
+        },
+        {
+          "period": "11",
+          "year": 2010,
+          "value": 133.8
+        },
+        {
+          "period": "12",
+          "year": 2010,
+          "value": 124.8
+        },
+        {
+          "period": "01",
+          "year": 2011,
+          "value": 124.8
+        },
+        {
+          "period": "02",
+          "year": 2011,
+          "value": 142.8
+        },
+        {
+          "period": "03",
+          "year": 2011,
+          "value": 152.5
+        },
+        {
+          "period": "04",
+          "year": 2011,
+          "value": 146.5
+        },
+        {
+          "period": "05",
+          "year": 2011,
+          "value": 146.5
+        },
+        {
+          "period": "06",
+          "year": 2011,
+          "value": 158.5
+        },
+        {
+          "period": "07",
+          "year": 2011,
+          "value": 163.7
+        },
+        {
+          "period": "08",
+          "year": 2011,
+          "value": 164.5
+        },
+        {
+          "period": "09",
+          "year": 2011,
+          "value": 157.7
+        },
+        {
+          "period": "10",
+          "year": 2011,
+          "value": 148.8
+        },
+        {
+          "period": "11",
+          "year": 2011,
+          "value": 152.5
+        },
+        {
+          "period": "12",
+          "year": 2011,
+          "value": 148.0
+        },
+        {
+          "period": "01",
+          "year": 2012,
+          "value": 142.0
+        },
+        {
+          "period": "02",
+          "year": 2012,
+          "value": 132.3
+        },
+        {
+          "period": "03",
+          "year": 2012,
+          "value": 128.6
+        },
+        {
+          "period": "04",
+          "year": 2012,
+          "value": 125.6
+        },
+        {
+          "period": "05",
+          "year": 2012,
+          "value": 121.1
+        },
+        {
+          "period": "06",
+          "year": 2012,
+          "value": 121.1
+        },
+        {
+          "period": "07",
+          "year": 2012,
+          "value": 126.3
+        },
+        {
+          "period": "08",
+          "year": 2012,
+          "value": 135.3
+        },
+        {
+          "period": "09",
+          "year": 2012,
+          "value": 146.5
+        },
+        {
+          "period": "10",
+          "year": 2012,
+          "value": 160.7
+        },
+        {
+          "period": "11",
+          "year": 2012,
+          "value": 164.5
+        },
+        {
+          "period": "12",
+          "year": 2012,
+          "value": 156.2
+        },
+        {
+          "period": "01",
+          "year": 2013,
+          "value": 148.8
+        },
+        {
+          "period": "02",
+          "year": 2013,
+          "value": 145.8
+        },
+        {
+          "period": "03",
+          "year": 2013,
+          "value": 142.8
+        },
+        {
+          "period": "04",
+          "year": 2013,
+          "value": 145.8
+        },
+        {
+          "period": "05",
+          "year": 2013,
+          "value": 147.3
+        },
+        {
+          "period": "06",
+          "year": 2013,
+          "value": 145.8
+        },
+        {
+          "period": "07",
+          "year": 2013,
+          "value": 142.0
+        },
+        {
+          "period": "08",
+          "year": 2013,
+          "value": 145.8
+        },
+        {
+          "period": "09",
+          "year": 2013,
+          "value": 150.3
+        },
+        {
+          "period": "10",
+          "year": 2013,
+          "value": 154.7
+        },
+        {
+          "period": "11",
+          "year": 2013,
+          "value": 161.5
+        },
+        {
+          "period": "12",
+          "year": 2013,
+          "value": 164.5
+        },
+        {
+          "period": "01",
+          "year": 2014,
+          "value": 175.7
+        },
+        {
+          "period": "02",
+          "year": 2014,
+          "value": 186.1
+        },
+        {
+          "period": "03",
+          "year": 2014,
+          "value": 188.4
+        },
+        {
+          "period": "04",
+          "year": 2014,
+          "value": 189.1
+        },
+        {
+          "period": "05",
+          "year": 2014,
+          "value": 180.9
+        },
+        {
+          "period": "06",
+          "year": 2014,
+          "value": 173.4
+        },
+        {
+          "period": "07",
+          "year": 2014,
+          "value": 174.2
+        },
+        {
+          "period": "08",
+          "year": 2014,
+          "value": 180.2
+        },
+        {
+          "period": "09",
+          "year": 2014,
+          "value": 192.1
+        },
+        {
+          "period": "10",
+          "year": 2014,
+          "value": 186.1
+        },
+        {
+          "period": "11",
+          "year": 2014,
+          "value": 171.9
+        },
+        {
+          "period": "12",
+          "year": 2014,
+          "value": 152.5
+        },
+        {
+          "period": "01",
+          "year": 2015,
+          "value": 131.6
+        },
+        {
+          "period": "02",
+          "year": 2015,
+          "value": 125.6
+        },
+        {
+          "period": "03",
+          "year": 2015,
+          "value": 124.1
+        },
+        {
+          "period": "04",
+          "year": 2015,
+          "value": 123.3
+        },
+        {
+          "period": "05",
+          "year": 2015,
+          "value": 124.8
+        },
+        {
+          "period": "06",
+          "year": 2015,
+          "value": 126.3
+        },
+        {
+          "period": "07",
+          "year": 2015,
+          "value": 124.1
+        },
+        {
+          "period": "08",
+          "year": 2015,
+          "value": 124.8
+        },
+        {
+          "period": "09",
+          "year": 2015,
+          "value": 130.8
+        },
+        {
+          "period": "10",
+          "year": 2015,
+          "value": 132.3
+        },
+        {
+          "period": "11",
+          "year": 2015,
+          "value": 136.1
+        },
+        {
+          "period": "12",
+          "year": 2015,
+          "value": 128.6
+        },
+        {
+          "period": "01",
+          "year": 2016,
+          "value": 122.8
+        },
+        {
+          "period": "02",
+          "year": 2016,
+          "value": 119.8
+        },
+        {
+          "period": "03",
+          "year": 2016,
+          "value": 116.7
+        },
+        {
+          "period": "04",
+          "year": 2016,
+          "value": 114.4
+        },
+        {
+          "period": "05",
+          "year": 2016,
+          "value": 110.6
+        },
+        {
+          "period": "06",
+          "year": 2016,
+          "value": 112.9
+        },
+        {
+          "period": "07",
+          "year": 2016,
+          "value": 122.8
+        },
+        {
+          "period": "08",
+          "year": 2016,
+          "value": 130.5
+        },
+        {
+          "period": "09",
+          "year": 2016,
+          "value": 132.0
+        },
+        {
+          "period": "10",
+          "year": 2016,
+          "value": 126.6
+        },
+        {
+          "period": "11",
+          "year": 2016,
+          "value": 134.3
+        },
+        {
+          "period": "12",
+          "year": 2016,
+          "value": 143.4
+        },
+        {
+          "period": "01",
+          "year": 2017,
+          "value": 144.2
+        },
+        {
+          "period": "02",
+          "year": 2017,
+          "value": 141.1
+        },
+        {
+          "period": "03",
+          "year": 2017,
+          "value": 132.0
+        },
+        {
+          "period": "04",
+          "year": 2017,
+          "value": 125.9
+        },
+        {
+          "period": "05",
+          "year": 2017,
+          "value": 127.4
+        },
+        {
+          "period": "06",
+          "year": 2017,
+          "value": 132.0
+        },
+        {
+          "period": "07",
+          "year": 2017,
+          "value": 132.0
+        },
+        {
+          "period": "08",
+          "year": 2017,
+          "value": 137.3
+        },
+        {
+          "period": "09",
+          "year": 2017,
+          "value": 135.8
+        },
+        {
+          "period": "10",
+          "year": 2017,
+          "value": 136.6
+        },
+        {
+          "period": "11",
+          "year": 2017,
+          "value": 138.1
+        },
+        {
+          "period": "12",
+          "year": 2017,
+          "value": 131.2
+        },
+        {
+          "period": "01",
+          "year": 2018,
+          "value": 122.8
+        },
+        {
+          "period": "02",
+          "year": 2018,
+          "value": 116.7
+        },
+        {
+          "period": "03",
+          "year": 2018,
+          "value": 119.0
+        },
+        {
+          "period": "04",
+          "year": 2018,
+          "value": 120.5
+        },
+        {
+          "period": "05",
+          "year": 2018,
+          "value": 123.6
+        },
+        {
+          "period": "06",
+          "year": 2018,
+          "value": 124.4
+        },
+        {
+          "period": "07",
+          "year": 2018,
+          "value": 117.5
+        },
+        {
+          "period": "08",
+          "year": 2018,
+          "value": 121.3
+        },
+        {
+          "period": "09",
+          "year": 2018,
+          "value": 127.4
+        },
+        {
+          "period": "10",
+          "year": 2018,
+          "value": 132.7
+        },
+        {
+          "period": "11",
+          "year": 2018,
+          "value": 129.7
+        },
+        {
+          "period": "12",
+          "year": 2018,
+          "value": 125.1
+        },
+        {
+          "period": "01",
+          "year": 2019,
+          "value": 126.6
+        },
+        {
+          "period": "02",
+          "year": 2019,
+          "value": 128.2
+        },
+        {
+          "period": "03",
+          "year": 2019,
+          "value": 133.5
+        },
+        {
+          "period": "04",
+          "year": 2019,
+          "value": 135.0
+        },
+        {
+          "period": "05",
+          "year": 2019,
+          "value": 137.3
+        },
+        {
+          "period": "06",
+          "year": 2019,
+          "value": 138.1
+        },
+        {
+          "period": "07",
+          "year": 2019,
+          "value": 142.7
+        },
+        {
+          "period": "08",
+          "year": 2019,
+          "value": 144.2
+        },
+        {
+          "period": "09",
+          "year": 2019,
+          "value": 147.2
+        },
+        {
+          "period": "10",
+          "year": 2019,
+          "value": 151.8
+        },
+        {
+          "period": "11",
+          "year": 2019,
+          "value": 160.2
+        },
+        {
+          "period": "12",
+          "year": 2019,
+          "value": 157.9
+        },
+        {
+          "period": "01",
+          "year": 2020,
+          "value": 149.5
+        },
+        {
+          "period": "02",
+          "year": 2020,
+          "value": 144.2
+        },
+        {
+          "period": "03",
+          "year": 2020,
+          "value": 137.3
+        },
+        {
+          "period": "04",
+          "year": 2020,
+          "value": 109.9
+        },
+        {
+          "period": "05",
+          "year": 2020,
+          "value": 103.8
+        },
+        {
+          "period": "06",
+          "year": 2020,
+          "value": 138.1
+        },
+        {
+          "period": "07",
+          "year": 2020,
+          "value": 156.4
+        },
+        {
+          "period": "08",
+          "year": 2020,
+          "value": 143.4
+        },
+        {
+          "period": "09",
+          "year": 2020,
+          "value": 136.6
+        },
+        {
+          "period": "10",
+          "year": 2020,
+          "value": 154.1
+        },
+        {
+          "period": "11",
+          "year": 2020,
+          "value": 162.5
+        },
+        {
+          "period": "12",
+          "year": 2020,
+          "value": 141.1
+        },
+        {
+          "period": "01",
+          "year": 2021,
+          "value": 133.5
+        },
+        {
+          "period": "02",
+          "year": 2021,
+          "value": 130.5
+        },
+        {
+          "period": "03",
+          "year": 2021,
+          "value": 132.7
+        },
+        {
+          "period": "04",
+          "year": 2021,
+          "value": 140.4
+        },
+        {
+          "period": "05",
+          "year": 2021,
+          "value": 146.5
+        },
+        {
+          "period": "06",
+          "year": 2021,
+          "value": 140.4
+        },
+        {
+          "period": "07",
+          "year": 2021,
+          "value": 136.559
+        },
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 135.034
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 140.374
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 150.292
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 158.684
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 166.313
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 184.622
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 188.437
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 197.592
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 206.746
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 208.272
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 205.221
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 196.066
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 185.385
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 186.148
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 197.592
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 195.303
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 188.437
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 176.23
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 164.787
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 160.972
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 157.921
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 147.24
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 136.559
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 132.745
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 150.292
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 160.209
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 164.787
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 165.55
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 157.158
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 153.343
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 157.158
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 157.921
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 156.395
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 167.838
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 173.942
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 173.942
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 180.045
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 194.54
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 192.251
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 184.622
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 177.756
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 183.859
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 180.045
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 167.838
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 160.209
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 162.498
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 162.498
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 158.684
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 159.446
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 155.632
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 152.58
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 150.292
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 144.951
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 133.508
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 139.611
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 150.292
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 158.684
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 162.498
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 160.972
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 154.869
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 151.055
+        },
+        {
+          "period": "09",
+          "year": 2026,
+          "value": 137.205
+        }
+      ]
+    },
+    {
+      "id": "di_us_cereals_output_index",
+      "product": "us_cereals_output_index",
+      "region": "us",
+      "sourceId": "bls_ppi",
+      "observationDate": "2026-09",
+      "publicationDate": "2026-10-23",
+      "value": 203.861,
+      "currency": "INDEX",
+      "unit": "index_1982_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-10-23T12:23:45.885272Z",
+      "comparability": "directional",
+      "methodology": "BLS Producer Price Index (cereales (grains), serie WPU012), base 1982=100, sin ajuste estacional. Es un indice de precios de productor, no un precio en dolares.",
+      "changePct": 17.1527,
+      "history": [
+        {
+          "period": "01",
+          "year": 1994,
+          "value": 118.0
+        },
+        {
+          "period": "02",
+          "year": 1994,
+          "value": 116.8
+        },
+        {
+          "period": "03",
+          "year": 1994,
+          "value": 112.5
+        },
+        {
+          "period": "04",
+          "year": 1994,
+          "value": 109.3
+        },
+        {
+          "period": "05",
+          "year": 1994,
+          "value": 106.8
+        },
+        {
+          "period": "06",
+          "year": 1994,
+          "value": 110.1
+        },
+        {
+          "period": "07",
+          "year": 1994,
+          "value": 96.4
+        },
+        {
+          "period": "08",
+          "year": 1994,
+          "value": 90.2
+        },
+        {
+          "period": "09",
+          "year": 1994,
+          "value": 94.2
+        },
+        {
+          "period": "10",
+          "year": 1994,
+          "value": 91.1
+        },
+        {
+          "period": "11",
+          "year": 1994,
+          "value": 91.2
+        },
+        {
+          "period": "12",
+          "year": 1994,
+          "value": 95.3
+        },
+        {
+          "period": "01",
+          "year": 1995,
+          "value": 95.5
+        },
+        {
+          "period": "02",
+          "year": 1995,
+          "value": 96.9
+        },
+        {
+          "period": "03",
+          "year": 1995,
+          "value": 98.2
+        },
+        {
+          "period": "04",
+          "year": 1995,
+          "value": 101.1
+        },
+        {
+          "period": "05",
+          "year": 1995,
+          "value": 104.2
+        },
+        {
+          "period": "06",
+          "year": 1995,
+          "value": 110.5
+        },
+        {
+          "period": "07",
+          "year": 1995,
+          "value": 116.2
+        },
+        {
+          "period": "08",
+          "year": 1995,
+          "value": 114.0
+        },
+        {
+          "period": "09",
+          "year": 1995,
+          "value": 119.3
+        },
+        {
+          "period": "10",
+          "year": 1995,
+          "value": 126.2
+        },
+        {
+          "period": "11",
+          "year": 1995,
+          "value": 131.1
+        },
+        {
+          "period": "12",
+          "year": 1995,
+          "value": 137.6
+        },
+        {
+          "period": "01",
+          "year": 1996,
+          "value": 141.4
+        },
+        {
+          "period": "02",
+          "year": 1996,
+          "value": 146.5
+        },
+        {
+          "period": "03",
+          "year": 1996,
+          "value": 151.5
+        },
+        {
+          "period": "04",
+          "year": 1996,
+          "value": 166.9
+        },
+        {
+          "period": "05",
+          "year": 1996,
+          "value": 190.5
+        },
+        {
+          "period": "06",
+          "year": 1996,
+          "value": 181.9
+        },
+        {
+          "period": "07",
+          "year": 1996,
+          "value": 184.9
+        },
+        {
+          "period": "08",
+          "year": 1996,
+          "value": 170.6
+        },
+        {
+          "period": "09",
+          "year": 1996,
+          "value": 138.7
+        },
+        {
+          "period": "10",
+          "year": 1996,
+          "value": 118.8
+        },
+        {
+          "period": "11",
+          "year": 1996,
+          "value": 112.2
+        },
+        {
+          "period": "12",
+          "year": 1996,
+          "value": 109.6
+        },
+        {
+          "period": "01",
+          "year": 1997,
+          "value": 111.1
+        },
+        {
+          "period": "02",
+          "year": 1997,
+          "value": 111.0
+        },
+        {
+          "period": "03",
+          "year": 1997,
+          "value": 119.3
+        },
+        {
+          "period": "04",
+          "year": 1997,
+          "value": 121.2
+        },
+        {
+          "period": "05",
+          "year": 1997,
+          "value": 116.6
+        },
+        {
+          "period": "06",
+          "year": 1997,
+          "value": 112.4
+        },
+        {
+          "period": "07",
+          "year": 1997,
+          "value": 105.9
+        },
+        {
+          "period": "08",
+          "year": 1997,
+          "value": 106.3
+        },
+        {
+          "period": "09",
+          "year": 1997,
+          "value": 107.2
+        },
+        {
+          "period": "10",
+          "year": 1997,
+          "value": 109.1
+        },
+        {
+          "period": "11",
+          "year": 1997,
+          "value": 107.1
+        },
+        {
+          "period": "12",
+          "year": 1997,
+          "value": 107.4
+        },
+        {
+          "period": "01",
+          "year": 1998,
+          "value": 104.4
+        },
+        {
+          "period": "02",
+          "year": 1998,
+          "value": 105.2
+        },
+        {
+          "period": "03",
+          "year": 1998,
+          "value": 107.2
+        },
+        {
+          "period": "04",
+          "year": 1998,
+          "value": 99.8
+        },
+        {
+          "period": "05",
+          "year": 1998,
+          "value": 98.7
+        },
+        {
+          "period": "06",
+          "year": 1998,
+          "value": 94.0
+        },
+        {
+          "period": "07",
+          "year": 1998,
+          "value": 92.0
+        },
+        {
+          "period": "08",
+          "year": 1998,
+          "value": 82.5
+        },
+        {
+          "period": "09",
+          "year": 1998,
+          "value": 76.3
+        },
+        {
+          "period": "10",
+          "year": 1998,
+          "value": 84.6
+        },
+        {
+          "period": "11",
+          "year": 1998,
+          "value": 88.5
+        },
+        {
+          "period": "12",
+          "year": 1998,
+          "value": 87.1
+        },
+        {
+          "period": "01",
+          "year": 1999,
+          "value": 87.0
+        },
+        {
+          "period": "02",
+          "year": 1999,
+          "value": 86.4
+        },
+        {
+          "period": "03",
+          "year": 1999,
+          "value": 84.9
+        },
+        {
+          "period": "04",
+          "year": 1999,
+          "value": 83.1
+        },
+        {
+          "period": "05",
+          "year": 1999,
+          "value": 84.6
+        },
+        {
+          "period": "06",
+          "year": 1999,
+          "value": 82.2
+        },
+        {
+          "period": "07",
+          "year": 1999,
+          "value": 71.7
+        },
+        {
+          "period": "08",
+          "year": 1999,
+          "value": 80.9
+        },
+        {
+          "period": "09",
+          "year": 1999,
+          "value": 75.9
+        },
+        {
+          "period": "10",
+          "year": 1999,
+          "value": 72.7
+        },
+        {
+          "period": "11",
+          "year": 1999,
+          "value": 77.2
+        },
+        {
+          "period": "12",
+          "year": 1999,
+          "value": 74.0
+        },
+        {
+          "period": "01",
+          "year": 2000,
+          "value": 77.8
+        },
+        {
+          "period": "02",
+          "year": 2000,
+          "value": 82.4
+        },
+        {
+          "period": "03",
+          "year": 2000,
+          "value": 85.9
+        },
+        {
+          "period": "04",
+          "year": 2000,
+          "value": 82.6
+        },
+        {
+          "period": "05",
+          "year": 2000,
+          "value": 85.8
+        },
+        {
+          "period": "06",
+          "year": 2000,
+          "value": 78.6
+        },
+        {
+          "period": "07",
+          "year": 2000,
+          "value": 71.0
+        },
+        {
+          "period": "08",
+          "year": 2000,
+          "value": 66.8
+        },
+        {
+          "period": "09",
+          "year": 2000,
+          "value": 70.1
+        },
+        {
+          "period": "10",
+          "year": 2000,
+          "value": 76.3
+        },
+        {
+          "period": "11",
+          "year": 2000,
+          "value": 81.2
+        },
+        {
+          "period": "12",
+          "year": 2000,
+          "value": 81.2
+        },
+        {
+          "period": "01",
+          "year": 2001,
+          "value": 85.7
+        },
+        {
+          "period": "02",
+          "year": 2001,
+          "value": 80.1
+        },
+        {
+          "period": "03",
+          "year": 2001,
+          "value": 84.0
+        },
+        {
+          "period": "04",
+          "year": 2001,
+          "value": 80.4
+        },
+        {
+          "period": "05",
+          "year": 2001,
+          "value": 79.7
+        },
+        {
+          "period": "06",
+          "year": 2001,
+          "value": 77.6
+        },
+        {
+          "period": "07",
+          "year": 2001,
+          "value": 81.0
+        },
+        {
+          "period": "08",
+          "year": 2001,
+          "value": 83.1
+        },
+        {
+          "period": "09",
+          "year": 2001,
+          "value": 81.7
+        },
+        {
+          "period": "10",
+          "year": 2001,
+          "value": 78.5
+        },
+        {
+          "period": "11",
+          "year": 2001,
+          "value": 80.3
+        },
+        {
+          "period": "12",
+          "year": 2001,
+          "value": 82.6
+        },
+        {
+          "period": "01",
+          "year": 2002,
+          "value": 82.2
+        },
+        {
+          "period": "02",
+          "year": 2002,
+          "value": 80.9
+        },
+        {
+          "period": "03",
+          "year": 2002,
+          "value": 81.2
+        },
+        {
+          "period": "04",
+          "year": 2002,
+          "value": 79.3
+        },
+        {
+          "period": "05",
+          "year": 2002,
+          "value": 82.8
+        },
+        {
+          "period": "06",
+          "year": 2002,
+          "value": 81.5
+        },
+        {
+          "period": "07",
+          "year": 2002,
+          "value": 90.0
+        },
+        {
+          "period": "08",
+          "year": 2002,
+          "value": 104.6
+        },
+        {
+          "period": "09",
+          "year": 2002,
+          "value": 114.1
+        },
+        {
+          "period": "10",
+          "year": 2002,
+          "value": 105.8
+        },
+        {
+          "period": "11",
+          "year": 2002,
+          "value": 98.8
+        },
+        {
+          "period": "12",
+          "year": 2002,
+          "value": 96.3
+        },
+        {
+          "period": "01",
+          "year": 2003,
+          "value": 93.8
+        },
+        {
+          "period": "02",
+          "year": 2003,
+          "value": 98.6
+        },
+        {
+          "period": "03",
+          "year": 2003,
+          "value": 95.3
+        },
+        {
+          "period": "04",
+          "year": 2003,
+          "value": 96.8
+        },
+        {
+          "period": "05",
+          "year": 2003,
+          "value": 101.5
+        },
+        {
+          "period": "06",
+          "year": 2003,
+          "value": 97.9
+        },
+        {
+          "period": "07",
+          "year": 2003,
+          "value": 87.8
+        },
+        {
+          "period": "08",
+          "year": 2003,
+          "value": 91.7
+        },
+        {
+          "period": "09",
+          "year": 2003,
+          "value": 96.6
+        },
+        {
+          "period": "10",
+          "year": 2003,
+          "value": 87.9
+        },
+        {
+          "period": "11",
+          "year": 2003,
+          "value": 96.6
+        },
+        {
+          "period": "12",
+          "year": 2003,
+          "value": 101.3
+        },
+        {
+          "period": "01",
+          "year": 2004,
+          "value": 105.5
+        },
+        {
+          "period": "02",
+          "year": 2004,
+          "value": 108.1
+        },
+        {
+          "period": "03",
+          "year": 2004,
+          "value": 112.6
+        },
+        {
+          "period": "04",
+          "year": 2004,
+          "value": 117.6
+        },
+        {
+          "period": "05",
+          "year": 2004,
+          "value": 113.9
+        },
+        {
+          "period": "06",
+          "year": 2004,
+          "value": 108.4
+        },
+        {
+          "period": "07",
+          "year": 2004,
+          "value": 99.1
+        },
+        {
+          "period": "08",
+          "year": 2004,
+          "value": 92.1
+        },
+        {
+          "period": "09",
+          "year": 2004,
+          "value": 90.7
+        },
+        {
+          "period": "10",
+          "year": 2004,
+          "value": 80.4
+        },
+        {
+          "period": "11",
+          "year": 2004,
+          "value": 80.6
+        },
+        {
+          "period": "12",
+          "year": 2004,
+          "value": 83.8
+        },
+        {
+          "period": "01",
+          "year": 2005,
+          "value": 84.9
+        },
+        {
+          "period": "02",
+          "year": 2005,
+          "value": 82.6
+        },
+        {
+          "period": "03",
+          "year": 2005,
+          "value": 90.4
+        },
+        {
+          "period": "04",
+          "year": 2005,
+          "value": 83.4
+        },
+        {
+          "period": "05",
+          "year": 2005,
+          "value": 83.8
+        },
+        {
+          "period": "06",
+          "year": 2005,
+          "value": 85.8
+        },
+        {
+          "period": "07",
+          "year": 2005,
+          "value": 88.2
+        },
+        {
+          "period": "08",
+          "year": 2005,
+          "value": 83.0
+        },
+        {
+          "period": "09",
+          "year": 2005,
+          "value": 78.3
+        },
+        {
+          "period": "10",
+          "year": 2005,
+          "value": 76.1
+        },
+        {
+          "period": "11",
+          "year": 2005,
+          "value": 79.9
+        },
+        {
+          "period": "12",
+          "year": 2005,
+          "value": 84.1
+        },
+        {
+          "period": "01",
+          "year": 2006,
+          "value": 85.2
+        },
+        {
+          "period": "02",
+          "year": 2006,
+          "value": 87.3
+        },
+        {
+          "period": "03",
+          "year": 2006,
+          "value": 88.5
+        },
+        {
+          "period": "04",
+          "year": 2006,
+          "value": 95.8
+        },
+        {
+          "period": "05",
+          "year": 2006,
+          "value": 96.7
+        },
+        {
+          "period": "06",
+          "year": 2006,
+          "value": 95.7
+        },
+        {
+          "period": "07",
+          "year": 2006,
+          "value": 102.9
+        },
+        {
+          "period": "08",
+          "year": 2006,
+          "value": 90.7
+        },
+        {
+          "period": "09",
+          "year": 2006,
+          "value": 92.1
+        },
+        {
+          "period": "10",
+          "year": 2006,
+          "value": 113.6
+        },
+        {
+          "period": "11",
+          "year": 2006,
+          "value": 134.7
+        },
+        {
+          "period": "12",
+          "year": 2006,
+          "value": 133.9
+        },
+        {
+          "period": "01",
+          "year": 2007,
+          "value": 131.5
+        },
+        {
+          "period": "02",
+          "year": 2007,
+          "value": 149.0
+        },
+        {
+          "period": "03",
+          "year": 2007,
+          "value": 147.8
+        },
+        {
+          "period": "04",
+          "year": 2007,
+          "value": 135.7
+        },
+        {
+          "period": "05",
+          "year": 2007,
+          "value": 140.7
+        },
+        {
+          "period": "06",
+          "year": 2007,
+          "value": 151.0
+        },
+        {
+          "period": "07",
+          "year": 2007,
+          "value": 138.7
+        },
+        {
+          "period": "08",
+          "year": 2007,
+          "value": 136.5
+        },
+        {
+          "period": "09",
+          "year": 2007,
+          "value": 146.3
+        },
+        {
+          "period": "10",
+          "year": 2007,
+          "value": 150.6
+        },
+        {
+          "period": "11",
+          "year": 2007,
+          "value": 162.1
+        },
+        {
+          "period": "12",
+          "year": 2007,
+          "value": 188.5
+        },
+        {
+          "period": "01",
+          "year": 2008,
+          "value": 214.5
+        },
+        {
+          "period": "02",
+          "year": 2008,
+          "value": 223.1
+        },
+        {
+          "period": "03",
+          "year": 2008,
+          "value": 245.6
+        },
+        {
+          "period": "04",
+          "year": 2008,
+          "value": 239.8
+        },
+        {
+          "period": "05",
+          "year": 2008,
+          "value": 233.4
+        },
+        {
+          "period": "06",
+          "year": 2008,
+          "value": 251.1
+        },
+        {
+          "period": "07",
+          "year": 2008,
+          "value": 235.7
+        },
+        {
+          "period": "08",
+          "year": 2008,
+          "value": 209.8
+        },
+        {
+          "period": "09",
+          "year": 2008,
+          "value": 201.5
+        },
+        {
+          "period": "10",
+          "year": 2008,
+          "value": 157.2
+        },
+        {
+          "period": "11",
+          "year": 2008,
+          "value": 150.6
+        },
+        {
+          "period": "12",
+          "year": 2008,
+          "value": 133.7
+        },
+        {
+          "period": "01",
+          "year": 2009,
+          "value": 147.2
+        },
+        {
+          "period": "02",
+          "year": 2009,
+          "value": 150.3
+        },
+        {
+          "period": "03",
+          "year": 2009,
+          "value": 151.5
+        },
+        {
+          "period": "04",
+          "year": 2009,
+          "value": 152.2
+        },
+        {
+          "period": "05",
+          "year": 2009,
+          "value": 166.7
+        },
+        {
+          "period": "06",
+          "year": 2009,
+          "value": 173.9
+        },
+        {
+          "period": "07",
+          "year": 2009,
+          "value": 142.6
+        },
+        {
+          "period": "08",
+          "year": 2009,
+          "value": 136.4
+        },
+        {
+          "period": "09",
+          "year": 2009,
+          "value": 131.1
+        },
+        {
+          "period": "10",
+          "year": 2009,
+          "value": 142.5
+        },
+        {
+          "period": "11",
+          "year": 2009,
+          "value": 144.6
+        },
+        {
+          "period": "12",
+          "year": 2009,
+          "value": 144.5
+        },
+        {
+          "period": "01",
+          "year": 2010,
+          "value": 143.8
+        },
+        {
+          "period": "02",
+          "year": 2010,
+          "value": 138.3
+        },
+        {
+          "period": "03",
+          "year": 2010,
+          "value": 138.5
+        },
+        {
+          "period": "04",
+          "year": 2010,
+          "value": 137.9
+        },
+        {
+          "period": "05",
+          "year": 2010,
+          "value": 143.4
+        },
+        {
+          "period": "06",
+          "year": 2010,
+          "value": 136.9
+        },
+        {
+          "period": "07",
+          "year": 2010,
+          "value": 141.9
+        },
+        {
+          "period": "08",
+          "year": 2010,
+          "value": 150.8
+        },
+        {
+          "period": "09",
+          "year": 2010,
+          "value": 174.8
+        },
+        {
+          "period": "10",
+          "year": 2010,
+          "value": 196.7
+        },
+        {
+          "period": "11",
+          "year": 2010,
+          "value": 203.1
+        },
+        {
+          "period": "12",
+          "year": 2010,
+          "value": 216.0
+        },
+        {
+          "period": "01",
+          "year": 2011,
+          "value": 226.7
+        },
+        {
+          "period": "02",
+          "year": 2011,
+          "value": 255.2
+        },
+        {
+          "period": "03",
+          "year": 2011,
+          "value": 239.1
+        },
+        {
+          "period": "04",
+          "year": 2011,
+          "value": 272.1
+        },
+        {
+          "period": "05",
+          "year": 2011,
+          "value": 266.0
+        },
+        {
+          "period": "06",
+          "year": 2011,
+          "value": 281.9
+        },
+        {
+          "period": "07",
+          "year": 2011,
+          "value": 260.7
+        },
+        {
+          "period": "08",
+          "year": 2011,
+          "value": 263.6
+        },
+        {
+          "period": "09",
+          "year": 2011,
+          "value": 266.8
+        },
+        {
+          "period": "10",
+          "year": 2011,
+          "value": 240.3
+        },
+        {
+          "period": "11",
+          "year": 2011,
+          "value": 243.5
+        },
+        {
+          "period": "12",
+          "year": 2011,
+          "value": 226.4
+        },
+        {
+          "period": "01",
+          "year": 2012,
+          "value": 243.5
+        },
+        {
+          "period": "02",
+          "year": 2012,
+          "value": 241.6
+        },
+        {
+          "period": "03",
+          "year": 2012,
+          "value": 250.5
+        },
+        {
+          "period": "04",
+          "year": 2012,
+          "value": 242.3
+        },
+        {
+          "period": "05",
+          "year": 2012,
+          "value": 234.2
+        },
+        {
+          "period": "06",
+          "year": 2012,
+          "value": 232.8
+        },
+        {
+          "period": "07",
+          "year": 2012,
+          "value": 278.8
+        },
+        {
+          "period": "08",
+          "year": 2012,
+          "value": 289.7
+        },
+        {
+          "period": "09",
+          "year": 2012,
+          "value": 289.2
+        },
+        {
+          "period": "10",
+          "year": 2012,
+          "value": 280.7
+        },
+        {
+          "period": "11",
+          "year": 2012,
+          "value": 277.2
+        },
+        {
+          "period": "12",
+          "year": 2012,
+          "value": 277.2
+        },
+        {
+          "period": "01",
+          "year": 2013,
+          "value": 278.8
+        },
+        {
+          "period": "02",
+          "year": 2013,
+          "value": 268.1
+        },
+        {
+          "period": "03",
+          "year": 2013,
+          "value": 275.4
+        },
+        {
+          "period": "04",
+          "year": 2013,
+          "value": 251.1
+        },
+        {
+          "period": "05",
+          "year": 2013,
+          "value": 261.9
+        },
+        {
+          "period": "06",
+          "year": 2013,
+          "value": 265.7
+        },
+        {
+          "period": "07",
+          "year": 2013,
+          "value": 257.0
+        },
+        {
+          "period": "08",
+          "year": 2013,
+          "value": 216.2
+        },
+        {
+          "period": "09",
+          "year": 2013,
+          "value": 200.2
+        },
+        {
+          "period": "10",
+          "year": 2013,
+          "value": 182.4
+        },
+        {
+          "period": "11",
+          "year": 2013,
+          "value": 178.2
+        },
+        {
+          "period": "12",
+          "year": 2013,
+          "value": 179.0
+        },
+        {
+          "period": "01",
+          "year": 2014,
+          "value": 177.2
+        },
+        {
+          "period": "02",
+          "year": 2014,
+          "value": 180.9
+        },
+        {
+          "period": "03",
+          "year": 2014,
+          "value": 193.2
+        },
+        {
+          "period": "04",
+          "year": 2014,
+          "value": 203.0
+        },
+        {
+          "period": "05",
+          "year": 2014,
+          "value": 203.9
+        },
+        {
+          "period": "06",
+          "year": 2014,
+          "value": 184.3
+        },
+        {
+          "period": "07",
+          "year": 2014,
+          "value": 158.9
+        },
+        {
+          "period": "08",
+          "year": 2014,
+          "value": 152.3
+        },
+        {
+          "period": "09",
+          "year": 2014,
+          "value": 148.7
+        },
+        {
+          "period": "10",
+          "year": 2014,
+          "value": 143.7
+        },
+        {
+          "period": "11",
+          "year": 2014,
+          "value": 151.7
+        },
+        {
+          "period": "12",
+          "year": 2014,
+          "value": 160.4
+        },
+        {
+          "period": "01",
+          "year": 2015,
+          "value": 157.2
+        },
+        {
+          "period": "02",
+          "year": 2015,
+          "value": 157.7
+        },
+        {
+          "period": "03",
+          "year": 2015,
+          "value": 157.6
+        },
+        {
+          "period": "04",
+          "year": 2015,
+          "value": 153.8
+        },
+        {
+          "period": "05",
+          "year": 2015,
+          "value": 148.6
+        },
+        {
+          "period": "06",
+          "year": 2015,
+          "value": 151.4
+        },
+        {
+          "period": "07",
+          "year": 2015,
+          "value": 165.0
+        },
+        {
+          "period": "08",
+          "year": 2015,
+          "value": 148.3
+        },
+        {
+          "period": "09",
+          "year": 2015,
+          "value": 147.8
+        },
+        {
+          "period": "10",
+          "year": 2015,
+          "value": 147.2
+        },
+        {
+          "period": "11",
+          "year": 2015,
+          "value": 141.0
+        },
+        {
+          "period": "12",
+          "year": 2015,
+          "value": 147.1
+        },
+        {
+          "period": "01",
+          "year": 2016,
+          "value": 140.8
+        },
+        {
+          "period": "02",
+          "year": 2016,
+          "value": 139.9
+        },
+        {
+          "period": "03",
+          "year": 2016,
+          "value": 142.6
+        },
+        {
+          "period": "04",
+          "year": 2016,
+          "value": 139.6
+        },
+        {
+          "period": "05",
+          "year": 2016,
+          "value": 142.7
+        },
+        {
+          "period": "06",
+          "year": 2016,
+          "value": 159.8
+        },
+        {
+          "period": "07",
+          "year": 2016,
+          "value": 132.7
+        },
+        {
+          "period": "08",
+          "year": 2016,
+          "value": 124.5
+        },
+        {
+          "period": "09",
+          "year": 2016,
+          "value": 119.9
+        },
+        {
+          "period": "10",
+          "year": 2016,
+          "value": 122.5
+        },
+        {
+          "period": "11",
+          "year": 2016,
+          "value": 125.6
+        },
+        {
+          "period": "12",
+          "year": 2016,
+          "value": 130.3
+        },
+        {
+          "period": "01",
+          "year": 2017,
+          "value": 133.0
+        },
+        {
+          "period": "02",
+          "year": 2017,
+          "value": 138.5
+        },
+        {
+          "period": "03",
+          "year": 2017,
+          "value": 136.2
+        },
+        {
+          "period": "04",
+          "year": 2017,
+          "value": 135.7
+        },
+        {
+          "period": "05",
+          "year": 2017,
+          "value": 136.8
+        },
+        {
+          "period": "06",
+          "year": 2017,
+          "value": 141.2
+        },
+        {
+          "period": "07",
+          "year": 2017,
+          "value": 153.1
+        },
+        {
+          "period": "08",
+          "year": 2017,
+          "value": 133.7
+        },
+        {
+          "period": "09",
+          "year": 2017,
+          "value": 129.9
+        },
+        {
+          "period": "10",
+          "year": 2017,
+          "value": 129.2
+        },
+        {
+          "period": "11",
+          "year": 2017,
+          "value": 129.0
+        },
+        {
+          "period": "12",
+          "year": 2017,
+          "value": 130.5
+        },
+        {
+          "period": "01",
+          "year": 2018,
+          "value": 135.4
+        },
+        {
+          "period": "02",
+          "year": 2018,
+          "value": 143.3
+        },
+        {
+          "period": "03",
+          "year": 2018,
+          "value": 150.6
+        },
+        {
+          "period": "04",
+          "year": 2018,
+          "value": 151.5
+        },
+        {
+          "period": "05",
+          "year": 2018,
+          "value": 155.1
+        },
+        {
+          "period": "06",
+          "year": 2018,
+          "value": 151.0
+        },
+        {
+          "period": "07",
+          "year": 2018,
+          "value": 138.4
+        },
+        {
+          "period": "08",
+          "year": 2018,
+          "value": 144.5
+        },
+        {
+          "period": "09",
+          "year": 2018,
+          "value": 138.8
+        },
+        {
+          "period": "10",
+          "year": 2018,
+          "value": 139.2
+        },
+        {
+          "period": "11",
+          "year": 2018,
+          "value": 142.8
+        },
+        {
+          "period": "12",
+          "year": 2018,
+          "value": 148.0
+        },
+        {
+          "period": "01",
+          "year": 2019,
+          "value": 144.2
+        },
+        {
+          "period": "02",
+          "year": 2019,
+          "value": 148.7
+        },
+        {
+          "period": "03",
+          "year": 2019,
+          "value": 141.4
+        },
+        {
+          "period": "04",
+          "year": 2019,
+          "value": 141.3
+        },
+        {
+          "period": "05",
+          "year": 2019,
+          "value": 142.7
+        },
+        {
+          "period": "06",
+          "year": 2019,
+          "value": 165.3
+        },
+        {
+          "period": "07",
+          "year": 2019,
+          "value": 168.0
+        },
+        {
+          "period": "08",
+          "year": 2019,
+          "value": 145.4
+        },
+        {
+          "period": "09",
+          "year": 2019,
+          "value": 142.1
+        },
+        {
+          "period": "10",
+          "year": 2019,
+          "value": 153.7
+        },
+        {
+          "period": "11",
+          "year": 2019,
+          "value": 151.9
+        },
+        {
+          "period": "12",
+          "year": 2019,
+          "value": 149.9
+        },
+        {
+          "period": "01",
+          "year": 2020,
+          "value": 158.7
+        },
+        {
+          "period": "02",
+          "year": 2020,
+          "value": 155.4
+        },
+        {
+          "period": "03",
+          "year": 2020,
+          "value": 153.1
+        },
+        {
+          "period": "04",
+          "year": 2020,
+          "value": 134.4
+        },
+        {
+          "period": "05",
+          "year": 2020,
+          "value": 131.3
+        },
+        {
+          "period": "06",
+          "year": 2020,
+          "value": 134.6
+        },
+        {
+          "period": "07",
+          "year": 2020,
+          "value": 133.5
+        },
+        {
+          "period": "08",
+          "year": 2020,
+          "value": 127.1
+        },
+        {
+          "period": "09",
+          "year": 2020,
+          "value": 143.9
+        },
+        {
+          "period": "10",
+          "year": 2020,
+          "value": 155.6
+        },
+        {
+          "period": "11",
+          "year": 2020,
+          "value": 168.4
+        },
+        {
+          "period": "12",
+          "year": 2020,
+          "value": 171.8
+        },
+        {
+          "period": "01",
+          "year": 2021,
+          "value": 203.8
+        },
+        {
+          "period": "02",
+          "year": 2021,
+          "value": 216.5
+        },
+        {
+          "period": "03",
+          "year": 2021,
+          "value": 215.5
+        },
+        {
+          "period": "04",
+          "year": 2021,
+          "value": 225.5
+        },
+        {
+          "period": "05",
+          "year": 2021,
+          "value": 285.5
+        },
+        {
+          "period": "06",
+          "year": 2021,
+          "value": 260.8
+        },
+        {
+          "period": "07",
+          "year": 2021,
+          "value": 249.686
+        },
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 251.986
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 223.168
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 217.941
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 232.69
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 246.904
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 248.6
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 260.151
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 301.702
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 318.043
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 322.3
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 322.742
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 280.166
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 274.406
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 290.946
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 280.361
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 277.504
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 270.886
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 268.915
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 279.648
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 257.021
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 270.26
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 257.526
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 257.294
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 226.695
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 211.044
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 194.918
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 190.498
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 189.425
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 190.589
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 183.484
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 174.163
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 175.257
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 174.765
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 189.722
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 182.791
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 163.139
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 155.573
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 158.529
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 157.22
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 168.992
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 175.531
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 181.8
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 185.27
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 178.324
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 184.647
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 170.173
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 171.889
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 161.485
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 147.641
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 154.917
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 152.196
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 162.149
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 165.679
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 157.952
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 163.004
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 170.527
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 169.759
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 184.37
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 162.892
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 173.089
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 174.013
+        },
+        {
+          "period": "09",
+          "year": 2026,
+          "value": 203.861
         }
       ]
     }

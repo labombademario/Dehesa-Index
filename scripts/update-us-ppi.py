@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'data' / 'us-ppi.json'
 UA = {'User-Agent': 'Dehesa-Index-data-bot/1.0 (https://dehesaindex.com)'}
 B = 'https://download.bls.gov/pub/time.series/wp/'
-WANT = ['WPU0131', 'WPU0132', 'WPU0133', 'WPU0134', 'WPU014', 'WPU0141', 'WPU016', 'WPU017', 'WPU011306', 'WPU01830131', 'WPU01830171', 'WPU0123', 'WPU011102283',
+WANT = ['WPU012', 'WPU0131', 'WPU0132', 'WPU0133', 'WPU0134', 'WPU014', 'WPU0141', 'WPU016', 'WPU017', 'WPU011306', 'WPU01830131', 'WPU01830171', 'WPU0123', 'WPU011102283',
         'WPU0232', 'WPU0233', 'WPU023302', 'WPU0235', 'WPU0252', 'WPU0253', 'WPU026104', 'WPU0213', 'WPU022101', 'WPU022104', 'WPU022103', 'WPU022203', 'WPU0292']
 LOG = []
 def log(m): LOG.append(m); print(m)

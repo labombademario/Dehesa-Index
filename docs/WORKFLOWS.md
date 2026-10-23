@@ -382,7 +382,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-nass-extra.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-nass-extra.py | us-nass-extra-stats.json | finish, validate-files |
 | update-us-nass-processing.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-nass-processing.py | us-nass-processing-ledger.json, us-nass-processing-stats.json | finish, validate-files |
 | update-us-noaa-fish.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-noaa-fish.py | us-noaa-fish-stats.json | finish, validate-files |
-| update-us-panel-prices.yml | a mano | semanal (1-5) | build-us-panel-obs.py | - | price-engine, publish |
+| update-us-panel-prices.yml | a mano | semanal (1-5) | build-us-index-obs.py, build-us-panel-obs.py | - | price-engine, publish |
 | update-us-ppi.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-ppi.py | us-ppi.json | finish, validate-files |
 | update-us-reservoirs.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-us-reservoirs.py | us-reservoirs-normals.json, us-reservoirs.json | finish, validate-files |
 | update-us-sap.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-sap.py | us-markets/sap-forecasts.json | finish, validate-files |

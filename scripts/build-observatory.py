@@ -66,6 +66,10 @@ EXTRA = {
  'defra_feed_input_index': L4('Índice DEFRA: pienso (insumos)', 'DEFRA index: feed (inputs)', 'Indice DEFRA : aliments (intrants)', 'Indice DEFRA: mangimi (input)'), 'defra_fertiliser_input_index': L4('Índice DEFRA: fertilizantes (insumos)', 'DEFRA index: fertilisers (inputs)', 'Indice DEFRA : engrais (intrants)', 'Indice DEFRA: fertilizzanti (input)'),
  'defra_milk_output_index': L4('Índice DEFRA: leche (producción)', 'DEFRA index: milk (output)', 'Indice DEFRA : lait (production)', 'Indice DEFRA: latte (produzione)'), 'defra_oilseed_rape_output_index': L4('Índice DEFRA: colza (producción)', 'DEFRA index: oilseed rape (output)', 'Indice DEFRA : colza (production)', 'Indice DEFRA: colza (produzione)'),
  'defra_pigs_output_index': L4('Índice DEFRA: cerdo (producción)', 'DEFRA index: pigs (output)', 'Indice DEFRA : porcs (production)', 'Indice DEFRA: suini (produzione)'), 'defra_sheep_output_index': L4('Índice DEFRA: ovino (producción)', 'DEFRA index: sheep (output)', 'Indice DEFRA : ovins (production)', 'Indice DEFRA: ovini (produzione)'),
+ 'us_fertilizer_input_index': L4('Índice NASS: fertilizantes (insumos)', 'NASS index: fertilisers (inputs)', 'Indice NASS : engrais (intrants)', 'Indice NASS: fertilizzanti (input)'),
+ 'us_energy_input_index': L4('Índice NASS: combustibles (insumos)', 'NASS index: fuels (inputs)', 'Indice NASS : carburants (intrants)', 'Indice NASS: carburanti (input)'),
+ 'us_milk_output_index': L4('Índice BLS: leche cruda (producción)', 'BLS index: raw milk (output)', 'Indice BLS : lait cru (production)', 'Indice BLS: latte crudo (produzione)'),
+ 'us_cereals_output_index': L4('Índice BLS: cereales (producción)', 'BLS index: grains (output)', 'Indice BLS : céréales (production)', 'Indice BLS: cereali (produzione)'),
  'defra_wheat_output_index': L4('Índice DEFRA: trigo (producción)', 'DEFRA index: wheat (output)', 'Indice DEFRA : blé (production)', 'Indice DEFRA: frumento (produzione)')}
 REGIONS = {'eu': L4('UE', 'EU', 'UE', 'UE'), 'us': L4('EE. UU.', 'US', 'É.-U.', 'USA'), 'ca': L4('Canadá', 'Canada', 'Canada', 'Canada'), 'uk': L4('Reino Unido', 'UK', 'Royaume-Uni', 'Regno Unito')}
 

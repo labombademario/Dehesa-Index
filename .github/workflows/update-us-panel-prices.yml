@@ -22,6 +22,8 @@ jobs:
           python-version: '3.12'
       - name: Construir observaciones para el panel
         run: python scripts/build-us-panel-obs.py
+      - name: Construir índices de EE. UU. (NASS precios pagados y BLS PPI) para las relaciones
+        run: python scripts/build-us-index-obs.py
       - uses: ./.github/actions/price-engine
       - name: Publicar
         uses: ./.github/actions/publish
