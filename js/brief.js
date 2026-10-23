@@ -111,7 +111,11 @@
   function link(k, h) { if (h) return h; var p = k.split('/'); if (p[0] === 'CB') return 'precios-locales.html?s=' + encodeURIComponent(p[1]) + '&c=' + encodeURIComponent(p[2]) + '&id=' + encodeURIComponent(p.slice(3).join('/')); if (p[0] === 'P') return 'catalogo.html?q=' + encodeURIComponent(p[1].replace(/^di_/, '').replace(/_/g, ' ')); return 'paises.html?c=' + encodeURIComponent(p[0]) + '&s=' + encodeURIComponent(p.slice(1).join('/')); }
   function flag(c) { return window.DIProfile && window.DIProfile.flag ? window.DIProfile.flag(c) : ''; }
   function card(n, l, hint) { return '<div class="di-card" style="padding:12px 14px;text-align:left"><div style="font:700 26px/1.1 \'Source Serif 4\',serif">' + n + '</div><div style="margin:2px 0 0;font-weight:700;font-size:13px">' + esc(l) + '</div>' + (hint ? '<div class="di-movers-hint" style="margin:4px 0 0">' + esc(hint) + '</div>' : '') + '</div>'; }
-  function sec(id, title, inner) { return '<section id="' + id + '" class="di-card" style="padding:14px 18px;margin:0 0 18px"><h2 style="margin:0 0 8px;font-size:17px">' + esc(title) + '</h2>' + inner + '</section>'; }
+  /* cada sección es un desplegable; lo que la persona pliega se recuerda en este navegador */
+  var CK = 'dehesaIndexBriefClosed';
+  function closedMap() { try { var v = JSON.parse(window.localStorage.getItem(CK) || '{}'); return v && typeof v === 'object' ? v : {}; } catch (e) { return {}; } }
+  function setClosed(id, on) { var o = closedMap(); if (on) o[id] = 1; else delete o[id]; try { window.localStorage.setItem(CK, JSON.stringify(o)); } catch (e) { /* sin almacenamiento */ } }
+  function sec(id, title, inner) { return '<section id="' + id + '" class="di-card" style="padding:14px 18px;margin:0 0 18px"><details class="br-sec" data-brsec="' + id + '"' + (closedMap()[id] ? '' : ' open') + '><summary class="br-sum"><h2 style="display:inline;margin:0;font-size:17px">' + esc(title) + '</h2></summary><div style="margin-top:8px">' + inner + '</div></details></section>'; }
   function savedCountry() { try { var v = JSON.parse(window.localStorage.getItem('di-mi-mercado-v1') || '{}'); return v && v.c ? String(v.c) : ''; } catch (e) { return ''; } }
   function zoneSec(t) {
     var cc = savedCountry(), arr = cc && B && B.byCountry ? (B.byCountry[cc] || []) : [];
@@ -164,10 +168,14 @@
     Array.prototype.forEach.call(secs, function (e) { var h = e.querySelector('h2'); if (h) items.push('<a href="#' + e.id + '" style="flex:0 0 auto;white-space:nowrap;padding:6px 12px;border:1px solid var(--border);border-radius:999px;font-size:13px;text-decoration:none;color:inherit;background:var(--surface,#fff)">' + esc(h.textContent) + '</a>'); });
     if (items.length < 3) return;
     var tl = ({ es: 'Contenido de la página', en: 'On this page', fr: 'Sur cette page', it: 'In questa pagina' })[lang()] || 'On this page';
-    root.insertAdjacentHTML('afterbegin', '<nav aria-label="' + esc(tl) + '" style="display:flex;gap:8px;overflow-x:auto;margin:0 0 16px;padding:2px 0 6px;-webkit-overflow-scrolling:touch">' + items.join('') + '</nav>');
+    var ca = ({ es: ['Plegar todo', 'Desplegar todo'], en: ['Collapse all', 'Expand all'], fr: ['Tout replier', 'Tout déplier'], it: ['Comprimi tutto', 'Espandi tutto'] })[lang()] || ['Collapse all', 'Expand all'];
+    root.insertAdjacentHTML('afterbegin', '<nav aria-label="' + esc(tl) + '" style="display:flex;gap:8px;overflow-x:auto;margin:0 0 8px;padding:2px 0 6px;-webkit-overflow-scrolling:touch">' + items.join('') + '</nav><p style="margin:0 0 14px;font-size:13px"><button type="button" class="di-link-btn" data-brall="close">' + esc(ca[0]) + '</button> · <button type="button" class="di-link-btn" data-brall="open">' + esc(ca[1]) + '</button></p>');
   }
   function bind(root) {
     var W = window.DIWatch, t = tt();
+    Array.prototype.forEach.call(root.querySelectorAll('details.br-sec'), function (d) { d.addEventListener('toggle', function () { setClosed(d.getAttribute('data-brsec'), !d.open); }); });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-brall]'), function (b) { b.addEventListener('click', function () { var op = b.getAttribute('data-brall') === 'open'; Array.prototype.forEach.call(root.querySelectorAll('details.br-sec'), function (d) { d.open = op; setClosed(d.getAttribute('data-brsec'), !op); }); }); });
+    Array.prototype.forEach.call(root.querySelectorAll('nav a[href^="#"]'), function (a) { a.addEventListener('click', function () { var sc = document.getElementById(a.getAttribute('href').slice(1)), d = sc && sc.querySelector('details.br-sec'); if (d && !d.open) d.open = true; }); });
     Array.prototype.forEach.call(root.querySelectorAll('[data-more]'), function (b) { b.addEventListener('click', function () { var k = b.getAttribute('data-more'); ST.more[k] = !ST.more[k]; render(); }); });
     Array.prototype.forEach.call(root.querySelectorAll('[data-ack]'), function (b) { b.addEventListener('click', function () { var p = b.getAttribute('data-ack').split('|'); W.ack(p[0], p.slice(1).join('|')); render(); }); });
     if (W) W.bindEditor(root, render);

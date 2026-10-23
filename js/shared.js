@@ -443,7 +443,7 @@
     };
   function frBar(host, title, items) {
     if (!host) return; var e = function (x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
-    items = items.filter(function (it) { return document.getElementById(it[0]); });
+    items = items.filter(function (it) { var t = document.getElementById(it[0]); return t && getComputedStyle(t).display !== 'none'; });   // un bloque oculto (sin datos en este país) no sale en la barra
     if (items.length < 2) { host.innerHTML = ''; host.hidden = true; return; }
     host.hidden = false; host.className = 'pt-ctx di-frame-bar'; host.setAttribute('aria-label', title);
     var subsOf = function (it) { return (it[2] || []).filter(function (x) { return document.getElementById(x[0]); }); };
@@ -451,7 +451,7 @@
     if (window.DIFrMenu) window.DIFrMenu();   // el desplegable de los submenus (fichas de pais y de region)
 
     frHdr();
-    var upd = function () { var cur = null, h = frHdr(); Array.prototype.forEach.call(document.querySelectorAll('.di-frame-bar a[data-fr]'), function (a) { var t = document.getElementById(a.getAttribute('data-fr')); if (t && t.getBoundingClientRect().top <= h + 100) cur = a; }); Array.prototype.forEach.call(document.querySelectorAll('.di-frame-bar a[data-fr]'), function (a) { if (a === cur) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); }); };
+    var upd = function () { var cur = null, h = frHdr(); Array.prototype.forEach.call(document.querySelectorAll('.di-frame-bar a[data-fr]'), function (a) { var t = document.getElementById(a.getAttribute('data-fr')); if (t && t.getClientRects().length && t.getBoundingClientRect().top <= h + 100) cur = a; }); Array.prototype.forEach.call(document.querySelectorAll('.di-frame-bar a[data-fr]'), function (a) { if (a === cur) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); }); };
     if (!FR.spy) { FR.spy = true; var tk = false; window.addEventListener('resize', frHdr); window.addEventListener('scroll', function () { if (tk) return; tk = true; (window.requestAnimationFrame || setTimeout)(function () { tk = false; upd(); }); }, { passive: true }); }
     if (!FR.clk) { FR.clk = true; document.addEventListener('click', function (ev) { var a = ev.target.closest ? ev.target.closest('.di-frame-bar a[data-fr]') : null; if (!a) return; var t = document.getElementById(a.getAttribute('data-fr')); if (!t) return; ev.preventDefault(); t.scrollIntoView({ behavior: 'auto', block: 'start' }); }); }
     upd();

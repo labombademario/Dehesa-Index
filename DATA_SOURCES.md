@@ -4,15 +4,16 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 159 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36852 series en el catalogo unificado.
+Resumen: 161 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 38751 series en el catalogo unificado.
 
-## VERIFIED (159)
+## VERIFIED (161)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
 | sourceId | Fuente | Pais | Licencia | Comercial/derivados | Atribucion | Series | Restricciones adicionales |
 |---|---|---|---|---|---|---|---|
 | `aafc_drought` | Agriculture and Agri-Food Canada — Canadian Drought Monitor | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
+| `aafc_slaughter` | Agriculture and Agri-Food Canada — Weekly Red Meat Slaughter | CA | OGL-Canada | si/si | si | 11 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `aafc_wholesale` | Agriculture and Agri-Food Canada — Weekly and Daily Wholesale Prices Reports | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `abares` | Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences) | AU | CC-BY-4.0 | si/si | si | 58 | Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth C… |
 | `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 158 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
@@ -25,9 +26,10 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `agreste_saa` | France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département | FR | etalab-1.0 | si/si | si | 4100 | Citar Agreste/SSP y la edición; el último año es provisional y se marca como tal. |
 | `agreste_ssp` | France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer) | FR | etalab-1.0 | si/si | si | 0 | Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer. |
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 9 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
+| `alberta_inputs` | Alberta Agriculture and Irrigation — Alberta Farm Input Prices | CA | OGL-Alberta | si/si | si | 54 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `ama_agrardiesel` | AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG | AT | PUBLIC-LAW | si/si | si | 0 |  |
 | `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 89 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
-| `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 1 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
+| `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 14 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
 | `bank_of_england` | Bank of England — Statistical Interactive Database (Bank Rate) | UK | OGL-UK-3.0 | si/si | si | 1 | La página legal excluye algunos datos de tipos de cambio de terceros; solo se usa Bank Rate (IUDBEDR), que es dato propio del Banco. |
 | `bea` | U.S. Bureau of Economic Analysis | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bfs_ch_open` | Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices | CH | OPENDATA-SWISS-TERMS-BY | si/si | si | 87 | Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each… |
@@ -139,7 +141,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
 | `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 123 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |
-| `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 728 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
+| `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 992 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `statistik_austria_vb` | Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications) | AT | STATISTIK-AUSTRIA-REUSE | si/si | si | 11 | Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en … |
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
@@ -154,12 +156,12 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_ams_fmmo` | USDA AMS Dairy Programs, Federal Milk Marketing Orders (Market News datamart) | US | US-PD | si/si | no | 48 | Only AMS-produced FMMO reports are used (3355 class prices by order, 3351 uniform prices, 3357 mailbox prices, 3352 price and pool, 3462 pro… |
 | `usda_ams_lmr` | USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart | US | US-PD | si/si | no | 0 | Only AMS-produced reports are used (LM_XB403 boxed beef cutout, LM_PK602 pork cutout, LM_HG201 prior-day swine, LM_CT100 5-area slaughter ca… |
 | `usda_ams_mars` | USDA AMS Market News (MARS API) | US | US-PD | si/si | no | 13 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
-| `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 770 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
+| `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 1812 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_esr` | USDA FAS — Export Sales Reporting (ESR) | US | US-PD | si/si | no | 13 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_gats` | USDA FAS — Global Agricultural Trade System (GATS) | US | CC-BY-4.0 | si/si | si | 16 | The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims. |
 | `usda_fas_psd` | USDA FAS — Production, Supply and Distribution (PSD Online) | US | CC-BY-4.0 | si/si | si | 0 | Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos. |
 | `usda_fsa` | USDA Farm Service Agency (ARC/PLC program data) | US | US-PD | si/si | no | 0 | Byline requested. Some FSA web materials are copyrighted and labelled as such; the ARC/PLC program data files are FSA's own publications. No… |
-| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 600 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
+| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 1115 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
 | `usda_nrcs` | USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API) | US | US-PD | si/si | si | 12 | No implied USDA endorsement. Provisional data: NRCS notes SNOTEL data are not quality controlled in real time. |
 | `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |
