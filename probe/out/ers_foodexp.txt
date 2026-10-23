@@ -1,0 +1,45 @@
+https://www.ers.usda.gov/data-products/food-expenditure-series
+200 text/html; charset=utf-8 len=62245
+TEXT:  Food Expenditure Series | Economic Research Service Skip to main content Skip to main content An official website of the United States government Here’s how you know Here’s how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( Lock Locked padlock icon ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. Economic Research Service U.S. DEPARTMENT OF AGRICULTURE Menu Topics Data Access the Data Access and analyze data sets, maps, charts and graphs. Browse All Data Data by Type Access the Data Charts Downloadable Data Files Queryable Data Applications Maps Data by Topic Explore the Data Repository Animal Products Crops Farm Bill Farm Economy Farm Practices &amp; Management Food &amp; Nutrition Assistance Food Choices &amp; Health Food Markets &amp; Prices Food Safety International Markets &amp; U.S. Trade Natural Resources &amp; Environment Rural Economy &amp; Population Analysis Understand the Research Get insights and objective analysis from experts in the field. Browse All Analysis Research Reports Published Papers from ERS Outlook Reports Agricultural Outlooks and Projections Amber Waves The Economics of Food, Farming, Natural Resources, and Rural Amer… Charts of Note Fast facts on U.S. agriculture Newsroom Newsroom See what&#039;s new and what&#039;s trending from ERS. Visit the Newsroom Events Trending Topics Contact ERS Press Office Subject Specialists Amber Waves Calendar About Careers Contact Us Search Breadcrumb Home Data Products Food Expenditure Series Food Expenditure Series Updated: 10/19/2026 Contact: Eliana Zeballos or Wilson Sinclair In this section Food Expenditure Series Documentation Update and Revision History Interactive Charts: Food Expenditures The Economic Research Service (ERS) Food Expenditure Series (FES) is a comprehensive data product that measures the value of food acquired in the United States by type of product, outlet, and purchaser, capturing both commercial food sales and nonmarket sources of food. Specifically, FES includes: The value of food and beverages sales, including sales taxes and tips The value of food produced at home, donated, and furnished to employees and institutionalized populations FES is produced by ERS and draws on data from the Census Bureau and other Federal agencies. FES provides a consistent, long-term measure of food s
+DATA LINKS (41):
+/index/sitemap.xml
+/media/5171/nominal-food-expenditures-with-taxes-and-tips-from-previously-published-estimates.xlsx?v=97905
+/media/5172/nominal-food-expenditures-with-taxes-and-tips-from-previously-published-estimates.csv?v=78414
+/media/5173/food-expenditures-by-final-purchaser-from-previously-published-estimates.xlsx?v=36036
+/media/5174/food-expenditures-by-final-purchaser-from-previously-published-estimates.csv?v=84875
+/media/5175/normalized-food-expenditures-by-final-purchasers-and-users-from-previously-published-estimates.xlsx?v=55475
+/media/5176/normalized-food-expenditures-by-final-purchasers-and-users-from-previously-published-estimates.csv?v=84965
+/media/5177/monthly-sales-of-food-with-taxes-and-tips-from-previously-published-estimates.xlsx?v=54157
+/media/5178/monthly-sales-of-food-with-taxes-and-tips-from-previously-published-estimates.csv?v=61840
+/media/5179/state-food-sales-with-taxes-and-tips-for-all-purchasers-previously-published-estimates.xlsx?v=31525
+/media/5180/state-food-sales-with-taxes-and-tips-for-all-purchasers-previously-published-estimates.csv?v=98916
+/media/5181/state-food-sales-without-taxes-and-tips-for-all-purchasers-previously-published-estimates.xlsx?v=14919
+/media/5182/state-food-sales-without-taxes-and-tips-for-all-purchasers-previously-published-estimates.csv?v=81574
+/media/5183/state-food-sales-per-capita-with-taxes-and-tips-for-all-purchasers-previously-published-estimates.xlsx?v=40144
+/media/5184/state-food-sales-per-capita-with-taxes-and-tips-for-all-purchasers-previously-published-estimates.csv?v=53953
+/media/5185/state-food-sales-per-capita-without-taxes-and-tips-for-all-purchasers-previously-published-estimates.xlsx?v=22438
+/media/5186/state-food-sales-per-capita-without-taxes-and-tips-for-all-purchasers-previously-published-estimates.csv?v=81126
+/media/5187/nominal-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers.xlsx?v=65047
+/media/5188/nominal-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers.csv?v=24022
+/media/5189/nominal-food-and-alcohol-expenditures-without-taxes-and-tips-for-all-purchasers.xlsx?v=70671
+/media/5190/nominal-food-and-alcohol-expenditures-without-taxes-and-tips-for-all-purchasers.csv?v=22429
+/media/5191/constant-dollar-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers.xlsx?v=99232
+/media/5192/constant-dollar-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers.csv?v=67106
+/media/5193/constant-dollar-food-and-alcohol-expenditures-without-taxes-and-tips-for-all-purchasers.xlsx?v=70765
+/media/5194/constant-dollar-food-and-alcohol-expenditures-without-taxes-and-tips-for-all-purchasers.csv?v=86894
+/media/5195/food-expenditures-by-final-purchaser.xlsx?v=62996
+/media/5196/food-expenditures-by-final-purchaser.csv?v=60070
+/media/5197/normalized-food-expenditures-by-all-purchasers-and-household-final-users.xlsx?v=43507
+/media/5198/normalized-food-expenditures-by-all-purchasers-and-household-final-users.csv?v=61430
+/media/5199/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers-by-outlet-type.xlsx?v=88814
+/media/5200/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers-by-outlet-type.csv?v=21626
+/media/5201/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers.xlsx?v=51145
+/media/5202/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers.csv?v=26996
+/media/5203/state-food-sales-with-taxes-and-tips-for-all-purchasers.xlsx?v=10086
+/media/5204/state-food-sales-with-taxes-and-tips-for-all-purchasers.csv?v=43255
+/media/5205/state-food-sales-without-taxes-and-tips-for-all-purchasers.xlsx?v=37930
+/media/5206/state-food-sales-without-taxes-and-tips-for-all-purchasers.csv?v=15225
+/media/5207/state-food-sales-per-capita-with-taxes-and-tips-for-all-purchasers.xlsx?v=79909
+/media/5208/state-food-sales-per-capita-with-taxes-and-tips-for-all-purchasers.csv?v=95457
+/media/5209/state-food-sales-per-capita-without-taxes-and-tips-for-all-purchasers.xlsx?v=63216
+/media/5210/state-food-sales-per-capita-without-taxes-and-tips-for-all-purchasers.csv?v=58242

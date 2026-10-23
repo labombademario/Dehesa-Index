@@ -1,0 +1,2 @@
+200 application/xml;charset=UTF-8 len=204
+<ns1:GetCDLStatResponse xmlns:ns1="http://cropscape.csiss.gmu.edu/CDLService/"><returnURL>https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2024_19.csv</returnURL></ns1:GetCDLStatResponse>

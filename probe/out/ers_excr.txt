@@ -1,0 +1,19 @@
+https://www.ers.usda.gov/data-products/agricultural-exchange-rate-data-set
+200 text/html; charset=utf-8 len=43839
+TEXT:  Agricultural Exchange Rate Data Set | Economic Research Service Skip to main content Skip to main content An official website of the United States government Here’s how you know Here’s how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( Lock Locked padlock icon ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. Economic Research Service U.S. DEPARTMENT OF AGRICULTURE Menu Topics Data Access the Data Access and analyze data sets, maps, charts and graphs. Browse All Data Data by Type Access the Data Charts Downloadable Data Files Queryable Data Applications Maps Data by Topic Explore the Data Repository Animal Products Crops Farm Bill Farm Economy Farm Practices &amp; Management Food &amp; Nutrition Assistance Food Choices &amp; Health Food Markets &amp; Prices Food Safety International Markets &amp; U.S. Trade Natural Resources &amp; Environment Rural Economy &amp; Population Analysis Understand the Research Get insights and objective analysis from experts in the field. Browse All Analysis Research Reports Published Papers from ERS Outlook Reports Agricultural Outlooks and Projections Amber Waves The Economics of Food, Farming, Natural Resources, and Rural Amer… Charts of Note Fast facts on U.S. agriculture Newsroom Newsroom See what&#039;s new and what&#039;s trending from ERS. Visit the Newsroom Events Trending Topics Contact ERS Press Office Subject Specialists Amber Waves Calendar About Careers Contact Us Search Breadcrumb Home Data Products Agricultural Exchange Rate Data Set Agricultural Exchange Rate Data Set Updated: 8/27/2026 Contact: William Johnson or Wendy Zeng In this section Agricultural Exchange Rate Data Set Documentation This dataset, released quarterly, contains annual and monthly data for exchange rates important to U.S. agriculture. It is produced by the Agricultural Exchange Rate model developed by the USDA Economic Research Service (ERS). It includes both nominal and real exchange rates for 79 countries, plus the European Union (EU), as well as real trade-weighted exchange rate indexes for many commodities and aggregations. Which exchange rates matter the most varies by commodity, since the countries the United States trades with vary by commodity; these important differences are captured by the commodity indexes in this dataset. The data series sta
+DATA LINKS (15):
+/index/sitemap.xml
+/media/5446/real-annual-commodity-trade-weighted-exchange-rate-indexes.xlsx?v=42768
+/media/5447/real-annual-commodity-trade-weighted-exchange-rate-indexes.csv?v=53914
+/media/5448/real-monthly-commodity-trade-weighted-exchange-rate-indexes.xlsx?v=98821
+/media/5449/real-monthly-commodity-trade-weighted-exchange-rate-indexes.csv?v=72427
+/media/5450/monthly-real-exchange-rates-local-currency-per-usd.xlsx?v=72751
+/media/5451/monthly-real-exchange-rates-local-currency-per-usd.csv?v=88128
+/media/5452/annual-nominal-exchange-rates-local-currency-per-usd.xlsx?v=40675
+/media/5453/annual-nominal-exchange-rates-local-currency-per-usd.csv?v=42400
+/media/5454/monthly-nominal-exchange-rates-local-currency-per-usd.xlsx?v=56402
+/media/5455/monthly-nominal-exchange-rates-local-currency-per-usd.csv?v=68333
+/media/5456/annual-real-exchange-rates-local-currency-per-usd.xlsx?v=12763
+/media/5457/annual-real-exchange-rates-local-currency-per-usd.csv?v=31686
+/media/5458/agricultural-trade-weights-by-commodity-or-commodity-group.xlsx?v=40011
+/media/5459/agricultural-trade-weights-by-commodity-or-commodity-group.csv?v=69938
