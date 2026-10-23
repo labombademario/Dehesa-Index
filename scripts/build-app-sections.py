@@ -792,12 +792,95 @@ def observatorio():
     if late: out.append(block('obs-late', 'WORLD', 'Precios que llegan tarde|Prices running late|Prix en retard|Prezzi in ritardo', asOf=gen, bars=[bars('Días desde el último dato|Days since the latest figure|Jours depuis la dernière donnée|Giorni dall’ultimo dato', 'd', [(nm(o), o.get('ageDays')) for o in late], 0)]))
     return {'id': 'observatorio', 'title': t4('Observatorio de datos|Data observatory|Observatoire des données|Osservatorio dei dati'), 'emoji': '🔭', 'blocks': out}
 
+def _ser(d, tid, sid):
+    t = next((x for x in (d or {}).get('tables', []) if x['id'] == tid), None)
+    return next((x for x in (t or {}).get('series', []) if x['id'] == sid), None)
+def _yoy(pts, back=1):
+    return pct(pts[-1][1], pts[-1 - back][1]) if len(pts) > back else None
+
+def portugal_nl():
+    """Portugal (INE, data/portugal-more) y nitrógeno en Natura 2000 de Países Bajos (RIVM, data/netherlands-more/natura2000.json)."""
+    out = []
+    SRC_PT = lambda f: {'name': 'INE (Instituto Nacional de Estatística)', 'url': 'https://www.ine.pt/'}
+    pe = j('portugal-more/pesca.json')
+    if pe:
+        tot = _ser(pe, 'pesca-total', 'pt-pesca-pt-total')
+        if tot and len(tot['points']) > 1:
+            P = tot['points']; y = P[-1][0]
+            def lt(tid, sid):
+                x = _ser(pe, tid, sid); return (x['points'][-1][1], x['points'][-1][0]) if x and x['points'] else (None, None)
+            reg = [(({l: x['label'] for l in L4}), x['points'][-1][1]) for x in next(t for t in pe['tables'] if t['id'] == 'pesca-total')['series'] if x['id'] not in ('pt-pesca-pt-total', 'pt-pesca-1-total') and x['points'] and x['points'][-1][0] == y and len(x['id'].split('-')[2]) <= 2]
+            reg = sorted(reg, key=lambda r: -r[1])
+            out.append(block('pesca-pt', 'PT', 'Portugal: precio medio de la pesca descargada|Portugal: average price of landed fish|Portugal : prix moyen du poisson débarqué|Portogallo: prezzo medio del pescato sbarcato', asOf=y,
+                stats=[stat('Precio medio, total|Average price, total|Prix moyen, total|Prezzo medio, totale', P[-1][1], '€/kg', 2, chg(_yoy(P), str(P[-2][0]))),
+                       stat('Pescado de mar|Sea fish|Poisson de mer|Pesce di mare', lt('pesca-sea-fish', 'pt-pesca-pt-sea-fish')[0], '€/kg', 2),
+                       stat('Crustáceos|Crustaceans|Crustacés|Crostacei', lt('pesca-crustaceans', 'pt-pesca-pt-crustaceans')[0], '€/kg', 2),
+                       stat('Moluscos|Molluscs|Mollusques|Molluschi', lt('pesca-molluscs', 'pt-pesca-pt-molluscs')[0], '€/kg', 2)],
+                charts=[chart('Precio medio desde ' + P[0][0] + '|Average price since ' + P[0][0] + '|Prix moyen depuis ' + P[0][0] + '|Prezzo medio dal ' + P[0][0], '€/kg', [('Portugal', [[a, b] for a, b in P])])],
+                bars=[bars('Por región ' + y + '|By region ' + y + '|Par région ' + y + '|Per regione ' + y, '€/kg', reg[:10], 2)],
+                note=t4('Valor medio de lo descargado en lonja, tal como lo publica el INE (€/kg). No es un precio de venta al público.|Average value of fish landed at auction, as published by INE (€/kg). Not a retail price.|Valeur moyenne du poisson débarqué en criée, publiée par l’INE (€/kg). Ce n’est pas un prix de détail.|Valore medio del pescato sbarcato in asta, come pubblicato dall’INE (€/kg). Non è un prezzo al dettaglio.'),
+                source={'name': 'INE Portugal', 'url': 'https://www.ine.pt/'}))
+    ip = j('portugal-more/ipc.json')
+    if ip:
+        def sr(c): return _ser(ip, 'ipca-alimentos', 'pt-hicp-' + c)
+        g, f, m, l = sr('t'), sr('01'), sr('0112'), sr('0114')
+        if g and f and len(g['points']) > 13:
+            P = g['points']
+            st = []
+            for lab, x in (('Índice general (IPCA)|General index (HICP)|Indice général (IPCH)|Indice generale (IPCA)', g), ('Alimentos y bebidas no alcohólicas|Food and non-alcoholic drinks|Produits alimentaires et boissons non alcoolisées|Alimenti e bevande analcoliche', f), ('Carne|Meat|Viande|Carne', m), ('Leche, lácteos y huevos|Milk, dairy and eggs|Lait, produits laitiers et œufs|Latte, latticini e uova', l)):
+                if x and len(x['points']) > 12: st.append(stat(lab, x['points'][-1][1], 'índice 2025=100|index 2025=100|indice 2025=100|indice 2025=100', 1, chg(_yoy(x['points'], 12))))
+            out.append(block('ipc-pt', 'PT', 'Portugal: precios de los alimentos al consumidor (IPCA)|Portugal: consumer food prices (HICP)|Portugal : prix alimentaires à la consommation (IPCH)|Portogallo: prezzi alimentari al consumo (IPCA)', asOf=P[-1][0], stats=st,
+                charts=[chart('Últimos 36 meses|Last 36 months|36 derniers mois|Ultimi 36 mesi', 'índice 2025=100|index 2025=100|indice 2025=100|indice 2025=100', [('Índice general|General index|Indice général|Indice generale', P[-36:]), ('Alimentos y bebidas|Food and drinks|Alimentation et boissons|Alimenti e bevande', f['points'][-36:])])],
+                source={'name': 'INE Portugal, IPCA', 'url': 'https://www.ine.pt/'}))
+    le = j('portugal-more/leche.json')
+    if le:
+        x = _ser(le, 'leche-t', 'pt-leche-t-cow-s-milk')
+        if x and len(x['points']) > 2:
+            P = x['points']
+            out.append(block('leche-pt', 'PT', 'Portugal: leche de vaca recogida|Portugal: cow’s milk collected|Portugal : lait de vache collecté|Portogallo: latte vaccino raccolto', asOf=P[-1][0],
+                stats=[stat('Leche de vaca recogida|Cow’s milk collected|Lait de vache collecté|Latte vaccino raccolto', P[-1][1] / 1e3, 'kt', 0, chg(_yoy(P), str(P[-2][0])))],
+                charts=[chart('Desde ' + P[0][0] + '|Since ' + P[0][0] + '|Depuis ' + P[0][0] + '|Dal ' + P[0][0], 't', [('Leche de vaca|Cow’s milk|Lait de vache|Latte vaccino', P)])],
+                source={'name': 'INE Portugal', 'url': 'https://www.ine.pt/'}))
+    inc = j('portugal-more/incendios.json')
+    if inc:
+        ha = _ser(inc, 'inc-ha-tipo', 'pt-fire-ha-pt-total'); n = _ser(inc, 'inc-n-tam', 'pt-fire-n-pt-total')
+        if ha and len(ha['points']) > 2:
+            P = ha['points']; y = P[-1][0]
+            parts = [(x['label'], x['points'][-1][1]) for x in next(t for t in inc['tables'] if t['id'] == 'inc-ha-tipo')['series'] if x['id'] != 'pt-fire-ha-pt-total' and x['points'] and x['points'][-1][0] == y]
+            out.append(block('incendios-pt', 'PT', 'Portugal: incendios rurales y superficie quemada|Portugal: rural fires and burnt area|Portugal : incendies ruraux et surfaces brûlées|Portogallo: incendi rurali e superficie bruciata', asOf=y,
+                stats=[stat('Superficie quemada|Burnt area|Surface brûlée|Superficie bruciata', P[-1][1], 'ha', 0, chg(_yoy(P), str(P[-2][0]))),
+                       stat('Número de incendios|Number of fires|Nombre d’incendies|Numero di incendi', n['points'][-1][1] if n and n['points'] else None, '', 0, chg(_yoy(n['points']), str(n['points'][-2][0])) if n and len(n['points']) > 1 else None)],
+                charts=[chart('Superficie quemada desde ' + P[0][0] + '|Burnt area since ' + P[0][0] + '|Surface brûlée depuis ' + P[0][0] + '|Superficie bruciata dal ' + P[0][0], 'ha', [('Total', P)])],
+                bars=[bars('Por tipo de terreno ' + y + '|By land type ' + y + '|Par type de terrain ' + y + '|Per tipo di terreno ' + y, 'ha', [({l: a for l in L4}, b) for a, b in sorted(parts, key=lambda r: -r[1])], 0)],
+                source={'name': 'INE Portugal', 'url': 'https://www.ine.pt/'}))
+    nt = j('netherlands-more/natura2000.json')
+    if nt:
+        def g1(tid, sid):
+            x = _ser(nt, tid, sid); return x['points'][-1][1] if x and x['points'] else None
+        tot, ag, ov = g1('natura-total', 'nl-n2k-0'), g1('natura-agricultura', 'nl-n2k-ag-0'), g1('natura-sobrecarga', 'nl-n2k-over-0')
+        yr = _ser(nt, 'natura-total', 'nl-n2k-0')['points'][-1][0] if tot is not None else ''
+        def tb(tid): return next((t for t in nt['tables'] if t['id'] == tid), None)
+        sec = [(x['l'] if False else {'es': x['label'], **x['l']}, x['points'][-1][1]) for x in (tb('natura-sectores') or {'series': []})['series'] if x['points']]
+        ori = [({'es': x['label'], **x['l']}, x['points'][-1][1]) for x in (tb('natura-origen') or {'series': []})['series'] if x['points']]
+        top = sorted(((x['label'], x['points'][-1][1]) for x in (tb('natura-total') or {'series': []})['series'] if x['id'] != 'nl-n2k-0' and x['points']), key=lambda r: -r[1])[:10]
+        if tot is not None:
+            st = [stat('Deposición media de nitrógeno|Average nitrogen deposition|Dépôt moyen d’azote|Deposizione media di azoto', tot, 'mol N/ha/a', 1),
+                  stat('De la agricultura neerlandesa|From Dutch agriculture|De l’agriculture néerlandaise|Dall’agricoltura olandese', ag, 'mol N/ha/a', 1)]
+            if ag is not None: st.append(stat('Parte de la agricultura neerlandesa|Share from Dutch agriculture|Part de l’agriculture néerlandaise|Quota dell’agricoltura olandese', ag / tot * 100, '%', 0))
+            if ov is not None: st.append(stat('Hábitat sensible por encima del valor crítico|Sensitive habitat above the critical value|Habitat sensible au-dessus de la valeur critique|Habitat sensibile sopra il valore critico', ov, '%', 0))
+            out.append(block('nitrogeno-natura-nl', 'NL', 'Países Bajos: nitrógeno en las zonas Natura 2000|Netherlands: nitrogen in Natura 2000 areas|Pays-Bas : azote dans les zones Natura 2000|Paesi Bassi: azoto nelle aree Natura 2000', asOf=str(yr), stats=st,
+                bars=[bars('Por sector (emisiones neerlandesas)|By sector (Dutch emissions)|Par secteur (émissions néerlandaises)|Per settore (emissioni olandesi)', 'mol N/ha/a', sec, 1), bars('Por país de origen|By country of origin|Par pays d’origine|Per paese di origine', 'mol N/ha/a', ori, 1),
+                      bars('Las 10 zonas con más deposición|The 10 areas with most deposition|Les 10 zones les plus exposées|Le 10 aree con più deposizione', 'mol N/ha/a', [({l: a for l in L4}, b) for a, b in top], 1)],
+                note=t4('Foto del año calculado ' + str(yr) + ' (Monitor Stikstofdepositie 2026 del RIVM); no es una serie en el tiempo. Corrección de medida: ajuste negativo del modelo.|Snapshot of calculated year ' + str(yr) + ' (RIVM Monitor Stikstofdepositie 2026); not a time series. Measurement correction: negative model adjustment.|Instantané de l’année calculée ' + str(yr) + ' (Monitor Stikstofdepositie 2026 du RIVM) ; pas une série temporelle. Correction de mesure : ajustement négatif du modèle.|Fotografia dell’anno calcolato ' + str(yr) + ' (Monitor Stikstofdepositie 2026 del RIVM); non è una serie temporale. Correzione di misura: aggiustamento negativo del modello.'),
+                source={'name': 'RIVM, Monitor Stikstofdepositie', 'url': 'https://data.rivm.nl/data/stikstof/'}))
+    return {'id': 'portugal-nitrogeno', 'title': t4('Portugal y nitrógeno en Países Bajos|Portugal and nitrogen in the Netherlands|Portugal et azote aux Pays-Bas|Portogallo e azoto nei Paesi Bassi'), 'emoji': '🇵🇹', 'blocks': out}
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     gen = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     idx = {}
     keep = {'index.json'}
-    for fn in (rendimientos_eu, observatorio, analisis, relaciones, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, regiones_pl, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles):
+    for fn in (rendimientos_eu, observatorio, analisis, relaciones, ganaderia_es, balances_es, seguro, cultivos, oferta, clima, insumos, regiones_pl, cuentas, granos_ca, ganaderia_us, exportaciones_us, aranceles, portugal_nl):
         try: doc = fn()
         except Exception as e: print('ERROR en', fn.__name__, repr(e)); raise
         if not doc or not doc['blocks']: print('sin datos:', fn.__name__); continue
