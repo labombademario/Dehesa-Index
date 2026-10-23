@@ -316,6 +316,7 @@
     document.addEventListener('mouseover', hov); document.addEventListener('focusin', hov); document.addEventListener('mouseout', unhov); document.addEventListener('focusout', unhov);
     document.addEventListener('keydown', function (e) { var el = e.target; if ((e.key === 'Enter' || e.key === ' ') && el && el.getAttribute && el.getAttribute('role') === 'button' && el.tagName === 'path') { e.preventDefault(); var ev = document.createEvent('MouseEvents'); ev.initEvent('click', true, true); el.dispatchEvent(ev); } });
     global.addEventListener('hashchange', function () { if (EMBED) return; var k = (location.hash || '').replace('#', ''); if (/^(empleo|suelo|insumos|vendimia)$/.test(k) && k !== STATE.tab) { STATE.tab = k; render(); } });
+    if (!EMBED && S.init) S.init('informacion');   /* cabecera, menu y pie (faltaba: la pagina salia sin ellos) */
     if (!EMBED) S.onLangChange = function () { text(); render(); };
     render();
   }
