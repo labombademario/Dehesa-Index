@@ -513,7 +513,7 @@ CASES = [
  ("spain-inputs/pesticides.json", "fila con valores de menos", lambda d: d["rows"][1]["v"].pop()),
  ("spain-health/focos.json", "id repetido", lambda d: d["focos"][1].__setitem__("id", d["focos"][0]["id"])),
  ("spain-health/focos.json", "fecha futura", lambda d: d["focos"][0].__setitem__("date", "2031-01-01")),
- ("spain-health/focos.json", "kind incoherente", lambda d: d["focos"][0].__setitem__("kind", "asf")),
+ ("spain-health/focos.json", "kind incoherente", lambda d: next(f for f in d["focos"] if "peste porcina africana" not in f["disease"].lower()).__setitem__("kind", "asf")),
  ("spain-health/focos.json", "vigilada como other", lambda d: next(f for f in d["focos"] if f["kind"] == "wnv").__setitem__("kind", "other")),
  ("spain-esyrce/extra-2025.json", "rendimiento imposible", lambda d: d["yields"][0]["y"].__setitem__(next(i for i, v in enumerate(d["yields"][0]["y"]) if v), 9e6)),
  ("spain-esyrce/extra-2025.json", "serie con territorios de menos", lambda d: d["yields"][3]["y"].pop()),
