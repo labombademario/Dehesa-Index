@@ -1,0 +1,61 @@
+## slaughter-weekly len=3865446 type=dict n=1
+ first: {"EndDt_DtFin": "1997-01-04T00:00:00-05:00", "MjrCmdtyEn_PrdtPrncplAn": "Calves", "MjCmdtyFr_PrdtPrncplFr": "Veaux", "CtgryEn_CtgrieAn": "Female", "CtgryFr_CtgrieFr": "Femelle", "NumHd_NmbTetes": "609"}
+ last: {"EndDt_DtFin": "2026-10-10T00:00:00-05:00", "MjrCmdtyEn_PrdtPrncplAn": "Sheep/Lamb", "MjCmdtyFr_PrdtPrncplFr": "Moutons/agneaux", "CtgryEn_CtgrieAn": "Sheep", "CtgryFr_CtgrieFr": "Moutons", "NumHd_NmbTetes": "14"}
+  EndDt_DtFin: 1553 distinct, e.g. ['1997-01-04T00:00:00-05:00', '1997-01-11T00:00:00-05:00', '1997-01-18T00:00:00-05:00', '1997-01-25T00:00:00-05:00'] .. ['2026-10-03T00:00:00-05:00', '2026-10-10T00:00:00-05:00']
+  MjrCmdtyEn_PrdtPrncplAn: 4 distinct, e.g. ['Calves', 'Cattle', 'Hogs', 'Sheep/Lamb'] .. ['Hogs', 'Sheep/Lamb']
+  MjCmdtyFr_PrdtPrncplFr: 4 distinct, e.g. ['Bovins', 'Moutons/agneaux', 'Porcs', 'Veaux'] .. ['Porcs', 'Veaux']
+  CtgryEn_CtgrieAn: 12 distinct, e.g. ['Boars', 'Bulls', 'Cows', 'Female'] .. ['Steers', 'Total Approved Hogs Slaughtered']
+  CtgryFr_CtgrieFr: 12 distinct, e.g. ['Agneaux', 'Bouvillons', 'Femelle', 'Genisses'] .. ['Vaches', 'Varrats']
+  NumHd_NmbTetes: 9283 distinct, e.g. ['0', '1', '10', '100'] .. ['999', '9997']
+## monthly page links: https://od-do.agr.gc.ca/AbattageAnimauxViandeRougeMensuelleDictionnaireFr.html | https://od-do.agr.gc.ca/AbattageAnimauxViandeRougeMensuelleJournalFr.html | https://od-do.agr.gc.ca/MonthlyRedMeatSlaughterChangeLogEn.html | https://od-do.agr.gc.ca/MonthlyRedMeatSlaughterDictionaryEn.html | https://od-do.agr.gc.ca/MonthlyRedMeatSlaughter_AbattageAnimauxViandeRougeMensuelle.csv | https://od-do.agr.gc.ca/MonthlyRedMeatSlaughter_AbattageAnimauxViandeRougeMensuelle.json
+## average-weekly-cattle-prices lic=Open Government Licence – Ontario upd=2026-10-05T17:38:51.920950
+   XLSX |  | https://data.ontario.ca/dataset/5fe854bf-3c17-4e60-b2a3-f1dba6732663/resource/b4611924-83c4-4a31-b4db-82b95cdabbda/download/weeklycattleprice_en.xlsx
+   XLSX |  | https://data.ontario.ca/dataset/5fe854bf-3c17-4e60-b2a3-f1dba6732663/resource/c59e1cee-5be4-4a4c-a1a8-ccc2b0d6e2b1/download/weeklycattleprice_fr.xlsx
+## average-weekly-hog-prices lic=Open Government Licence – Ontario upd=2026-10-05T17:37:10.386689
+   XLSX |  | https://data.ontario.ca/dataset/1ca3b31c-5adc-4d91-b606-c866b71135c2/resource/4399ff21-1719-4ea9-aca8-4f6537ad2389/download/weeklyswineprice_en.xlsx
+   XLSX |  | https://data.ontario.ca/dataset/1ca3b31c-5adc-4d91-b606-c866b71135c2/resource/2ab92a50-f514-4269-bdba-553b0f7dc52d/download/weeklyswineprice_fr.xlsx
+## average-weekly-corn-prices lic=Open Government Licence – Ontario upd=2026-10-05T17:30:49.166693
+   XLSX |  | https://data.ontario.ca/dataset/a33275b4-5ac4-4347-a39c-62adc2b0d510/resource/73072c55-4db4-4287-b467-c217798acfa7/download/weeklycornprice_en.xlsx
+   XLSX |  | https://data.ontario.ca/dataset/a33275b4-5ac4-4347-a39c-62adc2b0d510/resource/e6d48c8f-a610-4edb-b63b-a770d7279eec/download/weeklycornprice_fr.xlsx
+## average-weekly-soybean-prices lic=Open Government Licence – Ontario upd=2026-10-05T17:33:51.411630
+   XLSX |  | https://data.ontario.ca/dataset/f25e730a-0b31-44e5-8f86-78205be465a1/resource/65ca45f1-f8f7-4a7c-90d1-d696251d4466/download/weeklysoybeanprice_en.xlsx
+   XLSX |  | https://data.ontario.ca/dataset/f25e730a-0b31-44e5-8f86-78205be465a1/resource/e31c3a1a-546a-4267-b075-70ff72f8f59d/download/weeklysoybeanprice_fr.xlsx
+## average-weekly-winter-wheat-prices lic=Open Government Licence – Ontario upd=2026-10-05T17:35:26.199506
+   XLSX |  | https://data.ontario.ca/dataset/e083d20d-8a6d-4864-8c88-21a8fd03949c/resource/062af18a-4e86-49f2-ba5f-4e360eac883e/download/weeklywwheatprice_en.xlsx
+   XLSX |  | https://data.ontario.ca/dataset/e083d20d-8a6d-4864-8c88-21a8fd03949c/resource/dec3f33b-1e86-4e79-8ab5-bc6fdb93bfe8/download/weeklywwheatprice_fr.xlsx
+## alberta pdfs: 8, months ['2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08']
+ latest: https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/af9e3b2e-ab00-4ca4-a6ac-a20071fd1ff6/download/agi-tedab-monthly-farm-input-prices-2026-08.pdf
+ pages=1
+Alberta Farm Input Prices
+August 2026
+Farm Input Prices - Dollars ($) Aug 2025 Jul 2026 Aug 2026
+Construction Grade Lumber, 2x6, spruce, M 1,026.88 1,017.58 1,018.39
+Rough Grade Lumber, 2x8, spruce, M 1,038.50 992.59 1,112.29
+Sheathing, plywood, spruce, unsanded, 9.6 mm, 4'x8' sheet 28.29 27.97 27.39
+Fence Posts, standard grade, treated, 3-4" diameter, 7' length 10.16 10.36 9.55
+Ready-Mix Concrete, 32 mpa strength, cubic metre 343.63 352.20 347.43
+Nails, standard grade, 4" spiral, 50 lb box 104.57 119.35 116.17
+Pipe, plastic, 1" diameter, 75 psi, 100' coil 87.03 99.61 105.88
+Rods, steel reinforcing, 10 mm, 6 metre length 9.03 10.01 9.60
+Barbed Wire, 12 gauge, double strand, 40 kg, 80 rod spool 118.26 120.04 120.07
+Grain Bin, hopper bottom included, 7,000-8,000 bushel capacity, each 42,085.40 45,200.11 45,698.65
+Grain Bag, 10’x250’, holds approximately 11,000 bu grain, each 1,044.96 1,119.12 1,131.42
+Truck Tires, 1st line, blackwall, LT285-70R-17 Radial (environmental tax included), each 426.95 431.07 413.59
+Storage Battery, 12 volt, 24 series, 750-800 cranking amps, each 225.99 232.80 224.10
+Antifreeze, ethylene glycol, anti-corrosion, 9.46 litre 46.39 50.86 51.64
+Mechanical Repairs, for farm machinery, shop & labour, per hour 172.46 187.37 187.85
+Baler Twine, plastic, for round baler, 28,000' bale 50.03 39.99 39.99
+General Farm Labour, full-time, without board, per month 4,057.41 4,228.85 3,881.13
+Tractor, FWD, 130-140 hp, 4-6 cylinder, diesel, 12-24 speed, with front-end loader, new, each 257,942.58 276,945.20 273,819.50
+Tractor, 4WD, 500-600 hp, 6-8 cylinder, diesel, 12-18 speed, new, each 882,979.65 912,800.39 919,213.54
+Combine, self-propelled, diesel, Class 8, 375-429 hp, 250-350 bu grain tank, new, each 1,019,389.92 1,039,744.19 1,064,499.53
+Air Drill, 50-60', 400-500 bushels, double chute, variable rate sectional control, new, each 680,750.47 784,623.05 796,277.47
+Sprayer, self-propelled, 325-375 hp, 1,000-1,200 gallons, 100-120' boom, new, each 934,824.48 999,819.75 1,005,273.41
+Round Baler, pull-type, P.T.O. driven, 5'x6' hard core bale, new, each 112,262.55 117,961.81 121,308.76
+Double Disc, heavy-duty tandem, 19-21', 22" blades, new, each 111,497.47 110,309,40 105,104.00
+3/4 Ton Truck, diesel, crew cab, 4x4, mid-range, automatic, new, each 89,246.87 99,885.95 96,703.42
+Calf-Starter Ration, pellets, 13-20% protein, bagged, 25 kg 18.91 18.66 18.66
+Calf Milk Replacer, bagged, 20 kg 109.95 120.91 123.69
+Feedlot Supplement, pellets, 30-32% protein, 
+## MB weekly years 1987..2025 last=(2025, 12, 51) crops=14
+  ('Barley, #1CW', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Canola Meal, 34%, Altona', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Canola, #1CR', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Corn, #2', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Flaxseed, #1CW', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Oats, #2CW', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Peas, #2 Yellow', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Rye, #2', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Soybeans', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Soymeal, 46%, Wpg', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Wheat, Northern Hard Red', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Wheat, Red Winter', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Wheat, Special Purpose (Low Vomi)', 'CAD/tonne', "Farmer's net cash return at Wpg elevator"); ('Wheat, Western Red Spring', 'CAD/tonne', "Farmer's net cash return at Wpg elevator")
