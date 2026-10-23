@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T08:06:00Z",
+ "generatedAt": "2026-10-23T08:21:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 250,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T06:51:44.109484+00:00",
   "repoGeneratedAt": "2026-10-23T06:51:44.109484+00:00",
-  "checkedAt": "2026-10-23T08:06:00Z"
+  "checkedAt": "2026-10-23T08:21:00Z"
  },
  "pipelines": [
   {
@@ -190,9 +190,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:21:20Z",
+    "startedAt": "2026-10-23T08:18:00Z",
     "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39747108330"
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39923665931"
    },
    "recent": {
     "runs": 10,
@@ -397,9 +397,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:14:46Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39746312634"
+    "startedAt": "2026-10-23T08:12:26Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39923024685"
    },
    "recent": {
     "runs": 10,
@@ -1581,7 +1581,7 @@
    "crons": [
     "10 8 2,9,16,23 * *"
    ],
-   "nextRun": "2026-10-23T08:10:00Z",
+   "nextRun": "2026-11-02T08:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1596,7 +1596,7 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 240.0
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-es-esyrce-extra.yml",
@@ -1981,13 +1981,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-20T08:18:13Z",
-    "durationSec": 57,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39392418167"
+    "startedAt": "2026-10-23T08:20:39Z",
+    "durationSec": 55,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39923965875"
    },
    "recent": {
-    "runs": 2,
-    "success": 2,
+    "runs": 3,
+    "success": 3,
     "failed": 0
    },
    "status": "ok",
@@ -2027,9 +2027,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:14:42Z",
-    "durationSec": 118,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39746303733"
+    "startedAt": "2026-10-23T08:12:27Z",
+    "durationSec": 146,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39923026663"
    },
    "recent": {
     "runs": 10,
@@ -3206,9 +3206,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:23:48Z",
-    "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39747411531"
+    "startedAt": "2026-10-23T08:20:40Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39923968830"
    },
    "recent": {
     "runs": 10,
@@ -3848,7 +3848,7 @@
    "crons": [
     "10 8 * * *"
    ],
-   "nextRun": "2026-10-23T08:10:00Z",
+   "nextRun": "2026-10-24T08:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4039,7 +4039,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T07:54:05Z"
+     "lastChange": "2026-10-23T08:08:28Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4307,13 +4307,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-20T08:11:33Z",
-    "durationSec": 26,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39391619668"
+    "startedAt": "2026-10-23T08:13:35Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39923158389"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -4325,7 +4325,7 @@
    "crons": [
     "20 8 * * *"
    ],
-   "nextRun": "2026-10-23T08:20:00Z",
+   "nextRun": "2026-10-24T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5998,7 +5998,7 @@
    "crons": [
     "20 8 * * 2,5"
    ],
-   "nextRun": "2026-10-23T08:20:00Z",
+   "nextRun": "2026-10-27T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
