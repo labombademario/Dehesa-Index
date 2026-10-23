@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T07:23:00Z",
+ "generatedAt": "2026-10-23T07:38:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 250,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T06:51:44.109484+00:00",
   "repoGeneratedAt": "2026-10-23T06:51:44.109484+00:00",
-  "checkedAt": "2026-10-23T07:23:00Z"
+  "checkedAt": "2026-10-23T07:38:00Z"
  },
  "pipelines": [
   {
@@ -2805,7 +2805,7 @@
    "crons": [
     "30 7 * * 5"
    ],
-   "nextRun": "2026-10-23T07:30:00Z",
+   "nextRun": "2026-10-30T07:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3293,7 +3293,7 @@
    "crons": [
     "25 7 * * 2,5"
    ],
-   "nextRun": "2026-10-23T07:25:00Z",
+   "nextRun": "2026-10-27T07:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3412,10 +3412,10 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T10:46:34Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39765619359"
+    "event": "schedule",
+    "startedAt": "2026-10-23T07:26:05Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39917701952"
    },
    "recent": {
     "runs": 10,
@@ -3740,9 +3740,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T04:14:52Z",
-    "durationSec": 552,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39899300159"
+    "startedAt": "2026-10-23T07:26:50Z",
+    "durationSec": 211,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39917790032"
    },
    "recent": {
     "runs": 10,
@@ -3825,7 +3825,7 @@
    "crons": [
     "30 7 * * 2,5"
    ],
-   "nextRun": "2026-10-23T07:30:00Z",
+   "nextRun": "2026-10-27T07:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4039,7 +4039,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T07:03:35Z"
+     "lastChange": "2026-10-23T07:26:11Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4186,7 +4186,7 @@
    "crons": [
     "30 7 * * *"
    ],
-   "nextRun": "2026-10-23T07:30:00Z",
+   "nextRun": "2026-10-24T07:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
