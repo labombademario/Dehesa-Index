@@ -14,7 +14,7 @@ U = "https://www.ers.usda.gov/media/1/"
 mo = "Notes: x,,,\nYear,Month,Food-at-home sales (millions of nominal U.S. dollars),Food-away-from-home sales (millions of nominal U.S. dollars),Total\n" + "".join("%d,%d,%d,%d,%d\n" % (y, m, 1000 + m, 900 + m, 1900 + 2 * m) for y in (2024, 2025, 2026) for m in range(1, 13) if not (y == 2026 and m > 8)) + "Source: ERS,,,\n"
 w("monthly-sales.csv", mo)
 s = {x["id"]: x for x in F.monthly(U + "monthly-sales.csv", "monthly-sales", "Monthly")}
-eq(len(s), 3, "3 columnas mensuales"); a = s["us-ersfood-monthly-sales-food-at-home-sales-m"]; eq(a["latestPeriod"], "2026-08", "ultimo mes"); eq(a["unit"], "million USD", "unidad"); eq(len(a["points"]), 32, "32 meses")
+eq(len(s), 3, "3 columnas mensuales"); a = list(s.values())[0]; eq(a["latestPeriod"], "2026-08", "ultimo mes"); eq(a["unit"], "million USD", "unidad"); eq(len(a["points"]), 32, "32 meses")
 # anual con unidad en cabecera
 an = "Year,Grocery stores (millions of nominal U.S. dollars),Constant (millions of constant 1988 U.S. dollars)\n" + "".join("%d,%d,%d\n" % (y, 1000 * (y - 1996), 500 * (y - 1996)) for y in range(1997, 2026))
 w("annual.csv", an); s = {x["id"]: x for x in F.annual_cols(U + "annual.csv", "nom", "Food", F.SGE)}

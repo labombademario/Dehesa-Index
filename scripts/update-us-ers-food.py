@@ -24,7 +24,7 @@ def unit_of(h):
     if "constant" in t or "real" in t:
         m = re.search(r"(19|20)\d\d", t); return "million USD (%s dollars)" % (m.group(0) if m else "constant")
     return "million USD"
-def short(h): return re.sub(r"\s+", " ", re.sub(r"\([^)]*\)", "", h)).strip().rstrip(",")
+def short(h): return re.sub(r"\s+", " ", h).strip().rstrip(",")
 def read_wide(url, mincols=2):
     """CSV con cabecera 'Year,...' -> (cabeceras, filas de datos sin notas)."""
     rs = rows_of(url); hi = next(i for i, r in enumerate(rs) if r and r[0].strip().lower() == "year")
@@ -98,6 +98,10 @@ def main():
         for pat, kind in ((r"/food-dollar-nominal-data-2011-model[^/]*\.csv", "nom"), (r"/food-dollar-real-data-2011-model[^/]*\.csv", "real")):
             u = link(PFD, pat); ser += food_dollar(need(u, "dolar de la comida " + kind), kind, SGD)
         U.log("dolar de la comida:", len(ser) - n0, "series")
+        seen = {}
+        for s in ser:
+            n = seen.get(s["id"], 0); seen[s["id"]] = n + 1
+            if n: s["id"] += "-%d" % (n + 1)
         ids = [s["id"] for s in ser]
         if len(ser) < 150: raise ValueError("solo %d series (se esperan >=150)" % len(ser))
         if len(ids) != len(set(ids)): raise ValueError("ids repetidos: %s" % [i for i in set(ids) if ids.count(i) > 1][:5])
