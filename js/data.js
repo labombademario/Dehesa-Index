@@ -543,7 +543,7 @@
         { nameKey: 'gas_natural', imperialUnitKey: 'mmbtu', imperialKgPerUnit: 1, metricUnitKey: 'mmbtu', metricKgPerUnit: 1,
           us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
           eu: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
-          quoteTypes: { us: { type: 'referencia', market: 'EIA · Henry Hub (EE. UU., precio al contado, semanal)' }, eu: { type: 'referencia', market: 'Banco Mundial · TTF (Europa, media mensual, USD/MMBtu)' } } },
+          quoteTypes: { us: { type: 'referencia', market: 'EIA · Henry Hub (EE. UU., precio al contado, diario)' }, eu: { type: 'referencia', market: 'Banco Mundial · TTF (Europa, media mensual publicada con ~1 mes de retraso, USD/MMBtu)' } } },
         { nameKey: 'petroleo_wti', imperialUnitKey: 'barril', imperialKgPerUnit: 1, metricUnitKey: 'barril', metricKgPerUnit: 1,
           us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
           quoteTypes: { us: { type: 'referencia', market: 'EIA (WTI Cushing, spot)' } } },
@@ -797,7 +797,7 @@
     },
     'energia-gas_natural-us': {
       sourceId: 'eia', frequency: 'weekly',
-      methodology: 'Henry Hub natural gas spot price (EIA); USD/MMBtu. Wholesale benchmark, not a farm-gate price.',
+      methodology: 'Henry Hub natural gas spot price (EIA, daily); USD/MMBtu. Wholesale benchmark, not a farm-gate price.',
       comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
     },
     'energia-gas_natural-eu': {
