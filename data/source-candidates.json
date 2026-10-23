@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T15:47:14Z",
+ "generatedAt": "2026-10-23T16:35:56Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -7042,28 +7042,36 @@
    "country": "BE",
    "scope": "integrated",
    "institution": "Statbel (Statistics Belgium)",
-   "dataset": "Ya integrada (123 series en el catalogo unificado)",
+   "dataset": "Ya integrada (219 series en el catalogo unificado)",
    "products": [
     "barley",
+    "butter",
     "cattle",
+    "cheese",
     "eggs",
     "energy",
     "fertilizer",
     "fruit",
+    "maize",
     "milk",
+    "olive",
     "pigs",
     "potato",
     "poultry",
+    "rapeseed",
+    "rice",
     "sheep",
     "sugar",
-    "wheat"
+    "wheat",
+    "wine"
    ],
    "productsConfirmed": true,
    "metrics": [
+    "price",
     "price_index",
     "production"
    ],
-   "frequency": "monthly",
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,
