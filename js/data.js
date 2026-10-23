@@ -1405,9 +1405,26 @@
 
   var DATA_TRUST_HEALTH = validateDataTrustRegistry(DATA_TRUST);
 
+  // Texto del mercado de cada fila del panel en en/fr/it (la fila lleva el español); precios.js lo elige según el idioma
+  var MARKET_T = {
+    'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)': ['Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)'],
+    'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); precio por saco pasado a tonelada': ['Alberta Agriculture and Irrigation (Alberta Farm Input Prices); price per bag converted to tonnes', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices) ; prix au sac converti en tonnes', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); prezzo al sacco convertito in tonnellate'],
+    'Statistics Canada (precio en surtidor, autoservicio)': ['Statistics Canada (pump price, self-serve)', 'Statistics Canada (prix à la pompe, libre-service)', 'Statistics Canada (prezzo alla pompa, self-service)'],
+    'Statistics Canada (precio al consumidor, media nacional)': ['Statistics Canada (consumer price, national average)', 'Statistics Canada (prix à la consommation, moyenne nationale)', 'Statistics Canada (prezzo al consumo, media nazionale)'],
+    'DESNZ (precio medio semanal en surtidor, con impuestos)': ['DESNZ (weekly average pump price, taxes included)', 'DESNZ (prix moyen hebdomadaire à la pompe, taxes comprises)', 'DESNZ (prezzo medio settimanale alla pompa, tasse incluse)'],
+    'DAERA, informe semanal de mercados agrarios de Irlanda del Norte (precio medio en canal)': ['DAERA, weekly Northern Ireland farm markets report (average deadweight price)', 'DAERA, rapport hebdomadaire des marchés agricoles d’Irlande du Nord (prix moyen en carcasse)', 'DAERA, rapporto settimanale sui mercati agricoli dell’Irlanda del Nord (prezzo medio a carcassa)'],
+    'Defra (precio medio trimestral de la empaquetadora al productor)': ['Defra (quarterly average price paid by packers to producers)', 'Defra (prix moyen trimestriel payé par le centre de conditionnement au producteur)', 'Defra (prezzo medio trimestrale pagato dal centro di confezionamento al produttore)'],
+    'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)': ['World Bank, Pink Sheet (international reference price in USD, not the farmer’s price)', 'Banque mondiale, Pink Sheet (prix international de référence en USD, pas le prix payé à l’agriculteur)', 'Banca Mondiale, Pink Sheet (prezzo internazionale di riferimento in USD, non il prezzo dell’agricoltore)'],
+    'USDA AMS (National Dairy Products Sales Report, precio semanal medio ponderado)': ['USDA AMS (National Dairy Products Sales Report, weighted weekly average price)', 'USDA AMS (National Dairy Products Sales Report, prix hebdomadaire moyen pondéré)', 'USDA AMS (National Dairy Products Sales Report, prezzo settimanale medio ponderato)'],
+    'USDA ERS (estadísticas de bioenergía, mensual)': ['USDA ERS (bioenergy statistics, monthly)', 'USDA ERS (statistiques de bioénergie, mensuelles)', 'USDA ERS (statistiche sulla bioenergia, mensili)'],
+    'USDA AMS (Livestock Mandatory Reporting, diario)': ['USDA AMS (Livestock Mandatory Reporting, daily)', 'USDA AMS (Livestock Mandatory Reporting, quotidien)', 'USDA AMS (Livestock Mandatory Reporting, giornaliero)']
+  };
+  function marketText(es, lang) { var i = { en: 0, fr: 1, it: 2 }[lang]; var t = MARKET_T[es]; return i != null && t ? t[i] : es; }
+
   global.DehesaData = {
     FX: FX, FX_DATE: FX_DATE, formatFxDate: formatFxDate, CCY_SYMBOL: CCY_SYMBOL, UNIT_LABELS: UNIT_LABELS, REGION: REGION,
     DATA_TRUST_SCHEMA_VERSION: DATA_TRUST_SCHEMA_VERSION, DATA_TRUST: DATA_TRUST, DATA_TRUST_SOURCES: DATA_TRUST_SOURCES, DATA_TRUST_HEALTH: DATA_TRUST_HEALTH, validateDataTrustRegistry: validateDataTrustRegistry,
+    marketText: marketText,
     CA_PANEL: CA_PANEL,
     UK_PANEL: UK_PANEL,
     WB_PANEL: WB_PANEL,

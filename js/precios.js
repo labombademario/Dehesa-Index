@@ -680,7 +680,7 @@
     if (!quoteType) return '';
     var qt = (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[quoteType.type];
     if (!qt) return '';
-    var title = qt.desc + (quoteType.market ? ' — ' + quoteType.market : '');
+    var title = qt.desc + (quoteType.market ? ' — ' + D.marketText(quoteType.market, lang()) : '');
     return '<span class="di-quote-badge" title="' + esc(title) + '">' + esc(qt.label) + '</span>';
   }
 
@@ -710,7 +710,7 @@
       var sym = D.CCY_SYMBOL[s.ccy] || s.ccy;
       // Canadá: StatCan publica por provincia; se nombra la provincia real (Saskatchewan, Ontario…), no «provincia de referencia»
       var mkl = s.code === 'ca' && global.DehesaShared && global.DehesaShared.marketLabel ? global.DehesaShared.marketLabel({ id: 'di_' + entry.catId + '_' + entry.nameKey + '_ca', sourceId: 'statcan' }, lang()) : '';
-      rows.push('<tr><td>' + esc(s.regionLabel) + (mkl ? ' — ' + esc(mkl) : qt && qt.market ? ' — ' + esc(qt.market) : '') + '</td><td>' + esc(qtLabel) + '</td><td>' + sym + D.fmtNumber(s.region.price) + '/' + esc(s.unit) + '</td></tr>');
+      rows.push('<tr><td>' + esc(s.regionLabel) + (mkl ? ' — ' + esc(mkl) : qt && qt.market ? ' — ' + esc(D.marketText(qt.market, lang())) : '') + '</td><td>' + esc(qtLabel) + '</td><td>' + sym + D.fmtNumber(s.region.price) + '/' + esc(s.unit) + '</td></tr>');
     }
     var sourcesHtml = '';
     var cat = (D.CATS[lang()] || D.CATS.es)[entry.catId];
