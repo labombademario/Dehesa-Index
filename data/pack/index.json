@@ -16,11 +16,42 @@
   "attribution"
  ],
  "summary": {
-  "files": 87,
+  "files": 208,
   "excluded": 0,
-  "rows": 39877
+  "rows": 75885
  },
  "files": [
+  {
+   "product": "paleta_cerdo",
+   "name": {
+    "es": "Aguja/paleta (butt) de cerdo, FOB planta",
+    "en": "Pork butt, FOB plant",
+    "fr": "Échine de porc (butt), FOB usine",
+    "it": "Spalla di maiale (butt), FOB stabilimento"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/paleta_cerdo.csv",
+   "xlsx": "data/pack/us/paleta_cerdo.xlsx",
+   "csvBytes": 139874,
+   "xlsxBytes": 30511
+  },
   {
    "product": "arroz",
    "name": {
@@ -177,6 +208,68 @@
    "xlsxBytes": 31137
   },
   {
+   "product": "cerdo_base_us",
+   "name": {
+    "es": "Cerdos sacrificados, precio base de la canal (EE. UU.)",
+    "en": "Slaughtered hogs, carcass base price (U.S.)",
+    "fr": "Porcs abattus, prix de base de la carcasse (É.-U.)",
+    "it": "Suini macellati, prezzo base della carcassa (USA)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/cerdo_base_us.csv",
+   "xlsx": "data/pack/us/cerdo_base_us.xlsx",
+   "csvBytes": 147165,
+   "xlsxBytes": 30720
+  },
+  {
+   "product": "cerdo_neto_us",
+   "name": {
+    "es": "Cerdos sacrificados, precio neto de la canal (EE. UU.)",
+    "en": "Slaughtered hogs, carcass net price (U.S.)",
+    "fr": "Porcs abattus, prix net de la carcasse (É.-U.)",
+    "it": "Suini macellati, prezzo netto della carcassa (USA)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/cerdo_neto_us.csv",
+   "xlsx": "data/pack/us/cerdo_neto_us.xlsx",
+   "csvBytes": 147167,
+   "xlsxBytes": 30743
+  },
+  {
    "product": "colza",
    "name": {
     "es": "Colza",
@@ -239,6 +332,161 @@
    "xlsxBytes": 21435
   },
   {
+   "product": "cutout_cerdo",
+   "name": {
+    "es": "Corte de cerdo (cutout), FOB planta",
+    "en": "Pork cutout, FOB plant",
+    "fr": "Découpe de porc (cutout), FOB usine",
+    "it": "Taglio di maiale (cutout), FOB stabilimento"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/cutout_cerdo.csv",
+   "xlsx": "data/pack/us/cutout_cerdo.xlsx",
+   "csvBytes": 136926,
+   "xlsxBytes": 30511
+  },
+  {
+   "product": "cutout_vacuno_choice",
+   "name": {
+    "es": "Corte de vacuno en caja, Choice",
+    "en": "Boxed beef cutout, Choice",
+    "fr": "Découpe de bœuf en carton, Choice",
+    "it": "Taglio di manzo in scatola, Choice"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/cutout_vacuno_choice.csv",
+   "xlsx": "data/pack/us/cutout_vacuno_choice.xlsx",
+   "csvBytes": 139350,
+   "xlsxBytes": 30969
+  },
+  {
+   "product": "cutout_vacuno_select",
+   "name": {
+    "es": "Corte de vacuno en caja, Select",
+    "en": "Boxed beef cutout, Select",
+    "fr": "Découpe de bœuf en carton, Select",
+    "it": "Taglio di manzo in scatola, Select"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/cutout_vacuno_select.csv",
+   "xlsx": "data/pack/us/cutout_vacuno_select.xlsx",
+   "csvBytes": 139348,
+   "xlsxBytes": 30959
+  },
+  {
+   "product": "coste_maiz_etanol_us",
+   "name": {
+    "es": "Coste del maíz por galón de etanol",
+    "en": "Corn cost per gallon of ethanol",
+    "fr": "Coût du maïs par gallon d'éthanol",
+    "it": "Costo del mais per gallone di etanolo"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ers",
+   "sourceName": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture (ERS data products)",
+   "unit": "gal",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 360,
+   "first": "1996-07",
+   "last": "2026-06",
+   "csv": "data/pack/us/coste_maiz_etanol_us.csv",
+   "xlsx": "data/pack/us/coste_maiz_etanol_us.xlsx",
+   "csvBytes": 86817,
+   "xlsxBytes": 22970
+  },
+  {
+   "product": "costilla_cerdo",
+   "name": {
+    "es": "Costillar de cerdo, FOB planta",
+    "en": "Pork ribs, FOB plant",
+    "fr": "Travers de porc, FOB usine",
+    "it": "Costine di maiale, FOB stabilimento"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/costilla_cerdo.csv",
+   "xlsx": "data/pack/us/costilla_cerdo.xlsx",
+   "csvBytes": 135763,
+   "xlsxBytes": 30762
+  },
+  {
    "product": "gas_natural",
    "name": {
     "es": "Gas natural (Henry Hub)",
@@ -270,6 +518,37 @@
    "xlsxBytes": 75457
   },
   {
+   "product": "gasolina_base_us",
+   "name": {
+    "es": "Gasolina base para mezcla (RBOB, Los Ángeles)",
+    "en": "Gasoline blendstock (RBOB, Los Angeles)",
+    "fr": "Essence de base pour mélange (RBOB, Los Angeles)",
+    "it": "Benzina base per miscela (RBOB, Los Angeles)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ers",
+   "sourceName": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture (ERS data products)",
+   "unit": "gal",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 277,
+   "first": "2003-09",
+   "last": "2026-09",
+   "csv": "data/pack/us/gasolina_base_us.csv",
+   "xlsx": "data/pack/us/gasolina_base_us.xlsx",
+   "csvBytes": 69307,
+   "xlsxBytes": 19828
+  },
+  {
    "product": "diesel",
    "name": {
     "es": "Gasóleo de automoción (surtidor)",
@@ -292,13 +571,44 @@
    "unit": "gal",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 1700,
+   "rows": 1701,
    "first": "1994-03-21",
-   "last": "2026-10-12",
+   "last": "2026-10-19",
    "csv": "data/pack/us/diesel.csv",
    "xlsx": "data/pack/us/diesel.xlsx",
-   "csvBytes": 314421,
-   "xlsxBytes": 82194
+   "csvBytes": 314606,
+   "xlsxBytes": 82239
+  },
+  {
+   "product": "ddgs_us",
+   "name": {
+    "es": "Granos secos de destilería (DDGS), Illinois",
+    "en": "Distillers dried grains (DDGS), Illinois",
+    "fr": "Drêches de distillerie séchées (DDGS), Illinois",
+    "it": "Distillers dried grains (DDGS), Illinois"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ers",
+   "sourceName": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture (ERS data products)",
+   "unit": "ton_corta",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 313,
+   "first": "2000-09",
+   "last": "2026-09",
+   "csv": "data/pack/us/ddgs_us.csv",
+   "xlsx": "data/pack/us/ddgs_us.xlsx",
+   "csvBytes": 76921,
+   "xlsxBytes": 21474
   },
   {
    "product": "guisante_seco",
@@ -392,6 +702,37 @@
    "xlsx": "data/pack/us/huevos.xlsx",
    "csvBytes": 59076,
    "xlsxBytes": 20344
+  },
+  {
+   "product": "jamon_cerdo",
+   "name": {
+    "es": "Jamón fresco de cerdo, FOB planta",
+    "en": "Pork ham, FOB plant",
+    "fr": "Jambon frais de porc, FOB usine",
+    "it": "Prosciutto fresco di maiale, FOB stabilimento"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/jamon_cerdo.csv",
+   "xlsx": "data/pack/us/jamon_cerdo.xlsx",
+   "csvBytes": 135858,
+   "xlsxBytes": 30565
   },
   {
    "product": "leche",
@@ -518,6 +859,68 @@
    "xlsxBytes": 31608
   },
   {
+   "product": "lomo_cerdo",
+   "name": {
+    "es": "Lomo de cerdo, FOB planta",
+    "en": "Pork loin, FOB plant",
+    "fr": "Longe de porc, FOB usine",
+    "it": "Lombata di maiale, FOB stabilimento"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/lomo_cerdo.csv",
+   "xlsx": "data/pack/us/lomo_cerdo.xlsx",
+   "csvBytes": 130591,
+   "xlsxBytes": 30301
+  },
+  {
+   "product": "mantequilla",
+   "name": {
+    "es": "Mantequilla",
+    "en": "Butter",
+    "fr": "Beurre",
+    "it": "Burro"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_mars",
+   "sourceName": "USDA AMS Market News (MARS API)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture (AMS Market News (MARS))",
+   "unit": "lb",
+   "currency": "USD",
+   "frequency": "weekly",
+   "rows": 520,
+   "first": "2016-11-05",
+   "last": "2026-10-17",
+   "csv": "data/pack/us/mantequilla.csv",
+   "xlsx": "data/pack/us/mantequilla.xlsx",
+   "csvBytes": 83753,
+   "xlsxBytes": 30567
+  },
+  {
    "product": "maiz",
    "name": {
     "es": "Maíz",
@@ -547,6 +950,192 @@
    "xlsx": "data/pack/us/maiz.xlsx",
    "csvBytes": 105302,
    "xlsxBytes": 31602
+  },
+  {
+   "product": "novilla_canal_us",
+   "name": {
+    "es": "Novillas de sacrificio, en canal (EE. UU., 5 zonas)",
+    "en": "Slaughter heifers, dressed (U.S., 5-area)",
+    "fr": "Génisses d'abattage, en carcasse (É.-U., 5 zones)",
+    "it": "Giovenche da macello, in carcassa (USA, 5 aree)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 248,
+   "first": "2024-10-14",
+   "last": "2026-10-19",
+   "csv": "data/pack/us/novilla_canal_us.csv",
+   "xlsx": "data/pack/us/novilla_canal_us.xlsx",
+   "csvBytes": 70699,
+   "xlsxBytes": 18492
+  },
+  {
+   "product": "novilla_vivo_us",
+   "name": {
+    "es": "Novillas de sacrificio, vivo (EE. UU., 5 zonas)",
+    "en": "Slaughter heifers, live (U.S., 5-area)",
+    "fr": "Génisses d'abattage, vif (É.-U., 5 zones)",
+    "it": "Giovenche da macello, vivo (USA, 5 aree)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 350,
+   "first": "2024-10-14",
+   "last": "2026-10-19",
+   "csv": "data/pack/us/novilla_vivo_us.csv",
+   "xlsx": "data/pack/us/novilla_vivo_us.xlsx",
+   "csvBytes": 98151,
+   "xlsxBytes": 23201
+  },
+  {
+   "product": "novillo_canal_us",
+   "name": {
+    "es": "Novillos de sacrificio, en canal (EE. UU., 5 zonas)",
+    "en": "Slaughter steers, dressed (U.S., 5-area)",
+    "fr": "Bœufs d'abattage, en carcasse (É.-U., 5 zones)",
+    "it": "Manzi da macello, in carcassa (USA, 5 aree)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 319,
+   "first": "2024-10-14",
+   "last": "2026-10-19",
+   "csv": "data/pack/us/novillo_canal_us.csv",
+   "xlsx": "data/pack/us/novillo_canal_us.xlsx",
+   "csvBytes": 90988,
+   "xlsxBytes": 21767
+  },
+  {
+   "product": "novillo_vivo_us",
+   "name": {
+    "es": "Novillos de sacrificio, vivo (EE. UU., 5 zonas)",
+    "en": "Slaughter steers, live (U.S., 5-area)",
+    "fr": "Bœufs d'abattage, vif (É.-U., 5 zones)",
+    "it": "Manzi da macello, vivo (USA, 5 aree)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 396,
+   "first": "2024-10-14",
+   "last": "2026-10-19",
+   "csv": "data/pack/us/novillo_vivo_us.csv",
+   "xlsx": "data/pack/us/novillo_vivo_us.xlsx",
+   "csvBytes": 111034,
+   "xlsxBytes": 25254
+  },
+  {
+   "product": "picnic_cerdo",
+   "name": {
+    "es": "Paleta delantera (picnic) de cerdo, FOB planta",
+    "en": "Pork picnic, FOB plant",
+    "fr": "Épaule de porc (picnic), FOB usine",
+    "it": "Spalla anteriore di maiale (picnic), FOB stabilimento"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/picnic_cerdo.csv",
+   "xlsx": "data/pack/us/picnic_cerdo.xlsx",
+   "csvBytes": 142447,
+   "xlsxBytes": 30957
+  },
+  {
+   "product": "panceta_cerdo",
+   "name": {
+    "es": "Panceta de cerdo (belly), FOB planta",
+    "en": "Pork belly, FOB plant",
+    "fr": "Poitrine de porc (belly), FOB usine",
+    "it": "Pancetta di maiale (belly), FOB stabilimento"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 516,
+   "first": "2024-10-14",
+   "last": "2026-10-22",
+   "csv": "data/pack/us/panceta_cerdo.csv",
+   "xlsx": "data/pack/us/panceta_cerdo.xlsx",
+   "csvBytes": 138296,
+   "xlsxBytes": 30617
   },
   {
    "product": "petroleo_wti",
@@ -611,6 +1200,37 @@
    "xlsxBytes": 24776
   },
   {
+   "product": "cheddar",
+   "name": {
+    "es": "Queso cheddar de bloque (40 lb)",
+    "en": "Cheddar cheese, 40-lb block",
+    "fr": "Cheddar en bloc de 40 lb",
+    "it": "Formaggio cheddar, blocco da 40 lb"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_mars",
+   "sourceName": "USDA AMS Market News (MARS API)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture (AMS Market News (MARS))",
+   "unit": "lb",
+   "currency": "USD",
+   "frequency": "weekly",
+   "rows": 520,
+   "first": "2016-11-05",
+   "last": "2026-10-17",
+   "csv": "data/pack/us/cheddar.csv",
+   "xlsx": "data/pack/us/cheddar.xlsx",
+   "csvBytes": 92085,
+   "xlsxBytes": 30520
+  },
+  {
    "product": "soja_grano",
    "name": {
     "es": "Soja en grano",
@@ -671,6 +1291,37 @@
    "xlsx": "data/pack/us/sorgo.xlsx",
    "csvBytes": 104178,
    "xlsxBytes": 31258
+  },
+  {
+   "product": "suero",
+   "name": {
+    "es": "Suero seco",
+    "en": "Dry whey",
+    "fr": "Lactosérum sec",
+    "it": "Siero di latte in polvere"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_mars",
+   "sourceName": "USDA AMS Market News (MARS API)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture (AMS Market News (MARS))",
+   "unit": "lb",
+   "currency": "USD",
+   "frequency": "weekly",
+   "rows": 520,
+   "first": "2016-11-05",
+   "last": "2026-10-17",
+   "csv": "data/pack/us/suero.csv",
+   "xlsx": "data/pack/us/suero.xlsx",
+   "csvBytes": 80115,
+   "xlsxBytes": 30438
   },
   {
    "product": "trigo",
@@ -735,6 +1386,172 @@
    "xlsxBytes": 31382
   },
   {
+   "product": "vacuno_canal_us",
+   "name": {
+    "es": "Vacuno de sacrificio, en canal (EE. UU., 5 zonas)",
+    "en": "Slaughter cattle, dressed (U.S., 5-area)",
+    "fr": "Bovins d'abattage, en carcasse (É.-U., 5 zones)",
+    "it": "Bovini da macello, in carcassa (USA, 5 aree)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 342,
+   "first": "2024-10-14",
+   "last": "2026-10-19",
+   "csv": "data/pack/us/vacuno_canal_us.csv",
+   "xlsx": "data/pack/us/vacuno_canal_us.xlsx",
+   "csvBytes": 96581,
+   "xlsxBytes": 22867
+  },
+  {
+   "product": "vacuno_vivo_us",
+   "name": {
+    "es": "Vacuno de sacrificio, vivo (EE. UU., 5 zonas)",
+    "en": "Slaughter cattle, live (U.S., 5-area)",
+    "fr": "Bovins d'abattage, vif (É.-U., 5 zones)",
+    "it": "Bovini da macello, vivo (USA, 5 aree)"
+   },
+   "region": "us",
+   "place": {
+    "es": "EE. UU.",
+    "en": "US",
+    "fr": "États-Unis",
+    "it": "USA"
+   },
+   "source": "usda_ams_lmr",
+   "sourceName": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "unit": "cwt",
+   "currency": "USD",
+   "frequency": "daily",
+   "rows": 434,
+   "first": "2024-10-14",
+   "last": "2026-10-19",
+   "csv": "data/pack/us/vacuno_vivo_us.csv",
+   "xlsx": "data/pack/us/vacuno_vivo_us.xlsx",
+   "csvBytes": 120444,
+   "xlsxBytes": 27100
+  },
+  {
+   "product": "us_cereals_output_index",
+   "name": {
+    "es": "us_cereals_output_index",
+    "en": "us_cereals_output_index",
+    "fr": "us_cereals_output_index",
+    "it": "us_cereals_output_index"
+   },
+   "region": "us",
+   "place": {},
+   "source": "bls",
+   "sourceName": "U.S. Bureau of Labor Statistics",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Bureau of Labor Statistics",
+   "unit": "index_1982_100",
+   "currency": "INDEX",
+   "frequency": "monthly",
+   "rows": 393,
+   "first": "1994-01",
+   "last": "2026-09",
+   "csv": "data/pack/us/us_cereals_output_index.csv",
+   "xlsx": "data/pack/us/us_cereals_output_index.xlsx",
+   "csvBytes": 67652,
+   "xlsxBytes": 24090
+  },
+  {
+   "product": "us_energy_input_index",
+   "name": {
+    "es": "us_energy_input_index",
+    "en": "us_energy_input_index",
+    "fr": "us_energy_input_index",
+    "it": "us_energy_input_index"
+   },
+   "region": "us",
+   "place": {},
+   "source": "usda_nass",
+   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "unit": "index_2011_100",
+   "currency": "INDEX",
+   "frequency": "monthly",
+   "rows": 68,
+   "first": "2021-01",
+   "last": "2026-08",
+   "csv": "data/pack/us/us_energy_input_index.csv",
+   "xlsx": "data/pack/us/us_energy_input_index.xlsx",
+   "csvBytes": 15807,
+   "xlsxBytes": 9813
+  },
+  {
+   "product": "us_fertilizer_input_index",
+   "name": {
+    "es": "us_fertilizer_input_index",
+    "en": "us_fertilizer_input_index",
+    "fr": "us_fertilizer_input_index",
+    "it": "us_fertilizer_input_index"
+   },
+   "region": "us",
+   "place": {},
+   "source": "usda_nass",
+   "sourceName": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "unit": "index_2011_100",
+   "currency": "INDEX",
+   "frequency": "monthly",
+   "rows": 68,
+   "first": "2021-01",
+   "last": "2026-08",
+   "csv": "data/pack/us/us_fertilizer_input_index.csv",
+   "xlsx": "data/pack/us/us_fertilizer_input_index.xlsx",
+   "csvBytes": 16382,
+   "xlsxBytes": 9811
+  },
+  {
+   "product": "us_milk_output_index",
+   "name": {
+    "es": "us_milk_output_index",
+    "en": "us_milk_output_index",
+    "fr": "us_milk_output_index",
+    "it": "us_milk_output_index"
+   },
+   "region": "us",
+   "place": {},
+   "source": "bls",
+   "sourceName": "U.S. Bureau of Labor Statistics",
+   "license": "US-PD",
+   "verdict": "apto",
+   "attribution": "Source: U.S. Bureau of Labor Statistics",
+   "unit": "index_1982_100",
+   "currency": "INDEX",
+   "frequency": "monthly",
+   "rows": 393,
+   "first": "1994-01",
+   "last": "2026-09",
+   "csv": "data/pack/us/us_milk_output_index.csv",
+   "xlsx": "data/pack/us/us_milk_output_index.xlsx",
+   "csvBytes": 65300,
+   "xlsxBytes": 23901
+  },
+  {
    "product": "dap",
    "name": {
     "es": "Abonos fosfatados (P), agregado UE",
@@ -797,6 +1614,130 @@
    "xlsxBytes": 11203
   },
   {
+   "product": "aceite_cacahuete",
+   "name": {
+    "es": "Aceite de cacahuete",
+    "en": "Groundnut oil",
+    "fr": "Huile d'arachide",
+    "it": "Olio di arachidi"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/aceite_cacahuete.csv",
+   "xlsx": "data/pack/eu/aceite_cacahuete.xlsx",
+   "csvBytes": 82424,
+   "xlsxBytes": 26288
+  },
+  {
+   "product": "aceite_coco",
+   "name": {
+    "es": "Aceite de coco",
+    "en": "Coconut oil",
+    "fr": "Huile de coco",
+    "it": "Olio di cocco"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/aceite_coco.csv",
+   "xlsx": "data/pack/eu/aceite_coco.xlsx",
+   "csvBytes": 77876,
+   "xlsxBytes": 26228
+  },
+  {
+   "product": "aceite_colza",
+   "name": {
+    "es": "Aceite de colza",
+    "en": "Rapeseed oil",
+    "fr": "Huile de colza",
+    "it": "Olio di colza"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 296,
+   "first": "2002-02",
+   "last": "2026-09",
+   "csv": "data/pack/eu/aceite_colza.csv",
+   "xlsx": "data/pack/eu/aceite_colza.xlsx",
+   "csvBytes": 52902,
+   "xlsxBytes": 19870
+  },
+  {
+   "product": "aceite_girasol",
+   "name": {
+    "es": "Aceite de girasol",
+    "en": "Sunflower oil",
+    "fr": "Huile de tournesol",
+    "it": "Olio di girasole"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 291,
+   "first": "2002-02",
+   "last": "2026-09",
+   "csv": "data/pack/eu/aceite_girasol.csv",
+   "xlsx": "data/pack/eu/aceite_girasol.xlsx",
+   "csvBytes": 53168,
+   "xlsxBytes": 19672
+  },
+  {
    "product": "oliva",
    "name": {
     "es": "Aceite de oliva",
@@ -828,6 +1769,130 @@
    "xlsxBytes": 55132
   },
   {
+   "product": "aceite_palma",
+   "name": {
+    "es": "Aceite de palma",
+    "en": "Palm oil",
+    "fr": "Huile de palme",
+    "it": "Olio di palma"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/aceite_palma.csv",
+   "xlsx": "data/pack/eu/aceite_palma.xlsx",
+   "csvBytes": 78661,
+   "xlsxBytes": 26185
+  },
+  {
+   "product": "aceite_palmiste",
+   "name": {
+    "es": "Aceite de palmiste",
+    "en": "Palm kernel oil",
+    "fr": "Huile de palmiste",
+    "it": "Olio di palmisti"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 369,
+   "first": "1996-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/aceite_palmiste.csv",
+   "xlsx": "data/pack/eu/aceite_palmiste.xlsx",
+   "csvBytes": 68128,
+   "xlsxBytes": 23185
+  },
+  {
+   "product": "aceite_soja",
+   "name": {
+    "es": "Aceite de soja",
+    "en": "Soybean oil",
+    "fr": "Huile de soja",
+    "it": "Olio di soia"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/aceite_soja.csv",
+   "xlsx": "data/pack/eu/aceite_soja.xlsx",
+   "csvBytes": 77820,
+   "xlsxBytes": 26166
+  },
+  {
+   "product": "algodon_a",
+   "name": {
+    "es": "Algodón (índice A)",
+    "en": "Cotton (A Index)",
+    "fr": "Coton (indice A)",
+    "it": "Cotone (indice A)"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/algodon_a.csv",
+   "xlsx": "data/pack/eu/algodon_a.xlsx",
+   "csvBytes": 77207,
+   "xlsxBytes": 25809
+  },
+  {
    "product": "arroz",
    "name": {
     "es": "Arroz",
@@ -857,6 +1922,130 @@
    "xlsx": "data/pack/eu/arroz.xlsx",
    "csvBytes": 170536,
    "xlsxBytes": 48638
+  },
+  {
+   "product": "arroz_tai_25",
+   "name": {
+    "es": "Arroz de Tailandia 25 %",
+    "en": "Rice, Thai 25%",
+    "fr": "Riz thaï 25 %",
+    "it": "Riso thailandese 25%"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 435,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/arroz_tai_25.csv",
+   "xlsx": "data/pack/eu/arroz_tai_25.xlsx",
+   "csvBytes": 81264,
+   "xlsxBytes": 25921
+  },
+  {
+   "product": "arroz_tai_5",
+   "name": {
+    "es": "Arroz de Tailandia 5 %",
+    "en": "Rice, Thai 5%",
+    "fr": "Riz thaï 5 %",
+    "it": "Riso thailandese 5%"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/arroz_tai_5.csv",
+   "xlsx": "data/pack/eu/arroz_tai_5.xlsx",
+   "csvBytes": 81646,
+   "xlsxBytes": 26115
+  },
+  {
+   "product": "arroz_tai_a1",
+   "name": {
+    "es": "Arroz de Tailandia A.1",
+    "en": "Rice, Thai A.1",
+    "fr": "Riz thaï A.1",
+    "it": "Riso thailandese A.1"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/arroz_tai_a1.csv",
+   "xlsx": "data/pack/eu/arroz_tai_a1.xlsx",
+   "csvBytes": 82315,
+   "xlsxBytes": 26333
+  },
+  {
+   "product": "arroz_viet_5",
+   "name": {
+    "es": "Arroz de Vietnam 5 %",
+    "en": "Rice, Vietnamese 5%",
+    "fr": "Riz vietnamien 5 %",
+    "it": "Riso vietnamita 5%"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 263,
+   "first": "2003-12",
+   "last": "2026-09",
+   "csv": "data/pack/eu/arroz_viet_5.csv",
+   "xlsx": "data/pack/eu/arroz_viet_5.xlsx",
+   "csvBytes": 48679,
+   "xlsxBytes": 18588
   },
   {
    "product": "avena",
@@ -919,6 +2108,347 @@
    "xlsx": "data/pack/eu/azucar.xlsx",
    "csvBytes": 43245,
    "xlsxBytes": 18266
+  },
+  {
+   "product": "azucar_us",
+   "name": {
+    "es": "Azúcar, precio de EE. UU.",
+    "en": "Sugar, U.S. price",
+    "fr": "Sucre, prix américain",
+    "it": "Zucchero, prezzo USA"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/azucar_us.csv",
+   "xlsx": "data/pack/eu/azucar_us.xlsx",
+   "csvBytes": 80756,
+   "xlsxBytes": 25008
+  },
+  {
+   "product": "azucar_ue",
+   "name": {
+    "es": "Azúcar, precio de la UE",
+    "en": "Sugar, EU price",
+    "fr": "Sucre, prix UE",
+    "it": "Zucchero, prezzo UE"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/azucar_ue.csv",
+   "xlsx": "data/pack/eu/azucar_ue.xlsx",
+   "csvBytes": 79874,
+   "xlsxBytes": 24867
+  },
+  {
+   "product": "azucar_mundo",
+   "name": {
+    "es": "Azúcar, precio mundial",
+    "en": "Sugar, world price",
+    "fr": "Sucre, prix mondial",
+    "it": "Zucchero, prezzo mondiale"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/azucar_mundo.csv",
+   "xlsx": "data/pack/eu/azucar_mundo.xlsx",
+   "csvBytes": 80756,
+   "xlsxBytes": 25176
+  },
+  {
+   "product": "banana_us",
+   "name": {
+    "es": "Banana, EE. UU.",
+    "en": "Banana, U.S.",
+    "fr": "Banane, États-Unis",
+    "it": "Banana, Stati Uniti"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/banana_us.csv",
+   "xlsx": "data/pack/eu/banana_us.xlsx",
+   "csvBytes": 75883,
+   "xlsxBytes": 25529
+  },
+  {
+   "product": "banana_ue",
+   "name": {
+    "es": "Banana, Europa",
+    "en": "Banana, Europe",
+    "fr": "Banane, Europe",
+    "it": "Banana, Europa"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 357,
+   "first": "1997-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/banana_ue.csv",
+   "xlsx": "data/pack/eu/banana_ue.xlsx",
+   "csvBytes": 61086,
+   "xlsxBytes": 22062
+  },
+  {
+   "product": "cacahuete",
+   "name": {
+    "es": "Cacahuete",
+    "en": "Groundnuts",
+    "fr": "Arachides",
+    "it": "Arachidi"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/cacahuete.csv",
+   "xlsx": "data/pack/eu/cacahuete.xlsx",
+   "csvBytes": 74907,
+   "xlsxBytes": 25900
+  },
+  {
+   "product": "cacao",
+   "name": {
+    "es": "Cacao",
+    "en": "Cocoa",
+    "fr": "Cacao",
+    "it": "Cacao"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/cacao.csv",
+   "xlsx": "data/pack/eu/cacao.xlsx",
+   "csvBytes": 68825,
+   "xlsxBytes": 25657
+  },
+  {
+   "product": "cafe_arabica",
+   "name": {
+    "es": "Café arábica",
+    "en": "Coffee, Arabica",
+    "fr": "Café arabica",
+    "it": "Caffè arabica"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/cafe_arabica.csv",
+   "xlsx": "data/pack/eu/cafe_arabica.xlsx",
+   "csvBytes": 75889,
+   "xlsxBytes": 26085
+  },
+  {
+   "product": "cafe_robusta",
+   "name": {
+    "es": "Café robusta",
+    "en": "Coffee, Robusta",
+    "fr": "Café robusta",
+    "it": "Caffè robusta"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/cafe_robusta.csv",
+   "xlsx": "data/pack/eu/cafe_robusta.xlsx",
+   "csvBytes": 75434,
+   "xlsxBytes": 25899
+  },
+  {
+   "product": "caucho_rss3",
+   "name": {
+    "es": "Caucho RSS3",
+    "en": "Rubber RSS3",
+    "fr": "Caoutchouc RSS3",
+    "it": "Gomma RSS3"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/caucho_rss3.csv",
+   "xlsx": "data/pack/eu/caucho_rss3.xlsx",
+   "csvBytes": 74120,
+   "xlsxBytes": 25845
+  },
+  {
+   "product": "caucho_tsr20",
+   "name": {
+    "es": "Caucho TSR20",
+    "en": "Rubber TSR20",
+    "fr": "Caoutchouc TSR20",
+    "it": "Gomma TSR20"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 333,
+   "first": "1999-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/caucho_tsr20.csv",
+   "xlsx": "data/pack/eu/caucho_tsr20.xlsx",
+   "csvBytes": 56662,
+   "xlsxBytes": 21188
   },
   {
    "product": "cebada",
@@ -1045,6 +2575,130 @@
    "xlsxBytes": 20226
   },
   {
+   "product": "colza_fr",
+   "name": {
+    "es": "Colza, Rouen (Francia)",
+    "en": "Rapeseed, Rouen (France)",
+    "fr": "Colza, Rouen (France)",
+    "it": "Colza, Rouen (Francia)"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Francia (Rouen)",
+    "en": "France (Rouen)",
+    "fr": "France (Rouen)",
+    "it": "Francia (Rouen)"
+   },
+   "source": "eu_agrifood",
+   "sourceName": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "license": "EU-REUSE-2011-833",
+   "verdict": "condiciones",
+   "attribution": "Source: European Commission (Agri-food data portal)",
+   "unit": "tonelada",
+   "currency": "EUR",
+   "frequency": "weekly",
+   "rows": 176,
+   "first": "2021-05-02",
+   "last": "2026-10-04",
+   "csv": "data/pack/eu/colza_fr.csv",
+   "xlsx": "data/pack/eu/colza_fr.xlsx",
+   "csvBytes": 34977,
+   "xlsxBytes": 15062
+  },
+  {
+   "product": "colza_de",
+   "name": {
+    "es": "Colza, media nacional (Alemania)",
+    "en": "Rapeseed, national average (Germany)",
+    "fr": "Colza, moyenne nationale (Allemagne)",
+    "it": "Colza, media nazionale (Germania)"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Alemania",
+    "en": "Germany",
+    "fr": "Allemagne",
+    "it": "Germania"
+   },
+   "source": "eu_agrifood",
+   "sourceName": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "license": "EU-REUSE-2011-833",
+   "verdict": "condiciones",
+   "attribution": "Source: European Commission (Agri-food data portal)",
+   "unit": "tonelada",
+   "currency": "EUR",
+   "frequency": "weekly",
+   "rows": 269,
+   "first": "2021-06-06",
+   "last": "2026-10-18",
+   "csv": "data/pack/eu/colza_de.csv",
+   "xlsx": "data/pack/eu/colza_de.xlsx",
+   "csvBytes": 56795,
+   "xlsxBytes": 19735
+  },
+  {
+   "product": "colza_hu",
+   "name": {
+    "es": "Colza, media nacional (Hungría)",
+    "en": "Rapeseed, national average (Hungary)",
+    "fr": "Colza, moyenne nationale (Hongrie)",
+    "it": "Colza, media nazionale (Ungheria)"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Hungría",
+    "en": "Hungary",
+    "fr": "Hongrie",
+    "it": "Ungheria"
+   },
+   "source": "eu_agrifood",
+   "sourceName": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "license": "EU-REUSE-2011-833",
+   "verdict": "condiciones",
+   "attribution": "Source: European Commission (Agri-food data portal)",
+   "unit": "tonelada",
+   "currency": "EUR",
+   "frequency": "weekly",
+   "rows": 268,
+   "first": "2021-01-10",
+   "last": "2026-10-18",
+   "csv": "data/pack/eu/colza_hu.csv",
+   "xlsx": "data/pack/eu/colza_hu.xlsx",
+   "csvBytes": 56606,
+   "xlsxBytes": 19726
+  },
+  {
+   "product": "colza_pl",
+   "name": {
+    "es": "Colza, media nacional (Polonia)",
+    "en": "Rapeseed, national average (Poland)",
+    "fr": "Colza, moyenne nationale (Pologne)",
+    "it": "Colza, media nazionale (Polonia)"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Polonia",
+    "en": "Poland",
+    "fr": "Pologne",
+    "it": "Polonia"
+   },
+   "source": "eu_agrifood",
+   "sourceName": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "license": "EU-REUSE-2011-833",
+   "verdict": "condiciones",
+   "attribution": "Source: European Commission (Agri-food data portal)",
+   "unit": "tonelada",
+   "currency": "EUR",
+   "frequency": "weekly",
+   "rows": 265,
+   "first": "2021-01-10",
+   "last": "2026-10-18",
+   "csv": "data/pack/eu/colza_pl.csv",
+   "xlsx": "data/pack/eu/colza_pl.xlsx",
+   "csvBytes": 55720,
+   "xlsxBytes": 19580
+  },
+  {
    "product": "cordero",
    "name": {
     "es": "Cordero",
@@ -1074,6 +2728,37 @@
    "xlsx": "data/pack/eu/cordero.xlsx",
    "csvBytes": 110867,
    "xlsxBytes": 35272
+  },
+  {
+   "product": "cordero_mundo",
+   "name": {
+    "es": "Cordero, referencia internacional",
+    "en": "Lamb, international reference",
+    "fr": "Agneau, référence internationale",
+    "it": "Agnello, riferimento internazionale"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/cordero_mundo.csv",
+   "xlsx": "data/pack/eu/cordero_mundo.xlsx",
+   "csvBytes": 85587,
+   "xlsxBytes": 25984
   },
   {
    "product": "gas_natural",
@@ -1129,13 +2814,44 @@
    "unit": "litro",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1088,
+   "rows": 1089,
    "first": "2005-01-03",
-   "last": "2026-10-12",
+   "last": "2026-10-19",
    "csv": "data/pack/eu/diesel.csv",
    "xlsx": "data/pack/eu/diesel.xlsx",
-   "csvBytes": 232664,
-   "xlsxBytes": 65075
+   "csvBytes": 232878,
+   "xlsxBytes": 65132
+  },
+  {
+   "product": "harina_pescado",
+   "name": {
+    "es": "Harina de pescado",
+    "en": "Fish meal",
+    "fr": "Farine de poisson",
+    "it": "Farina di pesce"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/harina_pescado.csv",
+   "xlsx": "data/pack/eu/harina_pescado.xlsx",
+   "csvBytes": 80587,
+   "xlsxBytes": 26232
   },
   {
    "product": "harina_soja",
@@ -1324,6 +3040,37 @@
    "xlsxBytes": 30682
   },
   {
+   "product": "naranja",
+   "name": {
+    "es": "Naranja",
+    "en": "Orange",
+    "fr": "Orange",
+    "it": "Arancia"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/naranja.csv",
+   "xlsx": "data/pack/eu/naranja.xlsx",
+   "csvBytes": 70610,
+   "xlsxBytes": 25563
+  },
+  {
    "product": "petroleo_brent",
    "name": {
     "es": "Petróleo Brent",
@@ -1386,6 +3133,130 @@
    "xlsxBytes": 53683
   },
   {
+   "product": "pollo_mundo",
+   "name": {
+    "es": "Pollo, referencia internacional",
+    "en": "Chicken, international reference",
+    "fr": "Poulet, référence internationale",
+    "it": "Pollo, riferimento internazionale"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/pollo_mundo.csv",
+   "xlsx": "data/pack/eu/pollo_mundo.xlsx",
+   "csvBytes": 83857,
+   "xlsxBytes": 25561
+  },
+  {
+   "product": "roca_fosforica",
+   "name": {
+    "es": "Roca fosfórica",
+    "en": "Phosphate rock",
+    "fr": "Phosphate naturel",
+    "it": "Roccia fosfatica"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/roca_fosforica.csv",
+   "xlsx": "data/pack/eu/roca_fosforica.xlsx",
+   "csvBytes": 79675,
+   "xlsxBytes": 24992
+  },
+  {
+   "product": "tsp",
+   "name": {
+    "es": "Superfosfato triple (TSP)",
+    "en": "Triple superphosphate (TSP)",
+    "fr": "Superphosphate triple (TSP)",
+    "it": "Perfosfato triplo (TSP)"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/tsp.csv",
+   "xlsx": "data/pack/eu/tsp.xlsx",
+   "csvBytes": 79515,
+   "xlsxBytes": 25707
+  },
+  {
+   "product": "tabaco_us",
+   "name": {
+    "es": "Tabaco (valor unitario de importación de EE. UU.)",
+    "en": "Tobacco (U.S. import unit value)",
+    "fr": "Tabac (valeur unitaire à l'importation, É.-U.)",
+    "it": "Tabacco (valore unitario d'importazione USA)"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 439,
+   "first": "1990-01",
+   "last": "2026-07",
+   "csv": "data/pack/eu/tabaco_us.csv",
+   "xlsx": "data/pack/eu/tabaco_us.xlsx",
+   "csvBytes": 92721,
+   "xlsxBytes": 26607
+  },
+  {
    "product": "trigo",
    "name": {
     "es": "Trigo",
@@ -1415,6 +3286,99 @@
    "xlsx": "data/pack/eu/trigo.xlsx",
    "csvBytes": 79918,
    "xlsxBytes": 26731
+  },
+  {
+   "product": "trigo_srw_us",
+   "name": {
+    "es": "Trigo blando rojo de invierno de EE. UU. (SRW), exportación",
+    "en": "U.S. soft red winter wheat (SRW), export",
+    "fr": "Blé tendre rouge d'hiver américain (SRW), export",
+    "it": "Grano tenero rosso invernale USA (SRW), export"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/trigo_srw_us.csv",
+   "xlsx": "data/pack/eu/trigo_srw_us.xlsx",
+   "csvBytes": 100089,
+   "xlsxBytes": 26832
+  },
+  {
+   "product": "trigo_hrw_us",
+   "name": {
+    "es": "Trigo duro rojo de invierno de EE. UU. (HRW), exportación",
+    "en": "U.S. hard red winter wheat (HRW), export",
+    "fr": "Blé dur rouge d'hiver américain (HRW), export",
+    "it": "Grano duro rosso invernale USA (HRW), export"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "tonelada",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/trigo_hrw_us.csv",
+   "xlsx": "data/pack/eu/trigo_hrw_us.xlsx",
+   "csvBytes": 99223,
+   "xlsxBytes": 26790
+  },
+  {
+   "product": "te_subastas",
+   "name": {
+    "es": "Té (media de 3 subastas)",
+    "en": "Tea (average of 3 auctions)",
+    "fr": "Thé (moyenne de 3 ventes)",
+    "it": "Tè (media di 3 aste)"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/te_subastas.csv",
+   "xlsx": "data/pack/eu/te_subastas.xlsx",
+   "csvBytes": 80288,
+   "xlsxBytes": 25840
   },
   {
    "product": "urea",
@@ -1477,6 +3441,37 @@
    "xlsx": "data/pack/eu/vaca.xlsx",
    "csvBytes": 190657,
    "xlsxBytes": 55271
+  },
+  {
+   "product": "ternera_mundo",
+   "name": {
+    "es": "Vacuno, referencia internacional",
+    "en": "Beef, international reference",
+    "fr": "Bœuf, référence internationale",
+    "it": "Manzo, riferimento internazionale"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Mercado mundial",
+    "en": "World market",
+    "fr": "Marché mondial",
+    "it": "Mercato mondiale"
+   },
+   "source": "world_bank",
+   "sourceName": "World Bank — Commodity Price Data (Pink Sheet)",
+   "license": "CC-BY-4.0",
+   "verdict": "apto",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "unit": "kg",
+   "currency": "USD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/eu/ternera_mundo.csv",
+   "xlsx": "data/pack/eu/ternera_mundo.xlsx",
+   "csvBytes": 85155,
+   "xlsxBytes": 25862
   },
   {
    "product": "eurostat_energy_input_index",
@@ -1583,6 +3578,192 @@
    "xlsxBytes": 7866
   },
   {
+   "product": "corderos_ni",
+   "name": {
+    "es": "Corderos, en canal (Irlanda del Norte)",
+    "en": "Lambs, deadweight (Northern Ireland)",
+    "fr": "Agneaux, en carcasse (Irlande du Nord)",
+    "it": "Agnelli, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 187,
+   "first": "2022-04-09",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/corderos_ni.csv",
+   "xlsx": "data/pack/uk/corderos_ni.xlsx",
+   "csvBytes": 47568,
+   "xlsxBytes": 15753
+  },
+  {
+   "product": "gasolina_uk",
+   "name": {
+    "es": "Gasolina sin plomo en surtidor (Reino Unido)",
+    "en": "Pump unleaded petrol (UK)",
+    "fr": "Essence sans plomb à la pompe (Royaume-Uni)",
+    "it": "Benzina senza piombo alla pompa (Regno Unito)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "desnz_fuel_prices",
+   "sourceName": "UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Department for Energy Security and Net Zero.",
+   "unit": "litro",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 520,
+   "first": "2016-11-07",
+   "last": "2026-10-19",
+   "csv": "data/pack/uk/gasolina_uk.csv",
+   "xlsx": "data/pack/uk/gasolina_uk.xlsx",
+   "csvBytes": 169549,
+   "xlsxBytes": 31381
+  },
+  {
+   "product": "diesel_uk",
+   "name": {
+    "es": "Gasóleo en surtidor (Reino Unido)",
+    "en": "Pump diesel (UK)",
+    "fr": "Gazole à la pompe (Royaume-Uni)",
+    "it": "Gasolio alla pompa (Regno Unito)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "desnz_fuel_prices",
+   "sourceName": "UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Department for Energy Security and Net Zero.",
+   "unit": "litro",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 520,
+   "first": "2016-11-07",
+   "last": "2026-10-19",
+   "csv": "data/pack/uk/diesel_uk.csv",
+   "xlsx": "data/pack/uk/diesel_uk.xlsx",
+   "csvBytes": 163318,
+   "xlsxBytes": 30773
+  },
+  {
+   "product": "huevos_campero_uk",
+   "name": {
+    "es": "Huevos camperos, precio al productor (Reino Unido)",
+    "en": "Eggs, free range, producer price (UK)",
+    "fr": "Œufs plein air, prix producteur (Royaume-Uni)",
+    "it": "Uova allevate all'aperto, prezzo al produttore (Regno Unito)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "defra",
+   "sourceName": "UK Defra (gov.uk agricultural statistics)",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
+   "unit": "docena",
+   "currency": "GBP",
+   "frequency": "quarterly",
+   "rows": 114,
+   "first": "1998-03",
+   "last": "2026-06",
+   "csv": "data/pack/uk/huevos_campero_uk.csv",
+   "xlsx": "data/pack/uk/huevos_campero_uk.xlsx",
+   "csvBytes": 29883,
+   "xlsxBytes": 12608
+  },
+  {
+   "product": "huevos_jaula_uk",
+   "name": {
+    "es": "Huevos de jaula enriquecida, precio al productor (Reino Unido)",
+    "en": "Eggs, enriched cages, producer price (UK)",
+    "fr": "Œufs, cages aménagées, prix producteur (Royaume-Uni)",
+    "it": "Uova, gabbie arricchite, prezzo al produttore (Regno Unito)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "defra",
+   "sourceName": "UK Defra (gov.uk agricultural statistics)",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
+   "unit": "docena",
+   "currency": "GBP",
+   "frequency": "quarterly",
+   "rows": 114,
+   "first": "1998-03",
+   "last": "2026-06",
+   "csv": "data/pack/uk/huevos_jaula_uk.csv",
+   "xlsx": "data/pack/uk/huevos_jaula_uk.xlsx",
+   "csvBytes": 31017,
+   "xlsxBytes": 12609
+  },
+  {
+   "product": "huevos_todos_uk",
+   "name": {
+    "es": "Huevos, precio al productor, todos los tipos (Reino Unido)",
+    "en": "Eggs, packer-to-producer price, all types (UK)",
+    "fr": "Œufs, prix producteur, tous types (Royaume-Uni)",
+    "it": "Uova, prezzo al produttore, tutti i tipi (Regno Unito)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "defra",
+   "sourceName": "UK Defra (gov.uk agricultural statistics)",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
+   "unit": "docena",
+   "currency": "GBP",
+   "frequency": "quarterly",
+   "rows": 114,
+   "first": "1998-03",
+   "last": "2026-06",
+   "csv": "data/pack/uk/huevos_todos_uk.csv",
+   "xlsx": "data/pack/uk/huevos_todos_uk.xlsx",
+   "csvBytes": 30569,
+   "xlsxBytes": 12622
+  },
+  {
    "product": "leche",
    "name": {
     "es": "Leche",
@@ -1612,6 +3793,254 @@
    "xlsx": "data/pack/uk/leche.xlsx",
    "csvBytes": 134805,
    "xlsxBytes": 37361
+  },
+  {
+   "product": "novillas_r3_ni",
+   "name": {
+    "es": "Novillas R3, en canal (Irlanda del Norte)",
+    "en": "Heifers grade R3, deadweight (Northern Ireland)",
+    "fr": "Génisses R3, en carcasse (Irlande du Nord)",
+    "it": "Giovenche R3, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 249,
+   "first": "2022-01-08",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/novillas_r3_ni.csv",
+   "xlsx": "data/pack/uk/novillas_r3_ni.xlsx",
+   "csvBytes": 64550,
+   "xlsxBytes": 18215
+  },
+  {
+   "product": "novillas_ni",
+   "name": {
+    "es": "Novillas, en canal (Irlanda del Norte)",
+    "en": "Heifers, deadweight (Northern Ireland)",
+    "fr": "Génisses, en carcasse (Irlande du Nord)",
+    "it": "Giovenche, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 249,
+   "first": "2022-01-08",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/novillas_ni.csv",
+   "xlsx": "data/pack/uk/novillas_ni.xlsx",
+   "csvBytes": 63217,
+   "xlsxBytes": 18333
+  },
+  {
+   "product": "novillos_r3_ni",
+   "name": {
+    "es": "Novillos R3, en canal (Irlanda del Norte)",
+    "en": "Steers grade R3, deadweight (Northern Ireland)",
+    "fr": "Bœufs R3, en carcasse (Irlande du Nord)",
+    "it": "Manzi R3, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 249,
+   "first": "2022-01-08",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/novillos_r3_ni.csv",
+   "xlsx": "data/pack/uk/novillos_r3_ni.xlsx",
+   "csvBytes": 64555,
+   "xlsxBytes": 18197
+  },
+  {
+   "product": "novillos_ni",
+   "name": {
+    "es": "Novillos, en canal (Irlanda del Norte)",
+    "en": "Steers, deadweight (Northern Ireland)",
+    "fr": "Bœufs, en carcasse (Irlande du Nord)",
+    "it": "Manzi, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 249,
+   "first": "2022-01-08",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/novillos_ni.csv",
+   "xlsx": "data/pack/uk/novillos_ni.xlsx",
+   "csvBytes": 63215,
+   "xlsxBytes": 18322
+  },
+  {
+   "product": "toros_r3_ni",
+   "name": {
+    "es": "Toros jóvenes R3, en canal (Irlanda del Norte)",
+    "en": "Young bulls grade R3, deadweight (Northern Ireland)",
+    "fr": "Jeunes taureaux R3, en carcasse (Irlande du Nord)",
+    "it": "Giovani tori R3, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 249,
+   "first": "2022-01-08",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/toros_r3_ni.csv",
+   "xlsx": "data/pack/uk/toros_r3_ni.xlsx",
+   "csvBytes": 65304,
+   "xlsxBytes": 18226
+  },
+  {
+   "product": "toros_ni",
+   "name": {
+    "es": "Toros jóvenes, en canal (Irlanda del Norte)",
+    "en": "Young bulls, deadweight (Northern Ireland)",
+    "fr": "Jeunes taureaux, en carcasse (Irlande du Nord)",
+    "it": "Giovani tori, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 249,
+   "first": "2022-01-08",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/toros_ni.csv",
+   "xlsx": "data/pack/uk/toros_ni.xlsx",
+   "csvBytes": 63961,
+   "xlsxBytes": 18370
+  },
+  {
+   "product": "vacas_r3_ni",
+   "name": {
+    "es": "Vacas R3, en canal (Irlanda del Norte)",
+    "en": "Cows grade R3, deadweight (Northern Ireland)",
+    "fr": "Vaches R3, en carcasse (Irlande du Nord)",
+    "it": "Vacche R3, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 249,
+   "first": "2022-01-08",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/vacas_r3_ni.csv",
+   "xlsx": "data/pack/uk/vacas_r3_ni.xlsx",
+   "csvBytes": 63070,
+   "xlsxBytes": 18235
+  },
+  {
+   "product": "vacas_ni",
+   "name": {
+    "es": "Vacas, en canal (Irlanda del Norte)",
+    "en": "Cows, deadweight (Northern Ireland)",
+    "fr": "Vaches, en carcasse (Irlande du Nord)",
+    "it": "Vacche, a peso morto (Irlanda del Nord)"
+   },
+   "region": "uk",
+   "place": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "source": "daera_ni",
+   "sourceName": "DAERA (Northern Ireland) — Agricultural Market Report",
+   "license": "OGL-UK-3.0",
+   "verdict": "apto",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DAERA.",
+   "unit": "kg",
+   "currency": "GBP",
+   "frequency": "weekly",
+   "rows": 249,
+   "first": "2022-01-08",
+   "last": "2026-10-10",
+   "csv": "data/pack/uk/vacas_ni.csv",
+   "xlsx": "data/pack/uk/vacas_ni.xlsx",
+   "csvBytes": 61715,
+   "xlsxBytes": 18265
   },
   {
    "product": "defra_energy_input_index",
@@ -1900,6 +4329,37 @@
    "xlsxBytes": 14563
   },
   {
+   "product": "amoniaco_ab",
+   "name": {
+    "es": "Amoníaco anhidro con aplicador (Alberta)",
+    "en": "Anhydrous ammonia, applied (Alberta)",
+    "fr": "Ammoniac anhydre, épandu (Alberta)",
+    "it": "Ammoniaca anidra applicata (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 56,
+   "first": "2022-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/amoniaco_ab.csv",
+   "xlsx": "data/pack/ca/amoniaco_ab.xlsx",
+   "csvBytes": 13685,
+   "xlsxBytes": 9620
+  },
+  {
    "product": "avena",
    "name": {
     "es": "Avena",
@@ -1962,6 +4422,37 @@
    "xlsxBytes": 10672
   },
   {
+   "product": "bacon_ca",
+   "name": {
+    "es": "Bacon, al por menor",
+    "en": "Bacon, retail",
+    "fr": "Bacon, au détail",
+    "it": "Pancetta affumicata, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/bacon_ca.csv",
+   "xlsx": "data/pack/ca/bacon_ca.xlsx",
+   "csvBytes": 24303,
+   "xlsxBytes": 12007
+  },
+  {
    "product": "canola_elevador",
    "name": {
     "es": "Canola, oferta de elevador (Alberta)",
@@ -1991,6 +4482,37 @@
    "xlsx": "data/pack/ca/canola_elevador.xlsx",
    "csvBytes": 22378,
    "xlsxBytes": 11361
+  },
+  {
+   "product": "ternera_picada_ca",
+   "name": {
+    "es": "Carne picada de vacuno, al por menor",
+    "en": "Ground beef, retail",
+    "fr": "Bœuf haché, au détail",
+    "it": "Carne macinata di manzo, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/ternera_picada_ca.csv",
+   "xlsx": "data/pack/ca/ternera_picada_ca.xlsx",
+   "csvBytes": 27295,
+   "xlsxBytes": 12046
   },
   {
    "product": "cebada",
@@ -2117,6 +4639,37 @@
    "xlsxBytes": 10917
   },
   {
+   "product": "potasa_ab",
+   "name": {
+    "es": "Cloruro potásico 0-0-60 (Alberta)",
+    "en": "Potassium chloride 0-0-60 (Alberta)",
+    "fr": "Chlorure de potassium 0-0-60 (Alberta)",
+    "it": "Cloruro di potassio 0-0-60 (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/potasa_ab.csv",
+   "xlsx": "data/pack/ca/potasa_ab.xlsx",
+   "csvBytes": 3580,
+   "xlsxBytes": 7545
+  },
+  {
    "product": "colza",
    "name": {
     "es": "Colza",
@@ -2177,6 +4730,440 @@
    "xlsx": "data/pack/ca/cordero.xlsx",
    "csvBytes": 97863,
    "xlsxBytes": 29665
+  },
+  {
+   "product": "diesel_calgary",
+   "name": {
+    "es": "Diésel en surtidor, Calgary",
+    "en": "Pump diesel, Calgary",
+    "fr": "Gazole à la pompe, Calgary",
+    "it": "Gasolio alla pompa, Calgary"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/diesel_calgary.csv",
+   "xlsx": "data/pack/ca/diesel_calgary.xlsx",
+   "csvBytes": 100174,
+   "xlsxBytes": 26340
+  },
+  {
+   "product": "diesel_edmonton",
+   "name": {
+    "es": "Diésel en surtidor, Edmonton",
+    "en": "Pump diesel, Edmonton",
+    "fr": "Gazole à la pompe, Edmonton",
+    "it": "Gasolio alla pompa, Edmonton"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/diesel_edmonton.csv",
+   "xlsx": "data/pack/ca/diesel_edmonton.xlsx",
+   "csvBytes": 101048,
+   "xlsxBytes": 26371
+  },
+  {
+   "product": "diesel_montreal",
+   "name": {
+    "es": "Diésel en surtidor, Montreal",
+    "en": "Pump diesel, Montreal",
+    "fr": "Gazole à la pompe, Montréal",
+    "it": "Gasolio alla pompa, Montreal"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/diesel_montreal.csv",
+   "xlsx": "data/pack/ca/diesel_montreal.xlsx",
+   "csvBytes": 101049,
+   "xlsxBytes": 26416
+  },
+  {
+   "product": "diesel_regina",
+   "name": {
+    "es": "Diésel en surtidor, Regina",
+    "en": "Pump diesel, Regina",
+    "fr": "Gazole à la pompe, Regina",
+    "it": "Gasolio alla pompa, Regina"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/diesel_regina.csv",
+   "xlsx": "data/pack/ca/diesel_regina.xlsx",
+   "csvBytes": 99287,
+   "xlsxBytes": 26225
+  },
+  {
+   "product": "diesel_saskatoon",
+   "name": {
+    "es": "Diésel en surtidor, Saskatoon",
+    "en": "Pump diesel, Saskatoon",
+    "fr": "Gazole à la pompe, Saskatoon",
+    "it": "Gasolio alla pompa, Saskatoon"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 429,
+   "first": "1991-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/diesel_saskatoon.csv",
+   "xlsx": "data/pack/ca/diesel_saskatoon.xlsx",
+   "csvBytes": 99166,
+   "xlsxBytes": 25758
+  },
+  {
+   "product": "diesel_toronto",
+   "name": {
+    "es": "Diésel en surtidor, Toronto",
+    "en": "Pump diesel, Toronto",
+    "fr": "Gazole à la pompe, Toronto",
+    "it": "Gasolio alla pompa, Toronto"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/diesel_toronto.csv",
+   "xlsx": "data/pack/ca/diesel_toronto.xlsx",
+   "csvBytes": 100159,
+   "xlsxBytes": 26381
+  },
+  {
+   "product": "diesel_vancouver",
+   "name": {
+    "es": "Diésel en surtidor, Vancouver",
+    "en": "Pump diesel, Vancouver",
+    "fr": "Gazole à la pompe, Vancouver",
+    "it": "Gasolio alla pompa, Vancouver"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/diesel_vancouver.csv",
+   "xlsx": "data/pack/ca/diesel_vancouver.xlsx",
+   "csvBytes": 101929,
+   "xlsxBytes": 26337
+  },
+  {
+   "product": "diesel_winnipeg",
+   "name": {
+    "es": "Diésel en surtidor, Winnipeg",
+    "en": "Pump diesel, Winnipeg",
+    "fr": "Gazole à la pompe, Winnipeg",
+    "it": "Gasolio alla pompa, Winnipeg"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 441,
+   "first": "1990-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/diesel_winnipeg.csv",
+   "xlsx": "data/pack/ca/diesel_winnipeg.xlsx",
+   "csvBytes": 101052,
+   "xlsxBytes": 26266
+  },
+  {
+   "product": "electricidad_ab",
+   "name": {
+    "es": "Electricidad de uso agrícola (Alberta)",
+    "en": "Farm electricity (Alberta)",
+    "fr": "Électricité agricole (Alberta)",
+    "it": "Elettricità agricola (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "kwh",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 56,
+   "first": "2022-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/electricidad_ab.csv",
+   "xlsx": "data/pack/ca/electricidad_ab.xlsx",
+   "csvBytes": 13471,
+   "xlsxBytes": 9536
+  },
+  {
+   "product": "map_ab",
+   "name": {
+    "es": "Fosfato monoamónico 11-52-0 (Alberta)",
+    "en": "Monoammonium phosphate 11-52-0 (Alberta)",
+    "fr": "Phosphate monoammonique 11-52-0 (Alberta)",
+    "it": "Fosfato monoammonico 11-52-0 (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/map_ab.csv",
+   "xlsx": "data/pack/ca/map_ab.xlsx",
+   "csvBytes": 3612,
+   "xlsxBytes": 7559
+  },
+  {
+   "product": "gas_natural_ab",
+   "name": {
+    "es": "Gas natural de uso agrícola (Alberta)",
+    "en": "Farm natural gas (Alberta)",
+    "fr": "Gaz naturel agricole (Alberta)",
+    "it": "Gas naturale agricolo (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "gj",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 56,
+   "first": "2022-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/gas_natural_ab.csv",
+   "xlsx": "data/pack/ca/gas_natural_ab.xlsx",
+   "csvBytes": 13187,
+   "xlsxBytes": 9546
+  },
+  {
+   "product": "gasolina_agr_ab",
+   "name": {
+    "es": "Gasolina agrícola marcada (Alberta)",
+    "en": "Marked farm gasoline (Alberta)",
+    "fr": "Essence agricole colorée (Alberta)",
+    "it": "Benzina agricola marcata (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/gasolina_agr_ab.csv",
+   "xlsx": "data/pack/ca/gasolina_agr_ab.xlsx",
+   "csvBytes": 3662,
+   "xlsxBytes": 7606
+  },
+  {
+   "product": "gasolina_ca",
+   "name": {
+    "es": "Gasolina en surtidor (media de Canadá)",
+    "en": "Pump gasoline (Canada average)",
+    "fr": "Essence à la pompe (moyenne du Canada)",
+    "it": "Benzina alla pompa (media del Canada)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 249,
+   "first": "2006-01",
+   "last": "2026-09",
+   "csv": "data/pack/ca/gasolina_ca.csv",
+   "xlsx": "data/pack/ca/gasolina_ca.xlsx",
+   "csvBytes": 58077,
+   "xlsxBytes": 18044
+  },
+  {
+   "product": "diesel_agr_ab",
+   "name": {
+    "es": "Gasóleo agrícola marcado (Alberta)",
+    "en": "Marked farm diesel (Alberta)",
+    "fr": "Gazole agricole coloré (Alberta)",
+    "it": "Gasolio agricolo marcato (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 56,
+   "first": "2022-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/diesel_agr_ab.csv",
+   "xlsx": "data/pack/ca/diesel_agr_ab.xlsx",
+   "csvBytes": 13303,
+   "xlsxBytes": 9606
   },
   {
    "product": "guisante_verde_ab",
@@ -2241,6 +5228,37 @@
    "xlsxBytes": 27883
   },
   {
+   "product": "heno_ab",
+   "name": {
+    "es": "Heno de alfalfa (Alberta)",
+    "en": "Alfalfa hay (Alberta)",
+    "fr": "Foin de luzerne (Alberta)",
+    "it": "Fieno di erba medica (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "ton_corta",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 56,
+   "first": "2022-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/heno_ab.csv",
+   "xlsx": "data/pack/ca/heno_ab.xlsx",
+   "csvBytes": 12575,
+   "xlsxBytes": 9573
+  },
+  {
    "product": "huevos",
    "name": {
     "es": "Huevos",
@@ -2272,6 +5290,37 @@
    "xlsxBytes": 27699
   },
   {
+   "product": "huevos_docena_ca",
+   "name": {
+    "es": "Huevos, docena, al por menor",
+    "en": "Eggs, dozen, retail",
+    "fr": "Œufs, douzaine, au détail",
+    "it": "Uova, dozzina, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "docena",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/huevos_docena_ca.csv",
+   "xlsx": "data/pack/ca/huevos_docena_ca.xlsx",
+   "csvBytes": 26644,
+   "xlsxBytes": 11915
+  },
+  {
    "product": "leche",
    "name": {
     "es": "Leche",
@@ -2301,6 +5350,68 @@
    "xlsx": "data/pack/ca/leche.xlsx",
    "csvBytes": 70435,
    "xlsxBytes": 23621
+  },
+  {
+   "product": "leche_1l_ca",
+   "name": {
+    "es": "Leche, 1 litro, al por menor",
+    "en": "Milk, 1 litre, retail",
+    "fr": "Lait, 1 litre, au détail",
+    "it": "Latte, 1 litro, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/leche_1l_ca.csv",
+   "xlsx": "data/pack/ca/leche_1l_ca.xlsx",
+   "csvBytes": 25947,
+   "xlsxBytes": 11825
+  },
+  {
+   "product": "leche_4l_ca",
+   "name": {
+    "es": "Leche, envase de 4 litros, al por menor",
+    "en": "Milk, 4-litre pack, retail",
+    "fr": "Lait, format 4 litres, au détail",
+    "it": "Latte, confezione da 4 litri, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/leche_4l_ca.csv",
+   "xlsx": "data/pack/ca/leche_4l_ca.xlsx",
+   "csvBytes": 27381,
+   "xlsxBytes": 11946
   },
   {
    "product": "lenteja_laird_ab",
@@ -2396,6 +5507,99 @@
    "xlsxBytes": 30106
   },
   {
+   "product": "ternera_lomo_ca",
+   "name": {
+    "es": "Lomo alto de vacuno, al por menor",
+    "en": "Beef striploin, retail",
+    "fr": "Faux-filet de bœuf, au détail",
+    "it": "Controfiletto di manzo, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/ternera_lomo_ca.csv",
+   "xlsx": "data/pack/ca/ternera_lomo_ca.xlsx",
+   "csvBytes": 26751,
+   "xlsxBytes": 12111
+  },
+  {
+   "product": "cerdo_lomo_ca",
+   "name": {
+    "es": "Lomo de cerdo, al por menor",
+    "en": "Pork loin, retail",
+    "fr": "Longe de porc, au détail",
+    "it": "Lonza di maiale, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/cerdo_lomo_ca.csv",
+   "xlsx": "data/pack/ca/cerdo_lomo_ca.xlsx",
+   "csvBytes": 25717,
+   "xlsxBytes": 12009
+  },
+  {
+   "product": "mantequilla_ca",
+   "name": {
+    "es": "Mantequilla, al por menor",
+    "en": "Butter, retail",
+    "fr": "Beurre, au détail",
+    "it": "Burro, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/mantequilla_ca.csv",
+   "xlsx": "data/pack/ca/mantequilla_ca.xlsx",
+   "csvBytes": 25899,
+   "xlsxBytes": 12232
+  },
+  {
    "product": "maiz",
    "name": {
     "es": "Maíz",
@@ -2425,6 +5629,37 @@
    "xlsx": "data/pack/ca/maiz.xlsx",
    "csvBytes": 97996,
    "xlsxBytes": 29977
+  },
+  {
+   "product": "mineral_vacuno_ab",
+   "name": {
+    "es": "Mineral para vacuno (Alberta)",
+    "en": "Cattle mineral (Alberta)",
+    "fr": "Minéral pour bovins (Alberta)",
+    "it": "Minerale per bovini (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/mineral_vacuno_ab.csv",
+   "xlsx": "data/pack/ca/mineral_vacuno_ab.xlsx",
+   "csvBytes": 3626,
+   "xlsxBytes": 7611
   },
   {
    "product": "novillo_ab",
@@ -2458,6 +5693,161 @@
    "xlsxBytes": 11111
   },
   {
+   "product": "cerdo_paleta_ca",
+   "name": {
+    "es": "Paleta de cerdo, al por menor",
+    "en": "Pork shoulder, retail",
+    "fr": "Épaule de porc, au détail",
+    "it": "Spalla di maiale, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/cerdo_paleta_ca.csv",
+   "xlsx": "data/pack/ca/cerdo_paleta_ca.xlsx",
+   "csvBytes": 26177,
+   "xlsxBytes": 12020
+  },
+  {
+   "product": "pollo_pechuga_ca",
+   "name": {
+    "es": "Pechugas de pollo, al por menor",
+    "en": "Chicken breasts, retail",
+    "fr": "Poitrines de poulet, au détail",
+    "it": "Petto di pollo, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/pollo_pechuga_ca.csv",
+   "xlsx": "data/pack/ca/pollo_pechuga_ca.xlsx",
+   "csvBytes": 26645,
+   "xlsxBytes": 11991
+  },
+  {
+   "product": "iniciador_ternero_ab",
+   "name": {
+    "es": "Pienso de arranque para terneros (Alberta)",
+    "en": "Calf starter ration (Alberta)",
+    "fr": "Aliment de démarrage pour veaux (Alberta)",
+    "it": "Mangime di avviamento per vitelli (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/iniciador_ternero_ab.csv",
+   "xlsx": "data/pack/ca/iniciador_ternero_ab.xlsx",
+   "csvBytes": 3857,
+   "xlsxBytes": 7624
+  },
+  {
+   "product": "pienso_cerdo_ab",
+   "name": {
+    "es": "Pienso de crecimiento para cerdos (Alberta)",
+    "en": "Hog grower ration (Alberta)",
+    "fr": "Aliment croissance porcs (Alberta)",
+    "it": "Mangime accrescimento suini (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/pienso_cerdo_ab.csv",
+   "xlsx": "data/pack/ca/pienso_cerdo_ab.xlsx",
+   "csvBytes": 3785,
+   "xlsxBytes": 7625
+  },
+  {
+   "product": "pienso_broiler_ab",
+   "name": {
+    "es": "Pienso de crecimiento para pollos (Alberta)",
+    "en": "Broiler grower feed (Alberta)",
+    "fr": "Aliment croissance poulets de chair (Alberta)",
+    "it": "Mangime accrescimento polli (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/pienso_broiler_ab.csv",
+   "xlsx": "data/pack/ca/pienso_broiler_ab.xlsx",
+   "csvBytes": 3810,
+   "xlsxBytes": 7616
+  },
+  {
    "product": "pollo",
    "name": {
     "es": "Pollo",
@@ -2489,6 +5879,99 @@
    "xlsxBytes": 28145
   },
   {
+   "product": "pollo_entero_ca",
+   "name": {
+    "es": "Pollo entero, al por menor",
+    "en": "Whole chicken, retail",
+    "fr": "Poulet entier, au détail",
+    "it": "Pollo intero, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/pollo_entero_ca.csv",
+   "xlsx": "data/pack/ca/pollo_entero_ca.xlsx",
+   "csvBytes": 25838,
+   "xlsxBytes": 11954
+  },
+  {
+   "product": "propano_ab",
+   "name": {
+    "es": "Propano agrícola (Alberta)",
+    "en": "Farm propane (Alberta)",
+    "fr": "Propane agricole (Alberta)",
+    "it": "Propano agricolo (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "litro",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/propano_ab.csv",
+   "xlsx": "data/pack/ca/propano_ab.xlsx",
+   "csvBytes": 3447,
+   "xlsxBytes": 7578
+  },
+  {
+   "product": "queso_bloque_ca",
+   "name": {
+    "es": "Queso en bloque, al por menor",
+    "en": "Block cheese, retail",
+    "fr": "Fromage en bloc, au détail",
+    "it": "Formaggio in blocco, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/queso_bloque_ca.csv",
+   "xlsx": "data/pack/ca/queso_bloque_ca.xlsx",
+   "csvBytes": 26281,
+   "xlsxBytes": 11974
+  },
+  {
    "product": "soja_grano",
    "name": {
     "es": "Soja en grano",
@@ -2518,6 +6001,161 @@
    "xlsx": "data/pack/ca/soja_grano.xlsx",
    "csvBytes": 87402,
    "xlsxBytes": 26313
+  },
+  {
+   "product": "ternera_redondo_ca",
+   "name": {
+    "es": "Solomillo bajo de vacuno, al por menor",
+    "en": "Beef top sirloin, retail",
+    "fr": "Surlonge de bœuf, au détail",
+    "it": "Lombata di manzo, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/ternera_redondo_ca.csv",
+   "xlsx": "data/pack/ca/ternera_redondo_ca.xlsx",
+   "csvBytes": 27681,
+   "xlsxBytes": 12122
+  },
+  {
+   "product": "sulfato_amonico_ab",
+   "name": {
+    "es": "Sulfato amónico 21-0-0-24 (Alberta)",
+    "en": "Ammonium sulphate 21-0-0-24 (Alberta)",
+    "fr": "Sulfate d'ammonium 21-0-0-24 (Alberta)",
+    "it": "Solfato ammonico 21-0-0-24 (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/sulfato_amonico_ab.csv",
+   "xlsx": "data/pack/ca/sulfato_amonico_ab.xlsx",
+   "csvBytes": 3751,
+   "xlsxBytes": 7574
+  },
+  {
+   "product": "suplemento_cebo_ab",
+   "name": {
+    "es": "Suplemento para cebadero (Alberta)",
+    "en": "Feedlot supplement (Alberta)",
+    "fr": "Complément pour parc d'engraissement (Alberta)",
+    "it": "Integratore per feedlot (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/suplemento_cebo_ab.csv",
+   "xlsx": "data/pack/ca/suplemento_cebo_ab.xlsx",
+   "csvBytes": 3716,
+   "xlsxBytes": 7604
+  },
+  {
+   "product": "suplemento_cerdo_ab",
+   "name": {
+    "es": "Suplemento porcino (Alberta)",
+    "en": "Swine supplement (Alberta)",
+    "fr": "Complément porcin (Alberta)",
+    "it": "Integratore suini (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/suplemento_cerdo_ab.csv",
+   "xlsx": "data/pack/ca/suplemento_cerdo_ab.xlsx",
+   "csvBytes": 3636,
+   "xlsxBytes": 7611
+  },
+  {
+   "product": "leche_ternero_ab",
+   "name": {
+    "es": "Sustituto de leche para terneros (Alberta)",
+    "en": "Calf milk replacer (Alberta)",
+    "fr": "Lait de remplacement pour veaux (Alberta)",
+    "it": "Latte sostitutivo per vitelli (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 15,
+   "first": "2025-06",
+   "last": "2026-08",
+   "csv": "data/pack/ca/leche_ternero_ab.csv",
+   "xlsx": "data/pack/ca/leche_ternero_ab.xlsx",
+   "csvBytes": 3804,
+   "xlsxBytes": 7594
   },
   {
    "product": "trigo",
@@ -2613,6 +6251,37 @@
    "xlsxBytes": 11052
   },
   {
+   "product": "urea_ab",
+   "name": {
+    "es": "Urea a granel (Alberta)",
+    "en": "Urea, bulk (Alberta)",
+    "fr": "Urée en vrac (Alberta)",
+    "it": "Urea sfusa (Alberta)"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Alberta (Canadá)",
+    "en": "Alberta (Canada)",
+    "fr": "Alberta (Canada)",
+    "it": "Alberta (Canada)"
+   },
+   "source": "alberta_ag",
+   "sourceName": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "license": "OGL-Alberta",
+   "verdict": "apto",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "unit": "tonelada",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 56,
+   "first": "2022-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/urea_ab.csv",
+   "xlsx": "data/pack/ca/urea_ab.xlsx",
+   "csvBytes": 12419,
+   "xlsxBytes": 9558
+  },
+  {
    "product": "vaca",
    "name": {
     "es": "Vaca (vacuno)",
@@ -2642,6 +6311,68 @@
    "xlsx": "data/pack/ca/vaca.xlsx",
    "csvBytes": 82614,
    "xlsxBytes": 25914
+  },
+  {
+   "product": "ternera_guisar_ca",
+   "name": {
+    "es": "Vacuno para guisar, al por menor",
+    "en": "Stewing beef, retail",
+    "fr": "Bœuf à ragoût, au détail",
+    "it": "Spezzatino di manzo, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/ternera_guisar_ca.csv",
+   "xlsx": "data/pack/ca/ternera_guisar_ca.xlsx",
+   "csvBytes": 26873,
+   "xlsxBytes": 12030
+  },
+  {
+   "product": "yogur_ca",
+   "name": {
+    "es": "Yogur, al por menor",
+    "en": "Yogurt, retail",
+    "fr": "Yaourt, au détail",
+    "it": "Yogurt, al dettaglio"
+   },
+   "region": "ca",
+   "place": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "source": "statcan",
+   "sourceName": "Statistics Canada",
+   "license": "CUSTOM",
+   "verdict": "apto",
+   "attribution": "Adapted from Statistics Canada, 2026-08. This does not constitute an endorsement by Statistics Canada of this product.",
+   "unit": "kg",
+   "currency": "CAD",
+   "frequency": "monthly",
+   "rows": 116,
+   "first": "2017-01",
+   "last": "2026-08",
+   "csv": "data/pack/ca/yogur_ca.csv",
+   "xlsx": "data/pack/ca/yogur_ca.xlsx",
+   "csvBytes": 24185,
+   "xlsxBytes": 11905
   }
  ],
  "excluded": []

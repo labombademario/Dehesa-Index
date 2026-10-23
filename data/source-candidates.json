@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T13:58:17Z",
+ "generatedAt": "2026-10-23T15:47:14Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2419,7 +2419,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "U.S. Bureau of Labor Statistics",
-   "dataset": "Ya integrada (25 series en el catalogo unificado)",
+   "dataset": "Ya integrada (27 series en el catalogo unificado)",
    "products": [
     "butter",
     "cattle",
@@ -2438,6 +2438,7 @@
    ],
    "productsConfirmed": true,
    "metrics": [
+    "price",
     "price_index"
    ],
    "frequency": "monthly",
@@ -2592,15 +2593,19 @@
    "country": "NL",
    "scope": "integrated",
    "institution": "Statistics Netherlands (CBS StatLine)",
-   "dataset": "Ya integrada (67 series en el catalogo unificado)",
+   "dataset": "Ya integrada (129 series en el catalogo unificado)",
    "products": [
     "barley",
+    "butter",
     "cattle",
     "cheese",
     "eggs",
     "fertilizer",
+    "fruit",
     "maize",
     "milk",
+    "olive",
+    "pigs",
     "potato",
     "poultry",
     "rapeseed",
@@ -2610,6 +2615,8 @@
    ],
    "productsConfirmed": true,
    "metrics": [
+    "input_price",
+    "price",
     "production"
    ],
    "frequency": "mixed",
@@ -3011,7 +3018,7 @@
    "country": "UK",
    "scope": "integrated",
    "institution": "DAERA (Northern Ireland) — Agricultural Market Report",
-   "dataset": "Ya integrada (14 series en el catalogo unificado)",
+   "dataset": "Ya integrada (23 series en el catalogo unificado)",
    "products": [
     "cattle",
     "sheep"
@@ -3056,7 +3063,7 @@
    "country": "UK",
    "scope": "integrated",
    "institution": "UK Defra (gov.uk agricultural statistics)",
-   "dataset": "Ya integrada (790 series en el catalogo unificado)",
+   "dataset": "Ya integrada (793 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -3119,13 +3126,14 @@
    "country": "UK",
    "scope": "integrated",
    "institution": "UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices",
-   "dataset": "Ya integrada (4 series en el catalogo unificado)",
+   "dataset": "Ya integrada (6 series en el catalogo unificado)",
    "products": [
     "energy"
    ],
    "productsConfirmed": true,
    "metrics": [
-    "input_price"
+    "input_price",
+    "price"
    ],
    "frequency": "weekly",
    "access": {
@@ -7671,11 +7679,16 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (17 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "pigs"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "daily",
    "access": {
     "api": null,
     "csv": null,
@@ -7710,7 +7723,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA AMS Market News (MARS API)",
-   "dataset": "Ya integrada (13 series en el catalogo unificado)",
+   "dataset": "Ya integrada (16 series en el catalogo unificado)",
    "products": [
     "butter",
     "cheese",
@@ -7759,7 +7772,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
-   "dataset": "Ya integrada (1812 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1815 series en el catalogo unificado)",
    "products": [
     "butter",
     "cattle",
@@ -7990,7 +8003,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "dataset": "Ya integrada (1115 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1117 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",

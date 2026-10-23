@@ -1,18 +1,18 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T23:28:45Z",
+ "generatedAt": "2026-10-23T15:47:15Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 158,
-  "sourcesApto": 145,
+  "sources": 160,
+  "sourcesApto": 147,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 345,
-  "datasets_apto": 214,
-  "datasets_condiciones": 121,
+  "datasets": 358,
+  "datasets_apto": 226,
+  "datasets_condiciones": 122,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -23,6 +23,23 @@
    "id": "aafc_drought",
    "name": "Agriculture and Agri-Food Canada — Canadian Drought Monitor",
    "url": "https://agriculture.canada.ca/en/agricultural-production/weather/canadian-drought-monitor",
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "conditions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos."
+  },
+  {
+   "id": "aafc_slaughter",
+   "name": "Agriculture and Agri-Food Canada — Weekly Red Meat Slaughter",
+   "url": "https://open.canada.ca/data/en/dataset/43ea3719-f2ea-4c30-91d2-c8cf9b9b1cef",
    "country": "CA",
    "licenseId": "OGL-Canada",
    "licenseName": "Open Government Licence – Canada",
@@ -234,6 +251,23 @@
    "verdict": "apto",
    "status": "VERIFIED",
    "legalConfidence": "OWNER_ACCEPTED",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "conditions": "No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; alberta.ca pages without an OGL-Alberta line do not allow commercial reproduction without permission."
+  },
+  {
+   "id": "alberta_inputs",
+   "name": "Alberta Agriculture and Irrigation — Alberta Farm Input Prices",
+   "url": "https://open.alberta.ca/publications/0704-917x",
+   "country": "CA",
+   "licenseId": "OGL-Alberta",
+   "licenseName": "Open Government Licence – Alberta (Government of Alberta information; third-party material within the reviews excluded)",
+   "licenseUrl": "https://open.alberta.ca/licence",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
    "commercialUse": "yes",
    "derivatives": "yes",
    "redistribution": "yes",
@@ -3067,11 +3101,71 @@
    "sources": []
   },
   {
+   "path": "data/ca-aafc-slaughter-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "aafc_slaughter"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CA",
+     "sourceId": "aafc_slaughter",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/ca-alberta-inputs-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "alberta_inputs"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CA",
+     "sourceId": "alberta_inputs",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/ca-boc-bcpi-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "bank_of_canada"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CA",
+     "sourceId": "bank_of_canada",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
    "path": "data/ca-ghg-agri.json",
    "scope": "fichero",
    "verdict": "apto",
    "sources": [
     "eccc_ghg"
+   ]
+  },
+  {
+   "path": "data/ca-statcan-more-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statcan"
+   ],
+   "parts": [
+    {
+     "scope": "pais:CA",
+     "sourceId": "statcan",
+     "verdict": "apto"
+    }
    ]
   },
   {
@@ -5548,12 +5642,16 @@
    "verdict": "condiciones",
    "sources": [
     "alberta_ag",
+    "bls",
+    "daera_ni",
     "defra",
+    "desnz_fuel_prices",
     "eia",
     "eu_agrifood",
     "eu_oil_bulletin",
     "eurostat",
     "statcan",
+    "usda_ams_lmr",
     "usda_ams_mars",
     "usda_ers",
     "usda_nass",
@@ -5783,12 +5881,16 @@
    "verdict": "condiciones",
    "sources": [
     "alberta_ag",
+    "bls",
+    "daera_ni",
     "defra",
+    "desnz_fuel_prices",
     "eia",
     "eu_agrifood",
     "eu_oil_bulletin",
     "eurostat",
     "statcan",
+    "usda_ams_lmr",
     "usda_ams_mars",
     "usda_ers",
     "usda_nass",
@@ -5884,6 +5986,37 @@
    ]
   },
   {
+   "path": "data/netherlands-more-log.txt",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "cbs_nl"
+   ]
+  },
+  {
+   "path": "data/netherlands-more-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "cbs_nl"
+   ],
+   "parts": [
+    {
+     "scope": "pais:NL",
+     "sourceId": "cbs_nl",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/netherlands-more/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "cbs_nl"
+   ]
+  },
+  {
    "path": "data/news-archive/",
    "scope": "carpeta",
    "verdict": "derivado",
@@ -5932,12 +6065,16 @@
    "verdict": "condiciones",
    "sources": [
     "alberta_ag",
+    "bls",
+    "daera_ni",
     "defra",
+    "desnz_fuel_prices",
     "eia",
     "eu_agrifood",
     "eu_oil_bulletin",
     "eurostat",
     "statcan",
+    "usda_ams_lmr",
     "usda_ams_mars",
     "usda_ers",
     "usda_nass",
@@ -6794,6 +6931,51 @@
    ]
   },
   {
+   "path": "data/us-ers-bioenergy-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-ers-fertilizer-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-ers-food-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
    "path": "data/us-ers-livestock-stats.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -6803,6 +6985,191 @@
    "parts": [
     {
      "scope": "pais:US",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-ers-productivity-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_ers"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AR",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:AT",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:AU",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:BE",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:BG",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:CA",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:CH",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:CL",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:CY",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:CZ",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:DE",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:DK",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:EE",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:EL",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:ES",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:FI",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:FR",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:HR",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:HU",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:IE",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:IT",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:LT",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:LU",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:LV",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:MT",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:NL",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:PL",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:PT",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:RO",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:SE",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:SI",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:SK",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:UK",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_ers",
+     "verdict": "apto"
+    },
+    {
+     "scope": "pais:UY",
      "sourceId": "usda_ers",
      "verdict": "apto"
     }
@@ -6932,6 +7299,36 @@
     "usda_ams_mars",
     "usda_ers",
     "usda_oce_wasde"
+   ]
+  },
+  {
+   "path": "data/us-nass-cdl-cache.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_nass",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/us-nass-cdl-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usda_nass"
+   ],
+   "parts": [
+    {
+     "scope": "pais:US",
+     "sourceId": "usda_nass",
+     "verdict": "apto"
+    }
    ]
   },
   {
