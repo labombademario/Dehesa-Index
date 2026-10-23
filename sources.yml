@@ -2114,6 +2114,14 @@ sources:
     data: [us-ers-fertilizer-stats.json]
     log: us-ers-fertilizer-log.txt
     message: Fertilizantes de EE. UU. - consumo, precios pagados e indices historicos (USDA ERS)
+  - id: us-ers-food
+    name: Update US food expenditure and food dollar series (USDA ERS)
+    cron: ['10 16 * * 5']
+    script: scripts/update-us-ers-food.py
+    timeout: 15
+    data: [us-ers-food-stats.json]
+    log: us-ers-food-log.txt
+    message: Gasto en alimentos de EE. UU. - ventas mensuales, gasto por estado y reparto del dolar de la comida (USDA ERS)
   - id: us-nass-processing
     name: Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)
     cron: ['40 16 1-8,20 * *']
