@@ -1,1 +1,1 @@
-focos leídos 10, nuevos 1, total 15
+focos leídos 10, nuevos 3, total 18
