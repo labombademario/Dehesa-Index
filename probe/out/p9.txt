@@ -1,0 +1,417 @@
+## ON cattle 1219117 bytes
+ sheet Definitions dims=A1:X18 n=18
+   (None, "All price data is provided by John Jordan's Farm Market News Service", None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, ' ')
+   (None, 'John Jordan collects daily price information directly from those that producers would sell their production (elevators and processors)', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'These corn prices represent the average price in the Chatham Kent area, representing a small geographic portion of Ontario, prices will vary across the province', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, Non
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'Price Term', 'Definition', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet CttlePrices_Basis dims=A1:T1158 n=1158
+   ('Ontario Large and Medium Frame Feeder & Fed Cattle and Basis', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('*Definitions provided on Next sheet', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, 'Ontario Large and medium Frame Fed Steers over 1250 lbs.', 'Ontario Large and medium Frame Fed Heifers over 1000 lbs.', 'Weighted Average Stocker Steer and Heifer Cattle Price', 'CME futures live cattle', 'CME futures Feeder cattle ', 'Canadian Dollar Value (C$/US$)', 'Steers 500-599',
+   ('Year', 'Week #', '$/cwt (live weight)', '$/cwt (live weight)', '$/cwt (live weight)', 'US$/cwt', 'US$/cwt', None, '$/cwt (live weight)', '$/cwt (live weight)', '($/CWT carcsas weight) ', '($/CWT carcsas weight) ', '($/CWT carcsas weight) ', 'CANFAX $/cwt live weight', '$/cwt (live weight)', '$/cwt
+   (2005, 1, 87.92, 86.75, 93.97602943039035, 87.75, 98.8, 0.8166732000522671, 108.72545454545455, 87.4, 145, 150, 147.5, None, -12.253169454545443, -33.57862399999999, -18.948120000000003, None, None, None)
+   (2005, 2, 86.57, 85.68, 96.30199867637327, 89.15, 102.15, 0.8258456659619451, 112.28545454545456, 99.58, 150, 155, 152.5, None, -11.405937454545438, -24.111391999999995, -16.449951999999996, None, None, None)
+   ..(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None)
+   ..(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None)
+   ..(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None)
+ sheet Steer price comp dims=A1:O367 n=367
+   (None, None, None, 'Comparison of Fed Steer Carcass Weight Price Options', None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, 'CANFAX Reported Fed Steer Price - farmers report price based on carcass weight and CANFAX converts to liveweight including a transport cost to packer', None, None, 'BFO Reported Average ', 'Comparison', None, None, 'Ontario Auction Large and medium Frame Fed Steers over 1250 lb',
+   (None, None, '-', 'CANFAX $/cwt live weight', ' Transport Cost $/cwt carcass weight', 'CANFAX  $/cwt Carcass Weight adjusted for transport cost', 'BFO $/cwt Average Fed Steer Carcass Weight', 'Weekly Difference in Carcass Weight Price Options - $/cwt Carcass Weight', 'Average Difference since Jan 20
+   (2020, 1, '2020-1', 148.46, 2, 249.43333333333337, 247, 2.4333333333333655, 1.5052763819095571, None, 137.13, 149.66000000000003, 12.53000000000003, 4.756683417085425, None)
+   (2020, 2, '2020-2', 149.1, 2, 250.5, 247.5, 3, None, None, 139.71, 150.29999999999998, 10.589999999999975, None, None)
+   (2020, 3, '2020-3', 150.9, 2, 253.50000000000003, 252.5, 1.0000000000000284, None, None, 143.12, 152.10000000000002, 8.980000000000018, None, None)
+   ..(2026, 50, '2026-50', 0, 2, None, None, None, 0, 0, None, None, None, None, None)
+   ..(2026, 51, '2026-51', 0, 2, None, None, None, 0, 0, None, None, None, None, None)
+   ..(2026, 52, '2026-52', 0, 2, None, None, None, 0, 0, None, None, None, None, None)
+ sheet Market Price dims=A1:W1469 n=1469
+   (None, None, None, 'OCA Large & medium frame steers - 900-999', 'OCA Large & Medium Farm Steer over 1250+ price', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('Year ', 'Week', 'Week Ending', 'Steer Price $ per cwt', 'Steer Price $ per cwt', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 1, datetime.datetime(1999, 1, 8, 0, 0), 91.56, 87.94, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 2, datetime.datetime(1999, 1, 15, 0, 0), 98.4, 89.38, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 3, datetime.datetime(1999, 1, 22, 0, 0), 101.88, 90.68, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 4, datetime.datetime(1999, 1, 29, 0, 0), 99.18, 90.32, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(0, 0, datetime.datetime(2027, 1, 29, 0, 0), 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(0, 0, datetime.datetime(2027, 2, 5, 0, 0), 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(0, 0, datetime.datetime(2027, 2, 12, 0, 0), 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Feed Cost dims=A1:R1583 n=1583
+   (None, None, None, None, None, None, None, 'Feedlot - Steer', None, None, None, None, None, None, None, None, None, None)
+   (None, 'Corn', None, 'Corn Silage', 'Distillers Dried Grain', 'Soymeal', 'Concentrate', 'Feed Cost', None, None, None, None, None, None, None, None, None, None)
+   ('Source', 'Farm Market News', None, 'OMAFRA 5 year Historicl % of Corn Price', 'Farm Market News ', 'Farm Market News ', 'RMP produced % of Soymeal Price', 'Based on RMP', None, None, None, None, None, None, None, None, None, None)
+   ('Assumptions', 'Includes $15 per tonne for delivery to farm since most producers don’t truck the feed themselves ', None, 'Corn silage is worht 16.16% the value of a tonne of grain corn', None, None, None, '1802.4lbs of silage, 3715.4lbs of corn, 964.9lbs of DDGS, 272.4lbs of concentrate to take 90
+   ('Units', '$/bu', '$/tonne', '$/tonne', '$/tonne', '$/tonne', '$/tonne', '$ per 1500lb Steer', 600, 184.6153846153846, 26.373626373626372, None, None, None, None, None, None, None)
+   (datetime.datetime(1999, 1, 8, 0, 0), 2.7925, 124.93514, 20.189518624, 119.18001943728562, 258.121, 369.11303, 324.8255017422207, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Fed Steer Margin dims=A1:AG1439 n=1439
+   (None, 'Ontario - 1500lb steers ', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'Ontario 900lb Stocker Steer Price', 'Feed Cost', 'Fed Steer Costs', 'Fed Steer Revenue', 'Fed Steer Margin', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'BFO', 'RMP', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('Week Ending', '$ per 900lb steer', '$ per 1500lb steer', '$ per 1500lb steer', '$ per 1500lb steer', '$ per 1500lb steer', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (datetime.datetime(1999, 7, 9, 0, 0), 824.04, 299.93225171445687, 1123.972251714457, 1335.45, 211.47774828554316, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (datetime.datetime(1999, 7, 16, 0, 0), 885.6, 322.8441533871269, 1208.4441533871268, 1313.7, 105.25584661287326, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(datetime.datetime(2026, 12, 18, 0, 0), 4312.71, None, '#VALUE!', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(datetime.datetime(2026, 12, 25, 0, 0), 4373.91, None, '#VALUE!', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(datetime.datetime(2027, 1, 1, 0, 0), 4366.17, 0, 4366.17, 0, -4366.17, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet FED STEER MARGIN_graphs dims=A1:AJ112 n=112
+   (None, 'Fed-steer margins', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 'Last year ', 'This year', '5-Year Ave (2021-25)', '10-Year Ave (2016-25)', None, None, 'Fed-Steer Margin ($ per 1,500 lbs Steer)',
+   ('Week No.', 'Week No.', 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, '2026 ytd', 'Avg 2021-25', 'Avg 2016-25', None, None, 'Weekly Fed Steer Margin', None)
+   (datetime.datetime(2026, 1, 2, 0, 0), 1, None, 309.724693428828, 296.88713388779684, 28.041446986841265, 314.672878893218, 9.887940051770556, 247.08351340384138, 325.30923589272834, 22.87341886341096, -184.88121471204113, 96.91538986003775, -96.42579694216192, 55.61741483222045, 44.81084991709349, -
+   (datetime.datetime(2026, 1, 9, 0, 0), 2, None, 304.80966648273375, 260.30391893611795, 63.07910640780142, 374.44331329765646, 119.13207312849636, 283.7987455801822, 297.6688349342933, 71.22646071080453, -169.2615791300575, 21.47327201066446, -121.27521947018113, 72.14789417049724, 73.71780728390422,
+   (datetime.datetime(2026, 1, 16, 0, 0), 3, None, 316.9790370839137, 272.3768896313379, 101.18325822663951, 434.44237465744436, 121.45627781463645, 317.1751098878508, 296.23102149849, 60.917645569016486, -202.3887319338637, -10.792163353807837, -151.63083324783088, 79.50452852165517, 108.9481374861511
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet FedCat_Steer graph dims=A1:B27 n=27
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   ..(None, None)
+   ..(None, None)
+   ..(' ', None)
+ sheet FedSt_Basis graph dims=A1:B27 n=27
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   ..(None, None)
+   ..(None, None)
+   ..(' ', None)
+ sheet Steers(500-599lbs) LW graph dims=A1:P27 n=27
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, ' ', None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(' ', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Graph_FeederSteer(500-599)Basis dims=A1:AK111 n=111
+   (None, 'Feeder Steer (500-599) Basis', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 'Feeder Steer (500-599) Basis ($/cwt live weight', None, None, None, None, None, None, None, None, None, None, None, None, None, None, ' ')
+   (None, None, None, None, None, None, None, None, None, None, None, None, ' ', None, None, None, None, 'Last year', 'This Year', '5-Year Ave (2020-24)', '10-Year Ave (2015-24)', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('Week No.', 'Week No.', 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 'avg 2020-24', 'Avg 2015-24', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (datetime.datetime(2026, 1, 2, 0, 0), 1, 4.0018670000000185, 12.666655999999989, -30.97037450000002, 2.027564000000041, -34.42769249999998, 24.211799999999982, 7.875396250000023, 28.946339999999964, 47.881257500000004, 0.9001539999999579, 26.83186649999999, 21.49566280000002, 8.17449400000001, 14.05
+   (datetime.datetime(2026, 1, 9, 0, 0), 2, 6.439417200000008, 10.195232000000004, -21.93376539999997, 10.86424199999999, -8.751468999999986, 19.93913900000001, 31.560228800000033, 29.15612100000004, 39.65597999999997, 16.645869999999974, 26.689701000000042, 39.34982439999999, 10.648190000000028, 15.28
+   (datetime.datetime(2026, 1, 16, 0, 0), 3, 7.056264000000013, 15.034233999999984, -21.24235999999999, 12.093286999999975, 2.264116800000039, 41.62786199999999, 47.918252999999964, 14.65106400000002, 32.14106000000001, 19.81310399999998, 34.50309999999999, 28.449861999999968, 16.486784, 37.96862400000
+   ..(datetime.datetime(2026, 12, 11, 0, 0), 50, -4.218880800000008, -11.105090000000018, -19.087019999999995, -41.58941699999997, -11.490674999999982, 0.46382160000001704, 17.964500000000015, 25.69619800000001, 2.6255404000000055, -8.075610000000012, -7.030962000000017, -16.449585999999982, -1.825999000
+   ..(datetime.datetime(2026, 12, 18, 0, 0), 51, -6.6796050000000236, -18.51640679999997, -16.095615199999997, 0, 0, -3.020161999999999, 13.555931999999956, 40.39009199999995, 2.850079999999963, -8.338770000000011, -12.47696400000001, ' ', 1.483600000000024, 9.743975000000034, -16.926920000000052, -4.387
+   ..(datetime.datetime(2026, 12, 25, 0, 0), 52, -9.591422399999985, -21.688251000000008, -20.603694750000017, 0, -38.017313, -27.31942399999997, 10.008413999999988, 20.42000150000004, '#N/A', '#N/A', '#N/A', 2.744494000000003, -8.299579999999963, 16.971559999999954, '#N/A', '#N/A', None, '#N/A', '#N/A',
+ sheet Steers(900-999lbs) graph LW dims=A1:O27 n=27
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, ' ')
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(' ', None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Graph_FeederSteer900-999)Basis dims=A1:Q59 n=59
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Annual Fed steer prices grphs  dims=A1:AO53 n=53
+   ('Average of fed Steer Price ($ per cwt)', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('Year', 'Average of fed Steer Price ($ per cwt)', '% change', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 92.76326923076923, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (2000, 102.86346153846151, 0.10888137504690366, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (2001, 110.95692307692308, 0.078681598085588, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+## ON hog 687393 bytes
+ sheet Swine Prices dims=A1:V1474 n=1474
+   (None, None, '100% Formula Hog Price', None, 'Ave Price( $/ckg DW)', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('Year ', 'Week', ' $ per 100kg', 'Futures CBOT: US$/cwt DW', ' $ per 100kg', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 1, 83.87, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 2, 109.43, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 3, 118.13, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1999, 4, 115.12, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Swine margin dims=A1:W2407 n=2407
+   ('DATE', 'Week', 'Nearby Hog Price US$/cwt', 'Ontario Hog Price CAN$/100kg', 'Ave Market Price ($/ckg)', 'Exchange Rate', 'Adjusted Ontario Hog Basis for 100% Formula Price (CAN$/ckg)', 'Adjusted Ontario Hog Basis for Ave Market Price (CAN$/ckg)', 'Chatham Corn Price - $/bu', 'Ontario Soymeal Price 
+   (datetime.datetime(1981, 1, 2, 0, 0), 1, 47.85, 146.583854, None, 1.1875, 57.74927126315791, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (datetime.datetime(1981, 1, 9, 0, 0), 2, 46.95, 146.38544000000002, None, 1.1899, 59.397534293638145, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (datetime.datetime(1981, 1, 16, 0, 0), 3, 47.17, 141.579412, None, 1.1912, 54.27927314842175, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (datetime.datetime(1981, 1, 23, 0, 0), 4, 44.45, 142.218746, None, 1.1982, 60.43326861725923, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (datetime.datetime(1981, 1, 30, 0, 0), 5, 46.55, 144.07061, None, 1.1969, 58.328224671234025, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(datetime.datetime(2027, 1, 22, 0, 0), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None)
+   ..(datetime.datetime(2027, 1, 29, 0, 0), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None)
+   ..(datetime.datetime(2027, 2, 5, 0, 0), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None)
+ sheet Weekly Basis dims=A1:N54 n=54
+   (None, None, 'Weekly basis (100% Formula Price)', None, None, None, 'Weekly basis (Average Price)( $/ckg DW)', None, None, None, None, None, None, None)
+   (None, None, '10-Year Avg (2016-25)', '5-Year Avg (2021-25)', 2025, '2026 ytd', '10-Year Avg (2016-25)', '5-Year Avg (2021-25)', 2024, 2025, '2026 YTD', 2025, '2026 ytd', None)
+   (datetime.datetime(2026, 1, 2, 0, 0), 1, -53.0625362452861, -55.229082574950006, -38.41627373660006, -50.36845741479999, -17.952536245286094, -15.787082574950006, 12.26455802000001, 1.103726263399949, -9.468457414799985, 533.09, 470.69, None)
+   (datetime.datetime(2026, 1, 9, 0, 0), 2, -48.01636955046838, -49.45184951373838, -51.418393811399966, -57.91101728200002, -15.872369550468377, -14.601849513738376, 3.022193657999992, -13.398393811399956, -17.95101728200001, 582.14, 485.8, None)
+   (datetime.datetime(2026, 1, 16, 0, 0), 3, -44.746765978655375, -49.37834879254756, -46.89814277224997, -67.6104538662, -12.965765978655366, -15.17634879254756, 11.980679559000038, -10.788142772249955, -25.56045386620002, 573.76, 474, None)
+   (datetime.datetime(2026, 1, 23, 0, 0), 4, -44.662794011171776, -52.11672738032356, -47.435395473799986, -59.58759050059993, -13.135794011171782, -15.878727380323562, 6.300011580650022, -10.415395473799975, -23.05759050059993, 568.8, 482.71, None)
+   ..(datetime.datetime(2026, 12, 11, 0, 0), 50, -35.28527718818917, -46.31696833864077, -50.78776107350001, '#N/A', 0.3887228118108297, -8.796968338640772, -19.98324510879999, -6.627761073500011, '#N/A', 509.5, '#N/A', None)
+   ..(datetime.datetime(2026, 12, 18, 0, 0), 51, -49.54833095551678, -52.81299727979358, -47.40396354799995, '#N/A', -18.052330955516787, -13.376997279793567, -17.560324486449957, -3.7939635479999367, '#N/A', 523.06, '#N/A', None)
+   ..(datetime.datetime(2026, 12, 25, 0, 0), 52, -53.43698878072259, -54.074595405339984, -46.18940587035999, '#N/A', '#N/A', '#N/A', -10.11192492370003, '#N/A', '#N/A', 530.11, '#N/A', None)
+ sheet Hog_100%FormP dims=A1:B27 n=27
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   ..(None, None)
+   ..(None, None)
+   ..('Weekly Ontario Hog 100% Formula Price', None)
+ sheet Hog Futures  dims=A1:X57 n=57
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, '100% Formula($/ckg DW)', None, None, 'Futures US$/cwt DW', None, None, 'Average price /ckg DW total value', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, '10 year avg', 2025, '2026 YTD', '10 year avg', 2025, '2026 YTD', '10 year avg', 2025, '2026 YTD', None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1, 156.27100000000002, 218.23, 203.53, 71.63499999999999, 80.775, 84.1, 194.30400000000003, 257.75, 244.43, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (2, 158.798, 210.54, 202.92, 70.702, 82.55, 85.3, 195.623, 248.56, 242.88, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (3, 162.835, 211.2, 202.59, 70.49300000000001, 81.125, 88.275, 196.065, 247.31, 244.64, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(52, 166.81222222222223, 207.74, '#N/A', 71.713, 84.53, '#N/A', 197.8725, '#N/A', '#N/A', None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, 187.36829850427358, 240.6534693877551, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Weekly margin dims=A1:H58 n=58
+   (None, None, 'Weekly market hog margin', None, None, None, None, None)
+   (None, None, '2026 YTD', 2025, '5-Year Avg (2021-25)', '10-Year Avg (2016-25)', None, None)
+   (datetime.datetime(2025, 1, 3, 0, 0), 1, 78.55095591124798, 116.93139858849595, 52.33314802351964, 49.54547770237581, None, None)
+   (datetime.datetime(2025, 1, 10, 0, 0), 2, 80.73306867670397, 106.87578011271995, 51.39128317231693, 52.03198116443798, None, None)
+   (datetime.datetime(2025, 1, 17, 0, 0), 3, 83.31627711859198, 105.95317601947197, 53.43613103484413, 57.606229112357745, None, None)
+   (datetime.datetime(2025, 1, 24, 0, 0), 4, 91.22858455264003, 103.92209359079999, 57.95760756186094, 61.55316977545031, None, None)
+   ..(None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, ' ', None)
+   ..(None, None, None, None, None, None, ' ', None)
+ sheet Annual hog prices dims=A1:C55 n=55
+   (' ', None, None)
+   (' ', None, None)
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   ..(None, None, None)
+   ..(None, None, None)
+   ..(None, None, None)
+## ON corn 432957 bytes
+ sheet Definitions dims=A1:X18 n=18
+   (None, "All price data is provided by John Jordan's Farm Market News Service", None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, ' ')
+   (None, 'John Jordan collects daily price information directly from those that producers would sell their production (elevators and processors)', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'These prices represent the average price in the Chatham Kent area, representing a small geographic portion of Ontario, prices will vary across the province', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'Price Term', 'Definition', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, 'CBOT Price Spread', 'Reflects the difference between the old crop CBOT price and the new crop CBOT price, a postivie number represents that the old crop CBOT price is higher than the new crop CBOT price', None, None, None, None, None, None, None, None, None, None, None, None, None, None, Non
+   ..(None, 'Canadian Dollar Value', 'The value of Canadian dollar, measured in American dollars, C$/US$', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Corn Prices dims=A1:Q1824 n=1824
+   ('Corn price information: 1992 to-date', None, None, None, -0.10873831999999961, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('*Definitions provided on Previous sheet', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, 'Old Crop CBOT Price', 'Old Crop Weekly Unadjusted Basis', 'Old Crop Weekly Adjusted Basis', 'Old Crop Weekly Cash Price', 'New Crop CBOT Price', 'New Crop Weekly Unadjusted Basis', 'New Crop Weekly Adjusted Basis', 'New Crop Cash Price', 'Cash Price Spread', 'CBOT Price Spread', 'Canad
+   ('Year', 'Week #', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1992, 1, 2.526, -0.07850000000000001, -0.4606838, 2.4475, None, None, None, None, None, None, 0.8685833405715279, None, None, None, None)
+   (1992, 2, 2.594, -0.08149999999999968, -0.4677465999999999, 2.5125, None, None, None, None, None, None, 0.8703977717817042, None, None, None, None)
+   ..(2026, 50, '#N/A', None, '#N/A', '#N/A', '#N/A', None, '#N/A', None, '#N/A', '#N/A', '#N/A', None, None, None, None)
+   ..(2026, 51, '#N/A', None, '#N/A', '#N/A', '#N/A', None, '#N/A', None, '#N/A', '#N/A', '#N/A', None, None, None, None)
+   ..(2026, 52, '#N/A', None, '#N/A', '#N/A', '#N/A', None, '#N/A', None, '#N/A', '#N/A', '#N/A', None, None, None, None)
+ sheet Monthly Averages dims=A1:Q31 n=31
+   ('Old Crop', 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026)
+   ('January', 5.493, 6.0112000000000005, 6.484875000000001, 4.04875, 4.514, 4.587375, 4.292625, 4.0912500000000005, 4.7405, 5.190625, 6.5565, 7.4325, 8.125, 5.182, 6.002000000000001, None)
+   ('February ', 5.991, 6.032875000000001, 6.56625, 4.302833333333334, 4.596, 4.722625, 4.347875, 4.25675, 4.746124999999999, 5.191000000000001, 6.585125, 7.7524999999999995, 8.0775, 4.862500000000001, 6.0875, None)
+   ('March', 6.0396, 5.9915, 6.715999999999999, 4.5600000000000005, 4.6304, 4.4835666666666665, 4.312, 4.531499999999999, 4.653600000000001, 5.0724, 6.878400000000001, 8.744, 7.726000000000001, 5.005, 5.8625, None)
+   ('April', 6.8107500000000005, 5.786999999999999, 6.114999999999999, 4.7485, 4.535500000000001, 4.379, 4.3892500000000005, 4.6205, 4.613999999999999, 4.596875, 7.782500000000001, 9.3675, 7.35, 5.0425, 6.1425, None)
+   ('May', 6.8095, 5.7019, 6.1165, 4.6995000000000005, 4.1555, 4.534000000000001, 4.4455, 4.846, 4.7785, 4.4275, 8.445, 9.48, 6.8575, 5.306, 5.882, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Averages dims=A1:F57 n=57
+   (None, None, None, None, None, None)
+   (None, None, None, None, None, 'last year')
+   (None, None, '2021-2025', '2016-2025', '2016-2025', 2025)
+   (None, None, '5-Year Ave', '10-Year Ave', '10-Year Avg', 'Forward P')
+   ('This Year', None, 'Corn Basis', 'Corn Basis', 'Cash price', 'New Crop 2025')
+   (datetime.datetime(2026, 1, 2, 0, 0), 'week 1', -0.3944, -0.37470000000000003, 5.5550999999999995, 5.55)
+   ..(datetime.datetime(2026, 12, 11, 0, 0), 'week 50', -0.47800000000000004, -0.38760000000000006, 5.560999999999999, 5.77)
+   ..(datetime.datetime(2026, 12, 18, 0, 0), 'week 51', -0.43600000000000005, -0.36920000000000003, 5.6122, 5.77)
+   ..(datetime.datetime(2026, 12, 25, 0, 0), 'week 52', -0.396, -0.363854775, 5.65165, 5.84)
+ sheet Corn Spot Price dims=A1:O16 n=16
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Corn Spot Basis dims=A1:A1 n=0
+ sheet Corn_Fwd dims=A1:A1 n=0
+ sheet Corn_FwdBasis dims=A1:A1 n=0
+ sheet Long-term prices dims=A1:E26 n=26
+   (None, None, None, None, None)
+   (None, None, None, None, None)
+   (None, None, None, None, None)
+   (None, None, None, None, None)
+   (None, None, None, None, None)
+   (None, None, None, None, None)
+   ..(None, None, None, None, None)
+   ..(None, None, None, None, None)
+   ..(None, 'Corn Spot Price (Chatham) Over Time  ', None, None, None)
+## ON soy 418745 bytes
+ sheet Definitions dims=A1:X18 n=18
+   (None, "All price data is provided by John Jordan's Farm Market News Service", None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, ' ')
+   (None, 'John Jordan collects daily price information directly from those that producers would sell their production (elevators and processors)', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'These soybean prices represent the average price in the Chatham Kent area, representing a small geographic portion of Ontario, prices will vary across the province', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'Price Term', 'Definition', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Soybean Prices dims=A1:Q1523 n=1523
+   ('Soybean price information: 1998 to-date', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('*Definitions provided on Next sheet', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, 'Old CBOT Price', 'Old Crop Weekly Unadjusted Basis', 'Old Crop Weekly Adjusted Basis', 'Old Crop Weekly Cash Price', 'New CBOT Price', 'New Crop Weekly Unadjusted Basis', 'New Crop Weekly Adjusted Basis', 'New Crop Cash Price', 'Cash Price Spread', 'CBOT Price Spread', 'Canadian Dollar
+   ('Year', 'Week #', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (1998, 1, None, None, None, 9.4425, None, None, None, 8.973125, None, None, 0.6967670011148271, None, None, None, None)
+   (1998, 2, None, None, None, 9.4125, None, None, None, 8.8175, None, None, 0.699741095794556, None, None, None, None)
+   ..(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None)
+   ..(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None)
+   ..(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None)
+ sheet Averages dims=A1:Q108 n=108
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, 'Spot Adjusted Basis', None, None, None, None, 'Spot Price', None, None, 'Forward price', None, 'Forward Adjusted Basis', None, None, None, None)
+   (None, None, 2024, 2025, 2026, '5-yr Avg (2021-2025) ', '10-yr Avg (2016-2025) ', 2025, 2026, '10-yr Avg (2016-2025) ', 2025, '10-yr Avg (2016-2025) ', 2024, 2025, 2026, '5-yr Avg (2021-2025) ', '10-yr Avg (2016-2025) ')
+   ('This Year', 'week', None, None, None, 'Soybean Basis', 'Soybean Basis', 'Cash price', 'Cash price', 'Cash price', 'Forward Price', 'Forward Price', 'Forward Adjusted Basis', None, None, 'Forward Adjusted Basis', 'Forward Adjusted Basis')
+   (datetime.datetime(2026, 1, 2, 0, 0), 1, -1.0871790000000008, -0.956704000000002, -0.5639240000000019, -0.6240249040000012, -0.6256850145000008, 14.92, 13.76, 12.57, 13.969999999999999, 12.09, -0.83, -0.93, -0.7, -0.6104, -0.6270999999999999)
+   (datetime.datetime(2026, 1, 9, 0, 0), 2, -1.04936, -1.1238499999999991, -0.7238100000000003, -0.7034651519999986, -0.6604864759999992, 15.279999999999998, 14.02, 12.24, 13.93, 12.01, -0.86, -0.94, -0.82, -0.6164, -0.6474)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Soy Spot Price dims=A1:A1 n=0
+ sheet Soy Spot basis dims=A1:A1 n=0
+ sheet Soy_Fwd dims=A1:B28 n=28
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   ..(None, None)
+   ..(None, None)
+   ..(None, ' ')
+ sheet Soy-Fwdbasis dims=A1:A1 n=0
+ sheet Long-term prices dims=A1:C47 n=47
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   ..(None, None, None)
+   ..(None, None, None)
+   ..('Soybean Spot Price (Chatham) Over Time  ', None, None)
+## ON wwheat 359896 bytes
+ sheet Definitions dims=A1:X18 n=18
+   (None, "All price data is provided by John Jordan's Farm Market News Service", None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, ' ')
+   (None, 'John Jordan collects daily price information directly from those that producers would sell their production (elevators and processors)', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'These prices represent the price for Grain Farmers of Ontario Delivery', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (None, 'Price Term', 'Definition', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, 'CBOT Price Spread', 'Reflects the difference between the old crop CBOT price and the new crop CBOT price, a postivie number represents that the old crop CBOT price is higher than the new crop CBOT price', None, None, None, None, None, None, None, None, None, None, None, None, None, None, Non
+   ..(None, 'Canadian Dollar Value', 'The value of Canadian dollar, measured in American dollars, C$/US$', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Winter Wheat Prices dims=A1:Q1208 n=1208
+   ('Soft White Winter Wheat price information: 2004 to-date', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ('*Definitions provided on Previous sheet', None, None, None, None, None, None, None, None, 'Forward Price', None, None, None, None, None, None, None)
+   (None, None, 'Old Crop CBOT Price', 'Old Crop Weekly Unadjusted Basis', 'Old Crop Weekly Adjusted Basis', 'Old Crop Weekly Cash Price', 'New Crop CBOT Price', 'New Crop Weekly Unadjusted Basis', 'New Crop Weekly Adjusted Basis', 'New Crop Cash Price', 'Cash Price Spread', 'CBOT Price Spread', 'Canad
+   ('Year', 'Week #', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   (2004, 1, None, None, None, 4.4174, None, None, None, 4.5732, None, None, 0.7814453613403353, None, None, None, None)
+   (2004, 2, None, None, None, 4.436, None, None, None, 4.6988, None, None, 0.7777138324182234, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Monthly Averages dims=A1:Q30 n=30
+   ('Old Crop', 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026)
+   ('January', 7.2455, 6.186, 7.0617, 5.814500000000001, 7.3287, 8.731625000000001, 4.97175, 5.1575, 6.6651, 7.752000000000001, 7.92784126984127, 9.586666666666666, 9.713211233211233, 7.238407692307692, 7.070277777777778, 0)
+   ('February ', 7.640250000000001, 6.3966, 6.855, 6.314375, 7.278874999999999, 8.30175, 5.19775, 5.77575, 6.472, 7.564875, 7.8480357142857144, 10.097013888888888, 9.948003663003664, 6.99442094017094, 7.520549450549451, 0)
+   ('March', 6.5772, 6.356999999999999, 6.747625000000001, 7.272, 7.2565, 8.0083, 5.090400000000001, 6.034749999999999, 6.099, 7.6595, 7.574314814814815, 11.951501587301589, 9.286179487179485, 6.729751984126984, 7.104533730158729, 0)
+   ('April', 7.002750000000001, 6.17175, 6.610999999999999, 7.268000000000001, 7.272799999999999, 7.656, 4.905875, 5.949, 6.0676250000000005, 7.828100000000001, 8.253298611111111, 12.447045634920634, 8.459871031746033, 7.153759920634921, 6.951190476190477, 0)
+   ('May', 6.946, 6.2629, 6.420400000000001, 7.063375000000001, 7.542000000000001, 7.558999999999999, 4.947899999999999, 6.560400000000001, 6.2068, 7.2805, 8.553611111111111, 13.873823412698412, 7.95078083028083, 8.221067155067155, 6.7908333333333335, 0)
+   ..('December', 6.5399, 7.769, 6.155375, 6.961375, 6.601375, 5.221, 5.3345, 6.689, 6.9426250000000005, 7.204972718253968, 9.212733333333333, 9.802746489621489, 7.815775793650794, 7.3, 6.9, 0)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+   ..(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
+ sheet Averages dims=A1:J57 n=57
+   (None, None, None, None, None, None, None, 'Price trcking update', None, None)
+   (None, None, None, None, None, None, None, 'AD', 'AP', 'EZ')
+   (None, None, None, None, '2021-2025', '2016-2025', '2016-2025', None, None, '2016-2025')
+   (None, None, 2025, 2026, '5-Year Avg', '10-Year Avg', '10-Year Avg', None, 'Forward', '10-yr Avg(2016-2025) Forward Price')
+   ('This Year', None, None, None, 'WW Basis', 'WW Basis', 'Spot price', '2026 YTD', 2025, ' ')
+   (datetime.datetime(2026, 1, 2, 0, 0), 'week 1', -0.6898606984126996, -0.44127938461538374, -0.4792296361904764, -0.5925203809523794, 7.242049206349206, 6.760833333333333, 7.183833333333332, 6.958234126984126)
+   ..(datetime.datetime(2026, 12, 11, 0, 0), 'week 50', -0.591317179487179, '#N/A', -0.8723724761904776, -0.7837958730158743, 7.028833638583637, '#N/A', 6.921428571428572, 7.057090390720392)
+   ..(datetime.datetime(2026, 12, 18, 0, 0), 'week 51', -0.4773444102564097, '#N/A', -0.7339038095238131, -0.6998879682539672, 7.08137735042735, '#N/A', 6.767619047619047, 7.100921697191697)
+   ..(datetime.datetime(2026, 12, 25, 0, 0), 'week 52', -0.4638170769230783, '#N/A', -0.6041371428571427, -0.6990996825396811, 7.083419200244201, '#N/A', 6.878690476190477, 7.113410515873015)
+ sheet Wheat Spot Price dims=A1:A1 n=0
+ sheet WW Spot basis dims=A1:A1 n=0
+ sheet Wheat_Fwd dims=A1:B27 n=27
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   ..(None, None)
+   ..(None, None)
+   ..(' ', None)
+ sheet Wheat_FwdBasis dims=A1:B27 n=27
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   (None, None)
+   ..(None, None)
+   ..(None, None)
+   ..(' ', None)
+ sheet Long-term prices dims=A1:C27 n=27
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   (None, None, None)
+   ..(None, None, None)
+   ..(None, None, None)
+   ..('Winter Wheat Spot Price Over Time  ', None, None)
+## MB page https://www.gov.mb.ca/agriculture/markets-and-statistics/price-reports/index.html len=11384
+ links: 
+ ctx: imer - Government of Manitoba">Disclaimer</a></li> <li><a href="//www.gov.mb.ca/legal/copyright.html" title="Copyright - Government of Manitoba">Copyright</a></li> <li><a href="//www.gov.mb.ca/legal/privacy.html" title="Privacy - Government 
+ ctx: nitoba">Disclaimer</a></li> <li><a href="//www.gov.mb.ca/legal/copyright.html" title="Copyright - Government of Manitoba">Copyright</a></li> <li><a href="//www.gov.mb.ca/legal/privacy.html" title="Privacy - Government of Manitoba">Privacy</a
+ ctx:  <li><a href="//www.gov.mb.ca/legal/copyright.html" title="Copyright - Government of Manitoba">Copyright</a></li> <li><a href="//www.gov.mb.ca/legal/privacy.html" title="Privacy - Government of Manitoba">Privacy</a></li> </ul> <
+## MB page https://www.gov.mb.ca/agriculture/markets-and-statistics/price-reports/crops-prices.html len=11384
+ links: 
+ ctx: imer - Government of Manitoba">Disclaimer</a></li> <li><a href="//www.gov.mb.ca/legal/copyright.html" title="Copyright - Government of Manitoba">Copyright</a></li> <li><a href="//www.gov.mb.ca/legal/privacy.html" title="Privacy - Government 
+ ctx: nitoba">Disclaimer</a></li> <li><a href="//www.gov.mb.ca/legal/copyright.html" title="Copyright - Government of Manitoba">Copyright</a></li> <li><a href="//www.gov.mb.ca/legal/privacy.html" title="Privacy - Government of Manitoba">Privacy</a
+ ctx:  <li><a href="//www.gov.mb.ca/legal/copyright.html" title="Copyright - Government of Manitoba">Copyright</a></li> <li><a href="//www.gov.mb.ca/legal/privacy.html" title="Privacy - Government of Manitoba">Privacy</a></li> </ul> <
+## MB lic https://www.gov.mb.ca/copyright.html
+ Resource Not Found | Province of Manitoba Header Side Menu Content Footer Search Site Map Contact Government Keywords Resident and online services Search Programs and Services Forms Publications Finding Work Lost Identification Moving to or Around Manitoba Communities around Manitoba Maps Online Services Social Media Directory Mobile Applications Business Search for Business Information Starting a Business Business Research Financing a Business Registration, Legal and Licencing Doing Business with Government Entrepreneurship Manitoba BizPaS BizPaL Government Premier Cabinet Ministers Departments Agencies, Boards and Commissions Proactive Disclosure Legislative Assembly Manitoba Courts Manitoba Laws Visitors Things to do Places to Go Where to Stay Events Trip Essentials Visitor Information Center &nbsp; &nbsp; --> We couldn't find the web page / Nous ne pouvons trouver cette page web Error 404/ Erreur 404 The page or link you attempted to access is either outdated, inaccurate or not accessible. Return to Manitoba.ca ; Contact Manitoba Government Inquiry . La page ou le lien auquel vous avez tenté d’accéder est périmé, inexact ou inaccessible. Retourner à Manitoba.ca ; Communiquer avec le Service de renseignements au public . Close Window manitoba.ca | 1-866-MANITOBA Accessibility Disclaimer Copyright Privacy Twitter Facebook YouTube Flickr 
+## MB lic https://www.gov.mb.ca/openmb/licence.html
+ Resource Not Found | Province of Manitoba Header Side Menu Content Footer Search Site Map Contact Government Keywords Resident and online services Search Programs and Services Forms Publications Finding Work Lost Identification Moving to or Around Manitoba Communities around Manitoba Maps Online Services Social Media Directory Mobile Applications Business Search for Business Information Starting a Business Business Research Financing a Business Registration, Legal and Licencing Doing Business with Government Entrepreneurship Manitoba BizPaS BizPaL Government Premier Cabinet Ministers Departments Agencies, Boards and Commissions Proactive Disclosure Legislative Assembly Manitoba Courts Manitoba Laws Visitors Things to do Places to Go Where to Stay Events Trip Essentials Visitor Information Center &nbsp; &nbsp; --> We couldn't find the web page / Nous ne pouvons trouver cette page web Error 404/ Erreur 404 The page or link you attempted to access is either outdated, inaccurate or not accessible. Return to Manitoba.ca ; Contact Manitoba Government Inquiry . La page ou le lien auquel vous avez tenté d’accéder est périmé, inexact ou inaccessible. Retourner à Manitoba.ca ; Communiquer avec le Service de renseignements au public . Close Window manitoba.ca | 1-866-MANITOBA Accessibility Disclaimer Copyright Privacy Twitter Facebook YouTube Flickr 
