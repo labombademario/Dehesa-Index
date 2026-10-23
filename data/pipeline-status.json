@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T02:20:00Z",
+ "generatedAt": "2026-10-23T02:35:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 249,
+  "ok": 251,
   "late": 2,
   "error": 6,
   "not_run": 0,
@@ -14,15 +14,15 @@
   "status": "error",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "eda729e6",
+   "sha": "37f3f67b",
    "conclusion": "failure",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/ba4351bf-b159-41e3-9468-98d8a7ed51fc",
-   "completedAt": "2026-10-23T02:18:52Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/cb1c5814-ba7d-440a-b451-20902fe11712",
+   "completedAt": "2026-10-23T02:34:49Z"
   },
   "lagHours": 6.1,
   "prodGeneratedAt": "2026-10-22T18:48:38.533010+00:00",
   "repoGeneratedAt": "2026-10-23T00:57:21.741677+00:00",
-  "checkedAt": "2026-10-23T02:20:00Z"
+  "checkedAt": "2026-10-23T02:35:00Z"
  },
  "pipelines": [
   {
@@ -507,6 +507,29 @@
    "expectedEveryHours": 120.0
   },
   {
+   "workflow": "update-ca-alberta-inputs.yml",
+   "name": "Update Alberta farm input prices (Alberta Agriculture and Irrigation)",
+   "crons": [
+    "10 16 * * 1-5"
+   ],
+   "nextRun": "2026-10-23T16:10:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-23T02:32:56Z",
+    "durationSec": 109,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39890167642"
+   },
+   "recent": {
+    "runs": 4,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 72.0
+  },
+  {
    "workflow": "update-ca-boc-bcpi.yml",
    "name": "Update Canada commodity price indices (Bank of Canada BCPI)",
    "crons": [
@@ -551,6 +574,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-ca-statcan-more.yml",
+   "name": "Update Canada sawmills, price indices, CPI and aquaculture (Statistics Canada)",
+   "crons": [
+    "20 14 * * 2"
+   ],
+   "nextRun": "2026-10-27T14:20:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-23T02:32:57Z",
+    "durationSec": 27,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39890169699"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-canada-drought.yml",
@@ -3985,7 +4031,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T02:07:16Z"
+     "lastChange": "2026-10-23T02:22:58Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5894,7 +5940,7 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-10-23T02:30:00Z",
+   "nextRun": "2026-10-24T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
