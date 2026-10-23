@@ -55,6 +55,7 @@ const PAGES = [
   { n: 'monitor-insumos', url: '/monitor-insumos.html', crit: ['#mi-ratio', '#mi-g-nitrogen'] },
   { n: 'monitor-insumos-fr', url: '/monitor-insumos.html?c=FR', crit: ['#mi-ratio', '#mi-g-fert', '.cp-w'] },
   { n: 'agreste', url: '/agreste.html', crit: ['#ag-body .ag-chart svg', '#ag-body .ag-tbl'] },
+  { n: 'netherlands', url: '/netherlands.html', crit: ['#nl-body .ag-chart svg', '#nl-body .ag-tbl'] },
   { n: 'costes-pais', url: '/costes-pais.html?c=ES', crit: ['#cp-panel .cp-tile', '#cp-costes .cp-tbl'] },
   { n: 'pesca', url: '/pesca.html?c=ES', crit: ['#fsh-body .fsh-kpis', '#fsh-body .fsh-tbl'] },
   { n: 'ganaderia', url: '/ganaderia.html', crit: [] },
@@ -195,7 +196,7 @@ for (const w of [1280, 390]) {
       await page.goto(BASE + '/relaciones.html?id=fertiliser_to_grain__urea-eu__trigo-eu', { waitUntil: 'load' }); await page.waitForSelector(CARD, { timeout: 8000 });
       if ((await page.$$eval(CARD, (e) => e.length)) !== 1) throw new Error('el enlace profundo ?id= no abre una sola relacion');
       if (!(await page.$('.rl-hyp')) || !(await page.$('.rl-expl'))) throw new Error('la correlacion y la hipotesis deben mostrarse separadas');
-      const tx1 = await page.innerText('#rl-body');   // el esquema INSUMO > CANAL > MERCADO va en la tarjeta abierta
+      const tx1 = await page.textContent('#rl-body');   // el esquema INSUMO > CANAL > MERCADO va en la tarjeta abierta
       for (const must of [/INSUMO|INPUT|INTRANT/, /CANAL|CHANNEL/, /MERCADO|MARKET|MARCH/]) if (!must.test(tx1)) throw new Error('falta el esquema INSUMO>CANAL>MERCADO');
     });
     // Filtros y bloques del observatorio van plegados (3239fcd): el test los abre como lo haria una persona (clic en el resumen).

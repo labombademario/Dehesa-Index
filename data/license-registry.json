@@ -7322,6 +7322,24 @@
     "CA": "statcan"
    },
    "notes": "Statistics Canada tables 16-10-0017, 18-10-0265, 18-10-0268, 18-10-0004, 32-10-0107."
+  },
+  "data/netherlands-more/": {
+   "sources": [
+    "cbs_nl"
+   ],
+   "notes": "Facturacion trimestral de las explotaciones (85159NED), invernaderos y flores (81302NED, 80783NED), balance de minerales y estiercol (83475NED, 83983NED, 83982NED, 83655NED), fitosanitarios (83566NED), derechos de produccion (80240NED), PPI de alimentacion (85770NED), IPC (86141NED), hortalizas (37738), pastoreo (85303NED), huevos (86338NED), finanzas (84448NED) y estimacion de cosecha (85676NED) del CBS (scripts/update-nl-cbs-more.py). Cita obligatoria de la fuente; conversiones exactas de unidad (are->ha, m2->ha, mln kg->kt)."
+  },
+  "data/netherlands-more-stats.json": {
+   "byCountry": {
+    "NL": "cbs_nl"
+   },
+   "notes": "Series seleccionadas de los cinco conjuntos (scripts/update-nl-cbs-more.py), para el catalogo."
+  },
+  "data/netherlands-more-log.txt": {
+   "sources": [
+    "cbs_nl"
+   ],
+   "notes": "Registro de la ultima ejecucion de update-nl-cbs-more.py."
   }
  },
  "derived": [

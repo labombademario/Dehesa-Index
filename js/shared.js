@@ -103,6 +103,7 @@
     countries: { label: L('Países', 'Countries', 'Pays', 'Paesi'), mega: 1, first: L('Por país', 'By country', 'Par pays', 'Per paese'), items: [
       pd('perfiles.html', L('Perfiles de país y comparador', 'Country profiles and comparison', 'Profils de pays et comparateur', 'Profili paese e confronto'), L('Qué datos hay de cada país y comparación de dos países', 'What we have for each country and a two-country comparison', 'Les données de chaque pays et la comparaison de deux pays', 'I dati di ogni paese e il confronto tra due paesi')),
       pd('agreste.html', L('Francia · Agreste', 'France · Agreste', 'France · Agreste', 'Francia · Agreste'), L('Empleo, uso del suelo, insumos y vendimia del Ministerio de Agricultura', 'Jobs, land use, inputs and wine harvest from the Ministry of Agriculture', 'Emploi, sols, intrants et vendanges du ministère de l’Agriculture', 'Lavoro, suolo, input e vendemmia dal Ministero dell’Agricoltura')),
+      pd('netherlands.html', L('Países Bajos · CBS', 'Netherlands · CBS', 'Pays-Bas · CBS', 'Paesi Bassi · CBS'), L('Facturación, invernaderos, nitrógeno y cadena de precios del instituto de estadística', 'Turnover, glasshouses, nitrogen and the price chain from the statistics institute', 'Chiffre d’affaires, serres, azote et chaîne de prix de l’institut de statistique', 'Fatturato, serre, azoto e filiera dei prezzi dell’istituto di statistica')),
       pd('pac.html', L('PAC en la UE', 'EU CAP', 'PAC dans l’UE', 'PAC nell’UE'), L('UE-27 · asignaciones por país; ocho países con su ficha', 'EU-27 · allocations by country; eight countries with their own page', 'UE-27 · dotations par pays ; huit pays avec leur fiche', 'UE-27 · dotazioni per paese; otto paesi con la loro scheda'), '?c=EU'),
       pd('pac.html', L('PAC España', 'Spain CAP', 'PAC Espagne', 'PAC Spagna'), L('España · ayudas por hectárea, calendario y reglas', 'Spain · payments per hectare, calendar and rules', 'Espagne · aides à l’hectare, calendrier et règles', 'Spagna · aiuti per ettaro, calendario e regole'), '?c=ES'),
       cd('US', 'EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'),
@@ -224,6 +225,8 @@
       dl('Datos de Canadá', 'Canada data', 'Données du Canada', 'Dati Canada', [one('canada-granos.html')], 'CA'),
       dl('Datos de España', 'Spain data', 'Données de l’Espagne', 'Dati Spagna', [one('recan.html'), one('pac.html', '?c=ES'), one('dehesa.html')], 'ES'),
       dl('Datos de la UE', 'EU data', 'Données de l’UE', 'Dati UE', [one('pac.html', '?c=EU')], 'EU'),
+      dl('Datos de Francia', 'France data', 'Données de la France', 'Dati Francia', [one('agreste.html')], 'FR'),
+      dl('Datos de Países Bajos', 'Netherlands data', 'Données des Pays-Bas', 'Dati Paesi Bassi', [one('netherlands.html')], 'NL'),
       dl('Exportaciones', 'Exports', 'Exportations', 'Esportazioni', [one('exportaciones.html')]),
       dl('Insumos', 'Inputs', 'Intrants', 'Input agricoli', [one('insumos.html')]),
       dl('Quién produce qué', 'Who produces what', 'Qui produit quoi', 'Chi produce cosa', [one('produccion-mundial.html')]),

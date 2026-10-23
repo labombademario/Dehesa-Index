@@ -1977,6 +1977,17 @@ sources:
     data: [netherlands-farm.json]
     log: netherlands-farm-log.txt
     message: Datos Países Bajos cultivos, explotaciones y sacrificios (CBS)
+  - id: nl-cbs-more
+    name: Update Netherlands farm turnover by quarter, glasshouses and flowers, nitrogen and manure, food price chain and other series (CBS StatLine)
+    cron: ['50 8 * * 3']
+    script: scripts/update-nl-cbs-more.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/netherlands-more) data/netherlands-more-stats.json
+    data: [netherlands-more/index.json, netherlands-more-stats.json, netherlands-more-log.txt]
+    extra: ['!data/netherlands-more']
+    message: Datos Países Bajos facturacion trimestral, invernaderos, nitrogeno y estiercol, cadena de precios y otras series (CBS)
   - id: nl-rvo
     name: Update Netherlands pig and cattle prices and pig slaughter (RVO)
     cron: ['40 8 * * 2,5']

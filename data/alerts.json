@@ -274,7 +274,7 @@
       "type": "period_move",
       "product": "us_cereals_output_index",
       "region": "us",
-      "sourceId": "bls_ppi",
+      "sourceId": "bls",
       "severity": "high",
       "changePct": 17.15,
       "observationDate": "2026-09-01"
@@ -283,7 +283,7 @@
       "type": "period_move",
       "product": "us_milk_output_index",
       "region": "us",
-      "sourceId": "bls_ppi",
+      "sourceId": "bls",
       "severity": "watch",
       "changePct": -9.17,
       "observationDate": "2026-09-01"

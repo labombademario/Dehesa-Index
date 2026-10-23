@@ -40,7 +40,7 @@ def main():
     for pid, (code, label) in PPI.items():
         hit = [v for k, v in pp['series'].items() if k.endswith('[%s]' % code)]
         if not hit: print('sin serie PPI', code); continue
-        obs.append(mk(pid, 'bls_ppi', 'index_1982_100', [(a, b) for a, b in hit[0]['n']], pub,
+        obs.append(mk(pid, 'bls', 'index_1982_100', [(a, b) for a, b in hit[0]['n']], pub,
             'BLS Producer Price Index (%s, serie %s), base 1982=100, sin ajuste estacional. Es un indice de precios de productor, no un precio en dolares.' % (label, code)))
     if len(obs) != 4: raise SystemExit('esperaba 4 indices, hay %d: no se escribe' % len(obs))
     SNAP.mkdir(parents=True, exist_ok=True)

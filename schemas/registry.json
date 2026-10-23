@@ -1675,6 +1675,12 @@
    [
     "france_agreste_more_index"
    ]
+  ],
+  "netherlands-more/index.json": [
+   "netherlands-more-index",
+   [
+    "netherlands_more_index"
+   ]
   ]
  },
  "globs": {
@@ -1896,6 +1902,12 @@
    "france-agreste-more",
    [
     "france_agreste_more"
+   ]
+  ],
+  "netherlands-more/*.json": [
+   "netherlands-more",
+   [
+    "netherlands_more"
    ]
   ]
  },

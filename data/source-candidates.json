@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T12:44:58Z",
+ "generatedAt": "2026-10-23T13:58:17Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1983,12 +1983,16 @@
    "country": "CA",
    "scope": "integrated",
    "institution": "Alberta Agriculture and Irrigation — Weekly Market Review",
-   "dataset": "Ya integrada (9 series en el catalogo unificado)",
+   "dataset": "Ya integrada (27 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
+    "energy",
+    "fertilizer",
+    "milk",
     "oats",
     "pigs",
+    "poultry",
     "rapeseed",
     "wheat"
    ],
@@ -1996,7 +2000,7 @@
    "metrics": [
     "price"
    ],
-   "frequency": "weekly",
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,
@@ -3794,7 +3798,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "European Commission — Agri-food Data Portal (DG AGRI)",
-   "dataset": "Ya integrada (5549 series en el catalogo unificado)",
+   "dataset": "Ya integrada (5553 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -7086,7 +7090,7 @@
    "country": "CA",
    "scope": "integrated",
    "institution": "Statistics Canada",
-   "dataset": "Ya integrada (992 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1016 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -8367,10 +8371,19 @@
    "country": "INT",
    "scope": "integrated",
    "institution": "World Bank — Commodity Price Data (Pink Sheet)",
-   "dataset": "Ya integrada (2 series en el catalogo unificado)",
+   "dataset": "Ya integrada (36 series en el catalogo unificado)",
    "products": [
+    "cattle",
     "energy",
-    "fertilizer"
+    "fertilizer",
+    "olive",
+    "poultry",
+    "rapeseed",
+    "rice",
+    "sheep",
+    "soy",
+    "sugar",
+    "wheat"
    ],
    "productsConfirmed": true,
    "metrics": [

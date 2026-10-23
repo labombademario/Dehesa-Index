@@ -5247,3 +5247,35 @@ def france_agreste_more(doc, errs, warns, stats):
                 if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or abs(v) > 1e12: errs.append("france-agreste-more %s %s: valor %r" % (s["id"], p, v)); return
                 n += 1
     stats["tablas"] = len(doc["tables"]); stats["puntos"] = n
+
+
+# Paises Bajos: cinco conjuntos del CBS (facturacion, invernaderos, nitrogeno, cadena de precios, otros)
+def netherlands_more_index(doc, errs, warns, stats):
+    for f in doc["files"]:
+        if not f.get("file", "").endswith(".json") or f.get("series", 0) < 1: errs.append("netherlands-more index: %s sin fichero o sin series" % f.get("file")); return
+    stats["ficheros"] = len(doc["files"])
+
+
+def netherlands_more(doc, errs, warns, stats):
+    """Periodos AAAA, AAAA-Qn o AAAA-MM ordenados y sin repetir (una misma serie no mezcla formatos), valores numericos finitos, ids unicos, nombres en los cuatro idiomas y ninguna tabla vacia."""
+    import re as _re
+    ids = set(); n = 0
+    for t in doc["tables"]:
+        if not t["series"]: errs.append("netherlands-more %s: tabla vacia" % t["id"]); return
+        if set(t.get("l", {})) != {"en", "fr", "it"}: errs.append("netherlands-more %s: tabla sin nombre en en/fr/it" % t["id"]); return
+        for s in t["series"]:
+            if s["id"] in ids: errs.append("netherlands-more %s: id repetido" % s["id"]); return
+            if set(s.get("l", {})) != {"en", "fr", "it"} or not all(s["l"].values()): errs.append("netherlands-more %s: serie sin nombre en en/fr/it" % s["id"]); return
+            ids.add(s["id"]); last = ""; shape = None
+            for p, v in s["points"]:
+                k = "q" if "Q" in str(p) else "m" if _re.fullmatch(r"\d{4}-\d{2}", str(p)) else "y"
+                if shape is None: shape = k
+                if k != shape: errs.append("netherlands-more %s: mezcla de formatos de periodo en %s" % (s["id"], p)); return
+                if not isinstance(p, str) or not _re.fullmatch(r"\d{4}(-(0[1-9]|1[0-2]|Q[1-4]))?", p) or not 1950 <= int(p[:4]) <= 2100: errs.append("netherlands-more %s: periodo %r" % (s["id"], p)); return
+                if p <= last: errs.append("netherlands-more %s: periodos desordenados o repetidos en %s" % (s["id"], p)); return
+                last = p
+                if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or abs(v) > 1e12: errs.append("netherlands-more %s %s: valor %r" % (s["id"], p, v)); return
+                n += 1
+            for pv in s.get("provisional", []):
+                if pv not in [x[0] for x in s["points"]]: errs.append("netherlands-more %s: provisional %s sin dato" % (s["id"], pv)); return
+    stats["tablas"] = len(doc["tables"]); stats["puntos"] = n

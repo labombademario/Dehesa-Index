@@ -487,6 +487,14 @@
     "pattern": "data/france-agreste-more/"
    },
    "note": "Empleo agricola, TERUTI, vendimia e IPAMPA de Francia (Agreste): la pagina agreste.html descarga cada fichero solo al abrir su pestaña (los IPAMPA, de 0,9 y 1,1 MB, el de regiones solo despues del nacional)."
+  },
+  "data/netherlands-more/": {
+   "class": "RUNTIME",
+   "via": {
+    "file": "js/netherlands.js",
+    "pattern": "data/netherlands-more/"
+   },
+   "note": "Facturacion trimestral, invernaderos y flores, nitrogeno y estiercol, cadena de precios y otras series de Paises Bajos (CBS): la pagina netherlands.html descarga cada fichero solo al abrir su pestaña."
   }
  }
 }
