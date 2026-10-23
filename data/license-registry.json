@@ -7126,6 +7126,12 @@
     "agreste_more"
    ],
    "notes": "Registro de la última ejecución de update-fr-agreste-more.py."
+  },
+  "data/us-ers-bioenergy-stats.json": {
+   "byCountry": {
+    "US": "usda_ers"
+   },
+   "notes": "Bioenergia de EE. UU. (USDA ERS, U.S. Bioenergy Statistics): etanol, biodiesel, diesel renovable, materias primas y precios, sin cambiar valores."
   }
  },
  "derived": [

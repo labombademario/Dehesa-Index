@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T00:52:03Z",
+ "generatedAt": "2026-10-23T01:28:30Z",
  "summary": {
-  "files": 82,
+  "files": 83,
   "errors": 0,
-  "warnings": 26
+  "warnings": 27
  },
  "files": [
   {
@@ -921,6 +921,38 @@
    "generatedAt": "2026-10-22T15:17:26Z",
    "info": [],
    "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-ers-bioenergy-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "US/us-ersbio-t1-fuel-ethanol-balance-calculation-discrepancy-united-sta-m-myq: salto 0.0 -> 43.0 en 2026-02 (mediana previa 1)",
+    "US/us-ersbio-t13-biodiesel-number-of-fueling-stations-at-which-the-united-sta-a: salto 304.0 -> 459.0 en 2006 (mediana previa 2)",
+    "US/us-ersbio-t13-biodiesel-number-of-fueling-stations-at-which-the-united-sta-a: salto 459.0 -> 805.0 en 2007 (mediana previa 16)",
+    "US/us-ersbio-t3-fuel-ethanol-balance-calculation-discrepancy-united-sta-m: salto 1.0 -> 41.0 en 2026-01 (mediana previa 1)",
+    "US/us-ersbio-t4-1-biodiesel-exports-united-sta-a-my: salto 25773.0 -> 195213.0 en 2006 (mediana previa 5.53e+03)",
+    "US/us-ersbio-t4-1-biodiesel-exports-united-sta-a-my: salto 195213.0 -> 657211.0 en 2007 (mediana previa 5.53e+03)",
+    "US/us-ersbio-t4-1-biodiesel-exports-united-sta-a-my: salto 657211.0 -> 344658.0 en 2008 (mediana previa 6.79e+03)",
+    "US/us-ersbio-t4-1-biodiesel-imports-united-sta-a-my: salto 113931.0 -> 302946.0 en 2007 (mediana previa 8.05e+03)",
+    "US/us-ersbio-t4-1-biodiesel-production-united-sta-a-my: salto 424832.0 -> 646701.0 en 2007 (mediana previa 2.45e+04)",
+    "US/us-ersbio-t4-1-biodiesel-total-use-united-sta-a-my: salto 538763.0 -> 949647.0 en 2007 (mediana previa 2.94e+04)",
+    "US/us-ersbio-t4-2-biodiesel-exports-united-sta-a: salto 35936.0 -> 281225.0 en 2007 (mediana previa 5.36e+03)",
+    "US/us-ersbio-t4-2-biodiesel-exports-united-sta-a: salto 281225.0 -> 700262.0 en 2008 (mediana previa 5.36e+03)",
+    "US/us-ersbio-t4-2-biodiesel-exports-united-sta-a: salto 700262.0 -> 274936.0 en 2009 (mediana previa 8.93e+03)",
+    "US/us-ersbio-t4-2-biodiesel-imports-united-sta-a: salto 145108.0 -> 325711.0 en 2008 (mediana previa 8.29e+03)",
+    "US/us-ersbio-t4-2-biodiesel-total-use-united-sta-a: salto 634933.0 -> 1003818.0 en 2008 (mediana previa 3.22e+04)"
+   ],
+   "stats": {
+    "series": 133,
+    "points": 9683,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T01:26:35Z",
+   "info": [],
+   "nWarnings": 15,
    "nErrors": 0
   },
   {
