@@ -3,19 +3,19 @@
 (function () {
   'use strict';
   var T = {
-    es: { ixH: 'Índice', ixG: 'Cultivo', ixS: 'Resumen', ixE: 'Exportaciones', ixD: 'Entregas', ixT: 'Existencias', ixW: 'Últimas 8 semanas', ixN: 'Notas y fuente', exS: 'Exportaciones', dlS: 'Entregas', stS: 'Existencias', h: 'Granos de Canadá: exportaciones y existencias', sub: 'Cifras semanales de la Canadian Grain Commission, en miles de toneladas: lo que sale por los terminales portuarios, lo que entregan los agricultores de las praderas y lo que hay almacenado.',
+    es: { rgH: 'Periodo', rg6: '6 meses', rg1: '1 año', rg3: '3 años', rg5: '5 años', rgM: 'Máx.', rgNo: 'Solo hay datos desde %s', ixH: 'Índice', ixG: 'Cultivo', ixS: 'Resumen', ixE: 'Exportaciones', ixD: 'Entregas', ixT: 'Existencias', ixW: 'Últimas 8 semanas', ixN: 'Notas y fuente', exS: 'Exportaciones', dlS: 'Entregas', stS: 'Existencias', h: 'Granos de Canadá: exportaciones y existencias', sub: 'Cifras semanales de la Canadian Grain Commission, en miles de toneladas: lo que sale por los terminales portuarios, lo que entregan los agricultores de las praderas y lo que hay almacenado.',
       grain: 'Cultivo', ex: 'Exportaciones por terminales portuarios', dl: 'Entregas de los agricultores (Manitoba, Saskatchewan, Alberta y Columbia Británica)', st: 'Existencias comerciales en silos y terminales', cum: 'Exportaciones acumuladas de la campaña',
       week: 'Semana', last: 'Última semana', prev: 'Semana anterior', yago: 'Hace un año', chg: 'Variación', none: 'No hay datos disponibles ahora mismo.', kt: 'miles de t', gap: 'sin dato', unit: 'miles de toneladas', table: 'Ver la tabla de las últimas 8 semanas', thisCrop: 'campaña actual',
       note: 'Las exportaciones son las que salen por terminales portuarios autorizados: no incluyen los envíos directos por ferrocarril o camión a Estados Unidos, así que no son las exportaciones totales del país. La CGC revisa las semanas recientes, por lo que una cifra puede cambiar. Una semana sin dato aparece como hueco, nunca como cero. Las existencias son las comerciales, no las de las granjas.', src: 'Fuente', updated: 'Actualizado', asof: 'Semana terminada el' },
-    en: { ixH: 'Contents', ixG: 'Crop', ixS: 'Summary', ixE: 'Exports', ixD: 'Deliveries', ixT: 'Stocks', ixW: 'Last 8 weeks', ixN: 'Notes and source', exS: 'Exports', dlS: 'Deliveries', stS: 'Stocks', h: 'Canadian grain: exports, deliveries and stocks', sub: 'Weekly Canadian Grain Commission figures, in thousand tonnes: what leaves through port terminals, what Prairie farmers deliver, and what sits in storage.',
+    en: { rgH: 'Period', rg6: '6 months', rg1: '1 year', rg3: '3 years', rg5: '5 years', rgM: 'Max', rgNo: 'Data only starts on %s', ixH: 'Contents', ixG: 'Crop', ixS: 'Summary', ixE: 'Exports', ixD: 'Deliveries', ixT: 'Stocks', ixW: 'Last 8 weeks', ixN: 'Notes and source', exS: 'Exports', dlS: 'Deliveries', stS: 'Stocks', h: 'Canadian grain: exports, deliveries and stocks', sub: 'Weekly Canadian Grain Commission figures, in thousand tonnes: what leaves through port terminals, what Prairie farmers deliver, and what sits in storage.',
       grain: 'Crop', ex: 'Port terminal exports', dl: 'Farmer deliveries (Manitoba, Saskatchewan, Alberta and British Columbia)', st: 'Commercial stocks in elevators and terminals', cum: 'Crop-year exports to date',
       week: 'Week', last: 'Latest week', prev: 'Previous week', yago: 'A year ago', chg: 'Change', none: 'No data available right now.', kt: 'kt', gap: 'no data', unit: 'thousand tonnes', table: 'Show the table of the last 8 weeks', thisCrop: 'this crop year',
       note: 'Exports are those shipped through licensed port terminals: they exclude direct rail or truck shipments to the United States, so they are not Canada’s total exports. The CGC revises recent weeks, so a figure can change. A week with no data shows as a gap, never as zero. Stocks are commercial stocks, not on-farm stocks.', src: 'Source', updated: 'Updated', asof: 'Week ending' },
-    fr: { ixH: 'Sommaire', ixG: 'Culture', ixS: 'Résumé', ixE: 'Exportations', ixD: 'Livraisons', ixT: 'Stocks', ixW: '8 dernières semaines', ixN: 'Notes et source', exS: 'Exportations', dlS: 'Livraisons', stS: 'Stocks', h: 'Céréales du Canada : exportations et stocks', sub: 'Chiffres hebdomadaires de la Commission canadienne des grains, en milliers de tonnes : ce qui part par les terminaux portuaires, ce que livrent les agriculteurs des Prairies et ce qui est stocké.',
+    fr: { rgH: 'Période', rg6: '6 mois', rg1: '1 an', rg3: '3 ans', rg5: '5 ans', rgM: 'Max', rgNo: 'Données disponibles seulement depuis le %s', ixH: 'Sommaire', ixG: 'Culture', ixS: 'Résumé', ixE: 'Exportations', ixD: 'Livraisons', ixT: 'Stocks', ixW: '8 dernières semaines', ixN: 'Notes et source', exS: 'Exportations', dlS: 'Livraisons', stS: 'Stocks', h: 'Céréales du Canada : exportations et stocks', sub: 'Chiffres hebdomadaires de la Commission canadienne des grains, en milliers de tonnes : ce qui part par les terminaux portuaires, ce que livrent les agriculteurs des Prairies et ce qui est stocké.',
       grain: 'Culture', ex: 'Exportations par les terminaux portuaires', dl: 'Livraisons des agriculteurs (Manitoba, Saskatchewan, Alberta et Colombie-Britannique)', st: 'Stocks commerciaux en silos et terminaux', cum: 'Exportations cumulées de la campagne',
       week: 'Semaine', last: 'Dernière semaine', prev: 'Semaine précédente', yago: 'Il y a un an', chg: 'Variation', none: 'Aucune donnée disponible pour le moment.', kt: 'kt', gap: 'pas de donnée', unit: 'milliers de tonnes', table: 'Voir le tableau des 8 dernières semaines', thisCrop: 'campagne en cours',
       note: 'Les exportations sont celles expédiées par les terminaux portuaires agréés : elles excluent les envois directs par rail ou camion vers les États-Unis et ne sont donc pas les exportations totales du pays. La CGC révise les semaines récentes, un chiffre peut donc changer. Une semaine sans donnée apparaît comme un trou, jamais comme un zéro. Les stocks sont les stocks commerciaux, pas ceux des exploitations.', src: 'Source', updated: 'Mis à jour', asof: 'Semaine se terminant le' },
-    it: { ixH: 'Indice', ixG: 'Coltura', ixS: 'Riepilogo', ixE: 'Esportazioni', ixD: 'Consegne', ixT: 'Scorte', ixW: 'Ultime 8 settimane', ixN: 'Note e fonte', exS: 'Esportazioni', dlS: 'Consegne', stS: 'Scorte', h: 'Cereali del Canada: esportazioni e scorte', sub: 'Cifre settimanali della Canadian Grain Commission, in migliaia di tonnellate: ciò che parte dai terminal portuali, ciò che consegnano gli agricoltori delle Praterie e ciò che è in magazzino.',
+    it: { rgH: 'Periodo', rg6: '6 mesi', rg1: '1 anno', rg3: '3 anni', rg5: '5 anni', rgM: 'Max', rgNo: 'Dati disponibili solo dal %s', ixH: 'Indice', ixG: 'Coltura', ixS: 'Riepilogo', ixE: 'Esportazioni', ixD: 'Consegne', ixT: 'Scorte', ixW: 'Ultime 8 settimane', ixN: 'Note e fonte', exS: 'Esportazioni', dlS: 'Consegne', stS: 'Scorte', h: 'Cereali del Canada: esportazioni e scorte', sub: 'Cifre settimanali della Canadian Grain Commission, in migliaia di tonnellate: ciò che parte dai terminal portuali, ciò che consegnano gli agricoltori delle Praterie e ciò che è in magazzino.',
       grain: 'Coltura', ex: 'Esportazioni dai terminal portuali', dl: 'Consegne degli agricoltori (Manitoba, Saskatchewan, Alberta e Columbia Britannica)', st: 'Scorte commerciali in silos e terminal', cum: 'Esportazioni cumulate della campagna',
       week: 'Settimana', last: 'Ultima settimana', prev: 'Settimana precedente', yago: 'Un anno fa', chg: 'Variazione', none: 'Nessun dato disponibile al momento.', kt: 'kt', gap: 'nessun dato', unit: 'migliaia di tonnellate', table: 'Mostra la tabella delle ultime 8 settimane', thisCrop: 'campagna in corso',
       note: 'Le esportazioni sono quelle spedite dai terminal portuali autorizzati: escludono le spedizioni dirette in treno o camion verso gli Stati Uniti, quindi non sono le esportazioni totali del paese. La CGC rivede le settimane recenti, quindi una cifra può cambiare. Una settimana senza dato compare come vuoto, mai come zero. Le scorte sono quelle commerciali, non quelle aziendali.', src: 'Fonte', updated: 'Aggiornato', asof: 'Settimana terminata il' }
@@ -23,7 +23,7 @@
   var N = { wheat: { es: 'Trigo (sin durum)', en: 'Wheat (excluding durum)', fr: 'Blé (hors durum)', it: 'Frumento (escluso duro)' }, durum: { es: 'Trigo duro', en: 'Amber durum', fr: 'Blé dur', it: 'Frumento duro' }, barley: { es: 'Cebada', en: 'Barley', fr: 'Orge', it: 'Orzo' },
     canola: { es: 'Canola (colza)', en: 'Canola', fr: 'Canola', it: 'Canola' }, oats: { es: 'Avena', en: 'Oats', fr: 'Avoine', it: 'Avena' }, peas: { es: 'Guisantes', en: 'Peas', fr: 'Pois', it: 'Piselli' }, lentils: { es: 'Lentejas', en: 'Lentils', fr: 'Lentilles', it: 'Lenticchie' },
     flaxseed: { es: 'Lino', en: 'Flaxseed', fr: 'Lin', it: 'Lino' }, soybeans: { es: 'Soja', en: 'Soybeans', fr: 'Soja', it: 'Soia' }, corn: { es: 'Maíz', en: 'Corn', fr: 'Maïs', it: 'Mais' }, rye: { es: 'Centeno', en: 'Rye', fr: 'Seigle', it: 'Segale' }, chickpeas: { es: 'Garbanzos', en: 'Chickpeas', fr: 'Pois chiches', it: 'Ceci' } };
-  var D = null, ST = { g: 'wheat' };
+  var D = null, ST = { g: 'wheat', r: 'max' };
   var EMO = { wheat: '🌾', durum: '🍝', barley: '🍺', canola: '🌼', oats: '🥣', peas: '🟢', lentils: '🫘', flaxseed: '🌱', soybeans: '🫛', corn: '🌽', rye: '🍞', chickpeas: '🧆' };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
@@ -38,7 +38,7 @@
   function pct(a, b) { if (a == null || b == null || b === 0) return ''; var c = (a / b - 1) * 100; return (c > 0 ? '+' : c < 0 ? '−' : '') + nf(Math.abs(c), 1) + ' %'; }
   function chartFor(g, key, title, color) {
     var pts = []; D.weeks.forEach(function (w, i) { var v = g[key][i]; pts.push({ x: ms(w), y: v == null ? null : v, l: w }); });
-    pts = pts.slice(-78);
+    var RW = { '6m': 26, '1y': 52, '3y': 156, '5y': 260 }; if (RW[ST.r]) pts = pts.slice(-RW[ST.r]);
     var ok = pts.filter(function (p) { return p.y != null; }).length; if (ok < 4) return '';
     return '<div class="di-card" style="padding:16px 18px;margin-top:14px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(title.toUpperCase()) + ' (' + esc(tt().kt) + ')</div>' +
       window.DehesaChart.render({ series: [{ name: title, color: color, pts: pts }], xMode: 'time', yTitle: tt().unit, aria: gname(g) + ': ' + title, noLegend: true, zero: true,
@@ -60,6 +60,11 @@
     });
     html += '</table></div>';
     ix = [['cg-g', t.ixG], ['cg-sum', t.ixS]];
+    var spanD = (ms(D.weeks[n]) - ms(D.weeks[0])) / 864e5, rb = [['6m', t.rg6, 182], ['1y', t.rg1, 365], ['3y', t.rg3, 1095], ['5y', t.rg5, 1825], ['max', t.rgM, 0]];
+    html += '<div class="di-range-btns" role="group" aria-label="' + esc(t.rgH) + '" style="margin:16px 0 0"><span style="font-size:12px;font-weight:700;color:var(--text-faint);align-self:center;margin-right:4px">' + esc(t.rgH) + '</span>' + rb.map(function (r) {
+      var off = r[2] && spanD < r[2] - 14;
+      return '<button type="button" class="di-range-btn' + (ST.r === r[0] ? ' active' : '') + '" data-rg="' + r[0] + '" aria-pressed="' + (ST.r === r[0]) + '"' + (off ? ' disabled style="opacity:.45;cursor:not-allowed" title="' + esc(t.rgNo.replace('%s', dlab(D.weeks[0]))) + '"' : '') + '>' + esc(r[1]) + '</button>';
+    }).join('') + '</div>';
     [['exports', t.ex, '#2f6b4a', t.ixE], ['deliveries', t.dl, '#8a6d2f', t.ixD], ['stocks', t.st, '#3a5f8a', t.ixT]].forEach(function (c) {
       var h = chartFor(g, c[0], c[1], c[2]); if (!h) return;
       ix.push(['cg-c-' + c[0], c[3]]); html += '<div id="cg-c-' + c[0] + '">' + h + '</div>';
@@ -83,6 +88,9 @@
         d.scrollIntoView({ behavior: rm ? 'auto' : 'smooth', block: 'start' });
         if (d.id === 'cg-g') { d = document.getElementById('cg-g'); if (d) d.focus(); }
       };
+    });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-rg]'), function (b) {
+      b.onclick = function () { ST.r = b.getAttribute('data-rg'); var y = window.pageYOffset; build(); window.scrollTo(0, y); var nb = document.querySelector('#cg-body [data-rg="' + ST.r + '"]'); if (nb) nb.focus(); };
     });
     var el = document.getElementById('cg-g'); if (el) el.onchange = function (e) { ST.g = e.target.value; build(); var m = document.getElementById('cg-g'); if (m) m.focus(); };
   }
