@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T15:21:47Z",
+ "generatedAt": "2026-10-23T20:22:13Z",
  "facts": [
   {
    "id": "eu",
@@ -18,10 +18,10 @@
   {
    "id": "cattle",
    "file": "cattle-on-feed.json",
-   "date": "2026-09-01",
-   "release": "2026-09-18",
-   "onFeedKhead": 11163,
-   "pctYearAgo": 101
+   "date": "2026-10-01",
+   "release": "2026-10-23",
+   "onFeedKhead": 11372,
+   "pctYearAgo": 100
   },
   {
    "id": "exports",
