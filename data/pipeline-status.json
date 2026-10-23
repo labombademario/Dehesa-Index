@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T16:21:00Z",
+ "generatedAt": "2026-10-23T16:37:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 252,
   "late": 2,
   "error": 6,
-  "not_run": 5,
+  "not_run": 6,
   "unknown": 0
  },
  "global": "error",
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 3.0,
-  "prodGeneratedAt": "2026-10-23T12:50:41.241181+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
   "repoGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
-  "checkedAt": "2026-10-23T16:21:00Z"
+  "checkedAt": "2026-10-23T16:37:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-23T14:19:18Z"
+     "lastChange": "2026-10-23T16:34:08Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -323,7 +323,7 @@
    "crons": [
     "25 16 * * 2,5"
    ],
-   "nextRun": "2026-10-23T16:25:00Z",
+   "nextRun": "2026-10-27T16:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -454,6 +454,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-be-statbel-more.yml",
+   "name": "Update Belgium livestock and land census, harvest, food CPI, fishing, dairy products and meat balances (Statbel)",
+   "crons": [
+    "20 9 * * 4"
+   ],
+   "nextRun": "2026-10-29T09:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-belgium.yml",
@@ -4040,18 +4053,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-23T00:55:22Z"
+     "lastChange": "2026-10-23T16:34:08Z"
     },
     {
      "path": "data/catalog"
@@ -4064,7 +4077,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-23T15:51:11Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/products"
@@ -4075,19 +4088,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T16:08:48Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/pack"
@@ -4103,26 +4116,26 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/fv-products.json",
@@ -4134,7 +4147,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-23T15:48:02Z"
+     "lastChange": "2026-10-23T16:37:31Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5537,7 +5550,7 @@
    "crons": [
     "30 16 * * 5"
    ],
-   "nextRun": "2026-10-23T16:30:00Z",
+   "nextRun": "2026-10-30T16:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
