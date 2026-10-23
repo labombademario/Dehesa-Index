@@ -1316,6 +1316,7 @@
     root.innerHTML = ukNoticeHtml() + (entries.length || idxCards.length ? viewBar() + '<div class="di-product-grid' + (viewMode() === 'rows' ? ' di-rows' : '') + '">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + idxCards.join('') + '</div>' : '<p class="di-movers-hint">' + esc(t.noDataHereAll) + '</p>') +
       (missing.length ? '<details class="di-nodata-list" style="margin-top:14px"><summary style="cursor:pointer;font-size:13px;color:var(--text-faint)">' + esc(t.noDataHere) + ' (' + missing.length + ')</summary><p class="di-movers-hint" style="margin-top:6px">' + missing.map(function (e) { return esc(productName(e.nameKey)); }).join(' · ') + '</p></details>' : '');
     wireCardEvents(root);
+    if (state.activeTab === 'tropicales' && global.DehesaSofts) { var sf = document.createElement('div'); sf.id = 'pr-softs'; root.appendChild(sf); global.DehesaSofts.render(sf); }
   }
 
   /* Vista de la lista de productos: filas compactas (por defecto) o tarjetas. Se guarda por navegador. */
