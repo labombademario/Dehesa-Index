@@ -16,9 +16,9 @@ for geo in ("Canada", "Quebec", "Yukon"):
         for m in months(2022, 50): rows.append({"REF_DATE": m, "GEO": geo, NAP: prod, "VALUE": "100.5"})
 [r.update(VALUE="") for r in rows if r["GEO"] == "Canada" and r["REF_DATE"] == "2026-02" and "stocks" in r[NAP]]
 s = {x["id"]: x for x in S.lumber(rows)}
-eq(sorted(s), ["ca-sc-lumber-canada-spruce-pine-and-fir-production-m", "ca-sc-lumber-canada-total-softwood-and-hardwood-production-m", "ca-sc-lumber-canada-total-softwood-stocks-m",
-               "ca-sc-lumber-quebec-spruce-pine-and-fir-production-m", "ca-sc-lumber-quebec-total-softwood-and-hardwood-production-m", "ca-sc-lumber-quebec-total-softwood-stocks-m"], "lumber: sin Yukon")
-eq(s["ca-sc-lumber-canada-total-softwood-stocks-m"]["group"], "stocks", "grupo stocks"); eq(len(s["ca-sc-lumber-canada-total-softwood-stocks-m"]["points"]), 49, "valor vacio omitido")
+eq(sorted(s), ["ca-sc-lumber-ca-spruce-pine-and-fir-production-m", "ca-sc-lumber-ca-total-softwood-and-hardwood-production-m", "ca-sc-lumber-ca-total-softwood-stocks-m",
+               "ca-sc-lumber-qc-spruce-pine-and-fir-production-m", "ca-sc-lumber-qc-total-softwood-and-hardwood-production-m", "ca-sc-lumber-qc-total-softwood-stocks-m"], "lumber: sin Yukon")
+eq(s["ca-sc-lumber-ca-total-softwood-stocks-m"]["group"], "stocks", "grupo stocks"); eq(len(s["ca-sc-lumber-ca-total-softwood-stocks-m"]["points"]), 49, "valor vacio omitido")
 rows = [{"REF_DATE": m, "GEO": "Canada", NAP: p, "VALUE": "120.1"} for m in months(2023, 40) for p in ("Total, Industrial product price index (IPPI)", "Lumber and other wood products [P41]", "Cannabis products (except seeds) [P15]")]
 s = {x["id"]: x for x in S.ippi(rows, "18-10-0265", "ippi", "Industrial product price index, Canada")}
 eq(sorted(s), ["ca-sc-ippi-lumber-and-other-wood-products-m", "ca-sc-ippi-total-industrial-product-price-index-ippi-m"], "ippi sin cannabis")

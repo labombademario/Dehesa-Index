@@ -15,8 +15,9 @@ WDS = "https://www150.statcan.gc.ca/t1/wds/rest/getFullTableDownloadCSV/%d/en"
 PAGE = "https://www150.statcan.gc.ca/n1/en/subjects/agriculture_and_food"
 LIC = "Statistics Canada Open Licence"
 LUMBER_GEO = ["Canada", "Quebec", "Ontario", "British Columbia", "Alberta"]
+GEOC = {"Canada": "ca", "Quebec": "qc", "Ontario": "on", "British Columbia": "bc", "Alberta": "ab"}
 CPI_GEO = "Canada"
-CPI_ITEMS = ["All-items", "Food", "Food purchased from stores", "Food purchased from restaurants", "Meat", "Fish, seafood and other marine products", "Dairy products and eggs", "Bakery and cereal products",
+CPI_ITEMS = ["All-items", "Food", "Food purchased from stores", "Food purchased from restaurants", "Meat", "Fish, seafood and other marine products", "Dairy products and eggs", "Bakery and cereal products (excluding baby food)",
              "Fruit, fruit preparations and nuts", "Vegetables and vegetable preparations", "Energy", "Gasoline", "Fuel oil and other fuels", "Natural gas", "Electricity"]
 def clean(s): return re.sub(r"\s*\[[0-9A-Za-z.]+\]\s*$", "", (s or "").strip())
 def val(r):
@@ -37,7 +38,7 @@ def lumber(rows, nap="North American Product Classification System (NAPCS)"):
     by = group_by(rows, lambda r: (r["GEO"], clean(r[nap])) if r["GEO"] in LUMBER_GEO else None)
     for (geo, prod), pts in sorted(by.items()):
         g = "stocks" if prod.lower().endswith("stocks") else "production"
-        s = U.mk_series("ca-sc-lumber-%s-%s-m" % (U.slug(geo, 12), U.slug(prod, 60)), g, "Sawmills, %s: %s (monthly)" % (geo, prod[0].lower() + prod[1:]), "thousand m3", "monthly", pts, "StatCan 16-10-0017", min_points=36, max_age_years=1, keep=240)
+        s = U.mk_series("ca-sc-lumber-%s-%s-m" % (GEOC[geo], U.slug(prod, 60)), g, "Sawmills, %s: %s (monthly)" % (geo, prod[0].lower() + prod[1:]), "thousand m3", "monthly", pts, "StatCan 16-10-0017", min_points=36, max_age_years=1, keep=240)
         if s: out.append(s)
     return out
 def ippi(rows, pid, tag, what, nap="North American Product Classification System (NAPCS)"):
