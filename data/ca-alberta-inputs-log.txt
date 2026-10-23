@@ -1,11 +1,38 @@
 PDF: 56
-PDF saltado agi-tedab-monthly-farm-input-prices-2026-07.pdf: ValueError('cabecera sin mes: F arm Input Prices - Dollars ($) July 2025 June 2026 July 2026')
-meses leidos: 55 saltados: 1 rango: 2022-01 2026-08
+meses leidos: 56 saltados: 0 rango: 2022-01 2026-08
 descartada ca-ab-inputs-assert-300-sc-liquid-10-8-litre-m: 14 puntos, ultimo 2023-02
-descartada ca-ab-inputs-ivermectin-injection-for-cattle-sheep-and-swine-200-ml-injectable-m: 6 puntos, ultimo 2026-08
+descartada ca-ab-inputs-ivermectin-injection-for-cattle-sheep-and-swine-200-ml-injectable-m: 7 puntos, ultimo 2026-08
 descartada ca-ab-inputs-ivomec-injection-for-cattle-sheep-and-swine-250-ml-injectable-m: 8 puntos, ultimo 2026-01
 descartada ca-ab-inputs-penicillin-procaine-penicillin-g-injectable-short-acting-300-mg-ml-250-m: 15 puntos, ultimo 2023-03
 descartada ca-ab-inputs-sprayer-pull-type-800-900-gallon-tank-90-100-boom-new-each-m: 15 puntos, ultimo 2023-03
-descartada ca-ab-inputs-vitamin-a-d-e-oral-liquid-added-to-water-425-ml-bottle-m: 8 puntos, ultimo 2026-08
+descartada ca-ab-inputs-vitamin-a-d-e-oral-liquid-added-to-water-425-ml-bottle-m: 9 puntos, ultimo 2026-08
 descartada ca-ab-inputs-vitamin-a-d-oral-containing-vitamin-a-d-selenium-250-ml-bottle-m: 6 puntos, ultimo 2025-11
-OK: 82 series, 55 meses
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-3-4-ton-truck-v-8-5-4l-or-5-9l-engine-4x4-4-speed-automatic-transmissi-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-air-drill-40-42-3-compartment-tank-no-variable-rate-new-each-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-antifreeze-ethylene-glycol-anti-corrosion-4-litre-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-broiler-grower-complete-feed-18-20-bagged-25-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-calf-starter-ration-pellets-13-20-bagged-25-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-cattle-mineral-salt-free-18-phosphorus-18-calcium-20-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-combine-self-prop-diesel-class-7-323-374-hp-new-each-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-dairy-supplement-pellets-32-bagged-25-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-feed-barley-no-1-non-board-farm-gate-bushel-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-feed-oats-good-quality-farm-gate-bushel-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-feed-wheat-no-1-non-board-farm-gate-bushel-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-feedlot-supplement-pellets-32-excl-ionophore-bagged-25-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-fertilizer-11-51-0-bulk-tonne-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-grain-bin-hopper-bottom-included-4-000-bushel-capacity-each-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-hog-grower-ration-pellets-15-17-bagged-25-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-propane-liquefied-bulk-100-litres-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-purple-gasoline-regular-unleaded-marked-farm-fuel-100-litres-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-ready-mix-concrete-20-mpa-strength-cubic-metre-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-refine-sg-granular-486-gram-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-roundup-weathermax-liquid-10-litre-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-seed-barley-certified-no-1-bulk-100-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-seed-wheat-certified-no-1-bulk-100-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-storage-battery-12-volt-24-series-525-cranking-amps-each-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-swine-supplement-pellets-35-40-bagged-25-kg-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-tractor-4wd-325-375-hp-6-8-cylinder-diesel-12-18-speed-transmission-ne-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-tractor-fwd-105-130-hp-6-cylinder-diesel-12-24-speed-transmission-new-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-v-belt-implement-1-2-x-70-fibre-each-m (ultimo 2025-05)
+producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-vitamin-a-d-and-e-injectable-iu-cc-a-500-000-d-75-000-e-50-250-ml-m (ultimo 2025-05)
+OK: 54 series, 56 meses
