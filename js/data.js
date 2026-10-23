@@ -634,18 +634,18 @@
     return (v < 0 ? '-' : '') + parts.join('.');
   }
   // Cambio del MES del dato: dolares por 1 unidad de ccy en la media mensual del BCE (FXM). Sin fecha, o con un mes
-  // aun sin media publicada (el actual), se usa el cambio de hoy. Antes de 1999 (no hay serie) se usa enero de 1999.
+  // aun sin media publicada (el actual), se usa el cambio de hoy. Antes de 1999 no hay serie: devuelve null y el punto no se convierte (no se inventa un cambio).
   function fxAt(ccy, ts) {
     if (ccy === 'USD') return 1;
     var a = FXM[ccy];
     if (!a || !isFinite(ts) || ts === null || ts === undefined) return FX[ccy];
     var d = new Date(ts), i = (d.getUTCFullYear() - 1999) * 12 + d.getUTCMonth();
     if (i >= a.length) return FX[ccy];
-    return a[i < 0 ? 0 : i];
+    return i < 0 ? null : a[i];
   }
   function ccyRatio(from, to, fx, ts) {
     if (from === to) return 1;
-    if (fx === FX) return fxAt(from, ts) / fxAt(to, ts);   // cambio del mes del dato
+    if (fx === FX) { var a = fxAt(from, ts), c = fxAt(to, ts); return a === null || c === null ? null : a / c; }   // cambio del mes del dato (null: sin serie)
     return fx[from] / fx[to];                              // cambio indicado por quien llama (tests)
   }
   function regionTs(region) { var p = region && region.histPts; return p && p.length ? p[p.length - 1].ts : null; }
@@ -689,7 +689,10 @@
   function realHistory(region, targetCcy, targetKgPerUnit, fx) {
     if (!region || !region.histPts || region.histPts.length < 2) return null;
     var kg = targetKgPerUnit / region.kgPerUnit;
-    return { gran: region.histGran || 'day', pts: region.histPts.map(function (p) { return { ts: p.ts, y: p.value * kg * ccyRatio(region.currency, targetCcy, fx, p.ts) }; }) };
+    var pts = [];
+    region.histPts.forEach(function (p) { var r = ccyRatio(region.currency, targetCcy, fx, p.ts); if (r !== null) pts.push({ ts: p.ts, y: p.value * kg * r }); });   // sin cambio del mes (antes de 1999): el punto se omite
+    if (pts.length < 2) return null;
+    return { gran: region.histGran || 'day', pts: pts };
   }
   function isoDate(ts, gran) { var s = new Date(ts).toISOString(); return gran === 'month' ? s.slice(0, 7) : s.slice(0, 10); }
   function exportRealCsv(csvHeaderDate, csvHeaderPrice, productKey, regionCode, pts, gran, targetCcy, targetUnitLabel) {
