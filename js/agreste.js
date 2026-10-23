@@ -16,6 +16,7 @@
     tabs: { empleo: L('👷 Empleo', '👷 Jobs', '👷 Emploi', '👷 Lavoro'), suelo: L('🗺️ Uso del suelo', '🗺️ Land use', '🗺️ Occupation des sols', '🗺️ Uso del suolo'), insumos: L('🧪 Insumos (IPAMPA)', '🧪 Inputs (IPAMPA)', '🧪 Intrants (IPAMPA)', '🧪 Input (IPAMPA)'), vendimia: L('🍇 Vendimia', '🍇 Wine harvest', '🍇 Vendanges', '🍇 Vendemmia') },
     loading: L('Cargando…', 'Loading…', 'Chargement…', 'Caricamento…'), fail: L('No se han podido cargar estos datos. Prueba de nuevo en unos minutos.', 'These data could not be loaded. Try again in a few minutes.', 'Ces données n’ont pas pu être chargées. Réessayez dans quelques minutes.', 'Impossibile caricare questi dati. Riprova tra qualche minuto.'),
     pick: L('Tabla', 'Table', 'Tableau', 'Tabella'), prod: L('Producto', 'Product', 'Produit', 'Prodotto'), cat: L('Categoría', 'Category', 'Catégorie', 'Categoria'), terr: L('Territorio', 'Territory', 'Territoire', 'Territorio'),
+    full: L('Abrir en página completa', 'Open as a full page', 'Ouvrir en pleine page', 'Apri a pagina intera'),
     yoy: L('Variación sobre el mismo mes del año anterior', 'Change on the same month a year earlier', 'Variation sur le même mois un an plus tôt', 'Variazione sullo stesso mese di un anno prima'),
     hName: L('Serie', 'Series', 'Série', 'Serie'), hLast: L('Último', 'Latest', 'Dernier', 'Ultimo'), hPer: L('Periodo', 'Period', 'Période', 'Periodo'), hChg: L('Variación', 'Change', 'Variation', 'Variazione'), hFirst: L('Desde el inicio', 'Since the start', 'Depuis le début', 'Dall’inizio'),
     show: L('Pulsa una fila para añadirla o quitarla de la gráfica (hasta 4).', 'Click a row to add or remove it from the chart (up to 4).', 'Cliquez sur une ligne pour l’ajouter ou la retirer du graphique (4 au maximum).', 'Clicca una riga per aggiungerla o toglierla dal grafico (massimo 4).'),
@@ -137,14 +138,17 @@
       if (tab === 'insumos') load('ipampa-regiones.json').then(function (r) { var el = document.getElementById('ag-reg'); if (!el || STATE.tab !== 'insumos') return; el.innerHTML = r && r.tables ? (insumosReg(r, STATE.prod || d.tables[0].series[0].id) || '<p class="ag-m">—</p>') : '<p class="ag-m">' + esc(tx(T.fail)) + '</p>'; });
     });
   }
+  var BOUND = false, EMBED = false;
   function init() {
     var sub = document.getElementById('ag-sub'), h1 = document.getElementById('ag-h1');
     function text() { if (h1) h1.textContent = tx(T.h1); if (sub) sub.textContent = tx(T.sub); document.title = tx(T.h1) + ' | Dehesa Index'; var cat = document.getElementById('ag-cat'); if (cat) cat.textContent = tx(T.cat2); }
     text();
-    var h = (location.hash || '').replace('#', ''); if (/^(empleo|suelo|insumos|vendimia)$/.test(h)) STATE.tab = h;
+    var h = (location.hash || '').replace('#', ''); if (!EMBED && /^(empleo|suelo|insumos|vendimia)$/.test(h)) STATE.tab = h;
+    if (BOUND) { render(); return; }
+    BOUND = true;
     document.addEventListener('click', function (e) {
       var b = e.target.closest ? e.target.closest('[data-tab],[data-k]') : null; if (!b) return;
-      if (b.getAttribute('data-tab')) { STATE.tab = b.getAttribute('data-tab'); try { history.replaceState(null, '', '#' + STATE.tab); } catch (x) { /* sin history */ } render(); return; }
+      if (b.getAttribute('data-tab')) { STATE.tab = b.getAttribute('data-tab'); if (!EMBED) { try { history.replaceState(null, '', '#' + STATE.tab); } catch (x) { /* sin history */ } } render(); return; }
       var k = b.getAttribute('data-k'), id = b.getAttribute('data-id'), sel = STATE.sel[k] || [], i = sel.indexOf(id);
       if (i >= 0) { if (sel.length > 1) sel.splice(i, 1); } else { sel.push(id); if (sel.length > 4) sel.shift(); }
       STATE.sel[k] = sel; var d = CACHE[{ empleo: 'empleo.json', suelo: 'teruti.json', insumos: 'ipampa-fr.json', vendimia: 'vinconj.json' }[STATE.tab]];
@@ -158,9 +162,14 @@
       var d = CACHE[{ empleo: 'empleo.json', suelo: 'teruti.json', vendimia: 'vinconj.json' }[STATE.tab]]; if (d) d.then(function (dd) { paint({ empleo: empleo, suelo: suelo, vendimia: vendimia }[STATE.tab](dd)); });
     });
     function rerenderInsumos() { render(); }
-    global.addEventListener('hashchange', function () { var k = (location.hash || '').replace('#', ''); if (/^(empleo|suelo|insumos|vendimia)$/.test(k) && k !== STATE.tab) { STATE.tab = k; render(); } });
-    S.onLangChange = function () { text(); render(); };
+    global.addEventListener('hashchange', function () { if (EMBED) return; var k = (location.hash || '').replace('#', ''); if (/^(empleo|suelo|insumos|vendimia)$/.test(k) && k !== STATE.tab) { STATE.tab = k; render(); } });
+    if (!EMBED) S.onLangChange = function () { text(); render(); };
     render();
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  global.DIAgreste = { mount: function (el) {
+    EMBED = true;
+    el.innerHTML = '<section class="di-card cp-sec"><h2 class="cp-h2">' + esc(tx(T.h1)) + '</h2><p class="di-movers-hint">' + esc(tx(T.sub)) + '</p><div id="ag-root"></div><p class="ag-m"><a href="agreste.html">' + esc(tx(T.full)) + '</a></p></section>';
+    init();
+  } };
+  if (document.getElementById('ag-h1')) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init(); }
 })(window);
