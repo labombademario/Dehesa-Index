@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T20:39:00Z",
+ "generatedAt": "2026-10-23T20:54:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 256,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
   "repoGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
-  "checkedAt": "2026-10-23T20:39:00Z"
+  "checkedAt": "2026-10-23T20:54:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-23T20:20:02Z"
+     "lastChange": "2026-10-23T20:44:04Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -3855,7 +3855,7 @@
   },
   {
    "workflow": "update-nl-cbs-more.yml",
-   "name": "Update Netherlands farm turnover by quarter, glasshouses and flowers, nitrogen and manure, food price chain and other series (CBS StatLine)",
+   "name": "Update Netherlands farm turnover by quarter, glasshouses and flowers, nitrogen and manure, food price chain, other series (CBS StatLine) and nitrogen deposition in Natura 2000 (RIVM)",
    "crons": [
     "50 8 * * 3"
    ],
@@ -4084,14 +4084,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-23T20:20:02Z"
+     "lastChange": "2026-10-23T20:44:04Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-23T20:23:36Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4108,7 +4108,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-23T20:38:35Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/products"
@@ -4119,19 +4119,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T20:26:47Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-23T20:23:36Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-23T20:20:02Z"
+     "lastChange": "2026-10-23T20:44:04Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-23T20:20:02Z"
+     "lastChange": "2026-10-23T20:44:04Z"
     },
     {
      "path": "data/pack"
@@ -4147,7 +4147,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-23T20:23:36Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/country-pending.json",
@@ -4155,18 +4155,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-23T20:23:36Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-23T20:23:36Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-23T20:23:36Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/fv-products.json",
@@ -4178,7 +4178,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-23T20:23:36Z"
+     "lastChange": "2026-10-23T20:46:36Z"
     },
     {
      "path": "data/home-explore.json",
