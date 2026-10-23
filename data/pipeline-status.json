@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T20:08:00Z",
+ "generatedAt": "2026-10-23T20:24:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 256,
+  "ok": 255,
   "late": 2,
-  "error": 6,
-  "not_run": 3,
-  "unknown": 0
+  "error": 7,
+  "not_run": 2,
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
   "repoGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
-  "checkedAt": "2026-10-23T20:08:00Z"
+  "checkedAt": "2026-10-23T20:24:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-23T16:34:08Z"
+     "lastChange": "2026-10-23T20:20:02Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -1060,7 +1060,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-23T18:42:11Z"
+     "lastChange": "2026-10-23T20:24:00Z"
     }
    ],
    "last": {
@@ -3771,18 +3771,19 @@
    "nextRun": "2026-10-26T20:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "cancelled",
+    "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-23T19:58:08Z",
-    "durationSec": 13,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40015545417"
+    "startedAt": "2026-10-23T19:58:19Z",
+    "durationSec": 1372,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40015570890",
+    "reason": "no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 3,
-    "failed": 3
+    "failed": 4
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -4047,7 +4048,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-23T18:42:11Z"
+     "lastChange": "2026-10-23T20:24:00Z"
     }
    ],
    "last": {
@@ -4083,18 +4084,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:20:02Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:20:02Z"
     },
     {
      "path": "data/catalog"
@@ -4107,7 +4108,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-23T19:15:37Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/products"
@@ -4118,19 +4119,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T19:29:11Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-23T16:37:31Z"
+     "lastChange": "2026-10-23T20:20:02Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-23T16:37:31Z"
+     "lastChange": "2026-10-23T20:20:02Z"
     },
     {
      "path": "data/pack"
@@ -4146,26 +4147,26 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:20:02Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/fv-products.json",
@@ -4177,11 +4178,11 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/home-explore.json",
-     "lastChange": "2026-10-22T15:22:10Z"
+     "lastChange": "2026-10-23T20:23:36Z"
     },
     {
      "path": "data/cap/index.json",
@@ -4442,6 +4443,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-pt-ine-more.yml",
+   "name": "Update Portugal fish prices, supply balances, milk collected, gross meat production, food HICP, rural fires, crop area by region, fertilisers and honey (INE)",
+   "crons": [
+    "40 9 * * 4"
+   ],
+   "nextRun": "2026-10-29T09:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-pt-nitrates.yml",
@@ -5889,12 +5903,12 @@
    "crons": [
     "10 20 * * 1-5"
    ],
-   "nextRun": "2026-10-23T20:10:00Z",
+   "nextRun": "2026-10-26T20:10:00Z",
    "files": [],
    "last": null,
    "recent": null,
    "status": "not_run",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-ppi.yml",
@@ -6066,16 +6080,16 @@
    "nextRun": "2026-10-24T02:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-23T03:04:09Z",
-    "durationSec": 26,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39892999249"
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-23T20:23:37Z",
+    "durationSec": 13,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40018859525"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 4,
-    "failed": 3
+    "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 24.0
@@ -6378,19 +6392,6 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
-  },
-  {
-   "workflow": "update-pt-ine-more.yml",
-   "name": "Update Portugal fish prices, supply balances, milk collected, gross meat production, food HICP, rural fires, crop area by region, fertilisers and honey (INE)",
-   "crons": [
-    "40 9 * * 4"
-   ],
-   "nextRun": "2026-10-29T09:40:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 72.0
   }
  ]
 }
