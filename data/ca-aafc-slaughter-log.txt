@@ -1,2 +1,2 @@
-series: 12 ['ca-aafc-slaughter-calves-female-w', 'ca-aafc-slaughter-calves-male-w', 'ca-aafc-slaughter-cattle-bulls-w', 'ca-aafc-slaughter-cattle-cows-w', 'ca-aafc-slaughter-cattle-heifers-w', 'ca-aafc-slaughter-cattle-steers-w', 'ca-aafc-slaughter-hogs-boars-w', 'ca-aafc-slaughter-hogs-market-hogs-w', 'ca-aafc-slaughter-hogs-sows-w', 'ca-aafc-slaughter-hogs-total-approved-hogs-slaughtere-w', 'ca-aafc-slaughter-sheep-lamb-lambs-w', 'ca-aafc-slaughter-sheep-lamb-sheep-w']
-OK: 12 series
+series: 11 ['ca-aafc-slaughter-calves-female-w', 'ca-aafc-slaughter-calves-male-w', 'ca-aafc-slaughter-cattle-bulls-w', 'ca-aafc-slaughter-cattle-cows-w', 'ca-aafc-slaughter-cattle-heifers-w', 'ca-aafc-slaughter-cattle-steers-w', 'ca-aafc-slaughter-hogs-boars-w', 'ca-aafc-slaughter-hogs-market-hogs-w', 'ca-aafc-slaughter-hogs-sows-w', 'ca-aafc-slaughter-sheep-lamb-lambs-w', 'ca-aafc-slaughter-sheep-lamb-sheep-w']
+OK: 11 series
