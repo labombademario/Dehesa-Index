@@ -1,0 +1,11 @@
+PDF: 56
+PDF saltado agi-tedab-monthly-farm-input-prices-2026-07.pdf: ValueError('cabecera sin mes: F arm Input Prices - Dollars ($) July 2025 June 2026 July 2026')
+meses leidos: 55 saltados: 1 rango: 2022-01 2026-08
+descartada ca-ab-inputs-assert-300-sc-liquid-10-8-litre-m: 14 puntos, ultimo 2023-02
+descartada ca-ab-inputs-ivermectin-injection-for-cattle-sheep-and-swine-200-ml-injectable-m: 6 puntos, ultimo 2026-08
+descartada ca-ab-inputs-ivomec-injection-for-cattle-sheep-and-swine-250-ml-injectable-m: 8 puntos, ultimo 2026-01
+descartada ca-ab-inputs-penicillin-procaine-penicillin-g-injectable-short-acting-300-mg-ml-250-m: 15 puntos, ultimo 2023-03
+descartada ca-ab-inputs-sprayer-pull-type-800-900-gallon-tank-90-100-boom-new-each-m: 15 puntos, ultimo 2023-03
+descartada ca-ab-inputs-vitamin-a-d-e-oral-liquid-added-to-water-425-ml-bottle-m: 8 puntos, ultimo 2026-08
+descartada ca-ab-inputs-vitamin-a-d-oral-containing-vitamin-a-d-selenium-250-ml-bottle-m: 6 puntos, ultimo 2025-11
+OK: 82 series, 55 meses
