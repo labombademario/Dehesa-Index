@@ -1,8 +1,8 @@
 sin CDL de 2026 RuntimeError("https://nassgeodata.gmu.edu/axis2/services/CDLService/GetCDLStat?y
 ultimo ano de CDL: 2025
-pendientes: 864
+pendientes: 1
 fallo Minnesota 2022: ValueError('sin cultivos')
-descargados: 863, fallos: 1
+descargados: 0, fallos: 1
 descartada us-cdl-durum-wheat-09-a: 8 puntos, ultimo 2021
 descartada us-cdl-canola-19-a: 6 puntos, ultimo 2020
 descartada us-cdl-canola-23-a: 15 puntos, ultimo 2022
