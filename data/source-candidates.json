@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-22T23:28:45Z",
+ "generatedAt": "2026-10-23T00:54:44Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -7880,7 +7880,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "dataset": "Ya integrada (606 series en el catalogo unificado)",
+   "dataset": "Ya integrada (600 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
