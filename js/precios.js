@@ -592,9 +592,10 @@
     // Base de referencia siempre USD: solo se muestra el cambio de la moneda de la región elegida.
     // En EE. UU. no hay cambio que mostrar (ya está en USD).
     var date = D.formatFxDate(D.FX_DATE, lang());
-    if (state.location === 'eu') return t.fxLabelEu.replace('{eur}', fmtFxRate(D.FX.EUR)).replace('{date}', date);
-    if (state.location === 'uk') return t.fxLabelUk.replace('{gbp}', fmtFxRate(D.FX.GBP)).replace('{date}', date);
-    if (state.location === 'ca') return t.fxLabelCa.replace('{cad}', fmtFxRate(D.FX.CAD)).replace('{date}', date);
+    var note = t.fxMonthNote ? ' ' + t.fxMonthNote : '';
+    if (state.location === 'eu') return t.fxLabelEu.replace('{eur}', fmtFxRate(D.FX.EUR)).replace('{date}', date) + note;
+    if (state.location === 'uk') return t.fxLabelUk.replace('{gbp}', fmtFxRate(D.FX.GBP)).replace('{date}', date) + note;
+    if (state.location === 'ca') return t.fxLabelCa.replace('{cad}', fmtFxRate(D.FX.CAD)).replace('{date}', date) + note;
     return '';
   }
 

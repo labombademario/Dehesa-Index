@@ -264,6 +264,11 @@ jobs:
       - name: Unit Engine (FX historico, bushel por cultivo, ha/acre)
         run: node scripts/test-unit-engine.mjs
 
+      - name: Conversión de moneda con la media mensual del BCE (data.js)
+        run: |
+          node scripts/test-fx-monthly.mjs
+          python3 scripts/build-fx-monthly.py --check
+
       - name: Smart Watchlist 2.0 (reglas combinables, Transmission Watch, importacion validada)
         run: node scripts/test-watchlist.mjs
 

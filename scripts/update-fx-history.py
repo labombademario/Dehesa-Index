@@ -31,4 +31,7 @@ def main():
            "source": {"name": "European Central Bank — euro foreign exchange reference rates", "url": "https://data.ecb.europa.eu/data/datasets/EXR", "license": "ECB reuse policy (free with attribution)"}, "currencies": out}
     (ROOT / "data" / "fx-history.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
     (ROOT / "data" / "fx-history-log.txt").write_text("\n".join(LOG))
+    # la web convierte con la media del mes del dato: la tabla va embebida en js/data.js
+    import subprocess; r = subprocess.run([sys.executable, str(ROOT / "scripts" / "build-fx-monthly.py")], capture_output=True, text=True); log("FXM:", (r.stdout + r.stderr).strip()[:200])
+    (ROOT / "data" / "fx-history-log.txt").write_text("\n".join(LOG))
 main()

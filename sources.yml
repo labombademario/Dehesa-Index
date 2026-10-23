@@ -1663,7 +1663,7 @@ sources:
     timeout: 10
     continue: true
     data: []
-    extra: [fx-history.json]
+    extra: [fx-history.json, '!js/data.js']
     log: fx-history-log.txt
     message: Tipos de cambio históricos (BCE)
   - id: seo-pages
