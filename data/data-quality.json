@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T01:34:54Z",
+ "generatedAt": "2026-10-23T01:40:06Z",
  "summary": {
-  "files": 84,
+  "files": 86,
   "errors": 0,
   "warnings": 27
  },
@@ -919,6 +919,38 @@
     "lines": 0
    },
    "generatedAt": "2026-10-22T15:17:26Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-ers-productivity-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 326,
+    "points": 20254,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T01:35:41Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-ers-food-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 740,
+    "points": 24150,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-23T01:38:49Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0

@@ -7138,6 +7138,52 @@
     "US": "usda_ers"
    },
    "notes": "Uso y precio de fertilizantes de EE. UU. (USDA ERS, Fertilizer Use and Price): consumo de nutrientes y materiales, precios pagados, indices y dosis en maiz por estado; archivo historico sin actualizar, sin cambiar valores."
+  },
+  "data/us-ers-food-stats.json": {
+   "byCountry": {
+    "US": "usda_ers"
+   },
+   "notes": "Gasto en alimentos y dolar de la comida de EE. UU. (USDA ERS, Food Expenditure Series y Food Dollar Series): ventas mensuales, gasto anual, ventas por estado y reparto del dolar entre agricultura y resto de la cadena, sin cambiar valores."
+  },
+  "data/us-ers-productivity-stats.json": {
+   "byCountry": {
+    "US": "usda_ers",
+    "AR": "usda_ers",
+    "AT": "usda_ers",
+    "AU": "usda_ers",
+    "BE": "usda_ers",
+    "BG": "usda_ers",
+    "CA": "usda_ers",
+    "CH": "usda_ers",
+    "CL": "usda_ers",
+    "CY": "usda_ers",
+    "CZ": "usda_ers",
+    "DE": "usda_ers",
+    "DK": "usda_ers",
+    "EE": "usda_ers",
+    "EL": "usda_ers",
+    "ES": "usda_ers",
+    "FI": "usda_ers",
+    "FR": "usda_ers",
+    "HR": "usda_ers",
+    "HU": "usda_ers",
+    "IE": "usda_ers",
+    "IT": "usda_ers",
+    "LT": "usda_ers",
+    "LU": "usda_ers",
+    "LV": "usda_ers",
+    "MT": "usda_ers",
+    "NL": "usda_ers",
+    "PL": "usda_ers",
+    "PT": "usda_ers",
+    "RO": "usda_ers",
+    "SE": "usda_ers",
+    "SI": "usda_ers",
+    "SK": "usda_ers",
+    "UK": "usda_ers",
+    "UY": "usda_ers"
+   },
+   "notes": "Productividad agraria (USDA ERS, Agricultural Productivity in the U.S. e International Agricultural Productivity): PTF, produccion e insumos, sin cambiar valores."
   }
  },
  "derived": [

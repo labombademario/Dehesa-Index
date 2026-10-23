@@ -413,6 +413,10 @@
   "data/france-saa-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de catalogo de la SAA de Francia; las lee build-series-registry y el catalogo, no el navegador."
+  },
+  "data/us-ers-food-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Gasto en alimentos de EE. UU. (USDA ERS): alimenta el catalogo y el explorador. Ninguna pagina descarga este fichero."
   }
  },
  "prefixes": {
@@ -472,13 +476,5 @@
    },
    "note": "Empleo agricola, TERUTI, vendimia e IPAMPA de Francia (Agreste): la pagina agreste.html descarga cada fichero solo al abrir su pestaña (los IPAMPA, de 0,9 y 1,1 MB, el de regiones solo despues del nacional)."
   }
- },
- "data/us-ers-bioenergy-stats.json": {
-  "class": "BUILD_ONLY",
-  "note": "Bioenergia de EE. UU. (USDA ERS): alimenta el catalogo y el explorador. Ninguna pagina descarga este fichero."
- },
- "data/us-ers-fertilizer-stats.json": {
-  "class": "BUILD_ONLY",
-  "note": "Fertilizantes de EE. UU. (USDA ERS): alimenta el catalogo y el explorador. Ninguna pagina descarga este fichero."
  }
 }
