@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T21:26:00Z",
+ "generatedAt": "2026-10-23T21:38:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 256,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
   "repoGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
-  "checkedAt": "2026-10-23T21:26:00Z"
+  "checkedAt": "2026-10-23T21:38:00Z"
  },
  "pipelines": [
   {
@@ -26,7 +26,7 @@
    "crons": [
     "30 21 * * 5,6"
    ],
-   "nextRun": "2026-10-23T21:30:00Z",
+   "nextRun": "2026-10-24T21:30:00Z",
    "files": [
     {
      "path": "data/alberta-weekly-debug.txt"
@@ -3846,8 +3846,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40005768901"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -4119,7 +4119,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T21:13:48Z"
+     "lastChange": "2026-10-23T21:29:10Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4207,9 +4207,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40005620337"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 5,
-    "failed": 5
+    "failed": 4
    },
    "status": "ok",
    "expectedEveryHours": 3.0
