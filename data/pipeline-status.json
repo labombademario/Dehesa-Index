@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T18:35:00Z",
+ "generatedAt": "2026-10-23T18:44:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 254,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
   "repoGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
-  "checkedAt": "2026-10-23T18:35:00Z"
+  "checkedAt": "2026-10-23T18:44:00Z"
  },
  "pipelines": [
   {
@@ -1059,7 +1059,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-23T18:08:19Z"
+     "lastChange": "2026-10-23T18:42:11Z"
     }
    ],
    "last": {
@@ -2239,7 +2239,7 @@
    "crons": [
     "40 18 * * 3,5"
    ],
-   "nextRun": "2026-10-23T18:40:00Z",
+   "nextRun": "2026-10-28T18:40:00Z",
    "files": [],
    "last": null,
    "recent": null,
@@ -2533,9 +2533,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-20T18:36:47Z",
-    "durationSec": 217,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39476271155"
+    "startedAt": "2026-10-23T18:36:52Z",
+    "durationSec": 325,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40004733271"
    },
    "recent": {
     "runs": 10,
@@ -3835,8 +3835,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39980637808"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4037,7 +4037,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-23T18:08:19Z"
+     "lastChange": "2026-10-23T18:42:11Z"
     }
    ],
    "last": {
@@ -4108,7 +4108,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T18:22:44Z"
+     "lastChange": "2026-10-23T18:37:56Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4196,9 +4196,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39980514570"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 4,
-    "failed": 6
+    "failed": 5
    },
    "status": "ok",
    "expectedEveryHours": 3.0

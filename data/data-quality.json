@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T15:43:22Z",
+ "generatedAt": "2026-10-23T18:44:21Z",
  "summary": {
   "files": 91,
   "errors": 0,
@@ -189,10 +189,10 @@
    "warnings": [],
    "stats": {
     "series": 123,
-    "points": 20888,
+    "points": 20920,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T16:15:47Z",
+   "generatedAt": "2026-10-23T16:16:31Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -205,10 +205,10 @@
    "warnings": [],
    "stats": {
     "series": 254,
-    "points": 9260,
+    "points": 9267,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T16:56:04Z",
+   "generatedAt": "2026-10-23T16:57:21Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -247,7 +247,7 @@
     "points": 24356,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T17:28:53Z",
+   "generatedAt": "2026-10-23T18:07:59Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -260,10 +260,10 @@
    "warnings": [],
    "stats": {
     "series": 284,
-    "points": 11936,
+    "points": 11944,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T17:21:46Z",
+   "generatedAt": "2026-10-23T17:18:41Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -302,10 +302,10 @@
    ],
    "stats": {
     "series": 954,
-    "points": 56120,
+    "points": 56128,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T17:56:05Z",
+   "generatedAt": "2026-10-23T17:55:24Z",
    "info": [],
    "nWarnings": 36,
    "nErrors": 0
@@ -533,10 +533,10 @@
    ],
    "stats": {
     "series": 822,
-    "points": 39568,
+    "points": 39583,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T18:06:38Z",
+   "generatedAt": "2026-10-23T18:04:15Z",
    "info": [],
    "nWarnings": 7,
    "nErrors": 0
@@ -680,10 +680,10 @@
    ],
    "stats": {
     "series": 899,
-    "points": 33490,
+    "points": 33499,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T18:09:58Z",
+   "generatedAt": "2026-10-23T18:08:17Z",
    "info": [],
    "nWarnings": 40,
    "nErrors": 0
@@ -722,10 +722,10 @@
    ],
    "stats": {
     "series": 2891,
-    "points": 186234,
+    "points": 186288,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T18:40:05Z",
+   "generatedAt": "2026-10-23T18:41:54Z",
    "info": [],
    "nWarnings": 185,
    "nErrors": 0
@@ -764,10 +764,10 @@
    ],
    "stats": {
     "series": 2223,
-    "points": 188285,
+    "points": 188312,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T18:40:05Z",
+   "generatedAt": "2026-10-23T18:41:54Z",
    "info": [],
    "nWarnings": 68,
    "nErrors": 0
@@ -805,10 +805,10 @@
    ],
    "stats": {
     "series": 1619,
-    "points": 88507,
+    "points": 88516,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T18:40:05Z",
+   "generatedAt": "2026-10-23T18:41:54Z",
    "info": [],
    "nWarnings": 24,
    "nErrors": 0
@@ -843,10 +843,10 @@
    ],
    "stats": {
     "series": 1978,
-    "points": 122536,
+    "points": 122568,
     "lines": 0
    },
-   "generatedAt": "2026-10-20T18:40:05Z",
+   "generatedAt": "2026-10-23T18:41:54Z",
    "info": [],
    "nWarnings": 21,
    "nErrors": 0
@@ -952,7 +952,7 @@
     "points": 1752,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T02:34:40Z",
+   "generatedAt": "2026-10-23T16:40:46Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -968,7 +968,7 @@
     "points": 5720,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T02:18:46Z",
+   "generatedAt": "2026-10-23T16:19:36Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -984,7 +984,7 @@
     "points": 7719,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T02:16:10Z",
+   "generatedAt": "2026-10-23T15:58:58Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1028,7 +1028,7 @@
     "points": 20254,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T01:35:41Z",
+   "generatedAt": "2026-10-23T17:06:19Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1044,7 +1044,7 @@
     "points": 23406,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T01:40:51Z",
+   "generatedAt": "2026-10-23T16:41:43Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1060,7 +1060,7 @@
     "points": 5755,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T01:58:39Z",
+   "generatedAt": "2026-10-23T16:11:35Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1092,7 +1092,7 @@
     "points": 9683,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T01:26:35Z",
+   "generatedAt": "2026-10-23T15:56:55Z",
    "info": [],
    "nWarnings": 15,
    "nErrors": 0
