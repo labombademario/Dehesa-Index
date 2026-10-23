@@ -24,9 +24,9 @@ def parse_text(text):
     lines = [l.strip() for l in text.splitlines() if l.strip()]
     hdr = next((l for l in lines if re.search(r"Dollars", l)), None)
     if not hdr: raise ValueError("sin cabecera de precios")
-    m = re.search(r"\b([A-Z][a-z]{2})\s+(\d{4})\s*$", hdr)
-    if not m or m.group(1).lower() not in MONTHS: raise ValueError("cabecera sin mes: " + hdr[:80])
-    per = "%s-%02d" % (m.group(2), MONTHS[m.group(1).lower()]); out = {}
+    m = re.search(r"\b([A-Z][a-z]{2,8})\s+(\d{4})\s*$", hdr)
+    if not m or m.group(1)[:3].lower() not in MONTHS: raise ValueError("cabecera sin mes: " + hdr[:80])
+    per = "%s-%02d" % (m.group(2), MONTHS[m.group(1)[:3].lower()]); out = {}
     for l in lines[lines.index(hdr) + 1:]:
         mm = LINE.match(l)
         if not mm or mm.group("c") == "-": continue
@@ -35,14 +35,15 @@ def parse_text(text):
     return per, out
 def unit_of(name):
     n = name.lower().rstrip(". ")
-    for pat, u in ((r"100 kwh$", "CAD/100 kWh"), (r"\bgj$", "CAD/GJ"), (r"100 litres$", "CAD/100 L"), (r"\blitre$", "CAD/L"), (r"\btonne$", "CAD/tonne"), (r"\bton$", "CAD/short ton"), (r"\bbushel$", "CAD/bushel"),
-                   (r"per month$", "CAD/month"), (r"per hour$", "CAD/hour"), (r"\beach$", "CAD each"), (r"\bbagged, \d+ kg$", "CAD/bag"), (r"\bkg$", "CAD/bag")):
+    for pat, u in ((r"100 kwh$", "CAD/100 kWh"), (r"\bgj$", "CAD/GJ"), (r"100 litres$", "CAD/100 L"), (r"\btonne$", "CAD/tonne"), (r"\bton$", "CAD/short ton"), (r"\bbushel$", "CAD/bushel"),
+                   (r"per month$", "CAD/month"), (r"per hour$", "CAD/hour"), (r"\beach$", "CAD each"), (r"\bbagged, [\d.]+ kg$", "CAD/bag")):
         if re.search(pat, n): return u
     return "CAD"
 def group_of(name):
     n = name.lower()
     if n.startswith("fertilizer"): return "inputs_f"
-    if re.search(r"ration|supplement|replacer|feed |hay,|mineral|complete feed", n): return "inputs_a"
+    if n.startswith(("seed", "ivermectin", "ivomec", "vitamin", "penicillin")): return "inputs"
+    if re.search(r"ration|supplement|replacer|^feed |^hay,|cattle mineral|complete feed", n): return "inputs_a"
     return "inputs"
 def build(months):
     """months = {AAAA-MM: {producto: valor}} -> [serie]."""
@@ -56,7 +57,13 @@ def build(months):
         ids[sid] = name
         s = U.mk_series(sid, group_of(name), "Alberta farm input prices: %s" % name, unit_of(name), "monthly", pts, SRC, min_points=12, max_age_years=1)
         if s: out.append(s)
-    return out
+    newest = max(months)
+    ny, nm = int(newest[:4]), int(newest[5:]); k = ny * 12 + nm - 1 - 3
+    lim = "%d-%02d" % (k // 12, k % 12 + 1); live = []
+    for s in out:
+        if s["latestPeriod"] < lim: U.log("producto descontinuado o con otra especificacion, fuera: %s (ultimo %s)" % (s["id"], s["latestPeriod"]))
+        else: live.append(s)
+    return live
 def pdf_links():
     j = json.loads(U.get(CKAN).decode("utf-8")); links = []
     for r in j["result"]["results"]:

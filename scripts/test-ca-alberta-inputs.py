@@ -27,12 +27,14 @@ eq(d["Double Disc, heavy-duty tandem, 19-21', 22\" blades, new, each"], 105104.0
 eq("Seed, Barley, Canada No. 1, Feed Certified, bulk, per bushel" in d, False, "mes actual sin dato se salta"); eq(len(d), 8, "no entran el texto ni la fuente")
 eq(A.unit_of("Fertilizer, 46-0-0, Urea, bulk, tonne"), "CAD/tonne", "unidad tonelada"); eq(A.unit_of("Electricity, farm use, (excluding service or delivery charge), 100 kwh"), "CAD/100 kWh", "kWh")
 eq(A.unit_of("Natural Gas, (excluding service or delivery charge, prov. rebate deducted where applicable), GJ"), "CAD/GJ", "GJ"); eq(A.unit_of("Diesel Fuel, marked farm fuel, (provincial allowance deducted), 100 litres"), "CAD/100 L", "diesel")
-eq(A.group_of("Fertilizer, 46-0-0, Urea, bulk, tonne"), "inputs_f", "grupo fertilizante"); eq(A.group_of("Hog Grower Ration, pellets, 15-17% protein, bagged, 25 kg"), "inputs_a", "grupo pienso"); eq(A.group_of("Diesel Fuel, marked farm fuel, 100 litres"), "inputs", "grupo otros")
+eq(A.group_of("Seed, Barley, Canada No. 1, Feed Certified, bulk, per bushel"), "inputs", "semilla no es pienso"); eq(A.unit_of("Roundup WeatherMAX, liquid, 10 litre"), "CAD", "bidon: sin unidad por litro"); eq(A.group_of("Fertilizer, 46-0-0, Urea, bulk, tonne"), "inputs_f", "grupo fertilizante"); eq(A.group_of("Hog Grower Ration, pellets, 15-17% protein, bagged, 25 kg"), "inputs_a", "grupo pienso"); eq(A.group_of("Diesel Fuel, marked farm fuel, 100 litres"), "inputs", "grupo otros")
 months = {"%d-%02d" % (2023 + i // 12, i % 12 + 1): {"Fertilizer, 46-0-0, Urea, bulk, tonne": 800.0 + i, "Diesel Fuel, marked farm fuel, 100 litres": 120.0} for i in range(36)}
 months["2026-02"] = {"Fertilizer, 46-0-0, Urea, bulk, tonne": 900.0}
+for i in range(14): months["%d-%02d" % (2023 + i // 12, i % 12 + 1)]["Old spec product, each"] = 5.0
 s = {x["id"]: x for x in A.build(months)}
 eq(sorted(s), ["ca-ab-inputs-diesel-fuel-marked-farm-fuel-100-litres-m", "ca-ab-inputs-fertilizer-46-0-0-urea-bulk-tonne-m"], "ids")
 try:
+    eq(A.parse_text("Farm Input Prices - Dollars ($) July 2025 June 2026 July 2026\nUrea, tonne 1.00 2.00 3.00")[0], "2026-07", "mes con nombre largo")
     A.parse_text("nada"); bad.append("deberia fallar sin cabecera")
 except ValueError: pass
 print("OK test-ca-alberta-inputs" if not bad else "\n".join(bad)); sys.exit(1 if bad else 0)
