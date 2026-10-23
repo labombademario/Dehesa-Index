@@ -64,8 +64,11 @@ def food_dollar(url, kind, sg):
         v = U.fnum(r[ix["Total"]]); y = r[ix["Year"]].strip()
         if v is None or not re.match(r"^\d{4}$", y): continue
         k = (r[ix["Table_num"]].strip(), r[ix["Category_desc"]].strip(), r[ix["Units"]].strip()); by[k].append((y, v)); names[k] = r[ix["Table_name"]].strip()
-    ser = []
+    ser = []; seen = set()
     for (tn, cat, un), pts in sorted(by.items()):
+        sig = (tn, un, tuple(sorted(pts)))
+        if sig in seen: continue   # 'Total' y 'Total food dollar' publican las mismas cifras
+        seen.add(sig)
         u = "cents per food dollar" if "cents" in un.lower() else ("million 2017 USD" if "2017" in un else "million USD")
         s = U.mk_series("us-ersfd-t%s-%s-%s-%s-a" % (U.slug(tn, 4), U.slug(cat, 30), "c" if "cents" in un.lower() else "m", kind), "consumption", "Food dollar, %s: %s (ERS, %s)" % (names[(tn, cat, un)], cat, "real" if kind == "real" else "nominal"), u, "annual", pts, sg, min_points=8, max_age_years=4,
                         note="Modelo 2011 de ERS; los datos de los últimos años son preliminares.")
@@ -86,8 +89,8 @@ def main():
         mo = link(PEXP, r"/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers\.csv"); U.log("mensual:", mo)
         ser += monthly(need(mo, "ventas mensuales"), "monthly-sales", "Monthly food sales, all purchasers, with taxes and tips")
         n0 = len(ser)
-        for pat, sid, lab in ((r"/nominal-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers\.csv", "nom", "Food and alcohol expenditures, nominal, with taxes and tips"),
-                              (r"/constant-dollar-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers\.csv", "const", "Food and alcohol expenditures, constant dollars, with taxes and tips"),
+        for pat, sid, lab in ((r"/nominal-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers\.csv", "nom", "Expenditures, nominal, with taxes and tips"),
+                              (r"/constant-dollar-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers\.csv", "const", "Expenditures, constant dollars, with taxes and tips"),
                               (r"/food-expenditures-by-final-purchaser\.csv", "buyer", "Food expenditures by final purchaser")):
             u = link(PEXP, pat); ser += annual_cols(need(u, sid), sid, lab, SGE)
         U.log("gasto anual:", len(ser) - n0, "series"); n0 = len(ser)
