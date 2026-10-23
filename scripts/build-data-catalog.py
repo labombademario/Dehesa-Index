@@ -101,7 +101,7 @@ def main():
         if p in MON: return '%d-%02d' % (y, MON[p])
         if re.match(r'^Q\d$', p): return '%d-%s' % (y, p)
         if re.match(r'^\d\d$', p): return '%d-%s' % (y, p)
-        if re.match(r'^\d\d-\d\d$', p): return ('%d-%s' % (y, p)) if freq == 'weekly' else '%d-%s' % (y, p[:2])
+        if re.match(r'^\d\d-\d\d$', p): return ('%d-%s' % (y, p)) if freq in ('weekly', 'daily') else '%d-%s' % (y, p[:2])   # diario como semanal: fecha completa (si no, cientos de puntos caen en el mismo mes)
         return None
     obs = json.loads((ROOT / 'data/latest.json').read_text())['observations']
     nprod = 0

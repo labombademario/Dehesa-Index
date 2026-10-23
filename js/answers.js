@@ -200,11 +200,11 @@
       if (!p._w) { p._w = []; LANGS.forEach(function (l) { p._w = p._w.concat(toks(p.names[l])); }); p._w = p._w.concat(toks(p.kw || '')); p._t = {}; LANGS.forEach(function (l) { p._t[l] = toks(p.names[l]).length; }); }
       var tot = 0, ok = true;
       for (var i = 0; i < pt.length; i++) {
-        var b = 0; for (var j = 0; j < p._w.length; j++) { var s = pt[i].length < 3 && pt[i] !== p._w[j] ? 0 : env.tokScore(pt[i], p._w[j]); if (s > b) b = s; if (b === 1) break; }
+        var b = 0; for (var j = 0; j < p._w.length; j++) { var s = pt[i].length < 4 && pt[i] !== p._w[j] ? 0 : env.tokScore(pt[i], p._w[j]); if (s > b) b = s; if (b === 1) break; }
         if (b < 0.6) { ok = false; break; } tot += b;
       }
       if (!ok) return;
-      var sc = tot / pt.length - Math.min(p._t.es + p._t.en, 12) / 200;
+      var sc = tot / pt.length - Math.min(p._t.es + p._t.en, 12) / 200 - Math.min(p._t[curLang] || 0, 12) / 60;
       var own = toks(p.names[curLang] || ''); if (pt.every(function (w) { return own.some(function (o) { return env.tokScore(w, o) >= 0.95; }); })) sc += 0.1;   // «grano» en italiano es el trigo; en español, un grano cualquiera
       if (!best || sc > best.sc) best = { p: p, sc: sc };
     });
