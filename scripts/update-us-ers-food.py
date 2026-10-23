@@ -66,6 +66,7 @@ def food_dollar(url, kind, sg):
         k = (r[ix["Table_num"]].strip(), r[ix["Category_desc"]].strip(), r[ix["Units"]].strip()); by[k].append((y, v)); names[k] = r[ix["Table_name"]].strip()
     ser = []; seen = set()
     for (tn, cat, un), pts in sorted(by.items()):
+        if cat == "Total food dollar" and (tn, "Total", un) in by: continue   # mismo total con otro nombre
         sig = (tn, un, tuple(sorted(pts)))
         if sig in seen: continue   # 'Total' y 'Total food dollar' publican las mismas cifras
         seen.add(sig)
