@@ -27,6 +27,10 @@ const REG = read('data/license-registry.json').sources, ALIAS = {};
 for (const [k, v] of Object.entries(REG)) for (const a of (v.aliases || [])) ALIAS[a] = k;
 const canon = id => (REG[id] ? id : ALIAS[id] || id);
 
+// Categoria de cada producto (la misma de la web): la app agrupa con ella, sin lista propia que se quede atras
+const CAT_OF = {}, CAT_LABELS = {};
+for (const c of D.RAW) { for (const p of c.products) if (!CAT_OF[p.nameKey]) CAT_OF[p.nameKey] = c.id; CAT_LABELS[c.id] = {}; for (const l of LANGS) CAT_LABELS[c.id][l] = ((D.CATS[l] || {})[c.id] || {}).label || c.id; }
+
 // Lugar de cada observacion, sacado de su metodologia publicada (sin inventar): mercado concreto, pais o agregado
 const PLACE = {
   'España': t4('España', 'Spain', 'Espagne', 'Spagna'), 'UE': t4('UE', 'EU', 'UE', 'UE'), 'EE. UU.': t4('EE. UU.', 'US', 'États-Unis', 'USA'),
@@ -103,7 +107,7 @@ for (const region of ['eu', 'us', 'uk', 'ca']) {
     if (region === 'eu' && o.product === 'potasa') Object.assign(name, t4('Abonos potásicos (K), agregado UE', 'Potash fertilisers (K), EU aggregate', 'Engrais potassiques (K), agrégat UE', 'Fertilizzanti potassici (K), aggregato UE'));
     // Gas natural: en EE. UU. es Henry Hub y en Europa el TTF; cada fila con el suyo, no los dos nombres juntos
     if (o.product === 'gas_natural') Object.assign(name, region === 'us' ? t4('Gas natural (Henry Hub)', 'Natural gas (Henry Hub)', 'Gaz naturel (Henry Hub)', 'Gas naturale (Henry Hub)') : t4('Gas natural (TTF)', 'Natural gas (TTF)', 'Gaz naturel (TTF)', 'Gas naturale (TTF)'));
-    prices.push({ id: o.id, product: o.product, region, name, place: place(o), unit: unit(o), currency: o.currency, value: o.value,
+    prices.push({ id: o.id, product: o.product, region, ...(CAT_OF[o.product] ? { cat: CAT_OF[o.product] } : {}), name, place: place(o), unit: unit(o), currency: o.currency, value: o.value,
       changePct: typeof o.changePct === 'number' ? Math.round(o.changePct * 100) / 100 : null, date: o.observationDate, frequency: o.frequency, stale: STALE.has(o.id) || undefined,
       sourceId: canon(o.sourceId), sourceName: (REG[canon(o.sourceId)] || {}).short || (REG[canon(o.sourceId)] || {}).name || canon(o.sourceId), comparability: o.comparability || null, note: o.methodology ? { es: o.methodology } : null,
       ...(() => { const h = history(region, o.product, o.frequency); HIST[o.id] = h.all; return { points: h.points, yearAgo: h.yearAgo }; })() });
@@ -370,7 +374,7 @@ for (const c of countries) {
 // Escritura: solo si cambia el contenido (generatedAt fuera del hash) + manifiesto con hash y tamano
 fs.mkdirSync(OUT, { recursive: true });
 const gen = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
-const files = { 'prices.json': { prices }, 'today.json': todayDoc, 'news.json': { news }, 'countries.json': { countries }, 'sections.json': { sections } };
+const files = { 'prices.json': { categories: CAT_LABELS, prices }, 'today.json': todayDoc, 'news.json': { news }, 'countries.json': { countries }, 'sections.json': { sections } };
 if (pac) files['pac.json'] = { pac };
 if (summary) files['summary.json'] = { summary };
 const manifest = { schemaVersion: 1, generatedAt: gen, languages: LANGS, files: {} };
