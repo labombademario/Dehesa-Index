@@ -8,7 +8,7 @@ omitida (sin datos recientes): uk-egg-price-organic -
 huevos: 29 series; publicado 2026-07-30
 omitida (sin datos recientes): uk-poultry-meat-production-turkeys 2021-12
 omitida (sin datos recientes): uk-poultry-meat-production-ducks 2021-12
-aves: 12 series; publicado 2026-09-17
+aves: 12 series; publicado 2026-10-22
 cereales por región: 222 series; publicado 2026-10-08
 omitida (sin datos recientes): prod-milk-powders
 leche: 12 series; publicado 2026-10-01
