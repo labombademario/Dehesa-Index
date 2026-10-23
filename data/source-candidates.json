@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T00:54:44Z",
+ "generatedAt": "2026-10-23T12:44:58Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 188,
+  "total": 190,
   "byStatus": {
-   "ACTIVE": 158,
+   "ACTIVE": 160,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1376,6 +1376,51 @@
    ]
   },
   {
+   "sourceId": "aafc_slaughter",
+   "registryId": "aafc_slaughter",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Agriculture and Agri-Food Canada — Weekly Red Meat Slaughter",
+   "dataset": "Ya integrada (11 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "pigs",
+    "sheep"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "production"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-Canada",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "lastChecked": "2026-10-22",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "aafc_wholesale",
    "registryId": "aafc_wholesale",
    "country": "CA",
@@ -1981,6 +2026,59 @@
    ]
   },
   {
+   "sourceId": "alberta_inputs",
+   "registryId": "alberta_inputs",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Alberta Agriculture and Irrigation — Alberta Farm Input Prices",
+   "dataset": "Ya integrada (54 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "energy",
+    "fertilizer",
+    "milk",
+    "oats",
+    "pigs",
+    "poultry",
+    "rapeseed",
+    "sheep",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-Alberta",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "lastChecked": "2026-10-22",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "ama_agrardiesel",
    "registryId": "ama_agrardiesel",
    "country": "AT",
@@ -2085,11 +2183,15 @@
    "country": "CA",
    "scope": "integrated",
    "institution": "Bank of Canada (Valet API)",
-   "dataset": "Ya integrada (1 series en el catalogo unificado)",
-   "products": [],
+   "dataset": "Ya integrada (14 series en el catalogo unificado)",
+   "products": [
+    "energy"
+   ],
    "productsConfirmed": true,
-   "metrics": [],
-   "frequency": "monthly",
+   "metrics": [
+    "price"
+   ],
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,
@@ -6984,7 +7086,7 @@
    "country": "CA",
    "scope": "integrated",
    "institution": "Statistics Canada",
-   "dataset": "Ya integrada (728 series en el catalogo unificado)",
+   "dataset": "Ya integrada (992 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -7653,12 +7755,15 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
-   "dataset": "Ya integrada (505 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1812 series en el catalogo unificado)",
    "products": [
     "butter",
     "cattle",
     "cheese",
     "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
     "maize",
     "milk",
     "olive",
@@ -7673,6 +7778,7 @@
    ],
    "productsConfirmed": true,
    "metrics": [
+    "input_price",
     "price",
     "production",
     "stocks",
@@ -7880,7 +7986,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "dataset": "Ya integrada (600 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1115 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
