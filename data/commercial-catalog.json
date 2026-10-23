@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T20:34:25Z",
+ "generatedAt": "2026-10-23T23:07:07Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 161,
-  "sourcesApto": 148,
+  "sources": 162,
+  "sourcesApto": 149,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 364,
-  "datasets_apto": 232,
+  "datasets": 367,
+  "datasets_apto": 235,
   "datasets_condiciones": 122,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -1843,6 +1843,22 @@
    "redistribution": "yes",
    "attribution": "Sursa: Monitorul Oficial al României, HG nr. 1.571/2022 și ordinele MADR (106/2024, 44/2026, 268/2025, 447/2023). Extrase.",
    "conditions": "Las reglas son un resumen propio hecho a mano; manda el Monitorul Oficial. Todo se leyó en copias de terceros (legeaz.net, agrointel.ro, sitios de ayuntamientos, static.anaf.ro) porque legislatie.just.ro no se pudo abrir; el art. 9 se leyó también en copias (2010 y 2021), no en la versión oficial vigente. Hay contradicciones entre textos señaladas en las reglas."
+  },
+  {
+   "id": "mrirw_zsrir",
+   "name": "MRiRW / ZSRIR — boletines de precios agrarios en dane.gov.pl",
+   "url": "https://dane.gov.pl/pl/dataset/546",
+   "country": "PL",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Ministerstwo Rolnictwa i Rozwoju Wsi (MRiRW), Zintegrowany System Rolniczej Informacji Rynkowej (ZSRIR), dane.gov.pl, CC BY 4.0"
   },
   {
    "id": "nasa_power",
@@ -6233,6 +6249,37 @@
      "sourceId": "gus_poland",
      "verdict": "apto"
     }
+   ]
+  },
+  {
+   "path": "data/poland-zsrir-log.txt",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "mrirw_zsrir"
+   ]
+  },
+  {
+   "path": "data/poland-zsrir-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "mrirw_zsrir"
+   ],
+   "parts": [
+    {
+     "scope": "pais:PL",
+     "sourceId": "mrirw_zsrir",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/poland-zsrir/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "mrirw_zsrir"
    ]
   },
   {

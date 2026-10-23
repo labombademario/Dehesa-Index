@@ -1693,6 +1693,12 @@
    [
     "portugal_more_index"
    ]
+  ],
+  "poland-zsrir/index.json": [
+   "poland-zsrir-index",
+   [
+    "poland_zsrir_index"
+   ]
   ]
  },
  "globs": {
@@ -1932,6 +1938,12 @@
    "portugal-more",
    [
     "portugal_more"
+   ]
+  ],
+  "poland-zsrir/*.json": [
+   "poland-zsrir",
+   [
+    "poland_zsrir"
    ]
   ]
  },

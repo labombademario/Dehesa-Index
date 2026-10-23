@@ -2012,6 +2012,18 @@ sources:
     data: [portugal-more/index.json, portugal-more-stats.json, portugal-more-log.txt]
     extra: ['!data/portugal-more']
     message: Datos Portugal pesca, balances, leche, carne, IPCA, incendios, cultivos por región, fertilizantes y miel (INE)
+  - id: pl-zsrir
+    name: Update Poland cereal and rapeseed purchase prices (ZSRIR weekly bulletins, Ministry of Agriculture)
+    cron: ['15 7,10,13,16,19 * * 4,5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-pl-zsrir.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/poland-zsrir) data/poland-zsrir-stats.json
+    data: [poland-zsrir/index.json, poland-zsrir-stats.json, poland-zsrir-log.txt]
+    extra: ['!data/poland-zsrir']
+    message: Datos Polonia precios de compra de cereales y colza (ZSRIR)
   - id: nl-rvo
     name: Update Netherlands pig and cattle prices and pig slaughter (RVO)
     cron: ['40 8 * * 2,5']

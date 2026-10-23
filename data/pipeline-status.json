@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T23:16:00Z",
+ "generatedAt": "2026-10-23T23:21:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 256,
+  "ok": 257,
   "late": 3,
-  "error": 7,
+  "error": 6,
   "not_run": 1,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T21:44:33.375769+00:00",
   "repoGeneratedAt": "2026-10-23T21:44:33.375769+00:00",
-  "checkedAt": "2026-10-23T23:16:00Z"
+  "checkedAt": "2026-10-23T23:21:00Z"
  },
  "pipelines": [
   {
@@ -938,8 +938,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40032074810"
    },
    "recent": {
-    "runs": 10,
-    "success": 6,
+    "runs": 8,
+    "success": 5,
     "failed": 2
    },
    "status": "ok",
@@ -3770,19 +3770,18 @@
    "nextRun": "2026-10-26T20:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "cancelled",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-23T19:58:19Z",
-    "durationSec": 1372,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40015570890",
-    "reason": "no se pudo publicar tras 10 intentos"
+    "startedAt": "2026-10-23T23:22:35Z",
+    "durationSec": 13,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40039312668"
    },
    "recent": {
-    "runs": 10,
-    "success": 3,
-    "failed": 4
+    "runs": 8,
+    "success": 2,
+    "failed": 3
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -4118,7 +4117,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T23:04:36Z"
+     "lastChange": "2026-10-23T23:18:08Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4281,6 +4280,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-pl-zsrir.yml",
+   "name": "Update Poland cereal and rapeseed purchase prices (ZSRIR weekly bulletins, Ministry of Agriculture)",
+   "crons": [
+    "15 7,10,13,16,19 * * 4,5"
+   ],
+   "nextRun": "2026-10-29T07:15:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 3.0
   },
   {
    "workflow": "update-poland-eurostat.yml",

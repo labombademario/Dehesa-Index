@@ -523,6 +523,14 @@
     "pattern": "data/portugal-more/"
    },
    "note": "Pesca, balances de abastecimiento, leche recogida, producción bruta de carne, IPCA, incendios rurales, cultivos por región, fertilizantes y miel de Portugal (INE): la página portugal.html descarga cada fichero solo al abrir su pestaña."
+  },
+  "data/poland-zsrir/": {
+   "class": "RUNTIME",
+   "via": {
+    "file": "js/poland.js",
+    "pattern": "data/poland-zsrir/"
+   },
+   "note": "Precios de compra de cereales y colza de Polonia (ZSRIR, Ministerio de Agricultura): la página poland.html descarga cada fichero solo al abrir su pestaña."
   }
  }
 }

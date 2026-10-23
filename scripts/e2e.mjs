@@ -58,6 +58,7 @@ const PAGES = [
   { n: 'netherlands', url: '/netherlands.html', crit: ['#nl-body .ag-chart svg', '#nl-body .ag-tbl'] },
   { n: 'belgium', url: '/belgium.html', crit: ['#be-body .ag-chart svg', '#be-body .ag-tbl'] },
   { n: 'portugal', url: '/portugal.html', crit: ['#pt-body .ag-chart svg', '#pt-body .ag-tbl'] },
+  { n: 'poland', url: '/poland.html', crit: ['#pl-body .ag-chart svg', '#pl-body .ag-tbl'] },
   { n: 'costes-pais', url: '/costes-pais.html?c=ES', crit: ['#cp-panel .cp-tile', '#cp-costes .cp-tbl'] },
   { n: 'pesca', url: '/pesca.html?c=ES', crit: ['#fsh-body .fsh-kpis', '#fsh-body .fsh-tbl'] },
   { n: 'ganaderia', url: '/ganaderia.html', crit: [] },

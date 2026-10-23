@@ -4969,6 +4969,32 @@
    "short": "RIVM Monitor N",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia CC BY 4.0 en el catálogo de datos abiertos para el conjunto agregado; el fichero descargado no lleva la licencia dentro."
+  },
+  "mrirw_zsrir": {
+   "name": "MRiRW / ZSRIR — boletines de precios agrarios en dane.gov.pl",
+   "url": "https://dane.gov.pl/pl/dataset/546",
+   "country": "PL",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Ministerstwo Rolnictwa i Rozwoju Wsi (MRiRW), Zintegrowany System Rolniczej Informacji Rynkowej (ZSRIR), dane.gov.pl, CC BY 4.0",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-23",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "La API de dane.gov.pl (1.4/datasets/{id}, leida 2026-10-23) declara license_name «CC BY 4.0» y license_condition_default_cc40 = true, con titular MRiRW, en los conjuntos de cereales (546), colza (957) y el resumen semanal (2000). El acceso directo a zsrir.minrol.gov.pl falla por certificado y no se usa.",
+   "used": true,
+   "aliases": [],
+   "notes": "Boletines xlsx semanales (cereales 546 y colza 957 en la fase 1) de scripts/update-pl-zsrir.py. Medias nacionales ponderadas sin IVA, tal como se publican; sin conversiones. La fecha de la hoja manda sobre el titulo del recurso.",
+   "short": "MRiRW ZSRIR",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia declarada en la API del portal de datos abiertos para cada conjunto; los ficheros xlsx no llevan la licencia dentro."
   }
  },
  "files": {
@@ -7404,6 +7430,24 @@
     "ine_pt"
    ],
    "notes": "Registro de la ultima ejecucion de update-portugal-more.py."
+  },
+  "data/poland-zsrir/": {
+   "sources": [
+    "mrirw_zsrir"
+   ],
+   "notes": "Precios de compra de cereales (dataset 546) y colza (957) del ZSRIR del Ministerio de Agricultura de Polonia (scripts/update-pl-zsrir.py). Cita obligatoria (CC BY 4.0). Sin conversiones; el ultimo punto semanal se contrasta con el resumen del boletin."
+  },
+  "data/poland-zsrir-stats.json": {
+   "byCountry": {
+    "PL": "mrirw_zsrir"
+   },
+   "notes": "Series mensuales seleccionadas (scripts/update-pl-zsrir.py), para el catalogo."
+  },
+  "data/poland-zsrir-log.txt": {
+   "sources": [
+    "mrirw_zsrir"
+   ],
+   "notes": "Registro de la ultima ejecucion de update-pl-zsrir.py."
   }
  },
  "derived": [

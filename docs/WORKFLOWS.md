@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-278 workflows (229 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+279 workflows (230 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -322,6 +322,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-pl-diesel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-pl-diesel.py | pl-diesel.json | finish, validate-files |
 | update-pl-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | pl-ghg-agri.json | finish, validate-files |
 | update-pl-hydro-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-pl-hydro-drought.py | pl-hydro-drought.json | finish, validate-files |
+| update-pl-zsrir.yml | generado | semanal (4,5) | detect-revisions.py, gen-workflows.py, update-pl-zsrir.py | poland-zsrir-stats.json, poland-zsrir/index.json | finish, validate-files |
 
 ## PT
 

@@ -5344,3 +5344,37 @@ def portugal_more(doc, errs, warns, stats):
             for pv in s.get("provisional", []):
                 if pv not in [x[0] for x in s["points"]]: errs.append("portugal-more %s: provisional %s sin dato" % (s["id"], pv)); return
     stats["tablas"] = len(doc["tables"]); stats["puntos"] = n
+
+
+def poland_zsrir_index(doc, errs, warns, stats):
+    for f in doc["files"]:
+        if not f.get("file", "").endswith(".json") or f.get("series", 0) < 1: errs.append("poland-zsrir index: %s sin fichero o sin series" % f.get("file")); return
+    stats["ficheros"] = len(doc["files"])
+
+
+def poland_zsrir(doc, errs, warns, stats):
+    """Periodos AAAA-MM (mensual) o AAAA-Www (semana ISO, 01-53) ordenados y sin repetir (una serie no mezcla formatos), valores numericos positivos, ids unicos, nombres en los cuatro idiomas y ninguna tabla vacia."""
+    import datetime as _dt, re as _re
+    ids = set(); n = 0
+    for t in doc["tables"]:
+        if not t["series"]: errs.append("poland-zsrir %s: tabla vacia" % t["id"]); return
+        if set(t.get("l", {})) != {"en", "fr", "it"}: errs.append("poland-zsrir %s: tabla sin nombre en en/fr/it" % t["id"]); return
+        if not t.get("group"): errs.append("poland-zsrir %s: tabla sin grupo" % t["id"]); return
+        for s in t["series"]:
+            if s["id"] in ids: errs.append("poland-zsrir %s: id repetido" % s["id"]); return
+            if set(s.get("l", {})) != {"en", "fr", "it"} or not all(s["l"].values()): errs.append("poland-zsrir %s: serie sin nombre en en/fr/it" % s["id"]); return
+            ids.add(s["id"]); last = ""; shape = None
+            for p, v in s["points"]:
+                k = "w" if _re.fullmatch(r"\d{4}-W\d{2}", str(p)) else "m" if _re.fullmatch(r"\d{4}-(0[1-9]|1[0-2])", str(p)) else None
+                if k is None: errs.append("poland-zsrir %s: periodo %r" % (s["id"], p)); return
+                if shape is None: shape = k
+                if k != shape: errs.append("poland-zsrir %s: mezcla de formatos de periodo en %s" % (s["id"], p)); return
+                if not 2000 <= int(p[:4]) <= 2100: errs.append("poland-zsrir %s: año %r" % (s["id"], p)); return
+                if k == "w":
+                    try: _dt.date.fromisocalendar(int(p[:4]), int(p[6:]), 7)
+                    except ValueError: errs.append("poland-zsrir %s: semana inexistente %s" % (s["id"], p)); return
+                if p <= last: errs.append("poland-zsrir %s: periodos desordenados o repetidos en %s" % (s["id"], p)); return
+                last = p
+                if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or not 0 < v < 1e7: errs.append("poland-zsrir %s %s: valor %r" % (s["id"], p, v)); return
+                n += 1
+    stats["tablas"] = len(doc["tables"]); stats["puntos"] = n
