@@ -199,6 +199,8 @@
     'diesel:us': { key: 'energia:diesel', sourceId: 'eia', currency: 'USD', unit: 'gal', frequency: 'weekly' },
     'diesel:eu': { key: 'energia:diesel', sourceId: 'eu_oil_bulletin', currency: 'EUR', unit: 'litro', frequency: 'weekly' }
   };
+  // Canadá (abonos, energía, piensos, precios al por menor): una entrada por fila de DehesaData.CA_PANEL (js/data.js), misma clave que scripts/build-ca-panel-obs.py
+  (global.DehesaData && global.DehesaData.CA_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':ca'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'CAD', unit: r[6], frequency: 'monthly' }; });
 
   function numericHistory(observation) {
     // El minigráfico de la tarjeta usa solo los últimos 104 valores (`spark`, ya recortados en data/prices/latest/<region>.json);

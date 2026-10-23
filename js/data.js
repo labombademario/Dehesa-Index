@@ -1208,6 +1208,73 @@
     return out;
   }
 
+  // --- Canadá en el panel: abonos, energía, piensos y precios al por menor (se añade el 23-oct-2026) ---------
+  // Una fila por producto: clave, categoría, nombre en es/en/fr/it, unidad y kg por unidad de Canadá, unidad imperial y su kg, unidad métrica y su kg,
+  // emoticono, mercado/fuente (texto de la ficha) y sourceId. Las cifras las escribe scripts/build-ca-panel-obs.py (misma clave) en el snapshot; aquí solo
+  // están el marcador de posición (price 0) y el registro de confianza en «pendiente»: la ficha no se ve hasta que latest.json trae una observación verificada.
+  var CA_PANEL = [
+    ['urea_ab', 'fertilizantes', 'Urea a granel (Alberta)', 'Urea, bulk (Alberta)', 'Urée en vrac (Alberta)', 'Urea sfusa (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🧪', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['amoniaco_ab', 'fertilizantes', 'Amoníaco anhidro con aplicador (Alberta)', 'Anhydrous ammonia, applied (Alberta)', 'Ammoniac anhydre, épandu (Alberta)', 'Ammoniaca anidra applicata (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🧪', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['potasa_ab', 'fertilizantes', 'Cloruro potásico 0-0-60 (Alberta)', 'Potassium chloride 0-0-60 (Alberta)', 'Chlorure de potassium 0-0-60 (Alberta)', 'Cloruro di potassio 0-0-60 (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🧪', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['map_ab', 'fertilizantes', 'Fosfato monoamónico 11-52-0 (Alberta)', 'Monoammonium phosphate 11-52-0 (Alberta)', 'Phosphate monoammonique 11-52-0 (Alberta)', 'Fosfato monoammonico 11-52-0 (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🧪', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['sulfato_amonico_ab', 'fertilizantes', 'Sulfato amónico 21-0-0-24 (Alberta)', 'Ammonium sulphate 21-0-0-24 (Alberta)', 'Sulfate d\'ammonium 21-0-0-24 (Alberta)', 'Solfato ammonico 21-0-0-24 (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🧪', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['diesel_agr_ab', 'energia', 'Gasóleo agrícola marcado (Alberta)', 'Marked farm diesel (Alberta)', 'Gazole agricole coloré (Alberta)', 'Gasolio agricolo marcato (Alberta)', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['gasolina_agr_ab', 'energia', 'Gasolina agrícola marcada (Alberta)', 'Marked farm gasoline (Alberta)', 'Essence agricole colorée (Alberta)', 'Benzina agricola marcata (Alberta)', 'litro', 1, 'litro', 1, 'litro', 1, '⛽', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['propano_ab', 'energia', 'Propano agrícola (Alberta)', 'Farm propane (Alberta)', 'Propane agricole (Alberta)', 'Propano agricolo (Alberta)', 'litro', 1, 'litro', 1, 'litro', 1, '⛽', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['gas_natural_ab', 'energia', 'Gas natural de uso agrícola (Alberta)', 'Farm natural gas (Alberta)', 'Gaz naturel agricole (Alberta)', 'Gas naturale agricolo (Alberta)', 'gj', 1, 'gj', 1, 'gj', 1, '⛽', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['electricidad_ab', 'energia', 'Electricidad de uso agrícola (Alberta)', 'Farm electricity (Alberta)', 'Électricité agricole (Alberta)', 'Elettricità agricola (Alberta)', 'kwh', 1, 'kwh', 1, 'kwh', 1, '⚡', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['gasolina_ca', 'energia', 'Gasolina en surtidor (media de Canadá)', 'Pump gasoline (Canada average)', 'Essence à la pompe (moyenne du Canada)', 'Benzina alla pompa (media del Canada)', 'litro', 1, 'litro', 1, 'litro', 1, '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['diesel_calgary', 'energia', 'Diésel en surtidor, Calgary', 'Pump diesel, Calgary', 'Gazole à la pompe, Calgary', 'Gasolio alla pompa, Calgary', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['diesel_edmonton', 'energia', 'Diésel en surtidor, Edmonton', 'Pump diesel, Edmonton', 'Gazole à la pompe, Edmonton', 'Gasolio alla pompa, Edmonton', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['diesel_regina', 'energia', 'Diésel en surtidor, Regina', 'Pump diesel, Regina', 'Gazole à la pompe, Regina', 'Gasolio alla pompa, Regina', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['diesel_saskatoon', 'energia', 'Diésel en surtidor, Saskatoon', 'Pump diesel, Saskatoon', 'Gazole à la pompe, Saskatoon', 'Gasolio alla pompa, Saskatoon', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['diesel_winnipeg', 'energia', 'Diésel en surtidor, Winnipeg', 'Pump diesel, Winnipeg', 'Gazole à la pompe, Winnipeg', 'Gasolio alla pompa, Winnipeg', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['diesel_toronto', 'energia', 'Diésel en surtidor, Toronto', 'Pump diesel, Toronto', 'Gazole à la pompe, Toronto', 'Gasolio alla pompa, Toronto', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['diesel_montreal', 'energia', 'Diésel en surtidor, Montreal', 'Pump diesel, Montreal', 'Gazole à la pompe, Montréal', 'Gasolio alla pompa, Montreal', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['diesel_vancouver', 'energia', 'Diésel en surtidor, Vancouver', 'Pump diesel, Vancouver', 'Gazole à la pompe, Vancouver', 'Gasolio alla pompa, Vancouver', 'litro', 'LITRO_KG', 'gal', 'GAL_KG', 'litro', 'LITRO_KG', '⛽', 'Statistics Canada (precio en surtidor, autoservicio)', 'statcan'],
+    ['heno_ab', 'pienso', 'Heno de alfalfa (Alberta)', 'Alfalfa hay (Alberta)', 'Foin de luzerne (Alberta)', 'Fieno di erba medica (Alberta)', 'ton_corta', 907.185, 'ton_corta', 907.185, 'tonelada', 1000, '🌿', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices)', 'alberta_ag'],
+    ['pienso_broiler_ab', 'pienso', 'Pienso de crecimiento para pollos (Alberta)', 'Broiler grower feed (Alberta)', 'Aliment croissance poulets de chair (Alberta)', 'Mangime accrescimento polli (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); precio por saco pasado a tonelada', 'alberta_ag'],
+    ['leche_ternero_ab', 'pienso', 'Sustituto de leche para terneros (Alberta)', 'Calf milk replacer (Alberta)', 'Lait de remplacement pour veaux (Alberta)', 'Latte sostitutivo per vitelli (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); precio por saco pasado a tonelada', 'alberta_ag'],
+    ['iniciador_ternero_ab', 'pienso', 'Pienso de arranque para terneros (Alberta)', 'Calf starter ration (Alberta)', 'Aliment de démarrage pour veaux (Alberta)', 'Mangime di avviamento per vitelli (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); precio por saco pasado a tonelada', 'alberta_ag'],
+    ['suplemento_cebo_ab', 'pienso', 'Suplemento para cebadero (Alberta)', 'Feedlot supplement (Alberta)', 'Complément pour parc d\'engraissement (Alberta)', 'Integratore per feedlot (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); precio por saco pasado a tonelada', 'alberta_ag'],
+    ['pienso_cerdo_ab', 'pienso', 'Pienso de crecimiento para cerdos (Alberta)', 'Hog grower ration (Alberta)', 'Aliment croissance porcs (Alberta)', 'Mangime accrescimento suini (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); precio por saco pasado a tonelada', 'alberta_ag'],
+    ['suplemento_cerdo_ab', 'pienso', 'Suplemento porcino (Alberta)', 'Swine supplement (Alberta)', 'Complément porcin (Alberta)', 'Integratore suini (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); precio por saco pasado a tonelada', 'alberta_ag'],
+    ['mineral_vacuno_ab', 'pienso', 'Mineral para vacuno (Alberta)', 'Cattle mineral (Alberta)', 'Minéral pour bovins (Alberta)', 'Minerale per bovini (Alberta)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌾', 'Alberta Agriculture and Irrigation (Alberta Farm Input Prices); precio por saco pasado a tonelada', 'alberta_ag'],
+    ['leche_1l_ca', 'lacteos', 'Leche, 1 litro, al por menor', 'Milk, 1 litre, retail', 'Lait, 1 litre, au détail', 'Latte, 1 litro, al dettaglio', 'litro', 1, 'litro', 1, 'litro', 1, '🥛', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['leche_4l_ca', 'lacteos', 'Leche, envase de 4 litros, al por menor', 'Milk, 4-litre pack, retail', 'Lait, format 4 litres, au détail', 'Latte, confezione da 4 litri, al dettaglio', 'litro', 1, 'litro', 1, 'litro', 1, '🥛', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['mantequilla_ca', 'lacteos', 'Mantequilla, al por menor', 'Butter, retail', 'Beurre, au détail', 'Burro, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🧈', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['queso_bloque_ca', 'lacteos', 'Queso en bloque, al por menor', 'Block cheese, retail', 'Fromage en bloc, au détail', 'Formaggio in blocco, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🧀', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['yogur_ca', 'lacteos', 'Yogur, al por menor', 'Yogurt, retail', 'Yaourt, au détail', 'Yogurt, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🥛', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['ternera_picada_ca', 'ganado', 'Carne picada de vacuno, al por menor', 'Ground beef, retail', 'Bœuf haché, au détail', 'Carne macinata di manzo, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐄', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['ternera_guisar_ca', 'ganado', 'Vacuno para guisar, al por menor', 'Stewing beef, retail', 'Bœuf à ragoût, au détail', 'Spezzatino di manzo, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐄', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['ternera_lomo_ca', 'ganado', 'Lomo alto de vacuno, al por menor', 'Beef striploin, retail', 'Faux-filet de bœuf, au détail', 'Controfiletto di manzo, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐄', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['ternera_redondo_ca', 'ganado', 'Solomillo bajo de vacuno, al por menor', 'Beef top sirloin, retail', 'Surlonge de bœuf, au détail', 'Lombata di manzo, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐄', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['cerdo_lomo_ca', 'porcino', 'Lomo de cerdo, al por menor', 'Pork loin, retail', 'Longe de porc, au détail', 'Lonza di maiale, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐖', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['cerdo_paleta_ca', 'porcino', 'Paleta de cerdo, al por menor', 'Pork shoulder, retail', 'Épaule de porc, au détail', 'Spalla di maiale, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐖', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['bacon_ca', 'porcino', 'Bacon, al por menor', 'Bacon, retail', 'Bacon, au détail', 'Pancetta affumicata, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🥓', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['pollo_entero_ca', 'avicultura', 'Pollo entero, al por menor', 'Whole chicken, retail', 'Poulet entier, au détail', 'Pollo intero, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐔', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['pollo_pechuga_ca', 'avicultura', 'Pechugas de pollo, al por menor', 'Chicken breasts, retail', 'Poitrines de poulet, au détail', 'Petto di pollo, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐔', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
+    ['huevos_docena_ca', 'avicultura', 'Huevos, docena, al por menor', 'Eggs, dozen, retail', 'Œufs, douzaine, au détail', 'Uova, dozzina, al dettaglio', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan']
+  ];
+  var CA_PANEL_LABELS = { gj: { es: 'GJ', en: 'GJ', fr: 'GJ', it: 'GJ' }, kwh: { es: 'kWh', en: 'kWh', fr: 'kWh', it: 'kWh' } };
+  (function () {
+    var LK = LITRO_KG, GK = GAL_KG;
+    ['es', 'en', 'fr', 'it'].forEach(function (l) { Object.keys(CA_PANEL_LABELS).forEach(function (u) { UNIT_LABELS[l][u] = CA_PANEL_LABELS[u][l]; }); });
+    var nm = function (v) { return v === 'LITRO_KG' ? LK : v === 'GAL_KG' ? GK : v; };
+    CA_PANEL.forEach(function (row) {
+      var key = row[0], catId = row[1], unit = row[6], kg = nm(row[7]);
+      ['es', 'en', 'fr', 'it'].forEach(function (l, i) { NAMES[l][key] = row[2 + i]; });
+      var cat = null; RAW.forEach(function (c) { if (c.id === catId) cat = c; });
+      if (!cat) return;
+      cat.products.push({ nameKey: key, caUnitKey: unit, caKgPerUnit: kg, imperialUnitKey: row[8], imperialKgPerUnit: nm(row[9]), metricUnitKey: row[10], metricKgPerUnit: nm(row[11]),
+        ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: kg },
+        quoteTypes: { ca: { type: 'referencia', market: row[13] } } });
+      DATA_TRUST_PILOT[catId + '-' + key + '-ca'] = { sourceId: row[14], frequency: 'monthly',
+        methodology: row[13] + '. Pendiente de la primera ejecución automática.',
+        comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null };
+    });
+  })();
+
   var DATA_TRUST = buildPilotTrustRegistry();
 
   function validateDataTrustRegistry(registry) {
@@ -1243,6 +1310,7 @@
   global.DehesaData = {
     FX: FX, FX_DATE: FX_DATE, formatFxDate: formatFxDate, CCY_SYMBOL: CCY_SYMBOL, UNIT_LABELS: UNIT_LABELS, REGION: REGION,
     DATA_TRUST_SCHEMA_VERSION: DATA_TRUST_SCHEMA_VERSION, DATA_TRUST: DATA_TRUST, DATA_TRUST_SOURCES: DATA_TRUST_SOURCES, DATA_TRUST_HEALTH: DATA_TRUST_HEALTH, validateDataTrustRegistry: validateDataTrustRegistry,
+    CA_PANEL: CA_PANEL,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
     WOOD: WOOD,

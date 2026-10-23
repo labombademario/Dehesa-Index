@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-23T00:15:12.423Z",
+  "generatedAt": "2026-10-23T04:14:46.587Z",
   "status": "informational",
   "rules": [
     {
@@ -94,6 +94,78 @@
     },
     {
       "type": "period_move",
+      "product": "diesel_calgary",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": 14.34,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "diesel_edmonton",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": 14.84,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "diesel_montreal",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": 11.89,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "diesel_regina",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": 15.26,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "diesel_toronto",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": 12.8,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "diesel_vancouver",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": 13.35,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "diesel_winnipeg",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": 13.82,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "diesel_saskatoon",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": 15.01,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "vaca",
       "region": "ca",
       "sourceId": "statcan",
@@ -118,6 +190,15 @@
       "severity": "high",
       "changePct": -16.04,
       "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "gasolina_ca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": 6.04,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -166,6 +247,51 @@
     },
     {
       "type": "period_move",
+      "product": "bacon_ca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": -5.6,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cerdo_paleta_ca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": 5.49,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "pollo_entero_ca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": -6.43,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "ternera_guisar_ca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": -11.59,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "ternera_lomo_ca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": -6.41,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
       "product": "eurostat_energy_input_index",
       "region": "eu",
       "sourceId": "eurostat",
@@ -202,6 +328,33 @@
     },
     {
       "type": "period_move",
+      "product": "diesel_agr_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "high",
+      "changePct": 26.36,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "heno_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "watch",
+      "changePct": -9.3,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "urea_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "watch",
+      "changePct": -5.43,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
       "product": "leche_polvo",
       "region": "us",
       "sourceId": "usda_ams_mars",
@@ -226,6 +379,33 @@
       "severity": "high",
       "changePct": 20.23,
       "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "gasolina_agr_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "watch",
+      "changePct": 8.15,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "map_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "watch",
+      "changePct": 5.34,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "mineral_vacuno_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "high",
+      "changePct": -10.09,
+      "observationDate": "2026-08-01"
     }
   ],
   "policy": {

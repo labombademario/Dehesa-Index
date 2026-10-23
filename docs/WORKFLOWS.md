@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-270 workflows (226 generados desde `sources.yml`, 44 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+271 workflows (226 generados desde `sources.yml`, 45 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -57,6 +57,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-ca-alberta-inputs.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-ca-alberta-inputs.py | ca-alberta-inputs-stats.json | finish, validate-files |
 | update-ca-boc-bcpi.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-ca-boc-bcpi.py | ca-boc-bcpi-stats.json | finish, validate-files |
 | update-ca-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ca-ghg-agri.py | ca-ghg-agri.json | finish, validate-files |
+| update-ca-panel-prices.yml | a mano | semanal (2,5) | build-ca-panel-obs.py | - | price-engine, publish |
 | update-ca-statcan-more.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-ca-statcan-more.py | ca-statcan-more-stats.json | finish, validate-files |
 | update-canada-drought.yml | generado | semanal (2,4) | detect-revisions.py, gen-workflows.py, update-canada-drought.py | canada-drought.json | finish, validate-files |
 | update-canada-grain.yml | generado | semanal (3,4,5) | detect-revisions.py, gen-workflows.py, update-canada-grain.py | canada-grain.json | finish, validate-files |

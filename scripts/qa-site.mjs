@@ -20,6 +20,7 @@ check('context bar exists',shared.includes('function renderContextBar'));
 check('context back uses history.back',shared.includes('window.history.back()'));
 
 const prices=await read('js/precios.js');
+const dataJsSrc=await read('js/data.js');
 check('price URL sync uses pushState',prices.includes('history.pushState'));
 check('price URL restores popstate',prices.includes("addEventListener('popstate', restorePriceUrl)"));
 check('price category ids are canonical',prices.includes("['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','hortalizas','energia','seguro','vino','madera']"));
@@ -69,7 +70,7 @@ try {
 for(const o of latest.observations){
  check(o.id+' verified',o.status==='verified');
  check(o.id+' has source',!!o.sourceId);
- if(o.unit!=='index_2020_100') check(o.id+' is wired to a visible price card (LIVE_OBSERVATION_MAP)',prices.includes("'"+o.product+':'+o.region+"':"));
+ if(o.unit!=='index_2020_100') check(o.id+' is wired to a visible price card (LIVE_OBSERVATION_MAP)',(prices.includes("'"+o.product+':'+o.region+"':")||(o.region==='ca'&&/CA_PANEL/.test(prices)&&dataJsSrc.includes("'"+o.product+"'"))));
  check(o.id+' has observation date',/^\d{4}-\d{2}/.test(o.observationDate||''));
 }
 { const {readdirSync}=await import('node:fs'); const have=readdirSync('data/views/trade-products').filter(f=>/^[A-Z]{2}\.json$/.test(f)).map(f=>f.slice(0,2)).sort().join(' '); for(const f of ['js/perfil-pais.js','js/comercio-socios.js']){ const m=/var TPV = '([A-Z ]+)'/.exec(await read(f)); check(f+' lists exactly the countries with a trade-products view',m&&m[1]===have); } }

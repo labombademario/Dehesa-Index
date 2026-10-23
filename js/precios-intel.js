@@ -358,6 +358,8 @@
     'azucar-azucar': 'azucar', 'aceite-oliva': 'aceite', 'energia-diesel': 'energia', 'energia-gas_natural': 'energia', 'energia-petroleo_wti': 'energia', 'energia-petroleo_brent': 'energia'
   };
   var PROD_EMO = { maiz:'🌽', trigo:'🌾', arroz:'🍚', cebada:'🍺', avena:'🥣', centeno:'🌾', sorgo:'🌿', colza:'🌼', canola_elevador:'🌼', trigo_pienso_ab:'🌾', cebada_pienso_ab:'🍺', avena_pienso_ab:'🥣', trigo_cwrs_ab:'🌾', lenteja_laird_ab:'🫘', guisante_verde_ab:'🫛', soja_grano:'🫘', lenteja:'🫘', guisante_seco:'🫛', lino:'🌱', leche:'🥛', mantequilla:'🧈', leche_polvo:'🥛', vaca:'🐄', novillo_ab:'🐄', cabra:'🐐', cerdo:'🐖', cerdo_ab:'🐖', cordero:'🐑', huevos:'🥚', pollo:'🐔', pienso:'🌽', harina_soja:'🌱', urea:'🧪', dap:'🧪', potasa:'🧪', azucar:'🍬', oliva:'🫒', diesel:'⛽', gas_natural:'🔥', petroleo_wti:'🛢️', petroleo_brent:'🛢️' };
+  // Canadá: emoticono y grupo del mapa de cada producto de DehesaData.CA_PANEL
+  (D && D.CA_PANEL || []).forEach(function (r) { PROD_EMO[r[0]] = r[12]; MAP_GROUP[r[1] + '-' + r[0]] = ({ porcino: 'ganaderia', ganado: 'ganaderia', avicultura: 'ganaderia' })[r[1]] || r[1]; });
   function prodEmo(nameKey) { return PROD_EMO[nameKey] ? PROD_EMO[nameKey] + ' ' : ''; }
   var MAP_GROUP_EMOJI = { cereales: '🌾', ganaderia: '🐄', lacteos: '🥛', pienso: '🌽', fertilizantes: '🌱', azucar: '🍬', aceite: '🫒', energia: '⚡' };
   var MAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
