@@ -2154,6 +2154,15 @@ sources:
     data: [ca-aafc-slaughter-stats.json]
     log: ca-aafc-slaughter-log.txt
     message: Sacrificio semanal de vacuno, terneros, cerdos y ovino en Canada (AAFC)
+  - id: ca-alberta-inputs
+    name: Update Alberta farm input prices (Alberta Agriculture and Irrigation)
+    cron: ['10 16 * * 1-5']
+    pre: ['pip install pdfplumber']
+    script: scripts/update-ca-alberta-inputs.py
+    timeout: 20
+    data: [ca-alberta-inputs-stats.json]
+    log: ca-alberta-inputs-log.txt
+    message: Precios de insumos agrarios de Alberta - fertilizantes, piensos, semillas, combustibles y maquinaria (Alberta Agriculture and Irrigation)
   - id: us-nass-processing
     name: Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)
     cron: ['40 16 1-8,20 * *']
