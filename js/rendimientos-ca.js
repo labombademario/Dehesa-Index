@@ -21,7 +21,7 @@
   var items = Object.keys(CROPS).map(function (k) { return { id: k, label: CROPS[k] }; });
   function ser(D, prov, crop, m) { var P = D.provinces[prov], c = P && P.crops && P.crops[crop]; return c ? c[KEY[m]] || null : null; }
   var ex = window.CAExplorer.create({
-    id: 'rd-ca', usBody: 'rd-body', texts: T, items: items, defaultItem: 'wheat-all', defaultMeasure: 'yield', cite: 'statcan',
+    id: 'rd-ca', usBody: 'rd-body', usExtra: '#prd', texts: T, items: items, defaultItem: 'wheat-all', defaultMeasure: 'yield', cite: 'statcan',
     measures: function (D, crop) { return ['yield', 'production', 'harvested', 'planted'].filter(function (m) { return ser(D, 'CA', crop, m); }); },
     series: ser,
     fmt: function (m, v) {
