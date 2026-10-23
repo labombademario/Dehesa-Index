@@ -1,0 +1,432 @@
+## fert : 1 files
+  all-fertilizer-use-and-price-tables-in-a-single-workbook.xls  bytes=804352
+    sheet Table of contents 33x1 | The following tables may be found in the tabs in this workbook:
+    sheet Table1 65x9 | Table 1. U.S. consumption of plant nutrients ;  ;  ;  ;  ; 
+    sheet Table2 65x16 | Table 2. Estimated U.S. plant nutrient use by selected crops 1/ ;  ;  ;  ;  ; 
+    sheet Table3 66x9 | Table 3. U.S. consumption of single, multiple, and secondary and micro nutrients  ;  ;  ;  ;  ; 
+    sheet Table4 63x10 | Table 4. U.S. consumption of selected nitrogen materials  ;  ;  ;  ;  ; 
+    sheet Table5 71x11 | Table 5. U.S. consumption of selected phosphate and potash fertilizers  ;  ;  ;  ;  ; 
+    sheet Table6 37x10 | Table 6. U.S. consumption of selected secondary, micronutrients, and natural organic materials ;  ;  ;  ;  ; 
+    sheet Table7 117x11 | Table 7. Average U.S. farm prices of selected fertilizers  ;  ;  ;  ;  ; 
+    sheet Table8 67x8 | Table 8. Fertilizer price indexes ;  ;  ;  ;  ; 
+    sheet Table9 44x56 | Table 9. Percent of corn acreage receiving nitrogen fertilizer, selected States ;  ;  ;  ;  ; 
+    sheet Table10 44x56 | Table 10. Nitrogen used on corn, rate per fertilized acre receiving nitrogen, selected States ;  ;  ;  ;  ; 
+    sheet Table11 44x56 | Table 11. Percentage of corn acreage receiving phosphate fertilizer, selected States ;  ;  ;  ;  ; 
+    sheet Table12 45x56 | Table 12. Phosphate used on corn, rate per fertilized acre receiving phosphate fertilizer, selected States ;  ;  ;  ;  ; 
+    sheet Table13 45x56 | Table 13. Percentage of corn acreage receiving potash fertilizer, selected States ;  ;  ;  ;  ; 
+## dollar : 6 files
+  food-dollar-nominal-data.xlsx  bytes=9798256
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  food-dollar-nominal-data-in-machine-readable-format.zip  bytes=1005432
+  food-dollar-nominal-data-2011-model-1993-2023.xlsx  bytes=531767
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  food-dollar-nominal-data-2011-model-1993-2023.csv  bytes=957717
+    rows=8513
+    | Table_num,Table_name,Category_num,Category_desc,Year,Units,Salary_and_benefits,Property_income,Output_taxes,Imports,Total
+    | 1,Food dollar,1,Total,1993,Cents per Domestic Food Dollar,Not available,Not available,Not available,3.9,100
+    | 1,Food dollar,2,Agribusiness,1993,Cents per Domestic Food Dollar,Not available,Not available,Not available,0.4,3.5
+    | 22,Home food and beverage: Alcoholic beverages,15,Domestic food dollar,2017,million dollars,Not available,Not available,Not available,Not available,116353.28
+    | 22,Home food and beverage: Alcoholic beverages,16,Farm share,2017,million dollars,Not available,Not available,Not available,Not available,Not available
+  food-dollar-real-data-2011-model-1993-2023.xlsx  bytes=316288
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  food-dollar-real-data-2011-model-1993-2023.csv  bytes=554097
+    rows=5953
+    | Table_num,Table_name,Category_num,Category_desc,Year,Units,Value_added,Imports,Total
+    | 1,Food dollar,1,Total,1993,Cents per Domestic Real Food Dollar,,4.7,100
+    | 1,Food dollar,2,Agribusiness,1993,Cents per Domestic Real Food Dollar,,0.3,3.4
+    | 6,Away food and beverage dollar,15,Domestic food dollar,2023,million 2017 dollars,,,746646.54
+    | 6,Away food and beverage dollar,16,Farm share,2023,million 2017 dollars,,,24377.78
+## exp : 40 files
+  nominal-food-expenditures-with-taxes-and-tips-from-previously-published-estimates.xlsx  bytes=40917
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  nominal-food-expenditures-with-taxes-and-tips-from-previously-published-estimates.csv  bytes=35588
+    rows=146
+    | "Nominal food expenditures, with taxes and tips, from previously-published estimates",Table 1. Nominal Food Expenditures with Taxes and Tips,Table 1. Nominal Food Expenditures with Taxes and Tips,,Table 1. Nominal Food Expenditure
+    | [Millions of dollars],[Millions of Dollars],[Millions of Dollars],,[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],,[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Million
+    | Year,Food at home (FAH)1,Food at home (FAH),,Food at home (FAH),Food at home (FAH),Food at home (FAH),Food at home (FAH),,Food at home (FAH),Food at home (FAH),Food at home (FAH),Total FAH1,Food away from home (FAFH),Food away fro
+    | "7Derived from ""other FAFH"" in previously-published table 3 (Food away from home: total expenditures) less ""others, including military outlets"" in previously-published table 15 (Sales of food away from home by type of outlet).
+    | 8From previously-published table 4: Alcoholic beverages: total expenditures.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+  food-expenditures-by-final-purchaser-from-previously-published-estimates.xlsx  bytes=12902
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  food-expenditures-by-final-purchaser-from-previously-published-estimates.csv  bytes=5005
+    rows=87
+    | "Food expenditures by final purchaser, from previously published estimates",Table 5. Food Expenditures by Final Purchaser,,Table 5. Food Expenditures by Final Purchaser,Table 5. Food Expenditures by Final Purchaser
+    | [Millions of dollars],[Millions of Dollars],,[Millions of Dollars],[Millions of Dollars]
+    | Year,Households,Government,Home production,Businesses
+    | "Source: USDA, Economic Research Service, previously published table 5: Source of funds, in Food Expenditures, 2016. On February 5, 2019, this table was corrected for 2 mislabeled columns. The data in the columns labeled Governmen
+    | ",,,,
+  normalized-food-expenditures-by-final-purchasers-and-users-from-previously-published-estimates.xlsx  bytes=21849
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  normalized-food-expenditures-by-final-purchasers-and-users-from-previously-published-estimates.csv  bytes=10819
+    rows=97
+    | Normalized food expenditures by final purchasers and users from previously-published estimates,Table 6. Normalized Food Expenditures by Final Purchasers and Users,Table 6. Normalized Food Expenditures by Final Purchasers and Users
+    | [Millions of dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions 
+    | Year,Household final users,Household Final Users,Household Final Users,Household Final Users,Household Final Users,All purchasers,All Purchasers,All Purchasers,All Purchasers,All Purchasers,All Purchasers,All Purchasers,All Purcha
+    | 2From previously-published table 10: Food Away from home as a share of food expenditures.,,,,,,,,,,,,,
+    | 3From previously-published table 13: Per capita food expenditures.,,,,,,,,,,,,,
+  monthly-sales-of-food-with-taxes-and-tips-from-previously-published-estimates.xlsx  bytes=16857
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  monthly-sales-of-food-with-taxes-and-tips-from-previously-published-estimates.csv  bytes=5577
+    rows=187
+    | "Monthly sales of food, with taxes and tips, from previously-published estimates",Table 7. Monthly Sales of Food with Taxes and Tips,Table 7. Monthly Sales of Food with Taxes and Tips,Table 7. Monthly Sales of Food with Taxes and 
+    | [Billions of dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars],[Millions of Dollars]
+    | Year,Month,Nominal sales,Nominal sales,Total nominal food sales
+    | Notes: FAH = food at home and FAFH = food away from home.,,,,
+    | "Source: USDA, Economic Research Service, from previously-published table, Historical food sales, in Food Expenditures, 2016.",,,,
+  state-food-sales-with-taxes-and-tips-for-all-purchasers-previously-published-estimates.xlsx  bytes=107672
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  state-food-sales-with-taxes-and-tips-for-all-purchasers-previously-published-estimates.csv  bytes=101052
+    rows=1225
+    | Year,State,FAH sales million nominal U.S. dollars with taxes and tips,FAFH sales million nominal U.S. dollars with taxes and tips,Total sales million nominal U.S. dollars with taxes and tips,FAH sales million constant 1988 U.S. do
+    | 1997,Alabama,"6,059.91","3,589.84","9,649.74","4,469.23","2,784.98","7,254.21"
+    | 1998,Alabama,"6,250.84","3,837.32","10,088.16","4,524.20","2,901.21","7,425.41"
+    | 2019,Wyoming,"1,378.60","1,647.00","3,025.60",664.85,705.34,"1,370.19"
+    | 2020,Wyoming,"1,556.83","1,356.42","2,913.25",725.43,562.05,"1,287.48"
+  state-food-sales-without-taxes-and-tips-for-all-purchasers-previously-published-estimates.xlsx  bytes=108563
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  state-food-sales-without-taxes-and-tips-for-all-purchasers-previously-published-estimates.csv  bytes=100691
+    rows=1225
+    | Year,State,FAH sales million nominal U.S. dollars without taxes and tips,FAFH sales million nominal U.S. dollars without taxes and tips,Total sales million nominal U.S. dollars without taxes and tips,FAH sales million constant 198
+    | 1997,Alabama,"5,702.60","3,202.40","8,905.00","4,205.71","2,484.41","6,690.12"
+    | 1998,Alabama,"5,865.28","3,419.26","9,284.54","4,245.14","2,585.14","6,830.27"
+    | 2019,Wyoming,"1,360.11","1,486.81","2,846.92",655.93,636.73,"1,292.67"
+    | 2020,Wyoming,"1,536.24","1,233.31","2,769.55",715.84,511.04,"1,226.88"
+  state-food-sales-per-capita-with-taxes-and-tips-for-all-purchasers-previously-published-estimates.xlsx  bytes=113231
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  state-food-sales-per-capita-with-taxes-and-tips-for-all-purchasers-previously-published-estimates.csv  bytes=95249
+    rows=1225
+    | Year,State,FAH sales per capita nominal U.S. dollars with taxes and tips,FAFH sales per capita nominal U.S. dollars with taxes and tips,Total sales per capita nominal U.S. dollars with taxes and tips,FAH sales per capita constant 
+    | 1997,Alabama,"1,402.66",830.93,"2,233.59","1,034.48",644.63,"1,679.11"
+    | 1998,Alabama,"1,436.63",881.93,"2,318.56","1,039.80",666.79,"1,706.58"
+    | 2019,Wyoming,"2,376.43","2,839.09","5,215.51","1,146.07","1,215.85","2,361.92"
+    | 2020,Wyoming,"2,696.89","2,349.73","5,046.62","1,256.66",973.65,"2,230.30"
+  state-food-sales-per-capita-without-taxes-and-tips-for-all-purchasers-previously-published-estimates.xlsx  bytes=113595
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  state-food-sales-per-capita-without-taxes-and-tips-for-all-purchasers-previously-published-estimates.csv  bytes=93802
+    rows=1225
+    | Year,State,FAH sales per capita nominal U.S. dollars without taxes and tips,FAFH sales per capita nominal U.S. dollars without taxes and tips,Total sales per capita nominal U.S. dollars without taxes and tips,FAH sales per capita 
+    | 1997,Alabama,"1,319.96",741.25,"2,061.21",973.48,575.06,"1,548.54"
+    | 1998,Alabama,"1,348.02",785.85,"2,133.87",975.66,594.14,"1,569.80"
+    | 2019,Wyoming,"2,344.54","2,562.96","4,907.50","1,130.69","1,097.60","2,228.29"
+    | 2020,Wyoming,"2,661.23","2,136.47","4,797.70","1,240.04",885.28,"2,125.32"
+  nominal-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers.xlsx  bytes=24900
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  nominal-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers.csv  bytes=9400
+    rows=30
+    | Year,Food sales at grocery stores with taxes and tips (millions of nominal U.S. dollars),Food sales at convenience stores with taxes and tips (millions of nominal U.S. dollars),Food sales at other food stores with taxes and tips (
+    | 1997,268884.06,9064.21,10168.18,34988.59,44151.27,4117,1127.42,372500.78,120780.61,112401.51,1758.2,16131.31,11458.22,11781.68,27765.97,10793.28,22909.52,335780.28,20047.46,13374.44,17643.21,51065.11,33086.04,4192.72,4322.37,41601
+    | 1998,271742,8684.18,10412.85,40684.89,43617.79,3807.23,1149.58,380098.53,125947.53,119082.49,1837.88,17193.54,12483.69,12558.32,29268.99,11596.32,23467.81,353436.56,21151.48,13888.5,17762.3,52802.29,35468.66,4452.51,4721.03,44642.
+    | 2024,597097.06,14607.24,37029.72,282455.56,118450.69,12833.76,4487.47,1066961.5,452676.53,499664.13,9091.77,38559.88,141892.41,32764.43,81629.46,28248.19,65664.1,1350190.88,71312.71,42463.48,38415.95,152192.14,121183.61,10620.92,1
+    | 2025,616505.06,13394.81,38713.79,289178.78,121891.02,13357.67,3746.69,1096787.88,488431.97,516081.31,9531.04,38596.14,145008.08,34370.37,85009.59,28785.39,69153.12,1414967,70651.64,43013.95,38787.37,152452.97,129764.41,10630.66,13
+  nominal-food-and-alcohol-expenditures-without-taxes-and-tips-for-all-purchasers.xlsx  bytes=22521
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  nominal-food-and-alcohol-expenditures-without-taxes-and-tips-for-all-purchasers.csv  bytes=9441
+    rows=30
+    | Year,Food sales at grocery stores without taxes and tips (millions of nominal U.S. dollars),Food sales at convenience stores without taxes and tips (millions of nominal U.S. dollars),Food sales at other food stores without taxes a
+    | 1997,263215.06,8873.11,9953.8,34250.91,43270.77,4030.2,1127.42,364721.28,100112.91,105723.81,1449.27,13296.92,10777.5,10925.76,27765.97,10157.8,22909.52,303119.47,18809.46,12548.53,16553.68,47911.67,27304.25,3449.51,4009.8,34763.5
+    | 1998,266097.63,8503.81,10196.57,39839.82,42762.36,3728.15,1149.58,372277.94,104381.87,111938.11,1514.13,14164.77,11734.73,11658.79,29268.99,10906.56,23467.81,319035.75,19830.16,13020.89,16652.69,49503.74,29254.71,3661.19,4386.74,3
+    | 2024,583910.81,14284.66,36211.96,276217.88,115926.04,12550.35,4487.47,1043589.19,360794.31,461720.78,7203.24,30550.27,131117.44,29901.62,81629.46,26112.22,65664.1,1194693.38,66188.69,39412.35,35655.65,141256.69,96942.38,8453.43,11
+    | 2025,602732.56,13095.57,37848.93,282718.63,119262.3,13059.26,3746.69,1072464,389021.78,476707.06,7548.76,30568.87,133944.73,31347.31,85009.59,26599.36,69153.12,1249900.63,65548.56,39907.1,35985.8,141441.47,103756.03,8458.58,12440.
+  constant-dollar-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers.xlsx  bytes=21491
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  constant-dollar-food-and-alcohol-expenditures-with-taxes-and-tips-for-all-purchasers.csv  bytes=9800
+    rows=30
+    | Year,Food sales at grocery stores with taxes and tips (millions of constant U.S. dollars (2025=100)),Food sales at convenience stores with taxes and tips (millions of constant U.S. dollars (2025=100)),Food sales at other food stor
+    | 1997,532778.25,17960.22,20147.65,69327.88,87483.2,8157.6,2233.92,738088.75,294164.63,273757.09,4282.14,39288.27,27906.83,28694.61,67624.81,26287.34,55796.8,817802.5,30912.64,20623.03,27205.36,78741.03,77272.86,9792.15,10094.95,971
+    | 1998,528414.19,16886.78,20248.25,79113.55,84816.69,7403.32,2235.42,739118.19,298942.06,282647.59,4362.3,40809.64,29630.59,29807.72,69471.25,27524.38,55701.88,838897.38,32376.79,21259.28,27188.94,80825.01,80458.56,10100.25,10709.37
+    | 2024,610206.38,14927.94,37842.71,288656.88,121051.27,13115.53,4585.99,1090386.63,469415.13,518140.19,9427.95,39985.71,147139.16,33975.96,84647.87,29292.72,68092.16,1400116.88,71669.62,42676,38608.21,152953.84,124934.65,10949.67,13
+    | 2025,616505.06,13394.81,38713.79,289178.78,121891.02,13357.67,3746.69,1096787.88,488431.97,516081.31,9531.04,38596.14,145008.08,34370.37,85009.59,28785.39,69153.12,1414967,70651.64,43013.95,38787.37,152452.97,129764.41,10630.66,13
+  constant-dollar-food-and-alcohol-expenditures-without-taxes-and-tips-for-all-purchasers.xlsx  bytes=21237
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  constant-dollar-food-and-alcohol-expenditures-without-taxes-and-tips-for-all-purchasers.csv  bytes=9809
+    rows=30
+    | Year,Food sales at grocery stores without taxes and tips (millions of constant U.S. dollars (2025=100)),Food sales at convenience stores without taxes and tips (millions of constant U.S. dollars (2025=100)),Food sales at other foo
+    | 1997,521545.44,17581.55,19722.87,67866.2,85738.52,7985.61,2233.92,722674.13,243827.88,257493.38,3529.74,32385.03,26248.9,26610.01,67624.81,24739.61,55796.8,738256.19,29003.68,19349.49,25525.33,73878.51,63769.4,8056.37,9364.93,8119
+    | 1998,517438.47,16536.02,19827.67,77470.28,83153.28,7249.55,2235.42,723910.75,247755,265690.06,3593.84,33620.71,27852.9,27672.67,69471.25,25887.21,55701.88,757245.5,30354.23,19931.22,25490.45,75775.9,66362.58,8305.2,9951.05,84618.8
+    | 2024,596730.56,14598.28,37006.99,282282.25,118471.2,12825.89,4585.99,1066501.25,374135.38,478793.81,7469.59,31679.92,135965.77,31007.29,84647.87,27077.77,68092.16,1238869.5,66519.95,39609.61,35834.1,141963.66,99943.07,8715.1,12138
+    | 2025,602732.56,13095.57,37848.93,282718.63,119262.3,13059.26,3746.69,1072464,389021.78,476707.06,7548.76,30568.87,133944.73,31347.31,85009.59,26599.36,69153.12,1249900.63,65548.56,39907.1,35985.8,141441.47,103756.03,8458.58,12440.
+  food-expenditures-by-final-purchaser.xlsx  bytes=16872
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  food-expenditures-by-final-purchaser.csv  bytes=4336
+    rows=30
+    | Year,Household purchases of food at home (millions of nominal U.S. dollars),Government purchases of food at home (millions of nominal U.S. dollars),Home production of food at home (millions of nominal U.S. dollars),Household purch
+    | 1997,347980.69,23677.15,842.93,689503.63,46914.91,1670.23,264436.56,16614.79,54728.93,644042.81,40465.8,133293.88
+    | 1998,358168.09,21095.55,834.88,696473.5,41021.23,1623.45,277516.13,17067.68,58852.75,658696.88,40510.91,139689.61
+    | 2024,961312.19,103791.46,1857.88,982417.81,106070.2,1898.67,1063060.5,50083.46,237046.94,1102369.25,51935.39,245812.22
+    | 2025,990236.25,104665.57,1886.03,990236.25,104665.57,1886.03,1113426.5,52359.58,249180.89,1113426.5,52359.58,249180.89
+  normalized-food-expenditures-by-all-purchasers-and-household-final-users.xlsx  bytes=19660
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  normalized-food-expenditures-by-all-purchasers-and-household-final-users.csv  bytes=5857
+    rows=30
+    | Year,"Food-at-home nominal food expenditure share of disposable personal income, household final users (percentage)","Food-away-from-home nominal food expenditure share of disposable personal income, household final users (percent
+    | 1997,6.06,4.31,10.37,58.46,41.54,3684.65,2617.72,6302.37,7300.93,6375.53,13602.86,52.59,47.41,1364.68,1230.15,2594.84,2704.04,2996.07,5600.62
+    | 1998,5.79,4.23,10.03,57.78,42.22,3704.2,2706.74,6410.93,7202.97,6424.56,13544.42,51.82,48.18,1376.4,1279.85,2656.25,2676.47,3037.79,5611.89
+    | 2024,4.86,4.85,9.71,50.03,49.97,8049.95,8040.33,16090.28,8226.68,8337.64,16540.89,44.14,55.86,3137.25,3970.04,7107.29,3206.12,4116.84,7306.33
+    | 2025,4.79,4.87,9.65,49.58,50.42,8123.21,8260.45,16383.66,8123.21,8260.45,16383.66,43.67,56.33,3207.51,4138.01,7345.52,3207.51,4138.01,7345.52
+  monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers-by-outlet-type.xlsx  bytes=82358
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers-by-outlet-type.csv  bytes=62249
+    rows=349
+    | Year,Month,Food-at-home sales at grocery stores (millions of nominal U.S. dollars),Food-at-home sales at warehouse clubs and supercenters (millions of nominal U.S. dollars),Other food-at-home sales (millions of nominal U.S. dollar
+    | 2025,December,54175.07,28599.36,18978.12,101752.55,42575.20,42094.11,22092.97,106762.28,208514.83,53791.53,28401.11,18844.81,101037.45,41800.09,41323.48,21687.93,104811.49,205848.94
+    | 2025,November,52143.95,25269.59,16200.18,93613.71,40416.61,41071.88,21301.87,102790.37,196404.08,52056.79,25231.10,16174.22,93462.10,39956.17,40599.77,21056.52,101612.45,195074.56
+    | 1997,February,20104.82,2310.77,5327.61,27743.20,9094.30,8255.88,3922.10,21272.28,49015.48,39949.73,4593.57,10586.96,55130.26,22352.79,20291.32,9640.36,52284.47,107414.73
+    | 1997,January,22020.99,2382.74,5488.13,29891.87,9153.22,8302.23,3960.81,21416.27,51308.13,43701.87,4730.64,10892.26,59324.77,22541.08,20444.67,9754.31,52740.06,112064.83
+  monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers.xlsx  bytes=40900
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers.csv  bytes=24776
+    rows=357
+    | Year,Month,Food-at-home sales with taxes and tips (millions of nominal U.S. dollars),Food-away-from-home sales with taxes and tips (millions of nominal U.S. dollars),Total food sales with taxes and tips (millions of nominal U.S. d
+    | 2026,August,94429.25,115116.21,209545.47,92063.55,110746.39,202809.94
+    | 2026,July,94668.97,113980.67,208649.64,92256.23,109932.75,202188.98
+    | 1997,February,27743.2,21272.28,49015.48,55130.26,52284.46,107414.72
+    | 1997,January,29891.87,21416.27,51308.14,59324.77,52740.05,112064.83
+  state-food-sales-with-taxes-and-tips-for-all-purchasers.xlsx  bytes=239761
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  state-food-sales-with-taxes-and-tips-for-all-purchasers.csv  bytes=98790
+    rows=1480
+    | Year,State,Food-at-home sales with taxes and tips (millions of nominal U.S. dollars),Food-away-from-home sales with taxes and tips (millions of nominal U.S. dollars),Total food sales with taxes and tips (millions of nominal U.S. d
+    | 1997,Alabama,5073.67,4225.23,9298.9,10156.95,9977.11,20134.06
+    | 1998,Alabama,5093.48,4474.53,9568.01,10047.79,10294.53,20342.32
+    | 2024,Wyoming,1997.33,1866.83,3864.16,2050.73,1942.1,3992.83
+    | 2025,Wyoming,2091.78,1945.17,4036.95,2091.78,1945.17,4036.95
+  state-food-sales-without-taxes-and-tips-for-all-purchasers.xlsx  bytes=113365
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  state-food-sales-without-taxes-and-tips-for-all-purchasers.csv  bytes=98524
+    rows=1480
+    | Year,State,Food-at-home sales without taxes and tips (millions of nominal U.S. dollars),Food-away-from-home sales without taxes and tips (millions of nominal U.S. dollars),Total food sales without taxes and tips (millions of nomin
+    | 1997,Alabama,4774.52,3859.98,8634.5,9558.08,9114.64,18672.72
+    | 1998,Alabama,4779.3,4073.63,8852.93,9428.03,9372.18,18800.21
+    | 2024,Wyoming,1968.96,1684.2,3653.16,2021.6,1752.1,3773.7
+    | 2025,Wyoming,2059.65,1752.36,3812.01,2059.65,1752.36,3812.01
+  state-food-sales-per-capita-with-taxes-and-tips-for-all-purchasers.xlsx  bytes=108717
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  state-food-sales-per-capita-with-taxes-and-tips-for-all-purchasers.csv  bytes=93582
+    rows=1480
+    | Year,State,Food-at-home per capita sales with taxes and tips (nominal U.S. dollars),Food-away-from-home per capita sales with taxes and tips (nominal U.S. dollars),Total food per capita sales with taxes and tips (nominal U.S. doll
+    | 1997,Alabama,1174.39,978,2152.38,2350.99,2309.37,4660.36
+    | 1998,Alabama,1170.64,1028.38,2199.02,2309.29,2365.99,4675.28
+    | 2024,Wyoming,3404.22,3181.8,6586.02,3495.24,3310.08,6805.31
+    | 2025,Wyoming,3552.9,3303.88,6856.77,3552.9,3303.88,6856.77
+  state-food-sales-per-capita-without-taxes-and-tips-for-all-purchasers.xlsx  bytes=108781
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  state-food-sales-per-capita-without-taxes-and-tips-for-all-purchasers.csv  bytes=93577
+    rows=1480
+    | Year,State,Food-at-home per capita sales without taxes and tips (nominal U.S. dollars),Food-away-from-home per capita sales without taxes and tips (nominal U.S. dollars),Total food per capita sales without taxes and tips (nominal 
+    | 1997,Alabama,1105.14,893.46,1998.6,2212.38,2109.73,4322.11
+    | 1998,Alabama,1098.43,936.24,2034.67,2166.85,2154.01,4320.86
+    | 2024,Wyoming,3355.86,2870.53,6226.39,3445.59,2986.26,6431.84
+    | 2025,Wyoming,3498.32,2976.39,6474.72,3498.32,2976.39,6474.72
+## bio : 2 files
+  us-bioenergy-statistics.xlsx  bytes=168681
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  us-bioenergy-statistics.csv  bytes=3185969
+    rows=13857
+    | table,table_name,year,year_cat,year_desc,period,period_cat,period_desc,geographic_level,location,commodity,data_item,data_item_desc,units,value
+    | 1,Fuel ethanol supply and disappearance and grain crushings for fuel ethanol by marketing year and quarter,1980,Marketing,Corn marketing year (Sep-Aug),2,Marketing year quarter,Q2 Dec-Feb,Country,United States,Fuel ethanol,Consump
+    | 1,Fuel ethanol supply and disappearance and grain crushings for fuel ethanol by marketing year and quarter,1980,Marketing,Corn marketing year (Sep-Aug),2,Marketing year quarter,Q2 Dec-Feb,Country,United States,Fuel ethanol,Product
+    | 17,Monthly average retail diesel prices,2026,Calendar,Calendar year (Jan-Dec),9,Calendar year month,Sep,Country,United States,U.S. number 2 diesel,Price,Retail price,Cents per gallon,629.1
+    | 17,Monthly average retail diesel prices,2026,Calendar,Calendar year (Jan-Dec),2026,Calendar year,Calendar year (Jan-Dec),Country,United States,U.S. number 2 diesel,Price,Retail price,Cents per gallon,500
+## prod : 9 files
+  table-1-indices-of-farm-outputs-inputs-and-total-factor-productivity-for-the-united-states-1948-2021.xlsx  bytes=55282
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  table-1a-price-indices-and-implicit-quantities-of-farm-outputs-and-inputs-for-the-united-states-1948-2021.xlsx  bytes=88556
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  table-1-indices-of-farm-outputs-inputs-and-total-factor-productivity-for-the-united-states-1948-2023.csv  bytes=103838
+    rows=2281
+    | Year,Attribute,Value
+    | 1948,Total agricultural output,0.35656
+    | 1948,Livestock and products output: Total,0.43660
+    | 2023,Intermediate inputs: Other intermediate inputs,0.93384
+    | 2023,Total factor productivity (TFP),1.09200
+  table-1a-price-indices-and-implicit-quantities-of-farm-outputs-and-inputs-for-the-united-states-1948-2023.csv  bytes=323274
+    rows=4409
+    | Year,Attribute,Value
+    | 1948,"Total output: Price (index, 2015=1)",0.285604323
+    | 1948,"Total output: Quantity (million, $2015)",147235.9158
+    | 2023,"Intermediate inputs: Other intermediate inputs: Price (index, 2015=1)",1.355853869
+    | 2023,"Intermediate inputs: Other intermediate inputs: Quantity (million, $2015)",7126.143314
+  table-1-indices-of-farm-outputs-inputs-and-total-factor-productivity-for-the-united-states-1948-2021.csv  bytes=108988
+    rows=2221
+    | Year,Attribute,Value
+    | 1948,Total agricultural output,0.351753563
+    | 1948,Livestock and products output: Total,0.435703869
+    | 2021,Intermediate inputs: Other intermediate inputs,0.872286365
+    | 2021,Total factor productivity (TFP),1.095913291
+  table-1a-price-indices-and-implicit-quantities-of-farm-outputs-and-inputs-for-the-united-states-1948-2021.csv  bytes=314743
+    rows=4293
+    | Year,Attribute,Value
+    | 1948,"Total output: Price (index, 2015=1)",0.291914591
+    | 1948,"Total output: Quantity (million, $2015)",146514.353
+    | 2021,"Intermediate inputs: Other intermediate inputs: Price (index, 2015=1)",1.165784486
+    | 2021,"Intermediate inputs: Other intermediate inputs: Quantity (million, $2015)",6655.98167
+  table-1-indices-of-farm-outputs-inputs-and-total-factor-productivity-for-the-united-states-1948-2023.xlsx  bytes=32065
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  table-1a-price-indices-and-implicit-quantities-of-farm-outputs-and-inputs-for-the-united-states-1948-2023.xlsx  bytes=67330
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  table-2-relative-levels-of-agricultural-total-factor-productivity-tfp-and-price-and-quantity-indices-for-outpu  bytes=17767032
+    rows=115585
+    | ID,Variable Name,Variable Description,State,Units,Year,Value
+    | 1,Total agricultural output price index,Output price: Total,AL,Prices relative to Alabama in 1996 (AL 1996 = 1),1960,0.338577805
+    | 2,Total agricultural output price index,Output price: Total,AL,Prices relative to Alabama in 1996 (AL 1996 = 1),1961,0.336136017
+    | 115583,Total factor productivity,Total factor productivity,WY,TFP index (AL 1996 = 1),2014,0.614964068
+    | 115584,Total factor productivity,Total factor productivity,WY,TFP index (AL 1996 = 1),2015,0.621876478
+## intl : 3 files
+  machine-readable-and-long-format-file-of-tfp-indices-and-components-for-countries-regions-countries-grouped-by  bytes=18258097
+    rows=265408
+    | Order,FAO,ISO3,Country/territory,Region,Sub-Region,Inc I,Year,Variable,Value
+    | 1,159,NGA,Nigeria,SSA,"SSA, Nigeria",MI-L,1961,TFP_Index,83.9083
+    | 1,159,NGA,Nigeria,SSA,"SSA, Nigeria",MI-L,1961,Outall_Index,19.2616
+    | 242,,,,G20 (19 countries 2021),,,2023,Pasture_Q,1670100
+    | 242,,,,G20 (19 countries 2021),,,2023,IrrigArea_Q,227354.9285
+  tfp-indices-and-components-for-countries-regions-countries-grouped-by-income-level-and-the-world-1961-2023.xls  bytes=6509648
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  machine-readable-and-long-format-file-of-tfp-indices-and-components-for-countries-regions-countries-grouped-by  bytes=17165942
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+## excr : 14 files
+  real-annual-commodity-trade-weighted-exchange-rate-indexes.xlsx  bytes=62801
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  real-annual-commodity-trade-weighted-exchange-rate-indexes.csv  bytes=337048
+    rows=4219
+    | Commodity,Weights,Year,Value
+    | Bulk,U.S. competitors (country export weights),1970,83.47352600097656
+    | Consumer oriented,U.S. competitors (country export weights),1970,92.9830322265625
+    | U.S. total agricultural imports,U.S. suppliers (U.S. import weights),2026,111.8812916666667
+    | Wine and beer,U.S. suppliers (U.S. import weights),2026,103.99095
+  real-monthly-commodity-trade-weighted-exchange-rate-indexes.xlsx  bytes=598494
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  real-monthly-commodity-trade-weighted-exchange-rate-indexes.csv  bytes=4325325
+    rows=50617
+    | Commodity,Weights,Month,Year,Value
+    | Bulk,U.S. competitors (country export weights),January,1970,83.04405975341797
+    | Consumer oriented,U.S. competitors (country export weights),January,1970,92.496337890625
+    | U.S. agricultural imports,U.S. suppliers (U.S. import weights),December,2026,112.4288
+    | Wine and beer,U.S. suppliers (U.S. import weights),December,2026,104.9427
+  monthly-real-exchange-rates-local-currency-per-usd.xlsx  bytes=777453
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  monthly-real-exchange-rates-local-currency-per-usd.csv  bytes=3065908
+    rows=53353
+    | Region,Country,Countrycode,Month,Year,Value
+    | Central America,Costa Rica,(2230),January,1970,412.8433837890625
+    | Central America,Costa Rica,(2230),February,1970,415.5107116699219
+    | The Caribbean,Trinidad and Tobago,(2740),November,2026,7.821842877
+    | The Caribbean,Trinidad and Tobago,(2740),December,2026,7.849616186
+  annual-nominal-exchange-rates-local-currency-per-usd.xlsx  bytes=70120
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  annual-nominal-exchange-rates-local-currency-per-usd.csv  bytes=232374
+    rows=4447
+    | Region,Country,Countrycode,Year,Value
+    | Central America,Costa Rica,(2230),1970,6.625
+    | Central America,Costa Rica,(2230),1971,6.625833511352539
+    | The Caribbean,Trinidad and Tobago,(2740),2025,6.748841762542725
+    | The Caribbean,Trinidad and Tobago,(2740),2026,6.746399879455566
+  monthly-nominal-exchange-rates-local-currency-per-usd.xlsx  bytes=482420
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  monthly-nominal-exchange-rates-local-currency-per-usd.csv  bytes=2726380
+    rows=53353
+    | Region,Country,Countrycode,Month,Year,Value
+    | Central America,Costa Rica,(2230),January,1970,6.625
+    | Central America,Costa Rica,(2230),February,1970,6.625
+    | The Caribbean,Trinidad and Tobago,(2740),November,2026,6.748931751945258
+    | The Caribbean,Trinidad and Tobago,(2740),December,2026,6.747974729374131
+  annual-real-exchange-rates-local-currency-per-usd.xlsx  bytes=75432
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  annual-real-exchange-rates-local-currency-per-usd.csv  bytes=223352
+    rows=4447
+    | Region,Country,Countrycode,Year,Value
+    | Central America,Costa Rica,(2230),1970,420.163818359375
+    | Central America,Costa Rica,(2230),1971,425.1543579101563
+    | The Caribbean,Trinidad and Tobago,(2740),2025,7.411586285
+    | The Caribbean,Trinidad and Tobago,(2740),2026,7.564203739
+  agricultural-trade-weights-by-commodity-or-commodity-group.xlsx  bytes=65610
+    XL ERR AttributeError("'ReadOnlyWorksheet' object has no attribute 'dimensions'")
+  agricultural-trade-weights-by-commodity-or-commodity-group.csv  bytes=596607
+    rows=5698
+    | Weights,CommodityCategory,Commodity,Country,Region,Countrycode,Value
+    | U.S. competitors (country exports),Bulk,Bulk total,Algeria,North Africa,(7210),4.29000000000e-06
+    | U.S. competitors (country exports),Bulk,Bulk total,Argentina,South America,(3570),.0383498
+    | U.S. suppliers (U.S. imports),"Total agriculture, fish, and forest imports","Total agriculture, fish, and forest imports",Uruguay,South America,(3550),.00259
+    | U.S. suppliers (U.S. imports),"Total agriculture, fish, and forest imports","Total agriculture, fish, and forest imports",Zambia,Sub-Saharan Africa,(7940),3.74000000000e-06
+## mult : 1 files
+  agricultural-trade-multipliers.csv  bytes=80997
+    rows=626
+    | "COMMID","CommodityName","Variable","Unit","Value","Year"
+    | 1,"Soybeans","Producer Employment Multiplier","Jobs per 1 billion U.S. dollars of export value",3390.86642305398,2024
+    | 1,"Soybeans","Producer Output Multiplier","Total U.S. dollar economic output per U.S. dollar of export value",1.86409505658884,2024
+    | NA,NA,"Port Output Multiplier","Total U.S. dollar economic output per U.S. dollar of export value",NA,2024
+    | NA,NA,"Export Value","1,000 U.S. dollars",177208605.317,2024
+## macro : 7 files
+  historical-and-projected-real-gross-domestic-product-gdp-and-growth-rates-of-gdp-for-baseline-countriesregions  bytes=1758183
+    rows=30625
+    | Observation,Year,Unit,Value
+    | Afghanistan,1970,Real GDP USD,NA
+    | Afghanistan,1971,Real GDP USD,NA
+    | Zimbabwe,2034,Real GDP USD Percent Change year to year,1.3999949
+    | Zimbabwe,2035,Real GDP USD Percent Change year to year,1.3999979
+  historical-and-projected-real-gdp-per-capita-and-growth-rates-for-baseline-countriesregions-in-billions-of-201  bytes=1976675
+    rows=30625
+    | Observation,Year,Unit,Value
+    | Afghanistan,1970,GDP Per Capita in USD,NA
+    | Afghanistan,1971,GDP Per Capita in USD,NA
+    | Zimbabwe,2034,"GDP Per Capita in USD, Percent Change year to year",-0.23099832
+    | Zimbabwe,2035,"GDP Per Capita in USD, Percent Change year to year",-0.21398184
+  historical-and-projected-gdp-deflator-and-growth-rates-of-gdp-deflator-for-baseline-countriesregions-in-billio  bytes=1844793
+    rows=30625
+    | Observation,Year,Unit,Value
+    | Afghanistan,1970,GDP Deflator 2017 = 100,NA
+    | Afghanistan,1971,GDP Deflator 2017 = 100,NA
+    | Zimbabwe,2034,GDP Deflator Percent Change year to year,1.7000033
+    | Zimbabwe,2035,GDP Deflator Percent Change year to year,1.7000011
+  historical-and-projected-real-gdp-shares-and-growth-rates-for-baseline-countriesregions-in-billions-of-2017-do  bytes=1856930
+    rows=30625
+    | Observation,Year,Unit,Value
+    | Afghanistan,1970,Share of World GDP,NA
+    | Afghanistan,1971,Share of World GDP,NA
+    | Zimbabwe,2034,"Share of World GDP, Percent Change year to year",-0.848858
+    | Zimbabwe,2035,"Share of World GDP, Percent Change year to year",-0.86611784
+  historical-and-projected-real-exchange-rate-and-growth-rates-for-baseline-countriesregions-in-billions-of-2017  bytes=2797016
+    rows=30361
+    | Observation,Year,Unit,Value
+    | Afghanistan,1970,"US Ag. Trade Weighted Exchange Rate, 2017=100",NA
+    | Afghanistan,1971,"US Ag. Trade Weighted Exchange Rate, 2017=100",NA
+    | Zimbabwe,2034,"US Ag. Trade Weighted Exchange Rate, 2017=100, Percent Change year to year",0.097942546
+    | Zimbabwe,2035,"US Ag. Trade Weighted Exchange Rate, 2017=100, Percent Change year to year",0.097938724
+  historical-and-projected-consumer-price-indices-cpi-for-baseline-countriesregions-1970-2035.csv  bytes=2086729
+    rows=29965
+    | Observation,Year,Unit,Value
+    | Afghanistan,1970,Consumer Price Index 2017 = 100,NA
+    | Afghanistan,1971,Consumer Price Index 2017 = 100,NA
+    | Zimbabwe,2034,Consumer Price Index Percent Change year to year,2.0999994
+    | Zimbabwe,2035,Consumer Price Index Percent Change year to year,2.1000006
+  historical-and-projected-population-and-growth-rates-for-baseline-countriesregions-1970-2035.csv  bytes=1596416
+    rows=31543
+    | Observation,Year,Unit,Value
+    | Afghanistan,1970,Population,12430623
+    | Afghanistan,1971,Population,12749385
+    | ,,,
+    | ,,,
+## sec : 1 files
+  grain-food-demand-other-demand-total-demand-production-and-implied-additional-supply-required-for-global-food-  bytes=44063
+    rows=191
+    | "Dataset","Element","Region","Subregion","Year","Millions of metric tons"
+    | "Grain food demand, other demand, total demand, production, and implied additional supply required for International Food Security Assessment countries","Food grain demand","Asia","East Asia","2026",5.4
+    | "Grain food demand, other demand, total demand, production, and implied additional supply required for International Food Security Assessment countries","Other grain demand","Asia","East Asia","2026",1.3
+    | "Grain food demand, other demand, total demand, production, and implied additional supply required for International Food Security Assessment countries","Implied additional supply required","GFA countries","GFA countries, Total","
+    | "Grain food demand, other demand, total demand, production, and implied additional supply required for International Food Security Assessment countries","Total grain demand","GFA countries","GFA countries, Total","2036",1413.9
+## CDL 19 2025 -> https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2025_19.csv
+   rows=70
+   | Value, Category, Count,  Acreage
+   | 1, Corn, 60622798, 13482185.7
+   | 4, Sorghum, 74840, 16644.0
+   | 5, Soybeans, 42557170, 9464486.8
+   | 6, Sunflowers, 6535, 1453.3
+   | 11, Tobacco, 17, 3.8
+## CDL 19 2024 -> https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2024_19.csv
+   rows=69
+   | Value, Category, Count,  Acreage
+   | 1, Corn, 58848608, 13087615.4
+   | 3, Rice, 31, 6.9
+   | 4, Sorghum, 24077, 5354.6
+   | 5, Soybeans, 45567532, 10133975.2
+   | 6, Sunflowers, 5682, 1263.6
+CDL ERR <HTTPError 500: 'Internal Server Error'>
