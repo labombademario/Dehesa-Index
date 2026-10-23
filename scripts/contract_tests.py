@@ -486,7 +486,7 @@ def canada_grain(doc, errs, warns, stats):
     for w, d in zip(weeks, ds):
         if d.weekday() != 6 and not (d.month == 7 and d.day == 31): errs.append("%s: la semana de la CGC acaba en domingo (o el 31 de julio, fin de campana)" % w)
     for a, b in zip(ds, ds[1:]):
-        if (b - a).days > 10: errs.append("hueco de mas de 10 dias entre %s y %s" % (a, b)); break
+        if (b - a).days > 14: errs.append("hueco de mas de 14 dias entre %s y %s" % (a, b)); break  # la CGC no publica la semana de Navidad: un hueco de 14 dias es normal
     if doc["asOf"] != weeks[-1]: errs.append("asOf no es la ultima semana")
     if (TODAY - ds[-1]).days > 21: warns.append("ultima semana de hace mas de tres semanas")
     caps = {"exports": 5000, "cumExports": 40000, "deliveries": 5000, "stocks": 20000}; seen = set()

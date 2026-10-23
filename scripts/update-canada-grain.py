@@ -8,7 +8,7 @@ Por semana (termina en domingo) y grano, en miles de toneladas:
   deliveries entregas de productores a elevadores primarios (hoja "Primary", metrica "Deliveries")
   stocks     existencias comerciales: elevadores primarios y de proceso, terminales y puertos (hoja "Summary", metrica "Stocks")
 Si una fila trae "All grades combined" se usa esa; si no, se suman los grados (asi no se cuenta dos veces).
-Se guardan las 3 ultimas campanas. Solo cifras publicadas; si la descarga o el formato fallan, el fichero anterior se conserva.
+Se guardan las 6 ultimas campanas (da para el filtro de 5 anos de la web). Solo cifras publicadas; si la descarga o el formato fallan, el fichero anterior se conserva.
 Uso: python3 scripts/update-canada-grain.py [--fixture AAAA-AA=ruta.csv[.gz] ...] [--out ruta]"""
 import csv, datetime, gzip, io, json, sys, time, urllib.request
 from collections import defaultdict
@@ -22,7 +22,7 @@ GRAINS = {"Wheat": ("wheat", "Wheat (excluding durum)"), "Amber Durum": ("durum"
           "Oats": ("oats", "Oats"), "Peas": ("peas", "Peas"), "Lentils": ("lentils", "Lentils"), "Flaxseed": ("flaxseed", "Flaxseed"), "Soybeans": ("soybeans", "Soybeans"),
           "Corn": ("corn", "Corn"), "Rye": ("rye", "Rye"), "Chick Peas": ("chickpeas", "Chickpeas")}
 PROVINCES = {"Manitoba", "Saskatchewan", "Alberta", "British Columbia"}
-KEEP_YEARS = 3
+KEEP_YEARS = 6
 def iso(s):
     d, m, y = s.split("/"); return datetime.date(int(y), int(m), int(d)).isoformat()
 def cands(s):
@@ -63,13 +63,14 @@ NEED = {"Crop Year", "Grain Week", "Week Ending Date", "worksheet", "metric", "p
 def crop_years(today=None):
     t = today or datetime.date.today(); start = t.year if t.month >= 8 else t.year - 1
     return ["%d-%02d" % (y, (y + 1) % 100) for y in range(start, start - KEEP_YEARS, -1)]
-def total(rows, worksheet, metric, period, regions=None, wd=None):
+def total(rows, worksheet, metric, period, regions=None, wd=None, skip=()):
     """Suma por (grano, fecha) de todas las regiones; por region usa 'All grades combined' si existe, si no suma los grados."""
     cell = defaultdict(lambda: {"all": None, "sum": 0.0})
     for r in rows:
-        if r["worksheet"] != worksheet or r["metric"] != metric or r["period"] != period or r["grain"] not in GRAINS: continue
-        if r["Ktonnes"] in ("", None): continue
+        if r["worksheet"] != worksheet or r["metric"] not in ((metric,) if isinstance(metric, str) else metric) or r["period"] != period or r["grain"] not in GRAINS: continue
+        if (r["Ktonnes"] or "").strip() in ("", ".", "-", "..", "x", "X", "NA"): continue
         if regions and r["Region"] not in regions: continue
+        if r["Region"] in skip: continue
         k = (r["grain"], wd[(r["Crop Year"], int(r["Grain Week"]))], r["Region"]); v = num(r["Ktonnes"])
         if r["grade"] == "All grades combined": cell[k]["all"] = (cell[k]["all"] or 0.0) + v
         else: cell[k]["sum"] += v
@@ -81,7 +82,7 @@ def build(files):
     rows = [r for fy in sorted(files) for r in files[fy]]
     wd = week_dates([r for r in rows if r["worksheet"] in ("Terminal Exports", "Primary", "Summary")])
     ex = total(rows, "Terminal Exports", "Exports", "Current Week", None, wd); cum = total(rows, "Terminal Exports", "Exports", "Crop Year", None, wd)
-    dl = total(rows, "Primary", "Deliveries", "Current Week", PROVINCES, wd); st = total(rows, "Summary", "Stocks", "Current Week", None, wd)
+    dl = total(rows, "Primary", "Deliveries", "Current Week", PROVINCES, wd); st = total(rows, "Summary", ("Stocks", "Commercial Stocks"), "Current Week", None, wd, skip=("Lake Vessels",))  # las campanas antiguas llaman "Commercial Stocks" a lo mismo; "Lake Vessels" (buques en los lagos) no existe en las actuales
     weeks = sorted({d for (_, d) in list(ex) + list(dl) + list(st)})
     if len(weeks) < 4: raise ValueError("menos de 4 semanas")
     grains = []
@@ -103,7 +104,11 @@ def fetch(fy):
     raise RuntimeError("%s: %r" % (fy, last))
 def rows_of(text):
     rd = csv.DictReader(io.StringIO(text))
-    if not NEED <= set(rd.fieldnames or []): raise ValueError("columnas inesperadas: %s" % (rd.fieldnames,))
+    # Las campanas antiguas (hasta 2023-24 al menos) traen las cabeceras en snake_case (grain_week, crop_year...): se pasan a las actuales.
+    ALIAS = {"grain_week": "Grain Week", "crop_year": "Crop Year", "week_ending_date": "Week Ending Date", "region": "Region"}
+    names = [ALIAS.get(n, n) for n in (rd.fieldnames or [])]
+    if not NEED <= set(names): raise ValueError("columnas inesperadas: %s" % (rd.fieldnames,))
+    rd.fieldnames = names
     return list(rd)
 def main():
     args = sys.argv[1:]; outp = OUT; fx = {}
