@@ -2,7 +2,7 @@
 name: Update Sweden (Jordbruksverket producer prices, A-index and farm stocks)
 on:
   schedule:
-    - cron: '20 7 14 * *'
+    - cron: '20 7 * * 1,4'
   workflow_dispatch:
 permissions:
   contents: write
