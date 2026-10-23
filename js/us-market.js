@@ -52,7 +52,11 @@
   var MK = { corn: { es: 'Maíz', en: 'Corn', fr: 'Maïs', it: 'Mais' }, soybeans: { es: 'Soja', en: 'Soybeans', fr: 'Soja', it: 'Soia' }, soymeal: { es: 'Harina de soja', en: 'Soybean meal', fr: 'Tourteau de soja', it: 'Farina di soia' },
     soyoil: { es: 'Aceite de soja', en: 'Soybean oil', fr: 'Huile de soja', it: 'Olio di soia' }, wheat_srw: { es: 'Trigo blando de invierno (SRW)', en: 'SRW wheat', fr: 'Blé tendre d’hiver (SRW)', it: 'Grano tenero invernale (SRW)' },
     wheat_hrw: { es: 'Trigo duro de invierno (HRW)', en: 'HRW wheat', fr: 'Blé dur d’hiver (HRW)', it: 'Grano duro invernale (HRW)' }, live_cattle: { es: 'Vacuno vivo', en: 'Live cattle', fr: 'Bovins vivants', it: 'Bovini vivi' },
+    sugar11: { es: 'Azúcar n.º 11', en: 'Sugar No. 11', fr: 'Sucre n° 11', it: 'Zucchero n. 11' }, coffee_c: { es: 'Café C (arábica)', en: 'Coffee C (arabica)', fr: 'Café C (arabica)', it: 'Caffè C (arabica)' }, cocoa: { es: 'Cacao', en: 'Cocoa', fr: 'Cacao', it: 'Cacao' },
+    cotton2: { es: 'Algodón n.º 2', en: 'Cotton No. 2', fr: 'Coton n° 2', it: 'Cotone n. 2' }, fcoj: { es: 'Zumo de naranja concentrado', en: 'Frozen concentrated orange juice', fr: 'Jus d’orange concentré congelé', it: 'Succo d’arancia concentrato congelato' }, canola: { es: 'Canola', en: 'Canola', fr: 'Canola', it: 'Canola' },
     feeder_cattle: { es: 'Terneros de engorde', en: 'Feeder cattle', fr: 'Broutards', it: 'Vitelli da ingrasso' }, lean_hogs: { es: 'Porcino magro', en: 'Lean hogs', fr: 'Porcs maigres', it: 'Suini magri' } };
+  // Los seis blandos de ICE Futures U.S. entran por el mismo informe de la CFTC: son posiciones de fondos, no precios (ICE no permite publicar sus cotizaciones sin licencia)
+  var CI = { es: 'Azúcar, café, cacao, algodón, zumo de naranja y canola cotizan en ICE Futures U.S.: aquí solo se ven las posiciones de los fondos que publica la CFTC, no los precios de ICE.', en: 'Sugar, coffee, cocoa, cotton, orange juice and canola trade on ICE Futures U.S.: this shows only fund positions published by the CFTC, not ICE prices.', fr: 'Sucre, café, cacao, coton, jus d’orange et canola se négocient sur ICE Futures U.S. : on ne voit ici que les positions des fonds publiées par la CFTC, pas les prix d’ICE.', it: 'Zucchero, caffè, cacao, cotone, succo d’arancia e canola sono quotati su ICE Futures U.S.: qui si vedono solo le posizioni dei fondi pubblicate dalla CFTC, non i prezzi di ICE.' };
   var LIVE = { live_cattle: 1, feeder_cattle: 1, lean_hogs: 1 };
   var AREA = { NUS: { es: 'EE. UU.', en: 'U.S.', fr: 'États-Unis', it: 'USA' }, R10: { es: 'Costa Este (PADD 1)', en: 'East Coast (PADD 1)', fr: 'Côte Est (PADD 1)', it: 'Costa Est (PADD 1)' },
     R1X: { es: 'Nueva Inglaterra (PADD 1A)', en: 'New England (PADD 1A)', fr: 'Nouvelle-Angleterre (PADD 1A)', it: 'New England (PADD 1A)' }, R1Y: { es: 'Atlántico Central (PADD 1B)', en: 'Central Atlantic (PADD 1B)', fr: 'Atlantique Centre (PADD 1B)', it: 'Atlantico centrale (PADD 1B)' },
@@ -108,7 +112,7 @@
     var m = d.markets.filter(function (q) { return q.id === SEL.cot; })[0] || d.markets[0], last = d.markets[0].points[d.markets[0].points.length - 1][0];
     var pts = m.points.map(function (p) { var v = net(p); return { x: ts(p[0]), y: v, l: day(p[0]) }; });
     var body = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(x.wk) + ': ' + esc(day(last)) + ' · ' + esc(x.contracts) + '</p>' + table([x.mkt, x.net, x.wk, x.oi, x.rng, x.prod], rows, 640) +
-      '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(x.rngH) + '</p>' +
+      '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(x.rngH) + '</p><p class="di-movers-hint" style="margin:4px 0 0">' + esc(L(CI)) + '</p>' +
       chart([{ name: x.chartCot, color: '#1d5178', pts: pts }], x.contracts, x.chartCot + ' · ' + (L(MK[m.id]) || m.label), true, 0).replace('<div style="margin-top:12px">', '<div style="margin-top:12px"><div style="font-weight:600;margin-bottom:4px">' + esc(x.chartCot) + ' · ' + esc(L(MK[m.id]) || m.label) + '</div>') + cite('cftc', day(last));
     return card('usm-cot', x.cot, x.cotSub, body);
   }

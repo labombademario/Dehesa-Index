@@ -52,6 +52,8 @@ function place(o) {
   if (/Alberta/.test(m)) return PLACE.Alberta;
   if (/Statistics Canada/.test(m) || o.region === 'ca') return PLACE['Canadá'];
   if (/Reino Unido/.test(m) || o.region === 'uk') return PLACE['Reino Unido'];
+  const rc = /^colza_(fr|de|pl|hu)$/.exec(o.product);  // colza física de la Comisión: el país va en el nombre
+  if (rc) { const C = { fr: ['Francia (Rouen)', 'France (Rouen)', 'France (Rouen)', 'Francia (Rouen)'], de: ['Alemania', 'Germany', 'Allemagne', 'Germania'], pl: ['Polonia', 'Poland', 'Pologne', 'Polonia'], hu: ['Hungría', 'Hungary', 'Hongrie', 'Ungheria'] }[rc[1]]; return t4(C[0], C[1], C[2], C[3]); }
   if (canon(o.sourceId) === 'world_bank' && o.product !== 'gas_natural') return PLACE.Mundo;  // Pink Sheet: precio internacional de referencia, no de la UE
   if (/agregado de la UE|media de la UE,|Es la media de la UE|varios mercados de la UE|Weighted EU average|EU27/.test(m)) return PLACE.UE;
   if (/ en España/.test(m)) return PLACE['España'];

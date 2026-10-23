@@ -207,6 +207,8 @@
 
   // Banco Mundial (Pink Sheet): una entrada por fila de DehesaData.WB_PANEL, región 'eu', USD, mensual; misma clave que scripts/build-wb-panel-obs.py
   (global.DehesaData && global.DehesaData.WB_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':eu'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'USD', unit: r[6], frequency: r[15] }; });
+  // Colza física de la Comisión Europea (EUP_PANEL): región 'eu', EUR, semanal; misma clave que scripts/build-eu-oilseeds-panel-obs.py
+  (global.DehesaData && global.DehesaData.EUP_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':eu'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'EUR', unit: r[6], frequency: r[15] }; });
 
   // EE. UU. (lácteos de AMS, bioenergía de ERS): una entrada por fila de DehesaData.US_PANEL; misma clave que scripts/build-us-panel-obs.py
   (global.DehesaData && global.DehesaData.US_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':us'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'USD', unit: r[6], frequency: r[15] }; });

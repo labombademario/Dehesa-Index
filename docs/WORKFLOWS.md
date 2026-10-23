@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-274 workflows (226 generados desde `sources.yml`, 48 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+275 workflows (226 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -143,6 +143,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-land.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-land.py | eu-land/land.json | finish, validate-files |
 | update-eu-more-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | bg-ghg-agri.json, ch-ghg-agri.json, cy-ghg-agri.json … | finish, validate-files |
 | update-eu-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-nitrates.py | eu-nitrates.json | finish, validate-files |
+| update-eu-oilseeds-panel-prices.yml | a mano | semanal (3,5) | build-eu-oilseeds-panel-obs.py | - | price-engine, publish |
 | update-eu-organic.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-organic.py | eu-organic-stats.json | finish, validate-files |
 | update-eu-production.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-production.py | eu-production-stats.json | finish, validate-files |
 | update-eu-region-climate.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-eu-region-climate.mjs | eu-region-climate.json | finish, validate-files |

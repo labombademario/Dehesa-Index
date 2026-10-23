@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-23T10:02:26.113Z",
+  "generatedAt": "2026-10-23T12:04:15.339Z",
   "status": "informational",
   "rules": [
     {
@@ -476,6 +476,15 @@
       "severity": "watch",
       "changePct": 7.95,
       "observationDate": "2026-06-01"
+    },
+    {
+      "type": "period_move",
+      "product": "colza_pl",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 5.19,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",

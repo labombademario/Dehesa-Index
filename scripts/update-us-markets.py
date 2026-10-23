@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mercado e insumos de EE. UU. -> data/us-markets/{cot,transport,fuel}.json y data/us-markets/log.txt
   cot.json        posiciones de los fondos (CFTC Commitments of Traders, informe desagregado solo futuros): maiz, soja, harina y aceite de soja,
-                  trigo SRW y HRW, vacuno vivo, vacuno de engorde y porcino magro. Contratos abiertos, gestores de dinero, productores/comerciantes y swaps.
+                  trigo SRW y HRW, vacuno vivo, vacuno de engorde, porcino magro y, de ICE Futures U.S., azucar, cafe, cacao, algodon, zumo de naranja y canola. Contratos abiertos, gestores de dinero, productores/comerciantes y swaps.
   transport.json  transporte de grano de USDA AMS (AgTransport): indicadores semanales de coste por modo (camion, tren lanzadera, barcaza, flete
                   oceanico; indice 2017 = 100) y fletes de barcaza rio abajo por el sistema del Misisipi (porcentaje de la tarifa 7 y USD por tonelada).
   fuel.json       gasoleo de automocion (precio de venta al publico, semanal) por region PADD y por los estados que publica la EIA, y propano
@@ -41,7 +41,9 @@ def day(s): return str(s or "")[:10]
 # ---------------- CFTC ----------------
 COT = [("002602", "corn", "Maiz", "CBOT"), ("005602", "soybeans", "Soja", "CBOT"), ("026603", "soymeal", "Harina de soja", "CBOT"), ("007601", "soyoil", "Aceite de soja", "CBOT"),
        ("001602", "wheat_srw", "Trigo SRW", "CBOT"), ("001612", "wheat_hrw", "Trigo HRW", "KCBT"), ("057642", "live_cattle", "Vacuno vivo", "CME"),
-       ("061641", "feeder_cattle", "Vacuno de engorde", "CME"), ("054642", "lean_hogs", "Porcino magro", "CME")]
+       ("061641", "feeder_cattle", "Vacuno de engorde", "CME"), ("054642", "lean_hogs", "Porcino magro", "CME"),
+       ("080732", "sugar11", "Azucar n.o 11", "ICE"), ("083731", "coffee_c", "Cafe C", "ICE"), ("073732", "cocoa", "Cacao", "ICE"), ("033661", "cotton2", "Algodon n.o 2", "ICE"),
+       ("040701", "fcoj", "Zumo de naranja concentrado", "ICE"), ("135731", "canola", "Canola", "ICE")]
 COT_F = ["open_interest_all", "m_money_positions_long_all", "m_money_positions_short_all", "m_money_positions_spread", "prod_merc_positions_long", "prod_merc_positions_short",
          "swap_positions_long_all", "swap__positions_short_all", "nonrept_positions_long_all", "nonrept_positions_short_all"]
 COT_K = ["oi", "mmL", "mmS", "mmSp", "pmL", "pmS", "swL", "swS", "nrL", "nrS"]

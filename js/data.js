@@ -1279,6 +1279,13 @@
     ['huevos_jaula_uk', 'avicultura', 'Huevos de jaula enriquecida, precio al productor (Reino Unido)', 'Eggs, enriched cages, producer price (UK)', 'Œufs, cages aménagées, prix producteur (Royaume-Uni)', 'Uova, gabbie arricchite, prezzo al produttore (Regno Unito)', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Defra (precio medio trimestral de la empaquetadora al productor)', 'defra', 'quarterly'],
     ['huevos_campero_uk', 'avicultura', 'Huevos camperos, precio al productor (Reino Unido)', 'Eggs, free range, producer price (UK)', 'Œufs plein air, prix producteur (Royaume-Uni)', 'Uova allevate all\'aperto, prezzo al produttore (Regno Unito)', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Defra (precio medio trimestral de la empaquetadora al productor)', 'defra', 'quarterly']
   ];
+  // --- Colza física de la Comisión Europea (Rouen, Alemania, Polonia, Hungría), semanal, EUR/t (23-oct-2026). Mismas columnas que WB_PANEL. Cifras: scripts/build-eu-oilseeds-panel-obs.py ---
+  var EUP_PANEL = [
+    ['colza_fr', 'pienso', 'Colza, Rouen (Francia)', 'Rapeseed, Rouen (France)', 'Colza, Rouen (France)', 'Colza, Rouen (Francia)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌼', 'Comisión Europea, Agri-food Data Portal (precio físico semanal, no es el futuro de Euronext)', 'eu_agrifood', 'weekly'],
+    ['colza_de', 'pienso', 'Colza, media nacional (Alemania)', 'Rapeseed, national average (Germany)', 'Colza, moyenne nationale (Allemagne)', 'Colza, media nazionale (Germania)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌼', 'Comisión Europea, Agri-food Data Portal (precio físico semanal, no es el futuro de Euronext)', 'eu_agrifood', 'weekly'],
+    ['colza_pl', 'pienso', 'Colza, media nacional (Polonia)', 'Rapeseed, national average (Poland)', 'Colza, moyenne nationale (Pologne)', 'Colza, media nazionale (Polonia)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌼', 'Comisión Europea, Agri-food Data Portal (precio físico semanal, no es el futuro de Euronext)', 'eu_agrifood', 'weekly'],
+    ['colza_hu', 'pienso', 'Colza, media nacional (Hungría)', 'Rapeseed, national average (Hungary)', 'Colza, moyenne nationale (Hongrie)', 'Colza, media nazionale (Ungheria)', 'tonelada', 1000, 'ton_corta', 907.185, 'tonelada', 1000, '🌼', 'Comisión Europea, Agri-food Data Portal (precio físico semanal, no es el futuro de Euronext)', 'eu_agrifood', 'weekly']
+  ];
   // --- Banco Mundial (Pink Sheet) en el panel: aceites vegetales, café, cacao, té, banana, algodón, caucho, carnes y arroz internacionales... (23-oct-2026) ---
   // Mismas columnas que UK_PANEL. Región 'eu' (como la urea y el gas del Banco Mundial), USD, mensual. Cifras: scripts/build-wb-panel-obs.py.
   var WB_PANEL = [
@@ -1356,7 +1363,7 @@
     ['es', 'en', 'fr', 'it'].forEach(function (l) { NAMES[l].tropicales = TROP[l]; });
     var hasTrop = false; RAW.forEach(function (c) { if (c.id === 'tropicales') hasTrop = true; });
     if (!hasTrop) RAW.push({ id: 'tropicales', nameKey: 'tropicales', products: [] });
-    [[CA_PANEL, 'ca', 'CAD'], [UK_PANEL, 'uk', 'GBP'], [WB_PANEL, 'eu', 'USD'], [US_PANEL, 'us', 'USD']].forEach(function (set) { set[0].forEach(function (row) {
+    [[CA_PANEL, 'ca', 'CAD'], [UK_PANEL, 'uk', 'GBP'], [WB_PANEL, 'eu', 'USD'], [EUP_PANEL, 'eu', 'EUR'], [US_PANEL, 'us', 'USD']].forEach(function (set) { set[0].forEach(function (row) {
       var key = row[0], catId = row[1], unit = row[6], kg = nm(row[7]);
       var cat = null; RAW.forEach(function (c) { if (c.id === catId) cat = c; });
       if (!cat) return;
@@ -1417,6 +1424,7 @@
     'Banco Mundial, Pink Sheet (precio internacional de referencia en USD, no es el precio del agricultor)': ['World Bank, Pink Sheet (international reference price in USD, not the farmer’s price)', 'Banque mondiale, Pink Sheet (prix international de référence en USD, pas le prix payé à l’agriculteur)', 'Banca Mondiale, Pink Sheet (prezzo internazionale di riferimento in USD, non il prezzo dell’agricoltore)'],
     'USDA AMS (National Dairy Products Sales Report, precio semanal medio ponderado)': ['USDA AMS (National Dairy Products Sales Report, weighted weekly average price)', 'USDA AMS (National Dairy Products Sales Report, prix hebdomadaire moyen pondéré)', 'USDA AMS (National Dairy Products Sales Report, prezzo settimanale medio ponderato)'],
     'USDA ERS (estadísticas de bioenergía, mensual)': ['USDA ERS (bioenergy statistics, monthly)', 'USDA ERS (statistiques de bioénergie, mensuelles)', 'USDA ERS (statistiche sulla bioenergia, mensili)'],
+    'Comisión Europea, Agri-food Data Portal (precio físico semanal, no es el futuro de Euronext)': ['European Commission, Agri-food Data Portal (weekly physical price, not the Euronext future)', 'Commission européenne, Agri-food Data Portal (prix physique hebdomadaire, pas le contrat à terme Euronext)', 'Commissione europea, Agri-food Data Portal (prezzo fisico settimanale, non il future Euronext)'],
     'USDA AMS (Livestock Mandatory Reporting, diario)': ['USDA AMS (Livestock Mandatory Reporting, daily)', 'USDA AMS (Livestock Mandatory Reporting, quotidien)', 'USDA AMS (Livestock Mandatory Reporting, giornaliero)']
   };
   function marketText(es, lang) { var i = { en: 0, fr: 1, it: 2 }[lang]; var t = MARKET_T[es]; return i != null && t ? t[i] : es; }
@@ -1428,6 +1436,7 @@
     CA_PANEL: CA_PANEL,
     UK_PANEL: UK_PANEL,
     WB_PANEL: WB_PANEL,
+    EUP_PANEL: EUP_PANEL,
     US_PANEL: US_PANEL,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
