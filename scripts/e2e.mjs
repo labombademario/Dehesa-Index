@@ -212,7 +212,9 @@ for (const w of [1280, 390]) {
       await page.reload({ waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 }); await openFilt(page);
       if (parseInt((await page.innerText('#ob-body .rl-filters + p')).trim(), 10) !== us) throw new Error('el filtro no se conserva al recargar');
       await openFilt(page); await page.click('[data-f=w][data-v=d1]'); await page.waitForTimeout(150);
-      if (!/ninguna serie|No series|Aucune série|Nessuna serie/i.test(await page.innerText('#moves'))) throw new Error('la ventana diaria vacia debe decirlo en vez de rellenarse');
+      // la ventana de un dia puede estar vacia (debe decirlo) o tener movimientos reales hoy (entonces no puede ser mayor que la del filtro de pais)
+      const d1txt = await page.innerText('#moves'), d1n = parseInt((await page.innerText('#ob-body .rl-filters + p')).trim(), 10);
+      if (!/ninguna serie|No series|Aucune série|Nessuna serie/i.test(d1txt) && !(d1n >= 0 && d1n <= us)) throw new Error('la ventana diaria vacia debe decirlo en vez de rellenarse');
       await page.goto(BASE + '/observatorio.html?c=eu&t=INPUT&w=d30#freshness', { waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 }); await openFilt(page);
       if (!(await page.$('#moves [data-f=w][aria-pressed=true][data-v=d30]'))) throw new Error('?w=d30 no abre la ventana mensual');
       const rows = await page.$$eval('#moves tbody tr', (e) => e.length); if (rows < 1) throw new Error('ventana mensual sin filas con filtros eu+INPUT');
