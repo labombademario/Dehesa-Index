@@ -1,0 +1,40 @@
+## valet-groups ERR <HTTPError 404: 'Not Found'>
+## BCPI_MONTHLY 200 application/json; charset=utf-8 len=3788
+series: M.BCPI=Monthly BCPI Total - v52673496; M.BCNE=Monthly BCPI Excluding Energy - v52673497; M.ENER=Monthly BCPI Energy - v52673498; M.MTLS=Monthly BCPI Metals and Minerals - v52673499; M.FOPR=Monthly BCPI Forestry - v52673502; M.AGRI=Monthly BCPI Agriculture - v52673500; M.FISH=Monthly BCPI Fish - v52673501
+obs: [{"d": "2026-09-01", "M.FISH": {"v": "1730.27"}, "M.BCPI": {"v": "747.71"}, "M.BCNE": {"v": "576.51"}, "M.ENER": {"v": "1636.53"}, "M.MTLS": {"v": "1148.65"}, "M.FOPR": {"v": "471.24"}, "M.AGRI": {"v": "361.77"}}, {"d": "2026-08-01", "M.FISH": {"v": "1664.17"}, "M.BCPI": {"v": "709.81"}, "M.BCNE": {"v": "579.20"}, "M.ENER": {"v": "1468.40"}, "M.MTLS": {"v": "1165.55"}, "M.FOPR": {"v": "474.35"}, "M.AGRI": {"v": "359.83"}}]
+## BCPI_WEEKLY 200 application/json; charset=utf-8 len=3765
+series: W.BCPI=Weekly BCPI Total - v52673503; W.BCNE=Weekly BCPI Excluding Energy - v52673504; W.ENER=Weekly BCPI Energy - v52673505; W.MTLS=Weekly BCPI Metals and Minerals - v52673506; W.FOPR=Weekly BCPI Forestry - v52673509; W.AGRI=Weekly BCPI Agriculture - v52673507; W.FISH=Weekly BCPI Fish - v52673508
+obs: [{"d": "2026-10-21", "W.FISH": {"v": "1730.27"}, "W.BCPI": {"v": "741.53"}, "W.BCNE": {"v": "558.02"}, "W.ENER": {"v": "1662.32"}, "W.MTLS": {"v": "1108.64"}, "W.FOPR": {"v": "459.66"}, "W.AGRI": {"v": "349.64"}}, {"d": "2026-10-14", "W.FISH": {"v": "1730.27"}, "W.BCPI": {"v": "728.53"}, "W.BCNE": {"v": "560.77"}, "W.ENER": {"v": "1596.84"}, "W.MTLS": {"v": "1112.66"}, "W.FOPR": {"v": "462.27"}, "W.AGRI": {"v": "351.92"}}]
+## mb-weekly 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet len=724087
+ sheet manitoba-markets-crops-prices-w
+   ['Year', 'Month', 'Week', 'UOM', 'Crop', 'Value', 'Indicator']
+   ['1987', '8', '32', 'CAD/tonne', 'Soymeal, 46%, Wpg', '295', "Farmer's net cash "]
+   ['1987', '8', '32', 'CAD/tonne', 'Canola, #1CR', '204.22', "Farmer's net cash "]
+   ['1987', '8', '32', 'CAD/tonne', 'Canola Meal, 34%, ', '187.43', "Farmer's net cash "]
+   ['1987', '8', '32', 'CAD/tonne', 'Flaxseed, #1CW', '142.05', "Farmer's net cash "]
+   ['1987', '8', '32', 'CAD/tonne', 'Wheat, Special Pur', '64.95', "Farmer's net cash "]
+   ['2025', '12', '51', 'CAD/tonne', 'Soymeal, 46%, Wpg', 'na', "Farmer's net cash "]
+   ['2025', '12', '51', 'CAD/tonne', 'Canola Meal, 34%, ', '281.09', "Farmer's net cash "]
+## mb-monthly 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet len=171780
+ sheet manitoba-markets-crops-prices-m
+   ['Year', 'Month', 'UOM', 'Crop', 'Value', 'Indicator']
+   ['1987', '8', 'CAD/tonne', 'Wheat, Special Pur', '66.0975', "Farmer's net cash "]
+   ['1987', '9', 'CAD/tonne', 'Wheat, Special Pur', '70.752', "Farmer's net cash "]
+   ['1987', '10', 'CAD/tonne', 'Wheat, Special Pur', '72.725', "Farmer's net cash "]
+   ['1987', '11', 'CAD/tonne', 'Wheat, Special Pur', '76.825', "Farmer's net cash "]
+   ['1987', '12', 'CAD/tonne', 'Wheat, Special Pur', '80.884', "Farmer's net cash "]
+   ['2025', '11', 'CAD/tonne', 'Wheat, Northern Ha', '252.89058', "Farmer's net cash "]
+   ['2025', '12', 'CAD/tonne', 'Wheat, Northern Ha', '246.91968', "Farmer's net cash "]
+## ab-inputs 200 text/html; charset=utf-8 len=81236
+ links: https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/32817954-7476-49e5-88f8-450f346f941a/download/agi-tedab-monthly-farm-input-prices-2026-02.pdf | https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/4e7e62ea-c16f-4b0c-903b-768a588bedbc/download/agi-tedab-monthly-farm-input-prices-2026-04.pdf | https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/9bef22b6-c10a-4d89-a629-91c2eda9537c/download/agi-tedab-monthly-farm-input-prices-2026-03.pdf | https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/af9e3b2e-ab00-4ca4-a6ac-a20071fd1ff6/download/agi-tedab-monthly-farm-input-prices-2026-08.pdf | https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/bdcabac1-3fd2-46a8-b19c-4edf9c3141be/download/agi-tedab-monthly-farm-input-prices-2026-05.pdf | https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/d12ad022-1dfb-4ddc-a7b9-e9040236f607/download/agi-tedab-monthly-farm-input-prices-2026-07.pdf | https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/e3cd2fe3-6b08-46bb-bccc-d0f387a32ffd/download/agi-tedab-monthly-farm-input-prices-2026-01.pdf | https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/f01ab1da-4f4b-4a39-ad93-fc5205b1e87e/download/agi-tedab-monthly-farm-input-prices-2026-06.pdf
+ lic: Usage / Licence | 
+                       
+                           Licence
+                       
+                     | a href='https://open.alberta.ca/licence' | Open Government Licence - Alberta | license_id | Licence
+## ontario-org 200 text/html; charset=utf-8 len=117193
+ datasets: aggregated-carrots-production-and-yields | aggregated-cucumber-production-and-yields | average-weekly-cattle-prices | average-weekly-corn-prices | average-weekly-hog-prices | average-weekly-soybean-prices | average-weekly-winter-wheat-prices | condemnations-for-pathological-conditions-in-provincially-inspected-plants | farm-capital-in-ontario | livestock-medicine-outlets-in-ontario | new | omafra-technical-publications-catalogue | ontario-commercial-vegetable-crops-production | ontario-farm-data-by-county | ontario-sweetcherry-production-and-yield | provincially-licensed-fish-plants | provincially-licensed-meat-plants | red-meat-slaughter | resources | socio-economic-statistics-for-rural-and-urban-ontario | the-ontario-wildlife-damage-compensation-program-fair-market-value-valuation-table | white-meat-slaughter
+## WDS 16100017 Lumber production, shipments, and stocks by species, monthly | 2014-01-01 -> 2026-07-01 | freq 6 | dims ['Geography', 'North American Product Classification System (NAPCS)']
+## WDS 18100004 Consumer Price Index, monthly, not seasonally adjusted | 1914-01-01 -> 2026-09-01 | freq 6 | dims ['Geography', 'Products and product groups']
+## WDS 32100107 Aquaculture, production and value | 1991-01-01 -> 2024-01-01 | freq 12 | dims ['Geography', 'Finfish and shellfish', 'Production']
+## WDS 18100265 Industrial product price index, by major product group, monthly | 1956-01-01 -> 2026-09-01 | freq 6 | dims ['Geography', 'North American Product Classification System (NAPCS)']
