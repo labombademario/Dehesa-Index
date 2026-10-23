@@ -2122,6 +2122,14 @@ sources:
     data: [us-ers-food-stats.json]
     log: us-ers-food-log.txt
     message: Gasto en alimentos de EE. UU. - ventas mensuales, gasto por estado y reparto del dolar de la comida (USDA ERS)
+  - id: us-ers-productivity
+    name: Update US and international agricultural productivity (USDA ERS)
+    cron: ['30 16 * * 5']
+    script: scripts/update-us-ers-productivity.py
+    timeout: 15
+    data: [us-ers-productivity-stats.json]
+    log: us-ers-productivity-log.txt
+    message: Productividad agraria - indices de PTF, produccion e insumos de EE. UU. y de los paises del catalogo (USDA ERS)
   - id: us-nass-processing
     name: Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)
     cron: ['40 16 1-8,20 * *']

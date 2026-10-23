@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 159 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36716 series en el catalogo unificado.
+Resumen: 159 VERIFIED, 14 PENDING, 7 RESTRICTED, 4 BLOCKED; 36852 series en el catalogo unificado.
 
 ## VERIFIED (159)
 
@@ -154,7 +154,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_ams_fmmo` | USDA AMS Dairy Programs, Federal Milk Marketing Orders (Market News datamart) | US | US-PD | si/si | no | 48 | Only AMS-produced FMMO reports are used (3355 class prices by order, 3351 uniform prices, 3357 mailbox prices, 3352 price and pool, 3462 pro… |
 | `usda_ams_lmr` | USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart | US | US-PD | si/si | no | 0 | Only AMS-produced reports are used (LM_XB403 boxed beef cutout, LM_PK602 pork cutout, LM_HG201 prior-day swine, LM_CT100 5-area slaughter ca… |
 | `usda_ams_mars` | USDA AMS Market News (MARS API) | US | US-PD | si/si | no | 13 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
-| `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 634 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
+| `usda_ers` | USDA Economic Research Service (Food Price Outlook, costs and returns, farm income) | US | US-PD | si/si | no | 770 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_esr` | USDA FAS — Export Sales Reporting (ESR) | US | US-PD | si/si | no | 13 | USDA states that most content is public domain and credit is requested, not required. No agency-specific data licence page exists; the grant… |
 | `usda_fas_gats` | USDA FAS — Global Agricultural Trade System (GATS) | US | CC-BY-4.0 | si/si | si | 16 | The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims. |
 | `usda_fas_psd` | USDA FAS — Production, Supply and Distribution (PSD Online) | US | CC-BY-4.0 | si/si | si | 0 | Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos. |
