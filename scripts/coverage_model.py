@@ -19,7 +19,7 @@ GROUP_METRIC = {
   'trade': 'trade', 'partners': 'trade',
   'stocks': 'stocks',
   'inputs': 'input_price', 'inputs_a': 'input_price', 'inputs_f': 'input_price', 'costs': 'input_price',
-  'income': 'other', 'rates': 'other', 'organic': 'other', 'fish': 'other', 'environment': 'other', 'climate': 'other', 'consumption': 'other',
+  'income': 'other', 'rates': 'other', 'organic': 'other', 'fish': 'other', 'environment': 'other', 'climate': 'other', 'consumption': 'other', 'structure': 'other',
 }
 METRICS = ['price', 'price_index', 'production', 'trade', 'stocks', 'input_price']
 KIND_OF = {}

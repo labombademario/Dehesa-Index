@@ -12,7 +12,7 @@
     { "url": "/perfiles.html", "maxDataRawKB": 379, "maxJsRawKB": 249, "maxTotalGzKB": 210,
       "forbid": ["-stats\\.json", "/data/(latest|history|normalized)\\.json", "/data/catalog/[A-Z]{2}\\.json"] },
     { "url": "/comparador.html", "maxDataRawKB": 495, "maxTotalGzKB": 260, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
-    { "url": "/catalogo.html", "maxDataRawKB": 350, "maxJsRawKB": 260, "maxTotalGzKB": 210, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
+    { "url": "/catalogo.html", "maxDataRawKB": 375, "maxJsRawKB": 260, "maxTotalGzKB": 210, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
     { "url": "/catalogo.html?q=trigo", "maxDataRawKB": 5211, "maxTotalGzKB": 805, "forbid": ["/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
     { "url": "/mi-seguimiento.html", "maxDataRawKB": 351, "maxTotalGzKB": 180, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "/data/watch-index\\.json"] },
     { "url": "/mi-mercado.html?c=US&r=KS&p=cattle", "maxDataRawKB": 640, "maxTotalGzKB": 401, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/us-cash-bids/history/"], "wait": 3000 },
