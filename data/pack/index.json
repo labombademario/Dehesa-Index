@@ -18,7 +18,7 @@
  "summary": {
   "files": 208,
   "excluded": 0,
-  "rows": 75885
+  "rows": 75894
  },
  "files": [
   {
@@ -3600,13 +3600,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 187,
+   "rows": 188,
    "first": "2022-04-09",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/corderos_ni.csv",
    "xlsx": "data/pack/uk/corderos_ni.xlsx",
-   "csvBytes": 47568,
-   "xlsxBytes": 15753
+   "csvBytes": 47822,
+   "xlsxBytes": 15800
   },
   {
    "product": "gasolina_uk",
@@ -3817,13 +3817,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 249,
+   "rows": 250,
    "first": "2022-01-08",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/novillas_r3_ni.csv",
    "xlsx": "data/pack/uk/novillas_r3_ni.xlsx",
-   "csvBytes": 64550,
-   "xlsxBytes": 18215
+   "csvBytes": 64809,
+   "xlsxBytes": 18259
   },
   {
    "product": "novillas_ni",
@@ -3848,13 +3848,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 249,
+   "rows": 250,
    "first": "2022-01-08",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/novillas_ni.csv",
    "xlsx": "data/pack/uk/novillas_ni.xlsx",
-   "csvBytes": 63217,
-   "xlsxBytes": 18333
+   "csvBytes": 63470,
+   "xlsxBytes": 18376
   },
   {
    "product": "novillos_r3_ni",
@@ -3879,13 +3879,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 249,
+   "rows": 250,
    "first": "2022-01-08",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/novillos_r3_ni.csv",
    "xlsx": "data/pack/uk/novillos_r3_ni.xlsx",
-   "csvBytes": 64555,
-   "xlsxBytes": 18197
+   "csvBytes": 64814,
+   "xlsxBytes": 18241
   },
   {
    "product": "novillos_ni",
@@ -3910,13 +3910,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 249,
+   "rows": 250,
    "first": "2022-01-08",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/novillos_ni.csv",
    "xlsx": "data/pack/uk/novillos_ni.xlsx",
-   "csvBytes": 63215,
-   "xlsxBytes": 18322
+   "csvBytes": 63468,
+   "xlsxBytes": 18367
   },
   {
    "product": "toros_r3_ni",
@@ -3941,13 +3941,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 249,
+   "rows": 250,
    "first": "2022-01-08",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/toros_r3_ni.csv",
    "xlsx": "data/pack/uk/toros_r3_ni.xlsx",
-   "csvBytes": 65304,
-   "xlsxBytes": 18226
+   "csvBytes": 65566,
+   "xlsxBytes": 18269
   },
   {
    "product": "toros_ni",
@@ -3972,13 +3972,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 249,
+   "rows": 250,
    "first": "2022-01-08",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/toros_ni.csv",
    "xlsx": "data/pack/uk/toros_ni.xlsx",
-   "csvBytes": 63961,
-   "xlsxBytes": 18370
+   "csvBytes": 64217,
+   "xlsxBytes": 18415
   },
   {
    "product": "vacas_r3_ni",
@@ -4003,13 +4003,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 249,
+   "rows": 250,
    "first": "2022-01-08",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/vacas_r3_ni.csv",
    "xlsx": "data/pack/uk/vacas_r3_ni.xlsx",
-   "csvBytes": 63070,
-   "xlsxBytes": 18235
+   "csvBytes": 63322,
+   "xlsxBytes": 18278
   },
   {
    "product": "vacas_ni",
@@ -4034,13 +4034,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 249,
+   "rows": 250,
    "first": "2022-01-08",
-   "last": "2026-10-10",
+   "last": "2026-10-17",
    "csv": "data/pack/uk/vacas_ni.csv",
    "xlsx": "data/pack/uk/vacas_ni.xlsx",
-   "csvBytes": 61715,
-   "xlsxBytes": 18265
+   "csvBytes": 61962,
+   "xlsxBytes": 18310
   },
   {
    "product": "defra_energy_input_index",
