@@ -2163,6 +2163,14 @@ sources:
     data: [ca-alberta-inputs-stats.json]
     log: ca-alberta-inputs-log.txt
     message: Precios de insumos agrarios de Alberta - fertilizantes, piensos, semillas, combustibles y maquinaria (Alberta Agriculture and Irrigation)
+  - id: ca-statcan-more
+    name: Update Canada sawmills, price indices, CPI and aquaculture (Statistics Canada)
+    cron: ['20 14 * * 2']
+    script: scripts/update-ca-statcan-more.py
+    timeout: 25
+    data: [ca-statcan-more-stats.json]
+    log: ca-statcan-more-log.txt
+    message: Canada - aserraderos, indices de precios industriales y de materias primas, IPC de alimentos y energia y acuicultura (Statistics Canada)
   - id: us-nass-processing
     name: Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)
     cron: ['40 16 1-8,20 * *']

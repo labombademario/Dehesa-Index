@@ -100,6 +100,7 @@ jobs:
           python3 scripts/test-canada-grain.py
           python3 scripts/test-ca-boc-aafc.py
           python3 scripts/test-ca-alberta-inputs.py
+          python3 scripts/test-ca-statcan-more.py
           python3 scripts/test-canada-provinces.py
           python3 -m pip install --quiet numpy netCDF4 shapely
           python3 scripts/test-eu-drought.py
