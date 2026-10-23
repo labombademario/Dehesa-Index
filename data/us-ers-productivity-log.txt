@@ -1,0 +1,4 @@
+EE. UU.: 88 series (T1 30)
+variables en el fichero: Capital_Index, Capital_Q, Cropland_Q, Feed_Q, Fertilizer_Q, Input_Index, IrrigArea_Q, Labor_Index, Labor_Q, Land_Index, Land_Q, Materials_Index, Outall_Index, Outall_Q, Outanim_Q, Outcrop_Q, Outfish_Q, Pasture_Q, TFP_Index
+paises del catalogo con datos: 34 ['AR', 'AT', 'AU', 'BE', 'BG', 'CA', 'CH', 'CL', 'CY', 'CZ', 'DE', 'DK', 'EE', 'EL', 'ES', 'FI', 'FR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'UK', 'UY']
+OK: 88 series de EE. UU. + 34 paises
