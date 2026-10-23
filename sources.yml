@@ -2000,6 +2000,17 @@ sources:
     data: [belgium-more/index.json, belgium-more-stats.json, belgium-more-log.txt]
     extra: ['!data/belgium-more']
     message: Datos Bélgica censo ganadero, cosecha, IPC de alimentos, pesca, lácteos y balances de carne (Statbel)
+  - id: pt-ine-more
+    name: Update Portugal fish prices, supply balances, milk collected, gross meat production, food HICP, rural fires, crop area by region, fertilisers and honey (INE)
+    cron: ['40 9 * * 4']
+    script: scripts/update-portugal-more.py
+    timeout: 30
+    script_timeout: 25
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/portugal-more) data/portugal-more-stats.json
+    data: [portugal-more/index.json, portugal-more-stats.json, portugal-more-log.txt]
+    extra: ['!data/portugal-more']
+    message: Datos Portugal pesca, balances, leche, carne, IPCA, incendios, cultivos por región, fertilizantes y miel (INE)
   - id: nl-rvo
     name: Update Netherlands pig and cattle prices and pig slaughter (RVO)
     cron: ['40 8 * * 2,5']

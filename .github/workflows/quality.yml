@@ -216,6 +216,8 @@ jobs:
         run: python3 scripts/test-nl-cbs-more.py
       - name: Belgium Statbel blocks (unit guards, provisional advance, label matching, series kept when a block fails; no network)
         run: python3 scripts/test-belgium-more.py
+      - name: Portugal INE blocks (scale guard from the metadata sheet, periods, geography levels, series kept when a block fails; no network)
+        run: python3 scripts/test-portugal-more.py
 
       - name: Anomaly verifier (promotes only when the primary source reproduces the value; offline fixtures)
         run: |

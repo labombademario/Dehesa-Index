@@ -7358,6 +7358,24 @@
     "statbel"
    ],
    "notes": "Registro de la ultima ejecucion de update-belgium-more.py."
+  },
+  "data/portugal-more/": {
+   "sources": [
+    "ine_pt"
+   ],
+   "notes": "Precio medio de la pesca descargada (0001066), balances de abastecimiento, leche recogida, producción bruta de carne, IPCA, incendios rurales (ICNF), superficie de cultivos por región, fertilizantes y miel del INE (scripts/update-portugal-more.py). Cita obligatoria del INE (CC BY 4.0). Sin conversiones: la escala de cada indicador (miles de cabezas, toneladas, hectolitros) se lee de la ficha de metadatos del INE y se publica como tal."
+  },
+  "data/portugal-more-stats.json": {
+   "byCountry": {
+    "PT": "ine_pt"
+   },
+   "notes": "Series seleccionadas de los ocho conjuntos (scripts/update-portugal-more.py), para el catalogo."
+  },
+  "data/portugal-more-log.txt": {
+   "sources": [
+    "ine_pt"
+   ],
+   "notes": "Registro de la ultima ejecucion de update-portugal-more.py."
   }
  },
  "derived": [

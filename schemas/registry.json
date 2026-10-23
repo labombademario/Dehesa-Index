@@ -1687,6 +1687,12 @@
    [
     "belgium_more_index"
    ]
+  ],
+  "portugal-more/index.json": [
+   "portugal-more-index",
+   [
+    "portugal_more_index"
+   ]
   ]
  },
  "globs": {
@@ -1920,6 +1926,12 @@
    "belgium-more",
    [
     "belgium_more"
+   ]
+  ],
+  "portugal-more/*.json": [
+   "portugal-more",
+   [
+    "portugal_more"
    ]
   ]
  },

@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 161 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39030 series en el catalogo unificado.
+Resumen: 161 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39081 series en el catalogo unificado.
 
 ## VERIFIED (161)
 
@@ -93,7 +93,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `indec` | Argentina - INDEC, Indice de Precios al Consumidor nacional (IPC), via la API de series de datos.gob.ar | AR | CC-BY-INDEC | si/si | si | 0 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios: la inflacion interanual es calculo propio. El ultimo mes es provision… |
 | `indec_ar` | Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP) | AR | CC-BY-INDEC | si/si | si | 13 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios si los hubiere. El ultimo mes es provisional segun el INDEC. |
 | `ine_es` | Instituto Nacional de Estadística (España) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web de… |
-| `ine_pt` | INE — Statistics Portugal | PT | CC-BY-4.0 | si/si | si | 547 | INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt. |
+| `ine_pt` | INE — Statistics Portugal | PT | CC-BY-4.0 | si/si | si | 598 | INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt. |
 | `insee` | Institut national de la statistique et des études économiques (INSEE) | FR | Etalab-2.0 | si/si | si | 261 | Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información. |
 | `irs_sales_tax` | U.S. Internal Revenue Service - Optional State Sales Tax Tables | US | US-PD | si/si | no | 0 | Only the state general sales tax rate is used; local rates are not included. Not tax advice. |
 | `ispra` | ISPRA — Stato di severità idrica a scala nazionale | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |

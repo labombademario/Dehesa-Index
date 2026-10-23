@@ -1,0 +1,9 @@
+pesca: leido (edicion 2025 (actualizado 2026-05-28), 7 tablas, 211 series)
+balances: leido (edicion actualizado 2026-10-16, 8 tablas, 42 series)
+leche: leido (edicion actualizado 2026-09-29, 2 tablas, 10 series)
+carne: leido (edicion actualizado 2026-02-21, 3 tablas, 9 series)
+ipc: leido (edicion September 2026 (actualizado 2026-10-13), 1 tablas, 30 series)
+incendios: leido (edicion 2025 (actualizado 2026-05-30), 6 tablas, 682 series)
+cultivos: leido (edicion 2025 (actualizado 2026-08-01), 11 tablas, 795 series)
+insumos: leido (edicion actualizado 2026-07-10, 2 tablas, 2 series)
+escrito: 8 ficheros, 53 series en las estadisticas

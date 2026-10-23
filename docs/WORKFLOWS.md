@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-277 workflows (228 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+278 workflows (229 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -330,6 +330,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-pt-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-pt-diesel.py | pt-diesel.json | finish, validate-files |
 | update-pt-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-pt-drought.py | pt-drought.json | finish, validate-files |
 | update-pt-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | pt-ghg-agri.json | finish, validate-files |
+| update-pt-ine-more.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-portugal-more.py | portugal-more-stats.json, portugal-more/index.json | finish, validate-files |
 | update-pt-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-pt-nitrates.py | pt-nitrates.json | finish, validate-files |
 
 ## UK

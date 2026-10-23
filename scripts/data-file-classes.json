@@ -515,6 +515,14 @@
     "pattern": "data/belgium-more/"
    },
    "note": "Censo ganadero y de superficies, cosecha, IPC de alimentos, pesca, lacteos y balances de carne de Belgica (Statbel): la pagina belgium.html descarga cada fichero solo al abrir su pestaña."
+  },
+  "data/portugal-more/": {
+   "class": "RUNTIME",
+   "via": {
+    "file": "js/portugal.js",
+    "pattern": "data/portugal-more/"
+   },
+   "note": "Pesca, balances de abastecimiento, leche recogida, producción bruta de carne, IPCA, incendios rurales, cultivos por región, fertilizantes y miel de Portugal (INE): la página portugal.html descarga cada fichero solo al abrir su pestaña."
   }
  }
 }
