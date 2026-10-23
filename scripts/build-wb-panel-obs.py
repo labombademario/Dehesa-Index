@@ -113,7 +113,7 @@ def main():
             if not re.fullmatch(r"\d{4}M\d{2}", p) or int(p[:4]) < FIRST_YEAR:
                 continue
             v = r[c] if c < len(r) else None
-            if isinstance(v, (int, float)):
+            if isinstance(v, (int, float)) and v > 0:  # el Banco Mundial marca con 0 los meses sin dato
                 pts.append(("%s-%s" % (p[:4], p[5:7]), round(float(v), 4)))
         if len(pts) < MIN_POINTS:
             print("POCOS PUNTOS:", key, len(pts)); continue
