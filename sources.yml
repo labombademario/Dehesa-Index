@@ -2105,6 +2105,14 @@ sources:
     data: [us-ers-bioenergy-stats.json]
     log: us-ers-bioenergy-log.txt
     message: Bioenergia de EE. UU. - etanol, biodiesel, diesel renovable, materias primas y precios (USDA ERS)
+  - id: us-ers-fertilizer
+    name: Update US fertilizer use and price archive (USDA ERS)
+    cron: ['40 15 * * 5']
+    script: scripts/update-us-ers-fertilizer.py
+    timeout: 15
+    data: [us-ers-fertilizer-stats.json]
+    log: us-ers-fertilizer-log.txt
+    message: Fertilizantes de EE. UU. - consumo, precios pagados e indices historicos (USDA ERS)
   - id: us-nass-processing
     name: Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)
     cron: ['40 16 1-8,20 * *']
