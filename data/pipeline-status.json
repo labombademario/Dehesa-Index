@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T05:48:00Z",
+ "generatedAt": "2026-10-23T06:46:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 251,
@@ -11,13 +11,18 @@
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "error",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "5f024eb3",
+   "conclusion": "failure",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/5639e07b-b5b5-4c63-ae88-8a93f7f82e8c",
+   "completedAt": "2026-10-23T04:29:53Z"
+  },
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T03:45:52.819908+00:00",
   "repoGeneratedAt": "2026-10-23T03:45:52.819908+00:00",
-  "checkedAt": "2026-10-23T05:48:00Z"
+  "checkedAt": "2026-10-23T06:46:00Z"
  },
  "pipelines": [
   {
@@ -2920,7 +2925,7 @@
    "crons": [
     "15 6 * * 1,3,5"
    ],
-   "nextRun": "2026-10-23T06:15:00Z",
+   "nextRun": "2026-10-26T06:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3081,7 +3086,7 @@
    "crons": [
     "17 6 * * *"
    ],
-   "nextRun": "2026-10-23T06:17:00Z",
+   "nextRun": "2026-10-24T06:17:00Z",
    "files": [
     {
      "path": "data/gats.json",
@@ -3408,7 +3413,7 @@
    "crons": [
     "45 6 * * 1-5"
    ],
-   "nextRun": "2026-10-23T06:45:00Z",
+   "nextRun": "2026-10-26T06:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3423,7 +3428,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-it-fuel.yml",
@@ -3758,7 +3763,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-23T06:17:00Z",
+   "nextRun": "2026-10-23T09:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -3789,8 +3794,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39896162020"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -3992,7 +3997,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-23T06:10:00Z",
+   "nextRun": "2026-10-23T09:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -4039,7 +4044,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T03:41:19Z"
+     "lastChange": "2026-10-23T05:50:24Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4128,9 +4133,9 @@
     "reason": "no se pudo publicar el estado · no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 3,
-    "failed": 7
+    "failed": 6
    },
    "status": "error",
    "expectedEveryHours": 3.0
@@ -5709,7 +5714,7 @@
    "crons": [
     "30 6 * * *"
    ],
-   "nextRun": "2026-10-23T06:30:00Z",
+   "nextRun": "2026-10-24T06:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6044,7 +6049,7 @@
    "crons": [
     "40 6 * * 1-5"
    ],
-   "nextRun": "2026-10-23T06:40:00Z",
+   "nextRun": "2026-10-26T06:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6059,7 +6064,7 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-usda-psd.yml",
