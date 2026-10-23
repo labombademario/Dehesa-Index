@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T15:08:00Z",
+ "generatedAt": "2026-10-23T15:23:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 251,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T12:50:41.241181+00:00",
   "repoGeneratedAt": "2026-10-23T12:50:41.241181+00:00",
-  "checkedAt": "2026-10-23T15:08:00Z"
+  "checkedAt": "2026-10-23T15:23:00Z"
  },
  "pipelines": [
   {
@@ -530,7 +530,7 @@
    "crons": [
     "20 15 * * 5"
    ],
-   "nextRun": "2026-10-23T15:20:00Z",
+   "nextRun": "2026-10-30T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1420,7 +1420,7 @@
    "crons": [
     "15 15 * * 3,5"
    ],
-   "nextRun": "2026-10-23T15:15:00Z",
+   "nextRun": "2026-10-28T15:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3025,7 +3025,7 @@
    "crons": [
     "10 15 * * 2,5"
    ],
-   "nextRun": "2026-10-23T15:10:00Z",
+   "nextRun": "2026-10-27T15:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3771,7 +3771,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-23T15:17:00Z",
+   "nextRun": "2026-10-23T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -4028,7 +4028,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-23T15:10:00Z",
+   "nextRun": "2026-10-23T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -4075,7 +4075,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T14:55:34Z"
+     "lastChange": "2026-10-23T15:10:53Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5446,7 +5446,7 @@
    "crons": [
     "20 15 * * 5"
    ],
-   "nextRun": "2026-10-23T15:20:00Z",
+   "nextRun": "2026-10-30T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5699,7 +5699,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-10-23T15:20:00Z",
+   "nextRun": "2026-10-26T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5714,7 +5714,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-markets.yml",
