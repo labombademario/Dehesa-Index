@@ -54,3 +54,8 @@ No se ha borrado ni reescrito historia ni datos historicos. Todo lo anterior es 
 - `main` crece ~8 MB/dia sin contar la carga masiva del 16 oct (80 MB). El peso viene de reescribir `data/` (73 % del historial): `series-registry.json`, `data/app/v1/search*.json`, `normalized.json`, `history.json`, `news*.json`.
 - **Decision de Mario (2026-10-16):** historial git: aviso 250 -> 600 MB, limite 500 -> 900 MB; `data/`: aviso 270 -> 360 MB, limite 300 -> 400 MB. GitHub recomienda < 1 GB y tiene un maximo duro de ~5 GB, asi que hay margen. No se poda el historial.
 - Pendiente: volver a medir el ritmo de crecimiento hacia el 16 nov (con ~6 semanas de historial); si sigue en ~8 MB/dia, atacar registro de series e indices de busqueda.
+
+## Medicion del 2026-10-23 (limite de data/ subido de 450 a 520 MB; aviso de 410 a 470)
+- `data/` pesa 428 MB (1 oct: 111 MB): el crecimiento viene de los paises y fuentes nuevos (Belgica, Portugal, Paises Bajos, Reino Unido, Canada, USDA). El historial git (pack) ~650 MB; limites del pack: aviso 800, fallo 1000.
+- Mayores: `data/series` 49 MB, `data/app` 36, `data/ams` 31, `data/catalog` 24, `normalized.json` 23 (compactable ~26 %), `history.json` 17, `series-registry.json` 16.
+- Antes de volver a subir: compactar `normalized.json`, particionar `data/ams` por año y revisar `series-registry.json`.
