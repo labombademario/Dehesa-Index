@@ -23,7 +23,6 @@ descartada us-ersfd-t10-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t10-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -53,7 +52,6 @@ descartada us-ersfd-t11-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t11-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -83,7 +81,6 @@ descartada us-ersfd-t12-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t12-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -113,7 +110,6 @@ descartada us-ersfd-t13-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t13-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -143,7 +139,6 @@ descartada us-ersfd-t14-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t14-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -173,7 +168,6 @@ descartada us-ersfd-t15-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t15-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -203,7 +197,6 @@ descartada us-ersfd-t16-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t16-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -233,7 +226,6 @@ descartada us-ersfd-t17-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t17-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -263,7 +255,6 @@ descartada us-ersfd-t18-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t18-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -293,7 +284,6 @@ descartada us-ersfd-t19-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t19-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -323,7 +313,6 @@ descartada us-ersfd-t20-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t20-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -353,7 +342,6 @@ descartada us-ersfd-t21-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t21-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -383,7 +371,6 @@ descartada us-ersfd-t22-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t22-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -413,7 +400,6 @@ descartada us-ersfd-t7-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t7-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -443,7 +429,6 @@ descartada us-ersfd-t8-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t8-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -473,7 +458,6 @@ descartada us-ersfd-t9-packaging-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-packaging-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-retail-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-retail-trade-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t9-total-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-total-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-total-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-total-food-dollar-m-nom-a: 5 puntos, ultimo 2017
@@ -481,5 +465,5 @@ descartada us-ersfd-t9-transportation-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-transportation-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-wholesale-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-wholesale-trade-m-nom-a: 5 puntos, ultimo 2017
-dolar de la comida: 384 series
-OK: 760 series
+dolar de la comida: 364 series
+OK: 740 series
