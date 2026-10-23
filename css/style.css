@@ -3191,3 +3191,16 @@ a.di-nav-chip { min-width: 0; gap: 7px; padding-left: 10px; padding-right: 10px;
 .cg-ix a{flex:0 0 auto;font-size:13px;line-height:1;padding:8px 12px;border:1px solid var(--border);border-radius:999px;color:var(--text);text-decoration:none;background:var(--surface,transparent);white-space:nowrap}
 .cg-ix a:hover,.cg-ix a:focus-visible{border-color:var(--accent,currentColor)}
 #cg-sum,#cg-wk,#cg-note,[id^=cg-c-]{scroll-margin-top:110px}
+
+.fsh-yr{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px}
+.fsh-yl{font-size:12.5px;font-weight:700;color:var(--text-faint)}
+.fsh-ybtn,.fsh-ysel{font:inherit;font-size:14px;min-height:40px;border:1px solid var(--border-strong,var(--border));background:var(--surface);color:var(--text);cursor:pointer}
+.fsh-ylast{padding:0 16px;border-radius:999px}
+.fsh-ybtn[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:600}
+.fsh-ystep{display:inline-flex;align-items:stretch}
+.fsh-ystep .fsh-yar{width:40px;font-size:20px;line-height:1;padding:0}
+.fsh-ystep .fsh-yar:first-child{border-radius:999px 0 0 999px}
+.fsh-ystep .fsh-yar:last-child{border-radius:0 999px 999px 0}
+.fsh-ysel{border-left:0;border-right:0;border-radius:0;padding:0 12px;min-width:112px;text-align:center;text-align-last:center;font-weight:600}
+.fsh-ybtn:disabled{opacity:.4;cursor:not-allowed}
+.fsh-ybtn:focus-visible,.fsh-ysel:focus-visible{outline:2px solid var(--focus,#2b5f9e);outline-offset:2px}

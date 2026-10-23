@@ -91,11 +91,37 @@
     ['landings', 'catches', 'aquaculture', 'areas', 'states'].forEach(function (g) { (d[g] || []).forEach(function (o) { add(o.qty); add(o.value); }); });
     return Object.keys(m).map(Number).sort(function (a, b) { return b - a; });
   }
+  /* Selector de año: «Último dato» + flechas ‹ › para ir año a año + lista desplegable con todos los años (el <select> sigue siendo la fuente de verdad). */
+  var YT = { pick: L('Elegir año', 'Pick a year', 'Choisir une année', 'Scegli un anno'), older: L('Año anterior', 'Previous year', 'Année précédente', 'Anno precedente'), newer: L('Año siguiente', 'Next year', 'Année suivante', 'Anno successivo') };
   function yearSel(d, id) {
     var ys = yearsOf(d); if (ys.length < 2) return '';
     if (YEAR != null && ys.indexOf(YEAR) < 0) YEAR = null;
-    return '<span class="fsh-yr"><label for="' + id + '">' + esc(tx(T.hYear)) + '</label> <select data-chips id="' + id + '" class="di-compare-select"><option value="">' + esc(tx(T.latest)) + '</option>' +
-      ys.map(function (y) { return '<option value="' + y + '"' + (y === YEAR ? ' selected' : '') + '>' + y + '</option>'; }).join('') + '</select></span>';
+    var i = YEAR == null ? -1 : ys.indexOf(YEAR);
+    return '<span class="fsh-yr" role="group" aria-label="' + esc(tx(T.hYear)) + '"><span class="fsh-yl">' + esc(tx(T.hYear)) + '</span>' +
+      '<button type="button" class="fsh-ybtn fsh-ylast" data-yr="last" aria-pressed="' + (YEAR == null) + '">' + esc(tx(T.latest)) + '</button>' +
+      '<span class="fsh-ystep"><button type="button" class="fsh-ybtn fsh-yar" data-yr="older" aria-label="' + esc(tx(YT.older)) + '"' + (i >= ys.length - 1 ? ' disabled' : '') + '>‹</button>' +
+      '<select id="' + id + '" class="fsh-ysel" aria-label="' + esc(tx(T.hYear)) + '"><option value=""' + (YEAR == null ? ' selected' : '') + ' hidden>' + esc(tx(YT.pick)) + '</option>' +
+      ys.map(function (y) { return '<option value="' + y + '"' + (y === YEAR ? ' selected' : '') + '>' + y + '</option>'; }).join('') + '</select>' +
+      '<button type="button" class="fsh-ybtn fsh-yar" data-yr="newer" aria-label="' + esc(tx(YT.newer)) + '"' + (i <= 0 ? ' disabled' : '') + '>›</button></span></span>';
+  }
+  function yrSync(box) {
+    var sel = box.querySelector('select'); if (!sel) return;
+    var ys = Array.prototype.map.call(sel.options, function (o) { return o.value ? +o.value : null; }).filter(function (v) { return v != null; });
+    var i = sel.value ? ys.indexOf(+sel.value) : -1;
+    var q = function (k) { return box.querySelector('[data-yr="' + k + '"]'); };
+    q('last').setAttribute('aria-pressed', String(!sel.value)); q('older').disabled = i >= ys.length - 1; q('newer').disabled = i <= 0;
+  }
+  if (!window._fshYrBound) {
+    window._fshYrBound = 1;
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.fsh-yr [data-yr]') : null; if (!b || b.disabled) return;
+      var box = b.closest('.fsh-yr'), sel = box.querySelector('select'), k = b.getAttribute('data-yr');
+      var ys = Array.prototype.map.call(sel.options, function (o) { return o.value ? +o.value : null; }).filter(function (v) { return v != null; });
+      var i = sel.value ? ys.indexOf(+sel.value) : -1, v = '';
+      if (k === 'older') v = String(ys[i < 0 ? 1 : i + 1]); else if (k === 'newer') v = i > 0 ? String(ys[i - 1]) : '';
+      sel.value = v; sel.dispatchEvent(new Event('change', { bubbles: true })); if (box.isConnected) { yrSync(box); var nb = box.querySelector('[data-yr="' + k + '"]'); if (nb && !nb.disabled) nb.focus(); }
+    });
+    document.addEventListener('change', function (e) { var t = e.target; if (t && t.classList && t.classList.contains('fsh-ysel')) { var box = t.closest('.fsh-yr'); if (box) yrSync(box); } });
   }
   function prevOf(a, p) { if (!a || !p) return null; for (var i = a.length - 1; i >= 0; i--) if (+a[i][0] === +p[0] - 1) return a[i]; return null; }
   function pct(a, b) { return a != null && b ? (a / b - 1) * 100 : null; }
