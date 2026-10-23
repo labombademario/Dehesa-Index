@@ -1,4 +1,4 @@
-/* Dehesa Index — Polonia · ZSRIR: precios de compra de cereales y colza (poland.html). ES5.
+/* Dehesa Index — Polonia · ZSRIR: precios de cereales, colza, carne, lácteos, huevos y piensos (poland.html). ES5.
    Datos: data/poland-zsrir/{cereales,colza}.json (scripts/update-pl-zsrir.py), boletines del ZSRIR del Ministerio de Agricultura de Polonia en dane.gov.pl, CC BY 4.0.
    Cada pestaña descarga su fichero solo al abrirse. Un dato ausente se muestra como ausente; nada se estima ni se convierte. */
 (function (global) {
@@ -10,14 +10,14 @@
   function tx(a) { return a[IX[lg()]]; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d) { return v == null || isNaN(v) ? '—' : (+v).toLocaleString(LOC[lg()], { minimumFractionDigits: d || 0, maximumFractionDigits: d == null ? 0 : d }); }
-  var TABS = ['cereales', 'colza'];
+  var TABS = ['cereales', 'colza', 'carne', 'lacteos', 'piensos'];
   var T = {
-    h1: L('Polonia · ZSRIR: precios de compra de cereales y colza', 'Poland · ZSRIR: purchase prices of cereals and rapeseed', 'Pologne · ZSRIR : prix d’achat des céréales et du colza', 'Polonia · ZSRIR: prezzi d’acquisto di cereali e colza'),
+    h1: L('Polonia · ZSRIR: precios de cereales, colza, carne, lácteos, huevos y piensos', 'Poland · ZSRIR: prices of cereals, rapeseed, meat, dairy, eggs and feed', 'Pologne · ZSRIR : prix des céréales, du colza, de la viande, des produits laitiers, des œufs et des aliments du bétail', 'Polonia · ZSRIR: prezzi di cereali, colza, carne, latticini, uova e mangimi'),
     sub: L('Boletines semanales del sistema de información de mercados agrarios del Ministerio de Agricultura de Polonia (ZSRIR), tal como los publica: precio medio de compra en zlotys por tonelada, sin IVA. Se actualizan los jueves.',
            'Weekly bulletins from the Polish Ministry of Agriculture’s agricultural market information system (ZSRIR), as published: average purchase price in zlotys per tonne, excluding VAT. Updated on Thursdays.',
            'Bulletins hebdomadaires du système d’information sur les marchés agricoles du ministère polonais de l’Agriculture (ZSRIR), tels que publiés : prix d’achat moyen en zlotys par tonne, hors TVA. Mis à jour le jeudi.',
            'Bollettini settimanali del sistema informativo sui mercati agricoli del ministero dell’Agricoltura polacco (ZSRIR), come pubblicati: prezzo medio d’acquisto in zloty per tonnellata, IVA esclusa. Aggiornati il giovedì.'),
-    tabs: { cereales: L('🌾 Cereales', '🌾 Cereals', '🌾 Céréales', '🌾 Cereali'), colza: L('🌼 Colza', '🌼 Rapeseed', '🌼 Colza', '🌼 Colza') },
+    tabs: { cereales: L('🌾 Cereales', '🌾 Cereals', '🌾 Céréales', '🌾 Cereali'), colza: L('🌼 Colza', '🌼 Rapeseed', '🌼 Colza', '🌼 Colza'), carne: L('🥩 Carne', '🥩 Meat', '🥩 Viande', '🥩 Carne'), lacteos: L('🥛 Lácteos y huevos', '🥛 Dairy and eggs', '🥛 Produits laitiers et œufs', '🥛 Latte e uova'), piensos: L('🐄 Piensos', '🐄 Feed', '🐄 Aliments du bétail', '🐄 Mangimi') },
     loading: L('Cargando…', 'Loading…', 'Chargement…', 'Caricamento…'), fail: L('No se han podido cargar estos datos. Prueba de nuevo en unos minutos.', 'These data could not be loaded. Try again in a few minutes.', 'Ces données n’ont pas pu être chargées. Réessayez dans quelques minutes.', 'Impossibile caricare questi dati. Riprova tra qualche minuto.'),
     pick: L('Tabla', 'Table', 'Tableau', 'Tabella'), full: L('Abrir en página completa', 'Open as a full page', 'Ouvrir en pleine page', 'Apri a pagina intera'),
     hName: L('Serie', 'Series', 'Série', 'Serie'), hLast: L('Último', 'Latest', 'Dernier', 'Ultimo'), hPer: L('Periodo', 'Period', 'Période', 'Periodo'), hChg: L('Variación anual', 'Annual change', 'Variation annuelle', 'Variazione annua'), hFirst: L('Desde el inicio', 'Since the start', 'Depuis le début', 'Dall’inizio'),
@@ -34,10 +34,23 @@
                'Average purchase price of rapeseed in Poland, monthly and weekly since 2022. Each weekly value is cross-checked against the bulletin’s own summary table before it is published.',
                'Prix d’achat moyen de la graine de colza en Pologne, mensuel et hebdomadaire depuis 2022. Chaque valeur hebdomadaire est recoupée avec le tableau récapitulatif du bulletin avant publication.',
                'Prezzo medio d’acquisto dei semi di colza in Polonia, mensile e settimanale dal 2022. Ogni valore settimanale è verificato con la tabella riepilogativa del bollettino prima della pubblicazione.')
+,
+      carne: L('Precio de compra en mataderos de Polonia: cerdo de engorde en peso vivo (semanal y mensual) y canal de clase E, vacuno en canal por categoría y pollo broiler, semanal desde 2022. Cada dato semanal se contrasta con el resumen del propio boletín.',
+               'Purchase prices at Polish slaughterhouses: fattening pigs by live weight (weekly and monthly) and class E carcass, beef carcass by category and broiler chicken, weekly since 2022. Each weekly value is cross-checked against the bulletin’s own summary.',
+               'Prix d’achat dans les abattoirs polonais : porcs charcutiers en poids vif (hebdomadaire et mensuel) et carcasse de classe E, carcasse de bovins par catégorie et poulet de chair, hebdomadaire depuis 2022. Chaque valeur hebdomadaire est recoupée avec le récapitulatif du bulletin.',
+               'Prezzi d’acquisto nei macelli polacchi: suini da ingrasso a peso vivo (settimanale e mensile) e carcassa di classe E, carcassa bovina per categoria e pollo da carne, settimanale dal 2022. Ogni valore settimanale è verificato con il riepilogo del bollettino.'),
+      lacteos: L('Leche cruda (compra, mensual desde 2004), mantequilla, leche en polvo y quesos (venta, semanal) y huevos para transformación (compra, semanal). La leche entera en polvo y el Edam empiezan en la semana 49 de 2025 porque antes las hojas históricas del boletín repiten la misma serie en ambas.',
+                 'Raw milk (purchase, monthly since 2004), butter, milk powder and cheese (selling, weekly) and eggs for processing (purchase, weekly). Whole milk powder and Edam start in week 49 of 2025 because earlier the bulletin’s historical sheets repeat the same series for both.',
+                 'Lait cru (achat, mensuel depuis 2004), beurre, lait en poudre et fromages (vente, hebdomadaire) et œufs de transformation (achat, hebdomadaire). Le lait entier en poudre et l’Edam commencent à la semaine 49 de 2025 car, avant, les feuilles historiques du bulletin répètent la même série pour les deux.',
+                 'Latte crudo (acquisto, mensile dal 2004), burro, latte in polvere e formaggi (vendita, settimanale) e uova per la trasformazione (acquisto, settimanale). Il latte intero in polvere e l’Edam iniziano alla settimana 49 del 2025 perché prima i fogli storici del bollettino ripetono la stessa serie per entrambi.'),
+      piensos: L('Precio medio de venta de piensos compuestos en toda Polonia: complementarios para bovino y completos para aves y porcino, mensual, últimos diez años. Es el único dato de coste de un insumo físico de Polonia en la web.',
+                 'Average selling price of compound feed across Poland: complementary feed for cattle and complete feed for poultry and pigs, monthly, last ten years. It is the only physical input cost for Poland on the site.',
+                 'Prix de vente moyen des aliments composés dans toute la Pologne : complémentaires pour bovins et complets pour volailles et porcs, mensuel, dix dernières années. C’est la seule donnée de coût d’intrant physique de la Pologne sur le site.',
+                 'Prezzo medio di vendita dei mangimi composti in tutta la Polonia: complementari per bovini e completi per pollame e suini, mensile, ultimi dieci anni. È l’unico dato di costo di un input fisico della Polonia sul sito.')
     },
-    grpName: { cereales: L('Cereales', 'Cereals', 'Céréales', 'Cereali'), colza: L('Colza', 'Rapeseed', 'Colza', 'Colza') }
+    grpName: { cereales: L('Cereales', 'Cereals', 'Céréales', 'Cereali'), colza: L('Colza', 'Rapeseed', 'Colza', 'Colza'), carne: L('Carne', 'Meat', 'Viande', 'Carne'), lacteos: L('Leche y lácteos', 'Milk and dairy', 'Lait et produits laitiers', 'Latte e latticini'), huevos: L('Huevos', 'Eggs', 'Œufs', 'Uova'), piensos: L('Piensos', 'Feed', 'Aliments du bétail', 'Mangimi') }
   };
-  var FILE = { cereales: 'cereales.json', colza: 'colza.json' };
+  var FILE = { cereales: 'cereales.json', colza: 'colza.json', carne: 'carne.json', lacteos: 'lacteos.json', piensos: 'piensos.json' };
   var CACHE = {}, STATE = { tab: 'cereales', sel: {}, tid: {} }, BASE = 'data/poland-zsrir/', COLORS = ['#1d5178', '#a9491f', '#2e7d5b', '#7a4a8c'];
   function load(f) { if (CACHE[f]) return CACHE[f]; return CACHE[f] = fetch(BASE + f, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   function tsOf(p) { var y = +p.slice(0, 4), m = 1, c = p.charAt(5); if (p.charAt(5) === 'W') { var j4 = new Date(Date.UTC(y, 0, 4)), mon = j4.getTime() - ((j4.getUTCDay() + 6) % 7) * 864e5; return mon + (+p.slice(6) - 1) * 7 * 864e5 + 6 * 864e5; } if (p.charAt(4) === '-') { if (c === 'Q') m = (+p.slice(6) - 1) * 3 + 1; else if (c === 'S') m = (+p.slice(6) - 1) * 6 + 1; else m = +p.slice(5, 7); } return Date.UTC(y, m - 1, 1); }
@@ -51,7 +64,7 @@
       return { id: s.id, label: lab(s), nl: s.orig, points: p, last: lastP[1], per: per, prov: s.provisional, chg: pc(lastP[1], prev), chgFirst: n > 1 ? pc(lastP[1], p[0][1]) : null, ann: ann };
     });
   }
-  function decOf(rows, unit) { return /índice|%|€\/kg|t\/ha|kg\/hab|kg\/ha|l\/hab/.test(unit || '') || rows.every(function (r) { return Math.abs(r.last) < 100; }) ? 1 : 0; }
+  function decOf(rows, unit) { return /índice|%|€\/kg|t\/ha|kg\/hab|kg\/ha|l\/hab/.test(unit || '') || rows.every(function (r) { return Math.abs(r.last) < 100; }) ? 2 : 0; }
   function block(key, rows, o) {
     var sel = STATE.sel[key];
     if (!sel || !sel.length || !rows.some(function (r) { return sel.indexOf(r.id) >= 0; })) sel = STATE.sel[key] = (o.defSel || [rows[0].id]).filter(function (id) { return rows.some(function (r) { return r.id === id; }); });

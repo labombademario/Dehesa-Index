@@ -20,6 +20,9 @@ LOG = []
 SRC = {"name": "ZSRIR (Ministerstwo Rolnictwa i Rozwoju Wsi) - boletines de mercado en dane.gov.pl", "url": "https://dane.gov.pl/pl/dataset/546", "license": "CC BY 4.0 (MRiRW, dane.gov.pl)"}
 FILES = {
     "cereales.json": ("Cereales: precio de compra", "Precio de compra de 12 cereales (PLN/t), mensual desde 2006 y trigo de consumo semanal desde 2022 (ZSRIR)"),
+    "carne.json": ("Carne: precios de compra", "Precio de compra de cerdo (vivo y canal clase E), vacuno en canal y pollo broiler, semanal, y cerdo vivo mensual (ZSRIR)"),
+    "lacteos.json": ("Leche, lácteos y huevos: precios", "Leche cruda mensual, mantequilla, leche en polvo y quesos semanales, y huevos para transformación semanales (ZSRIR)"),
+    "piensos.json": ("Piensos compuestos: precio de venta", "Precio mensual de venta de piensos para bovino, aves y porcino, 10 años (ZSRIR)"),
     "colza.json": ("Colza: precio de compra", "Precio de compra de la semilla de colza (PLN/t), mensual y semanal desde 2022 (ZSRIR)"),
 }
 ROMAN = {m: i + 1 for i, m in enumerate("I II III IV V VI VII VIII IX X XI XII".split())}
@@ -115,7 +118,7 @@ def summary_weekly(ws, label_re):
             if txt and re.search(label_re, txt, re.I) and len(txt) < 60:
                 # cabecera: primera fila anterior con celdas 'dd.mm.yyyy' o 'dd.mm'
                 for h in range(i - 1, -1, -1):
-                    hs = [str(v).strip() if v is not None else "" for v in rows[h]]
+                    hs = [v.strip() if isinstance(v, str) else (v.strftime("%d.%m.%Y") if isinstance(v, datetime.datetime) else "") for v in rows[h]]
                     dd = [(j, v) for j, v in enumerate(hs) if re.fullmatch(r"\d{2}\.\d{2}(\.\d{4})?", v)]
                     if dd:
                         out = {}
@@ -135,13 +138,14 @@ def summary_weekly(ws, label_re):
     return {}
 
 
-def check_last(pts, summ, name):
+def check_last(pts, summ, name, scale=1):
     """El ultimo punto semanal debe coincidir con la misma semana del resumen del boletin (tolerancia 0,5 %)."""
     if not pts:
         raise RuntimeError("%s: sin puntos semanales" % name)
     k = max(pts)
     d, v = pts[k]
     s = summ.get(d.isoformat())
+    s = s / scale if s is not None else None
     if s is None:
         raise RuntimeError("%s: el resumen del boletin no trae la semana %s; no se puede contrastar" % (name, d))
     if abs(v - s) > max(0.5, abs(s) * 0.005):
@@ -154,8 +158,30 @@ def mk_series(sid, lab, pts, unit=None):
     return {"id": sid, "label": lab[0], "l": {"en": lab[1], "fr": lab[2], "it": lab[3]}, "points": p}
 
 
+def strip_clones(ser, name, min_same=20):
+    """Las hojas de graficos del boletin arrastran a veces el historico de otra serie (mismos valores al centimo semana tras semana). Si dos series de una tabla coinciden en
+    min_same o mas periodos, ninguna de las dos es fiable antes del ultimo periodo coincidente: se recortan a lo que viene despues."""
+    cut = {}
+    for i in range(len(ser)):
+        for j in range(i + 1, len(ser)):
+            a, b = dict(ser[i]["points"]), dict(ser[j]["points"])
+            same = [k for k in a if k in b and abs(a[k] - b[k]) < 1e-9]
+            if len(same) >= min_same:
+                last = max(same)
+                for x in (i, j):
+                    cut[x] = max(cut.get(x, ""), last)
+                log("%s: %s y %s tienen %d valores identicos hasta %s; se recortan a lo posterior" % (name, ser[i]["id"], ser[j]["id"], len(same), last))
+    out = []
+    for i, x in enumerate(ser):
+        if i in cut:
+            x = dict(x)
+            x["points"] = [p for p in x["points"] if p[0] > cut[i]]
+        out.append(x)
+    return out
+
+
 def mk_table(tid, group, lab, unit, note, ser):
-    ser = [s for s in ser if len(s["points"]) >= 2]
+    ser = [s for s in strip_clones(ser, tid) if len(s["points"]) >= 2]
     return {"id": tid, "group": group, "label": lab[0], "l": {"en": lab[1], "fr": lab[2], "it": lab[3]}, "unit": unit, "note": note, "series": ser}
 
 
@@ -182,6 +208,96 @@ def monthly_dates(ws, hdr_re="MC/ROK"):
             continue
         data.append((d, r))
     return names, data
+
+
+def roman_table(ws, hdr="MIESIĄC", nth=0):
+    """Tabla mensual con los meses en numeros romanos (filas) y los años en columnas -> {AAAA-MM: valor}. nth = que cabecera de la hoja (0 = la primera)."""
+    rows = [list(r) for r in ws.iter_rows(values_only=True)]
+    hs = [i for i, r in enumerate(rows) if any(isinstance(x, str) and x.strip() == hdr for x in r)]
+    if len(hs) <= nth:
+        raise RuntimeError("cabecera %s no encontrada" % hdr)
+    h = hs[nth]
+    cols = {}
+    for c, x in enumerate(rows[h]):
+        n = num(x.strip()) if isinstance(x, str) else num(x)
+        if n and 2000 <= n <= 2100:
+            cols[c] = int(n)
+    pts = {}
+    for r in rows[h + 1:h + 13]:
+        m = ROMAN.get(str(r[1]).strip())
+        if not m:
+            continue
+        for c, y in cols.items():
+            x = num(r[c]) if c < len(r) else None
+            if x is not None:
+                pts["%d-%02d" % (y, m)] = rnd(x)
+    return pts
+
+
+def year_rows(ws, after_rx=None, maxc=14):
+    """Tabla con el año en la primera columna de datos (filas) y los meses I..XII en columnas -> {AAAA-MM: valor}. after_rx = rotulo de la seccion tras la que empieza."""
+    rows = [list(r) for r in ws.iter_rows(values_only=True)]
+    start = 0
+    if after_rx:
+        start = next((i + 1 for i, r in enumerate(rows) if len(r) > 1 and isinstance(r[1], str) and re.search(after_rx, r[1], re.I)), None)
+        if start is None:
+            raise RuntimeError("seccion %s no encontrada" % after_rx)
+    pts = {}
+    seen = False
+    for r in rows[start:]:
+        y = num(r[1].strip()) if len(r) > 1 and isinstance(r[1], str) else (num(r[1]) if len(r) > 1 else None)
+        if y and 2000 <= y <= 2100 and y == int(y):
+            seen = True
+            for m in range(12):
+                x = num(r[2 + m]) if 2 + m < len(r) and 2 + m < maxc else None
+                if x is not None:
+                    pts["%d-%02d" % (int(y), m + 1)] = rnd(x)
+        elif seen:
+            break
+    return pts
+
+
+def has_value(ws, v, rows=40):
+    """Contraste de una serie mensual: el ultimo valor tiene que aparecer en la tabla resumen de la misma hoja o de otra del boletin."""
+    for r in ws.iter_rows(min_row=1, max_row=rows, values_only=True):
+        for x in r:
+            n = num(x)
+            if n is not None and abs(n - v) < 0.006:
+                return True
+    return False
+
+
+def cell_value(ws, rx, col=3):
+    """Valor numerico (columna col, 0-based) de la primera fila cuyo rotulo (columnas B y C, arrastrando el de B) coincide."""
+    last1 = ""
+    for r in ws.iter_rows(values_only=True):
+        if len(r) > 1 and isinstance(r[1], str) and r[1].strip():
+            last1 = r[1]
+        b = last1 if len(r) > 1 and not (isinstance(r[1], str) and r[1].strip()) else (r[1] if len(r) > 1 else "")
+        txt = re.sub(r"\s+", " ", " ".join(x for x in (b, r[2] if len(r) > 2 else None) if isinstance(x, str))).strip()
+        if txt and re.search(rx, txt, re.I):
+            return num(r[col]) if len(r) > col else None
+    return None
+
+
+def wser(wb, sheet, c0, c1, sumsheet, rx, sid, lab, scale=1):
+    """Serie semanal de un grupo de columnas, contrastada con el resumen. Devuelve (serie, fecha del ultimo punto)."""
+    pts = weekly(wb[sheet], c0, c1)
+    d = check_last(pts, summary_weekly(wb[sumsheet], rx), "%s (%s)" % (sid, sheet), scale)
+    return mk_series(sid, lab, {k: v[1] for k, v in pts.items()}), d
+
+
+def merge_old(tabs, old, name):
+    """Una tabla que falla no borra la publicada: se conserva la anterior y se avisa."""
+    if not old:
+        return tabs
+    have = set(t["id"] for t in tabs)
+    out = list(tabs)
+    for t in old.get("tables", []):
+        if t["id"] not in have:
+            out.append(t)
+            log("%s: la tabla %s no se pudo leer; se conserva la publicada" % (name, t["id"]))
+    return out
 
 
 # ------------------------------------------------------------ bloques
@@ -242,6 +358,119 @@ def colza():
     return "semana %s" % summ.isoformat(), tabs
 
 
+def carne():
+    """Porcino (777), vacuno (1214) y pollo (601). Cada tabla es independiente: la que falla se conserva de lo publicado (merge_old)."""
+    tabs, eds, errs = [], [], []
+
+    def tbl(tid, lab, unit, note, build):
+        try:
+            ser, ds = build()
+            tabs.append(mk_table(tid, "carne", lab, unit, note, ser))
+            eds.extend(ds)
+        except Exception as ex:
+            errs.append("%s: %s" % (tid, str(ex)[:160]))
+
+    wb, dd, t = workbook("777")
+    tbl("porcino-vivo-semanal", ("Cerdo de engorde: precio semanal", "Fattening pigs: weekly price", "Porcs charcutiers : prix hebdomadaire", "Suini da ingrasso: prezzo settimanale"), "PLN/kg peso vivo", "Precio medio de compra en mataderos, semana de lunes a domingo (ZSRIR)",
+        lambda: (lambda r: ([r[0]], [r[1]]))(wser(wb, "ZAKUP ŻYWIEC WYKRES TYG", 2, 13, "ZAKUP ŻYWIEC", r"^POLSKA$", "pl-pig-live-w", LB.PIG_LIVE_W)))
+    tbl("porcino-canal-semanal", ("Canal de cerdo clase E: precio semanal", "Pig carcass class E: weekly price", "Carcasse de porc classe E : prix hebdomadaire", "Carcassa suina classe E: prezzo settimanale"), "PLN/t", "Precio medio de compra por masa de carne en canal (mps), clase E de la escala EUROP, en mataderos (ZSRIR)",
+        lambda: (lambda r: ([r[0]], [r[1]]))(wser(wb, "ZAKUP KL. E WYKRES TYG", 2, 13, "ZAKUP EUROP", r"^Klasa E$", "pl-pig-e-w", LB.PIG_E_W)))
+
+    def pig_m():
+        pts = roman_table(wb["ZAKUP ŻYWIEC WYKRES MSC"])
+        return [mk_series("pl-pig-live-m", LB.PIG_LIVE_M, pts)], []
+    tbl("porcino-vivo-mensual", ("Cerdo de engorde: precio mensual", "Fattening pigs: monthly price", "Porcs charcutiers : prix mensuel", "Suini da ingrasso: prezzo mensile"), "PLN/kg peso vivo", "Precio medio mensual de compra en mataderos (ZSRIR)", pig_m)
+
+    wb, dd, t = workbook("1214")
+
+    def beef():
+        a, d1 = wser(wb, "ZAKUP WYKRESY (1) ", 2, 13, "ZAKUP BYDŁA", r"\bBydło ogółem", "pl-beef-total-w", LB.BEEF_W["total"])
+        b, d2 = wser(wb, "ZAKUP WYKRESY (1) ", 14, 25, "ZAKUP BYDŁA", r"\bbyki 12-24", "pl-beef-bulls-w", LB.BEEF_W["bulls"])
+        c, d3 = wser(wb, "ZAKUP WYKRESY (2)", 2, 13, "ZAKUP BYDŁA", r"\bjałówki", "pl-beef-heifers-w", LB.BEEF_W["heifers"])
+        d, d4 = wser(wb, "ZAKUP WYKRESY (2)", 14, 25, "ZAKUP BYDŁA", r"\bkrowy", "pl-beef-cows-w", LB.BEEF_W["cows"])
+        return [a, b, c, d], [d1, d2, d3, d4]
+    tbl("vacuno-canal-semanal", ("Vacuno en canal: precio semanal", "Beef carcass: weekly price", "Bovins en carcasse : prix hebdomadaire", "Bovini in carcassa: prezzo settimanale"), "PLN/t", "Precio medio de compra por masa de carne en canal (mps) en mataderos, por categoría (ZSRIR)", beef)
+
+    wb, dd, t = workbook("601")
+
+    def chicken():
+        r = wser(wb, "SKUP KURCZĄT WYKRES", 2, 13, "SKUP DROBIU POLSKA", r"\bKurczęta typu brojle", "pl-chicken-w", LB.CHICKEN_W, scale=1000)
+        return [r[0]], [r[1]]
+    tbl("pollo-semanal", ("Pollo broiler: precio semanal", "Broiler chicken: weekly price", "Poulet de chair : prix hebdomadaire", "Pollo da carne: prezzo settimanale"), "PLN/kg", "Precio medio de compra en mataderos de aves; el boletin lo da en zl/kg en la hoja semanal (ZSRIR)", chicken)
+    for e in errs:
+        log("carne: " + e)
+    if not tabs:
+        raise RuntimeError("carne: ninguna tabla (%s)" % "; ".join(errs)[:200])
+    return "semana %s" % max(eds).isoformat(), tabs
+
+
+def lacteos():
+    """Leche cruda (mensual), mantequilla, leche en polvo y quesos (semanal) del dataset 1024 y huevos para transformacion (1003). Una tabla que falla se conserva (merge_old)."""
+    tabs, eds, errs = [], [], []
+
+    def tbl(tid, grp, lab, unit, note, build):
+        try:
+            ser, ds = build()
+            tabs.append(mk_table(tid, grp, lab, unit, note, ser))
+            eds.extend(ds)
+        except Exception as ex:
+            errs.append("%s: %s" % (tid, str(ex)[:160]))
+
+    wb, dd, t = workbook("1024")
+    TS = "TAB. TYGODNIOWA"
+
+    def weeklies(specs):
+        out, ds = [], []
+        for sheet, c0, c1, rx, sid, lab in specs:
+            a, d = wser(wb, sheet, c0, c1, TS, rx, sid, lab)
+            out.append(a); ds.append(d)
+        return out, ds
+    tbl("lacteos-semanal", "lacteos", ("Mantequilla, leche en polvo y quesos: precio de venta semanal", "Butter, milk powder and cheese: weekly selling price", "Beurre, lait en poudre et fromages : prix de vente hebdomadaire", "Burro, latte in polvere e formaggi: prezzo di vendita settimanale"), "PLN/100 kg", "Precio medio de venta de los productos lácteos en Polonia, semana de lunes a domingo (ZSRIR). Leche entera en polvo y Edam empiezan en la semana 49 de 2025: antes, las hojas históricas del boletín repiten en ambas la misma serie y no se publican.",
+        lambda: weeklies([("MASŁO WYKRESY TYG.", 2, 13, r"^Masło Ekstra w blokach", "pl-dairy-butter-block-w", LB.DAIRY["butter-block"]), ("MASŁO WYKRESY TYG.", 17, 28, r"^Masło Ekstra konfekcjonowane", "pl-dairy-butter-pack-w", LB.DAIRY["butter-pack"]),
+                          ("MLEKO W PROSZKU WYKRESY TYG.", 2, 13, r"^Mleko odtłuszczone", "pl-dairy-smp-w", LB.DAIRY["smp"]), ("MLEKO W PROSZKU WYKRESY TYG.", 17, 28, r"^Mleko pełne", "pl-dairy-wmp-w", LB.DAIRY["wmp"]),
+                          ("SERY WYKRESY TYG.", 2, 13, r"^Ser Edamski", "pl-dairy-edam-w", LB.DAIRY["edam"]), ("SERY WYKRESY TYG.", 17, 28, r"^Ser Gouda", "pl-dairy-gouda-w", LB.DAIRY["gouda"])]))
+
+    def milk():
+        pts = year_rows(wb["MIESIĘCZNE CENY SKUPU 2004-2026"])
+        k = max(pts)
+        if not has_value(wb["SKUP MLEKA"], pts[k]):
+            raise RuntimeError("el ultimo valor mensual (%s = %s) no aparece en el resumen SKUP MLEKA; no se publica" % (k, pts[k]))
+        if len(pts) < 200:
+            raise RuntimeError("serie de leche cruda demasiado corta (%d)" % len(pts))
+        return [mk_series("pl-milk-raw-m", LB.MILK_RAW_M, pts)], []
+    tbl("leche-cruda-mensual", "lacteos", ("Leche cruda: precio de compra mensual", "Raw milk: monthly purchase price", "Lait cru : prix d'achat mensuel", "Latte crudo: prezzo d'acquisto mensile"), "PLN/100 kg", "Precio medio mensual de compra de leche cruda de parámetros estándar, desde 2004 (ZSRIR)", milk)
+
+    wb, dd, t = workbook("1003")
+
+    def eggs():
+        r = wser(wb, "SKUP WYKRESY", 2, 13, "SKUP-PRZETWÓRSTWO", r"^Jaja do przetwórstwa", "pl-eggs-proc-w", LB.EGGS_PROC_W)
+        return [r[0]], [r[1]]
+    tbl("huevos-semanal", "huevos", ("Huevos para transformación: precio de compra semanal", "Eggs for processing: weekly purchase price", "Œufs de transformation : prix d'achat hebdomadaire", "Uova per la trasformazione: prezzo d'acquisto settimanale"), "PLN/t", "Precio medio semanal de compra de huevos destinados a la industria (ZSRIR)", eggs)
+    for e in errs:
+        log("lacteos: " + e)
+    if not tabs:
+        raise RuntimeError("lacteos: ninguna tabla (%s)" % "; ".join(errs)[:200])
+    return "semana %s" % max(eds).isoformat() if eds else "mensual", tabs
+
+
+def piensos():
+    """Precio de venta de piensos para bovino, aves y porcino (dataset 1022), mensual, 10 años. El ultimo mes se contrasta con la hoja resumen de cada especie."""
+    wb, dd, t = workbook("1022")
+    ws = wb["CENY PASZ (10 LAT)"]
+    spec = [("BYDŁO - M\\.P\\. UZUPE", "BYDŁO PL", r"UZUPEŁNIAJĄCE OGÓŁEM", "pl-feed-cattle-m", LB.FEED["cattle"]),
+            ("DRÓB - M\\.P\\. PE", "DRÓB PL", r"^M\.P\. PEŁNOPORCJOWE$", "pl-feed-poultry-m", LB.FEED["poultry"]),
+            ("TRZODA - M\\.P\\. PE", "TRZODA PL", r"PEŁNOPORCJOWE OGÓŁEM", "pl-feed-pig-m", LB.FEED["pig"])]
+    ser = []
+    for sec, sheet, rx, sid, lab in spec:
+        pts = year_rows(ws, sec)
+        k = max(pts)
+        v = cell_value(wb[sheet], rx)
+        if v is None or abs(v - pts[k]) > 0.01 + abs(v) * 0.0005:
+            raise RuntimeError("%s: %s = %s pero la hoja %s dice %s; no se publica" % (sid, k, pts[k], sheet, v))
+        ser.append(mk_series(sid, lab, pts))
+    return "mes %s" % max(max(p for p, _ in s["points"]) for s in ser), [mk_table("piensos-mensual", "piensos", ("Piensos compuestos: precio de venta mensual", "Compound feed: monthly selling price", "Aliments composés : prix de vente mensuel", "Mangimi composti: prezzo di vendita mensile"), "PLN/t", "Precio medio mensual de venta de piensos: complementarios para bovino, completos para aves y para porcino, en toda Polonia, últimos 10 años (ZSRIR)", ser)]
+
+
 # ------------------------------------------------------------ estadisticas (catalogo): solo series mensuales
 def load(name):
     p = OUT / name
@@ -275,6 +504,11 @@ def stats(docs, now):
         if code in ("pszenica-kons", "pszenica-pasz", "zyto-kons", "jeczmien-pasz", "kukurydza-sucha"):
             add("pl-zsrir-cer-" + code, "prices", "%s, precio de compra, Polonia (ZSRIR)" % lab[0], "PLN/t", one(c, "cereales-mensual", "pl-cer-m-" + code))
     add("pl-zsrir-colza", "prices", "Colza (semilla), precio de compra, Polonia (ZSRIR)", "PLN/t", one(docs.get("colza.json"), "colza-mensual", "pl-colza-m-semilla"), 36)
+    pm = one(docs.get("carne.json"), "porcino-vivo-mensual", "pl-pig-live-m")
+    add("pl-zsrir-cerdo-vivo", "prices", "Cerdo de engorde (peso vivo), precio de compra, Polonia (ZSRIR)", "PLN/kg", pm, 36)
+    add("pl-zsrir-leche-cruda", "milk", "Leche cruda, precio de compra, Polonia (ZSRIR)", "PLN/100 kg", one(docs.get("lacteos.json"), "leche-cruda-mensual", "pl-milk-raw-m"), 60)
+    for k, nm in (("cattle", "bovino"), ("poultry", "aves"), ("pig", "porcino")):
+        add("pl-zsrir-pienso-" + k, "inputs", "Pienso para %s, precio de venta, Polonia (ZSRIR)" % nm, "PLN/t", one(docs.get("piensos.json"), "piensos-mensual", "pl-feed-" + k + "-m"), 36)
     return {"schemaVersion": 1, "generatedAt": now, "countries": {"PL": {"name": "Polonia", "extend": True, "source": SRC, "series": out}}}
 
 
@@ -283,9 +517,10 @@ def main():
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     docs = {n: load(n) for n in FILES}
     new = False
-    for name, fn in (("cereales", cereales), ("colza", colza)):
+    for name, fn in (("cereales", cereales), ("colza", colza), ("carne", carne), ("lacteos", lacteos), ("piensos", piensos)):
         try:
             ed, tabs = fn()
+            tabs = merge_old(tabs, docs.get(name + ".json"), name)
             old = docs.get(name + ".json")
             if old and old.get("tables") == tabs:
                 log("%s: sin cambios (%s)" % (name, ed))

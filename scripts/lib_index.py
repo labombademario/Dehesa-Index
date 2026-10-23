@@ -94,7 +94,7 @@ DATASETS = {
     'data/italy-istat': ('PRODUCTION', 'Macellazioni, precios agrarios, existencias de ganado, fertilizantes y fitosanitarios de Italia (ISTAT)'),
     'data/spain-health': ('PRODUCTION', 'Focos de enfermedades animales de España (MAPA RASVE)'),
     'data/france-infosrapides': ('PRICE', 'Informes mensuales Infos Rapides de Francia: leche, cosechas de grandes cultivos por región y comercio exterior (Agreste)'),
-    'data/poland-zsrir': ('PRICE', 'Precios semanales y mensuales de compra de cereales y colza de Polonia (ZSRIR, Ministerio de Agricultura)'),
+    'data/poland-zsrir': ('PRICE', 'Precios semanales y mensuales de cereales, colza, carne, lácteos, huevos y piensos de Polonia (ZSRIR, Ministerio de Agricultura)'),
     'data/portugal-more': ('PRODUCTION', 'Pesca con precio medio descargado, balances de abastecimiento, leche recogida, producción bruta de carne, IPCA de alimentos, incendios rurales, cultivos por región, fertilizantes y miel de Portugal (INE)'),
     'data/belgium-more': ('PRODUCTION', 'Censo ganadero y de superficies por región y provincia, cosecha definitiva, IPC de alimentos, pesca con precio de lonja, productos lácteos y balances de carne de Bélgica (Statbel)'),
     'data/netherlands-more': ('PRODUCTION', 'Facturación trimestral de las explotaciones, invernaderos y flores, nitrógeno y estiércol, cadena de precios (PPI e IPC de alimentos) y otras series de Países Bajos (CBS)'),

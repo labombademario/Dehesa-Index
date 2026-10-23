@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "Dehesa Index - Polonia: indice de los conjuntos del ZSRIR (cereales y colza)",
+ "title": "Dehesa Index - Polonia: indice de los conjuntos del ZSRIR (cereales, colza, carne, lácteos, huevos y piensos)",
  "type": "object",
  "required": [
   "schemaVersion",

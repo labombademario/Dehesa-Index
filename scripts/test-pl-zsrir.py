@@ -149,6 +149,40 @@ errs = []; CT.poland_zsrir(bad, errs, [], {}); check(errs and "inexistente" in e
 bad = pz.doc([pz.mk_table("t", "g", ["a", "a", "a", "a"], "PLN/t", "", [pz.mk_series("s", ["a", "a", "a", "a"], {"2026-01": 0, "2026-02": 2})])], "e", "2026-10-23T00:00:00Z")
 errs = []; CT.poland_zsrir(bad, errs, [], {}); check(errs, "valor cero")
 
+# --- clones: dos series que comparten >= 20 valores identicos se recortan a lo posterior
+pa = {"2024-W%02d" % i: 100.0 + i for i in range(1, 31)}; pa.update({"2025-W%02d" % i: 200.0 + i for i in range(1, 6)})
+pb = dict(pa); pb.update({"2025-W%02d" % i: 300.0 + i for i in range(1, 6)})
+pb.pop("2024-W30"); pb["2024-W30"] = 5.0
+pc = {"2024-W%02d" % i: 900.0 + i for i in range(1, 31)}
+sa, sb, sc = (pz.mk_series(n, ["a", "a", "a", "a"], p_) for n, p_ in (("a", pa), ("b", pb), ("c", pc)))
+out = pz.strip_clones([sa, sb, sc], "t")
+check(out[2]["points"] == sc["points"], "la serie sin clon no se toca")
+check(all(p[0] > "2024-W29" for p in out[0]["points"]) and len(out[0]["points"]) == 6 and len(out[1]["points"]) == 6, "clones recortados: %s" % out[0]["points"][:2])
+few = pz.strip_clones([pz.mk_series("a", ["a"] * 4, {"2024-W01": 1, "2024-W02": 2}), pz.mk_series("b", ["a"] * 4, {"2024-W01": 1, "2024-W02": 2})], "t")
+check(len(few[0]["points"]) == 2, "pocas coincidencias no recortan")
+
+# --- year_rows, has_value, cell_value
+yw = openpyxl.Workbook().active
+yw["B7"] = "BYDŁO - M.P. UZUPEŁNIAJĄCE"
+yw["B8"] = "2026"; yw["C8"] = 1454.32; yw["D8"] = "1431,08"; yw["E8"] = "nld"
+yw["B9"] = 2025; yw["C9"] = 1535.47
+yw["B18"] = "DRÓB - M.P. PEŁNOPORCJOWE"; yw["B19"] = "2026"; yw["C19"] = 1490.02
+check(pz.year_rows(yw, "BYDŁO") == {"2026-01": 1454.32, "2026-02": 1431.08, "2025-01": 1535.47}, "year_rows seccion: %s" % pz.year_rows(yw, "BYDŁO"))
+check(pz.year_rows(yw, "DRÓB") == {"2026-01": 1490.02}, "year_rows otra seccion")
+check(pz.has_value(yw, 1454.32) and not pz.has_value(yw, 1454.4), "has_value")
+cw = openpyxl.Workbook().active
+cw["B10"] = "M.P. PEŁNOPORCJOWE"; cw["C10"] = "OGÓŁEM"; cw["D10"] = 1253.94
+cw["B11"] = None; cw["C11"] = "PRESTARTER"; cw["D11"] = 1605.88
+check(pz.cell_value(cw, r"PEŁNOPORCJOWE OGÓŁEM") == 1253.94 and pz.cell_value(cw, r"PRESTARTER") == 1605.88 and pz.cell_value(cw, r"NADA") is None, "cell_value")
+# cabecera con fechas reales (datetime) en el resumen
+dw = openpyxl.Workbook().active
+dw["C6"] = D(2026, 10, 18); dw["D6"] = D(2026, 10, 11); dw["B7"] = "Masło Ekstra \nw blokach"; dw["C7"] = 1800.69; dw["D7"] = 1837.71
+check(pz.summary_weekly(dw, r"^Masło Ekstra w blokach") == {"2026-10-18": 1800.69, "2026-10-11": 1837.71}, "cabecera datetime")
+# una celda numerica 13.97 no es una fecha 13.97
+nw = openpyxl.Workbook().active
+nw["C8"] = "18.10.2026"; nw["B9"] = "POLSKA"; nw["B10"] = "Bydło ogółem"; nw["C10"] = 25540.75; nw["D10"] = 13.97
+check(pz.summary_weekly(nw, r"\bBydło ogółem") == {"2026-10-18": 25540.75}, "numeros con forma de fecha no cuentan")
+
 # --- main: un bloque que falla conserva lo publicado; sin cambios no reescribe
 tmp = Path(tempfile.mkdtemp())
 pz.OUT = tmp / "poland-zsrir"; pz.ROOT = tmp; pz.time.sleep = lambda s: None
@@ -169,6 +203,8 @@ pz.colza = colza_ok
 # main() usa los nombres de modulo: se sustituyen en el espacio de nombres
 g = pz.main.__globals__
 g["colza"] = colza_ok
+for other in ("carne", "lacteos", "piensos"):
+    g[other] = colza_ko
 pz.main()
 check((pz.OUT / "cereales.json").exists() and (pz.OUT / "colza.json").exists() and (pz.OUT / "index.json").exists(), "ficheros escritos")
 before = (pz.OUT / "colza.json").read_text()

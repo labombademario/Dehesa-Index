@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update Poland cereal and rapeseed purchase prices (ZSRIR weekly bulletins, Ministry of Agriculture)
+name: Update Poland cereal, rapeseed, meat, dairy, egg and feed prices (ZSRIR weekly bulletins, Ministry of Agriculture)
 on:
   schedule:
     - cron: '15 7,10,13,16,19 * * 4,5'
@@ -35,7 +35,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Datos Polonia precios de compra de cereales y colza (ZSRIR)" data/poland-zsrir/index.json data/poland-zsrir-stats.json data/poland-zsrir-log.txt data/poland-zsrir data/revisions.json
+        run: bash scripts/publish-data.sh "Datos Polonia precios de cereales, colza, carne, lácteos, huevos y piensos (ZSRIR)" data/poland-zsrir/index.json data/poland-zsrir-stats.json data/poland-zsrir-log.txt data/poland-zsrir data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

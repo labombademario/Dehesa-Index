@@ -1,3 +1,7 @@
 cereales: sin cambios (semana 2026-10-11)
-colza: leido (semana 2026-10-18, 2 tablas, 2 series)
-escrito: 2 ficheros, 6 series en las estadisticas
+colza: sin cambios (semana 2026-10-18)
+carne: sin cambios (semana 2026-10-18)
+lacteos-semanal: pl-dairy-wmp-w y pl-dairy-edam-w tienen 204 valores identicos hasta 2025-W48; se recortan a lo posterior
+lacteos: leido (semana 2026-10-18, 3 tablas, 8 series)
+piensos: sin cambios (mes 2026-09)
+escrito: 5 ficheros, 11 series en las estadisticas

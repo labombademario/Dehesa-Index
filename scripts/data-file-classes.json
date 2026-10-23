@@ -530,7 +530,7 @@
     "file": "js/poland.js",
     "pattern": "data/poland-zsrir/"
    },
-   "note": "Precios de compra de cereales y colza de Polonia (ZSRIR, Ministerio de Agricultura): la página poland.html descarga cada fichero solo al abrir su pestaña."
+   "note": "Precios de cereales, colza, carne, lácteos, huevos y piensos de Polonia (ZSRIR, Ministerio de Agricultura): la página poland.html descarga cada fichero solo al abrir su pestaña."
   }
  }
 }

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T23:48:00Z",
+ "generatedAt": "2026-10-23T23:51:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 256,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T21:44:33.375769+00:00",
   "repoGeneratedAt": "2026-10-23T21:44:33.375769+00:00",
-  "checkedAt": "2026-10-23T23:48:00Z"
+  "checkedAt": "2026-10-23T23:51:00Z"
  },
  "pipelines": [
   {
@@ -4118,7 +4118,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T23:36:20Z"
+     "lastChange": "2026-10-23T23:49:53Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4284,7 +4284,7 @@
   },
   {
    "workflow": "update-pl-zsrir.yml",
-   "name": "Update Poland cereal and rapeseed purchase prices (ZSRIR weekly bulletins, Ministry of Agriculture)",
+   "name": "Update Poland cereal, rapeseed, meat, dairy, egg and feed prices (ZSRIR weekly bulletins, Ministry of Agriculture)",
    "crons": [
     "15 7,10,13,16,19 * * 4,5"
    ],
@@ -5399,9 +5399,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T14:48:33Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39972794233"
+    "startedAt": "2026-10-23T23:51:35Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40041981393"
    },
    "recent": {
     "runs": 10,
