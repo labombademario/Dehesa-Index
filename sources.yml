@@ -2130,6 +2130,14 @@ sources:
     data: [us-ers-productivity-stats.json]
     log: us-ers-productivity-log.txt
     message: Productividad agraria - indices de PTF, produccion e insumos de EE. UU. y de los paises del catalogo (USDA ERS)
+  - id: us-nass-cdl
+    name: Update US crop acreage from the Cropland Data Layer (USDA NASS, satellite estimate)
+    cron: ['30 6 * * *']
+    script: scripts/update-us-nass-cdl.py
+    timeout: 90
+    data: [us-nass-cdl-stats.json, us-nass-cdl-cache.json]
+    log: us-nass-cdl-log.txt
+    message: Superficie de cultivos de EE. UU. por estado segun el Cropland Data Layer (estimacion por satelite, USDA NASS)
   - id: us-nass-processing
     name: Update US oilseed crushing, fats and oils and grain crushings (USDA NASS monthly reports)
     cron: ['40 16 1-8,20 * *']

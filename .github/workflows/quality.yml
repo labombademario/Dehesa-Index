@@ -93,6 +93,7 @@ jobs:
           python3 scripts/test-us-ers-fertilizer.py
           python3 scripts/test-us-ers-food.py
           python3 scripts/test-us-ers-productivity.py
+          python3 scripts/test-us-nass-cdl.py
           python3 scripts/test-eu-vat.py
           python3 scripts/test-eu-farm-economics.py
           python3 scripts/test-canada-stats.py
