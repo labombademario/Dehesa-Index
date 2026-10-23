@@ -1,0 +1,408 @@
+BIO rows=13856
+T1 Fuel ethanol supply and disappearance and grain crushings for fuel ethanol by marketing year and quarter n=1767
+   year_cat: {'Marketing': 1767}
+   period: {'4': 357, '3': 354, '2': 353, '1': 350, '2014': 11, '2015': 11, '2016': 11, '2017': 11}
+   period_cat: {'Marketing year quarter': 1414, 'Marketing year': 353}
+   period_desc: {'Q4 Jun-Aug': 357, 'Q3 Mar-May': 354, 'Q2 Dec-Feb': 353, 'Corn marketing year (Sep-Aug)': 353, 'Q1 Sep-Nov': 350}
+   geographic_level: {'Country': 1767}
+   units: {'1,000 gallons': 1650, '1,000 bushels': 117}
+   location: 1 distinct ['United States']
+   commodity: 3 ['Fuel ethanol', 'Corn', 'Sorghum']
+   item: 1 ['NA']
+   years 1980..2025 | ROW 1|Fuel ethanol supply and disappearance and grain crushings for fuel ethanol by marketing year and quarter|1980|Marketing|Corn marketing year (Sep-Aug)|2|Marketing year quarter|Q2 Dec-Feb|Country|United States|Fuel ethanol|Consump
+T2 Fuel ethanol supply and disappearance and grain crushings for fuel ethanol by calendar year n=360
+   year_cat: {'Calendar': 360}
+   period: {'2014': 11, '2015': 11, '2016': 11, '2017': 11, '2018': 11, '2019': 11, '2020': 11, '2021': 11}
+   period_cat: {'Calendar year': 360}
+   period_desc: {'Calendar year (Jan-Dec)': 360}
+   geographic_level: {'Country': 360}
+   units: {'1,000 gallons': 334, '1,000 bushels': 26}
+   location: 1 distinct ['United States']
+   commodity: 3 ['Fuel ethanol', 'Corn', 'Sorghum']
+   item: 1 ['NA']
+   years 1981..2026 | ROW 2|Fuel ethanol supply and disappearance and grain crushings for fuel ethanol by calendar year|1981|Calendar|Calendar year (Jan-Dec)|1981|Calendar year|Calendar year (Jan-Dec)|Country|United States|Fuel ethanol|Production|NA|1,000 
+T3 Fuel ethanol supply and disappearance and grain crushings for fuel ethanol by month n=4194
+   year_cat: {'Calendar': 4194}
+   period: {'6': 356, '1': 352, '2': 352, '3': 352, '5': 352, '4': 351, '10': 348, '8': 347}
+   period_cat: {'Calendar year month': 4194}
+   period_desc: {'Jun': 356, 'Jan': 352, 'Feb': 352, 'Mar': 352, 'May': 352, 'Apr': 351, 'Oct': 348, 'Aug': 347}
+   geographic_level: {'Country': 4194}
+   units: {'1,000 gallons': 3928, '1,000 bushels': 266}
+   location: 1 distinct ['United States']
+   commodity: 3 ['Fuel ethanol', 'Corn', 'Sorghum']
+   item: 1 ['NA']
+   years 1981..2026 | ROW 3|Fuel ethanol supply and disappearance and grain crushings for fuel ethanol by month|1981|Calendar|Calendar year (Jan-Dec)|1|Calendar year month|Jan|Country|United States|Fuel ethanol|Production|NA|1,000 gallons|7056
+T4.1 Biodiesel supply and disappearance by soybean oil marketing year n=197
+   year_cat: {'Marketing': 197}
+   period: {'2009': 9, '2010': 9, '2011': 9, '2012': 9, '2013': 9, '2014': 9, '2015': 9, '2016': 9}
+   period_cat: {'Marketing year': 197}
+   period_desc: {'Soybean oil marketing year (Oct-Sep)': 197}
+   geographic_level: {'Country': 197}
+   units: {'1,000 gallons': 197}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Biodiesel']
+   item: 1 ['NA']
+   years 2000..2025 | ROW 4.1|Biodiesel supply and disappearance by soybean oil marketing year|2000|Marketing|Soybean oil marketing year (Oct-Sep)|2000|Marketing year|Soybean oil marketing year (Oct-Sep)|Country|United States|Biodiesel|Consumption|NA|1,000
+T4.2 Biodiesel supply and disappearance by calendar year n=197
+   year_cat: {'Calendar': 197}
+   period: {'2010': 9, '2011': 9, '2012': 9, '2013': 9, '2014': 9, '2015': 9, '2016': 9, '2017': 9}
+   period_cat: {'Calendar year': 197}
+   period_desc: {'Calendar year (Jan-Dec)': 197}
+   geographic_level: {'Country': 197}
+   units: {'1,000 gallons': 197}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Biodiesel']
+   item: 1 ['NA']
+   years 2001..2026 | ROW 4.2|Biodiesel supply and disappearance by calendar year|2001|Calendar|Calendar year (Jan-Dec)|2001|Calendar year|Calendar year (Jan-Dec)|Country|United States|Biodiesel|Consumption|NA|1,000 gallons|10268
+T4.3 Renewable diesel supply and disappearance by soybean oil marketing year n=94
+   year_cat: {'Marketing': 94}
+   period: {'2024': 9, '2025': 7, '2012': 6, '2013': 6, '2014': 6, '2015': 6, '2016': 6, '2017': 6}
+   period_cat: {'Marketing year': 94}
+   period_desc: {'Soybean oil marketing year (Oct-Sep)': 94}
+   geographic_level: {'Country': 94}
+   units: {'1,000 gallons': 94}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Renewable diesel']
+   item: 1 ['NA']
+   years 2010..2025 | ROW 4.3|Renewable diesel supply and disappearance by soybean oil marketing year|2010|Marketing|Soybean oil marketing year (Oct-Sep)|2010|Marketing year|Soybean oil marketing year (Oct-Sep)|Country|United States|Renewable diesel|Consum
+T4.4 Renewable diesel supply and disappearance by calendar year n=97
+   year_cat: {'Calendar': 97}
+   period: {'2025': 9, '2026': 7, '2012': 6, '2013': 6, '2014': 6, '2015': 6, '2016': 6, '2017': 6}
+   period_cat: {'Calendar year': 97}
+   period_desc: {'Calendar year (Jan-Dec)': 97}
+   geographic_level: {'Country': 97}
+   units: {'1,000 gallons': 97}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Renewable diesel']
+   item: 1 ['NA']
+   years 2011..2026 | ROW 4.4|Renewable diesel supply and disappearance by calendar year|2011|Calendar|Calendar year (Jan-Dec)|2011|Calendar year|Calendar year (Jan-Dec)|Country|United States|Renewable diesel|Consumption|NA|1,000 gallons|61747
+T6 Soybean oil supply, disappearance, and share used for biofuel n=260
+   year_cat: {'Marketing': 260}
+   period: {'2001': 10, '2002': 10, '2003': 10, '2004': 10, '2005': 10, '2006': 10, '2007': 10, '2008': 10}
+   period_cat: {'Marketing year': 260}
+   period_desc: {'Soybean oil marketing year (Oct-Sep)': 260}
+   geographic_level: {'Country': 260}
+   units: {'Million pounds': 234, 'Percent': 26}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Soybean oil']
+   item: 1 ['NA']
+   years 2001..2026 | ROW 6|Soybean oil supply, disappearance, and share used for biofuel|2001|Marketing|Soybean oil marketing year (Oct-Sep)|2001|Marketing year|Soybean oil marketing year (Oct-Sep)|Country|United States|Soybean oil|Beginning stocks|NA|Mil
+T7 Oils and fats supply and prices n=633
+   year_cat: {'Marketing': 452, 'Calendar': 181}
+   period: {'2012': 15, '2013': 15, '2014': 15, '2015': 15, '2016': 15, '2017': 15, '2018': 15, '2020': 15}
+   period_cat: {'Marketing year': 452, 'Calendar year': 181}
+   period_desc: {'Calendar year (Jan-Dec)': 181, 'Corn oil marketing year (Oct-Sep)': 102, 'Cottonseed oil marketing year (Oct-Sep)': 93, 'Soybean oil marketing year (Oct-Sep)': 93, 'Sunflower seed oil marketing year (Oct-Sep)': 93, 'Canola oil marketing year (Oct-Sep)': 71}
+   geographic_level: {'Country': 324, 'City': 273, 'Region': 36}
+   units: {'Cents per pound': 322, 'Million pounds': 311}
+   location: 6 distinct ['United States', 'Midwest', 'Chicago, IL', 'Greenwood, MS', 'Decatur, IL']
+   commodity: 7 ['Canola oil', 'Corn oil', 'Cottonseed oil', 'Lard', 'Soybean oil', 'Sunflower seed oil']
+   item: 8 ['NA', 'Price for edible corn oil', 'Price for inedible corn oil', 'Price for prime bleachable summer yellow cottonseed oil', 'Average wholesale price for loose lard', 'Price for crude soybean oil']
+   years 1980..2026 | ROW 7|Oils and fats supply and prices|1991|Marketing|Canola oil marketing year (Oct-Sep)|1991|Marketing year|Canola oil marketing year (Oct-Sep)|Country|United States|Canola oil|Total supply|NA|Million pounds|900.87434
+T8.1 Distillers grains supply and disappearance n=204
+   year_cat: {'Marketing': 204}
+   period: {'2014': 6, '2015': 6, '2016': 6, '2017': 6, '2018': 6, '2019': 6, '2020': 6, '2021': 6}
+   period_cat: {'Marketing year': 204}
+   period_desc: {'Corn marketing year (Sep-Aug)': 204}
+   geographic_level: {'Country': 204}
+   units: {'Million metric tons': 204}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Distillers grains']
+   item: 1 ['NA']
+   years 1992..2025 | ROW 8.1|Distillers grains supply and disappearance|2014|Marketing|Corn marketing year (Sep-Aug)|2014|Marketing year|Corn marketing year (Sep-Aug)|Country|United States|Distillers grains|Production|NA|Million metric tons|35.05412516
+T8.2 Corn gluten meal supply and disappearance n=204
+   year_cat: {'Marketing': 204}
+   period: {'1992': 6, '1993': 6, '1994': 6, '1995': 6, '1996': 6, '1997': 6, '1998': 6, '1999': 6}
+   period_cat: {'Marketing year': 204}
+   period_desc: {'Corn marketing year (Sep-Aug)': 204}
+   geographic_level: {'Country': 204}
+   units: {'Million metric tons': 204}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Corn gluten meal']
+   item: 1 ['NA']
+   years 1992..2025 | ROW 8.2|Corn gluten meal supply and disappearance|1992|Marketing|Corn marketing year (Sep-Aug)|1992|Marketing year|Corn marketing year (Sep-Aug)|Country|United States|Corn gluten meal|Production|NA|Million metric tons|1.057993386
+T8.3 Corn gluten feed supply and disappearance n=204
+   year_cat: {'Marketing': 204}
+   period: {'1992': 6, '1993': 6, '1994': 6, '1995': 6, '1996': 6, '1997': 6, '1998': 6, '1999': 6}
+   period_cat: {'Marketing year': 204}
+   period_desc: {'Corn marketing year (Sep-Aug)': 204}
+   geographic_level: {'Country': 204}
+   units: {'Million metric tons': 204}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Corn gluten feed']
+   item: 1 ['NA']
+   years 1992..2025 | ROW 8.3|Corn gluten feed supply and disappearance|1992|Marketing|Corn marketing year (Sep-Aug)|1992|Marketing year|Corn marketing year (Sep-Aug)|Country|United States|Corn gluten feed|Production|NA|Million metric tons|5.647640554
+T9 Distillers dried grains price n=573
+   year_cat: {'Marketing': 573}
+   period: {'1': 45, '2': 45, '3': 45, '4': 45, '5': 45, '6': 45, '7': 45, '8': 45}
+   period_cat: {'Marketing year month': 527, 'Marketing year': 46}
+   period_desc: {'Corn marketing year (Sep-Aug)': 46, 'Sep': 45, 'Oct': 45, 'Nov': 45, 'Dec': 45, 'Jan': 45, 'Feb': 45, 'Mar': 45}
+   geographic_level: {'Sub-State': 340, 'City': 233}
+   units: {'Dollars per ton': 573}
+   location: 2 distinct ['Lawrenceburg, IN', 'Central IL']
+   commodity: 1 ['Distillers dried grains']
+   item: 1 ['Wholesale price']
+   years 1981..2026 | ROW 9|Distillers dried grains price|1981|Marketing|Corn marketing year (Sep-Aug)|1|Marketing year month|Sep|City|Lawrenceburg, IN|Distillers dried grains|Price|Wholesale price|Dollars per ton|150
+T10 Fuel ethanol production facilities capacity, production, and utilization ratios n=81
+   year_cat: {'Calendar': 81}
+   period: {'1': 27, '2000': 2, '2001': 2, '2002': 2, '2003': 2, '2004': 2, '2005': 2, '2006': 2}
+   period_cat: {'Calendar year': 54, 'Calendar year month': 27}
+   period_desc: {'Calendar year (Jan-Dec)': 54, 'Jan': 27}
+   geographic_level: {'Country': 81}
+   units: {'Million gallons': 54, 'Ratio': 27}
+   location: 1 distinct ['United States']
+   commodity: 1 ['Fuel ethanol']
+   item: 1 ['NA']
+   years 2000..2026 | ROW 10|Fuel ethanol production facilities capacity, production, and utilization ratios|2000|Calendar|Calendar year (Jan-Dec)|1|Calendar year month|Jan|Country|United States|Fuel ethanol|Production capacity|NA|Million gallons|1778.7
+T11 Fuel ethanol production facilities capacity, by State n=44
+   year_cat: {'Calendar': 44}
+   period: {'1': 44}
+   period_cat: {'Calendar year month': 44}
+   period_desc: {'Jan': 44}
+   geographic_level: {'State': 44}
+   units: {'Number of plants': 22, 'Million gallons per year': 22}
+   location: 22 distinct ['Iowa', 'Nebraska', 'Illinois', 'South Dakota', 'Indiana']
+   commodity: 1 ['Fuel ethanol']
+   item: 1 ['NA']
+   years 2026..2026 | ROW 11|Fuel ethanol production facilities capacity, by State|2026|Calendar|Calendar year (Jan-Dec)|1|Calendar year month|Jan|State|Iowa|Fuel ethanol|Number of plants|NA|Number of plants|42
+T12 Biodiesel and renewable diesel production: Number of plants and capacity by State n=180
+   year_cat: {'Calendar': 180}
+   period: {'1': 180}
+   period_cat: {'Calendar year month': 180}
+   period_desc: {'Jan': 180}
+   geographic_level: {'State': 180}
+   units: {'Number of plants': 90, 'Million gallons per year': 90}
+   location: 30 distinct ['California', 'Louisiana', 'Texas', 'Iowa', 'North Dakota']
+   commodity: 3 ['Biodiesel', 'Renewable diesel and other biofuels (excluding ethanol and biodiesel)', 'Biodiesel, renewable diesel, and other biofuels (excluding ethanol)']
+   item: 1 ['NA']
+   years 2026..2026 | ROW 12|Biodiesel and renewable diesel production: Number of plants and capacity by State|2026|Calendar|Calendar year (Jan-Dec)|1|Calendar year month|Jan|State|California|Biodiesel|Number of plants|NA|Number of plants|3
+T13 Alternative fuel stations n=136
+   year_cat: {'Calendar': 136}
+   period: {'1992': 4, '1993': 4, '1994': 4, '1995': 4, '1996': 4, '1997': 4, '1998': 4, '1999': 4}
+   period_cat: {'Calendar year': 136}
+   period_desc: {'Calendar year (Jan-Dec)': 136}
+   geographic_level: {'Country': 136}
+   units: {'Number of stations': 136}
+   location: 1 distinct ['United States']
+   commodity: 4 ['Ethanol (E85)', 'Biodiesel', 'Alternative fuels excluding biodiesel and ethanol', 'All alternative fuel types']
+   item: 1 ['NA']
+   years 1992..2025 | ROW 13|Alternative fuel stations|1992|Calendar|Calendar year (Jan-Dec)|1992|Calendar year|Calendar year (Jan-Dec)|Country|United States|Ethanol (E85)|Number of fueling stations at which the fuel is offered|NA|Number of stations|2
+T14 Monthly prices for corn, fuel ethanol, and gasoline n=3219
+   year_cat: {'Calendar': 3219}
+   period: {'1': 270, '2': 270, '3': 270, '4': 270, '5': 270, '6': 270, '7': 268, '8': 268}
+   period_cat: {'Calendar year month': 3219}
+   period_desc: {'Jan': 270, 'Feb': 270, 'Mar': 270, 'Apr': 270, 'May': 270, 'Jun': 270, 'Jul': 268, 'Aug': 268}
+   geographic_level: {'City': 1461, 'Country': 1068, 'Region': 690}
+   units: {'Dollars per gallon': 2685, 'Dollars per bushel': 534}
+   location: 10 distinct ['United States', 'Omaha, NE', 'Los Angeles, CA', 'IA, NE, SD', 'ECB, IA, NE, SD']
+   commodity: 3 ['Corn', 'Fuel ethanol', 'Gasoline']
+   item: 8 ['Price received by farmers', 'Free-on-board rack price', 'Price minus Federal tax credits', 'Free-on-board rack price for 87 octane unleaded gasoline', 'Cost of corn per gallon of ethanol', 'Price in dollars per gasoline-equivalent gallon']
+   years 1982..2026 | ROW 14|Monthly prices for corn, fuel ethanol, and gasoline|1982|Calendar|Calendar year (Jan-Dec)|1|Calendar year month|Jan|Country|United States|Corn|Price|Price received by farmers|Dollars per bushel|2.54
+T15 Fuel ethanol and finished motor gasoline consumption and fuel ethanol market share n=184
+   year_cat: {'Calendar': 184}
+   period: {'1981': 4, '1982': 4, '1983': 4, '1984': 4, '1985': 4, '1986': 4, '1987': 4, '1988': 4}
+   period_cat: {'Calendar year': 184}
+   period_desc: {'Calendar year (Jan-Dec)': 184}
+   geographic_level: {'Country': 184}
+   units: {'Million gallons': 138, 'Percent': 46}
+   location: 1 distinct ['United States']
+   commodity: 2 ['Fuel ethanol', 'Finished motor gasoline']
+   item: 1 ['NA']
+   years 1981..2026 | ROW 15|Fuel ethanol and finished motor gasoline consumption and fuel ethanol market share|1981|Calendar|Calendar year (Jan-Dec)|1981|Calendar year|Calendar year (Jan-Dec)|Country|United States|Fuel ethanol|Consumption (excluding denat
+T16 Biodiesel and diesel prices n=605
+   year_cat: {'Calendar': 605}
+   period: {'4': 51, '5': 51, '6': 51, '7': 51, '8': 51, '9': 51, '10': 50, '11': 50}
+   period_cat: {'Calendar year month': 605}
+   period_desc: {'Apr': 51, 'May': 51, 'Jun': 51, 'Jul': 51, 'Aug': 51, 'Sep': 51, 'Oct': 50, 'Nov': 50}
+   geographic_level: {'Country': 390, 'Region': 215}
+   units: {'Dollars per gallon': 605}
+   location: 6 distinct ['United States', 'IA, MN', 'IA, MN, IL, IN, OH', 'IA, MN, IL, IN, OH, IL, MN', 'IL, MN']
+   commodity: 2 ['U.S. number 2 diesel', 'Biodiesel']
+   item: 2 ['Retail price', 'Price for freight-on-board, truck-delivered']
+   years 1994..2026 | ROW 16|Biodiesel and diesel prices|1994|Calendar|Calendar year (Jan-Dec)|4|Calendar year month|Apr|Country|United States|U.S. number 2 diesel|Price|Retail price|Dollars per gallon|1.107
+T17 Monthly average retail diesel prices n=423
+   year_cat: {'Calendar': 423}
+   period: {'4': 33, '5': 33, '6': 33, '7': 33, '8': 33, '9': 33, '10': 32, '11': 32}
+   period_cat: {'Calendar year month': 390, 'Calendar year': 33}
+   period_desc: {'Apr': 33, 'May': 33, 'Jun': 33, 'Jul': 33, 'Aug': 33, 'Sep': 33, 'Calendar year (Jan-Dec)': 33, 'Oct': 32}
+   geographic_level: {'Country': 423}
+   units: {'Cents per gallon': 423}
+   location: 1 distinct ['United States']
+   commodity: 1 ['U.S. number 2 diesel']
+   item: 1 ['Retail price']
+   years 1994..2026 | ROW 17|Monthly average retail diesel prices|1994|Calendar|Calendar year (Jan-Dec)|4|Calendar year month|Apr|Country|United States|U.S. number 2 diesel|Price|Retail price|Cents per gallon|110.7
+== Table1 65x9
+  0 | Table 1. U.S. consumpt ;  ;  ;  ;  ;  ;  ;   ; 
+  1 |  ;  ;  ;  ;  ;  ;  ;  ; 
+  2 |  ; Primary nutrient conte ;  ;  ;  ;  ; Share of total ;  ; 
+  3 | Year ending June 30 ;   Nitrogen (N) ;  Phosphate (P2O5) ;    Potash (K2O) ;    Total ;  ;  Nitrogen ;  Phosphate ; Potash
+  4 |  ;  ;  ;  ;  ;  ;   ;  ; 
+  5 |  ; -------------------1,0 ;  ;  ;  ;  ; -----------------Perce ;  ; 
+  6 |  ;  ;  ;  ;  ;  ;  ;  ; 
+  7 | 1960.0 ; 2738.0 ; 2572.4 ; 2153.3 ; 7463.7 ;  ; 36.68421828315715 ; 34.46547958787197 ; 28.85030212897089
+  8 | 1961.0 ; 3030.8 ; 2645.1 ; 2168.5 ; 7844.4 ;  ; 38.636479526796194 ; 33.71959614502065 ; 27.64392432818316
+  9 | 1962.0 ; 3370.0 ; 2807.0 ; 2270.5 ; 8447.5 ;  ; 39.893459603432966 ; 33.2287659070731 ; 26.877774489493934
+ 10 | 1963.0 ; 3929.1 ; 3072.9 ; 2503.4 ; 9505.4 ;  ; 41.33545142760957 ; 32.327939907841866 ; 26.33660866454857
+ 11 | 1964.0 ; 4352.8 ; 3377.8 ; 2729.7 ; 10460.3 ;  ; 41.61257325315718 ; 32.291616875233025 ; 26.0958098716098
+ 12 | 1965.0 ; 4638.5 ; 3512.2 ; 2834.5 ; 10985.2 ;  ; 42.22499362779011 ; 31.972107927029093 ; 25.802898445180787
+ 13 | 1966.0 ; 5326.3 ; 3897.1 ; 3221.2 ; 12444.6 ;  ; 42.80008999887501 ; 31.315590697973416 ; 25.884319303151564
+ 14 | 1967.0 ; 6027.1 ; 4304.7 ; 3641.8 ; 13973.6 ;  ; 43.132049006698345 ; 30.805948359764123 ; 26.062002633537528
+ 15 | 1968.0 ; 6787.6 ; 4453.3 ; 3792.6 ; 15033.5 ;  ; 45.14983204177337 ; 29.62250972827352 ; 25.227658229953104
+ 60 | 2013.0 ; 13502.3 ; 4698.0 ; 4849.2 ; 23049.5 ;  ; 58.57957873272739 ; 20.382220872470118 ; 21.03820039480249
+ 61 | 2014.0 ; 13294.8 ; 4694.6 ; 5254.0 ; 23243.4 ;  ; 57.1981723844188 ; 20.197561458306446 ; 22.60426615727475
+ 62 | 2015.0 ; 13009.7 ; 4266.5 ; 4744.5 ; 22020.7 ;  ; 59.07941164449814 ; 19.37495174994437 ; 21.545636605557497
+ 63 | 1/ Includes Puerto Ric ;  ;  ;  ;  ;  ;  ;  ; 
+ 64 | Source: USDA, Economic ;  ;  ;  ;  ;  ;  ;  ; 
+== Table2 65x16
+  0 | Table 2. Estimated U.S ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  1 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  2 |  ; Nitrogen ;  ;  ;  ;  ; Phosphate ;  ;  ;  ;  ;  Potash
+  3 | Year ending June 30 ;    Corn ; Cotton ; Soybeans ;   Wheat ;   Other  ;   Corn ; Cotton ; Soybeans ;   Wheat ;   Other  ;   Corn
+  4 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  5 |  ;   -------------------- ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  6 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  7 | 1964.0 ; 1622.53695 ; 394.107714 ; 15.54329 ; 353.23884000000004 ; 1967.3732060000007 ; 1052.5097700000001 ; 210.81387600000002 ; 57.0978 ; 270.56592 ; 1787.0 ; 829.3698
+  8 | 1965.0 ; 2150.643 ; 452.80283849999995 ; 19.37485 ; 426.76584 ; 1588.9134715 ; 1336.0055 ; 229.6210675 ; 90.18111999999999 ; 326.9577 ; 1529.0 ; 1204.3600800000002
+  9 | 1966.0 ; 2596.15811 ; 330.352848 ; 40.277519999999996 ; 424.1832 ; 1935.3283220000003 ; 1626.16497 ; 167.919015 ; 164.83948 ; 328.95840000000004 ; 1609.0 ; 1512.7116
+ 10 | 1967.0 ; 3044.05368 ; 268.746624 ; 55.717935 ; 623.8736 ; 2034.7081610000005 ; 1857.1716000000001 ; 145.52384 ; 203.890905 ; 462.77632 ; 1635.0 ; 1750.4376000000002
+ 11 | 1968.0 ; 3115.6278399999997 ; 318.65668 ; 66.567375 ; 623.5488 ; 2663.1993050000005 ; 1854.78848 ; 174.169884 ; 211.113675 ; 425.5968 ; 1788.0 ; 1777.9398
+ 12 | 1969.0 ; 3287.1036 ; 405.4903125 ; 48.48876 ; 568.708 ; 2647.8093275 ; 1789.10976 ; 192.4965 ; 226.70622 ; 399.806 ; 2057.0 ; 1765.3320800000001
+ 13 | 1970.0 ; 3519.6683199999998 ; 322.5204 ; 63.33054 ; 579.750405 ; 2973.730335 ; 2136.2728500000003 ; 157.67664000000002 ; 215.19459 ; 321.67740000000003 ; 1743.0 ; 2046.0078
+ 14 | 1971.0 ; 3730.46191 ; 342.84847499999995 ; 61.953300000000006 ; 613.5708000000001 ; 3384.7655150000005 ; 2023.6031200000002 ; 163.70242499999998 ; 228.90114000000003 ; 375.13934 ; 2012.0 ; 1946.45696
+ 15 | 1972.0 ; 3705.3552 ; 404.2875375 ; 72.17364 ; 783.05938 ; 3057.4242425 ; 1993.6422 ; 211.7696625 ; 285.41394 ; 446.99182 ; 1926.0 ; 1991.62842
+ 60 | 2017.0 ; NA ; NA ; NA ; 1435.65 ; NA ; NA ; NA ; NA ; 469.35 ; NA ; NA
+ 61 | 2018.0 ; 6003.65 ; 410.75 ; 208.2 ; NA ; NA ; 2255.25 ; 149.2 ; 987.15 ; NA ; NA ; 2262.95
+ 62 | NA = Not available. So ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 63 | 1/ Estimates of plant  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 64 | Source: USDA, Economic ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+== Table4 63x10
+  0 | Table 4. U.S. consumpt ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  1 |  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  2 | Year ending June 30 ; Ammonia (Anhydrous) ; Ammonia (Aqua) ;  ; Ammonium (Nitrate) ; Ammonium (Sulfate) ;  Nitrogen solutions ;   Sodium nitrate ;       Urea   ;    Other
+  3 |  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  4 |  ; Material short tons ;  ;  ;  ;  ;  ;  ;  ; 
+  5 |  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  6 | 1960.0 ; 708798.0 ; 427062.0 ;  ; 1231294.0 ; 534795.0 ; 650259.0 ; 454341.0 ; 142198.0 ; 394163.0
+  7 | 1961.0 ; 811490.0 ; 432494.0 ;  ; 1324569.0 ; 552264.0 ; 948785.0 ; 407766.0 ; 203934.0 ; 358760.0
+  8 | 1962.0 ; 934743.0 ; 496303.0 ;  ; 1387769.0 ; 557701.0 ; 1190979.0 ; 407792.0 ; 292622.0 ; 330451.0
+  9 | 1963.0 ; 1226266.0 ; 579165.0 ;  ; 1480186.0 ; 703963.0 ; 1493507.0 ; 381343.0 ; 364439.0 ; 307885.0
+ 10 | 1964.0 ; 1398379.0 ; 776219.0 ;  ; 1643504.0 ; 712327.0 ; 1680367.0 ; 337866.0 ; 406360.0 ; 295307.0
+ 11 | 1965.0 ; 1563376.0 ; 819665.0 ;  ; 1634294.0 ; 774503.0 ; 1922126.0 ; 301111.0 ; 427555.0 ; 252410.0
+ 12 | 1966.0 ; 1959601.0 ; 972291.0 ;  ; 1823004.0 ; 792347.0 ; 2305118.0 ; 243576.0 ; 467359.0 ; 215909.0
+ 13 | 1967.0 ; 2406824.0 ; 862931.0 ;  ; 2141514.0 ; 839941.0 ; 2562625.0 ; 199118.0 ; 505769.0 ; 202007.0
+ 14 | 1968.0 ; 3072190.0 ; 813543.0 ;  ; 2376459.0 ; 843286.0 ; 2645424.0 ; 153385.0 ; 550250.0 ; 193767.0
+ 15 | 1969.0 ; 3138333.0 ; 701050.0 ;  ; 2574077.0 ; 762955.0 ; 2791582.0 ; 104470.0 ; 581879.0 ; 223899.0
+ 58 | 2012.0 ; 4663113.0 ; 168386.0 ;  ; 844655.0 ; 1521026.0 ; 12474482.0 ; 13224.0 ; 6292982.0 ; 1713684.0
+ 59 | 2013.0 ; 4076080.0 ; 327122.0 ;  ; 920577.0 ; 1547631.0 ; 12028240.0 ; 24546.0 ; 6696142.0 ; 2645517.0
+ 60 | 2014.0 ; 3912217.0 ; 253300.0 ;  ; 853324.0 ; 1790347.0 ; 12157129.0 ; 13499.0 ; 6647749.0 ; 2247453.0
+ 61 | 2015.0 ; 3854515.0 ; 286703.0 ;  ; 608268.0 ; 1935361.0 ; 11896660.0 ; 13694.0 ; 7038055.0 ; 2193063.0
+ 62 | Source: USDA, Economic ;  ;  ;  ;  ;  ;  ;  ;  ; 
+== Table5 71x11
+  0 | Table 5. U.S. consumpt ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  1 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  2 |  ; Phosphates ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  3 |  ;      Superphosphates ;  ;  ;  ; Other  ;  ;  ;  ; Potash  ; 
+  4 | Year ending June 30 ; Grades 22% and under ; Grades over 22% ; Other single phosphate ;  ; Diammonium phosphate ( ; Monoammonium phosphate ; Other nitrogen-phospha ;  ;     Potassium chloride ; Other single nutrient 
+  5 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  6 |   ; Material short tons ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  7 |   ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  8 | 1960.0 ; 510539.0 ; 399319.0 ; 153764.0 ;  ; 20388.0 ; NA ;           NA ;  ; 389369.0 ; 84753.0
+  9 |    1961 ; 492657.0 ; 438398.0 ; 171696.0 ;  ; 32680.0 ; NA ;           NA ;  ; 411691.0 ; 96409.0
+ 10 |    1962 ; 481266.0 ; 465067.0 ; 144038.0 ;  ; 81253.0 ; NA ;           NA ;  ; 427491.0 ; 110171.0
+ 11 | 1963.0 ; 483596.0 ; 474198.0 ; 132800.0 ;  ; 175312.0 ; NA ;           NA ;  ; 516482.0 ; 108996.0
+ 12 | 1964.0 ; 456357.0 ; 622434.0 ; 143993.0 ;  ; 337753.0 ; NA ;           NA ;  ; 644998.0 ; 116770.0
+ 13 | 1965.0 ; 455437.0 ; 729374.0 ; 154742.0 ;  ; 504481.0 ; NA ;           NA ;  ; 814233.0 ; 121747.0
+ 14 | 1966.0 ; 470244.0 ; 902098.0 ; 133804.0 ;  ; 786782.0 ; NA ;           NA ;  ; 1152082.0 ; 136542.0
+ 15 | 1967.0 ; 433383.0 ; 976351.0 ; 142385.0 ;  ; 906372.0 ; NA ;           NA ;  ; 1483159.0 ; 117037.0
+ 66 | 2/ 18-46-0 refers to t ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 67 | in this fertilizer mat ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 68 | 3/ All nitrogen-phosph ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 69 | 4/ Other potash materi ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 70 | Source: USDA, Economic ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+== Table7 117x11
+  0 | Table 7. Average U.S.  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  1 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  2 |  Year ; Month ; Anhydrous ammonia ; Nitrogen solutions (30 ; Urea 44-46% nitrogen ; Ammonium nitrate ; Sulfate of ammonium ; Super-phosphate 20% ph ; Super-phosphate 44-46% ; Diammonium phosphate ( ; Potassium chloride 60%
+  3 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  4 |  ;  ; Dollars per material s ;  ;  ;  ;  ;  ;  ;  ; 
+  5 |  ;  ;   ;  ;  ;  ;  ;  ;  ;  ; 
+  6 | 1960.0 ;   Apr. ; 141.0 ; NA ; 117.0 ; 81.6 ; 57.9 ; 37.5 ; 79.4 ; NA ; 51.3
+  7 | 1960.0 ;   Sept. ; 140.0 ; NA ; 117.0 ; 80.9 ; 57.8 ; 38.0 ; 80.1 ; NA ; 51.6
+  8 | 1961.0 ;   Apr. ; 142.0 ; NA ; 114.0 ; 82.7 ; 58.2 ; 38.3 ; 80.6 ; NA ; 52.4
+  9 | 1961.0 ;   Sept. ; 137.0 ; NA ; 112.0 ; 81.5 ; 58.5 ; 38.2 ; 79.8 ; NA ; 52.8
+ 10 | 1962.0 ;   Apr. ; 134.0 ; NA ; 109.0 ; 81.9 ; 57.0 ; 38.4 ; 80.0 ; NA ; 53.3
+ 11 | 1962.0 ;   Sept. ; 135.0 ; NA ; 108.0 ; 80.9 ; 56.8 ; 38.4 ; 79.9 ; NA ; 53.2
+ 12 | 1963.0 ;   Apr. ; 128.0 ; NA ; 107.0 ; 81.1 ; 52.2 ; 40.5 ; 81.2 ; NA ; 53.9
+ 13 | 1963.0 ;   Sept. ; 127.0 ; NA ; 105.0 ; 79.7 ; 51.8 ; 40.1 ; 80.4 ; NA ; 53.7
+ 14 | 1964.0 ;   Apr. ; 126.0 ; NA ; 106.0 ; 79.7 ; 52.6 ; 40.3 ; 80.9 ; NA ; 53.9
+ 15 | 1964.0 ;   Sept. ; 122.0 ; NA ; 104.0 ; 78.7 ; 52.6 ; 40.1 ; 80.1 ; NA ; 53.3
+112 | 2013.0 ;   Mar. ; 847.0 ; 410.0 ; 592.0 ; 544.0 ; 522.0 ; NA ; 701.0 ; 640.0 ; 595.0
+113 | 2014.0 ;   Mar. ; 851.0 ; 359.0 ; 571.0 ; 560.0 ; 533.0 ; NA ; 621.0 ; 611.0 ; 601.0
+114 | NA = Not available. ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+115 | Source: USDA, Economic ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+116 | The final NASS release ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+== Table8 67x8
+  0 | Table 8. Fertilizer pr ;  ;  ;  ;  ;  ;  ; 
+  1 |  ; Index of prices ;  ;  ; Producer price indexes ;  ;  ; 
+  2 | Year ; Paid by farmers for fe ; Received by farmers fo ;  ;   All fertilizers ;       Nitrogen ;     Phosphate ;       Potash
+  3 |  ;  ;  ;  ;  ;  ;  ; 
+  4 |  ; 2011=100 ;  ;  ; 2011=100 ;  ;  ; 
+  5 | 1960.0 ; NA ; NA ;  ; 12.925536823725155 ; 12.574553667629264 ; 8.602182493615041 ; 12.671021921238596
+  6 | 1961.0 ; NA ; NA ;  ; 13.193701488117792 ; 12.660512530591571 ; 8.89342930113768 ; 13.5867012397656
+  7 | 1962.0 ; NA ; NA ;  ; 12.885312124066258 ; 12.230718215780024 ; 8.831019270954258 ; 13.920800450579511
+  8 | 1963.0 ; NA ; NA ;  ; 12.63055569289325 ; 11.788644063402433 ; 8.955839331321101 ; 13.982670674804309
+  9 | 1964.0 ; NA ; NA ;  ; 12.657372159332514 ; 11.764084388270344 ; 9.143069421871367 ; 13.722815733060157
+ 10 | 1965.0 ; NA ; NA ;  ; 13.086435622360735 ; 12.107919840119582 ; 9.611144648247034 ; 14.19302943716862
+ 11 | 1966.0 ; NA ; NA ;  ; 13.207109721337423 ; 12.12019967768563 ; 10.01680984443928 ; 13.549579105230723
+ 12 | 1967.0 ; NA ; NA ;  ; 13.408233219631901 ; 12.2798375660442 ; 10.40167169723705 ; 12.374044844959565
+ 13 | 1968.0 ; NA ; NA ;  ; 12.684188625771778 ; 11.064133647005825 ; 10.40167169723705 ; 10.938655642944253
+ 14 | 1969.0 ; NA ; NA ;  ; 10.619320709948465 ; 8.841483047551828 ; 9.496169027165076 ; 8.550464987867057
+ 15 | 1970.0 ; NA ; NA ;  ; 10.042766681504295 ; 8.509927433268631 ; 9.10146273508242 ; 12.089441813525495
+ 62 | 2017.0 ; 66.2 ; 86.2 ;  ; 71.64971251658558 ; 70.4505850136918 ; 61.73670768516367 ; NA
+ 63 | 2018.0 ; 66.7 ; 86.8 ;  ; 78.0185758513932 ; 75.92730893701767 ; 70.86138843742744 ; NA
+ 64 | NA = Not available. ;  ;  ;  ;  ;  ;  ; 
+ 65 | 1/ Source Bureau of La ;  ;  ;  ;  ;  ;  ; 
+ 66 | Source: USDA, Economic ;  ;  ;  ;  ;  ;  ; 
+== Table9 44x56
+  0 | Table 9. Percent of co ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  1 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  2 | State ; 1964.0 ; 1965.0 ; 1966.0 ; 1967.0 ; 1968.0 ; 1969.0 ; 1970.0 ; 1971.0 ; 1972.0 ; 1973.0 ; 1974.0
+  3 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  4 |  ;     Percent ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  5 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  6 | Alabama ; 99.0 ; 99.0 ; 100.0 ; 99.0 ; 100.0 ; 100.0 ; 100.0 ; NA ; NA ; NA ; NA
+  7 | Colorado ; NA ; NA ; NA ; NA ; NA ; NA ; NA ; 99.0 ; 98.0 ; 96.0 ; 92.0
+  8 | Delaware ; NA ; NA ; NA ; NA ; NA ; NA ; NA ; 100.0 ; 96.0 ; 98.0 ; 96.0
+  9 | Florida ; NA ; 100.0 ; 97.0 ; 96.0 ; 100.0 ; 100.0 ; 98.0 ; NA ; NA ; NA ; NA
+ 10 | Georgia ; 99.0 ; 100.0 ; 99.0 ; 100.0 ; 100.0 ; 99.0 ; 100.0 ; 99.0 ; 99.0 ; 98.0 ; 99.0
+ 11 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 12 | Illinois ; 89.0 ; 90.0 ; 96.0 ; 93.0 ; 96.0 ; 96.0 ; 95.0 ; 95.0 ; 96.0 ; 94.0 ; 96.0
+ 13 | Indiana ; 99.0 ; 100.0 ; 99.0 ; 99.0 ; 100.0 ; 99.0 ; 99.0 ; 99.0 ; 100.0 ; 98.0 ; 99.0
+ 14 | Iowa ; 80.0 ; 86.0 ; 91.0 ; 88.0 ; 87.0 ; 91.0 ; 94.0 ; 94.0 ; 94.0 ; 93.0 ; 90.0
+ 15 | Kansas ; 79.0 ; 84.0 ; 92.0 ; 90.0 ; 93.0 ; 93.0 ; 97.0 ; 98.0 ; 97.0 ; 96.0 ; 93.0
+ 39 | U.S. average 1/ ; 85.0 ; 88.0 ; 91.0 ; 92.0 ; 92.0 ; 93.0 ; 94.0 ; 94.0 ; 96.0 ; 93.0 ; 94.0
+ 40 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 41 | NA = Not available. So ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 42 | 1/  U.S. average is an ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 43 | Source: Taylor (1964-9 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+== Table10 44x56
+  0 | Table 10. Nitrogen use ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  1 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  2 | State ; 1964.0 ; 1965.0 ; 1966.0 ; 1967.0 ; 1968.0 ; 1969.0 ; 1970.0 ; 1971.0 ; 1972.0 ; 1973.0 ; 1974.0
+  3 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  4 |  ;     Pounds/acre ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  5 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+  6 | Alabama ; 69.0 ; 79.0 ; 84.0 ; 90.0 ; 75.0 ; 96.0 ; 96.0 ; NA ; NA ; NA ; NA
+  7 | Colorado ; NA ; NA ; NA ; NA ; NA ; NA ; NA ; 152.0 ; 166.0 ; 167.0 ; 158.0
+  8 | Delaware ; NA ; NA ; NA ; NA ; NA ; NA ; NA ; 105.0 ; 100.0 ; 102.0 ; 112.0
+  9 | Florida ; NA ; 71.0 ; 80.0 ; 76.0 ; 93.0 ; 103.0 ; 97.0 ; NA ; NA ; NA ; NA
+ 10 | Georgia ; 72.0 ; 77.0 ; 95.0 ; 114.0 ; 114.0 ; 119.0 ; 118.0 ; 117.0 ; 115.0 ; 117.0 ; 124.0
+ 11 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 12 | Illinois ; 72.0 ; 86.0 ; 102.0 ; 109.0 ; 112.0 ; 120.0 ; 118.0 ; 113.0 ; 128.0 ; 123.0 ; 113.0
+ 13 | Indiana ; 68.0 ; 91.0 ; 108.0 ; 112.0 ; 112.0 ; 115.0 ; 126.0 ; 113.0 ; 126.0 ; 115.0 ; 102.0
+ 14 | Iowa ; 45.0 ; 65.0 ; 81.0 ; 90.0 ; 104.0 ; 108.0 ; 107.0 ; 101.0 ; 110.0 ; 109.0 ; 102.0
+ 15 | Kansas ; 60.0 ; 68.0 ; 75.0 ; 106.0 ; 128.0 ; 133.0 ; 148.0 ; 139.0 ; 143.0 ; 154.0 ; 140.0
+ 39 | U.S. average 1/ ; 58.0 ; 75.0 ; 86.0 ; 93.0 ; 104.0 ; 110.0 ; 112.0 ; 107.0 ; 115.0 ; 114.0 ; 103.0
+ 40 |  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 41 | NA = Not available. So ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 42 | 1/  U.S. average is an ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
+ 43 | Source: Taylor (1964-9 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 
