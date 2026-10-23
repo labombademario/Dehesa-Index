@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T20:05:09Z",
+ "generatedAt": "2026-10-23T20:34:25Z",
  "summary": {
-  "sources": 160,
-  "sourcesApto": 147,
+  "sources": 161,
+  "sourcesApto": 148,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
   "datasets": 364,
@@ -489,6 +489,10 @@
   },
   "rivm_lmm": {
    "name": "RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit",
+   "verdict": "apto"
+  },
+  "rivm_stikstof": {
+   "name": "RIVM — Monitor Stikstofdepositie in Natura 2000-gebieden",
    "verdict": "apto"
   },
   "rvo": {

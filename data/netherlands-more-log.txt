@@ -1,23 +1,23 @@
 omzet: 520 combinaciones region x tipo
-omzet: leido (CBS al 2026-09-11, 4 tablas, 182 series)
+omzet: leido (fuente al 2026-09-11, 4 tablas, 182 series)
 horticultura: 81302NED 27 anos
 horticultura: 80783NED 26 anos
-horticultura: leido (CBS al 2026-09-30, 6 tablas, 37 series)
+horticultura: leido (fuente al 2026-09-30, 6 tablas, 37 series)
 nitrogeno: balance 2 minerales
 nitrogeno: estiercol 83983NED 78 combinaciones
 nitrogeno: por animal 83982NED 7 categorias
 nitrogeno: fitosanitarios 6 grupos
 nitrogeno: derechos 19 regiones
-nitrogeno: leido (CBS al 2026-06-29, 27 tablas, 227 series)
+nitrogeno: leido (fuente al 2026-06-29, 27 tablas, 227 series)
 cadena: PPI 26 lineas
 cadena: IPC 19 categorias
-cadena: leido (CBS al 2026-10-13, 4 tablas, 94 series)
+cadena: leido (fuente al 2026-10-13, 4 tablas, 94 series)
 otros: hortalizas 48 especies
 otros: pastoreo 16 anos
 otros: huevos 4 anos
 otros: finanzas 18 combinaciones
 otros: cosecha provisional 26 cultivos
-otros: leido (CBS al 2026-09-30, 21 tablas, 271 series)
+otros: leido (fuente al 2026-09-30, 21 tablas, 271 series)
 natura2000: edicion M2026, año calculado 2024
-natura2000: leido (CBS al Monitor 2026, año calculado 2024, 5 tablas, 411 series)
+natura2000: leido (fuente al Monitor 2026, año calculado 2024, 5 tablas, 411 series)
 escrito: 6 ficheros, 62 series en las estadisticas

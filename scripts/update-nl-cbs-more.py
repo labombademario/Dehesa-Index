@@ -588,7 +588,7 @@ def natura():
             s["label"] = LB.NATURA_NL[0]; s["l"] = {"en": LB.NATURA_NL[1], "fr": LB.NATURA_NL[2], "it": LB.NATURA_NL[3]}
     if len(nat) < 50:
         raise RuntimeError("RIVM: solo %d zonas" % len(nat))
-    tabs.append(mk_table("natura-total", T("Deposición total de nitrógeno por zona Natura 2000", "Total nitrogen deposition by Natura 2000 area", "Dépôt total d’azote par zone Natura 2000", "Deposizione totale di azoto per area Natura 2000"), "mol N/ha/año",
+    tabs.append(mk_table("natura-total", T("Deposición total de nitrógeno por zona Natura 2000", "Total nitrogen deposition by Natura 2000 area", "Dépôt total d’azote par zone Natura 2000", "Deposizione totale di azoto per area Natura 2000"), "mol N/ha/a",
                          "Media sobre la superficie cartografiada de hábitat y zona de vida sensibles al nitrógeno, en mol de nitrógeno por hectárea y año, redondeada a un decimal. Año calculado %d (Monitor Stikstofdepositie %d). «Países Bajos» es la media nacional." % (y, ed), nat))
 
     rows_s = xrows(bd, "DepositiePerSectorgroep")[1:]
@@ -597,18 +597,18 @@ def natura():
         if r[0] is not None and int(r[0]) == y and str(r[3]).strip() == "Nederland" and str(r[4]).strip() == "Landbouw" and r[5] is not None:
             n, nm = int(r[1]), str(r[2]).strip()
             ag.append(mk_series("nl-n2k-ag-%d" % n, list(LB.NATURA_NL) if n == 0 else [nm, nm, nm, nm], {py: float(r[5])}, None, nm))
-    tabs.append(mk_table("natura-agricultura", T("Parte de la deposición que viene de la agricultura neerlandesa, por zona", "Deposition from Dutch agriculture, by area", "Dépôt provenant de l’agriculture néerlandaise, par zone", "Deposizione dall’agricoltura olandese, per area"), "mol N/ha/año",
+    tabs.append(mk_table("natura-agricultura", T("Parte de la deposición que viene de la agricultura neerlandesa, por zona", "Deposition from Dutch agriculture, by area", "Dépôt provenant de l’agriculture néerlandaise, par zone", "Deposizione dall’agricoltura olandese, per area"), "mol N/ha/a",
                          "Solo las emisiones de la agricultura de los Países Bajos (grupo de sectores «Landbouw»); no incluye la que llega de otros países. Año calculado %d." % y, ag))
 
     nat_sec = [mk_series("nl-n2k-sec-" + k, LB.SECTORS[k], {py: float(r[5])}, None, k) for r in rows_s for k in [str(r[4]).strip()]
                if r[0] is not None and int(r[0]) == y and int(r[1]) == 0 and str(r[3]).strip() == "Nederland" and r[5] is not None and k in LB.SECTORS]
-    tabs.append(mk_table("natura-sectores", T("Media nacional por sector (emisiones neerlandesas)", "National average by sector (Dutch emissions)", "Moyenne nationale par secteur (émissions néerlandaises)", "Media nazionale per settore (emissioni olandesi)"), "mol N/ha/año",
+    tabs.append(mk_table("natura-sectores", T("Media nacional por sector (emisiones neerlandesas)", "National average by sector (Dutch emissions)", "Moyenne nationale par secteur (émissions néerlandaises)", "Media nazionale per settore (emissioni olandesi)"), "mol N/ha/a",
                          "Deposición media en todas las zonas Natura 2000 que procede de cada grupo de sectores de los Países Bajos. Año calculado %d." % y, nat_sec))
 
     rows_l = xrows(bd, "DepositiePerLand")[1:]
     ori = [mk_series("nl-n2k-orig-" + k, LB.ORIGIN[k], {py: float(r[6])}, None, k) for r in rows_l for k in [str(r[4]).strip()]
            if r[0] is not None and int(r[0]) == y and int(r[1]) == 0 and r[6] is not None and k in LB.ORIGIN]
-    tabs.append(mk_table("natura-origen", T("Media nacional por país de origen", "National average by country of origin", "Moyenne nationale par pays d’origine", "Media nazionale per paese di origine"), "mol N/ha/año",
+    tabs.append(mk_table("natura-origen", T("Media nacional por país de origen", "National average by country of origin", "Moyenne nationale par pays d’origine", "Media nazionale per paese di origine"), "mol N/ha/a",
                          "De dónde viene el nitrógeno que cae en las zonas Natura 2000 de los Países Bajos. «Corrección de medida» es el ajuste negativo de la Monitor para acercar el modelo a las mediciones. Año calculado %d." % y, ori))
 
     # % de la superficie de hábitat relevante con la deposición por encima del valor crítico (suma de las hectáreas publicadas)
@@ -635,7 +635,7 @@ def natura():
     if ha_all:
         tn, to = sum(ha_all.values()), sum(ha_over.values())
         over.append(mk_series("nl-n2k-over-0", list(LB.NATURA_NL), {py: round(100.0 * to / tn, 1)}, None, "Nederland"))
-    tabs.append(mk_table("natura-sobrecarga", T("Hábitat sensible por encima del valor crítico de deposición", "Sensitive habitat above the critical deposition value", "Habitat sensible au-dessus de la valeur critique de dépôt", "Habitat sensibile sopra il valore critico di deposizione"), "% de la superficie",
+    tabs.append(mk_table("natura-sobrecarga", T("Hábitat sensible por encima del valor crítico de deposición", "Sensitive habitat above the critical deposition value", "Habitat sensible au-dessus de la valeur critique de dépôt", "Habitat sensibile sopra il valore critico di deposizione"), "% (ha)",
                          "Porcentaje de la superficie cartografiada de hábitats relevantes para permisos en que la deposición supera el valor crítico (KDW). Calculado sumando las hectáreas que publica el RIVM por hábitat (clase «overbelast = ja»), sin ponderar ni estimar. Año calculado %d." % y, over))
     for t in tabs:
         if not t["series"]:

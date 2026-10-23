@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T20:05:09Z",
+ "generatedAt": "2026-10-23T20:34:25Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 160,
-  "sourcesApto": 147,
+  "sources": 161,
+  "sourcesApto": 148,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
   "datasets": 364,
@@ -2045,6 +2045,22 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attribution": "RIVM, Landelijk Meetnet effecten Mestbeleid (CC BY 4.0)"
+  },
+  {
+   "id": "rivm_stikstof",
+   "name": "RIVM — Monitor Stikstofdepositie in Natura 2000-gebieden",
+   "url": "https://data.rivm.nl/data/stikstof/Stikstof%20Natuur/",
+   "country": "NL",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Public Domain Mark 1.0 (sin restricciones)",
+   "licenseUrl": "http://creativecommons.org/publicdomain/mark/1.0/deed.nl",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "RIVM, Monitor Stikstofdepositie in Natura 2000-gebieden"
   },
   {
    "id": "rvo",
@@ -6021,7 +6037,8 @@
    "scope": "fichero",
    "verdict": "apto",
    "sources": [
-    "cbs_nl"
+    "cbs_nl",
+    "rivm_stikstof"
    ]
   },
   {
@@ -6044,7 +6061,8 @@
    "scope": "carpeta",
    "verdict": "apto",
    "sources": [
-    "cbs_nl"
+    "cbs_nl",
+    "rivm_stikstof"
    ]
   },
   {

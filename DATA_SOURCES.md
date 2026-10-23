@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 161 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39081 series en el catalogo unificado.
+Resumen: 162 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39088 series en el catalogo unificado.
 
-## VERIFIED (161)
+## VERIFIED (162)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -35,7 +35,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `bfs_ch_open` | Switzerland — FSO/BFS (Federal Statistical Office): economic accounts for agriculture (unit value statistics) and Agristat price indices | CH | OPENDATA-SWISS-TERMS-BY | si/si | si | 87 | Only the three datasets listed in evidence are used, and only while every XLS resource keeps rights=terms_by (the pipeline checks it on each… |
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 0 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
 | `ble` | BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de) | DE | CUSTOM | unclear/unclear | si | 129 | open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de. |
-| `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 27 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
+| `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 28 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bmluk_hydrographie` | BMLUK — Grundwasser Aktuell Österreich (hydrographischer Dienst, gis.lfrz.gv.at) | AT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente. |
 | `boe_es` | Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada | ES | CUSTOM | si/si | si | 0 | No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legisla… |
 | `bundesanzeiger` | Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des Bundes | DE | CUSTOM | si/si | si | 0 | Only the amtlicher Teil (official notices of the Federal Government) is used, never the commercial parts of the Bundesanzeiger. The basis is… |
@@ -132,6 +132,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
 | `ris_at` | Rechtsinformationssystem des Bundes (RIS) — MOG 2021 y GAP-Strategieplan-Anwendungsverordnung | AT | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el RIS. Parte del texto se leyó en copias (AMA, gesetzefinden.at, jusline.at) y los imp… |
 | `rivm_lmm` | RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit | NL | CC-BY-4.0 | si/si | si | 0 |  |
+| `rivm_stikstof` | RIVM — Monitor Stikstofdepositie in Natura 2000-gebieden | NL | CC0-1.0 | si/si | no | 0 |  |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
 | `scottish_government` | Scottish Government (RESAS) — agricultural statistics | UK | OGL-UK-3.0 | si/si | si | 143 | Excluye logotipos y elementos gráficos. |
 | `sejm_eli` | Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia) | PL | PUBLIC-LAW | si/si | si | 0 | Cifras y reglas son extractos transcritos a mano; manda el texto publicado en el Dziennik Ustaw. No se leyeron los términos de uso de la API… |
@@ -161,7 +162,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_fas_gats` | USDA FAS — Global Agricultural Trade System (GATS) | US | CC-BY-4.0 | si/si | si | 16 | The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims. |
 | `usda_fas_psd` | USDA FAS — Production, Supply and Distribution (PSD Online) | US | CC-BY-4.0 | si/si | si | 0 | Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos. |
 | `usda_fsa` | USDA Farm Service Agency (ARC/PLC program data) | US | US-PD | si/si | no | 0 | Byline requested. Some FSA web materials are copyrighted and labelled as such; the ARC/PLC program data files are FSA's own publications. No… |
-| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 1117 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
+| `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 1123 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
 | `usda_nrcs` | USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API) | US | US-PD | si/si | si | 12 | No implied USDA endorsement. Provisional data: NRCS notes SNOTEL data are not quality controlled in real time. |
 | `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |
