@@ -1,33 +1,32 @@
 tabla 16100017 54075 filas
-descartada ca-sc-lumber-british-colu-all-other-softwood-not-elsewhere-specified-shipments-m: 33 puntos, ultimo 2026-02
-descartada ca-sc-lumber-british-colu-all-other-softwood-not-elsewhere-specified-stocks-m: 76 puntos, ultimo 2022-12
-descartada ca-sc-lumber-british-colu-hemlock-fir-stocks-m: 63 puntos, ultimo 2022-12
-descartada ca-sc-lumber-british-colu-total-hardwood-production-m: 49 puntos, ultimo 2024-12
-descartada ca-sc-lumber-british-colu-total-hardwood-shipments-m: 23 puntos, ultimo 2024-12
-descartada ca-sc-lumber-british-colu-total-hardwood-stocks-m: 70 puntos, ultimo 2024-12
-descartada ca-sc-lumber-british-colu-total-softwood-and-hardwood-production-m: 49 puntos, ultimo 2024-12
-descartada ca-sc-lumber-british-colu-total-softwood-and-hardwood-shipments-m: 83 puntos, ultimo 2024-12
-descartada ca-sc-lumber-british-colu-total-softwood-and-hardwood-stocks-m: 72 puntos, ultimo 2024-12
-descartada ca-sc-lumber-ontario-all-other-softwood-not-elsewhere-specified-shipments-m: 19 puntos, ultimo 2026-06
-descartada ca-sc-lumber-ontario-all-other-softwood-not-elsewhere-specified-stocks-m: 18 puntos, ultimo 2025-07
-descartada ca-sc-lumber-ontario-hemlock-fir-shipments-m: 21 puntos, ultimo 2026-06
-descartada ca-sc-lumber-ontario-hemlock-fir-stocks-m: 76 puntos, ultimo 2023-05
-descartada ca-sc-lumber-ontario-spruce-pine-and-fir-shipments-m: 25 puntos, ultimo 2026-07
-descartada ca-sc-lumber-ontario-total-softwood-excluding-spruce-pine-and-fir-production-m: 27 puntos, ultimo 2026-07
-descartada ca-sc-lumber-ontario-total-softwood-excluding-spruce-pine-and-fir-shipments-m: 19 puntos, ultimo 2026-07
-descartada ca-sc-lumber-ontario-total-softwood-excluding-spruce-pine-and-fir-stocks-m: 26 puntos, ultimo 2026-07
-descartada ca-sc-lumber-quebec-all-other-softwood-not-elsewhere-specified-production-m: 8 puntos, ultimo 2026-07
-descartada ca-sc-lumber-quebec-all-other-softwood-not-elsewhere-specified-shipments-m: 14 puntos, ultimo 2025-11
-descartada ca-sc-lumber-quebec-all-other-softwood-not-elsewhere-specified-stocks-m: 4 puntos, ultimo 2025-11
-descartada ca-sc-lumber-quebec-hemlock-fir-shipments-m: 16 puntos, ultimo 2025-11
+descartada ca-sc-lumber-bc-all-other-softwood-not-elsewhere-specified-shipments-m: 33 puntos, ultimo 2026-02
+descartada ca-sc-lumber-bc-all-other-softwood-not-elsewhere-specified-stocks-m: 76 puntos, ultimo 2022-12
+descartada ca-sc-lumber-bc-hemlock-fir-stocks-m: 63 puntos, ultimo 2022-12
+descartada ca-sc-lumber-bc-total-hardwood-production-m: 49 puntos, ultimo 2024-12
+descartada ca-sc-lumber-bc-total-hardwood-shipments-m: 23 puntos, ultimo 2024-12
+descartada ca-sc-lumber-bc-total-hardwood-stocks-m: 70 puntos, ultimo 2024-12
+descartada ca-sc-lumber-bc-total-softwood-and-hardwood-production-m: 49 puntos, ultimo 2024-12
+descartada ca-sc-lumber-bc-total-softwood-and-hardwood-shipments-m: 83 puntos, ultimo 2024-12
+descartada ca-sc-lumber-bc-total-softwood-and-hardwood-stocks-m: 72 puntos, ultimo 2024-12
+descartada ca-sc-lumber-on-all-other-softwood-not-elsewhere-specified-shipments-m: 19 puntos, ultimo 2026-06
+descartada ca-sc-lumber-on-all-other-softwood-not-elsewhere-specified-stocks-m: 18 puntos, ultimo 2025-07
+descartada ca-sc-lumber-on-hemlock-fir-shipments-m: 21 puntos, ultimo 2026-06
+descartada ca-sc-lumber-on-hemlock-fir-stocks-m: 76 puntos, ultimo 2023-05
+descartada ca-sc-lumber-on-spruce-pine-and-fir-shipments-m: 25 puntos, ultimo 2026-07
+descartada ca-sc-lumber-on-total-softwood-excluding-spruce-pine-and-fir-production-m: 27 puntos, ultimo 2026-07
+descartada ca-sc-lumber-on-total-softwood-excluding-spruce-pine-and-fir-shipments-m: 19 puntos, ultimo 2026-07
+descartada ca-sc-lumber-on-total-softwood-excluding-spruce-pine-and-fir-stocks-m: 26 puntos, ultimo 2026-07
+descartada ca-sc-lumber-qc-all-other-softwood-not-elsewhere-specified-production-m: 8 puntos, ultimo 2026-07
+descartada ca-sc-lumber-qc-all-other-softwood-not-elsewhere-specified-shipments-m: 14 puntos, ultimo 2025-11
+descartada ca-sc-lumber-qc-all-other-softwood-not-elsewhere-specified-stocks-m: 4 puntos, ultimo 2025-11
+descartada ca-sc-lumber-qc-hemlock-fir-shipments-m: 16 puntos, ultimo 2025-11
 lumber 114 series
 tabla 18100265 11579 filas
 ippi 23 series
 tabla 18100268 29253 filas
 rmpi 74 series
 tabla 18100004 1154918 filas
-IPC sin datos para: ['Bakery and cereal products']
-cpi 14 series
+cpi 15 series
 tabla 32100107 9710 filas
 descartada ca-sc-aqua-alberta-total-aquaculture-cad-a: 7 puntos, ultimo 1997
 descartada ca-sc-aqua-alberta-total-aquaculture-t-a: 7 puntos, ultimo 1997
@@ -38,4 +37,4 @@ descartada ca-sc-aqua-manitoba-total-aquaculture-t-a: 10 puntos, ultimo 2007
 descartada ca-sc-aqua-saskatchewan-total-aquaculture-cad-a: 12 puntos, ultimo 2002
 descartada ca-sc-aqua-saskatchewan-total-aquaculture-t-a: 12 puntos, ultimo 2002
 aqua 38 series
-OK: 263 series
+OK: 264 series
