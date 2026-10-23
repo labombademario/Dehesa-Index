@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T06:46:00Z",
+ "generatedAt": "2026-10-23T07:01:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 251,
@@ -11,18 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": {
-   "sha": "5f024eb3",
-   "conclusion": "failure",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/5639e07b-b5b5-4c63-ae88-8a93f7f82e8c",
-   "completedAt": "2026-10-23T04:29:53Z"
-  },
+  "build": null,
   "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-23T03:45:52.819908+00:00",
-  "repoGeneratedAt": "2026-10-23T03:45:52.819908+00:00",
-  "checkedAt": "2026-10-23T06:46:00Z"
+  "prodGeneratedAt": "2026-10-23T06:51:44.109484+00:00",
+  "repoGeneratedAt": "2026-10-23T06:51:44.109484+00:00",
+  "checkedAt": "2026-10-23T07:01:00Z"
  },
  "pipelines": [
   {
@@ -2930,9 +2925,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-21T06:48:03Z",
+    "startedAt": "2026-10-23T06:47:36Z",
     "durationSec": 34,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39557684960"
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39913671948"
    },
    "recent": {
     "runs": 10,
@@ -3096,9 +3091,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T06:56:06Z",
-    "durationSec": 24,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39737080084"
+    "startedAt": "2026-10-23T06:55:06Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39914447372"
    },
    "recent": {
     "runs": 10,
@@ -3740,7 +3735,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-23T06:47:00Z",
+   "nextRun": "2026-10-23T09:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3767,35 +3762,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-23T03:45:53Z"
+     "lastChange": "2026-10-23T06:51:44Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-23T03:45:53Z"
+     "lastChange": "2026-10-23T06:51:44Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-23T03:45:53Z"
+     "lastChange": "2026-10-23T06:51:44Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-23T03:45:53Z"
+     "lastChange": "2026-10-23T06:51:44Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-23T03:45:53Z"
+     "lastChange": "2026-10-23T06:51:44Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T03:39:20Z",
-    "durationSec": 397,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39896162020"
+    "startedAt": "2026-10-23T06:46:50Z",
+    "durationSec": 300,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39913595751"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -4044,7 +4039,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T05:50:24Z"
+     "lastChange": "2026-10-23T06:48:50Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4127,15 +4122,14 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-23T04:09:45Z",
-    "durationSec": 757,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39896079290",
-    "reason": "no se pudo publicar el estado · no se pudo publicar tras 10 intentos"
+    "startedAt": "2026-10-23T06:45:44Z",
+    "durationSec": 243,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39913483583"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 3,
-    "failed": 6
+    "failed": 7
    },
    "status": "error",
    "expectedEveryHours": 3.0
