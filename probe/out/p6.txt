@@ -1,0 +1,159 @@
+links 8
+## 2026-08 pages=1
+Alberta Farm Input Prices
+August 2026
+Farm Input Prices - Dollars ($) Aug 2025 Jul 2026 Aug 2026
+Construction Grade Lumber, 2x6, spruce, M 1,026.88 1,017.58 1,018.39
+Rough Grade Lumber, 2x8, spruce, M 1,038.50 992.59 1,112.29
+Sheathing, plywood, spruce, unsanded, 9.6 mm, 4'x8' sheet 28.29 27.97 27.39
+Fence Posts, standard grade, treated, 3-4" diameter, 7' length 10.16 10.36 9.55
+Ready-Mix Concrete, 32 mpa strength, cubic metre 343.63 352.20 347.43
+Nails, standard grade, 4" spiral, 50 lb box 104.57 119.35 116.17
+Pipe, plastic, 1" diameter, 75 psi, 100' coil 87.03 99.61 105.88
+Rods, steel reinforcing, 10 mm, 6 metre length 9.03 10.01 9.60
+Barbed Wire, 12 gauge, double strand, 40 kg, 80 rod spool 118.26 120.04 120.07
+Grain Bin, hopper bottom included, 7,000-8,000 bushel capacity, each 42,085.40 45,200.11 45,698.65
+Grain Bag, 10’x250’, holds approximately 11,000 bu grain, each 1,044.96 1,119.12 1,131.42
+Truck Tires, 1st line, blackwall, LT285-70R-17 Radial (environmental tax included), each 426.95 431.07 413.59
+Storage Battery, 12 volt, 24 series, 750-800 cranking amps, each 225.99 232.80 224.10
+Antifreeze, ethylene glycol, anti-corrosion, 9.46 litre 46.39 50.86 51.64
+Mechanical Repairs, for farm machinery, shop & labour, per hour 172.46 187.37 187.85
+Baler Twine, plastic, for round baler, 28,000' bale 50.03 39.99 39.99
+General Farm Labour, full-time, without board, per month 4,057.41 4,228.85 3,881.13
+Tractor, FWD, 130-140 hp, 4-6 cylinder, diesel, 12-24 speed, with front-end loader, new, each 257,942.58 276,945.20 273,819.50
+Tractor, 4WD, 500-600 hp, 6-8 cylinder, diesel, 12-18 speed, new, each 882,979.65 912,800.39 919,213.54
+Combine, self-propelled, diesel, Class 8, 375-429 hp, 250-350 bu grain tank, new, each 1,019,389.92 1,039,744.19 1,064,499.53
+Air Drill, 50-60', 400-500 bushels, double chute, variable rate sectional control, new, each 680,750.47 784,623.05 796,277.47
+Sprayer, self-propelled, 325-375 hp, 1,000-1,200 gallons, 100-120' boom, new, each 934,824.48 999,819.75 1,005,273.41
+Round Baler, pull-type, P.T.O. driven, 5'x6' hard core bale, new, each 112,262.55 117,961.81 121,308.76
+Double Disc, heavy-duty tandem, 19-21', 22" blades, new, each 111,497.47 110,309,40 105,104.00
+3/4 Ton Truck, diesel, crew cab, 4x4, mid-range, automatic, new, each 89,246.87 99,885.95 96,703.42
+Calf-Starter Ration, pellets, 13-20% protein, bagged, 25 kg 18.91 18.66 18.66
+Calf Milk Replacer, bagged, 20 kg 109.95 120.91 123.69
+Feedlot Supplement, pellets, 30-32% protein, bagged, 20 kg 23.73 24.53 24.55
+Hog Grower Ration, pellets, 15-17% protein, bagged, 25 kg 22.27 17.97 17.97
+Swine Supplement, pellets, 35-40% protein, bagged, 25 kg 30.99 28.08 27.24
+Broiler Grower Complete Feed, 15-17% protein, bagged, 20 kg 19.91 18.63 18.99
+Cattle Mineral, salt-free, 16% Phosphorus & 16% Calcium, 20 kg 56.07 56.47 50.77
+Feed Barley, good quality, non-board, farm gate, bushel 5.11 5.76 5.31
+Feed Wheat, good quality, non-board, farm gate, bushel 6.27 7.48 7.42
+Feed Oats, good quality, non-board, farm gate, bushel 3.96 3.47 3.40
+Hay, good quality, over 50% Alfalfa, farm gate, ton 199.48 193.97 175.94
+Ivermectin, injection for cattle, sheep and swine, 200 ml injectable **** - 148.93 148.93
+Vitamin A, D, E, oral, liquid, added to water, 425 ml bottle *** - 29.99 29.99
+Fertilizer, 46-0-0, Urea, bulk, tonne 849.58 926.58 876.25
+Fertilizer, 11-52-0, Monoammonium Phosphate, bulk, tonne 1,306.42 1,373.68 1,447.01
+Fertilizer, 82-0-0, Anhydrous Ammonia, full service with applicator, bulk, tonne 1,296.44 1,398.92 1,359.00
+Fertilizer, 0-0-60, Potassium Chloride, bulk, tonne 677.68 695.11 709.78
+Fertilizer, 21-0-0-24, Ammonium Sulphate, bulk, tonne 608.32 731.37 698.12
+Buctril M, containing Bromoxynil, emulsifiable concentrate, 8 litre 175.02 187.47 186.87
+Axial, containing Pinoxaden, emulsifiable concentrate, 10 litre 537.28 534.38 525.42
+Roundup WeatherMAX, containing Glyphosate, liquid, 10 litre 77.26 80.45 77.32
+Seed, Wheat, Canada No. 1, CWRS Certified, bulk, per bushel 14.87 13.34 13.39
+Seed, Barley, Canada No. 1, Feed Certified, bulk, per bushel 11.73 11.14 11.12
+Seed, Roundup Ready HT Canola, Certified No. 1, treated, bagged, 22.7 kg 852.88 841.78 838.92
+Seed, Liberty Link HT Canola, Certified No. 1, treated, bagged, 22.7 kg 827.97 851.67 849.62
+Marked Gasoline, regular unleaded, marked farm fuel, 100 litres 113.91 134.62 145.59
+Diesel Fuel, marked farm fuel, (provincial allowance deducted), 100 litres 121.87 140.83 177.95
+Propane, liquefied, for farm use, bulk, 100 litres 64.00 66.03 66.03
+Natural Gas, (excluding service or delivery charge, prov. rebate deducted where applicable), GJ 0.93 2.43 2.36
+Electricity, farm use, (excluding service or delivery charge), 100 kwh 12.04 11.56 11.56
+Oil, for diesel engines, 15W-40, (environmental tax included), 5 litre 41.46 48.36 53.74
+Most agricultural inputs were reported to be in good supply for the month of August 2026 with some exceptions in some areas of the province. The prices reported are
+simple averages for the province in Canadian Dollars ($) and are based on a survey conducted in the first week of each month.
+*** Specification changed as of December 2025 **** Specification changed as of February 2026
+Source: Alberta Agriculture and Irrigation, Trade, Economics and Data Analytics Branch, Statistics and Data Development Section, in partnership with Alberta
+Federation of Agriculture. For additional information, please contact: TEDA-Branch@gov.ab.ca.
+Financial support for this project was provided under the Sustainable Canadian Agricultural Partnership, a federal-provincial-territorial initiative.
+Alberta farm input prices
+©2026 Government of Alberta | October 2, 2026 | Alberta Agriculture and Irrigation
+Classification: Public
+## 2026-01 first lines
+Alberta Farm Input Prices
+January 2026
+F arm Input Prices - Dollars ($) Jan 2025 Dec 2025 Jan 2026
+Construction Grade Lumber, 2x6, spruce, M 1,289.99 1,028.94 1,028.24
+Rough Grade Lumber, 2x8, spruce, M 991.23 1,002.63 1,002.72
+Q farm input prices alberta | f2432af0-cffa-4a86-9c31-74e6ec5c5afa | Alberta farm input prices [2026] | 9
+Q farm input prices alberta | dc93ba24-2c25-4466-8bb2-459403188526 | Farmers' Advocate Office advisory | 17
+Q farm input prices alberta | a854e8c2-37cf-4c3e-a99f-3bc8e477ca8d | Alberta beekeepers' survey results | 17
+Q farm input prices alberta | 64f607fb-d73c-407d-aa60-1f112be29777 | Cropping alternatives : crop budget planning | 13
+Q farm input prices alberta | fb5fbe3d-5d6b-4603-b6ab-8e44c6c8e258 | Alberta farm input prices [2025] | 13
+Q farm input prices alberta | b79d81f5-92fb-47e5-81e6-84dd21a81e11 | Egg Farmers of Alberta Marketing Regulation | 1
+Q farm input prices alberta | e8a16a09-30cb-4f97-95b8-0287c2c5c0d3 | Agriculture Financial Services Regulation | 1
+Q farm input prices alberta | d793c04c-0717-4f98-8599-f1c7cd3e2892 | Alberta Chicken Producers Marketing Regulation | 1
+Q farm input prices alberta | b89c5caf-f17e-4e91-9efe-3ec3b36d64e3 | Hatching Eggs Regulation | 1
+Q farm input prices alberta | 2acf92e7-f5c5-410e-b517-0a49c1ed2ed2 | Alberta farm input prices [2024] | 13
+Q farm input prices alberta | 79f01912-5e5c-469e-8cf4-97cfc6901cea | Agriculture statistics factsheet | 13
+Q farm input prices alberta | 460601cf-136d-4a44-b2f6-723fd90c04d1 | Alberta farm input prices [2023] | 13
+Q farm input prices alberta | 5922c2fd-8f85-4ed6-872a-92c7c778f2b3 | Farm Implement and Dealership Act | 1
+Q farm input prices alberta | 6523e4b0-6976-4ae6-8011-1e42f391dde9 | Alberta farm input prices [2022] | 13
+Q farm input prices alberta | da3573a5-465c-4dc1-8793-36e9dc02b775 | Agriculture statistics yearbook | 15
+Q farm input prices alberta | bf01c8c7-1ea8-40ce-a193-9fe1d51d9417 | Alberta farm input prices : average monthly prices for 2021 | 13
+Q farm input prices alberta | dcd0ce25-236a-45d9-9a21-f90c31f85b4a | Economics of milk production in Alberta, 2020 : the dairy cost study | 8
+Q farm input prices alberta | d6e0d054-2463-4e13-8827-a54f250cb862 | Agriculture business alternatives [2021] | 8
+Q farm input prices alberta | 1c1f48a2-63b9-4dcb-823c-aa49a9a7c810 | Vertical farming case study | 1
+Q farm input prices alberta | 9bb9e11b-ae8f-42b4-8764-aa3d409f380e | Pricing horticulture products [2021] | 1
+Q alberta farm input prices 2024 | f2432af0-cffa-4a86-9c31-74e6ec5c5afa | Alberta farm input prices [2026] | 9
+Q alberta farm input prices 2024 | dc93ba24-2c25-4466-8bb2-459403188526 | Farmers' Advocate Office advisory | 17
+Q alberta farm input prices 2024 | a854e8c2-37cf-4c3e-a99f-3bc8e477ca8d | Alberta beekeepers' survey results | 17
+Q alberta farm input prices 2024 | 64f607fb-d73c-407d-aa60-1f112be29777 | Cropping alternatives : crop budget planning | 13
+Q alberta farm input prices 2024 | fb5fbe3d-5d6b-4603-b6ab-8e44c6c8e258 | Alberta farm input prices [2025] | 13
+Q alberta farm input prices 2024 | 2acf92e7-f5c5-410e-b517-0a49c1ed2ed2 | Alberta farm input prices [2024] | 13
+Q alberta farm input prices 2024 | 79f01912-5e5c-469e-8cf4-97cfc6901cea | Agriculture statistics factsheet | 13
+Q alberta farm input prices 2024 | 460601cf-136d-4a44-b2f6-723fd90c04d1 | Alberta farm input prices [2023] | 13
+Q alberta farm input prices 2024 | 6523e4b0-6976-4ae6-8011-1e42f391dde9 | Alberta farm input prices [2022] | 13
+Q alberta farm input prices 2024 | bf01c8c7-1ea8-40ce-a193-9fe1d51d9417 | Alberta farm input prices : average monthly prices for 2021 | 13
+Q alberta farm input prices 2024 | c41fc7c6-45c1-4c4d-bdd9-fcdf44430396 | Alberta farm input prices : average monthly prices for 2020 | 10
+Q alberta farm input prices 2024 | 983b8b2b-769e-4f55-a6e4-5f8edcfc7182 | Alberta farm input prices : overview | 7
+Q alberta farm input prices 2024 | 23f0bcb4-e5a8-4f1e-a4b2-25feb906dfae | Alberta farm input prices : average monthly prices for 2019 | 13
+Q alberta farm input prices 2024 | 62642eee-de55-4573-b1a9-b043bd6ece30 | Alberta farm input prices : average monthly prices for 2018 | 13
+Q alberta farm input prices 2024 | bd9d37f1-e105-4d49-ae01-eb315c6e6568 | Alberta farm input prices : average monthly prices for 2017 | 13
+Q alberta farm input prices 2024 | b5e6ef40-54b9-4305-84ff-b2cf0697fb72 | Alberta Average Farm Input Prices | 2
+Q alberta farm input prices 2024 | 5212ba0d-1dc8-4005-9702-3dcfcba23475 | Alberta farm input prices : average monthly prices for 2016 | 13
+Q alberta farm input prices 2024 | 54da881d-bc58-4d97-92b3-16c1137d8483 | Alberta farm input prices : average monthly prices for 2015 | 13
+Q alberta farm input prices 2024 | 3114eab9-f9c5-464e-86ad-4cf812a774ef | Alberta farm input prices : average monthly prices for 2014 | 13
+Q alberta farm input prices 2024 | 0365b41b-843f-4902-a70c-d6e0cb3708f4 | Alberta farm input prices : average monthly prices for 2013 | 13
+Q alberta farm input prices 2019 | f2432af0-cffa-4a86-9c31-74e6ec5c5afa | Alberta farm input prices [2026] | 9
+Q alberta farm input prices 2019 | dc93ba24-2c25-4466-8bb2-459403188526 | Farmers' Advocate Office advisory | 17
+Q alberta farm input prices 2019 | a854e8c2-37cf-4c3e-a99f-3bc8e477ca8d | Alberta beekeepers' survey results | 17
+Q alberta farm input prices 2019 | 64f607fb-d73c-407d-aa60-1f112be29777 | Cropping alternatives : crop budget planning | 13
+Q alberta farm input prices 2019 | fb5fbe3d-5d6b-4603-b6ab-8e44c6c8e258 | Alberta farm input prices [2025] | 13
+Q alberta farm input prices 2019 | 2acf92e7-f5c5-410e-b517-0a49c1ed2ed2 | Alberta farm input prices [2024] | 13
+Q alberta farm input prices 2019 | 79f01912-5e5c-469e-8cf4-97cfc6901cea | Agriculture statistics factsheet | 13
+Q alberta farm input prices 2019 | 460601cf-136d-4a44-b2f6-723fd90c04d1 | Alberta farm input prices [2023] | 13
+Q alberta farm input prices 2019 | 6523e4b0-6976-4ae6-8011-1e42f391dde9 | Alberta farm input prices [2022] | 13
+Q alberta farm input prices 2019 | da3573a5-465c-4dc1-8793-36e9dc02b775 | Agriculture statistics yearbook | 15
+Q alberta farm input prices 2019 | bf01c8c7-1ea8-40ce-a193-9fe1d51d9417 | Alberta farm input prices : average monthly prices for 2021 | 13
+Q alberta farm input prices 2019 | c41fc7c6-45c1-4c4d-bdd9-fcdf44430396 | Alberta farm input prices : average monthly prices for 2020 | 10
+Q alberta farm input prices 2019 | f58c3dc6-720b-460e-b67f-a3b9106c672b | Economics of milk production in Alberta, 2019 : the dairy cost study | 9
+Q alberta farm input prices 2019 | 983b8b2b-769e-4f55-a6e4-5f8edcfc7182 | Alberta farm input prices : overview | 7
+Q alberta farm input prices 2019 | de65c7d1-d133-4518-a133-2325378289d2 | Edmonton nutritious food basket prices, an overview | 6
+Q alberta farm input prices 2019 | 23f0bcb4-e5a8-4f1e-a4b2-25feb906dfae | Alberta farm input prices : average monthly prices for 2019 | 13
+Q alberta farm input prices 2019 | 7afe8eaf-2f9b-451b-bab1-bdea7a347249 | Economics of milk production in Alberta, 2018 : the dairy cost study | 11
+Q alberta farm input prices 2019 | aef92b2c-45e4-451f-9d1d-4e4d196ee6e4 | Economics of milk production in Alberta, 2017 : the dairy cost study | 9
+Q alberta farm input prices 2019 | b4f477b4-a3a5-40cc-bd5f-b1e14e88e329 | Alberta retail food prices : selected communities | 11
+Q alberta farm input prices 2019 | 62642eee-de55-4573-b1a9-b043bd6ece30 | Alberta farm input prices : average monthly prices for 2018 | 13
+Q alberta farm input prices 2013 | f2432af0-cffa-4a86-9c31-74e6ec5c5afa | Alberta farm input prices [2026] | 9
+Q alberta farm input prices 2013 | a854e8c2-37cf-4c3e-a99f-3bc8e477ca8d | Alberta beekeepers' survey results | 17
+Q alberta farm input prices 2013 | fb5fbe3d-5d6b-4603-b6ab-8e44c6c8e258 | Alberta farm input prices [2025] | 13
+Q alberta farm input prices 2013 | 2acf92e7-f5c5-410e-b517-0a49c1ed2ed2 | Alberta farm input prices [2024] | 13
+Q alberta farm input prices 2013 | 79f01912-5e5c-469e-8cf4-97cfc6901cea | Agriculture statistics factsheet | 13
+Q alberta farm input prices 2013 | 460601cf-136d-4a44-b2f6-723fd90c04d1 | Alberta farm input prices [2023] | 13
+Q alberta farm input prices 2013 | 6523e4b0-6976-4ae6-8011-1e42f391dde9 | Alberta farm input prices [2022] | 13
+Q alberta farm input prices 2013 | da3573a5-465c-4dc1-8793-36e9dc02b775 | Agriculture statistics yearbook | 15
+Q alberta farm input prices 2013 | bf01c8c7-1ea8-40ce-a193-9fe1d51d9417 | Alberta farm input prices : average monthly prices for 2021 | 13
+Q alberta farm input prices 2013 | c41fc7c6-45c1-4c4d-bdd9-fcdf44430396 | Alberta farm input prices : average monthly prices for 2020 | 10
+Q alberta farm input prices 2013 | 983b8b2b-769e-4f55-a6e4-5f8edcfc7182 | Alberta farm input prices : overview | 7
+Q alberta farm input prices 2013 | de65c7d1-d133-4518-a133-2325378289d2 | Edmonton nutritious food basket prices, an overview | 6
+Q alberta farm input prices 2013 | 23f0bcb4-e5a8-4f1e-a4b2-25feb906dfae | Alberta farm input prices : average monthly prices for 2019 | 13
+Q alberta farm input prices 2013 | 7afe8eaf-2f9b-451b-bab1-bdea7a347249 | Economics of milk production in Alberta, 2018 : the dairy cost study | 11
+Q alberta farm input prices 2013 | 62642eee-de55-4573-b1a9-b043bd6ece30 | Alberta farm input prices : average monthly prices for 2018 | 13
+Q alberta farm input prices 2013 | bd9d37f1-e105-4d49-ae01-eb315c6e6568 | Alberta farm input prices : average monthly prices for 2017 | 13
+Q alberta farm input prices 2013 | b5e6ef40-54b9-4305-84ff-b2cf0697fb72 | Alberta Average Farm Input Prices | 2
+Q alberta farm input prices 2013 | a4bf96b5-3aab-4a4b-a0ce-9f2f7063536c | Alberta Farm Debt Outstanding by Lender | 2
+Q alberta farm input prices 2013 | f6ee65bc-ca4e-4df8-99ea-62b78944565e | Alberta Farm Operating Expenses and Depreciation | 2
+Q alberta farm input prices 2013 | aaef5d31-6da5-4fcd-81c5-d13c501f066b | Selected Farm Income Statistics, Canada and Provinces | 2
+PUB https://open.alberta.ca/publications/0704-917x len=81230
+/publications/0704-917x/resource/32817954-7476-49e5-88f8-450f346f941a /publications/0704-917x/resource/4e7e62ea-c16f-4b0c-903b-768a588bedbc /publications/0704-917x/resource/7465c032-cebd-4c35-8f66-f138bd3121d8 /publications/0704-917x/resource/9bef22b6-c10a-4d89-a629-91c2eda9537c /publications/0704-917x/resource/af9e3b2e-ab00-4ca4-a6ac-a20071fd1ff6 /publications/0704-917x/resource/bdcabac1-3fd2-46a8-b19c-4edf9c3141be /publications/0704-917x/resource/d12ad022-1dfb-4ddc-a7b9-e9040236f607 /publications/0704-917x/resource/e3cd2fe3-6b08-46bb-bccc-d0f387a32ffd /publications/0704-917x/resource/f01ab1da-4f4b-4a39-ad93-fc5205b1e87e https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/32817954-7476-49e5-88f8-450f346f941a/download/agi-tedab-monthly-farm-input-prices-2026-02.pdf https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/4e7e62ea-c16f-4b0c-903b-768a588bedbc/download/agi-tedab-monthly-farm-input-prices-2026-04.pdf https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/9bef22b6-c10a-4d89-a629-91c2eda9537c/download/agi-tedab-monthly-farm-input-prices-2026-03.pdf https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/af9e3b2e-ab00-4ca4-a6ac-a20071fd1ff6/download/agi-tedab-monthly-farm-input-prices-2026-08.pdf https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/bdcabac1-3fd2-46a8-b19c-4edf9c3141be/download/agi-tedab-monthly-farm-input-prices-2026-05.pdf https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/d12ad022-1dfb-4ddc-a7b9-e9040236f607/download/agi-tedab-monthly-farm-input-prices-2026-07.pdf https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/e3cd2fe3-6b08-46bb-bccc-d0f387a32ffd/download/agi-tedab-monthly-farm-input-prices-2026-01.pdf https://open.alberta.ca/dataset/f2432af0-cffa-4a86-9c31-74e6ec5c5afa/resource/f01ab1da-4f4b-4a39-ad93-fc5205b1e87e/download/agi-tedab-monthly-farm-input-prices-2026-06.pdf
+PUB ERR https://open.alberta.ca/publications/0704917x <HTTPError 404: 'Not Found'>
