@@ -417,6 +417,18 @@
   "data/us-ers-food-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Gasto en alimentos de EE. UU. (USDA ERS): alimenta el catalogo y el explorador. Ninguna pagina descarga este fichero."
+  },
+  "data/ca-statcan-more-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Estadisticas de StatCan (aserraderos, IPPI, materias primas, IPC, acuicultura); lo leen el catalogo y las fichas de pais, no una pagina concreta."
+  },
+  "data/catalog/CA.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Canada (sin puntos): la ficha del pais los pide por DISeries.country('CA').",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
   }
  },
  "prefixes": {

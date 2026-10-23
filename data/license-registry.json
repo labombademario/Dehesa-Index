@@ -4867,6 +4867,32 @@
    "short": "AAFC",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia OGL-Canada indicada en el catálogo oficial para estos conjuntos."
+  },
+  "alberta_inputs": {
+   "name": "Alberta Agriculture and Irrigation — Alberta Farm Input Prices",
+   "url": "https://open.alberta.ca/publications/0704-917x",
+   "country": "CA",
+   "licenseId": "OGL-Alberta",
+   "licenseName": "Open Government Licence – Alberta (Government of Alberta information; third-party material within the reviews excluded)",
+   "licenseUrl": "https://open.alberta.ca/licence",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licensed under the Open Government Licence – Alberta.",
+   "additionalRestrictions": "No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; alberta.ca pages without an OGL-Alberta line do not allow commercial reproduction without permission.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "The OGL-Alberta grants no rights over third-party material the Government of Alberta cannot sublicense. The reviews include ICE Futures Canada and US futures, elevator and special-crop cash bids collected 'from various sources', and (livestock) CANFAX prices and US boxed beef and hog prices. They are reproduced as published and cited to the Alberta report; the original third-party owners are not licensed by this entry. No Alberta, ICE or CANFAX logos or marks are reused.",
+   "verifiedAt": "2026-10-22",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Ficha de open.alberta.ca de cada ejercicio (\"Alberta farm input prices [AAAA]\"): licencia Open Government Licence - Alberta (campo licencia de la API CKAN y enlace en la ficha); PDF descargados desde el runner el 2026-10-22.",
+   "used": true,
+   "aliases": [],
+   "notes": "Per-series origin tags (government vs ICE/CANFAX/private bids) are a possible refinement; not implemented.",
+   "short": "Alberta Agriculture",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia abierta explicita (OGL-Alberta) en la ficha del conjunto de datos."
   }
  },
  "files": {
@@ -7234,6 +7260,18 @@
     "CA": "aafc_slaughter"
    },
    "notes": "AAFC weekly red meat slaughter (Open Government Licence - Canada)."
+  },
+  "data/ca-alberta-inputs-stats.json": {
+   "byCountry": {
+    "CA": "alberta_inputs"
+   },
+   "notes": "Alberta Agriculture and Irrigation, Alberta Farm Input Prices (OGL-Alberta)."
+  },
+  "data/ca-statcan-more-stats.json": {
+   "byCountry": {
+    "CA": "statcan"
+   },
+   "notes": "Statistics Canada tables 16-10-0017, 18-10-0265, 18-10-0268, 18-10-0004, 32-10-0107."
   }
  },
  "derived": [
