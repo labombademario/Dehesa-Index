@@ -2109,6 +2109,7 @@ sources:
     name: Update US fertilizer use and price archive (USDA ERS)
     cron: ['40 15 * * 5']
     script: scripts/update-us-ers-fertilizer.py
+    pre: ['pip install xlrd']
     timeout: 15
     data: [us-ers-fertilizer-stats.json]
     log: us-ers-fertilizer-log.txt
