@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T07:01:00Z",
+ "generatedAt": "2026-10-23T07:23:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 251,
+  "ok": 250,
   "late": 2,
-  "error": 6,
+  "error": 7,
   "not_run": 4,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T06:51:44.109484+00:00",
   "repoGeneratedAt": "2026-10-23T06:51:44.109484+00:00",
-  "checkedAt": "2026-10-23T07:01:00Z"
+  "checkedAt": "2026-10-23T07:23:00Z"
  },
  "pipelines": [
   {
@@ -3178,7 +3178,7 @@
    "crons": [
     "15 7 * * 2,5"
    ],
-   "nextRun": "2026-10-23T07:15:00Z",
+   "nextRun": "2026-10-27T07:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4039,7 +4039,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T06:48:50Z"
+     "lastChange": "2026-10-23T07:03:35Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5712,14 +5712,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-23T01:36:39Z",
-    "durationSec": 938,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39884971246"
+    "event": "schedule",
+    "startedAt": "2026-10-23T07:12:53Z",
+    "durationSec": 144,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39916314136"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -6046,18 +6046,19 @@
    "nextRun": "2026-10-26T06:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T14:00:36Z",
-    "durationSec": 3442,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39791980272"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-10-23T07:22:44Z",
+    "durationSec": 181,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39917313241",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · NASS 2026-09: 42 filas"
    },
    "recent": {
     "runs": 10,
     "success": 8,
     "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 24.0
   },
   {
