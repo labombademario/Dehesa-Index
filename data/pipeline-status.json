@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T18:55:00Z",
+ "generatedAt": "2026-10-23T19:08:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 254,
+  "ok": 255,
   "late": 2,
   "error": 6,
   "not_run": 3,
-  "unknown": 1
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
   "repoGeneratedAt": "2026-10-23T15:50:15.286685+00:00",
-  "checkedAt": "2026-10-23T18:55:00Z"
+  "checkedAt": "2026-10-23T19:08:00Z"
  },
  "pipelines": [
   {
@@ -3828,14 +3828,14 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "cancelled",
     "event": "schedule",
-    "startedAt": "2026-10-23T15:42:55Z",
-    "durationSec": 448,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39980637808"
+    "startedAt": "2026-10-23T18:44:24Z",
+    "durationSec": 795,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40005768901"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
     "failed": 0
    },
@@ -4097,7 +4097,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T18:58:19Z"
     },
     {
      "path": "data/products"
@@ -4108,7 +4108,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T18:47:13Z"
+     "lastChange": "2026-10-23T18:58:12Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5154,9 +5154,19 @@
    ],
    "nextRun": "2026-10-27T18:20:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-10-23T18:52:44Z",
+    "durationSec": 342,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40006908478"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 96.0
   },
   {
