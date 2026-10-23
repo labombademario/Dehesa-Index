@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T15:23:00Z",
+ "generatedAt": "2026-10-23T15:43:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 251,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-23T12:50:41.241181+00:00",
   "repoGeneratedAt": "2026-10-23T12:50:41.241181+00:00",
-  "checkedAt": "2026-10-23T15:23:00Z"
+  "checkedAt": "2026-10-23T15:43:00Z"
  },
  "pipelines": [
   {
@@ -3030,13 +3030,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-20T15:34:47Z",
-    "durationSec": 43,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39449717464"
+    "startedAt": "2026-10-23T15:36:11Z",
+    "durationSec": 54,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39979682773"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -3802,8 +3802,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39955856357"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4075,7 +4075,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-23T15:10:53Z"
+     "lastChange": "2026-10-23T15:24:56Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4164,9 +4164,9 @@
     "reason": "no se pudo publicar el estado · no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 3,
-    "failed": 7
+    "failed": 6
    },
    "status": "error",
    "expectedEveryHours": 3.0
@@ -5469,7 +5469,7 @@
    "crons": [
     "40 15 * * 5"
    ],
-   "nextRun": "2026-10-23T15:40:00Z",
+   "nextRun": "2026-10-30T15:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5896,7 +5896,7 @@
    "crons": [
     "35 15 * * 5"
    ],
-   "nextRun": "2026-10-23T15:35:00Z",
+   "nextRun": "2026-10-30T15:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
