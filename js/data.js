@@ -1256,23 +1256,42 @@
     ['pollo_pechuga_ca', 'avicultura', 'Pechugas de pollo, al por menor', 'Chicken breasts, retail', 'Poitrines de poulet, au détail', 'Petto di pollo, al dettaglio', 'kg', 1, 'lb', 0.453592, 'kg', 1, '🐔', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan'],
     ['huevos_docena_ca', 'avicultura', 'Huevos, docena, al por menor', 'Eggs, dozen, retail', 'Œufs, douzaine, au détail', 'Uova, dozzina, al dettaglio', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Statistics Canada (precio al consumidor, media nacional)', 'statcan']
   ];
+  // --- Reino Unido en el panel: combustible (DESNZ), vacuno y cordero en canal de Irlanda del Norte (DAERA) y huevos (Defra) (se añade el 23-oct-2026) ---
+  // Mismas columnas que CA_PANEL más una última con la frecuencia. Cifras: scripts/build-uk-panel-obs.py. Precio de mercado del Reino Unido de AHDB: no se usa (licencia).
+  var NI_SRC = 'DAERA, informe semanal de mercados agrarios de Irlanda del Norte (precio medio en canal)';
+  var UK_PANEL = [
+    ['diesel_uk', 'energia', 'Gasóleo en surtidor (Reino Unido)', 'Pump diesel (UK)', 'Gazole à la pompe (Royaume-Uni)', 'Gasolio alla pompa (Regno Unito)', 'litro', 1, 'litro', 1, 'litro', 1, '⛽', 'DESNZ (precio medio semanal en surtidor, con impuestos)', 'desnz_fuel_prices', 'weekly'],
+    ['gasolina_uk', 'energia', 'Gasolina sin plomo en surtidor (Reino Unido)', 'Pump unleaded petrol (UK)', 'Essence sans plomb à la pompe (Royaume-Uni)', 'Benzina senza piombo alla pompa (Regno Unito)', 'litro', 1, 'litro', 1, 'litro', 1, '⛽', 'DESNZ (precio medio semanal en surtidor, con impuestos)', 'desnz_fuel_prices', 'weekly'],
+    ['vacas_ni', 'ganado', 'Vacas, en canal (Irlanda del Norte)', 'Cows, deadweight (Northern Ireland)', 'Vaches, en carcasse (Irlande du Nord)', 'Vacche, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐄', NI_SRC, 'daera_ni', 'weekly'],
+    ['vacas_r3_ni', 'ganado', 'Vacas R3, en canal (Irlanda del Norte)', 'Cows grade R3, deadweight (Northern Ireland)', 'Vaches R3, en carcasse (Irlande du Nord)', 'Vacche R3, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐄', NI_SRC, 'daera_ni', 'weekly'],
+    ['novillas_ni', 'ganado', 'Novillas, en canal (Irlanda del Norte)', 'Heifers, deadweight (Northern Ireland)', 'Génisses, en carcasse (Irlande du Nord)', 'Giovenche, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐄', NI_SRC, 'daera_ni', 'weekly'],
+    ['novillas_r3_ni', 'ganado', 'Novillas R3, en canal (Irlanda del Norte)', 'Heifers grade R3, deadweight (Northern Ireland)', 'Génisses R3, en carcasse (Irlande du Nord)', 'Giovenche R3, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐄', NI_SRC, 'daera_ni', 'weekly'],
+    ['novillos_ni', 'ganado', 'Novillos, en canal (Irlanda del Norte)', 'Steers, deadweight (Northern Ireland)', 'Bœufs, en carcasse (Irlande du Nord)', 'Manzi, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐄', NI_SRC, 'daera_ni', 'weekly'],
+    ['novillos_r3_ni', 'ganado', 'Novillos R3, en canal (Irlanda del Norte)', 'Steers grade R3, deadweight (Northern Ireland)', 'Bœufs R3, en carcasse (Irlande du Nord)', 'Manzi R3, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐄', NI_SRC, 'daera_ni', 'weekly'],
+    ['toros_ni', 'ganado', 'Toros jóvenes, en canal (Irlanda del Norte)', 'Young bulls, deadweight (Northern Ireland)', 'Jeunes taureaux, en carcasse (Irlande du Nord)', 'Giovani tori, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐄', NI_SRC, 'daera_ni', 'weekly'],
+    ['toros_r3_ni', 'ganado', 'Toros jóvenes R3, en canal (Irlanda del Norte)', 'Young bulls grade R3, deadweight (Northern Ireland)', 'Jeunes taureaux R3, en carcasse (Irlande du Nord)', 'Giovani tori R3, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐄', NI_SRC, 'daera_ni', 'weekly'],
+    ['corderos_ni', 'ovino', 'Corderos, en canal (Irlanda del Norte)', 'Lambs, deadweight (Northern Ireland)', 'Agneaux, en carcasse (Irlande du Nord)', 'Agnelli, a peso morto (Irlanda del Nord)', 'kg', 1, 'kg', 1, 'kg', 1, '🐑', NI_SRC, 'daera_ni', 'weekly'],
+    ['huevos_todos_uk', 'avicultura', 'Huevos, precio al productor, todos los tipos (Reino Unido)', 'Eggs, packer-to-producer price, all types (UK)', 'Œufs, prix producteur, tous types (Royaume-Uni)', 'Uova, prezzo al produttore, tutti i tipi (Regno Unito)', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Defra (precio medio trimestral de la empaquetadora al productor)', 'defra', 'quarterly'],
+    ['huevos_jaula_uk', 'avicultura', 'Huevos de jaula enriquecida, precio al productor (Reino Unido)', 'Eggs, enriched cages, producer price (UK)', 'Œufs, cages aménagées, prix producteur (Royaume-Uni)', 'Uova, gabbie arricchite, prezzo al produttore (Regno Unito)', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Defra (precio medio trimestral de la empaquetadora al productor)', 'defra', 'quarterly'],
+    ['huevos_campero_uk', 'avicultura', 'Huevos camperos, precio al productor (Reino Unido)', 'Eggs, free range, producer price (UK)', 'Œufs plein air, prix producteur (Royaume-Uni)', 'Uova allevate all\'aperto, prezzo al produttore (Regno Unito)', 'docena', 1, 'docena', 1, 'docena', 1, '🥚', 'Defra (precio medio trimestral de la empaquetadora al productor)', 'defra', 'quarterly']
+  ];
   var CA_PANEL_LABELS = { gj: { es: 'GJ', en: 'GJ', fr: 'GJ', it: 'GJ' }, kwh: { es: 'kWh', en: 'kWh', fr: 'kWh', it: 'kWh' } };
   (function () {
     var LK = LITRO_KG, GK = GAL_KG;
     ['es', 'en', 'fr', 'it'].forEach(function (l) { Object.keys(CA_PANEL_LABELS).forEach(function (u) { UNIT_LABELS[l][u] = CA_PANEL_LABELS[u][l]; }); });
     var nm = function (v) { return v === 'LITRO_KG' ? LK : v === 'GAL_KG' ? GK : v; };
-    CA_PANEL.forEach(function (row) {
+    [[CA_PANEL, 'ca', 'CAD'], [UK_PANEL, 'uk', 'GBP']].forEach(function (set) { set[0].forEach(function (row) {
       var key = row[0], catId = row[1], unit = row[6], kg = nm(row[7]);
       ['es', 'en', 'fr', 'it'].forEach(function (l, i) { NAMES[l][key] = row[2 + i]; });
       var cat = null; RAW.forEach(function (c) { if (c.id === catId) cat = c; });
       if (!cat) return;
       cat.products.push({ nameKey: key, caUnitKey: unit, caKgPerUnit: kg, imperialUnitKey: row[8], imperialKgPerUnit: nm(row[9]), metricUnitKey: row[10], metricKgPerUnit: nm(row[11]),
-        ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: kg },
-        quoteTypes: { ca: { type: 'referencia', market: row[13] } } });
-      DATA_TRUST_PILOT[catId + '-' + key + '-ca'] = { sourceId: row[14], frequency: 'monthly',
+        quoteTypes: {} });
+      var prod = cat.products[cat.products.length - 1]; prod[set[1]] = { price: 0, changePct: 0, history: [0, 0], currency: set[2], kgPerUnit: kg }; prod.quoteTypes[set[1]] = { type: 'referencia', market: row[13] };
+      DATA_TRUST_PILOT[catId + '-' + key + '-' + set[1]] = { sourceId: row[14], frequency: row[15] || 'monthly',
         methodology: row[13] + '. Pendiente de la primera ejecución automática.',
         comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null };
-    });
+    }); });
   })();
 
   var DATA_TRUST = buildPilotTrustRegistry();
@@ -1311,6 +1330,7 @@
     FX: FX, FX_DATE: FX_DATE, formatFxDate: formatFxDate, CCY_SYMBOL: CCY_SYMBOL, UNIT_LABELS: UNIT_LABELS, REGION: REGION,
     DATA_TRUST_SCHEMA_VERSION: DATA_TRUST_SCHEMA_VERSION, DATA_TRUST: DATA_TRUST, DATA_TRUST_SOURCES: DATA_TRUST_SOURCES, DATA_TRUST_HEALTH: DATA_TRUST_HEALTH, validateDataTrustRegistry: validateDataTrustRegistry,
     CA_PANEL: CA_PANEL,
+    UK_PANEL: UK_PANEL,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
     WOOD: WOOD,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-23T04:14:46.587Z",
+  "generatedAt": "2026-10-23T04:24:20.164Z",
   "status": "informational",
   "rules": [
     {
@@ -247,6 +247,24 @@
     },
     {
       "type": "period_move",
+      "product": "diesel_uk",
+      "region": "uk",
+      "sourceId": "desnz_fuel_prices",
+      "severity": "watch",
+      "changePct": 7.06,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
+      "product": "gasolina_uk",
+      "region": "uk",
+      "sourceId": "desnz_fuel_prices",
+      "severity": "watch",
+      "changePct": 6.37,
+      "observationDate": "2026-10-01"
+    },
+    {
+      "type": "period_move",
       "product": "bacon_ca",
       "region": "ca",
       "sourceId": "statcan",
@@ -352,6 +370,15 @@
       "severity": "watch",
       "changePct": -5.43,
       "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "corderos_ni",
+      "region": "uk",
+      "sourceId": "daera_ni",
+      "severity": "watch",
+      "changePct": 5.21,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",

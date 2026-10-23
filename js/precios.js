@@ -202,6 +202,9 @@
   // Canadá (abonos, energía, piensos, precios al por menor): una entrada por fila de DehesaData.CA_PANEL (js/data.js), misma clave que scripts/build-ca-panel-obs.py
   (global.DehesaData && global.DehesaData.CA_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':ca'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'CAD', unit: r[6], frequency: 'monthly' }; });
 
+  // Reino Unido (combustible DESNZ, vacuno y cordero en canal de Irlanda del Norte DAERA, huevos Defra): una entrada por fila de DehesaData.UK_PANEL, misma clave que scripts/build-uk-panel-obs.py
+  (global.DehesaData && global.DehesaData.UK_PANEL || []).forEach(function (r) { LIVE_OBSERVATION_MAP[r[0] + ':uk'] = { key: r[1] + ':' + r[0], sourceId: r[14], currency: 'GBP', unit: r[6], frequency: r[15] }; });
+
   function numericHistory(observation) {
     // El minigráfico de la tarjeta usa solo los últimos 104 valores (`spark`, ya recortados en data/prices/latest/<region>.json);
     // el histórico completo con fechas (histPts) se descarga aparte, solo cuando se abre el gráfico (loadHistory).
