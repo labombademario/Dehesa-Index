@@ -52,6 +52,7 @@ function place(o) {
   if (/Alberta/.test(m)) return PLACE.Alberta;
   if (/Statistics Canada/.test(m) || o.region === 'ca') return PLACE['Canadá'];
   if (/Reino Unido/.test(m) || o.region === 'uk') return PLACE['Reino Unido'];
+  if (canon(o.sourceId) === 'world_bank' && o.product !== 'gas_natural') return PLACE.Mundo;  // Pink Sheet: precio internacional de referencia, no de la UE
   if (/agregado de la UE|media de la UE,|Es la media de la UE|varios mercados de la UE|Weighted EU average|EU27/.test(m)) return PLACE.UE;
   if (/ en España/.test(m)) return PLACE['España'];
   if (o.region === 'us') return PLACE['EE. UU.'];
