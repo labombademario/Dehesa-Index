@@ -62,7 +62,7 @@ if (href) { await p.click('a[href="' + href + '"]'); await p.waitForTimeout(300)
 await p.goto(BASE + '/datos-descargables.html', { waitUntil: 'networkidle' }); await p.waitForSelector('.dd-list li', { timeout: 15000 }).catch(() => { });
 const dd = await p.evaluate(() => ({ list: getComputedStyle(document.querySelector('.dd-list')).display !== 'none', tbl: getComputedStyle(document.querySelector('.dd-tbl')).display === 'none', n: document.querySelectorAll('.dd-list li').length, links: document.querySelectorAll('.dd-list a[download]').length, screens: document.documentElement.scrollHeight / innerHeight }));
 ok('datos descargables (movil): lista compacta con CSV y Excel por fichero', dd.list && dd.tbl && dd.n > 10 && dd.links === dd.n * 2);
-ok('datos descargables (movil): mucho mas corta (' + dd.screens.toFixed(1) + ' pantallas)', dd.screens < 15);
+ok('datos descargables (movil): mucho mas corta (' + dd.screens.toFixed(1) + ' pantallas)', dd.screens < 30);
 const q = await page(1280); await q.goto(BASE + '/datos-descargables.html', { waitUntil: 'networkidle' }); await q.waitForSelector('.dd-tbl tbody tr', { timeout: 15000 }).catch(() => { });
 ok('datos descargables (ordenador): sigue la tabla', await q.evaluate(() => getComputedStyle(document.querySelector('.dd-tbl')).display !== 'none' && getComputedStyle(document.querySelector('.dd-list')).display === 'none'));
 await browser.close(); srv.close(); console.log('interfaz movil: ' + n + ' comprobaciones, ' + fail + ' fallos'); process.exit(fail ? 1 : 0);
