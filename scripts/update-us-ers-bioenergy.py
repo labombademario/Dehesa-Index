@@ -44,7 +44,7 @@ def period_of(r):
     if cat in ("calendar year", "marketing year"): return "%d" % y, "annual"
     return None
 def build(rows):
-    by = defaultdict(list); qn = set()
+    by = defaultdict(list); qn = set(); tnames = {}
     for r in rows:
         v = U.fnum(r.get("value")); pe = period_of(r)
         if v is None or not pe: continue
@@ -63,7 +63,14 @@ def build(rows):
         sid = "us-ersbio-t%s-%s-%s-%s-%s%s" % (U.slug(tb, 4), U.slug(com, 14), U.slug(item, 40), U.slug(loc, 10) or "us", "m" if monthly else "a", "-my" if mkt else "")
         if key in qn: sid += "q"
         s = U.mk_series(sid, group_of(tn, item), label, u_of(un), "monthly" if monthly else "annual", pts, SG, min_points=24 if monthly else 5, max_age_years=2 if monthly else 3, keep=360 if monthly else None, note=note)
-        if s: ser.append(s)
+        if s: ser.append(s); tnames[id(s)] = (tb, tn)
+    # Dos tablas del ERS pueden dar la misma magnitud con valores distintos (p. ej. oferta total de aceite de soja, tablas 6 y 7):
+    # si la etiqueta se repite, se anade la tabla para que sean distinguibles.
+    cnt = defaultdict(int)
+    for s in ser: cnt[(s["label"], s.get("unit"), s.get("frequency"))] += 1
+    for s in ser:
+        if cnt[(s["label"], s.get("unit"), s.get("frequency"))] > 1:
+            tb, tn = tnames[id(s)]; s["label"] += " - Table %s: %s" % (tb, tn)
     return ser
 def main():
     local, outdir = U.parse_args()

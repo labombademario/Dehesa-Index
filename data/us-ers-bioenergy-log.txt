@@ -1,4 +1,4 @@
-CSV: https://www.ers.usda.gov/media/6478/us-bioenergy-statistics.csv?v=79644
+CSV: https://www.ers.usda.gov/media/6478/us-bioenergy-statistics.csv?v=97394
 filas: 13856
 descartada us-ersbio-t1-fuel-ethanol-imports-united-sta-m-myq: 118 puntos, ultimo 2023-11
 descartada us-ersbio-t11-fuel-ethanol-number-of-plants-california-a: 1 puntos, ultimo 2026
