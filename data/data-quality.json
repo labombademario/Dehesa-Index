@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T21:38:53Z",
+ "generatedAt": "2026-10-24T00:54:50Z",
  "summary": {
   "files": 91,
   "errors": 0,
@@ -1370,10 +1370,10 @@
    "warnings": [],
    "stats": {
     "series": 38,
-    "points": 3997,
+    "points": 4025,
     "lines": 0
    },
-   "generatedAt": "2026-10-11T01:20:41Z",
+   "generatedAt": "2026-10-23T22:48:11Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1453,10 +1453,10 @@
    "warnings": [],
    "stats": {
     "series": 32,
-    "points": 4471,
+    "points": 4472,
     "lines": 0
    },
-   "generatedAt": "2026-10-22T21:51:38Z",
+   "generatedAt": "2026-10-23T21:41:14Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1525,10 +1525,10 @@
    "warnings": [],
    "stats": {
     "series": 219,
-    "points": 6854,
+    "points": 6856,
     "lines": 0
    },
-   "generatedAt": "2026-10-16T21:51:36Z",
+   "generatedAt": "2026-10-23T21:54:13Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1791,11 +1791,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 289,
-    "points": 18920,
+    "series": 283,
+    "points": 18857,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T20:23:56Z",
+   "generatedAt": "2026-10-23T23:55:16Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
