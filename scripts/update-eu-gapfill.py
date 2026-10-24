@@ -109,7 +109,7 @@ def evidence():
         EVID['%s/%s' % (cc, key)] = e; log('evidencia', cc, key, json.dumps(e, ensure_ascii=False))
 NAMES = {'DE': 'Germany', 'NL': 'Netherlands', 'DK': 'Denmark'}
 def main():
-    for fn in (butter, crops, sheep, wine, evidence):
+    for fn in (butter, crops, wine, evidence):   # sheep() retirado: Eurostat EUW ya publica la matanza de ovino de DK (b4100)
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     n = sum(len(v) for v in OUT.values())

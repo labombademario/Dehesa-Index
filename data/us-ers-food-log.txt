@@ -1,11 +1,10 @@
-mensual: https://www.ers.usda.gov/media/5202/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers.csv?v=75936
+mensual: https://www.ers.usda.gov/media/5202/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers.csv?v=41709
 gasto anual: 64 series
 ventas por estado: 306 series
 descartada us-ersfd-t10-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t10-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t10-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -32,7 +31,6 @@ descartada us-ersfd-t11-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t11-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t11-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -59,7 +57,6 @@ descartada us-ersfd-t12-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t12-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t12-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -86,7 +83,6 @@ descartada us-ersfd-t13-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t13-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t13-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -113,7 +109,6 @@ descartada us-ersfd-t14-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t14-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t14-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -140,7 +135,6 @@ descartada us-ersfd-t15-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t15-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t15-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -167,7 +161,6 @@ descartada us-ersfd-t16-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t16-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t16-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -194,7 +187,6 @@ descartada us-ersfd-t17-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t17-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t17-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -221,7 +213,6 @@ descartada us-ersfd-t18-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t18-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t18-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -248,7 +239,6 @@ descartada us-ersfd-t19-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t19-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t19-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -275,7 +265,6 @@ descartada us-ersfd-t20-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t20-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t20-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -302,7 +291,6 @@ descartada us-ersfd-t21-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t21-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t21-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -329,7 +317,6 @@ descartada us-ersfd-t22-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t22-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t22-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -356,7 +343,6 @@ descartada us-ersfd-t7-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t7-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t7-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -383,7 +369,6 @@ descartada us-ersfd-t8-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t8-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t8-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -410,7 +395,6 @@ descartada us-ersfd-t9-advertising-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-advertising-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-agribusiness-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-agribusiness-m-nom-a: 5 puntos, ultimo 2017
-descartada us-ersfd-t9-domestic-food-dollar-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-domestic-food-dollar-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-energy-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-energy-m-nom-a: 5 puntos, ultimo 2017
@@ -433,5 +417,5 @@ descartada us-ersfd-t9-transportation-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-transportation-m-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-wholesale-trade-c-nom-a: 5 puntos, ultimo 2017
 descartada us-ersfd-t9-wholesale-trade-m-nom-a: 5 puntos, ultimo 2017
-dolar de la comida: 340 series
-OK: 716 series
+dolar de la comida: 328 series
+OK: 704 series

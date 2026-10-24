@@ -70,6 +70,7 @@ def food_dollar(url, kind, sg):
         sig = (tn, un, tuple(sorted(pts)))
         if sig in seen: continue   # 'Total' y 'Total food dollar' publican las mismas cifras
         seen.add(sig)
+        if "cents" in un.lower() and len({v for _, v in pts}) == 1 and abs(next(iter({v for _, v in pts})) - 100) < 1e-9: continue   # el total del food dollar vale 100 centavos por definicion: no informa
         u = "cents per food dollar" if "cents" in un.lower() else ("million 2017 USD" if "2017" in un else "million USD")
         s = U.mk_series("us-ersfd-t%s-%s-%s-%s-a" % (U.slug(tn, 4), U.slug(cat, 30), "c" if "cents" in un.lower() else "m", kind), "consumption", "Food dollar, %s: %s (ERS, %s)" % (names[(tn, cat, un)], cat, "real" if kind == "real" else "nominal"), u, "annual", pts, sg, min_points=8, max_age_years=4,
                         note="Modelo 2011 de ERS; los datos de los últimos años son preliminares.")
