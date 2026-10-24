@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 167 VERIFIED, 15 PENDING, 7 RESTRICTED, 6 BLOCKED; 39842 series en el catalogo unificado.
+Resumen: 167 VERIFIED, 15 PENDING, 7 RESTRICTED, 6 BLOCKED; 39836 series en el catalogo unificado.
 
 ## VERIFIED (167)
 
@@ -145,7 +145,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `skogsstyrelsen` | Sweden — Skogsstyrelsen (Swedish Forest Agency): official forestry statistics database (roundwood prices) | SE | CC0-1.0 | si/si | si | 0 | Terms page: statistical database data is CC0; the API section asks for the source to be cited, so credit is given anyway. Commercial reuse i… |
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
-| `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 219 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |
+| `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 213 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |
 | `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 1016 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
 | `statfin_fi` | Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI | FI | CC-BY-4.0 | si/si | si | 191 | Statistics Finland's open data is CC BY 4.0 but excludes third-party data; API limit 40 calls per 60 s and 120,000 cells. |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |

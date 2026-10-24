@@ -432,13 +432,23 @@ def fish_sheet(rows):
 
 def fish_tables(period_rows, freq):
     qty, val, pri = {}, {}, {}
+    # Control de unidades: las hojas anuales de Statbel anteriores a 2023 rotulan el valor «in EUR», pero la cifra es ~100 veces menor que la real
+    # (p. ej. 2022: 795.190 EUR por 13.217 t, 0,06 EUR/kg frente a ~6 EUR/kg desde 2023). No se puede corregir con un factor verificado:
+    # se descartan valor y precio de los periodos cuyo precio medio total es inferior a 1 EUR/kg; la cantidad se mantiene.
+    bad = set()
+    for p, d in period_rows.items():
+        q, v = d.get("Overall total", (None, None))
+        if q and v is not None and v / q < 1.0:
+            bad.add(p)
+    if bad:
+        log("pesca %s: valor y precio descartados por unidad incoherente en la fuente: %s" % (freq, sorted(bad)))
     for p, d in period_rows.items():
         for k, (q, v) in d.items():
             if q is not None:
                 qty.setdefault(k, {})[p] = rnd(q / 1000, 3)
-            if v is not None:
+            if v is not None and p not in bad:
                 val.setdefault(k, {})[p] = rnd(v / 1000, 3)
-            if q and v is not None and q > 0:
+            if q and v is not None and q > 0 and p not in bad:
                 pri.setdefault(k, {})[p] = rnd(v / q, 3)
     fx = "anual" if freq == "y" else "mensual"
     en = "yearly" if freq == "y" else "monthly"
@@ -732,6 +742,11 @@ def stats(docs, now):
             if s:
                 bl = next(x[1][0] for x in LB.MEAT_BLOCKS.values() if x[0] == b)
                 add("be-carne-%s-%s" % (vid, b), "production" if vid == "production" else "consumption", "%s: %s, Bélgica (Statbel)" % (nm, bl.lower()), unit, s, "annual", 6)
+    # mismo titulo con frecuencia distinta (anual y mensual): se distingue en el titulo para que el buscador y las fichas no muestren dos filas iguales
+    cnt = {}
+    for o in out: cnt[o["label"]] = cnt.get(o["label"], 0) + 1
+    for o in out:
+        if cnt[o["label"]] > 1: o["label"] += " - " + {"annual": "anual", "monthly": "mensual"}.get(o["frequency"], o["frequency"])
     return {"schemaVersion": 1, "generatedAt": now, "countries": {"BE": {"name": "Belgium", "extend": True, "source": SRC, "series": out}}}
 
 

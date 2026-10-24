@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T09:40:31Z",
+ "generatedAt": "2026-10-24T11:59:26Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -7300,7 +7300,7 @@
    "country": "BE",
    "scope": "integrated",
    "institution": "Statbel (Statistics Belgium)",
-   "dataset": "Ya integrada (219 series en el catalogo unificado)",
+   "dataset": "Ya integrada (213 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
