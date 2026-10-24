@@ -2,7 +2,7 @@
 """data/daily-brief.json — "Que ha cambiado hoy" en Dehesa: cambios REALES de datos (no noticias).
 Compara el estado actual de las series con el que tenia cada fichero hace 24 h (historial de git; el workflow necesita fetch-depth 0),
 mas revisiones (data/revisions.json) y estado de pipelines (data/pipeline-status.json)."""
-import datetime, json, sys
+import datetime, json, re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import lib_cashbids as CB
@@ -46,6 +46,8 @@ def href_for(k):
     else: return None
     cc = reg.upper(); ids = _catalog(cc)
     ok = [i for i in ids if i == 'product:%s_%s' % (prod, reg) or i.endswith('_%s_%s' % (prod, reg))]
+    if len(ok) > 1:   # p. ej. cerdo_ab: 'porcino_cerdo_ab' frente a 'pienso_pienso_cerdo_ab' (pienso para cerdos): se queda la de un solo grupo delante
+        ok = [i for i in ok if re.match(r'^product:([a-z]+_)?%s_%s$' % (re.escape(prod), re.escape(reg)), i)]
     if len(ok) == 1: return 'paises.html?c=%s&s=%s' % (cc, ok[0])
     return None
 
