@@ -9,4 +9,10 @@ etiqueta repetida con valores distintos, se añade el codigo: fi-sf-cpi 01260
 etiqueta repetida con valores distintos, se añade el codigo: fi-sf-cpi 01290
 khi/15b5 (Consumer Price Index, 2025=100) 76 series
 thi/13m8 (Producer price indices, 2021=100) 10 series
+omitida (descontinuada): fi-sf-cpi-01168 hasta 2025-12
+omitida (descontinuada): fi-sf-cpi-01173 hasta 2025-12
+omitida (descontinuada): fi-sf-cpi-01184 hasta 2025-12
+omitida (descontinuada): fi-sf-thi-1012 hasta 2025-12
+omitida (descontinuada): fi-sf-thi-1013 hasta 2025-12
+omitida (descontinuada): fi-sf-thi-105 hasta 2024-12
 omitida (descontinuada): fi-sf-thi-1061 hasta 2020-12

@@ -74,11 +74,11 @@ def b_thi():
 for fn in (b_mthi, b_ttohi, b_khi, b_thi):
     try: fn()
     except Exception as e: say('FALLO %s: %s' % (fn.__name__, str(e)[:240]))
-def _yr(p): return int(p[:4])
+def _mi(p): return int(p[:4]) * 12 + int(p[5:7]) - 1
 if OUTS:
-    top = max(_yr(v['latestPeriod']) for v in OUTS.values())
-    for k in sorted(OUTS):   # series que la fuente dejo de publicar hace mas de 2 años
-        if _yr(OUTS[k]['latestPeriod']) < top - 2: say('omitida (descontinuada): %s hasta %s' % (k, OUTS[k]['latestPeriod'])); del OUTS[k]
+    top = max(_mi(v['latestPeriod']) for v in OUTS.values())
+    for k in sorted(OUTS):   # series que la fuente dejo de publicar: mas de 6 meses por detras de la ultima de la tabla (la reclasificacion COICOP/producto de 2026 retiro varios indices)
+        if _mi(OUTS[k]['latestPeriod']) < top - 6: say('omitida (descontinuada): %s hasta %s' % (k, OUTS[k]['latestPeriod'])); del OUTS[k]
 series = [OUTS[k] for k in sorted(OUTS)]
 if len(series) < 60: sys.exit('demasiado pocas series (%d); no se escribe nada' % len(series))
 now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')

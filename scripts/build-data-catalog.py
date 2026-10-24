@@ -50,6 +50,16 @@ def stats_source(n, cc, s):
         if (s.get('sourceGroup') or '').startswith(pf): return sid
     if m.get('default'): return m['default']
     raise KeyError('%s: %s/%s sin fuente en el registro de licencias' % (n, cc, s.get('id')))
+def change_basis(s):
+    """'y' si el changePct de la serie es interanual (mismo periodo del año anterior) y no frente al punto anterior; None en el resto (la convencion por defecto).
+    Se deduce de los puntos: cada fuente calcula su variacion a su manera (Statbel, CBS, INE, Agreste y ZSRIR dan la interanual en series mensuales y trimestrales)."""
+    pts = s.get('points') or []; ch = s.get('changePct')
+    if ch is None or len(pts) < 3 or not pts[-2][1]: return None
+    if abs((pts[-1][1] / pts[-2][1] - 1) * 100 - ch) <= 0.02: return None
+    per = str(pts[-1][0]); m = re.match(r'^(\d{4})(.*)$', per)
+    if not m: return None
+    ly = '%d%s' % (int(m.group(1)) - 1, m.group(2)); prev = next((v for k, v in pts if str(k) == ly), None)
+    return 'y' if prev and abs((pts[-1][1] / prev - 1) * 100 - ch) <= 0.02 else None
 BLK = {'markets': ['quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions'], 'production': ['production', 'crops', 'crops_regions', 'livestock', 'stocks', 'environment', 'organic', 'climate', 'fish'], 'trade': ['trade', 'partners'],
        'inputs': ['inputs', 'inputs_f', 'inputs_a', 'costs', 'prices_paid', 'idx_perc', 'idx_pag', 'income']}
 MAXAGE = {'daily': 10, 'weekly': 25, 'monthly': 80, 'quarterly': 160, 'semiannual': 220, 'annual': 520}
@@ -155,7 +165,7 @@ def main():
                 changed += write_if_changed(ROOT / 'data' / rel, dump(doc), written)
                 for n, s, r in ch:
                     pts = s.get('points', [])
-                    cat.append({'id': s['id'], 'label': s.get('label', ''), 'unit': s.get('unit', ''), 'freq': s.get('frequency', ''), 'group': g, 'latestPeriod': s.get('latestPeriod'), 'latest': s.get('latest'), 'changePct': s.get('changePct'),
+                    cat.append({'id': s['id'], 'label': s.get('label', ''), 'unit': s.get('unit', ''), 'freq': s.get('frequency', ''), 'group': g, 'latestPeriod': s.get('latestPeriod'), 'latest': s.get('latest'), 'changePct': s.get('changePct'), **({'cb': 'y'} if change_basis(s) else {}),
                                 'first': pts[0][0] if pts else None, 'n': len(pts), **({'nForecast': len(s['forecast'])} if s.get('forecast') else {}), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', '').split(' \u00b7 ')[0] if n == 'latest' else s.get('label', ''), g), 'source': n + '.json', 'file': rel,
                                 'sourceId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[0], 'licenseId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[1]})
             gs = [x for x in cat if x['group'] == g]

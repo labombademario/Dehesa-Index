@@ -975,6 +975,12 @@
     },
     LANGS: LANGS,
     getLang: function () { return lang; },
+    /* Rotulo de la variacion mostrada de una serie: cb = 'y' (interanual) o ausente (frente al periodo anterior). Devuelve '' si no hay variacion. */
+    chgTag: function (s) {
+      if (!s || s.changePct == null) return '';
+      var y = s.cb === 'y', L = { es: [y ? 'interanual' : 'vs. periodo anterior'], en: [y ? 'year on year' : 'vs. previous period'], fr: [y ? 'sur un an' : 'vs période précédente'], it: [y ? 'su base annua' : 'vs periodo precedente'] };
+      return ' <span class="chg-basis" style="font-size:.85em;font-weight:400;color:var(--text-muted)">(' + (L[lang] || L.es)[0] + ')</span>';
+    },
     getTheme: function () { return theme; },
     setLang: setLang,
     toggleTheme: toggleTheme,

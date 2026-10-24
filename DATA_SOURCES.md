@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 167 VERIFIED, 15 PENDING, 7 RESTRICTED, 6 BLOCKED; 39836 series en el catalogo unificado.
+Resumen: 167 VERIFIED, 15 PENDING, 7 RESTRICTED, 6 BLOCKED; 39830 series en el catalogo unificado.
 
 ## VERIFIED (167)
 
@@ -147,7 +147,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
 | `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 213 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |
 | `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 1016 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
-| `statfin_fi` | Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI | FI | CC-BY-4.0 | si/si | si | 191 | Statistics Finland's open data is CC BY 4.0 but excludes third-party data; API limit 40 calls per 60 s and 120,000 cells. |
+| `statfin_fi` | Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI | FI | CC-BY-4.0 | si/si | si | 185 | Statistics Finland's open data is CC BY 4.0 but excludes third-party data; API limit 40 calls per 60 s and 120,000 cells. |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `statistik_austria_vb` | Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications) | AT | STATISTIK-AUSTRIA-REUSE | si/si | si | 11 | Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en … |
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
