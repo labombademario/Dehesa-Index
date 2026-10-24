@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 163 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39094 series en el catalogo unificado.
+Resumen: 164 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39245 series en el catalogo unificado.
 
-## VERIFIED (163)
+## VERIFIED (164)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -102,6 +102,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `jcyl_open_data` | Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robo… |
 | `knmi_daggegevens` | KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación) | NL | CC-BY-4.0 | si/si | si | 0 | Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI. |
 | `ksh_hu` | Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables | HU | CC-BY-4.0 | si/si | si | 196 | La licencia cubre el contenido publicado en el sitio (tablas, graficos). Quedan fuera los ficheros consultados a peticion a las bases intern… |
+| `luke_fi` | Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received) | FI | CC-BY-4.0 | si/si | si | 65 | Luke's terms of use for statistics declare CC BY 4.0 without naming the PxWeb database explicitly; its tables carry «Natural Resources Insti… |
 | `magyarkozlony_hu` | Magyar Közlöny / Nemzeti Jogszabálytár — 15-21/2024. (IV. 9.) AM rendeletek | HU | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Magyar Közlöny. La exclusión se leyó en la versión de 2015 de la ley (PDF de la ofic… |
 | `magyp_estimaciones` | Ministerio de Agricultura, Ganadería y Pesca (Argentina) — Estimaciones agrícolas | AR | CC-BY-4.0 | si/si | si | 0 |  |
 | `magyp_lecheria` | Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar | AR | CC-BY-4.0 | si/si | si | 30 | Atribucion. El pipeline comprueba en cada ejecucion que la pagina sigue remitiendo a los Terminos de argentina.gob.ar; si no, no publica est… |
@@ -138,7 +139,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `scottish_government` | Scottish Government (RESAS) — agricultural statistics | UK | OGL-UK-3.0 | si/si | si | 143 | Excluye logotipos y elementos gráficos. |
 | `sejm_eli` | Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia) | PL | PUBLIC-LAW | si/si | si | 0 | Cifras y reglas son extractos transcritos a mano; manda el texto publicado en el Dziennik Ustaw. No se leyeron los términos de uso de la API… |
 | `sima_gpp` | Portugal — SIMA (GPP) weekly prices | PT | CUSTOM | unclear/unclear | si | 0 | Written authorisation from the GPP would be required before use. |
-| `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 38 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
+| `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 124 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
 | `skogsstyrelsen` | Sweden — Skogsstyrelsen (Swedish Forest Agency): official forestry statistics database (roundwood prices) | SE | CC0-1.0 | si/si | si | 0 | Terms page: statistical database data is CC0; the API section asks for the source to be cited, so credit is given anyway. Commercial reuse i… |
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |

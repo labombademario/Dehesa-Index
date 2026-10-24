@@ -2425,15 +2425,15 @@
    "additionalRestrictions": "The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is given anyway so the CC BY case is also met.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": "",
-   "verifiedAt": "2026-10-10",
+   "verifiedAt": "2026-10-23",
    "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "jordbruksverket.se/oppnadata (10-oct-2026; releido el 15-oct-2026 en la direccion https actual, que dice lo mismo): open data can be used without restrictions, licences CC0 (preferred) or CC BY; statistik.jordbruksverket.se user guide: database free to use, open data with an API for every table.",
+   "evidence": "jordbruksverket.se/oppnadata (10-oct-2026; releido el 15-oct-2026 en la direccion https actual, que dice lo mismo): open data can be used without restrictions, licences CC0 (preferred) or CC BY; statistik.jordbruksverket.se user guide: database free to use, open data with an API for every table. Releido el 23-oct-2026 en jordbruksverket.se/e-tjanster-databaser-och-appar/ovriga-e-tjanster-och-databaser/oppna-data: «Öppna data är gratis, maskinläsbar data som kan användas utan några begränsningar»; «Vi använder främst två licenser»: CC0 («Vi strävar efter att använda CC0») y CC BY («du behöver ange källan»). La página «Officiell statistik» y la guía de la base no asignan licencia por tabla; se cita siempre a Jordbruksverket para cumplir también CC BY. Contacto de la política: oppendata@jordbruksverket.se.",
    "used": true,
    "aliases": [
     "sjv_se"
    ],
-   "notes": "Tables used: JO1001L2 (producer prices, monthly), JO1001AM20 (A-index 2020=100, monthly), JO0611L01 (farm stocks of cereals and rapeseed, June and September; the December forecast is not published). Statistics Sweden (SCB) uses CC0 but its agricultural tables stop in 2007 except JO0601, which duplicates Eurostat.",
+   "notes": "Tables used: JO1001L2 (producer prices, monthly, 37 lines), JO1001AM20 (A-index 2020=100, monthly), JO1001APMM20 (PM-index of farm inputs), JO1001APPM20 (PPI-J) and JO1001KJM20 (KPI-J), all 2020=100, JO0611L01 (farm stocks of cereals and rapeseed, June and September; the December forecast is not published). Statistics Sweden (SCB) uses CC0 but its agricultural tables stop in 2007 except JO0601, which duplicates Eurostat.",
    "short": "Jordbruksverket (Suecia)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Politica de datos abiertos de Jordbruksverket (CC0 o CC BY, sin restricciones) y base estadistica ofrecida como datos abiertos con API; no hay licencia explicita por tabla."
@@ -4995,6 +4995,34 @@
    "short": "MRiRW ZSRIR",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia declarada en la API del portal de datos abiertos para cada conjunto; los ficheros xlsx no llevan la licencia dentro."
+  },
+  "luke_fi": {
+   "name": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received)",
+   "url": "https://statdb.luke.fi/",
+   "country": "FI",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (Luke statistics terms of use)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Natural Resources Institute Finland (Luke), statistics database.",
+   "additionalRestrictions": "Luke's terms of use for statistics declare CC BY 4.0 without naming the PxWeb database explicitly; its tables carry «Natural Resources Institute Finland» as the producer. Credit: licence, source and access date.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-23",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Investigacion del 23-oct-2026 (claude/finlandia-investigacion-23-oct.md): pagina de condiciones de uso de las estadisticas de Luke (luke.fi, terms-of-use-statistics) declara CC BY 4.0 con atribucion «Luke, [estadistica], [accessed on]»; la API PxWeb limita a 100 llamadas/10 s y 1.000.000 de celdas.",
+   "used": true,
+   "aliases": [
+    "luke_fi"
+   ],
+   "notes": "Tables used (statdb.luke.fi, maa): tuohin/kk 0100-0500 (producer prices of milk, meat, eggs, cereals and rape, food potatoes), lihtuo/kk/0100 (slaughterings and meat production), maitot/kk/0100 (milk received). kg to t and l to 1,000 l are exact conversions; no estimates. Forest (met), weekly euhint and metryv (wood prices, licence unclear) are not used.",
+   "short": "Luke (Finlandia)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Luke declara CC BY 4.0 en sus condiciones de uso de estadisticas; no nombra explicitamente la base PxWeb."
   }
  },
  "files": {
@@ -6116,7 +6144,7 @@
    "bySourceGroupPrefix": {
     "Jordbruksverket": "sjv_se"
    },
-   "notes": "scripts/update-se-sjv.py: Jordbruksverket, precios de liquidacion al productor, A-index (2020=100) y existencias de cereales y colza en la explotacion (junio y septiembre; el pronostico de diciembre no se publica)."
+   "notes": "scripts/update-se-sjv.py: Jordbruksverket, precios de liquidacion al productor (37 lineas), A-index, indices de insumos (PM-index), de la industria alimentaria (PPI-J) y de consumo (KPI-J), todos 2020=100, y existencias de cereales y colza en la explotacion (junio y septiembre; el pronostico de diciembre no se publica)."
   },
   "data/switzerland-bfs-stats.json": {
    "bySourceGroupPrefix": {
@@ -7448,6 +7476,12 @@
     "mrirw_zsrir"
    ],
    "notes": "Registro de la ultima ejecucion de update-pl-zsrir.py."
+  },
+  "data/finland-luke-stats.json": {
+   "bySourceGroupPrefix": {
+    "Luke": "luke_fi"
+   },
+   "notes": "scripts/update-fi-luke.py: Luke, precios mensuales al productor (leche, carne, huevos, cereales, patata), sacrificios y carne producida, y leche recibida por las lecherias."
   }
  },
  "derived": [

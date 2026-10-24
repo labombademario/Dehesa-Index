@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T01:10:44Z",
+ "generatedAt": "2026-10-24T01:32:49Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 192,
+  "total": 193,
   "byStatus": {
-   "ACTIVE": 162,
+   "ACTIVE": 163,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -5436,6 +5436,61 @@
    ]
   },
   {
+   "sourceId": "luke_fi",
+   "registryId": "luke_fi",
+   "country": "FI",
+   "scope": "integrated",
+   "institution": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received)",
+   "dataset": "Ya integrada (65 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Natural Resources Institute Finland (Luke), statistics database.",
+   "lastChecked": "2026-10-23",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "magyarkozlony_hu",
    "registryId": "magyarkozlony_hu",
    "country": "HU",
@@ -6907,15 +6962,21 @@
    "country": "SE",
    "scope": "integrated",
    "institution": "Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks)",
-   "dataset": "Ya integrada (38 series en el catalogo unificado)",
+   "dataset": "Ya integrada (124 series en el catalogo unificado)",
    "products": [
     "barley",
+    "butter",
     "cattle",
+    "cheese",
     "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
     "milk",
     "oats",
     "pigs",
     "potato",
+    "poultry",
     "rapeseed",
     "rye",
     "sheep",
@@ -6939,7 +7000,7 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Source: Jordbruksverket (Swedish Board of Agriculture), statistics database.",
-   "lastChecked": "2026-10-10",
+   "lastChecked": "2026-10-23",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

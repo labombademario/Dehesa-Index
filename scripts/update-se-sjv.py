@@ -30,12 +30,40 @@ P = [('Vete, kr/100 kg', 'wheat', 'prices', 'wheat'), ('Råg kr/100 kg', 'rye', 
      ('Raps, kr/100 kg', 'rapeseed', 'prices', 'rapeseed'), ('Sockerbetor, kr/100 kg', 'sugar-beet', 'prices', 'sugar beet'), ('Matpotatis, kr/100 kg', 'ware-potatoes', 'prices', 'ware potatoes'),
      ('Smågrisar, kr/100 kg', 'piglets', 'prices_lv', 'piglets'), ('Hanungnöt, kr/100 kg', 'young-bulls', 'prices_lv', 'young bulls'), ('Ko, kr/100 kg', 'cows', 'prices_lv', 'cows'),
      ('Slaktgris, kr/100 kg', 'slaughter-pigs', 'prices_lv', 'slaughter pigs'), ('Får, kr/100 kg', 'sheep', 'prices_lv', 'sheep'), ('Lamm, kr/100 kg', 'lamb', 'prices_lv', 'lamb'),
-     ('Mjölk (4,2 % fett) , kr/100 kg', 'milk', 'prices', 'milk 4.2% fat'), ('A-ägg frigående höns, kr/100 kg', 'eggs-a', 'prices', 'class A eggs')]
+     ('Mjölk (4,2 % fett) , kr/100 kg', 'milk', 'prices', 'milk 4.2% fat'), ('A-ägg frigående höns, kr/100 kg', 'eggs-a', 'prices', 'class A eggs'),
+     # ampliacion 23-oct-2026: el resto de lineas de la tabla en SEK/100 kg (tulipanes y huevos por pieza se omiten: otra unidad)
+     ('Höstvete, kr/100 kg', 'winter-wheat', 'prices', 'winter wheat'), ('Vårvete, kr/100 kg', 'spring-wheat', 'prices', 'spring wheat'), ('Fodervete, kr/100 kg', 'feed-wheat', 'prices', 'feed wheat'),
+     ('Foderkorn, kr/100 kg', 'feed-barley', 'prices', 'feed barley'), ('Maltkorn, kr/100 kg', 'malting-barley', 'prices', 'malting barley'), ('Rågvete, kr/100 kg', 'triticale', 'prices', 'triticale'),
+     ('Blomkål, 1:a kvalitet, kr/100 kg', 'cauliflower', 'prices', 'cauliflower (class 1)'), ('Tomater, växthusodlad 1:a kvalitet, kr/100 kg', 'tomatoes-gh', 'prices', 'greenhouse tomatoes (class 1)'),
+     ('Vitkål, 1:a kvalitet, kr/100 kg', 'white-cabbage', 'prices', 'white cabbage (class 1)'), ('Växthusodlad gurka, 1:a kvalitet, kr/100 kg', 'cucumbers-gh', 'prices', 'greenhouse cucumbers (class 1)'),
+     ('Morötter, 1:a kvalitet, kr/100 kg', 'carrots', 'prices', 'carrots (class 1)'), ('Lök, alla kvaliteter, kr/100 kg', 'onions', 'prices', 'onions (all qualities)'),
+     ('Potatis för stärkelse, kr/100 kg', 'starch-potatoes', 'prices', 'starch potatoes'), ('Äpplen, alla sorter, kr/100 kg', 'apples', 'prices', 'apples (all varieties)'),
+     ('Jordgubbar på friland, kr/100 kg', 'strawberries', 'prices', 'outdoor strawberries'), ('Livkalvar, kr/100 kg', 'breeding-calves', 'prices_lv', 'breeding calves'),
+     ('Grisar – klass S, kr/100 kg', 'pigs-s', 'prices_lv', 'pigs, EUROP class S'), ('Grisar – klass E, kr/100 kg', 'pigs-e', 'prices_lv', 'pigs, EUROP class E'),
+     ('-varav konventionell mjölk (4,2 % fett), kr/100 kg', 'milk-conv', 'prices', 'conventional milk 4.2% fat'), ('-varav ekologisk mjölk (4,2 % fett), kr/100 kg', 'milk-org', 'prices', 'organic milk 4.2% fat'),
+     ('Mjölk (3,7 % fett), kr/100 kg', 'milk-37', 'prices', 'milk 3.7% fat'), ('Ekologiska ägg, kr/100 kg', 'eggs-org', 'prices', 'organic eggs')]
 X = [('A-INDEX TOTALT', 'total', 'all farm products'), ('SPANNMÅL', 'cereals', 'cereals'), ('Vete', 'wheat', 'wheat'), ('Korn', 'barley', 'barley'), ('Havre', 'oats', 'oats'), ('Råg', 'rye', 'rye'),
      ('Oljeväxtfrö och oljehaltiga frukter', 'oilseeds', 'oilseeds'), ('Sockerbetor och andra industrigrödor', 'sugar-beet', 'sugar beet and other industrial crops'), ('POTATIS', 'potatoes', 'potatoes'),
      ('Nötkreatur', 'cattle', 'cattle'), ('Gris', 'pigs', 'pigs'), ('Får och getter', 'sheep-goats', 'sheep and goats'), ('Mjölk', 'milk', 'milk'), ('Ägg', 'eggs', 'eggs')]
 S = [('Höstvete', 'winter-wheat', 'winter wheat'), ('Vårvete', 'spring-wheat', 'spring wheat'), ('Råg', 'rye', 'rye'), ('Höstkorn', 'winter-barley', 'winter barley'), ('Vårkorn', 'spring-barley', 'spring barley'),
      ('Havre', 'oats', 'oats'), ('Majs', 'maize', 'maize'), ('Höstraps', 'winter-rapeseed', 'winter rapeseed'), ('Vårraps', 'spring-rapeseed', 'spring rapeseed'), ('Spannmål, totalt', 'cereals-total', 'cereals, total')]
+
+IDXB = 'Priser och prisindex/Prisindex/Prisindex med basar 2020=100/'
+PMI = IDXB + 'JO1001APMM20.px'; PPI = IDXB + 'JO1001APPM20.px'; KPI = IDXB + 'JO1001KJM20.px'
+# ampliacion 23-oct-2026: indices mensuales 2020=100 (texto exacto de la fuente, id, etiqueta inglesa). Los que no tienen datos suficientes se omiten (put exige >= 3 puntos).
+PM = [('PM-INDEX TOTALT', 'total', 'all inputs and investment goods'), ('UTSÄDE', 'seed', 'seed'), ('ENERGI OCH DRIVMEDEL', 'energy', 'energy and fuels'), ('Elektricitet', 'electricity', 'electricity'),
+      ('Diesel', 'diesel', 'diesel'), ('Andra bränslen och drivmedel', 'other-fuels', 'other fuels'), ('GÖDNINGS- OCH JORDFÖRBÄTTRINGSMEDEL', 'fertilisers', 'fertilisers and soil improvers'),
+      ('Enkla gödselmedel', 'fert-straight', 'straight fertilisers'), ('Sammansatta gödselmedel', 'fert-compound', 'compound fertilisers'), ('VÄXTSKYDDS- OCH BEKÄMPNINGSMEDEL', 'plant-protection', 'plant protection products'),
+      ('Svampmedel', 'fungicides', 'fungicides'), ('Insektsmedel', 'insecticides', 'insecticides'), ('Ogräsmedel', 'herbicides', 'herbicides'), ('VETERINÄRKOSTNADER', 'veterinary', 'veterinary costs'),
+      ('DJURFODER', 'feed', 'animal feed'), ('UNDERHÅLL AV UTRUSTNING', 'maint-equipment', 'maintenance of equipment'), ('UNDERHÅLL AV EKONOMIBYGGNADER', 'maint-buildings', 'maintenance of farm buildings'),
+      ('ANDRA VAROR OCH TJÄNSTER', 'other-goods', 'other goods and services'), ('TOTAL INSATSFÖRBRUKNING', 'intermediate', 'total intermediate consumption'), ('UTRUSTNING', 'equipment', 'equipment'),
+      ('Traktorer', 'tractors', 'tractors'), ('Övrig utrustning', 'other-equipment', 'other equipment'), ('EKONOMIBYGGNADER', 'buildings', 'farm buildings'), ('INVESTERINGSVAROR', 'investment', 'investment goods')]
+FOODX = [('VEGETABILIER', 'plant-products', 'plant-based products'), ('Mjöl, gryn & hårt bröd', 'flour', 'flour groats and crispbread'), ('Mjukt bröd', 'bread', 'soft bread'), ('Matpotatis', 'potatoes', 'ware potatoes'),
+         ('Socker', 'sugar', 'sugar'), ('Margarin', 'margarine', 'margarine'), ('ANIMALIER', 'animal-products', 'animal-based products'), ('MEJERIPRODUKTER', 'dairy', 'dairy products'), ('Mjölk', 'milk', 'milk'),
+         ('Grädde', 'cream', 'cream'), ('Smör', 'butter', 'butter'), ('Ost', 'cheese', 'cheese'), ('Glass', 'ice-cream', 'ice cream'), ('ÄGG', 'eggs', 'eggs'), ('KÖTT, CHARK & KÖTTKONSERVER', 'meat-all', 'meat including charcuterie and canned meat'),
+         ('KÖTT', 'meat', 'meat'), ('Nötkött', 'beef', 'beef'), ('Griskött', 'pork', 'pork'), ('Fjäderfäkött', 'poultry', 'poultry meat'), ('Annat kött', 'other-meat', 'other meat'), ('CHARK & KÖTTKONSERVER', 'charcuterie', 'charcuterie and canned meat only')]
+PPIJ = [('PPI-J TOTALT', 'total', 'all agriculture-regulated foods')] + FOODX
+KPIJ = [('KPI-J TOTALT (inkl moms)', 'total', 'all agriculture-regulated foods')] + [(a.replace('Mjöl, gryn & hårt bröd', 'Mjöl, gryn och hårt bröd').replace('KÖTT, CHARK & KÖTTKONSERVER', 'KÖTT, CHARK & KÖTTKONSERVER'), b, c) for a, b, c in FOODX] + [('KPI TOTALT', 'cpi', 'all items (CPI)'), ('LIVSMEDEL TOTALT', 'food-all', 'all food (CPI)'), ('EJ JORDBRUKSREGLERADE LIVSMEDEL', 'food-unregulated', 'foods not agriculture-regulated (CPI)')]
 
 def meta(path): return call(url(path))
 def var(m, code): return next(v for v in m['variables'] if v['code'] == code)
@@ -86,6 +114,13 @@ def mk_price(it, pts, unit, note, ds):
 def mk_idx(it, pts, unit, note, ds):
     put('se-sjv-aindex-' + it[1], 'idx_perc', 'Producer price index: %s, Sweden (Jordbruksverket, 2020=100)' % it[2], 'index 2020=100', 'monthly', pts, note, ds + ' (Avräkningsprisindex A-index, månad)')
 
+def mk_pm(it, pts, unit, note, ds):
+    put('se-sjv-pmindex-' + it[1], 'idx_pag', 'Farm input price index: %s, Sweden (Jordbruksverket, 2020=100)' % it[2], 'index 2020=100', 'monthly', pts, note, ds + ' (Produktionsmedelsprisindex PM-index, månad)')
+def mk_ppi(it, pts, unit, note, ds):
+    put('se-sjv-ppij-' + it[1], 'idx_perc', 'Food-industry producer price index: %s, Sweden (Jordbruksverket PPI-J, 2020=100)' % it[2], 'index 2020=100', 'monthly', pts, note, ds + ' (Producentprisindex livsmedelsindustrin PPI-J, månad)')
+def mk_kpi(it, pts, unit, note, ds):
+    put('se-sjv-kpij-' + it[1], 'idx_pag', 'Consumer price index: %s, Sweden (Jordbruksverket KPI-J, 2020=100)' % it[2], 'index 2020=100', 'monthly', pts, note, ds + ' (Konsumentprisindex jordbruksreglerade livsmedel KPI-J, månad)')
+
 def run_stocks():
     path = STOCKS; m = meta(path); gv = var(m, 'Gröda'); mv = var(m, 'Månad'); av = var(m, 'År'); xv = var(m, 'Variabel')
     gc = pick(gv, [i[0] for i in S], path); vcode = pick(xv, ['Värde, ton'], path)
@@ -106,6 +141,9 @@ def run_stocks():
 
 run_monthly(PRICES, P, 'price', mk_price, 'SEK/100 kg', 'Precio de liquidación pagado al productor (kr por 100 kg), media mensual publicada por Jordbruksverket.')
 run_monthly(INDEX, X, 'aindex', mk_idx, 'index', 'Índice de precios percibidos por el agricultor (A-index), base 2020=100.')
+run_monthly(PMI, PM, 'pmindex', mk_pm, 'index', 'Índice de precios de los medios de producción que compra el agricultor (PM-index), base 2020=100; fitosanitarios y veterinarios dejaron de publicarse en 2024.')
+run_monthly(PPI, PPIJ, 'ppij', mk_ppi, 'index', 'Índice de precios de productor de la industria alimentaria para alimentos regulados por la política agraria (PPI-J), base 2020=100.')
+run_monthly(KPI, KPIJ, 'kpij', mk_kpi, 'index', 'Índice de precios al consumo de alimentos regulados por la política agraria (KPI-J, con IVA), base 2020=100, y comparación con el IPC general.')
 run_stocks()
 series = [OUTS[k] for k in sorted(OUTS)]
 if len(series) < 25: sys.exit('demasiado pocas series (%d); no se escribe nada' % len(series))

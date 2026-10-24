@@ -1,3 +1,6 @@
-JO1001L2.px 15 series
+JO1001L2.px 37 series
 JO1001AM20.px 14 series
+JO1001APMM20.px 24 series
+JO1001APPM20.px 15 series
+JO1001KJM20.px 25 series
 JO0611L01 9 series

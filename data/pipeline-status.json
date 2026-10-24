@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T01:11:00Z",
+ "generatedAt": "2026-10-24T01:33:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 258,
   "late": 3,
   "error": 5,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 3.3,
-  "prodGeneratedAt": "2026-10-23T21:44:33.375769+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-24T01:00:21.937725+00:00",
   "repoGeneratedAt": "2026-10-24T01:00:21.937725+00:00",
-  "checkedAt": "2026-10-24T01:11:00Z"
+  "checkedAt": "2026-10-24T01:33:00Z"
  },
  "pipelines": [
   {
@@ -2696,6 +2696,19 @@
    "expectedEveryHours": 146.0
   },
   {
+   "workflow": "update-finland-luke.yml",
+   "name": "Update Finland (Luke producer prices, slaughterings and milk received)",
+   "crons": [
+    "40 7 * * 2,5"
+   ],
+   "nextRun": "2026-10-27T07:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 96.0
+  },
+  {
    "workflow": "update-fr-agreste-more.yml",
    "name": "Update France farm employment, land use (TERUTI), input price indices by region (IPAMPA) and wine harvest of Agreste",
    "crons": [
@@ -3796,9 +3809,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T22:11:05Z",
-    "durationSec": 168,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40031944953"
+    "startedAt": "2026-10-24T01:23:50Z",
+    "durationSec": 103,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40049598049"
    },
    "recent": {
     "runs": 10,
@@ -4090,11 +4103,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/catalog"
@@ -4107,7 +4120,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/products"
@@ -4118,11 +4131,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -4146,7 +4159,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/country-pending.json",
@@ -4154,18 +4167,18 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/fv-products.json",
@@ -4177,7 +4190,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:15:12Z"
     },
     {
      "path": "data/home-explore.json",

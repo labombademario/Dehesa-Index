@@ -1,0 +1,33 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Finland (Luke producer prices, slaughterings and milk received)
+on:
+  schedule:
+    - cron: '40 7 * * 2,5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-finland-luke
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-fi-luke.py
+        timeout-minutes: 12
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/finland-luke-stats.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/finland-luke-stats.json
+      - name: Publicar
+        run: bash scripts/publish-data.sh "Datos Finlandia (Luke, precios al productor, sacrificios y leche recibida)" data/finland-luke-stats.json data/finland-luke-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

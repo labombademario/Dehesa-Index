@@ -611,6 +611,15 @@ sources:
     data: [sweden-sjv-stats.json]
     log: sweden-sjv-log.txt
     message: Datos Suecia (Jordbruksverket, precios al productor y existencias)
+  - id: finland-luke
+    name: Update Finland (Luke producer prices, slaughterings and milk received)
+    cron: ['40 7 * * 2,5']
+    script: scripts/update-fi-luke.py
+    timeout: 20
+    script_timeout: 12
+    data: [finland-luke-stats.json]
+    log: finland-luke-log.txt
+    message: Datos Finlandia (Luke, precios al productor, sacrificios y leche recibida)
   - id: baltics-national
     name: Update Latvia and Estonia (national statistics offices, prices, stocks, crops and milk)
     cron: ['40 7 3,16 * *']

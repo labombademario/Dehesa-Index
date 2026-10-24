@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T23:07:07Z",
+ "generatedAt": "2026-10-24T01:32:49Z",
  "summary": {
-  "sources": 162,
-  "sourcesApto": 149,
+  "sources": 163,
+  "sourcesApto": 150,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 367,
-  "datasets_apto": 235,
+  "datasets": 368,
+  "datasets_apto": 236,
   "datasets_condiciones": 122,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -369,6 +369,10 @@
   },
   "ksh_hu": {
    "name": "Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables",
+   "verdict": "apto"
+  },
+  "luke_fi": {
+   "name": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received)",
    "verdict": "apto"
   },
   "magyarkozlony_hu": {
