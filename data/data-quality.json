@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T06:43:44Z",
+ "generatedAt": "2026-10-24T09:37:19Z",
  "summary": {
   "files": 96,
   "errors": 0,
@@ -431,11 +431,11 @@
     "PT/pt-fish-ld-sp-reg-eur: salto 24271776.033 -> 9843150.306 en 2023 (mediana previa 1.46e+04)"
    ],
    "stats": {
-    "series": 1227,
-    "points": 25849,
+    "series": 1223,
+    "points": 25776,
     "lines": 0
    },
-   "generatedAt": "2026-10-16T21:38:03Z",
+   "generatedAt": "2026-10-24T06:44:29Z",
    "info": [],
    "nWarnings": 107,
    "nErrors": 0
@@ -1012,7 +1012,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T07:13:32Z",
+   "generatedAt": "2026-10-24T07:08:16Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
