@@ -74,6 +74,9 @@ def put(sid, group, label, unit, freq, pts, note, ref):
     pp = sorted(d.items())
     if len(pp) < 3: say('omitida (menos de 3 puntos):', sid); return
     (lp, lv), (_, pv) = pp[-1], pp[-2]
+    if sid.startswith('se-sjv-stocks-'):  # solo junio y septiembre: comparar con el mismo mes del año anterior, no con el otro mes (estacional)
+        ly = str(int(lp[:4]) - 1) + lp[4:]
+        pv = d.get(ly)
     s = {'id': sid, 'group': group, 'label': label, 'unit': unit, 'frequency': freq, 'latestPeriod': lp, 'latest': lv, 'changePct': round((lv / pv - 1) * 100, 2) if pv else None,
          'points': [[k, v] for k, v in pp], 'sourceGroup': SG, 'reference': {'source': 'Jordbruksverket (Swedish Board of Agriculture), statistics database', 'dataset': ref, 'licence': 'Jordbruksverket open data (CC0 / CC BY)', 'original': 'https://statistik.jordbruksverket.se/'}}
     if note: s['periodNote'] = note
