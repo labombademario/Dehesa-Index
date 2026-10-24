@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T03:37:53Z",
+ "generatedAt": "2026-10-24T06:43:44Z",
  "summary": {
-  "files": 95,
+  "files": 96,
   "errors": 0,
   "warnings": 30
  },
@@ -637,11 +637,11 @@
     "UY/uy-inia-grid-anr-mean: salto 18.943 -> 57.473 en 2021-02 (mediana previa 2.12)"
    ],
    "stats": {
-    "series": 30,
-    "points": 5961,
+    "series": 43,
+    "points": 6026,
     "lines": 0
    },
-   "generatedAt": "2026-10-22T19:50:59Z",
+   "generatedAt": "2026-10-24T04:40:42Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
@@ -1444,6 +1444,22 @@
     "lines": 0
    },
    "generatedAt": "2026-10-24T02:04:32Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "australia-prices-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 55,
+    "points": 8042,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-24T04:05:27Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
