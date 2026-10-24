@@ -5,6 +5,8 @@
    index.html recibe los hreflang entre marcadores. Escribe el bloque home-pages de sitemap.xml. Uso: node scripts/build-home-pages.mjs (lo llama build-seo-pages.mjs) */
 import fs from 'node:fs';
 import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
+import { createHash as __bootHash } from 'node:crypto'; import { readFileSync as __bootRead } from 'node:fs';
+const BOOT_V = (() => { try { return __bootHash('sha256').update(__bootRead(new URL('../js/boot.js', import.meta.url))).digest('hex').slice(0, 8); } catch (e) { return 'x'; } })();   // ?v= de js/boot.js
 const SITE = 'https://dehesaindex.com', read = f => fs.readFileSync(f, 'utf8');
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const L = {
@@ -42,7 +44,7 @@ ${alt}
 <link rel="icon" href="${up}assets/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="${up}assets/icon-192.png">
 <link rel="stylesheet" href="${up}css/fonts.css">
 <link rel="stylesheet" href="${up}css/style.css">
-<script>try{localStorage.setItem('dehesaIndexLang','${lang}')}catch(e){}</script>
+<script src="${up}js/boot.js?v=${BOOT_V}" data-lang="${lang}" data-lang-mode="force"></script>
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
 <body>
@@ -59,7 +61,7 @@ ${alt}
 </main>
 <div id="di-footer-root"></div>
 <script src="${up}js/shared.js"></script>
-<script>if(window.DehesaShared&&window.DehesaShared.init)window.DehesaShared.init('informacion');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-open]');if(a){try{localStorage.setItem('dehesaIndexLang','${lang}')}catch(x){}}});</script>
+<script src="${up}js/boot.js?v=${BOOT_V}" data-init="informacion" data-open-lang="${lang}"></script>
 </body>
 </html>
 `;

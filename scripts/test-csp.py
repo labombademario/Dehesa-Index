@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parent.parent
 txt = (ROOT / '_headers').read_text(encoding='utf-8')
 blk = re.search(r'^/\*\n((?:[ \t]+.*\n?)+)', txt, re.M)
 bad = []
+ALL = [f for f in glob.glob(str(ROOT / '**' / '*.html'), recursive=True) if '/node_modules/' not in f and '/.git/' not in f]
 if not blk: sys.exit('_headers: no hay bloque /*')
 h = {}
 for l in blk.group(1).splitlines():
@@ -18,13 +19,22 @@ if 'frame-ancestors' in csp: bad.append('la CSP global no debe llevar frame-ance
 if "'unsafe-eval'" in csp: bad.append("la CSP no debe permitir 'unsafe-eval'")
 if 'script-src-attr' in csp: bad.append("la CSP no debe llevar script-src-attr: los manejadores en linea (onclick=...) estan prohibidos; usa data-di-act (js/shared.js)")
 # ningun manejador en linea en las paginas ni en el HTML que genera el JavaScript
-for f in sorted(glob.glob(str(ROOT / '*.html')) + glob.glob(str(ROOT / 'js' / '*.js'))):
+for f in sorted(ALL + glob.glob(str(ROOT / 'js' / '*.js')) + glob.glob(str(ROOT / 'data' / '*.js'))):
     s = Path(f).read_text(encoding='utf-8')
     if f.endswith('.html'): s = re.sub(r'<script\b[^>]*>.*?</script>', '', s, flags=re.S)
     for mm in re.finditer(r'<[a-zA-Z][^<>]*?\son[a-z]{3,}\s*=\s*\\?["\']', s):
         bad.append('%s: manejador en linea %r (la CSP lo bloquea; usa data-di-act en js/shared.js)' % (Path(f).name, mm.group(0)[:80]))
 m = re.search(r"script-src ([^;]*)", csp); allowed = set(re.findall(r"'(sha256-[^']+)'", m.group(1))) if m else set()
 used = {}
+# 24-oct-2026: tambien las paginas generadas (datos/, regiones/, precios/, en|fr|it/, data/): antes solo se miraba la raiz y
+# 2.566 landings llevaban un <script> en linea que la CSP bloqueaba (sin menu ni pie en produccion).
+for f in sorted(ALL):
+    if Path(f).parent != ROOT:
+        s = Path(f).read_text(encoding='utf-8', errors='ignore')
+        for mm in re.finditer(r'<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>', s, re.S):
+            if 'ld+json' in mm.group(1) or 'speculationrules' in mm.group(1) or not mm.group(2).strip(): continue
+            bad.append('%s: script en linea (la CSP lo bloquea; usa js/boot.js con data-*)' % Path(f).relative_to(ROOT))
+            break
 for f in sorted(glob.glob(str(ROOT / '*.html'))):
     s = Path(f).read_text(encoding='utf-8')
     for mm in re.finditer(r'<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>', s, re.S):

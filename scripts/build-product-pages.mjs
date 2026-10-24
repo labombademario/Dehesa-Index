@@ -7,6 +7,8 @@ import fs from 'node:fs';
 import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
 import { createHash as __ch } from 'node:crypto';
 import { readFileSync as __rf } from 'node:fs';
+import { createHash as __bootHash } from 'node:crypto'; import { readFileSync as __bootRead } from 'node:fs';
+const BOOT_V = (() => { try { return __bootHash('sha256').update(__bootRead(new URL('../js/boot.js', import.meta.url))).digest('hex').slice(0, 8); } catch (e) { return 'x'; } })();   // ?v= de js/boot.js
 // ?v= de shared.js = hash de su contenido (como scripts/stamp-assets.mjs): sin él, estas páginas servían un shared.js viejo de la caché
 const SHARED_V = (() => { try { return __ch('sha256').update(__rf(new URL('../js/shared.js', import.meta.url))).digest('hex').slice(0, 8); } catch (e) { return 'x'; } })();
 const read = f => fs.readFileSync(f, 'utf8');
@@ -258,9 +260,9 @@ ${qFaq}
   </article>
 </main>
 <div id="di-footer-root"></div>
-<script>try{if(!localStorage.getItem('dehesaIndexLang'))localStorage.setItem('dehesaIndexLang','${lg}')}catch(e){}</script>
+<script src="${up}js/boot.js?v=${BOOT_V}" data-lang="${lg}"></script>
 <script src="${up}js/shared.js?v=${SHARED_V}"></script>
-<script>if(window.DehesaShared&&window.DehesaShared.init)window.DehesaShared.init('informacion');</script>
+<script src="${up}js/boot.js?v=${BOOT_V}" data-init="informacion"></script>
 </body>
 </html>
 `;

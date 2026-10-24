@@ -6,6 +6,8 @@
    y la lista de ediciones aprobadas de blog.html. Uso: node scripts/build-blog-pages.mjs  (lo llama build-seo-pages.mjs) */
 import fs from 'node:fs';
 import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
+import { createHash as __bootHash } from 'node:crypto'; import { readFileSync as __bootRead } from 'node:fs';
+const BOOT_V = (() => { try { return __bootHash('sha256').update(__bootRead(new URL('../js/boot.js', import.meta.url))).digest('hex').slice(0, 8); } catch (e) { return 'x'; } })();   // ?v= de js/boot.js
 const SITE = 'https://dehesaindex.com', LANGS = ['es', 'en', 'fr', 'it'];
 const DIR = { es: 'blog', en: 'en/blog', fr: 'fr/blog', it: 'it/blog' };
 const UI = { es: ['Blog semanal', 'Todas las ediciones', 'Datos y herramientas'], en: ['Weekly blog', 'All editions', 'Data and tools'], fr: ['Blog hebdomadaire', 'Toutes les éditions', 'Données et outils'], it: ['Blog settimanale', 'Tutte le edizioni', 'Dati e strumenti'] };
@@ -61,7 +63,7 @@ ${alts}
 </main>
 <div id="di-footer-root"></div>
 <script src="${up}js/shared.js"></script>
-<script>if(window.DehesaShared&&window.DehesaShared.init)window.DehesaShared.init('informacion');</script>
+<script src="${up}js/boot.js?v=${BOOT_V}" data-init="informacion"></script>
 </body>
 </html>
 `;
