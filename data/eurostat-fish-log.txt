@@ -102,9 +102,9 @@ RO flota 9
 RO series 61
 SE capturas 10
 SE desembarques 27
-SE acuicultura 11
+SE acuicultura 7
 SE flota 9
-SE series 57
+SE series 53
 SI capturas 10
 SI desembarques 27
 SI acuicultura 11
