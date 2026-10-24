@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-284 workflows (235 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+285 workflows (235 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -231,6 +231,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | deploy-cloudflare.yml | a mano | varias veces al dia | - | - | - |
 | e2e-full.yml | a mano | semanal (1) | e2e-variants.mjs | - | - |
 | fetch-fao-areas.yml | a mano | manual / por evento | - | - | - |
+| probe-ro-sources.yml | a mano | manual / por evento | - | - | - |
 | refresh-observatory.yml | a mano | manual / por evento | build-observatory.py, build-pipeline-status.py, validate-data.py | - | - |
 | release-dispatch.yml | a mano | 2 veces al dia | release-dispatch.py | - | - |
 | send-digest.yml | a mano | semanal (1) | build-digest.py, send-digest.py | - | - |
