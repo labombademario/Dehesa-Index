@@ -7435,7 +7435,7 @@
    "sources": [
     "mrirw_zsrir"
    ],
-   "notes": "Precios de cereales, colza, carne (cerdo, vacuno, pollo), lacteos, huevos, piensos, fruta/hortaliza (comercio minorista) y azucar del ZSRIR del Ministerio de Agricultura de Polonia (scripts/update-pl-zsrir.py). Cita obligatoria (CC BY 4.0). Sin conversiones; el ultimo punto semanal se contrasta con el resumen del boletin."
+   "notes": "Precios de cereales, colza, carne (cerdo, vacuno, pollo), lacteos, huevos, piensos, fruta/hortaliza (comercio minorista y mercados mayoristas) y azucar del ZSRIR del Ministerio de Agricultura de Polonia (scripts/update-pl-zsrir.py). Cita obligatoria (CC BY 4.0). Sin conversiones; el ultimo punto semanal se contrasta con el resumen del boletin."
   },
   "data/poland-zsrir-stats.json": {
    "byCountry": {

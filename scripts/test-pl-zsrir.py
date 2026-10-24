@@ -161,6 +161,33 @@ check(all(p[0] > "2024-W29" for p in out[0]["points"]) and len(out[0]["points"])
 few = pz.strip_clones([pz.mk_series("a", ["a"] * 4, {"2024-W01": 1, "2024-W02": 2}), pz.mk_series("b", ["a"] * 4, {"2024-W01": 1, "2024-W02": 2})], "t")
 check(len(few[0]["points"]) == 2, "pocas coincidencias no recortan")
 
+
+# --- mercados mayoristas: hoja de medias con otro nombre y columnas desplazadas
+import datetime as _dt
+hb = openpyxl.Workbook(); hs = hb.active; hs.title = "zmiany cen hurt"
+hs.cell(6, 2, "Produkt"); hs.cell(6, 3, "Jedn."); hs.cell(6, 4, _dt.datetime(2026, 1, 8)); hs.cell(6, 6, _dt.datetime(2025, 12, 30))
+def hrow(r, nm, unit=None, v=()):
+    hs.cell(r, 2, nm)
+    if unit: hs.cell(r, 3, unit)
+    for j, x in enumerate(v): hs.cell(r, 4 + j, x)
+hrow(9, "Warzywa krajowe"); hrow(10, "Marchew", "kg", (1.0, 2.0, 1.2, 1.8)); hrow(11, "Ziemniaki", "kg", (0.7, 1.1, None, None))
+hrow(12, "Kapusta biała", "kg", (5.0, 40.0, 1.0, 1.4))
+hrow(13, "Owoce krajowe"); hrow(14, "Gruszki", "kg", (4.0, 5.0, 4.2, 5.2)); hrow(15, "Jabłka:"); hrow(16, "Gala", "kg", (2.0, 3.0, 2.0, 3.0))
+hrow(17, "Owoce importowe"); hrow(18, "Gruszki", "kg", (9.0, 9.5, 9.0, 9.5))
+hm, hd = pz.hurt_avg(hb)
+check(hd == [_dt.date(2026, 1, 8), _dt.date(2025, 12, 30)], "fechas de cabecera: %s" % hd)
+check(hm["Marchew"] == {_dt.date(2026, 1, 8): (1.0, 2.0), _dt.date(2025, 12, 30): (1.2, 1.8)}, "mayorista: dos fechas: %s" % hm.get("Marchew"))
+check(hm["Ziemniaki"] == {_dt.date(2026, 1, 8): (0.7, 1.1)}, "mayorista: fecha sin dato se omite")
+check("Kapusta biała" in hm and _dt.date(2026, 1, 8) not in hm["Kapusta biała"], "mayorista: maximo > 3 veces el minimo se descarta")
+check(hm["Gruszki"] == {_dt.date(2026, 1, 8): (4.0, 5.0), _dt.date(2025, 12, 30): (4.2, 5.2)}, "mayorista: pera nacional, no la importada: %s" % hm.get("Gruszki"))
+check("Gala" not in hm, "mayorista: la manzana no se publica")
+hs.cell(6, 4, _dt.datetime(2025, 12, 1))
+try:
+    pz.hurt_avg(hb); check(False, "fechas invertidas deben fallar")
+except RuntimeError:
+    check(True, "fechas invertidas rechazadas")
+check(pz.iso_week(_dt.date(2025, 12, 30)) == "2026-W01" and pz.iso_week(_dt.date(2026, 10, 22)) == "2026-W43", "iso_week")
+
 # --- year_rows, has_value, cell_value
 yw = openpyxl.Workbook().active
 yw["B7"] = "BYDŁO - M.P. UZUPEŁNIAJĄCE"
@@ -216,7 +243,7 @@ pz.colza = colza_ok
 # main() usa los nombres de modulo: se sustituyen en el espacio de nombres
 g = pz.main.__globals__
 g["colza"] = colza_ok
-for other in ("carne", "lacteos", "piensos", "fruta", "azucar"):
+for other in ("carne", "lacteos", "piensos", "fruta", "mayorista", "azucar"):
     g[other] = colza_ko
 pz.main()
 check((pz.OUT / "cereales.json").exists() and (pz.OUT / "colza.json").exists() and (pz.OUT / "index.json").exists(), "ficheros escritos")

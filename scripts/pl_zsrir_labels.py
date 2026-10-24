@@ -72,3 +72,17 @@ SUGAR = {
     "industry": L("Azúcar blanco, compra del sector de transformación alimentaria", "White sugar, bought by the food-processing sector", "Sucre blanc, achat du secteur de la transformation alimentaire", "Zucchero bianco, acquisto del settore della trasformazione alimentare"),
     "retail": L("Azúcar blanco envasado (1 kg), compra del comercio minorista", "White sugar, packed (1 kg), bought by retailers", "Sucre blanc conditionné (1 kg), achat du commerce de détail", "Zucchero bianco confezionato (1 kg), acquisto del commercio al dettaglio"),
 }
+
+
+# Mercados mayoristas (Bronisze, Gdansk, Lodz, Poznan, Rzeszow): media semanal de los cinco, punto medio entre minimo y maximo, PLN/kg.
+# Manzana mayorista NO se publica: su media semanal se repite en 17-31 de 48 semanas y no se distingue un precio estable de un dato arrastrado.
+HURT = {
+    "Marchew": ("marchew", L("Zanahoria", "Carrots", "Carottes", "Carote")),
+    "Ziemniaki": ("ziemniaki", L("Patata", "Potatoes", "Pommes de terre", "Patate")),
+    "Cebula biała": ("cebula", L("Cebolla blanca", "White onions", "Oignons blancs", "Cipolle bianche")),
+    "Kapusta biała": ("kapusta", L("Repollo blanco", "White cabbage", "Chou blanc", "Cavolo bianco")),
+    "Buraki ćwikłowe": ("buraki", L("Remolacha de mesa", "Beetroot", "Betteraves rouges", "Barbabietole rosse")),
+    "Pomidory": ("pomidory", L("Tomate (todas las clases)", "Tomatoes (all types)", "Tomates (tous types)", "Pomodori (tutti i tipi)")),
+    "Papryka czerwona": ("papryka", L("Pimiento rojo", "Red peppers", "Poivrons rouges", "Peperoni rossi")),
+    "Gruszki": ("gruszki", L("Pera nacional", "Domestic pears", "Poires nationales", "Pere nazionali")),
+}

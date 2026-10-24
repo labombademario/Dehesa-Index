@@ -1,6 +1,6 @@
 cereales: sin cambios (semana 2026-10-11)
 colza: sin cambios (semana 2026-10-18)
-carne: leido (semana 2026-10-18, 5 tablas, 8 series)
+carne: sin cambios (semana 2026-10-18)
 lacteos-semanal: pl-dairy-wmp-w y pl-dairy-edam-w tienen 204 valores identicos hasta 2025-W48; se recortan a lo posterior
 lacteos: sin cambios (semana 2026-10-18)
 piensos: sin cambios (mes 2026-09)
@@ -10,6 +10,7 @@ fecha fuera de orden 2025-02-16 tras 2026-01-25 (año mal escrito en la hoja): f
 fecha fuera de orden 2025-02-02 tras 2026-01-25 (año mal escrito en la hoja): fila omitida
 fecha fuera de orden 2025-02-09 tras 2026-01-25 (año mal escrito en la hoja): fila omitida
 fecha fuera de orden 2025-02-16 tras 2026-01-25 (año mal escrito en la hoja): fila omitida
-fruta: leido (semana 2026-10-18, 2 tablas, 7 series)
+fruta: sin cambios (semana 2026-10-18)
+mayorista: leido (semana 2026-10-22, 2 tablas, 8 series)
 azucar: sin cambios (mes 2026-08)
-escrito: 7 ficheros, 12 series en las estadisticas
+escrito: 8 ficheros, 12 series en las estadisticas

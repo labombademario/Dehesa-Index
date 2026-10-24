@@ -25,6 +25,7 @@ FILES = {
     "piensos.json": ("Piensos compuestos: precio de venta", "Precio mensual de venta de piensos para bovino, aves y porcino, 10 años (ZSRIR)"),
     "fruta.json": ("Manzana, zanahoria, tomate y patata: compra del comercio minorista", "Precio semanal de compra de manzanas, zanahoria, tomate y patata por el comercio minorista (ZSRIR); el boletín trae solo un año, la serie se acumula"),
     "azucar.json": ("Azúcar: precios mensuales", "Precio mensual del azúcar blanco: venta al mercado interior y compra de la transformación y del comercio minorista (ZSRIR)"),
+    "mayorista.json": ("Hortalizas y pera: precio mayorista medio", "Precio mayorista semanal (media de cinco mercados: Bronisze, Gdańsk, Łódź, Poznań, Rzeszów) de siete hortalizas y la pera (ZSRIR); se acumula desde nov-2025"),
     "colza.json": ("Colza: precio de compra", "Precio de compra de la semilla de colza (PLN/t), mensual y semanal desde 2022 (ZSRIR)"),
 }
 ROMAN = {m: i + 1 for i, m in enumerate("I II III IV V VI VII VIII IX X XI XII".split())}
@@ -505,10 +506,10 @@ def wide_weekly(ws, min_year=2022):
 PREV = {}
 
 
-def accumulate(sid, new_pts):
+def accumulate(sid, new_pts, fname="fruta.json"):
     """El boletin de fruta y hortaliza solo trae el ultimo año: se suman los puntos ya publicados (los nuevos mandan)."""
     old = {}
-    for d in (PREV.get("fruta.json") or {}).get("tables", []):
+    for d in (PREV.get(fname) or {}).get("tables", []):
         for x in d["series"]:
             if x["id"] == sid:
                 old = dict(x["points"])
@@ -542,6 +543,105 @@ def fruta():
     if not tabs:
         raise RuntimeError("fruta: ninguna tabla (%s)" % "; ".join(errs)[:200])
     return "semana %s" % max(eds).isoformat(), tabs
+
+
+# ------------------------------------------------------------ mercados mayoristas de fruta y hortaliza (hoja de medias del boletin 912)
+def _sheet(wb, *keys):
+    for n in wb.sheetnames:
+        low = n.lower().replace("_", " ")
+        if all(k in low for k in keys):
+            return wb[n]
+    return None
+
+
+def hurt_avg(wb):
+    """Hoja 'ZMIANY HURT' (su nombre cambia entre boletines): media de los cinco mercados mayoristas en la fecha del boletin y en una fecha anterior
+    (no siempre la semana previa: se leen las fechas de la cabecera). Devuelve ({producto: {fecha: (min, max)}}, [fecha actual, fecha anterior])."""
+    ws = _sheet(wb, "zmiany")
+    if ws is None:
+        raise RuntimeError("sin hoja de medias de mercados mayoristas")
+    rows = list(ws.iter_rows(values_only=True))
+    hi = next((i for i, r in enumerate(rows) if any(c and str(c).strip().lower() == "produkt" for c in r)), None)
+    if hi is None:
+        raise RuntimeError("sin cabecera 'Produkt'")
+    h = rows[hi]
+    c0 = next(j for j, c in enumerate(h) if c and str(c).strip().lower() == "produkt")
+    dates = [(j, c.date() if isinstance(c, datetime.datetime) else c) for j, c in enumerate(h) if isinstance(c, (datetime.datetime, datetime.date))][:2]
+    if len(dates) < 2 or dates[0][1] <= dates[1][1]:
+        raise RuntimeError("fechas de cabecera no validas: %s" % [str(d[1]) for d in dates])
+    out, sec = {}, None
+    for r in rows[hi + 1:]:
+        if len(r) <= c0 + 1 or r[c0] is None:
+            continue
+        a = str(r[c0]).strip()
+        if r[c0 + 1] is None:
+            sec = a.lower()
+            continue
+        if sec is None or "import" in sec or a not in LB.HURT:
+            continue
+        kind = "f" if sec.startswith(("owoc", "jab")) else "v"
+        if (a == "Gruszki") != (kind == "f"):
+            continue
+        d = {}
+        for j, dt in dates:
+            mn, mx = num(r[j]) if j < len(r) else None, num(r[j + 1]) if j + 1 < len(r) else None
+            if mn and mx and 0 < mn <= mx <= 3 * mn:
+                d[dt] = (mn, mx)
+        if d:
+            out[a] = d
+    return out, [d for _, d in dates]
+
+
+def iso_week(d):
+    y, w, _ = d.isocalendar()
+    return "%d-W%02d" % (y, w)
+
+
+def mayorista(n_boletines=None):
+    """Cada boletin trae 2 fechas; los 6 ultimos cubren los huecos de una caida de la tarea. PL_HURT_BACKFILL=N lee N boletines (carga historica, a mano)."""
+    import os, openpyxl
+    warnings.filterwarnings("ignore")
+    n = int(n_boletines or os.environ.get("PL_HURT_BACKFILL") or 6)
+    lst = json.loads(fetch(API % ("912", max(n, 6) + 4)))["data"]
+    cur, prev, got = {}, {}, 0
+    for r in sorted((x for x in lst if str(x["attributes"].get("title", "")).startswith("Rynek owoców i warzyw") and str(x["attributes"].get("format", "")).lower() == "xlsx" and x["attributes"].get("download_url")), key=lambda x: x["attributes"].get("data_date") or "")[-n:]:
+        a = r["attributes"]
+        try:
+            wb = openpyxl.load_workbook(io.BytesIO(fetch(a["download_url"], binary=True)), data_only=True)
+            data, ds = hurt_avg(wb)
+        except Exception as ex:
+            log("mayorista: %s no se pudo leer (%s)" % (a.get("data_date"), str(ex)[:100]))
+            continue
+        got += 1
+        for nm, d in data.items():
+            for dt, v in d.items():
+                (cur if dt == ds[0] else prev).setdefault(nm, {})[dt] = v
+    if not got:
+        raise RuntimeError("mayorista: ningun boletin legible")
+    tabs, last = [], None
+    for tid, kind, lab, note in (
+        ("hortalizas-mayorista-semanal", "v", ("Hortalizas: precio mayorista medio, semanal", "Vegetables: average wholesale price, weekly", "Légumes : prix de gros moyen, hebdomadaire", "Ortaggi: prezzo medio all'ingrosso, settimanale"), "Media de los cinco mercados mayoristas polacos (Bronisze, Gdańsk, Łódź, Poznań, Rzeszów): punto medio entre el precio mínimo y el máximo, PLN/kg, hortaliza nacional (ZSRIR). La serie se acumula boletín a boletín desde nov-2025."),
+        ("pera-mayorista-semanal", "f", ("Pera: precio mayorista medio, semanal", "Pears: average wholesale price, weekly", "Poires : prix de gros moyen, hebdomadaire", "Pere: prezzo medio all'ingrosso, settimanale"), "Media de los cinco mercados mayoristas polacos: punto medio entre el precio mínimo y el máximo, PLN/kg, pera nacional (ZSRIR). La manzana mayorista no se publica: su media semanal se repite demasiado para fiarse."),
+    ):
+        ser = []
+        for nm, (code, labs) in LB.HURT.items():
+            if (nm == "Gruszki") != (kind == "f"):
+                continue
+            sid = "pl-hurt-" + code + "-w"
+            pts = {}
+            for dd in (prev.get(nm, {}), cur.get(nm, {})):  # la fecha actual de un boletin manda sobre la anterior de otro
+                for dt, (mn, mx) in sorted(dd.items()):
+                    if dd is prev.get(nm) and any(iso_week(x) == iso_week(dt) for x in cur.get(nm, {})):
+                        continue
+                    pts[iso_week(dt)] = rnd((mn + mx) / 2)
+                    last = max(last or dt, dt)
+            ser.append(mk_series(sid, labs, accumulate(sid, pts, "mayorista.json")))
+        ser = [s for s in ser if len(s["points"]) >= 2]
+        if ser:
+            tabs.append(mk_table(tid, "fruta" if kind == "f" else "hortalizas", lab, "PLN/kg", note, ser))
+    if not tabs:
+        raise RuntimeError("mayorista: ninguna serie")
+    return "semana %s" % last.isoformat(), tabs
 
 
 def azucar():
@@ -605,7 +705,7 @@ def main():
     docs = {n: load(n) for n in FILES}
     PREV.update(docs)
     new = False
-    for name, fn in (("cereales", cereales), ("colza", colza), ("carne", carne), ("lacteos", lacteos), ("piensos", piensos), ("fruta", fruta), ("azucar", azucar)):
+    for name, fn in (("cereales", cereales), ("colza", colza), ("carne", carne), ("lacteos", lacteos), ("piensos", piensos), ("fruta", fruta), ("mayorista", mayorista), ("azucar", azucar)):
         try:
             ed, tabs = fn()
             tabs = merge_old(tabs, docs.get(name + ".json"), name)
