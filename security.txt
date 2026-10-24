@@ -1,4 +1,4 @@
 Contact: mailto:dehesaindex@gmail.com
 Expires: 2027-10-03T00:00:00.000Z
-Preferred-Languages: es, en
+Preferred-Languages: es, en, fr, it
 Canonical: https://dehesaindex.com/.well-known/security.txt
