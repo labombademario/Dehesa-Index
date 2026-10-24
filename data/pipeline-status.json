@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T05:05:00Z",
+ "generatedAt": "2026-10-24T05:32:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 258,
   "late": 3,
   "error": 5,
-  "not_run": 8,
+  "not_run": 7,
   "unknown": 0
  },
  "global": "error",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-24T03:43:20.571682+00:00",
   "repoGeneratedAt": "2026-10-24T03:43:20.571682+00:00",
-  "checkedAt": "2026-10-24T05:05:00Z"
+  "checkedAt": "2026-10-24T05:32:00Z"
  },
  "pipelines": [
   {
@@ -4170,7 +4170,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-24T04:55:32Z"
+     "lastChange": "2026-10-24T05:07:13Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4601,25 +4601,12 @@
    "expectedEveryHours": 744.0
   },
   {
-   "workflow": "update-romania-anm.yml",
-   "name": "Update Romania (ANM open data, monthly temperature and rainfall at farming stations)",
-   "crons": [
-    "20 8 4 * *"
-   ],
-   "nextRun": "2026-11-04T08:20:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 744.0
-  },
-  {
    "workflow": "update-seo-pages.yml",
    "name": "Rebuild SEO landing pages",
    "crons": [
     "10 5 * * *"
    ],
-   "nextRun": "2026-10-24T05:10:00Z",
+   "nextRun": "2026-10-25T05:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
