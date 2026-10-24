@@ -3,7 +3,7 @@
 # Solo comprueba alcanzabilidad y formato (codigo HTTP, tipo, tamano, primeros caracteres); no guarda datos ni ingiere nada.
 # Escribe docs/probes/ro-sources.md. Las licencias hay que leerlas en las paginas de condiciones: aqui solo se baja su texto inicial.
 set -u
-OUT=docs/probes/ro-sources.md
+OUT=docs/probes/ro-sources.md; mkdir -p docs/probes
 { echo "# Sondeo de fuentes de Rumania desde GitHub Actions"; echo; echo "Ejecutado: $(date -u +%Y-%m-%dT%H:%MZ). Solo alcanzabilidad y formato, no es ingesta."; echo; } > "$OUT"
 probe() {  # nombre url [max_bytes]
   local n="$1" u="$2" tmp; tmp=$(mktemp)
