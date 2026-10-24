@@ -55,6 +55,18 @@ def crops():
     for r, v in recs:
         if r['strucpro'] in M: by.setdefault((r['crops'], r['strucpro']), []).append((r['time'], v))
     n = 0
+    # Rendimiento publicado que no cuadra con produccion/superficie del mismo cultivo y año (p. ej. IT arroz 2010-2012: 0,7 t/ha
+    # frente a 7,0 por produccion/superficie): se omite el punto. Se compara con la mediana de la propia serie para respetar
+    # diferencias de definicion que se mantienen en el tiempo.
+    for c in set(k[0] for k in by):
+        a, pr, y = dict(by.get((c, 'AR_THS_HA'), [])), dict(by.get((c, 'HPRD_HUMD_EU_THS_T'), [])), by.get((c, 'YLD_HUMD_EU_T_HA'))
+        if not (a and pr and y): continue
+        rt = {k: yv * a[k] / pr[k] for k, yv in y if yv and a.get(k) and pr.get(k)}
+        if len(rt) < 4: continue
+        med = sorted(rt.values())[len(rt) // 2]
+        drop = set(k for k, r in rt.items() if med and not 0.7 <= r / med <= 1.43)
+        if drop:
+            by[(c, 'YLD_HUMD_EU_T_HA')] = [(k, yv) for k, yv in y if k not in drop]; log('rendimiento omitido (no cuadra con produccion/superficie)', c, sorted(drop))
     for (c, sp), pts in by.items():
         if NEC.search(clean(labs['crops'][c])) or not keep(clean(labs['crops'][c])): continue   # categorias residuales («n.e.c.», «Other ...»): no identifican un cultivo
         k, txt, u, mu = M[sp]
