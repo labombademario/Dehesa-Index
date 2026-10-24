@@ -54,3 +54,21 @@ FEED = {
     "poultry": L("Pienso completo para aves", "Complete feed for poultry", "Aliment complet pour volailles", "Mangime completo per pollame"),
     "pig": L("Pienso completo para porcino", "Complete feed for pigs", "Aliment complet pour porcs", "Mangime completo per suini"),
 }
+
+# fruta y hortaliza (912) y azucar (367)
+APPLES = {
+    "Gala": ("gala", L("Manzana Gala", "Gala apples", "Pommes Gala", "Mele Gala")),
+    "Jonagold": ("jonagold", L("Manzana Jonagold", "Jonagold apples", "Pommes Jonagold", "Mele Jonagold")),
+    "Ligol": ("ligol", L("Manzana Ligol", "Ligol apples", "Pommes Ligol", "Mele Ligol")),
+    "Szampion": ("szampion", L("Manzana Szampion", "Szampion apples", "Pommes Szampion", "Mele Szampion")),
+}
+VEG = {
+    "Marchew": ("marchew", L("Zanahoria", "Carrots", "Carottes", "Carote")),
+    "Pomidory okrągłe": ("pomidory", L("Tomate redondo", "Round tomatoes", "Tomates rondes", "Pomodori tondi")),
+    "Ziemniaki": ("ziemniaki", L("Patata", "Potatoes", "Pommes de terre", "Patate")),
+}
+SUGAR = {
+    "sales": L("Azúcar blanco envasado (1 kg), venta al mercado interior", "White sugar, packed (1 kg), domestic sales", "Sucre blanc conditionné (1 kg), ventes intérieures", "Zucchero bianco confezionato (1 kg), vendite interne"),
+    "industry": L("Azúcar blanco, compra del sector de transformación alimentaria", "White sugar, bought by the food-processing sector", "Sucre blanc, achat du secteur de la transformation alimentaire", "Zucchero bianco, acquisto del settore della trasformazione alimentare"),
+    "retail": L("Azúcar blanco envasado (1 kg), compra del comercio minorista", "White sugar, packed (1 kg), bought by retailers", "Sucre blanc conditionné (1 kg), achat du commerce de détail", "Zucchero bianco confezionato (1 kg), acquisto del commercio al dettaglio"),
+}

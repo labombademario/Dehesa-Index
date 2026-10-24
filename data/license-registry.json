@@ -4988,10 +4988,10 @@
    "verifiedAt": "2026-10-23",
    "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "La API de dane.gov.pl (1.4/datasets/{id}, leida 2026-10-23) declara license_name «CC BY 4.0» y license_condition_default_cc40 = true, con titular MRiRW, en los conjuntos de cereales (546), colza (957), porcino (777), vacuno (1214), aves (601), leche y lacteos (1024), huevos (1003), piensos (1022) y el resumen semanal (2000). El acceso directo a zsrir.minrol.gov.pl falla por certificado y no se usa.",
+   "evidence": "La API de dane.gov.pl (1.4/datasets/{id}, leida 2026-10-23) declara license_name «CC BY 4.0» y license_condition_default_cc40 = true, con titular MRiRW, en los conjuntos de cereales (546), colza (957), porcino (777), vacuno (1214), aves (601), leche y lacteos (1024), huevos (1003), piensos (1022), fruta y hortaliza (912), azucar (367) y el resumen semanal (2000). El acceso directo a zsrir.minrol.gov.pl falla por certificado y no se usa.",
    "used": true,
    "aliases": [],
-   "notes": "Boletines xlsx semanales de scripts/update-pl-zsrir.py: cereales (546), colza (957), porcino (777), vacuno (1214), aves (601), leche y lacteos (1024), huevos (1003) y piensos (1022). Medias nacionales ponderadas sin IVA, tal como se publican; sin conversiones. La fecha de la hoja manda sobre el titulo del recurso; las series clonadas entre hojas se recortan.",
+   "notes": "Boletines xlsx semanales de scripts/update-pl-zsrir.py: cereales (546), colza (957), porcino (777), vacuno (1214), aves (601), leche y lacteos (1024), huevos (1003), piensos (1022), fruta y hortaliza (912) y azucar (367). Medias nacionales ponderadas sin IVA, tal como se publican; sin conversiones. La fecha de la hoja manda sobre el titulo del recurso; las series clonadas entre hojas se recortan.",
    "short": "MRiRW ZSRIR",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia declarada en la API del portal de datos abiertos para cada conjunto; los ficheros xlsx no llevan la licencia dentro."
@@ -7435,7 +7435,7 @@
    "sources": [
     "mrirw_zsrir"
    ],
-   "notes": "Precios de cereales, colza, carne (cerdo, vacuno, pollo), lacteos, huevos y piensos del ZSRIR del Ministerio de Agricultura de Polonia (scripts/update-pl-zsrir.py). Cita obligatoria (CC BY 4.0). Sin conversiones; el ultimo punto semanal se contrasta con el resumen del boletin."
+   "notes": "Precios de cereales, colza, carne (cerdo, vacuno, pollo), lacteos, huevos, piensos, fruta/hortaliza (comercio minorista) y azucar del ZSRIR del Ministerio de Agricultura de Polonia (scripts/update-pl-zsrir.py). Cita obligatoria (CC BY 4.0). Sin conversiones; el ultimo punto semanal se contrasta con el resumen del boletin."
   },
   "data/poland-zsrir-stats.json": {
    "byCountry": {

@@ -183,6 +183,19 @@ nw = openpyxl.Workbook().active
 nw["C8"] = "18.10.2026"; nw["B9"] = "POLSKA"; nw["B10"] = "Bydło ogółem"; nw["C10"] = 25540.75; nw["D10"] = 13.97
 check(pz.summary_weekly(nw, r"\bBydło ogółem") == {"2026-10-18": 25540.75}, "numeros con forma de fecha no cuentan")
 
+# --- fechas fuera de orden (año mal escrito en la hoja): la fila se omite
+fw = openpyxl.Workbook().active
+fw["B25"] = "TYDZIEŃ"; fw["C25"] = "Gala"; fw["D25"] = "Ligol"
+seq = [(D(2026, 1, 25), 349, 1), (D(2025, 2, 2), 346.11, 2), (D(2026, 2, 8), 340, 3), (D(2026, 2, 15), "nld", 4), (D(2026, 2, 22), 324.33, 5)]
+for i, (d, v, l) in enumerate(seq):
+    fw.cell(row=26 + i, column=1, value=str(i)); fw.cell(row=26 + i, column=2, value=d); fw.cell(row=26 + i, column=3, value=v); fw.cell(row=26 + i, column=4, value=l)
+wd = pz.wide_weekly(fw)
+check(sorted(wd["Gala"]) == ["2026-W04", "2026-W06", "2026-W08"] and sorted(wd["Ligol"]) == ["2026-W04", "2026-W06", "2026-W07", "2026-W08"], "wide_weekly orden/sucios: %s" % {k: sorted(v) for k, v in wd.items()})
+# accumulate: lo publicado se conserva y lo nuevo manda
+pz.PREV["fruta.json"] = {"tables": [{"series": [{"id": "x", "points": [["2026-W01", 1], ["2026-W02", 2]]}]}]}
+check(pz.accumulate("x", {"2026-W02": 22, "2026-W03": 3}) == {"2026-W01": 1, "2026-W02": 22, "2026-W03": 3} and pz.accumulate("y", {"a": 1}) == {"a": 1}, "accumulate")
+pz.PREV.clear()
+
 # --- main: un bloque que falla conserva lo publicado; sin cambios no reescribe
 tmp = Path(tempfile.mkdtemp())
 pz.OUT = tmp / "poland-zsrir"; pz.ROOT = tmp; pz.time.sleep = lambda s: None
@@ -203,7 +216,7 @@ pz.colza = colza_ok
 # main() usa los nombres de modulo: se sustituyen en el espacio de nombres
 g = pz.main.__globals__
 g["colza"] = colza_ok
-for other in ("carne", "lacteos", "piensos"):
+for other in ("carne", "lacteos", "piensos", "fruta", "azucar"):
     g[other] = colza_ko
 pz.main()
 check((pz.OUT / "cereales.json").exists() and (pz.OUT / "colza.json").exists() and (pz.OUT / "index.json").exists(), "ficheros escritos")

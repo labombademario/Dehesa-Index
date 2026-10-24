@@ -23,6 +23,8 @@ FILES = {
     "carne.json": ("Carne: precios de compra", "Precio de compra de cerdo (vivo y canal clase E), vacuno en canal y pollo broiler, semanal, y cerdo vivo mensual (ZSRIR)"),
     "lacteos.json": ("Leche, lácteos y huevos: precios", "Leche cruda mensual, mantequilla, leche en polvo y quesos semanales, y huevos para transformación semanales (ZSRIR)"),
     "piensos.json": ("Piensos compuestos: precio de venta", "Precio mensual de venta de piensos para bovino, aves y porcino, 10 años (ZSRIR)"),
+    "fruta.json": ("Manzana, zanahoria, tomate y patata: compra del comercio minorista", "Precio semanal de compra de manzanas, zanahoria, tomate y patata por el comercio minorista (ZSRIR); el boletín trae solo un año, la serie se acumula"),
+    "azucar.json": ("Azúcar: precios mensuales", "Precio mensual del azúcar blanco: venta al mercado interior y compra de la transformación y del comercio minorista (ZSRIR)"),
     "colza.json": ("Colza: precio de compra", "Precio de compra de la semilla de colza (PLN/t), mensual y semanal desde 2022 (ZSRIR)"),
 }
 ROMAN = {m: i + 1 for i, m in enumerate("I II III IV V VI VII VIII IX X XI XII".split())}
@@ -97,7 +99,11 @@ def weekly(ws, c0=0, c1=999, min_year=2022):
         dts = [(i, d, v) for i, d, v in col if isinstance(d, datetime.datetime)]
         if len(dts) < 40:
             continue
+        prev = None
         for i, d, v in dts:
+            if prev is not None and d.date() <= prev:
+                continue
+            prev = d.date()
             x = num(v)
             if x is None or d.date().isocalendar()[0] < min_year or d.date() > datetime.date.today():
                 continue
@@ -471,6 +477,86 @@ def piensos():
     return "mes %s" % max(max(p for p, _ in s["points"]) for s in ser), [mk_table("piensos-mensual", "piensos", ("Piensos compuestos: precio de venta mensual", "Compound feed: monthly selling price", "Aliments composés : prix de vente mensuel", "Mangimi composti: prezzo di vendita mensile"), "PLN/t", "Precio medio mensual de venta de piensos: complementarios para bovino, completos para aves y para porcino, en toda Polonia, últimos 10 años (ZSRIR)", ser)]
 
 
+def wide_weekly(ws, min_year=2022):
+    """Hoja de graficos con una fecha por fila (columna B) y un producto por columna (cabecera 'TYDZIEŃ' en B) -> {nombre: {AAAA-Www: (fecha, valor)}}."""
+    rows = [list(r) for r in ws.iter_rows(values_only=True)]
+    h = next((i for i, r in enumerate(rows) if len(r) > 1 and isinstance(r[1], str) and r[1].strip() == "TYDZIEŃ"), None)
+    if h is None:
+        raise RuntimeError("cabecera TYDZIEŃ no encontrada")
+    names = {c: re.sub(r"\s+", " ", x).strip() for c, x in enumerate(rows[h]) if c >= 2 and isinstance(x, str) and x.strip()}
+    out = {n: {} for n in names.values()}
+    prev = None
+    for r in rows[h + 1:]:
+        d = r[1] if len(r) > 1 else None
+        if not isinstance(d, datetime.datetime) or d.date() > datetime.date.today() or d.date().isocalendar()[0] < min_year:
+            continue
+        if prev is not None and d.date() <= prev:
+            log("fecha fuera de orden %s tras %s (año mal escrito en la hoja): fila omitida" % (d.date(), prev))
+            continue
+        prev = d.date()
+        k = wk(d.date())
+        for c, n in names.items():
+            x = num(r[c]) if c < len(r) else None
+            if x is not None and k not in out[n]:
+                out[n][k] = (d.date(), rnd(x))
+    return out
+
+
+PREV = {}
+
+
+def accumulate(sid, new_pts):
+    """El boletin de fruta y hortaliza solo trae el ultimo año: se suman los puntos ya publicados (los nuevos mandan)."""
+    old = {}
+    for d in (PREV.get("fruta.json") or {}).get("tables", []):
+        for x in d["series"]:
+            if x["id"] == sid:
+                old = dict(x["points"])
+    old.update(new_pts)
+    return old
+
+
+def fruta():
+    wb, dd, t = workbook("912")
+    tabs, eds, errs = [], [], []
+    for sheet, sumsheet, spec, tid, grp, lab, note in (
+        ("WYKRES JABŁKA DETAL", "ZAKUP OWOCE DETAL - LUZ", LB.APPLES, "manzana-detal-semanal", "fruta", ("Manzana: precio de compra del comercio minorista, semanal", "Apples: retail purchase price, weekly", "Pommes : prix d'achat du commerce de détail, hebdomadaire", "Mele: prezzo d'acquisto del commercio al dettaglio, settimanale"), "Precio medio semanal que paga el comercio minorista (cadenas) por manzanas nacionales sueltas, por variedad (ZSRIR). El boletín trae un año; la serie se acumula desde la primera publicación."),
+        ("WYKRES_CENY WARZYW", "ZAKUP WARZ DETAL - LUZ", LB.VEG, "hortalizas-detal-semanal", "hortalizas", ("Zanahoria, tomate y patata: precio de compra del comercio minorista, semanal", "Carrots, tomatoes and potatoes: retail purchase price, weekly", "Carottes, tomates et pommes de terre : prix d'achat du commerce de détail, hebdomadaire", "Carote, pomodori e patate: prezzo d'acquisto del commercio al dettaglio, settimanale"), "Precio medio semanal que paga el comercio minorista (cadenas) por hortalizas nacionales sueltas (ZSRIR). El boletín trae un año; la serie se acumula desde la primera publicación."),
+    ):
+        try:
+            data = wide_weekly(wb[sheet])
+            summ = wb[sumsheet]
+            ser = []
+            for nm, (code, labs) in spec.items():
+                pts = data.get(nm)
+                if not pts:
+                    raise RuntimeError("columna %s no encontrada" % nm)
+                d = check_last(pts, summary_weekly(summ, r"^" + re.escape(nm) + r"(/|$)"), "%s (%s)" % (nm, sheet))
+                eds.append(d)
+                ser.append(mk_series("pl-fv-" + code + "-w", labs, accumulate("pl-fv-" + code + "-w", {k: v[1] for k, v in pts.items()})))
+            tabs.append(mk_table(tid, grp, lab, "PLN/100 kg", note, ser))
+        except Exception as ex:
+            errs.append("%s: %s" % (tid, str(ex)[:160]))
+    for e in errs:
+        log("fruta: " + e)
+    if not tabs:
+        raise RuntimeError("fruta: ninguna tabla (%s)" % "; ".join(errs)[:200])
+    return "semana %s" % max(eds).isoformat(), tabs
+
+
+def azucar():
+    wb, dd, t = workbook("367")
+    ser = []
+    for sheet, sumsheet, sid, lab in (("SPRZEDAŻ KRAJ WYKRES", "SPRZEDAŻ KRAJ", "pl-sugar-sales-m", LB.SUGAR["sales"]), ("ZAKUP PRZETWÓRSTWO WYKRES", "ZAKUP PRZETWÓRSTWO", "pl-sugar-industry-m", LB.SUGAR["industry"]), ("ZAKUP DETAL WYKRES", "ZAKUP DETAL", "pl-sugar-retail-m", LB.SUGAR["retail"])):
+        pts = roman_table(wb[sheet])
+        k = max(pts)
+        if not has_value(wb[sumsheet], pts[k]):
+            raise RuntimeError("%s: el ultimo valor (%s = %s) no aparece en la hoja %s; no se publica" % (sid, k, pts[k], sumsheet))
+        ser.append(mk_series(sid, lab, pts))
+    ed = max(p[-1][0] for p in (x["points"] for x in ser))
+    return "mes %s" % ed, [mk_table("azucar-mensual", "azucar", ("Azúcar blanco: precio mensual", "White sugar: monthly price", "Sucre blanc : prix mensuel", "Zucchero bianco: prezzo mensile"), "PLN/t", "Precio medio mensual del azúcar blanco en Polonia desde 2022 (ZSRIR); el boletín se publica con unos dos meses de retraso", ser)]
+
+
 # ------------------------------------------------------------ estadisticas (catalogo): solo series mensuales
 def load(name):
     p = OUT / name
@@ -509,6 +595,7 @@ def stats(docs, now):
     add("pl-zsrir-leche-cruda", "milk", "Leche cruda, precio de compra, Polonia (ZSRIR)", "PLN/100 kg", one(docs.get("lacteos.json"), "leche-cruda-mensual", "pl-milk-raw-m"), 60)
     for k, nm in (("cattle", "bovino"), ("poultry", "aves"), ("pig", "porcino")):
         add("pl-zsrir-pienso-" + k, "inputs", "Pienso para %s, precio de venta, Polonia (ZSRIR)" % nm, "PLN/t", one(docs.get("piensos.json"), "piensos-mensual", "pl-feed-" + k + "-m"), 36)
+    add("pl-zsrir-azucar-venta", "prices", "Azúcar blanco envasado, venta interior, Polonia (ZSRIR)", "PLN/t", one(docs.get("azucar.json"), "azucar-mensual", "pl-sugar-sales-m"), 36)
     return {"schemaVersion": 1, "generatedAt": now, "countries": {"PL": {"name": "Polonia", "extend": True, "source": SRC, "series": out}}}
 
 
@@ -516,8 +603,9 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     docs = {n: load(n) for n in FILES}
+    PREV.update(docs)
     new = False
-    for name, fn in (("cereales", cereales), ("colza", colza), ("carne", carne), ("lacteos", lacteos), ("piensos", piensos)):
+    for name, fn in (("cereales", cereales), ("colza", colza), ("carne", carne), ("lacteos", lacteos), ("piensos", piensos), ("fruta", fruta), ("azucar", azucar)):
         try:
             ed, tabs = fn()
             tabs = merge_old(tabs, docs.get(name + ".json"), name)

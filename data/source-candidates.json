@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T23:43:43Z",
+ "generatedAt": "2026-10-24T00:10:53Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -6180,7 +6180,7 @@
    "country": "PL",
    "scope": "integrated",
    "institution": "MRiRW / ZSRIR — boletines de precios agrarios en dane.gov.pl",
-   "dataset": "Ya integrada (11 series en el catalogo unificado)",
+   "dataset": "Ya integrada (12 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
@@ -6190,6 +6190,7 @@
     "rapeseed",
     "rye",
     "sheep",
+    "sugar",
     "wheat",
     "wine"
    ],

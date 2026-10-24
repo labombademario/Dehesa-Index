@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 163 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39099 series en el catalogo unificado.
+Resumen: 163 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39100 series en el catalogo unificado.
 
 ## VERIFIED (163)
 
@@ -120,7 +120,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `miteco_sequia` | MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha del informe. |
 | `moniteur_be` | Moniteur belge / Belgisch Staatsblad (decretos de pagos directos de Flandes y Valonia, PAC 2023-2027) | BE | CUSTOM | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto publicado en el Moniteur belge. Los textos se leyeron en copias consolidadas n… |
 | `monitorul_ro` | Monitorul Oficial al României — HG 1.571/2022 y ordinele MADR de pagos directos | RO | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el Monitorul Oficial. Todo se leyó en copias de terceros (legeaz.net, agrointel.ro, sit… |
-| `mrirw_zsrir` | MRiRW / ZSRIR — boletines de precios agrarios en dane.gov.pl | PL | CC-BY-4.0 | si/si | si | 11 |  |
+| `mrirw_zsrir` | MRiRW / ZSRIR — boletines de precios agrarios en dane.gov.pl | PL | CC-BY-4.0 | si/si | si | 12 |  |
 | `nasa_power` | NASA POWER (Prediction Of Worldwide Energy Resources) | US | CC-BY-4.0 | si/si | si | 0 | Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees. |
 | `nn_hr` | Narodne novine — Pravilnik o provedbi izravne potpore poljoprivredi i IAKS mjera ruralnog razvoja za 2026. godinu (NN 147/2025, 49/2026, 78/2026) | HR | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto de Narodne novine. El texto del Pravilnik se leyó en una copia (zakon.hr) y en… |
 | `noaa_fisheries` | NOAA Fisheries — Fisheries One Stop Shop (FOSS), commercial landings | US | CC0-1.0 | si/si | no | 38 | Sin uso del logotipo de NOAA ni insinuacion de respaldo. NOAA agrupa como «withheld for confidentiality» lo que no puede desglosar por espec… |
