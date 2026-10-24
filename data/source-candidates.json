@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T03:40:38Z",
+ "generatedAt": "2026-10-24T04:06:16Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1516,13 +1516,14 @@
    "country": "AU",
    "scope": "integrated",
    "institution": "Australian Bureau of Statistics (Data API)",
-   "dataset": "Ya integrada (158 series en el catalogo unificado)",
+   "dataset": "Ya integrada (211 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
     "cattle",
     "cheese",
     "eggs",
+    "energy",
     "fertilizer",
     "fruit",
     "maize",
@@ -1539,6 +1540,7 @@
    "productsConfirmed": true,
    "metrics": [
     "price",
+    "price_index",
     "production",
     "trade"
    ],
@@ -6675,10 +6677,12 @@
    "country": "AU",
    "scope": "integrated",
    "institution": "Reserve Bank of Australia (statistical tables)",
-   "dataset": "Ya integrada (1 series en el catalogo unificado)",
+   "dataset": "Ya integrada (3 series en el catalogo unificado)",
    "products": [],
    "productsConfirmed": true,
-   "metrics": [],
+   "metrics": [
+    "price_index"
+   ],
    "frequency": "monthly",
    "access": {
     "api": null,

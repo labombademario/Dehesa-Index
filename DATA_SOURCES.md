@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 167 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39778 series en el catalogo unificado.
+Resumen: 167 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39833 series en el catalogo unificado.
 
 ## VERIFIED (167)
 
@@ -16,7 +16,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `aafc_slaughter` | Agriculture and Agri-Food Canada — Weekly Red Meat Slaughter | CA | OGL-Canada | si/si | si | 11 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `aafc_wholesale` | Agriculture and Agri-Food Canada — Weekly and Daily Wholesale Prices Reports | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `abares` | Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences) | AU | CC-BY-4.0 | si/si | si | 58 | Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth C… |
-| `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 158 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
+| `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 211 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
 | `agence_bio` | Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr) | FR | etalab-2.0 | si/si | si | 155 | Citar la fuente y la fecha de la última actualización. Solo se usan los ficheros por departamento: la ficha «par région» de data.gouv.fr no … |
 | `agreste_bulconj` | France — Agreste / SSP, Bulletin de conjoncture mensuel (BulConj) | FR | etalab-1.0 | si/si | si | 69 | Citar Agreste/SSP; el boletín recoge cotizaciones y datos de terceros (FranceAgriMer, Eurostat, INSEE, bolsas), que se publican tal cual los… |
 | `agreste_comex` | France — Agreste / SSP con datos de la DGDDI (aduanas), Échanges extérieurs de céréales, produits laitiers, œufs et produits des IAA | FR | etalab-1.0 | si/si | si | 152 | Citar Agreste/SSP y la DGDDI; las cifras de aduanas se revisan, por eso cada edición sustituye a la anterior. |
@@ -131,7 +131,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `ons` | UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS) | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de … |
 | `pl_akcyza_rm` | Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej) | PL | PUBLIC-LAW | si/si | si | 0 |  |
 | `prix_carburants_fr` | Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers) | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
-| `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 1 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
+| `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 3 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
 | `ris_at` | Rechtsinformationssystem des Bundes (RIS) — MOG 2021 y GAP-Strategieplan-Anwendungsverordnung | AT | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el RIS. Parte del texto se leyó en copias (AMA, gesetzefinden.at, jusline.at) y los imp… |
 | `rivm_lmm` | RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit | NL | CC-BY-4.0 | si/si | si | 0 |  |

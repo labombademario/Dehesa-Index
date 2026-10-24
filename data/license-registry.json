@@ -7584,6 +7584,13 @@
     "Finnish Meteorological Institute": "fmi_fi"
    },
    "notes": "scripts/update-fi-fmi.py: FMI, temperatura y precipitacion mensual en estaciones agricolas."
+  },
+  "data/australia-prices-stats.json": {
+   "bySourceGroupPrefix": {
+    "ABS": "abs",
+    "RBA": "rba"
+   },
+   "notes": "scripts/update-au-prices.py: ABS CPI/PPI/ITPI/AG_BROADACRE/AG_HORTICULTURE (CC BY 4.0) y RBA tabla I2 (CC BY 4.0). Valor por tonelada derivado por Dehesa Index."
   }
  },
  "derived": [
