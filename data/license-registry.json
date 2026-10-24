@@ -5107,6 +5107,34 @@
    "short": "FMI (Finlandia)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "FMI open data licence (en.ilmatieteenlaitos.fi/open-data-licence): CC BY 4.0, credit «©Finnish Meteorological Institute» (23-oct-2026)."
+  },
+  "anm_ro": {
+   "name": "Romania — National Meteorological Administration (ANM) Open Data Platform: daily climate data",
+   "url": "https://odp.meteoromania.ro/",
+   "country": "RO",
+   "licenseId": "WMO-Unified-Data-Policy",
+   "licenseName": "WMO Unified Data Policy (Resolution 1, Cg-Ext 2021): free and unrestricted access, attribution requested",
+   "licenseUrl": "https://odp.meteoromania.ro/meta/ro-nma-ClimateData_ver1.json",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Administratia Nationala de Meteorologie (ANM), Romania.",
+   "additionalRestrictions": "The ANM commercial website (meteoromania.ro, terms section 5) forbids commercial use of ITS content; the ODP metadata says the opposite for the open data portal. Interpretation, not confirmed: confirm by email to opendata@meteoromania.ro.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-24",
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "WCMP2 metadata 'rights' of the dataset 'Meteo data - daily quality controlled climate data NMA, Romania': 'Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data.'",
+   "used": true,
+   "aliases": [
+    "anm_ro"
+   ],
+   "notes": "scripts/update-ro-anm.py: ZIP anual por estacion, CSV mensual de datos diarios (ta, r); agregacion mensual propia solo en meses completos.",
+   "short": "ANM (Rumania)",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Metadato del portal ODP: acceso libre sin condiciones (politica OMM); pero la web comercial de la ANM prohibe el uso comercial de su contenido. Pendiente de confirmar por escrito con opendata@meteoromania.ro."
   }
  },
  "files": {
@@ -7591,6 +7619,12 @@
     "RBA": "rba"
    },
    "notes": "scripts/update-au-prices.py: ABS CPI/PPI/ITPI/AG_BROADACRE/AG_HORTICULTURE (CC BY 4.0) y RBA tabla I2 (CC BY 4.0). Valor por tonelada derivado por Dehesa Index."
+  },
+  "data/romania-anm-stats.json": {
+   "bySourceGroupPrefix": {
+    "ANM": "anm_ro"
+   },
+   "notes": "scripts/update-ro-anm.py: ANM, temperatura y precipitacion mensual en 12 estaciones agricolas (agregacion propia)."
   }
  },
  "derived": [

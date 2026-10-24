@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T04:06:16Z",
+ "generatedAt": "2026-10-24T04:50:17Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 196,
+  "total": 197,
   "byStatus": {
-   "ACTIVE": 166,
+   "ACTIVE": 167,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2122,6 +2122,46 @@
    "evidence": [
     "data/license-registry.json"
    ]
+  },
+  {
+   "sourceId": "anm_ro",
+   "registryId": "anm_ro",
+   "country": "RO",
+   "scope": "integrated",
+   "institution": "Romania — National Meteorological Administration (ANM) Open Data Platform: daily climate data",
+   "dataset": "Ya integrada (24 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "WMO-Unified-Data-Policy",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Administratia Nationala de Meteorologie (ANM), Romania.",
+   "lastChecked": "2026-10-24",
+   "verification": "REGISTRY",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
   },
   {
    "sourceId": "argentina_datos_abiertos",
@@ -7708,10 +7748,12 @@
    "country": "UY",
    "scope": "integrated",
    "institution": "Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA, Ministerio de Ambiente)",
-   "dataset": "Ya integrada (30 series en el catalogo unificado)",
+   "dataset": "Ya integrada (43 series en el catalogo unificado)",
    "products": [
     "cattle",
     "energy",
+    "fertilizer",
+    "fruit",
     "milk",
     "sheep"
    ],

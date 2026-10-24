@@ -356,6 +356,42 @@ def dicose():
        [(y, v) for y, v in births.items() if v > 0], 'MGAP (Uruguay)', nt + ' El dato de nacimientos solo existe para bovinos.')
 
 
+# ------------------------------------------------------------------ MGAP: DICOSE leche por destino y uso de la tierra (mismos paquetes, licencia odc-uy)
+MILK_DEST = {'1': 'sold under quota or own distribution', '2': 'sold to industry', '3': 'processed on the holding', '4': 'human consumption on the holding', '5': 'animal feed on the holding'}
+LAND_USE = {'1': 'permanent sown pasture', '2': 'improved natural grassland', '3': 'fertilised grassland', '4': 'annual forage crops', '5': 'orchards, fruit and vineyards', '6': 'arable land', '7': 'planted forest', '8': 'natural grassland and stubble'}
+def dicose_extra():
+    milk = defaultdict(lambda: defaultdict(float)); land = defaultdict(lambda: defaultdict(float))
+    for name in DICOSE_PKGS:
+        try: pkg = package(name)
+        except Exception as e: log('DICOSE extra %s: %s' % (name[-12:], e)); continue
+        for fn, store, col, key in (('datosproduccionleche.csv', milk, 'Litros', 'TipoProduccionCodigo'), ('datosusostierra.csv', land, 'Hectareas', 'UsoCodigo')):
+            r = next((r for r in pkg['resources'] if (r.get('url') or '').lower().endswith(fn)), None)
+            if not r: continue
+            try: b = resource_bytes(r)
+            except Exception as e: log('DICOSE extra %s %s: %s' % (name[-12:], fn, e)); continue
+            if not b or b.lstrip().startswith(b'<'): continue
+            rd = csv.DictReader(io.StringIO(b.decode('latin-1')), delimiter=';')
+            cols = {(c or '').replace('ns1:', ''): c for c in (rd.fieldnames or [])}
+            if any(n not in cols for n in ('Ejercicio', col, key)): continue
+            sp_ok = fn != 'datosproduccionleche.csv' or 'EspecieCodigo' in cols
+            tmp = defaultdict(float); ej = set(); n = 0
+            for x in rd:
+                try:
+                    e = (x[cols['Ejercicio']] or '').strip(); v = num(x[cols[col]]); k = (x[cols[key]] or '').strip()
+                    if fn == 'datosproduccionleche.csv' and sp_ok and (x[cols['EspecieCodigo']] or '').strip() != '11': continue
+                except (KeyError, TypeError): continue
+                if not re.fullmatch(r'\d{4}', e) or v is None or not k: continue
+                ej.add(e); tmp[k] += v; n += 1
+            if len(ej) != 1 or n < 500: log('DICOSE extra %s %s: ejercicios %s, filas %d: se omite' % (name[-12:], fn, sorted(ej), n)); continue
+            y = next(iter(ej))
+            for k, v in tmp.items(): store[k][y] = v
+    nt = ('MGAP, DICOSE/SNIG: declaracion jurada. Solo cubre las explotaciones que presentan DICOSE (ganaderas y lecheras), no el total nacional; ejercicio ganadero; los ultimos datos son preliminares.')
+    for k, nm in MILK_DEST.items():
+        mk('uy-dicose-milk-dest-%s' % k, 'milk', 'Dairy cattle milk declared, %s, litres, Uruguay (MGAP DICOSE)' % nm, 'litres', 'annual', list(milk[k].items()), 'MGAP (Uruguay)', nt + ' Destino de la leche declarada por las explotaciones de bovinos de leche (especie 11).')
+    for k, nm in LAND_USE.items():
+        mk('uy-dicose-land-%s' % k, 'production', 'Land declared in DICOSE holdings: %s, hectares, Uruguay (MGAP DICOSE)' % nm, 'ha', 'annual', list(land[k].items()), 'MGAP (Uruguay)', nt + ' No es la superficie agricola nacional.')
+
+
 GHG = {}
 GHG_HEAD = ['Sector', 'Categoría', 'Subcategoría', 'Año', 'Tipo de GEI', 'GEI', 'Gg Gas', 'Gg CO2 - eq (GWP)', 'Gg CO2 - eq (GTP)']
 GHG_FACTOR = {'CO2': 1.0, 'CH4': 28.0, 'N2O': 265.0}   # factores GWP que trae el propio fichero (corresponden a AR5, aunque su metadato diga AR2)
@@ -609,7 +645,7 @@ def download_to(u, path, chunk=1 << 22):
 def main():
     global LOCAL
     if '--local' in sys.argv: LOCAL = sys.argv[sys.argv.index('--local') + 1]
-    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, inia_grids, ghg, forest, scan):
+    for fn in (inia, ursea, lambda: land('sale'), lambda: land('rent'), dicose, dicose_extra, inia_grids, ghg, forest, scan):
         try: fn()
         except Exception as e: log('fallo en', getattr(fn, '__name__', 'bloque'), e)
     if not OUT: log('sin series'); sys.exit(1)

@@ -647,6 +647,15 @@ sources:
     data: [finland-fmi-stats.json]
     log: finland-fmi-log.txt
     message: Datos Finlandia (FMI, temperatura y lluvia mensual)
+  - id: romania-anm
+    name: Update Romania (ANM open data, monthly temperature and rainfall at farming stations)
+    cron: ['20 8 4 * *']
+    script: scripts/update-ro-anm.py
+    timeout: 25
+    script_timeout: 15
+    data: [romania-anm-stats.json]
+    log: romania-anm-log.txt
+    message: Datos Rumania (ANM, temperatura y lluvia mensual)
   - id: baltics-national
     name: Update Latvia and Estonia (national statistics offices, prices, stocks, crops and milk)
     cron: ['40 7 3,16 * *']

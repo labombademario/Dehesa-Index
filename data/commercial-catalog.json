@@ -1,20 +1,20 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T04:06:17Z",
+ "generatedAt": "2026-10-24T04:50:18Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 166,
+  "sources": 167,
   "sourcesApto": 153,
   "sourcesCondiciones": 9,
-  "sourcesNoApto": 4,
-  "datasets": 372,
+  "sourcesNoApto": 5,
+  "datasets": 373,
   "datasets_apto": 240,
   "datasets_condiciones": 122,
   "datasets_parcial": 3,
-  "datasets_no-apto": 3,
+  "datasets_no-apto": 4,
   "datasets_reviewBeforeSelling": 0,
   "derived": 47
  },
@@ -289,6 +289,24 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attribution": "AMA, Infoblatt Agrardieselrückvergütung 2026 und 2027; § 7 MinStG"
+  },
+  {
+   "id": "anm_ro",
+   "name": "Romania — National Meteorological Administration (ANM) Open Data Platform: daily climate data",
+   "url": "https://odp.meteoromania.ro/",
+   "country": "RO",
+   "licenseId": "WMO-Unified-Data-Policy",
+   "licenseName": "WMO Unified Data Policy (Resolution 1, Cg-Ext 2021): free and unrestricted access, attribution requested",
+   "licenseUrl": "https://odp.meteoromania.ro/meta/ro-nma-ClimateData_ver1.json",
+   "verdict": "no-apto",
+   "status": "PENDING",
+   "legalConfidence": "PENDING",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Administratia Nationala de Meteorologie (ANM), Romania.",
+   "conditions": "The ANM commercial website (meteoromania.ro, terms section 5) forbids commercial use of ITS content; the ODP metadata says the opposite for the open data portal. Interpretation, not confirmed: confirm by email to opendata@meteoromania.ro.",
+   "why": "licencia PENDING en el registro"
   },
   {
    "id": "argentina_datos_abiertos",
@@ -6563,6 +6581,24 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/romania-anm-stats.json",
+   "scope": "fichero",
+   "verdict": "no-apto",
+   "sources": [
+    "anm_ro"
+   ],
+   "excludedSources": [
+    "anm_ro"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:ANM",
+     "sourceId": "anm_ro",
+     "verdict": "no-apto"
+    }
    ]
   },
   {

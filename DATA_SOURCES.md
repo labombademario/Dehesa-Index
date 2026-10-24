@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 167 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39833 series en el catalogo unificado.
+Resumen: 167 VERIFIED, 15 PENDING, 7 RESTRICTED, 6 BLOCKED; 39870 series en el catalogo unificado.
 
 ## VERIFIED (167)
 
@@ -153,7 +153,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
 | `ttb` | Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics) | US | US-PD | si/si | no | 7 | La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresa… |
-| `uruguay_datos_abiertos` | Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA, Ministerio de Ambiente) | UY | odc-uy | si/si | si | 30 | Identificar proveedor, licencia y conjunto; declarar las modificaciones. No extender a logos ni a materiales de terceros. |
+| `uruguay_datos_abiertos` | Uruguay - Catalogo de datos abiertos (INIA, MGAP, URSEA, Ministerio de Ambiente) | UY | odc-uy | si/si | si | 43 | Identificar proveedor, licencia y conjunto; declarar las modificaciones. No extender a logos ni a materiales de terceros. |
 | `us_drought_monitor` | U.S. Drought Monitor (NDMC, USDA, NOAA) | US | CUSTOM | unclear/unclear | si | 0 | Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisa… |
 | `us_tariffs` | USITC Harmonized Tariff Schedule, CBP trade remedies, USTR | US | US-PD | si/si | no | 0 | The HTS is legally binding only in its official publication: label derived rates as informational. |
 | `usbr_rise` | U.S. Bureau of Reclamation — RISE (Reclamation Information Sharing Environment) | US | US-PD | si/si | no | 0 |  |
@@ -180,12 +180,13 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
 | `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
-## PENDING (14)
+## PENDING (15)
 
 licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso.
 
 | sourceId | Fuente | Pais | Licencia | Comercial/derivados | Atribucion | Series | Restricciones adicionales |
 |---|---|---|---|---|---|---|---|
+| `anm_ro` | Romania — National Meteorological Administration (ANM) Open Data Platform: daily climate data | RO | WMO-Unified-Data-Policy | si/si | si | 24 | The ANM commercial website (meteoromania.ro, terms section 5) forbids commercial use of ITS content; the ODP metadata says the opposite for … |
 | `bfs_ch` | Switzerland — FSO/BFS (Federal Statistical Office), agricultural statistics (cantons, farm accounts, structure) | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | Agricultural datasets of the FSO on opendata.swiss are marked 'Use for commercial purposes requires permission of the data owner'. |
 | `defra_rpa_land` | RPA Land Parcels / Land Covers / Hedge Control | UK | CUSTOM | no/no | si | 0 | Defra indica que no están disponibles para «otros usuarios»; agricultores y agentes tienen condiciones propias. No se ingiere como dataset g… |
 | `france_bois_foret` | France Bois Forêt / ONF, prix des bois sur pied (communiqué annuel) | FR | UNKNOWN | unclear/unclear | si | 0 | Cifras de un comunicado de prensa difundido para su publicación; no hay licencia abierta declarada. |

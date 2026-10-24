@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T04:06:00Z",
+ "generatedAt": "2026-10-24T04:50:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 258,
   "late": 3,
   "error": 5,
-  "not_run": 6,
+  "not_run": 7,
   "unknown": 1
  },
  "global": "error",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-24T03:43:20.571682+00:00",
   "repoGeneratedAt": "2026-10-24T03:43:20.571682+00:00",
-  "checkedAt": "2026-10-24T04:06:00Z"
+  "checkedAt": "2026-10-24T04:50:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-24T00:13:04Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -235,7 +235,7 @@
    "files": [],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 744.0
   },
   {
@@ -965,7 +965,7 @@
    "crons": [
     "20 4 * * 2-6"
    ],
-   "nextRun": "2026-10-24T04:20:00Z",
+   "nextRun": "2026-10-27T04:20:00Z",
    "files": [
     {
      "path": "data/cl"
@@ -984,7 +984,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-chile.yml",
@@ -3848,9 +3848,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-24T01:23:50Z",
-    "durationSec": 103,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40049598049"
+    "startedAt": "2026-10-24T04:12:08Z",
+    "durationSec": 87,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40061403351"
    },
    "recent": {
     "runs": 10,
@@ -4135,18 +4135,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-24T02:54:31Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/catalog"
@@ -4159,7 +4159,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/products"
@@ -4170,19 +4170,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-24T03:40:01Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-24T02:27:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-24T02:27:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/pack"
@@ -4198,26 +4198,26 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-24T02:54:31Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/fv-products.json",
@@ -4229,7 +4229,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-24T03:41:16Z"
+     "lastChange": "2026-10-24T04:14:41Z"
     },
     {
      "path": "data/home-explore.json",
@@ -4598,6 +4598,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-romania-anm.yml",
+   "name": "Update Romania (ANM open data, monthly temperature and rainfall at farming stations)",
+   "crons": [
+    "20 8 4 * *"
+   ],
+   "nextRun": "2026-11-04T08:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 744.0
   },
   {

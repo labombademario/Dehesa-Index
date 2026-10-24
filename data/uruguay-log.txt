@@ -115,4 +115,4 @@ CATALOGO [q:poblacion] poblacion-por-zona-censal-en-montevideo | Población por 
 CATALOGO [q:poblacion] poblacion-atendida-por-las-policlinicas-de-las-intendencia-de-montevid | Población atendida por las policlínicas de las Intendencia de Montevideo | org=intendencia-montevideo | lic=odc-uy | CSV,TXT | mod=2026-09-21
 CATALOGO [q:agropecuario] miem-indicadores-de-eficiencia-energetica-por-sector | Indicadores de Eficiencia Energética | org=miem | lic=odc-uy | CSV | mod=2020-07-29
 CATALOGO: 45 conjuntos distintos
-series guardadas: 30
+series guardadas: 43
