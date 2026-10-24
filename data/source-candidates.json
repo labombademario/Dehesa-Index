@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T02:07:31Z",
+ "generatedAt": "2026-10-24T02:44:57Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -5480,11 +5480,12 @@
    "country": "FI",
    "scope": "integrated",
    "institution": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received, weekly prices, crops, census, balances, forest)",
-   "dataset": "Ya integrada (220 series en el catalogo unificado)",
+   "dataset": "Ya integrada (232 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
     "eggs",
+    "fertilizer",
     "milk",
     "oats",
     "pigs",
@@ -5498,6 +5499,7 @@
    ],
    "productsConfirmed": true,
    "metrics": [
+    "input_price",
     "price",
     "price_index",
     "production"
@@ -7057,7 +7059,7 @@
    "country": "SE",
    "scope": "integrated",
    "institution": "Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks)",
-   "dataset": "Ya integrada (164 series en el catalogo unificado)",
+   "dataset": "Ya integrada (253 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",

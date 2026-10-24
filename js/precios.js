@@ -407,7 +407,7 @@
     var base = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-eu'];
     if (D.DATA_TRUST && base) {
       var tr = {}; for (var k in base) tr[k] = base[k];
-      tr.value = reg.price; tr.status = 'verified'; tr.obsId = P.id; tr.obsSource = 'eu_agrifood'; tr.obsCcy = 'EUR'; tr.observationDate = P.date; tr.publicationDate = null;
+      tr.value = reg.price; tr.status = 'verified'; tr.obsId = P.id; tr.obsSource = P.sourceId || 'eu_agrifood'; tr.obsCcy = 'EUR'; tr.observationDate = P.date; tr.publicationDate = null;
       tr.methodology = P.note && P.note.es || tr.methodology; tr.frequency = P.frequency || tr.frequency; tr.ctyLabel = P.place;
       D.DATA_TRUST[key] = tr;
     }

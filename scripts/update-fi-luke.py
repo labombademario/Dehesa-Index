@@ -23,7 +23,7 @@ def call(u, data=None):
             with urllib.request.urlopen(urllib.request.Request(u, data=data, headers=UA), timeout=120) as r: return json.loads(r.read().decode('utf-8-sig'))
         except Exception as e: err = e; time.sleep(6 * (k + 1))
     raise RuntimeError('%s -> %s' % (u, err))
-def url(path): return ('https://statdb.luke.fi/PxWeb/api/v1/en/LUKE/' if path.startswith('met/') else BASE) + '/'.join(urllib.parse.quote(p) for p in path.split('/'))
+def url(path): return ('https://statdb.luke.fi/PxWeb/api/v1/en/LUKE/' if path.startswith(('met/', '08a ')) else BASE) + '/'.join(urllib.parse.quote(p) for p in path.split('/'))
 def clean(t): return re.sub(r'\s+', ' ', t).strip()
 def slug(t): return re.sub(r'[^a-z0-9]+', '-', t.lower()).strip('-')
 def var(m, code): return next(v for v in m['variables'] if v['code'] == code)
@@ -249,7 +249,28 @@ def block_forest():
         put_g('fi-luke-forest-' + slug(v.replace('rounwood', 'roundwood')), 'production', 'Forest: %s (million m³), Finland (Luke)' % v.lower().replace('rounwood', 'roundwood'), 'million m³', pts, 'Incremento, drenaje (drain = cortas más pérdidas naturales) y cortas totales de madera en rollo (millones de m³) desde 1918, según Luke.', '0500_hakker (Total annual roundwood removals, increment and drain)', freq='annual'); n += 1
     say('bosque', n, 'series')
 
-for fn in (block_milk, block_meat, block_eggs, block_cereals, block_potato, block_slaughter, block_milk_volume, block_weekly, block_crops, block_area, block_livestock, block_balance, block_forest):
+# ---------------------------------------------------------------- bloque 5: cerdos en diciembre (lechones, cerdas) y ventas de fertilizantes
+def block_pigs_dec():
+    PG = ['TOTAL (pigs)', 'Sows 8 months and over', 'Piglets 3 months and under', 'Young breeding pigs over 3 - under 8 months', 'Fattening pigs over 3 - under 8 months', 'Boars 8 months and over']
+    by, cols = table('kotlkm/0900_kotlkm.px', [('NUTS2', ['WHOLE COUNTRY']), ('LJ', PG)], 'A', yr); n = 0
+    for k, pts in by.items():
+        sp = k[cols.index('LJ')].lstrip('.')
+        put('fi-luke-pigs-dec-' + slug(sp.replace('TOTAL (pigs)', 'total')), 'livestock', 'Pigs on 1 December: %s (head), Finland (Luke)' % ('total' if sp.startswith('TOTAL') else sp.lower()), 'head', pts,
+            'Censo de cerdos a 1 de diciembre (cabezas), según Luke; la tabla empieza en 2017.', '0900_kotlkm (Number of pigs on 1.12., NUTS 2)', 'annual'); n += 1
+    say('cerdos 1.12', n, 'series')
+FERT = {'Nitrogen': 'nitrogen (N)', 'Phosphorus': 'phosphorus (P)', 'Potassium': 'potassium (K)'}
+def block_fert():
+    base = '08a CAP-indikaattorit/06 Tehokas ympäristönhoito ja suojelu/03 Maatalousmaan ravinnetase/02_Kasviravinteiden_myynti.px'
+    m = call(url(base)); tv = var(m, 'Lannoitusvuosi 2)')['code']
+    by, cols = table(base, [('Tieto', ['Sales, 1 000 kg', 'Sales, kg/ha 3)']), ('Kasviravinne 1)', list(FERT))], tv, crop_year); n = 0
+    for k, pts in by.items():
+        d, nu = k[cols.index('Tieto')], k[cols.index('Kasviravinne 1)')]
+        ha = 'kg/ha' in d
+        put('fi-luke-fert-%s-%s' % ('per-ha' if ha else 'total', slug(FERT[nu].split(' ')[0])), 'inputs', 'Fertiliser sales to farms: %s%s, Finland (Luke)' % (FERT[nu], ' per hectare' if ha else ''), 'kg/ha' if ha else 't', [(p, v if ha else v) for p, v in pts],
+            'Ventas de fertilizantes a explotaciones por campaña de abonado (1 julio a 30 junio); el año indicado es el de INICIO (2023 = campaña 2023/24). Total en toneladas de nutriente (la fuente da 1.000 kg, que son toneladas).' if not ha else 'Ventas de nutrientes por hectárea de superficie agraria y campaña de abonado; el año indicado es el de INICIO.', '02_Kasviravinteiden_myynti (Sales of fertilizers to farms)', 'annual'); n += 1
+    say('fertilizantes', n, 'series')
+
+for fn in (block_milk, block_meat, block_eggs, block_cereals, block_potato, block_slaughter, block_milk_volume, block_weekly, block_crops, block_area, block_livestock, block_balance, block_forest, block_pigs_dec, block_fert):
     try: fn()
     except Exception as e: say('FALLO %s: %s' % (fn.__name__, str(e)[:200]))
 def _yr(p): return int(p[:4])
@@ -259,7 +280,7 @@ for fq in ('monthly', 'weekly', 'annual'):   # series que la fuente dejo de publ
     top = max(_yr(OUTS[k]['latestPeriod']) for k in grp)
     for k in sorted(grp):
         v = OUTS[k]
-        if _yr(v['latestPeriod']) < top - 2 or len(v['points']) < (12 if fq != 'annual' else 5): say('omitida (descontinuada o corta): %s (%d puntos, hasta %s)' % (k, len(v['points']), v['latestPeriod'])); del OUTS[k]
+        if _yr(v['latestPeriod']) < top - (3 if k.startswith('fi-luke-fert-') else 2) or len(v['points']) < (12 if fq != 'annual' else 5): say('omitida (descontinuada o corta): %s (%d puntos, hasta %s)' % (k, len(v['points']), v['latestPeriod'])); del OUTS[k]
 series = [OUTS[k] for k in sorted(OUTS)]
 if len(series) < 30: sys.exit('demasiado pocas series (%d); no se escribe nada' % len(series))
 now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')

@@ -85,6 +85,69 @@ def erratic(pts, spikes):
     ch.sort(); med = ch[len(ch) // 2]
     return med > 0.07 or spikes >= 5
 
+# ---- Huecos que la Comision no cubre, rellenados con la estadistica NACIONAL del propio pais (23-oct-2026, a peticion de Mario) ----
+# Solo datos reales del pais; si la Comision ya tiene el producto al dia, no se toca. Si el de la Comision esta parado y el nacional es mas reciente, gana el nacional.
+# Monedas: PLN y SEK se pasan a euros con la media mensual del BCE de cada mes (data/fx-history.json); el mes en curso, aun sin media publicada, usa la ultima media disponible y se avisa en la nota.
+# (pais, producto, origen, fichero, serie, moneda, multiplicador a la unidad del panel, descripcion es, descripcion en)
+NAT = [
+ ('PL', 'trigo', 'zsrir', 'cereales', 'pl-cer-w-pszenica-kons', 'PLN', 1, 'precio semanal de compra de trigo de consumo (panificable) en empresas, sin IVA', 'weekly purchase price of food (bread) wheat at companies, excl. VAT'),
+ ('PL', 'maiz', 'zsrir', 'cereales', 'pl-cer-w-kukurydza', 'PLN', 1, 'precio semanal de compra de maíz en empresas, sin IVA', 'weekly purchase price of maize at companies, excl. VAT'),
+ ('PL', 'cebada', 'zsrir', 'cereales', 'pl-cer-m-jeczmien-pasz', 'PLN', 1, 'precio mensual de compra de cebada forrajera en empresas, sin IVA', 'monthly purchase price of feed barley at companies, excl. VAT'),
+ ('SE', 'cebada', 'stats', 'sweden-sjv-stats', 'se-sjv-price-feed-barley', 'SEK', 10, 'precio mensual al productor de cebada forrajera (coronas por 100 kg)', 'monthly producer price of feed barley (SEK per 100 kg)'),
+ ('FI', 'pollo', 'stats', 'finland-luke-stats', 'fi-luke-meat-broilers', 'EUR', 1, 'precio mensual al productor de pollos broiler (no es el precio de venta del pollo entero de la Comisión)', 'monthly producer price of broilers (not the whole-chicken selling price the Commission publishes)'),
+ ('FI', 'huevos', 'stats', 'finland-luke-stats', 'fi-luke-wk-eggs-barn-hen-house', 'EUR', 1, 'precio semanal de venta de las empaquetadoras, huevos de gallinas en suelo, tallas M y L', 'weekly packing-plant selling price, barn-hen eggs, sizes M and L'),
+]
+NAT_SRC = {'PL': ('mrirw_zsrir', 'ZSRIR (Ministerio de Agricultura de Polonia)', 'ZSRIR (Polish Ministry of Agriculture)'), 'SE': ('sjv_se', 'Jordbruksverket', 'Jordbruksverket'), 'FI': ('luke_fi', 'Luke (Instituto de Recursos Naturales de Finlandia)', 'Luke (Natural Resources Institute Finland)')}
+def fx_table(cur):
+    d = json.loads((D / 'fx-history.json').read_text())['currencies'][cur]; return {m: r for m, r in d}
+def nat_points(kind, fname, sid, cc):
+    """-> [(fecha ISO, valor en moneda original, freq)] """
+    if kind == 'zsrir':
+        doc = json.loads((D / 'poland-zsrir' / (fname + '.json')).read_text()); sr = next(x for t in doc['tables'] for x in t['series'] if x['id'] == sid)
+    else:
+        sr = next(x for x in json.loads((D / (fname + '.json')).read_text())['countries'][cc]['series'] if x['id'] == sid)
+    out, fq = [], sr.get('frequency') or 'monthly'
+    for p, v in sr['points']:
+        if v is None: continue
+        if 'W' in p:
+            y, w = p.split('-W'); d = datetime.date.fromisocalendar(int(y), int(w), 7); fq = 'weekly'
+        elif len(p) == 10:
+            d = datetime.date.fromisoformat(p) + datetime.timedelta(days=6); fq = 'weekly'     # lunes ISO -> domingo, como la Comision
+        else:
+            y, m = int(p[:4]), int(p[5:7]); d = (datetime.date(y + (m == 12), m % 12 + 1, 1) - datetime.timedelta(days=1)); fq = 'monthly'
+        out.append((d.isoformat(), v))
+    return out, fq
+def nat_fill(out, today):
+    added = []
+    for cc, pid, kind, fname, sid, cur, mult, des, den in NAT:
+        P0 = next(x for x in P if x[0] == pid)
+        try: pts0, fq = nat_points(kind, fname, sid, cc)
+        except Exception as e: print('  NAT sin serie:', cc, pid, sid, str(e)[:80]); continue
+        tab = fx_table(cur) if cur != 'EUR' else None; lastm = max(tab) if tab else None; carried = False; pts = []
+        for d, v in pts0:
+            if tab:
+                m = d[:7]; r = tab.get(m)
+                if r is None and m > lastm: r = tab[lastm]; carried = True
+                if r is None: continue
+                pts.append([d, round(v * mult / r, 2)])
+            else: pts.append([d, round(v * mult, 2)])
+        if len(pts) < 12: continue
+        last = datetime.date.fromisoformat(pts[-1][0]); age = (today - last).days
+        if age > MAX_AGE: print('  NAT demasiado viejo:', cc, pid, pts[-1][0]); continue
+        cut = (last - datetime.timedelta(days=5 * 366)).isoformat(); pts = [p for p in pts if p[0] >= cut]; pts, _ = despike(pts)
+        cur_e = next((x for x in out.get(cc, []) if x['product'] == pid), None)
+        if cur_e and not (cur_e['stale'] and cur_e['date'] < pts[-1][0]): continue
+        sidn, ses, sen = NAT_SRC[cc]; ch = round((pts[-1][1] / pts[-2][1] - 1) * 100, 2) if pts[-2][1] else None
+        conv_es = '' if cur == 'EUR' else ' Serie original en %s, convertida a euros con la media mensual del BCE de cada mes%s.' % (cur, '; el mes en curso usa la última media mensual publicada' if carried else '')
+        conv_en = '' if cur == 'EUR' else ' Original series in %s, converted to euros with the ECB monthly average of each month%s.' % (cur, '; the current month uses the latest published monthly average' if carried else '')
+        ya = next((p for p in reversed(pts) if p[0] <= (last - datetime.timedelta(days=364)).isoformat()), None)
+        e = {'id': 'eu_%s_%s' % (cc.lower(), pid), 'product': pid, 'region': 'eu', 'cc': cc, 'name': t4(P0[3]), 'place': t4(NAMES[cc]), 'unit': t4(P0[4]), 'currency': 'EUR', 'value': pts[-1][1], 'changePct': ch, 'date': pts[-1][0],
+             'frequency': fq, 'stale': age > STALE.get(fq, 120), 'sourceId': sidn, 'sourceName': ses, 'comparability': 'directional',
+             'note': {'es': '%s: %s (dato nacional de %s, no de la Comisión Europea).%s' % (ses, des, t4(NAMES[cc])['es'], conv_es), 'en': '%s: %s (national data for %s, not from the European Commission).%s' % (sen, den, t4(NAMES[cc])['en'], conv_en)},
+             'points': pts, 'yearAgo': {'date': ya[0], 'value': ya[1]} if ya else None}
+        out[cc] = [x for x in out.get(cc, []) if x['product'] != pid] + [e]; added.append('%s_%s' % (cc, pid))
+    return added
+
 def main():
     global LJ
     LJ = json.loads((D / 'views' / 'lonjas.json').read_text())
@@ -133,6 +196,7 @@ def main():
                     'note': (mk_note(cc, mk) if mk else {'es': 'Comisión Europea, portal de datos agroalimentarios: media nacional de %s (%s). Es el dato de este país, no el de otro.' % (t4(NAMES[cc])['es'], ' · '.join(files[key].get('parts') or [sid]))}),
                     'points': pts, 'yearAgo': {'date': ya[0], 'value': ya[1]} if ya else None})
                 break
+    nat = nat_fill(out, today)
     OUT.mkdir(parents=True, exist_ok=True)
     gen = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     keep = set()
@@ -149,6 +213,7 @@ def main():
     for f in OUT.glob('*.json'):
         if f.name not in keep: f.unlink()
     print('app eu: %d países; %s' % (len(out), {k: len(v) for k, v in sorted(out.items())}))
+    if nat: print('  desde estadística nacional: ' + ', '.join(nat))
     if dropped: print('  fuera por erráticas: ' + ', '.join(dropped))
 
 if __name__ == '__main__':

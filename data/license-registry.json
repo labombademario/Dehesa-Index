@@ -2433,7 +2433,7 @@
    "aliases": [
     "sjv_se"
    ],
-   "notes": "Tables used: JO1001L2 (producer prices, monthly, 37 lines), JO1001AM20 (A-index 2020=100, monthly), JO1001APMM20 (PM-index of farm inputs), JO1001APPM20 (PPI-J) and JO1001KJM20 (KPI-J), all 2020=100, JO0611L01 (farm stocks of cereals and rapeseed, June and September; the December forecast is not published). Statistics Sweden (SCB) uses CC0 but its agricultural tables stop in 2007 except JO0601, which duplicates Eurostat. Also used: slaughter, dairy, egg and harvest-forecast tables.",
+   "notes": "Tables used: JO1001L2 (producer prices, monthly, 37 lines), JO1001AM20 (A-index 2020=100, monthly), JO1001APMM20 (PM-index of farm inputs), JO1001APPM20 (PPI-J) and JO1001KJM20 (KPI-J), all 2020=100, JO0611L01 (farm stocks of cereals and rapeseed, June and September; the December forecast is not published). Statistics Sweden (SCB) uses CC0 but its agricultural tables stop in 2007 except JO0601, which duplicates Eurostat. Also used: slaughter, dairy, egg and harvest-forecast tables. Second extension: JO1002L1/L4 (farmland prices; old/new method years use the new value), JO1003M01 (rent), JO0205H2/H3 (agricultural accounts), JO0103F01, JO0106F01 and organic tables (JO0104C06, JO0609C1/C2/C4, JO0115B1).",
    "short": "Jordbruksverket (Suecia)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Politica de datos abiertos de Jordbruksverket (CC0 o CC BY, sin restricciones) y base estadistica ofrecida como datos abiertos con API; no hay licencia explicita por tabla."
@@ -5019,7 +5019,7 @@
    "aliases": [
     "luke_fi"
    ],
-   "notes": "Tables used (statdb.luke.fi): maa tuohin/kk (producer prices), lihtuo/kk (slaughterings), maitot/kk (milk received), weekly prices, crop, area, livestock census and balance tables, and met (forest: removals and assortments). kg to t and l to 1,000 l are exact conversions; no estimates. Wood prices (metryv, licence unclear) are not used.",
+   "notes": "Tables used (statdb.luke.fi): maa tuohin/kk (producer prices), lihtuo/kk (slaughterings), maitot/kk (milk received), weekly prices, crop, area, livestock census and balance tables, and met (forest: removals and assortments). kg to t and l to 1,000 l are exact conversions; no estimates. Wood prices (metryv, licence unclear) are not used. Also used: kotlkm/0900 (pigs on 1 December, incl. piglets and sows) and the CAP-indicator table 02_Kasviravinteiden_myynti (fertiliser sales to farms, N, P and K).",
    "short": "Luke (Finlandia)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Luke declara CC BY 4.0 en sus condiciones de uso de estadisticas; no nombra explicitamente la base PxWeb."

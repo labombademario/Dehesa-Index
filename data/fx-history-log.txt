@@ -5,3 +5,5 @@ GBP 333 meses, ultimo ('2026-09', 0.858125)
 DKK 333 meses, ultimo ('2026-09', 7.475173)
 CHF 333 meses, ultimo ('2026-09', 0.942986)
 PLN 333 meses, ultimo ('2026-09', 4.3445)
+SEK 333 meses, ultimo ('2026-09', 11.232868)
+FXM: FXM sin cambios

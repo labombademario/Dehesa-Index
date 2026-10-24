@@ -14,6 +14,8 @@ superficie 12 series
 censo 12 series
 balance de cereales 35 series
 bosque 29 series
+cerdos 1.12 6 series
+fertilizantes 6 series
 omitida (descontinuada o corta): fi-luke-meat-calves (129 puntos, hasta 2021-01)
 omitida (descontinuada o corta): fi-luke-meat-young-bulls-and-heifers-meat-breed (3 puntos, hasta 2020-08)
 omitida (descontinuada o corta): fi-luke-milk-price-of-standard-milk-quality-class-e (156 puntos, hasta 2023-12)

@@ -203,13 +203,117 @@ def run_stocks():
             'Existencias en la explotación según la encuesta de Jordbruksverket, en junio y en septiembre de cada año (no hay serie mensual); el valor de diciembre es un pronóstico y no se publica.', 'JO0611L01 (Lagerhållning av spannmål och raps)')
     say('JO0611L01', len(by), 'series')
 
+# ---- segunda ampliacion: tierra, arrendamiento, cuentas agrarias, censo de junio, estructura y ecologico (23-oct) ----
+def yr(a):
+    # precio de la tierra: en los años de cambio de metodo (2005, 2011, 2014, 2017, 2020, 2023) la fuente publica «gammal» (metodo anterior) y «ny» (nuevo); se usa «ny» y se omite «gammal»
+    a = a.strip(); m = re.match(r'^(\d{4})( ny)?$', a); return m.group(1) if m else None
+def ann(path, sels, tcode, build):
+    """consulta anual con gen(); build(clave_dict, pts) -> (sid, group, label, unit, note) o None para saltar."""
+    by, cols = gen(path, sels, tcode); n = 0
+    for k, pts in by.items():
+        r = build(dict(zip(cols, k)))
+        if not r: continue
+        sid, grp, lab, unit, note = r
+        put(sid, grp, lab, unit, 'annual', [(yr(a), v) for a, v in pts if yr(a)], note, path.split('/')[-1][:-3] + ' (' + r[5] + ')' if len(r) > 5 else path.split('/')[-1][:-3]); n += 1
+    say(path.split('/')[-1], n, 'series')
+NUTS = {'Riket': ('sweden', 'Sweden'), 'Stockholm': ('stockholm', 'Stockholm'), 'Östra Mellansverige': ('east-central', 'East Central Sweden'), 'Småland med öarna': ('smaland', 'Småland and islands'), 'Sydsverige': ('south', 'South Sweden'),
+        'Västsverige': ('west', 'West Sweden'), 'Norra Mellansverige': ('north-central', 'North Central Sweden'), 'Mellersta Norrland': ('mid-norrland', 'Mid Norrland'), 'Övre Norrland': ('upper-norrland', 'Upper Norrland')}
+LAND = {'Åkermark': ('arable', 'arable land'), 'Betesmark': ('pasture', 'pasture'), 'Jordbruksmark': ('agricultural', 'agricultural land')}
+def run_land():
+    path = 'Priser och prisindex/Markpriser/JO1002L1.px'
+    def b(k):
+        reg, lt, vb = k['Region (Nuts 2)'], k['Ägoslag'], k['Variabel']
+        if vb.startswith('Pris'):
+            if reg != 'Riket' and lt != 'Åkermark': return None
+            return ('se-sjv-landprice-%s-%s' % (LAND[lt][0], NUTS[reg][0]), 'prices', 'Farmland sale price: %s, %s (Jordbruksverket)' % (LAND[lt][1], NUTS[reg][1]), 'SEK thousand/ha', 'Precio medio de las fincas vendidas (miles de coronas por hectárea), según Jordbruksverket. En 2005, 2011, 2014, 2017, 2020 y 2023 cambió el método de cálculo: la fuente publica ese año con el método anterior y con el nuevo; aquí se usa el nuevo, así que los niveles anteriores a cada cambio no son estrictamente comparables.')
+        if vb.startswith('Antal') and reg == 'Riket' and lt == 'Jordbruksmark':
+            return ('se-sjv-landsales-count-sweden', 'production', 'Farmland sales: number of properties sold, Sweden (Jordbruksverket)', 'sales', 'Número de fincas agrícolas vendidas al año, según Jordbruksverket.')
+        return None
+    ann(path, [('Region (Nuts 2)', list(NUTS)), ('Ägoslag', list(LAND)), ('Variabel', ['Antal försäljningar', 'Pris per hektar, tkr per hektar'])], 'År', b)
+    path = 'Priser och prisindex/Markpriser/JO1002L4.px'
+    def b2(k):
+        reg, lt = k['Region (Nuts 2)'], k['Ägoslag']
+        if reg != 'Riket': return None
+        return ('se-sjv-landindex-%s-sweden' % LAND[lt][0], 'idx_perc', 'Farmland price index: %s, Sweden (Jordbruksverket)' % LAND[lt][1], 'index', 'Índice de precios de la tierra agrícola de Jordbruksverket, publicado tal cual (la tabla no indica la base). Cambios de método como en el precio de la tierra: se usa el valor «nuevo» de los años de cambio.')
+    ann(path, [('Region (Nuts 2)', ['Riket']), ('Ägoslag', list(LAND))], 'År', b2)
+def run_rent():
+    path = 'Priser och prisindex/Arrendepriser/JO1003M01.px'
+    R = {k: v for k, v in NUTS.items() if k in ('Riket', 'Östra Mellansverige', 'Småland med öarna', 'Sydsverige', 'Västsverige', 'Norra Mellansverige')}
+    def b(k):
+        reg, lt = k['Region (Nuts 2)'], k['Ägoslag']
+        if reg != 'Riket' and lt != 'Åkermark': return None
+        return ('se-sjv-rent-%s-%s' % (LAND[lt][0], R[reg][0]), 'prices', 'Farmland rent: %s, %s (Jordbruksverket)' % (LAND[lt][1], R[reg][1]), 'SEK/ha', 'Arrendamiento medio por hectárea (coronas) incluyendo arriendos gratuitos, según Jordbruksverket.')
+    ann(path, [('Region (Nuts 2)', list(R)), ('Ägoslag', list(LAND)), ('Variabel', ['Inklusive gratisarrenden']), ('Tabelluppgift', ['Genomsnittligt pris per hektar'])], 'År', b)
+EAA_EN = {'100000': 'value of crop output', '130000': 'value of animal output', '150000': 'agricultural services income', '170000': 'income from secondary non-agricultural activities', '180000': 'total value of agricultural output',
+          '200000': 'costs of inputs and services', '260000': 'gross value added at basic prices', '270000': 'consumption of fixed capital', '280000': 'net value added at basic prices', '310000': 'other production subsidies',
+          '320000': 'factor income', '290000': 'compensation of employees', '330000': 'net operating surplus', '340000': 'rent and leasing costs', '350000': 'interest costs', '360000': 'interest income', '370000': 'entrepreneurial income'}
+EAA_IND = {'A': 'real factor income per annual work unit', 'B': 'real entrepreneurial income per unpaid annual work unit', 'C': 'real entrepreneurial income'}
+def run_eaa():
+    path = 'Jordbrukets ekonomi/1 EAA/JO0205H2.px'; m = meta(path); cats = var(m, 'Kategori i EAA')['valueTexts']
+    def b(k):
+        t = k['Kategori i EAA']; code = t.split(' ')[0]; name = EAA_EN.get(code)
+        if not name: return None
+        return ('se-sjv-eaa-' + code, 'production', 'Agricultural accounts (EAA): %s, Sweden (Jordbruksverket)' % name, 'SEK million', 'Cuentas económicas de la agricultura (EAA) a precios corrientes, millones de coronas; el último año puede ser una estimación avanzada.')
+    ann(path, [('Kategori i EAA', cats)], 'År', b)
+    path = 'Jordbrukets ekonomi/1 EAA/JO0205H3.px'; m = meta(path); ind = var(m, 'Indikator')['valueTexts']
+    def b2(k):
+        t = k['Indikator']; l = t.split(':')[0].split(' ')[-1]
+        return ('se-sjv-eaa-indicator-' + l.lower(), 'idx_perc', 'Farm income indicator %s: %s, Sweden (Jordbruksverket)' % (l, EAA_IND[l]), 'index 2019-2021=100', 'Indicadores de renta agraria A, B y C (índice 2019-2021=100) calculados por Jordbruksverket.')
+    ann(path, [('Indikator', ind)], 'År', b2)
+JUNE = [('Kor för mjölkproduktion', 'dairy-cows', 'dairy cows', 'livestock'), ('Kor för uppfödning av kalvar', 'suckler-cows', 'suckler cows', 'livestock'), ('Summa nötkreatur', 'cattle', 'cattle total', 'livestock'), ('Summa får', 'sheep', 'sheep total', 'livestock'),
+        ('Suggor, inklusive gyltor', 'sows', 'sows and gilts', 'livestock'), ('Slaktgrisar', 'fattening-pigs', 'fattening pigs', 'livestock'), ('Summa grisar', 'pigs', 'pigs total', 'livestock'), ('Höns', 'hens', 'hens', 'livestock'),
+        ('Slaktkycklingar', 'broilers', 'broilers', 'livestock'), ('Kalkoner', 'turkeys', 'turkeys', 'livestock'), ('Hästar', 'horses', 'horses', 'livestock')]
+def run_june():
+    path = 'Lantbrukets djur/Lantbruksdjur i juni/JO0103F01.px'; nm = {i[0]: i for i in JUNE}
+    def b(k):
+        it, vb = nm[k['Kategori']], k['Variabel']
+        if vb == 'Antal djur': return ('se-sjv-june-animals-' + it[1], 'livestock', 'Livestock in June: %s (head), Sweden (Jordbruksverket)' % it[2], 'head', 'Censo de junio de Jordbruksverket (muestra y registro); no es el censo de diciembre.')
+        if it[1] in ('cattle', 'pigs', 'sheep', 'dairy-cows'): return ('se-sjv-june-holdings-' + it[1], 'livestock', 'Holdings with animals in June: %s, Sweden (Jordbruksverket)' % it[2], 'holdings', 'Número de explotaciones con ese ganado en junio, según Jordbruksverket.')
+        return None
+    ann(path, [('Län', ['00 Riket']), ('Kategori', list(nm)), ('Variabel', ['Antal djur', 'Antal företag']), ('Tabelluppgift', ['Värde'])], 'År', b)
+def run_farms():
+    path = 'Jordbruksforetag/Jordbruksforetag och jordbruksforetagare/JO0106F01.px'
+    def b(k):
+        vb = k['Variabel']
+        return ('se-sjv-farms-arable-ha' if vb.startswith('Areal') else 'se-sjv-farms-with-arable', 'production', 'Arable area on farms (ha), Sweden (Jordbruksverket)' if vb.startswith('Areal') else 'Farms with arable land (number), Sweden (Jordbruksverket)', 'ha' if vb.startswith('Areal') else 'farms', 'Censo agrario anual de Jordbruksverket; solo hay años 2007, 2010, 2013, 2016 y desde 2020 (no son anuales antes).')
+    ann(path, [('Storleksgrupp', ['Totalt']), ('Brukningsform åkermark', ['Totalt']), ('Variabel', ['Areal åkermark, hektar', 'Antal företag med åkermark'])], 'År', b)
+def run_organic():
+    path = 'Ekologisk produktion/1 Ekologiskt odlad jordbruksmark/JO0104C06.px'
+    LT = {'Total jordbruksmark': ('agricultural', 'agricultural land'), 'Åkermark': ('arable', 'arable land'), 'Betesmark': ('pasture', 'pasture')}
+    def b(k):
+        lt, vb = k['Ägoslag'], k['Variabel']
+        if vb.startswith('Areal'): return ('se-sjv-organic-area-' + LT[lt][0], 'crops', 'Organic farmland area: %s, Sweden (Jordbruksverket)' % LT[lt][1], 'ha', 'Superficie ecológica (certificada y en conversión) según Jordbruksverket.')
+        if vb.startswith('Andel'): return ('se-sjv-organic-share-' + LT[lt][0], 'crops', 'Organic share of %s, Sweden (Jordbruksverket)' % LT[lt][1], '%', 'Porcentaje de superficie ecológica sobre la total, según Jordbruksverket.')
+        if lt == 'Total jordbruksmark': return ('se-sjv-organic-farms', 'crops', 'Farms with organic farmland, Sweden (Jordbruksverket)', 'farms', 'Número de explotaciones con superficie ecológica, según Jordbruksverket.')
+        return None
+    ann(path, [('Län', ['00 Riket']), ('Variabel', ['Areal, hektar', 'Andel ekologisk areal, procent', 'Antal företag']), ('Ägoslag', list(LT)), ('Omställd/under omställning', ['Totalt omställd/under omställning'])], 'År', b)
+    path = 'Ekologisk produktion/3 Ekologisk Animalieproduktion/JO0609C1.px'
+    OD = [('Kvantitet invägd ekologisk mjölk, 1 000 ton', 'milk-intake', 'organic milk received'), ('Produktion av ekologisk konsumtionsmjölk, 1 000 ton', 'drinking-milk', 'organic drinking milk'), ('Produktion av ekologisk grädde, 1 000 ton', 'cream', 'organic cream'),
+          ('Produktion av ekologisk ost, 1 000 ton', 'cheese', 'organic cheese'), ('Partihandelns invägning av ekologiska ägg, 1 000 ton', 'eggs', 'organic eggs received by wholesalers')]
+    nm = {i[0]: i for i in OD}
+    ann(path, [('Variabel', list(nm))], 'År', lambda k: ('se-sjv-organic-' + nm[k['Variabel']][1], 'milk' if 'milk' in nm[k['Variabel']][1] else 'production', 'Organic production: %s (1,000 t), Sweden (Jordbruksverket)' % nm[k['Variabel']][2], '1,000 t', 'Producción ecológica anual según Jordbruksverket.'))
+    path = 'Ekologisk produktion/3 Ekologisk Animalieproduktion/JO0609C2.px'
+    by, _ = gen(path, [('Variabel', ['Kvantitet invägd ekologisk mjölk, 1 000 ton'])], 'Månad')
+    for k, pts in by.items():
+        put('se-sjv-organic-milk-intake-monthly', 'milk', 'Organic milk received by dairies, monthly (1,000 t), Sweden (Jordbruksverket)', '1,000 t', 'monthly', [(month(a), v) for a, v in pts], 'Leche ecológica recibida por las lecherías cada mes (miles de toneladas), según Jordbruksverket.', 'JO0609C2 (Ekologisk mejeri- och äggproduktion, månad)')
+    path = 'Ekologisk produktion/3 Ekologisk Animalieproduktion/JO0609C4.px'
+    SL = {'Summa Nötkreatur': ('cattle', 'cattle'), 'Summa Gris': ('pigs', 'pigs'), 'Summa Får och lamm': ('sheep', 'sheep and lambs'), 'Slaktkyckling': ('broilers', 'broilers')}
+    ann(path, [('Djurslag', list(SL)), ('Variabel', ['Kvantitet, ton'])], 'År', lambda k: ('se-sjv-organic-slaughter-' + SL[k['Djurslag']][0], 'production', 'Organic slaughter quantity: %s (t), Sweden (Jordbruksverket)' % SL[k['Djurslag']][1], 't', 'Sacrificio de animales criados con métodos ecológicos, según Jordbruksverket.'))
+    path = 'Ekologisk produktion/2 Antal omstallda ekologiska djur/JO0115B1.px'
+    OA = {'Summa kor': ('cows', 'cows'), 'Summa nötkreatur': ('cattle', 'cattle total'), 'Summa får och lamm': ('sheep', 'sheep and lambs'), 'Summa grisar': ('pigs', 'pigs total'), 'Värphöns': ('laying-hens', 'laying hens'), 'Slaktkycklingar': ('broilers', 'broilers')}
+    def b3(k):
+        it, vb = OA[k['Djurslag']], k['Variabel']
+        if vb == 'Antal djur': return ('se-sjv-organic-animals-' + it[0], 'livestock', 'Organic animals: %s (head), Sweden (Jordbruksverket)' % it[1], 'head', 'Animales ecológicos (incluidos los en conversión) según Jordbruksverket.')
+        return ('se-sjv-organic-animals-share-' + it[0], 'livestock', 'Organic share of animals: %s, Sweden (Jordbruksverket)' % it[1], '%', 'Porcentaje de animales ecológicos sobre el total, según Jordbruksverket.')
+    ann(path, [('Län', ['00 Riket']), ('Variabel', ['Antal djur', 'Andel ekologiskt hållna djur, procent']), ('Djurslag', list(OA))], 'År', b3)
+
 run_monthly(PRICES, P, 'price', mk_price, 'SEK/100 kg', 'Precio de liquidación pagado al productor (kr por 100 kg), media mensual publicada por Jordbruksverket.')
 run_monthly(INDEX, X, 'aindex', mk_idx, 'index', 'Índice de precios percibidos por el agricultor (A-index), base 2020=100.')
 run_monthly(PMI, PM, 'pmindex', mk_pm, 'index', 'Índice de precios de los medios de producción que compra el agricultor (PM-index), base 2020=100; fitosanitarios y veterinarios dejaron de publicarse en 2024.')
 run_monthly(PPI, PPIJ, 'ppij', mk_ppi, 'index', 'Índice de precios de productor de la industria alimentaria para alimentos regulados por la política agraria (PPI-J), base 2020=100.')
 run_monthly(KPI, KPIJ, 'kpij', mk_kpi, 'index', 'Índice de precios al consumo de alimentos regulados por la política agraria (KPI-J, con IVA), base 2020=100, y comparación con el IPC general.')
 run_stocks()
-for fn in (run_slaughter, run_dairy, run_eggs, run_forecast):
+for fn in (run_slaughter, run_dairy, run_eggs, run_forecast, run_land, run_rent, run_eaa, run_june, run_farms, run_organic):
     try: fn()
     except Exception as e: say('FALLO %s: %s' % (fn.__name__, str(e)[:200]))
 series = [OUTS[k] for k in sorted(OUTS)]
