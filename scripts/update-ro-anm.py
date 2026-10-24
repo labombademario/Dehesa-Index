@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# NO REGISTRADO NI PROGRAMADO: el License Gate (check-licenses.py --strict) no deja publicar una fuente PENDING nueva. Activar (sources.yml, listas de ficheros, catalogo) cuando la ANM confirme por escrito (opendata@meteoromania.ro).
 """Rumania: clima mensual en estaciones agricolas de la ANM (Administratia Nationala de Meteorologie), portal de datos abiertos odp.meteoromania.ro.
 Fuente: ZIP anual por estacion con un CSV mensual de datos diarios (ta temperatura media, r precipitacion). Politica de datos de la OMM: acceso libre y sin condiciones,
 se pide citar al productor (metadato WCMP2 'rights'). Agregacion propia (media de ta y suma de r) solo en meses con todos sus dias. Usa el CSV, no la API EDR (esta desplaza la fecha un dia).

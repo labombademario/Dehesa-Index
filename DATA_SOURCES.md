@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 167 VERIFIED, 15 PENDING, 7 RESTRICTED, 6 BLOCKED; 39870 series en el catalogo unificado.
+Resumen: 167 VERIFIED, 15 PENDING, 7 RESTRICTED, 6 BLOCKED; 39846 series en el catalogo unificado.
 
 ## VERIFIED (167)
 
@@ -186,7 +186,7 @@ licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya est
 
 | sourceId | Fuente | Pais | Licencia | Comercial/derivados | Atribucion | Series | Restricciones adicionales |
 |---|---|---|---|---|---|---|---|
-| `anm_ro` | Romania — National Meteorological Administration (ANM) Open Data Platform: daily climate data | RO | WMO-Unified-Data-Policy | si/si | si | 24 | The ANM commercial website (meteoromania.ro, terms section 5) forbids commercial use of ITS content; the ODP metadata says the opposite for … |
+| `anm_ro` | Romania — National Meteorological Administration (ANM) Open Data Platform: daily climate data | RO | WMO-Unified-Data-Policy | si/si | si | 0 | The ANM commercial website (meteoromania.ro, terms section 5) forbids commercial use of ITS content; the ODP metadata says the opposite for … |
 | `bfs_ch` | Switzerland — FSO/BFS (Federal Statistical Office), agricultural statistics (cantons, farm accounts, structure) | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | Agricultural datasets of the FSO on opendata.swiss are marked 'Use for commercial purposes requires permission of the data owner'. |
 | `defra_rpa_land` | RPA Land Parcels / Land Covers / Hedge Control | UK | CUSTOM | no/no | si | 0 | Defra indica que no están disponibles para «otros usuarios»; agricultores y agentes tienen condiciones propias. No se ingiere como dataset g… |
 | `france_bois_foret` | France Bois Forêt / ONF, prix des bois sur pied (communiqué annuel) | FR | UNKNOWN | unclear/unclear | si | 0 | Cifras de un comunicado de prensa difundido para su publicación; no hay licencia abierta declarada. |

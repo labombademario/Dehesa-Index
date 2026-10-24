@@ -1,16 +1,16 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T04:50:18Z",
+ "generatedAt": "2026-10-24T05:23:00Z",
  "summary": {
-  "sources": 167,
+  "sources": 166,
   "sourcesApto": 153,
   "sourcesCondiciones": 9,
-  "sourcesNoApto": 5,
-  "datasets": 373,
+  "sourcesNoApto": 4,
+  "datasets": 372,
   "datasets_apto": 240,
   "datasets_condiciones": 122,
   "datasets_parcial": 3,
-  "datasets_no-apto": 4,
+  "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
   "derived": 47
  },
@@ -78,10 +78,6 @@
   "ama_agrardiesel": {
    "name": "AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG",
    "verdict": "apto"
-  },
-  "anm_ro": {
-   "name": "Romania — National Meteorological Administration (ANM) Open Data Platform: daily climate data",
-   "verdict": "no-apto"
   },
   "argentina_datos_abiertos": {
    "name": "Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca",

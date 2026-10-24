@@ -5127,7 +5127,7 @@
    "status": "PENDING",
    "confidence": "low",
    "evidence": "WCMP2 metadata 'rights' of the dataset 'Meteo data - daily quality controlled climate data NMA, Romania': 'Users are granted free and unrestricted access to this data, without charge and with no conditions on use. Users are requested to attribute the producer of this data.'",
-   "used": true,
+   "used": false,
    "aliases": [
     "anm_ro"
    ],
@@ -7619,12 +7619,6 @@
     "RBA": "rba"
    },
    "notes": "scripts/update-au-prices.py: ABS CPI/PPI/ITPI/AG_BROADACRE/AG_HORTICULTURE (CC BY 4.0) y RBA tabla I2 (CC BY 4.0). Valor por tonelada derivado por Dehesa Index."
-  },
-  "data/romania-anm-stats.json": {
-   "bySourceGroupPrefix": {
-    "ANM": "anm_ro"
-   },
-   "notes": "scripts/update-ro-anm.py: ANM, temperatura y precipitacion mensual en 12 estaciones agricolas (agregacion propia)."
   }
  },
  "derived": [
