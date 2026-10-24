@@ -78,7 +78,12 @@ def aquaculture():
     by = series(recs, lambda r: (r['species'], r['unit']) if r['unit'] in UNIT else None)
     for u in ('TLW', 'EUR', 'EUR_T'):
         p = by.get(('F00', u))
-        if p: n += put('aq-total-' + u.lower(), 'fish', 'Aquaculture production: total, %s (Eurostat)' % ('quantity' if u == 'TLW' else 'value' if u == 'EUR' else 'average price'), UNIT[u][0], 'annual', p, 'Eurostat fish_aq2a F00 %s' % u)
+        if u == 'EUR_T':
+            # El precio medio publicado por Eurostat para el total no cuadra con valor/cantidad en varios paises y años
+            # (p. ej. ES 2024: 13.725 EUR/t frente a 3.479 de valor/cantidad); se calcula aqui con las dos series publicadas.
+            v, q = dict(by.get(('F00', 'EUR')) or []), dict(by.get(('F00', 'TLW')) or [])
+            p = [(k, v[k] / q[k]) for k in sorted(v) if k in q and q[k]] or p
+        if p: n += put('aq-total-' + u.lower(), 'fish', 'Aquaculture production: total, %s (Eurostat)' % ('quantity' if u == 'TLW' else 'value' if u == 'EUR' else 'average price'), UNIT[u][0], 'annual', p, 'Eurostat fish_aq2a F00 %s' % u, note='Precio medio = valor / cantidad de la acuicultura total, calculado con las dos series publicadas por Eurostat (el precio medio que publica Eurostat para el total no cuadra con ellas en varios países y años).' if u == 'EUR_T' else None)
     for sp in top(by, 'TLW', 6):
         nm = name(labs, 'species', sp)
         for u in ('TLW', 'EUR_T'):
