@@ -1130,7 +1130,7 @@
     } else {
       document.getElementById('mm-h1').textContent = t.title; document.getElementById('mm-sub').textContent = t.sub; document.title = t.title + ' | Dehesa Index';
       var ac = ACT[lang()] || ACT.es;
-      h = (ready ? '<p class="mm-active" style="margin:0 0 10px;font-size:15px"><b>' + esc(ac[0]) + ': ' + esc(placeName()) + ' · ' + esc(prodTitle()) + '</b> <a class="di-link-btn" href="#mm-sel" onclick="var e=document.querySelector(\'[data-mm-sel] select\');if(e){e.focus();}return false;">' + esc(ac[1]) + '</a></p>' : '') + '<div data-mm-sel id="mm-sel">' + selectors() + '</div>';
+      h = (ready ? '<p class="mm-active" style="margin:0 0 10px;font-size:15px"><b>' + esc(ac[0]) + ': ' + esc(placeName()) + ' · ' + esc(prodTitle()) + '</b> <a class="di-link-btn" href="#mm-sel" data-di-act="focus" data-di-target="[data-mm-sel] select">' + esc(ac[1]) + '</a></p>' : '') + '<div data-mm-sel id="mm-sel">' + selectors() + '</div>';
       if (!ready) { root.innerHTML = h + examples(); return; }
       h += '<p class="di-movers-hint">' + esc(t.saved) + ' <button type="button" class="di-src-tab" data-mm-reset="1">' + esc(t.reset) + '</button></p>';
     }

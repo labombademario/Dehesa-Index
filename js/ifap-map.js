@@ -55,7 +55,7 @@
         if (y < 0 || y >= n) continue;
         var bx0 = -ORG + x * TS * res, bx1 = bx0 + TS * res, by1 = ORG - y * TS * res, by0 = by1 - TS * res;
         var left = Math.round((bx0 - x0) / res), top = Math.round((y1 - by1) / res);
-        html += '<img alt="" draggable="false" style="position:absolute;left:' + left + 'px;top:' + top + 'px;width:' + TS + 'px;height:' + TS + 'px" onerror="this.style.visibility=\'hidden\'" src="' + OWS + '?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=' + encodeURIComponent(lyr) + '&STYLES=&CRS=EPSG:3857&BBOX=' + [bx0, by0, bx1, by1].join(',') + '&WIDTH=' + TS + '&HEIGHT=' + TS + '&FORMAT=image/png&TRANSPARENT=true">';
+        html += '<img alt="" draggable="false" style="position:absolute;left:' + left + 'px;top:' + top + 'px;width:' + TS + 'px;height:' + TS + 'px" data-di-hide-err="1" src="' + OWS + '?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=' + encodeURIComponent(lyr) + '&STYLES=&CRS=EPSG:3857&BBOX=' + [bx0, by0, bx1, by1].join(',') + '&WIDTH=' + TS + '&HEIGHT=' + TS + '&FORMAT=image/png&TRANSPARENT=true">';
       }
       tiles.innerHTML = html;
     }

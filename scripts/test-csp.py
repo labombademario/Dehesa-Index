@@ -16,6 +16,13 @@ if not csp: bad.append('falta Content-Security-Policy en /*')
 if 'strict-transport-security' not in h or 'max-age=' not in h['strict-transport-security']: bad.append('falta Strict-Transport-Security en /*')
 if 'frame-ancestors' in csp: bad.append('la CSP global no debe llevar frame-ancestors (rompe /embed, que lo abre con su propia CSP)')
 if "'unsafe-eval'" in csp: bad.append("la CSP no debe permitir 'unsafe-eval'")
+if 'script-src-attr' in csp: bad.append("la CSP no debe llevar script-src-attr: los manejadores en linea (onclick=...) estan prohibidos; usa data-di-act (js/shared.js)")
+# ningun manejador en linea en las paginas ni en el HTML que genera el JavaScript
+for f in sorted(glob.glob(str(ROOT / '*.html')) + glob.glob(str(ROOT / 'js' / '*.js'))):
+    s = Path(f).read_text(encoding='utf-8')
+    if f.endswith('.html'): s = re.sub(r'<script\b[^>]*>.*?</script>', '', s, flags=re.S)
+    for mm in re.finditer(r'<[a-zA-Z][^<>]*?\son[a-z]{3,}\s*=\s*\\?["\']', s):
+        bad.append('%s: manejador en linea %r (la CSP lo bloquea; usa data-di-act en js/shared.js)' % (Path(f).name, mm.group(0)[:80]))
 m = re.search(r"script-src ([^;]*)", csp); allowed = set(re.findall(r"'(sha256-[^']+)'", m.group(1))) if m else set()
 used = {}
 for f in sorted(glob.glob(str(ROOT / '*.html'))):

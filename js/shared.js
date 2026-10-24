@@ -961,7 +961,48 @@
     return s;
   }
 
+  /* Seguridad (24-oct-2026): enlaces externos solo https:// y ningun manejador en linea (onclick=, onerror=...): la CSP ya no
+     permite script-src-attr, asi que las acciones de los botones generados se declaran con data-* y se atienden aqui. */
+  function safeUrl(u) {
+    var s = String(u == null ? '' : u).replace(/^\s+|\s+$/g, '');
+    if (s.length < 9 || s.length > 2048 || /[\u0000-\u001f\u007f\s\\]/.test(s)) return '';
+    var m = /^https:\/\/([^\/?#@]+)(?:[\/?#]|$)/i.exec(s); if (!m) return '';
+    return /^[a-z0-9-]+(\.[a-z0-9-]+)+(:\d{1,5})?$/i.test(m[1]) ? s : '';
+  }
+  // Barrera unica para enlaces: cualquier <a> de la pagina (tambien los que vienen de los datos: noticias, fuentes) solo navega a
+  // la propia web, a https:// o a mailto:. Otros esquemas (tel:, sms:, intent:, apps...) se bloquean; http:// externo se abre en https://.
+  function linkGuard(ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null; if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (/^\s*#/.test(h) || (!/^\s*[a-z][a-z0-9+.-]*:/i.test(h) && !/^\s*\/\//.test(h))) return;   // ancla o ruta relativa de la web
+    var pr = String(a.protocol || '').toLowerCase();
+    if (pr === 'mailto:' || (pr === 'https:' && safeUrl(a.href))) return;
+    if (pr === 'blob:' && String(a.href).indexOf('blob:' + location.origin + '/') === 0) return;   // descargas que genera la propia pagina (exportar CSV, JSON...)
+    if (pr === 'data:' && a.hasAttribute('download')) return;
+    if (pr === 'http:' && a.host === location.host) return;
+    if (pr === 'http:' && safeUrl('https:' + String(a.href).slice(5))) { a.href = 'https:' + String(a.href).slice(5); return; }
+    ev.preventDefault();
+  }
+  function delegatedClick(ev) {
+    linkGuard(ev);
+    var el = ev.target && ev.target.closest ? ev.target.closest('[data-di-act]') : null; if (!el) return;
+    var a = el.getAttribute('data-di-act');
+    if (a === 'search') { ev.preventDefault(); if (global.DehesaShared && global.DehesaShared.openSearch) global.DehesaShared.openSearch(); }
+    else if (a === 'focus') { ev.preventDefault(); var f = document.querySelector(el.getAttribute('data-di-target') || ''); if (f && f.focus) f.focus(); }
+  }
+  function delegatedChange(ev) {
+    var el = ev.target; if (!el || !el.getAttribute || el.getAttribute('data-di-act') !== 'go') return;
+    var v = String(el.value || ''), base = el.getAttribute('data-di-base') || '';
+    if (v && /^[A-Za-z0-9_-]{1,80}$/.test(v) && /^[a-z0-9-]+\.html\?[a-z]+=$/.test(base)) location.href = base + encodeURIComponent(v);
+  }
+  function delegatedError(ev) { var el = ev.target; if (el && el.tagName === 'IMG' && el.hasAttribute && el.hasAttribute('data-di-hide-err')) el.style.visibility = 'hidden'; }
+  document.addEventListener('click', delegatedClick);
+  document.addEventListener('auxclick', linkGuard);   // clic central: abrir en pestaña nueva pasa por la misma barrera
+  document.addEventListener('change', delegatedChange);
+  document.addEventListener('error', delegatedError, true);   // los errores de imagen no burbujean: fase de captura
+
   global.DehesaShared = {
+    safeUrl: safeUrl,
     bizItems: function () { return BIZ_ITEMS; },
     countryLinks: function (cc) { var r = []; NAV_GROUPS.countries.items.forEach(function (b) { if (b.cc === cc) b.items.forEach(function (i) { r.push({ href: sitePath(i.file) + (i.query || ''), file: i.file, label: i.label[lang] || i.label.es, d: i.d ? (i.d[lang] || i.d.es) : '' }); }); }); return r; },
     newsletter: { action: 'https://dehesaindex.substack.com/api/v1/free?nojs=true', provider: 'Substack (Substack Inc., Estados Unidos)' },
