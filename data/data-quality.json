@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T12:43:48Z",
+ "generatedAt": "2026-10-24T13:53:10Z",
  "summary": {
   "files": 96,
   "errors": 0,
@@ -1423,11 +1423,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 191,
-    "points": 25006,
+    "series": 185,
+    "points": 24583,
     "lines": 0
    },
-   "generatedAt": "2026-10-24T02:06:44Z",
+   "generatedAt": "2026-10-24T13:08:28Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
