@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T15:37:28Z",
+ "generatedAt": "2026-10-24T18:38:18Z",
  "summary": {
   "files": 96,
   "errors": 0,
@@ -208,7 +208,7 @@
     "points": 9267,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T16:57:21Z",
+   "generatedAt": "2026-10-24T16:15:58Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -263,7 +263,7 @@
     "points": 11944,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T17:18:41Z",
+   "generatedAt": "2026-10-24T16:15:38Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -302,10 +302,10 @@
    ],
    "stats": {
     "series": 954,
-    "points": 56128,
+    "points": 56113,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T17:55:24Z",
+   "generatedAt": "2026-10-24T16:15:17Z",
    "info": [],
    "nWarnings": 36,
    "nErrors": 0
@@ -432,10 +432,10 @@
    ],
    "stats": {
     "series": 1223,
-    "points": 25776,
+    "points": 25772,
     "lines": 0
    },
-   "generatedAt": "2026-10-24T06:44:29Z",
+   "generatedAt": "2026-10-24T15:36:51Z",
    "info": [],
    "nWarnings": 107,
    "nErrors": 0
@@ -680,10 +680,10 @@
    ],
    "stats": {
     "series": 899,
-    "points": 33499,
+    "points": 33489,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T18:08:17Z",
+   "generatedAt": "2026-10-24T16:15:49Z",
    "info": [],
    "nWarnings": 40,
    "nErrors": 0
@@ -1040,11 +1040,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 716,
-    "points": 23406,
+    "series": 704,
+    "points": 23034,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T16:41:43Z",
+   "generatedAt": "2026-10-24T17:11:34Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1092,7 +1092,7 @@
     "points": 9683,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T15:56:55Z",
+   "generatedAt": "2026-10-24T16:55:57Z",
    "info": [],
    "nWarnings": 15,
    "nErrors": 0
@@ -1594,11 +1594,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 12,
-    "points": 400,
+    "series": 10,
+    "points": 312,
     "lines": 0
    },
-   "generatedAt": "2026-10-22T09:57:07Z",
+   "generatedAt": "2026-10-24T17:11:42Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
