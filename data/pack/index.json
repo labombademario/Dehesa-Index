@@ -665,12 +665,12 @@
    "currency": "USD",
    "frequency": "weekly",
    "rows": 104,
-   "first": "2024-09-13",
-   "last": "2026-10-16",
+   "first": "2024-09-20",
+   "last": "2026-10-23",
    "csv": "data/pack/us/harina_soja.csv",
    "xlsx": "data/pack/us/harina_soja.xlsx",
    "csvBytes": 17790,
-   "xlsxBytes": 11997
+   "xlsxBytes": 11999
   },
   {
    "product": "huevos",
@@ -789,12 +789,12 @@
    "currency": "USD",
    "frequency": "weekly",
    "rows": 104,
-   "first": "2024-10-25",
-   "last": "2026-10-16",
+   "first": "2024-11-01",
+   "last": "2026-10-23",
    "csv": "data/pack/us/leche_polvo.csv",
    "xlsx": "data/pack/us/leche_polvo.xlsx",
-   "csvBytes": 18031,
-   "xlsxBytes": 11682
+   "csvBytes": 18032,
+   "xlsxBytes": 11681
   },
   {
    "product": "lenteja",
