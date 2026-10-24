@@ -121,6 +121,70 @@ def mk_ppi(it, pts, unit, note, ds):
 def mk_kpi(it, pts, unit, note, ds):
     put('se-sjv-kpij-' + it[1], 'idx_pag', 'Consumer price index: %s, Sweden (Jordbruksverket KPI-J, 2020=100)' % it[2], 'index 2020=100', 'monthly', pts, note, ds + ' (Konsumentprisindex jordbruksreglerade livsmedel KPI-J, månad)')
 
+# ampliacion 23-oct-2026: produccion mensual (sacrificios, lacteos, huevos) y prevision de cosecha anual. Unidades tal como las publica la fuente.
+AP = 'Animalieproduktion/'
+SLK = [('Summa nötkreatur', 'cattle', 'cattle total'), ('Summa tjur', 'bulls', 'bulls'), ('Ko', 'cows', 'cows'), ('Kviga', 'heifers', 'heifers'), ('Summa kalv', 'calves', 'calves'),
+       ('Summa gris', 'pigs', 'pigs total'), ('Slaktgris', 'fattening-pigs', 'fattening pigs'), ('Suggor', 'sows', 'sows'), ('Summa får', 'sheep', 'sheep total'), ('Lamm', 'lamb', 'lambs')]
+DAI = [('Kvantitet invägd mjölk, 1 000 ton', 'milk-intake', 'milk received by dairies', 'milk'), ('Produktion av konsumtionsmjölk och syrade produkter totalt, 1 000 ton', 'drinking-milk', 'drinking milk and soured products', 'production'),
+       ('Produktion av grädde, 1 000 ton', 'cream', 'cream', 'production'), ('Produktion av ost, 1 000 ton', 'cheese', 'cheese', 'production'), ('Produktion av smör, 1 000 ton', 'butter', 'butter', 'production'),
+       ('Produktion av mjölkpulver, 1 000 ton', 'milk-powder', 'milk powder', 'production')]
+FCG = [('Höstvete', 'winter-wheat', 'winter wheat'), ('Vårvete', 'spring-wheat', 'spring wheat'), ('Råg', 'rye', 'rye'), ('Höstkorn', 'winter-barley', 'winter barley'), ('Vårkorn', 'spring-barley', 'spring barley'),
+       ('Havre', 'oats', 'oats'), ('Spannmål totalt', 'cereals-total', 'cereals total'), ('Höstraps', 'winter-rapeseed', 'winter rapeseed'), ('Vårraps', 'spring-rapeseed', 'spring rapeseed'), ('Oljeväxter totalt', 'oilseeds-total', 'oilseeds total')]
+
+def gen(path, sels, tcode):
+    """consulta generica: sels = [(variable, [textos exactos])]; el tiempo se pide entero. Si PxWeb devuelve una variable como columnas de contenido (dimension de medidas), cada columna es una serie.
+    Devuelve ({clave de valores (textos): [(texto de periodo, valor)]}, nombres de las variables de la clave)."""
+    m = meta(path); q = [(c, pick(var(m, c), t, path)) for c, t in sels]; q.append((tcode, var(m, tcode)['values']))
+    r = call(url(path), json.dumps({'query': [{'code': c, 'selection': {'filter': 'item', 'values': vals}} for c, vals in q], 'response': {'format': 'json'}}).encode())
+    names = [c['code'] for c in r['columns'] if c['type'] != 'c']; cc = [re.sub(r'\s+', ' ', c.get('text', '')).strip() for c in r['columns'] if c['type'] == 'c']
+    miss = [c for c, _ in sels if c not in names]
+    if len(cc) > 1 and len(miss) != 1: raise RuntimeError('%s: no se sabe a que variable corresponden las columnas de contenido' % path)
+    txt = {v['code']: dict(zip(v['values'], v['valueTexts'])) for v in m['variables']}; by = {}
+    for row in r['data']:
+        k = dict(zip(names, row['key'])); base = tuple(re.sub(r'\s+', ' ', txt[c][k[c]]).strip() for c in names if c != tcode)
+        for j, raw in enumerate(row['values']):
+            v = num(raw)
+            if v is not None: by.setdefault(base + ((cc[j],) if len(cc) > 1 else ()), []).append((txt[tcode][k[tcode]].strip(), v))
+    return by, [c for c in names if c != tcode] + (miss if len(cc) > 1 else [])
+
+def run_slaughter():
+    path = AP + 'Slakt/JO0604A4.px'
+    by, cols = gen(path, [('Djurslag', [i[0] for i in SLK]), ('Tabelluppgift', ['Slaktade hela kroppar, 1 000-tal', 'Kvantitet, 1 000 ton'])], 'Månad')
+    nm = {i[0]: i for i in SLK}
+    for k, pts in by.items():
+        it, tab = nm[k[cols.index('Djurslag')]], k[cols.index('Tabelluppgift')]
+        pp = [(month(a), v) for a, v in pts]
+        if tab.startswith('Slaktade'):
+            put('se-sjv-slaughter-heads-' + it[1], 'livestock', 'Slaughterings at abattoirs: %s (1,000 head), Sweden (Jordbruksverket)' % it[2], '1,000 head', 'monthly', pp, 'Animales sacrificados en mataderos (miles de cabezas), según Jordbruksverket.', 'JO0604A4 (Slakt av större lantbruksdjur vid slakteri, månad)')
+        else:
+            put('se-sjv-slaughter-weight-' + it[1], 'production', 'Slaughter quantity at abattoirs: %s (1,000 t), Sweden (Jordbruksverket)' % it[2], '1,000 t', 'monthly', pp, 'Cantidad sacrificada en mataderos (miles de toneladas), según Jordbruksverket.', 'JO0604A4 (Slakt av större lantbruksdjur vid slakteri, månad)')
+    say('JO0604A4', len(by), 'series')
+
+def run_dairy():
+    path = AP + 'Mejeriproduktion/JO0604A2.px'
+    by, _ = gen(path, [('Variabel', [i[0] for i in DAI])], 'Månad'); nm = {i[0]: i for i in DAI}
+    for (t,), pts in by.items():
+        it = nm[t]
+        put('se-sjv-dairy-' + it[1], it[3], 'Dairy production: %s (1,000 t), Sweden (Jordbruksverket)' % it[2], '1,000 t', 'monthly', [(month(a), v) for a, v in pts], 'Producción láctea mensual de las industrias (miles de toneladas), según Jordbruksverket.', 'JO0604A2 (Mejeriproduktion, månad)')
+    say('JO0604A2', len(by), 'series')
+
+def run_eggs():
+    path = AP + 'Agg/JO0604A8.px'
+    by, _ = gen(path, [('Variabel', ['Kvantitet invägd ägg, 1 000 ton'])], 'Månad')
+    for k, pts in by.items():
+        put('se-sjv-eggs-intake', 'production', 'Eggs received by wholesalers (1,000 t), Sweden (Jordbruksverket)', '1,000 t', 'monthly', [(month(a), v) for a, v in pts], 'Huevos recibidos por el comercio mayorista (miles de toneladas), según Jordbruksverket.', 'JO0604A8 (Partihandelns invägning av ägg, månad)')
+    say('JO0604A8', len(by), 'series')
+
+def run_forecast():
+    path = 'Skordar/Skordeprognos/JO0605P01.px'
+    by, cols = gen(path, [('Gröda', [i[0] for i in FCG]), ('Variabel', ['Hektarskörd, kg per hektar', 'Totalskörd, ton'])], 'År'); nm = {i[0]: i for i in FCG}
+    for k, pts in by.items():
+        it, vb = nm[k[cols.index('Gröda')]], k[cols.index('Variabel')]
+        yld = vb.startswith('Hektar')
+        put('se-sjv-forecast-%s-%s' % ('yield' if yld else 'total', it[1]), 'crops', 'Harvest forecast, %s: %s, Sweden (Jordbruksverket)' % ('yield per hectare' if yld else 'total harvest', it[2]), 'kg/ha' if yld else 't', 'annual',
+            [(a, v) for a, v in pts], 'PREVISIÓN de cosecha de Jordbruksverket (no es la cosecha final): cada año recoge la previsión publicada ese año.', 'JO0605P01 (Skördeprognos efter gröda)')
+    say('JO0605P01', len(by), 'series')
+
 def run_stocks():
     path = STOCKS; m = meta(path); gv = var(m, 'Gröda'); mv = var(m, 'Månad'); av = var(m, 'År'); xv = var(m, 'Variabel')
     gc = pick(gv, [i[0] for i in S], path); vcode = pick(xv, ['Värde, ton'], path)
@@ -145,6 +209,9 @@ run_monthly(PMI, PM, 'pmindex', mk_pm, 'index', 'Índice de precios de los medio
 run_monthly(PPI, PPIJ, 'ppij', mk_ppi, 'index', 'Índice de precios de productor de la industria alimentaria para alimentos regulados por la política agraria (PPI-J), base 2020=100.')
 run_monthly(KPI, KPIJ, 'kpij', mk_kpi, 'index', 'Índice de precios al consumo de alimentos regulados por la política agraria (KPI-J, con IVA), base 2020=100, y comparación con el IPC general.')
 run_stocks()
+for fn in (run_slaughter, run_dairy, run_eggs, run_forecast):
+    try: fn()
+    except Exception as e: say('FALLO %s: %s' % (fn.__name__, str(e)[:200]))
 series = [OUTS[k] for k in sorted(OUTS)]
 if len(series) < 25: sys.exit('demasiado pocas series (%d); no se escribe nada' % len(series))
 now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')

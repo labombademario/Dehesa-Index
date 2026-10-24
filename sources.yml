@@ -620,6 +620,33 @@ sources:
     data: [finland-luke-stats.json]
     log: finland-luke-log.txt
     message: Datos Finlandia (Luke, precios al productor, sacrificios y leche recibida)
+  - id: sweden-scb
+    name: Update Sweden (Statistics Sweden SCB, consumer and producer price indices and fertiliser sales)
+    cron: ['50 7 5,20 * *']
+    script: scripts/update-se-scb.py
+    timeout: 20
+    script_timeout: 12
+    data: [sweden-scb-stats.json]
+    log: sweden-scb-log.txt
+    message: Datos Suecia (SCB, IPC, precios de productor y fertilizantes)
+  - id: finland-statfin
+    name: Update Finland (Statistics Finland, agricultural, input, consumer and producer price indices)
+    cron: ['10 8 5,20 * *']
+    script: scripts/update-fi-statfin.py
+    timeout: 20
+    script_timeout: 12
+    data: [finland-statfin-stats.json]
+    log: finland-statfin-log.txt
+    message: Datos Finlandia (Statistics Finland, indices de precios agrarios, insumos y consumo)
+  - id: finland-fmi
+    name: Update Finland (Finnish Meteorological Institute, monthly temperature and rainfall at farming stations)
+    cron: ['30 8 3 * *']
+    script: scripts/update-fi-fmi.py
+    timeout: 20
+    script_timeout: 12
+    data: [finland-fmi-stats.json]
+    log: finland-fmi-log.txt
+    message: Datos Finlandia (FMI, temperatura y lluvia mensual)
   - id: baltics-national
     name: Update Latvia and Estonia (national statistics offices, prices, stocks, crops and milk)
     cron: ['40 7 3,16 * *']

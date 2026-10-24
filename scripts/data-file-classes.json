@@ -437,6 +437,30 @@
     "file": "js/series-store.js",
     "pattern": "e.catalog"
    }
+  },
+  "data/catalog/FI.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Finlandia (sin puntos): la ficha del pais los pide por DISeries.country('FI'); se descarga una vez.",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
+  },
+  "data/catalog/SE.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Suecia (sin puntos): la ficha del pais los pide por DISeries.country('SE'); se descarga una vez.",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
+  },
+  "data/finland-luke-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Finlandia (Luke): alimentan el catalogo data/catalog/FI.json; paises.js carga por catalogo y no pide este fichero."
+  },
+  "data/sweden-sjv-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Suecia (Jordbruksverket): alimentan el catalogo data/catalog/SE.json; paises.js carga por catalogo y no pide este fichero."
   }
  },
  "prefixes": {

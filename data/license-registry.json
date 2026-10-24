@@ -2433,7 +2433,7 @@
    "aliases": [
     "sjv_se"
    ],
-   "notes": "Tables used: JO1001L2 (producer prices, monthly, 37 lines), JO1001AM20 (A-index 2020=100, monthly), JO1001APMM20 (PM-index of farm inputs), JO1001APPM20 (PPI-J) and JO1001KJM20 (KPI-J), all 2020=100, JO0611L01 (farm stocks of cereals and rapeseed, June and September; the December forecast is not published). Statistics Sweden (SCB) uses CC0 but its agricultural tables stop in 2007 except JO0601, which duplicates Eurostat.",
+   "notes": "Tables used: JO1001L2 (producer prices, monthly, 37 lines), JO1001AM20 (A-index 2020=100, monthly), JO1001APMM20 (PM-index of farm inputs), JO1001APPM20 (PPI-J) and JO1001KJM20 (KPI-J), all 2020=100, JO0611L01 (farm stocks of cereals and rapeseed, June and September; the December forecast is not published). Statistics Sweden (SCB) uses CC0 but its agricultural tables stop in 2007 except JO0601, which duplicates Eurostat. Also used: slaughter, dairy, egg and harvest-forecast tables.",
    "short": "Jordbruksverket (Suecia)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Politica de datos abiertos de Jordbruksverket (CC0 o CC BY, sin restricciones) y base estadistica ofrecida como datos abiertos con API; no hay licencia explicita por tabla."
@@ -4997,7 +4997,7 @@
    "legalConfidenceReason": "Licencia declarada en la API del portal de datos abiertos para cada conjunto; los ficheros xlsx no llevan la licencia dentro."
   },
   "luke_fi": {
-   "name": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received)",
+   "name": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received, weekly prices, crops, census, balances, forest)",
    "url": "https://statdb.luke.fi/",
    "country": "FI",
    "licenseId": "CC-BY-4.0",
@@ -5019,10 +5019,94 @@
    "aliases": [
     "luke_fi"
    ],
-   "notes": "Tables used (statdb.luke.fi, maa): tuohin/kk 0100-0500 (producer prices of milk, meat, eggs, cereals and rape, food potatoes), lihtuo/kk/0100 (slaughterings and meat production), maitot/kk/0100 (milk received). kg to t and l to 1,000 l are exact conversions; no estimates. Forest (met), weekly euhint and metryv (wood prices, licence unclear) are not used.",
+   "notes": "Tables used (statdb.luke.fi): maa tuohin/kk (producer prices), lihtuo/kk (slaughterings), maitot/kk (milk received), weekly prices, crop, area, livestock census and balance tables, and met (forest: removals and assortments). kg to t and l to 1,000 l are exact conversions; no estimates. Wood prices (metryv, licence unclear) are not used.",
    "short": "Luke (Finlandia)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Luke declara CC BY 4.0 en sus condiciones de uso de estadisticas; no nombra explicitamente la base PxWeb."
+  },
+  "scb_se": {
+   "name": "Sweden — Statistics Sweden (SCB): statistical database (CPI, PPI, fertiliser sales)",
+   "url": "https://www.statistikdatabasen.scb.se/",
+   "country": "SE",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons Zero 1.0 (SCB open data)",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Statistics Sweden (SCB).",
+   "additionalRestrictions": "SCB publishes its statistics database under CC0; credit is given anyway. API limit 10 calls per 10 s.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-23",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Condiciones de uso de SCB y su API (scb.se/en/Services/Open-data-API): datos con licencia CC0; limite de 10 llamadas por 10 s (solicitado por el usuario el 23-oct-2026).",
+   "used": true,
+   "aliases": [
+    "scb_se"
+   ],
+   "notes": "Tables used: PR0101A/KPI2020COICOPM (CPI by COICOP, 2020=100), PR0301G/PPI2020M (producer price index, SPIN 2015), MI1002/ForsHandelsgodsel (fertiliser sales in nutrients). Values as published; no estimates.",
+   "short": "SCB (Suecia)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Condiciones de uso de SCB y su API (scb.se/en/Services/Open-data-API): datos con licencia CC0; limite de 10 llamadas por 10 s (solicitado por el usuario el 23-oct-2026)."
+  },
+  "statfin_fi": {
+   "name": "Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI",
+   "url": "https://pxdata.stat.fi/",
+   "country": "FI",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (Statistics Finland open data)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Statistics Finland.",
+   "additionalRestrictions": "Statistics Finland's open data is CC BY 4.0 but excludes third-party data; API limit 40 calls per 60 s and 120,000 cells.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Third-party data inside the database is excluded from the licence; only Statistics Finland's own price indices are used.",
+   "verifiedAt": "2026-10-23",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Licencia de Statistics Finland (stat.fi/en/luokitukset-ja-metatiedot / copyright): CC BY 4.0, atribucion «Source: Statistics Finland», excluye datos de terceros (23-oct-2026).",
+   "used": true,
+   "aliases": [
+    "statfin_fi"
+   ],
+   "notes": "Tables used: mthi/14nv (agricultural producer price index), ttohi/14nz (means of production purchase prices), khi/15b5 (CPI food groups), thi/13m8 (producer price index of manufactured products). Values as published; no estimates.",
+   "short": "Statistics Finland (Finlandia)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia de Statistics Finland (stat.fi/en/luokitukset-ja-metatiedot / copyright): CC BY 4.0, atribucion «Source: Statistics Finland», excluye datos de terceros (23-oct-2026)."
+  },
+  "fmi_fi": {
+   "name": "Finland — Finnish Meteorological Institute (FMI) open data: monthly weather observations",
+   "url": "https://en.ilmatieteenlaitos.fi/open-data",
+   "country": "FI",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (FMI open data)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "©Finnish Meteorological Institute (CC BY 4.0).",
+   "additionalRestrictions": "Credit «©Finnish Meteorological Institute» required; the WFS query limits each request to under 10 years.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-23",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "FMI open data licence (en.ilmatieteenlaitos.fi/open-data-licence): CC BY 4.0, credit «©Finnish Meteorological Institute» (23-oct-2026).",
+   "used": true,
+   "aliases": [
+    "fmi_fi"
+   ],
+   "notes": "WFS stored query fmi::observations::weather::monthly::simple, parameters tmon (mean temperature) and rrmon (precipitation) for Jokioinen, Kuopio, Oulu (temperature) and Sodankylä; stations with fewer than 200 monthly values are omitted.",
+   "short": "FMI (Finlandia)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "FMI open data licence (en.ilmatieteenlaitos.fi/open-data-licence): CC BY 4.0, credit «©Finnish Meteorological Institute» (23-oct-2026)."
   }
  },
  "files": {
@@ -7481,7 +7565,25 @@
    "bySourceGroupPrefix": {
     "Luke": "luke_fi"
    },
-   "notes": "scripts/update-fi-luke.py: Luke, precios mensuales al productor (leche, carne, huevos, cereales, patata), sacrificios y carne producida, y leche recibida por las lecherias."
+   "notes": "scripts/update-fi-luke.py: Luke, precios mensuales y semanales al productor, sacrificios, leche recibida, cultivos, superficies, censo ganadero, balances y bosque."
+  },
+  "data/sweden-scb-stats.json": {
+   "bySourceGroupPrefix": {
+    "SCB": "scb_se"
+   },
+   "notes": "scripts/update-se-scb.py: SCB, IPC por grupo COICOP, indice de precios de productor y ventas de fertilizantes."
+  },
+  "data/finland-statfin-stats.json": {
+   "bySourceGroupPrefix": {
+    "Statistics Finland": "statfin_fi"
+   },
+   "notes": "scripts/update-fi-statfin.py: Statistics Finland, indices de precios agrarios, insumos, IPC alimentos y precios de productor."
+  },
+  "data/finland-fmi-stats.json": {
+   "bySourceGroupPrefix": {
+    "Finnish Meteorological Institute": "fmi_fi"
+   },
+   "notes": "scripts/update-fi-fmi.py: FMI, temperatura y precipitacion mensual en estaciones agricolas."
   }
  },
  "derived": [

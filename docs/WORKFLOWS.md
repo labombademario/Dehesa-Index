@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-280 workflows (231 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+283 workflows (234 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -253,7 +253,9 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-energy-markets.yml | a mano | semanal (3,5) | update-eia-energy-markets.mjs, update-worldbank-gas-eu.py | - | finish, price-engine, publish |
 | update-energy.yml | a mano | semanal (5) | sync-diesel-trust.mjs, update-ec-diesel-eu.py, update-eia-diesel-us.mjs | - | price-engine, publish |
 | update-export-sales.yml | a mano | 2 veces/semana | update-export-sales.mjs | export-sales.json | finish, validate-files |
+| update-finland-fmi.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fi-fmi.py | finland-fmi-stats.json | finish, validate-files |
 | update-finland-luke.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-fi-luke.py | finland-luke-stats.json | finish, validate-files |
+| update-finland-statfin.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fi-statfin.py | finland-statfin-stats.json | finish, validate-files |
 | update-france-hicp.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-france-hicp.py | france-hicp-stats.json | finish, validate-files |
 | update-france-organic.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-france-organic.py | france-organic-stats.json | finish, validate-files |
 | update-france-rnm-potato.yml | generado | semanal (4,5) | detect-revisions.py, gen-workflows.py, update-france-rnm-potato.py | france-rnm-stats.json | finish, validate-files |
@@ -298,6 +300,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-spain-wine-monthly.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-wine-monthly.py | spain-wine/monthly.json | finish, validate-files |
 | update-spain-wine.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-wine.py | spain-wine/infovi.json | finish, validate-files |
 | update-spain.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-mapa-spain.py | spain-stats.json | finish, validate-files |
+| update-sweden-scb.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-se-scb.py | sweden-scb-stats.json | finish, validate-files |
 | update-sweden-sjv.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-se-sjv.py | sweden-sjv-stats.json | finish, validate-files |
 | update-switzerland-bfs.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ch-bfs.py | switzerland-bfs-stats.json | finish, validate-files |
 | update-switzerland-foag.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-ch-foag.py | ch-chain.json, switzerland-foag-stats.json | finish, validate-files |

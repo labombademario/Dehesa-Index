@@ -1,0 +1,5 @@
+IPC 17 series
+PPI 16 series
+fertilizantes 8 series
+omitida (descontinuada): se-scb-ppi-10-51 hasta 2023-12
+omitida (descontinuada): se-scb-ppi-10-91 hasta 2022-12

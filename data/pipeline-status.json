@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T01:33:00Z",
+ "generatedAt": "2026-10-24T02:13:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 258,
   "late": 3,
   "error": 5,
-  "not_run": 2,
-  "unknown": 1
+  "not_run": 3,
+  "unknown": 3
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-24T01:00:21.937725+00:00",
   "repoGeneratedAt": "2026-10-24T01:00:21.937725+00:00",
-  "checkedAt": "2026-10-24T01:33:00Z"
+  "checkedAt": "2026-10-24T02:13:00Z"
  },
  "pipelines": [
   {
@@ -2696,6 +2696,19 @@
    "expectedEveryHours": 146.0
   },
   {
+   "workflow": "update-finland-fmi.yml",
+   "name": "Update Finland (Finnish Meteorological Institute, monthly temperature and rainfall at farming stations)",
+   "crons": [
+    "30 8 3 * *"
+   ],
+   "nextRun": "2026-11-03T08:30:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-finland-luke.yml",
    "name": "Update Finland (Luke producer prices, slaughterings and milk received)",
    "crons": [
@@ -2705,8 +2718,21 @@
    "files": [],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-finland-statfin.yml",
+   "name": "Update Finland (Statistics Finland, agricultural, input, consumer and producer price indices)",
+   "crons": [
+    "10 8 5,20 * *"
+   ],
+   "nextRun": "2026-11-05T08:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 360.0
   },
   {
    "workflow": "update-fr-agreste-more.yml",
@@ -4096,14 +4122,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-24T00:58:17Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4120,7 +4146,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/products"
@@ -4131,19 +4157,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-23T23:26:21Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-23T23:26:21Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/pack"
@@ -4159,26 +4185,26 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-24T00:33:21Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/fv-products.json",
@@ -4190,7 +4216,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-24T01:15:12Z"
+     "lastChange": "2026-10-24T01:41:48Z"
     },
     {
      "path": "data/home-explore.json",
@@ -4928,6 +4954,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-sweden-scb.yml",
+   "name": "Update Sweden (Statistics Sweden SCB, consumer and producer price indices and fertiliser sales)",
+   "crons": [
+    "50 7 5,20 * *"
+   ],
+   "nextRun": "2026-11-05T07:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 360.0
   },
   {
    "workflow": "update-sweden-sjv.yml",

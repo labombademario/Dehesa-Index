@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T01:32:49Z",
+ "generatedAt": "2026-10-24T02:07:31Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 193,
+  "total": 196,
   "byStatus": {
-   "ACTIVE": 163,
+   "ACTIVE": 166,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -4226,6 +4226,45 @@
    ]
   },
   {
+   "sourceId": "fmi_fi",
+   "registryId": "fmi_fi",
+   "country": "FI",
+   "scope": "integrated",
+   "institution": "Finland — Finnish Meteorological Institute (FMI) open data: monthly weather observations",
+   "dataset": "Ya integrada (7 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "©Finnish Meteorological Institute (CC BY 4.0).",
+   "lastChecked": "2026-10-23",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "foag_ch",
    "registryId": "foag_ch",
    "country": "CH",
@@ -5440,8 +5479,8 @@
    "registryId": "luke_fi",
    "country": "FI",
    "scope": "integrated",
-   "institution": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received)",
-   "dataset": "Ya integrada (65 series en el catalogo unificado)",
+   "institution": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received, weekly prices, crops, census, balances, forest)",
+   "dataset": "Ya integrada (220 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
@@ -5454,14 +5493,16 @@
     "rapeseed",
     "rye",
     "sheep",
+    "sugar",
     "wheat"
    ],
    "productsConfirmed": true,
    "metrics": [
     "price",
+    "price_index",
     "production"
    ],
-   "frequency": "monthly",
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,
@@ -6861,6 +6902,60 @@
    ]
   },
   {
+   "sourceId": "scb_se",
+   "registryId": "scb_se",
+   "country": "SE",
+   "scope": "integrated",
+   "institution": "Sweden — Statistics Sweden (SCB): statistical database (CPI, PPI, fertiliser sales)",
+   "dataset": "Ya integrada (39 series en el catalogo unificado)",
+   "products": [
+    "butter",
+    "cattle",
+    "cheese",
+    "eggs",
+    "fertilizer",
+    "fruit",
+    "milk",
+    "potato",
+    "poultry",
+    "sheep",
+    "sugar"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price_index"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC0-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Statistics Sweden (SCB).",
+   "lastChecked": "2026-10-23",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "scottish_government",
    "registryId": "scottish_government",
    "country": "UK",
@@ -6962,7 +7057,7 @@
    "country": "SE",
    "scope": "integrated",
    "institution": "Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks)",
-   "dataset": "Ya integrada (124 series en el catalogo unificado)",
+   "dataset": "Ya integrada (164 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -6987,6 +7082,7 @@
    "metrics": [
     "price",
     "price_index",
+    "production",
     "stocks"
    ],
    "frequency": "mixed",
@@ -7311,6 +7407,66 @@
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "statfin_fi",
+   "registryId": "statfin_fi",
+   "country": "FI",
+   "scope": "integrated",
+   "institution": "Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI",
+   "dataset": "Ya integrada (191 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "butter",
+    "cattle",
+    "cheese",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "sugar",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price_index"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Statistics Finland.",
+   "lastChecked": "2026-10-23",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

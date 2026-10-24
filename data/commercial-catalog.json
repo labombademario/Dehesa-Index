@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T01:32:49Z",
+ "generatedAt": "2026-10-24T02:07:32Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 163,
-  "sourcesApto": 150,
+  "sources": 166,
+  "sourcesApto": 153,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 368,
-  "datasets_apto": 236,
+  "datasets": 371,
+  "datasets_apto": 239,
   "datasets_condiciones": 122,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -1080,6 +1080,23 @@
    "conditions": "Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y el art. 2(5) de la ley 2121/1993 en una copia de lawspot.gr, no en el ΦΕΚ. Las fechas de la solicitud única 2026 se leyeron en una copia de la decisión de la AADE en taxheaven.gr; la reforma Α.458/2025 y las decisiones de importes de ayudas asociadas, en copias de forin.gr. El cambio de solape de parcelas 2026 procede de prensa (taxrevenue.gr) y se cita como tal. No se han revisado los términos de uso de esos sitios. Confianza media."
   },
   {
+   "id": "fmi_fi",
+   "name": "Finland — Finnish Meteorological Institute (FMI) open data: monthly weather observations",
+   "url": "https://en.ilmatieteenlaitos.fi/open-data",
+   "country": "FI",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (FMI open data)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "©Finnish Meteorological Institute (CC BY 4.0).",
+   "conditions": "Credit «©Finnish Meteorological Institute» required; the WFS query limits each request to under 10 years."
+  },
+  {
    "id": "foag_ch",
    "name": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
    "url": "https://www.agrarmarktdaten.ch",
@@ -1541,7 +1558,7 @@
   },
   {
    "id": "luke_fi",
-   "name": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received)",
+   "name": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received, weekly prices, crops, census, balances, forest)",
    "url": "https://statdb.luke.fi/",
    "country": "FI",
    "licenseId": "CC-BY-4.0",
@@ -2113,6 +2130,23 @@
    "conditions": "No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, calves and pigs among the available datasets. Cite RVO and do not present the figures as official RVO publications."
   },
   {
+   "id": "scb_se",
+   "name": "Sweden — Statistics Sweden (SCB): statistical database (CPI, PPI, fertiliser sales)",
+   "url": "https://www.statistikdatabasen.scb.se/",
+   "country": "SE",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons Zero 1.0 (SCB open data)",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Statistics Sweden (SCB).",
+   "conditions": "SCB publishes its statistics database under CC0; credit is given anyway. API limit 10 calls per 10 s."
+  },
+  {
    "id": "scottish_government",
    "name": "Scottish Government (RESAS) — agricultural statistics",
    "url": "https://www.gov.scot/collections/agriculture-fisheries-and-rural-statistics/",
@@ -2265,6 +2299,23 @@
    "redistribution": "yes",
    "attribution": "Adapted from Statistics Canada. This does not constitute an endorsement by Statistics Canada of this product.",
    "conditions": "No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP)."
+  },
+  {
+   "id": "statfin_fi",
+   "name": "Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI",
+   "url": "https://pxdata.stat.fi/",
+   "country": "FI",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (Statistics Finland open data)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Statistics Finland.",
+   "conditions": "Statistics Finland's open data is CC BY 4.0 but excludes third-party data; API limit 40 calls per 60 s and 120,000 cells."
   },
   {
    "id": "statistik_austria",
@@ -5211,6 +5262,21 @@
    ]
   },
   {
+   "path": "data/finland-fmi-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "fmi_fi"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Finnish Meteorological Institute",
+     "sourceId": "fmi_fi",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
    "path": "data/finland-luke-stats.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -5221,6 +5287,21 @@
     {
      "scope": "grupo:Luke",
      "sourceId": "luke_fi",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/finland-statfin-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "statfin_fi"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Statistics Finland",
+     "sourceId": "statfin_fi",
      "verdict": "apto"
     }
    ]
@@ -6714,6 +6795,21 @@
    "verdict": "apto",
    "sources": [
     "usda_fas_psd"
+   ]
+  },
+  {
+   "path": "data/sweden-scb-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "scb_se"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:SCB",
+     "sourceId": "scb_se",
+     "verdict": "apto"
+    }
    ]
   },
   {

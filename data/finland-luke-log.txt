@@ -5,8 +5,21 @@ cereales 11 series
 patata 2 series
 sacrificios 24 series
 leche recogida 2 series
+omitida (menos de 3 puntos): fi-luke-wk-grain-vaasa-feed-wheat
+omitida (menos de 3 puntos): fi-luke-wk-grain-vaasa-feed-barley
+omitida (menos de 3 puntos): fi-luke-wk-grain-vaasa-feed-oats
+semanales 31 series
+cultivos 43 series
+superficie 12 series
+censo 12 series
+balance de cereales 35 series
+bosque 29 series
 omitida (descontinuada o corta): fi-luke-meat-calves (129 puntos, hasta 2021-01)
 omitida (descontinuada o corta): fi-luke-meat-young-bulls-and-heifers-meat-breed (3 puntos, hasta 2020-08)
 omitida (descontinuada o corta): fi-luke-milk-price-of-standard-milk-quality-class-e (156 puntos, hasta 2023-12)
 omitida (descontinuada o corta): fi-luke-milk-price-of-standard-milk-quality-class-i (180 puntos, hasta 2021-12)
 omitida (descontinuada o corta): fi-luke-milk-production-subsidies (120 puntos, hasta 2016-12)
+omitida (descontinuada o corta): fi-luke-removals-energywood (73 puntos, hasta 2020-03)
+omitida (descontinuada o corta): fi-luke-wk-grain-raisio-malting-barley (115 puntos, hasta 2012-09-24)
+omitida (descontinuada o corta): fi-luke-forest-increment (87 puntos, hasta 2020)
+omitida (descontinuada o corta): fi-luke-livestock-horses-on-farms (54 puntos, hasta 2018)

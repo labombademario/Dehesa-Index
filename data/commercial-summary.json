@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T01:32:49Z",
+ "generatedAt": "2026-10-24T02:07:32Z",
  "summary": {
-  "sources": 163,
-  "sourcesApto": 150,
+  "sources": 166,
+  "sourcesApto": 153,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 4,
-  "datasets": 368,
-  "datasets_apto": 236,
+  "datasets": 371,
+  "datasets_apto": 239,
   "datasets_condiciones": 122,
   "datasets_parcial": 3,
   "datasets_no-apto": 3,
@@ -263,6 +263,10 @@
    "name": "Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023",
    "verdict": "apto"
   },
+  "fmi_fi": {
+   "name": "Finland — Finnish Meteorological Institute (FMI) open data: monthly weather observations",
+   "verdict": "apto"
+  },
   "foag_ch": {
    "name": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
    "verdict": "apto"
@@ -372,7 +376,7 @@
    "verdict": "apto"
   },
   "luke_fi": {
-   "name": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received)",
+   "name": "Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received, weekly prices, crops, census, balances, forest)",
    "verdict": "apto"
   },
   "magyarkozlony_hu": {
@@ -507,6 +511,10 @@
    "name": "RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk)",
    "verdict": "apto"
   },
+  "scb_se": {
+   "name": "Sweden — Statistics Sweden (SCB): statistical database (CPI, PPI, fertiliser sales)",
+   "verdict": "apto"
+  },
   "scottish_government": {
    "name": "Scottish Government (RESAS) — agricultural statistics",
    "verdict": "apto"
@@ -541,6 +549,10 @@
   },
   "statcan": {
    "name": "Statistics Canada",
+   "verdict": "apto"
+  },
+  "statfin_fi": {
+   "name": "Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI",
    "verdict": "apto"
   },
   "statistik_austria": {

@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 164 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39245 series en el catalogo unificado.
+Resumen: 167 VERIFIED, 14 PENDING, 7 RESTRICTED, 6 BLOCKED; 39677 series en el catalogo unificado.
 
-## VERIFIED (164)
+## VERIFIED (167)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -75,6 +75,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 2241 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |
 | `fek_gr` | Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023 | EL | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y e… |
+| `fmi_fi` | Finland — Finnish Meteorological Institute (FMI) open data: monthly weather observations | FI | CC-BY-4.0 | si/si | si | 7 | Credit «©Finnish Meteorological Institute» required; the WFS query limits each request to under 10 years. |
 | `foag_ch` | Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen) | CH | OPENDATA-SWISS-BY | si/si | si | 118 | Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same … |
 | `forest_research` | Forest Research (UK), Timber Price Indices (official statistics) | GB | OGL-UK-3.0 | si/si | si | 0 |  |
 | `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 214 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
@@ -102,7 +103,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `jcyl_open_data` | Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robo… |
 | `knmi_daggegevens` | KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación) | NL | CC-BY-4.0 | si/si | si | 0 | Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI. |
 | `ksh_hu` | Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables | HU | CC-BY-4.0 | si/si | si | 196 | La licencia cubre el contenido publicado en el sitio (tablas, graficos). Quedan fuera los ficheros consultados a peticion a las bases intern… |
-| `luke_fi` | Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received) | FI | CC-BY-4.0 | si/si | si | 65 | Luke's terms of use for statistics declare CC BY 4.0 without naming the PxWeb database explicitly; its tables carry «Natural Resources Insti… |
+| `luke_fi` | Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received, weekly prices, crops, census, balances, forest) | FI | CC-BY-4.0 | si/si | si | 220 | Luke's terms of use for statistics declare CC BY 4.0 without naming the PxWeb database explicitly; its tables carry «Natural Resources Insti… |
 | `magyarkozlony_hu` | Magyar Közlöny / Nemzeti Jogszabálytár — 15-21/2024. (IV. 9.) AM rendeletek | HU | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Magyar Közlöny. La exclusión se leyó en la versión de 2015 de la ley (PDF de la ofic… |
 | `magyp_estimaciones` | Ministerio de Agricultura, Ganadería y Pesca (Argentina) — Estimaciones agrícolas | AR | CC-BY-4.0 | si/si | si | 0 |  |
 | `magyp_lecheria` | Argentina - Direccion Nacional de Lecheria (SAGyP): estadisticas lacteas en magyp.gob.ar | AR | CC-BY-4.0 | si/si | si | 30 | Atribucion. El pipeline comprueba en cada ejecucion que la pagina sigue remitiendo a los Terminos de argentina.gob.ar; si no, no publica est… |
@@ -136,15 +137,17 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `rivm_lmm` | RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit | NL | CC-BY-4.0 | si/si | si | 0 |  |
 | `rivm_stikstof` | RIVM — Monitor Stikstofdepositie in Natura 2000-gebieden | NL | CC0-1.0 | si/si | no | 0 |  |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
+| `scb_se` | Sweden — Statistics Sweden (SCB): statistical database (CPI, PPI, fertiliser sales) | SE | CC0-1.0 | si/si | si | 39 | SCB publishes its statistics database under CC0; credit is given anyway. API limit 10 calls per 10 s. |
 | `scottish_government` | Scottish Government (RESAS) — agricultural statistics | UK | OGL-UK-3.0 | si/si | si | 143 | Excluye logotipos y elementos gráficos. |
 | `sejm_eli` | Sejm de la República de Polonia — API ELI del Dziennik Ustaw (ustawy y rozporządzenia) | PL | PUBLIC-LAW | si/si | si | 0 | Cifras y reglas son extractos transcritos a mano; manda el texto publicado en el Dziennik Ustaw. No se leyeron los términos de uso de la API… |
 | `sima_gpp` | Portugal — SIMA (GPP) weekly prices | PT | CUSTOM | unclear/unclear | si | 0 | Written authorisation from the GPP would be required before use. |
-| `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 124 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
+| `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 164 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
 | `skogsstyrelsen` | Sweden — Skogsstyrelsen (Swedish Forest Agency): official forestry statistics database (roundwood prices) | SE | CC0-1.0 | si/si | si | 0 | Terms page: statistical database data is CC0; the API section asks for the source to be cited, so credit is given anyway. Commercial reuse i… |
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
 | `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 219 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |
 | `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 1016 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
+| `statfin_fi` | Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI | FI | CC-BY-4.0 | si/si | si | 191 | Statistics Finland's open data is CC BY 4.0 but excludes third-party data; API limit 40 calls per 60 s and 120,000 cells. |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `statistik_austria_vb` | Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications) | AT | STATISTIK-AUSTRIA-REUSE | si/si | si | 11 | Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en … |
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
