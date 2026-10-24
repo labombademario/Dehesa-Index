@@ -7,20 +7,15 @@ Cada valor es el publicado por la fuente: sin estimaciones, sin relleno y sin co
 Uso: python3 scripts/update-se-sjv.py"""
 import datetime, json, re, sys, time, urllib.parse, urllib.request
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib_pxweb import UA, make_say, make_call, num, clean, slug, var, pick, month
 ROOT = Path(__file__).resolve().parents[1]; OUT = ROOT / 'data' / 'sweden-sjv-stats.json'; LOG = ROOT / 'data' / 'sweden-sjv-log.txt'
 BASE = 'https://statistik.sjv.se/PXWeb/api/v1/sv/Jordbruksverkets%20statistikdatabas/'
-UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)', 'Content-Type': 'application/json'}
 SG = 'Jordbruksverket'
 log = []
-def say(*a): s = ' '.join(str(x) for x in a); log.append(s); print(s, flush=True)
+say = make_say(log)
 def url(path): return BASE + '/'.join(urllib.parse.quote(p) for p in path.split('/'))
-def call(u, data=None):
-    err = None
-    for k in range(3):
-        try:
-            with urllib.request.urlopen(urllib.request.Request(u, data=data, headers=UA), timeout=120) as r: return json.loads(r.read().decode('utf-8-sig'))
-        except Exception as e: err = e; time.sleep(5 * (k + 1))
-    raise RuntimeError('%s -> %s' % (u, err))
+call = make_call(pause=0, tries=3, backoff=5)
 
 PRICES = 'Priser och prisindex/Priser/Avrakningspriser20/JO1001L2.px'
 INDEX = 'Priser och prisindex/Prisindex/Prisindex med basar 2020=100/JO1001AM20.px'
@@ -66,22 +61,11 @@ PPIJ = [('PPI-J TOTALT', 'total', 'all agriculture-regulated foods')] + FOODX
 KPIJ = [('KPI-J TOTALT (inkl moms)', 'total', 'all agriculture-regulated foods')] + [(a.replace('Mjöl, gryn & hårt bröd', 'Mjöl, gryn och hårt bröd').replace('KÖTT, CHARK & KÖTTKONSERVER', 'KÖTT, CHARK & KÖTTKONSERVER'), b, c) for a, b, c in FOODX] + [('KPI TOTALT', 'cpi', 'all items (CPI)'), ('LIVSMEDEL TOTALT', 'food-all', 'all food (CPI)'), ('EJ JORDBRUKSREGLERADE LIVSMEDEL', 'food-unregulated', 'foods not agriculture-regulated (CPI)')]
 
 def meta(path): return call(url(path))
-def var(m, code): return next(v for v in m['variables'] if v['code'] == code)
-def pick(v, wanted, what):
-    """codigos de los valores cuyo texto (sin espacios sobrantes) coincide exactamente; falta alguno -> error claro (la tabla cambio)."""
-    t2c = {re.sub(r'\s+', ' ', x).strip(): c for c, x in zip(v['values'], v['valueTexts'])}
-    miss = [w for w in wanted if re.sub(r'\s+', ' ', w).strip() not in t2c]
-    if miss: raise RuntimeError('%s: valores que ya no existen en la fuente: %s' % (what, miss))
-    return [t2c[re.sub(r'\s+', ' ', w).strip()] for w in wanted]
 def query(path, m, sel):
     q = [{'code': c, 'selection': {'filter': 'item', 'values': vals}} for c, vals in sel]
     r = call(url(path), json.dumps({'query': q, 'response': {'format': 'json'}}).encode())
     cols = [c for c in r['columns'] if c['type'] != 'c']
     return cols, r['data']
-def num(x):
-    try:
-        v = float(str(x).replace(',', '.')); return v if v == v else None
-    except Exception: return None
 OUTS = {}
 def put(sid, group, label, unit, freq, pts, note, ref):
     d = {}
@@ -94,9 +78,6 @@ def put(sid, group, label, unit, freq, pts, note, ref):
          'points': [[k, v] for k, v in pp], 'sourceGroup': SG, 'reference': {'source': 'Jordbruksverket (Swedish Board of Agriculture), statistics database', 'dataset': ref, 'licence': 'Jordbruksverket open data (CC0 / CC BY)', 'original': 'https://statistik.jordbruksverket.se/'}}
     if note: s['periodNote'] = note
     OUTS[sid] = s
-def month(txt):
-    m = re.match(r'^(\d{4})M(\d{2})$', txt); return '%s-%s' % m.groups() if m else None
-
 def run_monthly(path, items, prefix, mk, unit, note):
     m = meta(path); pv = var(m, 'Produkter'); tv = var(m, 'Månad')
     codes = pick(pv, [i[0] for i in items], path)

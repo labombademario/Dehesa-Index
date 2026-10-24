@@ -9,35 +9,15 @@ Cada valor es el publicado por la fuente: sin estimaciones, sin relleno y sin co
 Uso: python3 scripts/update-fi-luke.py"""
 import datetime, json, re, sys, time, urllib.parse, urllib.request
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib_pxweb import UA, make_say, make_call, num, clean, slug, var, pick, month
 ROOT = Path(__file__).resolve().parents[1]; OUT = ROOT / 'data' / 'finland-luke-stats.json'; LOG = ROOT / 'data' / 'finland-luke-log.txt'
 BASE = 'https://statdb.luke.fi/PxWeb/api/v1/en/LUKE/maa/'
-UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)', 'Content-Type': 'application/json'}
 SG = 'Luke'
 log = []
-def say(*a): s = ' '.join(str(x) for x in a); log.append(s); print(s, flush=True)
-def call(u, data=None):
-    err = None
-    for k in range(4):
-        time.sleep(1.2)   # Luke corta la conexion si se le insiste: una llamada cada ~1 s
-        try:
-            with urllib.request.urlopen(urllib.request.Request(u, data=data, headers=UA), timeout=120) as r: return json.loads(r.read().decode('utf-8-sig'))
-        except Exception as e: err = e; time.sleep(6 * (k + 1))
-    raise RuntimeError('%s -> %s' % (u, err))
+say = make_say(log)
+call = make_call(pause=1.2, tries=4, backoff=6)   # Luke corta la conexion si se le insiste: una llamada cada ~1 s
 def url(path): return ('https://statdb.luke.fi/PxWeb/api/v1/en/LUKE/' if path.startswith(('met/', '08a ')) else BASE) + '/'.join(urllib.parse.quote(p) for p in path.split('/'))
-def clean(t): return re.sub(r'\s+', ' ', t).strip()
-def slug(t): return re.sub(r'[^a-z0-9]+', '-', t.lower()).strip('-')
-def var(m, code): return next(v for v in m['variables'] if v['code'] == code)
-def pick(v, wanted, what):
-    t2c = {clean(x): c for c, x in zip(v['values'], v['valueTexts'])}
-    miss = [w for w in wanted if clean(w) not in t2c]
-    if miss: raise RuntimeError('%s: valores que ya no existen en la fuente: %s' % (what, miss))
-    return [t2c[clean(w)] for w in wanted]
-def num(x):
-    try:
-        v = float(str(x).replace(',', '.').replace(' ', '')); return v if v == v else None
-    except Exception: return None
-def month(txt):
-    m = re.match(r'^(\d{4})M(\d{2})$', txt); return '%s-%s' % m.groups() if m else None
 
 import datetime as _dt
 def wk(t):

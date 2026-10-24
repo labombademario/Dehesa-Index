@@ -8,28 +8,15 @@ Cada valor es el publicado por la fuente: sin estimaciones, sin relleno y sin co
 Uso: python3 scripts/update-se-scb.py"""
 import datetime, json, re, sys, time, urllib.parse, urllib.request
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib_pxweb import UA, make_say, make_call, num, clean, slug, var, month
 ROOT = Path(__file__).resolve().parents[1]; OUT = ROOT / 'data' / 'sweden-scb-stats.json'; LOG = ROOT / 'data' / 'sweden-scb-log.txt'
 BASE = 'https://api.scb.se/OV0104/v1/doris/en/ssd/'
-UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)', 'Content-Type': 'application/json'}
 SG = 'SCB'
 log = []
-def say(*a): s = ' '.join(str(x) for x in a); log.append(s); print(s, flush=True)
+say = make_say(log)
 def url(path): return BASE + path
-def call(u, data=None):
-    err = None
-    for k in range(4):
-        time.sleep(1.2)   # SCB admite 10 consultas por 10 s
-        try:
-            with urllib.request.urlopen(urllib.request.Request(u, data=data, headers=UA), timeout=120) as r: return json.loads(r.read().decode('utf-8-sig'))
-        except Exception as e: err = e; time.sleep(6 * (k + 1))
-    raise RuntimeError('%s -> %s' % (u, err))
-def num(x):
-    try:
-        v = float(str(x).replace(',', '.').replace(' ', '')); return v if v == v else None
-    except Exception: return None
-def month(t):
-    m = re.match(r'^(\d{4})M(\d{2})$', t); return '%s-%s' % m.groups() if m else None
-def var(m, code): return next(v for v in m['variables'] if v['code'] == code)
+call = make_call(pause=1.2, tries=4, backoff=6)   # SCB admite 10 consultas por 10 s
 def codes(v, wanted, what):
     miss = [w for w in wanted if w not in v['values']]
     if miss: say('%s: codigos que no existen en la fuente (se omiten): %s' % (what, miss))
@@ -45,7 +32,6 @@ def put(sid, group, label, unit, freq, pts, note, ref):
                  'points': [[k, v] for k, v in pp], 'sourceGroup': SG, 'periodNote': note,
                  'reference': {'source': 'Statistics Sweden (SCB), statistical database', 'dataset': ref, 'licence': 'CC0', 'original': 'https://www.statistikdatabasen.scb.se/'}}
 
-def slug(c): return re.sub(r'[^a-z0-9]+', '-', c.lower()).strip('-')
 
 def query(path, sel):
     m = call(url(path)); q = [{'code': c, 'selection': {'filter': 'item', 'values': v}} for c, v in sel]

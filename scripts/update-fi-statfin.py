@@ -8,29 +8,16 @@ Cada valor es el publicado por la fuente: sin estimaciones, sin relleno y sin co
 Uso: python3 scripts/update-fi-statfin.py"""
 import datetime, json, re, sys, time, urllib.request
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib_pxweb import UA, make_say, make_call, num, clean, slug, var
 ROOT = Path(__file__).resolve().parents[1]; OUT = ROOT / 'data' / 'finland-statfin-stats.json'; LOG = ROOT / 'data' / 'finland-statfin-log.txt'
 BASE = 'https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/'
-UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)', 'Content-Type': 'application/json'}
 SG = 'Statistics Finland'
 log = []
-def say(*a): s = ' '.join(str(x) for x in a); log.append(s); print(s, flush=True)
-def call(u, data=None):
-    err = None
-    for k in range(4):
-        time.sleep(1.8)   # 40 consultas por 60 s
-        try:
-            with urllib.request.urlopen(urllib.request.Request(BASE + u, data=data, headers=UA), timeout=120) as r: return json.loads(r.read().decode('utf-8-sig'))
-        except Exception as e: err = e; time.sleep(8 * (k + 1))
-    raise RuntimeError('%s -> %s' % (u, err))
-def num(x):
-    try:
-        v = float(str(x).replace(',', '.').replace(' ', '')); return v if v == v else None
-    except Exception: return None
+say = make_say(log)
+call = make_call(pause=1.8, tries=4, backoff=8, base=BASE)   # 40 consultas por 60 s
 def month(t):
     m = re.match(r'^(\d{4})M(\d{2})\*?$', t.strip()); return '%s-%s' % m.groups() if m else None
-def clean(t): return re.sub(r'\s+', ' ', t).strip()
-def slug(t): return re.sub(r'[^a-z0-9]+', '-', t.lower()).strip('-')
-def var(m, code): return next(v for v in m['variables'] if v['code'] == code)
 
 OUTS = {}
 def put(sid, group, label, unit, pts, note, ref, lic_note=''):
