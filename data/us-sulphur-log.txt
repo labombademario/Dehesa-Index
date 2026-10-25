@@ -1,5 +1,5 @@
-22:28:15 HS4: filas 6205, unidades ['-'], total mundial en la fuente: True
-22:28:15 HS4: unidad de cantidad inesperada ['-'] (se esperaba KG): se descarta
-22:28:19 HS10: filas 9211, unidades ['T'], total mundial en la fuente: True
-22:28:19 HS10: unidad de cantidad inesperada ['T'] (se esperaba KG): se descarta
-22:28:19 toneladas por año (meses con volumen): 
+22:29:26 HS4: filas 6205, unidades ['-'], total mundial en la fuente: False
+22:29:26 HS4: sin unidad de cantidad conocida (['-']): se descarta
+22:29:31 HS10: filas 9211, unidades ['T'], total mundial en la fuente: True
+22:29:31 toneladas por año (meses con volumen): 2023 1144 kt, 2024 1000 kt, 2025 1421 kt, 2026 1210 kt
+22:29:31 us-sulphur.json: 140 meses, ultimo 2026-08, 655.4 USD/t
