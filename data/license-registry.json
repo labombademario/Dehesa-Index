@@ -7740,6 +7740,10 @@
   "data/us-sulphur.json": {
    "default": "census",
    "notes": "Valor unitario de importacion del azufre (HS 2503) de EE. UU.: valor de aduana de las importaciones generales entre toneladas, mensual (US Census Bureau, API de comercio exterior). No es un precio de mercado."
+  },
+  "data/eu-input-prices.json": {
+   "default": "eurostat_comext",
+   "notes": "Valores unitarios de importacion y exportacion (fuera de la UE) de fertilizantes, energia, piensos y otros insumos de la UE-27 y sus Estados miembros: valor entre toneladas, mensual, y reparto por pais de origen (Eurostat Comext, DS-045409). No son precios de mercado."
   }
  },
  "derived": [

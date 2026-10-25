@@ -82,7 +82,7 @@
         'Nada se estima ni se rellena: si un país no publica una serie, no aparece. Los datos trimestrales se muestran como T1 a T4.'],
       srcI: { FR: 'Fuente: INSEE (índices IPAMPA de precios pagados e IPPAP de precios percibidos), mensuales desde 2005.', EU: 'Fuente: Eurostat (apri_pi_inq y apri_pi_outq), trimestrales desde 2020; gasóleo: Boletín Petrolero Semanal de la Comisión Europea, con impuestos.' },
       wNote: 'Fuente: Banco Mundial, Commodity Price Data (Pink Sheet), USD por tonelada, mensual. Son precios internacionales de mercado: el precio que paga un agricultor depende de su país, su proveedor y los impuestos.', spain: 'Precios reales (MAPA)',
-      sNameUS: 'Azufre importado · EE. UU. (todos los orígenes)', sUsgs: 'USGS, azufre elemental en EE. UU.: valor unitario medio anual FOB mina o planta (USD por tonelada): {a}. Precio del contrato en Tampa (USD por tonelada larga): {t}. El dato de 2025 es una estimación del USGS.', sT: 'Azufre: valor unitario de importación', sName: 'Azufre importado de fuera de la UE · {c}', sEU: 'UE-27', sNote: 'Fuente: Eurostat Comext (código 2503, azufre de todo tipo), importaciones desde fuera de la UE, euros por tonelada, mensual. Es el valor de aduana de lo que realmente entró (coste, seguro y flete incluidos), no un precio de mercado: va por detrás del mercado y se mueve con el volumen del mes. Solo se muestran meses con más de {m} toneladas; los demás quedan en blanco. Los países sin volumen suficiente no aparecen.' },
+      sNameUS: 'Azufre importado · EE. UU. (todos los orígenes)', sUsgs: 'USGS, azufre elemental en EE. UU.: valor unitario medio anual FOB mina o planta (USD por tonelada): {a}. Precio del contrato en Tampa (USD por tonelada larga): {t}. El dato de 2025 es una estimación del USGS.', pT: 'Insumos: valor unitario de comercio exterior', pFlow: 'Flujo', pImp: 'Importaciones', pExp: 'Exportaciones', pGrp: { fert: 'Fertilizantes', energy: 'Energía y plásticos', feed: 'Piensos', other: 'Otros insumos' }, pNote: 'Fuente: Eurostat Comext, comercio con países de fuera de la UE, euros por tonelada, mensual. Es el valor de aduana de lo que realmente se comerció, no un precio de mercado: va por detrás del mercado y se mueve con el volumen y la mezcla de productos de cada mes. Solo se muestran meses con volumen suficiente (según el producto) y series de al menos dos años; lo que falta no se estima. El petróleo y el gas agrupan productos muy distintos; los tractores se miden por tonelada de peso, así que su cifra solo sirve para ver la tendencia.', pOrT: 'De dónde llegan los insumos a la UE', pOrS: 'Reparto de las importaciones de la UE-27 desde fuera de la UE por país de origen, en toneladas ({y}).', pOrCols: ['Producto', 'Principales orígenes (cuota en toneladas)', 'Toneladas'], sT: 'Azufre: valor unitario de importación', sName: 'Azufre importado de fuera de la UE · {c}', sEU: 'UE-27', sNote: 'Fuente: Eurostat Comext (código 2503, azufre de todo tipo), importaciones desde fuera de la UE, euros por tonelada, mensual. Es el valor de aduana de lo que realmente entró (coste, seguro y flete incluidos), no un precio de mercado: va por detrás del mercado y se mueve con el volumen del mes. Solo se muestran meses con más de {m} toneladas; los demás quedan en blanco. Los países sin volumen suficiente no aparecen.' },
     en: { country: 'Country', sub: 'How expensive inputs are in {c} compared with their own history: where each price index sits today between its lows and highs of the last {y} years.',
       idx: 'index 2020=100', q: 'Q', rI: 'Cereals versus fertiliser', rSI: 'How much fertiliser cereals buy compared with 2020: the cereal selling-price index divided by the fertiliser price index, both based on 2020=100 and for the same period. Above 100 = cereals buy more fertiliser than in 2020; below 100 = less. It is a ratio of indices, not kilos.',
       rColsI: ['Fertiliser', 'Cereal ÷ fertiliser (2020=100)', 'Position in {y} years', 'Worst period', 'Best period'],
@@ -92,7 +92,7 @@
         'Nothing is estimated or filled in: if a country does not publish a series, it does not appear. Quarterly data are shown as Q1 to Q4.'],
       srcI: { FR: 'Source: INSEE (IPAMPA index of prices paid and IPPAP index of prices received), monthly since 2005.', EU: 'Source: Eurostat (apri_pi_inq and apri_pi_outq), quarterly since 2020; diesel: European Commission Weekly Oil Bulletin, taxes included.' },
       wNote: 'Source: World Bank, Commodity Price Data (Pink Sheet), USD per tonne, monthly. These are international market prices: what a farmer pays depends on the country, the supplier and taxes.', spain: 'Actual prices (MAPA)',
-      sNameUS: 'Sulphur imported · United States (all origins)', sUsgs: 'USGS, elemental sulfur in the US: average annual unit value FOB mine or plant (USD per tonne): {a}. Tampa contract price (USD per long ton): {t}. The 2025 figure is a USGS estimate.', sT: 'Sulphur: import unit value', sName: 'Sulphur imported from outside the EU · {c}', sEU: 'EU-27', sNote: 'Source: Eurostat Comext (code 2503, sulphur of all kinds), imports from outside the EU, euros per tonne, monthly. It is the customs value of what actually came in (cost, insurance and freight included), not a market price: it lags the market and moves with the month’s volume. Only months above {m} tonnes are shown; the others are left blank. Countries without enough volume do not appear.' },
+      sNameUS: 'Sulphur imported · United States (all origins)', sUsgs: 'USGS, elemental sulfur in the US: average annual unit value FOB mine or plant (USD per tonne): {a}. Tampa contract price (USD per long ton): {t}. The 2025 figure is a USGS estimate.', pT: 'Inputs: foreign-trade unit value', pFlow: 'Flow', pImp: 'Imports', pExp: 'Exports', pGrp: { fert: 'Fertilisers', energy: 'Energy and plastics', feed: 'Feed', other: 'Other inputs' }, pNote: 'Source: Eurostat Comext, trade with countries outside the EU, euros per tonne, monthly. It is the customs value of what was actually traded, not a market price: it lags the market and moves with each month’s volume and product mix. Only months with enough volume (depending on the product) and series of at least two years are shown; what is missing is not estimated. Petroleum and gas group very different products; tractors are measured per tonne of weight, so their figure is only useful for the trend.', pOrT: 'Where inputs come from into the EU', pOrS: 'Split of EU-27 imports from outside the EU by country of origin, in tonnes ({y}).', pOrCols: ['Product', 'Main origins (share of tonnes)', 'Tonnes'], sT: 'Sulphur: import unit value', sName: 'Sulphur imported from outside the EU · {c}', sEU: 'EU-27', sNote: 'Source: Eurostat Comext (code 2503, sulphur of all kinds), imports from outside the EU, euros per tonne, monthly. It is the customs value of what actually came in (cost, insurance and freight included), not a market price: it lags the market and moves with the month’s volume. Only months above {m} tonnes are shown; the others are left blank. Countries without enough volume do not appear.' },
     fr: { country: 'Pays', sub: 'Combien coûtent les intrants en {c} par rapport à leur propre historique : où se situe aujourd’hui chaque indice de prix entre ses minimums et maximums des {y} dernières années.',
       idx: 'indice 2020=100', q: 'T', rI: 'Céréales face aux engrais', rSI: 'Quelle quantité d’engrais les céréales achètent par rapport à 2020 : l’indice du prix de vente des céréales divisé par l’indice du prix de l’engrais, tous deux en base 2020=100 et pour la même période. Plus de 100 = les céréales achètent plus d’engrais qu’en 2020 ; moins de 100 = moins. C’est un rapport d’indices, pas des kilos.',
       rColsI: ['Engrais', 'Céréale ÷ engrais (2020=100)', 'Position sur {y} ans', 'Pire période', 'Meilleure période'],
@@ -102,7 +102,7 @@
         'Rien n’est estimé ni complété : si un pays ne publie pas une série, elle n’apparaît pas. Les données trimestrielles sont affichées en T1 à T4.'],
       srcI: { FR: 'Source : INSEE (indices IPAMPA des prix payés et IPPAP des prix perçus), mensuels depuis 2005.', EU: 'Source : Eurostat (apri_pi_inq et apri_pi_outq), trimestriel depuis 2020 ; gazole : Bulletin pétrolier hebdomadaire de la Commission européenne, taxes comprises.' },
       wNote: 'Source : Banque mondiale, Commodity Price Data (Pink Sheet), USD par tonne, mensuel. Ce sont des prix de marché internationaux : ce que paie un agriculteur dépend du pays, du fournisseur et des taxes.', spain: 'Prix réels (MAPA)',
-      sNameUS: 'Soufre importé · États-Unis (toutes origines)', sUsgs: 'USGS, soufre élémentaire aux États-Unis : valeur unitaire moyenne annuelle FOB mine ou usine (USD par tonne) : {a}. Prix du contrat à Tampa (USD par tonne longue) : {t}. Le chiffre de 2025 est une estimation de l’USGS.', sT: 'Soufre : valeur unitaire à l’importation', sName: 'Soufre importé de l’extérieur de l’UE · {c}', sEU: 'UE-27', sNote: 'Source : Eurostat Comext (code 2503, soufre de toute nature), importations hors UE, euros par tonne, mensuel. C’est la valeur en douane de ce qui est réellement entré (coût, assurance et fret compris), pas un prix de marché : elle suit le marché avec retard et varie avec le volume du mois. Seuls les mois de plus de {m} tonnes sont affichés ; les autres restent vides. Les pays sans volume suffisant n’apparaissent pas.' },
+      sNameUS: 'Soufre importé · États-Unis (toutes origines)', sUsgs: 'USGS, soufre élémentaire aux États-Unis : valeur unitaire moyenne annuelle FOB mine ou usine (USD par tonne) : {a}. Prix du contrat à Tampa (USD par tonne longue) : {t}. Le chiffre de 2025 est une estimation de l’USGS.', pT: 'Intrants : valeur unitaire du commerce extérieur', pFlow: 'Flux', pImp: 'Importations', pExp: 'Exportations', pGrp: { fert: 'Engrais', energy: 'Énergie et plastiques', feed: 'Aliments', other: 'Autres intrants' }, pNote: 'Source : Eurostat Comext, commerce avec les pays hors UE, euros par tonne, mensuel. C’est la valeur en douane de ce qui a réellement été échangé, pas un prix de marché : elle suit le marché avec retard et varie avec le volume et la composition de chaque mois. Seuls les mois à volume suffisant (selon le produit) et les séries d’au moins deux ans sont affichés ; ce qui manque n’est pas estimé. Le pétrole et le gaz regroupent des produits très différents ; les tracteurs sont mesurés par tonne de poids, leur chiffre ne sert donc qu’à voir la tendance.', pOrT: 'D’où viennent les intrants dans l’UE', pOrS: 'Répartition des importations de l’UE-27 hors UE par pays d’origine, en tonnes ({y}).', pOrCols: ['Produit', 'Principales origines (part en tonnes)', 'Tonnes'], sT: 'Soufre : valeur unitaire à l’importation', sName: 'Soufre importé de l’extérieur de l’UE · {c}', sEU: 'UE-27', sNote: 'Source : Eurostat Comext (code 2503, soufre de toute nature), importations hors UE, euros par tonne, mensuel. C’est la valeur en douane de ce qui est réellement entré (coût, assurance et fret compris), pas un prix de marché : elle suit le marché avec retard et varie avec le volume du mois. Seuls les mois de plus de {m} tonnes sont affichés ; les autres restent vides. Les pays sans volume suffisant n’apparaissent pas.' },
     it: { country: 'Paese', sub: 'Quanto costano i mezzi tecnici in {c} rispetto alla loro storia: dove si trova oggi ciascun indice dei prezzi tra i minimi e i massimi degli ultimi {y} anni.',
       idx: 'indice 2020=100', q: 'T', rI: 'Cereali rispetto ai concimi', rSI: 'Quanto concime comprano i cereali rispetto al 2020: l’indice del prezzo di vendita dei cereali diviso per l’indice del prezzo del concime, entrambi in base 2020=100 e dello stesso periodo. Oltre 100 = i cereali comprano più concime che nel 2020; sotto 100 = meno. È un rapporto tra indici, non chili.',
       rColsI: ['Concime', 'Cereale ÷ concime (2020=100)', 'Posizione in {y} anni', 'Periodo peggiore', 'Periodo migliore'],
@@ -112,9 +112,9 @@
         'Niente è stimato né riempito: se un paese non pubblica una serie, non compare. I dati trimestrali sono mostrati come T1–T4.'],
       srcI: { FR: 'Fonte: INSEE (indici IPAMPA dei prezzi pagati e IPPAP dei prezzi percepiti), mensili dal 2005.', EU: 'Fonte: Eurostat (apri_pi_inq e apri_pi_outq), trimestrali dal 2020; gasolio: Bollettino petrolifero settimanale della Commissione europea, tasse incluse.' },
       wNote: 'Fonte: Banca Mondiale, Commodity Price Data (Pink Sheet), USD per tonnellata, mensile. Sono prezzi di mercato internazionali: quanto paga un agricoltore dipende dal paese, dal fornitore e dalle tasse.', spain: 'Prezzi reali (MAPA)',
-      sNameUS: 'Zolfo importato · Stati Uniti (tutte le origini)', sUsgs: 'USGS, zolfo elementare negli Stati Uniti: valore unitario medio annuo FOB miniera o impianto (USD per tonnellata): {a}. Prezzo del contratto a Tampa (USD per tonnellata lunga): {t}. Il dato del 2025 è una stima dell’USGS.', sT: 'Zolfo: valore unitario all’importazione', sName: 'Zolfo importato da fuori dell’UE · {c}', sEU: 'UE-27', sNote: 'Fonte: Eurostat Comext (codice 2503, zolfo di ogni specie), importazioni da fuori dell’UE, euro per tonnellata, mensile. È il valore doganale di ciò che è realmente entrato (costo, assicurazione e nolo inclusi), non un prezzo di mercato: segue il mercato con ritardo e varia con il volume del mese. Si mostrano solo i mesi sopra {m} tonnellate; gli altri restano vuoti. I paesi senza volume sufficiente non compaiono.' },
+      sNameUS: 'Zolfo importato · Stati Uniti (tutte le origini)', sUsgs: 'USGS, zolfo elementare negli Stati Uniti: valore unitario medio annuo FOB miniera o impianto (USD per tonnellata): {a}. Prezzo del contratto a Tampa (USD per tonnellata lunga): {t}. Il dato del 2025 è una stima dell’USGS.', pT: 'Mezzi tecnici: valore unitario del commercio estero', pFlow: 'Flusso', pImp: 'Importazioni', pExp: 'Esportazioni', pGrp: { fert: 'Concimi', energy: 'Energia e plastiche', feed: 'Mangimi', other: 'Altri mezzi tecnici' }, pNote: 'Fonte: Eurostat Comext, commercio con i paesi extra-UE, euro per tonnellata, mensile. È il valore doganale di ciò che è stato realmente scambiato, non un prezzo di mercato: segue il mercato con ritardo e varia con il volume e la composizione di ogni mese. Si mostrano solo i mesi con volume sufficiente (secondo il prodotto) e le serie di almeno due anni; ciò che manca non viene stimato. Petrolio e gas raggruppano prodotti molto diversi; i trattori sono misurati per tonnellata di peso, quindi la cifra serve solo per la tendenza.', pOrT: 'Da dove arrivano i mezzi tecnici nell’UE', pOrS: 'Ripartizione delle importazioni UE-27 da fuori UE per paese di origine, in tonnellate ({y}).', pOrCols: ['Prodotto', 'Principali origini (quota in tonnellate)', 'Tonnellate'], sT: 'Zolfo: valore unitario all’importazione', sName: 'Zolfo importato da fuori dell’UE · {c}', sEU: 'UE-27', sNote: 'Fonte: Eurostat Comext (codice 2503, zolfo di ogni specie), importazioni da fuori dell’UE, euro per tonnellata, mensile. È il valore doganale di ciò che è realmente entrato (costo, assicurazione e nolo inclusi), non un prezzo di mercato: segue il mercato con ritardo e varia con il volume del mese. Si mostrano solo i mesi sopra {m} tonnellate; gli altri restano vuoti. I paesi senza volume sufficiente non compaiono.' },
   };
-  var DOC = null, WORLD = null, SULPH = null, SGDOC = null, INDEX = null, CC = 'ES', FAILED = false, GRAIN = 'es-perc-trigo', ES_DOC = null;
+  var DOC = null, WORLD = null, SULPH = null, SGDOC = null, PRICES = null, PGDOC = null, FLOW = 'imp', INDEX = null, CC = 'ES', FAILED = false, GRAIN = 'es-perc-trigo', ES_DOC = null;
   function lang() { return S.getLang ? S.getLang() : 'es'; }
   function t() { return T[lang()] || T.es; }
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -186,7 +186,7 @@
     });
     return h + '</tbody></table></div></section>';
   }
-  function findItem(id) { var r = null; if (id.indexOf('r|') === 0) { (DOC.ratios || []).forEach(function (q) { if (rid(q) === id) r = q; }); if (r) r.name = r.fertName; return r; } [DOC, WORLD, SGDOC].forEach(function (d) { if (d) d.groups.forEach(function (g) { g.items.forEach(function (x) { if (x.id === id) r = x; }); }); }); return r; }
+  function findItem(id) { var r = null; if (id.indexOf('r|') === 0) { (DOC.ratios || []).forEach(function (q) { if (rid(q) === id) r = q; }); if (r) r.name = r.fertName; return r; } [DOC, WORLD, SGDOC, PGDOC].forEach(function (d) { if (d) d.groups.forEach(function (g) { g.items.forEach(function (x) { if (x.id === id) r = x; }); }); }); return r; }
   function toggleChart(id, btn) {
     var row = document.querySelector('tr[data-ch="' + id + '"]'); if (!row) return;
     var open = row.hasAttribute('hidden'); var all = document.querySelectorAll('[data-sp="' + id + '"]'); function ae(v) { Array.prototype.forEach.call(all, function (e) { e.setAttribute('aria-expanded', v); }); }
@@ -224,6 +224,39 @@
     t = U.tampa.map(function (p) { return per(p[0]) + ': ' + num(p[1], 0); }).join(', ');
     return X1.sUsgs.replace('{a}', a).replace('{t}', t);
   }
+  function pricesGroups() {   // insumos (Eurostat Comext): por producto, la UE-27 y, si hay volumen suficiente, el pais elegido
+    var X1 = xt(), l = lang(), out = [];
+    if (!PRICES) return out;
+    ['fert', 'energy', 'feed', 'other'].forEach(function (gid) {
+      var items = [];
+      PRICES.products.forEach(function (p) {
+        if (p.group !== gid) return;
+        var by = (PRICES.items[FLOW] || {})[p.cn]; if (!by) return;
+        ['EU', CC].forEach(function (c, i) {
+          var it = by[c], o = {}, k, x = {}; if (!it || (i && c === 'EU')) return;
+          o[l] = (p.name[l] || p.name.es) + ' · ' + (c === 'EU' ? X1.sEU : cname(c)); x.id = 'inp-' + FLOW + '-' + p.id + '-' + c; x.name = o;
+          for (k in it) if (Object.prototype.hasOwnProperty.call(it, k)) x[k] = it[k];
+          items.push(x);
+        });
+      });
+      if (items.length) out.push({ id: 'inp-' + gid, gid: gid, items: items });
+    });
+    return out;
+  }
+  function originsBlock(w) {
+    var X1 = xt(), l = lang(), rows = '';
+    if (!PRICES || !PRICES.origins) return '';
+    PRICES.products.forEach(function (p) {
+      var o = PRICES.origins[p.cn]; if (!o || !o.top || !o.top.length) return;
+      rows += '<tr><td><strong>' + esc(p.name[l] || p.name.es) + '</strong></td><td>' + o.top.map(function (t) { return esc(cname(t[0])) + ' ' + esc(num(t[1], 0)) + ' %'; }).join(' · ') + '</td><td>' + esc(num(o.tonnes / 1000, 0)) + ' kt</td></tr>';
+    });
+    if (!rows) return '';
+    return '<section class="di-card mi-sec" id="mi-g-origins"><h2>' + esc(X1.pOrT) + '</h2><p class="mi-sub">' + esc(X1.pOrS.replace('{y}', PRICES.originsYear)) + '</p><div style="overflow-x:auto"><table class="mi-t" data-no-rows><thead><tr>' + X1.pOrCols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows + '</tbody></table></div></section>';
+  }
+  function flowPicker() {
+    var X1 = xt();
+    return '<div class="mi-how cp-pick" style="display:flex;margin:14px 0"><label class="cp-lab" for="mi-flow">' + esc(X1.pFlow) + '</label><select id="mi-flow" class="di-compare-select"><option value="imp"' + (FLOW === 'imp' ? ' selected' : '') + '>' + esc(X1.pImp) + '</option><option value="exp"' + (FLOW === 'exp' ? ' selected' : '') + '>' + esc(X1.pExp) + '</option></select></div>';
+  }
   function render() {
     var w = t(), X1 = xt(), root = document.getElementById('mi-body'); if (!root) return;
     document.getElementById('mi-h1').textContent = w.h1; document.title = w.title + ' | Dehesa Index';
@@ -236,7 +269,9 @@
     if (WORLD && WORLD.groups[0].items.length) h += groupBlock(w, WORLD.groups[0], X1.wT, X1.wS);
     var SG = sulphGroup(); SGDOC = SG ? { groups: [SG] } : null;
     if (SG) h += groupBlock(w, SG, X1.sT);
-    h += (I ? X1.noteI.map(Y).concat([X1.srcI[CC === 'FR' ? 'FR' : 'EU']]) : w.note).concat(WORLD ? [X1.wNote] : []).concat(SG ? [X1.sNote.replace('{m}', String(SULPH.minTonnes))].concat(usgsNote() ? [usgsNote()] : []) : []).map(function (p) { return '<p class="di-movers-hint" style="max-width:820px">' + esc(p) + '</p>'; }).join('');
+    var PG = pricesGroups(); PGDOC = PG.length ? { groups: PG } : null;
+    if (PG.length) { h += flowPicker(); PG.forEach(function (g) { h += groupBlock(w, g, X1.pGrp[g.gid]); }); h += originsBlock(w); }
+    h += (I ? X1.noteI.map(Y).concat([X1.srcI[CC === 'FR' ? 'FR' : 'EU']]) : w.note).concat(WORLD ? [X1.wNote] : []).concat(SG ? [X1.sNote.replace('{m}', String(SULPH.minTonnes))].concat(usgsNote() ? [usgsNote()] : []) : []).concat(PG.length ? [X1.pNote] : []).map(function (p) { return '<p class="di-movers-hint" style="max-width:820px">' + esc(p) + '</p>'; }).join('');
     h += '<section class="di-card di-emp-cta" style="margin-top:16px"><p class="di-emp-cta-body" style="margin:0 0 12px">' + esc(w.cta) + '</p><a class="di-btn-gold-solid" href="empresas.html#contacto">' + esc(w.ctaBtn) + '</a></section>';
     root.innerHTML = h; bindChips(root);
     Array.prototype.forEach.call(root.querySelectorAll('[data-sp]'), function (b) { b.onclick = function () { toggleChart(b.getAttribute('data-sp'), b); }; b.onkeydown = function (e) { if (b.getAttribute('role') === 'button' && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggleChart(b.getAttribute('data-sp'), b); } }; });
@@ -245,7 +280,10 @@
     DOC.groups.forEach(function (g) { if (g.items.length) secs.push(['mi-g-' + g.id, w.g[g.id] || X1.g[g.id] || g.id]); });
     if (WORLD && WORLD.groups[0].items.length) secs.push(['mi-g-world', X1.g.world]);
     if (SG) secs.push(['mi-g-sulphur', X1.sT]);
+    PG.forEach(function (g) { secs.push(['mi-g-' + g.id, X1.pGrp[g.gid]]); });
+    if (root.querySelector('#mi-g-origins')) secs.push(['mi-g-origins', X1.pOrT]);
     if (F && bh) F.bar(bh, w.barT, secs);
+    var fs = document.getElementById('mi-flow'); if (fs) fs.onchange = function (e) { FLOW = e.target.value === 'exp' ? 'exp' : 'imp'; render(); };
     var sel = document.getElementById('mi-g'); if (sel) sel.onchange = function (e) { GRAIN = e.target.value; render(); };
   }
   function bindChips(root) { var s = root.querySelector('#mi-cc'); if (!s) return; s.onchange = function () { setCountry(s.value); }; if (window.DehesaCountryPicker) window.DehesaCountryPicker.scan(root); }
@@ -264,7 +302,7 @@
   getJ('data/views/input-monitor-countries/index.json').then(function (d) { INDEX = d; }).catch(function () { INDEX = null; }).then(function () {
     if (!INDEX) return null;  // la referencia mundial y el azufre solo se piden si el índice dice que existen
     var pw = INDEX.world ? getJ('data/views/input-monitor-countries/world.json').then(function (d) { WORLD = d; }).catch(function () { WORLD = null; }) : Promise.resolve();
-    return pw.then(function () { return INDEX.sulphur ? getJ('data/views/input-monitor-countries/sulphur.json').then(function (d) { SULPH = d; }).catch(function () { SULPH = null; }) : null; });
+    return pw.then(function () { return INDEX.sulphur ? getJ('data/views/input-monitor-countries/sulphur.json').then(function (d) { SULPH = d; }).catch(function () { SULPH = null; }) : null; }).then(function () { return INDEX.prices ? getJ('data/views/input-monitor-countries/prices.json').then(function (d) { PRICES = d; }).catch(function () { PRICES = null; }) : null; });
   }).then(function () {
     var ok = cc0 === 'ES' || (INDEX && INDEX.countries.some(function (c) { return c.cc === cc0; }));
     setCountry(ok ? cc0 : 'ES', true);

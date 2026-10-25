@@ -1735,6 +1735,10 @@
   "us-sulphur.json": [
    "us-sulphur",
    []
+  ],
+  "eu-input-prices.json": [
+   "eu-input-prices",
+   []
   ]
  },
  "globs": {

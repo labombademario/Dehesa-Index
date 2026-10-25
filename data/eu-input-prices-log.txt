@@ -1,0 +1,3 @@
+19:30:59 imp: 17 productos con serie, 319 series
+19:31:20 exp: 17 productos con serie, 230 series
+19:31:21 eu-input-prices.json: 17 productos, ultimo mes 2026-08, origenes de 17 productos (2025)

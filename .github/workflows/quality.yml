@@ -218,6 +218,9 @@ jobs:
       - name: US sulphur import unit value from the Census API (kg to tonnes, world total vs country sum, volume threshold, unit check; synthetic response, no network or key)
         run: python3 scripts/test-us-sulphur.py
 
+      - name: EU input unit values from Comext (fertilisers, energy, feed; per-product volume threshold, Greece code, origin shares; synthetic response, no network)
+        run: python3 scripts/test-eu-input-prices.py
+
       - name: France Infos Rapides of Agreste (milk tables, crop estimates by edition, trade graphs; no network)
         run: python3 scripts/test-fr-infosrapides.py
       - name: France monthly bulletin of Agreste (tables, periods, units, series kept when the source drops them; no network)

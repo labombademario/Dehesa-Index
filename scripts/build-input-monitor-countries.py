@@ -241,8 +241,26 @@ def main():
             usgs = {'annual': sr['us-unit-value']['points'], 'estimateFrom': sr['us-unit-value'].get('estimateFrom'), 'tampa': sr['tampa-contract']['points'], 'source': gd['source']}
         if 'EU' in items:
             write('sulphur.json', {'schemaVersion': 1, 'generatedAt': sd.get('generatedAt') or gen, 'latestPeriod': sd.get('latestPeriod'), 'years': YEARS, 'source': sd['source'], 'minTonnes': sd['minTonnes'], 'items': items, 'usgs': usgs})
+    # --- insumos: valores unitarios de comercio exterior de la UE y sus paises (Eurostat Comext, scripts/update-eu-input-prices.py) ---
+    ip = ROOT / 'data/eu-input-prices.json'
+    if ip.exists():
+        pd = J(ip); items = {'imp': {}, 'exp': {}}
+        for fl, key in (('imp', 'imports'), ('exp', 'exports')):
+            for cn, bycc in pd[key].items():
+                for cc, c in bycc.items():
+                    last = c['points'][-1][0]; y0 = '%04d%s' % (int(last[:4]) - YEARS, last[4:])
+                    pts = [(q[0], q[1]) for q in c['points'] if q[0] > y0]
+                    st = stats(pts, 'EUR/t', 'm')
+                    if not st: continue
+                    span = (int(last[:4]) - int(pts[0][0][:4])) * 12 + int(last[5:7]) - int(pts[0][0][5:7]) + 1
+                    if len(pts) < span or cc != 'EU': st['spark'] = []   # solo la UE-27 dibuja grafico; con meses sin volumen no se dibuja una linea que mienta sobre las fechas
+                    st['years'] = round(min(float(YEARS), span / 12.0), 1); st['tonnes'] = c['points'][-1][2]; st['gaps'] = span - len(pts)
+                    items[fl].setdefault(cn, {})[cc] = st
+        if items['imp']:
+            write('prices.json', {'schemaVersion': 1, 'generatedAt': pd.get('generatedAt') or gen, 'latestPeriod': pd.get('latestPeriod'), 'years': YEARS, 'source': pd['source'],
+                                  'originsYear': pd.get('originsYear'), 'products': pd['products'], 'items': items, 'origins': pd.get('origins', {})})
     index.sort(key=lambda x: x['cc'])
-    write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists(), 'sulphur': (OUT / 'sulphur.json').exists()})
+    write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists(), 'sulphur': (OUT / 'sulphur.json').exists(), 'prices': (OUT / 'prices.json').exists()})
     print('Monitor de insumos por país: %s; referencia mundial %s' % (', '.join(x['cc'] for x in index), 'sí' if (OUT / 'world.json').exists() else 'no'))
 
 main()
