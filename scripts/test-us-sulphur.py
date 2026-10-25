@@ -8,7 +8,7 @@ spec = importlib.util.spec_from_file_location('usul', ROOT / 'scripts' / 'update
 fails = []
 def check(ok, msg):
     if not ok: fails.append(msg); print('FALLA', msg)
-H = ['CON_VAL_MO', 'CON_QY1_MO', 'UNIT_QY1', 'CTY_CODE', 'CTY_NAME', 'time']
+H = ['GEN_VAL_MO', 'GEN_QY1_MO', 'UNIT_QY1', 'CTY_CODE', 'CTY_NAME', 'time']
 months = ['%04d-%02d' % (2022 + i // 12, i % 12 + 1) for i in range(30)]
 def rows(world=True, unit='KG', tons=1000):
     out = [H]

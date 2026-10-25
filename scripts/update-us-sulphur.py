@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Valor unitario de importacion del azufre (HS 2503) de EE. UU. (US Census Bureau, API de comercio exterior, dominio publico).
 Escribe data/us-sulphur.json y data/us-sulphur-log.txt. Necesita el secreto CENSUS_API_KEY (clave gratuita; la misma de update-us-states-macro).
- - Importaciones para consumo (CON_VAL_MO, valor de aduana) entre cantidad (CON_QY1_MO, toneladas) = USD por tonelada, mensual desde 2015, total de todos los paises.
-   Se usan las importaciones para consumo (no las generales) porque son las que suma el USGS: 2023 2.300 kt frente a 2.390 kt del USGS (las generales daban 1.140 kt).
+ - Importaciones generales (GEN_VAL_MO, valor de aduana) entre cantidad (GEN_QY1_MO, toneladas) = USD por tonelada, mensual desde 2015, total de todos los paises.
+   Se usan las generales y no las de consumo: las de consumo suman toneladas parecidas a las del USGS (2023: 2.300 kt frente a 2.390 kt) pero su valor por tonelada
+   (unos 330 USD/t en 2023-2024) no es creible frente a los precios de Tampa (60-150 USD/t); las generales dan 75-110 USD/t, coherente con el mercado, aunque con la
+   mitad de las toneladas. La diferencia entre ambas medidas del Census no esta explicada (ver el diagnostico del log).
  - Es un valor unitario de aduana de lo realmente importado, no un precio de mercado. Un mes sin cantidad o con menos de MIN_T toneladas no da precio.
  - El total se toma de la fila de total mundial (CTY_CODE '-'); no se suman paises porque el Census mezcla agregados (OCDE, USMCA...) con paises. Se comprueba la unidad.
 Uso: python3 scripts/update-us-sulphur.py [--fixture fichero.json]  (con --fixture lee ese JSON del Census en lugar de la red; para los tests)."""
@@ -61,10 +63,10 @@ def diag(code, rows):
 
 def parse(rows):
     """Lista de listas del Census (primera fila = cabecera) -> {periodo: [USD, toneladas]}; devuelve tambien las unidades vistas."""
-    h = rows[0]; ix = {k: h.index(k) for k in ("CON_VAL_MO", "CON_QY1_MO", "UNIT_QY1", "CTY_CODE", "time")}
+    h = rows[0]; ix = {k: h.index(k) for k in ("GEN_VAL_MO", "GEN_QY1_MO", "UNIT_QY1", "CTY_CODE", "time")}
     world = {}; units = set()
     for r in rows[1:]:
-        try: v = float(r[ix["CON_VAL_MO"]]); q = float(r[ix["CON_QY1_MO"]])
+        try: v = float(r[ix["GEN_VAL_MO"]]); q = float(r[ix["GEN_QY1_MO"]])
         except (TypeError, ValueError): continue
         u = (r[ix["UNIT_QY1"]] or "").strip(); units.add(u); p = r[ix["time"]][:7]; code = (r[ix["CTY_CODE"]] or "").strip()
         f = FACTOR.get(u)
@@ -109,7 +111,7 @@ def main():
     for p, v, t, usd in pts: ann[p[:4]] = ann.get(p[:4], 0) + t
     log("toneladas por año (meses con volumen): " + ", ".join("%s %d kt" % (y, round(t / 1000)) for y, t in sorted(ann.items())[-4:]))
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "latestPeriod": pts[-1][0],
-           "source": {"id": "census", "name": "U.S. Census Bureau, International Trade API, HS 2503 sulphur, imports for consumption", "url": "https://www.census.gov/foreign-trade/index.html", "license": "US public domain (credit Census Bureau)"},
+           "source": {"id": "census", "name": "U.S. Census Bureau, International Trade API, HS 2503 sulphur, general imports", "url": "https://www.census.gov/foreign-trade/index.html", "license": "US public domain (credit Census Bureau)"},
            "unit": "USD/t", "minTonnes": MIN_T, "pointFields": ["period", "unitValueUsdPerTonne", "tonnes", "valueUsd"], "points": pts}
     (ROOT / "data" / "us-sulphur.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     log("us-sulphur.json: %d meses, ultimo %s, %s USD/t" % (len(pts), pts[-1][0], pts[-1][1]))
