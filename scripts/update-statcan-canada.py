@@ -37,7 +37,7 @@ SPEC = {
 CAT = {"soja_grano": "cereales", "lenteja": "cereales", "guisante_seco": "cereales", "lino": "cereales", "trigo": "cereales", "cebada": "cereales", "avena": "cereales", "colza": "cereales", "maiz": "cereales", "centeno": "cereales",
        "leche": "lacteos", "vaca": "ganado", "cerdo": "porcino", "cordero": "ovino", "pollo": "avicultura", "huevos": "avicultura"}
 
-def call(path, body=None, tries=4):
+def call(path, body=None, tries=4, fatal=True):
     """Llamada al WDS de Statistics Canada con reintentos; si sigue sin devolver JSON se dice que respondio el servicio (estado, tipo y comienzo)."""
     import time
     last = None
@@ -53,15 +53,17 @@ def call(path, body=None, tries=4):
         except Exception as e:
             last = "%s: %s" % (type(e).__name__, e)
         time.sleep(5 * (i + 1))
-    print("ERROR: StatCan WDS %s sin respuesta util tras %d intentos: %s" % (path.split("/")[0], tries, last))
-    sys.exit(1)
+    print("%s: StatCan WDS %s sin respuesta util tras %d intentos: %s" % ("ERROR" if fatal else "AVISO", path.split("/")[0], tries, last))
+    if fatal: sys.exit(1)
+    return None
 
 now = datetime.now(timezone.utc)
 verified_at = now.isoformat(timespec="seconds").replace("+00:00", "Z")
 pub_date = now.date().isoformat()
 try:
-    meta = call("getCubeMetadata", [{"productId": PID}])
-    rel = meta[0]["object"].get("releaseTime") or ""
+    # los metadatos solo dan la fecha de publicacion: si no responden (el 25-oct agotaron el tiempo desde GitHub) se sigue con la descarga
+    meta = call("getCubeMetadata", [{"productId": PID}], tries=2, fatal=False)
+    rel = (meta[0]["object"].get("releaseTime") or "") if meta else ""
     if re.match(r"\d{4}-\d{2}-\d{2}", rel):
         pub_date = rel[:10]
 except Exception as e:
