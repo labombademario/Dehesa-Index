@@ -67,6 +67,15 @@
   };
   function t2(lang) { return T2[lang] || T2.es; }
   var REGN = { eu: { es: 'Unión Europea', en: 'European Union', fr: 'Union européenne', it: 'Unione europea' }, us: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' }, ca: { es: 'Canadá', en: 'Canada', fr: 'Canada', it: 'Canada' }, uk: { es: 'Reino Unido', en: 'United Kingdom', fr: 'Royaume-Uni', it: 'Regno Unito' } };
+  // mercado de la cifra: etiqueta publicada en data/market-labels.json; los precios internacionales (Banco Mundial, EIA) están archivados con la región «eu» y no son de la UE
+  function mktName(env, o, lang) {
+    var M = env.marketData, i = { es: 0, en: 1, fr: 2, it: 3 }[lang] || 0, m = M && M.byId && M.byId[o.id];
+    if (m) return m[i];
+    if (o.region === 'eu' && (o.sourceId === 'world_bank' || o.sourceId === 'eia')) return (o.sourceId === 'eia' ? WORLDN_EIA : WORLDN)[lang] || WORLDN.es;
+    return REGN[o.region] ? REGN[o.region][lang] : o.region;
+  }
+  var WORLDN_EIA = { es: 'Mercado internacional (EIA)', en: 'International market (EIA)', fr: 'Marché international (EIA)', it: 'Mercato internazionale (EIA)' };
+  var WORLDN = { es: 'Mercado internacional (Banco Mundial)', en: 'International market (World Bank)', fr: 'Marché international (Banque mondiale)', it: 'Mercato internazionale (Banca mondiale)' };
   var UNIT = { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg', kg: 'kg', litro: 'L', mmbtu: 'MMBtu', barril: 'bbl', docena: { es: 'docena', en: 'dozen', fr: 'douzaine', it: 'dozzina' }, lb: 'lb', gal: 'gal', ton_corta: 'short ton', index_2020_100: '2020 = 100' };
   var SRC = { eu_agrifood: 'Comisión Europea · Agri-food Data Portal', usda_nass: 'USDA NASS (Quick Stats)', statcan: 'Statistics Canada', defra: 'DEFRA', eurostat: 'Eurostat', world_bank: 'Banco Mundial', usda_ams_mars: 'USDA AMS', european_commission: 'Comisión Europea', eu_oil_bulletin: 'Boletín Petrolero de la UE', eia: 'U.S. EIA', usda_ers: 'USDA ERS' };
 
@@ -91,8 +100,13 @@
     ['DE', { es: 'Alemania', en: 'Germany', fr: 'Allemagne', it: 'Germania' }, ['alemania', 'germany', 'allemagne', 'germania', 'aleman', 'german']], ['PT', { es: 'Portugal', en: 'Portugal', fr: 'Portugal', it: 'Portogallo' }, ['portugal', 'portogallo', 'portugues']],
     ['NL', { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' }, ['paises bajos', 'netherlands', 'pays bas', 'paesi bassi', 'holanda', 'holland']], ['BE', { es: 'Bélgica', en: 'Belgium', fr: 'Belgique', it: 'Belgio' }, ['belgica', 'belgium', 'belgique', 'belgio']],
     ['AT', { es: 'Austria', en: 'Austria', fr: 'Autriche', it: 'Austria' }, ['austria', 'autriche']], ['DK', { es: 'Dinamarca', en: 'Denmark', fr: 'Danemark', it: 'Danimarca' }, ['dinamarca', 'denmark', 'danemark', 'danimarca']],
-    ['AU', { es: 'Australia', en: 'Australia', fr: 'Australie', it: 'Australia' }, ['australia', 'australie', 'australiano']], ['IT', { es: 'Italia', en: 'Italy', fr: 'Italie', it: 'Italia' }, ['italia', 'italy', 'italie', 'italiano']]
+    ['AU', { es: 'Australia', en: 'Australia', fr: 'Australie', it: 'Australia' }, ['australia', 'australie', 'australiano']], ['IT', { es: 'Italia', en: 'Italy', fr: 'Italie', it: 'Italia' }, ['italia', 'italy', 'italie', 'italiano']],
+    ['AR', { es: 'Argentina', en: 'Argentina', fr: 'Argentine', it: 'Argentina' }, ['argentina', 'argentine', 'argentino']], ['UY', { es: 'Uruguay', en: 'Uruguay', fr: 'Uruguay', it: 'Uruguay' }, ['uruguay', 'uruguayo']],
+    ['CY', { es: 'Chipre', en: 'Cyprus', fr: 'Chypre', it: 'Cipro' }, ['chipre', 'cyprus', 'chypre', 'cipro']], ['LU', { es: 'Luxemburgo', en: 'Luxembourg', fr: 'Luxembourg', it: 'Lussemburgo' }, ['luxemburgo', 'luxembourg', 'lussemburgo']],
+    ['MT', { es: 'Malta', en: 'Malta', fr: 'Malte', it: 'Malta' }, ['malta', 'malte']]
   ];
+  // Irlanda del Norte es Reino Unido (precios de DAERA), no Irlanda: se cambia antes de buscar países
+  var NIRL = ['irlanda del norte', 'northern ireland', 'irlande du nord', 'irlanda del nord'];
   var STATES = [ // [código, [nombres normalizados]]
     ['AR', ['arkansas']], ['CA', ['california']], ['CO', ['colorado']], ['IA', ['iowa']], ['IL', ['illinois']], ['IN', ['indiana']], ['KS', ['kansas']], ['KY', ['kentucky']], ['MD', ['maryland']], ['MN', ['minnesota']], ['MO', ['missouri']], ['MS', ['mississippi']],
     ['MT', ['montana']], ['NC', ['carolina del norte', 'north carolina', 'caroline du nord', 'carolina del nord']], ['ND', ['dakota del norte', 'north dakota', 'dakota du nord', 'dakota del nord']], ['NE', ['nebraska']], ['OH', ['ohio']], ['OK', ['oklahoma']],
@@ -107,7 +121,7 @@
     change: 'anual anuales annuel annuelle annuels annuale annuali annual yearly yoy interanual subido sube subir subida sube bajado baja bajar bajada caido caida cae variacion variaciones cambio cambios evolucion evoluciono tendencia rose rise risen rising rises up down fell fall falling drop dropped change changes changed trend moved movement evolution gain gained loss lost augmente augmenter baisse baisser hausse variation variations tendance evolue evolution monte descendu aumentato aumento aumentare sceso scendere salito salita calo variazione variazioni cambiamento tendenza ano anos year years annee annees anno anni mes meses month months mois mese mesi semana semanas week weeks ytd',
     premium: 'ecologico ecologica ecologicos ecologicas ecologique ecologiques prime primes premio premi organico organicos organica organic organique organiques biologico biologici bio premium prima primas',
     cost: 'coste costes costo costos costi costs cout couts',
-    calendar: 'cuando sale salen publica publican publicacion publicaciones calendario informe informes wasde release releases publie publient quand uscita esce calendrier calendar report reports'
+    calendar: 'cuando sale salen publica publican publicacion publicaciones calendario informe informes wasde release releases released publie publient publiee publie quand uscita esce escono pubblicato pubblica calendrier calendar report reports rapport rapports rapporto rapporti fecha fechas date dates next proximo proxima prochain prochaine prossimo prossima'
   };
   var REPORT_WORDS = [ // informes oficiales de USDA que se pueden preguntar por su nombre (solo se reconocen si la pregunta lleva palabras de calendario)
     ['wasde', ['wasde']], ['crop-progress', ['crop progress', 'progreso de cultivos', 'progreso de los cultivos', 'estado de los cultivos']],
@@ -115,7 +129,7 @@
     ['milk-production', ['milk production', 'produccion de leche', 'production de lait', 'produzione di latte']], ['hogs-and-pigs', ['hogs and pigs']],
     ['grain-stocks', ['grain stocks', 'existencias de granos', 'existencias de cereales']], ['agricultural-prices', ['agricultural prices', 'precios agricolas']], ['cold-storage', ['cold storage']]
   ];
-  var FILLER = 'ofertas bids bid offres offerte agrarias agrarios agraria agrario agroalimentarias agroalimentarios agrarie agrari vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s pais paese paesi country page pagina pays mercado mercados market markets marche marches mercato mercati agricultura agriculture agricoltura acre acres cash spot ha han cotizacion cotizaciones cotiza cotation cotations cours quotazione quotazioni quote quotes esta estan sta stanno est sont has have had one une uno over currently actualmente attualmente actuellement en cours del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto when next is quand sort rapport quando prossimo prochain proximo proxima'.split(' ');
+  var FILLER = 'ofertas bids bid offres offerte agrarias agrarios agraria agrario agroalimentarias agroalimentarios agrarie agrari vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data donnee donnees dati lonja lonjas values value valor valores valeur valeurs valore valori se paga pagan pagado paid pay pays paye payes pagato pagati pagano ha han he este estos estas this cette ce questo questa quest dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s pais paese paesi country page pagina pays mercado mercados market markets marche marches mercato mercati agricultura agriculture agricoltura acre acres cash spot ha han cotizacion cotizaciones cotiza cotation cotations cours quotazione quotazioni quote quotes esta estan sta stanno est sont has have had one une uno over currently actualmente attualmente actuellement en cours del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto when next is quand sort rapport quando prossimo prochain proximo proxima'.split(' ');
 
   var TRADE_EXP = toSet('exportaciones exportacion exportar exporta exportan exports export exportations exportation exporte exportent esportazioni esportazione esporta esportano destino destinos destination destinations destinazione destinazioni vende venden vender sell sells selling vend vendent vendre vendono');
   var TRADE_IMP = toSet('importaciones importacion importar importa importan imports import importations importation importe importent importazioni importazione importano origen origenes origin origins origine origini compra compran comprar buy buys buying achete achetent acheter comprano');
@@ -158,7 +172,7 @@
     ['silage', ['maiz de silo', 'maiz forrajero', 'maiz para ensilar', 'silage maize', 'silage', 'maize silage', 'mais fourrage', 'ensilage', 'mais da foraggio', 'insilato', 'silomais']], ['sugarbeet', ['remolacha azucarera', 'remolacha', 'sugar beet', 'sugarbeet', 'sugar beets', 'betterave sucriere', 'betterave', 'barbabietola da zucchero', 'barbabietola']],
     ['potato', ['patatas', 'patata', 'potatoes', 'potato', 'pommes de terre', 'pomme de terre', 'patate', 'patata']], ['sunflower', ['girasol', 'sunflower', 'tournesol', 'girasole']], ['triticale', ['triticale']], ['cereals', ['cereales', 'cereals', 'cereal', 'cereales', 'cereali', 'cereale']]
   ];
-  var DEFILL = toSet('agricola agricolas agricole agricoles agricolo agricoli agricultural agrarian farm farms'), PRICEW = toSet('precio precios price prices prix prezzo prezzi cotiza cotizacion');
+  var DEFILL = toSet('agricola agricolas agricole agricoles agricolo agricoli agricultural agrarian farm farms'), PRICEW = toSet('precio precios price prices prix prezzo prezzi cotiza cotizacion paga pagan paid payé paye pagato');
   var RANKW = toSet('mas mayor mayores top biggest largest most plus piu maggiori maggiore principales best worst mejores peores');
   var UPW = toSet('subido sube suben subida subidas subir rise rises rising risen up gain gains gainers gainer climbed hausse hausses monte rialzo rialzi salito salita'), DNW = toSet('bajado baja bajan bajada bajadas bajar caido caida cae caen fell fall falls falling down drop drops dropped losers loser baisse baisses ribasso ribassi sceso scesa calo');
   var MOVW = toSet('movers'), CONNW = toSet('y and et e vs versus con with contra compara comparar compare comparer confronta confronto frente entre between o or ou');
@@ -193,27 +207,55 @@
     return { n: n, found: found };
   }
   var curLang = 'es';
-  function bestProduct(pt, env) {
+  function bestProduct(pt, env, nums) {
     var best = null;
+    if (pt.length === 1 && ALIAS[pt[0]]) { var al = (env.products || []).filter(function (p) { return p.slug === ALIAS[pt[0]]; })[0]; if (al) return al; }
     (env.products || []).forEach(function (p) {
       if (!p.slug) return;
       if (!p._w) { p._w = []; LANGS.forEach(function (l) { p._w = p._w.concat(toks(p.names[l])); }); p._w = p._w.concat(toks(p.kw || '')); p._t = {}; LANGS.forEach(function (l) { p._t[l] = toks(p.names[l]).length; }); }
       var tot = 0, ok = true;
       for (var i = 0; i < pt.length; i++) {
-        var b = 0; for (var j = 0; j < p._w.length; j++) { var s = pt[i].length < 4 && pt[i] !== p._w[j] ? 0 : env.tokScore(pt[i], p._w[j]); if (s > b) b = s; if (b === 1) break; }
-        if (b < 0.6) { ok = false; break; } tot += b;
+        var b = 0; for (var j = 0; j < p._w.length; j++) { var s = pt[i].length < 3 || pt[i].length < 4 && pt[i] !== p._w[j] ? 0 : env.tokScore(pt[i], p._w[j]); if (s > b) b = s; if (b === 1) break; }
+        if (b < (p.fv ? 0.85 : 0.6)) { ok = false; break; } tot += b;   // fruta y hortaliza: sin erratas dudosas («abogado» no es aguacate)
       }
       if (!ok) return;
       var sc = tot / pt.length - Math.min(p._t.es + p._t.en, 12) / 200 - Math.min(p._t[curLang] || 0, 12) / 60;
+      (nums || []).forEach(function (d) { if (p._w.indexOf(d) >= 0) sc += 0.04; });
       var own = toks(p.names[curLang] || ''); if (pt.every(function (w) { return own.some(function (o) { return env.tokScore(w, o) >= 0.95; }); })) sc += 0.1;   // «grano» en italiano es el trigo; en español, un grano cualquiera
       if (!best || sc > best.sc) best = { p: p, sc: sc };
     });
     return best && best.sc >= 0.55 ? best.p : null;
   }
+  // Si la pregunta es el nombre completo de una ficha (todas sus palabras, nada más), es esa ficha aunque nombre un país, un estado o una región.
+  var PLACEW = null;
+  function placeWords() { var o = {}; [REGION_WORDS, COUNTRY_WORDS, XC, STATES].forEach(function (T) { T.forEach(function (r) { r[r.length - 1].forEach(function (a) { a.split(' ').forEach(function (w) { o[w] = 1; }); }); }); }); return o; }
+  function fullProduct(raw, env) {
+    PLACEW = PLACEW || placeWords();
+    var qt = toks(raw).filter(function (w) { return !FILL[w] && !KW.change[w]; });
+    if (qt.length < 2) return null;
+    var best = null;
+    (env.products || []).forEach(function (p) {
+      if (!p.slug) return;
+      if (!p._nt) { p._nt = {}; LANGS.forEach(function (l) { p._nt[l] = toks(p.names[l]).filter(function (w) { return !FILL[w]; }); }); }
+      LANGS.forEach(function (l) {
+        var nt = p._nt[l];
+        if (nt.length < 2 || nt.length !== qt.length || nt.filter(function (w) { return !PLACEW[w]; }).length < 2) return;
+        var m = function (a, b) { return /^\d+$/.test(a) || /^\d+$/.test(b) || a.length < 3 || b.length < 3 ? a === b : env.tokScore(a, b) >= (a.length >= 5 ? 0.6 : 0.8); };
+        if (!nt.every(function (w) { return qt.some(function (q) { return m(q, w); }); })) return;
+        if (!qt.every(function (q) { return nt.some(function (w) { return m(q, w); }); })) return;
+        var sc = 0; qt.forEach(function (q) { var b = 0; nt.forEach(function (w) { var v = q === w ? 1 : env.tokScore(q, w); if (v > b) b = v; }); sc += b; });   // «novillos» antes que «novillas»
+        if (!best || sc > best.sc || sc === best.sc && nt.length > best.n) best = { p: p, n: nt.length, sc: sc };
+      });
+    });
+    return best ? best.p : null;
+  }
   function firstPos(n, aliases) { var best = -1; aliases.forEach(function (a) { var i = n.indexOf(' ' + a + ' '); if (i >= 0 && (best < 0 || i < best)) best = i; }); return best; }
   function parse(query, lang, env) {
     var raw = String(query || ''), n = ' ' + norm(raw) + ' '; curLang = lang;
     if (n.trim().length < 2) return null;
+    var fp = fullProduct(raw, env);
+    if (fp) return { kind: toks(raw).some(function (w) { return KW.change[w]; }) ? 'change' : 'price', reports: [], product: fp, pair: null, regions: [], states: [], countries: [], parties: [], tdir: {}, lands: [], crop: null, de: {}, attrs: [], scopes: [], world: false, wantChange: false, full: true };
+    NIRL.forEach(function (w) { n = n.split(' ' + w + ' ').join(' reino unido '); });
     var states = [], m;
     var up = raw.match(/\b[A-Z]{2}\b/g) || [];
     up.forEach(function (c) { if (STATE_NAME[c] && c !== 'CA' && c !== 'IN' && c !== 'OK' && c !== 'US' && c !== 'EU' && c !== 'UK') n = n.split(' ' + c.toLowerCase() + ' ').join(' '); });
@@ -227,12 +269,20 @@
     m = takePhrases(n, REGION_WORDS); n = m.n; var regions = m.found;
     var cm = takePhrases(n, COUNTRY_WORDS.map(function (c) { return [c[0], c[2]]; })); n = cm.n; var countries = cm.found;
     var xm = takePhrases(n, XC.map(function (c) { return [c[0], c[2]]; })); n = xm.n; var xcountries = xm.found;
+    var priceHit0 = toks(raw).some(function (w) { return PRICEW[w]; });   // en Alemania, «patata» sin «precio» es la cosecha de Destatis
+    var RCC = { us: 'US', uk: 'UK', ca: 'CA' }, rcc = !countries.length && regions.length === 1 && RCC[regions[0]] && !states.length ? RCC[regions[0]] : null;
+    var cfam = null; if (countries.length || rcc) {
+      var fm0 = takePhrases(n, CFAM_ROWS.filter(function (r) { return r[0] === 'tierra'; }).map(function (r) { return [r[0], r[2]]; }));
+      if (rcc && fm0.found.length) { countries = [rcc]; regions = []; }
+    }
+    if (countries.length && (!(countries.indexOf('DE') >= 0 || lands.length) || priceHit0 && !lands.length)) { var fm = takePhrases(n, CFAM_ROWS.filter(function (r) { return r[0] !== 'tierra' || countries.indexOf('DE') < 0; }).map(function (r) { return [r[0], r[2]]; })); if (fm.found.length === 1) { n = fm.n; var fr = CFAM_ROWS.filter(function (r) { return r[0] === fm.found[0]; })[0]; cfam = { slug: fr[0], names: fr[1], pseudo: true }; } }
     var deCtx = lands.length > 0 || countries.indexOf('DE') >= 0, xcrops = [];
     if (deCtx) { m = takePhrases(n, CROP_X); n = m.n; xcrops = m.found; }
     var calHit = n.trim().split(' ').some(function (w) { return KW.calendar && KW.calendar[w]; });
     var rp = calHit ? takePhrases(n, REPORT_WORDS) : { found: [], n: n }; n = rp.n; var reports = rp.found;
     var words = n.trim() ? n.trim().split(' ') : [], kinds = {}, rest = [], prodW = false, weakCost = false, tdir = {}, sup = {}, df = {}, world = false;
     words.forEach(function (w) {
+      if (calHit && (w === 'se' || w === 'si')) return;   // «cuándo se publica»
       if (TRADE_EXP[w]) { tdir.exp = 1; return; } if (TRADE_IMP[w]) { tdir.imp = 1; return; } if (TRADE_GEN[w]) { tdir.gen = 1; return; }
       if (PW[w]) { prodW = true; return; }
       if (WORLDW[w]) { world = true; return; }
@@ -252,7 +302,12 @@
     var restM = rest.filter(function (w) { return !MOVFILL[w] && !UPW[w] && !DNW[w]; });
     if ((mv.up || mv.dn || mv.mov) && (mv.rank || mv.mov) && !restM.length && !states.length && !countries.length && !lands.length && !xcountries.length && !tdir.exp && !tdir.imp && !prodW && !kinds.calendar && !kinds.cost && !kinds.premium)
       return { kind: 'movers', dir: mv.up && !mv.dn ? 'up' : mv.dn && !mv.up ? 'down' : mv.mov && !mv.up && !mv.dn ? 'both' : 'both', reports: [], product: null, regions: regions, states: [], countries: [], parties: [], tdir: {} };
-    var product = rest.length ? bestProduct(rest, env) : null, pair = null, i;
+    var nums = n.trim().split(' ').filter(function (w) { return /^\d+$/.test(w); });
+    var product = rest.length ? bestProduct(rest, env, nums) : cfam, pair = null, i;
+    if (cfam && rest.length) product = null;
+    // «banana en Europa»: la fruta (platano) no tiene precio por región; la ficha regional del Banco Mundial (banana_ue) sí
+    if (product && product.fv && regions.length === 1) { var sf = { us: 'us', eu: 'ue' }[regions[0]], fw = {}; LANGS.forEach(function (l) { var t0 = toks(product.names[l])[0]; if (t0) fw[t0] = 1; });
+      var rp = (env.products || []).filter(function (p) { return !p.fv && sf && new RegExp('_' + sf + '$').test(p.slug) && LANGS.some(function (l) { return fw[toks(p.names[l])[0]]; }); })[0]; if (rp) product = rp; }
     var conn = toks(raw).some(function (w) { return CONNW[w]; });
     if (!product && rest.length >= 2 && conn) for (i = 1; i < rest.length && !pair; i++) { var pa = bestProduct(rest.slice(0, i), env), pb = bestProduct(rest.slice(i), env); if (pa && pb && pa.slug !== pb.slug) pair = [pa, pb]; }
     if (rest.length && !product && !pair) return null; // palabras que no entendemos: mejor no responder
@@ -264,8 +319,9 @@
       else if (lands.length && !crop && !product && !tdir.exp && !tdir.imp && !tdir.gen) deKind = 'land';
     }
     var attrs = Object.keys(sup).filter(function (k) { return k !== 'generic'; });
+    if (product && PSD[product.slug] && (attrs.length || sup.generic || prodW || tdir.exp || tdir.imp)) countries = countries.filter(function (c) { if (PSD_KEY[c]) { xcountries.push(c); return false; } return true; });
     if (prodW && attrs.indexOf('production') < 0) attrs.push('production'); if (tdir.exp) attrs.push('exports'); if (tdir.imp) attrs.push('imports');
-    var scopes = [], badParty = parties.some(function (p) { return p.code !== 'US' && p.code !== 'CA'; }) || regions.some(function (r) { return !PSD_KEY[r]; });
+    var scopes = [], badParty = parties.some(function (p) { return p.code !== 'US' && p.code !== 'CA' && !(PSD_KEY[p.code] && xcountries.indexOf(p.code) >= 0); }) || regions.some(function (r) { return !PSD_KEY[r]; });
     regions.forEach(function (r) { if (PSD_KEY[r]) scopes.push(r); }); xcountries.forEach(function (c) { scopes.push(c); });
     var supOk = !!(product && PSD[product.slug] && (attrs.length || sup.generic) && !states.length && !kinds.cost && !kinds.premium && !deKind && !badParty && !countries.length);
     var kind = null, tradeOk = (tdir.exp || tdir.imp || tdir.gen) && !product && !states.length && parties.length && TRADE_CC[parties[0].code] && !lands.length;
@@ -323,7 +379,7 @@
   }
   function card(env, o, lang, withY12) {
     var t = tx(lang), idl = identityLine(env, o, lang);
-    var c = { region: o.region, regionName: REGN[o.region] ? REGN[o.region][lang] : o.region, ident: idl, value: o.value, valueTxt: unitCurrency(o, lang), date: o.observationDate, dateTxt: dateTxt(o.observationDate, lang), changePct: typeof o.changePct === 'number' ? o.changePct : null, sid: o.sourceId, pub: o.publicationDate,
+    var c = { region: o.region, regionName: mktName(env, o, lang), ident: idl, value: o.value, valueTxt: unitCurrency(o, lang), date: o.observationDate, dateTxt: dateTxt(o.observationDate, lang), changePct: typeof o.changePct === 'number' ? o.changePct : null, sid: o.sourceId, pub: o.publicationDate,
       directional: o.comparability === 'directional', source: SRC[o.sourceId] || o.sourceId, href: env.href('producto.html?p=' + encodeURIComponent(o.product)), y12: null, y12Known: false, id: o.id, product: o.product };
     return c;
   }
@@ -337,6 +393,12 @@
   function rPrice(intent, lang, env, wantY12) {
     var t = tx(lang), slug = intent.product.slug, pn = pname(intent.product, lang);
     return obsFor(env, slug, intent.regions).then(function (obs) {
+      // «banana en EE. UU.»: si el producto no tiene dato en esa región pero existe su variante con la región en el nombre (banana_us), se usa esa ficha
+      if (!obs.length && intent.regions.length === 1) {
+        var suf = { us: 'us', eu: 'ue', ca: 'ca', uk: 'uk' }[intent.regions[0]], base = slug.split('_')[0];
+        var sib = (env.products || []).filter(function (p) { return p.slug === base + '_' + suf; })[0];
+        if (sib && sib.slug !== slug) return rPrice({ kind: intent.kind, product: sib, regions: [], states: [], countries: [] }, lang, env, wantY12);
+      }
       if (!obs.length) {
           var noneHere = function () {
           if (intent.regions.length) return obsFor(env, slug, null).then(function (all) {
@@ -344,7 +406,7 @@
             var where = all.map(function (o) { return (Sh && Sh.marketLabel && Sh.marketLabel(o, lang)) || REGN[o.region][lang]; }).filter(function (x, i, a) { return a.indexOf(x) === i; }).join(', ');
             return { kind: 'price', heading: pn, cards: [], notes: [(fmt(t.noneReg, { p: pn, r: intent.regions.map(function (r) { return REGN[r][lang]; }).join(', ') }) + (where ? ' ' + fmt(t.noneProd, { p: pn, r: where }) : '')).replace(/\.\./g, '.')], link: { href: env.href('producto.html?p=' + encodeURIComponent(slug)), label: t.open } };
           });
-          return { kind: 'price', heading: pn, cards: [], notes: [t.none + ': ' + pn + '.'], link: null };
+          return { kind: 'price', heading: pn, cards: [], notes: [t.none + ': ' + pn + '.'], link: intent.product.u ? { href: env.href(intent.product.u), label: t.open } : null };
         };
         // Fertilizantes en EE. UU.: no hay serie nacional, pero sí los informes estatales de costes de USDA AMS (precio por estado, nunca una media inventada)
         var FERT = { urea: 'urea', amoniaco: 'amoniaco', dap: 'dap', map: 'map', potasa: 'potasa', uan: 'uan' };
@@ -357,10 +419,20 @@
           });
           return { kind: 'price', heading: pn + ' · ' + REGN.us[lang], cards: cards, notes: [({ es: 'Precio medio por estado de los informes de costes de producción de USDA AMS. No es una media nacional.', en: 'State average from USDA AMS production cost reports. Not a national average.', fr: 'Prix moyen par État des rapports de coûts de production de l’USDA AMS. Ce n’est pas une moyenne nationale.', it: 'Prezzo medio per stato dai rapporti sui costi di produzione USDA AMS. Non è una media nazionale.' })[lang]], link: { href: env.href('insumos.html'), label: ({ es: 'Ver insumos', en: 'See inputs', fr: 'Voir les intrants', it: 'Vedi gli input' })[lang] } };
         }).then(function (r) { return r || noneHere(); });
+        // otra ficha de la misma familia con dato en esa región («huevos en el Reino Unido» -> huevos_todos_uk, «lamb UK» -> corderos_ni)
+        if (intent.regions.length === 1) {
+          var rg = intent.regions[0], fw = toks(pname(intent.product, 'es'))[0];
+          return J(env, 'prices/latest/' + rg + '.json').then(function (d) {
+            var have = {}; (d && d.observations || []).forEach(function (o) { have[o.product] = 1; });
+            var allT = function (p) { return /todos|all types|tous|tutti/i.test(p.names.es + ' ' + p.names.en) ? 0 : 1; };
+            var fam = (env.products || []).filter(function (p) { return have[p.slug] && !p.fv && p.slug !== slug && fw && env.tokScore(fw, toks(p.names.es)[0] || '') >= 0.85; }).sort(function (a, b) { return allT(a) - allT(b) || a.names.es.length - b.names.es.length; })[0];
+            return fam ? rPrice({ kind: intent.kind, product: fam, regions: [rg], states: [], countries: [] }, lang, env, wantY12) : noneHere();
+          });
+        }
         return noneHere();
       }
 
-      return J(env, 'instrument-identity.json').then(function (d) { env.identityData = d; }).then(function () {
+      return Promise.all([J(env, 'instrument-identity.json'), J(env, 'market-labels.json')]).then(function (d) { env.identityData = d[0]; env.marketData = d[1]; }).then(function () {
         var cards = obs.map(function (o) { return card(env, o, lang); });
         var done = Promise.resolve();
         if (wantY12) done = Promise.all(obs.map(function (o, i) { return J(env, 'prices/history/' + o.region + '/' + o.product + '.json').then(function (h) { var y = yoy(h, o); cards[i].y12 = y; cards[i].y12Known = y !== null; }); }));
@@ -463,9 +535,31 @@
   }
   // «Precio del trigo en Francia»: con producto + país se busca la cotización del propio país en su catálogo (auditoría 8-oct-2026).
   // Solo precios en moneda (nunca índices 2020=100); si no hay ninguna, se dice claramente y se ofrece el perfil, sin sustituir otro mercado en silencio.
-  var CPRICE = { trigo: /\b(soft |common |milling )?wheat\b/i, maiz: /\b(maize|corn)\b/i, cebada: /\bbarley\b/i, avena: /\boats?\b/i, centeno: /\brye\b/i, colza: /\b(rapeseed|canola)\b/i,
-    soja: /\bsoy(beans?)?\b/i, girasol: /\bsunflower/i, leche: /\bmilk\b[^:]*:?.*\bprice\b|\bmilk price\b/i, vacuno: /\b(cow|cattle|young bull|steer|heifer|beef)\b/i, cerdo: /\b(pig|pork|hog)s?\b/i,
-    cordero: /\blambs?\b/i, pollo: /\b(chicken|broiler)s?\b/i, huevos: /\beggs?\b/i, arroz: /\brice\b/i, urea: /\burea\b/i, oliva: /\bolive oil\b/i };
+  var CPRICE = { trigo: /\bwheat\b|\bbl[ée]s?\b|\btrigo\b|pszenic|\bspelt\b/i, maiz: /\bmaize\b|\bcorn\b|\bma[iï]s\b|\bma[ií]z\b|kukurydz/i, cebada: /\bbarley\b|\borge\b|\bcebada\b|j[eę]czmie/i,
+    avena: /\boats?\b|\bavoine\b|\bavena\b|\bowies/i, centeno: /\brye\b|\bseigle\b|\bcenteno\b|[zż]yto/i, colza: /rapeseed|canola|\brape\b|\bcolza\b|rzepak/i, soja: /\bsoy|\bsoja\b/i, girasol: /sunflower|tournesol|girasol/i,
+    leche: /\bmilk\b|\blait\b|\bleche\b|\blatte\b|\bmleko\b/i, vacuno: /\bcattle\b|\bcows?\b|\bbeef\b|\bbulls?\b|\bsteers?\b|\bheifers?\b|\bbovin|\bvacuno\b|\bvaches?\b|\bveal\b|\bcalf\b|\bcalves\b|\bb(o|œ)euf/i,
+    cerdo: /\bpigs?\b|\bpork\b|\bhogs?\b|\bporcs?\b|\bcerdo\b|\bporcino\b|\bswine\b|wieprz|\bpiglets?\b/i, cordero: /\blambs?\b|\bagneaux?\b|\bcordero\b|\bagnell/i, pollo: /chicken|broiler|poulet|\bpollo\b|kurcz/i,
+    huevos: /\beggs?\b|\b(o|œ)eufs?\b|\bhuevos?\b|\buova\b|\bjaj/i, arroz: /\brice\b|\briz\b|\barroz\b|\briso\b|\bpaddy\b/i, urea: /\burea\b|\bur[ée]e\b/i, oliva: /olive oil|huile d.olive|aceite de oliva|olio d.oliva/i,
+    patata: /potato|pommes? de terre|\bpatatas?\b|ziemniak/i, mantequilla: /\bbutter\b|\bbeurre\b|mantequilla|\bburro\b|mas[lł]o/i, queso: /cheese|fromage|\bqueso\b|formaggio|cheddar|emmental|gouda|\bgauda\b/i };
+  CPRICE.tierra = /agricultural land (price|rent)|\bland (sales|rents?)\b|farmland (sale )?price|mean rent|ag land.*value|precio de la tierra|prix des terres/i;
+  var CPRICE_GRP = { tierra: { inputs: 0, prices: 1, income: 2 } };   // el precio de la tierra está entre los insumos (Eurostat apri_lprc)
+  var GRAINNOT = /flour|harina|farine|farina|\bbran\b|semolina|semoule|straw|paille|paja|silage|ensilage|green maize|fourrage|malt\b|meal\b|tourteau|\bcake\b|\boil\b|huile|aceite|olio/i;
+  var CPRICE_NOT = { queso: /head ?cheese/i, vacuno: /milk|\blait|leche|latte|mleko|hides?|leather|compound feed|feedingstuff|\bfeed,|pienso|aliment/i, pollo: /\beggs?\b|(o|œ)eufs?|huevos|uova|compound feed|feedingstuff|\bfeed,|pienso|aliment/i, cerdo: /lard\b|manteca|compound feed|feedingstuff|\bfeed,|pienso|aliment/i,
+    trigo: GRAINNOT, maiz: GRAINNOT, cebada: GRAINNOT, avena: GRAINNOT, centeno: GRAINNOT, arroz: /\bbran\b|flour|harina/i, colza: /\boil\b|huile|aceite|olio|meal\b|tourteau|\bcake\b|harina/i, soja: /\boil\b|huile|aceite|olio|meal\b|tourteau|\bcake\b|harina|farina/i, leche: /powder|poudre|polvo|lactos|whey|butter|beurre|replacer|cheese|fromage/i, oliva: /olives? for/i };
+  // menos preferidas dentro de la familia (se muestran si no hay otra): trigo duro, leche de cabra u oveja, ecológico
+  var CPRICE_LOW = { trigo: /durum|\bdur\b/i, leche: /goat|ewe|sheep|ch[eè]vre|brebis|cabra|oveja/i, vacuno: /calves|calf\b|breeding/i, cerdo: /piglets?|breeding|weaners?/i, tierra: /rent|irrigable|area in|number of/i, girasol: /\boil\b|huile|aceite|olio/i };
+  var CMONEY = /€|\beur\b|eur\/|usd|\$|£|gbp|chf|sek|dkk|pln|huf|czk|ron|bgn|nok|clp|uyu|ars|\bct\b|ct\/|cent|pence|\bp\/kg|kr\//i;
+  // producto del índice -> familia del país (soja_grano es la soja, vaca el vacuno…)
+  var CFAM = { soja_grano: 'soja', vaca: 'vacuno', aceite_girasol: 'girasol', queso_bloque_ca: 'queso', cheddar: 'queso', mantequilla_ca: 'mantequilla', huevos_docena_ca: 'huevos', leche_1l_ca: 'leche', leche_4l_ca: 'leche' };
+  // familias que no tienen ficha de precio propia: se reconocen solo cuando la pregunta nombra un país
+  var CFAM_ROWS = [
+    ['patata', { es: 'Patata', en: 'Potatoes', fr: 'Pommes de terre', it: 'Patate' }, ['pommes de terre', 'pomme de terre', 'patatas', 'patata', 'potatoes', 'potato', 'patate', 'papas', 'papa']],
+    ['girasol', { es: 'Girasol', en: 'Sunflower', fr: 'Tournesol', it: 'Girasole' }, ['pipas de girasol', 'semillas de girasol', 'sunflower seeds', 'sunflower seed', 'girasol', 'sunflower', 'tournesol', 'girasole']],
+    ['tierra', { es: 'Tierra agrícola', en: 'Farmland', fr: 'Terres agricoles', it: 'Terreni agricoli' }, ['tierra agricola', 'tierras agricolas', 'tierra de cultivo', 'tierras', 'tierra', 'terrenos', 'terreno', 'farmland', 'agricultural land', 'land', 'terres agricoles', 'terre agricole', 'terres', 'terre', 'terreni agricoli', 'terreni', 'terra', 'fincas', 'hectarea']],
+    ['queso', { es: 'Queso', en: 'Cheese', fr: 'Fromage', it: 'Formaggio' }, ['quesos', 'queso', 'cheeses', 'cheese', 'fromages', 'fromage', 'formaggi', 'formaggio']]
+  ];
+  // palabras genéricas que la gente usa para un producto y que el índice reparte entre varias fichas
+  var ALIAS = { beef: 'vaca', boeuf: 'vaca', manzo: 'vaca', bovino: 'vaca', bovini: 'vaca', bovins: 'vaca', vacuno: 'vaca', pork: 'cerdo', porc: 'cerdo', maiale: 'cerdo', suino: 'cerdo', suini: 'cerdo', maiali: 'cerdo', porcino: 'cerdo', porcini: 'cerdo', cerdos: 'cerdo', hog: 'cerdo', hogs: 'cerdo', pig: 'cerdo', pigs: 'cerdo', porcs: 'cerdo', terneros: 'vaca', ternero: 'vaca', terneras: 'vaca', calves: 'vaca', calf: 'vaca', veaux: 'vaca', veau: 'vaca', vitelli: 'vaca', vitello: 'vaca', lambs: 'cordero', agneaux: 'cordero', agnelli: 'cordero', corderos: 'cordero', soybean: 'soja_grano', soybeans: 'soja_grano', soy: 'soja_grano' };
   var PGRP = { quotes: 0, prices_lv: 1, milk: 1, prices: 2, prices_fv: 2, prices_paid: 3 };
   var CTX2 = {
     es: { chart: 'Ver gráfico e histórico de {p} en {c}', found: 'Precios de {p} en {c}', none: 'No hay un precio verificado de {p} en {c} en nuestros datos. El perfil del país tiene producción, comercio y otros indicadores; los precios de otros mercados no equivalen al de {c}.', open: 'Abrir el perfil de {c}', note: 'Último dato publicado de cada serie, en su unidad original.' },
@@ -475,17 +569,18 @@
   /* nombre de la serie en el idioma de la página si el traductor de etiquetas está cargado (si falta una pieza se deja el original) */
   function tlab(l, lang) { var T = root.DILabelTl; return T && T.ready && T.ready(lang) ? T.tl(l, lang) : l; }
   function rCountry(intent, lang, env) {
-    var t = tx(lang), cc = intent.countries[0], row = COUNTRY_WORDS.filter(function (c) { return c[0] === cc; })[0], name = row[1][lang];
+    var t = tx(lang), cc = intent.countries[0], row = COUNTRY_WORDS.filter(function (c) { return c[0] === cc; })[0], name = row ? row[1][lang] : (REGN[{ US: 'us', UK: 'uk', CA: 'ca' }[cc]] || {})[lang] || cc;
     var base = { kind: 'country', heading: t.countryHead + ' · ' + name, cards: [], notes: [fmt(t.countryText, { c: name })], link: { href: env.href('paises.html?c=' + cc), label: t.countryLink } };
-    var slug = intent.product && intent.product.slug, re = slug && CPRICE[slug];
+    var slug = intent.product && intent.product.slug, fam = slug && (CFAM[slug] || (CPRICE[slug] ? slug : CPRICE[slug.split('_')[0]] ? slug.split('_')[0] : slug)), re = fam && CPRICE[fam], not = fam && CPRICE_NOT[fam], low = fam && CPRICE_LOW[fam];
     if (!re) return Promise.resolve(base);
+    if (fam !== slug && !CFAM[slug]) { var fp = (env.products || []).filter(function (p) { return p.slug === fam; })[0]; if (fp) intent = { kind: intent.kind, countries: intent.countries, product: fp }; }   // «feed barley» -> nombre de la familia (cebada), no de la ficha de Alberta
     var k2 = CTX2[lang] || CTX2.es, pn = pname(intent.product, lang).toLowerCase();
     return Promise.all([J(env, 'catalog/' + cc + '.json'), J(env, 'license-registry.json')]).then(function (rr) {
       var cat = rr[0], reg = (rr[1] && rr[1].sources) || {};
-      var S = ((cat && cat.series) || []).filter(function (x) { return PGRP[x.group] != null && x.latest != null && re.test(x.label || '') && (x.group !== 'milk' || /price/i.test(x.label || '')) && !/2020=100|index/i.test((x.unit || '') + ' ' + (x.label || '')) && x.fs !== 'HISTORICAL' && x.fs !== 'DISCONTINUED'; });
-      if (slug === 'trigo') S = S.filter(function (x) { return !/durum/i.test(x.label); });
-      var org = function (x) { return /organic/i.test(x.label) ? 1 : 0; };
-      S.sort(function (a, b) { return (PGRP[a.group] - PGRP[b.group]) || (org(a) - org(b)) || (String(b.latestPeriod) > String(a.latestPeriod) ? 1 : String(b.latestPeriod) < String(a.latestPeriod) ? -1 : 0); });
+      var G = CPRICE_GRP[fam] || PGRP;
+      var S = ((cat && cat.series) || []).filter(function (x) { return G[x.group] != null && x.latest != null && re.test(x.label || '') && !(not && not.test(x.label || '')) && CMONEY.test(x.unit || '') && !/2020=100|index|= ?100/i.test((x.unit || '') + ' ' + (x.label || '')) && x.fs !== 'HISTORICAL' && x.fs !== 'DISCONTINUED'; });
+      var org = function (x) { return (/organic|biolog|ecol/i.test(x.label) ? 1 : 0) + (low && low.test(x.label) ? 2 : 0); };
+      S.sort(function (a, b) { return (org(a) - org(b)) || (G[a.group] - G[b.group]) || (String(b.latestPeriod) > String(a.latestPeriod) ? 1 : String(b.latestPeriod) < String(a.latestPeriod) ? -1 : 0); });
       var Sh = root.DehesaShared, fd = function (p) { return Sh && Sh.fmtDate ? Sh.fmtDate(p, lang) : p; };
       var cards = S.slice(0, 3).map(function (x) {
         return { sid: x.sourceId, trade: true, label: tlab(x.label, lang), id: x.id, value: x.latest, valueTxt: nf(x.latest, lang, Math.abs(x.latest) >= 100 ? 1 : 2) + ' ' + x.unit, unit: x.unit, date: x.latestPeriod, dateTxt: fd(x.latestPeriod), src: (reg[x.sourceId] && reg[x.sourceId].name) || '', cc: cc, region: cc,
@@ -606,7 +701,7 @@
       var keep = Object.keys(common).length ? function (o) { return common[o.region]; } : function () { return true; };
       var obs = oa.filter(keep).concat(ob.filter(keep));
       obs.sort(function (a, b) { return a.region === b.region ? (a.product === A.slug ? -1 : 1) : (a.region < b.region ? -1 : 1); });
-      return J(env, 'instrument-identity.json').then(function (d) { env.identityData = d; }).then(function () {
+      return Promise.all([J(env, 'instrument-identity.json'), J(env, 'market-labels.json')]).then(function (d) { env.identityData = d[0]; env.marketData = d[1]; }).then(function () {
         var cards = obs.map(function (o) { var c = card(env, o, lang); c.regionName = pname(o.product === A.slug ? A : B, lang) + ' · ' + c.regionName; return c; });
         var done = wantY ? Promise.all(obs.map(function (o, i) { return J(env, 'prices/history/' + o.region + '/' + o.product + '.json').then(function (h) { var y = yoy(h, o); cards[i].y12 = y; cards[i].y12Known = y !== null; }); })) : Promise.resolve();
         return done.then(function () { return { kind: 'compare', heading: pa + ' · ' + pb, cards: cards, notes: [u.cmpNote], link: { href: env.href('producto.html?p=' + encodeURIComponent(A.slug)), label: t.open + ': ' + pa }, y12: wantY }; });
@@ -614,12 +709,31 @@
     });
   }
 
+  // Productos del índice del buscador: fichas de precios (precios.html?…product=tab:slug) y de fruta y hortaliza (producto.html?p=slug, fv)
+  function productsFrom(entries) {
+    return (entries || []).filter(function (e) { return e.t === 'product'; }).map(function (e) {
+      var m = /product=([^&]+)/.exec(e.u); if (m) return { slug: decodeURIComponent(m[1]).split(':')[1], names: e.n, kw: e.k, u: e.u };
+      var f = /^producto\.html\?p=([^&#]+)/.exec(e.u); return f ? { slug: decodeURIComponent(f[1]), names: e.n, kw: e.k, u: e.u, fv: true, sub: e.s } : null;
+    }).filter(function (p) { return p && p.slug; });
+  }
+  // Fruta y hortaliza: el precio semanal por país está en su ficha; no hay una cifra única que dar aquí
+  var FVT = { es: 'Precio semanal por país, lo que cobra el agricultor y dónde se cultiva.', en: 'Weekly price by country, what farmers get and where it is grown.', fr: 'Prix hebdomadaire par pays, prix agricole et lieux de culture.', it: 'Prezzo settimanale per paese, prezzo agricolo e dove si coltiva.' };
+  var FVL = { es: 'Abrir la ficha de {p}', en: 'Open the {p} page', fr: 'Ouvrir la fiche : {p}', it: 'Apri la scheda: {p}' };
+  function rFV(intent, lang, env) {
+    var p = intent.product, pn = pname(p, lang);
+    return Promise.resolve({ kind: 'fv', heading: pn, cards: [], notes: [FVT[lang] || FVT.es], link: { href: env.href(p.u), label: fmt(FVL[lang] || FVL.es, { p: lang === 'en' ? pn : pn.toLowerCase() }) } });
+  }
   function answer(query, lang, env) {
     lang = LANGS.indexOf(lang) >= 0 ? lang : 'es';
     var intent; try { intent = parse(query, lang, env); } catch (e) { return Promise.resolve(null); }
     if (!intent) return Promise.resolve(null);
     var p;
+    if (intent.kind === 'country' && intent.product && !intent.product.fv) { var sl = intent.product.slug, fm = CFAM[sl] || (CPRICE[sl] ? sl : CPRICE[sl.split('_')[0]] ? sl.split('_')[0] : null);
+      if (!fm) { var nm = norm(pname(intent.product, 'es')), twin = (env.products || []).filter(function (p) { return p.fv && norm(p.names.es) === nm; })[0]; if (twin) intent.product = twin; } }
+    if (intent.product && intent.product.fv && (intent.kind === 'price' || intent.kind === 'change' || intent.kind === 'country' && !CPRICE[intent.product.slug])) intent.kind = 'fv';
+    else if (intent.product && intent.product.fv && intent.kind !== 'country') return Promise.resolve(null);
     switch (intent.kind) {
+      case 'fv': p = rFV(intent, lang, env); break;
       case 'price': p = rPrice(intent, lang, env, false); break;
       case 'change': p = rPrice(intent, lang, env, true); break;
       case 'local': p = rLocal(intent, lang, env); break;
@@ -635,7 +749,7 @@
       case 'compare': p = rCompare(intent, lang, env); break;
       default: p = Promise.resolve(null);
     }
-    return p.then(function (a) { if (a) a.intent = { kind: intent.kind, product: intent.product && intent.product.slug, pair: intent.pair && intent.pair.map(function (x) { return x.slug; }), lands: intent.lands, crop: intent.crop, scopes: intent.scopes, attrs: intent.attrs, dir: intent.dir, regions: intent.regions, states: intent.states, countries: intent.countries }; return a; }, function () { return null; });
+    return p.then(function (a) { if (a) a.intent = { kind: intent.kind, product: intent.product && intent.product.slug, pair: intent.pair && intent.pair.map(function (x) { return x.slug; }), lands: intent.lands, crop: intent.crop, scopes: intent.scopes, attrs: intent.attrs, dir: intent.dir, regions: intent.regions, states: intent.states, countries: intent.countries, full: !!intent.full }; return a; }, function () { return null; });
   }
 
   /* ---------- HTML ---------- */
@@ -671,6 +785,6 @@
     return h + '</div>';
   }
 
-  var API = { answer: answer, parse: parse, render: render, _norm: norm, _yoy: yoy };
+  var API = { answer: answer, parse: parse, render: render, productsFrom: productsFrom, _norm: norm, _yoy: yoy };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.DehesaAnswers = API;
 })(typeof window !== 'undefined' ? window : globalThis);

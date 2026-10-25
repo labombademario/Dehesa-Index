@@ -82,6 +82,8 @@ jobs:
 
       - name: Search ranking (54 consultas de scripts/search-cases.json traen la entrada esperada arriba)
         run: node scripts/test-search-ranking.mjs
+      - name: Search bench (~17.500 preguntas generadas con los datos del día + ~110 escritas a mano; Enter debe abrir el dato que existe)
+        run: node scripts/gen-search-bench.mjs && node scripts/test-search-bench.mjs
 
       - name: Blog email subscription (required consent, legal text, provider privacy link)
         run: node scripts/test-newsletter.mjs

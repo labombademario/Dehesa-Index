@@ -60,12 +60,23 @@
   function prep(entries) {
     entries.forEach(function (e) {
       e._t = {}; L.forEach(function (l) { e._t[l] = toks(e.n[l]); });
+      e._b = {}; L.forEach(function (l) { e._b[l] = e._t[l].filter(function (t) { return !STOP[t]; }).join(' '); });
       e._k = toks(e.k || ''); e._s = {}; L.forEach(function (l) { e._s[l] = toks((e.s || {})[l] || ''); });
     });
   }
   var L = ['es', 'en', 'fr', 'it'];
-  function fieldBest(q, arr) { var b = 0, i, s; for (i = 0; i < arr.length; i++) { s = tokScore(q, arr[i]); if (s > b) { b = s; if (b === 1) break; } } return b; }
-  function scoreEntry(e, qs, lang, needAll, gen) {
+  var VOC = { words: [], map: Object.create(null) };
+  function voc() {
+    var map = Object.create(null);
+    IDX.forEach(function (e, i) { var seen = Object.create(null), add = function (w) { if (!seen[w]) { seen[w] = 1; (map[w] || (map[w] = [])).push(i); } };
+      L.forEach(function (l) { e._t[l].forEach(add); e._s[l].forEach(add); }); e._k.forEach(add); });
+    VOC = { words: Object.keys(map), map: map };
+  }
+  // MEMO: durante una búsqueda, la puntuación de cada término frente a cada palabra se calcula una sola vez (las palabras se repiten en miles de entradas)
+  var MEMO = null;
+  function ts(q, w) { if (!MEMO) return tokScore(q, w); var m = MEMO[q] || (MEMO[q] = Object.create(null)), v = m[w]; if (v === undefined) v = m[w] = tokScore(q, w); return v; }
+  function fieldBest(q, arr) { var b = 0, i, s; for (i = 0; i < arr.length; i++) { s = ts(q, arr[i]); if (s > b) { b = s; if (b === 1) break; } } return b; }
+  function scoreEntry(e, qs, lang, needAll, gen, bq) {
     var total = 0, hit = 0, i;
     for (i = 0; i < qs.length; i++) {
       var q = qs[i], best = fieldBest(q, e._t[lang]);
@@ -84,6 +95,8 @@
     if (tt.length && tt.length === qs.length && qs.every(function (q, j) { return tokScore(q, tt[j]) >= 0.95; })) s += 0.12;
     // la primera palabra del título es exactamente la consulta («Pesca y acuicultura» frente a «Harina de pescado», que solo empieza igual)
     else if (tt.length && tt[0] === qs[0]) s += 0.03;
+    // el título completo es exactamente lo escrito, con «precio», «mapa»… incluidos («Precio de los piensos», «Mapa · Precios · Trigo»)
+    if (bq && e._b && e._b[lang] === bq) s += 0.5;
     if (gen) for (i = 0; i < gen.length; i++) { var g = Math.max(fieldBest(gen[i], e._t[lang]), fieldBest(gen[i], e._k) * 0.5); if (g >= 0.85) s += 0.015; else if (g > 0) s += 0.007; }
     return s;
   }
@@ -92,10 +105,27 @@
     if (!all.length) return { list: [], partial: false };
     var qs = all.filter(function (t) { return !GEN[t]; }), gen = all.filter(function (t) { return GEN[t]; });
     if (!qs.length) { qs = all; gen = []; }   // «precios» a secas: se busca tal cual
-    var run = function (needAll) { var out = []; IDX.forEach(function (e) { var s = scoreEntry(e, qs, lang, needAll, gen); if (s > 0.12) out.push({ e: e, s: s }); }); out.sort(function (a, b) { return b.s - a.s; }); return out; };
+    MEMO = Object.create(null);
+    // candidatas: solo las entradas que contienen alguna palabra que encaja con algún término (índice invertido de VOC)
+    var hitsBy = qs.map(function (q) { var o = Object.create(null), ws = VOC.words, i, j, ids; for (i = 0; i < ws.length; i++) if (ts(q, ws[i]) > 0) { ids = VOC.map[ws[i]]; for (j = 0; j < ids.length; j++) o[ids[j]] = 1; } return o; });
+    var cand = function (needAll) { var out = [], i, k; for (i = 0; i < IDX.length; i++) { if (needAll) { for (k = 0; k < hitsBy.length; k++) if (!hitsBy[k][i]) break; if (k === hitsBy.length) out.push(IDX[i]); } else { for (k = 0; k < hitsBy.length; k++) if (hitsBy[k][i]) { out.push(IDX[i]); break; } } } return out; };
+    var run = function (needAll) { var out = []; cand(needAll).forEach(function (e) { var s = scoreEntry(e, qs, lang, needAll, gen, all.join(' ')); if (s > 0.12) out.push({ e: e, s: s }); }); out.sort(function (a, b) { return b.s - a.s; }); return out; };
     var r = run(true), partial = false;
     if (!r.length && qs.length > 1) { r = run(false); partial = true; }
+    MEMO = null;
     return { list: r.slice(0, 10).map(function (x) { return x.e; }), partial: partial };
+  }
+  // Qué abre Enter: el dato de la respuesta directa, salvo que el primer resultado sea exactamente lo que se ha escrito
+  // («Cereales», «Calendario», «Precio de los piensos»): entonces esa página, aunque la respuesta hable de un producto o un país.
+  function bare(s) { return toks(s).filter(function (t) { return !STOP[t]; }).join(' '); }
+  function exactTitle(e, q, l) { var b = bare(q); return !!b && (bare(e.n[l]) === b || L.some(function (x) { return x !== l && bare(e.n[x]) === b; }) && bare(e.n[l]) !== ''); }
+  function enterTarget(q, l, a, list) {
+    var top = list && list[0], ah = a && (((a.cards || []).filter(function (c) { return c.href; })[0] || {}).href || (a.link && a.link.href));
+    if (top && exactTitle(top, q, l) && !(a && a.intent && a.intent.full && bare(a.heading || '') === bare(q))) {
+      var m = /product=[^&%]+%3A([^&]+)/.exec(top.u), same = m && a && a.intent && a.intent.product === decodeURIComponent(m[1]);
+      if (!same || !ah) return { u: top.u, ext: !!top.ext, ans: false };
+    }
+    return ah ? { u: ah, ans: true } : top ? { u: top.u, ext: !!top.ext, ans: false } : null;
   }
   // Noticias: data/news.json se baja solo cuando se busca (>= 3 letras); no entra en el indice estatico porque cambia cada 3 h.
   var NEWS = { arr: null, p: null };
@@ -229,7 +259,7 @@
     if (ANS.mod) return Promise.resolve(ANS.mod);
     if (!ANS.p) ANS.p = (global.DIIdentity ? Promise.resolve() : script('js/instrument-identity.js')).then(function () { return global.DIUsdaCal ? 0 : script('js/usda-calendar.js'); }).then(function () { return global.DICite ? 0 : script('js/cite.js'); }).then(function () { return global.DICite ? global.DICite.load() : 0; }).then(function () { return global.DehesaAnswers ? 0 : script('js/answers.js'); }).then(function () { return (global.DILabelTl ? Promise.resolve() : script('js/label-tl.js')).then(function () { return global.DILabelTl ? global.DILabelTl.load(lang()) : 0; }).catch(function () { return 0; }); }).then(function () {
       ANS.env = {
-        products: (IDX || []).filter(function (e) { return e.t === 'product'; }).map(function (e) { var m = /product=([^&]+)/.exec(e.u); return m ? { slug: decodeURIComponent(m[1]).split(':')[1], names: e.n, kw: e.k, u: e.u } : null; }).filter(Boolean),
+        products: global.DehesaAnswers.productsFrom ? global.DehesaAnswers.productsFrom(IDX || []) : (IDX || []).filter(function (e) { return e.t === 'product'; }).map(function (e) { var m = /product=([^&]+)/.exec(e.u); return m ? { slug: decodeURIComponent(m[1]).split(':')[1], names: e.n, kw: e.k, u: e.u } : null; }).filter(Boolean),   // answers.js antiguo en caché
         tokScore: tokScore, href: href,
         provider: { json: function (p) { if (!ANS.cache[p]) ANS.cache[p] = fetch(href('data/' + p), /^(prices\/latest|us-cash-bids)\//.test(p) ? { cache: 'no-cache' } : undefined).then(function (r) { if (!r.ok) throw Error(p); return r.json(); }).catch(function (e) { delete ANS.cache[p]; throw e; }); return ANS.cache[p]; } }
       };
@@ -246,8 +276,9 @@
         return (global.DILabelTl ? global.DILabelTl.load(l).catch(function () { return 0; }) : Promise.resolve()).then(function () { return m.answer(q, l, ANS.env); }).then(function (a) {
           if (STATE.q !== q || !STATE.open) return;
           setAns(a ? m.render(a, l, esc) : '');
-          var first = a && ((a.cards || []).filter(function (c) { return c.href; })[0] || {}).href || (a && a.link && a.link.href);
-          STATE.ans = first || null; if (STATE.ans && STATE.sel === 0) STATE.sel = -1; mark();   // si no se ha movido, Enter abre el dato de la respuesta
+          var tg = enterTarget(q, l, a, STATE.results);
+          STATE.ans = (a && ((a.cards || []).filter(function (c) { return c.href; })[0] || {}).href || (a && a.link && a.link.href)) || null;
+          if (tg && tg.ans && STATE.sel === 0) STATE.sel = -1; mark();   // si no se ha movido, Enter abre el dato de la respuesta (o el resultado que es exactamente lo escrito)
         });
       }).catch(function () { setAns(''); });
     }, 150);
@@ -262,8 +293,8 @@
   }
   function close() { if (!ROOT) return; ROOT.classList.remove('is-open'); STATE.open = false; document.documentElement.style.overflow = ''; }
   function load() {
-    return fetch(href('data/search-index.json')).then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { IDX = d.entries; prep(IDX); }).catch(function () { var b = document.getElementById('ds-body'); if (b) b.innerHTML = '<div class="ds-msg">' + esc(tx().loadFail) + '</div>'; });
+    return fetch(href('data/search-index.json')).then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { IDX = d.entries; prep(IDX); voc(); }).catch(function () { var b = document.getElementById('ds-body'); if (b) b.innerHTML = '<div class="ds-msg">' + esc(tx().loadFail) + '</div>'; });
   }
-  global.DehesaSearch = { open: open, close: close, _tokScore: tokScore, match: match, _search: function (q, l) { return search(q, l || 'es'); }, _load: function (entries) { IDX = entries; prep(IDX); }, _norm: norm };
+  global.DehesaSearch = { open: open, close: close, _tokScore: tokScore, match: match, _search: function (q, l) { return search(q, l || 'es'); }, _enter: function (q, l, a) { return enterTarget(q, l || 'es', a, search(q, l || 'es').list); }, _load: function (entries) { IDX = entries; prep(IDX); voc(); }, _norm: norm };
   if (global.__diSearchWantOpen) { var w = global.__diSearchWantOpen; global.__diSearchWantOpen = false; open(typeof w === 'string' ? w : undefined); }
 })(typeof window !== 'undefined' ? window : globalThis);
