@@ -49,6 +49,11 @@ def diag(code, rows):
             if (r[ix["CTY_CODE"]] or "").strip() != "-": continue
             a = yr.setdefault(r[ix["time"]][:4], [0.0] * len(F))
             for i, k in enumerate(F): a[i] += float(r[ix[k]] or 0)
+        if code.endswith("10"):   # una linea, mes a mes de 2024 (kt y MUSD): general frente a consumo
+            m = {}
+            for r in rows[1:]:
+                if (r[ix["CTY_CODE"]] or "").strip() == "-" and r[ix["time"]].startswith("2024"): m[r[ix["time"]]] = [float(r[ix[k]] or 0) for k in ("GEN_QY1_MO", "GEN_VAL_MO", "CON_QY1_MO", "CON_VAL_MO")]
+            log("diag mensual 2024 %s (gen kt/MUSD | con kt/MUSD): %s" % (code, "; ".join("%s %d/%d | %d/%d" % (k[5:], v[0] / 1000, v[1] / 1e6, v[2] / 1000, v[3] / 1e6) for k, v in sorted(m.items()))))
         for y, a in sorted(yr.items())[-4:]:
             log("diag %s %s: gen %d kt %.0f MUSD | consumo %d kt, valor %.0f, CIF %.0f, cargos %.0f, dutiable %.0f MUSD" % (code, y, a[0] / 1000, a[1] / 1e6, a[2] / 1000, a[3] / 1e6, a[4] / 1e6, a[5] / 1e6, a[6] / 1e6))
     except Exception as e: log("diag %s fallo: %r" % (code, e))
