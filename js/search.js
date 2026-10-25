@@ -165,7 +165,7 @@
       '#di-search li a:hover,#di-search li.is-sel a{background:var(--bg-soft,rgba(120,110,80,.12))}#di-search .ds-ic{font-size:18px;width:26px;text-align:center;flex:none}#di-search .ds-t{font-weight:600;font-size:15px;line-height:1.25}' +
       '#di-search .ds-s{font-size:12.5px;color:var(--text-faint,#7a7466);margin-top:1px}#di-search .ds-badge{margin-left:auto;flex:none;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--text-faint,#7a7466);border:1px solid var(--border,#ddd6c4);border-radius:10px;padding:2px 8px}' +
       '#di-search .ds-msg{padding:16px 16px 18px;font-size:14px;color:var(--text-faint,#7a7466)}#di-search .ds-head{padding:8px 14px 2px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-faint,#7a7466)}#di-search .ds-foot{padding:8px 14px;border-top:1px solid var(--border,#ddd6c4);font-size:12px;color:var(--text-faint,#7a7466)}' +
-      '#di-search #ds-ans:empty{display:none}#di-search .ds-ans{padding:10px 12px 4px;border-bottom:1px solid var(--border,#ddd6c4);max-height:min(46vh,360px);overflow-y:auto}#di-search .ds-ans-h{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-faint,#7a7466);padding:0 2px 6px}' +
+      '#di-search #ds-ans:empty{display:none}#di-search .ds-ans.is-sel{box-shadow:inset 3px 0 0 var(--gold,#b8892b);background:var(--bg-soft,rgba(120,110,80,.08))}#di-search .ds-ans{padding:10px 12px 4px;border-bottom:1px solid var(--border,#ddd6c4);max-height:min(46vh,360px);overflow-y:auto}#di-search .ds-ans-h{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-faint,#7a7466);padding:0 2px 6px}' +
       '#di-search .ds-card{display:block;padding:9px 12px;margin:0 0 8px;border:1px solid var(--border,#ddd6c4);border-radius:10px;text-decoration:none;color:inherit;background:var(--bg-soft,rgba(120,110,80,.08))}#di-search .ds-card:hover,#di-search .ds-card:focus-visible{border-color:var(--text-faint,#7a7466)}' +
       '#di-search .ds-c-r{font-size:13px;font-weight:700}#di-search .ds-c-r em{font-style:normal;font-weight:400;color:var(--text-faint,#7a7466);font-size:12px}#di-search .ds-c-id{font-size:12px;color:var(--text-faint,#7a7466)}#di-search .ds-c-v{font-size:22px;font-weight:700;line-height:1.25;font-variant-numeric:tabular-nums}#di-search .ds-c-v small{font-size:12.5px;font-weight:400;color:var(--text-faint,#7a7466)}' +
       '#di-search .ds-cites{padding:2px 2px 6px}#di-search .di-cite{font-size:12px;color:var(--text-faint,#7a7466)}#di-search .di-cite-b{background:var(--surface,#fff);border:1px solid var(--border,#ddd6c4);border-radius:8px;padding:8px 10px;margin:4px 0}#di-search .di-cite-r{display:flex;gap:8px}#di-search .di-cite-r>span:first-child{min-width:78px}#di-search .di-cite>summary{cursor:pointer;list-style:none;padding:2px 0}#di-search .di-cite>summary::-webkit-details-marker{display:none}#di-search .di-cite-s{font-weight:600;margin-top:4px}'+
@@ -186,13 +186,15 @@
     input.addEventListener('input', function () { STATE.sel = 0; renderResults(); });
     input.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { e.preventDefault(); move(1); } else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
-      else if (e.key === 'Enter') { var r = STATE.results[STATE.sel]; if (r) { e.preventDefault(); go(r); } }
+      else if (e.key === 'Enter') { if (STATE.sel === -1 && STATE.ans) { e.preventDefault(); close(); global.location.href = STATE.ans; return; } var r = STATE.results[STATE.sel]; if (r) { e.preventDefault(); go(r); } }
       else if (e.key === 'Escape') { e.preventDefault(); close(); }
     });
     document.addEventListener('keydown', function (e) { if (STATE.open && e.key === 'Escape') close(); });
   }
-  function move(d) { if (!STATE.results.length) return; STATE.sel = (STATE.sel + d + STATE.results.length) % STATE.results.length; mark(); }
+  // con una respuesta directa, la posición -1 es la propia respuesta (la primera al pulsar Enter): lleva al dato, no a la ficha general
+  function move(d) { var lo = STATE.ans ? -1 : 0, n = STATE.results.length - lo; if (n <= 0) return; STATE.sel = ((STATE.sel - lo + d) % n + n) % n + lo; mark(); }
   function mark() {
+    var ab = ROOT.querySelector('#ds-ans .ds-ans'); if (ab) ab.classList.toggle('is-sel', STATE.sel === -1);
     var lis = ROOT.querySelectorAll('li'); Array.prototype.forEach.call(lis, function (li, i) { li.classList.toggle('is-sel', i === STATE.sel); li.setAttribute('aria-selected', i === STATE.sel ? 'true' : 'false'); if (i === STATE.sel && li.scrollIntoView) li.scrollIntoView({ block: 'nearest' }); });
   }
   function go(e) { close(); if (e.ext) global.open(e.u, '_blank', 'noopener,noreferrer'); else global.location.href = href(e.u); }
@@ -202,7 +204,7 @@
   }
   function renderResults() {
     var t = tx(), l = lang(), q = document.getElementById('ds-input').value, body = document.getElementById('ds-body'), html = '';
-    STATE.q = q; if (!norm(q)) setAns('');
+    STATE.q = q; STATE.ans = null; if (STATE.sel < 0) STATE.sel = 0; if (!norm(q)) setAns('');
     if (!IDX) { body.innerHTML = '<div class="ds-msg">…</div>'; return; }
     if (!norm(q)) {
       var by = {}; IDX.forEach(function (e) { by[e.u] = e; });
@@ -225,7 +227,7 @@
   function script(src) { return new Promise(function (res, rej) { var s = document.createElement('script'); s.src = href(src); s.onload = res; s.onerror = rej; document.head.appendChild(s); }); }
   function ansReady() {
     if (ANS.mod) return Promise.resolve(ANS.mod);
-    if (!ANS.p) ANS.p = (global.DIIdentity ? Promise.resolve() : script('js/instrument-identity.js')).then(function () { return global.DIUsdaCal ? 0 : script('js/usda-calendar.js'); }).then(function () { return global.DICite ? 0 : script('js/cite.js'); }).then(function () { return global.DICite ? global.DICite.load() : 0; }).then(function () { return global.DehesaAnswers ? 0 : script('js/answers.js'); }).then(function () {
+    if (!ANS.p) ANS.p = (global.DIIdentity ? Promise.resolve() : script('js/instrument-identity.js')).then(function () { return global.DIUsdaCal ? 0 : script('js/usda-calendar.js'); }).then(function () { return global.DICite ? 0 : script('js/cite.js'); }).then(function () { return global.DICite ? global.DICite.load() : 0; }).then(function () { return global.DehesaAnswers ? 0 : script('js/answers.js'); }).then(function () { return (global.DILabelTl ? Promise.resolve() : script('js/label-tl.js')).then(function () { return global.DILabelTl ? global.DILabelTl.load(lang()) : 0; }).catch(function () { return 0; }); }).then(function () {
       ANS.env = {
         products: (IDX || []).filter(function (e) { return e.t === 'product'; }).map(function (e) { var m = /product=([^&]+)/.exec(e.u); return m ? { slug: decodeURIComponent(m[1]).split(':')[1], names: e.n, kw: e.k, u: e.u } : null; }).filter(Boolean),
         tokScore: tokScore, href: href,
@@ -241,7 +243,12 @@
     ANS.timer = setTimeout(function () {
       ansReady().then(function (m) {
         if (!m || !ANS.env || STATE.q !== q || !STATE.open) return null;
-        return m.answer(q, l, ANS.env).then(function (a) { if (STATE.q === q && STATE.open) setAns(a ? m.render(a, l, esc) : ''); });
+        return (global.DILabelTl ? global.DILabelTl.load(l).catch(function () { return 0; }) : Promise.resolve()).then(function () { return m.answer(q, l, ANS.env); }).then(function (a) {
+          if (STATE.q !== q || !STATE.open) return;
+          setAns(a ? m.render(a, l, esc) : '');
+          var first = a && ((a.cards || []).filter(function (c) { return c.href; })[0] || {}).href || (a && a.link && a.link.href);
+          STATE.ans = first || null; if (STATE.ans && STATE.sel === 0) STATE.sel = -1; mark();   // si no se ha movido, Enter abre el dato de la respuesta
+        });
       }).catch(function () { setAns(''); });
     }, 150);
   }

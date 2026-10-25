@@ -468,10 +468,12 @@
     cordero: /\blambs?\b/i, pollo: /\b(chicken|broiler)s?\b/i, huevos: /\beggs?\b/i, arroz: /\brice\b/i, urea: /\burea\b/i, oliva: /\bolive oil\b/i };
   var PGRP = { quotes: 0, prices_lv: 1, milk: 1, prices: 2, prices_fv: 2, prices_paid: 3 };
   var CTX2 = {
-    es: { found: 'Precios de {p} en {c}', none: 'No hay un precio verificado de {p} en {c} en nuestros datos. El perfil del país tiene producción, comercio y otros indicadores; los precios de otros mercados no equivalen al de {c}.', open: 'Abrir el perfil de {c}', note: 'Último dato publicado de cada serie, en su unidad original.' },
-    en: { found: '{p} prices in {c}', none: 'There is no verified {p} price for {c} in our data. The country profile has production, trade and other indicators; prices from other markets are not equivalent to {c}.', open: 'Open the {c} profile', note: 'Latest published figure of each series, in its original unit.' },
-    fr: { found: 'Prix : {p} en {c}', none: 'Aucun prix vérifié pour {p} en {c} dans nos données. Le profil du pays présente production, commerce et autres indicateurs ; les prix d’autres marchés n’équivalent pas à celui de {c}.', open: 'Ouvrir le profil : {c}', note: 'Dernière donnée publiée de chaque série, dans son unité d’origine.' },
-    it: { found: 'Prezzi: {p} in {c}', none: 'Non c’è un prezzo verificato di {p} per {c} nei nostri dati. Il profilo del paese ha produzione, commercio e altri indicatori; i prezzi di altri mercati non equivalgono a quello di {c}.', open: 'Apri il profilo: {c}', note: 'Ultimo dato pubblicato di ogni serie, nella sua unità originale.' } };
+    es: { chart: 'Ver gráfico e histórico de {p} en {c}', found: 'Precios de {p} en {c}', none: 'No hay un precio verificado de {p} en {c} en nuestros datos. El perfil del país tiene producción, comercio y otros indicadores; los precios de otros mercados no equivalen al de {c}.', open: 'Abrir el perfil de {c}', note: 'Último dato publicado de cada serie, en su unidad original.' },
+    en: { chart: 'See the {p} chart and history for {c}', found: '{p} prices in {c}', none: 'There is no verified {p} price for {c} in our data. The country profile has production, trade and other indicators; prices from other markets are not equivalent to {c}.', open: 'Open the {c} profile', note: 'Latest published figure of each series, in its original unit.' },
+    fr: { chart: 'Voir le graphique et l’historique : {p} en {c}', found: 'Prix : {p} en {c}', none: 'Aucun prix vérifié pour {p} en {c} dans nos données. Le profil du pays présente production, commerce et autres indicateurs ; les prix d’autres marchés n’équivalent pas à celui de {c}.', open: 'Ouvrir le profil : {c}', note: 'Dernière donnée publiée de chaque série, dans son unité d’origine.' },
+    it: { chart: 'Vedi grafico e storico: {p} in {c}', found: 'Prezzi: {p} in {c}', none: 'Non c’è un prezzo verificato di {p} per {c} nei nostri dati. Il profilo del paese ha produzione, commercio e altri indicatori; i prezzi di altri mercati non equivalgono a quello di {c}.', open: 'Apri il profilo: {c}', note: 'Ultimo dato pubblicato di ogni serie, nella sua unità originale.' } };
+  /* nombre de la serie en el idioma de la página si el traductor de etiquetas está cargado (si falta una pieza se deja el original) */
+  function tlab(l, lang) { var T = root.DILabelTl; return T && T.ready && T.ready(lang) ? T.tl(l, lang) : l; }
   function rCountry(intent, lang, env) {
     var t = tx(lang), cc = intent.countries[0], row = COUNTRY_WORDS.filter(function (c) { return c[0] === cc; })[0], name = row[1][lang];
     var base = { kind: 'country', heading: t.countryHead + ' · ' + name, cards: [], notes: [fmt(t.countryText, { c: name })], link: { href: env.href('paises.html?c=' + cc), label: t.countryLink } };
@@ -486,11 +488,11 @@
       S.sort(function (a, b) { return (PGRP[a.group] - PGRP[b.group]) || (org(a) - org(b)) || (String(b.latestPeriod) > String(a.latestPeriod) ? 1 : String(b.latestPeriod) < String(a.latestPeriod) ? -1 : 0); });
       var Sh = root.DehesaShared, fd = function (p) { return Sh && Sh.fmtDate ? Sh.fmtDate(p, lang) : p; };
       var cards = S.slice(0, 3).map(function (x) {
-        return { sid: x.sourceId, trade: true, label: x.label, id: x.id, value: x.latest, valueTxt: nf(x.latest, lang, Math.abs(x.latest) >= 100 ? 1 : 2) + ' ' + x.unit, unit: x.unit, date: x.latestPeriod, dateTxt: fd(x.latestPeriod), src: (reg[x.sourceId] && reg[x.sourceId].name) || '', cc: cc, region: cc,
-          href: env.href('paises.html?c=' + cc + '&g=' + encodeURIComponent(x.group) + '&s=' + encodeURIComponent(x.id)) };
+        return { sid: x.sourceId, trade: true, label: tlab(x.label, lang), id: x.id, value: x.latest, valueTxt: nf(x.latest, lang, Math.abs(x.latest) >= 100 ? 1 : 2) + ' ' + x.unit, unit: x.unit, date: x.latestPeriod, dateTxt: fd(x.latestPeriod), src: (reg[x.sourceId] && reg[x.sourceId].name) || '', cc: cc, region: cc,
+          href: env.href('paises.html?c=' + cc + '&g=' + encodeURIComponent(x.group) + '&s=' + encodeURIComponent(x.id)) + '#ps-explorer' };   /* abre directamente el gráfico de esa serie, no la cabecera del perfil */
       });
       if (!cards.length) return { kind: 'country', heading: fmt(k2.found, { p: pname(intent.product, lang), c: name }), cards: [], notes: [fmt(k2.none, { p: pn, c: name })], link: { href: env.href('paises.html?c=' + cc), label: fmt(k2.open, { c: name }) } };
-      return { kind: 'country', heading: fmt(k2.found, { p: pname(intent.product, lang), c: name }), cards: cards, notes: [k2.note], link: { href: env.href('paises.html?c=' + cc), label: fmt(k2.open, { c: name }) } };
+      return { kind: 'country', heading: fmt(k2.found, { p: lang === 'en' ? pname(intent.product, lang) : pn, c: name }), cards: cards, notes: [k2.note], link: { href: cards[0].href, label: fmt(k2.chart, { p: pn, c: name }) } };
     }, function () { return base; });
   }
 
