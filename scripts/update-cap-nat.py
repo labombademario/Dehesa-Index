@@ -185,12 +185,13 @@ def de_scan(doc, fixture):
 def nl_scan(doc, fixture):
     c = doc['current']
     known = {x['id'] for x in c['candidates']}
-    seen_any = False
+    seen_any = False; errs = []
     for url in NL_URLS:
         try:
             page = get(url, fixture)
-        except Exception:
+        except Exception as e:
             if fixture: raise
+            errs.append('%s: %s' % (type(e).__name__, str(e)[:80]))
             continue
         seen_any = True
         for li in re.findall(r'<li>\s*<h2 class="result--title[^"]*">(.*?)</li>', page, re.S):
@@ -203,7 +204,7 @@ def nl_scan(doc, fixture):
             if not oid.startswith(NL_RULE_PREFIX) or day < NL_SINCE or not NL_TITLE.search(t) or oid in known: continue
             known.add(oid)
             c['candidates'].append({'id': oid, 'title': t, 'date': day, 'url': 'https://zoek.officielebekendmakingen.nl/' + oid + '.html'})
-    if not seen_any: raise IOError('Officiele bekendmakingen no responde')
+    if not seen_any: raise IOError('Officiele bekendmakingen no responde (%s)' % ' | '.join(errs))
 
 
 # ------------------------------------------------------------------ PT / EL (RSS de WordPress)
