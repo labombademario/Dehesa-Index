@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-25T21:55:00Z",
+ "generatedAt": "2026-10-25T22:09:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 274,
+  "ok": 275,
   "late": 2,
   "error": 0,
   "not_run": 1,
-  "unknown": 1
+  "unknown": 0
  },
  "global": "late",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 2.8,
-  "prodGeneratedAt": "2026-10-25T18:54:16.769071+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-25T21:42:12.698488+00:00",
   "repoGeneratedAt": "2026-10-25T21:42:12.698488+00:00",
-  "checkedAt": "2026-10-25T21:55:00Z"
+  "checkedAt": "2026-10-25T22:09:00Z"
  },
  "pipelines": [
   {
@@ -2515,9 +2515,19 @@
    ],
    "nextRun": "2026-11-17T10:10:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-25T21:59:14Z",
+    "durationSec": 19,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40238028878"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 576.0
   },
   {
@@ -3990,9 +4000,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-25T19:11:59Z",
-    "durationSec": 93,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40224878480"
+    "startedAt": "2026-10-25T22:04:06Z",
+    "durationSec": 110,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40238427220"
    },
    "recent": {
     "runs": 10,
@@ -4312,11 +4322,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-25T21:38:51Z"
+     "lastChange": "2026-10-25T21:57:52Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-25T21:40:12Z"
+     "lastChange": "2026-10-25T21:57:52Z"
     },
     {
      "path": "data/commercial-catalog.json",
