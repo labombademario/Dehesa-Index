@@ -29,4 +29,22 @@ for name, runs, want in cases:
 many = [run(200 + k, "update-m%d.yml" % k, "2026-10-09T22:00:00Z") for k in range(9)]
 for k in range(9): J[200 + k] = 0
 n = len(rc.decide(many, jobs, NOW)); ok = n == rc.MAX_PER_RUN; bad += not ok; print(("OK   " if ok else "FALLO"), "tope por pasada", n)
+
+# gh(): un POST que sale bien responde sin cuerpo (204/201) y se hace UNA sola vez; una lectura vacia se reintenta y acaba en error
+import types as _t
+def _gh_case(mod, args, outs):
+    calls = []
+    def fake_run(cmd, capture_output=True, text=True):
+        rc_, out = outs[min(len(calls), len(outs) - 1)]; calls.append(cmd); return _t.SimpleNamespace(returncode=rc_, stdout=out, stderr="" if rc_ == 0 else "gh: Not Found (HTTP 404)")
+    old_run, old_sleep = mod.subprocess.run, mod.time.sleep
+    mod.subprocess.run, mod.time.sleep = fake_run, (lambda s: None)
+    try: r = mod.gh(*args)
+    finally: mod.subprocess.run, mod.time.sleep = old_run, old_sleep
+    return r[0], len(calls)
+for _name, _args, _outs, _want in [
+    ("POST dispatches 204 vacio = exito, 1 llamada", ("-X", "POST", "repos/o/r/actions/workflows/w.yml/dispatches", "-f", "ref=main"), [(0, "")], (0, 1)),
+    ("POST con 404 = fallo sin reintentar", ("-X", "POST", "repos/o/r/actions/runs/1/rerun-failed-jobs"), [(1, "")], (1, 1)),
+    ("GET vacio = 3 intentos y fallo", ("repos/o/r/actions/runs",), [(0, "")], (1, 3)),
+    ("GET con cuerpo = exito", ("repos/o/r/actions/runs",), [(0, "{}")], (0, 1))]:
+    _got = _gh_case(rc, _args, _outs); _ok = _got == _want; bad += not _ok; print(("OK   " if _ok else "FALLO"), "gh():", _name, _got)
 raise SystemExit(1 if bad else 0)

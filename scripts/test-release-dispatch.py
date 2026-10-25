@@ -35,4 +35,22 @@ for ws in list(rd.MAP.values()) + [list(rd.FOLLOW)] + list(rd.FOLLOW.values()):
     for x in ws: eq((ROOT / ".github/workflows" / x).exists(), True, "existe " + x)
 cal = json.loads((ROOT / "data/usda-calendar.json").read_text(encoding="utf-8"))
 eq(bool([r for r in cal["releases"] if r["id"] in rd.MAP]), True, "el calendario real trae informes del mapa")
+
+# gh(): un POST que sale bien responde sin cuerpo (204/201) y se hace UNA sola vez; una lectura vacia se reintenta y acaba en error
+import types as _t
+def _gh_case(mod, args, outs):
+    calls = []
+    def fake_run(cmd, capture_output=True, text=True):
+        rc_, out = outs[min(len(calls), len(outs) - 1)]; calls.append(cmd); return _t.SimpleNamespace(returncode=rc_, stdout=out, stderr="" if rc_ == 0 else "gh: Not Found (HTTP 404)")
+    old_run, old_sleep = mod.subprocess.run, mod.time.sleep
+    mod.subprocess.run, mod.time.sleep = fake_run, (lambda s: None)
+    try: r = mod.gh(*args)
+    finally: mod.subprocess.run, mod.time.sleep = old_run, old_sleep
+    return r[0], len(calls)
+for _name, _args, _outs, _want in [
+    ("POST dispatches 204 vacio = exito, 1 llamada", ("-X", "POST", "repos/o/r/actions/workflows/w.yml/dispatches", "-f", "ref=main"), [(0, "")], (0, 1)),
+    ("POST con 404 = fallo sin reintentar", ("-X", "POST", "repos/o/r/actions/runs/1/rerun-failed-jobs"), [(1, "")], (1, 1)),
+    ("GET vacio = 3 intentos y fallo", ("repos/o/r/actions/runs",), [(0, "")], (1, 3)),
+    ("GET con cuerpo = exito", ("repos/o/r/actions/runs",), [(0, "{}")], (0, 1))]:
+    eq(_gh_case(rd, _args, _outs), _want, "gh(): " + _name)
 raise SystemExit(1 if bad else 0)

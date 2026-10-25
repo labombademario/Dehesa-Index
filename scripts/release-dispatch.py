@@ -57,12 +57,17 @@ def decide(releases, runs, now):
         if max(ok) > last_f: seen.add(f); todo.append((f, "tras " + "/".join(leaders)))
     return todo[:MAX_PER_RUN]
 def gh(*a):
-    # la API de GitHub devuelve a ratos una respuesta vacia o 5xx: hasta 3 intentos con espera antes de dar el error
+    # la API de GitHub devuelve a ratos una respuesta vacia o 5xx: hasta 3 intentos con espera antes de dar el error.
+    # Las acciones (POST: lanzar con /dispatches, relanzar con /rerun-failed-jobs) responden 204/201 SIN cuerpo cuando salen bien:
+    # ahi un codigo 0 es exito y NO se reintenta (antes se repetian y cada workflow se lanzaba 3 veces). Solo las lecturas exigen cuerpo.
+    post = "-X" in a and a[a.index("-X") + 1].upper() == "POST"
     for i in range(3):
         r = subprocess.run(["gh", "api", *a], capture_output=True, text=True)
-        if r.returncode == 0 and r.stdout.strip(): break
+        if r.returncode == 0 and (post or r.stdout.strip()): break
+        if post and r.returncode != 0 and "HTTP 4" in (r.stderr or ""): break   # 4xx (p. ej. ya esta en marcha): reintentar no lo arregla
         if i < 2: time.sleep(5 * (i + 1))
-    return r.returncode if r.stdout.strip() or r.returncode else 1, r.stdout, r.stderr
+    ok = r.returncode == 0 and (post or r.stdout.strip())
+    return 0 if ok else (r.returncode or 1), r.stdout, r.stderr
 def main():
     repo = os.environ["GITHUB_REPOSITORY"]; dry = "--dry-run" in sys.argv; now = datetime.datetime.now(UTC)
     cal = json.loads((ROOT / "data" / "usda-calendar.json").read_text(encoding="utf-8"))
