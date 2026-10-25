@@ -52,7 +52,7 @@ def country_de():
     if not a: return None
     dw = J('de/watch.json')
     de_watch = ni('sin vigilancia automatica: el Bundesanzeiger no se lee desde los servidores de GitHub; el contrato avisa si falta el importe real de 2026 pasado el 15 de diciembre', 'SOURCE_UNREACHABLE') if not dw else \
-        comp('INGESTED' if dw['status'] == 'OK' else 'PARTIAL', 'de/watch.json', checkedAt=dw['checkedAt'], reviewNeeded=len(dw['reviewNeeded']), note='Huella del texto vigente de la GAPDZV y la GAPInVeKoSV (gesetze-im-internet.de); los Bekanntmachungen de importes del Bundesanzeiger no se vigilan')
+        comp('INGESTED' if dw['status'] == 'OK' else 'PARTIAL', 'de/watch.json', checkedAt=dw['checkedAt'], reviewNeeded=len(dw['reviewNeeded']), note='Huella de tres páginas del Ministerio federal (BMLEH) sobre la GAP y páginas nuevas en su sección; no vigila el texto de la GAPDZV (gesetze-im-internet.de no responde desde GitHub) ni los Bekanntmachungen del Bundesanzeiger')
     docs = {d['id']: d for d in a['documents']}
     return {'cc': 'DE', 'name': 'Alemania', 'scheme': 'Direktzahlungen und Oko-Regelungen (Bundesanzeiger y GAPDZV)', 'legalAct': {'title': 'GAP-Direktzahlungen-Gesetz (GAPDZG) y GAP-Direktzahlungen-Verordnung (GAPDZV); Bekanntmachungen de los importes reales', 'ref': 'GAPDZV Anlagen 3, 4, 6 y 7; ' + ', '.join(docs['BAnz-%d' % y]['ref'] for y in (2023, 2024, 2025)), 'url': 'https://www.gesetze-im-internet.de/gapdzv/', 'sourceId': 'gesetze_im_internet'},
             'updatedAt': a['verifiedAt'],

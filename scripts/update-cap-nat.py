@@ -11,8 +11,8 @@ No reescribe reglas ni importes: avisa cuando la fuente oficial publica algo que
 Si la fuente no responde se conserva la lectura anterior y se marca status UNREACHABLE (nunca se inventa un 'sin cambios').
 NEW_RULE no es detectable: lo que aparezca aqui son candidatos, no reglas nuevas confirmadas.
 
-  DE  huella (sha256) del texto vigente de la GAP-Direktzahlungen-Verordnung y de la GAP-InVeKoS-Verordnung en gesetze-im-internet.de
-      (la misma fuente que ya usan los importes alemanes); anota tambien la linea «Zuletzt geaendert durch» para saber que norma la modifico.
+  DE  huella (sha256) del texto principal de tres paginas del BMLEH (Anpassungen der Direktzahlungen, Oeko-Regelungen, GAP) y paginas nuevas enlazadas desde
+      la portada «EU-Agrarpolitik + Foerderung». gesetze-im-internet.de no responde desde GitHub, por eso no se vigila el texto de la GAPDZV.
   NL  busca en Officiele bekendmakingen (Staatscourant y Staatsblad) publicaciones recientes cuyo titulo habla del GLB.
   PT  RSS de pepacc.pt (PEPAC no Continente): entradas nuevas sobre portarias, despachos, pedido unico, pagamentos, ecorregimes.
   EL  RSS de agrotikianaptixi.gr (web oficial del Plan Estrategico de la PAC griego): entradas nuevas sobre ayudas directas y decisiones ministeriales.
@@ -32,8 +32,9 @@ FR_TITLE = re.compile(r'politique agricole commune|campagne 20\d\d|[ée]cor[ée]
 PL_TITLE = re.compile(r'staw(?:k|ek)|zaliczk|zaliczek|Plan(?:u|em)? Strategiczn|schemat|płatności bezpośrednie|płatności w ramach|wspólnej polityki rolnej|WPR', re.I)
 PL_BASE = ['DU/2023/412', 'DU/2024/1741']
 PL_SINCE = '2026-09-01'
-DE_LAWS = [('gapdzv', 'GAP-Direktzahlungen-Verordnung (GAPDZV)'), ('gapinvekosv', 'GAP-InVeKoS-Verordnung (GAPInVeKoSV)')]
-DE_BASE = 'https://www.gesetze-im-internet.de/'
+DE_BASE = 'https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/'
+DE_PAGES = [('direktzahlung/anpassungen-direktzahlungen.html', 'anpassungen', 'Anpassungen der Direktzahlungen'), ('direktzahlung/oeko-regelungen.html', 'oeko', 'Öko-Regelungen'), ('gap/gap_node.html', 'gap', 'Gemeinsame Agrarpolitik (GAP)')]
+DE_HUB = DE_BASE + 'eu-agrarpolitik-und-foerderung_node.html'
 NL_SINCE = '2026-10-25'      # fecha de puesta en marcha de la vigilancia: solo cuenta lo publicado desde entonces
 NL_TITLE = re.compile(r'\bGLB\b|gemeenschappelijk landbouwbeleid|landbouwbeleid|nationaal strategisch plan|Uitvoeringsregeling GLB', re.I)
 NL_URLS = ['https://zoek.officielebekendmakingen.nl/resultaten?q=(c.product-area==%22officielepublicaties%22)and(cql.textAndIndexes=%22GLB%22)&zv=GLB&pg=50&col=&svel=Publicatiedatum&svol=Aflopend',
@@ -169,31 +170,55 @@ def _plain(h):
     return re.sub(r'\s+', ' ', htmllib.unescape(re.sub(r'<[^>]+>', ' ', h))).strip()
 
 
+def _main_text(h):
+    m = re.search(r'<main\b.*?</main>', h, re.S | re.I)
+    b = re.sub(r'<nav\b.*?</nav>', ' ', m.group(0) if m else h, flags=re.S | re.I)
+    return _plain(b)
+
+
 def de_scan(doc, fixture):
+    """BMLEH (Bundesministerium fuer Landwirtschaft): gesetze-im-internet.de no responde desde los servidores de GitHub (comprobado el 25-oct-2026).
+    Huella del texto principal de tres paginas oficiales de la GAP y paginas nuevas enlazadas desde la portada de «EU-Agrarpolitik + Foerderung»."""
     c = doc['current']
-    for slug, label in DE_LAWS:
-        idx = get(DE_BASE + slug + '/index.html', fixture)
-        m = re.search(r'href="(BJNR\d+\.html)"', idx)
-        if not m: raise IOError('sin enlace al texto completo de ' + slug)
-        full = _plain(get(DE_BASE + slug + '/' + m.group(1), fixture))
-        if len(full) < 20000: raise IOError('texto demasiado corto de %s (%d)' % (slug, len(full)))
-        a = re.search(r'Stand: (Zuletzt ge.ndert durch .{0,160}?)(?= Gem\. | N.heres zur Standangabe| Fu.note|$)', full)
-        c['fingerprints'][slug] = {'sha256': sha(full), 'chars': len(full), 'label': label + ', texto vigente', 'amendedBy': a.group(1).strip() if a else None}
+    for path, key, label in DE_PAGES:
+        txt = _main_text(get(DE_BASE + path, fixture))
+        if len(txt) < 1500: raise IOError('texto demasiado corto de %s (%d)' % (path, len(txt)))
+        c['fingerprints'][key] = {'sha256': sha(txt), 'chars': len(txt), 'label': 'BMLEH: ' + label}
+    hub = get(DE_HUB, fixture)
+    known = {x['id'] for x in c['candidates']}
+    n = 0
+    for href, inner in re.findall(r'<a[^>]+href="(https://www\.bmleh\.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/[^"#]+\.html)"[^>]*>(.*?)</a>', hub, re.S):
+        title = _plain(inner)
+        if href == DE_HUB or len(title) < 6 or href in known: continue
+        known.add(href); n += 1
+        c['candidates'].append({'id': href, 'title': title, 'date': TODAY, 'url': href})
+    if not known: raise IOError('sin enlaces en la portada de EU-Agrarpolitik + Foerderung')
 
 
 # ------------------------------------------------------------------ NL
+NL_WETTEN = 'https://wetten.overheid.nl/BWBR0047444'    # Uitvoeringsregeling GLB 2023 (texto consolidado vigente)
+
+
 def nl_scan(doc, fixture):
+    """Fuente principal: huella del texto consolidado de la Uitvoeringsregeling GLB 2023 en wetten.overheid.nl (responde desde GitHub).
+    Staatscourant/Staatsblad con GLB en el titulo: lectura opcional (zoek.officielebekendmakingen.nl da 403 desde GitHub); si falla no es un error."""
     c = doc['current']
+    page = get(NL_WETTEN, fixture)
+    i = page.find('<div id="regeling"')
+    if i < 0: raise IOError('wetten.overheid.nl: no se encuentra el texto de la regeling')
+    txt = re.sub(r'Geraadpleegd op \d{2}-\d{2}-\d{4}\.?', ' ', _plain(page[i:page.find('</form>', i) if '</form>' in page[i:] else len(page)]))
+    if len(txt) < 5000: raise IOError('texto demasiado corto de la regeling (%d)' % len(txt))
+    g = re.search(r'Geldend van (\d{2}-\d{2}-\d{4})', page)
+    c['fingerprints']['uitvoeringsregeling'] = {'sha256': sha(txt), 'chars': len(txt), 'label': 'Uitvoeringsregeling GLB 2023 (BWBR0047444)' + (', vigente desde ' + g.group(1) if g else '')}
     known = {x['id'] for x in c['candidates']}
-    seen_any = False; errs = []
+    errs = []
     for url in NL_URLS:
         try:
             page = get(url, fixture)
         except Exception as e:
-            if fixture: raise
+            if fixture and 'fixture ausente' not in str(e): raise
             errs.append('%s: %s' % (type(e).__name__, str(e)[:80]))
             continue
-        seen_any = True
         for li in re.findall(r'<li>\s*<h2 class="result--title[^"]*">(.*?)</li>', page, re.S):
             href = re.search(r'href="/?([a-z]+(?:-\d+)+)\.html"', li)
             title = re.search(r'result--subtitle[^>]*>(.*?)</a>', li, re.S)
@@ -204,7 +229,7 @@ def nl_scan(doc, fixture):
             if not oid.startswith(NL_RULE_PREFIX) or day < NL_SINCE or not NL_TITLE.search(t) or oid in known: continue
             known.add(oid)
             c['candidates'].append({'id': oid, 'title': t, 'date': day, 'url': 'https://zoek.officielebekendmakingen.nl/' + oid + '.html'})
-    if not seen_any: raise IOError('Officiele bekendmakingen no responde (%s)' % ' | '.join(errs))
+    c['searchErrors'] = errs
 
 
 # ------------------------------------------------------------------ PT / EL (RSS de WordPress)
@@ -239,9 +264,9 @@ def init_doc(cc):
         doc = base_doc('PL', 'sejm_eli', 'Vigilancia de la ley del Plan Estratégico y búsqueda de reglamentos nuevos en el Dziennik Ustaw desde el 1 de septiembre de 2026. Los textos que aparecen son candidatos: no se interpretan.')
         doc['baseline']['acknowledged'] = sorted(x['eli'] for x in json.loads((d / 'amounts.json').read_text(encoding='utf-8'))['documents'])
     elif cc == 'DE':
-        doc = base_doc('DE', 'gesetze_im_internet', 'Huella del texto vigente de la GAPDZV y de la GAPInVeKoSV. Si cambia hay que releer la norma: no se sabe qué artículo cambió.')
+        doc = base_doc('DE', 'bmleh_de', 'Huella de tres páginas del Ministerio federal (BMLEH) sobre la GAP y vigilancia de páginas nuevas en su sección de política agraria europea. No vigila el texto de la GAPDZV (gesetze-im-internet.de no responde desde GitHub). Lo que aparece son candidatos: no se interpretan.')
     elif cc == 'NL':
-        doc = base_doc('NL', 'wetten_nl', 'Vigilancia de Staatscourant y Staatsblad con el GLB en el título, desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan.')
+        doc = base_doc('NL', 'wetten_nl', 'Huella del texto consolidado de la Uitvoeringsregeling GLB 2023 (wetten.overheid.nl) y, cuando responde, búsqueda de Staatscourant/Staatsblad con GLB en el título desde el 25 de octubre de 2026. Lo que aparece son candidatos: no se interpretan.')
         doc['current']['lastScanned'] = NL_SINCE
     elif cc == 'PT':
         doc = base_doc('PT', 'pepacc_pt', 'Vigilancia del RSS de pepacc.pt (PEPAC no Continente) desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan.')
@@ -282,6 +307,7 @@ def main():
         # primera lectura automatica: lo que ya estaba publicado cuando se escribieron las reglas es la linea base
         if not doc['baseline']['fingerprints'] and doc['current']['fingerprints']:
             doc['baseline']['fingerprints'] = json.loads(json.dumps(doc['current']['fingerprints']))
+            if cc == 'DE': doc['baseline']['acknowledged'] = sorted({x['id'] for x in doc['current']['candidates']})   # lo ya enlazado en la primera lectura es la linea base
     else:
         if doc['status'] != 'NOT_YET_RUN': doc['status'] = 'UNREACHABLE'
     if '--accept' in sys.argv:

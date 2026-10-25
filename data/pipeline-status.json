@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-25T19:03:00Z",
+ "generatedAt": "2026-10-25T19:17:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 274,
@@ -16,8 +16,8 @@
   "build": null,
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-25T18:54:16.769071+00:00",
-  "repoGeneratedAt": "2026-10-25T18:44:43.242827+00:00",
-  "checkedAt": "2026-10-25T19:03:00Z"
+  "repoGeneratedAt": "2026-10-25T18:54:16.769071+00:00",
+  "checkedAt": "2026-10-25T19:17:00Z"
  },
  "pipelines": [
   {
@@ -829,7 +829,7 @@
   },
   {
    "workflow": "update-cap-de.yml",
-   "name": "Watch Germany CAP changes (GAPDZV and GAPInVeKoSV, gesetze-im-internet.de)",
+   "name": "Watch Germany CAP changes (BMLEH pages on the CAP)",
    "crons": [
     "50 7 * * 1"
    ],
@@ -967,7 +967,7 @@
   },
   {
    "workflow": "update-cap-nl.yml",
-   "name": "Watch Netherlands CAP changes (Staatscourant and Staatsblad, GLB)",
+   "name": "Watch Netherlands CAP changes (Uitvoeringsregeling GLB 2023, wetten.overheid.nl)",
    "crons": [
     "0 8 * * 1"
    ],
@@ -976,13 +976,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-25T19:01:42Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40224044312"
+    "startedAt": "2026-10-25T19:03:54Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40224223349"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -3977,9 +3977,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-25T16:08:15Z",
-    "durationSec": 89,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40210237537"
+    "startedAt": "2026-10-25T19:11:59Z",
+    "durationSec": 93,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40224878480"
    },
    "recent": {
     "runs": 10,
@@ -4299,7 +4299,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-25T18:52:16Z"
+     "lastChange": "2026-10-25T19:05:52Z"
     },
     {
      "path": "data/source-candidates.json",

@@ -2,18 +2,30 @@
  "schemaVersion": 1,
  "country": "NL",
  "source": "wetten_nl",
- "status": "UNREACHABLE",
+ "status": "OK",
  "checkedAt": "2026-10-25",
  "baseline": {
-  "fingerprints": {},
+  "fingerprints": {
+   "uitvoeringsregeling": {
+    "sha256": "d73d2b5a4d6d2d6e3ab7cb7ba7e9e99b79bc17011370e9f19cdd94d0c28b7be4",
+    "chars": 206105,
+    "label": "Uitvoeringsregeling GLB 2023 (BWBR0047444), vigente desde 11-07-2026"
+   }
+  },
   "acknowledged": []
  },
  "current": {
-  "fingerprints": {},
+  "fingerprints": {
+   "uitvoeringsregeling": {
+    "sha256": "d73d2b5a4d6d2d6e3ab7cb7ba7e9e99b79bc17011370e9f19cdd94d0c28b7be4",
+    "chars": 206105,
+    "label": "Uitvoeringsregeling GLB 2023 (BWBR0047444), vigente desde 11-07-2026"
+   }
+  },
   "candidates": [],
-  "lastScanned": "2026-10-25"
+  "lastScanned": "2026-10-25",
+  "searchErrors": []
  },
  "reviewNeeded": [],
- "note": "Vigilancia de Staatscourant y Staatsblad con el GLB en el título, desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan.",
- "lastError": "OSError: Officiele bekendmakingen no responde (HTTPError: HTTP Error 403: Forbidden | HTTPError: HTTP Error 403: Forbidden)"
+ "note": "Huella del texto consolidado de la Uitvoeringsregeling GLB 2023 (wetten.overheid.nl) y, cuando responde, búsqueda de Staatscourant/Staatsblad con GLB en el título desde el 25 de octubre de 2026. Lo que aparece son candidatos: no se interpretan."
 }

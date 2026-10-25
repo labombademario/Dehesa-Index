@@ -1794,7 +1794,7 @@ sources:
     data: [cap/pl/watch.json]
     message: Seguimiento de la PAC de Polonia (Dziennik Ustaw)
   - id: cap-de
-    name: Watch Germany CAP changes (GAPDZV and GAPInVeKoSV, gesetze-im-internet.de)
+    name: Watch Germany CAP changes (BMLEH pages on the CAP)
     cron: ['50 7 * * 1']
     script: scripts/update-cap-nat.py DE
     timeout: 15
@@ -1802,9 +1802,9 @@ sources:
     continue: true
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
     data: [cap/de/watch.json]
-    message: Seguimiento de la PAC de Alemania (GAPDZV y GAPInVeKoSV)
+    message: Seguimiento de la PAC de Alemania (BMLEH)
   - id: cap-nl
-    name: Watch Netherlands CAP changes (Staatscourant and Staatsblad, GLB)
+    name: Watch Netherlands CAP changes (Uitvoeringsregeling GLB 2023, wetten.overheid.nl)
     cron: ['0 8 * * 1']
     script: scripts/update-cap-nat.py NL
     timeout: 15

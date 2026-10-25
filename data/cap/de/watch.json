@@ -1,44 +1,171 @@
 {
  "schemaVersion": 1,
  "country": "DE",
- "source": "gesetze_im_internet",
- "status": "UNREACHABLE",
+ "source": "bmleh_de",
+ "status": "OK",
  "checkedAt": "2026-10-25",
  "baseline": {
   "fingerprints": {
-   "gapdzv": {
-    "sha256": "cfc46402393d2948aef79a3fc76540855735b40a74a5202d4f39a1d317d8e663",
-    "chars": 99374,
-    "label": "GAP-Direktzahlungen-Verordnung (GAPDZV), texto vigente",
-    "amendedBy": "Zuletzt geändert durch Art. 1 V v. 12.8.2026 I Nr. 237"
+   "anpassungen": {
+    "sha256": "c2bfc58473361845fafde09b9caab3933925fc20a4f816f66ed6d2a2d6f8a206",
+    "chars": 2457,
+    "label": "BMLEH: Anpassungen der Direktzahlungen"
    },
-   "gapinvekosv": {
-    "sha256": "929b1c0efb7ca1ef09d33f40fe5c03e1d3e62781ce5298497d4b6cab957f7ddf",
-    "chars": 79042,
-    "label": "GAP-InVeKoS-Verordnung (GAPInVeKoSV), texto vigente",
-    "amendedBy": "Zuletzt geändert durch Art. 2 V v. 12.8.2026 I Nr. 237"
+   "oeko": {
+    "sha256": "e25869e1c7d211b5fcd15d14f219c5d9a91fc986e015eca4c5d32c8d215e3de7",
+    "chars": 28054,
+    "label": "BMLEH: Öko-Regelungen"
+   },
+   "gap": {
+    "sha256": "07a6705a8807005d52109a251443a3598f520d54dd9055b53d8f26f5dd95af07",
+    "chars": 9864,
+    "label": "BMLEH: Gemeinsame Agrarpolitik (GAP)"
    }
   },
-  "acknowledged": []
+  "acknowledged": [
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/agrarumwelt-und-klimamassnahmen-aukm/agrarumwelt-und-klimamassnahmen-aukm_node.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/anpassungen-direktzahlungen.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/direktzahlung_node.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/oeko-regelungen.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/eu-absatzfoerderung/eu-absatzfoerderung_node.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-09-2026-bruessel.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-09-2026.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-3-2026.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-4-2026.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-5-2026.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/eu-ratsberichte.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-dashboard.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-geschichte.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-partnerbeteiligung.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-strategieplan_begleitausschuss.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap_node.html",
+   "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/staatliche-beihilfen/staatliche-beihilfen_node.html"
+  ]
  },
  "current": {
   "fingerprints": {
-   "gapdzv": {
-    "sha256": "cfc46402393d2948aef79a3fc76540855735b40a74a5202d4f39a1d317d8e663",
-    "chars": 99374,
-    "label": "GAP-Direktzahlungen-Verordnung (GAPDZV), texto vigente",
-    "amendedBy": "Zuletzt geändert durch Art. 1 V v. 12.8.2026 I Nr. 237"
+   "anpassungen": {
+    "sha256": "c2bfc58473361845fafde09b9caab3933925fc20a4f816f66ed6d2a2d6f8a206",
+    "chars": 2457,
+    "label": "BMLEH: Anpassungen der Direktzahlungen"
    },
-   "gapinvekosv": {
-    "sha256": "929b1c0efb7ca1ef09d33f40fe5c03e1d3e62781ce5298497d4b6cab957f7ddf",
-    "chars": 79042,
-    "label": "GAP-InVeKoS-Verordnung (GAPInVeKoSV), texto vigente",
-    "amendedBy": "Zuletzt geändert durch Art. 2 V v. 12.8.2026 I Nr. 237"
+   "oeko": {
+    "sha256": "e25869e1c7d211b5fcd15d14f219c5d9a91fc986e015eca4c5d32c8d215e3de7",
+    "chars": 28054,
+    "label": "BMLEH: Öko-Regelungen"
+   },
+   "gap": {
+    "sha256": "07a6705a8807005d52109a251443a3598f520d54dd9055b53d8f26f5dd95af07",
+    "chars": 9864,
+    "label": "BMLEH: Gemeinsame Agrarpolitik (GAP)"
    }
   },
-  "candidates": [],
+  "candidates": [
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap_node.html",
+    "title": "Gemeinsame Agrarpolitik (GAP)",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap_node.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/direktzahlung_node.html",
+    "title": "Direktzahlung",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/direktzahlung_node.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/staatliche-beihilfen/staatliche-beihilfen_node.html",
+    "title": "Staatliche Beihilfen",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/staatliche-beihilfen/staatliche-beihilfen_node.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/eu-absatzfoerderung/eu-absatzfoerderung_node.html",
+    "title": "EU-Absatzförderung",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/eu-absatzfoerderung/eu-absatzfoerderung_node.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/agrarumwelt-und-klimamassnahmen-aukm/agrarumwelt-und-klimamassnahmen-aukm_node.html",
+    "title": "Agrarumwelt- und Klimamassnahmen (AUKM)",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/agrarumwelt-und-klimamassnahmen-aukm/agrarumwelt-und-klimamassnahmen-aukm_node.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/eu-ratsberichte.html",
+    "title": "Zur Seite",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/eu-ratsberichte.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-09-2026-bruessel.html",
+    "title": "Ergebnisbericht über die Tagung des Rates (Landwirtschaft und Fischerei) vom 28. bis 29. September 2026 in Brüssel",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-09-2026-bruessel.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-09-2026.html",
+    "title": "Tagung des Rates (Landwirtschaft und Fischerei) vom 06. bis 08. September 2026 in Dublin (Irland)",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-09-2026.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-5-2026.html",
+    "title": "Informelle Treffen der EU- Fischereiministerinnen und -minister am 28. und 29. Juli 2026 in Cork (Irland)",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-5-2026.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-4-2026.html",
+    "title": "Ergebnisbericht über die Tagung des Rates (Landwirtschaft und Fischerei) am 13. Juli 2026 in Brüssel",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-4-2026.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-3-2026.html",
+    "title": "Ergebnisbericht über die Tagung des Rates (Landwirtschaft und Fischerei) am 22./23. Juni 2026 in Luxemburg",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/agrarrat-3-2026.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/oeko-regelungen.html",
+    "title": "Öko-Regelungen",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/oeko-regelungen.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-partnerbeteiligung.html",
+    "title": "Partnerbeteiligung zum Sektorkapitel GAP und ländliche Räume 2028 – 2034",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-partnerbeteiligung.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-strategieplan_begleitausschuss.html",
+    "title": "Begleitausschuss \"Nationaler GAP -Strategieplan\"",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-strategieplan_begleitausschuss.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-geschichte.html",
+    "title": "Geschichte der Gemeinsamen Agrarpolitik",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-geschichte.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-dashboard.html",
+    "title": "Der GAP-Strategieplan in Zahlen",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/gap-dashboard.html"
+   },
+   {
+    "id": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/anpassungen-direktzahlungen.html",
+    "title": "Anpassungen der Direktzahlungen",
+    "date": "2026-10-25",
+    "url": "https://www.bmleh.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/direktzahlung/anpassungen-direktzahlungen.html"
+   }
+  ],
   "lastScanned": null
  },
  "reviewNeeded": [],
- "note": "Huella del texto vigente de la GAPDZV y de la GAPInVeKoSV. Si cambia hay que releer la norma: no se sabe qué artículo cambió."
+ "note": "Huella de tres páginas del Ministerio federal (BMLEH) sobre la GAP y vigilancia de páginas nuevas en su sección de política agraria europea. No vigila el texto de la GAPDZV (gesetze-im-internet.de no responde desde GitHub). Lo que aparece son candidatos: no se interpretan."
 }

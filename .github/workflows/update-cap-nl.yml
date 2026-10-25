@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Watch Netherlands CAP changes (Staatscourant and Staatsblad, GLB)
+name: Watch Netherlands CAP changes (Uitvoeringsregeling GLB 2023, wetten.overheid.nl)
 on:
   schedule:
     - cron: '0 8 * * 1'
