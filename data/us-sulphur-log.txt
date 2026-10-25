@@ -1,14 +1,14 @@
-22:44:42 HS4: filas 6205, unidades ['-'], total mundial en la fuente: False
-22:44:42 HS4: sin unidad de cantidad conocida (['-']): se descarta
-22:44:42 diag mensual 2024 2503000010 (gen kt/MUSD | con kt/MUSD): 01 67/5 | 158/52; 02 61/4 | 136/45; 03 55/3 | 129/43; 04 59/3 | 138/45; 05 67/4 | 158/55; 06 56/3 | 111/33; 07 49/3 | 114/39; 08 68/4 | 135/41; 09 36/2 | 106/38; 10 56/4 | 127/42; 11 69/6 | 126/37; 12 79/6 | 149/43
-22:44:42 diag 2503000010 2023: gen 866 kt 84 MUSD | consumo 1876 kt, valor 638, CIF 664, cargos 26, dutiable 0 MUSD
-22:44:42 diag 2503000010 2024: gen 728 kt 55 MUSD | consumo 1593 kt, valor 520, CIF 540, cargos 20, dutiable 0 MUSD
-22:44:42 diag 2503000010 2025: gen 819 kt 156 MUSD | consumo 1047 kt, valor 274, CIF 286, cargos 12, dutiable 1 MUSD
-22:44:42 diag 2503000010 2026: gen 958 kt 417 MUSD | consumo 958 kt, valor 417, CIF 427, cargos 10, dutiable 0 MUSD
-22:44:43 diag 2503000090 2023: gen 277 kt 44 MUSD | consumo 424 kt, valor 135, CIF 152, cargos 17, dutiable 1 MUSD
-22:44:43 diag 2503000090 2024: gen 271 kt 52 MUSD | consumo 516 kt, valor 181, CIF 193, cargos 12, dutiable 0 MUSD
-22:44:43 diag 2503000090 2025: gen 601 kt 156 MUSD | consumo 719 kt, valor 214, CIF 231, cargos 16, dutiable 6 MUSD
-22:44:43 diag 2503000090 2026: gen 251 kt 120 MUSD | consumo 251 kt, valor 120, CIF 124, cargos 4, dutiable 4 MUSD
-22:44:43 HS10: filas 9211, unidades ['T'], total mundial en la fuente: True
-22:44:43 toneladas por año (meses con volumen): 2023 2300 kt, 2024 2109 kt, 2025 1767 kt, 2026 1210 kt
-22:44:43 us-sulphur.json: 140 meses, ultimo 2026-08, 655.4 USD/t
+22:45:57 HS4: filas 6205, unidades ['-'], total mundial en la fuente: False
+22:45:57 HS4: sin unidad de cantidad conocida (['-']): se descarta
+22:45:58 diag mensual 2024 2503000010 (gen kt/MUSD | con kt/MUSD): 01 67/5 | 158/52; 02 61/4 | 136/45; 03 55/3 | 129/43; 04 59/3 | 138/45; 05 67/4 | 158/55; 06 56/3 | 111/33; 07 49/3 | 114/39; 08 68/4 | 135/41; 09 36/2 | 106/38; 10 56/4 | 127/42; 11 69/6 | 126/37; 12 79/6 | 149/43
+22:45:58 diag 2503000010 2023: gen 866 kt 84 MUSD | consumo 1876 kt, valor 638, CIF 664, cargos 26, dutiable 0 MUSD
+22:45:58 diag 2503000010 2024: gen 728 kt 55 MUSD | consumo 1593 kt, valor 520, CIF 540, cargos 20, dutiable 0 MUSD
+22:45:58 diag 2503000010 2025: gen 819 kt 156 MUSD | consumo 1047 kt, valor 274, CIF 286, cargos 12, dutiable 1 MUSD
+22:45:58 diag 2503000010 2026: gen 958 kt 417 MUSD | consumo 958 kt, valor 417, CIF 427, cargos 10, dutiable 0 MUSD
+22:45:59 diag 2503000090 2023: gen 277 kt 44 MUSD | consumo 424 kt, valor 135, CIF 152, cargos 17, dutiable 1 MUSD
+22:45:59 diag 2503000090 2024: gen 271 kt 52 MUSD | consumo 516 kt, valor 181, CIF 193, cargos 12, dutiable 0 MUSD
+22:45:59 diag 2503000090 2025: gen 601 kt 156 MUSD | consumo 719 kt, valor 214, CIF 231, cargos 16, dutiable 6 MUSD
+22:45:59 diag 2503000090 2026: gen 251 kt 120 MUSD | consumo 251 kt, valor 120, CIF 124, cargos 4, dutiable 4 MUSD
+22:45:59 HS10: filas 9211, unidades ['T'], total mundial en la fuente: True
+22:45:59 toneladas por año (meses con volumen): 2023 1144 kt, 2024 1000 kt, 2025 1421 kt, 2026 1210 kt
+22:45:59 us-sulphur.json: 140 meses, ultimo 2026-08, 655.4 USD/t
