@@ -173,7 +173,7 @@
   function optsHtml(list, w) {
     var g = {}, order = [];
     list.forEach(function (x) { var r = w.M[x.region] || x.region; if (!g[r]) { g[r] = []; order.push(r); } g[r].push(x); });
-    return order.map(function (r) { return '<optgroup label="' + esc(r) + '">' + g[r].map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === SID ? ' selected' : '') + '>' + esc(nm(x.name, x.product) + ' (' + x.unit + ' ' + x.currency + ')') + '</option>'; }).join('') + '</optgroup>'; }).join('');
+    return order.map(function (r) { return '<optgroup label="' + esc(r) + '">' + g[r].map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === SID ? ' selected' : '') + '>' + esc(nm(x.name, x.product) + ' (' + UL(x.unit) + (x.currency && x.currency !== 'INDEX' ? ' ' + x.currency : '') + ')') + '</option>'; }).join('') + '</optgroup>'; }).join('');
   }
   function render() {
     var w = t(), root = document.getElementById('cf-body'); if (!root) return;

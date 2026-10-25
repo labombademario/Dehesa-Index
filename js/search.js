@@ -79,6 +79,11 @@
     var title = e.n[lang] || ''; s -= Math.min(title.length, 80) / 1500;
     // frase completa dentro del título
     if (qs.length > 1 && norm(title).indexOf(qs.join(' ')) >= 0) s += 0.2;
+    // el título entero es la consulta («Grains», «Pienso» para «piensos»): la sección o categoría va antes que un producto que solo contiene la palabra
+    var tt = e._t[lang] || [];
+    if (tt.length && tt.length === qs.length && qs.every(function (q, j) { return tokScore(q, tt[j]) >= 0.95; })) s += 0.12;
+    // la primera palabra del título es exactamente la consulta («Pesca y acuicultura» frente a «Harina de pescado», que solo empieza igual)
+    else if (tt.length && tt[0] === qs[0]) s += 0.03;
     if (gen) for (i = 0; i < gen.length; i++) { var g = Math.max(fieldBest(gen[i], e._t[lang]), fieldBest(gen[i], e._k) * 0.5); if (g >= 0.85) s += 0.015; else if (g > 0) s += 0.007; }
     return s;
   }

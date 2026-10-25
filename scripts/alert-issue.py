@@ -39,6 +39,12 @@ def stale_problems():
     return out
 def handle(label, probs, title, intro, now):
     open_issues = api("GET", "issues?state=open&labels=%s&per_page=5" % label) or []
+    if not open_issues:   # el listado por etiqueta tarda a veces en ver un issue recien etiquetado: se mira tambien la lista general antes de abrir otro
+        open_issues = [it for it in (api("GET", "issues?state=open&per_page=50") or []) if label in [l.get("name") for l in it.get("labels") or []] and not it.get("pull_request")]
+    open_issues.sort(key=lambda it: it.get("number", 0), reverse=True)
+    for it in open_issues[1:]:   # nunca mas de uno abierto: los antiguos se cierran remitiendo al mas reciente
+        api("POST", "issues/%d/comments" % it["number"], {"body": "Duplicado de #%d, que sigue el mismo estado. Se cierra este." % open_issues[0]["number"]}); api("PATCH", "issues/%d" % it["number"], {"state": "closed"}); print("issue duplicado cerrado", it["number"])
+    open_issues = open_issues[:1]
     if probs:
         body = "%s a las %s.\n\n%s\n\nPagina de estado: https://dehesaindex.com/status.html\n\nEste issue lo abre y cierra solo el workflow *Update pipeline status*." % (intro, now, "\n".join(probs))
         if open_issues:

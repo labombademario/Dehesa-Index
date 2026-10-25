@@ -274,12 +274,15 @@ export function patchDataJs(data, cfg, name, o) {
 const HISTORY_DAYS = Number(process.env.EU_HISTORY_DAYS) || 7300;
 const HISTORY_POINTS = Number(process.env.EU_HISTORY_POINTS) || 1200;
 
+function monthStart(d) { return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1)); }
 function euDate(d) { return d.toISOString().slice(0, 10).split('-').reverse().join('/'); }
 
 async function fetchRows(cfg, members) {
   // El agregado de la UE (código EU) se filtra después: se pide todo el conjunto sin lista de países
   let url = BASE + '/' + cfg.commodity + '/prices' + (members.indexOf('EU') >= 0 ? '?x=1' : '?memberStateCodes=' + members.join(','));
-  if (cfg.recent) url += '&beginDate=' + euDate(new Date(Date.now() - HISTORY_DAYS * 864e5));
+  // La ventana empieza el dia 1 del mes: con un dia cualquiera, el mes mas antiguo salia de un mes incompleto y su media cambiaba
+  // cada dia que corria la ventana (falsas «revisiones» de octubre de 2006 el 24 oct 2026).
+  if (cfg.recent) url += '&beginDate=' + euDate(monthStart(new Date(Date.now() - HISTORY_DAYS * 864e5)));
   let res;
   for (let attempt = 1; attempt <= 3; attempt++) {
     res = await fetch(url, { headers: { Accept: 'application/json' } });

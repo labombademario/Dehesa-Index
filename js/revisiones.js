@@ -37,7 +37,10 @@
   function esc(x) { return S.esc(x == null ? '' : String(x)); }
   function nf(v) { if (typeof v !== 'number') return '—'; try { return v.toLocaleString(lang(), { maximumFractionDigits: Math.abs(v) >= 100 ? 1 : 3 }); } catch (e) { return String(v); } }
   function pct(v) { if (typeof v !== 'number') return '—'; var s = (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(2); return lang() === 'en' ? s + '%' : s.replace('.', ',') + ' %'; }
-  function lab(l) { return window.DILabelTl && window.DILabelTl.ready(lang()) ? window.DILabelTl.tl(l, lang()) : l; }
+  /* Las revisiones de precios llegan como «leche_polvo (EU)» y «USD/ton_corta» (ids internos): nombre y unidad del idioma de la pagina */
+  function priceName(l) { var m = /^([a-z0-9_]+) \(([A-Z]{2,3})\)$/.exec(l || ''), L0 = (D.obs && D.obs.labels) || {}; return m && L0[m[1]] ? (L0[m[1]][lang()] || L0[m[1]].es) + ' (' + m[2] + ')' : null; }
+  function unitOf(u) { var S0 = window.DehesaShared; return u && S0 && S0.unitLabel ? String(u).split('/').map(function (x) { return S0.unitLabel(x, lang()); }).join('/') : u; }
+  function lab(l) { var p = priceName(l); if (p) return p; return window.DILabelTl && window.DILabelTl.ready(lang()) ? window.DILabelTl.tl(l, lang()) : l; }
   function get(u) { return fetch(S.sitePath(u), { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   function table(cols, rows) { return '<div class="di-table-wrap" style="overflow-x:auto"><table class="di-table" style="width:100%;font-size:13px;border-collapse:collapse"><thead><tr>' + cols.map(function (c) { return '<th style="text-align:left;padding:6px 8px">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows.join('') + '</tbody></table></div>'; }
   function td(x, raw) { return '<td style="padding:6px 8px;border-top:1px solid var(--border)">' + (raw ? x : esc(x)) + '</td>'; }
@@ -49,7 +52,7 @@
     var R = ((D.rev && D.rev.revisions) || []).filter(function (r) { return !Q || (String(r.label || '') + ' ' + r.series).toLowerCase().indexOf(Q) > -1; });
     h += '<section class="di-card" style="padding:14px 16px;margin:0 0 16px"><h2 style="font-size:18px;margin:0 0 4px">' + esc(w.rev) + '</h2><p class="di-movers-hint" style="margin:0 0 8px">' + esc(w.revSub) + '</p>' +
       '<input type="search" id="rv-q" class="di-compare-select" aria-label="' + esc(w.q) + '" placeholder="' + esc(w.q) + '" value="' + esc(Q) + '" style="min-width:220px;margin:0 0 8px">' +
-      table(w.cols, R.slice(0, LIM).map(function (r) { return '<tr>' + td(lab(r.label || r.series) + (r.unit ? ' (' + r.unit + ')' : '')) + td(r.period) + td(nf(r.old)) + td(nf(r.new)) + td(pct(r.pct)) + td(S.fmtDate(String(r.detectedAt || '').slice(0, 10))) + td(w.why) + td(S.reportLink({ id: r.series, label: r.label, period: r.period, value: r.new, unit: r.unit }), 1) + '</tr>'; })) +
+      table(w.cols, R.slice(0, LIM).map(function (r) { return '<tr>' + td(lab(r.label || r.series) + (r.unit ? ' (' + unitOf(r.unit) + ')' : '')) + td(r.period) + td(nf(r.old)) + td(nf(r.new)) + td(pct(r.pct)) + td(S.fmtDate(String(r.detectedAt || '').slice(0, 10))) + td(w.why) + td(S.reportLink({ id: r.series, label: r.label, period: r.period, value: r.new, unit: r.unit }), 1) + '</tr>'; })) +
       '<p class="di-movers-hint" style="margin:6px 0 0">' + esc(w.shown.replace('{n}', Math.min(LIM, R.length)).replace('{t}', R.length)) + (R.length > LIM ? ' <button type="button" class="di-link-btn" id="rv-more">' + esc(w.more) + '</button>' : '') + '</p></section>';
     var O = ((D.obs && D.obs.observations) || []).filter(function (o) { return o.type === 'PRICE' && (o.freshness === 'DELAYED' || o.freshness === 'STALE') && o.expectedNext; });
     var today = (D.obs && D.obs.today) || new Date().toISOString().slice(0, 10), dd = function (a, b) { return Math.round((Date.parse(b) - Date.parse(a)) / 864e5); };

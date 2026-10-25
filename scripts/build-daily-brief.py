@@ -154,6 +154,12 @@ def main():
         for r in json.loads((ROOT / 'data/revisions.json').read_text()).get('revisions', []):
             if (r.get('detectedAt') or '') >= iso: revs.append(r)
     except Exception: pass
+    # nombre del producto en los 4 idiomas para las revisiones de precios («leche_polvo (EU)» -> «Leche en polvo (EU)»), desde las etiquetas del observatorio
+    try: OBL = json.loads((ROOT / 'data/observatory.json').read_text()).get('labels', {})
+    except Exception: OBL = {}
+    for r in revs:
+        m = re.match(r'^([a-z0-9_]+) \(([A-Z]{2,3})\)$', r.get('label') or '')
+        if m and m.group(1) in OBL: r['labels'] = {l: '%s (%s)' % (OBL[m.group(1)].get(l) or OBL[m.group(1)]['es'], m.group(2)) for l in ('es', 'en', 'fr', 'it')}
     # pipelines en retraso / error y proximas ejecuciones
     old = {}
     try: old = json.loads((ROOT / 'data/daily-brief.json').read_text())

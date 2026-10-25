@@ -80,6 +80,9 @@ jobs:
       - name: Search answers (every figure shown must equal the source data)
         run: node scripts/test-answers.mjs
 
+      - name: Search ranking (54 consultas de scripts/search-cases.json traen la entrada esperada arriba)
+        run: node scripts/test-search-ranking.mjs
+
       - name: Blog email subscription (required consent, legal text, provider privacy link)
         run: node scripts/test-newsletter.mjs
 
@@ -467,6 +470,22 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-es-livestock.mjs
+      - name: España, tierra (precios y rentas de la tierra del MAPA, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-es-land.mjs
+      - name: España, leche (INFOLAC, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-es-milk.mjs
+      - name: España, sacrificio de ganado (4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-es-slaughter.mjs
+      - name: España, sacrificio por provincia y censo (4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-es-slaughter-census.mjs
       - name: Oferta y demanda, pestaña España (balances de cereales del MAPA = los JSON, notas del total, cita, 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

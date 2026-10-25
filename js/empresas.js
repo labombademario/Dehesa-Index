@@ -187,8 +187,12 @@
   function fill(s, o) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return o[k] == null ? m : o[k]; }); }
   function nf(v) { try { return v.toLocaleString(lang(), { maximumFractionDigits: 2 }); } catch (e) { return String(v); } }
   function prodName(p) { var L = D.labels && D.labels.labels && D.labels.labels[p]; return L ? (L[lang()] || L.es || p) : p; }
-  function srcName(id) { var s = D.sum && D.sum.sources[id]; return s ? s.name : id; }
-  function verdict(id) { var s = D.sum && D.sum.sources[id]; return s ? s.verdict : ''; }
+  /* Alias de fuente: la leche cruda de la UE llega con sourceId «european_commission» (Milk Market Observatory), que es el mismo portal
+     de DG AGRI registrado como «eu_agrifood» en las licencias; sin el alias la tabla mostraba el id interno y sin veredicto. */
+  var SRC_ALIAS = { european_commission: 'eu_agrifood' };
+  function srcKey(id) { return D.sum && D.sum.sources && !D.sum.sources[id] && SRC_ALIAS[id] ? SRC_ALIAS[id] : id; }
+  function srcName(id) { var s = D.sum && D.sum.sources[srcKey(id)]; return s ? s.name : String(id).replace(/_/g, ' '); }
+  function verdict(id) { var s = D.sum && D.sum.sources[srcKey(id)]; return s ? s.verdict : ''; }
   function vLabel(v, w) { return v === 'apto' ? w.vApto : v === 'condiciones' ? w.vCond : v === 'no-apto' ? w.vNo : '—'; }
   var UNITS = { tonelada: { es: 'tonelada', en: 'tonne', fr: 'tonne', it: 'tonnellata' }, bushel: { es: 'bushel', en: 'bushel', fr: 'boisseau', it: 'bushel' } };
   function unit(u) { return UNITS[u] ? UNITS[u][lang()] : u; }

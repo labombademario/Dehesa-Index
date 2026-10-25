@@ -45,6 +45,21 @@ def moves_for(hist):
 
 
 def L4(es, en, fr, it): return {'es': es, 'en': en, 'fr': fr, 'it': it}
+def web_names():
+    """Nombres de producto en es/en/fr/it tal como los muestra la web (DehesaData.NAMES de js/data.js), para no enseñar ids internos
+    («tabaco_us», «diesel_calgary»). Si node no esta, se sigue sin ellos: EXTRA y, en ultimo caso, el id."""
+    import subprocess
+    js = ("const vm=require('vm'),fs=require('fs');const c={console};c.window=c;c.self=c;vm.createContext(c);"
+          "vm.runInContext(fs.readFileSync(process.argv[1],'utf8'),c);process.stdout.write(JSON.stringify(c.DehesaData.NAMES))")
+    try:
+        r = subprocess.run(['node', '-e', js, str(ROOT / 'js' / 'data.js')], capture_output=True, text=True, timeout=60)
+        N = json.loads(r.stdout) if r.returncode == 0 else {}
+    except Exception: N = {}
+    out = {}
+    for l in ('es', 'en', 'fr', 'it'):
+        for k, v in (N.get(l) or {}).items():
+            if isinstance(v, str) and v: out.setdefault(k, {})[l] = v
+    return {k: v for k, v in out.items() if len(v) == 4}
 EXTRA = {
  'arroz': L4('Arroz', 'Rice', 'Riz', 'Riso'), 'avena': L4('Avena', 'Oats', 'Avoine', 'Avena'), 'azucar': L4('Azúcar', 'Sugar', 'Sucre', 'Zucchero'), 'cebada': L4('Cebada', 'Barley', 'Orge', 'Orzo'), 'centeno': L4('Centeno', 'Rye', 'Seigle', 'Segale'),
  'cerdo': L4('Cerdo', 'Pigs', 'Porc', 'Suini'), 'colza': L4('Colza', 'Rapeseed', 'Colza', 'Colza'), 'cordero': L4('Cordero', 'Lamb', 'Agneau', 'Agnello'), 'dap': L4('Fosfato diamónico (DAP)', 'Diammonium phosphate (DAP)', 'Phosphate diammonique (DAP)', 'Fosfato biammonico (DAP)'),
@@ -138,9 +153,10 @@ def main():
                 'note': 'Los cambios comparan la ultima instantanea guardada con la anterior; la primera ejecucion no tiene con que comparar.'}
     upcoming = sorted([{'k': o['k'], 'expectedNext': o['expectedNext'], 'frequency': o['frequency'], 'sourceId': o['sourceId'], 'freshness': o['freshness']} for o in obs if o['expectedNext']], key=lambda x: x['expectedNext'])
     kinds = sorted({c['kind'] for c in brief['coverage']}); datasets = [{'file': c['file'], 'name': c['name'], 'kind': c['kind'], 'status': c['status']} for c in brief['coverage']]
+    WN = web_names()
     doc = {'schemaVersion': 1, 'generatedAt': NOW, 'today': TODAY, 'newDays': NEW_DAYS, 'windows': {k: {'minDays': v[0], 'maxDays': v[1]} for k, v in WINDOWS.items()},
            'methodology': 'Todo se deriva de ficheros ya validados. "Nuevo" = el pipeline vio esa fecha de observacion por primera vez en los ultimos %d dias (en la primera ejecucion, la de publicacion/recuperacion de un dato al dia). Los movimientos comparan el ultimo punto con el anterior dentro de cada ventana de dias, en la moneda y unidad originales. "Proximas" son observaciones ESPERADAS segun la politica de frescura, no un calendario oficial.' % NEW_DAYS,
-           'labels': {p: EXTRA.get(p) or L4(p, p, p, p) for p in sorted({o['product'] for o in obs})}, 'regions': {r: REGIONS.get(r) or L4(r.upper(), r.upper(), r.upper(), r.upper()) for r in sorted({o['region'] for o in obs})}, 'kinds': kinds, 'observations': obs, 'datasets': datasets, 'revisions': revisions, 'freshness': freshness, 'upcoming': upcoming, 'coverage': coverage, 'quality': quality, 'pipelines': pipelines}
+           'labels': {p: EXTRA.get(p) or WN.get(p) or L4(p, p, p, p) for p in sorted({o['product'] for o in obs})}, 'regions': {r: REGIONS.get(r) or L4(r.upper(), r.upper(), r.upper(), r.upper()) for r in sorted({o['region'] for o in obs})}, 'kinds': kinds, 'observations': obs, 'datasets': datasets, 'revisions': revisions, 'freshness': freshness, 'upcoming': upcoming, 'coverage': coverage, 'quality': quality, 'pipelines': pipelines}
     new = json.dumps(doc, ensure_ascii=False, separators=(',', ':'))
     path = D / 'observatory.json'
     try:

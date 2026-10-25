@@ -164,7 +164,13 @@ def main():
                 # Una ejecucion cancelada (la cola de concurrencia descarta la pendiente cuando entra otra) NO es un exito: el retraso se mide desde
                 # la ultima ejecucion que si termino bien; si no hay ninguna reciente, queda en retraso y se ve.
                 good = [x for x in rr if x.get("conclusion") == "success"]; gst = pdate(good[0].get("run_started_at")) if good else None
-                if r.get("conclusion") == "failure":
+                # Lanzamiento repetido: una ejecucion buena y, a los pocos minutos, una copia lanzada por bot que choca al publicar.
+                # El dato ya quedo publicado por la buena: se juzga por ella (se anota el duplicado para que se vea).
+                dup = r.get("conclusion") == "failure" and r.get("event") == "workflow_dispatch" and gst and st and datetime.timedelta(0) <= st - gst <= datetime.timedelta(minutes=20)
+                if dup:
+                    item["last"]["note"] = "duplicate-after-success"
+                    item["status"] = "late" if crons and is_late(crons, gst) else "ok"
+                elif r.get("conclusion") == "failure":
                     item["status"] = "error"
                     why = failure_reason(r.get("id"))
                     if why: item["last"]["reason"] = why
