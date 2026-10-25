@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "country": "NL",
  "source": "wetten_nl",
- "status": "OK",
+ "status": "UNREACHABLE",
  "checkedAt": "2026-10-25",
  "baseline": {
   "fingerprints": {},
