@@ -216,7 +216,7 @@
     input.addEventListener('input', function () { STATE.sel = 0; renderResults(); });
     input.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { e.preventDefault(); move(1); } else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
-      else if (e.key === 'Enter') { if (STATE.sel === 0 && ANS.pending === STATE.q && STATE.results.length) { e.preventDefault(); waitEnter(); return; } if (STATE.sel === -1 && STATE.ans) { e.preventDefault(); close(); global.location.href = STATE.ans; return; } var r = STATE.results[STATE.sel]; if (r) { e.preventDefault(); go(r); } }
+      else if (e.key === 'Enter') { if (STATE.sel === 0 && norm(STATE.q) && (ANS.pending === STATE.q || !IDX)) { e.preventDefault(); waitEnter(); return; } if (STATE.sel === -1 && STATE.ans) { e.preventDefault(); close(); global.location.href = STATE.ans; return; } var r = STATE.results[STATE.sel]; if (r) { e.preventDefault(); go(r); } }
       else if (e.key === 'Escape') { e.preventDefault(); close(); }
     });
     document.addEventListener('keydown', function (e) { if (STATE.open && e.key === 'Escape') close(); });
@@ -271,7 +271,7 @@
   function waitEnter() {
     var q = STATE.q; clearTimeout(ANS.wt);
     ANS.go = q;
-    ANS.wt = setTimeout(function () { if (ANS.go === q && STATE.open && STATE.q === q) { ANS.go = null; var r = STATE.results[STATE.sel < 0 ? 0 : STATE.sel]; if (r) go(r); } }, 2500);
+    ANS.wt = setTimeout(function () { if (ANS.go === q && STATE.open && STATE.q === q) { ANS.go = null; if (STATE.sel === -1 && STATE.ans) { close(); global.location.href = STATE.ans; return; } var r = STATE.results[STATE.sel < 0 ? 0 : STATE.sel]; if (r) go(r); } }, 6000);   // red lenta: como mucho 6 s y se abre lo que haya
   }
   function settle(q) {
     if (ANS.pending === q) ANS.pending = null;
@@ -281,7 +281,8 @@
     var r = STATE.results[STATE.sel < 0 ? 0 : STATE.sel]; if (r) go(r);
   }
   function answerFor(q, l) {
-    clearTimeout(ANS.timer); setAns(''); ANS.pending = null; ANS.go = null; clearTimeout(ANS.wt);
+    clearTimeout(ANS.timer); setAns(''); ANS.pending = null;
+    if (ANS.go !== q) { ANS.go = null; clearTimeout(ANS.wt); }   // al redibujar con la misma consulta (p. ej. al llegar las noticias) el Enter pendiente se mantiene
     if (!IDX || !norm(q) || norm(q).length < 3) return;
     ANS.pending = q;
     ANS.timer = setTimeout(function () {
