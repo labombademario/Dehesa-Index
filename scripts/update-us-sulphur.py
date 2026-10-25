@@ -26,7 +26,7 @@ ATTEMPTS = [("HS4", ["2503"]), ("HS10", ["2503000010", "2503000090"])]   # si el
 
 
 def fetch(key, level, code, tries=4):
-    q = urllib.parse.urlencode({"get": "GEN_VAL_MO,GEN_QY1_MO,UNIT_QY1,CTY_CODE,CTY_NAME", "COMM_LVL": level, "I_COMMODITY": code, "time": "from " + SINCE, "key": key})
+    q = urllib.parse.urlencode({"get": "GEN_VAL_MO,GEN_QY1_MO,CON_VAL_MO,CON_QY1_MO,UNIT_QY1,CTY_CODE,CTY_NAME", "COMM_LVL": level, "I_COMMODITY": code, "time": "from " + SINCE, "key": key})
     last = None
     for i in range(tries):
         try:
@@ -36,6 +36,22 @@ def fetch(key, level, code, tries=4):
                 return json.loads(body)
         except Exception as e: last = e; time.sleep(4 * (i + 1))
     raise RuntimeError(repr(last)[:200])
+
+
+def diag(code, rows):
+    """Diagnostico en el log: toneladas e importes por año de cada linea (general y para consumo) y principales origenes de 2024; sirve para contrastar con el USGS."""
+    try:
+        h = rows[0]; ix = {k: h.index(k) for k in ("GEN_VAL_MO", "GEN_QY1_MO", "CON_VAL_MO", "CON_QY1_MO", "CTY_CODE", "CTY_NAME", "time")}
+        yr = {}; org = {}
+        for r in rows[1:]:
+            y = r[ix["time"]][:4]; code_c = (r[ix["CTY_CODE"]] or "").strip()
+            f = lambda k: float(r[ix[k]] or 0)
+            if code_c == "-":
+                a = yr.setdefault(y, [0.0, 0.0, 0.0, 0.0]); a[0] += f("GEN_QY1_MO"); a[1] += f("GEN_VAL_MO"); a[2] += f("CON_QY1_MO"); a[3] += f("CON_VAL_MO")
+            elif y == "2024" and re.fullmatch(r"\d{4}", code_c): org[r[ix["CTY_NAME"]]] = org.get(r[ix["CTY_NAME"]], 0.0) + f("GEN_QY1_MO")
+        log("diag %s: %s" % (code, "; ".join("%s gen %d kt %.0f MUSD, consumo %d kt" % (y, a[0] / 1000, a[1] / 1e6, a[2] / 1000) for y, a in sorted(yr.items())[-4:])))
+        log("diag %s origenes 2024: %s" % (code, ", ".join("%s %d kt" % (k, v / 1000) for k, v in sorted(org.items(), key=lambda x: -x[1])[:6])))
+    except Exception as e: log("diag %s fallo: %r" % (code, e))
 
 
 def parse(rows):
@@ -76,6 +92,7 @@ def main():
                 try: r = fetch(key, level, code)
                 except Exception as e: log("%s %s: %s" % (level, code, e)); continue
                 got += r if not got else r[1:]
+                if level == "HS10": diag(code, r)
         else: got = rows
         if not got: continue
         months, units, from_total = parse(got)
