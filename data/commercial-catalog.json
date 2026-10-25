@@ -1,19 +1,19 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T05:23:00Z",
+ "generatedAt": "2026-10-25T21:39:32Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 166,
-  "sourcesApto": 153,
+  "sources": 170,
+  "sourcesApto": 154,
   "sourcesCondiciones": 9,
-  "sourcesNoApto": 4,
-  "datasets": 372,
+  "sourcesNoApto": 7,
+  "datasets": 373,
   "datasets_apto": 240,
   "datasets_condiciones": 122,
-  "datasets_parcial": 3,
+  "datasets_parcial": 4,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
   "derived": 47
@@ -241,6 +241,24 @@
    "conditions": "Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer."
   },
   {
+   "id": "agrotikianaptixi_gr",
+   "name": "Σχέδιο ΚΑΠ — agrotikianaptixi.gr (Grecia)",
+   "url": "https://www.agrotikianaptixi.gr/",
+   "country": "EL",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No reuse licence found",
+   "licenseUrl": "https://www.agrotikianaptixi.gr/",
+   "verdict": "no-apto",
+   "status": "PENDING",
+   "legalConfidence": "PENDING",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attribution": "Fuente: Plan Estratégico PAC (Grecia)",
+   "conditions": "Solo se guardan títulos y enlaces de las entradas del RSS y su fecha; no se copia texto.",
+   "why": "licencia PENDING en el registro"
+  },
+  {
    "id": "alberta_ag",
    "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
    "url": "https://open.alberta.ca/",
@@ -410,6 +428,24 @@
    "redistribution": "yes",
    "attribution": "Source: U.S. Bureau of Labor Statistics",
    "conditions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido."
+  },
+  {
+   "id": "bmleh_de",
+   "name": "BMLEH — Bundesministerium für Landwirtschaft, Ernährung und Heimat (Alemania)",
+   "url": "https://www.bmleh.de/",
+   "country": "DE",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No reuse licence found",
+   "licenseUrl": "https://www.bmleh.de/DE/serviceseiten/impressum/impressum_node.html",
+   "verdict": "no-apto",
+   "status": "PENDING",
+   "legalConfidence": "PENDING",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attribution": "Fuente: BMLEH (Alemania)",
+   "conditions": "El impressum dice: «Das Copyright für Texte und Bilder liegt, soweit nicht anders vermerkt, beim Bundesministerium». No ofrece licencia abierta. Solo se guardan títulos, enlaces y huellas (hash) de tres páginas; no se publica ni se copia su texto.",
+   "why": "licencia PENDING en el registro"
   },
   {
    "id": "bmluk_hydrographie",
@@ -1997,6 +2033,24 @@
    "conditions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de precios de consumo (CPI, D7BT) y, vía NOMIS (servicio del ONS), la población, la tasa de paro y el valor añadido bruto por región (mismo régimen OGL v3.0)."
   },
   {
+   "id": "pepacc_pt",
+   "name": "PEPAC Continente (pepacc.pt)",
+   "url": "https://pepacc.pt/",
+   "country": "PT",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No reuse licence found",
+   "licenseUrl": "https://pepacc.pt/politica-de-privacidade/",
+   "verdict": "no-apto",
+   "status": "PENDING",
+   "legalConfidence": "PENDING",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attribution": "Fuente: PEPAC Continente (Portugal)",
+   "conditions": "Solo se guardan títulos y enlaces de las entradas del RSS y su fecha; no se copia texto.",
+   "why": "licencia PENDING en el registro"
+  },
+  {
    "id": "pl_akcyza_rm",
    "name": "Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej)",
    "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20250001875",
@@ -2709,6 +2763,23 @@
    "conditions": "USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summary of Business files are published for open download on the RMA public site and contain county-level aggregates, not farm-level records. No USDA/RMA logo or endorsement implied; Dehesa Index sums the published records and does not republish them one by one."
   },
   {
+   "id": "usgs_mcs",
+   "name": "USGS Mineral Commodity Summaries (Sulfur)",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-sulfur.pdf",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); credit to the USGS requested",
+   "licenseUrl": "https://www.usgs.gov/faqs/are-usgs-reportspublications-copyrighted",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Geological Survey, Mineral Commodity Summaries 2026, Sulfur",
+   "conditions": "USGS pide citar la fuente; algunas imágenes de su web son de terceros (no se usan). Los precios de Tampa que cita el USGS proceden de proveedores privados de precios: se publican solo los cuatro puntos que el propio informe recoge, con cita."
+  },
+  {
    "id": "vigieau",
    "name": "VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau)",
    "url": "https://vigieau.gouv.fr/",
@@ -3402,8 +3473,31 @@
   {
    "path": "data/cap/",
    "scope": "carpeta",
-   "verdict": "apto",
+   "verdict": "parcial",
    "sources": [
+    "agrotikianaptixi_gr",
+    "bmleh_de",
+    "boe_es",
+    "bundesanzeiger",
+    "dila_jorf",
+    "dre_pt",
+    "esbirka_cz",
+    "fek_gr",
+    "gesetze_im_internet",
+    "gov_ie_dafm",
+    "magyarkozlony_hu",
+    "masaf_it",
+    "moniteur_be",
+    "monitorul_ro",
+    "nn_hr",
+    "pepacc_pt",
+    "retsinformation",
+    "ris_at",
+    "sejm_eli",
+    "svensk_forfattningssamling",
+    "wetten_nl"
+   ],
+   "commercialSources": [
     "boe_es",
     "bundesanzeiger",
     "dila_jorf",
@@ -3422,6 +3516,11 @@
     "sejm_eli",
     "svensk_forfattningssamling",
     "wetten_nl"
+   ],
+   "excludedSources": [
+    "agrotikianaptixi_gr",
+    "bmleh_de",
+    "pepacc_pt"
    ]
   },
   {
@@ -7863,6 +7962,14 @@
    "sources": [
     "usda_nass",
     "usda_oce_wasde"
+   ]
+  },
+  {
+   "path": "data/usgs-sulfur.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usgs_mcs"
    ]
   },
   {

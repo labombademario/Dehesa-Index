@@ -1,15 +1,15 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-24T05:23:00Z",
+ "generatedAt": "2026-10-25T21:39:32Z",
  "summary": {
-  "sources": 166,
-  "sourcesApto": 153,
+  "sources": 170,
+  "sourcesApto": 154,
   "sourcesCondiciones": 9,
-  "sourcesNoApto": 4,
-  "datasets": 372,
+  "sourcesNoApto": 7,
+  "datasets": 373,
   "datasets_apto": 240,
   "datasets_condiciones": 122,
-  "datasets_parcial": 3,
+  "datasets_parcial": 4,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
   "derived": 47
@@ -67,6 +67,10 @@
    "name": "France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer)",
    "verdict": "apto"
   },
+  "agrotikianaptixi_gr": {
+   "name": "Σχέδιο ΚΑΠ — agrotikianaptixi.gr (Grecia)",
+   "verdict": "no-apto"
+  },
   "alberta_ag": {
    "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
    "verdict": "apto"
@@ -106,6 +110,10 @@
   "bls": {
    "name": "U.S. Bureau of Labor Statistics",
    "verdict": "apto"
+  },
+  "bmleh_de": {
+   "name": "BMLEH — Bundesministerium für Landwirtschaft, Ernährung und Heimat (Alemania)",
+   "verdict": "no-apto"
   },
   "bmluk_hydrographie": {
    "name": "BMLUK — Grundwasser Aktuell Österreich (hydrographischer Dienst, gis.lfrz.gv.at)",
@@ -479,6 +487,10 @@
    "name": "UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS)",
    "verdict": "apto"
   },
+  "pepacc_pt": {
+   "name": "PEPAC Continente (pepacc.pt)",
+   "verdict": "no-apto"
+  },
   "pl_akcyza_rm": {
    "name": "Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej)",
    "verdict": "apto"
@@ -645,6 +657,10 @@
   },
   "usda_rma": {
    "name": "USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance)",
+   "verdict": "apto"
+  },
+  "usgs_mcs": {
+   "name": "USGS Mineral Commodity Summaries (Sulfur)",
    "verdict": "apto"
   },
   "vigieau": {
