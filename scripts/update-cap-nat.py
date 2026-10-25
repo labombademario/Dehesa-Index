@@ -272,8 +272,10 @@ def main():
         else: it_scan(doc, fixture)
     except Exception as e:
         ok = False
+        doc['lastError'] = ('%s: %s' % (type(e).__name__, e))[:200]
         print('%s: fuente no disponible (%s: %s); se conserva la lectura anterior' % (cc, type(e).__name__, e))
     if ok:
+        doc.pop('lastError', None)
         doc['status'] = 'PARTIAL' if partial else 'OK'
         doc['checkedAt'] = TODAY
         # primera lectura automatica: lo que ya estaba publicado cuando se escribieron las reglas es la linea base
