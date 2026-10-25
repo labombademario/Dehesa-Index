@@ -21,6 +21,10 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   await page.goto(BASE + '/insumos.html', { waitUntil: 'domcontentloaded', timeout: 20000 });
   await page.waitForSelector('[data-catab="es"]', { timeout: 10000, state: 'attached' }).catch(() => {}); await page.click('[data-catab="es"]');
   await page.waitForSelector('#in-es-land:not([hidden]) .gb-card', { timeout: 8000 }).catch(() => {});
+  // tras cambiar un selector el bloque puede cargar otro fichero: se espera hasta 6 s a que se cumpla la condicion (antes fallaba a ratos en la CI)
+  const until = async pred => { let x; for (let i = 0; i < 30; i++) { x = await get(); if (pred(x)) return x; await page.waitForTimeout(200); } return x; };
+  // si el bloque se vuelve a pintar (llega otro fichero) el selector se sustituye y pierde el valor: se vuelve a elegir hasta que se cumpla
+  const pick = async (sel, val, pred) => { let x; for (let i = 0; i < 30; i++) { const cur = await page.$eval(sel, e => e.value).catch(() => null); if (cur !== val) await selectHidden(page, sel, val); x = await get(); if (pred(x)) return x; await page.waitForTimeout(200); } return x; };
   let m = await get();
   ok(tag + ' bloque visible', !m.hidden && m.svgs >= 2);
   ok(tag + ' mapa de 17 comunidades', m.paths === 17);
@@ -29,14 +33,14 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ' cita MAPA', /MAPA/.test(m.txt));
   ok(tag + ' sin desborde', !m.over);
   if (w === 1280) {
-    await selectHidden(page, '#in-es-land .gb-lvl', 'prov'); m = await get();
+    m = await pick('#in-es-land .gb-lvl', 'prov', x => x.paths === 52);
     ok(tag + ' mapa de provincias (50 + Ceuta y Melilla sin dato)', m.paths === 52);
     ok(tag + ' provincia sin dato publicado de tierras arables: tabla con las que si', m.rows > 40 && m.rows <= 50);
-    await selectHidden(page, '#in-es-land .gb-type', 'TAR'); m = await get();
+    m = await pick('#in-es-land .gb-type', 'TAR', x => BAL.TAR == null || norm(x.txt).includes(num(BAL.TAR, lang)));
     ok(tag + ' Baleares tierras arables regadio = JSON', BAL.TAR == null || norm(m.txt).includes(num(BAL.TAR, lang)));
-    await selectHidden(page, '#in-es-land .gb-m', 'rent'); m = await get();
+    m = await pick('#in-es-land .gb-m', 'rent', x => norm(x.txt).includes(num(RENT, lang)) && x.paths === 17);
     ok(tag + ' canon general nacional = JSON', norm(m.txt).includes(num(RENT, lang)) && m.paths === 17);
-    await selectHidden(page, '#in-es-land .gb-reg', 'GA'); m = await get();
+    m = await pick('#in-es-land .gb-reg', 'GA', x => norm(x.txt).includes(String(J.years[0])));
     ok(tag + ' grafico con 5 anos', norm(m.txt).includes(String(J.years[0])));
   }
   ok(tag + ' sin errores de consola', errs.length === 0); if (errs.length) console.log(errs);

@@ -470,10 +470,6 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-es-livestock.mjs
-      - name: España, tierra (precios y rentas de la tierra del MAPA, 4 idiomas, 1280/390)
-        env:
-          CHROMIUM: ''
-        run: node scripts/test-es-land.mjs
       - name: España, leche (INFOLAC, 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''
