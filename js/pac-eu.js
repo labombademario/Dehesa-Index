@@ -72,7 +72,7 @@
   function param() { try { var c = (new URLSearchParams(window.location.search).get('c') || '').toUpperCase(); return c === 'EU' || WORK.indexOf(c) >= 0 ? c : 'ES'; } catch (e) { return 'ES'; } }
   function cite(id, p) { var Q = window.DICite; if (!Q) return ''; var c = Q.html(id, { period: p || '' }); return c ? '<div class="pp-cites">' + c + '</div>' : ''; }
   function citeCalc(ids, what) { var Q = window.DICite; if (!Q || !Q.derived) return ''; var c = Q.derived(ids, { what: what }); return c ? '<div class="pp-cites">' + c + '</div>' : ''; }
-  var C = param(), A = null, DK = null, DE = null, FR = null;
+  var C = param(), A = null, DK = null, DE = null, FR = null, DEW = null;
   var bar = document.getElementById('pac-eu-bar'), host = document.getElementById('pac-eu'), body = document.getElementById('pac-body');
   function fl(c) { if (c === 'EU') return '\uD83C\uDDEA\uD83C\uDDFA '; var i = c === 'EL' ? 'GR' : c === 'UK' ? 'GB' : c; return /^[A-Z]{2}$/.test(i) ? String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)) + ' ' : ''; }
   function barHtml() {
@@ -134,6 +134,46 @@
       return '<details class="pac-eu-all"><summary>' + esc(c.code) + ' · <span class="di-movers-hint">' + esc(c.ref) + '</span></summary><ul>' + pts.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul></details>';
     }).join('');
   }
+  // Vigilancia de la GAPDZV y la GAPInVeKoSV (data/cap/de/watch.json, lunes): huella del texto vigente en gesetze-im-internet.de
+  var WT = { es: { h: 'Vigilancia de cambios', ok: 'Comprobado el {d}: el texto vigente de las dos normas no ha cambiado.', rev: 'Comprobado el {d}: hay {n} cambio(s) por revisar.', bad: 'La última lectura no llegó a la fuente oficial; se conserva la anterior.', none: 'La vigilancia está configurada y todavía no ha hecho su primera lectura.', last: 'Última modificación publicada: {a}' },
+    en: { h: 'Change watch', ok: 'Checked on {d}: the current text of both regulations has not changed.', rev: 'Checked on {d}: {n} change(s) to review.', bad: 'The last read could not reach the official source; the previous one is kept.', none: 'The watch is set up and has not made its first read yet.', last: 'Latest amendment published: {a}' },
+    fr: { h: 'Veille des changements', ok: 'Vérifié le {d} : le texte en vigueur des deux règlements n’a pas changé.', rev: 'Vérifié le {d} : {n} changement(s) à examiner.', bad: 'La dernière lecture n’a pas atteint la source officielle ; la précédente est conservée.', none: 'La veille est configurée et n’a pas encore fait sa première lecture.', last: 'Dernière modification publiée : {a}' },
+    it: { h: 'Monitoraggio delle modifiche', ok: 'Verificato il {d}: il testo vigente dei due regolamenti non è cambiato.', rev: 'Verificato il {d}: {n} modifica/he da esaminare.', bad: 'L’ultima lettura non ha raggiunto la fonte ufficiale; si conserva la precedente.', none: 'Il monitoraggio è configurato e non ha ancora fatto la prima lettura.', last: 'Ultima modifica pubblicata: {a}' } };
+  function dWatchHtml() {
+    var w = DEW; if (!w) return ''; var x = WT[lang()] || WT.es, d = '';
+    try { var p = String(w.checkedAt).slice(0, 10).split('-'); d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).toLocaleDateString(lang(), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch (e) { d = w.checkedAt || ''; }
+    var h = '<h3 class="pac-eu-h2">' + esc(x.h) + '</h3>';
+    if (w.status === 'NOT_YET_RUN') return h + '<p class="di-movers-hint">' + esc(x.none) + '</p>';
+    h += '<p class="di-movers-hint" role="status">' + esc(w.reviewNeeded.length ? fill(x.rev, { d: d, n: w.reviewNeeded.length }) : fill(x.ok, { d: d })) + (w.status === 'UNREACHABLE' ? ' ' + esc(x.bad) : '') + '</p>';
+    if (w.reviewNeeded.length) h += '<ul>' + w.reviewNeeded.slice(0, 6).map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul>';
+    var am = Object.keys(w.current.fingerprints || {}).map(function (k) { return w.current.fingerprints[k].amendedBy; }).filter(Boolean)[0];
+    if (am) h += '<p class="di-movers-hint">' + esc(fill(x.last, { a: am })) + '</p>';
+    return h;
+  }
+  // Ultimas novedades de la PAC: los 8 titulares mas recientes con la etiqueta PAC (data/views/news-product.json, se renueva con las noticias cada pocas horas)
+  var NT = { es: { h: 'Últimas novedades de la PAC en Europa', n: 'Titulares de la Comisión Europea, ministerios y prensa agraria recogidos automáticamente. Cada uno enlaza a su fuente; no los hemos verificado ni resumido.', none: 'No hay titulares de la PAC en las últimas semanas.', all: 'Ver todas las noticias de la PAC' },
+    en: { h: 'Latest CAP news in Europe', n: 'Headlines from the European Commission, ministries and the farm press, collected automatically. Each links to its source; we have not verified or summarised them.', none: 'No CAP headlines in the last few weeks.', all: 'See all CAP news' },
+    fr: { h: 'Dernières nouvelles de la PAC en Europe', n: 'Titres de la Commission européenne, des ministères et de la presse agricole, collectés automatiquement. Chacun renvoie à sa source ; nous ne les avons ni vérifiés ni résumés.', none: 'Aucun titre sur la PAC ces dernières semaines.', all: 'Voir toutes les actualités de la PAC' },
+    it: { h: 'Ultime novità della PAC in Europa', n: 'Titoli della Commissione europea, dei ministeri e della stampa agricola, raccolti automaticamente. Ognuno rimanda alla sua fonte; non li abbiamo verificati né riassunti.', none: 'Nessun titolo sulla PAC nelle ultime settimane.', all: 'Vedi tutte le notizie sulla PAC' } };
+  var PN = null, PNT = {};
+  function newsHtml() {
+    var x = NT[lang()] || NT.es, h = '<section class="pac-news" aria-labelledby="pac-news-h"><h2 class="pac-eu-h2" id="pac-news-h">' + esc(x.h) + '</h2>';
+    if (PN === null) return '';
+    if (!PN.length) return h + '<p class="di-movers-hint">' + esc(x.none) + '</p></section>';
+    h += '<ul class="pac-news-l">' + PN.map(function (n) {
+      var tr = PNT[n.id], title = (tr && tr[0]) || n.headline.es, u = /^https?:\/\//i.test(n.url) ? n.url : '#', d = String(n.date || '').slice(0, 10);
+      return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(title) + '</a> <span class="di-movers-hint">' + esc(n.source) + (d ? ' · ' + esc(d) : '') + '</span></li>';
+    }).join('') + '</ul><p class="di-movers-hint">' + esc(x.n) + '</p><p><a class="di-link-btn" href="noticias.html?product=pac">' + esc(x.all) + '</a></p></section>';
+    return h;
+  }
+  function drawNews() { var host = document.getElementById('pac-news'); if (host) host.innerHTML = newsHtml(); }
+  function loadNews() {
+    if (!window.DINews) return;
+    window.DINews.product().then(function (items) {
+      PN = (items || []).filter(function (n) { return n.products.indexOf('pac') >= 0; }).sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); }).slice(0, 8);
+      return window.DINews.tr(lang()).then(function (t) { PNT = t || {}; });
+    }).then(drawNews, function () { PN = []; drawNews(); });
+  }
   function deHtml() {
     var x = t(), main = DE.items.filter(function (i) { return i.group !== 'eco'; }), eco = DE.items.filter(function (i) { return i.group === 'eco'; });
     return '<p class="di-movers-hint"><b>' + esc(x.deH) + '</b> · ' + esc(x.deAct) + ' 2023-2025</p>' + deTable(main, ['2023', '2024', '2025']) +
@@ -169,7 +209,7 @@
       var items = []; DK.schemes.forEach(function (s) { (s.items || []).forEach(function (it) { if (items.length < 14) items.push([it.label || s.name, it.amount, it.unit]); }); });
       h += '<p class="di-movers-hint"><b>' + esc(x.dkH) + '</b></p><div class="de-sc"><table class="de-t" data-no-cards><tbody>' + items.map(function (i) { return '<tr><td lang="da">' + esc(i[0]) + '</td><td class="r">' + nf(i[1], 2) + ' ' + esc(i[2]) + '</td></tr>'; }).join('') + '</tbody></table></div>' +
         '<p><a class="di-link-btn" href="paises.html?c=DK">' + esc(x.dkMore) + '</a></p>' + cite('retsinformation', String(DK.campaign || ''));
-    } else if (c === 'DE' && DE && DE.items) h += deHtml();
+    } else if (c === 'DE' && DE && DE.items) h += deHtml() + dWatchHtml();
     else if (c === 'FR' && FR && FR.items) h += frHtml();
     else if (c === 'IT' || c === 'PL' || c === 'FR' || c === 'PT' || c === 'BE' || c === 'HR' || c === 'EL' || c === 'NL' || c === 'AT' || c === 'IE' || c === 'RO' || c === 'HU' || c === 'CZ' || c === 'SE') h += '';
     else h += '<p class="di-movers-hint">' + esc(x.natNone) + '</p>';
@@ -195,8 +235,9 @@
   window.DehesaPacEU = { country: C };   // js/pac.js no arranca fuera de España
   function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
   draw();
-  Promise.all([get('data/cap/eu/allocations.json'), C === 'DK' ? get('data/cap/dk/amounts.json').catch(function () { return null; }) : null, C === 'DE' ? get('data/cap/de/amounts.json').catch(function () { return null; }) : null, C === 'FR' ? get('data/cap/fr/amounts.json').catch(function () { return null; }) : null, window.DICite ? window.DICite.load() : null])
-    .then(function (r) { A = r[0]; DK = r[1]; DE = r[2]; FR = r[3]; draw(); }, function () { A = false; draw(); });
+  Promise.all([get('data/cap/eu/allocations.json'), C === 'DK' ? get('data/cap/dk/amounts.json').catch(function () { return null; }) : null, C === 'DE' ? get('data/cap/de/amounts.json').catch(function () { return null; }) : null, C === 'FR' ? get('data/cap/fr/amounts.json').catch(function () { return null; }) : null, window.DICite ? window.DICite.load() : null, C === 'DE' ? get('data/cap/de/watch.json').catch(function () { return null; }) : null])
+    .then(function (r) { A = r[0]; DK = r[1]; DE = r[2]; FR = r[3]; DEW = r[5]; draw(); }, function () { A = false; draw(); });
+  loadNews();
   var prev = window.DehesaShared && window.DehesaShared.onLangChange;
-  if (window.DehesaShared) window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); draw(); };
+  if (window.DehesaShared) window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); draw(); loadNews(); };
 })();

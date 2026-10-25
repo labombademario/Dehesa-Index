@@ -1793,6 +1793,46 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
     data: [cap/pl/watch.json]
     message: Seguimiento de la PAC de Polonia (Dziennik Ustaw)
+  - id: cap-de
+    name: Watch Germany CAP changes (GAPDZV and GAPInVeKoSV, gesetze-im-internet.de)
+    cron: ['50 7 * * 1']
+    script: scripts/update-cap-nat.py DE
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/de/watch.json]
+    message: Seguimiento de la PAC de Alemania (GAPDZV y GAPInVeKoSV)
+  - id: cap-nl
+    name: Watch Netherlands CAP changes (Staatscourant and Staatsblad, GLB)
+    cron: ['0 8 * * 1']
+    script: scripts/update-cap-nat.py NL
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/nl/watch.json]
+    message: Seguimiento de la PAC de Países Bajos (Staatscourant y Staatsblad)
+  - id: cap-pt
+    name: Watch Portugal CAP changes (PEPAC no Continente RSS)
+    cron: ['10 8 * * 1']
+    script: scripts/update-cap-nat.py PT
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/pt/watch.json]
+    message: Seguimiento de la PAC de Portugal (PEPAC no Continente)
+  - id: cap-el
+    name: Watch Greece CAP changes (agrotikianaptixi.gr RSS)
+    cron: ['20 8 * * 1']
+    script: scripts/update-cap-nat.py EL
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/el/watch.json]
+    message: Seguimiento de la PAC de Grecia (web oficial del Plan Estratégico)
   - id: us-states
     name: Update US data by state (USDA NASS Quick Stats and USDA ERS farm income)
     cron: ['40 21 * * 5']

@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-25T18:39:00Z",
+ "generatedAt": "2026-10-25T18:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 270,
   "late": 2,
   "error": 0,
   "not_run": 1,
-  "unknown": 0
+  "unknown": 4
  },
  "global": "late",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 0.0,
+  "lagHours": 3.0,
   "prodGeneratedAt": "2026-10-25T15:43:24.420311+00:00",
-  "repoGeneratedAt": "2026-10-25T15:43:24.420311+00:00",
-  "checkedAt": "2026-10-25T18:39:00Z"
+  "repoGeneratedAt": "2026-10-25T18:44:43.242827+00:00",
+  "checkedAt": "2026-10-25T18:48:00Z"
  },
  "pipelines": [
   {
@@ -828,6 +828,19 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-cap-de.yml",
+   "name": "Watch Germany CAP changes (GAPDZV and GAPInVeKoSV, gesetze-im-internet.de)",
+   "crons": [
+    "50 7 * * 1"
+   ],
+   "nextRun": "2026-10-26T07:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-cap-dk.yml",
    "name": "Check Denmark CAP rules and amounts (Retsinformation BEK 1363 and 1381)",
    "crons": [
@@ -848,6 +861,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-el.yml",
+   "name": "Watch Greece CAP changes (agrotikianaptixi.gr RSS)",
+   "crons": [
+    "20 8 * * 1"
+   ],
+   "nextRun": "2026-10-26T08:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {
@@ -920,6 +946,19 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-cap-nl.yml",
+   "name": "Watch Netherlands CAP changes (Staatscourant and Staatsblad, GLB)",
+   "crons": [
+    "0 8 * * 1"
+   ],
+   "nextRun": "2026-10-26T08:00:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-cap-pl.yml",
    "name": "Watch Poland CAP changes (Sejm ELI, Dziennik Ustaw)",
    "crons": [
@@ -940,6 +979,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-pt.yml",
+   "name": "Watch Portugal CAP changes (PEPAC no Continente RSS)",
+   "crons": [
+    "10 8 * * 1"
+   ],
+   "nextRun": "2026-10-26T08:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {
@@ -3880,7 +3932,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-25T18:47:00Z",
+   "nextRun": "2026-10-25T21:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3907,35 +3959,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-25T15:43:25Z"
+     "lastChange": "2026-10-25T18:44:44Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-25T15:43:25Z"
+     "lastChange": "2026-10-25T18:44:44Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-25T15:43:25Z"
+     "lastChange": "2026-10-25T18:44:44Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-25T15:43:25Z"
+     "lastChange": "2026-10-25T18:44:44Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-25T15:43:25Z"
+     "lastChange": "2026-10-25T18:44:44Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-25T15:36:51Z",
-    "durationSec": 398,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40207772639"
+    "startedAt": "2026-10-25T18:38:52Z",
+    "durationSec": 356,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40222235702"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -4179,7 +4231,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4196,7 +4248,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/products"
@@ -4207,11 +4259,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-25T15:40:10Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -4235,7 +4287,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/country-pending.json",
@@ -4243,22 +4295,22 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -4266,7 +4318,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-25T15:41:29Z"
+     "lastChange": "2026-10-25T18:42:43Z"
     },
     {
      "path": "data/home-explore.json",
@@ -4290,13 +4342,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-25T15:36:15Z",
-    "durationSec": 320,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40207725761"
+    "startedAt": "2026-10-25T18:37:45Z",
+    "durationSec": 303,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40222150334"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 1
    },
    "status": "ok",

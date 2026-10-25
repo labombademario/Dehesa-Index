@@ -1,0 +1,18 @@
+{
+ "schemaVersion": 1,
+ "country": "EL",
+ "source": "agrotikianaptixi_gr",
+ "status": "OK",
+ "checkedAt": "2026-10-25",
+ "baseline": {
+  "fingerprints": {},
+  "acknowledged": []
+ },
+ "current": {
+  "fingerprints": {},
+  "candidates": [],
+  "lastScanned": "2026-10-25"
+ },
+ "reviewNeeded": [],
+ "note": "Vigilancia del RSS de la web oficial del Plan Estratégico de la PAC (agrotikianaptixi.gr) desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan."
+}

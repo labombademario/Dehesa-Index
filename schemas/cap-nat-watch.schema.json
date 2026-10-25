@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "Dehesa Index - PAC Francia/Italia/Polonia: vigilancia de cambios",
+ "title": "Dehesa Index - PAC Francia/Italia/Polonia/Alemania/Países Bajos/Portugal/Grecia: vigilancia de cambios",
  "type": "object",
  "required": [
   "schemaVersion",
@@ -21,7 +21,11 @@
    "enum": [
     "FR",
     "IT",
-    "PL"
+    "PL",
+    "DE",
+    "NL",
+    "PT",
+    "EL"
    ]
   },
   "source": {

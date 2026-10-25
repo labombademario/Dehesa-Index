@@ -1,0 +1,18 @@
+{
+ "schemaVersion": 1,
+ "country": "NL",
+ "source": "wetten_nl",
+ "status": "OK",
+ "checkedAt": "2026-10-25",
+ "baseline": {
+  "fingerprints": {},
+  "acknowledged": []
+ },
+ "current": {
+  "fingerprints": {},
+  "candidates": [],
+  "lastScanned": "2026-10-25"
+ },
+ "reviewNeeded": [],
+ "note": "Vigilancia de Staatscourant y Staatsblad con el GLB en el título, desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan."
+}

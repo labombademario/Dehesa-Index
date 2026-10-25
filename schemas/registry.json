@@ -1282,6 +1282,30 @@
     "cap_nat_rules"
    ]
   ],
+  "cap/de/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/nl/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/pt/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/el/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
   "cap/pl/watch.json": [
    "cap-nat-watch",
    [

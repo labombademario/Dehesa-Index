@@ -11,11 +11,17 @@ No reescribe reglas ni importes: avisa cuando la fuente oficial publica algo que
 Si la fuente no responde se conserva la lectura anterior y se marca status UNREACHABLE (nunca se inventa un 'sin cambios').
 NEW_RULE no es detectable: lo que aparezca aqui son candidatos, no reglas nuevas confirmadas.
 
-Uso: python3 scripts/update-cap-nat.py FR|IT|PL [--accept] [--fixture DIR]
+  DE  huella (sha256) del texto vigente de la GAP-Direktzahlungen-Verordnung y de la GAP-InVeKoS-Verordnung en gesetze-im-internet.de
+      (la misma fuente que ya usan los importes alemanes); anota tambien la linea «Zuletzt geaendert durch» para saber que norma la modifico.
+  NL  busca en Officiele bekendmakingen (Staatscourant y Staatsblad) publicaciones recientes cuyo titulo habla del GLB.
+  PT  RSS de pepacc.pt (PEPAC no Continente): entradas nuevas sobre portarias, despachos, pedido unico, pagamentos, ecorregimes.
+  EL  RSS de agrotikianaptixi.gr (web oficial del Plan Estrategico de la PAC griego): entradas nuevas sobre ayudas directas y decisiones ministeriales.
+Uso: python3 scripts/update-cap-nat.py FR|IT|PL|DE|NL|PT|EL [--accept] [--fixture DIR]
   --accept   da por revisado todo lo actual (la lectura pasa a ser la linea base)
   --fixture  lee de ficheros locales en lugar de la red (pruebas)
 """
-import datetime, hashlib, io, json, os, re, subprocess, sys, tarfile, tempfile, urllib.request
+import datetime, hashlib, html as htmllib, io, json, os, re, subprocess, sys, tarfile, tempfile, urllib.request
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +32,19 @@ FR_TITLE = re.compile(r'politique agricole commune|campagne 20\d\d|[ée]cor[ée]
 PL_TITLE = re.compile(r'staw(?:k|ek)|zaliczk|zaliczek|Plan(?:u|em)? Strategiczn|schemat|płatności bezpośrednie|płatności w ramach|wspólnej polityki rolnej|WPR', re.I)
 PL_BASE = ['DU/2023/412', 'DU/2024/1741']
 PL_SINCE = '2026-09-01'
+DE_LAWS = [('gapdzv', 'GAP-Direktzahlungen-Verordnung (GAPDZV)'), ('gapinvekosv', 'GAP-InVeKoS-Verordnung (GAPInVeKoSV)')]
+DE_BASE = 'https://www.gesetze-im-internet.de/'
+NL_SINCE = '2026-10-25'      # fecha de puesta en marcha de la vigilancia: solo cuenta lo publicado desde entonces
+NL_TITLE = re.compile(r'\bGLB\b|gemeenschappelijk landbouwbeleid|landbouwbeleid|nationaal strategisch plan|Uitvoeringsregeling GLB', re.I)
+NL_URLS = ['https://zoek.officielebekendmakingen.nl/resultaten?q=(c.product-area==%22officielepublicaties%22)and(cql.textAndIndexes=%22GLB%22)&zv=GLB&pg=50&col=&svel=Publicatiedatum&svol=Aflopend',
+           'https://zoek.officielebekendmakingen.nl/resultaten?q=(c.product-area==%22officielepublicaties%22)and(cql.textAndIndexes=%22gemeenschappelijk+landbouwbeleid%22)&zv=gemeenschappelijk+landbouwbeleid&pg=50&col=&svel=Publicatiedatum&svol=Aflopend']
+NL_RULE_PREFIX = ('stcrt', 'stb', 'trb')    # Staatscourant, Staatsblad, Tractatenblad: normas. Los Kamerstukken (parlamento) no son normas.
+PT_SINCE = '2026-10-25'
+PT_FEED = 'https://pepacc.pt/feed/'
+PT_TITLE = re.compile(r'portaria|despacho|decreto|regulamento|altera[cç]|pedido [uú]nico|pagamento|ecorregime|interven[cç]|ajuda|apoio|candidatura|aviso', re.I)
+EL_SINCE = '2026-10-25'
+EL_FEED = 'https://www.agrotikianaptixi.gr/feed/'
+EL_TITLE = re.compile(r'Υ\.? ?Α\.?|ΚΥΑ|απόφαση|ενιαία ενίσχυση|ενίσχυση|ενισχύσε|άμεσες|οικολογικ|ΣΣΚΑΠ|ΚΑΠ|τροποποίηση|εκκαθάριση|πληρωμ', re.I)
 FR_SINCE = '2026-10-01'      # ultimo dia leido a mano (JORF del 1-oct-2026, arretes de la campana 2026)
 FR_MAX_DAYS = 45             # tope de ficheros diarios por ejecucion
 
@@ -144,6 +163,70 @@ def it_scan(doc, fixture):
                                                   'updatedAt': m.group(1) if m else None}
 
 
+# ------------------------------------------------------------------ DE
+def _plain(h):
+    h = re.sub(r'<script.*?</script>|<style.*?</style>', ' ', h, flags=re.S)
+    return re.sub(r'\s+', ' ', htmllib.unescape(re.sub(r'<[^>]+>', ' ', h))).strip()
+
+
+def de_scan(doc, fixture):
+    c = doc['current']
+    for slug, label in DE_LAWS:
+        idx = get(DE_BASE + slug + '/index.html', fixture)
+        m = re.search(r'href="(BJNR\d+\.html)"', idx)
+        if not m: raise IOError('sin enlace al texto completo de ' + slug)
+        full = _plain(get(DE_BASE + slug + '/' + m.group(1), fixture))
+        if len(full) < 20000: raise IOError('texto demasiado corto de %s (%d)' % (slug, len(full)))
+        a = re.search(r'Stand: (Zuletzt ge.ndert durch .{0,160}?)(?= Gem\. | N.heres zur Standangabe| Fu.note|$)', full)
+        c['fingerprints'][slug] = {'sha256': sha(full), 'chars': len(full), 'label': label + ', texto vigente', 'amendedBy': a.group(1).strip() if a else None}
+
+
+# ------------------------------------------------------------------ NL
+def nl_scan(doc, fixture):
+    c = doc['current']
+    known = {x['id'] for x in c['candidates']}
+    seen_any = False
+    for url in NL_URLS:
+        try:
+            page = get(url, fixture)
+        except Exception:
+            if fixture: raise
+            continue
+        seen_any = True
+        for li in re.findall(r'<li>\s*<h2 class="result--title[^"]*">(.*?)</li>', page, re.S):
+            href = re.search(r'href="/?([a-z]+(?:-\d+)+)\.html"', li)
+            title = re.search(r'result--subtitle[^>]*>(.*?)</a>', li, re.S)
+            dt = re.search(r'Datum publicatie</dt>\s*<dd>(\d{2})-(\d{2})-(\d{4})</dd>', li, re.S)
+            if not (href and title and dt): continue
+            oid = href.group(1); day = '%s-%s-%s' % (dt.group(3), dt.group(2), dt.group(1))
+            t = _plain(title.group(1))
+            if not oid.startswith(NL_RULE_PREFIX) or day < NL_SINCE or not NL_TITLE.search(t) or oid in known: continue
+            known.add(oid)
+            c['candidates'].append({'id': oid, 'title': t, 'date': day, 'url': 'https://zoek.officielebekendmakingen.nl/' + oid + '.html'})
+    if not seen_any: raise IOError('Officiele bekendmakingen no responde')
+
+
+# ------------------------------------------------------------------ PT / EL (RSS de WordPress)
+def _rss_scan(doc, fixture, url, since, title_rx, tag):
+    c = doc['current']
+    known = {x['id'] for x in c['candidates']}
+    root = ET.fromstring(get(url, fixture, binary=True))
+    items = root.findall('./channel/item')
+    if not items: raise IOError('RSS sin entradas')
+    for it in items:
+        title = _plain(it.findtext('title') or ''); link = (it.findtext('link') or '').strip(); pub = it.findtext('pubDate') or ''
+        try: day = datetime.datetime.strptime(pub[:25].strip(), '%a, %d %b %Y %H:%M:%S').date().isoformat()
+        except ValueError: continue
+        oid = (it.findtext('guid') or link).strip()
+        if day < since or not title_rx.search(title) or oid in known or not link.startswith('http'): continue
+        known.add(oid)
+        c['candidates'].append({'id': oid, 'title': title, 'date': day, 'url': link})
+
+
+def pt_scan(doc, fixture): _rss_scan(doc, fixture, PT_FEED, PT_SINCE, PT_TITLE, 'PT')
+def el_scan(doc, fixture): _rss_scan(doc, fixture, EL_FEED, EL_SINCE, EL_TITLE, 'EL')
+
+
 def init_doc(cc):
     """Linea base inicial: los textos que ya recogen las reglas e importes curados a mano."""
     d = ROOT / 'data' / 'cap' / cc.lower()
@@ -154,6 +237,17 @@ def init_doc(cc):
     elif cc == 'PL':
         doc = base_doc('PL', 'sejm_eli', 'Vigilancia de la ley del Plan Estratégico y búsqueda de reglamentos nuevos en el Dziennik Ustaw desde el 1 de septiembre de 2026. Los textos que aparecen son candidatos: no se interpretan.')
         doc['baseline']['acknowledged'] = sorted(x['eli'] for x in json.loads((d / 'amounts.json').read_text(encoding='utf-8'))['documents'])
+    elif cc == 'DE':
+        doc = base_doc('DE', 'gesetze_im_internet', 'Huella del texto vigente de la GAPDZV y de la GAPInVeKoSV. Si cambia hay que releer la norma: no se sabe qué artículo cambió.')
+    elif cc == 'NL':
+        doc = base_doc('NL', 'wetten_nl', 'Vigilancia de Staatscourant y Staatsblad con el GLB en el título, desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan.')
+        doc['current']['lastScanned'] = NL_SINCE
+    elif cc == 'PT':
+        doc = base_doc('PT', 'pepacc_pt', 'Vigilancia del RSS de pepacc.pt (PEPAC no Continente) desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan.')
+        doc['current']['lastScanned'] = PT_SINCE
+    elif cc == 'EL':
+        doc = base_doc('EL', 'agrotikianaptixi_gr', 'Vigilancia del RSS de la web oficial del Plan Estratégico de la PAC (agrotikianaptixi.gr) desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan.')
+        doc['current']['lastScanned'] = EL_SINCE
     else:
         doc = base_doc('IT', 'masaf_it', 'Huella del texto coordinado del DM 660087/2022. Si cambia hay que releer el decreto: no se sabe qué artículo cambió.')
     return doc
@@ -161,7 +255,7 @@ def init_doc(cc):
 
 def main():
     a = [x for x in sys.argv[1:] if not x.startswith('--')]
-    if not a or a[0] not in ('FR', 'IT', 'PL'): sys.exit(__doc__)
+    if not a or a[0] not in ('FR', 'IT', 'PL', 'DE', 'NL', 'PT', 'EL'): sys.exit(__doc__)
     cc = a[0]
     fixture = sys.argv[sys.argv.index('--fixture') + 1] if '--fixture' in sys.argv else None
     p, doc = load(cc)
@@ -171,6 +265,10 @@ def main():
     try:
         if cc == 'FR': partial = fr_scan(doc, fixture)
         elif cc == 'PL': pl_scan(doc, fixture)
+        elif cc == 'DE': de_scan(doc, fixture)
+        elif cc == 'NL': nl_scan(doc, fixture)
+        elif cc == 'PT': pt_scan(doc, fixture)
+        elif cc == 'EL': el_scan(doc, fixture)
         else: it_scan(doc, fixture)
     except Exception as e:
         ok = False

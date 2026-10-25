@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "country": "DE",
+ "source": "gesetze_im_internet",
+ "status": "OK",
+ "checkedAt": "2026-10-25",
+ "baseline": {
+  "fingerprints": {
+   "gapdzv": {
+    "sha256": "cfc46402393d2948aef79a3fc76540855735b40a74a5202d4f39a1d317d8e663",
+    "chars": 99374,
+    "label": "GAP-Direktzahlungen-Verordnung (GAPDZV), texto vigente",
+    "amendedBy": "Zuletzt geändert durch Art. 1 V v. 12.8.2026 I Nr. 237"
+   },
+   "gapinvekosv": {
+    "sha256": "929b1c0efb7ca1ef09d33f40fe5c03e1d3e62781ce5298497d4b6cab957f7ddf",
+    "chars": 79042,
+    "label": "GAP-InVeKoS-Verordnung (GAPInVeKoSV), texto vigente",
+    "amendedBy": "Zuletzt geändert durch Art. 2 V v. 12.8.2026 I Nr. 237"
+   }
+  },
+  "acknowledged": []
+ },
+ "current": {
+  "fingerprints": {
+   "gapdzv": {
+    "sha256": "cfc46402393d2948aef79a3fc76540855735b40a74a5202d4f39a1d317d8e663",
+    "chars": 99374,
+    "label": "GAP-Direktzahlungen-Verordnung (GAPDZV), texto vigente",
+    "amendedBy": "Zuletzt geändert durch Art. 1 V v. 12.8.2026 I Nr. 237"
+   },
+   "gapinvekosv": {
+    "sha256": "929b1c0efb7ca1ef09d33f40fe5c03e1d3e62781ce5298497d4b6cab957f7ddf",
+    "chars": 79042,
+    "label": "GAP-InVeKoS-Verordnung (GAPInVeKoSV), texto vigente",
+    "amendedBy": "Zuletzt geändert durch Art. 2 V v. 12.8.2026 I Nr. 237"
+   }
+  },
+  "candidates": [],
+  "lastScanned": null
+ },
+ "reviewNeeded": [],
+ "note": "Huella del texto vigente de la GAPDZV y de la GAPInVeKoSV. Si cambia hay que releer la norma: no se sabe qué artículo cambió."
+}

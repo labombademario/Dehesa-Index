@@ -14,6 +14,15 @@ CASES = [
  ("New sunflower hybrid launched for 2027 season by seed company", "en", True, {"products": ["colza"], "no_topics": ["comercio", "sanidad"]}),
  ("Wheat exports fall as tariffs hit Black Sea trade", "en", False, {"products": ["trigo"], "channel": "trade"}),
  ("Drought cuts corn yields in Illinois", "en", False, {"products": ["maiz"], "channel": "weather"}),
+ # PAC (25-oct-2026): terminos concretos de la politica agraria comun en varios idiomas
+ ("Los ecorregimenes de la PEPAC 2026 pagaran mas por hectarea de pastos", "es", False, {"products": ["pac"]}),
+ ("Ecoesquemas: el Ministerio ajusta los pagos directos de la campana", "es", False, {"products": ["pac"]}),
+ ("Écorégimes : les aides de la campagne 2026 versées en novembre", "fr", False, {"products": ["pac"]}),
+ ("Pagamenti diretti e ecoschemi: domanda unica 2026, le scadenze", "it", False, {"products": ["pac"]}),
+ ("Direktzahlungen und Öko-Regelungen: Das ändert sich 2027 für Landwirte", "de", False, {"products": ["pac"]}),
+ ("Ecoregelingen 2027: wat verandert er voor akkerbouwers", "nl", False, {"products": ["pac"]}),
+ ("Commission proposes CAP simplification package for farmers", "en", False, {"products": ["pac"]}),
+ ("US farm bill extension passes the House", "en", False, {"products": ["pac"]}),
 ]
 # Auditoria del 12-oct-2026: una noticia de agricultores que no cobran el grano salia como «POLITICA · COLZA» porque la colza y la politica
 # solo aparecian en la entradilla. Sin producto y canal en el titular no hay etiqueta. (titular, entradilla, idioma, mercados prohibidos)

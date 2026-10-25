@@ -46,10 +46,10 @@ def google(q, lang="en", gl=None):
     return "https://news.google.com/rss/search?" + urllib.parse.urlencode(
         {"q": q + " when:14d", "hl": hl, "gl": g, "ceid": ceid})
 
-def F(source, region, url, lang="en", general=False, pub=False):
+def F(source, region, url, lang="en", general=False, pub=False, tags=False):
     """source label, default region, url, language, general-interest feed (needs a product hit),
     pub = Google topical query whose real publisher is read from each item."""
-    return dict(source=source, region=region, url=url, lang=lang, general=general, pub=pub)
+    return dict(source=source, region=region, url=url, lang=lang, general=general, pub=pub, tags=tags)
 
 FEEDS = [
     # ── Agencias y prensa económica (vía Google News, sus RSS bloquean bots) ──
@@ -261,6 +261,7 @@ FEEDS = [
     F("WTO", "global", "https://www.wto.org/library/rss/latest_news_e.xml", "en", general=True),
     F("EIA", "us", "https://www.eia.gov/rss/todayinenergy.xml", "en", general=True),
     F("European Commission", "eu", "https://ec.europa.eu/commission/presscorner/api/rss?language=en", "en", general=True),
+    F("European Commission", "eu", "https://agriculture.ec.europa.eu/node/2/rss_en", "en", tags=True),   # DG AGRI: noticias de la PAC con etiquetas oficiales (RSS directo, 30 entradas)
     F("Agriland", "eu", "https://www.agriland.ie/feed/", "en"),
     F("Farmdoc Daily", "us", "https://farmdocdaily.illinois.edu/feed", "en"),
     F("Farm Policy News", "us", "https://farmpolicynews.illinois.edu/feed/", "en"),
@@ -375,7 +376,11 @@ PRODUCTS = {
  "energia": ["crude", "oil price", "natural gas", "brent", "petroleum", "energy prices", "petroleo", "petrole", "gas natural", "prezzo del petrolio", "energie", "energia", "energy"],
  "pienso": ["animal feed", "compound feed", "feed prices", "soybean meal", "pienso", "piensos", "aliment pour betail", "mangime", "mangimi", "feed"],
  "costes": ["input cost", "farm cost", "production cost", "costes de produccion", "costes", "cout de production", "couts", "costi di produzione"],
- "pac": ["common agricultural policy", "cap reform", "cap funding", "cap payments", "cap budget", "farm bill", "es:pac", "fr:pac", "it:pac", "politica agricola", "politique agricole"],
+ "pac": ["common agricultural policy", "cap reform", "cap funding", "cap payments", "cap budget", "farm bill", "es:pac", "fr:pac", "it:pac", "politica agricola", "politique agricole",
+         "cap simplification", "cap strategic plan", "cap post-2027", "post-2027 cap", "future cap", "cap support", "eco-scheme", "eco-schemes", "eu direct payments", "basic income support",
+         "pepac", "ecorregimen", "ecorregimenes", "ecoesquema", "ecoesquemas", "pagos directos", "pago basico", "derechos de pago", "solicitud unica", "politica agraria comun",
+         "ecoregime", "ecoregimes", "paiements directs", "droits a paiement", "ecoschema", "ecoschemi", "pagamenti diretti", "domanda unica",
+         "direktzahlungen", "oko-regelungen", "okoregelungen", "ecoregelingen", "directe betalingen", "pagamentos diretos", "pedido unico"],
 }
 TOPICS = {
  "clima": ["weather", "rain", "drought", "flood", "heat wave", "heatwave", "frost", "el nino", "la nina", "climate", "wildfire", "sequia", "lluvia", "ola de calor", "helada", "granizo", "secheresse", "pluie", "canicule", "grele", "siccita", "maltempo", "gelo", "grandine", "ondata di caldo"],
@@ -516,6 +521,7 @@ def _parse_et(txt):
                 if href and c.attrib.get("rel", "alternate") == "alternate": v.setdefault("link", href)
                 elif txt_: v.setdefault("link", txt_)
             elif tag == "source" and txt_: v["pub"] = txt_
+            elif tag == "category" and txt_: v.setdefault("cats", []).append(txt_)
         if v.get("title") and v.get("link"): out.append(v)
     return out
 
@@ -650,7 +656,7 @@ def fetch(feed):
                 if m: pub = m.group(1).strip(); title = title[: m.start()].rstrip()
         if not pub or len(title) < 28: continue   # páginas índice tipo "News - Dairy Herd"
         if not re.match(r"^https?://", (x.get("link") or "").strip(), re.I): continue   # solo enlaces web: un feed no puede colar javascript: ni data: en la pagina
-        c = classify(title, desc, feed["region"], feed["lang"], feed["general"])
+        c = classify(title, desc + (" " + " ".join(x.get("cats", [])) if feed.get("tags") else ""), feed["region"], feed["lang"], feed["general"])   # tags: las etiquetas del propio RSS (DG AGRI marca «common agricultural policy») cuentan para clasificar
         if not c: continue
         products, topics, reg, score = c
         if pub in TRUSTED or feed["source"] in TRUSTED: score = min(100, score + 8)

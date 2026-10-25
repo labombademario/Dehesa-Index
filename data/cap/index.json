@@ -215,9 +215,11 @@
      "reasonCode": "NOT_READ"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: ni gesetze-im-internet.de ni el Bundesanzeiger se leen desde los servidores de GitHub; el contrato avisa si falta el importe real de 2026 pasado el 15 de diciembre",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "de/watch.json",
+     "checkedAt": "2026-10-25",
+     "reviewNeeded": 0,
+     "note": "Huella del texto vigente de la GAPDZV y la GAPInVeKoSV (gesetze-im-internet.de); los Bekanntmachungen de importes del Bundesanzeiger no se vigilan"
     }
    }
   },
@@ -389,7 +391,7 @@
     "url": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf",
     "sourceId": "dre_pt"
    },
-   "updatedAt": "2026-10-15",
+   "updatedAt": "2026-10-25",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -420,9 +422,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha podido probar la lectura del Diario da Republica ni del IFAP desde estos servidores, asi que no se promete una vigilancia que no se ha visto funcionar",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "pt/watch.json",
+     "checkedAt": "2026-10-25",
+     "reviewNeeded": 0
     }
    }
   },
@@ -529,7 +532,7 @@
     "url": "https://www.forin.gr/articles/article/70797/ua-520-135074-2023",
     "sourceId": "fek_gr"
    },
-   "updatedAt": "2026-10-15",
+   "updatedAt": "2026-10-25",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -559,9 +562,10 @@
      "reasonCode": "NOT_READ"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha podido probar la lectura del ΦΕΚ (Εθνικό Τυπογραφείο) ni de la AADE desde estos servidores",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "el/watch.json",
+     "checkedAt": "2026-10-25",
+     "reviewNeeded": 0
     }
    }
   },
@@ -575,7 +579,7 @@
     "url": "https://wetten.overheid.nl/BWBR0047444/2026-01-21",
     "sourceId": "wetten_nl"
    },
-   "updatedAt": "2026-10-15",
+   "updatedAt": "2026-10-25",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -606,9 +610,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha probado la lectura de wetten.overheid.nl ni del Staatscourant desde estos servidores",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "nl/watch.json",
+     "checkedAt": "2026-10-25",
+     "reviewNeeded": 0
     }
    }
   },
