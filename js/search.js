@@ -216,7 +216,7 @@
     input.addEventListener('input', function () { STATE.sel = 0; renderResults(); });
     input.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { e.preventDefault(); move(1); } else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
-      else if (e.key === 'Enter') { if (STATE.sel === -1 && STATE.ans) { e.preventDefault(); close(); global.location.href = STATE.ans; return; } var r = STATE.results[STATE.sel]; if (r) { e.preventDefault(); go(r); } }
+      else if (e.key === 'Enter') { if (STATE.sel === 0 && ANS.pending === STATE.q && STATE.results.length) { e.preventDefault(); waitEnter(); return; } if (STATE.sel === -1 && STATE.ans) { e.preventDefault(); close(); global.location.href = STATE.ans; return; } var r = STATE.results[STATE.sel]; if (r) { e.preventDefault(); go(r); } }
       else if (e.key === 'Escape') { e.preventDefault(); close(); }
     });
     document.addEventListener('keydown', function (e) { if (STATE.open && e.key === 'Escape') close(); });
@@ -267,9 +267,23 @@
     }).catch(function () { ANS.p = null; return null; });
     return ANS.p;
   }
+  // Enter pulsado antes de que llegue la respuesta directa: se abre lo que toque cuando llegue (o el primer resultado si tarda)
+  function waitEnter() {
+    var q = STATE.q; clearTimeout(ANS.wt);
+    ANS.go = q;
+    ANS.wt = setTimeout(function () { if (ANS.go === q && STATE.open && STATE.q === q) { ANS.go = null; var r = STATE.results[STATE.sel < 0 ? 0 : STATE.sel]; if (r) go(r); } }, 2500);
+  }
+  function settle(q) {
+    if (ANS.pending === q) ANS.pending = null;
+    if (ANS.go !== q || !STATE.open || STATE.q !== q) return;
+    ANS.go = null; clearTimeout(ANS.wt);
+    if (STATE.sel === -1 && STATE.ans) { close(); global.location.href = STATE.ans; return; }
+    var r = STATE.results[STATE.sel < 0 ? 0 : STATE.sel]; if (r) go(r);
+  }
   function answerFor(q, l) {
-    clearTimeout(ANS.timer); setAns('');
+    clearTimeout(ANS.timer); setAns(''); ANS.pending = null; ANS.go = null; clearTimeout(ANS.wt);
     if (!IDX || !norm(q) || norm(q).length < 3) return;
+    ANS.pending = q;
     ANS.timer = setTimeout(function () {
       ansReady().then(function (m) {
         if (!m || !ANS.env || STATE.q !== q || !STATE.open) return null;
@@ -280,7 +294,7 @@
           STATE.ans = (a && ((a.cards || []).filter(function (c) { return c.href; })[0] || {}).href || (a && a.link && a.link.href)) || null;
           if (tg && tg.ans && STATE.sel === 0) STATE.sel = -1; mark();   // si no se ha movido, Enter abre el dato de la respuesta (o el resultado que es exactamente lo escrito)
         });
-      }).catch(function () { setAns(''); });
+      }).then(function () { settle(q); }, function () { setAns(''); settle(q); });
     }, 150);
   }
   function open(q0) {
