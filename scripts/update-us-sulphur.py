@@ -12,6 +12,7 @@ API = "https://api.census.gov/data/timeseries/intltrade/imports/hs"
 UA = {"User-Agent": "Dehesa-Index-data-bot/1.0"}
 SINCE = "2015-01"
 MIN_T = 500.0
+FACTOR = {"KG": 0.001, "T": 1.0}   # unidad de cantidad del Census -> toneladas metricas (en HS 2503 las lineas de 10 digitos vienen en T; se comprueba en cada ejecucion)
 LOG = []
 
 
@@ -44,10 +45,13 @@ def parse(rows):
     for r in rows[1:]:
         try: v = float(r[ix["GEN_VAL_MO"]]); q = float(r[ix["GEN_QY1_MO"]])
         except (TypeError, ValueError): continue
-        units.add(r[ix["UNIT_QY1"]]); p = r[ix["time"]][:7]; code = (r[ix["CTY_CODE"]] or "").strip()
-        if code == "-": world[p] = [v, q / 1000.0]
+        u = (r[ix["UNIT_QY1"]] or "").strip(); units.add(u); p = r[ix["time"]][:7]; code = (r[ix["CTY_CODE"]] or "").strip()
+        f = FACTOR.get(u)
+        if f is None: continue      # unidad desconocida (p. ej. '-' en los totales HS4, que no traen cantidad): no se interpreta
+        if code == "-":
+            w = world.setdefault(p, [0.0, 0.0]); w[0] += v; w[1] += q * f      # varias lineas HS10 se suman
         elif re.fullmatch(r"\d{4}", code):
-            c = countries.setdefault(p, [0.0, 0.0]); c[0] += v; c[1] += q / 1000.0   # kg -> toneladas
+            c = countries.setdefault(p, [0.0, 0.0]); c[0] += v; c[1] += q * f
     return (world or countries), units, bool(world)
 
 
@@ -76,7 +80,8 @@ def main():
         if not got: continue
         months, units, from_total = parse(got)
         log("%s: filas %d, unidades %s, total mundial en la fuente: %s" % (level, len(got) - 1, sorted(units), from_total))
-        if units - {"KG"}: log("%s: unidad de cantidad inesperada %s (se esperaba KG): se descarta" % (level, sorted(units))); continue
+        if not units & set(FACTOR): log("%s: sin unidad de cantidad conocida (%s): se descarta" % (level, sorted(units))); continue
+        if units - set(FACTOR) - {"-", ""}: log("%s: unidades inesperadas %s: se descarta" % (level, sorted(units))); continue
         pts = build(months)
         if len(pts) >= 24: break
         if len(pts) < 24: raise SystemExit("FALLO: el Census devolvio datos insuficientes (%d meses con volumen)" % len(pts))

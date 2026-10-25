@@ -24,7 +24,12 @@ check(len(pts) == 30 and pts[0] == ['2022-01', 100.0, 1000, 100000] and pts[1][1
 mo2, _, wt2 = M.parse(rows(world=False))
 check(not wt2 and M.build(mo2) == pts, 'sin fila de total debe sumar los paises y dar lo mismo')
 check(M.build(M.parse(rows(tons=0.2))[0]) == [], 'menos de 500 t al mes no da precio')
-check(M.parse(rows(unit='NO'))[1] == {'NO'}, 'la unidad se devuelve para que el script la rechace')
+check(M.build(M.parse(rows(unit='NO'))[0]) == [], 'unidad desconocida: no da precio')
+low = [H] + [['5000', '100', 'T', '-', 'TOTAL', m] for m in months]
+check(M.parse(low)[1] == {'T'} and M.build(M.parse(low)[0]) == [], 'en toneladas (T) 100 t por mes queda bajo el umbral')
+rt = [H] + [[str((100 + i) * 1000), '1000', 'T', '-', 'TOTAL', m] for i, m in enumerate(months)]
+rt += [[str(1), '0', '-', '-', 'TOTAL', 'HS4']]
+check(M.build(M.parse(rt)[0])[0][1:3] == [100.0, 1000], 'T: 1000 t a 100 USD/t: %s' % M.build(M.parse(rt)[0])[:1])
 bad = rows(); bad[4][1] = 'x'
 check(len(M.build(M.parse(bad)[0])) == 29, 'una fila ilegible se omite sin romper')
 print('azufre Census: %d fallos' % len(fails)); sys.exit(1 if fails else 0)
