@@ -1727,6 +1727,10 @@
   "usgs-sulfur.json": [
    "usgs-sulfur",
    []
+  ],
+  "eu-sulphur.json": [
+   "eu-sulphur",
+   []
   ]
  },
  "globs": {

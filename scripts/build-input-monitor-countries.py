@@ -212,8 +212,24 @@ def main():
         if items:
             write('world.json', {'schemaVersion': 1, 'generatedAt': w.get('generatedAt') or gen, 'publication': w.get('publication'), 'years': YEARS,
                                  'source': w['source'], 'groups': [{'id': 'world', 'items': items}]})
+    # --- azufre: valor unitario de importacion (Eurostat Comext, scripts/update-eu-sulphur.py) ---
+    sp = ROOT / 'data/eu-sulphur.json'
+    if sp.exists():
+        sd = J(sp); items = {}
+        for cc, c in sd['countries'].items():
+            last = c['points'][-1][0]; y0 = '%04d%s' % (int(last[:4]) - YEARS, last[4:])
+            pts = [(q[0], q[1]) for q in c['points'] if q[0] > y0]
+            st = stats(pts, 'EUR/t', 'm')
+            if not st: continue
+            span = (int(last[:4]) - int(pts[0][0][:4])) * 12 + int(last[5:7]) - int(pts[0][0][5:7]) + 1
+            if len(pts) < span: st['spark'] = []   # meses sin volumen suficiente: no se dibuja una linea que mienta sobre las fechas
+            st['years'] = round(min(float(YEARS), span / 12.0), 1)
+            st['tonnes'] = c['points'][-1][2]; st['gaps'] = span - len(pts)
+            items[cc] = st
+        if 'EU' in items:
+            write('sulphur.json', {'schemaVersion': 1, 'generatedAt': sd.get('generatedAt') or gen, 'latestPeriod': sd.get('latestPeriod'), 'years': YEARS, 'source': sd['source'], 'minTonnes': sd['minTonnes'], 'items': items})
     index.sort(key=lambda x: x['cc'])
-    write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists()})
+    write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists(), 'sulphur': (OUT / 'sulphur.json').exists()})
     print('Monitor de insumos por país: %s; referencia mundial %s' % (', '.join(x['cc'] for x in index), 'sí' if (OUT / 'world.json').exists() else 'no'))
 
 main()

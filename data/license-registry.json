@@ -7732,6 +7732,10 @@
     "usgs_mcs"
    ],
    "notes": "Precio medio unitario anual del azufre elemental en EE. UU. (USGS, Mineral Commodity Summaries 2026) y cuatro puntos del contrato de Tampa en 2025; 2025 es una estimación del USGS."
+  },
+  "data/eu-sulphur.json": {
+   "default": "eurostat_comext",
+   "notes": "Valor unitario de importacion del azufre (CN 2503, importaciones desde fuera de la UE) de la UE-27 y sus Estados miembros: valor entre toneladas, mensual (Eurostat Comext, DS-045409). No es un precio de mercado."
   }
  },
  "derived": [

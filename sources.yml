@@ -1543,6 +1543,16 @@ sources:
     extra: [eu-trade-products.json]
     log: eu-trade-log.txt
     message: Datos comercio exterior UE (Eurostat Comext)
+  - id: eu-sulphur
+    name: Update EU sulphur import unit value (Eurostat Comext, CN 2503)
+    cron: ['10 10 17,19,23 * *']
+    script: scripts/update-eu-sulphur.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [eu-sulphur.json]
+    log: eu-sulphur-log.txt
+    message: Azufre - valor unitario de importacion UE (Eurostat Comext)
   - id: eu-trade-extra
     name: Update EU extra-EU agri-food trade by partner (Eurostat Comext)
     cron: ['50 9 17 * *']
