@@ -27,7 +27,7 @@ ATTEMPTS = [("HS4", ["2503"]), ("HS10", ["2503000010", "2503000090"])]   # si el
 
 
 def fetch(key, level, code, tries=4):
-    q = urllib.parse.urlencode({"get": "GEN_VAL_MO,GEN_QY1_MO,CON_VAL_MO,CON_QY1_MO,UNIT_QY1,CTY_CODE,CTY_NAME", "COMM_LVL": level, "I_COMMODITY": code, "time": "from " + SINCE, "key": key})
+    q = urllib.parse.urlencode({"get": "GEN_VAL_MO,GEN_QY1_MO,CON_VAL_MO,CON_QY1_MO,CON_CIF_MO,CON_CHA_MO,DUT_VAL_MO,UNIT_QY1,CTY_CODE,CTY_NAME", "COMM_LVL": level, "I_COMMODITY": code, "time": "from " + SINCE, "key": key})
     last = None
     for i in range(tries):
         try:
@@ -40,18 +40,17 @@ def fetch(key, level, code, tries=4):
 
 
 def diag(code, rows):
-    """Diagnostico en el log: toneladas e importes por año de cada linea (general y para consumo) y principales origenes de 2024; sirve para contrastar con el USGS."""
+    """Diagnostico en el log: por año y linea, toneladas e importes (MUSD) de las importaciones generales y para consumo (valor, CIF, cargos, dutiable); sirve para elegir la medida coherente."""
     try:
-        h = rows[0]; ix = {k: h.index(k) for k in ("GEN_VAL_MO", "GEN_QY1_MO", "CON_VAL_MO", "CON_QY1_MO", "CTY_CODE", "CTY_NAME", "time")}
-        yr = {}; org = {}
+        h = rows[0]; F = ("GEN_QY1_MO", "GEN_VAL_MO", "CON_QY1_MO", "CON_VAL_MO", "CON_CIF_MO", "CON_CHA_MO", "DUT_VAL_MO")
+        ix = {k: h.index(k) for k in F + ("CTY_CODE", "time")}
+        yr = {}
         for r in rows[1:]:
-            y = r[ix["time"]][:4]; code_c = (r[ix["CTY_CODE"]] or "").strip()
-            f = lambda k: float(r[ix[k]] or 0)
-            if code_c == "-":
-                a = yr.setdefault(y, [0.0, 0.0, 0.0, 0.0]); a[0] += f("GEN_QY1_MO"); a[1] += f("GEN_VAL_MO"); a[2] += f("CON_QY1_MO"); a[3] += f("CON_VAL_MO")
-            elif y == "2024" and re.fullmatch(r"\d{4}", code_c): org[r[ix["CTY_NAME"]]] = org.get(r[ix["CTY_NAME"]], 0.0) + f("GEN_QY1_MO")
-        log("diag %s: %s" % (code, "; ".join("%s gen %d kt %.0f MUSD, consumo %d kt" % (y, a[0] / 1000, a[1] / 1e6, a[2] / 1000) for y, a in sorted(yr.items())[-4:])))
-        log("diag %s origenes 2024: %s" % (code, ", ".join("%s %d kt" % (k, v / 1000) for k, v in sorted(org.items(), key=lambda x: -x[1])[:6])))
+            if (r[ix["CTY_CODE"]] or "").strip() != "-": continue
+            a = yr.setdefault(r[ix["time"]][:4], [0.0] * len(F))
+            for i, k in enumerate(F): a[i] += float(r[ix[k]] or 0)
+        for y, a in sorted(yr.items())[-4:]:
+            log("diag %s %s: gen %d kt %.0f MUSD | consumo %d kt, valor %.0f, CIF %.0f, cargos %.0f, dutiable %.0f MUSD" % (code, y, a[0] / 1000, a[1] / 1e6, a[2] / 1000, a[3] / 1e6, a[4] / 1e6, a[5] / 1e6, a[6] / 1e6))
     except Exception as e: log("diag %s fallo: %r" % (code, e))
 
 
