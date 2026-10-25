@@ -1,9 +1,9 @@
-22:34:08 HS4: filas 6205, unidades ['-'], total mundial en la fuente: False
-22:34:08 HS4: sin unidad de cantidad conocida (['-']): se descarta
-22:34:12 diag 2503000010: 2023 gen 866 kt 84 MUSD, consumo 1876 kt; 2024 gen 728 kt 55 MUSD, consumo 1593 kt; 2025 gen 819 kt 156 MUSD, consumo 1047 kt; 2026 gen 958 kt 417 MUSD, consumo 958 kt
-22:34:12 diag 2503000010 origenes 2024: USMCA (NAFTA) 728 kt, OECD 728 kt, APEC 728 kt, NATO 728 kt, CANADA 728 kt, TWENTY LATIN AMERICAN REPUBLICS 0 kt
-22:34:13 diag 2503000090: 2023 gen 277 kt 44 MUSD, consumo 424 kt; 2024 gen 271 kt 52 MUSD, consumo 516 kt; 2025 gen 601 kt 156 MUSD, consumo 719 kt; 2026 gen 251 kt 120 MUSD, consumo 251 kt
-22:34:13 diag 2503000090 origenes 2024: OECD 213 kt, NATO 212 kt, APEC 211 kt, USMCA (NAFTA) 210 kt, CANADA 210 kt, SAUDI ARABIA 53 kt
-22:34:13 HS10: filas 9211, unidades ['T'], total mundial en la fuente: True
-22:34:13 toneladas por año (meses con volumen): 2023 1144 kt, 2024 1000 kt, 2025 1421 kt, 2026 1210 kt
-22:34:13 us-sulphur.json: 140 meses, ultimo 2026-08, 655.4 USD/t
+22:41:43 HS4: filas 6205, unidades ['-'], total mundial en la fuente: False
+22:41:43 HS4: sin unidad de cantidad conocida (['-']): se descarta
+22:41:44 diag 2503000010: 2023 gen 866 kt 84 MUSD, consumo 1876 kt; 2024 gen 728 kt 55 MUSD, consumo 1593 kt; 2025 gen 819 kt 156 MUSD, consumo 1047 kt; 2026 gen 958 kt 417 MUSD, consumo 958 kt
+22:41:44 diag 2503000010 origenes 2024: USMCA (NAFTA) 728 kt, OECD 728 kt, APEC 728 kt, NATO 728 kt, CANADA 728 kt, TWENTY LATIN AMERICAN REPUBLICS 0 kt
+22:41:46 diag 2503000090: 2023 gen 277 kt 44 MUSD, consumo 424 kt; 2024 gen 271 kt 52 MUSD, consumo 516 kt; 2025 gen 601 kt 156 MUSD, consumo 719 kt; 2026 gen 251 kt 120 MUSD, consumo 251 kt
+22:41:46 diag 2503000090 origenes 2024: OECD 213 kt, NATO 212 kt, APEC 211 kt, USMCA (NAFTA) 210 kt, CANADA 210 kt, SAUDI ARABIA 53 kt
+22:41:46 HS10: filas 9211, unidades ['T'], total mundial en la fuente: True
+22:41:46 toneladas por año (meses con volumen): 2023 2300 kt, 2024 2109 kt, 2025 1767 kt, 2026 1210 kt
+22:41:46 us-sulphur.json: 140 meses, ultimo 2026-08, 655.4 USD/t
