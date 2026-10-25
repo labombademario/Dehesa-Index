@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-25T22:09:00Z",
+ "generatedAt": "2026-10-25T22:24:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 275,
   "late": 2,
   "error": 0,
   "not_run": 1,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "late",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-25T21:42:12.698488+00:00",
   "repoGeneratedAt": "2026-10-25T21:42:12.698488+00:00",
-  "checkedAt": "2026-10-25T22:09:00Z"
+  "checkedAt": "2026-10-25T22:24:00Z"
  },
  "pipelines": [
   {
@@ -4322,7 +4322,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-25T21:57:52Z"
+     "lastChange": "2026-10-25T22:12:03Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6362,6 +6362,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-us-sulphur.yml",
+   "name": "Update US sulphur import unit value (US Census Bureau, HS 2503)",
+   "crons": [
+    "20 10 8,10,14 * *"
+   ],
+   "nextRun": "2026-11-08T10:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 576.0
   },
   {
    "workflow": "update-us-tariffs.yml",

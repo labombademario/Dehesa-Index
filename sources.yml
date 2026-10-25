@@ -1553,6 +1553,16 @@ sources:
     data: [eu-sulphur.json]
     log: eu-sulphur-log.txt
     message: Azufre - valor unitario de importacion UE (Eurostat Comext)
+  - id: us-sulphur
+    name: Update US sulphur import unit value (US Census Bureau, HS 2503)
+    cron: ['20 10 8,10,14 * *']
+    script: scripts/update-us-sulphur.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    env: {CENSUS_API_KEY: '${{ secrets.CENSUS_API_KEY }}'}
+    data: [us-sulphur.json, us-sulphur-log.txt]
+    message: Azufre - valor unitario de importacion EE. UU. (US Census Bureau)
   - id: eu-trade-extra
     name: Update EU extra-EU agri-food trade by partner (Eurostat Comext)
     cron: ['50 9 17 * *']

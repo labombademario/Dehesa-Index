@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-289 workflows (240 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+290 workflows (241 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -406,5 +406,6 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-states-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-states-macro.py | us-states-macro.json | finish, validate-files |
 | update-us-states.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-states.py | us-states/index.json | finish, validate-files |
 | update-us-stats.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-us-stats.py | us-stats.json | finish, validate-files |
+| update-us-sulphur.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-sulphur.py | us-sulphur.json | finish, validate-files |
 | update-us-tariffs.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-us-tariffs.py | us-tariffs.json | finish, validate-files |
 | update-us-wasde.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-wasde.py | us-markets/wasde-ledger.json, us-markets/wasde.json | finish, validate-files |

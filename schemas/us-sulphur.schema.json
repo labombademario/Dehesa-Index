@@ -1,0 +1,73 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Valor unitario de importacion del azufre (HS 2503) de EE. UU., mensual (US Census Bureau)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "latestPeriod",
+  "source",
+  "unit",
+  "minTonnes",
+  "pointFields",
+  "points"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "latestPeriod": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}$"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "census"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    },
+    "license": {
+     "type": "string"
+    }
+   }
+  },
+  "unit": {
+   "enum": [
+    "USD/t"
+   ]
+  },
+  "minTonnes": {
+   "type": "number"
+  },
+  "pointFields": {
+   "type": "array"
+  },
+  "points": {
+   "type": "array",
+   "minItems": 24,
+   "items": {
+    "type": "array",
+    "minItems": 4,
+    "maxItems": 4
+   }
+  }
+ }
+}
