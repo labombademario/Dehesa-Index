@@ -1723,6 +1723,10 @@
    [
     "poland_zsrir_index"
    ]
+  ],
+  "usgs-sulfur.json": [
+   "usgs-sulfur",
+   []
   ]
  },
  "globs": {

@@ -5135,6 +5135,110 @@
    "short": "ANM (Rumania)",
    "legalConfidence": "PENDING",
    "legalConfidenceReason": "Metadato del portal ODP: acceso libre sin condiciones (politica OMM); pero la web comercial de la ANM prohibe el uso comercial de su contenido. Pendiente de confirmar por escrito con opendata@meteoromania.ro."
+  },
+  "usgs_mcs": {
+   "name": "USGS Mineral Commodity Summaries (Sulfur)",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-sulfur.pdf",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); credit to the USGS requested",
+   "licenseUrl": "https://www.usgs.gov/faqs/are-usgs-reportspublications-copyrighted",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. Geological Survey, Mineral Commodity Summaries 2026, Sulfur",
+   "additionalRestrictions": "USGS pide citar la fuente; algunas imágenes de su web son de terceros (no se usan). Los precios de Tampa que cita el USGS proceden de proveedores privados de precios: se publican solo los cuatro puntos que el propio informe recoge, con cita.",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Preguntas frecuentes del USGS (leídas 2026-10-25): «USGS-authored or produced data and information are considered to be in the U.S. public domain»; se pide crédito. Cifras comprobadas a mano en el PDF del informe 2026 (tabla Salient Statistics y párrafo de precios).",
+   "short": "USGS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-25",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "bmleh_de": {
+   "country": "DE",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-25",
+   "status": "PENDING",
+   "confidence": "low",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "BMLEH — Bundesministerium für Landwirtschaft, Ernährung und Heimat (Alemania)",
+   "url": "https://www.bmleh.de/",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No reuse licence found",
+   "licenseUrl": "https://www.bmleh.de/DE/serviceseiten/impressum/impressum_node.html",
+   "attributionText": "Fuente: BMLEH (Alemania)",
+   "additionalRestrictions": "El impressum dice: «Das Copyright für Texte und Bilder liegt, soweit nicht anders vermerkt, beim Bundesministerium». No ofrece licencia abierta. Solo se guardan títulos, enlaces y huellas (hash) de tres páginas; no se publica ni se copia su texto.",
+   "evidence": "Impressum leído el 2026-10-25: reserva de copyright, sin Datenlizenz Deutschland ni Creative Commons. Uso limitado a vigilancia de cambios (hash) y enlaces a la fuente.",
+   "short": "BMLEH (Alemania)",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
+  },
+  "pepacc_pt": {
+   "country": "PT",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-25",
+   "status": "PENDING",
+   "confidence": "low",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "PEPAC Continente (pepacc.pt)",
+   "url": "https://pepacc.pt/",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No reuse licence found",
+   "licenseUrl": "https://pepacc.pt/politica-de-privacidade/",
+   "attributionText": "Fuente: PEPAC Continente (Portugal)",
+   "additionalRestrictions": "Solo se guardan títulos y enlaces de las entradas del RSS y su fecha; no se copia texto.",
+   "evidence": "Pie de página y políticas leídas el 2026-10-25: solo RGPD, privacidad y cookies; no hay aviso legal ni condiciones de reutilización.",
+   "short": "PEPAC Continente (Portugal)",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
+  },
+  "agrotikianaptixi_gr": {
+   "country": "EL",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-25",
+   "status": "PENDING",
+   "confidence": "low",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "Σχέδιο ΚΑΠ — agrotikianaptixi.gr (Grecia)",
+   "url": "https://www.agrotikianaptixi.gr/",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No reuse licence found",
+   "licenseUrl": "https://www.agrotikianaptixi.gr/",
+   "attributionText": "Fuente: Plan Estratégico PAC (Grecia)",
+   "additionalRestrictions": "Solo se guardan títulos y enlaces de las entradas del RSS y su fecha; no se copia texto.",
+   "evidence": "Portada leída el 2026-10-25: no aparece aviso legal ni condiciones de reutilización (no se ha podido ver el pie completo).",
+   "short": "Plan Estratégico PAC (Grecia)",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   }
  },
  "files": {
@@ -5594,9 +5698,12 @@
     "magyarkozlony_hu",
     "esbirka_cz",
     "svensk_forfattningssamling",
-    "gov_ie_dafm"
+    "gov_ie_dafm",
+    "bmleh_de",
+    "pepacc_pt",
+    "agrotikianaptixi_gr"
    ],
-   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización. PAC Dinamarca (scripts/update-cap-dk.py, data/cap/dk/): importes y umbrales de 2026 de las bekendtgørelser 1363 y 1381 leídos del XML de Retsinformation (extractos, no el texto auténtico; se cita número de decreto y fecha de versión). PAC Alemania (scripts/build-cap-de.py, data/cap/de/amounts.json): importes reales de 2023-2025 de las Bekanntmachungen del Bundesanzeiger y planificados de las Öko-Regelungen (2023-2026) de la GAPDZV, transcritos a mano de los textos oficiales; sin actualizacion automatica porque ninguna de las dos fuentes se lee desde GitHub. PAC Francia (scripts/build-cap-fr.py, data/cap/fr/amounts.json): importes unitarios de la campaña 2025 transcritos a mano de 15 arrêtés del Ministerio de Agricultura publicados en el Journal officiel (iniciales y modificativos de nov-2025, mar-2026 y jun-2026), leídos del volcado de datos abiertos de la DILA (reutilización gratuita, Arrêté du 24 juin 2014). Se cita la fuente y la referencia NOR; las condiciones completas de reutilización no se leyeron. PAC Francia, Italia y Polonia (2.º tramo, oct-2026): FR añade la campaña 2026 de los arrêtés del 16-sep-2026; PL (scripts/build-cap-pl.py) las tasas oficiales de los reglamentos del Dziennik Ustaw 2023-2025 y los anticipos 2026; reglas de los tres (scripts/build-cap-rules.py) escritas a mano de la norma oficial (código rural, DM 660087/2022 y ley del Plan Estratégico polaco); vigilancia semanal (scripts/update-cap-nat.py) por títulos del JORF, metadatos del Sejm y huella del DM del MASAF. PAC Portugal y Bélgica (scripts/cap_pt_be_data.py): reglas curadas a mano de las portarias portuguesas y de los decretos de Flandes y Valonia; sin vigilancia automática. PAC Croacia y Grecia (scripts/cap_hr_el_data.py): reglas curadas a mano del Pravilnik croata de 2026 (NN 147/2025, 49/2026, 78/2026) y de las decisiones ministeriales griegas 519 y 520 de 2023; sin vigilancia automática. PAC Países Bajos, Austria, Rumanía, Hungría, Chequia y Suecia (scripts/cap_nl_at_data.py, cap_ie_ro_data.py, cap_hu_cz_data.py, cap_se_data.py): reglas curadas a mano de las normas oficiales (resúmenes propios con cita); importes solo cuando figuran en publicaciones oficiales, rotulados como planificados o reales; sin vigilancia automática. Irlanda: reglas de páginas de gov.ie (DAFM), fuente aceptada por el titular el 15-10-2026 sin licencia explícita."
+   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización. PAC Dinamarca (scripts/update-cap-dk.py, data/cap/dk/): importes y umbrales de 2026 de las bekendtgørelser 1363 y 1381 leídos del XML de Retsinformation (extractos, no el texto auténtico; se cita número de decreto y fecha de versión). PAC Alemania (scripts/build-cap-de.py, data/cap/de/amounts.json): importes reales de 2023-2025 de las Bekanntmachungen del Bundesanzeiger y planificados de las Öko-Regelungen (2023-2026) de la GAPDZV, transcritos a mano de los textos oficiales; sin actualizacion automatica porque ninguna de las dos fuentes se lee desde GitHub. PAC Francia (scripts/build-cap-fr.py, data/cap/fr/amounts.json): importes unitarios de la campaña 2025 transcritos a mano de 15 arrêtés del Ministerio de Agricultura publicados en el Journal officiel (iniciales y modificativos de nov-2025, mar-2026 y jun-2026), leídos del volcado de datos abiertos de la DILA (reutilización gratuita, Arrêté du 24 juin 2014). Se cita la fuente y la referencia NOR; las condiciones completas de reutilización no se leyeron. PAC Francia, Italia y Polonia (2.º tramo, oct-2026): FR añade la campaña 2026 de los arrêtés del 16-sep-2026; PL (scripts/build-cap-pl.py) las tasas oficiales de los reglamentos del Dziennik Ustaw 2023-2025 y los anticipos 2026; reglas de los tres (scripts/build-cap-rules.py) escritas a mano de la norma oficial (código rural, DM 660087/2022 y ley del Plan Estratégico polaco); vigilancia semanal (scripts/update-cap-nat.py) por títulos del JORF, metadatos del Sejm y huella del DM del MASAF. PAC Portugal y Bélgica (scripts/cap_pt_be_data.py): reglas curadas a mano de las portarias portuguesas y de los decretos de Flandes y Valonia; sin vigilancia automática. PAC Croacia y Grecia (scripts/cap_hr_el_data.py): reglas curadas a mano del Pravilnik croata de 2026 (NN 147/2025, 49/2026, 78/2026) y de las decisiones ministeriales griegas 519 y 520 de 2023; sin vigilancia automática. PAC Países Bajos, Austria, Rumanía, Hungría, Chequia y Suecia (scripts/cap_nl_at_data.py, cap_ie_ro_data.py, cap_hu_cz_data.py, cap_se_data.py): reglas curadas a mano de las normas oficiales (resúmenes propios con cita); importes solo cuando figuran en publicaciones oficiales, rotulados como planificados o reales; sin vigilancia automática. Irlanda: reglas de páginas de gov.ie (DAFM), fuente aceptada por el titular el 15-10-2026 sin licencia explícita. Vigilancia semanal de Alemania, Países Bajos, Portugal y Grecia (oct-2026, scripts/update-cap-nat.py): solo se guardan huellas (hash), títulos, fechas y enlaces; Países Bajos lee wetten.overheid.nl (texto de una norma), Alemania tres páginas del BMLEH (copyright reservado, sin licencia abierta), Portugal y Grecia los RSS de pepacc.pt y agrotikianaptixi.gr (sin condiciones de reutilización publicadas)."
   },
   "data/mb-markets/": {
    "sources": [
@@ -7619,6 +7726,12 @@
     "RBA": "rba"
    },
    "notes": "scripts/update-au-prices.py: ABS CPI/PPI/ITPI/AG_BROADACRE/AG_HORTICULTURE (CC BY 4.0) y RBA tabla I2 (CC BY 4.0). Valor por tonelada derivado por Dehesa Index."
+  },
+  "data/usgs-sulfur.json": {
+   "sources": [
+    "usgs_mcs"
+   ],
+   "notes": "Precio medio unitario anual del azufre elemental en EE. UU. (USGS, Mineral Commodity Summaries 2026) y cuatro puntos del contrato de Tampa en 2025; 2025 es una estimación del USGS."
   }
  },
  "derived": [
@@ -7680,6 +7793,18 @@
    "kansas_city_fed": {
     "since": "2026-10-15",
     "nextAction": "Sin uso comercial por decisión del propietario. Leer los términos de uso del banco antes de volver a considerarlo."
+   },
+   "bmleh_de": {
+    "since": "2026-10-25",
+    "nextAction": "Copyright reservado en el impressum. Solo huellas, títulos y enlaces. Pedir al ministerio por escrito si permite citar o reutilizar, o quitar los títulos de candidatos."
+   },
+   "pepacc_pt": {
+    "since": "2026-10-25",
+    "nextAction": "Sin condiciones de reutilización publicadas. Solo títulos y enlaces del RSS. Preguntar a la autoridad de gestión del PEPAC si hay una licencia."
+   },
+   "agrotikianaptixi_gr": {
+    "since": "2026-10-25",
+    "nextAction": "Sin condiciones de reutilización visibles (no se vio el pie completo). Solo títulos y enlaces del RSS. Revisar páginas legales de la web o preguntar a la autoridad de gestión."
    }
   }
  }

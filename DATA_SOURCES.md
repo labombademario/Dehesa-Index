@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 167 VERIFIED, 15 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
+Resumen: 168 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
 
-## VERIFIED (167)
+## VERIFIED (168)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -171,6 +171,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_nrcs` | USDA Natural Resources Conservation Service (SNOTEL, AWDB REST API) | US | US-PD | si/si | si | 12 | No implied USDA endorsement. Provisional data: NRCS notes SNOTEL data are not quality controlled in real time. |
 | `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |
+| `usgs_mcs` | USGS Mineral Commodity Summaries (Sulfur) | US | US-PD | si/si | no | 0 | USGS pide citar la fuente; algunas imágenes de su web son de terceros (no se usan). Los precios de Tampa que cita el USGS proceden de provee… |
 | `vigieau` | VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau) | FR | LO-2.0 | si/si | si | 0 | LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indica… |
 | `vlada_hr` | Vlada Republike Hrvatske — notas de prensa sobre los precios máximos de los derivados del petróleo | HR | HR-VLADA-REUSE | si/si | si | 0 | Se aconseja revisar los avisos de derechos de autor de documentos concretos; se usan solo cifras de precios de la nota de prensa. |
 | `vmm_waterinfo` | Vlaamse Milieumaatschappij (VMM) — waterinfo.be y feiten & cijfers | BE | VL-MODELLICENTIE-GRATIS-HERGEBRUIK-1.0 | si/si | si | 0 | Citar la fuente. |
@@ -180,18 +181,21 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
 | `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
-## PENDING (15)
+## PENDING (18)
 
 licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso.
 
 | sourceId | Fuente | Pais | Licencia | Comercial/derivados | Atribucion | Series | Restricciones adicionales |
 |---|---|---|---|---|---|---|---|
+| `agrotikianaptixi_gr` | Σχέδιο ΚΑΠ — agrotikianaptixi.gr (Grecia) | EL | UNKNOWN | unclear/unclear | si | 0 | Solo se guardan títulos y enlaces de las entradas del RSS y su fecha; no se copia texto. |
 | `anm_ro` | Romania — National Meteorological Administration (ANM) Open Data Platform: daily climate data | RO | WMO-Unified-Data-Policy | si/si | si | 0 | The ANM commercial website (meteoromania.ro, terms section 5) forbids commercial use of ITS content; the ODP metadata says the opposite for … |
 | `bfs_ch` | Switzerland — FSO/BFS (Federal Statistical Office), agricultural statistics (cantons, farm accounts, structure) | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | Agricultural datasets of the FSO on opendata.swiss are marked 'Use for commercial purposes requires permission of the data owner'. |
+| `bmleh_de` | BMLEH — Bundesministerium für Landwirtschaft, Ernährung und Heimat (Alemania) | DE | UNKNOWN | unclear/unclear | si | 0 | El impressum dice: «Das Copyright für Texte und Bilder liegt, soweit nicht anders vermerkt, beim Bundesministerium». No ofrece licencia abie… |
 | `defra_rpa_land` | RPA Land Parcels / Land Covers / Hedge Control | UK | CUSTOM | no/no | si | 0 | Defra indica que no están disponibles para «otros usuarios»; agricultores y agentes tienen condiciones propias. No se ingiere como dataset g… |
 | `france_bois_foret` | France Bois Forêt / ONF, prix des bois sur pied (communiqué annuel) | FR | UNKNOWN | unclear/unclear | si | 0 | Cifras de un comunicado de prensa difundido para su publicación; no hay licencia abierta declarada. |
 | `gep_pt` | GEP — Gabinete de Estratégia e Planeamento (MTSSS, Portugal) | PT | UNKNOWN | unclear/unclear | si | 0 | Los «Termos e Condições» del BTE Online (leídos 2026-10-01) solo tratan privacidad y estadísticas de acceso; no dicen nada sobre reutilizaci… |
 | `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-NOT-COMMERCIAL | no/unclear | si | 47 | Sin uso comercial por decisión del propietario. No implied endorsement by the Federal Reserve. |
+| `pepacc_pt` | PEPAC Continente (pepacc.pt) | PT | UNKNOWN | unclear/unclear | si | 0 | Solo se guardan títulos y enlaces de las entradas del RSS y su fecha; no se copia texto. |
 | `snice_mx` | Mexico — Secretaría de Economía (SNICE, LIGIE tariff) | MX | UNKNOWN | no/unclear | si | 0 | Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attri… |
 | `swissimpex_ch` | Switzerland — FOCBS/BAZG, SwissImpex and Tares foreign trade statistics | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | SwissImpex/Tares terms: commercial use requires permission of the data owner. |
 | `uy_bcu` | Banco Central del Uruguay (BCU) | UY | UNKNOWN | unclear/unclear | si | 0 | Permiso de reutilizacion comercial sin comprobar. |

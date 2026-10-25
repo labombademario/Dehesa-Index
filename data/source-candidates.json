@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-25T18:42:04Z",
+ "generatedAt": "2026-10-25T21:23:27Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 196,
+  "total": 200,
   "byStatus": {
-   "ACTIVE": 166,
+   "ACTIVE": 170,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1980,6 +1980,46 @@
    ]
   },
   {
+   "sourceId": "agrotikianaptixi_gr",
+   "registryId": "agrotikianaptixi_gr",
+   "country": "EL",
+   "scope": "integrated",
+   "institution": "Σχέδιο ΚΑΠ — agrotikianaptixi.gr (Grecia)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Fuente: Plan Estratégico PAC (Grecia)",
+   "lastChecked": "2026-10-25",
+   "verification": "REGISTRY",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
    "sourceId": "alberta_ag",
    "registryId": "alberta_ag",
    "country": "CA",
@@ -2471,6 +2511,46 @@
    "evidence": [
     "data/license-registry.json"
    ]
+  },
+  {
+   "sourceId": "bmleh_de",
+   "registryId": "bmleh_de",
+   "country": "DE",
+   "scope": "integrated",
+   "institution": "BMLEH — Bundesministerium für Landwirtschaft, Ernährung und Heimat (Alemania)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Fuente: BMLEH (Alemania)",
+   "lastChecked": "2026-10-25",
+   "verification": "REGISTRY",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
   },
   {
    "sourceId": "bmluk_hydrographie",
@@ -6594,6 +6674,46 @@
    ]
   },
   {
+   "sourceId": "pepacc_pt",
+   "registryId": "pepacc_pt",
+   "country": "PT",
+   "scope": "integrated",
+   "institution": "PEPAC Continente (pepacc.pt)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Fuente: PEPAC Continente (Portugal)",
+   "lastChecked": "2026-10-25",
+   "verification": "REGISTRY",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
    "sourceId": "pl_akcyza_rm",
    "registryId": "pl_akcyza_rm",
    "country": "PL",
@@ -8494,6 +8614,45 @@
    "derivatives": "yes",
    "attribution": "Source: U.S. Department of Agriculture, Risk Management Agency (Summary of Business). Aggregated by Dehesa Index.",
    "lastChecked": "2026-10-03",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usgs_mcs",
+   "registryId": "usgs_mcs",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USGS Mineral Commodity Summaries (Sulfur)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Geological Survey, Mineral Commodity Summaries 2026, Sulfur",
+   "lastChecked": "2026-10-25",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
