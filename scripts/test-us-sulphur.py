@@ -8,7 +8,7 @@ spec = importlib.util.spec_from_file_location('usul', ROOT / 'scripts' / 'update
 fails = []
 def check(ok, msg):
     if not ok: fails.append(msg); print('FALLA', msg)
-H = ['GEN_VAL_MO', 'GEN_QY1_MO', 'UNIT_QY1', 'CTY_CODE', 'CTY_NAME', 'time']
+H = ['CON_VAL_MO', 'CON_QY1_MO', 'UNIT_QY1', 'CTY_CODE', 'CTY_NAME', 'time']
 months = ['%04d-%02d' % (2022 + i // 12, i % 12 + 1) for i in range(30)]
 def rows(world=True, unit='KG', tons=1000):
     out = [H]
@@ -22,7 +22,7 @@ check(wt and units == {'KG'}, 'total mundial: %s %s' % (wt, units))
 pts = M.build(mo)
 check(len(pts) == 30 and pts[0] == ['2022-01', 100.0, 1000, 100000] and pts[1][1] == 101.0, 'puntos: %s' % pts[:2])
 mo2, _, wt2 = M.parse(rows(world=False))
-check(not wt2 and M.build(mo2) == pts, 'sin fila de total debe sumar los paises y dar lo mismo')
+check(not wt2 and M.build(mo2) == [], 'sin fila de total mundial no se publica nada (los agregados OCDE/USMCA duplicarian)')
 check(M.build(M.parse(rows(tons=0.2))[0]) == [], 'menos de 500 t al mes no da precio')
 check(M.build(M.parse(rows(unit='NO'))[0]) == [], 'unidad desconocida: no da precio')
 low = [H] + [['5000', '100', 'T', '-', 'TOTAL', m] for m in months]

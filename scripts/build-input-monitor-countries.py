@@ -226,8 +226,21 @@ def main():
             st['years'] = round(min(float(YEARS), span / 12.0), 1)
             st['tonnes'] = c['points'][-1][2]; st['gaps'] = span - len(pts)
             items[cc] = st
+        up = ROOT / 'data/us-sulphur.json'
+        if up.exists():   # EE. UU. (US Census Bureau): mismo calculo que la UE, en USD/t
+            ud = J(up); last = ud['points'][-1][0]; y0 = '%04d%s' % (int(last[:4]) - YEARS, last[4:])
+            pts = [(q[0], q[1]) for q in ud['points'] if q[0] > y0]; st = stats(pts, 'USD/t', 'm')
+            if st:
+                span = (int(last[:4]) - int(pts[0][0][:4])) * 12 + int(last[5:7]) - int(pts[0][0][5:7]) + 1
+                if len(pts) < span: st['spark'] = []
+                st['years'] = round(min(float(YEARS), span / 12.0), 1); st['tonnes'] = ud['points'][-1][2]; st['gaps'] = span - len(pts); items['US'] = st
+        usgs = None
+        gp = ROOT / 'data/usgs-sulfur.json'
+        if gp.exists():
+            gd = J(gp); sr = {x['id']: x for x in gd['series']}
+            usgs = {'annual': sr['us-unit-value']['points'], 'estimateFrom': sr['us-unit-value'].get('estimateFrom'), 'tampa': sr['tampa-contract']['points'], 'source': gd['source']}
         if 'EU' in items:
-            write('sulphur.json', {'schemaVersion': 1, 'generatedAt': sd.get('generatedAt') or gen, 'latestPeriod': sd.get('latestPeriod'), 'years': YEARS, 'source': sd['source'], 'minTonnes': sd['minTonnes'], 'items': items})
+            write('sulphur.json', {'schemaVersion': 1, 'generatedAt': sd.get('generatedAt') or gen, 'latestPeriod': sd.get('latestPeriod'), 'years': YEARS, 'source': sd['source'], 'minTonnes': sd['minTonnes'], 'items': items, 'usgs': usgs})
     index.sort(key=lambda x: x['cc'])
     write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists(), 'sulphur': (OUT / 'sulphur.json').exists()})
     print('Monitor de insumos por país: %s; referencia mundial %s' % (', '.join(x['cc'] for x in index), 'sí' if (OUT / 'world.json').exists() else 'no'))
