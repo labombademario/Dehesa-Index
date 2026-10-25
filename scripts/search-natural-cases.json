@@ -110,5 +110,16 @@
 {"q":"prix de la terre en Irlande","lang":"fr","u":"paises.html?c=IE&g=inputs&s=ie-es-st-land-price-ara"},
 {"q":"prezzo del mais in Spagna","lang":"it","u":"paises.html?c=ES&g=prices&s=es-perc-maiz"},
 {"q":"latte spot","lang":"it","u":"producto.html?p=leche"},
-{"q":"prezzo terreni agricoli Irlanda","lang":"it","u":"paises.html?c=IE&g=inputs&s=ie-es-st-land-price-ara"}
+{"q":"prezzo terreni agricoli Irlanda","lang":"it","u":"paises.html?c=IE&g=inputs&s=ie-es-st-land-price-ara"},
+{"q":"trigo duro","lang":"es","u":"paises.html?c=IT&g=prices&s=it-es-crop-01120000"},
+{"q":"precio del trigo duro","lang":"es","u":"paises.html?c=IT&g=prices&s=it-es-crop-01120000"},
+{"q":"durum wheat","lang":"en","u":"paises.html?c=IT&g=prices&s=it-es-crop-01120000"},
+{"q":"blé dur","lang":"fr","u":"paises.html?c=IT&g=prices&s=it-es-crop-01120000"},
+{"q":"grano duro","lang":"it","u":"paises.html?c=IT&g=prices&s=it-es-crop-01120000"},
+{"q":"trigo duro Italia","lang":"es","u":"paises.html?c=IT&g=prices&s=it-es-crop-01120000"},
+{"q":"trigo duro España","lang":"es","u":"paises.html?c=ES&g=prices&s=es-es-crop-01120000"},
+{"q":"durum wheat US","lang":"en","u":"paises.html?c=US&g=prices&s=us-ers-wheat-px-durum-united-states-average-pric"},
+{"q":"trigo duro rojo de invierno","lang":"es","u":"producto.html?p=trigo_hrw_us"},
+{"q":"glosario","lang":"es","u":"metodologia.html"},
+{"q":"tiempo mañana","lang":"es","noAnswer":true}
 ]

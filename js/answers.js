@@ -568,13 +568,30 @@
     it: { chart: 'Vedi grafico e storico: {p} in {c}', found: 'Prezzi: {p} in {c}', none: 'Non c’è un prezzo verificato di {p} per {c} nei nostri dati. Il profilo del paese ha produzione, commercio e altri indicatori; i prezzi di altri mercati non equivalgono a quello di {c}.', open: 'Apri il profilo: {c}', note: 'Ultimo dato pubblicato di ogni serie, nella sua unità originale.' } };
   /* nombre de la serie en el idioma de la página si el traductor de etiquetas está cargado (si falta una pieza se deja el original) */
   function tlab(l, lang) { var T = root.DILabelTl; return T && T.ready && T.ready(lang) ? T.tl(l, lang) : l; }
+  /* trigo duro (durum): «duro» en las fichas de EE. UU. es «hard» (HRW, trigo rojo duro de invierno), no el trigo duro de la pasta. Se contestan solo series de durum. */
+  var DURN = { es: 'trigo duro', en: 'durum wheat', fr: 'blé dur', it: 'grano duro' };
+  var DURUM_RE = /(^| )(trigo duro|trigo cristalino|trigos duros|durum|durum wheat|ble dur|bles durs|grano duro|frumento duro|semola di grano duro)( |$)/, DURUM_NOT = /(^| )(rojo|rojos|red|rouge|rosso|invierno|winter|hiver|inverno|primavera|spring|printemps|hrw|hrs|hard|dur rojo)( |$)/;
+  var DUR_CC = ['IT', 'ES', 'FR', 'US'];
+  function rDurum(intent, lang, env) {
+    var tri = (env.products || []).filter(function (p) { return p.slug === 'trigo'; })[0] || intent.product;
+    if (!tri) return Promise.resolve(null);
+    return Promise.all(DUR_CC.map(function (cc) { return rCountry({ kind: 'country', countries: [cc], product: tri, durum: true }, lang, env).catch(function () { return null; }); })).then(function (rs) {
+      var cards = [], notes = null;
+      rs.forEach(function (r) { if (r && r.cards && r.cards.length) { cards.push(r.cards[0]); notes = notes || r.notes; } });
+      if (!cards.length) return null;
+      var H = { es: 'Precios del trigo duro por país', en: 'Durum wheat prices by country', fr: 'Prix du blé dur par pays', it: 'Prezzi del grano duro per paese' };
+      return { kind: 'country', heading: H[lang] || H.es, cards: cards, notes: notes, link: { href: cards[0].href, label: { es: 'Ver el gráfico y el historial del trigo duro', en: 'See the durum wheat chart and history', fr: 'Voir le graphique et l’historique du blé dur', it: 'Vedi grafico e storico del grano duro' }[lang] } };
+    });
+  }
   function rCountry(intent, lang, env) {
     var t = tx(lang), cc = intent.countries[0], row = COUNTRY_WORDS.filter(function (c) { return c[0] === cc; })[0], name = row ? row[1][lang] : (REGN[{ US: 'us', UK: 'uk', CA: 'ca' }[cc]] || {})[lang] || cc;
     var base = { kind: 'country', heading: t.countryHead + ' · ' + name, cards: [], notes: [fmt(t.countryText, { c: name })], link: { href: env.href('paises.html?c=' + cc), label: t.countryLink } };
+    var DN = intent.durum ? DURN[lang] : null;
     var slug = intent.product && intent.product.slug, fam = slug && (CFAM[slug] || (CPRICE[slug] ? slug : CPRICE[slug.split('_')[0]] ? slug.split('_')[0] : slug)), re = fam && CPRICE[fam], not = fam && CPRICE_NOT[fam], low = fam && CPRICE_LOW[fam];
+    if (DN) { re = /durum|\bdur\b|\bdure?\b/i; low = null; }   // trigo duro: solo series de trigo duro (no el blando, ni «hard red winter»)
     if (!re) return Promise.resolve(base);
     if (fam !== slug && !CFAM[slug]) { var fp = (env.products || []).filter(function (p) { return p.slug === fam; })[0]; if (fp) intent = { kind: intent.kind, countries: intent.countries, product: fp }; }   // «feed barley» -> nombre de la familia (cebada), no de la ficha de Alberta
-    var k2 = CTX2[lang] || CTX2.es, pn = pname(intent.product, lang).toLowerCase();
+    var k2 = CTX2[lang] || CTX2.es, pn = (DN || pname(intent.product, lang)).toLowerCase();
     return Promise.all([J(env, 'catalog/' + cc + '.json'), J(env, 'license-registry.json')]).then(function (rr) {
       var cat = rr[0], reg = (rr[1] && rr[1].sources) || {};
       var G = CPRICE_GRP[fam] || PGRP;
@@ -586,8 +603,8 @@
         return { sid: x.sourceId, trade: true, label: tlab(x.label, lang), id: x.id, value: x.latest, valueTxt: nf(x.latest, lang, Math.abs(x.latest) >= 100 ? 1 : 2) + ' ' + x.unit, unit: x.unit, date: x.latestPeriod, dateTxt: fd(x.latestPeriod), src: (reg[x.sourceId] && reg[x.sourceId].name) || '', cc: cc, region: cc,
           href: env.href('paises.html?c=' + cc + '&g=' + encodeURIComponent(x.group) + '&s=' + encodeURIComponent(x.id)) + '#ps-explorer' };   /* abre directamente el gráfico de esa serie, no la cabecera del perfil */
       });
-      if (!cards.length) return { kind: 'country', heading: fmt(k2.found, { p: pname(intent.product, lang), c: name }), cards: [], notes: [fmt(k2.none, { p: pn, c: name })], link: { href: env.href('paises.html?c=' + cc), label: fmt(k2.open, { c: name }) } };
-      return { kind: 'country', heading: fmt(k2.found, { p: lang === 'en' ? pname(intent.product, lang) : pn, c: name }), cards: cards, notes: [k2.note], link: { href: cards[0].href, label: fmt(k2.chart, { p: pn, c: name }) } };
+      if (!cards.length) return { kind: 'country', heading: fmt(k2.found, { p: DN || pname(intent.product, lang), c: name }), cards: [], notes: [fmt(k2.none, { p: pn, c: name })], link: { href: env.href('paises.html?c=' + cc), label: fmt(k2.open, { c: name }) } };
+      return { kind: 'country', heading: fmt(k2.found, { p: DN ? DN : lang === 'en' ? pname(intent.product, lang) : pn, c: name }), cards: cards, notes: [k2.note], link: { href: cards[0].href, label: fmt(k2.chart, { p: pn, c: name }) } };
     }, function () { return base; });
   }
 
@@ -725,8 +742,17 @@
   }
   function answer(query, lang, env) {
     lang = LANGS.indexOf(lang) >= 0 ? lang : 'es';
+    var qn = ' ' + norm(query) + ' ', durum = DURUM_RE.test(qn) && !DURUM_NOT.test(qn);
+    if (durum) query = qn.replace(DURUM_RE, ' trigo ').replace(/ +/g, ' ').trim();
     var intent; try { intent = parse(query, lang, env); } catch (e) { return Promise.resolve(null); }
     if (!intent) return Promise.resolve(null);
+    if (durum) {
+      var RC = { us: 'US', ca: 'CA', uk: 'UK' };
+      if (intent.kind === 'price' && intent.regions && intent.regions.length === 1 && RC[intent.regions[0]] && !(intent.states && intent.states.length)) intent = { kind: 'country', countries: [RC[intent.regions[0]]], product: intent.product, durum: true };
+      if (intent.kind === 'country' && intent.countries && intent.countries.length) intent.durum = true;
+      else if (intent.kind === 'price' && !(intent.regions && intent.regions.length) && !(intent.states && intent.states.length)) return rDurum(intent, lang, env).then(function (a) { if (a) a.intent = { kind: 'country', product: 'trigo', regions: [], states: [], countries: [], full: false, durum: true }; return a; }, function () { return null; });
+      else return Promise.resolve(null);
+    }
     var p;
     if (intent.kind === 'country' && intent.product && !intent.product.fv) { var sl = intent.product.slug, fm = CFAM[sl] || (CPRICE[sl] ? sl : CPRICE[sl.split('_')[0]] ? sl.split('_')[0] : null);
       if (!fm) { var nm = norm(pname(intent.product, 'es')), twin = (env.products || []).filter(function (p) { return p.fv && norm(p.names.es) === nm; })[0]; if (twin) intent.product = twin; } }

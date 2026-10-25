@@ -277,9 +277,17 @@ sections('js/legal.js', 'legal.html', tri('Aviso legal', 'Legal notice', 'Mentio
 // --- conceptos
 const CON = [
   ['metodologia.html#etiquetas', tri('DATO OFICIAL, NO COMPARABLE y PENDIENTE', 'OFFICIAL DATA, NOT COMPARABLE and PENDING', 'DONNÉE OFFICIELLE, NON COMPARABLE et EN ATTENTE', 'DATO UFFICIALE, NON COMPARABILE e IN ATTESA'), 'etiquetas labels verificado pendiente comparable real estado'],
+  ['metodologia.html#glosario', tri('Glosario de términos', 'Glossary of terms', 'Glossaire des termes', 'Glossario dei termini'), 'glosario glossary glossaire glossario terminos terms termes termini definiciones definitions definitions definizioni significado meaning que significa what does mean basis spread futuros futures soja siglas abreviaturas abbreviations acronyms'],
   ['metodologia.html#indice', tri('Dehesa Index: el índice compuesto', 'Dehesa Index: the composite index', 'Dehesa Index : l’indice composite', 'Dehesa Index: l’indice composito'), 'indice índice index composite base 100 crea tu propio indice personalizado']
 ];
 for (const [u, n, k] of CON) add({ t: 'concept', u, n, s: tri('Cómo se calcula', 'How it works', 'Comment ça marche', 'Come funziona'), k });
+
+// --- términos del glosario (data/glosario-<idioma>.json): «basis», «WASDE»… llevan a la sección del glosario
+{ const G = {}; for (const l of ['es', 'en', 'fr', 'it']) { try { G[l] = JSON.parse(fs.readFileSync('data/glosario-' + l + '.json', 'utf8')).entries; } catch (e) { G[l] = null; } }
+  if (G.es && ['en', 'fr', 'it'].every(l => G[l] && G[l].length === G.es.length)) G.es.forEach((e, i) => {
+    const by = l => G[l][i], cut = d => { d = String(d || ''); return d.length > 110 ? d.slice(0, 107).replace(/\s+\S*$/, '') + '…' : d; };
+    add({ t: 'concept', b: -0.75, u: 'metodologia.html#glosario', n: Object.fromEntries(['es', 'en', 'fr', 'it'].map(l => [l, (by(l).t || [e.id])[0]])), s: Object.fromEntries(['es', 'en', 'fr', 'it'].map(l => [l, cut(by(l).d)])), k: ['es', 'en', 'fr', 'it'].map(l => (by(l).t || []).join(' ')).join(' ') + ' ' + e.id + ' glosario glossary' });
+  }); }
 
 // --- país × categoría (perfiles de país: paises.html?c=XX&g=grupo) y páginas nuevas
 {

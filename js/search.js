@@ -76,12 +76,13 @@
   var MEMO = null;
   function ts(q, w) { if (!MEMO) return tokScore(q, w); var m = MEMO[q] || (MEMO[q] = Object.create(null)), v = m[w]; if (v === undefined) v = m[w] = tokScore(q, w); return v; }
   function fieldBest(q, arr) { var b = 0, i, s; for (i = 0; i < arr.length; i++) { s = ts(q, arr[i]); if (s > b) { b = s; if (b === 1) break; } } return b; }
-  function scoreEntry(e, qs, lang, needAll, gen, bq) {
+  function scoreEntry(e, qs, lang, needAll, gen, bq, strict) {
     var total = 0, hit = 0, i;
     for (i = 0; i < qs.length; i++) {
       var q = qs[i], best = fieldBest(q, e._t[lang]);
       if (best < 1) { var o = 0, k; for (k = 0; k < L.length; k++) if (L[k] !== lang) o = Math.max(o, fieldBest(q, e._t[L[k]]) * 0.7); best = Math.max(best, o); }  // 0.7: «pesca» (es) es la pesca, no el melocotón italiano
       if (best < 1) best = Math.max(best, fieldBest(q, e._k) * 0.7, fieldBest(q, e._s[lang]) * 0.3);
+      if (strict && best < 0.65) best = 0;   // resultados parciales (no encajan todas las palabras): solo palabras que coinciden de verdad, no erratas («mañana» no es «manzana»)
       if (best > 0) hit++;
       total += best;
     }
@@ -109,7 +110,7 @@
     // candidatas: solo las entradas que contienen alguna palabra que encaja con algún término (índice invertido de VOC)
     var hitsBy = qs.map(function (q) { var o = Object.create(null), ws = VOC.words, i, j, ids; for (i = 0; i < ws.length; i++) if (ts(q, ws[i]) > 0) { ids = VOC.map[ws[i]]; for (j = 0; j < ids.length; j++) o[ids[j]] = 1; } return o; });
     var cand = function (needAll) { var out = [], i, k; for (i = 0; i < IDX.length; i++) { if (needAll) { for (k = 0; k < hitsBy.length; k++) if (!hitsBy[k][i]) break; if (k === hitsBy.length) out.push(IDX[i]); } else { for (k = 0; k < hitsBy.length; k++) if (hitsBy[k][i]) { out.push(IDX[i]); break; } } } return out; };
-    var run = function (needAll) { var out = []; cand(needAll).forEach(function (e) { var s = scoreEntry(e, qs, lang, needAll, gen, all.join(' ')); if (s > 0.12) out.push({ e: e, s: s }); }); out.sort(function (a, b) { return b.s - a.s; }); return out; };
+    var run = function (needAll) { var out = []; cand(needAll).forEach(function (e) { var s = scoreEntry(e, qs, lang, needAll, gen, all.join(' '), !needAll); if (s > 0.12) out.push({ e: e, s: s }); }); out.sort(function (a, b) { return b.s - a.s; }); return out; };
     var r = run(true), partial = false;
     if (!r.length && qs.length > 1) { r = run(false); partial = true; }
     MEMO = null;

@@ -52,5 +52,11 @@
   {"q":"how much is wheat","lang":"en","top":1,"u":"cereales%3Atrigo$"},
   {"q":"quanto costa il grano","lang":"it","top":1,"u":"cereales%3Atrigo$"},
   {"q":"combien coûte le blé","lang":"fr","top":1,"u":"cereales%3Atrigo$"},
-  {"q":"precios del cerdo","lang":"es","top":1,"u":"porcino%3Acerdo$"}
+  {"q":"precios del cerdo","lang":"es","top":1,"u":"porcino%3Acerdo$"},
+  {"q":"glosario","lang":"es","top":1,"u":"metodologia\\.html#glosario"},
+  {"q":"glossary","lang":"en","top":1,"u":"metodologia\\.html#glosario"},
+  {"q":"glossaire","lang":"fr","top":1,"u":"metodologia\\.html#glosario"},
+  {"q":"WASDE","lang":"es","top":1,"u":"metodologia\\.html#glosario"},
+  {"q":"tiempo mañana","lang":"es","none":true},
+  {"q":"bitcoin","lang":"es","none":true}
 ]
