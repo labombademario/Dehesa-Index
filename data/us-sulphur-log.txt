@@ -1,0 +1,5 @@
+22:28:15 HS4: filas 6205, unidades ['-'], total mundial en la fuente: True
+22:28:15 HS4: unidad de cantidad inesperada ['-'] (se esperaba KG): se descarta
+22:28:19 HS10: filas 9211, unidades ['T'], total mundial en la fuente: True
+22:28:19 HS10: unidad de cantidad inesperada ['T'] (se esperaba KG): se descarta
+22:28:19 toneladas por año (meses con volumen): 
