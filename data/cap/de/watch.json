@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "country": "DE",
  "source": "gesetze_im_internet",
- "status": "OK",
+ "status": "UNREACHABLE",
  "checkedAt": "2026-10-25",
  "baseline": {
   "fingerprints": {
