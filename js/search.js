@@ -112,6 +112,12 @@
     var cand = function (needAll) { var out = [], i, k; for (i = 0; i < IDX.length; i++) { if (needAll) { for (k = 0; k < hitsBy.length; k++) if (!hitsBy[k][i]) break; if (k === hitsBy.length) out.push(IDX[i]); } else { for (k = 0; k < hitsBy.length; k++) if (hitsBy[k][i]) { out.push(IDX[i]); break; } } } return out; };
     var run = function (needAll) { var out = []; cand(needAll).forEach(function (e) { var s = scoreEntry(e, qs, lang, needAll, gen, all.join(' '), !needAll); if (s > 0.12) out.push({ e: e, s: s }); }); out.sort(function (a, b) { return b.s - a.s; }); return out; };
     var r = run(true), partial = false;
+    // «trigo duro» (durum) no es el «trigo duro rojo de invierno» (hard red winter) de EE. UU.: esa ficha va detrás si no se ha pedido «rojo/invierno/hard»
+    var qn = ' ' + all.join(' ') + ' ';
+    if (/ (trigo duro|durum|ble dur|grano duro|frumento duro) /.test(qn.replace(/ (wheat|trigo|grain|ble) (duro|dur) /, ' $2 ')) || / (trigo|ble|grano|frumento) (duro|dur) /.test(qn) || / durum /.test(qn)) {
+      if (!/ (rojo|red|rouge|rosso|invierno|winter|hiver|inverno|primavera|spring|hrw|hrs|hard) /.test(qn)) r.forEach(function (x) { if (/trigo_hrw|trigo_hrs/.test(x.e.u)) x.s -= 0.6; });
+      r.sort(function (a, b) { return b.s - a.s; });
+    }
     if (!r.length && qs.length > 1) { r = run(false); partial = true; }
     MEMO = null;
     return { list: r.slice(0, 10).map(function (x) { return x.e; }), partial: partial };

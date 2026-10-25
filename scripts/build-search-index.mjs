@@ -277,6 +277,7 @@ sections('js/legal.js', 'legal.html', tri('Aviso legal', 'Legal notice', 'Mentio
 // --- conceptos
 const CON = [
   ['metodologia.html#etiquetas', tri('DATO OFICIAL, NO COMPARABLE y PENDIENTE', 'OFFICIAL DATA, NOT COMPARABLE and PENDING', 'DONNÉE OFFICIELLE, NON COMPARABLE et EN ATTENTE', 'DATO UFFICIALE, NON COMPARABILE e IN ATTESA'), 'etiquetas labels verificado pendiente comparable real estado'],
+  ['paises.html?c=IT&g=prices&s=it-es-crop-01120000', tri('Trigo duro (durum): precio al productor', 'Durum wheat: producer price', 'Blé dur : prix à la production', 'Grano duro: prezzo alla produzione'), 'trigo duro durum durum wheat blé dur ble dur grano duro frumento duro pasta semola precio price prix prezzo'],
   ['metodologia.html#glosario', tri('Glosario de términos', 'Glossary of terms', 'Glossaire des termes', 'Glossario dei termini'), 'glosario glossary glossaire glossario terminos terms termes termini definiciones definitions definitions definizioni significado meaning que significa what does mean basis spread futuros futures soja siglas abreviaturas abbreviations acronyms'],
   ['metodologia.html#indice', tri('Dehesa Index: el índice compuesto', 'Dehesa Index: the composite index', 'Dehesa Index : l’indice composite', 'Dehesa Index: l’indice composito'), 'indice índice index composite base 100 crea tu propio indice personalizado']
 ];
