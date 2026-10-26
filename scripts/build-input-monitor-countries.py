@@ -256,9 +256,25 @@ def main():
                     if len(pts) < span or cc != 'EU': st['spark'] = []   # solo la UE-27 dibuja grafico; con meses sin volumen no se dibuja una linea que mienta sobre las fechas
                     st['years'] = round(min(float(YEARS), span / 12.0), 1); st['tonnes'] = c['points'][-1][2]; st['gaps'] = span - len(pts)
                     items[fl].setdefault(cn, {})[cc] = st
+        # cruce: kg de fertilizante que compra una tonelada de grano a valor unitario de importacion (mismo mes, mismo declarante)
+        AF_F = ['310210', '310230', '310520', '310530', '310420']; AF_G = ['1001', '1005']
+        items['afford'] = {}
+        for fcn in AF_F:
+            for gcn in AF_G:
+                for cc, fc in pd['imports'].get(fcn, {}).items():
+                    gc = pd['imports'].get(gcn, {}).get(cc)
+                    if not gc: continue
+                    fd = dict((q[0], q[1]) for q in fc['points']); pts = [(q[0], round(q[1] / fd[q[0]] * 1000.0, 1)) for q in gc['points'] if fd.get(q[0])]
+                    st = stats(pts, 'kg/t', 'm')
+                    if not st: continue
+                    last = pts[-1][0]; first = pts[max(0, len(pts) - YEARS * 12)][0]
+                    span = (int(last[:4]) - int(first[:4])) * 12 + int(last[5:7]) - int(first[5:7]) + 1
+                    if len(pts[-YEARS * 12:]) < span or cc != 'EU': st['spark'] = []
+                    st['years'] = round(min(float(YEARS), span / 12.0), 1); st['gaps'] = span - len(pts[-YEARS * 12:])
+                    items['afford'].setdefault(fcn, {}).setdefault(gcn, {})[cc] = st
         if items['imp']:
             write('prices.json', {'schemaVersion': 1, 'generatedAt': pd.get('generatedAt') or gen, 'latestPeriod': pd.get('latestPeriod'), 'years': YEARS, 'source': pd['source'],
-                                  'originsYear': pd.get('originsYear'), 'products': pd['products'], 'items': items, 'origins': pd.get('origins', {})})
+                                  'originsYear': pd.get('originsYear'), 'products': pd['products'], 'items': items, 'origins': pd.get('origins', {}), 'originsByCountry': pd.get('originsByCountry', {})})
     index.sort(key=lambda x: x['cc'])
     write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists(), 'sulphur': (OUT / 'sulphur.json').exists(), 'prices': (OUT / 'prices.json').exists()})
     print('Monitor de insumos por país: %s; referencia mundial %s' % (', '.join(x['cc'] for x in index), 'sí' if (OUT / 'world.json').exists() else 'no'))

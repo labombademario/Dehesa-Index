@@ -465,6 +465,10 @@
   "data/finland-statfin-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de Finlandia (Statistics Finland): alimentan el catalogo data/catalog/FI.json; paises.js carga por catalogo y no pide este fichero."
+  },
+  "data/eu-input-prices.json": {
+   "class": "BUILD_ONLY",
+   "note": "Valores unitarios de comercio exterior de insumos (Eurostat Comext). Solo lo lee scripts/build-input-monitor-countries.py; el navegador descarga la vista data/views/input-monitor-countries/prices.json."
   }
  },
  "prefixes": {

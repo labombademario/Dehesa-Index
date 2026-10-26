@@ -11,9 +11,10 @@
   "source": {"type": "object", "required": ["id", "name", "url", "license"], "properties": {"id": {"enum": ["eurostat_comext"]}, "name": {"type": "string"}, "url": {"type": "string"}, "license": {"type": "string"}}},
   "unit": {"enum": ["EUR/t"]},
   "pointFields": {"type": "array"},
-  "products": {"type": "array", "minItems": 8, "items": {"type": "object", "required": ["id", "cn", "group", "name", "minTonnes"], "properties": {"id": {"type": "string"}, "cn": {"type": "string"}, "group": {"enum": ["fert", "energy", "feed", "other"]}, "name": {"type": "object", "required": ["es", "en", "fr", "it"]}, "minTonnes": {"type": "number"}}}},
+  "products": {"type": "array", "minItems": 8, "items": {"type": "object", "required": ["id", "cn", "group", "name", "minTonnes"], "properties": {"id": {"type": "string"}, "cn": {"type": "string"}, "group": {"enum": ["fert", "energy", "feed", "grain", "other"]}, "name": {"type": "object", "required": ["es", "en", "fr", "it"]}, "minTonnes": {"type": "number"}}}},
   "imports": {"type": "object", "minProperties": 8},
   "exports": {"type": "object"},
-  "origins": {"type": "object"}
+  "origins": {"type": "object"},
+  "originsByCountry": {"type": "object"}
  }
 }
