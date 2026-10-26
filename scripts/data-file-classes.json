@@ -469,6 +469,10 @@
   "data/eu-input-prices.json": {
    "class": "BUILD_ONLY",
    "note": "Valores unitarios de comercio exterior de insumos (Eurostat Comext). Solo lo lee scripts/build-input-monitor-countries.py; el navegador descarga la vista data/views/input-monitor-countries/prices.json."
+  },
+  "data/eu-fish-first-sales.json": {
+   "class": "BUILD_ONLY",
+   "note": "Precio en primera venta (EUMOFA) por pais y especie, semanal (10 paises) y mensual (18). Solo lo lee scripts/build-views.py; el navegador descarga data/views/fish/<CC>.json."
   }
  },
  "prefixes": {

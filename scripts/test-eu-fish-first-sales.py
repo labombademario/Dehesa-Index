@@ -35,4 +35,22 @@ check(b['lastWeek'] == '2025-W53', 'ultima semana del pais: %s' % b['lastWeek'])
 check(b['species'][1]['group'] == 'Small pelagics', 'grupo')
 try: M.accumulate('a;b\n1;2\n', {}, {}); check(False, 'debe fallar sin columnas')
 except RuntimeError as e: check('faltan columnas' in str(e), 'mensaje: %s' % e)
-print('EUMOFA primeras ventas semanales: %d fallos' % len(fails)); sys.exit(1 if fails else 0)
+
+# --- mensual ---
+HM = 'Year;Month_of_Year;Country;Location;Seaboard;Commodity_Group;Main_commercial_species;ERS_Code;English_name;Size;Presentation;Preservation;Volume(Kg);weight;Value(Eur);Destination_use'
+def mrow(y, m, c, sp, kg, eur, w='Net weight', du='Food'): return '%d;%d;%s;P;S;Groundfish;%s;X;X;1;Whole;Fresh;%s;%s;%s;%s' % (y, m, c, sp, kg, w, eur, du)
+mr = []
+for y in (2025, 2026):
+    for m in range(1, 13):
+        mr += [mrow(y, m, 'Italy', 'Hake', 3000, 24000), mrow(y, m, 'Italy', 'Hake', 1000, 99999, w='Live weight'), mrow(y, m, 'Italy', 'Hake', 5000, 500, du='Non-food')]
+        mr.append(mrow(y, m, 'Italy', 'Molluscs and aquatic invertebrates, other', 9000, 90000))
+        mr.append(mrow(y, m, 'Iceland', 'Cod', 9000, 90000))
+mr.append(mrow(2026, 12, 'Italy', 'Clam', 1000, 3000))     # bajo el umbral mensual y con pocos meses: fuera
+macc, mg = {}, {}
+M.accumulate_monthly(HM + '\n' + '\n'.join(mr) + '\n', macc, mg)
+check(set(macc) == {'IT'} and set(macc['IT']) == {'Hake', 'Clam'}, 'mensual: paises y especies %s' % {k: sorted(v) for k, v in macc.items()})
+check(macc['IT']['Hake']['2025-01'] == [3000.0, 24000.0], 'mensual: fuera peso vivo y no alimentario %s' % macc['IT']['Hake']['2025-01'])
+bm = M.build(macc, mg, window=12, min_kg=M.MIN_KG_M, min_n=M.MIN_MONTHS, last_key='lastMonth')['IT']
+check([s['name'] for s in bm['species']] == ['Hake'] and bm['lastMonth'] == '2026-12', 'mensual: seleccion %s' % bm)
+check(bm['species'][0]['points'][0] == ['2025-01', 8.0, 3.0], 'mensual: punto %s' % bm['species'][0]['points'][0])
+print('EUMOFA primeras ventas semanales y mensuales: %d fallos' % len(fails)); sys.exit(1 if fails else 0)

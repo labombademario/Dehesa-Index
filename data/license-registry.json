@@ -7801,7 +7801,7 @@
   },
   "data/eu-fish-first-sales.json": {
    "default": "eumofa",
-   "notes": "Precio medio semanal en primera venta (euros por kg) por Estado miembro y especie comercial principal, desde 2019: valor entre volumen de las notas de venta compiladas por EUMOFA. Mezcla puertos, tallas y presentaciones."
+   "notes": "Precio medio semanal (10 paises) y mensual (18 paises) en primera venta (euros por kg) por Estado miembro y especie comercial principal, desde 2019: valor entre volumen de las notas de venta compiladas por EUMOFA. Mezcla puertos, tallas y presentaciones."
   }
  },
  "derived": [

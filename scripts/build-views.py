@@ -484,7 +484,10 @@ def fish():
         fa = {k: g('fleet-age-' + k) for k in ('y_lt5', 'y5-9', 'y10-14', 'y15-19', 'y20-24', 'y_ge25') if g('fleet-age-' + k)}
         fs = (wk.get('countries') or {}).get(cc)
         fsv = {'lastWeek': fs['lastWeek'], 'generatedAt': wk.get('generatedAt'), 'minKg': wk.get('minKg'), 'species': [{'name': x['name'], 'group': x['group'], 'points': x['points']} for x in fs['species']]} if fs else None
-        write('fish/%s.json' % cc, dict({'schemaVersion': 1, 'generatedAt': eu.get('generatedAt'), 'cc': cc, 'src': 'eurostat', 'series': S, 'landings': sp, 'catches': cs, 'aquaculture': aq, 'areas': areas, 'fleetAge': fa}, **({'firstSales': fsv} if fsv else {})))
+        fm = None if fs else ((wk.get('monthly') or {}).get('countries') or {}).get(cc)   # mensual solo donde no hay semanal
+        fmv = {'lastMonth': fm['lastMonth'], 'generatedAt': wk.get('generatedAt'), 'minKg': wk['monthly'].get('minKg'), 'species': [{'name': x['name'], 'group': x['group'], 'points': x['points']} for x in fm['species']]} if fm else None
+        extra = {'firstSales': fsv} if fsv else ({'firstSalesM': fmv} if fmv else {})
+        write('fish/%s.json' % cc, dict({'schemaVersion': 1, 'generatedAt': eu.get('generatedAt'), 'cc': cc, 'src': 'eurostat', 'series': S, 'landings': sp, 'catches': cs, 'aquaculture': aq, 'areas': areas, 'fleetAge': fa}, **extra))
         L = lambda k: _last(S.get(k))
         old = None; nr = L('fleet-nr'); o25 = L('fleet-age-y_ge25')
         if nr and o25 and nr[0] == o25[0] and nr[1]: old = [nr[0], round(o25[1] / nr[1] * 100, 1)]
