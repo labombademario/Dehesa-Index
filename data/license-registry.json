@@ -5447,6 +5447,32 @@
    "short": "ELGO-DIMITRA",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+  },
+  "dzs_hr": {
+   "name": "Croatia — Državni zavod za statistiku (Croatian Bureau of Statistics), base PxWeb",
+   "url": "https://web.dzs.hr/PXWeb/pxweb/en/",
+   "country": "HR",
+   "licenseId": "HR-DZS-REUSE",
+   "licenseName": "Condiciones de uso del DZS: reproduccion permitida citando el nombre completo del Zavod como fuente; los conjuntos estan ademas en data.gov.hr con la Otvorena dozvola RH",
+   "licenseUrl": "https://dzs.gov.hr/uvjeti-koristenja/76",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Državni zavod za statistiku (Croatian Bureau of Statistics), web.dzs.hr. Elaboracion de dehesaindex.com.",
+   "additionalRestrictions": "Citar el nombre completo del Zavod como fuente; no deformar el sentido de los datos. El Zavod no responde de danos por su uso. La condicion de uso es breve y no dice expresamente que el uso comercial este permitido; se apoya en que los conjuntos publicados en data.gov.hr llevan la licencia abierta de la Republica de Croacia (Otvorena dozvola RH).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Uvjeti korištenja del DZS (leidas 2026-10-26): prohibido reproducir publicaciones sin citar el nombre completo del Zavod como fuente; sin otras restricciones. Los catalogos de DZS en data.gov.hr (cijene, biljna proizvodnja, poljoprivreda) figuran como open-license.",
+   "used": true,
+   "aliases": [],
+   "notes": "Estadistica agraria (cultivos, ganado, leche, indices de precios agrarios, balances de cultivos y abonos) por la API PxWeb publica del DZS (scripts/update-hr-dzs.py).",
+   "short": "DZS Croacia",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "VERIFIED: condiciones de uso publicadas (citar el nombre completo del Zavod); no mencionan expresamente el uso comercial."
   }
  },
  "files": {
@@ -8017,6 +8043,12 @@
     "gisco_nuts"
    ],
    "notes": "Indicador Combinado de Sequía del EDO calculado para 49 unidades regionales griegas (NUTS 3 de GISCO; los 4 sectores de Atenas ciudad juntos). scripts/update-el-drought.py."
+  },
+  "data/hr-dzs/": {
+   "sources": [
+    "dzs_hr"
+   ],
+   "notes": "Cultivos, ganado, leche, precios agrarios, balances y abonos de Croacia (scripts/update-hr-dzs.py), de la API PxWeb del DZS."
   }
  },
  "derived": [

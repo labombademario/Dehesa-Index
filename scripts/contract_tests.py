@@ -5171,6 +5171,77 @@ def el_elstat_regions(doc, errs, warns, stats):
     stats["series"] = n
 
 
+def _hr_tab(t):
+    """Tabla PxWeb del DZS -> (dims, matriz plana, tamaños, indice del eje de años o None)."""
+    size = [len(d["l"]) for d in t["dims"]]; n = 1
+    for x in size: n *= x
+    ky = next((i for i, d in enumerate(t["dims"]) if d["l"] and all(str(x).isdigit() and len(str(x)) == 4 for x in d["l"])), None)
+    return size, n, ky
+def _hr_at(t, size, ix):
+    p = 0
+    for k, s in enumerate(size): p = p * s + ix.get(k, 0)
+    return t["v"][p]
+def hr_dzs(doc, errs, warns, stats):
+    """Estadistica agraria de Croacia (DZS): cada tabla con tantos valores como celdas, un eje de años al dia, sin negativos; cultivos: 4 regiones suman la Republica en superficie y produccion y el rendimiento publicado cuadra con produccion/superficie, el trigo suma sus clases; ganado y leche en rangos posibles; indices de precios con 2020 = 100; balances y abonos con totales posibles."""
+    T = doc["tables"]; n = 0
+    if doc["source"]["id"] != "dzs_hr": errs.append("la fuente no es dzs_hr")
+    for key, t in T.items():
+        size, cells, ky = _hr_tab(t)
+        if cells != len(t["v"]): errs.append("%s: %d valores y %d celdas" % (key, len(t["v"]), cells)); continue
+        if ky is None: errs.append(key + ": sin eje de años"); continue
+        if not key.endswith("_h") and int(t["dims"][ky]["l"][-1]) < doc["year"] - 3: errs.append("%s: ultimo año %s muy atrasado" % (key, t["dims"][ky]["l"][-1]))
+        if any(x is not None and x < 0 for x in t["v"]): errs.append(key + ": valor negativo")
+        n += 1
+        r = next((i for i, d in enumerate(t["dims"]) if any("Pannonian" in x for x in d["l"])), None)
+        vk = next((i for i, d in enumerate(t["dims"]) if d["n"] == "Variable"), None)
+        if r is not None:
+            ys = len(t["dims"][ky]["l"]) - 1
+            for c in range(size[0]):
+                for v in range(size[vk] if vk is not None else 1):
+                    if vk is not None and not t["dims"][vk]["l"][v].startswith(("Area", "Production")): continue
+                    ix = {0: c, ky: ys}
+                    if vk is not None: ix[vk] = v
+                    root = _hr_at(t, size, {**ix, r: 0}); parts = [_hr_at(t, size, {**ix, r: j}) for j in range(1, size[r])]
+                    if root is None or None in parts: continue
+                    if abs(sum(parts) - root) > max(3, 0.03 * abs(root)): errs.append("%s %s: regiones suman %.0f y la Republica %.0f" % (key, t["dims"][0]["l"][c][:30], sum(parts), root))
+        if key in ("bp2", "bp3", "bp4"):
+            ix0 = {ky: len(t["dims"][ky]["l"]) - 1, r: 0}
+            for c in range(size[0]):
+                a = _hr_at(t, size, {**ix0, 0: c, vk: 0}); p = _hr_at(t, size, {**ix0, 0: c, vk: 1}); y = _hr_at(t, size, {**ix0, 0: c, vk: 2})
+                if a and p and y is not None and abs(p / a - y) > max(0.15, 0.04 * y): errs.append("%s %s: rendimiento %.2f y produccion/superficie %.2f" % (key, t["dims"][0]["l"][c][:30], y, p / a))
+        if key == "bp2":
+            lab = t["dims"][0]["l"]; ix0 = {ky: len(t["dims"][ky]["l"]) - 1, r: 0, vk: 1}
+            for c, l in enumerate(lab):
+                m = re.match(r"^(\d+) .*\((\d+(?: \+ \d+)+)\)$", l)
+                if not m: continue
+                parts = [int(x) for x in m.group(2).split(" + ")]
+                idx = {int(re.match(r"^(\d+) ", x).group(1)): i for i, x in enumerate(lab)}
+                if any(p_ not in idx for p_ in parts): continue
+                tot = _hr_at(t, size, {**ix0, 0: c}); ss = [_hr_at(t, size, {**ix0, 0: idx[p_]}) for p_ in parts]
+                if tot is not None and None not in ss and abs(sum(ss) - tot) > max(5, 0.03 * tot): errs.append("bp2 %s: suma de clases %.0f y total %.0f" % (l[:30], sum(ss), tot))
+            if "1 Wheat (2 + 3 + 4)" not in lab: errs.append("bp2: falta el trigo")
+    if "bp2" in T:
+        t = T["bp2"]; size, _, ky = _hr_tab(t); w = _hr_at(t, size, {0: 0, ky: size[ky] - 1, 2: 0, 3: 1})
+        if w is None or not 2e5 < w < 3e6: errs.append("trigo de Croacia fuera de 0,2-3 Mt: %s" % w)
+    if "milk" in T:
+        t = T["milk"]; size, _, ky = _hr_tab(t); c = _hr_at(t, size, {0: 0, ky: size[ky] - 1})
+        if c is None or not 1e5 < c < 1.5e6: errs.append("leche de vaca fuera de 100-1.500 millones de l: %s" % c)
+    if "cattle" in T:
+        t = T["cattle"]; size, _, ky = _hr_tab(t); c = _hr_at(t, size, {0: size[0] - 1, ky: size[ky] - 1, 2: 0})
+        if c is None or not 1e5 < c < 1e6: errs.append("vacuno de Croacia fuera de 100.000-1.000.000 cabezas: %s" % c)
+    for key in ("output", "input"):
+        if key in T:
+            t = T[key]; size, _, ky = _hr_tab(t); yl = t["dims"][ky]["l"]; kp = next(i for i, d in enumerate(t["dims"]) if "Year" in d["l"])
+            if "2020" not in yl: errs.append(key + ": sin 2020"); continue
+            for c in range(size[0]):
+                x = _hr_at(t, size, {0: c, ky: yl.index("2020"), kp: t["dims"][kp]["l"].index("Year")})
+                if x is not None and abs(x - 100) > 0.6: errs.append("%s: indice anual 2020 = %s" % (key, x))
+    if "products" in T:
+        t = T["products"]; size, _, ky = _hr_tab(t); b = _hr_at(t, size, {0: 0, ky: size[ky] - 1})
+        if b is None or not 300 < b < 30000: errs.append("mantequilla fuera de 300-30.000 t: %s" % b)
+    stats["tablas"] = n
+
+
 def eu_land(doc, errs, warns, stats):
     """Precio de la tierra y regadio por region: % = regadio/SAU, regadio <= SAU, un solo año por pais, Grecia con regadio mas caro que secano, cada region tiene nombre."""
     C = doc["countries"]; n = 0

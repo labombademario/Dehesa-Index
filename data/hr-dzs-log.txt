@@ -1,0 +1,7 @@
+balance cereals ultimo año 2024 celdas 1155
+balance oilseeds ultimo año 2024 celdas 495
+balance rice ultimo año 2024 celdas 540
+balance sugar ultimo año 2024 celdas 390
+balance fert_active ultimo año 2025 celdas 32
+balance fert_tonnes ultimo año 2025 celdas 60
+escrito balance.json 18 KB

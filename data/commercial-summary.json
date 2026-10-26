@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T21:45:10Z",
+ "generatedAt": "2026-10-26T23:26:07Z",
  "summary": {
-  "sources": 178,
-  "sourcesApto": 162,
+  "sources": 179,
+  "sourcesApto": 163,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 390,
-  "datasets_apto": 254,
+  "datasets": 391,
+  "datasets_apto": 255,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -197,6 +197,10 @@
   },
   "dwd_cdc": {
    "name": "Deutscher Wetterdienst (DWD) — Climate Data Center (opendata.dwd.de)",
+   "verdict": "apto"
+  },
+  "dzs_hr": {
+   "name": "Croatia — Državni zavod za statistiku (Croatian Bureau of Statistics), base PxWeb",
    "verdict": "apto"
   },
   "ec_eambrosia": {

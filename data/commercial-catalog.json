@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T21:45:10Z",
+ "generatedAt": "2026-10-26T23:30:12Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 178,
-  "sourcesApto": 162,
+  "sources": 179,
+  "sourcesApto": 163,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 390,
-  "datasets_apto": 254,
+  "datasets": 391,
+  "datasets_apto": 255,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -802,6 +802,23 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attribution": "Datenbasis: Deutscher Wetterdienst"
+  },
+  {
+   "id": "dzs_hr",
+   "name": "Croatia — Državni zavod za statistiku (Croatian Bureau of Statistics), base PxWeb",
+   "url": "https://web.dzs.hr/PXWeb/pxweb/en/",
+   "country": "HR",
+   "licenseId": "HR-DZS-REUSE",
+   "licenseName": "Condiciones de uso del DZS: reproduccion permitida citando el nombre completo del Zavod como fuente; los conjuntos estan ademas en data.gov.hr con la Otvorena dozvola RH",
+   "licenseUrl": "https://dzs.gov.hr/uvjeti-koristenja/76",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Državni zavod za statistiku (Croatian Bureau of Statistics), web.dzs.hr. Elaboracion de dehesaindex.com.",
+   "conditions": "Citar el nombre completo del Zavod como fuente; no deformar el sentido de los datos. El Zavod no responde de danos por su uso. La condicion de uso es breve y no dice expresamente que el uso comercial este permitido; se apoya en que los conjuntos publicados en data.gov.hr llevan la licencia abierta de la Republica de Croacia (Otvorena dozvola RH)."
   },
   {
    "id": "ec_eambrosia",
@@ -6179,6 +6196,14 @@
    "sources": [
     "edo_cdi",
     "gisco_nuts"
+   ]
+  },
+  {
+   "path": "data/hr-dzs/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "dzs_hr"
    ]
   },
   {

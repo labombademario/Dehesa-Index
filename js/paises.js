@@ -494,6 +494,12 @@
     var el = document.createElement('div'); el.id = 'pp-hr-diesel'; after.parentNode.insertBefore(el, after.nextSibling);
     var go = function () { if (window.DIHrDiesel && ST.c === cc) window.DIHrDiesel.mount(el, lang()); };
     if (window.DIHrDiesel) go(); else { var sc = document.createElement('script'); sc.src = 'js/hr-diesel.js?v=20261019'; sc.onload = go; document.head.appendChild(sc); }
+    /* Croacia: estadística agraria del DZS (js/hr-dzs.js; cultivos por región, ganado, lácteos, índices de precios agrarios y balances; data/hr-dzs/) */
+    var el2 = document.createElement('div'); el2.id = 'pp-hr-dzs'; el2.style.minHeight = '1px'; el.parentNode.insertBefore(el2, el.nextSibling);
+    function js(src, ok) { var s2 = document.createElement('script'); s2.src = src; s2.onload = ok; document.head.appendChild(s2); }
+    var go2 = function () { if (window.DIHrDzs && ST.c === cc) window.DIHrDzs.mount(el2, lang()); };
+    var mod2 = function () { var run = function () { if (window.DIHrDzs) go2(); else js('js/hr-dzs.js?v=20261026', go2); }; if (window.DICite) run(); else js('js/cite.js?v=0', run); };
+    nearView(el2, function () { if (window.ESUI) mod2(); else js('js/es-ui.js?v=20261015', mod2); });
   }
   /* Irlanda: gasoleo (Boletin Petrolero UE, despachos de gasoleo marcado e indice de combustibles agrarios del CSO, js/ie-diesel.js) y nitratos/agua (EPA via CSO, js/ie-nitrates.js) */
   function ieUp() {

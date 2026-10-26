@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 176 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
+Resumen: 177 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
 
-## VERIFIED (176)
+## VERIFIED (177)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -57,6 +57,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `dre_pt` | Imprensa Nacional-Casa da Moeda — Diário da República (Portarias n.º 54-D, 54-E y 54-L/2023, PEPAC) y GPP/IFAP | PT | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto publicado en el Diário da República. El art. 8 n.º 1 se leyó en una copia del … |
 | `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 58 | Disclose modifications; the Statistics Denmark logo cannot be used. |
 | `dwd_cdc` | Deutscher Wetterdienst (DWD) — Climate Data Center (opendata.dwd.de) | DE | CC-BY-4.0 | si/si | si | 0 |  |
+| `dzs_hr` | Croatia — Državni zavod za statistiku (Croatian Bureau of Statistics), base PxWeb | HR | HR-DZS-REUSE | si/si | si | 0 | Citar el nombre completo del Zavod como fuente; no deformar el sentido de los datos. El Zavod no responde de danos por su uso. La condicion … |
 | `ec_eambrosia` | Comisión Europea - eAmbrosia (registro de indicaciones geográficas de la UE) | EU | CC-BY-4.0 | si/si | si | 0 | No se publican los datos de contacto de los consejos reguladores. Logos y marcas excluidos. |
 | `ecb` | European Central Bank (euro reference rates, ECB Data Portal) | EU | ESCB-REUSE | si/conditional | si | 2 | Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed … |
 | `eccc_ghg` | Environment and Climate Change Canada — Canada's Official Greenhouse Gas Inventory | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
