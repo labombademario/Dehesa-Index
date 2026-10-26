@@ -3,7 +3,7 @@
  "country": "PL",
  "source": "sejm_eli",
  "status": "OK",
- "checkedAt": "2026-10-19",
+ "checkedAt": "2026-10-26",
  "baseline": {
   "fingerprints": {
    "DU/2023/412": {
@@ -31,7 +31,7 @@
  "current": {
   "fingerprints": {
    "DU/2023/412": {
-    "sha256": "0df0b1a60535b0561b2eca262daf286b52da7956098ee3e3f848d8baff9318ba",
+    "sha256": "2a97f7b12e1cd2d06c0f1d5c5c2c1f65b1c6e5f1c45d2a40b22a56b118035fbe",
     "label": "ley del Plan Estratégico, metadatos y referencias (DU/2023/412)"
    },
    "DU/2024/1741": {
@@ -50,6 +50,8 @@
   "lastScanned": null,
   "search": "OK"
  },
- "reviewNeeded": [],
+ "reviewNeeded": [
+  "cambia: ley del Plan Estratégico, metadatos y referencias (DU/2023/412)"
+ ],
  "note": "Vigilancia de la ley del Plan Estratégico y búsqueda de reglamentos nuevos en el Dziennik Ustaw desde el 1 de septiembre de 2026. Los textos que aparecen son candidatos: no se interpretan."
 }
