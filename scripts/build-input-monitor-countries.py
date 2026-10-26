@@ -257,7 +257,7 @@ def main():
                     st['years'] = round(min(float(YEARS), span / 12.0), 1); st['tonnes'] = c['points'][-1][2]; st['gaps'] = span - len(pts)
                     items[fl].setdefault(cn, {})[cc] = st
         # cruce: kg de fertilizante que compra una tonelada de grano a valor unitario de importacion (mismo mes, mismo declarante)
-        AF_F = ['310210', '310230', '310520', '310530', '310420']; AF_G = ['1001', '1005']
+        AF_F = ['310210', '310520', '310530', '310420']; AF_G = ['1001', '1005']
         items['afford'] = {}
         for fcn in AF_F:
             for gcn in AF_G:
