@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T22:20:00Z",
+ "generatedAt": "2026-10-26T22:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 285,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 3.2,
-  "prodGeneratedAt": "2026-10-26T18:58:15.383780+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-26T22:10:20.629964+00:00",
   "repoGeneratedAt": "2026-10-26T22:10:20.629964+00:00",
-  "checkedAt": "2026-10-26T22:20:00Z"
+  "checkedAt": "2026-10-26T22:25:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-26T21:48:07Z"
+     "lastChange": "2026-10-26T22:25:21Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -1542,7 +1542,7 @@
   },
   {
    "workflow": "update-el-elstat.yml",
-   "name": "Update Greece agricultural price indices and regional farm accounts (ELSTAT)",
+   "name": "Update Greece agricultural price indices, regional farm accounts and crops and livestock by region (ELSTAT)",
    "crons": [
     "20 9 16,22 * *"
    ],
@@ -4499,7 +4499,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T22:07:25Z"
+     "lastChange": "2026-10-26T22:22:26Z"
     },
     {
      "path": "data/source-candidates.json",
