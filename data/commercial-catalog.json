@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T06:54:49Z",
+ "generatedAt": "2026-10-26T14:57:16Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 172,
-  "sourcesApto": 156,
+  "sources": 173,
+  "sourcesApto": 157,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 380,
-  "datasets_apto": 244,
+  "datasets": 382,
+  "datasets_apto": 246,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -2812,6 +2812,23 @@
    "redistribution": "yes",
    "attribution": "Source: U.S. Geological Survey, Mineral Commodity Summaries 2026, Sulfur",
    "conditions": "USGS pide citar la fuente; algunas imágenes de su web son de terceros (no se usan). Los precios de Tampa que cita el USGS proceden de proveedores privados de precios: se publican solo los cuatro puntos que el propio informe recoge, con cita."
+  },
+  {
+   "id": "usgs_water",
+   "name": "U.S. Geological Survey, National Water Information System (daily values)",
+   "url": "https://waterdata.usgs.gov/nwis",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USGS asks for credit",
+   "licenseUrl": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: U.S. Geological Survey, National Water Information System",
+   "conditions": "No implied USGS endorsement; provisional data are subject to revision."
   },
   {
    "id": "vigieau",
@@ -7663,6 +7680,14 @@
    ]
   },
   {
+   "path": "data/us-fertilizer-imports.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "census"
+   ]
+  },
+  {
    "path": "data/us-fertilizers.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -7756,6 +7781,14 @@
     "usda_ams_mars",
     "usda_ers",
     "usda_oce_wasde"
+   ]
+  },
+  {
+   "path": "data/us-markets/rivers.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "usgs_water"
    ]
   },
   {

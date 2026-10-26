@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T06:54:50Z",
+ "generatedAt": "2026-10-26T14:57:16Z",
  "summary": {
-  "sources": 172,
-  "sourcesApto": 156,
+  "sources": 173,
+  "sourcesApto": 157,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 380,
-  "datasets_apto": 244,
+  "datasets": 382,
+  "datasets_apto": 246,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -669,6 +669,10 @@
   },
   "usgs_mcs": {
    "name": "USGS Mineral Commodity Summaries (Sulfur)",
+   "verdict": "apto"
+  },
+  "usgs_water": {
+   "name": "U.S. Geological Survey, National Water Information System (daily values)",
    "verdict": "apto"
   },
   "vigieau": {
