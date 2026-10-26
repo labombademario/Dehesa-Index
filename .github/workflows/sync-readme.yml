@@ -1,0 +1,39 @@
+name: README al dia (tras cambios de codigo)
+# Las cifras del README (workflows, scripts, esquemas, fuentes, catalogo) las genera scripts/build-readme-status.py. Quien cambia el codigo no tiene que acordarse:
+# al llegar a main un cambio en workflows, esquemas, scripts de fuentes, registro de licencias, catalogo o estado de pipelines, este workflow regenera el README
+# y lo publica. Su propio commit solo toca README.md, que no esta en la lista de rutas: no hay bucle. Sin descargas ni red.
+# El control de calidad avisa (no bloquea) si el README va por detras: esta es la forma de dejarlo al dia.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+      - 'schemas/**'
+      - 'scripts/update-*'
+      - 'data/license-registry.json'
+      - 'data/catalog/manifest.json'
+      - 'data/pipeline-status.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  readme:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Regenerar las cifras del README
+        run: python3 scripts/build-readme-status.py
+      - name: Publicar si cambio
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_NO_NOTIFY: '1'
+          PUBLISH_DERIVED: README.md
+          PUBLISH_REGEN: python3 scripts/build-readme-status.py
+        run: |
+          bash scripts/publish-data.sh "README, cifras regeneradas" README.md

@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-295 workflows (246 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+296 workflows (246 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -241,9 +241,10 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | deploy-cloudflare.yml | a mano | varias veces al dia | - | - | - |
 | e2e-full.yml | a mano | semanal (1) | e2e-variants.mjs | - | - |
 | fetch-fao-areas.yml | a mano | manual / por evento | - | - | - |
-| refresh-observatory.yml | a mano | manual / por evento | build-observatory.py, build-pipeline-status.py, validate-data.py | - | - |
+| refresh-observatory.yml | a mano | manual / por evento | build-observatory.py, build-pipeline-status.py, build-readme-status.py | - | - |
 | release-dispatch.yml | a mano | 2 veces al dia | release-dispatch.py | - | - |
 | send-digest.yml | a mano | semanal (1) | build-digest.py, send-digest.py | - | - |
+| sync-readme.yml | a mano | manual / por evento | build-readme-status.py | - | - |
 | update-baltics-national.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-np-baltic.py | baltics-national-stats.json | finish, validate-files |
 | update-belgium.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-belgium.py | belgium-stats.json | finish, validate-files |
 | update-climate.yml | a mano | semanal (2) | update-climate.mjs | climate-history.json, climate.json | finish, validate-files |

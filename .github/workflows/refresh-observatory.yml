@@ -29,11 +29,12 @@ jobs:
         run: |
           python3 scripts/build-pipeline-status.py
           python3 scripts/build-observatory.py
+          python3 scripts/build-readme-status.py   # el README cuenta los procesos de pipeline-status.json: se rehace con el, en el mismo commit
           python3 scripts/validate-data.py --no-report --files data/pipeline-status.json data/observatory.json
       - name: Publicar (sin volver a avisar)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_NO_NOTIFY: '1'
-          PUBLISH_DERIVED: data/pipeline-status.json data/observatory.json
-          PUBLISH_REGEN: python3 scripts/build-pipeline-status.py && python3 scripts/build-observatory.py
-        run: bash scripts/publish-data.sh "Observatorio y estado de pipelines (tras una publicacion de datos)" data/pipeline-status.json data/observatory.json
+          PUBLISH_DERIVED: data/pipeline-status.json data/observatory.json README.md
+          PUBLISH_REGEN: python3 scripts/build-pipeline-status.py && python3 scripts/build-observatory.py && python3 scripts/build-readme-status.py
+        run: bash scripts/publish-data.sh "Observatorio y estado de pipelines (tras una publicacion de datos)" data/pipeline-status.json data/observatory.json README.md
