@@ -1,0 +1,10 @@
+13:09:13 310210: 10904 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 388.5 USD/t
+13:09:18 310230: 2954 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 325.5 USD/t
+13:09:22 310280: 2245 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 299.4 USD/t
+13:09:25 310221: 3717 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 272.3 USD/t
+13:09:30 310420: 4844 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 276.7 USD/t
+13:09:35 310530: 3623 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 741.5 USD/t
+13:09:41 310520: 5705 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 833.2 USD/t
+13:09:44 281410: 2570 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 701.6 USD/t
+13:09:50 280920: 10365 filas, unidades ['T'], 128 meses con precio, ultimo 2026-08 1132.3 USD/t
+13:09:51 us-fertilizer-imports.json: 9 productos, ultimo mes 2026-08
