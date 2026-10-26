@@ -285,6 +285,20 @@ def main():
                     if len(pts) < span or cc != 'EU': st['spark'] = []   # solo la UE-27 dibuja grafico; con meses sin volumen no se dibuja una linea que mienta sobre las fechas
                     st['years'] = round(min(float(YEARS), span / 12.0), 1); st['tonnes'] = c['points'][-1][2]; st['gaps'] = span - len(pts)
                     items[fl].setdefault(cn, {})[cc] = st
+        # EE. UU. (US Census Bureau, scripts/update-us-fertilizer-imports.py): mismo SA6 y mismo calculo, en USD/t; solo importaciones
+        usf = ROOT / 'data/us-fertilizer-imports.json'; origins_us = {}
+        if usf.exists():
+            ud = J(usf)
+            for cn, c in ud['products'].items():
+                last = c['points'][-1][0]; y0 = '%04d%s' % (int(last[:4]) - YEARS, last[4:])
+                pts = [(q[0], q[1]) for q in c['points'] if q[0] > y0]
+                st = stats(pts, 'USD/t', 'm')
+                if not st: continue
+                span = (int(last[:4]) - int(pts[0][0][:4])) * 12 + int(last[5:7]) - int(pts[0][0][5:7]) + 1
+                if len(pts) < span: st['spark'] = []
+                st['years'] = round(min(float(YEARS), span / 12.0), 1); st['tonnes'] = c['points'][-1][2]; st['gaps'] = span - len(pts); st['hs6'] = c.get('hs6')
+                items['imp'].setdefault(cn, {})['US'] = st
+                if c.get('origins'): origins_us[cn] = c['origins']
         # cruce: kg de fertilizante que compra una tonelada de grano a valor unitario de importacion (mismo mes, mismo declarante)
         AF_F = ['310210', '310520', '310530', '310420']; AF_G = ['1001', '1005']
         items['afford'] = {}
@@ -303,7 +317,8 @@ def main():
                     items['afford'].setdefault(fcn, {}).setdefault(gcn, {})[cc] = st
         if items['imp']:
             write('prices.json', {'schemaVersion': 1, 'generatedAt': pd.get('generatedAt') or gen, 'latestPeriod': pd.get('latestPeriod'), 'years': YEARS, 'source': pd['source'],
-                                  'originsYear': pd.get('originsYear'), 'products': pd['products'], 'items': items, 'origins': pd.get('origins', {}), 'originsByCountry': pd.get('originsByCountry', {})})
+                                  'originsYear': pd.get('originsYear'), 'products': pd['products'], 'items': items, 'origins': pd.get('origins', {}), 'originsByCountry': pd.get('originsByCountry', {}), 'originsUS': origins_us,
+                                  'sourceUS': J(usf)['source'] if usf.exists() else None})
     # --- costes y renta de la explotacion media (FADN/FSDN, scripts/update-eu-fadn.py): anual, sin estadistica de ventana (hay pocos años) ---
     fp = ROOT / 'data/eu-fadn.json'
     if fp.exists():

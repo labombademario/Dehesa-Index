@@ -2060,8 +2060,7 @@
  "optional": [
   "italy-land/land.json",
   "es-climate-provinces.json",
-  "eu-region-climate.json",
-  "us-fertilizer-imports.json"
+  "eu-region-climate.json"
  ],
  "uk-tiff-regions.json": [
   "uk-tiff-regions",

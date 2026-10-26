@@ -117,7 +117,7 @@
     return card('usm-cot', x.cot, x.cotSub, body);
   }
   /* ---------- AgTransport ---------- */
-  function trHtml(d) {
+  function trHtml(d, rv) {
     var x = t(); if (!d || !d.indicators) return card('usm-tr', x.tr, x.trSub, '<p class="di-movers-hint">' + esc(x.none) + '</p>');
     var I = d.indicators, P = I.points, li = P.length - 1, z = P[li], w = P[li - 1], ya = back(P, li, 364);
     var kp = '<div class="usm-kpis">' + I.fields.map(function (f, k) {
@@ -139,8 +139,45 @@
       ton = '<details class="usm-more"><summary>' + esc(x.bton) + '</summary>' + table([x.loc, 'USD/t', x.date], tr, 420) + '</details>';
     }
     var body = kp + '<h4 class="usm-h4">' + esc(x.bpct) + ' · ' + esc(day(lastB)) + '</h4>' + table([x.loc, x.now, x.prevW, x.yAgo, x.vsY], rows, 560) +
-      '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(x.bpctH) + '</p><label class="usm-sel">' + esc(x.pick) + ' <select id="usm-loc" class="di-compare-select">' + opts + '</select></label>' + chartB + ton + cite('usda_ams_agtransport', day(z[0]));
+      '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(x.bpctH) + '</p><label class="usm-sel">' + esc(x.pick) + ' <select id="usm-loc" class="di-compare-select">' + opts + '</select></label>' + chartB + ton + cite('usda_ams_agtransport', day(z[0])) + rvHtml(rv);
     return card('usm-tr', x.tr, x.trSub, body);
+  }
+  /* ---------- Rios de las barcazas (USGS, data/us-markets/rivers.json; scripts/update-us-rivers.py) ---------- */
+  var RV = {
+    es: { h: 'Caudal de los ríos de las barcazas (USGS)', s: 'Caudal medio diario en metros cúbicos por segundo. Con el río bajo las barcazas cargan menos y el flete sube; con el río muy alto se cierran esclusas. El percentil compara la media de los últimos 7 días con todos los días del mismo mes desde {y}.',
+      cols: ['Río y estación', 'Último día (m³/s)', 'Media 7 días', 'Frente al mismo mes', 'Fecha'], lv: ['muy bajo', 'bajo', 'normal', 'alto', 'muy alto'], pct: 'percentil {p}', pick: 'Estación', flow: 'Caudal diario', p50: 'Mediana {y}', band: 'Percentil {q} ({y})', u: 'm³/s',
+      note: 'Fuente: U.S. Geological Survey (NWIS, valores diarios, dominio público). Los datos recientes son provisionales y el USGS los revisa. La conversión de pies cúbicos a metros cúbicos, la media de 7 días y los percentiles son cálculo de Dehesa Index. No es un aviso de navegación: los calados y cierres los publican el Cuerpo de Ingenieros y el Servicio Meteorológico Nacional.' },
+    en: { h: 'River flow on the barge routes (USGS)', s: 'Daily mean discharge in cubic metres per second. Low water means lighter barge loads and higher freight; very high water closes locks. The percentile compares the last 7-day mean with every day of the same month since {y}.',
+      cols: ['River and gauge', 'Latest day (m³/s)', '7-day mean', 'Versus same month', 'Date'], lv: ['very low', 'low', 'normal', 'high', 'very high'], pct: 'percentile {p}', pick: 'Gauge', flow: 'Daily discharge', p50: 'Median {y}', band: '{q}th percentile ({y})', u: 'm³/s',
+      note: 'Source: U.S. Geological Survey (NWIS daily values, public domain). Recent data are provisional and revised by USGS. The cubic-feet to cubic-metres conversion, the 7-day mean and the percentiles are Dehesa Index calculations. This is not a navigation notice: drafts and closures are published by the Army Corps of Engineers and the National Weather Service.' },
+    fr: { h: 'Débit des fleuves des barges (USGS)', s: 'Débit moyen journalier en mètres cubes par seconde. Quand le fleuve est bas, les barges chargent moins et le fret monte ; très haut, les écluses ferment. Le percentile compare la moyenne des 7 derniers jours à tous les jours du même mois depuis {y}.',
+      cols: ['Fleuve et station', 'Dernier jour (m³/s)', 'Moyenne 7 jours', 'Par rapport au même mois', 'Date'], lv: ['très bas', 'bas', 'normal', 'haut', 'très haut'], pct: 'percentile {p}', pick: 'Station', flow: 'Débit journalier', p50: 'Médiane {y}', band: 'Percentile {q} ({y})', u: 'm³/s',
+      note: 'Source : U.S. Geological Survey (NWIS, valeurs journalières, domaine public). Les données récentes sont provisoires et révisées par l’USGS. La conversion des pieds cubes en mètres cubes, la moyenne sur 7 jours et les percentiles sont des calculs de Dehesa Index. Ce n’est pas un avis à la navigation : tirants d’eau et fermetures sont publiés par le Corps des ingénieurs et le Service météorologique national.' },
+    it: { h: 'Portata dei fiumi delle chiatte (USGS)', s: 'Portata media giornaliera in metri cubi al secondo. Con il fiume basso le chiatte caricano meno e il nolo sale; con il fiume molto alto chiudono le chiuse. Il percentile confronta la media degli ultimi 7 giorni con tutti i giorni dello stesso mese dal {y}.',
+      cols: ['Fiume e stazione', 'Ultimo giorno (m³/s)', 'Media 7 giorni', 'Rispetto allo stesso mese', 'Data'], lv: ['molto bassa', 'bassa', 'normale', 'alta', 'molto alta'], pct: 'percentile {p}', pick: 'Stazione', flow: 'Portata giornaliera', p50: 'Mediana {y}', band: 'Percentile {q} ({y})', u: 'm³/s',
+      note: 'Fonte: U.S. Geological Survey (NWIS, valori giornalieri, pubblico dominio). I dati recenti sono provvisori e l’USGS li rivede. La conversione da piedi cubi a metri cubi, la media di 7 giorni e i percentili sono calcoli di Dehesa Index. Non è un avviso alla navigazione: pescaggi e chiusure li pubblicano il Corpo degli ingegneri e il Servizio meteorologico nazionale.' }
+  };
+  var CFS = 0.0283168;
+  function rvLevel(p) { return p == null ? null : p < 10 ? 0 : p < 25 ? 1 : p <= 75 ? 2 : p <= 90 ? 3 : 4; }
+  function rvHtml(d) {
+    var R = RV[lang()] || RV.es; if (!d || !d.stations || !d.stations.length) return '';
+    if (!SEL.rv || !d.stations.some(function (s) { return s.id === SEL.rv; })) SEL.rv = '07010000';
+    var y0 = d.stations.filter(function (s) { return s.id === SEL.rv; })[0], yr = y0 && y0.histYears ? y0.histYears[0] + '–' + y0.histYears[1] : '';
+    var rows = d.stations.map(function (s) {
+      var lv = rvLevel(s.pctMonth), col = lv === 0 ? '#b3261e' : lv === 1 ? '#b26a00' : lv === 4 ? '#1d4f91' : lv === 3 ? '#2b6cb0' : '';
+      return ['<strong>' + esc(s.river) + '</strong> · ' + esc(s.reach), nf(s.lastValue * CFS, 0), s.avg7 != null ? nf(s.avg7 * CFS, 0) : '—',
+        lv == null ? '—' : '<span style="font-weight:600' + (col ? ';color:' + col : '') + '">' + esc(R.lv[lv]) + '</span> <span style="color:var(--text-faint)">(' + esc(R.pct.replace('{p}', nf(s.pctMonth, 0))) + ')</span>', esc(day(s.last))];
+    });
+    var st = y0 || d.stations[0], opts = d.stations.map(function (s) { return '<option value="' + esc(s.id) + '"' + (s.id === st.id ? ' selected' : '') + '>' + esc(s.river + ' · ' + s.reach) + '</option>'; }).join('');
+    var fl = st.points.map(function (p) { return { x: ts(p[0]), y: p[1] * CFS, l: day(p[0]) }; }), ser = [{ name: R.flow, color: '#1d4f91', pts: fl }];
+    if (st.clim && fl.length) {
+      var y1 = st.histYears[0] + '–' + st.histYears[1], lo = [], md = [], hi = [];
+      st.points.forEach(function (p) { var dd = new Date(ts(p[0])), j = Math.min(365, Math.floor((dd - Date.UTC(dd.getUTCFullYear(), 0, 1)) / 864e5) + 1), c = st.clim[j - 1]; if (!c) return; var x = ts(p[0]), l = day(p[0]); lo.push({ x: x, y: c[0] * CFS, l: l }); md.push({ x: x, y: c[1] * CFS, l: l }); hi.push({ x: x, y: c[2] * CFS, l: l }); });
+      ser.push({ name: R.p50.replace('{y}', y1), color: '#7a7a7a', pts: md }, { name: R.band.replace('{y}', y1).replace('{q}', '10'), color: '#c9a227', pts: lo }, { name: R.band.replace('{y}', y1).replace('{q}', '90'), color: '#9bb7d4', pts: hi });
+    }
+    return '<h4 class="usm-h4" id="usm-rv">' + esc(R.h) + ' · ' + esc(day(d.latestDate)) + '</h4><p class="di-movers-hint" style="margin:0 0 6px">' + esc(R.s.replace('{y}', yr ? yr.slice(0, 4) : '2000')) + '</p>' + table(R.cols, rows, 620) +
+      '<label class="usm-sel">' + esc(R.pick) + ' <select id="usm-rvs" class="di-compare-select">' + opts + '</select></label>' + (window.DehesaChart ? chart(ser, R.u, R.flow + ' · ' + st.river + ' · ' + st.reach, true, 0) : '') +
+      '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(R.note) + '</p>' + cite('usgs_water', d.latestDate);
   }
   /* ---------- EIA ---------- */
   function stName(c) { var N = window.DehesaRegionNames && window.DehesaRegionNames.US, v = N && N[c]; return v ? v.split('|')[{ en: 0, es: 1, fr: 2, it: 3 }[lang()] || 1] : c; }
@@ -241,14 +278,15 @@
   function render(el, opts) {
     if (!el) return Promise.resolve(); opts = opts || {}; var x = t();
     el.innerHTML = '<p class="di-movers-hint" role="status">…</p>';
-    return Promise.all([get('cot'), get('transport'), get('fuel'), get('ethanol'), get('inspections'), get('lmr'), geo()]).then(function (r) {
+    return Promise.all([get('cot'), get('transport'), get('fuel'), get('ethanol'), get('inspections'), get('lmr'), geo(), get('rivers')]).then(function (r) {
       if (!r[0] && !r[1] && !r[2]) { el.innerHTML = ''; return; }
-      var parts = [['usm-cot', cotHtml(r[0])], ['usm-tr', trHtml(r[1])], ['usm-dem', demHtml(r[3], r[4])], ['usm-lmr', lmrHtml(r[5])], ['usm-fuel', fuelHtml(r[2])]].filter(function (p) { return p[1]; }), SEC = window.DehesaSector, shown = [], folded = [];
+      var parts = [['usm-cot', cotHtml(r[0])], ['usm-tr', trHtml(r[1], r[7])], ['usm-dem', demHtml(r[3], r[4])], ['usm-lmr', lmrHtml(r[5])], ['usm-fuel', fuelHtml(r[2])]].filter(function (p) { return p[1]; }), SEC = window.DehesaSector, shown = [], folded = [];
       parts.forEach(function (p) { (opts.sector && SEC && !SEC.visible(sectorOf(p[0])) ? folded : shown).push(p[1]); });
       el.innerHTML = '<section class="usm" style="margin-top:18px"><h2 class="cof-h2" style="margin:0 0 4px">' + esc(x.h) + '</h2><p class="di-movers-hint" style="margin:0">' + esc(x.sub) + '</p>' + shown.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '') + '</section>';
       Array.prototype.forEach.call(el.querySelectorAll('[data-cot]'), function (b) { b.onclick = function () { SEL.cot = b.getAttribute('data-cot'); render(el, opts).then(function () { var c = document.getElementById('usm-cot'); if (c && c.scrollIntoView) c.scrollIntoView({ block: 'nearest' }); }); }; });
       if (window.DehesaUsDepth && window.DehesaUsDepth.fold) window.DehesaUsDepth.fold(el);
       var s = el.querySelector('#usm-loc'); if (s) s.onchange = function () { SEL.loc = s.value; render(el, opts); };
+      var sr = el.querySelector('#usm-rvs'); if (sr) sr.onchange = function () { SEL.rv = sr.value; render(el, opts).then(function () { var n = document.getElementById('usm-rvs'); if (n) { try { n.focus({ preventScroll: true }); } catch (e) {} } }); };
     });
   }
   /* para la ficha de estado: gasóleo de su región PADD (y del estado si la EIA lo publica) y propano del estado */
