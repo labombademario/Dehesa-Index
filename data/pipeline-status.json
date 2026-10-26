@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T09:02:00Z",
+ "generatedAt": "2026-10-26T09:17:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 281,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-26T06:57:24.641925+00:00",
   "repoGeneratedAt": "2026-10-26T06:57:24.641925+00:00",
-  "checkedAt": "2026-10-26T09:02:00Z"
+  "checkedAt": "2026-10-26T09:17:00Z"
  },
  "pipelines": [
   {
@@ -1658,7 +1658,7 @@
    "crons": [
     "10 9 * * 1"
    ],
-   "nextRun": "2026-10-26T09:10:00Z",
+   "nextRun": "2026-11-02T09:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1870,9 +1870,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-25T08:57:42Z",
+    "startedAt": "2026-10-26T09:13:05Z",
     "durationSec": 30,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40178692619"
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40297848034"
    },
    "recent": {
     "runs": 10,
@@ -4133,7 +4133,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-26T09:17:00Z",
+   "nextRun": "2026-10-26T12:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -4390,7 +4390,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-26T09:10:00Z",
+   "nextRun": "2026-10-26T12:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -4437,7 +4437,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T08:50:07Z"
+     "lastChange": "2026-10-26T09:05:05Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4750,9 +4750,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-25T08:51:46Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40178304002"
+    "startedAt": "2026-10-26T09:04:38Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40296797111"
    },
    "recent": {
     "runs": 10,
