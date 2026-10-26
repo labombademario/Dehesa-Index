@@ -10,7 +10,7 @@ def check(c, m):
     if not c: fails.append(m); print('FALLO:', m)
 def day(d, n, v, off='+01:00'):
     return [{"timestamp": "%sT%02d:%02d:00%s" % (d, (i * 15) // 60, (i * 15) % 60, off), "value": v + (i % 2)} for i in range(n)]
-st = {"uuid": "u1", "shortname": "KAUB", "longname": "KAUB", "km": 546.23, "agency": "BINGEN", "water": {"shortname": "RHEIN"},
+st = {"uuid": "u1", "shortname": "KAUB", "longname": "KAUB", "km": 546.23, "agency": "BINGEN", "longitude": 7.764962, "latitude": 50.085438, "water": {"shortname": "RHEIN"},
       "timeseries": [{"shortname": "Q", "equidistance": 15, "currentMeasurement": {"timestamp": "2026-10-26T16:15:00+01:00", "value": 673.0}},
                      {"shortname": "W", "equidistance": 15, "currentMeasurement": {"timestamp": "2026-10-26T16:30:00+01:00", "value": 55.0, "stateMnwMhw": "low"},
                       "characteristicValues": [{"shortname": "MNW", "value": 65.0, "timespanStart": "2010-11-01", "timespanEnd": "2020-10-31"}, {"shortname": "MW", "value": 208.0, "timespanStart": "2010-11-01", "timespanEnd": "2020-10-31"},
@@ -33,4 +33,5 @@ st2 = dict(st); st2['timeseries'] = [st['timeseries'][0]]
 check(M.station(st2, 'Rhein', None, lambda u, s: [], now) is None, 'sin nivel actual no se publica')
 check(M.pick([st])[('RHEIN', 'KAUB')] is st and ('ELBE', 'DRESDEN') not in M.pick([st]), 'seleccion por rio y estacion')
 check(M.DISPLAY['Trier UP'] == 'Trier' and ('MOSEL', 'Cochem') in [(w, n) for w, n, _ in M.STATIONS], 'estaciones de Mosela con nombre limpio')
+check(r['lon'] == 7.765 and r['lat'] == 50.0854, 'coordenadas de la estacion: %s %s' % (r['lon'], r['lat']))
 print('Rios alemanes (PEGELONLINE): %d fallos' % len(fails)); sys.exit(1 if fails else 0)

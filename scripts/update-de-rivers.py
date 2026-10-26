@@ -91,7 +91,7 @@ def station(st, shown, old, meas_for, now):
     ks = sorted(days)[-KEEP_DAYS:]
     cq = (tq or {}).get("currentMeasurement")
     return {"id": st["shortname"].lower().replace(" ", "-"), "uuid": uid, "river": shown, "name": DISPLAY.get(st["shortname"]) or st["shortname"].title().replace(" Donau", ""),
-            "km": st.get("km"), "agency": st.get("agency"),
+            "km": st.get("km"), "agency": st.get("agency"), "lon": round(st["longitude"], 4) if st.get("longitude") is not None else None, "lat": round(st["latitude"], 4) if st.get("latitude") is not None else None,
             "w": {"value": cw["value"], "time": cw["timestamp"], "state": state if state in STATES else None, "unit": "cm"},
             "q": {"value": cq["value"], "time": cq["timestamp"], "unit": "m3/s"} if cq and cq.get("value") is not None else None,
             "ref": ref, "first": ks[0] if ks else None, "last": ks[-1] if ks else None, "points": [[d, days[d][0], days[d][1]] for d in ks]}
