@@ -1081,7 +1081,7 @@
     'pienso-harina_soja-us': {
       sourceId: 'usda_ams_mars', frequency: 'weekly',
       methodology: 'USDA AMS Market News (API MARS, informe 3511 «National Grain and Oilseed Processor Feedstuff Report», semanal): precio medio semanal de la harina de soja de 46,5-48 % de proteína en Iowa, FOB, cotización de venta (ask), en USD por tonelada. El informe solo indica «$ Per Ton»; se trata como tonelada corta (2.000 lb) porque el precio se expresa como base sobre el futuro de harina de soja de CBOT, que cotiza en toneladas cortas. Es un mercado regional, no un futuro ni la media nacional, y no es exactamente el mismo producto que la referencia europea (España, 40-50 % de proteína, salida de fábrica, EUR/t).',
-      comparability: 'directional', observationDate: '2026-10-23', publicationDate: '2026-10-23', status: 'verified', verifiedAt: '2026-10-23T22:53:55.092Z'
+      comparability: 'directional', observationDate: '2026-10-23', publicationDate: '2026-10-23', status: 'verified', verifiedAt: '2026-10-26T15:02:09.500Z'
     },
     'pienso-harina_soja-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -1116,7 +1116,7 @@
     'lacteos-leche_polvo-us': {
       sourceId: 'usda_ams_mars', frequency: 'weekly',
       methodology: 'USDA AMS Market News (API MARS, informe 1049 «Nonfat Dry Milk - East and Central U.S.», semanal): leche desnatada en polvo de calor bajo y medio, en USD por libra. El informe publica un rango semanal (mínimo y máximo) y el valor mostrado es el punto medio de ese rango, calculado por Dehesa Index. Es un mercado regional (Este y Centro de EE. UU.), no un futuro; el producto es equivalente en tipo al SMP europeo, pero no es idéntico.',
-      comparability: 'directional', observationDate: '2026-10-23', publicationDate: '2026-10-23', status: 'verified', verifiedAt: '2026-10-23T22:53:55.213Z'
+      comparability: 'directional', observationDate: '2026-10-23', publicationDate: '2026-10-23', status: 'verified', verifiedAt: '2026-10-26T15:02:09.578Z'
     },
     'lacteos-leche_polvo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
