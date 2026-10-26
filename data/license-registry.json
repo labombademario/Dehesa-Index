@@ -5473,6 +5473,32 @@
    "short": "DZS Croacia",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "VERIFIED: condiciones de uso publicadas (citar el nombre completo del Zavod); no mencionan expresamente el uso comercial."
+  },
+  "apprrr_hr": {
+   "name": "Croatia — APPRRR (Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju), datos abiertos en data.gov.hr",
+   "url": "https://data.gov.hr/organization/agencija-za-placanja-u-poljoprivredi-ribarstvu-i-ruralnom-razvoju",
+   "country": "HR",
+   "licenseId": "HR-OTVORENA-DOZVOLA",
+   "licenseName": "Otvorena dozvola Republike Hrvatske (open-license en data.gov.hr)",
+   "licenseUrl": "https://data.gov.hr/otvorena-dozvola",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju (APPRRR), data.gov.hr, Otvorena dozvola RH. Elaboracion de dehesaindex.com.",
+   "additionalRestrictions": "Citar la fuente. Datos agregados por provincia (suma de los asentamientos del fichero); un PG con parcelas en varias provincias cuenta en cada una.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Metadatos CKAN de data.gov.hr (leidos 2026-10-26): los 15 conjuntos de la organizacion APPRRR figuran con license_id open-license.",
+   "used": true,
+   "aliases": [],
+   "notes": "Upisnik poljoprivrednika, ARKOD y Vinogradarski registar por provincia (scripts/update-hr-apprrr.py).",
+   "short": "APPRRR Croacia",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "VERIFIED: licencia abierta declarada en el catalogo; no se ha leido el texto completo de la Otvorena dozvola en esta pasada."
   }
  },
  "files": {
@@ -8049,6 +8075,12 @@
     "dzs_hr"
    ],
    "notes": "Cultivos, ganado, leche, precios agrarios, balances y abonos de Croacia (scripts/update-hr-dzs.py), de la API PxWeb del DZS."
+  },
+  "data/hr-apprrr/": {
+   "sources": [
+    "apprrr_hr"
+   ],
+   "notes": "Explotaciones, ARKOD y viñedo por provincia de Croacia (scripts/update-hr-apprrr.py), de los ficheros abiertos de la APPRRR."
   }
  },
  "derived": [

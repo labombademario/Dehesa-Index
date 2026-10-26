@@ -1,0 +1,208 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Croacia por provincia (APPRRR): data/hr-apprrr/counties.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "counties",
+  "asOf",
+  "datasets",
+  "farms",
+  "size",
+  "use",
+  "vineyard"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "apprrr_hr"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    },
+    "license": {
+     "type": "string"
+    }
+   }
+  },
+  "counties": {
+   "type": "array",
+   "minItems": 21,
+   "maxItems": 21,
+   "items": {
+    "type": "string"
+   }
+  },
+  "asOf": {
+   "type": "object",
+   "required": [
+    "farms",
+    "size",
+    "use",
+    "vineyard"
+   ],
+   "additionalProperties": {
+    "type": "string",
+    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+   }
+  },
+  "datasets": {
+   "type": "object"
+  },
+  "farms": {
+   "type": "object",
+   "required": [
+    "types",
+    "rows",
+    "total"
+   ],
+   "properties": {
+    "types": {
+     "type": "array",
+     "minItems": 3,
+     "items": {
+      "type": "string"
+     }
+    },
+    "rows": {
+     "type": "object",
+     "minProperties": 21
+    },
+    "total": {
+     "type": "number"
+    }
+   }
+  },
+  "size": {
+   "type": "object",
+   "required": [
+    "classes",
+    "rows",
+    "fileTotal"
+   ],
+   "properties": {
+    "classes": {
+     "type": "array",
+     "minItems": 5,
+     "maxItems": 5,
+     "items": {
+      "type": "string"
+     }
+    },
+    "rows": {
+     "type": "object",
+     "minProperties": 21
+    },
+    "fileTotal": {
+     "type": "object"
+    }
+   }
+  },
+  "use": {
+   "type": "object",
+   "required": [
+    "uses",
+    "rows",
+    "fileTotal"
+   ],
+   "properties": {
+    "uses": {
+     "type": "array",
+     "minItems": 10,
+     "items": {
+      "type": "string"
+     }
+    },
+    "rows": {
+     "type": "object",
+     "minProperties": 21
+    },
+    "fileTotal": {
+     "type": "object"
+    }
+   }
+  },
+  "vineyard": {
+   "type": "object",
+   "required": [
+    "active",
+    "cleared",
+    "mixed"
+   ],
+   "properties": {
+    "active": {
+     "type": "object",
+     "required": [
+      "rows",
+      "total"
+     ],
+     "properties": {
+      "rows": {
+       "type": "object",
+       "minProperties": 17
+      },
+      "total": {
+       "type": "object"
+      }
+     }
+    },
+    "cleared": {
+     "type": "object",
+     "required": [
+      "rows",
+      "total"
+     ],
+     "properties": {
+      "rows": {
+       "type": "object",
+       "minProperties": 17
+      },
+      "total": {
+       "type": "object"
+      }
+     }
+    },
+    "mixed": {
+     "type": "object",
+     "required": [
+      "rows",
+      "total"
+     ],
+     "properties": {
+      "rows": {
+       "type": "object",
+       "minProperties": 17
+      },
+      "total": {
+       "type": "object"
+      }
+     }
+    }
+   }
+  }
+ }
+}

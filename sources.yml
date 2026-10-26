@@ -1160,6 +1160,17 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/hr-dzs/crops.json data/hr-dzs/livestock.json data/hr-dzs/dairy.json data/hr-dzs/prices.json data/hr-dzs/balance.json
     data: [hr-dzs/crops.json, hr-dzs/livestock.json, hr-dzs/dairy.json, hr-dzs/prices.json, hr-dzs/balance.json, hr-dzs-log.txt]
     message: Cultivos, ganadería, leche, precios agrarios y balances de Croacia (DZS)
+  - id: hr-apprrr
+    name: Update Croatia farms, ARKOD land and vineyards by county (APPRRR open data)
+    cron: ['15 10 14 * *']
+    pre: ['python3 -m pip install --quiet openpyxl']
+    script: scripts/update-hr-apprrr.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/hr-apprrr/counties.json
+    data: [hr-apprrr/counties.json, hr-apprrr-log.txt]
+    message: Explotaciones, ARKOD y viñedo por provincia de Croacia (APPRRR)
   - id: hr-ghg-agri
     name: Update Croatia agricultural greenhouse gas emissions (Eurostat env_air_gge)
     cron: ['35 8 4 * *']

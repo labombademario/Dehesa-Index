@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-304 workflows (254 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+305 workflows (255 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -283,6 +283,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-germany-extra.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-germany-destatis-extra.py | germany-extra-stats.json | finish, validate-files |
 | update-germany-livestock.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-germany-livestock.py | germany-livestock.json | finish, validate-files |
 | update-germany.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-germany.py | germany-agri.json, germany-stats.json | finish, validate-files |
+| update-hr-apprrr.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-hr-apprrr.py | hr-apprrr/counties.json | finish, validate-files |
 | update-hr-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-hr-diesel.py | hr-diesel.json | finish, validate-files |
 | update-hr-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-hr-drought.py | hr-drought.json | finish, validate-files |
 | update-hr-dzs.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-hr-dzs.py | hr-dzs/balance.json, hr-dzs/crops.json, hr-dzs/dairy.json … | finish, validate-files |

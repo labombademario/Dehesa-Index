@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T23:26:07Z",
+ "generatedAt": "2026-10-26T23:42:40Z",
  "summary": {
-  "sources": 179,
-  "sourcesApto": 163,
+  "sources": 180,
+  "sourcesApto": 164,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 391,
-  "datasets_apto": 255,
+  "datasets": 392,
+  "datasets_apto": 256,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -81,6 +81,10 @@
   },
   "ama_agrardiesel": {
    "name": "AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG",
+   "verdict": "apto"
+  },
+  "apprrr_hr": {
+   "name": "Croatia — APPRRR (Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju), datos abiertos en data.gov.hr",
    "verdict": "apto"
   },
   "argentina_datos_abiertos": {

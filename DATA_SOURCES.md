@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 177 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
+Resumen: 178 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
 
-## VERIFIED (177)
+## VERIFIED (178)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -28,6 +28,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 27 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `alberta_inputs` | Alberta Agriculture and Irrigation — Alberta Farm Input Prices | CA | OGL-Alberta | si/si | si | 54 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `ama_agrardiesel` | AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG | AT | PUBLIC-LAW | si/si | si | 0 |  |
+| `apprrr_hr` | Croatia — APPRRR (Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju), datos abiertos en data.gov.hr | HR | HR-OTVORENA-DOZVOLA | si/si | si | 0 | Citar la fuente. Datos agregados por provincia (suma de los asentamientos del fichero); un PG con parcelas en varias provincias cuenta en ca… |
 | `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 89 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
 | `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 14 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
 | `bank_of_england` | Bank of England — Statistical Interactive Database (Bank Rate) | UK | OGL-UK-3.0 | si/si | si | 1 | La página legal excluye algunos datos de tipos de cambio de terceros; solo se usa Bank Rate (IUDBEDR), que es dato propio del Banco. |

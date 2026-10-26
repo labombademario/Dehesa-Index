@@ -500,6 +500,11 @@
     var go2 = function () { if (window.DIHrDzs && ST.c === cc) window.DIHrDzs.mount(el2, lang()); };
     var mod2 = function () { var run = function () { if (window.DIHrDzs) go2(); else js('js/hr-dzs.js?v=20261026', go2); }; if (window.DICite) run(); else js('js/cite.js?v=0', run); };
     nearView(el2, function () { if (window.ESUI) mod2(); else js('js/es-ui.js?v=20261015', mod2); });
+    /* Croacia por provincia: APPRRR (js/hr-apprrr.js; explotaciones, ARKOD y viñedo de las 21 provincias; data/hr-apprrr/) */
+    var el3 = document.createElement('div'); el3.id = 'pp-hr-apprrr'; el3.style.minHeight = '1px'; el2.parentNode.insertBefore(el3, el2.nextSibling);
+    var go3 = function () { if (window.DIHrApprrr && ST.c === cc) window.DIHrApprrr.mount(el3, lang()); };
+    var mod3 = function () { var run = function () { if (window.DIHrApprrr) go3(); else js('js/hr-apprrr.js?v=20261026', go3); }; if (window.DICite) run(); else js('js/cite.js?v=0', run); };
+    nearView(el3, function () { if (window.ESUI) mod3(); else js('js/es-ui.js?v=20261015', mod3); });
   }
   /* Irlanda: gasoleo (Boletin Petrolero UE, despachos de gasoleo marcado e indice de combustibles agrarios del CSO, js/ie-diesel.js) y nitratos/agua (EPA via CSO, js/ie-nitrates.js) */
   function ieUp() {

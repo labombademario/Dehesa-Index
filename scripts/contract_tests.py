@@ -5181,6 +5181,47 @@ def _hr_at(t, size, ix):
     p = 0
     for k, s in enumerate(size): p = p * s + ix.get(k, 0)
     return t["v"][p]
+def hr_apprrr(doc, errs, warns, stats):
+    """Croacia por provincia (APPRRR): las 21 provincias en cada bloque, explotaciones por tipo que suman el total, ARKOD por tamaño y por uso que suman lo mismo (±3%), viñedo con provincias que suman el total y densidad de cepas posible."""
+    if doc["source"]["id"] != "apprrr_hr": errs.append("la fuente no es apprrr_hr")
+    C = doc["counties"]; n = 0
+    if len(set(C)) != 21: errs.append("las provincias no son 21 distintas")
+    for blk in ("farms", "size", "use"):
+        miss = [c for c in C if c not in doc[blk]["rows"]]
+        if miss: errs.append("%s: faltan provincias %s" % (blk, miss[:3]))
+    F = doc["farms"]; tot = 0
+    for c, r in F["rows"].items():
+        s = sum(r[t] for t in F["types"])
+        if abs(s - r["total"]) > 1 + 0.01 * r["total"]: errs.append("%s: los tipos de explotacion suman %d y el total es %d" % (c, s, r["total"]))
+        if any(r[t] < 0 for t in F["types"]): errs.append(c + ": explotaciones negativas")
+        tot += r["total"]; n += 1
+    if abs(tot - F["total"]) > 1: errs.append("explotaciones: las provincias suman %d y el total es %d" % (tot, F["total"]))
+    if not 80000 < F["total"] < 400000: errs.append("explotaciones: total imposible %s" % F["total"])
+    S, U = doc["size"], doc["use"]; sh = uh = 0
+    for c, r in S["rows"].items():
+        for k in S["classes"]:
+            x = r[k]
+            if x["ha"] < 0 or x["parcels"] < 0: errs.append("%s/%s: valor negativo" % (c, k))
+            if x["parcels"] > 0 and x["ha"] / x["parcels"] > 5000: errs.append("%s/%s: %.0f ha por parcela" % (c, k, x["ha"] / x["parcels"]))
+            sh += x["ha"]
+    for c, r in U["rows"].items():
+        for k in U["uses"]:
+            x = r[k]
+            if x["ha"] < 0 or x["parcels"] < 0: errs.append("%s/%s: valor negativo" % (c, k))
+            uh += x["ha"]
+        n += 1
+    if sh <= 0 or abs(uh - sh) > 0.03 * sh: errs.append("ARKOD por tamaño (%.0f ha) y por uso (%.0f ha) no cuadran" % (sh, uh))
+    if not 700000 < sh < 2500000: errs.append("superficie ARKOD imposible: %.0f ha" % sh)
+    V = doc["vineyard"]
+    for k in ("active", "cleared", "mixed"):
+        rows = V[k]["rows"]; ha = sum(x["ha"] for x in rows.values())
+        if abs(ha - V[k]["total"]["ha"]) > max(1, 0.005 * V[k]["total"]["ha"]): errs.append("vinedo %s: provincias %.0f ha y total %.0f" % (k, ha, V[k]["total"]["ha"]))
+        for c, x in rows.items():
+            if x["ha"] < 0 or x["parcels"] < 0 or x["farms"] < 0: errs.append("vinedo %s/%s: negativo" % (k, c))
+    for c, x in V["active"]["rows"].items():
+        if x["ha"] >= 5 and not 1000 < x["vines"] / x["ha"] < 20000: errs.append("vinedo %s: %.0f cepas por ha" % (c, x["vines"] / x["ha"]))
+    if not 8000 < V["active"]["total"]["ha"] < 40000: errs.append("vinedo: superficie total imposible")
+    stats["provincias"] = len(C); stats["filas"] = n
 def hr_dzs(doc, errs, warns, stats):
     """Estadistica agraria de Croacia (DZS): cada tabla con tantos valores como celdas, un eje de años al dia, sin negativos; cultivos: 4 regiones suman la Republica en superficie y produccion y el rendimiento publicado cuadra con produccion/superficie, el trigo suma sus clases; ganado y leche en rangos posibles; indices de precios con 2020 = 100; balances y abonos con totales posibles."""
     T = doc["tables"]; n = 0

@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T23:30:12Z",
+ "generatedAt": "2026-10-26T23:42:40Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 179,
-  "sourcesApto": 163,
+  "sources": 180,
+  "sourcesApto": 164,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 391,
-  "datasets_apto": 255,
+  "datasets": 392,
+  "datasets_apto": 256,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -307,6 +307,23 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attribution": "AMA, Infoblatt Agrardieselrückvergütung 2026 und 2027; § 7 MinStG"
+  },
+  {
+   "id": "apprrr_hr",
+   "name": "Croatia — APPRRR (Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju), datos abiertos en data.gov.hr",
+   "url": "https://data.gov.hr/organization/agencija-za-placanja-u-poljoprivredi-ribarstvu-i-ruralnom-razvoju",
+   "country": "HR",
+   "licenseId": "HR-OTVORENA-DOZVOLA",
+   "licenseName": "Otvorena dozvola Republike Hrvatske (open-license en data.gov.hr)",
+   "licenseUrl": "https://data.gov.hr/otvorena-dozvola",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju (APPRRR), data.gov.hr, Otvorena dozvola RH. Elaboracion de dehesaindex.com.",
+   "conditions": "Citar la fuente. Datos agregados por provincia (suma de los asentamientos del fichero); un PG con parcelas en varias provincias cuenta en cada una."
   },
   {
    "id": "argentina_datos_abiertos",
@@ -6178,6 +6195,14 @@
     "usda_ers",
     "usda_nass",
     "world_bank"
+   ]
+  },
+  {
+   "path": "data/hr-apprrr/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "apprrr_hr"
    ]
   },
   {
