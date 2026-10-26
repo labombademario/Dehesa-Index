@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T21:38:00Z",
+ "generatedAt": "2026-10-26T21:42:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 285,
   "late": 2,
   "error": 0,
-  "not_run": 2,
+  "not_run": 3,
   "unknown": 0
  },
  "global": "late",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-26T18:58:15.383780+00:00",
   "repoGeneratedAt": "2026-10-26T18:58:15.383780+00:00",
-  "checkedAt": "2026-10-26T21:38:00Z"
+  "checkedAt": "2026-10-26T21:42:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-26T21:11:04Z"
+     "lastChange": "2026-10-26T21:42:36Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -1513,6 +1513,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-el-elgo.yml",
+   "name": "Update Greece milk deliveries and prices, slaughter and dairy production by regional unit (ELGO-DIMITRA, data.gov.gr)",
+   "crons": [
+    "50 9 24 * *"
+   ],
+   "nextRun": "2026-11-24T09:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
   },
   {
    "workflow": "update-el-elstat.yml",
@@ -4193,14 +4206,14 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "cancelled",
     "event": "schedule",
-    "startedAt": "2026-10-26T18:52:06Z",
-    "durationSec": 376,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40381560128"
+    "startedAt": "2026-10-26T21:39:39Z",
+    "durationSec": 186,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40406212423"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
     "failed": 0
    },
@@ -4473,7 +4486,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T21:25:42Z"
+     "lastChange": "2026-10-26T21:40:43Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4481,11 +4494,11 @@
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-26T21:11:04Z"
+     "lastChange": "2026-10-26T21:42:36Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-26T21:11:04Z"
+     "lastChange": "2026-10-26T21:42:36Z"
     },
     {
      "path": "data/pack"
@@ -4919,7 +4932,7 @@
    "crons": [
     "40 5,13,21 * * *"
    ],
-   "nextRun": "2026-10-26T21:40:00Z",
+   "nextRun": "2026-10-27T05:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5898,7 +5911,7 @@
     "40 21 * * 1",
     "40 13 * * 2"
    ],
-   "nextRun": "2026-10-26T21:40:00Z",
+   "nextRun": "2026-10-27T13:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
