@@ -32,4 +32,5 @@ check(r['id'] == 'kaub' and r['name'] == 'Kaub' and r['first'] == '2026-10-20' a
 st2 = dict(st); st2['timeseries'] = [st['timeseries'][0]]
 check(M.station(st2, 'Rhein', None, lambda u, s: [], now) is None, 'sin nivel actual no se publica')
 check(M.pick([st])[('RHEIN', 'KAUB')] is st and ('ELBE', 'DRESDEN') not in M.pick([st]), 'seleccion por rio y estacion')
+check(M.DISPLAY['Trier UP'] == 'Trier' and ('MOSEL', 'Cochem') in [(w, n) for w, n, _ in M.STATIONS], 'estaciones de Mosela con nombre limpio')
 print('Rios alemanes (PEGELONLINE): %d fallos' % len(fails)); sys.exit(1 if fails else 0)

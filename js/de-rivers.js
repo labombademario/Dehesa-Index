@@ -31,7 +31,7 @@
   function day(s, lg) { var q = String(s).slice(0, 10).split('-'); try { return new Intl.DateTimeFormat(LOC[lg], { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(+q[0], +q[1] - 1, +q[2]))); } catch (e) { return s; } }
   function when(s, lg) { return day(s, lg) + ', ' + String(s).slice(11, 16); }
   function ts(s) { var q = String(s).split('-'); return Date.UTC(+q[0], +q[1] - 1, +q[2]); }
-  var RN = { es: { Rhein: 'Rin', Main: 'Meno', Elbe: 'Elba', Donau: 'Danubio' }, en: { Rhein: 'Rhine', Main: 'Main', Elbe: 'Elbe', Donau: 'Danube' }, fr: { Rhein: 'Rhin', Main: 'Main', Elbe: 'Elbe', Donau: 'Danube' }, it: { Rhein: 'Reno', Main: 'Meno', Elbe: 'Elba', Donau: 'Danubio' } };
+  var RN = { es: { Rhein: 'Rin', Main: 'Meno', Elbe: 'Elba', Donau: 'Danubio', Mosel: 'Mosela', Neckar: 'Neckar', Weser: 'Weser' }, en: { Rhein: 'Rhine', Main: 'Main', Elbe: 'Elbe', Donau: 'Danube', Mosel: 'Moselle', Neckar: 'Neckar', Weser: 'Weser' }, fr: { Rhein: 'Rhin', Main: 'Main', Elbe: 'Elbe', Donau: 'Danube', Mosel: 'Moselle', Neckar: 'Neckar', Weser: 'Weser' }, it: { Rhein: 'Reno', Main: 'Meno', Elbe: 'Elba', Donau: 'Danubio', Mosel: 'Mosella', Neckar: 'Neckar', Weser: 'Weser' } };
   function rn(s, lg) { return (RN[lg] && RN[lg][s.river]) || s.river; }
   function stName(s, lg) { return rn(s, lg) + ' · ' + s.name; }
   function pr(x) { return x.ref.period ? ' <span style="color:var(--text-faint);font-size:11px;white-space:nowrap">' + esc(x.ref.period[0] + '–' + String(x.ref.period[1]).slice(2)) + '</span>' : ''; }

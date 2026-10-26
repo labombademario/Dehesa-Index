@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Nivel y caudal de los rios alemanes de navegacion (Rin, Meno, Elba y Danubio), PEGELONLINE de la Administracion federal de vias navegables (WSV, licencia DL-DE-Zero-2.0).
+"""Nivel y caudal de los rios alemanes de navegacion (Rin, Meno, Mosela, Neckar, Weser, Elba y Danubio), PEGELONLINE de la Administracion federal de vias navegables (WSV, licencia DL-DE-Zero-2.0).
 Escribe data/de-rivers.json y data/de-rivers-log.txt.
  - Fuente: https://www.pegelonline.wsv.de/webservices/rest-api/v2 . Datos brutos (Rohdaten) cada 15 minutos, sin clave. La API solo da unos 30 dias de historia
    (start=P30D como maximo), asi que cada ejecucion recalcula la media diaria de esos 30 dias y la UNE a la historia ya guardada en data/de-rivers.json: la serie
@@ -19,7 +19,9 @@ API = "https://www.pegelonline.wsv.de/webservices/rest-api/v2"
 UA = {"User-Agent": "Dehesa-Index-data-bot/1.0 (https://dehesaindex.com)"}
 # (rio en PEGELONLINE, estacion en PEGELONLINE, rio para mostrar), de aguas arriba a aguas abajo dentro de cada rio
 STATIONS = [("RHEIN", "MAXAU", "Rhein"), ("RHEIN", "KAUB", "Rhein"), ("RHEIN", "KÖLN", "Rhein"), ("RHEIN", "DUISBURG-RUHRORT", "Rhein"), ("RHEIN", "EMMERICH", "Rhein"),
-            ("MAIN", "FRANKFURT OSTHAFEN", "Main"), ("ELBE", "DRESDEN", "Elbe"), ("ELBE", "MAGDEBURG-STROMBRÜCKE", "Elbe"), ("DONAU", "PASSAU DONAU", "Donau")]
+            ("MAIN", "FRANKFURT OSTHAFEN", "Main"), ("ELBE", "DRESDEN", "Elbe"), ("ELBE", "MAGDEBURG-STROMBRÜCKE", "Elbe"), ("DONAU", "PASSAU DONAU", "Donau"),
+            ("MOSEL", "Cochem", "Mosel"), ("MOSEL", "Trier UP", "Mosel"), ("NECKAR", "Heidelberg UP", "Neckar"), ("NECKAR", "Lauffen", "Neckar"), ("WESER", "VLOTHO", "Weser"), ("WESER", "INTSCHEDE", "Weser")]
+DISPLAY = {"Trier UP": "Trier", "Heidelberg UP": "Heidelberg"}   # el sufijo UP del PEGELONLINE es el pegel de aguas arriba de la esclusa
 REFS = ["NNW", "MNW", "MW", "MHW", "HHW", "GlW"]
 KEEP_DAYS = 800          # historia propia guardada
 MIN_COVER = 0.8          # parte minima de las lecturas esperadas de un dia
@@ -88,7 +90,7 @@ def station(st, shown, old, meas_for, now):
     days.pop(today, None)   # el dia en curso esta incompleto
     ks = sorted(days)[-KEEP_DAYS:]
     cq = (tq or {}).get("currentMeasurement")
-    return {"id": st["shortname"].lower().replace(" ", "-"), "uuid": uid, "river": shown, "name": st["shortname"].title().replace(" Donau", ""),
+    return {"id": st["shortname"].lower().replace(" ", "-"), "uuid": uid, "river": shown, "name": DISPLAY.get(st["shortname"]) or st["shortname"].title().replace(" Donau", ""),
             "km": st.get("km"), "agency": st.get("agency"),
             "w": {"value": cw["value"], "time": cw["timestamp"], "state": state if state in STATES else None, "unit": "cm"},
             "q": {"value": cq["value"], "time": cq["timestamp"], "unit": "m3/s"} if cq and cq.get("value") is not None else None,

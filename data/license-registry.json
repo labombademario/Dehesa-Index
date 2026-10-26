@@ -5339,7 +5339,7 @@
    "evidence": "Condiciones de uso de PEGELONLINE (https://www.pegelonline.wsv.de/gast/nutzungsbedingungen, versión del 21-may-2024) y página de la API REST, leídas el 26 oct 2026: «auf der Grundlage der Lizenz DL-DE->Zero-2.0»; los datos pueden reproducirse y usarse para fines comerciales y no comerciales.",
    "used": true,
    "aliases": [],
-   "notes": "Niveles y caudales brutos (Rohdaten) de 9 estaciones del Rin, el Meno, el Elba y el Danubio. La media diaria y la historia propia son cálculo de Dehesa Index; el estado bajo/normal/alto y los valores de referencia son los de la WSV.",
+   "notes": "Niveles y caudales brutos (Rohdaten) de 15 estaciones del Rin, el Meno, la Mosela, el Neckar, el Weser, el Elba y el Danubio. La media diaria y la historia propia son cálculo de Dehesa Index; el estado bajo/normal/alto y los valores de referencia son los de la WSV.",
    "short": "PEGELONLINE (WSV)",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: condiciones de uso de PEGELONLINE (DL-DE-Zero-2.0, uso comercial permitido)."
@@ -7876,7 +7876,7 @@
   },
   "data/de-rivers.json": {
    "default": "pegelonline",
-   "notes": "Nivel (cm) y caudal (m3/s) de 9 estaciones del Rin, el Meno, el Elba y el Danubio: lectura actual, media diaria desde que empezó la serie propia (la API solo da 30 días) y valores de referencia oficiales de cada estación (PEGELONLINE, WSV). Datos brutos sin revisar."
+   "notes": "Nivel (cm) y caudal (m3/s) de 15 estaciones del Rin, el Meno, la Mosela, el Neckar, el Weser, el Elba y el Danubio: lectura actual, media diaria desde que empezó la serie propia (la API solo da 30 días) y valores de referencia oficiales de cada estación (PEGELONLINE, WSV). Datos brutos sin revisar."
   }
  },
  "derived": [
