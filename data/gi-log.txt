@@ -1,11 +1,11 @@
 INAO areas 1443 AOC/AOP, 371 IGP/IG
 Francia: region asignada a 489 denominaciones; sin region 9 (Cabernet d'Anjou, Rosé d'Anjou, Pouilly-sur-Loire, Côtes de Blaye, Sainte-Foy-Bordeaux, Banyuls grand cru, Graves supérieures, Le Pays Cathare, Cabernet de Saumur)
-Italia: fuente no disponible Regione Umbria (CC BY 4.0) <HTTPError 503: 'Service Unavailable'>
-Italia: fuente no disponible Regione Umbria (CC BY 4.0) <HTTPError 503: 'Service Unavailable'>
+Italia UMB 21 nombres de Regione Umbria (CC BY 4.0)
+Italia UMB 10 nombres de Regione Umbria (CC BY 4.0)
 Italia PUG 38 nombres de Regione Puglia (CC BY 4.0)
 Italia TAA 8 nombres de Provincia autonoma di Trento (CC0)
 Italia TAA 50 nombres de Provincia autonoma di Bolzano (CC0)
 Italia LOM 45 nombres de Regione Lombardia (CC0)
 Italia TOS 78 nombres de Regione Toscana (CC BY 4.0)
-Italia: region asignada a 145 de 578 denominaciones
+Italia: region asignada a 167 de 578 denominaciones
 paises 30 vinos 1651 quesos 271
