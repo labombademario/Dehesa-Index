@@ -1747,6 +1747,10 @@
   "eu-fish-first-sales.json": [
    "eu-fish-first-sales",
    []
+  ],
+  "eu-fish-retail-prices.json": [
+   "eu-fish-retail-prices",
+   []
   ]
  },
  "globs": {

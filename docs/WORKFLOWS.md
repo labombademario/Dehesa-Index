@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-293 workflows (244 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+294 workflows (245 generados desde `sources.yml`, 49 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -146,6 +146,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eu-fadn.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-fadn.py | eu-fadn.json | finish, validate-files |
 | update-eu-farm-economics.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-farm-economics.py | eu-farm-economics.json | finish, validate-files |
 | update-eu-fish-first-sales.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-fish-first-sales.py | eu-fish-first-sales.json | finish, validate-files |
+| update-eu-fish-retail-prices.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-fish-retail-prices.py | eu-fish-retail-prices.json | finish, validate-files |
 | update-eu-food-monitor.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-food-monitor.py | eu-food-monitor-stats.json, eu-food-monitor/index.json | finish, validate-files |
 | update-eu-fv-farm.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-eu-fv-farm.py | eu-fv-farm.json | finish, validate-files |
 | update-eu-gapfill.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-eu-gapfill.py | eu-gapfill-stats.json | finish, validate-files |

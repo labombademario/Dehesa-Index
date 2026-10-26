@@ -1573,6 +1573,16 @@ sources:
     data: [eu-fish-first-sales.json]
     log: eu-fish-first-sales-log.txt
     message: Precio en primera venta del pescado - UE (EUMOFA)
+  - id: eu-fish-retail-prices
+    name: Update EU online retail fish prices by member state and product (EUMOFA bulk download)
+    cron: ['50 9 20 * *']
+    script: scripts/update-eu-fish-retail-prices.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [eu-fish-retail-prices.json]
+    log: eu-fish-retail-prices-log.txt
+    message: Precio minorista online del pescado - UE (EUMOFA)
   - id: us-sulphur
     name: Update US sulphur import unit value (US Census Bureau, HS 2503)
     cron: ['20 10 8,10,14 * *']

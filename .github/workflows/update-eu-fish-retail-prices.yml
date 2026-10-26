@@ -1,0 +1,37 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update EU online retail fish prices by member state and product (EUMOFA bulk download)
+on:
+  schedule:
+    - cron: '50 9 20 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-eu-fish-retail-prices
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-eu-fish-retail-prices.py
+        timeout-minutes: 15
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/eu-fish-retail-prices.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/eu-fish-retail-prices.json
+      - name: Publicar
+        if: always()
+        run: bash scripts/publish-data.sh "Precio minorista online del pescado - UE (EUMOFA)" data/eu-fish-retail-prices.json data/eu-fish-retail-prices-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

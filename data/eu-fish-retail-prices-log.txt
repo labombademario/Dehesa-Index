@@ -1,0 +1,7 @@
+22:45:24 2021_Daily-online retail prices.csv: 13.8 MB, 17502 filas con precio por kilo
+22:45:28 2022_Daily-online retail prices.csv: 57.2 MB, 81361 filas con precio por kilo
+22:45:33 2023_Daily-online retail prices.csv: 70.3 MB, 126912 filas con precio por kilo
+22:45:39 2024_Daily-online retail prices.csv: 91.6 MB, 183559 filas con precio por kilo
+22:45:47 2025_Daily-online retail prices.csv: 108.6 MB, 243065 filas con precio por kilo
+22:45:52 2026_Daily-online retail prices.csv: 70.1 MB, 144403 filas con precio por kilo
+22:45:52 eu-fish-retail-prices.json: 17 paises, 55 series, ultimo mes 2026-08, 796802 filas leidas

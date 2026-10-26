@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T02:50:00Z",
+ "generatedAt": "2026-10-26T03:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 279,
   "late": 2,
   "error": 0,
   "not_run": 1,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "late",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-26T01:05:52.638592+00:00",
   "repoGeneratedAt": "2026-10-26T01:05:52.638592+00:00",
-  "checkedAt": "2026-10-26T02:50:00Z"
+  "checkedAt": "2026-10-26T03:00:00Z"
  },
  "pipelines": [
   {
@@ -2255,6 +2255,19 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-eu-fish-retail-prices.yml",
+   "name": "Update EU online retail fish prices by member state and product (EUMOFA bulk download)",
+   "crons": [
+    "50 9 20 * *"
+   ],
+   "nextRun": "2026-11-20T09:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-eu-food-monitor.yml",
    "name": "Update Eurostat food price monitor (prc_fpmt_m, 41 products across the supply chain)",
    "crons": [
@@ -4391,7 +4404,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T02:17:45Z"
+     "lastChange": "2026-10-26T02:52:48Z"
     },
     {
      "path": "data/source-candidates.json",
