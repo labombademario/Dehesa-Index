@@ -117,7 +117,7 @@ FAMILIES = {
                     'Le gazole est raffiné à partir du brut : son prix suit le pétrole presque sans délai ; le gaz naturel a son propre marché et, en Europe depuis 2021, évolue à part.',
                     'Il gasolio si raffina dal greggio, quindi il suo prezzo segue il petrolio quasi senza ritardo; il gas naturale ha un mercato proprio e in Europa, dal 2021, è andato per conto suo.'),
    'pairs': [(('eu', 'petroleo_brent'), ('eu', 'diesel')), (('us', 'petroleo_wti'), ('us', 'diesel')), (('eu', 'petroleo_brent'), ('eu', 'gas_natural')), (('us', 'petroleo_wti'), ('us', 'gas_natural'))]},
- 'crude_to_grain': {'channel': 'crude', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 6],
+ 'crude_to_grain': {'channel': 'crude', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 6], 'longrun': True,
    'hypothesis': L4('El petróleo encarece el gasóleo, el transporte y, vía gas y energía, los fertilizantes; además tira de la demanda de grano para biocombustibles y suele moverse con el resto de materias primas cuando cambia el ciclo económico o hay un choque de energía. El efecto es indirecto y mezcla causas distintas: la relación es mucho más clara en los años de choque energético (2021-2022) que en los tranquilos, y un nivel de precios que sube junto no implica que los cambios de cada mes vayan juntos.',
                     'Oil raises the cost of diesel, transport and, through gas and energy, fertiliser; it also pulls on grain demand for biofuels and tends to move with other commodities when the economic cycle turns or there is an energy shock. The effect is indirect and mixes different causes: the link is much clearer in energy-shock years (2021-2022) than in calm ones, and price levels that rise together do not mean that each month’s changes move together.',
                     'Le pétrole renchérit le gazole, le transport et, via le gaz et l’énergie, les engrais ; il tire aussi la demande de grains pour les biocarburants et évolue souvent avec les autres matières premières quand le cycle économique tourne ou lors d’un choc énergétique. L’effet est indirect et mêle des causes différentes : le lien est bien plus net les années de choc énergétique (2021-2022) que les années calmes, et des niveaux de prix qui montent ensemble ne signifient pas que les variations de chaque mois vont de pair.',
@@ -249,6 +249,23 @@ def special(region, ref):
     return None
 
 
+LR_SPLIT = 2021 * 12   # 2021-01: antes y despues del choque energetico
+
+def longrun(sa, sb):
+    """Vista de largo plazo (solo familias con 'longrun'): correlacion de NIVELES y de cambios a 12 MESES, en el mismo mes, en todo el periodo comun y antes/despues de 2021-01.
+    Los niveles que suben juntos dan correlacion alta sin que una serie mueva a la otra, y los cambios a 12 meses se solapan (cada mes comparte 11 con el siguiente): por eso se publica
+    'effN' (meses / 12, orden de magnitud de las observaciones independientes) y no se calcula confianza ni estado con ella. Un tramo necesita 24 meses."""
+    ks = sorted(set(sa) & set(sb))
+    def seg(keys):
+        if len(keys) < 24: return None
+        lv = RE.pearson([sa[k] for k in keys], [sb[k] for k in keys])
+        yk = [k for k in keys if sa.get(k - 12) and sb.get(k - 12)]
+        yo = RE.pearson([sa[k] / sa[k - 12] - 1 for k in yk], [sb[k] / sb[k - 12] - 1 for k in yk]) if len(yk) >= 24 else None
+        return {'periodStart': RE.ym_of(keys[0], 'monthly'), 'periodEnd': RE.ym_of(keys[-1], 'monthly'), 'n': len(keys), 'level': None if lv is None else round(lv, 3),
+                'yoy': None if yo is None else round(yo, 3), 'yoyN': len(yk), 'effN': round(len(yk) / 12.0, 1)}
+    out = {'all': seg(ks), 'before': seg([k for k in ks if k < LR_SPLIT]), 'since': seg([k for k in ks if k >= LR_SPLIT]), 'split': '2021-01'}
+    return out if out['all'] else None
+
 def main():
     now_day = FR.today_ord(); rels = []
     for fam, spec in FAMILIES.items():
@@ -284,6 +301,9 @@ def main():
                 o = LATEST.get(rg + '/' + pr); fs[k] = FR.evaluate(o['observationDate'], o['frequency'], o['sourceId'], now_day)['state'] if o else 'PENDING'
             rel['freshness'] = fs
             rel['explanation'] = explain(rel)
+            if spec.get('longrun') and not sp_a:
+                lr = longrun(sa2, sb2)
+                if lr: rel['longRun'] = lr
             rels.append(rel)
     order = {'OBSERVED_RELATIONSHIP': 0, 'WEAK_OR_UNSTABLE': 1, 'INSUFFICIENT_DATA': 2}; crank = {'HIGH': 0, 'MEDIUM': 1, 'LOW': 2}
     rels.sort(key=lambda x: (order[x['status']], crank[x['confidence']], -abs(x['stat']['correlation'] or 0), x['id']))
