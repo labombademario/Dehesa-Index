@@ -292,10 +292,17 @@
   }
   /* lleva al gráfico completo (explorador) y lo mantiene a la vista mientras los bloques de más arriba terminan de cargarse y mueven la página */
   function goExplorer() {
-    var stop = false, off = function () { stop = true; ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.removeEventListener(ev, off, true); }); };
-    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.addEventListener(ev, off, true); });
-    var align = function () { var e = document.getElementById('ps-explorer'); if (!e || stop) return; var h = (window.DehesaShared && DehesaShared.frHdr) ? 0 : 0, r = e.getBoundingClientRect(); window.scrollTo(0, window.pageYOffset + r.top - 120 - h); };
-    align(); [250, 700, 1500, 2800].forEach(function (ms) { setTimeout(function () { align(); if (ms === 2800) off(); }, ms); });
+    /* Fija el explorador en pantalla hasta que la página se asiente (los bloques de arriba cargan y cambian la altura). Solo cancela una acción real del usuario
+       pasado un margen de 700 ms: la inercia del trackpad o del dedo justo después de pulsar no cuenta. Con ResizeObserver se realinea en cada cambio de altura. */
+    var t0 = Date.now(), stop = false, evs = ['wheel', 'touchmove', 'keydown'], timer = 0, ro = null;
+    var done = function () { if (stop) return; stop = true; evs.forEach(function (ev) { window.removeEventListener(ev, off, true); }); if (ro) { try { ro.disconnect(); } catch (e) {} } clearInterval(timer); };
+    var off = function (e) { if (Date.now() - t0 < 700) return; if (e && e.type === 'wheel' && Math.abs(e.deltaY || 0) < 4) return; done(); };
+    evs.forEach(function (ev) { window.addEventListener(ev, off, { capture: true, passive: true }); });
+    var align = function () { if (stop) return; var e = document.getElementById('ps-explorer'); if (!e) return; var d = e.getBoundingClientRect().top - 120; if (Math.abs(d) > 2) window.scrollBy(0, d); };
+    align();
+    var rt = document.getElementById('paises-body'); if (window.ResizeObserver && rt) { try { ro = new ResizeObserver(function () { align(); }); ro.observe(rt); } catch (e) {} }
+    timer = setInterval(function () { align(); if (Date.now() - t0 > 4500) done(); }, 120);
+    [0, 60, 250, 700, 1500].forEach(function (ms) { setTimeout(align, ms); });
   }
   function frameUp(c) {
     var F = window.DehesaShared && window.DehesaShared.frame, L = FRL[lang()] || FRL.es; if (!F) return;
@@ -912,7 +919,7 @@
       det.appendChild(sm); var box = document.createElement('div'); box.style.marginTop = '6px'; box.innerHTML = DIWatch.editor(ST.c, cur.id, lang()); det.appendChild(box);
       var after = wb.parentNode; after.parentNode.insertBefore(det, after.nextSibling); DIWatch.bindEditor(box, build);
     }
-    Array.prototype.forEach.call(root.querySelectorAll('[data-pg],[data-ps]'), function (el) { el.onclick = function () { var g = el.getAttribute('data-pg'), sid = el.getAttribute('data-ps'); if (g) { ST.g = g; ST.s = null; } else { var s = c.series.filter(function (x) { return x.id === sid; })[0]; if (s) { ST.g = s.group; ST.s = sid; } } build(); goExplorer(); }; });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-pg],[data-ps]'), function (el) { el.onclick = function () { var g = el.getAttribute('data-pg'), sid = el.getAttribute('data-ps'); if (g) { ST.g = g; ST.s = null; } else { var s = c.series.filter(function (x) { return x.id === sid; })[0]; if (s) { ST.g = s.group; ST.s = sid; } } var mh = root.offsetHeight; root.style.minHeight = mh + 'px'; build(); goExplorer(); setTimeout(function () { root.style.minHeight = ''; }, 4600); }; });
         try { var qq = new URLSearchParams(window.location.search); qq.set('c', ST.c); ['g', 's', 'r'].forEach(function (k) { var v = ST[k]; if (v && v !== 'all' && !(k === 'r' && v === 'max')) qq.set(k, v); else qq.delete(k); }); if (ST.cmp) qq.set('cmp', ST.cmp.cc + ':' + ST.cmp.id); else qq.delete('cmp'); history.replaceState(null, '', '?' + qq.toString() + window.location.hash); } catch (e) {} bind('ps-c', 'c'); bind('ps-g', 'g'); bind('ps-s', 's'); bind('ps-r', 'r');
   }
   /* Al cambiar un desplegable la ficha se repinta y los bloques de arriba se recargan: se mantiene el control en el mismo sitio de la pantalla
