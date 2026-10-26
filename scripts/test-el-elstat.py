@@ -62,4 +62,29 @@ except RuntimeError as e: ok("suman" in str(e), "regiones que no suman el total 
 wb = openpyxl.Workbook(); ws = wb.active; ws.append(["Year 2023"]); ws.append(["CATEGORIES", "DESCRIPTION", "Ellada", "Region inventada"]); b = io.BytesIO(); wb.save(b)
 try: E.parse_accounts(b.getvalue()); ok(False, "region desconocida se rechaza")
 except RuntimeError as e: ok("desconocida" in str(e), "region desconocida se rechaza")
+# --- cultivos y ganaderia por region y unidad regional ---
+def rbook(tot=100.0, regs=((60.0, (30.0, 30.0)), (40.0, (25.0, 15.0)))):
+    wb = openpyxl.Workbook(); ws = wb.active
+    ws.append(["Table 2a. Cereals for grain. Areas and production, by Region and Regional Unities, 2024"]); ws.append([]); ws.append([None, "Wheat", None, "Regions"]); ws.append([None, 1, 2])
+    ws.append(["Σύνολο Ελλάδας", tot, tot * 3, "Greece Total"])
+    for i, (rt, us) in enumerate(regs):
+        ws.append(["Περιφέρεια Χ%d" % i, rt, rt * 3, "Region of X%d" % i])
+        for j, u in enumerate(us): ws.append(["  Νομός%d_%d." % (i, j), u, u * 3, "  Unit%d_%d" % (i, j)])
+    ws.merge_cells("B3:C3"); b = io.BytesIO(); wb.save(b); return b.getvalue()
+t = E.rtable(rbook())
+ok(t["year"] == 2024 and [r[2] for r in t["rows"]] == [0, 1, 2, 2, 1, 2, 2], "niveles: Grecia, region y unidad (por sangria) y año del titulo")
+ok(t["rows"][2][0] == "Νομός0_0", "el punto final del nombre griego se quita")
+ok(E.find_col(t["heads"], "Wheat | 1") == 2 and E.find_col(t["heads"], "Wheat | 2") == 3, "cabeceras combinadas se resuelven por su ruta")
+try: E.find_col(t["heads"], "Barley | 1"); ok(False, "cabecera inexistente se rechaza")
+except RuntimeError: ok(True, "cabecera inexistente se rechaza")
+areas = E.aligned({"t2a": t}); v = E.series(t, areas, [2])
+ok(len(areas) == 7 and areas[1]["parent"] == "EL" and areas[2]["parent"] == "R01" and v[0] == 100.0, "areas con padre y serie alineada por nombre griego")
+ok(E.check_sums("x", areas, v) == [], "regiones suman Grecia y unidades suman su region")
+t2 = E.rtable(rbook(tot=100.0, regs=((60.0, (30.0, 10.0)), (40.0, (25.0, 15.0)))))
+ok(len(E.check_sums("x", areas, E.series(t2, areas, [2]))) == 1, "unidades que no suman su region se senalan")
+t3 = E.rtable(rbook(tot=150.0)); ok(len(E.check_sums("x", areas, E.series(t3, areas, [2]))) == 1, "regiones que no suman Grecia se senalan")
+html = '<a href="/x?documentID=7&amp;a=1">02a. Cereals</a> <a href="/x?documentID=8">02b. Pulses</a>'
+ok(E.link_table(html, r"^02a\.").endswith("documentID=7&a=1"), "enlace de descarga por el texto del enlace")
+try: E.link_table(html, r"^03"); ok(False, "enlace ausente se rechaza")
+except RuntimeError: ok(True, "enlace ausente se rechaza")
 print("\n%d fallos" % len(fails)); sys.exit(1 if fails else 0)

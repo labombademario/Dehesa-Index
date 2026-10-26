@@ -1,40 +1,40 @@
 /* Dehesa Index — Grecia: estadísticas agrarias de ELSTAT (índices de precios agrarios en origen y de insumos, productos seleccionados, cuentas agrarias por región).
-   data/el-elstat/{prices,accounts}.json (scripts/update-el-elstat.py). Bloque de la ficha de Grecia. ES5. window.DIElElstat. Usa window.ESUI (js/es-ui.js). */
+   data/el-elstat/{prices,accounts,regions}.json (scripts/update-el-elstat.py). Bloque de la ficha de Grecia. ES5. window.DIElElstat. Usa window.ESUI (js/es-ui.js). */
 (function (global) {
   'use strict';
   var T = {
-    es: { h: 'Estadísticas agrarias de Grecia (ELSTAT)', tabs: { out: 'Precios en origen', prod: 'Productos', inp: 'Insumos', reg: 'Cuentas por región' },
+    es: { h: 'Estadísticas agrarias de Grecia (ELSTAT)', tabs: { out: 'Precios en origen', prod: 'Productos', inp: 'Insumos', reg: 'Cuentas por región', geo: 'Cultivos y ganado por región' },
       grp: 'Grupo', prodL: 'Producto', idx: 'Índice (2020 = 100)', mom: 'Mes anterior', yoy: 'Hace un año', last: 'Último mes: {m}', all: 'Todos los grupos, ordenados por variación anual',
       range: 'Periodo', r3: '3 años', r10: '10 años', rall: 'Desde 2000', annualH: 'Media anual del índice', monthsH: 'Meses de {y}', yrAvg: 'Media de {y}', line: 'Concepto', nat: 'Total nacional', top: 'Región con más', share: 'del total',
       regions: 'Por región (NUTS 2)', yr: 'Año {y}, millones de euros', nodata: 'Sin dato publicado', cats: { c: 'Cereales y cultivos', v: 'Hortalizas y patata', f: 'Frutas, frutos secos y olivo', a: 'Ganado y productos animales' },
       nOut: 'Índices de ELSTAT, base 2020 = 100, de lo que cobra el agricultor sin contar subvenciones. Los meses recientes son provisionales. No es el precio del consumidor.',
       nInp: 'Índices de ELSTAT, base 2020 = 100, de lo que paga el agricultor por semillas, energía, abonos, piensos, maquinaria y otros insumos. Los meses recientes son provisionales.',
       nProd: 'Índices de productos seleccionados (ELSTAT, 2020 = 100). Un mes vacío es un mes sin precio (producto fuera de temporada), no un cero. Del año en curso solo se publica el detalle mensual.',
-      nReg: 'Cuentas económicas de la agricultura por región (ELSTAT), a precios básicos, millones de euros. Las 13 regiones NUTS 2 suman el total nacional. Una celda vacía es dato no publicado.', src: 'Fuente:' },
-    en: { h: 'Greece agricultural statistics (ELSTAT)', tabs: { out: 'Farm-gate prices', prod: 'Products', inp: 'Inputs', reg: 'Accounts by region' },
+      nReg: 'Cuentas económicas de la agricultura por región (ELSTAT), a precios básicos, millones de euros. Las 13 regiones NUTS 2 suman el total nacional. Una celda vacía es dato no publicado.', src: 'Fuente:', g_ind: 'Cultivo o ganado', g_met: 'Medida', g_mA: 'Superficie (ha)', g_mP: 'Producción (t)', g_gC: 'Cultivos', g_gL: 'Ganadería y leche', g_lv1: 'Regiones', g_lv2: 'Unidades regionales (top 20)', g_nat: 'Total nacional', g_top: 'Primera región', g_share: 'del total', g_yld: 'Rendimiento', g_ha: 't/ha', g_hd: 'cabezas', g_t: 't', g_yr: 'Año {y}', g_note: 'Encuesta agraria y encuesta ganadera anuales de ELSTAT por región y unidad regional. Superficies en hectáreas (ELSTAT publica estremas), producciones en toneladas, ganado en cabezas a 31 de diciembre. Las unidades suman su región y las regiones suman Grecia. Un hueco es dato no publicado (—).' },
+    en: { h: 'Greece agricultural statistics (ELSTAT)', tabs: { out: 'Farm-gate prices', prod: 'Products', inp: 'Inputs', reg: 'Accounts by region', geo: 'Crops and livestock by region' },
       grp: 'Group', prodL: 'Product', idx: 'Index (2020 = 100)', mom: 'Previous month', yoy: 'A year ago', last: 'Latest month: {m}', all: 'All groups, ranked by annual change',
       range: 'Period', r3: '3 years', r10: '10 years', rall: 'Since 2000', annualH: 'Annual index', monthsH: 'Months of {y}', yrAvg: 'Average {y}', line: 'Item', nat: 'National total', top: 'Largest region', share: 'of the total',
       regions: 'By region (NUTS 2)', yr: 'Year {y}, million euro', nodata: 'No published figure', cats: { c: 'Cereals and field crops', v: 'Vegetables and potatoes', f: 'Fruit, nuts and olives', a: 'Livestock and animal products' },
       nOut: 'ELSTAT indices, 2020 = 100, of what the farmer is paid, excluding subsidies. Recent months are provisional. It is not the consumer price.',
       nInp: 'ELSTAT indices, 2020 = 100, of what the farmer pays for seed, energy, fertiliser, feed, machinery and other inputs. Recent months are provisional.',
       nProd: 'ELSTAT indices for selected products (2020 = 100). An empty month means no price that month (out of season), not zero. Only the current year is published month by month.',
-      nReg: 'ELSTAT economic accounts for agriculture by region, at basic prices, million euro. The 13 NUTS 2 regions add up to the national total. An empty cell means the figure is not published.', src: 'Source:' },
-    fr: { h: 'Statistiques agricoles de la Grèce (ELSTAT)', tabs: { out: 'Prix à la production', prod: 'Produits', inp: 'Intrants', reg: 'Comptes par région' },
+      nReg: 'ELSTAT economic accounts for agriculture by region, at basic prices, million euro. The 13 NUTS 2 regions add up to the national total. An empty cell means the figure is not published.', src: 'Source:', g_ind: 'Crop or livestock', g_met: 'Measure', g_mA: 'Area (ha)', g_mP: 'Production (t)', g_gC: 'Crops', g_gL: 'Livestock and milk', g_lv1: 'Regions', g_lv2: 'Regional units (top 20)', g_nat: 'National total', g_top: 'Largest region', g_share: 'of the total', g_yld: 'Yield', g_ha: 't/ha', g_hd: 'head', g_t: 't', g_yr: 'Year {y}', g_note: 'ELSTAT annual agricultural and livestock surveys by region and regional unit. Areas in hectares (ELSTAT publishes stremmata), production in tonnes, livestock in head on 31 December. Units add up to their region and regions to Greece. A gap is an unpublished figure (—).' },
+    fr: { h: 'Statistiques agricoles de la Grèce (ELSTAT)', tabs: { out: 'Prix à la production', prod: 'Produits', inp: 'Intrants', reg: 'Comptes par région', geo: 'Cultures et élevage par région' },
       grp: 'Groupe', prodL: 'Produit', idx: 'Indice (2020 = 100)', mom: 'Mois précédent', yoy: 'Il y a un an', last: 'Dernier mois : {m}', all: 'Tous les groupes, classés par variation annuelle',
       range: 'Période', r3: '3 ans', r10: '10 ans', rall: 'Depuis 2000', annualH: 'Indice annuel', monthsH: 'Mois de {y}', yrAvg: 'Moyenne {y}', line: 'Poste', nat: 'Total national', top: 'Première région', share: 'du total',
       regions: 'Par région (NUTS 2)', yr: 'Année {y}, millions d’euros', nodata: 'Pas de chiffre publié', cats: { c: 'Céréales et grandes cultures', v: 'Légumes et pommes de terre', f: 'Fruits, fruits à coque et olives', a: 'Élevage et produits animaux' },
       nOut: 'Indices ELSTAT, base 2020 = 100, de ce que touche l’agriculteur, hors subventions. Les mois récents sont provisoires. Ce n’est pas le prix au consommateur.',
       nInp: 'Indices ELSTAT, base 2020 = 100, de ce que paie l’agriculteur pour les semences, l’énergie, les engrais, l’alimentation animale, le matériel et d’autres intrants. Les mois récents sont provisoires.',
       nProd: 'Indices ELSTAT de produits sélectionnés (2020 = 100). Un mois vide signifie pas de prix ce mois-là (hors saison), pas zéro. Seule l’année en cours est publiée mois par mois.',
-      nReg: 'Comptes économiques de l’agriculture par région (ELSTAT), aux prix de base, millions d’euros. Les 13 régions NUTS 2 totalisent le chiffre national. Une case vide signifie chiffre non publié.', src: 'Source :' },
-    it: { h: 'Statistiche agricole della Grecia (ELSTAT)', tabs: { out: 'Prezzi alla produzione', prod: 'Prodotti', inp: 'Input', reg: 'Conti per regione' },
+      nReg: 'Comptes économiques de l’agriculture par région (ELSTAT), aux prix de base, millions d’euros. Les 13 régions NUTS 2 totalisent le chiffre national. Une case vide signifie chiffre non publié.', src: 'Source :', g_ind: 'Culture ou élevage', g_met: 'Mesure', g_mA: 'Surface (ha)', g_mP: 'Production (t)', g_gC: 'Cultures', g_gL: 'Élevage et lait', g_lv1: 'Régions', g_lv2: 'Unités régionales (20 premières)', g_nat: 'Total national', g_top: 'Première région', g_share: 'du total', g_yld: 'Rendement', g_ha: 't/ha', g_hd: 'têtes', g_t: 't', g_yr: 'Année {y}', g_note: 'Enquêtes agricole et d’élevage annuelles d’ELSTAT par région et unité régionale. Surfaces en hectares (ELSTAT publie des stremmata), production en tonnes, cheptel en têtes au 31 décembre. Les unités totalisent leur région et les régions la Grèce. Un blanc est un chiffre non publié (—).' },
+    it: { h: 'Statistiche agricole della Grecia (ELSTAT)', tabs: { out: 'Prezzi alla produzione', prod: 'Prodotti', inp: 'Input', reg: 'Conti per regione', geo: 'Colture e allevamento per regione' },
       grp: 'Gruppo', prodL: 'Prodotto', idx: 'Indice (2020 = 100)', mom: 'Mese precedente', yoy: 'Un anno fa', last: 'Ultimo mese: {m}', all: 'Tutti i gruppi, in ordine di variazione annua',
       range: 'Periodo', r3: '3 anni', r10: '10 anni', rall: 'Dal 2000', annualH: 'Indice annuo', monthsH: 'Mesi del {y}', yrAvg: 'Media {y}', line: 'Voce', nat: 'Totale nazionale', top: 'Regione maggiore', share: 'del totale',
       regions: 'Per regione (NUTS 2)', yr: 'Anno {y}, milioni di euro', nodata: 'Dato non pubblicato', cats: { c: 'Cereali e seminativi', v: 'Ortaggi e patate', f: 'Frutta, frutta a guscio e olive', a: 'Zootecnia e prodotti animali' },
       nOut: 'Indici ELSTAT, base 2020 = 100, di quanto incassa l’agricoltore, senza sussidi. I mesi recenti sono provvisori. Non è il prezzo al consumo.',
       nInp: 'Indici ELSTAT, base 2020 = 100, di quanto paga l’agricoltore per sementi, energia, fertilizzanti, mangimi, macchine e altri input. I mesi recenti sono provvisori.',
       nProd: 'Indici ELSTAT di prodotti selezionati (2020 = 100). Un mese vuoto significa nessun prezzo in quel mese (fuori stagione), non zero. Solo l’anno in corso è pubblicato mese per mese.',
-      nReg: 'Conti economici dell’agricoltura per regione (ELSTAT), a prezzi base, milioni di euro. Le 13 regioni NUTS 2 sommano il totale nazionale. Una cella vuota significa dato non pubblicato.', src: 'Fonte:' }
+      nReg: 'Conti economici dell’agricoltura per regione (ELSTAT), a prezzi base, milioni di euro. Le 13 regioni NUTS 2 sommano il totale nazionale. Una cella vuota significa dato non pubblicato.', src: 'Fonte:', g_ind: 'Coltura o allevamento', g_met: 'Misura', g_mA: 'Superficie (ha)', g_mP: 'Produzione (t)', g_gC: 'Colture', g_gL: 'Allevamento e latte', g_lv1: 'Regioni', g_lv2: 'Unità regionali (prime 20)', g_nat: 'Totale nazionale', g_top: 'Prima regione', g_share: 'del totale', g_yld: 'Resa', g_ha: 't/ha', g_hd: 'capi', g_t: 't', g_yr: 'Anno {y}', g_note: 'Indagini agraria e zootecnica annuali di ELSTAT per regione e unità regionale. Superfici in ettari (ELSTAT pubblica stremmata), produzione in tonnellate, bestiame in capi al 31 dicembre. Le unità sommano la propria regione e le regioni la Grecia. Un vuoto è un dato non pubblicato (—).' }
   };
   /* etiquetas: en|es|fr|it (el inglés es el nombre de ELSTAT, acortado) */
   var LG = { en: 0, es: 1, fr: 2, it: 3 };
@@ -99,7 +99,17 @@
     EL51: 'East Macedonia and Thrace|Macedonia Oriental y Tracia|Macédoine-Orientale et Thrace|Macedonia orientale e Tracia', EL52: 'Central Macedonia|Macedonia Central|Macédoine-Centrale|Macedonia centrale', EL53: 'Western Macedonia|Macedonia Occidental|Macédoine-Occidentale|Macedonia occidentale',
     EL54: 'Epirus|Epiro|Épire|Epiro', EL61: 'Thessaly|Tesalia|Thessalie|Tessaglia', EL62: 'Ionian Islands|Islas Jónicas|Îles Ioniennes|Isole Ionie', EL63: 'Western Greece|Grecia Occidental|Grèce-Occidentale|Grecia occidentale',
     EL64: 'Central Greece|Grecia Central|Grèce-Centrale|Grecia centrale', EL65: 'Peloponnese|Peloponeso|Péloponnèse|Peloponneso' };
-  var U = global.ESUI, ST = { tab: 'out', og: '140000', ig: '220000', rng: '10', prod: 'olive-oil', line: '14' }, D = {};
+var GL = {
+    wheat_common: 'Common wheat|Trigo blando|Blé tendre|Frumento tenero', wheat_durum: 'Durum wheat|Trigo duro|Blé dur|Frumento duro', barley: 'Barley|Cebada|Orge|Orzo', oats: 'Oats|Avena|Avoine|Avena', maize: 'Maize|Maíz|Maïs|Mais', rice: 'Rice|Arroz|Riz|Riso',
+    cotton: 'Cotton|Algodón|Coton|Cotone', sunflower: 'Sunflower|Girasol|Tournesol|Girasole', soya: 'Soya|Soja|Soja|Soia', rapeseed: 'Rapeseed|Colza|Colza|Colza', sugarbeet: 'Sugar beet|Remolacha azucarera|Betterave sucrière|Barbabietola da zucchero',
+    tree_orange: 'Oranges|Naranja|Oranges|Arance', tree_mandarin: 'Mandarins|Mandarina|Mandarines|Mandarini', tree_lemon: 'Lemons|Limón|Citrons|Limoni', tree_peach: 'Peaches and nectarines|Melocotón y nectarina|Pêches et nectarines|Pesche e nettarine',
+    tree_apple: 'Apples|Manzana|Pommes|Mele', tree_kiwi: 'Kiwi|Kiwi|Kiwi|Kiwi', tree_almond: 'Almonds|Almendra|Amandes|Mandorle', tree_walnut: 'Walnuts|Nuez|Noix|Noci', tree_cherry: 'Cherries|Cereza|Cerises|Ciliegie', tree_pistachio: 'Pistachios|Pistacho|Pistaches|Pistacchi',
+    olive_oil: 'Olive oil|Aceite de oliva|Huile d’olive|Olio d’oliva',
+    cattle: 'Cattle and buffaloes|Vacuno y búfalos|Bovins et buffles|Bovini e bufali', dairy_cows: 'Dairy cows|Vacas de leche|Vaches laitières|Vacche da latte', sheep: 'Sheep|Ovino|Ovins|Ovini', goats: 'Goats|Caprino|Caprins|Caprini', pigs: 'Pigs|Porcino|Porcins|Suini',
+    milk_total: 'Milk, all species|Leche, todas las especies|Lait, toutes espèces|Latte, tutte le specie', milk_cow: 'Cow and buffalo milk|Leche de vaca y búfala|Lait de vache et de bufflonne|Latte vaccino e bufalino', milk_sheep: 'Sheep milk|Leche de oveja|Lait de brebis|Latte ovino', milk_goat: 'Goat milk|Leche de cabra|Lait de chèvre|Latte caprino'
+  };
+  var GR = { 'Eastern Macedonia and Thrace': 'EL51', 'Central Macedonia': 'EL52', 'Western Macedonia': 'EL53', Epirus: 'EL54', Thessally: 'EL61', 'Ionian Islands': 'EL62', 'Western Greece': 'EL63', 'Central Greece': 'EL64', Peloponnese: 'EL65', Attica: 'EL30', 'Northern Aegean': 'EL41', 'Southern Aegean': 'EL42', Crete: 'EL43' };
+  var U = global.ESUI, ST = { tab: 'out', og: '140000', ig: '220000', rng: '10', prod: 'olive-oil', line: '14', gi: 'wheat_durum', gm: 'prod', gl: '1' }, D = {};
   function nm(tab, k, lg, fb) { var s = tab[k]; if (!s) return fb || k; var a = s.split('|'); return a[LG[lg]] || a[0]; }
   function lastIdx(a) { for (var i = a.length - 1; i >= 0; i--) if (a[i] != null) return i; return -1; }
   function sgn(v, d) { return v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + U.nf(Math.abs(v), d == null ? 1 : d) + ' %'; }
@@ -167,15 +177,41 @@
     if (list.length) out += '<h3 class="cof-h3">' + U.esc(t.regions) + '</h3>' + U.bars(list, list[0][1] || 1, dec, 'M€');
     return out + note(t, 'nReg');
   }
+  function geoView(g, lg, t) {
+    var yk = String(g.year), Y = g.years[yk] || g.years[Object.keys(g.years).sort().pop()], A = g.areas, C = Y.crops, Lv = Y.livestock, ks = Object.keys(C).concat(Object.keys(Lv));
+    if (ks.indexOf(ST.gi) < 0) ST.gi = ks[0];
+    var live = !!Lv[ST.gi], e = live ? Lv[ST.gi] : C[ST.gi], hasA = !live && !!e.area;
+    if (!hasA && ST.gm === 'area') ST.gm = 'prod';
+    var v = live ? e.v : (ST.gm === 'area' && hasA ? e.area : e.prod), unit = live ? (e.unit === 'head' ? t.g_hd : t.g_t) : (ST.gm === 'area' && hasA ? 'ha' : t.g_t);
+    var og = function (arr, cls) { return '<optgroup label="' + U.esc(cls) + '">' + arr.map(function (k) { return U.opt(k, nm(GL, k, lg, k), ST.gi); }).join('') + '</optgroup>'; };
+    var out = U.sel('el-gi', t.g_ind, og(Object.keys(C), t.g_gC) + og(Object.keys(Lv), t.g_gL), ST.gi);
+    if (hasA) out += U.sel('el-gm', t.g_met, U.opt('prod', t.g_mP, ST.gm) + U.opt('area', t.g_mA, ST.gm), ST.gm);
+    out += '<div style="margin:6px 0 10px">' + U.chip(ST.gl === '1', 'el-gl', 'data-l="1"', t.g_lv1) + U.chip(ST.gl === '2', 'el-gl', 'data-l="2"', t.g_lv2) + '</div>';
+    var tot = v[0], list = [], regName = {};
+    A.forEach(function (a, j) { if (a.level === 1) regName[a.id] = GR[a.en] ? nm(RN, GR[a.en], lg, a.en) : a.en; });
+    A.forEach(function (a, j) {
+      if (a.level !== +ST.gl || v[j] == null) return;
+      list.push([a.level === 1 ? regName[a.id] : a.en + ' (' + regName[a.parent] + ')', v[j], tot ? U.nf(v[j] / tot * 100, 1) + ' %' : '']);
+    });
+    list.sort(function (p, q) { return q[1] - p[1]; });
+    var dec = tot != null && Math.abs(tot) < 100 ? 1 : 0, top = list.slice(0, 20);
+    var cards = card(U.esc(t.g_nat + ' · ' + t.g_yr.replace('{y}', g.year)), tot == null ? '–' : U.nf(tot, dec) + ' ' + U.esc(unit), U.esc(nm(GL, ST.gi, lg, ST.gi)));
+    if (list.length && tot) cards += card(U.esc(t.g_top), U.esc(list[0][0]), U.nf(list[0][1] / tot * 100, 1) + ' % ' + U.esc(t.g_share));
+    if (hasA && e.area[0] && e.prod[0]) cards += card(U.esc(t.g_yld), U.nf(e.prod[0] / e.area[0], 2) + ' ' + U.esc(t.g_ha));
+    out += '<div class="cof-cards">' + cards + '</div>';
+    if (top.length) out += U.bars(top, top[0][1] || 1, dec, unit);
+    return out + '<p class="cof-note" style="margin:10px 0 0">' + U.esc(t.g_note) + '</p>';
+  }
   var VIEWS = {
+    geo: function (d, lg, t) { return geoView(d.regions, lg, t); },
     out: function (d, lg, t) { return indexView(d.prices, lg, t, 'output'); },
     inp: function (d, lg, t) { return indexView(d.prices, lg, t, 'input'); },
     prod: function (d, lg, t) { return prodView(d.prices, lg, t); },
     reg: function (d, lg, t) { return regView(d.accounts, lg, t); }
   };
   function load() {
-    if (D.p || D.a) return Promise.resolve(D);
-    return Promise.all([U.json('data/el-elstat/prices.json'), U.json('data/el-elstat/accounts.json')]).then(function (r) { D = { prices: r[0], accounts: r[1], p: !!r[0], a: !!r[1] }; return D; });
+    if (D.p || D.a || D.g) return Promise.resolve(D);
+    return Promise.all([U.json('data/el-elstat/prices.json'), U.json('data/el-elstat/accounts.json'), U.json('data/el-elstat/regions.json')]).then(function (r) { D = { prices: r[0], accounts: r[1], regions: r[2], p: !!r[0], a: !!r[1], g: !!r[2] }; return D; });
   }
   function mount(el, lg) {
     if (!el || !U) return Promise.resolve(false);
@@ -183,9 +219,9 @@
     function draw(focus) {
       var t = T[lg];
       return load().then(function (d) {
-        if (!d.p && !d.a) { el.hidden = true; return false; }
+        if (!d.p && !d.a && !d.g) { el.hidden = true; return false; }
         el.hidden = false;
-        var tabs = Object.keys(T.es.tabs).filter(function (k) { return k === 'reg' ? d.a : d.p; });
+        var tabs = Object.keys(T.es.tabs).filter(function (k) { return k === 'reg' ? d.a : k === 'geo' ? d.g : d.p; });
         if (tabs.indexOf(ST.tab) < 0) ST.tab = tabs[0];
         var chips = tabs.map(function (k) { return U.chip(k === ST.tab, 'el-tab', 'data-tab="' + k + '"', t.tabs[k]); }).join('');
         var body; try { body = VIEWS[ST.tab](d, lg, t); } catch (e) { body = '<p class="cof-note">' + U.esc(t.nodata) + '</p>'; }
@@ -196,10 +232,10 @@
     }
     if (!el.getAttribute('data-el')) {
       el.setAttribute('data-el', '1');
-      el.addEventListener('click', function (ev) { var b = ev.target.closest ? ev.target.closest('.el-tab') : null; if (b) { ST.tab = b.getAttribute('data-tab'); draw('.el-tab[data-tab="' + ST.tab + '"]'); } });
+      el.addEventListener('click', function (ev) { var b = ev.target.closest ? ev.target.closest('.el-tab') : null; if (b) { ST.tab = b.getAttribute('data-tab'); draw('.el-tab[data-tab="' + ST.tab + '"]'); return; } var l = ev.target.closest ? ev.target.closest('.el-gl') : null; if (l) { ST.gl = l.getAttribute('data-l'); draw('.el-gl[data-l="' + ST.gl + '"]'); } });
       el.addEventListener('change', function (ev) {
         var id = ev.target.id || '', v = ev.target.value;
-        if (id === 'el-g') { if (ST.tab === 'inp') ST.ig = v; else ST.og = v; } else if (id === 'el-r') ST.rng = v; else if (id === 'el-p') ST.prod = v; else if (id === 'el-l') ST.line = v;
+        if (id === 'el-g') { if (ST.tab === 'inp') ST.ig = v; else ST.og = v; } else if (id === 'el-r') ST.rng = v; else if (id === 'el-p') ST.prod = v; else if (id === 'el-l') ST.line = v; else if (id === 'el-gi') ST.gi = v; else if (id === 'el-gm') ST.gm = v;
         draw('#' + id);
       });
     }

@@ -993,16 +993,16 @@ sources:
     data: [italy-istat/crops.json, italy-istat/crops-prov.json, italy-istat/milk.json, italy-istat/agritourism.json, italy-istat/irrigation.json, italy-istat/comuni.json, italy-istat-2-log.txt]
     message: Cultivos, leche por región, agriturismo y riego de Italia (ISTAT)
   - id: el-elstat
-    name: Update Greece agricultural price indices and regional farm accounts (ELSTAT)
+    name: Update Greece agricultural price indices, regional farm accounts and crops and livestock by region (ELSTAT)
     cron: ['20 9 16,22 * *']
     script: scripts/update-el-elstat.py
     pre: ['pip install openpyxl xlrd']
     timeout: 20
     script_timeout: 15
     continue: true
-    check: python3 scripts/validate-data.py --no-report --files data/el-elstat/prices.json data/el-elstat/accounts.json
-    data: [el-elstat/prices.json, el-elstat/accounts.json, el-elstat-log.txt]
-    message: Precios agrarios y cuentas regionales de Grecia (ELSTAT)
+    check: python3 scripts/validate-data.py --no-report --files data/el-elstat/prices.json data/el-elstat/accounts.json data/el-elstat/regions.json
+    data: [el-elstat/prices.json, el-elstat/accounts.json, el-elstat/regions.json, el-elstat-log.txt]
+    message: Precios agrarios, cuentas regionales y cultivos y ganadería por región de Grecia (ELSTAT)
   - id: el-elgo
     name: Update Greece milk deliveries and prices, slaughter and dairy production by regional unit (ELGO-DIMITRA, data.gov.gr)
     cron: ['50 9 24 * *']

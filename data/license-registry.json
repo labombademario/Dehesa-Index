@@ -7514,7 +7514,7 @@
    "sources": [
     "elstat"
    ],
-   "notes": "Indices mensuales de precios agrarios (producto, insumos y productos seleccionados) y cuentas agrarias regionales de Grecia (scripts/update-el-elstat.py), de los ficheros publicos de statistics.gr."
+   "notes": "Indices mensuales de precios agrarios (producto, insumos y productos seleccionados) cuentas agrarias regionales y encuestas agraria (SPG06) y ganadera (SPK33) anuales por region y unidad regional de Grecia (scripts/update-el-elstat.py), de los ficheros publicos de statistics.gr."
   },
   "data/es-cork.json": {
    "sources": [

@@ -1,0 +1,67 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Cultivos y ganaderia de Grecia por region y unidad regional (ELSTAT): data/el-elstat/regions.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "year",
+  "areas",
+  "years"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "elstat"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "year": {
+   "type": "integer",
+   "minimum": 2015
+  },
+  "areas": {
+   "type": "array",
+   "minItems": 80,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "el",
+     "en",
+     "level"
+    ]
+   }
+  },
+  "years": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}

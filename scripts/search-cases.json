@@ -83,6 +83,8 @@
   {"q":"siccità province Italia","lang":"it","top":3,"u":"itsq"},
   {"q":"precio leche de oveja Grecia","lang":"es","top":3,"u":"ps-el-elgo"},
   {"q":"feta production Greece","lang":"en","top":3,"u":"ps-el-elgo"},
+  {"q":"superficie de algodón Grecia por región","lang":"es","top":3,"u":"ps-el-elstat"},
+  {"q":"Greece wheat production by region","lang":"en","top":3,"u":"ps-el-elstat"},
   {"q":"sequía Grecia por unidad regional","lang":"es","top":3,"u":"elsq"},
   {"q":"siccità Grecia","lang":"it","top":3,"u":"elsq"}
 ]

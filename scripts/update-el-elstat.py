@@ -12,7 +12,7 @@ politica de difusion de ELSTAT y condiciones de las estadisticas europeas).
               valor añadido, subvenciones, renta.
 Nada se estima: celda vacia o 0,0 en un indice mensual = mes sin precio (producto fuera de temporada) = null.
 Los .xls se leen con xlrd; la cuenta regional (.xlsx) con openpyxl. Si algo no cuadra (indices, sumas), no se escribe nada.
-Uso: python3 scripts/update-el-elstat.py [--only prices,accounts] [--local carpeta con ts01.xls ts04.xls regional.xlsx]"""
+Uso: python3 scripts/update-el-elstat.py [--only prices,accounts,regions] [--local carpeta con ts01.xls ts04.xls regional.xlsx]"""
 import argparse, datetime, json, re, sys, time, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -239,7 +239,196 @@ def write(out, name, doc):
     out.mkdir(parents=True, exist_ok=True)
     s = json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n"
     (out / name).write_text(s, encoding="utf-8"); log("escrito", name, len(s) // 1024, "KB")
-JOBS = {"prices": do_prices, "accounts": do_accounts}
+
+# ---------------------------------------------------------------- cultivos y ganaderia por region y unidad regional
+PUB = {"crops": "https://www.statistics.gr/en/statistics/-/publication/SPG06/-", "livestock": "https://www.statistics.gr/en/statistics/-/publication/SPK33/-"}
+# tabla -> (publicacion, prefijo del enlace). Los ficheros cambian de documentID cada año: se resuelven por el texto del enlace.
+RTABLES = {"t01": ("crops", r"^01\."), "t2a": ("crops", r"^02a\."), "t2c": ("crops", r"^02c\."), "t5b": ("crops", r"^05b\."), "t07": ("crops", r"^07\."),
+           "l02": ("livestock", r"^02\."), "l03": ("livestock", r"^03\."), "l7a": ("livestock", r"^07a\.")}
+# indicador -> (tabla, [cabeceras de area/cabezas], [cabeceras de produccion], etiqueta). Cabecera = ruta normalizada que ACABA asi; debe ser unica.
+RCROPS = {
+    "wheat_common": ("t2a", ["Wheat | Common | 1"], ["Wheat | Common | 2"], "Common wheat"),
+    "wheat_durum": ("t2a", ["Wheat | Durum | 1"], ["Wheat | Durum | 2"], "Durum wheat"),
+    "barley": ("t2a", ["Barley | 1"], ["Barley | 2"], "Barley"),
+    "oats": ("t2a", ["Oats | 1"], ["Oats | 2"], "Oats"),
+    "maize": ("t2a", ["Maize | without intercropping | 1"], ["Maize | without intercropping | 2"], "Maize"),
+    "rice": ("t2a", ["Rice | 1"], ["Rice | 2"], "Rice"),
+    "cotton": ("t2c", ["Cotton | irrigated | 1", "Cotton | non-irrigated | 1"], ["Cotton | irrigated", "Cotton | non-irrigated"], "Cotton"),
+    "sunflower": ("t2c", ["Sunflower | 1"], ["Sunflower | 2"], "Sunflower"),
+    "soya": ("t2c", ["Soya seed | 1"], ["Soya seed | 2"], "Soya"),
+    "rapeseed": ("t2c", ["Rapeseed | 1"], ["Rapeseed | 2"], "Rapeseed"),
+    "sugarbeet": ("t2c", ["Sugarbeets | 1"], ["Sugarbeets | 2"], "Sugar beet"),
+}
+RTREES = {"orange": "Orange trees | 5", "mandarin": "Mandarin trees | 5", "lemon": "Lemon trees | 5", "peach": "Peach - Nectarine trees | 5", "apple": "Apple trees | 5",
+          "kiwi": "Kiwi trees | 5", "almond": "Almond trees | 5", "walnut": "Walnut trees | 5", "cherry": "Cherry trees | 5", "pistachio": "Pistachio trees | 5"}
+RLIVE = {  # clave -> (tabla, cabecera, unidad, etiqueta)
+    "cattle": ("l02", "General total", "head", "Cattle and buffaloes"), "dairy_cows": ("l02", "Cows for milk production", "head", "Dairy cows"),
+    "sheep": ("l03", "Sheep | Total", "head", "Sheep"), "goats": ("l03", "Goats | Total", "head", "Goats"), "pigs": ("l03", "Pigs | Total", "head", "Pigs"),
+    "milk_total": ("l7a", "Grand Total of milk", "t", "Milk, all species"), "milk_cow": ("l7a", "Bovine milk | Total", "t", "Cow and buffalo milk"),
+    "milk_sheep": ("l7a", "Sheep milk | Total", "t", "Sheep milk"), "milk_goat": ("l7a", "Goat milk | Total", "t", "Goat milk"),
+}
+RALIAS = {"Κέας - Κύθνου": "Κύθνου", "Καρπάθου - Ηρωικής Νήσου Κάσου": "Καρπάθου"}   # misma unidad, nombre distinto segun la tabla
+def eng(s): return s is not None and re.search(r"[A-Za-z]{3}", str(s)) is not None
+def rtable(b):
+    """Libro regional de ELSTAT -> dict(title, year, rows=[(el, en, level, {col: valor})], heads={col: cabecera normalizada}). Sin hojas con 'Σύνολο Ελλάδας' falla."""
+    import io, openpyxl
+    wb = openpyxl.load_workbook(io.BytesIO(b), data_only=True)
+    for ws in wb.worksheets:
+        g = next((r for r in range(1, ws.max_row + 1) if ws.cell(r, 1).value and "Σύνολο Ελλάδας" in str(ws.cell(r, 1).value)), None)
+        if g is None: continue
+        grid = {(r, c): ws.cell(r, c).value for r in range(1, g) for c in range(1, ws.max_column + 1)}
+        for m in ws.merged_cells.ranges:
+            if m.min_row < g:
+                v = ws.cell(m.min_row, m.min_col).value
+                for r in range(m.min_row, min(m.max_row, g - 1) + 1):
+                    for c in range(m.min_col, m.max_col + 1): grid[(r, c)] = v
+        lab = next((c for c in range(ws.max_column, 0, -1) if ws.cell(g, c).value and eng(ws.cell(g, c).value)), None)
+        if lab is None: continue
+        heads = {}
+        for c in range(2, lab):
+            parts = []
+            for r in range(1, g):
+                v = grid.get((r, c))
+                if v is None: continue
+                t = clean(v)
+                if re.search(r"Table|Areas in|Weight in|Regions|^\d\. ", t) and not re.fullmatch(r"\d+", t): continue
+                if (eng(v) or re.fullmatch(r"\d+", t)) and (not parts or parts[-1] != t): parts.append(t)
+            heads[c] = " | ".join(parts)
+        text = " ".join(clean(ws.cell(r, c).value) for r in range(1, g) for c in range(1, 4) if ws.cell(r, c).value)
+        ym = re.findall(r"\b(20\d\d)\b", text)
+        rows = []
+        for r in range(g, ws.max_row + 1):
+            el = ws.cell(r, 1).value; en = ws.cell(r, lab).value
+            if not el or not en: continue
+            ele = clean(el).rstrip(".").strip(); ele = RALIAS.get(ele, ele)
+            if r == g: level = 0
+            elif ele.startswith("Περιφέρεια"): level = 1
+            elif str(el).startswith(" "): level = 2
+            else: continue
+            vals = {}
+            for c in range(2, lab):
+                x = ws.cell(r, c).value
+                vals[c] = float(x) if isinstance(x, (int, float)) and not isinstance(x, bool) else None
+            rows.append((ele, clean(en), level, vals))
+        return {"year": int(ym[0]) if ym else None, "heads": heads, "rows": rows, "text": text, "sheet": ws}
+    raise RuntimeError("tabla regional sin fila 'Σύνολο Ελλάδας'")
+def find_col(heads, suffix):
+    hit = [c for c, h in heads.items() if h == suffix or h.endswith(" | " + suffix)]
+    if len(hit) != 1: raise RuntimeError("cabecera %r: %d coincidencias" % (suffix, len(hit)))
+    return hit[0]
+def link_table(pub_html, rx):
+    """Enlace de descarga (.xlsx) de la tabla cuyo texto empieza por rx en la pagina de la publicacion."""
+    import html as H
+    out = []
+    for m in re.finditer(r'<a[^>]*href="([^"]*documentID=\d+[^"]*)"[^>]*>(.*?)</a>', pub_html, re.S):
+        t = clean(H.unescape(re.sub(r"<[^>]+>", "", m.group(2))))
+        if re.search(rx, t, re.I): out.append(H.unescape(m.group(1)))
+    if len(out) != 1: raise RuntimeError("enlace %s: %d coincidencias" % (rx, len(out)))
+    u = out[0]
+    u = u if u.startswith("http") else "https://www.statistics.gr" + u
+    return u.replace("statistics.gr:443/", "statistics.gr/", 1)      # el proxy de salida no resuelve el host con puerto explicito
+def load_rtables(local):
+    pages = {}; tabs = {}
+    for k, (pub, rx) in RTABLES.items():
+        if local:
+            p = Path(local) / (k + ".xlsx")
+            if not p.exists(): raise RuntimeError("falta " + k + ".xlsx en " + str(local))
+            b = p.read_bytes()
+        else:
+            if pub not in pages: pages[pub] = http(PUB[pub]).decode("utf-8", "ignore")
+            b = http(link_table(pages[pub], rx))
+            if b[:2] != b"PK": raise RuntimeError(k + ": no es un .xlsx")
+        tabs[k] = rtable(b)
+    return tabs
+def aligned(tabs):
+    """Lista de areas de referencia (Grecia, regiones y unidades) de la tabla de cereales; el resto se alinea por nombre griego."""
+    ref = tabs["t2a"]["rows"]
+    areas = []; reg = None
+    for el, en, lv, _ in ref:
+        if lv == 0: aid = "EL"
+        elif lv == 1: aid = "R%02d" % (sum(1 for a in areas if a["level"] == 1) + 1); reg = aid
+        else: aid = "U%03d" % (sum(1 for a in areas if a["level"] == 2) + 1)
+        areas.append({"id": aid, "el": el, "en": re.sub(r"^Region of ", "", en), "level": lv, "parent": None if lv == 0 else ("EL" if lv == 1 else reg)})
+    return areas
+def series(tab, areas, cols):
+    by = {}
+    for el, en, lv, vals in tab["rows"]: by[el] = vals
+    miss = [a["el"] for a in areas if a["level"] < 2 and a["el"] not in by]
+    if miss: raise RuntimeError("faltan regiones en la tabla: " + ", ".join(miss[:4]))
+    out = []
+    for a in areas:
+        if a["el"] not in by: out.append(None); continue      # unidad que esa tabla no desglosa
+        vs = [by[a["el"]][c] for c in cols]
+        out.append(None if all(v is None for v in vs) else sum(v or 0 for v in vs))
+    return out
+def check_sums(name, areas, v, tol=0.015):
+    """Regiones suman Grecia y unidades suman su region (tolerancia relativa tol; abs 3 por redondeo). Devuelve lista de desviaciones."""
+    bad = []; ix = {a["id"]: k for k, a in enumerate(areas)}
+    def cmp(label, tot, parts):
+        if tot is None: return
+        s = sum(x or 0 for x in parts)
+        if abs(s - tot) > max(3, tol * abs(tot)): bad.append("%s %s: suma %.1f, total %.1f" % (name, label, s, tot))
+    cmp("EL", v[0], [v[k] for k, a in enumerate(areas) if a["level"] == 1])
+    for a in areas:
+        if a["level"] == 1:
+            ch = [v[k] for k, b in enumerate(areas) if b["parent"] == a["id"]]
+            if any(x is not None for x in ch): cmp(a["en"], v[ix[a["id"]]], ch)   # tablas sin desglose provincial: no se comprueba
+    return bad
+def do_regions(outdir, local):
+    tabs = load_rtables(local)
+    years = {k: t["year"] for k, t in tabs.items()}
+    ys = {y for y in years.values() if y}
+    if len(ys) != 1: raise RuntimeError("tablas de años distintos: %s" % years)
+    year = ys.pop()
+    for k, t in tabs.items():
+        if not t["year"]: raise RuntimeError(k + ": sin año")
+    areas = aligned(tabs); nreg = sum(1 for a in areas if a["level"] == 1); nuni = sum(1 for a in areas if a["level"] == 2)
+    if nreg != 13 or nuni < 70 or nuni > 80: raise RuntimeError("estructura inesperada: %d regiones, %d unidades" % (nreg, nuni))
+    crops = {}; live = {}; warn = []
+    for key, (tk, ac, pc, lab) in RCROPS.items():
+        t = tabs[tk]; area = series(t, areas, [find_col(t["heads"], h) for h in ac])
+        prod = series(t, areas, [find_col(t["heads"], h) for h in pc])
+        area = [None if x is None else round(x / 10.0, 1) for x in area]      # estremas -> ha
+        prod = [None if x is None else round(x, 1) for x in prod]
+        crops[key] = {"label": lab, "area": area, "prod": prod}
+        for nm, v in (("area", area), ("prod", prod)): warn += check_sums(key + "." + nm, areas, v)
+        if not (area[0] and prod[0]): raise RuntimeError(key + ": sin total nacional")
+    t = tabs["t5b"]
+    for key, h in RTREES.items():
+        prod = [None if x is None else round(x, 1) for x in series(t, areas, [find_col(t["heads"], h)])]
+        crops["tree_" + key] = {"label": key.capitalize(), "area": None, "prod": prod}
+        warn += check_sums("tree_" + key, areas, prod)
+        if not prod[0]: raise RuntimeError(key + ": sin total nacional")
+    # aceite de oliva (tabla 7: cabecera propia, columna 'Olive oil')
+    t7 = tabs["t07"]; ws = t7["sheet"]; col = None
+    for r in range(1, 12):
+        for c in range(2, 6):
+            if clean(ws.cell(r, c).value or "").lower() == "olive oil": col = c
+    if not col: raise RuntimeError("tabla 7 sin columna Olive oil")
+    crops["olive_oil"] = {"label": "Olive oil", "area": None, "prod": [None if x is None else round(x, 1) for x in series(t7, areas, [col])]}
+    warn += check_sums("olive_oil", areas, crops["olive_oil"]["prod"])
+    for key, (tk, h, unit, lab) in RLIVE.items():
+        t = tabs[tk]; v = [None if x is None else round(x, 1) for x in series(t, areas, [find_col(t["heads"], h)])]
+        live[key] = {"label": lab, "unit": unit, "v": v}; warn += check_sums(key, areas, v)
+        if not v[0]: raise RuntimeError(key + ": sin total nacional")
+    for w in warn: log("aviso", w)
+    if len(warn) > 6: raise RuntimeError("demasiadas desviaciones de suma (%d): %s" % (len(warn), warn[0]))
+    # historico: se conservan los años ya publicados
+    prev = {}
+    f = outdir / "regions.json"
+    if f.exists():
+        try: prev = json.loads(f.read_text(encoding="utf-8")).get("years", {})
+        except Exception: prev = {}
+    snap = {"crops": crops, "livestock": live}
+    if prev and str(year) not in prev and max(int(y) for y in prev) > year: raise RuntimeError("el año %d es anterior al ya publicado" % year)
+    prev[str(year)] = snap
+    doc = {"schemaVersion": 1, "generatedAt": now(), "source": {"id": "elstat", "name": "ELSTAT (Hellenic Statistical Authority)", "url": PUB["crops"], "url2": PUB["livestock"]},
+           "year": year, "areas": areas, "years": prev,
+           "note": "Encuesta agraria anual (SPG06, cultivos) y encuesta ganadera anual (SPK33) de ELSTAT por region y unidad regional. Superficies en hectareas (ELSTAT publica estremas: 1 ha = 10 estremas), produccion en toneladas, ganado en cabezas a 31 de diciembre, leche en toneladas. Casilla vacia = sin dato (—)."}
+    log("regiones", year, len(areas), "areas", len(crops), "cultivos", len(live), "series ganaderas")
+    write(outdir, "regions.json", doc)
+
+JOBS = {"prices": do_prices, "accounts": do_accounts, "regions": do_regions}
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", default=str(ROOT / "data" / "el-elstat")); ap.add_argument("--only", default=""); ap.add_argument("--local", default="")
     ap.add_argument("--log", default=str(ROOT / "data" / "el-elstat-log.txt"))

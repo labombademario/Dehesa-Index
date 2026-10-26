@@ -5130,6 +5130,47 @@ def el_elstat_accounts(doc, errs, warns, stats):
     stats["series"] = len(R)
 
 
+def el_elstat_regions(doc, errs, warns, stats):
+    """Cultivos y ganaderia por region y unidad regional (ELSTAT): 1 Grecia + 13 regiones + unidades, cada serie alineada con las areas, regiones suman Grecia (±1,5 %), unidades suman su region cuando hay desglose, y produccion/superficie con rendimientos posibles."""
+    A = doc["areas"]; ids = [a["id"] for a in A]
+    if len(set(ids)) != len(ids) or ids[0] != "EL" or A[0]["level"] != 0: errs.append("areas repetidas o sin Grecia en primer lugar"); return
+    regs = [a for a in A if a["level"] == 1]
+    if len(regs) != 13: errs.append("regiones: %d, esperadas 13" % len(regs)); return
+    if any(a["level"] == 2 and a["parent"] not in {r["id"] for r in regs} for a in A): errs.append("unidad con region inexistente"); return
+    if str(doc["year"]) not in doc["years"]: errs.append("el año actual no esta en years"); return
+    def sums(name, v):
+        tot = v[0]
+        if tot is None: errs.append(name + ": sin total nacional"); return
+        s = sum(x or 0 for x, a in zip(v, A) if a["level"] == 1)
+        if abs(s - tot) > max(3, 0.015 * abs(tot)): errs.append("%s: regiones suman %.1f y Grecia %.1f" % (name, s, tot))
+        for r in regs:
+            ch = [x for x, a in zip(v, A) if a["parent"] == r["id"]]
+            if any(x is not None for x in ch):
+                rv = v[ids.index(r["id"])]
+                if rv is not None and abs(sum(x or 0 for x in ch) - rv) > max(3, 0.015 * abs(rv)): errs.append("%s %s: unidades suman %.1f y la region %.1f" % (name, r["en"], sum(x or 0 for x in ch), rv))
+    n = 0
+    for y, snap in doc["years"].items():
+        for k, c in snap["crops"].items():
+            for f in ("area", "prod"):
+                v = c[f]
+                if v is None: continue
+                if len(v) != len(A): errs.append("%s %s.%s: %d valores y %d areas" % (y, k, f, len(v), len(A))); return
+                if any(x is not None and not 0 <= x < 1e8 for x in v): errs.append("%s %s.%s: valor imposible" % (y, k, f))
+                sums("%s %s.%s" % (y, k, f), v); n += 1
+            if c["area"] and c["prod"] and c["area"][0] and c["prod"][0]:
+                ry = c["prod"][0] / c["area"][0]
+                if not 0.2 < ry < 100: errs.append("%s %s: rendimiento nacional %.2f t/ha imposible" % (y, k, ry))
+        for k, c in snap["livestock"].items():
+            if len(c["v"]) != len(A): errs.append("%s %s: %d valores y %d areas" % (y, k, len(c["v"]), len(A))); return
+            if any(x is not None and not 0 <= x < 1e9 for x in c["v"]): errs.append("%s %s: valor imposible" % (y, k))
+            sums("%s %s" % (y, k), c["v"]); n += 1
+        L = snap["livestock"]
+        if all(k in L for k in ("milk_total", "milk_cow", "milk_sheep", "milk_goat")):
+            s = sum(L[k]["v"][0] for k in ("milk_cow", "milk_sheep", "milk_goat"))
+            if abs(s - L["milk_total"]["v"][0]) > 0.03 * s: errs.append("%s: leche de vaca+oveja+cabra %.0f no suma el total %.0f" % (y, s, L["milk_total"]["v"][0]))
+    stats["series"] = n
+
+
 def eu_land(doc, errs, warns, stats):
     """Precio de la tierra y regadio por region: % = regadio/SAU, regadio <= SAU, un solo año por pais, Grecia con regadio mas caro que secano, cada region tiene nombre."""
     C = doc["countries"]; n = 0

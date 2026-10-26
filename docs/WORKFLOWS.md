@@ -264,7 +264,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-eambrosia.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-eambrosia.py | gi/index.json | finish, validate-files |
 | update-el-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-el-drought.py | el-drought.json | finish, validate-files |
 | update-el-elgo.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-el-elgo.py | el-elgo/dairy.json, el-elgo/meat.json, el-elgo/milk.json | finish, validate-files |
-| update-el-elstat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-el-elstat.py | el-elstat/accounts.json, el-elstat/prices.json | finish, validate-files |
+| update-el-elstat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-el-elstat.py | el-elstat/accounts.json, el-elstat/prices.json, el-elstat/regions.json | finish, validate-files |
 | update-el-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | el-ghg-agri.json | finish, validate-files |
 | update-embalses.yml | generado | semanal (3,4) | detect-revisions.py, gen-workflows.py, update-embalses.py | spain-reservoirs-points.json, spain-reservoirs.json | finish, validate-files |
 | update-energy-markets.yml | a mano | semanal (3,5) | update-eia-energy-markets.mjs, update-worldbank-gas-eu.py | - | finish, price-engine, publish |

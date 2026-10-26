@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update Greece agricultural price indices and regional farm accounts (ELSTAT)
+name: Update Greece agricultural price indices, regional farm accounts and crops and livestock by region (ELSTAT)
 on:
   schedule:
     - cron: '20 9 16,22 * *'
@@ -24,18 +24,18 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/el-elstat/prices.json data/el-elstat/accounts.json
+          files: data/el-elstat/prices.json data/el-elstat/accounts.json data/el-elstat/regions.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/el-elstat/prices.json data/el-elstat/accounts.json
+        run: python3 scripts/detect-revisions.py data/el-elstat/prices.json data/el-elstat/accounts.json data/el-elstat/regions.json
       - id: qa
         name: Control de calidad antes de publicar (si falla, no se publica)
         if: always()
-        run: python3 scripts/validate-data.py --no-report --files data/el-elstat/prices.json data/el-elstat/accounts.json
+        run: python3 scripts/validate-data.py --no-report --files data/el-elstat/prices.json data/el-elstat/accounts.json data/el-elstat/regions.json
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Precios agrarios y cuentas regionales de Grecia (ELSTAT)" data/el-elstat/prices.json data/el-elstat/accounts.json data/el-elstat-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Precios agrarios, cuentas regionales y cultivos y ganadería por región de Grecia (ELSTAT)" data/el-elstat/prices.json data/el-elstat/accounts.json data/el-elstat/regions.json data/el-elstat-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

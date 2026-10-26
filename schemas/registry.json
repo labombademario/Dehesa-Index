@@ -1540,6 +1540,12 @@
     "el_elstat_accounts"
    ]
   ],
+  "el-elstat/regions.json": [
+   "el-elstat-regions",
+   [
+    "el_elstat_regions"
+   ]
+  ],
   "el-elgo/milk.json": [
    "el-elgo-milk",
    [
