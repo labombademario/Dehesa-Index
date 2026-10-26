@@ -1,5 +1,5 @@
 leche 23 combinaciones
-sacrificio 23 series 3718 filas; regionales 29
+sacrificio 23 series 3741 filas; regionales 29
 fruta-hortaliza candidatas 193 incluidas 45
 GENESIS API 61211-0001 49 series; periodos 1968 .. 2025
 destatis 61211-0001 49 series
