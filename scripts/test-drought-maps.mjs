@@ -6,7 +6,8 @@ const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? proce
 const BASE = arg('--base', 'http://localhost:8123');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
 const b = await pw.chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : fs.existsSync('/opt/pw-browsers/chromium') ? { executablePath: '/opt/pw-browsers/chromium' } : {});
-const CC = ['DK', 'DE', 'FR', 'ES', 'IT', 'PL', 'BE', 'AT', 'UK', 'EL', 'CH', 'FI', 'SE', 'HU', 'CZ', 'RO', 'BG', 'SK', 'SI', 'LT'];
+// HR, IE, IT, NL y PT llevan un mapa por provincia propio (js/hr-, ie-, it-, nl-, pt-drought.js), no el de regiones
+const CC = ['DK', 'DE', 'FR', 'ES', 'PL', 'BE', 'AT', 'UK', 'EL', 'CH', 'FI', 'SE', 'HU', 'CZ', 'RO', 'BG', 'SK', 'SI', 'LT'];
 let fails = 0, n = 0; const ok = (m, c) => { n++; if (!c) { fails++; console.log('FALLO ' + m); } };
 for (const w of [1280, 390]) for (const cc of CC) {
   const p = await b.newPage({ viewport: { width: w, height: 900 } }); const errs = []; p.on('pageerror', e => errs.push(e.message));

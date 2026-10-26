@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-300 workflows (250 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+301 workflows (251 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -209,6 +209,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-it-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-it-drought.py | it-drought.json | finish, validate-files |
 | update-it-fuel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-it-fuel.py | it-fuel.json | finish, validate-files |
 | update-it-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | it-ghg-agri.json | finish, validate-files |
 | update-it-istat-2.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat-2.py | italy-istat/agritourism.json, italy-istat/comuni.json, italy-istat/crops.json … | finish, validate-files |

@@ -78,5 +78,7 @@
   {"q":"water API rivers JSON","lang":"en","top":3,"u":"^api\\.html"},
   {"q":"trigo duro precio","lang":"es","top":3,"u":"trigo_duro"},
   {"q":"prix du blé dur","lang":"fr","top":3,"u":"trigo_duro"},
-  {"q":"prezzo grano duro","lang":"it","top":3,"u":"trigo_duro"}
+  {"q":"prezzo grano duro","lang":"it","top":3,"u":"trigo_duro"},
+  {"q":"sequía Italia por provincia","lang":"es","top":3,"u":"itsq"},
+  {"q":"siccità province Italia","lang":"it","top":3,"u":"itsq"}
 ]

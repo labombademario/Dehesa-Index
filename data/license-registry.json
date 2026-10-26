@@ -6886,6 +6886,13 @@
    ],
    "notes": "Indicador Combinado de Sequía del EDO calculado para las 21 provincias croatas (NUTS 3 de GISCO). scripts/update-hr-drought.py."
   },
+  "data/it-drought.json": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ],
+   "notes": "Indicador Combinado de Sequía del EDO calculado para las 107 provincias italianas (NUTS 3 de GISCO). scripts/update-it-drought.py."
+  },
   "data/ie-diesel.json": {
    "sources": [
     "eu_oil_bulletin",

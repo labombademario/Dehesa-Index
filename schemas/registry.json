@@ -1126,6 +1126,12 @@
     "hr_drought"
    ]
   ],
+  "it-drought.json": [
+   "it-drought",
+   [
+    "it_drought"
+   ]
+  ],
   "ie-diesel.json": [
    "ie-diesel",
    [
