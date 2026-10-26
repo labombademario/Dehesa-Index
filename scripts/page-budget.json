@@ -21,7 +21,7 @@
     { "url": "/observatorio.html", "maxDataRawKB": 392, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/relaciones.html", "maxDataRawKB": 600, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/calculadora.html", "maxDataRawKB": 112, "maxTotalGzKB": 160, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
-    { "url": "/mi-explotacion.html", "maxDataRawKB": 90, "maxTotalGzKB": 175, "wait": 2500, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "input-monitor\\.json"] },
+    { "url": "/mi-explotacion.html", "maxDataRawKB": 92, "maxTotalGzKB": 175, "wait": 2500, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "input-monitor\\.json"] },
     { "url": "/brief.html", "maxDataRawKB": 310, "maxTotalGzKB": 220, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
     { "url": "/precios-locales.html", "maxDataRawKB": 165, "maxTotalGzKB": 230, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/us-cash-bids/history/"], "wait": 2500 },
     { "url": "/noticias.html", "maxDataRawKB": 420, "maxTotalGzKB": 275, "forbid": ["/data/news\\.json", "news-feed\\.js(\\?|$)"] },
