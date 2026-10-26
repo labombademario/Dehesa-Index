@@ -40,6 +40,23 @@
     }).filter(Boolean).join('. ');
   }
   var GAPW = { es: ['Hueco en la serie: sin dato publicado entre', 'y', 'Los valores de antes y de después pueden no ser comparables (cambio de cobertura o definición de la fuente).'], en: ['Gap in the series: no published data between', 'and', 'Values before and after may not be comparable (change in the source’s coverage or definition).'], fr: ['Rupture dans la série : aucune donnée publiée entre', 'et', 'Les valeurs avant et après peuvent ne pas être comparables (changement de couverture ou de définition de la source).'], it: ['Interruzione nella serie: nessun dato pubblicato tra', 'e', 'I valori prima e dopo potrebbero non essere confrontabili (cambio di copertura o di definizione della fonte).'] };
+  /* Línea de tendencia (opcional, la activa el usuario): recta de mínimos cuadrados sobre los puntos mostrados de una serie temporal única. Descriptiva, no una previsión.
+     La preferencia se recuerda en este navegador (localStorage 'dehesaTrend') y se aplica a todas las gráficas de la página. */
+  var TRW = { es: ['Línea de tendencia', 'Tendencia', 'al año', 'R²', 'calculada sobre los {n} puntos mostrados', 'la recta apenas explica la serie', 'Es una descripción del pasado, no una previsión.'],
+    en: ['Trend line', 'Trend', 'per year', 'R²', 'fitted to the {n} points shown', 'the line barely explains the series', 'It describes the past; it is not a forecast.'],
+    fr: ['Ligne de tendance', 'Tendance', 'par an', 'R²', 'calculée sur les {n} points affichés', 'la droite explique à peine la série', 'C’est une description du passé, pas une prévision.'],
+    it: ['Linea di tendenza', 'Tendenza', 'all’anno', 'R²', 'calcolata sui {n} punti mostrati', 'la retta spiega appena la serie', 'Descrive il passato, non è una previsione.'] };
+  var TRK = 'dehesaTrend';
+  function trendOn() { try { return window.localStorage.getItem(TRK) === '1'; } catch (e) { return false; } }
+  function linFit(pts) {   // pts: [[x, y]] -> { a, b, r2, n } con y = a + b·x
+    var n = pts.length, sx = 0, sy = 0, sxx = 0, sxy = 0, syy = 0, i;
+    for (i = 0; i < n; i++) { sx += pts[i][0]; sy += pts[i][1]; }
+    var mx = sx / n, my = sy / n;
+    for (i = 0; i < n; i++) { var dx = pts[i][0] - mx, dy = pts[i][1] - my; sxx += dx * dx; sxy += dx * dy; syy += dy * dy; }
+    if (!sxx) return null;
+    var b = sxy / sxx; return { a: my - b * mx, b: b, r2: syy ? (sxy * sxy) / (sxx * syy) : 0, n: n };
+  }
+  function sig3(v) { var a = Math.abs(v); return a >= 100 ? 0 : a >= 10 ? 1 : a >= 1 ? 2 : a > 0 ? Math.min(6, Math.ceil(-Math.log(a) / Math.LN10) + 2) : 0; }
   function render(o) {
     var S = (o.series || []).filter(function (s) { return s.pts && s.pts.length; });
     if (!S.length) return '';
@@ -100,11 +117,31 @@
       g += dots + '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"' + (s.dash ? ' stroke-dasharray="6 4"' : '') + '/>';
       spec.s.push({ n: s.name, c: s.color, p: pts });
     });
+    var trendSvg = '', trendBox = '';
+    if (time && S.length === 1 && o.trend !== false) {
+      var tp = S[0].pts.filter(function (p) { return p.y !== null && p.y !== undefined && isFinite(p.y); }).map(function (p) { return [(p.x - xmin) / (365.25 * 864e5), p.y]; });
+      var fit = tp.length >= 5 ? linFit(tp) : null;
+      if (fit) {
+        var on = trendOn(), tw = TRW[lang()] || TRW.es, yr = (xmax - xmin) / (365.25 * 864e5), cid = 'dhc' + Math.random().toString(36).slice(2, 8);
+        trendSvg = '<clipPath id="' + cid + '"><rect x="' + L + '" y="' + Tp + '" width="' + (W - R - L) + '" height="' + (H - Bt - Tp) + '"/></clipPath><g class="dh-trend" clip-path="url(#' + cid + ')"' + (on ? '' : ' style="display:none"') + '><line x1="' + x(xmin).toFixed(1) + '" y1="' + y(fit.a).toFixed(1) + '" x2="' + x(xmax).toFixed(1) + '" y2="' + y(fit.a + fit.b * yr).toFixed(1) + '" stroke="var(--text,#3a352c)" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="7 5"/></g>';
+        var unit = o.trendUnit || o.yTitle || '', sl = fit.b, txt = tw[1] + ': ' + (sl > 0 ? '+' : sl < 0 ? '−' : '') + nf(Math.abs(sl), sig3(sl)) + (unit ? ' ' + unit : '') + ' ' + tw[2] + ' · ' + tw[3] + ' ' + nf(fit.r2, 2) + ' (' + tw[4].replace('{n}', String(fit.n)) + (fit.r2 < 0.1 ? '; ' + tw[5] : '') + '). ' + tw[6];
+        trendBox = '<div style="margin:6px 0 0 4px;font-size:12px;color:var(--text-faint,#7a7466)"><label style="display:inline-flex;gap:6px;align-items:center;cursor:pointer;color:var(--text,#3a352c)"><input type="checkbox" data-dh-trend="1"' + (on ? ' checked' : '') + '> ' + esc(tw[0]) + '</label><div class="dh-trend-txt" style="margin-top:3px' + (on ? '' : ';display:none') + '">' + esc(txt) + '</div></div>';
+      }
+    }
     var leg = !o.noLegend && (S.length > 1 || o.legend) ? '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;margin:6px 0 0 4px">' + S.map(function (s) { return '<span><span style="display:inline-block;width:14px;height:3px;background:' + s.color + ';vertical-align:middle;margin-right:6px' + (s.dash ? ';opacity:.7' : '') + '"></span>' + esc(s.name) + '</span>'; }).join('') + '</div>' : '';
     var gapNote = '';
     if (breaks.length && time) { var bl = function (t) { return annual ? String(new Date(t).getUTCFullYear()) : fmtMonth(t); }, gw = GAPW[lang()] || GAPW.es; gapNote = '<div style="margin:6px 0 0 4px;font-size:11.5px;color:var(--text-faint,#7a7466)">' + esc(gw[0] + ' ' + bl(breaks[0][0]) + ' ' + gw[1] + ' ' + bl(breaks[0][1]) + '.' + (annual ? ' ' + gw[2] : '')) + '</div>'; }
-    return '<div class="di-card di-ch" style="padding:10px 10px 8px"><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;max-width:' + W + 'px;margin:0 auto;height:auto;display:block;touch-action:pan-y" role="img" tabindex="0" aria-label="' + esc((o.aria ? o.aria + '. ' : '') + summaryText(S, time, vFmt)) + '" data-dh="' + attrJson(spec) + '">' + g + '</svg>' + leg + gapNote + '</div>';
+    return '<div class="di-card di-ch" style="padding:10px 10px 8px"><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;max-width:' + W + 'px;margin:0 auto;height:auto;display:block;touch-action:pan-y" role="img" tabindex="0" aria-label="' + esc((o.aria ? o.aria + '. ' : '') + summaryText(S, time, vFmt)) + '" data-dh="' + attrJson(spec) + '">' + g + trendSvg + '</svg>' + leg + trendBox + gapNote + '</div>';
   }
+
+  document.addEventListener('change', function (e) {
+    var t = e.target; if (!t || !t.matches || !t.matches('input[data-dh-trend]')) return;
+    var on = !!t.checked; try { window.localStorage.setItem(TRK, on ? '1' : '0'); } catch (er) {}
+    [].forEach.call(document.querySelectorAll('.di-ch'), function (c) {
+      var i = c.querySelector('input[data-dh-trend]'); if (i) i.checked = on;
+      [].forEach.call(c.querySelectorAll('.dh-trend, .dh-trend-txt'), function (el) { el.style.display = on ? '' : 'none'; });
+    });
+  });
 
   /* ---------- atributo para gráficas ya existentes ----------
      spec = { L, R, T, B (área de dibujo en coordenadas del viewBox), s: [{ n, c, p: [[x, y, textoValor, etiqueta], ...] }] } */
