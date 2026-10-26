@@ -244,7 +244,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | refresh-observatory.yml | a mano | manual / por evento | build-observatory.py, build-pipeline-status.py, build-readme-status.py | - | - |
 | release-dispatch.yml | a mano | 2 veces al dia | release-dispatch.py | - | - |
 | send-digest.yml | a mano | semanal (1) | build-digest.py, send-digest.py | - | - |
-| sync-readme.yml | a mano | manual / por evento | build-readme-status.py | - | - |
+| sync-readme.yml | a mano | manual / por evento | build-docs.py, build-readme-status.py | - | - |
 | update-baltics-national.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-np-baltic.py | baltics-national-stats.json | finish, validate-files |
 | update-belgium.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-belgium.py | belgium-stats.json | finish, validate-files |
 | update-climate.yml | a mano | semanal (2) | update-climate.mjs | climate-history.json, climate.json | finish, validate-files |
