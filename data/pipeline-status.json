@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T06:21:00Z",
+ "generatedAt": "2026-10-26T06:51:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 281,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-26T03:45:59.199468+00:00",
   "repoGeneratedAt": "2026-10-26T03:45:59.199468+00:00",
-  "checkedAt": "2026-10-26T06:21:00Z"
+  "checkedAt": "2026-10-26T06:51:00Z"
  },
  "pipelines": [
   {
@@ -3301,9 +3301,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T06:47:36Z",
-    "durationSec": 34,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39913671948"
+    "startedAt": "2026-10-26T06:51:31Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40282284932"
    },
    "recent": {
     "runs": 10,
@@ -3784,7 +3784,7 @@
    "crons": [
     "45 6 * * 1-5"
    ],
-   "nextRun": "2026-10-26T06:45:00Z",
+   "nextRun": "2026-10-27T06:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4110,7 +4110,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-26T06:47:00Z",
+   "nextRun": "2026-10-26T09:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4164,8 +4164,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40265237603"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4437,7 +4437,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T05:54:20Z"
+     "lastChange": "2026-10-26T06:22:54Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4525,9 +4525,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40265166336"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 9,
-    "failed": 1
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 3.0
@@ -6185,7 +6185,7 @@
    "crons": [
     "30 6 * * *"
    ],
-   "nextRun": "2026-10-26T06:30:00Z",
+   "nextRun": "2026-10-27T06:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6553,7 +6553,7 @@
    "crons": [
     "40 6 * * 1-5"
    ],
-   "nextRun": "2026-10-26T06:40:00Z",
+   "nextRun": "2026-10-27T06:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6613,7 +6613,7 @@
     "55 23 * * *",
     "40 6 * * 1"
    ],
-   "nextRun": "2026-10-26T06:40:00Z",
+   "nextRun": "2026-10-26T23:55:00Z",
    "files": [
     {
      "path": "data/news-archive"
