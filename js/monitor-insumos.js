@@ -178,8 +178,8 @@
       var late = x.state === 'DELAYED' || x.state === 'STALE', yr = x.years < 9.5 ? '<div class="mi-m">' + esc(num(x.years, x.years % 1 ? 1 : 0) + ' ' + w.yrs) + '</div>' : '';
       h += '<tr><td><strong>' + esc(nm(x.name)) + '</strong></td>' +
         '<td><strong>' + esc(num(x.value, dec(x.value, x.unit))) + '</strong> <span class="mi-m">' + esc(unitShort(x.unit)) + '</span><div class="mi-m">' + esc(per(x.last)) + (late ? ' · <span style="color:#8f5f12">' + esc(w.late) + '</span>' : '') + '</div></td>' +
-        '<td style="color:' + (x.yoy > 0 ? 'var(--negative)' : x.yoy < 0 ? 'var(--positive)' : 'inherit') + ';font-weight:600">' + esc(pct(x.yoy)) + '</td>' +
-        '<td>' + bar(x.pct, w, false, x.spark && x.spark.length > 2 ? x.id : '') + yr + '</td>' +
+        '<td style="color:' + (x.yoy > 0 ? (g.gid === 'afford' ? 'var(--positive)' : 'var(--negative)') : x.yoy < 0 ? (g.gid === 'afford' ? 'var(--negative)' : 'var(--positive)') : 'inherit') + ';font-weight:600">' + esc(pct(x.yoy)) + '</td>' +
+        '<td>' + bar(x.pct, w, g.gid === 'afford', x.spark && x.spark.length > 2 ? x.id : '') + yr + '</td>' +
         '<td>' + esc(num(x.min[1], dec(x.min[1], x.unit))) + '<div class="mi-m">' + esc(per(x.min[0])) + '</div></td><td>' + esc(num(x.max[1], dec(x.max[1], x.unit))) + '<div class="mi-m">' + esc(per(x.max[0])) + '</div></td>' +
         '<td>' + (x.spark && x.spark.length > 2 ? '<button type="button" class="mi-sp" data-sp="' + esc(x.id) + '" aria-expanded="false" title="' + esc(w.seeChart) + '" aria-label="' + esc(w.seeChart + ': ' + nm(x.name)) + '" style="background:none;border:0;padding:2px;cursor:pointer;font:inherit;color:inherit;text-align:left">' + spark(x.spark) + '<div class="mi-m" style="margin:0">' + esc(w.seeChart) + ' ▾</div></button>' : '') + '</td></tr>' +
         '<tr class="mi-ch" data-ch="' + esc(x.id) + '" hidden><td colspan="7" style="padding:4px 6px 14px"></td></tr>';
