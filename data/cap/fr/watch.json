@@ -3,7 +3,7 @@
  "country": "FR",
  "source": "dila_jorf",
  "status": "OK",
- "checkedAt": "2026-10-19",
+ "checkedAt": "2026-10-26",
  "baseline": {
   "fingerprints": {},
   "acknowledged": [
@@ -47,10 +47,60 @@
     "title": "Arrêté du 29 septembre 2026 définissant le taux annuel minimum de contrôle 2026 de l'écorégime, des indemnités compensatoires de handicaps naturels et des aides en faveur de l'agriculture biologique en application de l'article D. 614-17 du code rural et de la pêche maritime",
     "date": "2026-10-02",
     "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054938477"
+   },
+   {
+    "id": "JORFTEXT000054999216",
+    "title": "Arrêté du 14 octobre 2026 relatif aux dispositions de l'avenant à l'accord interprofessionnel triennal relatif aux cotisations destinées à financer les actions du BNIC et les dépenses de publicité collective ainsi que les études économiques et techniques (campagne 2026-2027)",
+    "date": "2026-10-20",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054999216"
+   },
+   {
+    "id": "JORFTEXT000055002724",
+    "title": "Arrêté du 14 octobre 2026 relatif aux dispositions de l'accord interprofessionnel relatif à la cotisation professionnelle destinée à financer la recherche et développement/transition environnementale (campagne 2026-2027)",
+    "date": "2026-10-21",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055002724"
+   },
+   {
+    "id": "JORFTEXT000055009263",
+    "title": "Arrêté du 20 octobre 2026 relatif aux dispositions de l'accord interprofessionnel relatif à la cotisation professionnelle destinée à financer la lutte contre la flavescence dorée (campagne 2026-2027)",
+    "date": "2026-10-23",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055009263"
+   },
+   {
+    "id": "JORFTEXT000055013363",
+    "title": "Décret n° 2026-991 du 23 octobre 2026 relatif à la mise en œuvre de la norme relative aux bonnes conditions agricoles et environnementales des sols (norme BCAE 6) applicable aux aides de la politique agricole commune pour la campagne 2026",
+    "date": "2026-10-25",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013363"
+   },
+   {
+    "id": "JORFTEXT000055013372",
+    "title": "Arrêté du 12 octobre 2026 modifiant l'arrêté du 22 mars 2023 fixant les conditions d'accès à l'aide aux bovins de plus de 16 mois dans les départements de Corse mise en œuvre à partir de la campagne 2023",
+    "date": "2026-10-25",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013372"
+   },
+   {
+    "id": "JORFTEXT000055013502",
+    "title": "Arrêté du 23 octobre 2026 relatif au champ d'application de la dérogation prévue par le décret n° 2026-991 du 23 octobre 2026 relatif à la mise en œuvre de la norme relative aux bonnes conditions agricoles et environnementales des sols (norme BCAE 6) applicable aux aides de la politique agricole commune pour la campagne 2026",
+    "date": "2026-10-25",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013502"
+   },
+   {
+    "id": "JORFTEXT000047396318",
+    "title": "Arrêté du 22 mars 2023 fixant les conditions d'accès à l'aide aux bovins de plus de 16 mois dans les départements de Corse mise en œuvre à partir de la campagne 2023",
+    "date": "2026-10-25",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047396318"
    }
   ],
-  "lastScanned": "2026-10-18"
+  "lastScanned": "2026-10-25"
  },
- "reviewNeeded": [],
+ "reviewNeeded": [
+  "texto nuevo: Arrêté du 14 octobre 2026 relatif aux dispositions de l'avenant à l'accord interprofessionnel triennal relatif aux cotisations destinées à f (2026-10-20)",
+  "texto nuevo: Arrêté du 14 octobre 2026 relatif aux dispositions de l'accord interprofessionnel relatif à la cotisation professionnelle destinée à finance (2026-10-21)",
+  "texto nuevo: Arrêté du 20 octobre 2026 relatif aux dispositions de l'accord interprofessionnel relatif à la cotisation professionnelle destinée à finance (2026-10-23)",
+  "texto nuevo: Décret n° 2026-991 du 23 octobre 2026 relatif à la mise en œuvre de la norme relative aux bonnes conditions agricoles et environnementales d (2026-10-25)",
+  "texto nuevo: Arrêté du 12 octobre 2026 modifiant l'arrêté du 22 mars 2023 fixant les conditions d'accès à l'aide aux bovins de plus de 16 mois dans les d (2026-10-25)",
+  "texto nuevo: Arrêté du 23 octobre 2026 relatif au champ d'application de la dérogation prévue par le décret n° 2026-991 du 23 octobre 2026 relatif à la m (2026-10-25)",
+  "texto nuevo: Arrêté du 22 mars 2023 fixant les conditions d'accès à l'aide aux bovins de plus de 16 mois dans les départements de Corse mise en œuvre à p (2026-10-25)"
+ ],
  "note": "Vigilancia de los boletines diarios del JORF desde el 1 de octubre de 2026 (último día leído a mano). Los textos que aparecen son candidatos: no se interpretan."
 }
