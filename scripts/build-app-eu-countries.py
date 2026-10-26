@@ -11,6 +11,8 @@ D = ROOT / 'data'
 OUT = D / 'app' / 'v1' / 'eu'
 EPOCH = datetime.date(2000, 1, 1)
 # producto -> (familia, [series por orden de preferencia], nombre es|en|fr|it, unidad es|en|fr|it, divisor para la unidad mostrada)
+NATIONAL_MARKET = ('average national price', 'national average')   # la Comisión rotula así la media nacional cuando el país publica además mercados concretos (aceite: Italia, Grecia, Portugal, Croacia)
+def is_national(x): return not x.get('m') or x['m'].strip().lower() in NATIONAL_MARKET
 P = [
  ('trigo', 'cereales', ['breadmaking-common-wheat-national-average-not-specified'], 'Trigo blando|Soft wheat|Blé tendre|Frumento tenero', '€/tonelada|€/tonne|€/tonne|€/tonnellata', 1),
  ('trigo_duro', 'cereales', ['durum-wheat-national-average-not-specified'], 'Trigo duro|Durum wheat|Blé dur|Frumento duro', '€/tonelada|€/tonne|€/tonne|€/tonnellata', 1),
@@ -24,6 +26,7 @@ P = [
  ('cordero', 'ovino', ['heavy-lamb', 'light-lamb'], 'Cordero|Lamb|Agneau|Agnello', '€/100 kg|€/100 kg|€/100 kg|€/100 kg', 1),
  ('pollo', 'pollo', ['whole-broiler-65-selling-price'], 'Pollo|Chicken|Poulet|Pollo', '€/100 kg|€/100 kg|€/100 kg|€/100 kg', 1),
  ('huevos', 'huevos', ['cage', 'barn'], 'Huevos|Eggs|Œufs|Uova', '€/100 kg|€/100 kg|€/100 kg|€/100 kg', 1),
+ ('arroz', 'arroz', ['paddy-japonica-avg'], 'Arroz cáscara (japónica)|Paddy rice (japonica)|Riz paddy (japonica)|Riso risone (japonica)', '€/tonelada|€/tonne|€/tonne|€/tonnellata', 1),
  ('oliva', 'aceite', ['extra-virgin-olive-oil-up-to-0-8'], 'Aceite de oliva virgen extra|Extra virgin olive oil|Huile d’olive vierge extra|Olio extravergine di oliva', '€/100 kg|€/100 kg|€/100 kg|€/100 kg', 1),
 ]
 L4 = ('es', 'en', 'fr', 'it')
@@ -159,13 +162,13 @@ def main():
         for cc in NAMES:
             for sid in sids:
                 s = idx.get(sid)
-                r = next((x for x in (s or {}).get('regions', []) if x['c'] == cc and not x.get('m')), None) if s else None
+                r = next((x for x in (s or {}).get('regions', []) if x['c'] == cc and is_national(x)), None) if s else None
                 if not r: continue
                 last = datetime.date.fromisoformat(r['last'][0])
                 if (today - last).days > MAX_AGE: continue
                 key = (fam, sid)
                 if key not in files: files[key] = json.loads((D / 'eu' / fam / (sid + '.json')).read_text())
-                fr = next((x for x in files[key]['regions'] if x['c'] == cc and not x.get('m')), None)
+                fr = next((x for x in files[key]['regions'] if x['c'] == cc and is_national(x) and (x.get('m') or '') == (r.get('m') or '')), None)
                 pts = [[(EPOCH + datetime.timedelta(days=dd)).isoformat(), v] for dd, v in zip(fr['d'], fr['v'])] if fr else []
                 cut = (last - datetime.timedelta(days=5 * 366)).isoformat()   # 5 años: la web los usa en el histórico ampliado
                 pts = [p for p in pts if p[0] >= cut]

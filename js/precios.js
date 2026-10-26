@@ -130,6 +130,7 @@
     'trigo:us': { key: 'cereales:trigo', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
     'arroz:us': { key: 'cereales:arroz', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'cebada:us': { key: 'cereales:cebada', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
+    'trigo_duro:eu': { key: 'cereales:trigo_duro', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
     'cebada:eu': { key: 'cereales:cebada', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
     'avena:us': { key: 'cereales:avena', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
     'avena:eu': { key: 'cereales:avena', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
@@ -354,7 +355,7 @@
   }
 
   // Emoji solo para productos inconfundibles; decorativo (aria-hidden), sin emoji = sin icono
-  var PRODUCT_EMOJI = { maiz: '🌽', trigo: '🌾', trigo_pienso_ab: '🌾', trigo_cwrs_ab: '🌾', vaca: '🐄', novillo_ab: '🐄', cerdo: '🐖', cerdo_ab: '🐖', pollo: '🐔', huevos: '🥚', leche: '🥛', mantequilla: '🧈', oliva: '🫒', cordero: '🐑', cabra: '🐐', gas_natural: '🔥', petroleo_brent: '🛢️', petroleo_wti: '🛢️', diesel: '⛽' };
+  var PRODUCT_EMOJI = { maiz: '🌽', trigo: '🌾', trigo_duro: '🌾', trigo_pienso_ab: '🌾', trigo_cwrs_ab: '🌾', vaca: '🐄', novillo_ab: '🐄', cerdo: '🐖', cerdo_ab: '🐖', pollo: '🐔', huevos: '🥚', leche: '🥛', mantequilla: '🧈', oliva: '🫒', cordero: '🐑', cabra: '🐐', gas_natural: '🔥', petroleo_brent: '🛢️', petroleo_wti: '🛢️', diesel: '⛽' };
   function productEmoji(nameKey) { return PRODUCT_EMOJI[nameKey] ? '<span class="di-emoji" aria-hidden="true">' + PRODUCT_EMOJI[nameKey] + '</span> ' : ''; }
   // En la UE la Comisión no publica DAP ni MOP sino un precio agregado por nutriente: con ubicación Europa se nombra así
   var EU_FERT = { dap: { es: 'Abonos fosfatados (P), agregado UE', en: 'Phosphate fertilisers (P), EU aggregate', fr: 'Engrais phosphatés (P), agrégat UE', it: 'Fertilizzanti fosfatici (P), aggregato UE' }, potasa: { es: 'Abonos potásicos (K), agregado UE', en: 'Potash fertilisers (K), EU aggregate', fr: 'Engrais potassiques (K), agrégat UE', it: 'Fertilizzanti potassici (K), aggregato UE' } };
@@ -381,7 +382,7 @@
   // Precio REAL de cada país de la UE (13-oct-2026, a petición de Mario): media nacional de la Comisión Europea para ese país
   // (data/app/v1/eu/<CC>.json, scripts/build-app-eu-countries.py). Sustituye a los countryFactors (precio de España × un factor fijo),
   // que mostraban en Alemania, Francia o Italia un dato que en realidad era de España. Si el país no tiene el producto, no se muestra.
-  var SPAIN_ONLY = { arroz: 1, cebada: 1, cerdo: 1, colza: 1, cordero: 1, harina_soja: 1, huevos: 1, leche: 1, maiz: 1, oliva: 1, pollo: 1, trigo: 1, vaca: 1 };
+  var SPAIN_ONLY = { arroz: 1, cebada: 1, cerdo: 1, colza: 1, cordero: 1, harina_soja: 1, huevos: 1, leche: 1, maiz: 1, oliva: 1, pollo: 1, trigo: 1, trigo_duro: 1, vaca: 1 };
   var CTRY = {}, CTRY_P = {}, CTRY_REG = {};
   function loadCountry(cc) {
     cc = String(cc || '').toUpperCase(); if (!cc || cc === 'ES' || CTRY[cc] || CTRY_P[cc]) return CTRY_P[cc] || Promise.resolve();

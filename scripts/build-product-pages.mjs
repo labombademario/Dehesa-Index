@@ -18,6 +18,7 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const P = {
   trigo: { es: ['Trigo', 'del trigo'], en: ['Wheat', 'wheat'], fr: ['Blé', 'du blé'], it: ['Grano', 'del grano'], s: ['wheat', 'ble', 'grano'] },
   maiz: { es: ['Maíz', 'del maíz'], en: ['Corn', 'corn'], fr: ['Maïs', 'du maïs'], it: ['Mais', 'del mais'], s: ['corn', 'mais', 'mais'] },
+  trigo_duro: { es: ['Trigo duro', 'del trigo duro'], en: ['Durum wheat', 'durum wheat'], fr: ['Blé dur', 'du blé dur'], it: ['Grano duro', 'del grano duro'], s: ['durum-wheat', 'ble-dur', 'grano-duro'] },
   cebada: { es: ['Cebada', 'de la cebada'], en: ['Barley', 'barley'], fr: ['Orge', 'de l’orge'], it: ['Orzo', 'dell’orzo'], s: ['barley', 'orge', 'orzo'] },
   avena: { es: ['Avena', 'de la avena'], en: ['Oats', 'oats'], fr: ['Avoine', 'de l’avoine'], it: ['Avena', 'dell’avena'], s: ['oats', 'avoine', 'avena'] },
   centeno: { es: ['Centeno', 'del centeno'], en: ['Rye', 'rye'], fr: ['Seigle', 'du seigle'], it: ['Segale', 'della segale'], s: ['rye', 'seigle', 'segale'] },
@@ -170,7 +171,7 @@ try {
     }
   }
 } catch (e) { /* sin fertilizantes de EE. UU. */ }
-const QUINTAL = new Set(['arroz', 'avena', 'cebada', 'centeno', 'colza', 'maiz', 'trigo']);
+const QUINTAL = new Set(['arroz', 'avena', 'cebada', 'centeno', 'colza', 'maiz', 'trigo', 'trigo_duro']);
 const ORDER = ['us', 'eu', 'ca', 'uk'];
 const keys = Object.keys(byProd).sort();
 const urlOf = (lg, k) => SITE + '/' + L[lg].root + '/' + (lg === 'es' ? k : P[k].s[['en', 'fr', 'it'].indexOf(lg)]) + '/';

@@ -14,7 +14,7 @@ const tri = (es, en, fr, it) => ({ es, en, fr, it });
 
 // --- productos de la página de precios
 const SYN = {
-  maiz: 'corn maize mais maïs cereal grano forraje', trigo: 'wheat blé ble frumento pan harina cereal candeal', arroz: 'rice riz riso paddy cereal', mantequilla: 'butter beurre burro lacteo lácteo', leche_polvo: 'skim milk powder smp lait poudre latte polvere desnatada', colza: 'rapeseed canola colza oleaginosa oilseed', centeno: 'rye seigle segale cereal', cebada: 'barley orge orzo cereal cerveza malta pienso', avena: 'oats avoine avena cereal pienso', sorgo: 'sorghum sorgho milo cereal grano forraje',
+  maiz: 'corn maize mais maïs cereal grano forraje', trigo_duro: 'durum wheat blé dur grano duro semola sémola pasta macarrones cereal', trigo: 'wheat blé ble frumento pan harina cereal candeal', arroz: 'rice riz riso paddy cereal', mantequilla: 'butter beurre burro lacteo lácteo', leche_polvo: 'skim milk powder smp lait poudre latte polvere desnatada', colza: 'rapeseed canola colza oleaginosa oilseed', centeno: 'rye seigle segale cereal', cebada: 'barley orge orzo cereal cerveza malta pienso', avena: 'oats avoine avena cereal pienso', sorgo: 'sorghum sorgho milo cereal grano forraje',
   leche: 'milk lait latte lacteo lácteo dairy vaca cruda', vaca: 'vacuno beef cattle bovino bovins bovini ternera buey novillo carne res vitello manzo',
   cabra: 'goat chevre chèvre capra caprino', cerdo: 'pork hogs pig porcino cochino cochinillo porc maiale swine', cordero: 'lamb sheep ovino oveja agneau agnello mouton',
   huevos: 'eggs oeufs uova huevo gallina', pollo: 'chicken broiler poulet aves avicultura', pienso: 'feed mangime aliment compuesto racion ración',
@@ -139,7 +139,7 @@ for (const loc of clim.locations) add({ t: 'climate', u: 'clima.html?loc=' + loc
 add({ t: 'map', u: 'mapa.html?layer=precip', n: tri('Mapa · Lluvia', 'Map · Rainfall', 'Carte · Pluie', 'Mappa · Pioggia'), s: tri('Desviación frente a la media 2001-2020', 'Deviation from the 2001-2020 average', 'Écart à la moyenne 2001-2020', 'Scostamento dalla media 2001-2020'), k: 'lluvia rain pluie pioggia sequia sequía clima mapa map' });
 add({ t: 'map', u: 'mapa.html?layer=temp', n: tri('Mapa · Temperatura', 'Map · Temperature', 'Carte · Température', 'Mappa · Temperatura'), s: tri('Desviación frente a la media 2001-2020', 'Deviation from the 2001-2020 average', 'Écart à la moyenne 2001-2020', 'Scostamento dalla media 2001-2020'), k: 'temperatura temperature calor frio heat cold clima mapa map' });
 // --- mapa de precios por producto
-for (const id of ['trigo', 'maiz', 'arroz', 'cerdo', 'cordero', 'harina_soja', 'huevos', 'leche', 'oliva', 'pollo', 'vaca', 'azucar', 'dap', 'potasa', 'diesel']) {
+for (const id of ['trigo', 'trigo_duro', 'maiz', 'arroz', 'cerdo', 'cordero', 'harina_soja', 'huevos', 'leche', 'oliva', 'pollo', 'vaca', 'azucar', 'dap', 'potasa', 'diesel']) {
   const nm = D.NAMES; const key = id === 'vaca' ? 'vaca' : id;
   add({ t: 'map', u: 'mapa.html?layer=price&product=' + id, n: Object.fromEntries(L.map(l => [l, MAPW[l] + ' · ' + tri('Precios', 'Prices', 'Prix', 'Prezzi')[l] + ' · ' + (nm[l][key] || nm[l][id] || id)])), s: tri('Precio verificado por país', 'Verified price by country', 'Prix vérifié par pays', 'Prezzo verificato per paese'), k: (SYN[id] || '') + ' mapa map carte mappa precio price prix prezzo' });
 }

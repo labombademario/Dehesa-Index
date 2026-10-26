@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: '22'
       - name: Update EU Agri-food prices
-        run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo huevos azucar oliva arroz maiz trigo cebada avena colza centeno mantequilla leche_polvo dap potasa leche harina_soja
+        run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo huevos azucar oliva arroz maiz trigo trigo_duro cebada avena colza centeno mantequilla leche_polvo dap potasa leche harina_soja
       - uses: ./.github/actions/price-engine
       - name: Site QA
         run: node scripts/qa-site.mjs

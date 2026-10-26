@@ -1,21 +1,2 @@
-2026-10-22T14:32:00.130Z
-OK cerdo
-OK vaca
-OK cordero
-OK pollo
-OK huevos
-OK azucar
-OK oliva
-OK arroz
-OK maiz
-OK trigo
-OK cebada
-OK avena
-OK colza
-OK centeno
-OK mantequilla
-OK leche_polvo
-OK dap
-OK potasa
-OK leche
-OK harina_soja
+2026-10-26T20:46:33.535Z
+OK trigo_duro

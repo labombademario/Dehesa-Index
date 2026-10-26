@@ -66,6 +66,13 @@ export const PRODUCTS = {
     market: 'Comisión Europea (maíz pienso, mercado de Zaragoza, salida de silo)',
     methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del maíz pienso en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro de Euronext.' + NOTE_PUB
   },
+  trigo_duro: {
+    catId: 'cereales', id: 'di_cereales_trigo_duro_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'cereal', member: 'ES', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.productName === 'Durum wheat' && r.marketName === 'Sevilla' && /^Departure from silo/.test(r.stageName), recent: true,
+    market: 'Comisión Europea (trigo duro, mercado de Sevilla, salida de silo)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo duro en el mercado de Sevilla (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro. Italia, el mayor productor de la UE, publica sus propios mercados (Bolonia, Roma, Foggia…): se ven al elegir Italia y en la página de Europa.' + NOTE_PUB
+  },
   cebada: {
     catId: 'cereales', id: 'di_cereales_cebada_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'cereal', member: 'ES', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
