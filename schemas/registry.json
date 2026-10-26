@@ -1534,6 +1534,24 @@
     "el_elstat_accounts"
    ]
   ],
+  "el-elgo/milk.json": [
+   "el-elgo-milk",
+   [
+    "el_elgo_milk"
+   ]
+  ],
+  "el-elgo/meat.json": [
+   "el-elgo-meat",
+   [
+    "el_elgo_meat"
+   ]
+  ],
+  "el-elgo/dairy.json": [
+   "el-elgo-dairy",
+   [
+    "el_elgo_dairy"
+   ]
+  ],
   "eu-land/land.json": [
    "eu-land",
    [

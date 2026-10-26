@@ -1003,6 +1003,16 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/el-elstat/prices.json data/el-elstat/accounts.json
     data: [el-elstat/prices.json, el-elstat/accounts.json, el-elstat-log.txt]
     message: Precios agrarios y cuentas regionales de Grecia (ELSTAT)
+  - id: el-elgo
+    name: Update Greece milk deliveries and prices, slaughter and dairy production by regional unit (ELGO-DIMITRA, data.gov.gr)
+    cron: ['50 9 24 * *']
+    script: scripts/update-el-elgo.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/el-elgo/milk.json data/el-elgo/meat.json data/el-elgo/dairy.json
+    data: [el-elgo/milk.json, el-elgo/meat.json, el-elgo/dairy.json, el-elgo-log.txt]
+    message: Leche, sacrificio y lacteos de Grecia por provincia (ELGO-DIMITRA)
   - id: eu-land
     name: Update agricultural land prices and irrigated share for FR, IT, PL, PT, DE, BE, HR and EL (Eurostat)
     cron: ['40 9 14 * *']

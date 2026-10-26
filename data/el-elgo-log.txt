@@ -1,0 +1,6 @@
+milk: 11490 filas, 80 meses (2020-01..2026-08)
+meat: 54109 filas, 80 meses; aves 970 filas
+dairy: 47966 filas lacteos, 7724 filas DOP, 80 meses
+escrito milk 46606 bytes
+escrito meat 102318 bytes
+escrito dairy 37471 bytes

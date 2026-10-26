@@ -660,12 +660,17 @@
     var go = function () { if (window.DIElElstat && ST.c === cc) window.DIElElstat.mount(el, lang()); };
     var mod = function () { if (window.DIElElstat) go(); else js('js/el-elstat.js?v=20261019', go); };
     nearView(el, function () { if (window.ESUI) mod(); else js('js/es-ui.js?v=20261015', mod); });
+    /* Grecia: leche, sacrificio y lácteos por provincia (js/el-elgo.js; ELGO-Dimitra, data/el-elgo/) */
+    var el2 = document.createElement('div'); el2.id = 'pp-el-elgo'; el2.style.minHeight = '1px'; el.parentNode.insertBefore(el2, el.nextSibling);
+    var go2 = function () { if (window.DIElElgo && ST.c === cc) window.DIElElgo.mount(el2, lang()); };
+    var mod2 = function () { if (window.DIElElgo) go2(); else js('js/el-elgo.js?v=20261026', go2); };
+    nearView(el2, function () { if (window.ESUI) mod2(); else js('js/es-ui.js?v=20261015', mod2); });
   }
   var LANDCC = ['FR', 'IT', 'PL', 'PT', 'DE', 'BE', 'HR', 'EL'];
   function euLandUp() {
     if (LANDCC.indexOf(ST.c) < 0) return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
-    var after = document.getElementById('pp-land-fr-it') || document.getElementById('pp-el-elstat') || document.getElementById('pp-eu-diesel') || document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || tr;
+    var after = document.getElementById('pp-land-fr-it') || document.getElementById('pp-el-elgo') || document.getElementById('pp-el-elstat') || document.getElementById('pp-eu-diesel') || document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || tr;
     var el = document.createElement('div'); el.id = 'pp-eu-land'; el.style.minHeight = '1px'; after.parentNode.insertBefore(el, after.nextSibling);
     function js(src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
     var go = function () { if (window.DIEuLand && ST.c === cc) window.DIEuLand.mount(el, lang(), cc); };

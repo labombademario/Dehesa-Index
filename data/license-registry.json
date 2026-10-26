@@ -5421,6 +5421,32 @@
    "short": "ECCC · WSC",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: ECCC Data Services End-use Licence 2.1.1 (uso comercial permitido, con atribución)."
+  },
+  "elgo_dimitra": {
+   "name": "Greece — ELGO-DIMITRA (Hellenic Agricultural Organisation), via data.gov.gr",
+   "url": "https://data.gov.gr/",
+   "country": "EL",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: ELGO-DIMITRA (Organismo Helenico de Agricultura), datos abiertos de data.gov.gr, CC BY 4.0. Elaboracion de dehesaindex.com.",
+   "additionalRestrictions": "Citar la fuente e indicar los cambios. Las filas son las que publica ELGO; los totales nacionales y anuales son sumas nuestras.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Cada recurso del conjunto en data.gov.gr (CKAN) declara license=http://publications.europa.eu/resource/authority/licence/CC_BY_4_0 y rights='Creative Commons Attribution 4.0 International' (leido 2026-10-26 con package_show). El script rechaza el recurso si la licencia declarada deja de ser CC BY 4.0.",
+   "used": true,
+   "aliases": [],
+   "notes": "Conjuntos 'Gestion de datos de produccion de leche fresca', 'Gestion de datos de circulacion de carne' y 'Gestion de datos de productos producidos' (leche entregada con precio, sacrificio, lacteos y quesos DOP) por unidad regional y mes. Pipeline scripts/update-el-elgo.py.",
+   "short": "ELGO-DIMITRA",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   }
  },
  "files": {
@@ -7978,6 +8004,12 @@
   "data/rivers-be.json": {
    "default": "vmm_waterinfo",
    "notes": "Nivel y caudal de 9 estaciones de ríos de Flandes; media diaria, referencia y percentil: cálculo de Dehesa Index."
+  },
+  "data/el-elgo/": {
+   "sources": [
+    "elgo_dimitra"
+   ],
+   "notes": "Leche entregada (con precio medio), sacrificio por especie, produccion de lacteos y quesos DOP de Grecia por unidad regional y mes (scripts/update-el-elgo.py), de los conjuntos abiertos de ELGO-DIMITRA en data.gov.gr."
   }
  },
  "derived": [

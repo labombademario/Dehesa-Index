@@ -4992,6 +4992,77 @@ def commercial_summary(doc, errs, warns, stats):
     stats["series"] = len(doc["sources"])
 
 # ---- Grecia (ELSTAT): precios agrarios y cuentas regionales -------------------------------------------------------------
+def _elgo_axis(doc, errs, what, M):
+    if not M or M != sorted(set(M)): errs.append("%s: meses desordenados o repetidos" % what); return False
+    def nxt(m): y, mo = int(m[:4]), int(m[5:]); return "%d-%02d" % (y + (mo == 12), mo % 12 + 1)
+    if any(nxt(M[i]) != M[i + 1] for i in range(len(M) - 1)): errs.append("%s: meses con huecos" % what); return False
+    return True
+
+
+def _elgo_annual_sum(doc, errs, what, M, nat, prefs, field):
+    """La suma de las unidades regionales de cada año (hasta el 0,05 %) es el total nacional del mismo año."""
+    tot = {}
+    for i, m in enumerate(M): tot[m[:4]] = tot.get(m[:4], 0) + (nat[i] or 0)
+    for y, t in tot.items():
+        s = sum(p.get(field, {}).get(y, 0) for p in prefs.values())
+        if t and abs(s - t) > 5e-4 * t + 60: errs.append("%s %s: unidades suman %.0f y el total es %.0f" % (what, y, s, t)); return
+
+
+def el_elgo_milk(doc, errs, warns, stats):
+    """Leche de Grecia: meses contiguos, series alineadas, precio nacional entre 0,15 y 3,5 EUR/kg (oveja y cabra por encima de la vaca), kg ecologicos <= total, unidades regionales suman el total de cada año."""
+    M = doc["months"]
+    if not _elgo_axis(doc, errs, "leche", M): return
+    if doc["lastMonth"] != M[-1]: errs.append("lastMonth no es el ultimo mes")
+    for t, e in doc["types"].items():
+        for k in ("kg", "price", "producers", "orgKg"):
+            if len(e[k]) != len(M): errs.append("leche %s.%s: %d valores y %d meses" % (t, k, len(e[k]), len(M))); return
+        if any(o > k + 2 for o, k in zip(e["orgKg"], e["kg"])): errs.append("leche %s: mas kg ecologicos que totales" % t)
+        if t != "buffalo":
+            if any(p is not None and not 0.15 < p < 3.5 for p in e["price"]): errs.append("leche %s: precio fuera de 0,15-3,5 EUR/kg" % t)
+            if e["price"][-1] is None: errs.append("leche %s: sin precio en el ultimo mes" % t)
+        _elgo_annual_sum(doc, errs, "leche " + t, M, e["kg"], doc["prefectures"][t], "kg")
+    c, s = doc["types"]["cow"]["price"][-1], doc["types"]["sheep"]["price"][-1]
+    if c and s and s < c: errs.append("leche: la oveja (%.2f) por debajo de la vaca (%.2f)" % (s, c))
+    stats["series"] = sum(len(e) for e in doc["types"].values())
+
+
+def el_elgo_meat(doc, errs, warns, stats):
+    """Sacrificio de Grecia: meses contiguos, series alineadas, pesos medios por cabeza razonables (vacuno 80-450 kg, porcino 20-200 kg, ovino 3-40 kg), importados <= total, unidades suman el total anual."""
+    M = doc["months"]
+    if not _elgo_axis(doc, errs, "sacrificio", M): return
+    lim = {"cattle": (80, 450), "pigs": (20, 200), "lamb": (3, 25), "sheep": (8, 60), "kid": (3, 20), "goat": (8, 60)}
+    for g, e in doc["groups"].items():
+        if not (len(e["heads"]) == len(e["kg"]) == len(e["importedKg"]) == len(M)): errs.append("sacrificio %s: series desalineadas" % g); return
+        if any(i > k + 2 for i, k in zip(e["importedKg"], e["kg"])): errs.append("sacrificio %s: importados mayores que el total" % g)
+        h, k = sum(e["heads"][-12:]), sum(e["kg"][-12:])
+        if h and g in lim and not lim[g][0] <= k / h <= lim[g][1]: errs.append("sacrificio %s: %.1f kg por cabeza fuera de %s" % (g, k / h, lim[g]))
+        _elgo_annual_sum(doc, errs, "sacrificio " + g, M, e["kg"], doc["prefectures"][g], "kg")
+    PM = doc["poultry"]["months"]
+    if not _elgo_axis(doc, errs, "aves", PM): return
+    for t, e in doc["poultry"]["types"].items():
+        if len(e["kg"]) != len(PM) or len(e["heads"]) != len(PM): errs.append("aves %s: series desalineadas" % t)
+    b = doc["poultry"]["types"]["broiler"]
+    if sum(b["heads"][-12:]) and not 0.5 <= sum(b["kg"][-12:]) / sum(b["heads"][-12:]) <= 4: errs.append("aves: peso del pollo fuera de 0,5-4 kg")
+    stats["series"] = len(doc["species"]) * 2
+
+
+def el_elgo_dairy(doc, errs, warns, stats):
+    """Lacteos de Grecia: meses contiguos, series alineadas, ningun valor negativo, feta DOP entre 20 y 400 kt al año, kg ecologicos <= total."""
+    M = doc["months"]
+    if not _elgo_axis(doc, errs, "lacteos", M): return
+    for g, v in doc["groups"].items():
+        if len(v) != len(M) or any(x < 0 for x in v): errs.append("lacteos %s: serie desalineada o negativa" % g)
+    PM = doc["pdo"]["months"]
+    if not _elgo_axis(doc, errs, "DOP", PM): return
+    for k, e in doc["pdo"]["products"].items():
+        if len(e["kg"]) != len(PM) or len(e["orgKg"]) != len(PM): errs.append("DOP %s: series desalineadas" % k); return
+        if any(o > x + 2 for o, x in zip(e["orgKg"], e["kg"])): errs.append("DOP %s: ecologico mayor que total" % k)
+    f = doc["pdo"]["products"].get("Π.Ο.Π. ΦΕΤΑ")
+    if not f or not 2e7 <= sum(f["kg"][-12:]) <= 4e8: errs.append("feta DOP fuera de 20-400 kt al año")
+    else: _elgo_annual_sum(doc, errs, "feta DOP", PM, f["kg"], {p: {"kg": y} for p, y in doc["fetaPrefectures"].items()}, "kg")
+    stats["series"] = len(doc["groups"]) + len(doc["pdo"]["products"])
+
+
 def el_elstat_prices(doc, errs, warns, stats):
     """Indices mensuales (base 2020 = 100): meses contiguos y ordenados, series alineadas, indices entre 15 y 700, series principales vivas hasta el ultimo mes; productos con 2020 = 100."""
     M = doc["months"]

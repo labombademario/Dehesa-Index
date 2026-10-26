@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T20:52:51Z",
+ "generatedAt": "2026-10-26T21:40:12Z",
  "summary": {
-  "sources": 177,
-  "sourcesApto": 161,
+  "sources": 178,
+  "sourcesApto": 162,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 388,
-  "datasets_apto": 252,
+  "datasets": 389,
+  "datasets_apto": 253,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -222,6 +222,10 @@
   "eia": {
    "name": "U.S. Energy Information Administration (Open Data API)",
    "verdict": "condiciones"
+  },
+  "elgo_dimitra": {
+   "name": "Greece — ELGO-DIMITRA (Hellenic Agricultural Organisation), via data.gov.gr",
+   "verdict": "apto"
   },
   "elstat": {
    "name": "Greece — ELSTAT (Hellenic Statistical Authority)",

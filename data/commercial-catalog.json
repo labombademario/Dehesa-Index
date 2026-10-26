@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T20:52:51Z",
+ "generatedAt": "2026-10-26T21:40:12Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 177,
-  "sourcesApto": 161,
+  "sources": 178,
+  "sourcesApto": 162,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 388,
-  "datasets_apto": 252,
+  "datasets": 389,
+  "datasets_apto": 253,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -906,6 +906,23 @@
    "attribution": "Source: U.S. Energy Information Administration",
    "conditions": "Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API key and call limits.",
    "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones (no alterar los datos diciendo que son de la EIA, no insinuar su respaldo, sin logo de la EIA, limites de la API). (2026-10-15)"
+  },
+  {
+   "id": "elgo_dimitra",
+   "name": "Greece — ELGO-DIMITRA (Hellenic Agricultural Organisation), via data.gov.gr",
+   "url": "https://data.gov.gr/",
+   "country": "EL",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: ELGO-DIMITRA (Organismo Helenico de Agricultura), datos abiertos de data.gov.gr, CC BY 4.0. Elaboracion de dehesaindex.com.",
+   "conditions": "Citar la fuente e indicar los cambios. Las filas son las que publica ELGO; los totales nacionales y anuales son sumas nuestras."
   },
   {
    "id": "elstat",
@@ -3973,6 +3990,14 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/el-elgo/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "elgo_dimitra"
    ]
   },
   {

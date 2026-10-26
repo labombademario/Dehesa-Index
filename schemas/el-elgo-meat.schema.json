@@ -1,0 +1,90 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Sacrificio de Grecia por grupo y unidad regional (ELGO-DIMITRA): data/el-elgo/meat.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "kind",
+  "months",
+  "names",
+  "lastMonth",
+  "groups",
+  "species",
+  "prefectures",
+  "poultry"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "elgo_dimitra"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "kind": {
+   "type": "string"
+  },
+  "months": {
+   "type": "array",
+   "minItems": 60,
+   "items": {
+    "type": "string",
+    "pattern": "^\\d{4}-\\d{2}$"
+   }
+  },
+  "lastMonth": {
+   "type": "string"
+  },
+  "names": {
+   "type": "object",
+   "minProperties": 40,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "el",
+     "en"
+    ]
+   }
+  },
+  "groups": {
+   "type": "object",
+   "minProperties": 5
+  },
+  "species": {
+   "type": "object",
+   "minProperties": 10
+  },
+  "prefectures": {
+   "type": "object"
+  },
+  "poultry": {
+   "type": "object"
+  }
+ }
+}
