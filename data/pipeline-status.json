@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T08:32:00Z",
+ "generatedAt": "2026-10-26T08:47:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 281,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-26T06:57:24.641925+00:00",
   "repoGeneratedAt": "2026-10-26T06:57:24.641925+00:00",
-  "checkedAt": "2026-10-26T08:32:00Z"
+  "checkedAt": "2026-10-26T08:47:00Z"
  },
  "pipelines": [
   {
@@ -975,14 +975,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-25T19:20:00Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40225525356"
+    "event": "schedule",
+    "startedAt": "2026-10-26T08:38:44Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40293703077"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -3697,9 +3697,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-25T08:33:08Z",
-    "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40177071918"
+    "startedAt": "2026-10-26T08:46:50Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40294653508"
    },
    "recent": {
     "runs": 10,
@@ -4251,9 +4251,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-25T08:33:17Z",
-    "durationSec": 38,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40177081591"
+    "startedAt": "2026-10-26T08:47:02Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40294675618"
    },
    "recent": {
     "runs": 10,
@@ -4437,7 +4437,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T08:20:00Z"
+     "lastChange": "2026-10-26T08:34:14Z"
     },
     {
      "path": "data/source-candidates.json",
