@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 170 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
+Resumen: 171 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
 
-## VERIFIED (170)
+## VERIFIED (171)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -174,6 +174,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |
 | `usgs_mcs` | USGS Mineral Commodity Summaries (Sulfur) | US | US-PD | si/si | no | 0 | USGS pide citar la fuente; algunas imágenes de su web son de terceros (no se usan). Los precios de Tampa que cita el USGS proceden de provee… |
+| `usgs_water` | U.S. Geological Survey, National Water Information System (daily values) | US | US-PD | si/si | si | 0 | No implied USGS endorsement; provisional data are subject to revision. |
 | `vigieau` | VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau) | FR | LO-2.0 | si/si | si | 0 | LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indica… |
 | `vlada_hr` | Vlada Republike Hrvatske — notas de prensa sobre los precios máximos de los derivados del petróleo | HR | HR-VLADA-REUSE | si/si | si | 0 | Se aconseja revisar los avisos de derechos de autor de documentos concretos; se usan solo cifras de precios de la nota de prensa. |
 | `vmm_waterinfo` | Vlaamse Milieumaatschappij (VMM) — waterinfo.be y feiten & cijfers | BE | VL-MODELLICENTIE-GRATIS-HERGEBRUIK-1.0 | si/si | si | 0 | Citar la fuente. |

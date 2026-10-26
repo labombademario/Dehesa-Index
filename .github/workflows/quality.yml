@@ -295,7 +295,8 @@ jobs:
           python3 scripts/test-license-gate.py
 
       - name: DATA_SOURCES.md generated from the license registry
-        run: python3 scripts/build-docs.py --check
+        # aviso, no bloqueo: sync-readme.yml lo regenera solo al llegar a main un cambio del registro o del catalogo
+        run: python3 scripts/build-docs.py --check || echo "::warning::DATA_SOURCES.md por detras del registro; sync-readme.yml lo regenera"
 
       - name: Versiones ?v= de scripts y estilos al dia (node scripts/stamp-assets.mjs)
         run: node scripts/stamp-assets.mjs --check
