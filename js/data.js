@@ -1138,7 +1138,7 @@
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo duro en el mercado de Sevilla (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro. Italia, el mayor productor de la UE, publica sus propios mercados (Bolonia, Roma, Foggia…): se ven al elegir Italia y en la página de Europa. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-10-18', publicationDate: '2026-10-26',
-      status: 'verified', verifiedAt: '2026-10-26T20:46:35.221Z'
+      status: 'verified', verifiedAt: '2026-10-26T20:49:07.553Z'
     }
   };
 

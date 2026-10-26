@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-26T20:40:38.708Z",
+  "generatedAt": "2026-10-26T20:49:09.332Z",
   "scope": {
-    "latestObservations": 208,
-    "historyObservations": 49083,
-    "verified": 208,
+    "latestObservations": 209,
+    "historyObservations": 49193,
+    "verified": 209,
     "pending": 0,
     "stale": 3,
     "freshness": {
       "FRESH": 96,
-      "LIVE": 101,
+      "LIVE": 102,
       "DELAYED": 3,
       "EXPECTED_DELAY": 7,
       "HISTORICAL": 1
@@ -178,6 +178,7 @@
       "toros_ni",
       "toros_r3_ni",
       "trigo_cwrs_ab",
+      "trigo_duro",
       "trigo_hrw_us",
       "trigo_pienso_ab",
       "trigo_srw_us",
@@ -3187,6 +3188,22 @@
       "frequency": "weekly",
       "historyPoints": 22,
       "ageDays": 3,
+      "freshness": "LIVE",
+      "stale": false
+    },
+    {
+      "id": "di_cereales_trigo_duro_eu",
+      "product": "trigo_duro",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-10-18",
+      "publicationDate": "2026-10-26",
+      "verifiedAt": "2026-10-26T20:49:07.553Z",
+      "frequency": "weekly",
+      "historyPoints": 110,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },

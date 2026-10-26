@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-10-26T20:40:38.894Z",
+  "generatedAt": "2026-10-26T20:49:09.553Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -2263,6 +2263,25 @@
       "yoyPct": null,
       "volatility": 0.04566710317966746,
       "points": 130,
+      "coverageStart": "2015-11-01",
+      "coverageEnd": "2026-10-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_duro_eu",
+      "product": "trigo_duro",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "frequency": "weekly",
+      "unit": "tonelada",
+      "currency": "EUR",
+      "latest": 270,
+      "observationDate": "2026-10-01",
+      "periodChangePct": 3.8461538461538547,
+      "yoyPct": null,
+      "volatility": 0.06747218817830301,
+      "points": 110,
       "coverageStart": "2015-11-01",
       "coverageEnd": "2026-10-01",
       "status": "verified",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-26T20:40:37.363Z",
-  "observationCount": 386,
+  "generatedAt": "2026-10-26T20:49:08.214Z",
+  "observationCount": 387,
   "products": [
     "aceite_cacahuete",
     "aceite_coco",
@@ -161,6 +161,7 @@
     "toros_r3_ni",
     "trigo",
     "trigo_cwrs_ab",
+    "trigo_duro",
     "trigo_hrw_us",
     "trigo_pienso_ab",
     "trigo_srw_us",
@@ -3012,6 +3013,21 @@
       "comparability": "directional",
       "points": 22,
       "coverageStart": "2025-01-01",
+      "coverageEnd": "2026-10-01"
+    },
+    {
+      "product": "trigo_duro",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-10-18",
+      "unit": "tonelada",
+      "currency": "EUR",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-10-26T20:49:07.553Z",
+      "comparability": "directional",
+      "points": 110,
+      "coverageStart": "2015-11-01",
       "coverageEnd": "2026-10-01"
     },
     {
