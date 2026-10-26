@@ -5291,6 +5291,32 @@
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "El aviso legal de EUMOFA da CC BY 4.0 al contenido propiedad de la UE y excluye el de terceros; las primeras ventas de los Estados miembros las compila EUMOFA a partir de las notas de venta nacionales y no aparecen en la lista de exclusiones, pero el panel de descarga no repite la licencia y el cubo de ficheros se llama 'dev-'.",
    "short": "EUMOFA"
+  },
+  "usgs_water": {
+   "name": "U.S. Geological Survey, National Water Information System (daily values)",
+   "url": "https://waterdata.usgs.gov/nwis",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USGS asks for credit",
+   "licenseUrl": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: U.S. Geological Survey, National Water Information System",
+   "additionalRestrictions": "No implied USGS endorsement; provisional data are subject to revision.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "USGS copyright policy: USGS-authored or produced data and information are in the U.S. public domain; credit to USGS is requested.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "USGS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Obra del gobierno federal de EE. UU. (dominio publico, politica de copyright del USGS) con peticion de credito."
   }
  },
  "files": {
@@ -7813,6 +7839,14 @@
   "data/eu-fish-retail-prices.json": {
    "default": "eumofa",
    "notes": "Precio minorista online (euros por kg), media mensual por Estado miembro, categoria y producto vigilado, desde 2021: precios que los analistas de EUMOFA recogen a diario de tiendas online de grandes cadenas. No es un indice de precios."
+  },
+  "data/us-markets/rivers.json": {
+   "default": "usgs_water",
+   "notes": "Caudal medio diario (pies cubicos por segundo) del Mississippi, el Illinois y el Ohio en 8 estaciones del USGS, con la media de 7 dias y su percentil frente al mismo mes desde 2000 (calculo de Dehesa Index). Datos provisionales tal como los publica el USGS."
+  },
+  "data/us-fertilizer-imports.json": {
+   "default": "census",
+   "notes": "Valor unitario de importacion de fertilizantes de EE. UU. (urea, nitrato amonico, UAN, sulfato amonico, cloruro potasico, DAP, NPK, amoniaco anhidro, acido fosforico): valor de aduana de las importaciones generales entre toneladas, mensual desde 2016, y reparto de origenes de los ultimos 12 meses (US Census Bureau). No es un precio de mercado."
   }
  },
  "derived": [

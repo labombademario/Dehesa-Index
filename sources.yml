@@ -1603,6 +1603,25 @@ sources:
     env: {CENSUS_API_KEY: '${{ secrets.CENSUS_API_KEY }}'}
     data: [us-sulphur.json, us-sulphur-log.txt]
     message: Azufre - valor unitario de importacion EE. UU. (US Census Bureau)
+  - id: us-fertilizer-imports
+    name: Update US fertiliser import unit values by product and origin (US Census Bureau)
+    cron: ['40 10 8,10,14 * *']
+    script: scripts/update-us-fertilizer-imports.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    env: {CENSUS_API_KEY: '${{ secrets.CENSUS_API_KEY }}'}
+    data: [us-fertilizer-imports.json, us-fertilizer-imports-log.txt]
+    message: Fertilizantes - valor unitario de importacion EE. UU. (US Census Bureau)
+  - id: us-rivers
+    name: Update Mississippi, Illinois and Ohio river discharge for grain barges (USGS daily values)
+    cron: ['25 14 * * *']
+    script: scripts/update-us-rivers.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [us-markets/rivers.json, us-markets/rivers-log.txt]
+    message: Rios de las barcazas de grano - caudal diario (USGS)
   - id: eu-input-prices
     name: Update EU input trade unit values and origins (Eurostat Comext, fertilisers, energy, feed)
     cron: ['30 10 17,19,23 * *']

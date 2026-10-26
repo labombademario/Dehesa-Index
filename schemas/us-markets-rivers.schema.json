@@ -1,0 +1,58 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Caudal diario de los rios de las barcazas de grano de EE. UU. (USGS)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "latestDate",
+  "source",
+  "unit",
+  "stations"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url",
+    "license"
+   ]
+  },
+  "pointFields": {
+   "type": "array"
+  },
+  "latestDate": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "unit": {
+   "enum": [
+    "ft3/s"
+   ]
+  },
+  "stations": {
+   "type": "array",
+   "minItems": 5,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "river",
+     "reach",
+     "last",
+     "lastValue",
+     "points"
+    ]
+   }
+  }
+ }
+}

@@ -826,6 +826,14 @@
     "us_markets_cot"
    ]
   ],
+  "us-markets/rivers.json": [
+   "us-markets-rivers",
+   []
+  ],
+  "us-fertilizer-imports.json": [
+   "us-fertilizer-imports",
+   []
+  ],
   "us-markets/transport.json": [
    "us-markets-transport",
    [
@@ -2052,7 +2060,8 @@
  "optional": [
   "italy-land/land.json",
   "es-climate-provinces.json",
-  "eu-region-climate.json"
+  "eu-region-climate.json",
+  "us-fertilizer-imports.json"
  ],
  "uk-tiff-regions.json": [
   "uk-tiff-regions",

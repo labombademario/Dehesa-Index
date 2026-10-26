@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-296 workflows (246 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+298 workflows (248 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -393,6 +393,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-ers-productivity.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-ers-productivity.py | us-ers-productivity-stats.json | finish, validate-files |
 | update-us-ers.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-us-ers.py | us-ers-stats.json, us-ttb-stats.json | finish, validate-files |
 | update-us-fed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-fed.py | us-fed-stats.json | finish, validate-files |
+| update-us-fertilizer-imports.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-fertilizer-imports.py | us-fertilizer-imports.json | finish, validate-files |
 | update-us-fmmo.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-us-fmmo.py | us-fmmo-stats.json | finish, validate-files |
 | update-us-fsa-rates.yml | generado | manual / por evento | detect-revisions.py, gen-workflows.py, update-us-fsa-rates.py | us-fsa-rates-stats.json | finish, validate-files |
 | update-us-kcfed.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-kc-fed-ag-credit.py | us-kcfed-stats.json | finish, validate-files |
@@ -406,6 +407,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-panel-prices.yml | a mano | semanal (1-5) | build-us-index-obs.py, build-us-panel-obs.py | - | price-engine, publish |
 | update-us-ppi.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-ppi.py | us-ppi.json | finish, validate-files |
 | update-us-reservoirs.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-us-reservoirs.py | us-reservoirs-normals.json, us-reservoirs.json | finish, validate-files |
+| update-us-rivers.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-us-rivers.py | us-markets/rivers.json | finish, validate-files |
 | update-us-sap.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-sap.py | us-markets/sap-forecasts.json | finish, validate-files |
 | update-us-slaughter.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-slaughter.py | us-markets/slaughter.json | finish, validate-files |
 | update-us-snotel.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-snotel.py | us-snotel-stats.json | finish, validate-files |

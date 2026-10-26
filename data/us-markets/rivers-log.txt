@@ -1,0 +1,9 @@
+08:53:31 05420500 Mississippi Clinton, IA: 30300.0 cfs el 2026-10-25, media 7 dias 32600, percentil del mes 40.8 (26 años)
+08:53:31 05586100 Illinois Valley City, IL: 11000.0 cfs el 2026-10-25, media 7 dias 12271, percentil del mes 66.6 (26 años)
+08:53:31 07010000 Mississippi St. Louis, MO: 156000.0 cfs el 2026-10-25, media 7 dias 171429, percentil del mes 69.7 (26 años)
+08:53:31 07020500 Mississippi Chester, IL: 166000.0 cfs el 2026-10-25, media 7 dias 176143, percentil del mes 70.2 (26 años)
+08:53:31 07022000 Mississippi Thebes, IL: 170000.0 cfs el 2026-10-25, media 7 dias 175571, percentil del mes 70.1 (26 años)
+08:53:31 03612600 Ohio Olmsted, IL: 101000.0 cfs el 2026-10-25, media 7 dias 108043, percentil del mes 53.3 (12 años)
+08:53:31 07032000 Mississippi Memphis, TN: 296000.0 cfs el 2026-10-25, media 7 dias 339000, percentil del mes 60.6 (11 años)
+08:53:31 07289000 Mississippi Vicksburg, MS: 394000.0 cfs el 2026-10-25, media 7 dias 426000, percentil del mes 70.2 (18 años)
+08:53:31 rivers.json: 8 estaciones, ultimo dia 2026-10-25
