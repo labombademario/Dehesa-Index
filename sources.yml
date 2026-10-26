@@ -1180,6 +1180,16 @@ sources:
     continue: true
     data: [it-drought.json]
     message: Sequia por provincia en Italia (EDO)
+  - id: el-drought
+    name: Update Greece drought by regional unit (EDO Combined Drought Indicator)
+    cron: ['2 8 * * *']
+    pre: ['python3 -m pip install --quiet numpy netCDF4 shapely']
+    script: scripts/update-el-drought.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    data: [el-drought.json]
+    message: Sequia por unidad regional en Grecia (EDO)
   - id: ie-diesel
     name: Update Ireland diesel (EU Weekly Oil Bulletin), marked gas oil clearances and farm fuel price index (CSO)
     cron: ['25 7 * * 2,5']

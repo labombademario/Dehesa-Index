@@ -1126,6 +1126,12 @@
     "hr_drought"
    ]
   ],
+  "el-drought.json": [
+   "el-drought",
+   [
+    "el_drought"
+   ]
+  ],
   "it-drought.json": [
    "it-drought",
    [

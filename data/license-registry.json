@@ -8010,6 +8010,13 @@
     "elgo_dimitra"
    ],
    "notes": "Leche entregada (con precio medio), sacrificio por especie, produccion de lacteos y quesos DOP de Grecia por unidad regional y mes (scripts/update-el-elgo.py), de los conjuntos abiertos de ELGO-DIMITRA en data.gov.gr."
+  },
+  "data/el-drought.json": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ],
+   "notes": "Indicador Combinado de Sequía del EDO calculado para 49 unidades regionales griegas (NUTS 3 de GISCO; los 4 sectores de Atenas ciudad juntos). scripts/update-el-drought.py."
   }
  },
  "derived": [

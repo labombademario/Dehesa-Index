@@ -64,7 +64,7 @@
     fr: ['Carte : surface en sécheresse agricole par région', 'Survolez ou touchez une région.', 'pas de donnée', 'Quand une région de la carte réunit plusieurs régions européennes (NUTS 2), la plus touchée donne la couleur.'],
     it: ['Mappa: superficie in siccità agricola per regione', 'Passa il cursore o tocca una regione.', 'nessun dato', 'Dove una regione della mappa riunisce più regioni europee (NUTS 2), il colore è quello della più colpita.'] };
   function droughtMap(box, cc, R, lg) {
-    if ({ HR: 1, IE: 1, IT: 1, NL: 1, PT: 1 }[cc]) return;   // ya tienen mapa del mismo indicador con regiones mas finas (js/hr-, ie-, nl-, pt-drought.js)
+    if ({ EL: 1, HR: 1, IE: 1, IT: 1, NL: 1, PT: 1 }[cc]) return;   // ya tienen mapa del mismo indicador con regiones mas finas (js/hr-, ie-, nl-, pt-drought.js)
     var mp = MAPS[cc]; if (!mp || !box) return;
     var go = function () {
       global.DIFrDeptMap.load(mp[0], mp[1]).then(function (M) {
@@ -141,6 +141,13 @@
         var tjs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
         var tmod = function () { if (global.DIItDrought) tgo(); else tjs('js/it-drought.js?v=0', tgo); };
         if (global.DIFrDeptMap) tmod(); else tjs('js/fr-dept-map.js?v=20261015', tmod);
+      }
+      if (cc === 'EL') {   // sequia por unidad regional (EDO calculado para las 49 unidades NUTS 3, js/el-drought.js), a peticion
+        var gbox = document.createElement('div'); gbox.style.marginTop = '14px'; el.appendChild(gbox);
+        var ggo = function () { if (global.DIElDrought) global.DIElDrought.mount(gbox, lg.slice(0, 2)); };
+        var gjs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
+        var gmod = function () { if (global.DIElDrought) ggo(); else gjs('js/el-drought.js?v=0', ggo); };
+        if (global.DIFrDeptMap) gmod(); else gjs('js/fr-dept-map.js?v=20261015', gmod);
       }
       if (cc === 'IE') {   // sequia por region (EDO calculado para las 8 regiones NUTS 3, js/ie-drought.js), a peticion
         var ibox = document.createElement('div'); ibox.style.marginTop = '14px'; el.appendChild(ibox);

@@ -4086,6 +4086,19 @@ def it_drought(doc, errs, warns, stats):
     if doc["asOf"] != P[-1]: errs.append("sequia IT: asOf %s y ultima decada %s" % (doc["asOf"], P[-1]))
     if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=40)).isoformat(): warns.append("sequia IT: ultimo dato %s" % doc["asOf"])
     stats["decadas"] = len(P)
+def el_drought(doc, errs, warns, stats):
+    import datetime as _dt
+    C = doc["counties"]; P = doc["periods"]
+    if len(C) != 49 or not all(k.startswith("EL") for k in C): errs.append("sequia EL: %d unidades" % len(C)); return
+    if P != sorted(set(P)): errs.append("sequia EL: decadas desordenadas")
+    for k, c in C.items():
+        if len(c["v"]) != len(P): errs.append("sequia EL %s: %d filas y %d decadas" % (k, len(c["v"]), len(P))); continue
+        for i, v in enumerate(c["v"]):
+            if len(v) != 6 or any(not 0 <= x <= 100.5 for x in v) or sum(v) > 100.5: errs.append("sequia EL %s %s: %s" % (k, P[i], v)); break
+        if c.get("coverage", 0) < 80: errs.append("sequia EL %s: cobertura %s %%" % (k, c.get("coverage")))
+    if doc["asOf"] != P[-1]: errs.append("sequia EL: asOf %s y ultima decada %s" % (doc["asOf"], P[-1]))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=40)).isoformat(): warns.append("sequia EL: ultimo dato %s" % doc["asOf"])
+    stats["decadas"] = len(P)
 def ie_diesel(doc, errs, warns, stats):
     import datetime as _dt
     today = _dt.date.today(); prev = None
