@@ -405,7 +405,7 @@
     var el = document.createElement('div'); el.id = 'pp-it-istat'; after.parentNode.insertBefore(el, after.nextSibling);
     function js(src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
     var go = function () { if (window.DIItIstat && ST.c === cc) window.DIItIstat.mount(el, lang()); };
-    var mod = function () { if (window.DIItIstat) go(); else js('js/it-istat.js?v=20261015', go); };
+    var mod = function () { if (window.DIItIstat) go(); else js('js/it-istat.js?v=20261026', go); };
     if (window.ESUI) mod(); else js('js/es-ui.js?v=20261015', mod);
   }
   /* Francia e Italia: precio/valor de la tierra agrícola por departamento/región (js/land-fr-it.js; Italia solo se dibuja si su fichero existe) */

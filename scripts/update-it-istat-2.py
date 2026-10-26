@@ -2,11 +2,12 @@
 """Italia (ISTAT, SDMX) segunda tanda -> data/italy-istat/{crops,milk,agritourism,irrigation,comuni}.json
 
   crops:       101_1015 cultivos: superficie (ha) y produccion recolectada (q -> t) por region y cultivo, anual desde 2018 (los años recientes son estimaciones del ISTAT).
+  crops-prov:  el mismo flujo 101_1015 por provincia (107): mismo formato que crops.json (+ la region de cada provincia y el total de Italia), para el selector «Provincias».
   milk:        101_959 leche y productos lacteos por region (anual, 2015-2020/21): produccion por producto y numero de establecimientos.
   agritourism: 101_965 agriturismo por region: explotaciones autorizadas, camas, plazas de acampada, mesas y habitaciones, por tipo de autorizacion y servicio.
   irrigation:  censo agrario 2020 (y encuesta SPA 2023 si existe): explotaciones y superficie irrigable/irrigada, por sistema, fuente y cultivo; Italia, regiones y provincias.
   comuni:      censo agrario 2020: explotaciones y superficie irrigable/irrigada por municipio.
-Fuente ISTAT (CC BY 4.0). Nada se estima: celda ausente = null. Uso: python3 scripts/update-it-istat-2.py [--only crops,milk,...]"""
+Fuente ISTAT (CC BY 4.0). Nada se estima: celda ausente = null. Uso: python3 scripts/update-it-istat-2.py [--only crops,crops-prov,milk,...]"""
 import argparse, csv, importlib.util, io, json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -75,6 +76,38 @@ def do_crops(out):
     log("cultivos:", len(crops), "cultivos,", len(A), "areas,", ys[0], "->", ys[-1])
     I.write(out, "crops.json", I.head({"years": ys, "areas": A, "crops": crops, "units": {"a": "ha", "p": "t"},
         "note": "Coltivazioni ISTAT: superficie (ha) y produccion recolectada (ISTAT la publica en quintales; aqui en toneladas). Los años más recientes son estimaciones del ISTAT."}))
+
+PROV_REGION_FALLBACK = {"IT108": "ITC4", "IT109": "ITI3", "IT110": "ITF4", "IT111": "ITG2"}   # provincias nuevas (Monza, Fermo, Barletta-Andria-Trani, Sud Sardegna): sin prefijo de region en el codigo
+TN_BZ = ("ITD1", "ITD2")
+def prov_region(a):
+    p = PARENT.get(a); r = p if p and len(p) == 4 and p[:3] in ("ITC", "ITD", "ITE", "ITF", "ITG") else PROV_REGION_FALLBACK.get(a, a[:4])
+    return "ITDA" if r in ("ITD1", "ITD2") else r
+
+def do_crops_prov(out):
+    """Cultivos por provincia (mismo flujo que crops.json). Superficie y produccion recolectada; cada provincia lleva su region."""
+    flow = "101_1015"; dims, L = struct(flow)
+    if not dims: raise RuntimeError("sin estructura")
+    provs = sorted(c for c in L.get("REF_AREA", {}) if (PROV.match(c) or c in TN_BZ) and c not in ("ITD10", "ITD20"))   # la lista de territorios incluye tambien los ~12.000 municipios; Bolzano y Trento son ITD1 e ITD2 (4 caracteres, como una region)
+    rows = getmany(flow, dims, {"DATA_TYPE": "ART+HP_Q_EXT"}, provs, "startPeriod=2018", n=10)
+    nat = get(flow, dims, {"REF_AREA": "IT", "DATA_TYPE": "ART+HP_Q_EXT"}, "startPeriod=2018")
+    ys = axis(rows + nat); ix = {y: i for i, y in enumerate(ys)}; A = {}; area = {}; prod = {}
+    for r in rows + nat:
+        v = I.num(r["OBS_VALUE"]); a = r["REF_AREA"]
+        if v is None or r["DESTINATION_WINEGRAPES"] != "ALL" or not (a == "IT" or a in TN_BZ or I.area_kind(a) == "province"): continue
+        if a == "IT": A[a] = {"kind": "country", "label": lab(L, "REF_AREA", a)}
+        else: A[a] = {"kind": "province", "label": lab(L, "REF_AREA", a), "region": prov_region(a)}
+        i = ix[r["TIME_PERIOD"]]
+        if r["DATA_TYPE"] == "ART": put(area, r["TYPE_OF_CROP"], a, ix, len(ys), i, round(v))
+        elif r["DATA_TYPE"] == "HP_Q_EXT": put(prod, r["TYPE_OF_CROP"], a, ix, len(ys), i, round(v / 10, 1))
+    crops = {c: {"label": lab(L, "TYPE_OF_CROP", c), "a": area[c], "p": prod.get(c, {})} for c in sorted(area) if len([k for k in area[c] if k != "IT"]) >= 3}
+    nprov = len([a for a in A if a != "IT"])
+    if nprov < 100: raise RuntimeError("solo %d provincias con dato" % nprov)
+    regs = {}
+    for a, x in A.items():
+        if x["kind"] == "province": regs.setdefault(x["region"], []).append(a)
+    log("cultivos por provincia:", len(crops), "cultivos,", nprov, "provincias en", len(regs), "regiones,", ys[0], "->", ys[-1])
+    I.write(out, "crops-prov.json", I.head({"years": ys, "areas": A, "regions": {r: lab(L, "REF_AREA", r) for r in sorted(regs)}, "crops": crops, "units": {"a": "ha", "p": "t"},
+        "note": "Coltivazioni ISTAT por provincia: superficie (ha) y produccion recolectada (ISTAT la publica en quintales; aqui en toneladas). Los años más recientes son estimaciones del ISTAT. Solo cultivos con dato en al menos 3 provincias; celda ausente = sin dato publicado. En 2026 (estimacion) el ISTAT ya usa las provincias nuevas de Cerdeña."}))
 
 def do_milk(out):
     flow = "101_959"; dims, L = struct(flow)
@@ -216,7 +249,7 @@ def do_comuni(out):
     I.write(out, "comuni.json", I.head({"year": "2020", "cols": ["code", "name", "region", "province", "farmsIrrigable", "farmsIrrigated", "irrigableHa", "irrigatedHa"], "rows": items,
         "note": "Censimento dell'agricoltura 2020 (ISTAT) por municipio. Superficie en hectareas; provincia y region deducidas emparejando el prefijo del codigo ISTAT del municipio con la provincia cuyos totales coinciden en el propio fichero."}))
 
-JOBS = {"crops": do_crops, "milk": do_milk, "agritourism": do_agri, "irrigation": do_irrigation, "comuni": do_comuni}
+JOBS = {"crops": do_crops, "crops-prov": do_crops_prov, "milk": do_milk, "agritourism": do_agri, "irrigation": do_irrigation, "comuni": do_comuni}
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", default=str(ROOT / "data" / "italy-istat")); ap.add_argument("--only", default=""); ap.add_argument("--log", default=str(ROOT / "data" / "italy-istat-2-log.txt"))
     a = ap.parse_args(); out = Path(a.out); out.mkdir(parents=True, exist_ok=True); only = [x for x in a.only.split(",") if x] or list(JOBS); fails = 0

@@ -1468,6 +1468,12 @@
     "it_istat_crops"
    ]
   ],
+  "italy-istat/crops-prov.json": [
+   "it-istat-crops-prov",
+   [
+    "it_istat_crops_prov"
+   ]
+  ],
   "italy-istat/milk.json": [
    "it-istat-milk",
    [

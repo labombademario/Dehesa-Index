@@ -4810,6 +4810,12 @@ def it_istat_crops(doc, errs, warns, stats):
         if a and p:
             for j in range(len(a)):
                 if a[j] and p[j] and not 0.1 < p[j] / a[j] < 150: errs.append("cultivos %s %s: %.1f t/ha fuera de 0,1-150" % (c, doc["years"][j], p[j] / a[j])); break
+def it_istat_crops_prov(doc, errs, warns, stats):
+    """Cultivos por provincia: mismas reglas que el fichero regional (provincias no superan Italia, rendimiento 0,1-150 t/ha) y al menos 100 provincias."""
+    if sum(1 for a in doc["areas"].values() if a.get("kind") == "province") < 100: errs.append("menos de 100 provincias")
+    it_istat_crops(doc, errs, warns, stats)
+
+
 def it_istat_milk(doc, errs, warns, stats):
     """Lacteos: años ordenados, una cifra por año, valores sin negativos, porcentajes entre 0 y 100, leche total de Italia entre 5 y 30 Mt y regiones <= 3 % sobre Italia."""
     if not _it_axis_ok(doc["years"], errs, "lacteos"): return

@@ -23,18 +23,18 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/italy-istat/crops.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
+          files: data/italy-istat/crops.json data/italy-istat/crops-prov.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/italy-istat/crops.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
+        run: python3 scripts/detect-revisions.py data/italy-istat/crops.json data/italy-istat/crops-prov.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
       - id: qa
         name: Control de calidad antes de publicar (si falla, no se publica)
         if: always()
-        run: python3 scripts/validate-data.py --no-report --files data/italy-istat/crops.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
+        run: python3 scripts/validate-data.py --no-report --files data/italy-istat/crops.json data/italy-istat/crops-prov.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Cultivos, leche por región, agriturismo y riego de Italia (ISTAT)" data/italy-istat/crops.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json data/italy-istat-2-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Cultivos, leche por región, agriturismo y riego de Italia (ISTAT)" data/italy-istat/crops.json data/italy-istat/crops-prov.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json data/italy-istat-2-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

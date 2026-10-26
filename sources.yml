@@ -989,8 +989,8 @@ sources:
     timeout: 50
     script_timeout: 45
     continue: true
-    check: python3 scripts/validate-data.py --no-report --files data/italy-istat/crops.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
-    data: [italy-istat/crops.json, italy-istat/milk.json, italy-istat/agritourism.json, italy-istat/irrigation.json, italy-istat/comuni.json, italy-istat-2-log.txt]
+    check: python3 scripts/validate-data.py --no-report --files data/italy-istat/crops.json data/italy-istat/crops-prov.json data/italy-istat/milk.json data/italy-istat/agritourism.json data/italy-istat/irrigation.json data/italy-istat/comuni.json
+    data: [italy-istat/crops.json, italy-istat/crops-prov.json, italy-istat/milk.json, italy-istat/agritourism.json, italy-istat/irrigation.json, italy-istat/comuni.json, italy-istat-2-log.txt]
     message: Cultivos, leche por región, agriturismo y riego de Italia (ISTAT)
   - id: el-elstat
     name: Update Greece agricultural price indices and regional farm accounts (ELSTAT)
