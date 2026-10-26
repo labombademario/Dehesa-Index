@@ -1007,6 +1007,8 @@
     countryLinks: function (cc) { var r = []; NAV_GROUPS.countries.items.forEach(function (b) { if (b.cc === cc) b.items.forEach(function (i) { r.push({ href: sitePath(i.file) + (i.query || ''), file: i.file, label: i.label[lang] || i.label.es, d: i.d ? (i.d[lang] || i.d.es) : '' }); }); }); return r; },
     newsletter: { action: 'https://dehesaindex.substack.com/api/v1/free?nojs=true', provider: 'Substack (Substack Inc., Estados Unidos)' },
     /* Resumen de precios por correo (pagina avisos.html). Se rellena al crear la cuenta del proveedor; vacio = el formulario no se muestra. Ver docs/avisos-por-correo.md */
+    /* Formulario de contacto de la pagina de empresas. Vacio = se abre el programa de correo con el mensaje listo. Para activarlo: action = direccion de envio del proveedor (p. ej. https://formspree.io/f/<id>) y provider = su nombre y pais; ver docs/formulario-empresas.md */
+    contact: { action: '', provider: '' },
     digest: { action: 'https://buttondown.com/api/emails/embed-subscribe/dehesa_index', provider: 'Buttondown (Buttondown, Estados Unidos)' },
     /* Unidad de una serie de la API en el idioma de la pagina (la API guarda el identificador interno: 'tonelada', 'ton_corta', 'index_2020_100'…) */
     unitLabel: function (u, l) {

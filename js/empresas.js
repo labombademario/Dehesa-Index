@@ -8,7 +8,7 @@
   var T = {
     es: {
       title: 'Empresas | Dehesa Index', badge: 'PARA EMPRESAS', h1: 'Datos agrícolas listos para integrar en tu operación',
-      sub: 'Dehesa Index está preparando una API de precios y estadísticas agrarias por producto y región, pensada para quien necesita estos datos dentro de su propio sistema y no solo en una web para consultar a mano. Aún no está a la venta: aquí ves qué hay, qué se podría ofrecer y cómo apuntarte.',
+      sub: 'Dehesa Index publica ya datos agrarios abiertos en JSON, CSV y Excel, con fuente, licencia y atribución en cada serie, y prepara una API con clave para quien necesite integrarlos en su propio sistema. Aquí ves qué hay hoy, qué se podría ofrecer y cómo hablar con nosotros.',
       whatTitle: 'QUÉ HAY DETRÁS',
       whatP1: 'El panel público reúne precios oficiales de EE. UU., la UE, Reino Unido y Canadá, y estadísticas agrarias de decenas de países. Cada cifra lleva su fuente, su fecha y su licencia, y lo que no es un dato oficial se marca como tal.',
       whatP2: 'La API llevará ese mismo modelo, con cada precio identificado por producto y región, a un formato pensado para hojas de cálculo, ERPs o sistemas de riesgo, en lugar de copiarlo a mano desde el panel.',
@@ -28,14 +28,20 @@
           note: 'Algunos conjuntos, como el U.S. Drought Monitor, quedan fuera de la oferta comercial por su licencia.' },
         { name: 'Bancos', problem: 'Evaluar financiación agraria: valor de la garantía, coste de producción, margen y entorno macro.',
           data: ['Precios y tendencias de los productos financiados.', 'Precio y alquiler de la tierra en varios países.', 'Indicadores macro y tipos de cambio por país.', 'Costes de producción y margen.'],
-          links: [['precios.html', 'Precios'], ['paises.html', 'Países'], ['costes.html', 'Costes']] }
+          links: [['precios.html', 'Precios'], ['paises.html', 'Países'], ['costes.html', 'Costes']] },
+        { name: 'Fabricantes de insumos y logística', problem: 'Anticipar la demanda de abono y pienso y los fletes del grano: qué cuesta cada insumo frente a su histórico y si el río que lo mueve baja.',
+          data: ['Fertilizantes, pienso y gasóleo frente a sus últimos 10 años.', 'Valor unitario de importación de fertilizantes en EE. UU. y la UE.', 'Fletes del grano y caudal diario de los ríos de las barcazas (Misisipi, Illinois, Ohio).', 'Gasóleo agrícola en España, Francia, Alemania y Bélgica.'],
+          links: [['monitor-insumos.html', 'Monitor de insumos'], ['insumos.html', 'Insumos y fletes'], ['insumos.html#usm-rv', 'Ríos de las barcazas'], ['api.html', 'API']] },
+        { name: 'Seguros y riesgo hídrico', problem: 'Valorar el riesgo de sequía y de niveles de río bajos junto: dónde está el río frente a lo normal y cómo va la sequía de la zona.',
+          data: ['Nivel, caudal y percentil frente al histórico de los ríos de Alemania, Países Bajos, Francia, Flandes, Canadá y EE. UU.', 'Indicador Combinado de Sequía del Observatorio Europeo por país.', 'Embalses de España y del oeste de EE. UU.', 'Todo en JSON con fuente, licencia y atribución (API de agua).'],
+          links: [['sequia.html', 'Sequía y ríos'], ['sequia.html?zona=eu#rvfr', 'Ríos de Francia'], ['clima.html', 'Clima'], ['api.html', 'API de agua']] }
       ],
       others: 'También: fabricantes de fertilizantes y pienso (vigilar insumos), empresas de alimentación (costes de materia prima), y medios y analistas (series citables con fuente y fecha).',
       sampleTitle: 'MUESTRA DE DATOS', sampleSub: 'Estas filas son reales y salen del panel de hoy. El formato final de la API puede cambiar.',
       tabs: ['Tabla', 'JSON', 'CSV'], copy: 'Copiar', copied: 'Copiado', cols: ['Producto', 'Mercado', 'Valor', 'Fecha', 'Fuente', 'Uso comercial'],
       vApto: 'Apta', vCond: 'Con condiciones', vNo: 'No apta', sampleFail: 'No se pudo cargar la muestra ahora mismo.',
       apiTitle: 'QUÉ HAY HECHO Y QUÉ FALTA', apiStatus: 'API y descargas disponibles',
-      apiFeatures: ['Ya disponible: precios actuales e histórico por producto y región en ficheros JSON públicos y en CSV y Excel descargables.', 'Ya disponible: se actualizan con la misma cadencia que el panel público, y la página de estado muestra qué fuente va al día y cuál no.', 'Ya disponible: el paquete descargable está dividido por mercado (UE, EE. UU., Reino Unido, Canadá) y cada fila lleva su tipo de precio y su veredicto de licencia.', 'Ya disponible: API de datos en JSON, gratis y sin clave, con fuente, licencia y atribución en cada serie (ver la página API).', 'Pendiente: avisos automáticos cuando un precio cruza un umbral. Necesitan un servicio de correo y de momento no hay servidor.', 'Pendiente: acceso con clave y límites propios, que no hacen falta mientras todo sean ficheros estáticos.'],
+      apiFeatures: ['Ya disponible: precios actuales e histórico por producto y región en ficheros JSON públicos y en CSV y Excel descargables.', 'Ya disponible: se actualizan con la misma cadencia que el panel público, y la página de estado muestra qué fuente va al día y cuál no.', 'Ya disponible: el paquete descargable está dividido por mercado (UE, EE. UU., Reino Unido, Canadá) y cada fila lleva su tipo de precio y su veredicto de licencia.', 'Ya disponible: API de datos en JSON, gratis y sin clave, con fuente, licencia y atribución en cada serie (ver la página API).', 'Ya disponible: API de agua en JSON con los ríos de seis países (nivel, caudal, estado y percentil frente al histórico) y la sequía europea por país.', 'Pendiente: avisos automáticos cuando un precio cruza un umbral. El resumen semanal por correo está preparado y sale en cuanto se active el proveedor de correo.', 'Pendiente: acceso con clave y límites propios, que no hacen falta mientras todo sean ficheros estáticos.'],
       apiNow: 'Mientras tanto, los ficheros JSON y CSV públicos del sitio, descritos en data/api.json, siguen disponibles. Su uso comercial depende de la licencia de cada fuente.',
       condTitle: 'QUÉ SE PODRÍA OFRECER', condBody: 'De las {t} fuentes en uso, {a} permiten uso comercial sin reservas, {c} lo permiten con condiciones y {n} se quedan fuera por tener la licencia pendiente o sin confirmar. Cada fichero y cada fuente tiene su veredicto público.', condBtn: 'Ver las condiciones',
       cTitle: 'Escríbenos', cBody: 'Cuéntanos qué datos necesitas y para qué. Lo leemos nosotros y te contestamos.',
@@ -46,12 +52,15 @@
       ints: ['Precios', 'Producción y rendimientos', 'Comercio y aranceles', 'Clima y sequía', 'Insumos y costes', 'Tierra y renta', 'PAC y ayudas'],
       send: 'Preparar el correo', join: 'Apuntarme', errName: 'Escribe tu nombre.', errEmail: 'Escribe un correo válido.', errMsg: 'Cuéntanos en unas líneas qué necesitas.',
       done: 'Se ha abierto tu programa de correo con el mensaje listo. Pulsa enviar allí. Si no se ha abierto, copia el texto de abajo y mándalo a {m}.',
+      sentC: 'Mensaje enviado. Se ha abierto una pestaña con la confirmación; te contestaremos al correo que has escrito. Si no se abrió, escríbenos a {m}.',
+      sentL: 'Casi listo: se ha abierto una pestaña para confirmar tu correo. Recibirás un mensaje y no quedas apuntado hasta que lo confirmes.',
+      privExt: 'Al enviar, tus datos van a {p}, que gestiona el envío; esta web no los guarda. Más en la',
       privacy: 'No guardamos nada en esta web. El mensaje sale de tu programa de correo hacia {m}. Más en la', privacyLink: 'política de privacidad',
       subjC: 'Empresas: consulta de datos', subjL: 'Lista de espera de la API', hello: 'Mensaje enviado desde dehesaindex.com/empresas', lang: 'Idioma de la web', noInt: 'ninguno indicado'
     },
     en: {
       title: 'Business | Dehesa Index', badge: 'FOR BUSINESSES', h1: 'Agricultural data ready to plug into your operation',
-      sub: 'Dehesa Index is preparing an API of agricultural prices and statistics by product and region, built for teams that need this data inside their own systems and not just on a dashboard to check by hand. It is not on sale yet: here you can see what exists, what could be offered and how to sign up.',
+      sub: 'Dehesa Index already publishes open agricultural data as JSON, CSV and Excel, with source, licence and attribution on every series, and is preparing a keyed API for teams that need to plug it into their own systems. Here you can see what exists today, what could be offered and how to talk to us.',
       whatTitle: "WHAT'S BEHIND IT",
       whatP1: 'The public dashboard brings together official prices for the US, the EU, the UK and Canada, plus agricultural statistics for dozens of countries. Every figure carries its source, date and licence, and anything that is not an official figure is labelled as such.',
       whatP2: 'The API will bring that same model, with each price identified by product and region, into a format meant for spreadsheets, ERPs or risk systems, instead of copying it by hand from the dashboard.',
@@ -71,14 +80,20 @@
           note: 'Some datasets, such as the U.S. Drought Monitor, are left out of the commercial offer because of their licence.' },
         { name: 'Banks', problem: 'Assessing agricultural lending: collateral value, production cost, margin and the macro backdrop.',
           data: ['Prices and trends of the products being financed.', 'Land prices and rents in several countries.', 'Macro indicators and exchange rates by country.', 'Production costs and margin.'],
-          links: [['precios.html', 'Prices'], ['paises.html', 'Countries'], ['costes.html', 'Costs']] }
+          links: [['precios.html', 'Prices'], ['paises.html', 'Countries'], ['costes.html', 'Costs']] },
+        { name: 'Input makers and logistics', problem: 'Anticipate fertiliser and feed demand and grain freight: what each input costs against its history and whether the river that moves it is falling.',
+          data: ['Fertiliser, feed and diesel against their last 10 years.', 'Fertiliser import unit values for the US and the EU.', 'Grain freight and daily flow of the barge rivers (Mississippi, Illinois, Ohio).', 'Farm diesel in Spain, France, Germany and Belgium.'],
+          links: [['monitor-insumos.html', 'Input monitor'], ['insumos.html', 'Inputs and freight'], ['insumos.html#usm-rv', 'Barge rivers'], ['api.html', 'API']] },
+        { name: 'Insurance and water risk', problem: 'Judge drought risk and low river levels together: where the river stands against normal and how the drought in the area is going.',
+          data: ['Level, discharge and percentile against history for the rivers of Germany, the Netherlands, France, Flanders, Canada and the US.', 'European Drought Observatory Combined Drought Indicator by country.', 'Reservoirs of Spain and the western US.', 'Everything as JSON with source, licence and attribution (water API).'],
+          links: [['sequia.html', 'Drought and rivers'], ['sequia.html?zona=eu#rvfr', 'Rivers of France'], ['clima.html', 'Climate'], ['api.html', 'Water API']] }
       ],
       others: 'Also: fertilizer and feed makers (watching inputs), food companies (raw-material costs), and media and analysts (citable series with source and date).',
       sampleTitle: 'DATA SAMPLE', sampleSub: 'These rows are real and come from today’s dashboard. The final API format may change.',
       tabs: ['Table', 'JSON', 'CSV'], copy: 'Copy', copied: 'Copied', cols: ['Product', 'Market', 'Value', 'Date', 'Source', 'Commercial use'],
       vApto: 'Fit', vCond: 'With conditions', vNo: 'Not fit', sampleFail: 'The sample could not be loaded right now.',
       apiTitle: 'WHAT IS DONE AND WHAT IS MISSING', apiStatus: 'API and downloads available',
-      apiFeatures: ['Available: current prices and history by product and region as public JSON files and downloadable CSV and Excel.', 'Available: updated at the same cadence as the public dashboard, and the status page shows which source is current and which is not.', 'Available: the downloadable pack is split by market (EU, US, UK, Canada) and every row carries its price type and licence verdict.', 'Available: JSON data API, free and no key, with source, licence and attribution on every series (see the API page).', 'Pending: automatic alerts when a price crosses a threshold. They need an email service and there is no server yet.', 'Pending: keyed access and custom limits, which are not needed while everything is static files.'],
+      apiFeatures: ['Available: current prices and history by product and region as public JSON files and downloadable CSV and Excel.', 'Available: updated at the same cadence as the public dashboard, and the status page shows which source is current and which is not.', 'Available: the downloadable pack is split by market (EU, US, UK, Canada) and every row carries its price type and licence verdict.', 'Available: JSON data API, free and no key, with source, licence and attribution on every series (see the API page).', 'Available: JSON water API with the rivers of six countries (level, discharge, state and percentile against history) and European drought by country.', 'Pending: automatic alerts when a price crosses a threshold. The weekly email digest is ready and goes out as soon as the email provider is switched on.', 'Pending: keyed access and custom limits, which are not needed while everything is static files.'],
       apiNow: 'Meanwhile, the site’s public JSON and CSV files, described in data/api.json, remain available. Commercial use of them depends on each source’s licence.',
       condTitle: 'WHAT COULD BE OFFERED', condBody: 'Of the {t} sources in use, {a} allow commercial use without reservations, {c} allow it with conditions and {n} are left out because their licence is pending or unconfirmed. Every file and every source has a public verdict.', condBtn: 'See the terms',
       cTitle: 'Write to us', cBody: 'Tell us what data you need and what for. We read every message and reply.',
@@ -89,12 +104,15 @@
       ints: ['Prices', 'Production and yields', 'Trade and tariffs', 'Weather and drought', 'Inputs and costs', 'Land and rents', 'CAP and payments'],
       send: 'Prepare the email', join: 'Sign me up', errName: 'Enter your name.', errEmail: 'Enter a valid email.', errMsg: 'Tell us in a few lines what you need.',
       done: 'Your email app has opened with the message ready. Press send there. If it did not open, copy the text below and send it to {m}.',
+      sentC: 'Message sent. A tab with the confirmation has opened; we will reply to the email you wrote. If it did not open, write to us at {m}.',
+      sentL: 'Almost done: a tab has opened to confirm your email. You will get a message, and you are not on the list until you confirm it.',
+      privExt: 'When you send it, your data goes to {p}, which handles delivery; this site does not store it. More in the',
       privacy: 'We store nothing on this site. The message goes from your email app to {m}. More in the', privacyLink: 'privacy policy',
       subjC: 'Business: data enquiry', subjL: 'API waiting list', hello: 'Message sent from dehesaindex.com/empresas', lang: 'Site language', noInt: 'none given'
     },
     fr: {
       title: 'Entreprises | Dehesa Index', badge: 'POUR LES ENTREPRISES', h1: 'Des données agricoles prêtes à intégrer dans votre activité',
-      sub: 'Dehesa Index prépare une API de prix et de statistiques agricoles par produit et par région, pour ceux qui ont besoin de ces données dans leur propre système et pas seulement sur un tableau de bord à consulter à la main. Elle n’est pas encore en vente : voici ce qui existe, ce qui pourrait être proposé et comment vous inscrire.',
+      sub: 'Dehesa Index publie déjà des données agricoles ouvertes en JSON, CSV et Excel, avec source, licence et attribution sur chaque série, et prépare une API avec clé pour ceux qui veulent les intégrer à leur propre système. Voici ce qui existe aujourd’hui, ce qui pourrait être proposé et comment nous parler.',
       whatTitle: 'CE QUI EST DÉJÀ LÀ',
       whatP1: 'Le tableau de bord public réunit les prix officiels des États-Unis, de l’UE, du Royaume-Uni et du Canada, et des statistiques agricoles de dizaines de pays. Chaque chiffre porte sa source, sa date et sa licence, et ce qui n’est pas une donnée officielle est signalé comme tel.',
       whatP2: 'L’API reprendra ce même modèle, chaque prix étant identifié par produit et région, dans un format pensé pour les tableurs, ERP ou systèmes de risque, au lieu de le copier à la main depuis le tableau de bord.',
@@ -114,14 +132,20 @@
           note: 'Certains jeux de données, comme le U.S. Drought Monitor, sont exclus de l’offre commerciale à cause de leur licence.' },
         { name: 'Banques', problem: 'Évaluer le financement agricole : valeur de la garantie, coût de production, marge et contexte macro.',
           data: ['Prix et tendances des produits financés.', 'Prix et loyers des terres dans plusieurs pays.', 'Indicateurs macro et taux de change par pays.', 'Coûts de production et marge.'],
-          links: [['precios.html', 'Prix'], ['paises.html', 'Pays'], ['costes.html', 'Coûts']] }
+          links: [['precios.html', 'Prix'], ['paises.html', 'Pays'], ['costes.html', 'Coûts']] },
+        { name: 'Fabricants d’intrants et logistique', problem: 'Anticiper la demande d’engrais et d’aliments et le fret du grain : ce que coûte chaque intrant face à son historique et si le fleuve qui le transporte baisse.',
+          data: ['Engrais, aliments et gazole face à leurs 10 dernières années.', 'Valeur unitaire à l’importation des engrais aux États-Unis et dans l’UE.', 'Fret du grain et débit quotidien des fleuves à barges (Mississippi, Illinois, Ohio).', 'Gazole agricole en Espagne, France, Allemagne et Belgique.'],
+          links: [['monitor-insumos.html', 'Moniteur des intrants'], ['insumos.html', 'Intrants et fret'], ['insumos.html#usm-rv', 'Fleuves à barges'], ['api.html', 'API']] },
+        { name: 'Assurance et risque hydrique', problem: 'Évaluer ensemble le risque de sécheresse et les bas niveaux des cours d’eau : où en est le cours d’eau par rapport à la normale et comment évolue la sécheresse de la zone.',
+          data: ['Niveau, débit et percentile par rapport à l’historique des cours d’eau d’Allemagne, des Pays-Bas, de France, de Flandre, du Canada et des États-Unis.', 'Indicateur combiné de sécheresse de l’Observatoire européen par pays.', 'Retenues d’Espagne et de l’ouest des États-Unis.', 'Tout en JSON avec source, licence et attribution (API de l’eau).'],
+          links: [['sequia.html', 'Sécheresse et cours d’eau'], ['sequia.html?zona=eu#rvfr', 'Cours d’eau de France'], ['clima.html', 'Climat'], ['api.html', 'API de l’eau']] }
       ],
       others: 'Aussi : fabricants d’engrais et d’aliments pour bétail (suivi des intrants), entreprises agroalimentaires (coûts de matières premières), médias et analystes (séries citables avec source et date).',
       sampleTitle: 'ÉCHANTILLON DE DONNÉES', sampleSub: 'Ces lignes sont réelles et viennent du tableau de bord d’aujourd’hui. Le format final de l’API peut changer.',
       tabs: ['Tableau', 'JSON', 'CSV'], copy: 'Copier', copied: 'Copié', cols: ['Produit', 'Marché', 'Valeur', 'Date', 'Source', 'Usage commercial'],
       vApto: 'Apte', vCond: 'Sous conditions', vNo: 'Non apte', sampleFail: 'L’échantillon n’a pas pu être chargé pour l’instant.',
       apiTitle: 'CE QUI EST FAIT ET CE QUI MANQUE', apiStatus: 'API et téléchargements disponibles',
-      apiFeatures: ['Disponible : prix actuels et historique par produit et région en fichiers JSON publics et en CSV et Excel téléchargeables.', 'Disponible : mise à jour au même rythme que le tableau de bord public, et la page d’état montre quelle source est à jour et laquelle ne l’est pas.', 'Disponible : le pack téléchargeable est découpé par marché (UE, États-Unis, Royaume-Uni, Canada) et chaque ligne porte son type de prix et son verdict de licence.', 'Disponible : API de données en JSON, gratuite et sans clé, avec source, licence et attribution sur chaque série (voir la page API).', 'À venir : alertes automatiques quand un prix franchit un seuil. Elles demandent un service d’e-mail et il n’y a pas encore de serveur.', 'À venir : accès avec clé et limites propres, inutiles tant que tout reste en fichiers statiques.'],
+      apiFeatures: ['Disponible : prix actuels et historique par produit et région en fichiers JSON publics et en CSV et Excel téléchargeables.', 'Disponible : mise à jour au même rythme que le tableau de bord public, et la page d’état montre quelle source est à jour et laquelle ne l’est pas.', 'Disponible : le pack téléchargeable est découpé par marché (UE, États-Unis, Royaume-Uni, Canada) et chaque ligne porte son type de prix et son verdict de licence.', 'Disponible : API de données en JSON, gratuite et sans clé, avec source, licence et attribution sur chaque série (voir la page API).', 'Disponible : API de l’eau en JSON avec les cours d’eau de six pays (niveau, débit, état et percentile par rapport à l’historique) et la sécheresse européenne par pays.', 'À venir : alertes automatiques quand un prix franchit un seuil. Le résumé hebdomadaire par e-mail est prêt et partira dès que le service d’e-mail sera activé.', 'À venir : accès avec clé et limites propres, inutiles tant que tout reste en fichiers statiques.'],
       apiNow: 'En attendant, les fichiers JSON et CSV publics du site, décrits dans data/api.json, restent disponibles. Leur usage commercial dépend de la licence de chaque source.',
       condTitle: 'CE QUI POURRAIT ÊTRE PROPOSÉ', condBody: 'Sur les {t} sources utilisées, {a} autorisent l’usage commercial sans réserve, {c} l’autorisent sous conditions et {n} sont exclues car leur licence est en attente ou non confirmée. Chaque fichier et chaque source a un verdict public.', condBtn: 'Voir les conditions',
       cTitle: 'Écrivez-nous', cBody: 'Dites-nous de quelles données vous avez besoin et pour quoi faire. Nous lisons chaque message et répondons.',
@@ -132,12 +156,15 @@
       ints: ['Prix', 'Production et rendements', 'Commerce et tarifs', 'Météo et sécheresse', 'Intrants et coûts', 'Terres et loyers', 'PAC et aides'],
       send: 'Préparer l’e-mail', join: 'M’inscrire', errName: 'Indiquez votre nom.', errEmail: 'Indiquez un e-mail valide.', errMsg: 'Dites-nous en quelques lignes ce dont vous avez besoin.',
       done: 'Votre messagerie s’est ouverte avec le message prêt. Appuyez sur envoyer là-bas. Si elle ne s’est pas ouverte, copiez le texte ci-dessous et envoyez-le à {m}.',
+      sentC: 'Message envoyé. Un onglet de confirmation s’est ouvert ; nous répondrons à l’adresse que vous avez indiquée. S’il ne s’est pas ouvert, écrivez-nous à {m}.',
+      sentL: 'Presque terminé : un onglet s’est ouvert pour confirmer votre e-mail. Vous recevrez un message et vous n’êtes inscrit qu’après l’avoir confirmé.',
+      privExt: 'À l’envoi, vos données partent chez {p}, qui gère l’envoi ; ce site ne les conserve pas. Plus dans la',
       privacy: 'Nous ne stockons rien sur ce site. Le message part de votre messagerie vers {m}. Plus d’informations dans la', privacyLink: 'politique de confidentialité',
       subjC: 'Entreprises : demande de données', subjL: 'Liste d’attente de l’API', hello: 'Message envoyé depuis dehesaindex.com/empresas', lang: 'Langue du site', noInt: 'aucune indiquée'
     },
     it: {
       title: 'Aziende | Dehesa Index', badge: 'PER LE AZIENDE', h1: 'Dati agricoli pronti da integrare nella tua attività',
-      sub: 'Dehesa Index sta preparando un’API di prezzi e statistiche agricole per prodotto e regione, pensata per chi ha bisogno di questi dati nel proprio sistema e non solo in una dashboard da consultare a mano. Non è ancora in vendita: qui vedi cosa c’è, cosa si potrebbe offrire e come iscriverti.',
+      sub: 'Dehesa Index pubblica già dati agricoli aperti in JSON, CSV ed Excel, con fonte, licenza e attribuzione su ogni serie, e prepara un’API con chiave per chi vuole integrarli nel proprio sistema. Qui vedi cosa c’è oggi, cosa si potrebbe offrire e come parlarci.',
       whatTitle: "COSA C'È DIETRO",
       whatP1: 'La dashboard pubblica riunisce i prezzi ufficiali di Stati Uniti, UE, Regno Unito e Canada, e statistiche agricole di decine di paesi. Ogni dato riporta fonte, data e licenza, e ciò che non è un dato ufficiale è indicato come tale.',
       whatP2: 'L’API porterà lo stesso modello, con ogni prezzo identificato per prodotto e regione, in un formato pensato per fogli di calcolo, ERP o sistemi di rischio, invece di copiarlo a mano dalla dashboard.',
@@ -157,14 +184,20 @@
           note: 'Alcuni insiemi di dati, come lo U.S. Drought Monitor, restano fuori dall’offerta commerciale per via della licenza.' },
         { name: 'Banche', problem: 'Valutare il credito agricolo: valore della garanzia, costo di produzione, margine e contesto macro.',
           data: ['Prezzi e tendenze dei prodotti finanziati.', 'Prezzi e affitti dei terreni in vari paesi.', 'Indicatori macro e tassi di cambio per paese.', 'Costi di produzione e margine.'],
-          links: [['precios.html', 'Prezzi'], ['paises.html', 'Paesi'], ['costes.html', 'Costi']] }
+          links: [['precios.html', 'Prezzi'], ['paises.html', 'Paesi'], ['costes.html', 'Costi']] },
+        { name: 'Produttori di input e logistica', problem: 'Anticipare la domanda di concimi e mangimi e i noli del grano: quanto costa ogni input rispetto al suo storico e se il fiume che lo trasporta cala.',
+          data: ['Concimi, mangimi e gasolio rispetto agli ultimi 10 anni.', 'Valore unitario all’importazione dei fertilizzanti negli USA e nell’UE.', 'Noli del grano e portata giornaliera dei fiumi delle chiatte (Mississippi, Illinois, Ohio).', 'Gasolio agricolo in Spagna, Francia, Germania e Belgio.'],
+          links: [['monitor-insumos.html', 'Monitor dei mezzi tecnici'], ['insumos.html', 'Input e noli'], ['insumos.html#usm-rv', 'Fiumi delle chiatte'], ['api.html', 'API']] },
+        { name: 'Assicurazioni e rischio idrico', problem: 'Valutare insieme il rischio di siccità e i livelli bassi dei fiumi: dove si trova il fiume rispetto alla norma e come va la siccità della zona.',
+          data: ['Livello, portata e percentile rispetto allo storico dei fiumi di Germania, Paesi Bassi, Francia, Fiandre, Canada e USA.', 'Indicatore combinato di siccità dell’Osservatorio europeo per paese.', 'Invasi della Spagna e degli USA occidentali.', 'Tutto in JSON con fonte, licenza e attribuzione (API dell’acqua).'],
+          links: [['sequia.html', 'Siccità e fiumi'], ['sequia.html?zona=eu#rvfr', 'Fiumi della Francia'], ['clima.html', 'Clima'], ['api.html', 'API dell’acqua']] }
       ],
       others: 'Anche: produttori di fertilizzanti e mangimi (monitoraggio degli input), aziende alimentari (costi delle materie prime), media e analisti (serie citabili con fonte e data).',
       sampleTitle: 'CAMPIONE DI DATI', sampleSub: 'Queste righe sono reali e vengono dalla dashboard di oggi. Il formato finale dell’API può cambiare.',
       tabs: ['Tabella', 'JSON', 'CSV'], copy: 'Copia', copied: 'Copiato', cols: ['Prodotto', 'Mercato', 'Valore', 'Data', 'Fonte', 'Uso commerciale'],
       vApto: 'Idonea', vCond: 'Con condizioni', vNo: 'Non idonea', sampleFail: 'Impossibile caricare il campione in questo momento.',
       apiTitle: 'COSA È FATTO E COSA MANCA', apiStatus: 'API e download disponibili',
-      apiFeatures: ['Disponibile: prezzi attuali e storico per prodotto e regione in file JSON pubblici e in CSV ed Excel scaricabili.', 'Disponibile: aggiornamento con la stessa cadenza della dashboard pubblica, e la pagina di stato mostra quale fonte è aggiornata e quale no.', 'Disponibile: il pacchetto scaricabile è diviso per mercato (UE, USA, Regno Unito, Canada) e ogni riga porta il tipo di prezzo e il verdetto di licenza.', 'Disponibile: API dei dati in JSON, gratuita e senza chiave, con fonte, licenza e attribuzione su ogni serie (vedi la pagina API).', 'Da fare: avvisi automatici quando un prezzo supera una soglia. Servono un servizio e-mail e per ora non c’è un server.', 'Da fare: accesso con chiave e limiti propri, non necessari finché tutto resta in file statici.'],
+      apiFeatures: ['Disponibile: prezzi attuali e storico per prodotto e regione in file JSON pubblici e in CSV ed Excel scaricabili.', 'Disponibile: aggiornamento con la stessa cadenza della dashboard pubblica, e la pagina di stato mostra quale fonte è aggiornata e quale no.', 'Disponibile: il pacchetto scaricabile è diviso per mercato (UE, USA, Regno Unito, Canada) e ogni riga porta il tipo di prezzo e il verdetto di licenza.', 'Disponibile: API dei dati in JSON, gratuita e senza chiave, con fonte, licenza e attribuzione su ogni serie (vedi la pagina API).', 'Disponibile: API dell’acqua in JSON con i fiumi di sei paesi (livello, portata, stato e percentile rispetto allo storico) e la siccità europea per paese.', 'Da fare: avvisi automatici quando un prezzo supera una soglia. Il riepilogo settimanale via e-mail è pronto e partirà appena sarà attivato il servizio e-mail.', 'Da fare: accesso con chiave e limiti propri, non necessari finché tutto resta in file statici.'],
       apiNow: 'Nel frattempo restano disponibili i file JSON e CSV pubblici del sito, descritti in data/api.json. L’uso commerciale dipende dalla licenza di ogni fonte.',
       condTitle: 'COSA SI POTREBBE OFFRIRE', condBody: 'Delle {t} fonti in uso, {a} consentono l’uso commerciale senza riserve, {c} lo consentono con condizioni e {n} restano fuori perché la licenza è in sospeso o non confermata. Ogni file e ogni fonte ha un verdetto pubblico.', condBtn: 'Vedi le condizioni',
       cTitle: 'Scrivici', cBody: 'Dicci di quali dati hai bisogno e per cosa. Leggiamo ogni messaggio e rispondiamo.',
@@ -175,11 +208,14 @@
       ints: ['Prezzi', 'Produzione e rese', 'Commercio e dazi', 'Clima e siccità', 'Input e costi', 'Terra e affitti', 'PAC e aiuti'],
       send: 'Prepara l’email', join: 'Iscrivimi', errName: 'Scrivi il tuo nome.', errEmail: 'Scrivi un’email valida.', errMsg: 'Dicci in poche righe di cosa hai bisogno.',
       done: 'Il tuo programma di posta si è aperto con il messaggio pronto. Premi invia lì. Se non si è aperto, copia il testo qui sotto e mandalo a {m}.',
+      sentC: 'Messaggio inviato. Si è aperta una scheda di conferma; risponderemo all’indirizzo che hai scritto. Se non si è aperta, scrivici a {m}.',
+      sentL: 'Quasi fatto: si è aperta una scheda per confermare la tua e-mail. Riceverai un messaggio e non sei in lista finché non lo confermi.',
+      privExt: 'All’invio, i tuoi dati vanno a {p}, che gestisce la spedizione; questo sito non li conserva. Altro nella',
       privacy: 'Non conserviamo nulla su questo sito. Il messaggio parte dal tuo programma di posta verso {m}. Altro nella', privacyLink: 'informativa sulla privacy',
       subjC: 'Aziende: richiesta di dati', subjL: 'Lista d’attesa dell’API', hello: 'Messaggio inviato da dehesaindex.com/empresas', lang: 'Lingua del sito', noInt: 'nessuno indicato'
     }
   };
-  var D = { tape: null, sum: null, labels: null, pm: null }, TAB = 0;
+  var D = { tape: null, sum: null, labels: null, pm: null, sheet: null }, TAB = 0, SQ = '', SV = '', SALL = false;
   function lang() { return S.getLang(); }
   function t() { return T[lang()] || T.es; }
   function esc(x) { return S.esc(x == null ? '' : String(x)); }
@@ -233,6 +269,7 @@
     return '<fieldset class="di-emp-checks"><legend>' + esc(w.fInt) + ' <em>' + esc(w.opt) + '</em></legend>' + items.map(function (x, i) {
       return '<label><input type="checkbox" id="' + pref + i + '" value="' + i + '"> ' + esc(x) + '</label>'; }).join('') + '</fieldset>';
   }
+  function extProv(c) { var x = c ? S.contact : S.digest; return x && x.action ? (x.provider || 'un proveedor externo') : ''; }
   function formHtml(kind, w) {
     var c = kind === 'c', p = c ? 'ec-' : 'el-';
     return '<form class="di-card di-emp-form" id="' + (c ? 'contacto' : 'lista') + '" novalidate data-kind="' + kind + '"><div class="di-emp-cta-title">' + esc(c ? w.cTitle : w.lTitle) + '</div><p class="di-emp-cta-body">' + esc(c ? w.cBody : w.lBody) + '</p>' +
@@ -243,7 +280,58 @@
       (c ? field(p + 'msg', w.fMsg, '<textarea id="' + p + 'msg" class="di-compare-select" rows="4" required></textarea>', false, w) + field(p + 'use', w.fUse, select(p + 'use', w.uses, w), true, w) : '') +
       checks(p + 'int', w.ints, w) +
       '<div class="di-emp-actions"><button type="submit" class="di-btn-gold-solid">' + esc(c ? w.send : w.join) + '</button></div><p class="di-emp-status" role="status" aria-live="polite" id="' + p + 'status"></p>' +
-      '<p class="di-emp-cta-note">' + esc(fill(w.privacy, { m: MAIL })) + ' <a href="legal.html#privacidad">' + esc(w.privacyLink) + '</a>.</p></form>';
+      '<p class="di-emp-cta-note">' + esc(extProv(c) ? fill(w.privExt, { p: extProv(c) }) : fill(w.privacy, { m: MAIL })) + ' <a href="legal.html#privacidad">' + esc(w.privacyLink) + '</a>.</p></form>';
+  }
+
+  /* Ficha de datos por fuente: una fila por fuente en uso, con licencia, uso comercial, atribucion, cadencia y ultima actualizacion (data/views/source-sheet.json). */
+  var SH = {
+    es: { lu: ['Sin confirmar', 'Propia'], title: 'FICHA DE DATOS POR FUENTE', sub: 'Cada fuente en uso, con su licencia y si permite uso comercial. Cadencia y última actualización salen del estado de los pipelines; «—» significa que esa fuente se actualiza por un proceso que aún no se mide aquí.', search: 'Buscar fuente, país o licencia', all: 'Todas', cols: ['Fuente', 'País', 'Licencia', 'Uso comercial', 'Atribución', 'Se actualiza', 'Última actualización', 'Estado'], attr: ['Sí, citar', 'No'], more: 'Mostrar las {n} fuentes', less: 'Mostrar menos', none: 'Ninguna fuente coincide.', count: '{n} de {t} fuentes',
+      cad: ['Varias veces al día', 'Diaria', 'Semanal', 'Mensual', 'Menos de una vez al mes'], st: { ok: 'Al día', late: 'Con retraso', error: 'Con error', not_run: 'Aún sin ejecutar', unknown: 'Sin medir' } },
+    en: { lu: ['Unconfirmed', 'Custom'], title: 'DATA SHEET BY SOURCE', sub: 'Every source in use, with its licence and whether it allows commercial use. Cadence and last update come from the pipeline status; “—” means that source is refreshed by a process not measured here yet.', search: 'Search source, country or licence', all: 'All', cols: ['Source', 'Country', 'Licence', 'Commercial use', 'Attribution', 'Updated', 'Last update', 'Status'], attr: ['Yes, quote it', 'No'], more: 'Show all {n} sources', less: 'Show fewer', none: 'No source matches.', count: '{n} of {t} sources',
+      cad: ['Several times a day', 'Daily', 'Weekly', 'Monthly', 'Less than monthly'], st: { ok: 'Up to date', late: 'Late', error: 'Failing', not_run: 'Not run yet', unknown: 'Not measured' } },
+    fr: { lu: ['Non confirmée', 'Propre'], title: 'FICHE DE DONNÉES PAR SOURCE', sub: 'Chaque source utilisée, avec sa licence et si elle permet l’usage commercial. Le rythme et la dernière mise à jour viennent de l’état des pipelines ; « — » signifie que la source est actualisée par un processus pas encore mesuré ici.', search: 'Chercher une source, un pays ou une licence', all: 'Toutes', cols: ['Source', 'Pays', 'Licence', 'Usage commercial', 'Attribution', 'Mise à jour', 'Dernière mise à jour', 'État'], attr: ['Oui, à citer', 'Non'], more: 'Afficher les {n} sources', less: 'Afficher moins', none: 'Aucune source ne correspond.', count: '{n} sources sur {t}',
+      cad: ['Plusieurs fois par jour', 'Quotidienne', 'Hebdomadaire', 'Mensuelle', 'Moins d’une fois par mois'], st: { ok: 'À jour', late: 'En retard', error: 'En erreur', not_run: 'Pas encore lancé', unknown: 'Non mesuré' } },
+    it: { lu: ['Non confermata', 'Propria'], title: 'SCHEDA DEI DATI PER FONTE', sub: 'Ogni fonte in uso, con la sua licenza e se consente l’uso commerciale. Cadenza e ultimo aggiornamento vengono dallo stato delle pipeline; «—» significa che la fonte è aggiornata da un processo non ancora misurato qui.', search: 'Cerca fonte, paese o licenza', all: 'Tutte', cols: ['Fonte', 'Paese', 'Licenza', 'Uso commerciale', 'Attribuzione', 'Si aggiorna', 'Ultimo aggiornamento', 'Stato'], attr: ['Sì, da citare', 'No'], more: 'Mostra tutte le {n} fonti', less: 'Mostra meno', none: 'Nessuna fonte corrisponde.', count: '{n} di {t} fonti',
+      cad: ['Più volte al giorno', 'Giornaliera', 'Settimanale', 'Mensile', 'Meno di una volta al mese'], st: { ok: 'Aggiornata', late: 'In ritardo', error: 'In errore', not_run: 'Non ancora eseguita', unknown: 'Non misurata' } }
+  };
+  function shT() { return SH[lang()] || SH.es; }
+  function cadWord(h, w) { return h == null ? '—' : h <= 12 ? w.cad[0] : h <= 36 ? w.cad[1] : h <= 200 ? w.cad[2] : h <= 800 ? w.cad[3] : w.cad[4]; }
+  function sheetRows() {
+    var q = SQ.toLowerCase(), rows = (D.sheet && D.sheet.sources) || [];
+    return rows.filter(function (r) {
+      if (SV && r.commercial !== SV) return false;
+      if (!q) return true;
+      return (r.name + ' ' + (r.fullName || '') + ' ' + (r.country || '') + ' ' + ((r.license && (r.license.id + ' ' + r.license.name)) || '') + ' ' + r.id).toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  function sheetBody() {
+    var w = t(), x = shT(), all = sheetRows(), tot = D.sheet.sources.length, lim = SALL || SQ || SV ? all.length : 20, rows = all.slice(0, lim);
+    if (!rows.length) return '<p class="di-emp-p">' + esc(x.none) + '</p>';
+    var tr = rows.map(function (r) {
+      var lid = r.license && (r.license.id === 'UNKNOWN' ? x.lu[0] : r.license.id === 'CUSTOM' ? x.lu[1] : (r.license.id || r.license.name)), lic = lid ? (r.license.url && r.license.id !== 'UNKNOWN' ? '<a href="' + esc(r.license.url) + '" rel="noopener">' + esc(lid) + '</a>' : esc(lid)) : '—';
+      return '<tr><td data-label="' + esc(x.cols[0]) + '"><b>' + esc(r.name) + '</b></td><td data-label="' + esc(x.cols[1]) + '">' + esc(r.country || '—') + '</td><td data-label="' + esc(x.cols[2]) + '">' + lic + '</td>' +
+        '<td data-label="' + esc(x.cols[3]) + '">' + esc(vLabel(r.commercial, w)) + '</td><td data-label="' + esc(x.cols[4]) + '">' + esc(x.attr[r.attributionRequired ? 0 : 1]) + '</td>' +
+        '<td data-label="' + esc(x.cols[5]) + '">' + esc(cadWord(r.cadenceHours, x)) + '</td><td data-label="' + esc(x.cols[6]) + '">' + esc(r.lastUpdate || '—') + '</td>' +
+        '<td data-label="' + esc(x.cols[7]) + '">' + esc(r.status ? x.st[r.status] || r.status : '—') + '</td></tr>'; }).join('');
+    var more = !SQ && !SV && all.length > 20 ? '<button type="button" class="di-btn-gold-solid" id="em-sheet-more" style="margin-top:12px">' + esc(SALL ? x.less : fill(x.more, { n: all.length })) + '</button>' : '';
+    return '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(fill(x.count, { n: all.length, t: tot })) + '</p><div class="di-table-wrap" style="overflow-x:auto"><table class="di-table" data-no-cards><thead><tr>' +
+      x.cols.map(function (c) { return '<th style="text-align:left;padding:6px 8px;white-space:nowrap">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' + tr + '</tbody></table></div>' + more;
+  }
+  function sheetHtml() {
+    if (!D.sheet) return '';
+    var w = t(), x = shT();
+    return '<section class="di-card di-emp-section" id="ficha-fuentes"><div class="di-emp-section-title">' + esc(x.title) + '</div><p class="di-emp-p" style="margin-bottom:12px">' + esc(x.sub) + '</p>' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><input id="em-sheet-q" type="search" class="di-compare-select" style="flex:1 1 220px" placeholder="' + esc(x.search) + '" aria-label="' + esc(x.search) + '" value="' + esc(SQ) + '">' +
+      '<select id="em-sheet-v" class="di-compare-select" aria-label="' + esc(x.cols[3]) + '"><option value="">' + esc(x.all) + '</option>' + ['apto', 'condiciones', 'no-apto'].map(function (v) { return '<option value="' + v + '"' + (SV === v ? ' selected' : '') + '>' + esc(vLabel(v, w)) + '</option>'; }).join('') + '</select></div>' +
+      '<div id="em-sheet-body" aria-live="polite">' + sheetBody() + '</div></section>';
+  }
+  function wireSheet() {
+    var q = document.getElementById('em-sheet-q'), v = document.getElementById('em-sheet-v'), b = document.getElementById('em-sheet-body');
+    if (!q || !b) return;
+    function again() { b.innerHTML = sheetBody(); var m = document.getElementById('em-sheet-more'); if (m) m.onclick = function () { SALL = !SALL; again(); }; }
+    q.oninput = function () { SQ = q.value.trim(); again(); };
+    v.onchange = function () { SV = v.value; again(); };
+    again();
   }
   function render() {
     var w = t(), esc2 = esc, tape = D.tape, n = D.pm ? D.pm.products : null, sm = D.sum && D.sum.summary;
@@ -277,10 +365,12 @@
     h += '<section class="di-card di-emp-section di-emp-api-section"><div class="di-emp-api-head"><span class="di-emp-section-title">' + esc2(w.apiTitle) + '</span><span class="di-emp-api-status">' + esc2(w.apiStatus) + '</span></div><div class="di-emp-api-features">' +
       w.apiFeatures.map(function (f) { return '<div class="di-emp-api-feature"><span class="di-emp-api-arrow">' + (/^(Ya disponible|Available|Disponible|Disponibile)/.test(f) ? '✓' : '○') + '</span><span>' + esc2(f) + '</span></div>'; }).join('') + '</div><p class="di-emp-p" style="margin-top:14px">' + esc2(w.apiNow) + '</p></section>';
     if (sm) h += '<section class="di-card di-emp-section"><div class="di-emp-section-title">' + esc2(w.condTitle) + '</div><p class="di-emp-p">' + esc2(fill(w.condBody, { t: sm.sources, a: sm.sourcesApto, c: sm.sourcesCondiciones, n: sm.sourcesNoApto })) + '</p><a class="di-btn-gold-solid" href="condiciones.html">' + esc2(w.condBtn) + '</a></section>';
+    h += sheetHtml();
     h += '<div class="di-emp-forms">' + formHtml('c', w) + formHtml('l', w) + '</div>';
     document.getElementById('em-root').innerHTML = h;
     restoreForm(form);
     wire();
+    wireSheet();
   }
   /* Al volver a pintar (cambio de idioma o llegada de datos) se conserva lo que la persona ya haya escrito. */
   function saveForm() {
@@ -307,6 +397,13 @@
   }
   function selectPre() { var p = document.getElementById('em-pre'); if (!p) return; try { var r = document.createRange(); r.selectNodeContents(p); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) { /* sin seleccion */ } }
   function val(id) { var e = document.getElementById(id); return e ? String(e.value || '').trim() : ''; }
+  /* Envio real sin servidor propio: un formulario HTML que se manda desde JS a la pagina del proveedor (target _blank), como el alta de avisos. */
+  function post(url, fields) {
+    var f = document.createElement('form'), k;
+    f.method = 'post'; f.action = url; f.target = '_blank'; f.style.display = 'none';
+    for (k in fields) if (fields.hasOwnProperty(k) && fields[k] !== '' && fields[k] != null) { var i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = fields[k]; f.appendChild(i); }
+    document.body.appendChild(f); f.submit(); document.body.removeChild(f);
+  }
   function submit(kind) {
     var w = t(), c = kind === 'c', p = c ? 'ec-' : 'el-', st = document.getElementById(p + 'status'), email = val(p + 'email'), name = val(p + 'name'), msg = c ? val(p + 'msg') : '';
     var err = '';
@@ -320,6 +417,9 @@
     lines.push(w.fInt + ': ' + (ints.length ? ints.join(', ') : w.noInt));
     if (c) { if (msg.length > 1200) msg = msg.slice(0, 1200) + '…'; lines.push('', msg); }
     var body = lines.join('\n'), subject = (c ? w.subjC : w.subjL) + (val(p + 'company') ? ' — ' + val(p + 'company') : '');
+    var tr = c ? (S.contact && S.contact.action ? { url: S.contact.action, f: { name: name, email: email, company: val(p + 'company'), role: role, use: use, interests: ints.join(', '), message: msg, _subject: subject, lang: lang() } } : null)
+               : (S.digest && S.digest.action ? { url: S.digest.action, f: { email: email, tag: 'api-empresas', metadata__company: val(p + 'company'), metadata__role: role, metadata__interests: ints.join(', ') } } : null);
+    if (tr) { post(tr.url, tr.f); st.className = 'di-emp-status ok'; st.textContent = fill(c ? w.sentC : w.sentL, { m: MAIL }); return; }
     st.className = 'di-emp-status ok';
     st.innerHTML = esc(fill(w.done, { m: MAIL })) + '<textarea class="di-compare-select" rows="7" readonly aria-label="' + esc(subject) + '" style="margin-top:8px">' + esc(subject + '\n\n' + body) + '</textarea>';
     window.location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
@@ -333,8 +433,8 @@
   S.init('empresas');
   S.onLangChange = render;
   render();
-  Promise.all([get('data/home-tape.json'), get('data/commercial-summary.json'), get('data/product-labels.json'), get('data/prices/manifest.json')]).then(function (a) {
-    D.tape = a[0] || false; D.sum = a[1]; D.labels = a[2];
+  Promise.all([get('data/home-tape.json'), get('data/commercial-summary.json'), get('data/product-labels.json'), get('data/prices/manifest.json'), get('data/views/source-sheet.json')]).then(function (a) {
+    D.tape = a[0] || false; D.sum = a[1]; D.labels = a[2]; D.sheet = a[4] && a[4].sources ? a[4] : null;
     if (a[3] && a[3].regions) {
       var all = {}, k, j, regs = Object.keys(a[3].regions);
       for (k = 0; k < regs.length; k++) { var ps = a[3].regions[regs[k]].products || []; for (j = 0; j < ps.length; j++) all[ps[j]] = 1; }

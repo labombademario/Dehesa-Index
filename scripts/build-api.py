@@ -61,7 +61,7 @@ def build():
         files['series/%s.json' % sid] = jdump(dict(meta, schemaVersion=1, generatedAt=gen, first=pts[0][0], last=last[0], rows=len(pts), points=pts))
     series_docs.sort(key=lambda x: x['id']); latest.sort(key=lambda x: x['id'])
     files['index.json'] = jdump({'schemaVersion': 1, 'name': 'Dehesa Index Data API', 'version': 'v1', 'generatedAt': gen, 'base': BASE, 'policy': POLICY,
-        'endpoints': {'index': '/data/api/v1/index.json', 'latest': '/data/api/v1/latest.json', 'series': '/data/api/v1/series/{region}/{product}.json', 'openapi': '/data/api/v1/openapi.json'},
+        'endpoints': {'index': '/data/api/v1/index.json', 'latest': '/data/api/v1/latest.json', 'series': '/data/api/v1/series/{region}/{product}.json', 'openapi': '/data/api/v1/openapi.json', 'water': '/data/api/v1/water/index.json'},
         'regions': ['us', 'eu', 'uk', 'ca'], 'summary': {'series': len(series_docs), 'rows': sum(s['rows'] for s in series_docs)}, 'terms': BASE + '/condiciones', 'series': series_docs})
     files['latest.json'] = jdump({'schemaVersion': 1, 'generatedAt': gen, 'policy': POLICY, 'series': latest})
     files['openapi.json'] = jdump(openapi(gen))
@@ -75,6 +75,9 @@ def openapi(gen):
             'license': {'name': 'Per source: see each series', 'url': BASE + '/condiciones'}}, 'servers': [{'url': BASE}],
         'paths': {'/data/api/v1/index.json': {'get': {'operationId': 'listSeries', 'summary': 'Catalogue of series with source, licence and attribution', 'responses': ok('Catalogue', ref('Index'))}},
                   '/data/api/v1/latest.json': {'get': {'operationId': 'latestAll', 'summary': 'Latest value, previous value and change of every series', 'responses': ok('Latest values', ref('Latest'))}},
+                  '/data/api/v1/water/index.json': {'get': {'operationId': 'waterCatalogue', 'summary': 'Catalogue of river and drought datasets with source, licence and attribution', 'responses': ok('Water catalogue', {'type': 'object'})}},
+                  '/data/api/v1/water/rivers/{country}.json': {'get': {'operationId': 'getRivers', 'summary': 'River stations of one country: latest level and discharge, state, percentile against history and 30 days of daily points', 'parameters': [param('country', 'Country', ['de', 'nl', 'fr', 'be', 'ca', 'us'])], 'responses': ok('River stations', {'type': 'object'})}},
+                  '/data/api/v1/water/drought/eu.json': {'get': {'operationId': 'getDroughtEu', 'summary': 'European Drought Observatory Combined Drought Indicator by country: share of the area in each class, last 13 periods', 'responses': ok('Drought by country', {'type': 'object'})}},
                   '/data/api/v1/series/{region}/{product}.json': {'get': {'operationId': 'getSeries', 'summary': 'Full history of one series', 'parameters': [param('region', 'Market', ['us', 'eu', 'uk', 'ca']), param('product', 'Product key from the catalogue, e.g. trigo')], 'responses': dict(ok('Series', ref('Series')), **{'404': {'description': 'No such series'}})}}},
         'components': {'schemas': {
             'SeriesMeta': {'type': 'object', 'required': ['id', 'unit', 'currency', 'frequency', 'sourceName', 'license', 'attribution'], 'properties': {'id': {'type': 'string', 'description': 'region/product'}, 'product': {'type': 'string'}, 'region': {'type': 'string'}, 'name': {'type': 'object', 'additionalProperties': {'type': 'string'}}, 'place': {'type': 'object', 'additionalProperties': {'type': 'string'}}, 'unit': {'type': 'string'}, 'currency': {'type': 'string'}, 'frequency': {'type': 'string'}, 'source': {'type': 'string'}, 'sourceName': {'type': 'string'}, 'license': {'type': 'string'}, 'verdict': {'enum': ['apto', 'condiciones']}, 'attribution': {'type': 'string'}, 'note': {'type': 'object', 'additionalProperties': {'type': 'string'}, 'description': 'What exactly the series measures'}, 'comparability': {'type': 'string'}}},
@@ -87,7 +90,7 @@ def main():
     files = build()
     if check:
         bad = [k for k, v in files.items() if not (OUT / k).exists() or (OUT / k).read_text(encoding='utf-8') != v]
-        extra = [str(p.relative_to(OUT)) for p in OUT.rglob('*.json') if str(p.relative_to(OUT)) not in files] if OUT.exists() else []
+        extra = [str(p.relative_to(OUT)) for p in OUT.rglob('*.json') if str(p.relative_to(OUT)) not in files and not str(p.relative_to(OUT)).startswith('water/')] if OUT.exists() else []
         if bad or extra: print('API DESFASADA (%d ficheros, %d sobrantes): ejecuta scripts/build-api.py' % (len(bad), len(extra))); sys.exit(1)
         print('API al dia: %d ficheros' % len(files)); return
     OUT.mkdir(parents=True, exist_ok=True)
@@ -95,7 +98,7 @@ def main():
         p = OUT / k; p.parent.mkdir(parents=True, exist_ok=True)
         if not p.exists() or p.read_text(encoding='utf-8') != v: p.write_text(v, encoding='utf-8')
     for p in list(OUT.rglob('*.json')):
-        if str(p.relative_to(OUT)) not in files: p.unlink()   # serie que ya no es apta: fuera de la API
+        if str(p.relative_to(OUT)) not in files and not str(p.relative_to(OUT)).startswith('water/'): p.unlink()   # (water/ lo gestiona scripts/build-api-water.py) serie que ya no es apta: fuera de la API
     idx = json.loads(files['index.json'])
     print('API v1: %d series, %d filas, %d ficheros' % (idx['summary']['series'], idx['summary']['rows'], len(files)))
 

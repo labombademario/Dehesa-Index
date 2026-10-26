@@ -7,7 +7,7 @@
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), payment=(), usb=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-IsZVoFHiB7XoBMi6vb0QAtc3d8wppfG+9Wv41K+10L0=' 'sha256-0yRQb6F+6VZVsJCA0qbJGWmAFsZ4jMjXxh7VZgCkaAk='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://dehesaindex.substack.com https://substack.com https://buttondown.com
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-IsZVoFHiB7XoBMi6vb0QAtc3d8wppfG+9Wv41K+10L0=' 'sha256-0yRQb6F+6VZVsJCA0qbJGWmAFsZ4jMjXxh7VZgCkaAk='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://dehesaindex.substack.com https://substack.com https://buttondown.com https://formspree.io
 
 # API de datos publica (JSON estatico): se puede leer desde cualquier web. Cache corta para que los cambios lleguen pronto.
 /data/api/*

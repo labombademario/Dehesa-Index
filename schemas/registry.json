@@ -210,6 +210,10 @@
     "views_home_summary"
    ]
   ],
+  "views/source-sheet.json": [
+   "views-source-sheet",
+   []
+  ],
   "views/news-index.json": [
    "views-news-index",
    [

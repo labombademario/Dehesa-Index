@@ -101,6 +101,19 @@
     var dg = window.DehesaShared && window.DehesaShared.digest; if (!dg || !dg.action) return;
     Object.keys(STRINGS).forEach(function (lg) { STRINGS[lg].sections.forEach(function (sec) { if (sec.id === 'privacidad' && DGP[lg]) sec.p.push(DGP[lg](dg.provider)); }); });
   })();
+  /* Pagina de empresas: la lista de espera de la API usa el mismo proveedor que los avisos; el formulario de contacto, el suyo si esta configurado (DehesaShared.contact). */
+  var EMP = {
+    es: function (v, c) { return 'Página de empresas: si te apuntas a la lista de espera' + (c ? ' o nos escribes por el formulario' : '') + ', tu correo y los datos que escribas los recibe y conserva ' + (c ? v + ' (lista de espera y contacto)' : v) + ', y los usamos solo para contestarte y avisarte de la API. La base jurídica es tu consentimiento; puedes pedir que los borremos escribiendo a dehesaindex@gmail.com.'; },
+    en: function (v, c) { return 'Business page: if you join the API waiting list' + (c ? ' or write to us through the form' : '') + ', your email and what you type are received and stored by ' + (c ? v + ' (waiting list and contact)' : v) + ', and we use them only to reply and to tell you about the API. The legal basis is your consent; you can ask us to delete them by writing to dehesaindex@gmail.com.'; },
+    fr: function (v, c) { return 'Page entreprises : si vous rejoignez la liste d’attente de l’API' + (c ? ' ou nous écrivez par le formulaire' : '') + ', votre e-mail et ce que vous écrivez sont reçus et conservés par ' + (c ? v + ' (liste d’attente et contact)' : v) + ', et nous ne les utilisons que pour vous répondre et vous informer de l’API. La base juridique est votre consentement ; vous pouvez demander leur suppression en écrivant à dehesaindex@gmail.com.'; },
+    it: function (v, c) { return 'Pagina aziende: se ti iscrivi alla lista d’attesa dell’API' + (c ? ' o ci scrivi dal modulo' : '') + ', la tua e-mail e ciò che scrivi sono ricevuti e conservati da ' + (c ? v + ' (lista d’attesa e contatto)' : v) + ', e li usiamo solo per risponderti e informarti sull’API. La base giuridica è il tuo consenso; puoi chiederne la cancellazione scrivendo a dehesaindex@gmail.com.'; }
+  };
+  (function () {
+    var S = window.DehesaShared || {}, dg = S.digest, ct = S.contact, v = [];
+    if (ct && ct.action && ct.provider) v.push(ct.provider); if (dg && dg.action && dg.provider) v.push(dg.provider);
+    if (!v.length) return;
+    Object.keys(STRINGS).forEach(function (lg) { STRINGS[lg].sections.forEach(function (sec) { if (sec.id === 'privacidad' && EMP[lg]) sec.p.push(EMP[lg](v.join(' / '), !!(ct && ct.action))); }); });
+  })();
   (function () {
     var nl = window.DehesaShared && window.DehesaShared.newsletter; if (!nl || !nl.provider) return;
     Object.keys(STRINGS).forEach(function (lg) { STRINGS[lg].sections.forEach(function (sec) { if (sec.id === 'privacidad' && NLP[lg]) sec.p.push(NLP[lg](nl.provider)); }); });

@@ -93,12 +93,14 @@ jobs:
         run: pip install --quiet openpyxl && python3 scripts/build-data-pack.py
       - name: API de datos v1 (JSON estatico generado solo desde el paquete apto; sin datos nuevos no cambia)
         run: python3 scripts/build-api.py
+      - name: API de agua v1 (rios y sequia por pais, solo fuentes con uso comercial permitido)
+        run: python3 scripts/build-api-water.py
       - name: Avisos de precio y resumen semanal (eventos, Atom; solo desde la API; sin datos nuevos no cambia)
         run: python3 scripts/build-digest.py
       - name: Cestas de precios (indices por categoria con metodologia publicada; solo desde la API)
         run: python3 scripts/build-baskets.py
       - name: Informe de mercado para cooperativas (muestra) y estado por fuente
-        run: python3 scripts/build-coop-report.py && python3 scripts/build-source-health.py && python3 scripts/build-input-monitor.py && python3 scripts/build-input-monitor-countries.py && python3 scripts/build-liquidation-refs.py
+        run: python3 scripts/build-coop-report.py && python3 scripts/build-source-health.py && python3 scripts/build-source-sheet.py && python3 scripts/build-input-monitor.py && python3 scripts/build-input-monitor-countries.py && python3 scripts/build-liquidation-refs.py
       - name: Huecos de cobertura (pais x producto x metrica)
         run: python3 scripts/build-coverage-gaps.py
       - name: Paises - que falta por llegar (cobertura hoy, techo y fuentes esperadas)

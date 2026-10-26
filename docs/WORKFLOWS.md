@@ -93,7 +93,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | qa-navigation.yml | a mano | manual / por evento | qa-navigation.mjs | - | - |
 | qa-site.yml | a mano | manual / por evento | qa-site.mjs, validate-snapshots.mjs | - | - |
-| quality.yml | a mano | diaria | build-api.py, build-baskets.py, build-blog-posts.mjs | - | - |
+| quality.yml | a mano | diaria | build-api-water.py, build-api.py, build-baskets.py | - | - |
 | verify-anomalies.yml | a mano | semanal (1) | test-verify-anomalies.py, verify-anomalies.py | data-anomalies.json | finish, validate-files |
 
 ## DE
@@ -109,7 +109,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
-| update-pipeline-status.yml | a mano | varias veces al dia | alert-issue.py, build-api.py, build-app-env.py | api, app, blog/posts.json … | - |
+| update-pipeline-status.yml | a mano | varias veces al dia | alert-issue.py, build-api-water.py, build-api.py | api, app, blog/posts.json … | - |
 | update-seo-pages.yml | generado | diaria | build-seo-pages.mjs, gen-workflows.py, qa-seo.mjs | - | finish |
 
 ## ES

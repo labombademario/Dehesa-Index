@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T14:57:16Z",
+ "generatedAt": "2026-10-26T18:28:29Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 173,
-  "sourcesApto": 157,
+  "sources": 177,
+  "sourcesApto": 161,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 382,
-  "datasets_apto": 246,
+  "datasets": 387,
+  "datasets_apto": 251,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -856,6 +856,23 @@
    "conditions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos."
   },
   {
+   "id": "eccc_hydrometric",
+   "name": "Environment and Climate Change Canada — Water Survey of Canada, datos hidrométricos (GeoMet-OGC)",
+   "url": "https://api.weather.gc.ca/",
+   "country": "CA",
+   "licenseId": "ECCC-ENDUSE-2.1.1",
+   "licenseName": "Environment and Climate Change Canada Data Services End-use Licence v2.1.1",
+   "licenseUrl": "https://eccc-msc.github.io/open-data/licence/readme_en/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains information licenced under the Data Server End-use Licence of Environment and Climate Change Canada.",
+   "conditions": "Citar la fuente; sin sugerir aval oficial; excluye información personal, derechos de terceros y símbolos oficiales; «as is», sin garantías."
+  },
+  {
    "id": "edo_cdi",
    "name": "European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS)",
    "url": "https://drought.emergency.copernicus.eu/",
@@ -1335,6 +1352,23 @@
    "redistribution": "yes",
    "attribution": "Source : ADES (BRGM), via Hub'Eau",
    "conditions": "Mencionar la fuente y la fecha de la última actualización."
+  },
+  {
+   "id": "hubeau_hydrometrie",
+   "name": "Hub'Eau — API Hidrometría (SCHAPI / Eaufrance, nivel y caudal)",
+   "url": "https://hubeau.eaufrance.fr/page/api-hydrometrie",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (datos públicos del sistema de información sobre el agua)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : Hub'Eau, API Hydrométrie (SCHAPI, Eaufrance)",
+   "conditions": "Citar la fuente. Datos de tiempo real sin validar (los productores son responsables de su calidad)."
   },
   {
    "id": "hubeau_onde",
@@ -2067,6 +2101,23 @@
    "conditions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de precios de consumo (CPI, D7BT) y, vía NOMIS (servicio del ONS), la población, la tasa de paro y el valor añadido bruto por región (mismo régimen OGL v3.0)."
   },
   {
+   "id": "pegelonline",
+   "name": "Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV) — PEGELONLINE",
+   "url": "https://www.pegelonline.wsv.de/",
+   "country": "DE",
+   "licenseId": "DL-DE-Zero-2.0",
+   "licenseName": "Datenlizenz Deutschland – Zero – Version 2.0",
+   "licenseUrl": "https://www.govdata.de/dl-de/zero-2-0",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Quelle: Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV), PEGELONLINE",
+   "conditions": "La WSV publica datos brutos sin revisar y no responde de su exactitud ni de su actualidad."
+  },
+  {
    "id": "pepacc_pt",
    "name": "PEPAC Continente (pepacc.pt)",
    "url": "https://pepacc.pt/",
@@ -2150,6 +2201,23 @@
    "redistribution": "yes",
    "attribution": "Kilde: Retsinformation (Civilstyrelsen), bekendtgørelse 1363 og 1381 af 2025. Uddrag.",
    "conditions": "Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regulations from copyright. Our figures are extracts, not the authentic text: always cite the order number and its version date."
+  },
+  {
+   "id": "rijkswaterstaat",
+   "name": "Rijkswaterstaat — WaterWebservices (DD-API 2.0, datos brutos de nivel y caudal)",
+   "url": "https://waterwebservices.rijkswaterstaat.nl/",
+   "country": "NL",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons Zero (CC0 1.0): dominio público",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Bron: Rijkswaterstaat (waterwebservices.rijkswaterstaat.nl)",
+   "conditions": "La página de la API pide no abusar del servicio (puede limitar el acceso); los datos son brutos y sin validar. Excepción por derechos de autor de terceros en componentes concretos."
   },
   {
    "id": "ris_at",
@@ -3803,6 +3871,14 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/de-rivers.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "pegelonline"
    ]
   },
   {
@@ -6753,6 +6829,38 @@
    "verdict": "apto",
    "sources": [
     "mapa_es"
+   ]
+  },
+  {
+   "path": "data/rivers-be.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "vmm_waterinfo"
+   ]
+  },
+  {
+   "path": "data/rivers-ca.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "eccc_hydrometric"
+   ]
+  },
+  {
+   "path": "data/rivers-fr.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "hubeau_hydrometrie"
+   ]
+  },
+  {
+   "path": "data/rivers-nl.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "rijkswaterstaat"
    ]
   },
   {
