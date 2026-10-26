@@ -5365,7 +5365,7 @@
    "evidence": "Página de la WaterWebservices (https://rijkswaterstaatdata.nl/waterdata/, leída el 26 oct 2026): «Op de inhoud van de WaterWebservices is de Creative Commons zero verklaring (CC0) van toepassing»; hergebruik toegestaan. Rijkswaterstaat «open, tenzij» (rijkswaterstaat.nl/zakelijk/open-data).",
    "used": true,
    "aliases": [],
-   "notes": "Nivel (cm sobre NAP) y caudal (m3/s) de 7 estaciones del Rin, el Waal, el Bajo Rin, el Lek, el IJssel y el Mosa. La media diaria, la referencia (cuartiles de ±10 días en 20 años) y el percentil son cálculo de Dehesa Index.",
+   "notes": "Nivel (cm sobre NAP) y caudal (m3/s) de 8 estaciones del Rin, el Waal, el Bajo Rin, el Lek, el IJssel y el Mosa. La media diaria, la referencia (cuartiles de ±10 días en 20 años) y el percentil son cálculo de Dehesa Index.",
    "short": "Rijkswaterstaat",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: WaterWebservices bajo CC0 (uso comercial permitido)."
@@ -7958,7 +7958,7 @@
   },
   "data/rivers-nl.json": {
    "default": "rijkswaterstaat",
-   "notes": "Nivel (cm sobre NAP) y caudal (m3/s) de 7 estaciones de los ríos de los Países Bajos; media diaria, referencia y percentil: cálculo de Dehesa Index."
+   "notes": "Nivel (cm sobre NAP) y caudal (m3/s) de 8 estaciones de los ríos de los Países Bajos; media diaria, referencia y percentil: cálculo de Dehesa Index."
   },
   "data/rivers-fr.json": {
    "default": "hubeau_hydrometrie",

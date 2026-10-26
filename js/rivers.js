@@ -70,7 +70,8 @@
     for (var k = n - 2; k >= 0; k--) { var d = ts(p[k][0]); if (d === want) return p[k][i] == null ? null : last - p[k][i]; if (d < want) return null; }
     return null;
   }
-  function vsNormal(x) { return x.ref && x.ref.p50 ? (cur(x) / x.ref.p50 - 1) * 100 : null; }
+  /* Si el cuartil inferior es menos de un tercio de la mediana (ríos regulados con caudales casi nulos en estiaje, p. ej. el Lek en Hagestein) el porcentaje frente a la mediana engaña: se deja en blanco y manda el estado por percentil. */
+  function vsNormal(x) { return x.ref && x.ref.p50 && x.ref.p25 >= x.ref.p50 / 3 ? (cur(x) / x.ref.p50 - 1) * 100 : null; }
   function mapHtml(D, cc, t, lg) {
     var G = (global.DEHESA_RIVER_MAPS || {})[cc]; if (!G) return '';
     var P = G.proj, S = D.stations.filter(function (x) { return x.lon != null && x.lat != null; }), sel = SEL[cc];
