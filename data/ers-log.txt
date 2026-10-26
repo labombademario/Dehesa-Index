@@ -1,4 +1,4 @@
-FPO cpi 22 ppi 16 August 2025 to August 2026
+FPO cpi 22 ppi 16 September 2025 to September 2026
 costes corn 759
 costes soybeans 825
 costes wheat 792
@@ -13,4 +13,4 @@ costes cow-calf 872
 costes hogs-all 624
 previsión costes 306
 renta agraria 4874 Data as of September 3, 2026.
-bytes 1308216
+bytes 1308643
