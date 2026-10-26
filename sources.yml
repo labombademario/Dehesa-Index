@@ -1563,6 +1563,16 @@ sources:
     data: [eu-fadn.json]
     log: eu-fadn-log.txt
     message: Costes y renta de las explotaciones - UE (FADN/FSDN)
+  - id: eu-fish-first-sales
+    name: Update EU weekly fish first-sale prices by member state and species (EUMOFA bulk download)
+    cron: ['30 9 * * 3']
+    script: scripts/update-eu-fish-first-sales.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [eu-fish-first-sales.json]
+    log: eu-fish-first-sales-log.txt
+    message: Precio en primera venta del pescado - UE (EUMOFA)
   - id: us-sulphur
     name: Update US sulphur import unit value (US Census Bureau, HS 2503)
     cron: ['20 10 8,10,14 * *']

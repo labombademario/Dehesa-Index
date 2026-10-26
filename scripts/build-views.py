@@ -449,6 +449,8 @@ def fish():
     salvo el reparto de la flota por edad (buques de 25 anos o mas / total de buques del mismo ano), que la pagina rotula como calculo."""
     import re
     rows = []
+    try: wk = load('eu-fish-first-sales.json')   # precio semanal en primera venta por especie (EUMOFA, scripts/update-eu-fish-first-sales.py)
+    except Exception: wk = {}
     try: eu = load('eurostat-fish-stats.json')
     except Exception: eu = {'countries': {}}
     for cc, c in sorted((eu.get('countries') or {}).items()):
@@ -480,7 +482,9 @@ def fish():
         S = {k: v for k, v in S.items() if v}
         if not S: continue
         fa = {k: g('fleet-age-' + k) for k in ('y_lt5', 'y5-9', 'y10-14', 'y15-19', 'y20-24', 'y_ge25') if g('fleet-age-' + k)}
-        write('fish/%s.json' % cc, {'schemaVersion': 1, 'generatedAt': eu.get('generatedAt'), 'cc': cc, 'src': 'eurostat', 'series': S, 'landings': sp, 'catches': cs, 'aquaculture': aq, 'areas': areas, 'fleetAge': fa})
+        fs = (wk.get('countries') or {}).get(cc)
+        fsv = {'lastWeek': fs['lastWeek'], 'generatedAt': wk.get('generatedAt'), 'minKg': wk.get('minKg'), 'species': [{'name': x['name'], 'group': x['group'], 'points': x['points']} for x in fs['species']]} if fs else None
+        write('fish/%s.json' % cc, dict({'schemaVersion': 1, 'generatedAt': eu.get('generatedAt'), 'cc': cc, 'src': 'eurostat', 'series': S, 'landings': sp, 'catches': cs, 'aquaculture': aq, 'areas': areas, 'fleetAge': fa}, **({'firstSales': fsv} if fsv else {})))
         L = lambda k: _last(S.get(k))
         old = None; nr = L('fleet-nr'); o25 = L('fleet-age-y_ge25')
         if nr and o25 and nr[0] == o25[0] and nr[1]: old = [nr[0], round(o25[1] / nr[1] * 100, 1)]

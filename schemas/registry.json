@@ -1743,6 +1743,10 @@
   "eu-fadn.json": [
    "eu-fadn",
    []
+  ],
+  "eu-fish-first-sales.json": [
+   "eu-fish-first-sales",
+   []
   ]
  },
  "globs": {

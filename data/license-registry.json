@@ -5264,6 +5264,31 @@
    "notes": "Sample-based accounting data of commercial farms (not a census), published with a delay. Values are copied as published; no splicing across definition changes.",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "La ficha del dataset en data.europa.eu declara el aviso de reutilizacion de la Comision (Decision 2011/833/UE) para sus distribuciones, incluido el CSV de resultados estandar; las paginas de agridata y de CIRCABC no muestran licencia propia y el aviso legal (disclaimer) enlazado no se pudo leer."
+  },
+  "eumofa": {
+   "name": "EUMOFA - European Market Observatory for Fisheries and Aquaculture Products (European Commission, DG MARE)",
+   "url": "https://fishery-aquaculture-market-observatory.ec.europa.eu/en/data/bulk-download",
+   "country": "EU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: EUMOFA (European Market Observatory for Fisheries and Aquaculture Products), European Commission. Weekly averages by species computed by dehesaindex.com.",
+   "additionalRestrictions": "CC BY 4.0 covers content owned by the EU; third-party content (consumption panels, Euromonitor, MABUX, Trade Data Monitor, and data from non-EU providers) is excluded. Only first-sale data of EU member states is used; Norway, Iceland and the Faroe Islands are dropped.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Norway (Sildelaget), Iceland and Faroe Islands first sales come from non-EU providers and are not used.",
+   "verifiedAt": "2026-10-25",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "EUMOFA legal notice (fishery-aquaculture-market-observatory.ec.europa.eu/en/about/legal-notice, read 25-oct-2026): 'content owned by the EU on this website is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence'. Files linked from the public Bulk Download panel (Amazon QuickSight) to a public S3 bucket.",
+   "used": true,
+   "aliases": [],
+   "notes": "Weekly first-sale volume and value by port, species, size and presentation, compiled by EUMOFA from member states' sales notes. The public S3 bucket is named dev-eumofa-bulk but is the one linked by the production panel.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "El aviso legal de EUMOFA da CC BY 4.0 al contenido propiedad de la UE y excluye el de terceros; las primeras ventas de los Estados miembros las compila EUMOFA a partir de las notas de venta nacionales y no aparecen en la lista de exclusiones, pero el panel de descarga no repite la licencia y el cubo de ficheros se llama 'dev-'."
   }
  },
  "files": {
@@ -7773,6 +7798,10 @@
   "data/eu-fadn.json": {
    "default": "fadn_fsdn",
    "notes": "Costes (fertilizantes, fitosanitarios, semillas, energía, piensos) y renta de la explotación media de cada Estado miembro, anual (FADN/FSDN, resultados estándar SO por país). Muestra contable, no censo."
+  },
+  "data/eu-fish-first-sales.json": {
+   "default": "eumofa",
+   "notes": "Precio medio semanal en primera venta (euros por kg) por Estado miembro y especie comercial principal, desde 2019: valor entre volumen de las notas de venta compiladas por EUMOFA. Mezcla puertos, tallas y presentaciones."
   }
  },
  "derived": [

@@ -200,6 +200,56 @@
     var head = us ? [tx(T.hSp), tx(T.hVal), tx(T.hQty), tx(T.hYear)] : [tx(T.hSp), tx(T.hVal), tx(T.hQty), tx(T.hPrice), tx(T.hChg), tx(T.hYear)];
     return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(us ? T.spUS : T.spT)) + '</h2><p class="di-movers-hint">' + esc(tx(T.spS)) + '</p>' + table(head, rows) + '</section>';
   }
+  /* Precio semanal en primera venta por especie (EUMOFA, data/views/fish/<CC>.json > firstSales). Precio = valor / volumen de la semana (calculo del cargador). */
+  var WK = {
+    t: L('Precio semanal en primera venta (lonja)', 'Weekly first-sale price (auction)', 'Prix hebdomadaire de première vente (criée)', 'Prezzo settimanale di prima vendita (asta)'),
+    s: L('Euros por kilo: valor de la semana entre kilos vendidos, sumando todos los puertos, tallas y presentaciones de cada especie. Última semana con dato en este país: {w}. Pulsa una especie para ver su serie desde 2019.',
+         'Euros per kilo: the week’s value divided by kilos sold, adding up all ports, sizes and presentations of each species. Latest week with data in this country: {w}. Select a species to see its series since 2019.',
+         'Euros par kilo : valeur de la semaine divisée par les kilos vendus, en additionnant tous les ports, tailles et présentations de chaque espèce. Dernière semaine disponible dans ce pays : {w}. Sélectionnez une espèce pour voir sa série depuis 2019.',
+         'Euro al chilo: valore della settimana diviso per i chili venduti, sommando tutti i porti, le taglie e le presentazioni di ogni specie. Ultima settimana con dati in questo paese: {w}. Seleziona una specie per vederne la serie dal 2019.'),
+    cols: L(['Especie', 'Semana', '€/kg', 'Frente a 4 semanas antes', 'Frente a la misma semana del año anterior', 'Toneladas', 'Últimas 52 semanas'], ['Species', 'Week', '€/kg', 'vs 4 weeks earlier', 'vs same week a year earlier', 'Tonnes', 'Last 52 weeks'],
+            ['Espèce', 'Semaine', '€/kg', 'Par rapport à 4 semaines plus tôt', 'Par rapport à la même semaine un an plus tôt', 'Tonnes', '52 dernières semaines'], ['Specie', 'Settimana', '€/kg', 'Rispetto a 4 settimane prima', 'Rispetto alla stessa settimana dell’anno prima', 'Tonnellate', 'Ultime 52 settimane']),
+    wk: L('sem. {n} de {y}', 'wk {n} {y}', 'sem. {n} {y}', 'sett. {n} {y}'),
+    ch: L('{s}: precio semanal en primera venta (€/kg)', '{s}: weekly first-sale price (€/kg)', '{s} : prix hebdomadaire de première vente (€/kg)', '{s}: prezzo settimanale di prima vendita (€/kg)'),
+    date: L('Semana', 'Week', 'Semaine', 'Settimana'),
+    note: L('Fuente: EUMOFA (Observatorio Europeo del Mercado de Productos de la Pesca y la Acuicultura, Comisión Europea), primeras ventas semanales, CC BY 4.0. EUMOFA las compila de las notas de venta de cada país; no todos los países las envían cada semana ni con el mismo retraso, y en algunos solo informan algunos puertos. El precio de cada semana es un cálculo de Dehesa Index (valor entre kilos) que mezcla puertos, tallas, presentaciones y conservación: un cambio en esa mezcla mueve el precio aunque el mercado no cambie. Las semanas con menos de {k} kg de una especie quedan en blanco; se muestran las especies con más valor del último año. Las semanas son las que publica EUMOFA.',
+          'Source: EUMOFA (European Market Observatory for Fisheries and Aquaculture Products, European Commission), weekly first sales, CC BY 4.0. EUMOFA compiles them from each country’s sales notes; not every country reports every week or with the same delay, and in some only certain ports report. The weekly price is a Dehesa Index calculation (value divided by kilos) that mixes ports, sizes, presentations and preservation: a change in that mix moves the price even if the market does not. Weeks with less than {k} kg of a species are left blank; the species shown are those with the highest value over the last year. Weeks are as published by EUMOFA.',
+          'Source : EUMOFA (Observatoire européen des marchés des produits de la pêche et de l’aquaculture, Commission européenne), premières ventes hebdomadaires, CC BY 4.0. EUMOFA les compile à partir des notes de vente de chaque pays ; tous les pays ne déclarent pas chaque semaine ni avec le même retard, et dans certains seuls quelques ports déclarent. Le prix hebdomadaire est un calcul de Dehesa Index (valeur divisée par les kilos) qui mélange ports, tailles, présentations et conservation : un changement de ce mélange fait bouger le prix même si le marché ne bouge pas. Les semaines avec moins de {k} kg d’une espèce restent vides ; les espèces affichées sont celles de plus forte valeur sur la dernière année. Les semaines sont celles publiées par EUMOFA.',
+          'Fonte: EUMOFA (Osservatorio europeo del mercato dei prodotti della pesca e dell’acquacoltura, Commissione europea), prime vendite settimanali, CC BY 4.0. EUMOFA le compila dalle note di vendita di ogni paese; non tutti i paesi le inviano ogni settimana né con lo stesso ritardo, e in alcuni riferiscono solo alcuni porti. Il prezzo settimanale è un calcolo di Dehesa Index (valore diviso per i chili) che mescola porti, taglie, presentazioni e conservazione: un cambiamento di questo mix muove il prezzo anche se il mercato non cambia. Le settimane con meno di {k} kg di una specie restano vuote; si mostrano le specie con il valore più alto nell’ultimo anno. Le settimane sono quelle pubblicate da EUMOFA.')
+  };
+  /* nombres comunes de las especies comerciales principales de EUMOFA (es, fr, it); si falta una, se usa el glosario y, si no, el nombre en inglés */
+  var WSN = {"Hake": ["Merluza", "Merlu", "Nasello"], "Anchovy": ["Boquerón (anchoa)", "Anchois", "Acciuga"], "Tuna, albacore": ["Atún blanco (bonito del norte)", "Germon", "Alalunga"], "Shrimp, miscellaneous": ["Gambas y camarones varios", "Crevettes diverses", "Gamberi vari"], "Swordfish": ["Pez espada", "Espadon", "Pesce spada"], "Monk": ["Rape", "Baudroie (lotte)", "Rana pescatrice"], "Shrimp, deep-water rose": ["Gamba blanca", "Crevette rose du large", "Gambero rosa"], "Sardine": ["Sardina", "Sardine", "Sardina"], "Squid": ["Calamar", "Calmar", "Calamaro"], "Mackerel": ["Caballa", "Maquereau", "Sgombro"], "Clam": ["Almeja", "Palourde", "Vongola"], "Tuna, bluefin": ["Atún rojo", "Thon rouge", "Tonno rosso"], "Sole, common": ["Lenguado común", "Sole commune", "Sogliola comune"], "Cuttlefish": ["Sepia", "Seiche", "Seppia"], "Turbot": ["Rodaballo", "Turbot", "Rombo chiodato"], "Octopus": ["Pulpo", "Poulpe", "Polpo"], "Ray": ["Raya", "Raie", "Razza"], "Shrimp Crangon spp": ["Quisquilla (Crangon)", "Crevette grise", "Gamberetto grigio"], "Plaice, European": ["Solla europea", "Plie d’Europe", "Passera di mare"], "Brill": ["Rémol", "Barbue", "Rombo liscio"], "Scallop": ["Vieira", "Coquille Saint-Jacques", "Capasanta"], "Megrim": ["Gallo", "Cardine", "Rombo giallo"], "Herring": ["Arenque", "Hareng", "Aringa"], "Sprat (=Brisling)": ["Espadín", "Sprat", "Spratto"], "Lobster, Norway": ["Cigala", "Langoustine", "Scampo"], "Red mullet": ["Salmonete", "Rouget", "Triglia"], "Pollack": ["Abadejo", "Lieu jaune", "Merluzzo giallo"], "Saithe (=Coalfish)": ["Carbonero", "Lieu noir", "Merluzzo carbonaro"], "Horse mackerel, Atlantic": ["Jurel", "Chinchard", "Suro"], "Seabream, other": ["Otros espáridos (besugos, pargos…)", "Autres dorades", "Altri sparidi"], "Scabbardfish": ["Pez sable", "Sabre", "Pesce sciabola"], "Shrimp, coldwater": ["Camarón boreal", "Crevette nordique", "Gamberetto boreale"], "Smelt": ["Eperlano", "Éperlan", "Sperlano"], "Cod": ["Bacalao", "Cabillaud", "Merluzzo bianco"], "Haddock": ["Eglefino", "Églefin", "Eglefino"], "Whiting": ["Merlán", "Merlan", "Merlano"], "Sea bass": ["Lubina", "Bar", "Spigola"], "Mussel": ["Mejillón", "Moule", "Cozza"], "Oyster": ["Ostra", "Huître", "Ostrica"], "Crab": ["Cangrejo", "Crabe", "Granchio"], "Lobster, European": ["Bogavante", "Homard européen", "Astice"]};
+  function wsName(n) { var r = WSN[n], i = { es: 0, fr: 1, it: 2 }[lg()]; return lg() === 'en' ? n : r && i != null ? r[i] : spName(n); }
+  var WSP = 0;
+  function wkTs(k) { var y = +k.slice(0, 4), w = +k.slice(6), j4 = Date.UTC(y, 0, 4), dw = (new Date(j4).getUTCDay() + 6) % 7; return j4 - dw * 864e5 + (w - 1) * 7 * 864e5; }
+  function wkLabel(k) { return tx(WK.wk).replace('{n}', String(+k.slice(6))).replace('{y}', k.slice(0, 4)); }
+  function wkAt(pts, k) { for (var i = pts.length - 1; i >= 0; i--) if (pts[i][0] === k) return pts[i]; return null; }
+  function wkShift(k, n) { var t = wkTs(k) + n * 7 * 864e5, d = new Date(t), th = new Date(t + 3 * 864e5), y = th.getUTCFullYear(), j4 = Date.UTC(y, 0, 4), dw = (new Date(j4).getUTCDay() + 6) % 7, w = Math.round((t - (j4 - dw * 864e5)) / (7 * 864e5)) + 1; return y + '-W' + (w < 10 ? '0' : '') + w; }
+  function wkSpark(pts, last) {
+    var from = wkTs(last) - 51 * 7 * 864e5, v = pts.filter(function (p) { return wkTs(p[0]) >= from; }); if (v.length < 8) return '';
+    var mn = Math.min.apply(null, v.map(function (p) { return p[1]; })), mx = Math.max.apply(null, v.map(function (p) { return p[1]; })), d = (mx - mn) || 1, span = wkTs(last) - from || 1;
+    return '<svg width="96" height="22" viewBox="0 0 96 22" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" points="' + v.map(function (p) { return ((wkTs(p[0]) - from) / span * 94 + 1).toFixed(1) + ',' + (20 - (p[1] - mn) / d * 18).toFixed(1); }).join(' ') + '"/></svg>';
+  }
+  function weeklyChart(fs) {
+    var o = fs.species[WSP] || fs.species[0]; if (!o || !global.DehesaChart) return '';
+    var nm = wsName(o.name);
+    return '<div class="di-info-card-title gb-sub" style="margin-top:14px">' + esc(tx(WK.ch).replace('{s}', nm)) + '</div>' + global.DehesaChart.render({ series: [{ name: nm, color: '#2f6b4a', pts: o.points.map(function (p) { return { x: wkTs(p[0]), y: p[1], l: wkLabel(p[0]) }; }) }], xMode: 'time', xTitle: tx(WK.date), yTitle: '€/kg', aria: nm + ' (€/kg)', noLegend: true, vFmt: function (v) { return nf(v, 2); } });
+  }
+  function weeklyBlock(d) {
+    var fs = d.firstSales; if (!fs || !fs.species || !fs.species.length) return '';
+    if (WSP >= fs.species.length) WSP = 0;
+    var rows = fs.species.map(function (o, i) {
+      var p = o.points[o.points.length - 1], a = wkAt(o.points, wkShift(p[0], -4)), b = wkAt(o.points, (+p[0].slice(0, 4) - 1) + p[0].slice(4));
+      return '<tr class="fsh-wrow' + (i === WSP ? ' on' : '') + '" data-i="' + i + '" tabindex="0" style="cursor:pointer">' + td('<strong>' + esc(wsName(o.name)) + '</strong>') + td(esc(wkLabel(p[0])), 1) + td(nf(p[1], 2), 1) + td(chg(a ? pct(p[1], a[1]) : null), 1) + td(chg(b ? pct(p[1], b[1]) : null), 1) + td(nf(p[2], p[2] < 10 ? 1 : 0), 1) + td(wkSpark(o.points, p[0]), 1) + '</tr>';
+    });
+    return '<section class="di-card fsh-sec" id="fsh-weekly"><h2 class="fsh-h2">' + esc(tx(WK.t)) + '</h2><p class="di-movers-hint">' + esc(tx(WK.s).replace('{w}', wkLabel(fs.lastWeek))) + '</p>' + table(tx(WK.cols), rows) + '<div id="fsh-wchart">' + weeklyChart(fs) + '</div><p class="di-movers-hint" style="max-width:860px">' + esc(tx(WK.note).replace('{k}', nf(fs.minKg || 500, 0))) + '</p><p class="di-field-hint" style="margin:4px 0 0"><a href="https://fishery-aquaculture-market-observatory.ec.europa.eu/en/data/bulk-download" target="_blank" rel="noopener noreferrer">EUMOFA</a></p></section>';
+  }
+  function bindWeekly(root, d) {
+    [].forEach.call(root.querySelectorAll('.fsh-wrow'), function (tr) {
+      var pickRow = function () { WSP = +tr.getAttribute('data-i'); [].forEach.call(root.querySelectorAll('.fsh-wrow'), function (x) { x.classList.toggle('on', x === tr); }); var c = root.querySelector('#fsh-wchart'); if (c) c.innerHTML = weeklyChart(d.firstSales); };
+      tr.onclick = pickRow; tr.onkeydown = function (e) { if (e.key === 'Enter') pickRow(); };
+    });
+  }
   function statesBlock(d) {
     if (!d.states || !d.states.length) return '';
     var rows = d.states.map(function (o) { var v = pick(o.value), q = pick(o.qty); return '<tr>' + td(esc(o.name)) + td(money(v && v[1], 'USD'), 1) + td(q ? nf(q[1] / 1e6, 1) + ' ' + esc(tx(T.u.mlb)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>'; });
@@ -289,13 +339,13 @@
         var h = '<div class="fsh-pick"><label for="fsh-cc">' + esc(tx(T.country)) + '</label> <select data-cpick="1" id="fsh-cc" class="di-compare-select">' + opts + '</select> ' + yearSel(d, 'fsh-yr') + (YEAR != null ? ' <span class="di-movers-hint">' + esc(tx(T.yrNote)) + '</span>' : '') + (noSea ? ' <span class="di-movers-hint">' + esc(tx(T.land)) + '</span>' : '') + '</div>' +
           '<div class="fsh-kpis">' + kpis(d) + '</div>' +
           (ch.length ? '<section class="di-card fsh-sec wp-card">' + ch.map(function (c) { return c.html; }).join('') + '</section>' : '') +
-          speciesBlock(d) + statesBlock(d) + zonesBlock(d) + listBlock(tx(T.cT), d.catches, false) + listBlock(tx(T.aT), d.aquaculture, true) + fleetBlock(d) +
+          weeklyBlock(d) + speciesBlock(d) + statesBlock(d) + zonesBlock(d) + listBlock(tx(T.cT), d.catches, false) + listBlock(tx(T.aT), d.aquaculture, true) + fleetBlock(d) +
           compareBlock(idx, CUR) +
           T.notes.map(function (n) { return '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(n)) + '</p>'; }).join('') + sources(d) +
           (d.cc === 'US' ? '' : '<p class="di-field-hint" style="margin:4px 0 0"><a href="https://www.fisheries.noaa.gov/foss" target="_blank" rel="noopener noreferrer">' + esc(tx(T.srcUs)) + '</a></p>');
         root.innerHTML = h;
-        ch.forEach(function (c) { bindChart(root, c); }); mountFaoMaps(root);
-        var sel = document.getElementById('fsh-cc'); if (sel) sel.onchange = function () { go(sel.value); };
+        ch.forEach(function (c) { bindChart(root, c); }); mountFaoMaps(root); bindWeekly(root, d);
+        var sel = document.getElementById('fsh-cc'); if (sel) sel.onchange = function () { WSP = 0; go(sel.value); };
         var ysel = document.getElementById('fsh-yr'); if (ysel) ysel.onchange = function () { YEAR = ysel.value ? +ysel.value : null; pageRender(); };
         [].forEach.call(root.querySelectorAll('.fsh-row'), function (tr) {
           tr.onclick = function (e) { if (e.target.closest && e.target.closest('a')) { e.preventDefault(); } go(tr.getAttribute('data-cc')); };
