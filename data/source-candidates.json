@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T16:44:09Z",
+ "generatedAt": "2026-10-26T17:22:09Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 204,
+  "total": 207,
   "byStatus": {
-   "ACTIVE": 174,
+   "ACTIVE": 177,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3643,6 +3643,45 @@
    ]
   },
   {
+   "sourceId": "eccc_hydrometric",
+   "registryId": "eccc_hydrometric",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Environment and Climate Change Canada — Water Survey of Canada, datos hidrométricos (GeoMet-OGC)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "ECCC-ENDUSE-2.1.1",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains information licenced under the Data Server End-use Licence of Environment and Climate Change Canada.",
+   "lastChecked": "2026-10-26",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "edo_cdi",
    "registryId": "edo_cdi",
    "country": "EU",
@@ -4875,6 +4914,45 @@
    "derivatives": "yes",
    "attribution": "Source : ADES (BRGM), via Hub'Eau",
    "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "hubeau_hydrometrie",
+   "registryId": "hubeau_hydrometrie",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "Hub'Eau — API Hidrometría (SCHAPI / Eaufrance, nivel y caudal)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "LO-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source : Hub'Eau, API Hydrométrie (SCHAPI, Eaufrance)",
+   "lastChecked": "2026-10-26",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
@@ -6973,6 +7051,45 @@
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "rijkswaterstaat",
+   "registryId": "rijkswaterstaat",
+   "country": "NL",
+   "scope": "integrated",
+   "institution": "Rijkswaterstaat — WaterWebservices (DD-API 2.0, datos brutos de nivel y caudal)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC0-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Bron: Rijkswaterstaat (waterwebservices.rijkswaterstaat.nl)",
+   "lastChecked": "2026-10-26",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

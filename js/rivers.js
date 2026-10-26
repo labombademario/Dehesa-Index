@@ -1,0 +1,155 @@
+/* Dehesa Index — ríos de Países Bajos, Francia, Canadá y Bélgica (Flandes): nivel y caudal de las estaciones principales, mapa, tabla ordenable y gráfico, como los ríos de Alemania (js/de-rivers.js).
+   data/rivers-{nl,fr,ca,be}.json (scripts/update-rivers.py) y vendor/rivers-map-{cc}.js (scripts/build-rivers-map.py). En sequia.html (#rvnl, #rvfr, #rvca, #rvbe) y en la pestaña «Sequía» de cada ficha de país (js/country-drought.js).
+   La lectura actual es de la fuente; la referencia (cuartiles de la misma época en años anteriores), el percentil, el estado y la variación a 7 días son cálculo de Dehesa Index. ES5. */
+(function (global) {
+  'use strict';
+  var C = {
+    nl: { id: 'rijkswaterstaat', rv: { es: { Rijn: 'Rin', Waal: 'Waal', Nederrijn: 'Bajo Rin', Lek: 'Lek', IJssel: 'IJssel', Maas: 'Mosa' }, en: { Rijn: 'Rhine', Waal: 'Waal', Nederrijn: 'Lower Rhine', Lek: 'Lek', IJssel: 'IJssel', Maas: 'Meuse' }, fr: { Rijn: 'Rhin', Waal: 'Waal', Nederrijn: 'Bas-Rhin', Lek: 'Lek', IJssel: 'IJssel', Maas: 'Meuse' }, it: { Rijn: 'Reno', Waal: 'Waal', Nederrijn: 'Basso Reno', Lek: 'Lek', IJssel: 'IJssel', Maas: 'Mosa' } },
+      tz: { es: 'hora de Países Bajos', en: 'Dutch time', fr: 'heure néerlandaise', it: 'ora olandese' }, nm: { es: 'los Países Bajos', en: 'the Netherlands', fr: 'les Pays-Bas', it: 'i Paesi Bassi' },
+      src: { es: 'Rijkswaterstaat (Waterwebservices, datos brutos, CC0)', en: 'Rijkswaterstaat (Waterwebservices, raw data, CC0)', fr: 'Rijkswaterstaat (Waterwebservices, données brutes, CC0)', it: 'Rijkswaterstaat (Waterwebservices, dati grezzi, CC0)' },
+      lv: { es: 'El nivel de los Países Bajos es la altura sobre el NAP (nivel de referencia de Ámsterdam), no la profundidad del cauce.', en: 'Levels in the Netherlands are heights above NAP (the Amsterdam reference level), not channel depth.', fr: 'Aux Pays-Bas, le niveau est la hauteur par rapport au NAP (niveau de référence d’Amsterdam), pas la profondeur du chenal.', it: 'Nei Paesi Bassi il livello è l’altezza sul NAP (livello di riferimento di Amsterdam), non la profondità dell’alveo.' } },
+    fr: { id: 'hubeau_hydrometrie', rv: { es: { Seine: 'Sena', Marne: 'Marne', Loire: 'Loira', 'Saône': 'Saona', 'Rhône': 'Ródano', Garonne: 'Garona', Dordogne: 'Dordoña', Meuse: 'Mosa', Moselle: 'Mosela' }, en: { Seine: 'Seine', Marne: 'Marne', Loire: 'Loire', 'Saône': 'Saône', 'Rhône': 'Rhône', Garonne: 'Garonne', Dordogne: 'Dordogne', Meuse: 'Meuse', Moselle: 'Moselle' }, fr: { Seine: 'Seine', Marne: 'Marne', Loire: 'Loire', 'Saône': 'Saône', 'Rhône': 'Rhône', Garonne: 'Garonne', Dordogne: 'Dordogne', Meuse: 'Meuse', Moselle: 'Moselle' }, it: { Seine: 'Senna', Marne: 'Marna', Loire: 'Loira', 'Saône': 'Saona', 'Rhône': 'Rodano', Garonne: 'Garonna', Dordogne: 'Dordogna', Meuse: 'Mosa', Moselle: 'Mosella' } },
+      tz: { es: 'hora de Francia', en: 'French time', fr: 'heure de Paris', it: 'ora francese' }, nm: { es: 'Francia', en: 'France', fr: 'la France', it: 'la Francia' },
+      src: { es: 'Hub’Eau Hidrometría (SCHAPI, Eaufrance, Licence Ouverte 2.0)', en: 'Hub’Eau Hydrometry (SCHAPI, Eaufrance, Licence Ouverte 2.0)', fr: 'Hub’Eau Hydrométrie (SCHAPI, Eaufrance, Licence Ouverte 2.0)', it: 'Hub’Eau Idrometria (SCHAPI, Eaufrance, Licence Ouverte 2.0)' },
+      lv: { es: 'El nivel de Francia es la altura en la escala de cada estación (no la profundidad del cauce); el caudal es la medida más comparable entre estaciones.', en: 'Level in France is the gauge height at each station (not channel depth); discharge is the most comparable measure across stations.', fr: 'En France, le niveau est la hauteur à l’échelle de chaque station (pas la profondeur du chenal) ; le débit est la mesure la plus comparable entre stations.', it: 'In Francia il livello è l’altezza all’asta di ogni stazione (non la profondità dell’alveo); la portata è la misura più confrontabile tra stazioni.' } },
+    ca: { id: 'eccc_hydrometric', rv: { es: { Fraser: 'Fraser', Thompson: 'Thompson', Bow: 'Bow', Oldman: 'Oldman', 'South Saskatchewan': 'Saskatchewan Sur', 'North Saskatchewan': 'Saskatchewan Norte', Red: 'Rojo', Assiniboine: 'Assiniboine', Peace: 'Peace', Athabasca: 'Athabasca', Ottawa: 'Ottawa', 'Saint Lawrence': 'San Lorenzo', 'Saint John': 'Saint John', Grand: 'Grand' }, en: { Fraser: 'Fraser', Thompson: 'Thompson', Bow: 'Bow', Oldman: 'Oldman', 'South Saskatchewan': 'South Saskatchewan', 'North Saskatchewan': 'North Saskatchewan', Red: 'Red', Assiniboine: 'Assiniboine', Peace: 'Peace', Athabasca: 'Athabasca', Ottawa: 'Ottawa', 'Saint Lawrence': 'St. Lawrence', 'Saint John': 'Saint John', Grand: 'Grand' }, fr: { Fraser: 'Fraser', Thompson: 'Thompson', Bow: 'Bow', Oldman: 'Oldman', 'South Saskatchewan': 'Saskatchewan Sud', 'North Saskatchewan': 'Saskatchewan Nord', Red: 'Rouge', Assiniboine: 'Assiniboine', Peace: 'de la Paix', Athabasca: 'Athabasca', Ottawa: 'des Outaouais', 'Saint Lawrence': 'Saint-Laurent', 'Saint John': 'Saint-Jean', Grand: 'Grand' }, it: { Fraser: 'Fraser', Thompson: 'Thompson', Bow: 'Bow', Oldman: 'Oldman', 'South Saskatchewan': 'Saskatchewan Meridionale', 'North Saskatchewan': 'Saskatchewan Settentrionale', Red: 'Red', Assiniboine: 'Assiniboine', Peace: 'Peace', Athabasca: 'Athabasca', Ottawa: 'Ottawa', 'Saint Lawrence': 'San Lorenzo', 'Saint John': 'Saint John', Grand: 'Grand' } },
+      tz: { es: 'hora local estándar de cada estación', en: 'local standard time at each station', fr: 'heure normale locale de chaque station', it: 'ora standard locale di ogni stazione' }, nm: { es: 'Canadá', en: 'Canada', fr: 'le Canada', it: 'il Canada' },
+      src: { es: 'Environment and Climate Change Canada, Water Survey of Canada (Open Government Licence - Canada)', en: 'Environment and Climate Change Canada, Water Survey of Canada (Open Government Licence - Canada)', fr: 'Environnement et Changement climatique Canada, Relevés hydrologiques du Canada (Licence du gouvernement ouvert - Canada)', it: 'Environment and Climate Change Canada, Water Survey of Canada (Open Government Licence - Canada)' },
+      lv: { es: 'En Canadá, el nivel es la lectura respecto a la referencia propia de cada estación (no la profundidad del cauce); se muestra la lectura sin revisar y el estado compara el caudal.', en: 'In Canada, level is the reading against each station’s own datum (not channel depth); readings are provisional and the status compares discharge.', fr: 'Au Canada, le niveau est la lecture par rapport au repère propre de chaque station (pas la profondeur du chenal) ; les lectures sont provisoires et l’état compare le débit.', it: 'In Canada il livello è la lettura rispetto allo zero proprio di ogni stazione (non la profondità dell’alveo); le letture sono provvisorie e lo stato confronta la portata.' } },
+    be: { id: 'vmm_waterinfo', rv: { es: { Demer: 'Demer', Dijle: 'Dijle', Zenne: 'Zenne', 'Grote Nete': 'Gran Nete', 'Kleine Nete': 'Pequeño Nete', Mandel: 'Mandel', Dommel: 'Dommel', Gete: 'Gete' }, en: { Demer: 'Demer', Dijle: 'Dyle', Zenne: 'Senne', 'Grote Nete': 'Grote Nete', 'Kleine Nete': 'Kleine Nete', Mandel: 'Mandel', Dommel: 'Dommel', Gete: 'Gete' }, fr: { Demer: 'Demer', Dijle: 'Dyle', Zenne: 'Senne', 'Grote Nete': 'Grande Nèthe', 'Kleine Nete': 'Petite Nèthe', Mandel: 'Mandel', Dommel: 'Dommel', Gete: 'Gette' }, it: { Demer: 'Demer', Dijle: 'Dyle', Zenne: 'Senne', 'Grote Nete': 'Grande Nete', 'Kleine Nete': 'Piccola Nete', Mandel: 'Mandel', Dommel: 'Dommel', Gete: 'Gete' } },
+      tz: { es: 'hora de Bélgica', en: 'Belgian time', fr: 'heure belge', it: 'ora belga' }, nm: { es: 'Bélgica (Flandes)', en: 'Belgium (Flanders)', fr: 'la Belgique (Flandre)', it: 'il Belgio (Fiandre)' },
+      src: { es: 'VMM / Hydrologisch Informatiecentrum (waterinfo.be, datos abiertos de Flandes)', en: 'VMM / Hydrologisch Informatiecentrum (waterinfo.be, Flemish open data)', fr: 'VMM / Hydrologisch Informatiecentrum (waterinfo.be, données ouvertes de Flandre)', it: 'VMM / Hydrologisch Informatiecentrum (waterinfo.be, dati aperti delle Fiandre)' },
+      lv: { es: 'Solo ríos de Flandes: el Mosa (Valonia) y el Escalda (tidal) no están. El nivel es la lectura respecto a la referencia de cada estación.', en: 'Flemish rivers only: the Meuse (Wallonia) and the tidal Scheldt are not included. Level is the reading against each station’s reference.', fr: 'Seulement des cours d’eau de Flandre : la Meuse (Wallonie) et l’Escaut maritime n’y figurent pas. Le niveau est la lecture par rapport à la référence de chaque station.', it: 'Solo fiumi delle Fiandre: la Mosa (Vallonia) e la Schelda tidale non sono inclusi. Il livello è la lettura rispetto al riferimento di ogni stazione.' } }
+  };
+  var T = {
+    es: { h: 'Ríos de {n}: nivel y caudal', s: 'Estaciones principales: lectura actual de nivel y caudal y su comparación con la misma época de años anteriores. Con el río bajo el riego se resiente y el transporte fluvial carga menos.',
+      at: 'Última lectura {t} ({z}).', mh: 'Mapa de estaciones', mhint: 'Cada punto es una estación; el color es el estado frente a la misma época de años anteriores. Pasa el cursor o toca un punto para ver cuál es; pulsa una estación en la tabla para ver su gráfico.',
+      cnt: '{a} estaciones en el mapa', legend: 'Estado', lv: { low: 'bajo', normal: 'normal', high: 'alto', none: 'sin referencia' },
+      cols: ['Estación', 'Nivel (cm)', 'Caudal (m³/s)', 'Frente a lo normal', 'Estado', 'Variación 7 días'], vs: 'de la mediana', cd: 'Caudal, media diaria', cdw: 'Nivel, media diaria', ax: 'm³/s', axw: 'cm',
+      p25: 'Cuartil inferior ({a}–{b})', p50: 'Mediana ({a}–{b})', p75: 'Cuartil superior ({a}–{b})', noref: 'Sin referencia de años anteriores: la fuente solo ofrece unos 30 días de historia.',
+      since: 'La serie diaria empieza el {d}.', mean: 'mediana', pctl: 'percentil',
+      note: 'La lectura actual es de la fuente (sin revisar). La referencia es de Dehesa Index: para la fecha de la última lectura, los valores diarios de ±7 días en años anteriores (al menos 8 años, de {a} a {b} en la estación elegida); «Frente a lo normal» compara con la mediana y «Estado» es bajo si la lectura queda en el 25 % inferior de esos valores y alto si queda en el 25 % superior. Es una comparación estadística, no un aviso de sequía ni de inundación. La variación a 7 días es la diferencia entre medias diarias.', src: 'Fuente: {s}.' },
+    en: { h: 'Rivers of {n}: level and discharge', s: 'Main gauges: current level and discharge against the same time of year in earlier years. With a low river irrigation suffers and river transport loads less.',
+      at: 'Latest reading {t} ({z}).', mh: 'Gauge map', mhint: 'Each dot is a gauge; the colour is the status against the same time of year in earlier years. Hover or tap a dot to see which one it is; select a gauge in the table to see its chart.',
+      cnt: '{a} gauges on the map', legend: 'Status', lv: { low: 'low', normal: 'normal', high: 'high', none: 'no reference' },
+      cols: ['Gauge', 'Level (cm)', 'Discharge (m³/s)', 'Versus normal', 'Status', '7-day change'], vs: 'of the median', cd: 'Discharge, daily mean', cdw: 'Level, daily mean', ax: 'm³/s', axw: 'cm',
+      p25: 'Lower quartile ({a}–{b})', p50: 'Median ({a}–{b})', p75: 'Upper quartile ({a}–{b})', noref: 'No reference from earlier years: the source only offers about 30 days of history.',
+      since: 'The daily series starts on {d}.', mean: 'median', pctl: 'percentile',
+      note: 'The current reading is from the source (unrevised). The reference is a Dehesa Index calculation: for the date of the latest reading, the daily values within ±7 days in earlier years (at least 8 years, {a} to {b} for the selected gauge); “Versus normal” compares with the median and “Status” is low if the reading falls in the lowest 25% of those values and high if it falls in the highest 25%. It is a statistical comparison, not a drought or flood warning. The 7-day change is the difference between daily means.', src: 'Source: {s}.' },
+    fr: { h: 'Cours d’eau de {n} : niveau et débit', s: 'Principales stations : niveau et débit actuels comparés à la même période des années précédentes. À l’étiage, l’irrigation en souffre et le transport fluvial charge moins.',
+      at: 'Dernière mesure {t} ({z}).', mh: 'Carte des stations', mhint: 'Chaque point est une station ; la couleur est l’état par rapport à la même période des années précédentes. Survolez ou touchez un point pour l’identifier ; choisissez une station dans le tableau pour voir son graphique.',
+      cnt: '{a} stations sur la carte', legend: 'État', lv: { low: 'bas', normal: 'normal', high: 'haut', none: 'sans référence' },
+      cols: ['Station', 'Niveau (cm)', 'Débit (m³/s)', 'Par rapport à la normale', 'État', 'Variation 7 jours'], vs: 'de la médiane', cd: 'Débit, moyenne journalière', cdw: 'Niveau, moyenne journalière', ax: 'm³/s', axw: 'cm',
+      p25: 'Quartile inférieur ({a}–{b})', p50: 'Médiane ({a}–{b})', p75: 'Quartile supérieur ({a}–{b})', noref: 'Pas de référence des années précédentes : la source ne donne qu’environ 30 jours d’historique.',
+      since: 'La série journalière commence le {d}.', mean: 'médiane', pctl: 'percentile',
+      note: 'La mesure actuelle vient de la source (non révisée). La référence est un calcul de Dehesa Index : pour la date de la dernière mesure, les valeurs journalières à ±7 jours des années précédentes (au moins 8 ans, de {a} à {b} pour la station choisie) ; « Par rapport à la normale » compare à la médiane et « État » est bas si la mesure est dans les 25 % inférieurs de ces valeurs et haut si elle est dans les 25 % supérieurs. C’est une comparaison statistique, pas une alerte sécheresse ni crue. La variation sur 7 jours est la différence entre moyennes journalières.', src: 'Source : {s}.' },
+    it: { h: 'Fiumi di {n}: livello e portata', s: 'Stazioni principali: livello e portata attuali rispetto allo stesso periodo degli anni precedenti. Con il fiume basso l’irrigazione ne risente e il trasporto fluviale carica meno.',
+      at: 'Ultima lettura {t} ({z}).', mh: 'Mappa delle stazioni', mhint: 'Ogni punto è una stazione; il colore è lo stato rispetto allo stesso periodo degli anni precedenti. Passa il cursore o tocca un punto per vedere quale sia; scegli una stazione nella tabella per vederne il grafico.',
+      cnt: '{a} stazioni sulla mappa', legend: 'Stato', lv: { low: 'basso', normal: 'normale', high: 'alto', none: 'senza riferimento' },
+      cols: ['Stazione', 'Livello (cm)', 'Portata (m³/s)', 'Rispetto al normale', 'Stato', 'Variazione 7 giorni'], vs: 'della mediana', cd: 'Portata, media giornaliera', cdw: 'Livello, media giornaliera', ax: 'm³/s', axw: 'cm',
+      p25: 'Quartile inferiore ({a}–{b})', p50: 'Mediana ({a}–{b})', p75: 'Quartile superiore ({a}–{b})', noref: 'Nessun riferimento dagli anni precedenti: la fonte offre solo circa 30 giorni di storico.',
+      since: 'La serie giornaliera inizia il {d}.', mean: 'mediana', pctl: 'percentile',
+      note: 'La lettura attuale proviene dalla fonte (non rivista). Il riferimento è un calcolo di Dehesa Index: per la data dell’ultima lettura, i valori giornalieri a ±7 giorni negli anni precedenti (almeno 8 anni, dal {a} al {b} per la stazione scelta); «Rispetto al normale» confronta con la mediana e «Stato» è basso se la lettura rientra nel 25 % inferiore di quei valori e alto se rientra nel 25 % superiore. È un confronto statistico, non un’allerta siccità né piena. La variazione a 7 giorni è la differenza tra medie giornaliere.', src: 'Fonte: {s}.' }
+  };
+  var LOC = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }, COL = { low: '#c0541d', normal: '#3d7fb8', high: '#1b4f7d', none: '#b5b0a2' };
+  var DAT = {}, SEL = {}, MAPL = {}, CUR = {};
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function nf(v, d, lg) { try { return Number(v).toLocaleString(LOC[lg], { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return Number(v).toFixed(d); } }
+  function dg(v) { var a = Math.abs(v); return a >= 100 ? 0 : a >= 10 ? 1 : 2; }
+  function sg(v, d, lg) { return v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), d, lg); }
+  function day(s, lg) { var q = String(s).slice(0, 10).split('-'); try { return new Intl.DateTimeFormat(LOC[lg], { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(+q[0], +q[1] - 1, +q[2]))); } catch (e) { return s; } }
+  function when(s, lg) { return day(s, lg) + ', ' + String(s).slice(11, 16); }
+  function ts(s) { var q = String(s).split('-'); return Date.UTC(+q[0], +q[1] - 1, +q[2]); }
+  function stName(s, cc, lg) { return ((C[cc].rv[lg] || {})[s.river] || s.river) + ' · ' + s.name; }
+  function st(x) { return x.state || 'none'; }
+  function bidx(x) { return (x.ref && x.ref.basis === 'W') || !x.q ? 1 : 2; }   // columna de puntos del valor base
+  function cur(x) { return bidx(x) === 2 ? x.q.value : x.w.value; }
+  function chg7(x) {
+    var i = bidx(x), p = x.points, n = p.length; if (n < 8) return null;
+    var last = p[n - 1][i]; if (last == null) return null; var want = ts(p[n - 1][0]) - 7 * 864e5;
+    for (var k = n - 2; k >= 0; k--) { var d = ts(p[k][0]); if (d === want) return p[k][i] == null ? null : last - p[k][i]; if (d < want) return null; }
+    return null;
+  }
+  function vsNormal(x) { return x.ref && x.ref.p50 ? (cur(x) / x.ref.p50 - 1) * 100 : null; }
+  function mapHtml(D, cc, t, lg) {
+    var G = (global.DEHESA_RIVER_MAPS || {})[cc]; if (!G) return '';
+    var P = G.proj, S = D.stations.filter(function (x) { return x.lon != null && x.lat != null; }), sel = SEL[cc];
+    var regs = G.regions.map(function (g) { return '<path d="' + g.d + '" fill="var(--surface-2,#f1eee6)" stroke="var(--border,#d9d3c4)" stroke-width="0.8"/>'; }).join('');
+    var rvs = G.rivers.map(function (r) { return '<path d="' + r.d + '" fill="none" stroke="#9bb7d4" stroke-width="' + (r.major ? 1.6 : 0.9) + '" stroke-linejoin="round" stroke-linecap="round"/>'; }).join('');
+    var dots = S.map(function (x) {
+      var cx = (x.lon - P.lon0) * P.c * P.k, cy = (P.lat0 - x.lat) * P.k, on = x.id === sel;
+      return '<circle class="rv-dot" data-id="' + esc(x.id) + '" cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + (on ? 8 : 6) + '" fill="' + COL[st(x)] + '" stroke="' + (on ? 'var(--text,#222)' : 'var(--surface,#fff)') + '" stroke-width="' + (on ? 2.5 : 1.2) + '"/>';
+    }).join('');
+    var key = ['low', 'normal', 'high', 'none'].map(function (k) { return '<span style="display:inline-flex;align-items:center;gap:5px;margin-right:12px"><i style="display:inline-block;width:11px;height:11px;border-radius:50%;background:' + COL[k] + ';border:1px solid var(--border)"></i>' + esc(t.lv[k]) + '</span>'; }).join('');
+    return '<h3 style="margin:14px 0 4px;font-size:15px">' + esc(t.mh) + '</h3><p class="cof-note" style="margin:0 0 8px">' + esc(t.mhint) + '</p>' +
+      '<div class="di-card rv-map" style="padding:10px 12px;position:relative;max-width:560px"><div class="rv-tip cof-note" aria-live="polite" style="min-height:2.6em;margin:0 0 6px">' + esc(t.cnt.replace('{a}', S.length)) + '</div>' +
+      '<svg viewBox="' + G.viewBox + '" role="img" aria-label="' + esc(t.mh) + '" style="width:100%;height:auto;display:block;touch-action:manipulation">' + regs + rvs + dots + '</svg>' +
+      '<div class="cof-note" style="margin-top:6px"><strong>' + esc(t.legend) + ':</strong> ' + key + '</div></div>';
+  }
+  function tipText(x, cc, t, lg) {
+    var v = vsNormal(x);
+    return '<strong>' + esc(stName(x, cc, lg)) + '</strong> · ' + esc(t.lv[st(x)]) + '<br>' + (x.q ? '<strong>' + nf(x.q.value, dg(x.q.value), lg) + ' m³/s</strong>' : '') + (x.q && x.w ? ' · ' : '') + (x.w ? nf(x.w.value, 0, lg) + ' cm' : '') + (v != null ? ' (' + sg(v, 0, lg) + ' % ' + esc(t.vs) + ')' : '');
+  }
+  function chartHtml(x, cc, t, lg) {
+    var i = bidx(x), pts = [];
+    x.points.forEach(function (p) { if (p[i] != null) pts.push({ x: ts(p[0]), y: p[i], l: day(p[0], lg) }); });
+    if (pts.length < 2 || !global.DehesaChart || !global.DehesaChart.render) return '';
+    var r = x.ref || {}, yr = r.years || ['', ''], x0 = pts[0].x, x1 = pts[pts.length - 1].x, nm = i === 2 ? t.cd : t.cdw, ser = [{ name: nm, color: '#2a6f97', pts: pts }];
+    var hl = function (k, col, lab) { if (r[k] != null) ser.push({ name: lab.replace('{a}', yr[0]).replace('{b}', yr[1]), color: col, dash: true, pts: [{ x: x0, y: r[k], l: '' }, { x: x1, y: r[k], l: '' }] }); };
+    hl('p75', '#6b8e7a', t.p75); hl('p50', '#8b8b8b', t.p50); hl('p25', '#b8651b', t.p25);
+    return '<h3 style="margin:18px 0 6px;font-size:16px">' + esc(stName(x, cc, lg)) + '</h3><div>' + global.DehesaChart.render({ series: ser, xMode: 'time', yTitle: i === 2 ? t.ax : t.axw, aria: nm + ' · ' + stName(x, cc, lg), legend: true, vFmt: function (v) { return nf(v, i === 2 ? dg(v) : 0, lg); } }) + '</div>';
+  }
+  function loadMap(cc) {
+    if (MAPL[cc]) return; MAPL[cc] = 1;
+    var s = document.createElement('script'); s.src = 'vendor/rivers-map-' + cc + '.js?v=20261026'; s.onload = function () { if (CUR[cc]) render(CUR[cc].el, CUR[cc].lg, cc); }; document.head.appendChild(s);
+  }
+  function render(el, lg, cc) {
+    var D = DAT[cc], t = T[lg] || T.es, S = D.stations, c = C[cc]; CUR[cc] = { el: el, lg: lg };
+    if (!SEL[cc] || !S.some(function (x) { return x.id === SEL[cc]; })) SEL[cc] = S[0].id;
+    var sel = S.filter(function (x) { return x.id === SEL[cc]; })[0], hasRef = S.some(function (x) { return x.ref && x.ref.p50; });
+    var rows = S.map(function (x) {
+      var v = vsNormal(x), c7 = chg7(x), s = st(x), i = bidx(x), fd = i === 2 ? dg(x.q.value) : 0;
+      return '<tr style="' + (x.id === SEL[cc] ? 'background:rgba(29,81,120,.06)' : '') + '"><th scope="row"><button type="button" class="rv-b" data-id="' + esc(x.id) + '" style="all:unset;cursor:pointer;font-weight:600">' + esc(stName(x, cc, lg)) + '</button></th>' +
+        '<td class="cof-n" data-v="' + (x.w ? x.w.value : '') + '">' + (x.w ? nf(x.w.value, 0, lg) : '—') + '</td><td class="cof-n rv-q" data-v="' + (x.q ? x.q.value : '') + '">' + (x.q ? '<strong>' + nf(x.q.value, dg(x.q.value), lg) + '</strong>' : '—') + '</td>' +
+        '<td class="cof-n"' + (v != null ? ' data-v="' + v + '"' : '') + '>' + (v != null ? sg(v, 0, lg) + ' %' : '—') + '</td><td class="cof-n" data-v="' + ['low', 'normal', 'high', 'none'].indexOf(s) + '"><span style="font-weight:600;color:' + (s === 'low' ? '#b3501a' : s === 'high' ? '#1b4f7d' : 'inherit') + '">' + esc(t.lv[s]) + '</span></td>' +
+        '<td class="cof-n"' + (c7 != null ? ' data-v="' + c7 + '"' : '') + '>' + (c7 != null ? sg(c7, fd, lg) + (i === 2 ? ' m³/s' : ' cm') : '—') + '</td></tr>';
+    }).join('');
+    var head = t.cols.map(function (h, i) { return '<th scope="col"' + (i ? ' class="cof-n' + (i === 2 ? ' rv-q' : '') + '"' : '') + '>' + esc(h) + '</th>'; }).join('');
+    var yr = (sel.ref && sel.ref.years) || ['', ''];
+    var since = sel.first ? '<p class="cof-note" style="margin:8px 0 0">' + esc(t.since.replace('{d}', day(sel.first, lg))) + '</p>' : '';
+    var cite = global.DICite && global.DICite.html ? '<div class="pp-cites" style="margin-top:10px">' + global.DICite.html(c.id, { period: D.latestTime.slice(0, 10) }) + '</div>' : '';
+    el.innerHTML = '<style>@media(max-width:520px){.cof-tbl .rv-q{display:none!important}}</style><h2 class="cof-h2">' + esc(t.h.replace('{n}', c.nm[lg])) + '</h2><p class="cof-sub">' + esc(t.s) + ' ' + esc(t.at.replace('{t}', when(D.latestTime, lg)).replace('{z}', c.tz[lg])) + '</p>' + mapHtml(D, cc, t, lg) +
+      '<div class="di-card" style="padding:6px 14px;overflow-x:auto;margin-top:14px"><table class="cof-tbl"><thead><tr>' + head + '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      chartHtml(sel, cc, t, lg) + (hasRef ? '' : '<p class="cof-note" style="margin:8px 0 0">' + esc(t.noref) + '</p>') + since + '<p class="cof-note" style="margin:10px 0 0">' + esc(c.lv[lg]) + '</p>' +
+      (hasRef ? '<p class="cof-note" style="margin:6px 0 0">' + esc(t.note.replace('{a}', yr[0]).replace('{b}', yr[1])) + '</p>' : '') + '<p class="cof-note" style="margin:6px 0 0">' + esc(t.src.replace('{s}', c.src[lg])) + '</p>' + cite;
+    Array.prototype.forEach.call(el.querySelectorAll('.rv-b'), function (b) { b.onclick = function () { SEL[cc] = b.getAttribute('data-id'); render(el, lg, cc); }; });
+    var box = el.querySelector('.rv-map');
+    if (box) {
+      var tip = box.querySelector('.rv-tip'), svg = box.querySelector('svg'), base = tip.innerHTML;
+      var by = function (id) { return S.filter(function (x) { return x.id === id; })[0]; };
+      svg.addEventListener('mouseover', function (e) { if (e.target.classList && e.target.classList.contains('rv-dot')) tip.innerHTML = tipText(by(e.target.getAttribute('data-id')), cc, t, lg); });
+      svg.addEventListener('mouseleave', function () { tip.innerHTML = base; });
+      svg.addEventListener('click', function (e) {
+        var r = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal, px = (e.clientX - r.left) / r.width * vb.width, py = (e.clientY - r.top) / r.height * vb.height, best = null, bd = 1e9;
+        Array.prototype.forEach.call(svg.querySelectorAll('.rv-dot'), function (d) { var dx = d.cx.baseVal.value - px, dy = d.cy.baseVal.value - py, dd = dx * dx + dy * dy; if (dd < bd) { bd = dd; best = d; } });
+        if (best && bd < 900) { SEL[cc] = best.getAttribute('data-id'); render(el, lg, cc); }
+      });
+    }
+    if (!(global.DEHESA_RIVER_MAPS || {})[cc]) loadMap(cc);
+  }
+  function mount(el, lg, cc) {
+    if (!el || !C[cc]) return Promise.resolve(false); lg = T[lg] ? lg : 'es';
+    var p = DAT[cc] ? Promise.resolve(DAT[cc]) : fetch('data/rivers-' + cc + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    return p.then(function (d) { if (!d || !d.stations || d.stations.length < 3) return false; DAT[cc] = d; render(el, lg, cc); return true; });
+  }
+  global.DIRivers = { mount: mount, countries: ['nl', 'fr', 'ca', 'be'] };
+  function auto() {
+    var S = global.DehesaShared, lg = function () { var l = S && S.getLang ? S.getLang() : 'es'; return T[l] ? l : 'es'; };
+    ['nl', 'fr', 'ca', 'be'].forEach(function (cc) {
+      var el = document.getElementById('rv' + cc); if (!el) return;
+      mount(el, lg(), cc);
+      if (S) { var prev = S.onLangChange; S.onLangChange = function () { if (prev) prev.apply(this, arguments); mount(el, lg(), cc); }; }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', auto); else auto();
+})(window);

@@ -1767,6 +1767,22 @@
   "de-rivers.json": [
    "de-rivers",
    []
+  ],
+  "rivers-nl.json": [
+   "rivers",
+   []
+  ],
+  "rivers-fr.json": [
+   "rivers",
+   []
+  ],
+  "rivers-ca.json": [
+   "rivers",
+   []
+  ],
+  "rivers-be.json": [
+   "rivers",
+   []
   ]
  },
  "globs": {

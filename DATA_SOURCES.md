@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 172 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
+Resumen: 175 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
 
-## VERIFIED (172)
+## VERIFIED (175)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -60,6 +60,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `ec_eambrosia` | Comisión Europea - eAmbrosia (registro de indicaciones geográficas de la UE) | EU | CC-BY-4.0 | si/si | si | 0 | No se publican los datos de contacto de los consejos reguladores. Logos y marcas excluidos. |
 | `ecb` | European Central Bank (euro reference rates, ECB Data Portal) | EU | ESCB-REUSE | si/conditional | si | 2 | Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed … |
 | `eccc_ghg` | Environment and Climate Change Canada — Canada's Official Greenhouse Gas Inventory | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
+| `eccc_hydrometric` | Environment and Climate Change Canada — Water Survey of Canada, datos hidrométricos (GeoMet-OGC) | CA | ECCC-ENDUSE-2.1.1 | si/si | si | 0 | Citar la fuente; sin sugerir aval oficial; excluye información personal, derechos de terceros y símbolos oficiales; «as is», sin garantías. |
 | `edo_cdi` | European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS) | EU | CC-BY-4.0 | si/si | si | 0 | Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission… |
 | `eia` | U.S. Energy Information Administration (Open Data API) | US | US-PD | si/conditional | si | 8 | Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API k… |
 | `elstat` | Greece — ELSTAT (Hellenic Statistical Authority) | EL | OPEN-REUSE-ATTRIBUTION | si/si | si | 0 | Citar la fuente; no deformar el sentido de los datos. Quedan fuera microdatos, datos personales, material de terceros (mapas y limites) y pu… |
@@ -89,6 +90,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `hmrc_govuk` | HM Revenue & Customs - GOV.UK VAT guidance | GB | OGL-UK-3.0 | si/si | si | 0 | Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra. |
 | `hmrc_uktradeinfo` | HM Revenue & Customs - UK Trade Info (OTS, API OData) | GB | OGL-UK-3.0 | si/si | si | 37 | Third-party material and logos excluded. |
 | `hubeau_ades` | ADES (BRGM) — Qualité des eaux souterraines, vía Hub'Eau | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
+| `hubeau_hydrometrie` | Hub'Eau — API Hidrometría (SCHAPI / Eaufrance, nivel y caudal) | FR | LO-2.0 | si/si | si | 0 | Citar la fuente. Datos de tiempo real sin validar (los productores son responsables de su calidad). |
 | `hubeau_onde` | OFB — Observatoire national des étiages (ONDE), vía Hub'Eau | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `imgw_pib` | IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne) | PL | PL-PSI-IMGW | si/si | si | 0 | Citar la fuente con la frase del reglamento e indicar que los datos se han procesado. |
 | `inao_aires` | INAO - Aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
@@ -136,6 +138,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `prix_carburants_fr` | Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers) | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 3 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
+| `rijkswaterstaat` | Rijkswaterstaat — WaterWebservices (DD-API 2.0, datos brutos de nivel y caudal) | NL | CC0-1.0 | si/si | no | 0 | La página de la API pide no abusar del servicio (puede limitar el acceso); los datos son brutos y sin validar. Excepción por derechos de aut… |
 | `ris_at` | Rechtsinformationssystem des Bundes (RIS) — MOG 2021 y GAP-Strategieplan-Anwendungsverordnung | AT | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el RIS. Parte del texto se leyó en copias (AMA, gesetzefinden.at, jusline.at) y los imp… |
 | `rivm_lmm` | RIVM — Landelijk Meetnet effecten Mestbeleid (LMM), datatool waterkwaliteit | NL | CC-BY-4.0 | si/si | si | 0 |  |
 | `rivm_stikstof` | RIVM — Monitor Stikstofdepositie in Natura 2000-gebieden | NL | CC0-1.0 | si/si | no | 0 |  |

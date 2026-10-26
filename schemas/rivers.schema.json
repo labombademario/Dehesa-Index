@@ -1,0 +1,185 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Nivel y caudal de rios de Paises Bajos, Francia, Canada y Flandes (Rijkswaterstaat, Hub'Eau, ECCC, VMM)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "country",
+  "latestTime",
+  "source",
+  "units",
+  "stations"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "latestTime": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url",
+    "license"
+   ]
+  },
+  "units": {
+   "type": "object"
+  },
+  "pointFields": {
+   "type": "array"
+  },
+  "stations": {
+   "type": "array",
+   "minItems": 4,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "river",
+     "name",
+     "w",
+     "q",
+     "ref",
+     "points"
+    ],
+    "properties": {
+     "w": {
+      "type": [
+       "object",
+       "null"
+      ],
+      "properties": {
+       "value": {
+        "type": "number"
+       },
+       "time": {
+        "type": "string"
+       },
+       "state": {
+        "enum": [
+         "low",
+         "normal",
+         "high",
+         null
+        ]
+       },
+       "unit": {
+        "enum": [
+         "cm"
+        ]
+       }
+      },
+      "required": [
+       "value",
+       "time",
+       "unit"
+      ]
+     },
+     "q": {
+      "type": [
+       "object",
+       "null"
+      ],
+      "properties": {
+       "value": {
+        "type": "number"
+       },
+       "time": {
+        "type": "string"
+       },
+       "unit": {
+        "enum": [
+         "m3/s"
+        ]
+       }
+      },
+      "required": [
+       "value",
+       "time",
+       "unit"
+      ]
+     },
+     "ref": {
+      "type": "object",
+      "properties": {
+       "p25": {
+        "type": "number"
+       },
+       "p50": {
+        "type": "number"
+       },
+       "p75": {
+        "type": "number"
+       },
+       "pct": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+       },
+       "basis": {
+        "enum": [
+         "Q",
+         "W"
+        ]
+       },
+       "years": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2
+       },
+       "n": {
+        "type": "integer"
+       }
+      }
+     },
+     "points": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 3,
+       "maxItems": 3
+      }
+     },
+     "state": {
+      "enum": [
+       "low",
+       "normal",
+       "high",
+       null
+      ]
+     },
+     "lon": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "lat": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    }
+   }
+  },
+  "country": {
+   "enum": [
+    "NL",
+    "FR",
+    "CA",
+    "BE"
+   ]
+  }
+ }
+}

@@ -3272,10 +3272,10 @@
    "verifiedAt": "2026-10-12",
    "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "Catálogo metadata.vlaanderen.be: los conjuntos de la VMM de waterinfo (p. ej. «Meetreeksen - neerslag») y los indicadores «Nitraat in oppervlaktewater in landbouwgebied» y «Nutriënten in oppervlaktewater» figuran con la «Modellicentie voor gratis hergebruik». Las capas captatieverboden y droogtestatus se sirven sin autenticación en inspirepub.waterinfo.be; no tienen ficha propia en el catálogo, así que se les aplica la licencia general de la VMM para waterinfo.",
+   "evidence": "Catálogo metadata.vlaanderen.be: los conjuntos de la VMM de waterinfo (p. ej. «Meetreeksen - neerslag») y los indicadores «Nitraat in oppervlaktewater in landbouwgebied» y «Nutriënten in oppervlaktewater» figuran con la «Modellicentie voor gratis hergebruik». Las capas captatieverboden y droogtestatus se sirven sin autenticación en inspirepub.waterinfo.be; no tienen ficha propia en el catálogo, así que se les aplica la licencia general de la VMM para waterinfo. El conjunto «Meetreeksen - afvoer» (afvoer y waterstand, VMM, última modificación 28-01-2025) figura con la «Modellicentie voor gratis hergebruik» (vlaanderen.be/datavindplaats, leído el 26 oct 2026).",
    "used": true,
    "aliases": [],
-   "notes": "Valonia (SPW) no publica equivalentes abiertos de prohibiciones de captación, SPI ni nitrato medido.",
+   "notes": "Valonia (SPW) no publica equivalentes abiertos de prohibiciones de captación, SPI ni nitrato medido. Series de nivel y caudal de 9 estaciones de ríos de Flandes (KiWIS de waterinfo.be); referencia y percentil son cálculo de Dehesa Index.",
    "short": "VMM",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "VERIFIED por la licencia general de los datos de la VMM; las dos capas de waterinfo no tienen ficha individual."
@@ -5343,6 +5343,84 @@
    "short": "PEGELONLINE (WSV)",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: condiciones de uso de PEGELONLINE (DL-DE-Zero-2.0, uso comercial permitido)."
+  },
+  "rijkswaterstaat": {
+   "name": "Rijkswaterstaat — WaterWebservices (DD-API 2.0, datos brutos de nivel y caudal)",
+   "url": "https://waterwebservices.rijkswaterstaat.nl/",
+   "country": "NL",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons Zero (CC0 1.0): dominio público",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Bron: Rijkswaterstaat (waterwebservices.rijkswaterstaat.nl)",
+   "additionalRestrictions": "La página de la API pide no abusar del servicio (puede limitar el acceso); los datos son brutos y sin validar. Excepción por derechos de autor de terceros en componentes concretos.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "«tenzij bij een bepaald onderdeel staat aangegeven dat een auteursrechtelijke uitzondering van toepassing is» (WaterWebservices).",
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Página de la WaterWebservices (https://rijkswaterstaatdata.nl/waterdata/, leída el 26 oct 2026): «Op de inhoud van de WaterWebservices is de Creative Commons zero verklaring (CC0) van toepassing»; hergebruik toegestaan. Rijkswaterstaat «open, tenzij» (rijkswaterstaat.nl/zakelijk/open-data).",
+   "used": true,
+   "aliases": [],
+   "notes": "Nivel (cm sobre NAP) y caudal (m3/s) de 7 estaciones del Rin, el Waal, el Bajo Rin, el Lek, el IJssel y el Mosa. La media diaria, la referencia (cuartiles de ±10 días en 20 años) y el percentil son cálculo de Dehesa Index.",
+   "short": "Rijkswaterstaat",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: WaterWebservices bajo CC0 (uso comercial permitido)."
+  },
+  "hubeau_hydrometrie": {
+   "name": "Hub'Eau — API Hidrometría (SCHAPI / Eaufrance, nivel y caudal)",
+   "url": "https://hubeau.eaufrance.fr/page/api-hydrometrie",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (datos públicos del sistema de información sobre el agua)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Hub'Eau, API Hydrométrie (SCHAPI, Eaufrance)",
+   "additionalRestrictions": "Citar la fuente. Datos de tiempo real sin validar (los productores son responsables de su calidad).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Condiciones generales de Hub'Eau (https://hubeau.eaufrance.fr/page/conditions-generales, leídas el 26 oct 2026): «La réutilisation des Jeux de données est régie par la licence ouverte Etalab … librement et gratuitement utilisables et réutilisables, y compris dans un but commercial. L'utilisateur de ces données doit néanmoins veiller à citer l'auteur».",
+   "used": true,
+   "aliases": [],
+   "notes": "Nivel (cm, convertido de mm) y caudal (m3/s, convertido de l/s) de 15 estaciones del Sena, el Marne, el Loira, el Saona, el Ródano, el Garona, el Dordoña y el Mosa. La referencia (cuartiles ±7 días desde la apertura de la estación, de QmnJ) y el percentil son cálculo de Dehesa Index.",
+   "short": "Hub'Eau · Hidrometría",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones generales de Hub'Eau (licence ouverte Etalab, uso comercial permitido)."
+  },
+  "eccc_hydrometric": {
+   "name": "Environment and Climate Change Canada — Water Survey of Canada, datos hidrométricos (GeoMet-OGC)",
+   "url": "https://api.weather.gc.ca/",
+   "country": "CA",
+   "licenseId": "ECCC-ENDUSE-2.1.1",
+   "licenseName": "Environment and Climate Change Canada Data Services End-use Licence v2.1.1",
+   "licenseUrl": "https://eccc-msc.github.io/open-data/licence/readme_en/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licenced under the Data Server End-use Licence of Environment and Climate Change Canada.",
+   "additionalRestrictions": "Citar la fuente; sin sugerir aval oficial; excluye información personal, derechos de terceros y símbolos oficiales; «as is», sin garantías.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Derechos que el proveedor no puede licenciar quedan excluidos.",
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Licencia ECCC Data Services End-use Licence, versión 2.1.1 (https://eccc-msc.github.io/open-data/licence/readme_en/, leída el 26 oct 2026): licencia mundial, gratuita, perpetua y no exclusiva, incluido el uso comercial, con atribución.",
+   "used": true,
+   "aliases": [],
+   "notes": "Nivel (m, a cm) y caudal (m3/s) de 15 estaciones de ríos de Canadá (lectura de 30 días, provisional) y caudal medio diario histórico (hasta el año anterior) para la referencia: cuartiles ±7 días y percentil son cálculo de Dehesa Index.",
+   "short": "ECCC · WSC",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: ECCC Data Services End-use Licence 2.1.1 (uso comercial permitido, con atribución)."
   }
  },
  "files": {
@@ -7877,6 +7955,22 @@
   "data/de-rivers.json": {
    "default": "pegelonline",
    "notes": "Nivel (cm) y caudal (m3/s) de 15 estaciones del Rin, el Meno, la Mosela, el Neckar, el Weser, el Elba y el Danubio: lectura actual, media diaria desde que empezó la serie propia (la API solo da 30 días) y valores de referencia oficiales de cada estación (PEGELONLINE, WSV). Datos brutos sin revisar."
+  },
+  "data/rivers-nl.json": {
+   "default": "rijkswaterstaat",
+   "notes": "Nivel (cm sobre NAP) y caudal (m3/s) de 7 estaciones de los ríos de los Países Bajos; media diaria, referencia y percentil: cálculo de Dehesa Index."
+  },
+  "data/rivers-fr.json": {
+   "default": "hubeau_hydrometrie",
+   "notes": "Nivel y caudal de 15 estaciones de ríos de Francia; media diaria, referencia y percentil: cálculo de Dehesa Index."
+  },
+  "data/rivers-ca.json": {
+   "default": "eccc_hydrometric",
+   "notes": "Nivel y caudal de 15 estaciones de ríos de Canadá; media diaria, referencia y percentil: cálculo de Dehesa Index."
+  },
+  "data/rivers-be.json": {
+   "default": "vmm_waterinfo",
+   "notes": "Nivel y caudal de 9 estaciones de ríos de Flandes; media diaria, referencia y percentil: cálculo de Dehesa Index."
   }
  },
  "derived": [
