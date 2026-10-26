@@ -1583,6 +1583,16 @@ sources:
     data: [eu-fish-retail-prices.json]
     log: eu-fish-retail-prices-log.txt
     message: Precio minorista online del pescado - UE (EUMOFA)
+  - id: eu-fish-hicp
+    name: Update EU consumer price index for fish and seafood by member state (Eurostat HICP)
+    cron: ['20 14 19 * *']
+    script: scripts/update-eu-fish-hicp.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [eu-fish-hicp.json]
+    log: eu-fish-hicp-log.txt
+    message: IPC del pescado - UE (Eurostat HICP)
   - id: us-sulphur
     name: Update US sulphur import unit value (US Census Bureau, HS 2503)
     cron: ['20 10 8,10,14 * *']

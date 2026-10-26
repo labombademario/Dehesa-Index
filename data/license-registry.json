@@ -7803,6 +7803,10 @@
    "default": "eumofa",
    "notes": "Precio medio semanal (10 paises) y mensual (18 paises) en primera venta (euros por kg) por Estado miembro y especie comercial principal, desde 2019: valor entre volumen de las notas de venta compiladas por EUMOFA. Mezcla puertos, tallas y presentaciones."
   },
+  "data/eu-fish-hicp.json": {
+   "default": "eurostat",
+   "notes": "Indice de precios de consumo armonizado (IPCA) del pescado y otros productos del mar (COICOP CP0113), base 2025=100, por Estado miembro y UE. Eurostat tal cual; la pagina lo reindexa a 100 en un mes comun y lo rotula como calculo de Dehesa Index."
+  },
   "data/eu-fish-retail-prices.json": {
    "default": "eumofa",
    "notes": "Precio minorista online (euros por kg), media mensual por Estado miembro, categoria y producto vigilado, desde 2021: precios que los analistas de EUMOFA recogen a diario de tiendas online de grandes cadenas. No es un indice de precios."

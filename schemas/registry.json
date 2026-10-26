@@ -1748,6 +1748,10 @@
    "eu-fish-first-sales",
    []
   ],
+  "eu-fish-hicp.json": [
+   "eu-fish-hicp",
+   []
+  ],
   "eu-fish-retail-prices.json": [
    "eu-fish-retail-prices",
    []

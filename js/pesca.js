@@ -320,6 +320,70 @@
       tr.onclick = pickRow; tr.onkeydown = function (e) { if (e.key === 'Enter') pickRow(); };
     });
   }
+  /* Primera venta frente al IPC del pescado (data/views/fish/<CC>.json > cross): precio mensual de cada especie clave (EUMOFA) y IPCA del pescado y marisco (Eurostat, CP0113) */
+  var CR = {
+    t: L('Primera venta frente al IPC del pescado', 'First-sale prices vs the fish consumer price index', 'Première vente et indice des prix du poisson', 'Prima vendita e indice dei prezzi del pesce'),
+    s: L('Precio mensual en primera venta de cada especie clave frente al índice de precios de consumo (IPCA) del pescado y marisco de {c}. Último mes comparable: {w}. Variaciones: media de los 3 últimos meses frente a la de los mismos 3 meses de un año antes. Pulsa una especie para ver las dos series.',
+         'Monthly first-sale price of each key species against the consumer price index (HICP) for fish and seafood in {c}. Latest comparable month: {w}. Changes: average of the last 3 months against the same 3 months a year earlier. Select a species to see both series.',
+         'Prix mensuel en première vente de chaque espèce clé et indice des prix à la consommation (IPCH) du poisson et des fruits de mer de {c}. Dernier mois comparable : {w}. Variations : moyenne des 3 derniers mois par rapport aux mêmes 3 mois un an plus tôt. Sélectionnez une espèce pour voir les deux séries.',
+         'Prezzo mensile alla prima vendita di ciascuna specie chiave e indice dei prezzi al consumo (IPCA) di pesce e frutti di mare di {c}. Ultimo mese confrontabile: {w}. Variazioni: media degli ultimi 3 mesi rispetto agli stessi 3 mesi di un anno prima. Seleziona una specie per vedere le due serie.'),
+    lead: L('IPC del pescado y marisco: {v} frente a hace un año.', 'Fish and seafood consumer prices: {v} versus a year ago.', 'Prix à la consommation du poisson et des fruits de mer : {v} sur un an.', 'Prezzi al consumo di pesce e frutti di mare: {v} su un anno.'),
+    cols: L(['Especie', '€/kg (media 3 meses)', 'Primera venta, 12 meses', 'Diferencia con el IPC (puntos)', 'Correlación de variaciones anuales'], ['Species', '€/kg (3-month average)', 'First sale, 12 months', 'Gap versus CPI (points)', 'Correlation of annual changes'],
+            ['Espèce', '€/kg (moyenne 3 mois)', 'Première vente, 12 mois', 'Écart avec l’IPC (points)', 'Corrélation des variations annuelles'], ['Specie', '€/kg (media 3 mesi)', 'Prima vendita, 12 mesi', 'Differenza con l’IPC (punti)', 'Correlazione delle variazioni annuali']),
+    ch: L('{s}: precio en primera venta frente al IPC del pescado (100 = media de los primeros 12 meses comunes, {b})', '{s}: first-sale price vs fish CPI (100 = average of the first 12 common months, {b})',
+          '{s} : prix en première vente et IPC du poisson (100 = moyenne des 12 premiers mois communs, {b})', '{s}: prezzo alla prima vendita e IPC del pesce (100 = media dei primi 12 mesi comuni, {b})'),
+    sp: L('Primera venta: {s}', 'First sale: {s}', 'Première vente : {s}', 'Prima vendita: {s}'),
+    cp: L('IPC pescado y marisco', 'Fish and seafood CPI', 'IPC poisson et fruits de mer', 'IPC pesce e frutti di mare'),
+    note: L('Qué se compara: el precio en primera venta (EUMOFA, valor/kilos de una especie en lonja, calculado por Dehesa Index) y el índice de precios de consumo de todo el pescado y marisco (Eurostat, ECOICOP CP0113, fresco, congelado, ahumado y conservas), que no es el de la misma especie. Ambos se han reindexado a 100 en la media de los primeros 12 meses comunes: cálculo de Dehesa Index sobre datos de Eurostat y EUMOFA, no cifras oficiales; Eurostat no es responsable de la modificación. La correlación (Pearson) se calcula con las variaciones de cada mes frente al mismo mes del año anterior, solo con 24 o más meses comunes: mide si suben y bajan a la vez, no si uno causa al otro ni con qué retraso, y un mes de primera venta puede mezclar puertos, tallas y presentaciones.',
+          'What is compared: the first-sale price (EUMOFA, value/kilos of one species at auction, calculated by Dehesa Index) and the consumer price index for all fish and seafood (Eurostat, ECOICOP CP0113: fresh, frozen, smoked and canned), which is not the same species. Both are rebased to 100 at the average of the first 12 common months: a Dehesa Index calculation on Eurostat and EUMOFA data, not official figures; Eurostat is not responsible for the modification. The correlation (Pearson) uses each month’s change versus the same month a year earlier, only with 24 or more common months: it shows whether they rise and fall together, not whether one causes the other nor with what lag, and a first-sale month may mix ports, sizes and presentations.',
+          'Ce qui est comparé : le prix en première vente (EUMOFA, valeur/kilos d’une espèce en criée, calculé par Dehesa Index) et l’indice des prix à la consommation de tout le poisson et des fruits de mer (Eurostat, ECOICOP CP0113 : frais, surgelé, fumé et conserves), qui n’est pas celui de la même espèce. Les deux sont rebasés à 100 sur la moyenne des 12 premiers mois communs : calcul de Dehesa Index sur des données d’Eurostat et d’EUMOFA, pas des chiffres officiels ; Eurostat n’est pas responsable de la modification. La corrélation (Pearson) utilise la variation de chaque mois par rapport au même mois un an plus tôt, avec au moins 24 mois communs : elle indique s’ils montent et baissent ensemble, pas si l’un cause l’autre ni avec quel décalage, et un mois de première vente peut mêler ports, calibres et présentations.',
+          'Cosa si confronta: il prezzo alla prima vendita (EUMOFA, valore/chili di una specie all’asta, calcolato da Dehesa Index) e l’indice dei prezzi al consumo di tutto il pesce e i frutti di mare (Eurostat, ECOICOP CP0113: fresco, congelato, affumicato e conserve), che non è quello della stessa specie. Entrambi sono ribasati a 100 sulla media dei primi 12 mesi comuni: calcolo di Dehesa Index su dati Eurostat ed EUMOFA, non cifre ufficiali; Eurostat non è responsabile della modifica. La correlazione (Pearson) usa la variazione di ogni mese rispetto allo stesso mese di un anno prima, solo con 24 o più mesi comuni: indica se salgono e scendono insieme, non se uno causa l’altro né con quale ritardo, e un mese di prima vendita può mescolare porti, taglie e presentazioni.')
+  };
+  var CSP = 0;
+  function crMap(pts) { var m = {}; pts.forEach(function (p) { m[p[0]] = p[1]; }); return m; }
+  function crAvg3(m, end) { var s = 0, i, v; for (i = 0; i < 3; i++) { v = m[moShift(end, -i)]; if (v == null) return null; s += v; } return s / 3; }
+  function crStat(c, o) {
+    var sm = crMap(o.points), hm = crMap(c.hicp), sl = o.points[o.points.length - 1][0], hl = c.hicp[c.hicp.length - 1][0], end = sl < hl ? sl : hl;
+    var s1 = crAvg3(sm, end), s0 = crAvg3(sm, moShift(end, -12)), h1 = crAvg3(hm, end), h0 = crAvg3(hm, moShift(end, -12));
+    var ds = s1 != null && s0 ? (s1 / s0 - 1) * 100 : null, dh = h1 != null && h0 ? (h1 / h0 - 1) * 100 : null;
+    var xs = [], ys = [];
+    o.points.forEach(function (p) { var k = p[0], a = sm[moShift(k, -12)], b = hm[k], e = hm[moShift(k, -12)]; if (a && b != null && e) { xs.push(p[1] / a - 1); ys.push(b / e - 1); } });
+    var r = null, n = xs.length;
+    if (n >= 24) { var mx = 0, my = 0, i; for (i = 0; i < n; i++) { mx += xs[i]; my += ys[i]; } mx /= n; my /= n; var sxy = 0, sxx = 0, syy = 0; for (i = 0; i < n; i++) { sxy += (xs[i] - mx) * (ys[i] - my); sxx += (xs[i] - mx) * (xs[i] - mx); syy += (ys[i] - my) * (ys[i] - my); } r = sxx > 0 && syy > 0 ? sxy / Math.sqrt(sxx * syy) : null; }
+    return { end: end, price: s1, ds: ds, dh: dh, gap: ds != null && dh != null ? ds - dh : null, r: r, n: n };
+  }
+  function crSeries(c, o) {
+    var hm = crMap(c.hicp), com = o.points.filter(function (p) { return hm[p[0]] != null; });
+    if (com.length < 12) return null;
+    var bs = 0, bh = 0, i; for (i = 0; i < 12; i++) { bs += com[i][1]; bh += hm[com[i][0]]; } bs /= 12; bh /= 12;
+    return { base: com[0][0] + '–' + com[11][0], s: com.map(function (p) { return { x: moTs(p[0]), y: p[1] / bs * 100, l: moLabel(p[0]) }; }), h: com.map(function (p) { return { x: moTs(p[0]), y: hm[p[0]] / bh * 100, l: moLabel(p[0]) }; }) };
+  }
+  function crossChart(c) {
+    var o = c.species[CSP] || c.species[0]; if (!o || !global.DehesaChart) return '';
+    var z = crSeries(c, o); if (!z) return '';
+    var nm = wsName(o.name), b = z.base.split('–').map(function (k) { return moLabel(k); }).join(' – ');
+    return '<div class="di-info-card-title gb-sub" style="margin-top:14px">' + esc(tx(CR.ch).replace('{s}', nm).replace('{b}', b)) + '</div>' + global.DehesaChart.render({ series: [{ name: tx(CR.sp).replace('{s}', nm), color: '#2f6b4a', pts: z.s }, { name: tx(CR.cp), color: '#b4552d', pts: z.h }], xMode: 'time', xTitle: tx(MK.date), yTitle: '100 = ' + b, aria: nm + ' / ' + tx(CR.cp), vFmt: function (v) { return nf(v, 1); } });
+  }
+  function crossBlock(d, cn) {
+    var c = d.cross; if (!c || !c.species || !c.species.length || !c.hicp) return '';
+    var st = c.species.map(function (o) { return crStat(c, o); });
+    var rows = [], i, ref = null;
+    for (i = 0; i < c.species.length; i++) {
+      var o = c.species[i], x = st[i]; if (x.dh != null) ref = x;
+      rows.push('<tr class="fsh-crow' + (i === CSP ? ' on' : '') + '" data-i="' + i + '" tabindex="0" style="cursor:pointer">' + td('<strong>' + esc(wsName(o.name)) + '</strong>') + td(x.price != null ? nf(x.price, 2) : '—', 1) + td(chg(x.ds), 1) + td(x.gap != null ? esc((x.gap > 0 ? '+' : '') + nf(x.gap, 1)) : '—', 1) + td(x.r != null ? esc(nf(x.r, 2)) + ' <span class="fsh-m">(' + x.n + ')</span>' : '<span class="fsh-m">—</span>', 1) + '</tr>');
+    }
+    if (!ref) return '';
+    if (CSP >= c.species.length) CSP = 0;
+    var cn2 = cn || '';
+    return '<section class="di-card fsh-sec" id="fsh-cross"><h2 class="fsh-h2">' + esc(tx(CR.t)) + '</h2><p class="di-movers-hint">' + esc(tx(CR.s).replace('{c}', cn2).replace('{w}', moLabel(ref.end))) + '</p><p style="margin:0 0 8px"><strong>' + tx(CR.lead).replace('{v}', chg(ref.dh)) + '</strong></p>' + table(tx(CR.cols), rows) + '<div id="fsh-cchart">' + crossChart(c) + '</div><p class="di-movers-hint" style="max-width:860px">' + esc(tx(CR.note)) + '</p><p class="di-field-hint" style="margin:4px 0 0"><a href="https://fishery-aquaculture-market-observatory.ec.europa.eu/en/data/bulk-download" target="_blank" rel="noopener noreferrer">EUMOFA</a> · <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table" target="_blank" rel="noopener noreferrer">Eurostat prc_hicp_minr</a></p></section>';
+  }
+  function bindCross(root, d) {
+    var c = d.cross; if (!c) return;
+    [].forEach.call(root.querySelectorAll('.fsh-crow'), function (tr) {
+      var pickRow = function () { CSP = +tr.getAttribute('data-i'); [].forEach.call(root.querySelectorAll('.fsh-crow'), function (x) { x.classList.toggle('on', x === tr); }); var b = root.querySelector('#fsh-cchart'); if (b) b.innerHTML = crossChart(c); };
+      tr.onclick = pickRow; tr.onkeydown = function (e) { if (e.key === 'Enter') pickRow(); };
+    });
+  }
   function statesBlock(d) {
     if (!d.states || !d.states.length) return '';
     var rows = d.states.map(function (o) { var v = pick(o.value), q = pick(o.qty); return '<tr>' + td(esc(o.name)) + td(money(v && v[1], 'USD'), 1) + td(q ? nf(q[1] / 1e6, 1) + ' ' + esc(tx(T.u.mlb)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>'; });
@@ -409,13 +473,13 @@
         var h = '<div class="fsh-pick"><label for="fsh-cc">' + esc(tx(T.country)) + '</label> <select data-cpick="1" id="fsh-cc" class="di-compare-select">' + opts + '</select> ' + yearSel(d, 'fsh-yr') + (YEAR != null ? ' <span class="di-movers-hint">' + esc(tx(T.yrNote)) + '</span>' : '') + (noSea ? ' <span class="di-movers-hint">' + esc(tx(T.land)) + '</span>' : '') + '</div>' +
           '<div class="fsh-kpis">' + kpis(d) + '</div>' +
           (ch.length ? '<section class="di-card fsh-sec wp-card">' + ch.map(function (c) { return c.html; }).join('') + '</section>' : '') +
-          weeklyBlock(d) + retailBlock(d) + speciesBlock(d) + statesBlock(d) + zonesBlock(d) + listBlock(tx(T.cT), d.catches, false) + listBlock(tx(T.aT), d.aquaculture, true) + fleetBlock(d) +
+          weeklyBlock(d) + crossBlock(d, tx(N[d.cc] || [d.cc, d.cc, d.cc, d.cc])) + retailBlock(d) + speciesBlock(d) + statesBlock(d) + zonesBlock(d) + listBlock(tx(T.cT), d.catches, false) + listBlock(tx(T.aT), d.aquaculture, true) + fleetBlock(d) +
           compareBlock(idx, CUR) +
           T.notes.map(function (n) { return '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(n)) + '</p>'; }).join('') + sources(d) +
           (d.cc === 'US' ? '' : '<p class="di-field-hint" style="margin:4px 0 0"><a href="https://www.fisheries.noaa.gov/foss" target="_blank" rel="noopener noreferrer">' + esc(tx(T.srcUs)) + '</a></p>');
         root.innerHTML = h;
-        ch.forEach(function (c) { bindChart(root, c); }); mountFaoMaps(root); bindWeekly(root, d); bindRetail(root, d);
-        var sel = document.getElementById('fsh-cc'); if (sel) sel.onchange = function () { WSP = 0; RSP = 0; go(sel.value); };
+        ch.forEach(function (c) { bindChart(root, c); }); mountFaoMaps(root); bindWeekly(root, d); bindCross(root, d); bindRetail(root, d);
+        var sel = document.getElementById('fsh-cc'); if (sel) sel.onchange = function () { WSP = 0; RSP = 0; CSP = 0; go(sel.value); };
         var ysel = document.getElementById('fsh-yr'); if (ysel) ysel.onchange = function () { YEAR = ysel.value ? +ysel.value : null; pageRender(); };
         [].forEach.call(root.querySelectorAll('.fsh-row'), function (tr) {
           tr.onclick = function (e) { if (e.target.closest && e.target.closest('a')) { e.preventDefault(); } go(tr.getAttribute('data-cc')); };
