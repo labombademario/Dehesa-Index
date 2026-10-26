@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-26T15:02:11.606Z",
+  "generatedAt": "2026-10-26T15:09:18.702Z",
   "scope": {
     "latestObservations": 208,
     "historyObservations": 49083,
@@ -3327,7 +3327,7 @@
       "comparability": "not_comparable",
       "observationDate": "2026-09-01",
       "publicationDate": "2026-10-02",
-      "verifiedAt": "2026-10-25T13:24:44Z",
+      "verifiedAt": "2026-10-26T15:09:16Z",
       "frequency": "monthly",
       "historyPoints": 561,
       "ageDays": 26,
