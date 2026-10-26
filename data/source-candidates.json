@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T18:55:23Z",
+ "generatedAt": "2026-10-26T21:45:41Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 207,
+  "total": 208,
   "byStatus": {
-   "ACTIVE": 177,
+   "ACTIVE": 178,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3766,6 +3766,45 @@
    ]
   },
   {
+   "sourceId": "elgo_dimitra",
+   "registryId": "elgo_dimitra",
+   "country": "EL",
+   "scope": "integrated",
+   "institution": "Greece — ELGO-DIMITRA (Hellenic Agricultural Organisation), via data.gov.gr",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: ELGO-DIMITRA (Organismo Helenico de Agricultura), datos abiertos de data.gov.gr, CC BY 4.0. Elaboracion de dehesaindex.com.",
+   "lastChecked": "2026-10-26",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "elstat",
    "registryId": "elstat",
    "country": "EL",
@@ -3927,7 +3966,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "European Commission — Agri-food Data Portal (DG AGRI)",
-   "dataset": "Ya integrada (5553 series en el catalogo unificado)",
+   "dataset": "Ya integrada (5554 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -8685,7 +8724,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA National Agricultural Statistics Service (Quick Stats)",
-   "dataset": "Ya integrada (1117 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1123 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
