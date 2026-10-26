@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T18:15:00Z",
+ "generatedAt": "2026-10-26T18:52:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 285,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-26T16:16:59.311975+00:00",
   "repoGeneratedAt": "2026-10-26T16:16:59.311975+00:00",
-  "checkedAt": "2026-10-26T18:15:00Z"
+  "checkedAt": "2026-10-26T18:52:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-26T18:08:12Z"
+     "lastChange": "2026-10-26T18:37:39Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -4133,7 +4133,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-26T18:47:00Z",
+   "nextRun": "2026-10-26T21:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4156,7 +4156,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-26T18:17:00Z",
+   "nextRun": "2026-10-26T21:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -4187,8 +4187,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40356124790"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4460,7 +4460,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T18:03:21Z"
+     "lastChange": "2026-10-26T18:18:00Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4468,11 +4468,11 @@
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-26T14:57:53Z"
+     "lastChange": "2026-10-26T18:37:39Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-26T14:57:53Z"
+     "lastChange": "2026-10-26T18:37:39Z"
     },
     {
      "path": "data/pack"
@@ -4548,8 +4548,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40356035796"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
