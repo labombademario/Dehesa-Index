@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T07:32:00Z",
+ "generatedAt": "2026-10-26T07:47:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 281,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-26T06:57:24.641925+00:00",
   "repoGeneratedAt": "2026-10-26T06:57:24.641925+00:00",
-  "checkedAt": "2026-10-26T07:32:00Z"
+  "checkedAt": "2026-10-26T07:47:00Z"
  },
  "pipelines": [
   {
@@ -415,7 +415,7 @@
    "crons": [
     "40 7 * * *"
    ],
-   "nextRun": "2026-10-26T07:40:00Z",
+   "nextRun": "2026-10-27T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -994,7 +994,7 @@
    "crons": [
     "40 7 * * 1"
    ],
-   "nextRun": "2026-10-26T07:40:00Z",
+   "nextRun": "2026-11-02T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2026,7 +2026,7 @@
    "crons": [
     "40 7 * * 1"
    ],
-   "nextRun": "2026-10-26T07:40:00Z",
+   "nextRun": "2026-11-02T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2168,7 +2168,7 @@
    "crons": [
     "40 7 * * *"
    ],
-   "nextRun": "2026-10-26T07:40:00Z",
+   "nextRun": "2026-10-27T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3789,9 +3789,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T07:26:05Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39917701952"
+    "startedAt": "2026-10-26T07:33:36Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40286523934"
    },
    "recent": {
     "runs": 10,
@@ -4115,9 +4115,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-26T04:17:58Z",
-    "durationSec": 96,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40268345535"
+    "startedAt": "2026-10-26T07:34:00Z",
+    "durationSec": 123,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40286564444"
    },
    "recent": {
     "runs": 10,
@@ -4437,7 +4437,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T07:07:31Z"
+     "lastChange": "2026-10-26T07:34:13Z"
     },
     {
      "path": "data/source-candidates.json",
