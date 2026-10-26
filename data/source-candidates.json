@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T01:03:09Z",
+ "generatedAt": "2026-10-26T01:10:51Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 200,
+  "total": 201,
   "byStatus": {
-   "ACTIVE": 170,
+   "ACTIVE": 171,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -4220,6 +4220,45 @@
     "result": "NOT_READY",
     "reasons": [
      "VERIFIED pero con condiciones no inequivocas: uso comercial conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "fadn_fsdn",
+   "registryId": "fadn_fsdn",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "European Commission - FADN/FSDN public database (standard results)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "EU-REUSE-2011-833",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: European Commission, FADN/FSDN public database. Adapted by dehesaindex.com where applicable.",
+   "lastChecked": "2026-10-25",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",

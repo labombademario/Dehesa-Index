@@ -1739,6 +1739,10 @@
   "eu-input-prices.json": [
    "eu-input-prices",
    []
+  ],
+  "eu-fadn.json": [
+   "eu-fadn",
+   []
   ]
  },
  "globs": {

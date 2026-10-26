@@ -215,6 +215,9 @@ jobs:
       - name: EU sulphur import unit value from Comext (100 kg to tonnes, unit value, volume threshold, Greece code; synthetic response, no network)
         run: python3 scripts/test-eu-sulphur.py
 
+      - name: EU farm costs and income from FADN/FSDN standard results (semicolon CSV, country codes incl. Greece and EU-27, UK and old aggregates dropped, empty and non-numeric cells, short series, missing columns; synthetic CSV, no network)
+        run: python3 scripts/test-eu-fadn.py
+
       - name: US sulphur import unit value from the Census API (kg to tonnes, world total vs country sum, volume threshold, unit check; synthetic response, no network or key)
         run: python3 scripts/test-us-sulphur.py
 

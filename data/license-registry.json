@@ -5239,6 +5239,31 @@
    "short": "Plan Estratégico PAC (Grecia)",
    "legalConfidence": "PENDING",
    "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
+  },
+  "fadn_fsdn": {
+   "name": "European Commission - FADN/FSDN public database (standard results)",
+   "url": "https://agriculture.ec.europa.eu/data-and-analysis/farm-structures-and-economics/fsdn_en",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "European Commission reuse notice (Decision 2011/833/EU)",
+   "licenseUrl": "http://data.europa.eu/eli/dec/2011/833/oj",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: European Commission, FADN/FSDN public database. Adapted by dehesaindex.com where applicable.",
+   "additionalRestrictions": "Reuse allowed with acknowledgement of the source; changes must be indicated. The agridata pages themselves state no licence and point to a disclaimer that was not readable; the licence comes from the dataset record on data.europa.eu.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-25",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "data.europa.eu dataset 'Farm Accountancy Data Network Public Database' lists every distribution (dynamic tool, dashboard, 'FADN Standard reports' CSV) under COM_REUSE (Decision 2011/833/EU). Files downloaded from the public CIRCABC library 'FSDN Public' with guest access.",
+   "used": true,
+   "aliases": [],
+   "notes": "Sample-based accounting data of commercial farms (not a census), published with a delay. Values are copied as published; no splicing across definition changes.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "La ficha del dataset en data.europa.eu declara el aviso de reutilizacion de la Comision (Decision 2011/833/UE) para sus distribuciones, incluido el CSV de resultados estandar; las paginas de agridata y de CIRCABC no muestran licencia propia y el aviso legal (disclaimer) enlazado no se pudo leer."
   }
  },
  "files": {
@@ -7744,6 +7769,10 @@
   "data/eu-input-prices.json": {
    "default": "eurostat_comext",
    "notes": "Valores unitarios de importacion y exportacion (fuera de la UE) de fertilizantes, energia, piensos y otros insumos de la UE-27 y sus Estados miembros: valor entre toneladas, mensual, y reparto por pais de origen (Eurostat Comext, DS-045409). No son precios de mercado."
+  },
+  "data/eu-fadn.json": {
+   "default": "fadn_fsdn",
+   "notes": "Costes (fertilizantes, fitosanitarios, semillas, energía, piensos) y renta de la explotación media de cada Estado miembro, anual (FADN/FSDN, resultados estándar SO por país). Muestra contable, no censo."
   }
  },
  "derived": [

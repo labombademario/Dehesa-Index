@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 168 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
+Resumen: 169 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
 
-## VERIFIED (168)
+## VERIFIED (169)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -73,6 +73,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
 | `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17296 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 2241 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
+| `fadn_fsdn` | European Commission - FADN/FSDN public database (standard results) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Reuse allowed with acknowledgement of the source; changes must be indicated. The agridata pages themselves state no licence and point to a d… |
 | `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |
 | `fek_gr` | Εφημερίς της Κυβερνήσεως (ΦΕΚ) — Υ.Α. 519/135068/2023 και 520/135074/2023 | EL | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el ΦΕΚ. Los textos se leyeron en copias de prensa jurídica (forin.gr), no en et.gr, y e… |
 | `fmi_fi` | Finland — Finnish Meteorological Institute (FMI) open data: monthly weather observations | FI | CC-BY-4.0 | si/si | si | 7 | Credit «©Finnish Meteorological Institute» required; the WFS query limits each request to under 10 years. |

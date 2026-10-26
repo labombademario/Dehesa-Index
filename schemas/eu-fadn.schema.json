@@ -1,0 +1,102 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Costes y renta de la explotación media de cada Estado miembro (FADN/FSDN, resultados estándar), anual",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "latestYear",
+  "source",
+  "pointFields",
+  "variables",
+  "countries"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "latestYear": {
+   "type": "integer",
+   "minimum": 2015
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "fadn_fsdn"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    },
+    "license": {
+     "type": "string"
+    }
+   }
+  },
+  "pointFields": {
+   "type": "array"
+  },
+  "variables": {
+   "type": "array",
+   "minItems": 8,
+   "items": {
+    "type": "object",
+    "required": [
+     "code",
+     "group",
+     "unit",
+     "name"
+    ],
+    "properties": {
+     "code": {
+      "type": "string",
+      "pattern": "^SE\\d{3}$"
+     },
+     "group": {
+      "enum": [
+       "output",
+       "cost",
+       "income",
+       "structure"
+      ]
+     },
+     "unit": {
+      "enum": [
+       "EUR",
+       "EUR/AWU",
+       "ha"
+      ]
+     },
+     "name": {
+      "type": "object",
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ]
+     }
+    }
+   }
+  },
+  "countries": {
+   "type": "object",
+   "minProperties": 21
+  }
+ }
+}

@@ -275,8 +275,27 @@ def main():
         if items['imp']:
             write('prices.json', {'schemaVersion': 1, 'generatedAt': pd.get('generatedAt') or gen, 'latestPeriod': pd.get('latestPeriod'), 'years': YEARS, 'source': pd['source'],
                                   'originsYear': pd.get('originsYear'), 'products': pd['products'], 'items': items, 'origins': pd.get('origins', {}), 'originsByCountry': pd.get('originsByCountry', {})})
+    # --- costes y renta de la explotacion media (FADN/FSDN, scripts/update-eu-fadn.py): anual, sin estadistica de ventana (hay pocos años) ---
+    fp = ROOT / 'data/eu-fadn.json'
+    if fp.exists():
+        fd = J(fp); items = {}
+        for cc, vs in fd['countries'].items():
+            out_ = {}; outp = dict((y, v) for y, v in vs.get('SE131', []))
+            for code, pts in vs.items():
+                last_y, last_v = pts[-1]; d = dict((y, v) for y, v in pts); prev = d.get(last_y - 1)
+                it = {'last': last_y, 'value': last_v, 'yoy': round((last_v / prev - 1) * 100, 1) if prev else None, 'n': len(pts)}
+                if code not in ('SE131', 'SE025', 'SE425', 'SE420') and outp.get(last_y): it['share'] = round(last_v / outp[last_y] * 100, 1)
+                ev = dict(fd['countries'].get('EU', {}).get(code, [])).get(last_y)    # UE-27 del MISMO año que el pais (Malta llega a 2021, la UE a 2024)
+                if ev is not None and cc != 'EU':
+                    it['eu'] = ev; eo = dict(fd['countries']['EU'].get('SE131', [])).get(last_y)
+                    if 'share' in it and eo: it['euShare'] = round(ev / eo * 100, 1)
+                run = [v for y, v in pts if y > last_y - 11]
+                it['spark'] = [round(v, 1) for v in run] if len(run) == min(11, last_y - pts[0][0] + 1) and len(run) >= 4 else []
+                out_[code] = it
+            items[cc] = out_
+        write('fadn.json', {'schemaVersion': 1, 'generatedAt': fd.get('generatedAt') or gen, 'latestYear': fd['latestYear'], 'source': fd['source'], 'variables': fd['variables'], 'items': items})
     index.sort(key=lambda x: x['cc'])
-    write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists(), 'sulphur': (OUT / 'sulphur.json').exists(), 'prices': (OUT / 'prices.json').exists()})
+    write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists(), 'sulphur': (OUT / 'sulphur.json').exists(), 'prices': (OUT / 'prices.json').exists(), 'fadn': (OUT / 'fadn.json').exists()})
     print('Monitor de insumos por país: %s; referencia mundial %s' % (', '.join(x['cc'] for x in index), 'sí' if (OUT / 'world.json').exists() else 'no'))
 
 main()

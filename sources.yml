@@ -1553,6 +1553,16 @@ sources:
     data: [eu-sulphur.json]
     log: eu-sulphur-log.txt
     message: Azufre - valor unitario de importacion UE (Eurostat Comext)
+  - id: eu-fadn
+    name: Update EU farm costs and income by member state (FADN/FSDN standard results, European Commission)
+    cron: ['40 10 12 * *']
+    script: scripts/update-eu-fadn.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [eu-fadn.json]
+    log: eu-fadn-log.txt
+    message: Costes y renta de las explotaciones - UE (FADN/FSDN)
   - id: us-sulphur
     name: Update US sulphur import unit value (US Census Bureau, HS 2503)
     cron: ['20 10 8,10,14 * *']
