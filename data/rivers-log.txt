@@ -1,51 +1,51 @@
-17:40:14 nl Rijn Lobith: 692.0 cm, 875.31 m3/s, estado low, 29 dias
-17:40:14 nl Waal Tiel: 203.0 cm, 691.69 m3/s, estado None, 29 dias
-17:40:14 nl Nederrijn Driel: 644.0 cm, 13.0 m3/s, estado low, 29 dias
-17:40:14 nl Lek Hagestein: 219.0 cm, 22.83 m3/s, estado normal, 29 dias
-17:40:14 nl IJssel Olst: 25.0 cm, 141.83 m3/s, estado low, 29 dias
-17:40:14 nl Maas Venlo: 1133.0 cm, 128.19 m3/s, estado normal, 29 dias
-17:40:14 nl Maas Maastricht: 4419.0 cm, 102.73 m3/s, estado None, 29 dias
-17:40:14 nl Maas Eijsden: 4433.0 cm, 129.6 m3/s, estado normal, 29 dias
-17:40:14 rivers-nl.json: 8 estaciones, ultima lectura 2026-10-26T18:20
-17:55:48 fr Seine Paris: 97.2 cm, 110.0 m3/s, estado low, 430 dias
-17:55:48 fr Seine Vernon: 322.5 cm, 194.0 m3/s, estado low, 430 dias
-17:55:48 fr Marne Gournay-sur-Marne: 113.7 cm, 30.3 m3/s, estado low, 430 dias
-17:55:48 fr Loire Gien: -56.5 cm, 67.5 m3/s, estado low, 430 dias
-17:55:48 fr Loire Orléans: -102.7 cm, 57.3 m3/s, estado low, 430 dias
-17:55:48 fr Loire Tours: 62.0 cm, 78.9 m3/s, estado low, 430 dias
-17:55:49 fr Loire Montjean: -145.5 cm, 158.0 m3/s, estado low, 430 dias
-17:55:49 fr Saône Mâcon: 156.3 cm, 20.9 m3/s, estado low, 430 dias
-17:55:49 fr Rhône Lyon: - cm, 578.0 m3/s, estado normal, 430 dias
-17:55:49 fr Rhône Valence: 247.9 cm, 800.0 m3/s, estado normal, 430 dias
-17:55:49 fr Rhône Tarascon: 146.0 cm, 1100.0 m3/s, estado normal, 430 dias
-17:55:49 fr Garonne Lamagistère: -67.9 cm, 83.3 m3/s, estado low, 430 dias
-17:55:49 fr Garonne Tonneins: -56.4 cm, 119.0 m3/s, estado low, 430 dias
-17:55:49 fr Dordogne Cénac: 24.1 cm, 33.4 m3/s, estado low, 430 dias
-17:55:49 fr Meuse Sedan: 288.9 cm, 42.2 m3/s, estado normal, 430 dias
-17:55:49 rivers-fr.json: 15 estaciones, ultima lectura 2026-10-26T18:30
-17:59:13 ca Fraser Hope: 365.6 cm, 1360.0 m3/s, estado low, 24 dias
-17:59:13 ca Thompson Kamloops: 227.7 cm, - m3/s, estado None, 30 dias
-17:59:13 ca Bow Calgary: 84.2 cm, 44.8 m3/s, estado low, 30 dias
-17:59:13 ca Oldman Lethbridge: 38.8 cm, 31.4 m3/s, estado normal, 30 dias
-17:59:13 ca South Saskatchewan Medicine Hat: 213.5 cm, 106.0 m3/s, estado normal, 30 dias
-17:59:13 ca South Saskatchewan Saskatoon: 222.9 cm, 156.0 m3/s, estado normal, 30 dias
-17:59:13 ca North Saskatchewan Edmonton: 298.5 cm, 120.0 m3/s, estado normal, 30 dias
-17:59:13 ca Red Emerson: 22845.1 cm, 66.0 m3/s, estado normal, 30 dias
-17:59:13 ca Assiniboine Headingley: 23181.0 cm, 91.7 m3/s, estado high, 30 dias
-17:59:13 ca Peace Peace River: 717.0 cm, 1990.0 m3/s, estado high, 30 dias
-17:59:14 ca Athabasca Athabasca: 120.3 cm, 309.0 m3/s, estado normal, 30 dias
-17:59:14 ca Ottawa Britannia: 5782.0 cm, 584.0 m3/s, estado low, 30 dias
-17:59:14 ca Saint Lawrence LaSalle: 83.2 cm, 7380.0 m3/s, estado low, 30 dias
-17:59:14 ca Saint John Fredericton: 96.9 cm, - m3/s, estado None, 30 dias
-17:59:14 ca Grand Galt: 69.3 cm, 14.0 m3/s, estado low, 30 dias
-17:59:14 rivers-ca.json: 15 estaciones, ultima lectura 2026-10-26T13:00
-18:01:13 be Demer Hasselt: -11.7 cm, 1.82 m3/s, estado normal, 430 dias
-18:01:13 be Demer Bilzen: 4108.6 cm, 0.405 m3/s, estado normal, 430 dias
-18:01:13 be Dijle Wilsele: 1304.9 cm, 6.6 m3/s, estado normal, 430 dias
-18:01:13 be Zenne Lot: 2324.5 cm, 23.2 m3/s, estado high, 430 dias
-18:01:13 be Grote Nete Geel: 1806.6 cm, 4.05 m3/s, estado high, 430 dias
-18:01:13 be Kleine Nete Herentals: 1039.2 cm, 4.17 m3/s, estado high, 430 dias
-18:01:13 be Mandel Oostrozebeke: 819.1 cm, 1.71 m3/s, estado normal, 430 dias
-18:01:14 be Dommel Overpelt: 120.4 cm, 0.693 m3/s, estado normal, 430 dias
-18:01:14 be Gete Halen: 2114.5 cm, 2.34 m3/s, estado normal, 430 dias
-18:01:14 rivers-be.json: 9 estaciones, ultima lectura 2026-10-26T18:45
+22:16:35 nl Rijn Lobith: 694.0 cm, 879.69 m3/s, estado low, 29 dias
+22:16:35 nl Waal Tiel: 212.0 cm, 700.7 m3/s, estado None, 29 dias
+22:16:35 nl Nederrijn Driel: 647.0 cm, 10.1 m3/s, estado low, 29 dias
+22:16:35 nl Lek Hagestein: 223.0 cm, 25.6 m3/s, estado normal, 29 dias
+22:16:35 nl IJssel Olst: 22.0 cm, 139.13 m3/s, estado low, 29 dias
+22:16:35 nl Maas Venlo: 1130.0 cm, 126.13 m3/s, estado normal, 29 dias
+22:16:35 nl Maas Maastricht: 4417.0 cm, 90.65 m3/s, estado None, 29 dias
+22:16:35 nl Maas Eijsden: 4430.0 cm, 138.6 m3/s, estado high, 29 dias
+22:16:35 rivers-nl.json: 8 estaciones, ultima lectura 2026-10-26T23:10
+22:29:52 fr Seine Paris: 98.7 cm, 127.0 m3/s, estado low, 430 dias
+22:29:52 fr Seine Vernon: 318.6 cm, 140.0 m3/s, estado low, 430 dias
+22:29:53 fr Marne Gournay-sur-Marne: 112.7 cm, 29.6 m3/s, estado low, 430 dias
+22:29:53 fr Loire Gien: -57.3 cm, 66.2 m3/s, estado low, 430 dias
+22:29:53 fr Loire Orléans: -102.7 cm, 57.3 m3/s, estado low, 430 dias
+22:29:53 fr Loire Tours: 61.3 cm, 77.6 m3/s, estado low, 430 dias
+22:29:53 fr Loire Montjean: -142.2 cm, 164.0 m3/s, estado low, 430 dias
+22:29:53 fr Saône Mâcon: 161.8 cm, 30.3 m3/s, estado low, 430 dias
+22:29:53 fr Rhône Lyon: - cm, 461.0 m3/s, estado normal, 430 dias
+22:29:53 fr Rhône Valence: 246.6 cm, 828.0 m3/s, estado normal, 430 dias
+22:29:53 fr Rhône Tarascon: 159.0 cm, 1170.0 m3/s, estado normal, 430 dias
+22:29:53 fr Garonne Lamagistère: -64.3 cm, 88.9 m3/s, estado low, 430 dias
+22:29:53 fr Garonne Tonneins: -45.7 cm, 138.0 m3/s, estado low, 430 dias
+22:29:53 fr Dordogne Cénac: 24.5 cm, 33.8 m3/s, estado low, 430 dias
+22:29:53 fr Meuse Sedan: 286.8 cm, 39.1 m3/s, estado normal, 430 dias
+22:29:53 rivers-fr.json: 15 estaciones, ultima lectura 2026-10-26T23:20
+22:37:28 ca Fraser Hope: 364.2 cm, 1350.0 m3/s, estado low, 24 dias
+22:37:28 ca Thompson Kamloops: 227.2 cm, - m3/s, estado None, 30 dias
+22:37:28 ca Bow Calgary: 83.2 cm, 43.6 m3/s, estado low, 30 dias
+22:37:28 ca Oldman Lethbridge: 38.4 cm, 31.1 m3/s, estado normal, 30 dias
+22:37:28 ca South Saskatchewan Medicine Hat: 212.3 cm, 104.0 m3/s, estado normal, 30 dias
+22:37:28 ca South Saskatchewan Saskatoon: 222.8 cm, 156.0 m3/s, estado normal, 30 dias
+22:37:28 ca North Saskatchewan Edmonton: 300.7 cm, 124.0 m3/s, estado normal, 30 dias
+22:37:28 ca Red Emerson: 22844.2 cm, 65.4 m3/s, estado normal, 30 dias
+22:37:28 ca Assiniboine Headingley: 23181.0 cm, 91.7 m3/s, estado high, 30 dias
+22:37:28 ca Peace Peace River: 716.6 cm, 1990.0 m3/s, estado high, 30 dias
+22:37:28 ca Athabasca Athabasca: 119.7 cm, 307.0 m3/s, estado normal, 30 dias
+22:37:28 ca Ottawa Britannia: 5783.8 cm, 604.0 m3/s, estado low, 30 dias
+22:37:28 ca Saint Lawrence LaSalle: 83.8 cm, 7400.0 m3/s, estado low, 30 dias
+22:37:28 ca Saint John Fredericton: 107.6 cm, - m3/s, estado None, 30 dias
+22:37:28 ca Grand Galt: 69.1 cm, 13.9 m3/s, estado low, 30 dias
+22:37:28 rivers-ca.json: 15 estaciones, ultima lectura 2026-10-26T18:05
+22:39:23 be Demer Hasselt: -14.5 cm, 1.61 m3/s, estado normal, 430 dias
+22:39:23 be Demer Bilzen: 4106.7 cm, 0.354 m3/s, estado normal, 430 dias
+22:39:23 be Dijle Wilsele: 1304.6 cm, 6.56 m3/s, estado normal, 430 dias
+22:39:23 be Zenne Lot: 2318.6 cm, 2.04 m3/s, estado normal, 430 dias
+22:39:23 be Grote Nete Geel: 1805.3 cm, 3.97 m3/s, estado high, 430 dias
+22:39:23 be Kleine Nete Herentals: 1037.8 cm, 4.04 m3/s, estado high, 430 dias
+22:39:23 be Mandel Oostrozebeke: 819.1 cm, 1.71 m3/s, estado normal, 430 dias
+22:39:23 be Dommel Overpelt: 117.9 cm, 0.597 m3/s, estado normal, 430 dias
+22:39:23 be Gete Halen: 2111.0 cm, 2.2 m3/s, estado low, 430 dias
+22:39:23 rivers-be.json: 9 estaciones, ultima lectura 2026-10-26T23:30
