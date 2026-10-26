@@ -58,5 +58,18 @@
   {"q":"glossaire","lang":"fr","top":1,"u":"metodologia\\.html#glosario"},
   {"q":"WASDE","lang":"es","top":1,"u":"metodologia\\.html#glosario"},
   {"q":"tiempo mañana","lang":"es","none":true},
-  {"q":"bitcoin","lang":"es","none":true}
+  {"q":"bitcoin","lang":"es","none":true},
+  {"q":"gasóleo agrícola España","lang":"es","top":3,"u":"in-es-gb"},
+  {"q":"focos peste porcina africana","lang":"es","top":3,"u":"gn-es-focos"},
+  {"q":"lengua azul focos","lang":"es","top":3,"u":"gn-es-focos"},
+  {"q":"Defra farm business survey","lang":"en","top":3,"u":"cs-uk"},
+  {"q":"English farm structure by county","lang":"en","top":3,"u":"ps-uk-structure"},
+  {"q":"age of farmers UK","lang":"en","top":3,"u":"ps-uk-farmers-age"},
+  {"q":"caudal Rin Alemania","lang":"es","top":3,"u":"derivers"},
+  {"q":"Rhine level Netherlands Lobith","lang":"en","top":3,"u":"rvnl"},
+  {"q":"niveau Seine Loire débit","lang":"fr","top":3,"u":"rvfr"},
+  {"q":"fiumi Canada portata","lang":"it","top":3,"u":"rvca"},
+  {"q":"rivers barges Mississippi flow","lang":"en","top":3,"u":"usm-rv"},
+  {"q":"valor unitario importación urea","lang":"es","top":3,"u":"mi-g"},
+  {"q":"Flanders river Demer flow","lang":"en","top":3,"u":"rvbe"}
 ]
