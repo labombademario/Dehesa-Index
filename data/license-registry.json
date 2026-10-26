@@ -5263,7 +5263,8 @@
    "aliases": [],
    "notes": "Sample-based accounting data of commercial farms (not a census), published with a delay. Values are copied as published; no splicing across definition changes.",
    "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "La ficha del dataset en data.europa.eu declara el aviso de reutilizacion de la Comision (Decision 2011/833/UE) para sus distribuciones, incluido el CSV de resultados estandar; las paginas de agridata y de CIRCABC no muestran licencia propia y el aviso legal (disclaimer) enlazado no se pudo leer."
+   "legalConfidenceReason": "La ficha del dataset en data.europa.eu declara el aviso de reutilizacion de la Comision (Decision 2011/833/UE) para sus distribuciones, incluido el CSV de resultados estandar; las paginas de agridata y de CIRCABC no muestran licencia propia y el aviso legal (disclaimer) enlazado no se pudo leer.",
+   "short": "FADN · FSDN"
   },
   "eumofa": {
    "name": "EUMOFA - European Market Observatory for Fisheries and Aquaculture Products (European Commission, DG MARE)",
@@ -5288,12 +5289,14 @@
    "aliases": [],
    "notes": "Weekly first-sale volume and value by port, species, size and presentation, compiled by EUMOFA from member states' sales notes. The public S3 bucket is named dev-eumofa-bulk but is the one linked by the production panel.",
    "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "El aviso legal de EUMOFA da CC BY 4.0 al contenido propiedad de la UE y excluye el de terceros; las primeras ventas de los Estados miembros las compila EUMOFA a partir de las notas de venta nacionales y no aparecen en la lista de exclusiones, pero el panel de descarga no repite la licencia y el cubo de ficheros se llama 'dev-'."
+   "legalConfidenceReason": "El aviso legal de EUMOFA da CC BY 4.0 al contenido propiedad de la UE y excluye el de terceros; las primeras ventas de los Estados miembros las compila EUMOFA a partir de las notas de venta nacionales y no aparecen en la lista de exclusiones, pero el panel de descarga no repite la licencia y el cubo de ficheros se llama 'dev-'.",
+   "short": "EUMOFA"
   }
  },
  "files": {
   "data/latest.json": {
-   "fromField": "sourceId"
+   "fromField": "sourceId",
+   "short": "EUMOFA"
   },
   "data/history.json": {
    "fromField": "sourceId"
