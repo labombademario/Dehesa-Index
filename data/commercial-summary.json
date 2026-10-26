@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-25T23:55:05Z",
+ "generatedAt": "2026-10-26T03:43:24Z",
  "summary": {
-  "sources": 170,
-  "sourcesApto": 154,
+  "sources": 172,
+  "sourcesApto": 156,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 376,
-  "datasets_apto": 241,
+  "datasets": 379,
+  "datasets_apto": 244,
   "datasets_condiciones": 124,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -251,6 +251,10 @@
    "name": "European Commission — TARIC / EU customs tariff (DG TAXUD)",
    "verdict": "condiciones"
   },
+  "eumofa": {
+   "name": "EUMOFA - European Market Observatory for Fisheries and Aquaculture Products (European Commission, DG MARE)",
+   "verdict": "apto"
+  },
   "eur_lex": {
    "name": "EUR-Lex (Publications Office of the European Union) — EU legislation",
    "verdict": "apto"
@@ -262,6 +266,10 @@
   "eurostat_comext": {
    "name": "Eurostat — Comext international trade in goods",
    "verdict": "condiciones"
+  },
+  "fadn_fsdn": {
+   "name": "European Commission - FADN/FSDN public database (standard results)",
+   "verdict": "apto"
   },
   "fed_board": {
    "name": "Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate)",

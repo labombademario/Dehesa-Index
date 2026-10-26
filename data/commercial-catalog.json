@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-25T23:55:05Z",
+ "generatedAt": "2026-10-26T03:43:24Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 170,
-  "sourcesApto": 154,
+  "sources": 172,
+  "sourcesApto": 156,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 376,
-  "datasets_apto": 241,
+  "datasets": 379,
+  "datasets_apto": 244,
   "datasets_condiciones": 124,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -1029,6 +1029,23 @@
    "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de la Comision (citar la fuente, no alterar el sentido, respetar sus avisos, calculos propios etiquetados como de Dehesa Index). (2026-10-15)"
   },
   {
+   "id": "eumofa",
+   "name": "EUMOFA - European Market Observatory for Fisheries and Aquaculture Products (European Commission, DG MARE)",
+   "url": "https://fishery-aquaculture-market-observatory.ec.europa.eu/en/data/bulk-download",
+   "country": "EU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: EUMOFA (European Market Observatory for Fisheries and Aquaculture Products), European Commission. Weekly averages by species computed by dehesaindex.com.",
+   "conditions": "CC BY 4.0 covers content owned by the EU; third-party content (consumption panels, Euromonitor, MABUX, Trade Data Monitor, and data from non-EU providers) is excluded. Only first-sale data of EU member states is used; Norway, Iceland and the Faroe Islands are dropped."
+  },
+  {
    "id": "eur_lex",
    "name": "EUR-Lex (Publications Office of the European Union) — EU legislation",
    "url": "https://eur-lex.europa.eu/",
@@ -1080,6 +1097,23 @@
    "attribution": "Source: Eurostat (Comext). Adapted by dehesaindex.com where applicable.",
    "conditions": "Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep Austria at coarser product level).",
    "ownerDecision": "Mario lo da por valido para el uso comercial; se mantienen las condiciones de atribucion y la exclusion de comercio de declarantes EFTA y de Austria a 8 digitos (si no se puede, no se puede). (2026-10-15)"
+  },
+  {
+   "id": "fadn_fsdn",
+   "name": "European Commission - FADN/FSDN public database (standard results)",
+   "url": "https://agriculture.ec.europa.eu/data-and-analysis/farm-structures-and-economics/fsdn_en",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "European Commission reuse notice (Decision 2011/833/EU)",
+   "licenseUrl": "http://data.europa.eu/eli/dec/2011/833/oj",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: European Commission, FADN/FSDN public database. Adapted by dehesaindex.com where applicable.",
+   "conditions": "Reuse allowed with acknowledgement of the source; changes must be indicated. The agridata pages themselves state no licence and point to a disclaimer that was not readable; the licence comes from the dataset record on data.europa.eu."
   },
   {
    "id": "fed_board",
@@ -4018,11 +4052,35 @@
    ]
   },
   {
+   "path": "data/eu-fadn.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "fadn_fsdn"
+   ]
+  },
+  {
    "path": "data/eu-farm-economics.json",
    "scope": "fichero",
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/eu-fish-first-sales.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "eumofa"
+   ]
+  },
+  {
+   "path": "data/eu-fish-retail-prices.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "eumofa"
    ]
   },
   {
