@@ -176,6 +176,9 @@
         var djs = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
         var dmod = function () { if (global.DIDeSoil) dgo(); else djs('js/de-soil.js?v=20261014', dgo); };
         if (global.DIFrDeptMap) dmod(); else djs('js/fr-dept-map.js?v=20261015', dmod);
+        var rbox = document.createElement('div'); rbox.style.marginTop = '14px'; el.appendChild(rbox);   // nivel de los rios alemanes (PEGELONLINE, js/de-rivers.js), a peticion
+        var rgo = function () { if (global.DIDeRivers) global.DIDeRivers.mount(rbox, lg.slice(0, 2)); };
+        if (global.DIDeRivers) rgo(); else djs('js/de-rivers.js?v=20261026', rgo);
       }
       if (cc === 'FR') {   // rios sin agua (ONDE, js/fr-onde.js, con el mapa de departamentos js/fr-dept-map.js), a peticion
         var fbox = document.createElement('div'); fbox.style.marginTop = '14px'; el.appendChild(fbox);

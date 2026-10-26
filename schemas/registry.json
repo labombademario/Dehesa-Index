@@ -1763,6 +1763,10 @@
   "eu-fish-retail-prices.json": [
    "eu-fish-retail-prices",
    []
+  ],
+  "de-rivers.json": [
+   "de-rivers",
+   []
   ]
  },
  "globs": {

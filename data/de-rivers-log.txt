@@ -1,0 +1,10 @@
+11:53:03 Rhein MAXAU: 342.0 cm (low), 497.0 m3/s, 29 dias de historia propia
+11:53:06 Rhein KAUB: 55.0 cm (low), 673.0 m3/s, 29 dias de historia propia
+11:53:09 Rhein KÖLN: 143.0 cm (normal), 953.0 m3/s, 29 dias de historia propia
+11:53:12 Rhein DUISBURG-RUHRORT: 212.0 cm (normal), 937.0 m3/s, 29 dias de historia propia
+11:53:15 Rhein EMMERICH: 49.0 cm (low), 908.0 m3/s, 28 dias de historia propia
+11:53:18 Main FRANKFURT OSTHAFEN: 146.0 cm (low), 18.0 m3/s, 29 dias de historia propia
+11:53:21 Elbe DRESDEN: 61.0 cm (low), 93.3 m3/s, 29 dias de historia propia
+11:53:26 Elbe MAGDEBURG-STROMBRÜCKE: 52.0 cm (low), 155.0 m3/s, 29 dias de historia propia
+11:53:28 Donau PASSAU DONAU: 402.0 cm (low), 29 dias de historia propia
+11:53:28 de-rivers.json: 9 estaciones, ultima lectura 2026-10-26T16:45:00+01:00

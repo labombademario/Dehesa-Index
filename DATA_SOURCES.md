@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 171 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
+Resumen: 172 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39816 series en el catalogo unificado.
 
-## VERIFIED (171)
+## VERIFIED (172)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -131,6 +131,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `noaa_ncei` | NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv) | US | US-PD | si/si | si | 149 | No implied NOAA endorsement. |
 | `odepa_chile` | ODEPA (Chile) - Portal de datos abiertos | CL | CC-BY | si/si | si | 130 | Atribucion a ODEPA; los datos de comercio exterior proceden del Servicio Nacional de Aduanas. |
 | `ons` | UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS) | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de … |
+| `pegelonline` | Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV) — PEGELONLINE | DE | DL-DE-Zero-2.0 | si/si | no | 0 | La WSV publica datos brutos sin revisar y no responde de su exactitud ni de su actualidad. |
 | `pl_akcyza_rm` | Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej) | PL | PUBLIC-LAW | si/si | si | 0 |  |
 | `prix_carburants_fr` | Prix des carburants en France — flux instantané v2 (Ministères économiques et financiers) | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 3 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |

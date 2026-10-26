@@ -7,7 +7,7 @@
   "late": 2,
   "error": 0,
   "not_run": 1,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "late",
  "deploy": {
@@ -1351,6 +1351,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-de-rivers.yml",
+   "name": "Update German river levels and discharge (PEGELONLINE, WSV raw data)",
+   "crons": [
+    "25 5,13,21 * * *"
+   ],
+   "nextRun": "2026-10-26T21:25:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 8.0
   },
   {
    "workflow": "update-de-soil-moisture.yml",

@@ -354,7 +354,7 @@
     var el = document.createElement('div'); el.id = 'pp-drought-slot'; tr.parentNode.insertBefore(el, tr.nextSibling);
     el = lateBox('pp-drought-box') || el;
     var go = function () { if (!window.DIDroughtCountry || ST.c !== cc) return; window.DIDroughtCountry.mount(el, cc, tt().countries[cc] || cc, lang()).then(function (ok) { if (ok && ST.c === cc) frameUp(c); }); };
-    if (window.DIDroughtCountry) go(); else { var sc = document.createElement('script'); sc.src = 'js/country-drought.js?v=20261021'; sc.onload = go; document.head.appendChild(sc); }
+    if (window.DIDroughtCountry) go(); else { var sc = document.createElement('script'); sc.src = 'js/country-drought.js?v=20261026'; sc.onload = go; document.head.appendChild(sc); }
   }
   /* Emisiones del campo (js/es-ghg-agri.js): España con el inventario del MITECO; el resto de la UE con Eurostat env_air_gge. Si el fichero del país no existe, no se pinta nada */
   function ghgUp(c) {

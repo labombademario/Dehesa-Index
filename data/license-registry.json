@@ -5317,6 +5317,32 @@
    "short": "USGS",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Obra del gobierno federal de EE. UU. (dominio publico, politica de copyright del USGS) con peticion de credito."
+  },
+  "pegelonline": {
+   "name": "Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV) — PEGELONLINE",
+   "url": "https://www.pegelonline.wsv.de/",
+   "country": "DE",
+   "licenseId": "DL-DE-Zero-2.0",
+   "licenseName": "Datenlizenz Deutschland – Zero – Version 2.0",
+   "licenseUrl": "https://www.govdata.de/dl-de/zero-2-0",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Quelle: Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV), PEGELONLINE",
+   "additionalRestrictions": "La WSV publica datos brutos sin revisar y no responde de su exactitud ni de su actualidad.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Condiciones de uso de PEGELONLINE (https://www.pegelonline.wsv.de/gast/nutzungsbedingungen, versión del 21-may-2024) y página de la API REST, leídas el 26 oct 2026: «auf der Grundlage der Lizenz DL-DE->Zero-2.0»; los datos pueden reproducirse y usarse para fines comerciales y no comerciales.",
+   "used": true,
+   "aliases": [],
+   "notes": "Niveles y caudales brutos (Rohdaten) de 9 estaciones del Rin, el Meno, el Elba y el Danubio. La media diaria y la historia propia son cálculo de Dehesa Index; el estado bajo/normal/alto y los valores de referencia son los de la WSV.",
+   "short": "PEGELONLINE (WSV)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones de uso de PEGELONLINE (DL-DE-Zero-2.0, uso comercial permitido)."
   }
  },
  "files": {
@@ -7847,6 +7873,10 @@
   "data/us-fertilizer-imports.json": {
    "default": "census",
    "notes": "Valor unitario de importacion de fertilizantes de EE. UU. (urea, nitrato amonico, UAN, sulfato amonico, cloruro potasico, DAP, NPK, amoniaco anhidro, acido fosforico): valor de aduana de las importaciones generales entre toneladas, mensual desde 2016, y reparto de origenes de los ultimos 12 meses (US Census Bureau). No es un precio de mercado."
+  },
+  "data/de-rivers.json": {
+   "default": "pegelonline",
+   "notes": "Nivel (cm) y caudal (m3/s) de 9 estaciones del Rin, el Meno, el Elba y el Danubio: lectura actual, media diaria desde que empezó la serie propia (la API solo da 30 días) y valores de referencia oficiales de cada estación (PEGELONLINE, WSV). Datos brutos sin revisar."
   }
  },
  "derived": [
