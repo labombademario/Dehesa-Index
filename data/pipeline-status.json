@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T23:32:00Z",
+ "generatedAt": "2026-10-26T23:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 285,
   "late": 2,
   "error": 0,
-  "not_run": 5,
+  "not_run": 6,
   "unknown": 0
  },
  "global": "late",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-26T22:10:20.629964+00:00",
   "repoGeneratedAt": "2026-10-26T22:10:20.629964+00:00",
-  "checkedAt": "2026-10-26T23:32:00Z"
+  "checkedAt": "2026-10-26T23:48:00Z"
  },
  "pipelines": [
   {
@@ -77,14 +77,14 @@
     "45 23 * * 1-5",
     "30 13 * * 6"
    ],
-   "nextRun": "2026-10-26T23:45:00Z",
+   "nextRun": "2026-10-27T23:45:00Z",
    "files": [
     {
      "path": "data/ams"
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-26T23:31:58Z"
+     "lastChange": "2026-10-26T23:48:26Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -783,7 +783,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-10-26T23:40:00Z",
+   "nextRun": "2026-10-27T23:40:00Z",
    "files": [
     {
      "path": "data/ca"
@@ -3598,6 +3598,19 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-hr-apprrr.yml",
+   "name": "Update Croatia farms, ARKOD land and vineyards by county (APPRRR open data)",
+   "crons": [
+    "15 10 14 * *"
+   ],
+   "nextRun": "2026-11-14T10:15:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-hr-diesel.yml",
    "name": "Update Croatia official fuel prices incl. blue diesel (Vlada) and diesel (EU Weekly Oil Bulletin)",
    "crons": [
@@ -4512,7 +4525,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-26T23:07:24Z"
+     "lastChange": "2026-10-26T23:34:57Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4520,11 +4533,11 @@
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-26T23:31:58Z"
+     "lastChange": "2026-10-26T23:48:26Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-26T23:31:58Z"
+     "lastChange": "2026-10-26T23:48:26Z"
     },
     {
      "path": "data/pack"
