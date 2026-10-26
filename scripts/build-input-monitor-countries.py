@@ -163,6 +163,35 @@ def write(name, doc):
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / name).write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
 
+CROSS_MIN_MONTHS = 9   # meses con dato para dar por valido el valor unitario medio de un año
+
+
+def annual_unit_values(points, min_months=CROSS_MIN_MONTHS):
+    """[[AAAA-MM, euros/t, toneladas], ...] -> {año: euros/t ponderado por toneladas}; solo años con al menos min_months meses con dato y toneladas."""
+    by = {}
+    for pt in points:
+        if len(pt) < 3 or pt[1] is None or not pt[2]: continue
+        by.setdefault(int(pt[0][:4]), []).append((pt[1], pt[2]))
+    return dict((y, sum(a * b for a, b in v) / sum(b for a, b in v)) for y, v in by.items() if len(v) >= min_months)
+
+
+def fert_cross(fadn_countries, prices, first=2016):
+    """Gasto en fertilizantes (FADN SE295, euros por explotacion media) por hectarea (SE025) frente al valor unitario de importacion de la urea (Comext 310210).
+    cantidad implicita = gasto por ha / precio de la urea = kg de urea equivalente por ha. Un indicador, NO el consumo real: el gasto incluye todos los abonos y enmiendas.
+    Un año solo entra si hay gasto, superficie y precio; lo que falta queda fuera, nunca se estima."""
+    urea = (prices.get('imports') or {}).get('310210') or {}
+    out = {}
+    for cc, vs in fadn_countries.items():
+        if cc not in urea or 'SE295' not in vs or 'SE025' not in vs: continue
+        u = annual_unit_values(urea[cc].get('points', [])); sp = dict((y, v) for y, v in vs['SE295']); ha = dict((y, v) for y, v in vs['SE025'])
+        rows = []
+        for y in sorted(u):
+            if y >= first and sp.get(y) and ha.get(y):
+                e = sp[y] / ha[y]; rows.append([y, round(e, 1), round(u[y], 1), round(e / u[y] * 1000)])
+        if len(rows) >= 4: out[cc] = rows
+    return out
+
+
 def main():
     gen = J(ROOT / 'data/freshness.json').get('generatedAt')
     index = []
@@ -293,9 +322,11 @@ def main():
                 it['spark'] = [round(v, 1) for v in run] if len(run) == min(11, last_y - pts[0][0] + 1) and len(run) >= 4 else []
                 out_[code] = it
             items[cc] = out_
-        write('fadn.json', {'schemaVersion': 1, 'generatedAt': fd.get('generatedAt') or gen, 'latestYear': fd['latestYear'], 'source': fd['source'], 'variables': fd['variables'], 'items': items})
+        cross = fert_cross(fd['countries'], J(ROOT / 'data/eu-input-prices.json') if (ROOT / 'data/eu-input-prices.json').exists() else {})
+        write('fadn.json', {'schemaVersion': 1, 'generatedAt': fd.get('generatedAt') or gen, 'latestYear': fd['latestYear'], 'source': fd['source'], 'variables': fd['variables'], 'items': items, 'cross': cross})
     index.sort(key=lambda x: x['cc'])
     write('index.json', {'schemaVersion': 1, 'generatedAt': gen, 'countries': index, 'world': (OUT / 'world.json').exists(), 'sulphur': (OUT / 'sulphur.json').exists(), 'prices': (OUT / 'prices.json').exists(), 'fadn': (OUT / 'fadn.json').exists()})
     print('Monitor de insumos por país: %s; referencia mundial %s' % (', '.join(x['cc'] for x in index), 'sí' if (OUT / 'world.json').exists() else 'no'))
 
-main()
+if __name__ == '__main__':
+    main()
