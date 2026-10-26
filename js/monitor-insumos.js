@@ -264,7 +264,7 @@
     PRICES.products.forEach(function (p) {
       [['EU', PRICES.origins[p.cn]], [CC, CC !== 'EU' && PRICES.originsByCountry ? (PRICES.originsByCountry[p.cn] || {})[CC] : null]].forEach(function (e) {
         var o = e[1]; if (!o || !o.top || !o.top.length) return;
-        rows += '<tr><td><strong>' + esc(p.name[l] || p.name.es) + '</strong> <span class="mi-m">' + esc(e[0] === 'EU' ? X1.sEU : cname(e[0])) + '</span></td><td>' + o.top.map(function (t) { return esc(cname(t[0])) + ' ' + esc(num(t[1], 0)) + ' %'; }).join(' · ') + '</td><td>' + esc(num(o.tonnes / 1000, o.tonnes < 10000 ? 1 : 0)) + ' kt</td></tr>';
+        rows += '<tr><td><strong>' + esc(p.name[l] || p.name.es) + '</strong> <span class="mi-m">' + esc(e[0] === 'EU' ? X1.sEU : cname(e[0])) + '</span></td><td>' + o.top.map(function (t) { return esc(cname(t[0])) + ' ' + esc(t[1] < 1 ? '<1' : num(t[1], 0)) + ' %'; }).join(' · ') + '</td><td>' + esc(num(o.tonnes / 1000, o.tonnes < 10000 ? 1 : 0)) + ' kt</td></tr>';
       });
     });
     if (!rows) return '';
