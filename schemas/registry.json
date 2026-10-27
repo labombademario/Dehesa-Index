@@ -1874,6 +1874,18 @@
     "hr_apprrr"
    ]
   ],
+  "se-weather.json": [
+   "nordic-weather",
+   [
+    "nordic_weather"
+   ]
+  ],
+  "dk-weather.json": [
+   "nordic-weather",
+   [
+    "nordic_weather"
+   ]
+  ],
   "be-weather.json": [
    "be-weather",
    [

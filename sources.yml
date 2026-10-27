@@ -1102,6 +1102,16 @@ sources:
     continue: true
     data: [be-ghg-agri.json]
     message: Emisiones de la agricultura belga (Eurostat)
+  - id: nordic-weather
+    name: Update Sweden and Denmark observed weather against normal (SMHI and DMI open data)
+    cron: ['50 6 * * *']
+    script: scripts/update-nordic-weather.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/se-weather.json data/dk-weather.json
+    data: [se-weather.json, dk-weather.json]
+    message: Tiempo observado en Suecia y Dinamarca frente a lo normal (SMHI, DMI)
   - id: be-weather
     name: Update Belgium observed weather and precipitation deficit (KMI-IRM automatic weather stations)
     cron: ['40 6 * * *']

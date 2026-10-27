@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T02:51:52Z",
+ "generatedAt": "2026-10-27T03:02:21Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 183,
-  "sourcesApto": 167,
+  "sources": 184,
+  "sourcesApto": 168,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 397,
-  "datasets_apto": 261,
+  "datasets": 399,
+  "datasets_apto": 263,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -769,6 +769,23 @@
    "redistribution": "yes",
    "attribution": "Source : Journal officiel de la République française (DILA, données ouvertes JORF), arrêtés du ministère de l'Agriculture (références NOR dans data/cap/fr/amounts.json) et textes du code rural. Extraits.",
    "conditions": "The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse under the Arrêté du 24 juin 2014 and that the API is under the Licence Ouverte 2.0. The rest of the usage conditions on that page (second bullet) was cut off and not read, so we cite the source and the arrêté reference as a precaution. Amounts are extracts transcribed by hand from the JORF article texts; the Journal officiel prevails. We read the DILA open-data archives, not the Légifrance site or the PISTE API, so there is no account or API key. Amounts and rules are transcribed by hand; a weekly job only lists the titles of new JORF texts that mention the CAP (candidates for review) and stores no text."
+  },
+  {
+   "id": "dmi",
+   "name": "DMI — Danmarks Meteorologiske Institut (datos abiertos, friedata)",
+   "url": "https://www.dmi.dk/friedata/",
+   "country": "DK",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (CC BY 4.0), condiciones de uso de los datos abiertos del DMI",
+   "licenseUrl": "https://www.dmi.dk/friedata/dokumentation/terms-of-use",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: DMI (datos procesados por Dehesa Index)",
+   "conditions": "Citar al DMI como fuente; no sugerir que el DMI respalda el uso."
   },
   {
    "id": "dre_pt",
@@ -4075,6 +4092,14 @@
    ]
   },
   {
+   "path": "data/dk-weather.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "dmi"
+   ]
+  },
+  {
    "path": "data/drought.json",
    "scope": "fichero",
    "verdict": "no-apto",
@@ -7062,6 +7087,14 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/se-weather.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "smhi"
    ]
   },
   {

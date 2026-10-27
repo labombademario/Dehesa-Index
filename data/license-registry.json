@@ -3176,6 +3176,32 @@
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: Note legali de ISPRA, leídas el 12 oct 2026: «i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 4.0»."
   },
+  "dmi": {
+   "name": "DMI — Danmarks Meteorologiske Institut (datos abiertos, friedata)",
+   "url": "https://www.dmi.dk/friedata/",
+   "country": "DK",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (CC BY 4.0), condiciones de uso de los datos abiertos del DMI",
+   "licenseUrl": "https://www.dmi.dk/friedata/dokumentation/terms-of-use",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: DMI (datos procesados por Dehesa Index)",
+   "additionalRestrictions": "Citar al DMI como fuente; no sugerir que el DMI respalda el uso.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Condiciones de los datos abiertos del DMI (dmi.dk/friedata; la propia API enlaza esa página como licencia) revisadas el 26 oct 2026: CC BY 4.0, uso comercial permitido citando al DMI.",
+   "used": true,
+   "aliases": [],
+   "notes": "API opendataapi.dmi.dk (climateData, stationValue diario: mean_temp, acc_precip). El host opendataapi.dmi.dk respondió sin clave desde un ejecutor de GitHub Actions el 26 oct 2026 (el host antiguo dmigw.govcloud.dk no resuelve).",
+   "short": "DMI",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones de datos abiertos del DMI (CC BY 4.0)."
+  },
   "smhi": {
    "name": "SMHI — Sveriges meteorologiska och hydrologiska institut (datos abiertos: observaciones meteorológicas e hidrológicas)",
    "url": "https://www.smhi.se/data/utforskaren-oppna-data",
@@ -8166,6 +8192,18 @@
     "apprrr_hr"
    ],
    "notes": "Explotaciones, ARKOD y viñedo por provincia de Croacia (scripts/update-hr-apprrr.py), de los ficheros abiertos de la APPRRR."
+  },
+  "data/se-weather.json": {
+   "sources": [
+    "smhi"
+   ],
+   "notes": "Lluvia y temperatura observadas de Suecia frente a lo normal (scripts/update-nordic-weather.py), de 13 estaciones del SMHI; promedios, meses y normales: cálculo de Dehesa Index (datos procesados)."
+  },
+  "data/dk-weather.json": {
+   "sources": [
+    "dmi"
+   ],
+   "notes": "Lluvia y temperatura observadas de Dinamarca frente a lo normal (scripts/update-nordic-weather.py), de estaciones sinópticas del DMI (API climateData); promedios, meses y normales: cálculo de Dehesa Index (datos procesados)."
   },
   "data/be-weather.json": {
    "sources": [

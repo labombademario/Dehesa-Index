@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 181 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
+Resumen: 182 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
 
-## VERIFIED (181)
+## VERIFIED (182)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -55,6 +55,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 340 | Modifications must be marked as such. |
 | `dgec_prix_petroliers` | Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `dila_jorf` | DILA — Journal officiel de la République française (données ouvertes JORF) | FR | CUSTOM | si/si | si | 0 | The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse … |
+| `dmi` | DMI — Danmarks Meteorologiske Institut (datos abiertos, friedata) | DK | CC-BY-4.0 | si/si | si | 0 | Citar al DMI como fuente; no sugerir que el DMI respalda el uso. |
 | `dre_pt` | Imprensa Nacional-Casa da Moeda — Diário da República (Portarias n.º 54-D, 54-E y 54-L/2023, PEPAC) y GPP/IFAP | PT | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto publicado en el Diário da República. El art. 8 n.º 1 se leyó en una copia del … |
 | `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 58 | Disclose modifications; the Statistics Denmark logo cannot be used. |
 | `dwd_cdc` | Deutscher Wetterdienst (DWD) — Climate Data Center (opendata.dwd.de) | DE | CC-BY-4.0 | si/si | si | 0 |  |

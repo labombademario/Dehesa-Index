@@ -4286,6 +4286,32 @@ def be_weather(doc, errs, warns, stats):
         if s["tmin7"] is not None and s["temp7"] is not None and s["tmin7"] > s["temp7"] + 0.01: errs.append("estacion %s: minima mayor que la media" % s["name"])
     if len(doc["stations"]) < 10: errs.append("solo %d estaciones" % len(doc["stations"]))
     stats["estaciones"] = len(doc["stations"]); stats["deficitHasta"] = D["asOf"]
+def nordic_weather(doc, errs, warns, stats):
+    """Suecia y Dinamarca (SMHI, DMI): 12 meses seguidos con valores fisicos, normales con al menos 12 años, lluvia de 30 dias coherente con el normal, estaciones unicas dentro de cada pais y ultimo dato reciente."""
+    import datetime as _dt
+    cc = doc["country"]; box = {"SE": (55.0, 69.5, 10.5, 24.5), "DK": (54.5, 58.0, 8.0, 15.5)}[cc]
+    M = doc["monthly"]
+    for i, m in enumerate(M):
+        y, mo = int(m["m"][:4]), int(m["m"][5:7])
+        if i and (y * 12 + mo) - (int(M[i - 1]["m"][:4]) * 12 + int(M[i - 1]["m"][5:7])) != 1: errs.append("mensual %s: meses no consecutivos en %s" % (cc, m["m"])); break
+        for k, lo, hi in (("rain", 0, 400), ("rainN", 5, 250), ("temp", -25, 28), ("tempN", -20, 25)):
+            if m[k] is not None and not lo <= m[k] <= hi: errs.append("mensual %s %s: %s %s" % (cc, m["m"], k, m[k]))
+    if M[-1]["m"] > doc["asOf"][:7]: errs.append("mensual %s: mes posterior a asOf" % cc)
+    L = doc["l30"]
+    if L["rain"] is not None and not 0 <= L["rain"] < 500: errs.append("lluvia 30 dias %s: %s" % (cc, L["rain"]))
+    if L["rainN"] is not None and not 5 < L["rainN"] < 250: errs.append("lluvia normal 30 dias %s: %s" % (cc, L["rainN"]))
+    if L["temp"] is not None and not -25 < L["temp"] < 30: errs.append("temperatura 30 dias %s: %s" % (cc, L["temp"]))
+    if L.get("years", 99) < 12: errs.append("normal 30 dias %s: solo %s años" % (cc, L.get("years")))
+    A = doc.get("sinceApr")
+    if A and (A["rain"] is None or not 0 <= A["rain"] < 1500 or (A["rainN"] is not None and not 20 < A["rainN"] < 1500)): errs.append("lluvia desde abril %s: %s" % (cc, A))
+    ids = set()
+    for s in doc["stations"]:
+        if s["id"] in ids: errs.append("estacion repetida: " + s["id"])
+        ids.add(s["id"])
+        if s["rain30"] is not None and not 0 <= s["rain30"] < 600: errs.append("estacion %s: lluvia 30 d %s" % (s["name"], s["rain30"]))
+        if s["temp7"] is not None and not -30 < s["temp7"] < 35: errs.append("estacion %s: temperatura %s" % (s["name"], s["temp7"]))
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=10)).isoformat(): warns.append("tiempo %s: ultimo dato %s" % (cc, doc["asOf"]))
+    stats["estaciones"] = len(doc["stations"]); stats["hasta"] = doc["asOf"]
 def be_wallonia_crops(doc, errs, warns, stats):
     """Valonia (SPW, SIGEC anonimo): campañas consecutivas, cultivos y grupos que suman el total de cada campaña, total declarado y parcelas en rango, sin saltos de mas del 5 % entre campañas, trigo y pradera presentes y en rango."""
     Y = doc["years"]; n = len(Y); T = doc["totals"]

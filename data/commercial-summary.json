@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T02:51:52Z",
+ "generatedAt": "2026-10-27T03:02:21Z",
  "summary": {
-  "sources": 183,
-  "sourcesApto": 167,
+  "sources": 184,
+  "sourcesApto": 168,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 397,
-  "datasets_apto": 261,
+  "datasets": 399,
+  "datasets_apto": 263,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -189,6 +189,10 @@
   },
   "dila_jorf": {
    "name": "DILA — Journal officiel de la République française (données ouvertes JORF)",
+   "verdict": "apto"
+  },
+  "dmi": {
+   "name": "DMI — Danmarks Meteorologiske Institut (datos abiertos, friedata)",
    "verdict": "apto"
   },
   "dre_pt": {
