@@ -1,3 +1,3 @@
 precios de la tierra: Precios medios de las tierras de uso agrario. Resultados provisionales 2025 https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/1.economicas/precios-medios-anuales-de-las-tierras-de-uso-agrario/precios-medios-de-las-tierras-de-uso-agrario--resultados-2025.xlsx
 canones: Tablas Cánones de arrendamiento 2024 Base 2020 https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/1.economicas/canones-de-arrendamientos-rusticos/tablas-c-nones-de-arrendamiento-2024-base-2020-2.xlsx
-ERROR: Cuadro 20: 0 provincias (codigos []...), se esperaban las 50
+OK: años [2020, 2021, 2022, 2023, 2024, 2025] | precio: 169 series CCAA/tipo | provincias 50 (año 2025) | canones: 99 series
