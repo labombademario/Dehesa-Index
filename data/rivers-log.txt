@@ -1,4 +1,25 @@
-06:26:50 aviso: nl venlo historia 2014: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> URLError(TimeoutError('timed out'))
-06:35:41 aviso: nl venlo historia 2015: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> URLError(TimeoutError('timed out'))
-06:44:32 aviso: nl venlo historia 2016: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> URLError(TimeoutError('timed out'))
-06:53:22 aviso: nl venlo historia 2017: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> URLError(TimeoutError('timed out'))
+07:25:30 nl Rijn Lobith: 699.0 cm, 904.64 m3/s, estado low, 30 dias
+07:25:30 nl Waal Tiel: 223.0 cm, 700.7 m3/s, estado None, 30 dias
+07:25:30 nl Nederrijn Driel: 651.0 cm, 11.9 m3/s, estado low, 30 dias
+07:25:30 nl Lek Hagestein: 223.0 cm, 15.35 m3/s, estado normal, 30 dias
+07:25:30 nl IJssel Olst: 22.0 cm, 139.13 m3/s, estado low, 30 dias
+07:25:30 nl Maas Venlo: 1120.0 cm, 91.65 m3/s, estado normal, 29 dias
+07:25:30 nl Maas Maastricht: 4417.0 cm, 94.09 m3/s, estado None, 29 dias
+07:25:30 nl Maas Eijsden: 4426.0 cm, 111.7 m3/s, estado normal, 29 dias
+07:25:30 rivers-nl.json: 8 estaciones, ultima lectura 2026-10-27T08:10
+07:42:37 fr Seine Paris: 88.1 cm, 127.0 m3/s, estado low, 430 dias
+07:42:37 fr Seine Vernon: 326.7 cm, 224.0 m3/s, estado low, 430 dias
+07:42:37 fr Marne Gournay-sur-Marne: 111.8 cm, 29.0 m3/s, estado low, 430 dias
+07:42:37 fr Loire Gien: -58.4 cm, 64.5 m3/s, estado low, 430 dias
+07:42:37 fr Loire Orléans: -103.4 cm, 56.3 m3/s, estado low, 430 dias
+07:42:37 fr Loire Tours: 61.7 cm, 78.3 m3/s, estado low, 430 dias
+07:42:37 fr Loire Montjean: -140.3 cm, 168.0 m3/s, estado low, 430 dias
+07:42:37 fr Saône Mâcon: 157.1 cm, 21.4 m3/s, estado low, 430 dias
+07:42:37 fr Rhône Lyon: - cm, 486.0 m3/s, estado normal, 430 dias
+07:42:37 fr Rhône Valence: 246.3 cm, 701.0 m3/s, estado normal, 430 dias
+07:42:37 fr Rhône Tarascon: 129.0 cm, 998.0 m3/s, estado normal, 430 dias
+07:42:37 fr Garonne Lamagistère: -59.1 cm, 97.1 m3/s, estado low, 430 dias
+07:42:37 fr Garonne Tonneins: -64.1 cm, 106.0 m3/s, estado low, 430 dias
+07:42:38 fr Dordogne Cénac: 24.2 cm, 33.5 m3/s, estado low, 430 dias
+07:42:38 fr Meuse Sedan: 278.8 cm, 27.4 m3/s, estado normal, 430 dias
+07:42:38 rivers-fr.json: 15 estaciones, ultima lectura 2026-10-27T08:30
