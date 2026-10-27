@@ -1929,6 +1929,31 @@ sources:
     data: [spain-hicp-stats.json]
     log: spain-hicp-log.txt
     message: Precios de consumo de mantequilla y queso, precio de la tierra y alquileres, y agricultura ecológica en España (Eurostat)
+  - id: spain-ine
+    name: Update Spain food CPI, industrial producer prices, farm employment and regional farm value added (INE)
+    cron: ['25 10 2,16,26 * *']
+    script: scripts/update-spain-ine.py
+    timeout: 20
+    data: [spain-ine-stats.json]
+    log: spain-ine-log.txt
+    message: IPC de alimentos, precios industriales, ocupados agrarios y VAB agrario por comunidad de España (INE)
+  - id: es-catalonia-ippa
+    name: Update Catalonia agricultural prices received index (Generalitat de Catalunya, DACC)
+    cron: ['50 10 5,20 * *']
+    pre: ['pip install xlrd']
+    script: scripts/update-es-catalonia-ippa.py
+    timeout: 15
+    data: [spain-catalonia-stats.json]
+    log: spain-catalonia-log.txt
+    message: Índice de precios percibidos agrarios de Cataluña (Generalitat de Catalunya)
+  - id: es-andalucia-prices
+    name: Update Andalusia weekly farm prices (Junta de Andalucia, Observatorio de Precios y Mercados)
+    cron: ['15 9 * * 2,5']
+    script: scripts/update-es-andalucia-prices.py
+    timeout: 30
+    check: python3 scripts/validate-data.py --no-report --files data/spain-prices/andalucia.json
+    data: [spain-prices/andalucia.json, spain-andalucia-log.txt]
+    message: Precios agrarios semanales de Andalucía (Observatorio de Precios y Mercados de la Junta de Andalucía)
   - id: france-hicp
     name: Update France consumer price indices for butter, cheese and olive oil (Eurostat HICP)
     cron: ['50 9 4,18 * *']

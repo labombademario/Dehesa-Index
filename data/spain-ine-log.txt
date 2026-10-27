@@ -1,0 +1,13 @@
+tabla t=79184: 234036 filas, último periodo 2026-09
+IPC: tabla 79184, 59 series, último 2026-09
+tabla t=61525: 548964 filas, último periodo 2026-09
+IPRI: tabla 61525, 36 series, último 2026-09
+tabla t=65311: 22500 filas, último periodo 2026-Q3
+tabla t=79326: 900 filas, último periodo 2026-Q3
+EPA: tabla 65311, 18 series, último 2026-Q3
+tabla tpx=77773: 21000 filas, último periodo 2024
+tabla tpx=76923: 21000 filas, último periodo 2024
+tabla tpx=77774: 14000 filas, último periodo 2024
+tabla tpx=76924: 14000 filas, último periodo 2024
+CRE: tablas 77773 y 77774, 60 series, último 2024
+escrito: 173 series

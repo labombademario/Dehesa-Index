@@ -380,11 +380,34 @@
     dmg: L('Daños y cortas', 'Damage and felling', 'Dégâts et coupes', 'Danni e tagli'),
     more: L('Ver todo el bosque y la madera', 'See all forests and timber', 'Voir toutes les forêts et le bois', 'Vedi tutte le foreste e il legno'),
     en: L('Energía', 'Energy', 'Énergie', 'Energia'),
-    vsPrev: L('año anterior', 'previous year', 'année précédente', 'anno precedente')
+    vsPrev: L('año anterior', 'previous year', 'année précédente', 'anno precedente'),
+    corkP: L('Corcho: producción', 'Cork: production', 'Liège : production', 'Sughero: produzione'),
+    corkSum: L('suma de las comunidades con dato; no comparable sin más con años anteriores', 'sum of the regions with data; not directly comparable with earlier years', 'somme des régions disposant de données ; pas directement comparable aux années précédentes', 'somma delle regioni con dato; non direttamente confrontabile con gli anni precedenti'),
+    corkX: L('Corcho y manufacturas: exportaciones', 'Cork and cork goods: exports', 'Liège et ouvrages en liège : exportations', 'Sughero e manufatti: esportazioni'),
+    meur: L('millones de €', 'EUR million', 'millions d’€', 'milioni di €'),
+    corkMore: L('Ver el corcho en Mercados Dehesa', 'See cork in Dehesa markets', 'Voir le liège dans Marchés de la dehesa', 'Vedi il sughero in Mercati della dehesa')
   };
+  /* Corcho (solo España): producción del MITECO y exportaciones (Eurostat, capítulo 45) de data/dehesa.json, la misma fuente que dehesa.html */
+  function corkRows(dh) {
+    var c = dh && dh.cork, out = [];
+    if (!c) return out;
+    var p = c.production;
+    if (p && p.years && p.total && p.years.length) {
+      var i = p.years.length - 1, y = p.years[i];
+      out.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.corkP)) + ' (' + esc(String(y)) + ')</span><span class="di-info-stat-value"><b>' + num(p.total[i]) + '</b> t' + (y >= 2024 ? ' · ' + esc(tx(MC.corkSum)) : '') + '</span></div>');
+    }
+    var ex = c.countries && c.countries.ES && c.countries.ES.exports;
+    if (ex && ex.length) {
+      var a = ex[ex.length - 1], b = ex.length > 1 ? ex[ex.length - 2] : null, ch = b && b[1] ? (a[1] - b[1]) / b[1] * 100 : null;
+      out.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.corkX)) + ' (' + esc(String(a[0])) + ')</span><span class="di-info-stat-value"><b>' + num(a[1], 1) + '</b> ' + esc(tx(MC.meur)) + (ch == null ? '' : ' · ' + pct(ch) + ' ' + esc(tx(MC.vsPrev))) + '</span></div>');
+    }
+    return out;
+  }
   function mountCountry(el, lang, cc) {
     if (!el) return Promise.resolve(false);
-    return loadAll().then(function (D) {
+    var dhP = cc === 'ES' ? fetch('data/dehesa.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }) : Promise.resolve(null);
+    return Promise.all([loadAll(), dhP]).then(function (res) {
+      var D = res[0], cork = corkRows(res[1]);
       var rows = [], ff = D.ff && D.ff.countries && D.ff.countries[cc] ? D.ff : null, tp = D.tp && D.tp.countries && D.tp.countries[cc] ? D.tp.countries[cc] : null;
       var fd = D.fd && D.fd.series ? D.fd.series.filter(function (x) { return x.country === cc; }) : [];
       if (ff) {
@@ -405,10 +428,11 @@
         var li = lastIdx(x.values); if (li < 0) return; var c2 = yoy(x);
         rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.en)) + ': ' + esc(trl(x.label)) + ' (' + esc(x.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(x.values[li], dec(x.values[li], x.unit)) + '</b> ' + esc(unit(x.unit)) + (c2 == null ? '' : ' · ' + pct(c2)) + '</span></div>');
       });
+      rows = rows.concat(cork);
       if (!rows.length) { el.innerHTML = ''; return false; }
       var tab = ff ? 'fires' : tp ? 'prices' : 'damage';
       el.innerHTML = '<section class="di-card di-info-card wp-card gb-card" id="ps-forest" style="max-width:none"><h2 class="ps-rm-h">' + esc(tx(MC.h)) + '</h2><div class="di-info-stat-list">' + rows.join('') + '</div>' +
-        '<p style="margin:10px 0 0"><a href="bosque.html?s=' + tab + '&c=' + encodeURIComponent(cc) + '">' + esc(tx(MC.more)) + '</a></p></section>';
+        '<p style="margin:10px 0 0"><a href="bosque.html?s=' + tab + '&c=' + encodeURIComponent(cc) + '">' + esc(tx(MC.more)) + '</a>' + (cork.length ? ' · <a href="dehesa.html#dh-cork">' + esc(tx(MC.corkMore)) + '</a>' : '') + '</p></section>';
       return true;
     });
   }

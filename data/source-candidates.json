@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T19:47:43Z",
+ "generatedAt": "2026-10-27T21:10:17Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 217,
+  "total": 219,
   "byStatus": {
-   "ACTIVE": 187,
+   "ACTIVE": 189,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3134,6 +3134,56 @@
    ]
   },
   {
+   "sourceId": "dacc_cat",
+   "registryId": "dacc_cat",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "Generalitat de Catalunya — Departament d'Agricultura (DACC), Observatori Agroalimentari de Preus",
+   "dataset": "Ya integrada (24 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "eggs",
+    "fruit",
+    "milk",
+    "olive",
+    "pigs",
+    "sheep",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price_index"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "LOUI-CAT",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Font: Generalitat de Catalunya, Departament d'Agricultura, Ramaderia, Pesca i Alimentació — Observatori Agroalimentari de Preus (data de l'última actualització indicada)",
+   "lastChecked": "2026-10-27",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "daera_ni",
    "registryId": "daera_ni",
    "country": "UK",
@@ -5455,11 +5505,25 @@
    "country": "ES",
    "scope": "integrated",
    "institution": "Instituto Nacional de Estadística (España)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (173 series en el catalogo unificado)",
+   "products": [
+    "butter",
+    "cheese",
+    "eggs",
+    "fertilizer",
+    "fruit",
+    "milk",
+    "olive",
+    "potato",
+    "sugar",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price"
+   ],
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,
@@ -5791,6 +5855,45 @@
    "derivatives": "yes",
    "attribution": "Fuente: Junta de Castilla y León, Observatorio de precios de los productos agrícolas y ganaderos (datos abiertos), licencia CC BY 4.0. Datos agregados y presentados por dehesaindex.com.",
    "lastChecked": "2026-10-20",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "junta_andalucia_observatorio",
+   "registryId": "junta_andalucia_observatorio",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "Junta de Andalucía — Observatorio de Precios y Mercados (precios agrarios semanales)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Junta de Andalucía, Consejería de Agricultura, Pesca, Agua y Desarrollo Rural — Observatorio de Precios y Mercados (datos abiertos, CC BY 4.0)",
+   "lastChecked": "2026-10-27",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

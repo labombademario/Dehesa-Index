@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T18:26:21Z",
+ "generatedAt": "2026-10-27T21:10:18Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 187,
-  "sourcesApto": 171,
+  "sources": 189,
+  "sourcesApto": 173,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 405,
-  "datasets_apto": 268,
+  "datasets": 408,
+  "datasets_apto": 271,
   "datasets_condiciones": 126,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -667,6 +667,23 @@
    "redistribution": "yes",
    "attribution": "Source: Czech Statistical Office (CSU), open data DataStat.",
    "conditions": "None declared. Credit is given anyway."
+  },
+  {
+   "id": "dacc_cat",
+   "name": "Generalitat de Catalunya — Departament d'Agricultura (DACC), Observatori Agroalimentari de Preus",
+   "url": "https://agricultura.gencat.cat/ca/departament/observatori-agroambiental/estadistiques/observatori-agroalimentari-preus/",
+   "country": "ES",
+   "licenseId": "LOUI-CAT",
+   "licenseName": "Llicència oberta d'ús d'informació – Catalunya",
+   "licenseUrl": "https://web.gencat.cat/ca/ajuda/avis_legal/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Font: Generalitat de Catalunya, Departament d'Agricultura, Ramaderia, Pesca i Alimentació — Observatori Agroalimentari de Preus (data de l'última actualització indicada)",
+   "conditions": "Citar la fuente e indicar la fecha de la última actualización; no alterar el contenido ni desnaturalizar su sentido."
   },
   {
    "id": "daera_ni",
@@ -1708,6 +1725,23 @@
    "redistribution": "yes",
    "attribution": "Fuente: Junta de Castilla y León, Observatorio de precios de los productos agrícolas y ganaderos (datos abiertos), licencia CC BY 4.0. Datos agregados y presentados por dehesaindex.com.",
    "conditions": "Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robots.txt y NO se usan."
+  },
+  {
+   "id": "junta_andalucia_observatorio",
+   "name": "Junta de Andalucía — Observatorio de Precios y Mercados (precios agrarios semanales)",
+   "url": "https://www.juntadeandalucia.es/datosabiertos/portal/dataset/precios-agrarios-en-el-observatorio-de-precios-y-mercados",
+   "country": "ES",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Reconocimiento 4.0 (CC BY 4.0)",
+   "licenseUrl": "http://creativecommons.org/licenses/by/4.0/deed.es_ES",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Junta de Andalucía, Consejería de Agricultura, Pesca, Agua y Desarrollo Rural — Observatorio de Precios y Mercados (datos abiertos, CC BY 4.0)",
+   "conditions": "Citar la fuente."
   },
   {
    "id": "kansas_city_fed",
@@ -7225,6 +7259,21 @@
    ]
   },
   {
+   "path": "data/spain-catalonia-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "dacc_cat"
+   ],
+   "parts": [
+    {
+     "scope": "pais:ES",
+     "sourceId": "dacc_cat",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
    "path": "data/spain-crops/",
    "scope": "carpeta",
    "verdict": "apto",
@@ -7280,6 +7329,21 @@
    ]
   },
   {
+   "path": "data/spain-ine-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "ine_es"
+   ],
+   "parts": [
+    {
+     "scope": "pais:ES",
+     "sourceId": "ine_es",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
    "path": "data/spain-inputs/",
    "scope": "carpeta",
    "verdict": "apto",
@@ -7332,6 +7396,14 @@
    "verdict": "apto",
    "sources": [
     "mapa_es"
+   ]
+  },
+  {
+   "path": "data/spain-prices/andalucia.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "junta_andalucia_observatorio"
    ]
   },
   {

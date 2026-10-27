@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-315 workflows (265 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+318 workflows (268 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -118,7 +118,9 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-es-andalucia-prices.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-es-andalucia-prices.py | spain-prices/andalucia.json | finish, validate-files |
 | update-es-avances.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-es-avances.py | spain-avances/avances.json | finish, validate-files |
+| update-es-catalonia-ippa.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-catalonia-ippa.py | spain-catalonia-stats.json | finish, validate-files |
 | update-es-climate-provinces.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-es-climate.mjs | es-climate-provinces.json | finish, validate-files |
 | update-es-cork.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-cork.py | es-cork.json | finish, validate-files |
 | update-es-drought-ute.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-es-drought-ute.py | es-drought-ute.json | finish, validate-files |
@@ -315,6 +317,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-spain-balances.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-balances.py | spain-balances/cereals.json | finish, validate-files |
 | update-spain-crops.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-crops.py | spain-crops/index.json | finish, validate-files |
 | update-spain-hicp.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-spain-hicp.py | spain-hicp-stats.json | finish, validate-files |
+| update-spain-ine.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-spain-ine.py | spain-ine-stats.json | finish, validate-files |
 | update-spain-land.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-spain-land.py | spain-land/land.json | finish, validate-files |
 | update-spain-livestock.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-livestock.py | spain-livestock/index.json | finish, validate-files |
 | update-spain-milk.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-milk.py | spain-milk/infolac.json | finish, validate-files |

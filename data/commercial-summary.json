@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T16:14:59Z",
+ "generatedAt": "2026-10-27T21:00:52Z",
  "summary": {
-  "sources": 187,
-  "sourcesApto": 171,
+  "sources": 189,
+  "sourcesApto": 173,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 405,
-  "datasets_apto": 268,
+  "datasets": 408,
+  "datasets_apto": 271,
   "datasets_condiciones": 126,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -165,6 +165,10 @@
   },
   "csu_cz": {
    "name": "Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area)",
+   "verdict": "apto"
+  },
+  "dacc_cat": {
+   "name": "Generalitat de Catalunya — Departament d'Agricultura (DACC), Observatori Agroalimentari de Preus",
    "verdict": "apto"
   },
   "daera_ni": {
@@ -409,6 +413,10 @@
   },
   "jcyl_open_data": {
    "name": "Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos)",
+   "verdict": "apto"
+  },
+  "junta_andalucia_observatorio": {
+   "name": "Junta de Andalucía — Observatorio de Precios y Mercados (precios agrarios semanales)",
    "verdict": "apto"
   },
   "kansas_city_fed": {

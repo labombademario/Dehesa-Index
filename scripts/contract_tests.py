@@ -4892,6 +4892,31 @@ def spain_prices_obs(doc, errs, warns, stats):
     for k, n in st.items():
         if n < 25: errs.append("obs: solo %d series de %s (se esperan >=25)" % (n, k))
     stats["series"] = len(S)
+AND_UNIT_MAX = {"€/kg": 100, "€/t": 5000, "€/100 kg vivo": 2000, "€/100 kg canal": 3000, "€/100 l": 500}
+def spain_prices_andalucia(doc, errs, warns, stats):
+    """Observatorio de precios de Andalucía: semanas lunes a lunes sin saltos, >=150 series con tantos valores como semanas, ids únicos, unidad conocida,
+    precios positivos y por debajo del máximo de su unidad, aceite de oliva virgen extra en almazara presente y plausible, y última semana reciente."""
+    W = doc["weeks"]; S = doc["series"]; ids = set()
+    if not _weeks_ok(W, "andalucia", errs): return
+    for a, b in zip(W, W[1:]):
+        if (datetime.date.fromisoformat(b) - datetime.date.fromisoformat(a)).days != 7: errs.append("andalucia: salto de semanas entre %s y %s" % (a, b)); break
+    if len(S) < 150: errs.append("andalucia: %d series (se esperan >=150)" % len(S)); return
+    if W[-1] < "2026-01-01": errs.append("andalucia: última semana %s muy antigua" % W[-1])
+    for s in S:
+        if s["id"] in ids: errs.append("andalucia: id repetido %s" % s["id"])
+        ids.add(s["id"])
+        if len(s["v"]) != len(W): errs.append("andalucia %s: %d valores para %d semanas" % (s["id"], len(s["v"]), len(W))); continue
+        mx = AND_UNIT_MAX.get(s["unit"])
+        if mx is None: errs.append("andalucia %s: unidad desconocida %r" % (s["id"], s["unit"])); continue
+        vs = [x for x in s["v"] if x is not None]
+        if not vs: errs.append("andalucia %s: sin ningun dato" % s["id"]); continue
+        if min(vs) <= 0 or max(vs) > mx: errs.append("andalucia %s: precio imposible (%s-%s %s)" % (s["id"], min(vs), max(vs), s["unit"]))
+    ev = [s for s in S if s["key"][0] == "ACEITES DE OLIVA" and s["key"][2] == "VIRGEN-EXTRA" and s["pos"] == "Almazara o Bodega" and not s["key"][6]]
+    if not ev: errs.append("andalucia: falta el aceite de oliva virgen extra en almazara")
+    else:
+        vs = [x for x in ev[0]["v"] if x is not None]
+        if not (1.0 <= vs[-1] <= 15.0): errs.append("andalucia: AOVE en almazara %s €/kg fuera de 1-15" % vs[-1])
+    stats["series"] = len(S)
 def spain_income_cea(doc, errs, warns, stats):
     """Cuentas de la agricultura: años crecientes que llegan a >=2024, todas las filas con un valor por año, fila A y fila G (renta agraria) presentes y plausibles, y cada cuenta regional con >=18 territorios cuyo total ESPAÑA cuadra con la suma de comunidades (1 %)."""
     Y = doc["years"]; N = doc["national"]

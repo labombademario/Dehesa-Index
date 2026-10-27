@@ -1,0 +1,10 @@
+año 2019: 8074 precios
+año 2020: 8214 precios
+año 2021: 8251 precios
+año 2022: 8103 precios
+año 2023: 8029 precios
+año 2024: 8271 precios
+año 2025: 8184 precios
+año 2026: 5413 precios
+filas descartadas: {'bad_date': 0, 'not_monday': 0, 'bad_price': 0, 'nonpositive': 0}
+escrito: 296 series, 408 semanas (2018-12-31 a 2026-10-19)

@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 184 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40136 series en el catalogo unificado.
+Resumen: 186 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40333 series en el catalogo unificado.
 
-## VERIFIED (184)
+## VERIFIED (186)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -49,6 +49,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `cso_ie` | Central Statistics Office (CSO) Irlanda — PxStat: Fuel Excise Clearance (FPM01), Agricultural Input and Output Price Indices (AHM05), Intake of Cows Milk (AKA01), Agricultural Land Sales (ARA02) | IE | CC-BY-4.0 | si/si | si | 127 | El logotipo del CSO tiene límites de uso propios; Dehesa Index no lo usa. |
 | `csp_lv` | Latvia — CSP (Central Statistical Bureau of Latvia): official statistics portal (agricultural prices, balances, crops, milk) | LV | CC-BY-4.0 | si/si | si | 51 |  |
 | `csu_cz` | Czechia — CSU (Czech Statistical Office): open data catalogue DataStat (agricultural prices, input prices, price indices, harvest, sown area) | CZ | CZ-OPENDATA-FREE | si/si | si | 75 | None declared. Credit is given anyway. |
+| `dacc_cat` | Generalitat de Catalunya — Departament d'Agricultura (DACC), Observatori Agroalimentari de Preus | ES | LOUI-CAT | si/si | si | 24 | Citar la fuente e indicar la fecha de la última actualización; no alterar el contenido ni desnaturalizar su sentido. |
 | `daera_ni` | DAERA (Northern Ireland) — Agricultural Market Report | UK | OGL-UK-3.0 | si/si | si | 23 | Excluye logotipos, datos personales y mapas de OSNI. |
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 793 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
 | `desnz_fuel_prices` | UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices | UK | OGL-UK-3.0 | si/si | si | 6 | Sin respaldo oficial implícito. |
@@ -102,7 +103,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `inao_siqo` | INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `indec` | Argentina - INDEC, Indice de Precios al Consumidor nacional (IPC), via la API de series de datos.gob.ar | AR | CC-BY-INDEC | si/si | si | 0 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios: la inflacion interanual es calculo propio. El ultimo mes es provision… |
 | `indec_ar` | Argentina - INDEC, Sistema de Indices de Precios Mayoristas (SIPM: IPIM, IPIB, IPP) | AR | CC-BY-INDEC | si/si | si | 13 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios si los hubiere. El ultimo mes es provisional segun el INDEC. |
-| `ine_es` | Instituto Nacional de Estadística (España) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web de… |
+| `ine_es` | Instituto Nacional de Estadística (España) | ES | CC-BY-4.0 | si/si | si | 173 | Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web de… |
 | `ine_pt` | INE — Statistics Portugal | PT | CC-BY-4.0 | si/si | si | 598 | INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt. |
 | `insee` | Institut national de la statistique et des études économiques (INSEE) | FR | Etalab-2.0 | si/si | si | 261 | Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información. |
 | `irs_sales_tax` | U.S. Internal Revenue Service - Optional State Sales Tax Tables | US | US-PD | si/si | no | 0 | Only the state general sales tax rate is used; local rates are not included. Not tax advice. |
@@ -110,6 +111,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `istat` | Italy — Istituto Nazionale di Statistica (ISTAT) | IT | CC-BY-4.0 | si/si | si | 0 | Cite the source; flag changes. Dehesa Index converts units (quintals to tonnes) and says so on screen. |
 | `it_regioni_dop` | Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana) | IT | CC-BY-4.0/CC0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `jcyl_open_data` | Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robo… |
+| `junta_andalucia_observatorio` | Junta de Andalucía — Observatorio de Precios y Mercados (precios agrarios semanales) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente. |
 | `kmi_be` | Belgium — Royal Meteorological Institute (KMI-IRM), open data platform: automatic weather stations (AWS) | BE | CC-BY-4.0 | si/si | si | 0 | Citar al KMI-IRM como fuente de los datos brutos. Los datos climáticos en malla de 5x5 km del KMI NO son reutilizables y no se usan. El défi… |
 | `knmi_daggegevens` | KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación) | NL | CC-BY-4.0 | si/si | si | 0 | Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI. |
 | `ksh_hu` | Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables | HU | CC-BY-4.0 | si/si | si | 509 | La licencia cubre el contenido publicado en el sitio (tablas, graficos). Quedan fuera los ficheros consultados a peticion a las bases intern… |

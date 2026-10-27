@@ -182,8 +182,10 @@
     if (!DOC) { body.innerHTML = '<p class="di-movers-hint">' + esc(tt.loading) + '</p>'; return; }
     var was = open();
     body.innerHTML = sec('dh-pigs', tt.pigH, tt.pigS, pigs()) + sec('dh-past', tt.pastH, tt.pastS, pasture()) + sec('dh-cork', tt.corkH, tt.corkS, cork()) + sec('dh-cork1', tt.aH, '', corkOnce()) + sec('dh-forest', tt.fH, tt.fS, forest()) + sec('dh-st', tt.stH, tt.stS, status()) + links();
-    if (!FIRST) { FIRST = true; was = { 'dh-pigs': true }; }
+    var hs = (window.location.hash || '').slice(1), jump = null;
+    if (!FIRST) { FIRST = true; was = { 'dh-pigs': true }; if (/^dh-[a-z0-9]+$/.test(hs) && document.getElementById(hs)) { was = {}; was[hs] = true; jump = hs; } }   /* enlace con ancla (p. ej. desde la ficha de España): abre ese bloque */
     for (var k in was) if (was[k]) { var d = document.getElementById(k); if (d) d.open = true; }
+    if (jump) { var j = document.getElementById(jump); if (j && j.scrollIntoView) j.scrollIntoView(); }
   }
   if (S && S.init) S.init('informacion');
   if (S) { var prev = S.onLangChange; S.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); }; }

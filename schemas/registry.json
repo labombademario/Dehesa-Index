@@ -1933,6 +1933,12 @@
    [
     "uk_timber_prices"
    ]
+  ],
+  "spain-prices/andalucia.json": [
+   "spain-prices-andalucia",
+   [
+    "spain_prices_andalucia"
+   ]
   ]
  },
  "globs": {

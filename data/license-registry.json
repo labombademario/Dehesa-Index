@@ -3568,6 +3568,7 @@
   },
   "forest_research": {
    "name": "Forest Research (UK), Timber Price Indices (official statistics)",
+   "short": "Forest Research (UK)",
    "url": "https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/timber-statistics/timber-price-indices/",
    "country": "GB",
    "licenseId": "OGL-UK-3.0",
@@ -5684,6 +5685,58 @@
    "short": "NSI-BG",
    "legalConfidence": "PENDING",
    "legalConfidenceReason": "Hay uso comercial con cita, pero la prohibicion de difundir obras derivadas hace dudosa su combinacion con otras fuentes."
+  },
+  "junta_andalucia_observatorio": {
+   "country": "ES",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "Los precios los aportan operadores (empresas) al Observatorio; la Junta los publica en su catálogo de datos abiertos con licencia CC BY 4.0 sin excepción declarada.",
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "used": true,
+   "aliases": [],
+   "notes": "data/spain-prices/andalucia.json; scripts/update-es-andalucia-prices.py.",
+   "name": "Junta de Andalucía — Observatorio de Precios y Mercados (precios agrarios semanales)",
+   "url": "https://www.juntadeandalucia.es/datosabiertos/portal/dataset/precios-agrarios-en-el-observatorio-de-precios-y-mercados",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Reconocimiento 4.0 (CC BY 4.0)",
+   "licenseUrl": "http://creativecommons.org/licenses/by/4.0/deed.es_ES",
+   "attributionText": "Fuente: Junta de Andalucía, Consejería de Agricultura, Pesca, Agua y Desarrollo Rural — Observatorio de Precios y Mercados (datos abiertos, CC BY 4.0)",
+   "additionalRestrictions": "Citar la fuente.",
+   "evidence": "Catálogo de datos abiertos de la Junta de Andalucía (CKAN, package_show precios-agrarios-en-el-observatorio-de-precios-y-mercados, consultado el 27-oct-2026): license_id CC-BY-4.0, «Reconocimiento 4.0 Internacional (CC BY 4.0)»; autor Consejería de Agricultura, Ganadería, Pesca y Desarrollo Sostenible; mantenedor AGAPA. Los recursos son el formulario «OpenData» del Observatorio (CSV).",
+   "short": "Observatorio de Precios (Andalucía)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "La licencia CC BY 4.0 está declarada en los metadatos del catálogo oficial de datos abiertos de la Junta; la página del Observatorio no repite la licencia y los precios los aportan operadores."
+  },
+  "dacc_cat": {
+   "country": "ES",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "used": true,
+   "aliases": [],
+   "notes": "IPPA base 2020 (data/spain-catalonia-stats.json; scripts/update-es-catalonia-ippa.py). Los precios semanales de llotges (XLS) no se integran: el formato no permite asignar cada fila a su lonja sin ambigüedad.",
+   "name": "Generalitat de Catalunya — Departament d'Agricultura (DACC), Observatori Agroalimentari de Preus",
+   "url": "https://agricultura.gencat.cat/ca/departament/observatori-agroambiental/estadistiques/observatori-agroalimentari-preus/",
+   "licenseId": "LOUI-CAT",
+   "licenseName": "Llicència oberta d'ús d'informació – Catalunya",
+   "licenseUrl": "https://web.gencat.cat/ca/ajuda/avis_legal/",
+   "attributionText": "Font: Generalitat de Catalunya, Departament d'Agricultura, Ramaderia, Pesca i Alimentació — Observatori Agroalimentari de Preus (data de l'última actualització indicada)",
+   "additionalRestrictions": "Citar la fuente e indicar la fecha de la última actualización; no alterar el contenido ni desnaturalizar su sentido.",
+   "evidence": "Avís legal de gencat.cat, «Condicions generals de reutilització» (leído el 27-oct-2026): «aplicables a qualsevol persona que reutilitzi informació del sector públic de la Generalitat, per a fins comercials o no comercials»; cesión gratuita y no exclusiva «segons la Llicència oberta d'ús d'informació – Catalunya o la llicència CC0»; requisitos: no alterar el contenido, citar la fuente, indicar la fecha de la última actualización.",
+   "short": "DACC (Cataluña)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explícito (condiciones generales de reutilización de gencat.cat) que concede la reutilización comercial citando la fuente."
   }
  },
  "files": {
@@ -8350,6 +8403,24 @@
     "forest_research"
    ],
    "notes": "Precio medio nominal de la madera en pie, rollos de aserrio y madera pequeña de coniferas de Gran Bretaña (Forest Research, Timber Price Indices). scripts/update-uk-timber.py; sustituye al valor fijo de js/data.js."
+  },
+  "data/spain-ine-stats.json": {
+   "byCountry": {
+    "ES": "ine_es"
+   },
+   "notes": "INE (CC BY 4.0): IPC de subclases ECOICOP ver.2 de alimentos y bebidas (tabla 79184), Índices de Precios Industriales por clases de la industria alimentaria, fertilizantes, fitosanitarios y piensos (61525), ocupados en agricultura de la EPA por comunidad (65311) y VAB de la rama agraria por comunidad de la Contabilidad Regional (77773, 77774; miles de euros pasados a millones). Valores tal cual; scripts/update-spain-ine.py."
+  },
+  "data/spain-catalonia-stats.json": {
+   "byCountry": {
+    "ES": "dacc_cat"
+   },
+   "notes": "Índex de preus percebuts agraris de Cataluña (DACC), base 2020=100, mensual, 24 índices por grupo de productos, tal cual; scripts/update-es-catalonia-ippa.py."
+  },
+  "data/spain-prices/andalucia.json": {
+   "sources": [
+    "junta_andalucia_observatorio"
+   ],
+   "notes": "Precios semanales del Observatorio de Precios y Mercados de la Junta de Andalucía por producto, posición comercial, categoría, formato y canal, tal cual; scripts/update-es-andalucia-prices.py."
   }
  },
  "derived": [
