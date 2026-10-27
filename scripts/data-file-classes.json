@@ -497,6 +497,14 @@
     "file": "js/series-store.js",
     "pattern": "e.catalog"
    }
+  },
+  "data/spain-prices/andalucia.json": {
+   "class": "RUNTIME",
+   "note": "Precios semanales del Observatorio de Precios y Mercados de Andalucía; lo descarga la pestaña «Andalucía» de Precios semanales de España (lonjas.html, es-precios-mapa.js) junto a pmn.json y obs.json.",
+   "via": {
+    "file": "js/es-precios-mapa.js",
+    "pattern": "data/spain-prices/andalucia.json"
+   }
   }
  },
  "prefixes": {
