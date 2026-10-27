@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T04:03:43Z",
+ "generatedAt": "2026-10-27T05:27:57Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -5854,11 +5854,13 @@
    "country": "HU",
    "scope": "integrated",
    "institution": "Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables",
-   "dataset": "Ya integrada (196 series en el catalogo unificado)",
+   "dataset": "Ya integrada (509 series en el catalogo unificado)",
    "products": [
     "barley",
+    "butter",
     "cattle",
     "eggs",
+    "fertilizer",
     "fruit",
     "maize",
     "milk",
@@ -5867,18 +5869,21 @@
     "potato",
     "poultry",
     "rapeseed",
+    "rice",
     "rye",
     "sheep",
     "soy",
     "sugar",
-    "wheat"
+    "wheat",
+    "wine"
    ],
    "productsConfirmed": true,
    "metrics": [
     "input_price",
+    "price",
     "production"
    ],
-   "frequency": "annual",
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,

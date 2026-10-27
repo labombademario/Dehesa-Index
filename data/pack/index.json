@@ -3319,6 +3319,37 @@
    "xlsxBytes": 26832
   },
   {
+   "product": "trigo_duro",
+   "name": {
+    "es": "Trigo duro",
+    "en": "Durum wheat",
+    "fr": "Blé dur",
+    "it": "Grano duro"
+   },
+   "region": "eu",
+   "place": {
+    "es": "Sevilla (España)",
+    "en": "Sevilla (Spain)",
+    "fr": "Sevilla (Espagne)",
+    "it": "Sevilla (Spagna)"
+   },
+   "source": "eu_agrifood",
+   "sourceName": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "license": "EU-REUSE-2011-833",
+   "verdict": "condiciones",
+   "attribution": "Source: European Commission (Agri-food data portal)",
+   "unit": "tonelada",
+   "currency": "EUR",
+   "frequency": "weekly",
+   "rows": 431,
+   "first": "2015-11-22",
+   "last": "2026-10-18",
+   "csv": "data/pack/eu/trigo_duro.csv",
+   "xlsx": "data/pack/eu/trigo_duro.xlsx",
+   "csvBytes": 80261,
+   "xlsxBytes": 25592
+  },
+  {
    "product": "trigo_hrw_us",
    "name": {
     "es": "Trigo duro rojo de invierno de EE. UU. (HRW), exportación",
@@ -3472,32 +3503,6 @@
    "xlsx": "data/pack/eu/ternera_mundo.xlsx",
    "csvBytes": 85155,
    "xlsxBytes": 25862
-  },
-  {
-   "product": "trigo_duro",
-   "name": {
-    "es": "trigo_duro",
-    "en": "trigo_duro",
-    "fr": "trigo_duro",
-    "it": "trigo_duro"
-   },
-   "region": "eu",
-   "place": {},
-   "source": "eu_agrifood",
-   "sourceName": "European Commission — Agri-food Data Portal (DG AGRI)",
-   "license": "EU-REUSE-2011-833",
-   "verdict": "condiciones",
-   "attribution": "Source: European Commission (Agri-food data portal)",
-   "unit": "tonelada",
-   "currency": "EUR",
-   "frequency": "weekly",
-   "rows": 431,
-   "first": "2015-11-22",
-   "last": "2026-10-18",
-   "csv": "data/pack/eu/trigo_duro.csv",
-   "xlsx": "data/pack/eu/trigo_duro.xlsx",
-   "csvBytes": 80261,
-   "xlsxBytes": 24964
   },
   {
    "product": "eurostat_energy_input_index",
