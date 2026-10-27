@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T03:40:25Z",
+ "generatedAt": "2026-10-27T05:23:01Z",
  "summary": {
   "files": 96,
   "errors": 0,
-  "warnings": 30
+  "warnings": 31
  },
  "files": [
   {
@@ -385,17 +385,19 @@
   {
    "file": "hu-ksh-stats.json",
    "schema": "country-stats",
-   "status": "ok",
+   "status": "warning",
    "errors": [],
-   "warnings": [],
+   "warnings": [
+    "HU/hu-ksh-a0016-colza-seeds-for-sowing: salto 282263.0 -> 8241433.0 en 2019 (mediana previa 3.12e+05)"
+   ],
    "stats": {
-    "series": 236,
-    "points": 8645,
+    "series": 509,
+    "points": 17852,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T03:22:51Z",
+   "generatedAt": "2026-10-27T03:48:44Z",
    "info": [],
-   "nWarnings": 0,
+   "nWarnings": 1,
    "nErrors": 0
   },
   {
