@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T02:48:00Z",
+ "generatedAt": "2026-10-27T03:16:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 288,
+  "ok": 289,
   "late": 2,
   "error": 2,
   "not_run": 4,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T01:01:17.709335+00:00",
   "repoGeneratedAt": "2026-10-27T01:01:17.709335+00:00",
-  "checkedAt": "2026-10-27T02:48:00Z"
+  "checkedAt": "2026-10-27T03:16:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-27T02:37:23Z"
+     "lastChange": "2026-10-27T03:05:27Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -4512,6 +4512,29 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-nordic-weather.yml",
+   "name": "Update Sweden and Denmark observed weather against normal (SMHI and DMI open data)",
+   "crons": [
+    "50 6 * * *"
+   ],
+   "nextRun": "2026-10-27T06:50:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T03:12:55Z",
+    "durationSec": 147,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40442909852"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 24.0
+  },
+  {
    "workflow": "update-partner-tariffs.yml",
    "name": "Update partner tariffs (MX, CA, EU)",
    "crons": [
@@ -4569,7 +4592,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-27T03:10:00Z",
+   "nextRun": "2026-10-27T06:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -4616,7 +4639,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T02:38:15Z"
+     "lastChange": "2026-10-27T02:50:37Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4624,11 +4647,11 @@
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-27T02:37:23Z"
+     "lastChange": "2026-10-27T03:05:27Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-27T02:37:23Z"
+     "lastChange": "2026-10-27T03:05:27Z"
     },
     {
      "path": "data/pack"
@@ -6713,10 +6736,10 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-26T21:17:06Z",
-    "durationSec": 34,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40403046642"
+    "event": "schedule",
+    "startedAt": "2026-10-27T03:05:44Z",
+    "durationSec": 27,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40442226736"
    },
    "recent": {
     "runs": 10,
