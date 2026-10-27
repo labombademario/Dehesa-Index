@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "Valonia: superficie por cultivo del parcelario agricola anonimo (SPW, SIGEC): data/be-wallonia-crops.json",
+ "title": "Valonia: superficie por cultivo, por provincia y region agricola, del parcelario agricola anonimo (SPW, SIGEC): data/be-wallonia-crops.json",
  "type": "object",
  "required": [
   "schemaVersion",
@@ -160,6 +160,63 @@
         "integer",
         "null"
        ]
+      }
+     }
+    }
+   }
+  },
+  "areas": {
+   "type": "array",
+   "minItems": 10,
+   "items": {
+    "type": "object",
+    "required": [
+     "kind",
+     "id",
+     "name",
+     "ha",
+     "n",
+     "crops"
+    ],
+    "properties": {
+     "kind": {
+      "enum": [
+       "province",
+       "region"
+      ]
+     },
+     "id": {
+      "type": "string",
+      "minLength": 1
+     },
+     "name": {
+      "type": "string",
+      "minLength": 1
+     },
+     "ha": {
+      "type": "array",
+      "items": {
+       "type": "number",
+       "minimum": 0
+      }
+     },
+     "n": {
+      "type": "array",
+      "items": {
+       "type": "integer",
+       "minimum": 0
+      }
+     },
+     "crops": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
       }
      }
     }

@@ -5538,7 +5538,7 @@
    "redistribution": "yes",
    "attributionRequired": true,
    "attributionText": "Fuente: Service public de Wallonie (SPW), Parcellaire agricole anonyme, CC BY 4.0. Agregación por cultivo de dehesaindex.com.",
-   "additionalRestrictions": "Citar al SPW como fuente. Se publican sumas por cultivo y campaña (no se redistribuyen geometrías ni parcelas). El parcelario anónimo es la superficie declarada a la PAC, no la superficie agraria total de Valonia.",
+   "additionalRestrictions": "Citar al SPW como fuente. Se publican sumas por cultivo y campaña (no se redistribuyen geometrías ni parcelas). Desglose por provincia y región agrícola: los límites (servicios LIMITES_ADMINISTRATIVES y LIMITES_REGIONSAGRICOLES del SPW) solo se usan como filtro espacial en el servidor y no se publican geometrías; licencia propia de esas dos capas no verificada (ficha no localizada). El parcelario anónimo es la superficie declarada a la PAC, no la superficie agraria total de Valonia.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
    "verifiedAt": "2026-10-26",

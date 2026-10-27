@@ -4306,8 +4306,26 @@ def be_wallonia_crops(doc, errs, warns, stats):
     for code, lo, hi, nm in (("311", 80000, 170000, "froment d'hiver"), ("6", 300000, 450000, "prairie")):
         c = next((x for x in doc["crops"] if x["code"] == code), None)
         if not c or any(v is None or not lo < v < hi for v in c["ha"]): errs.append("%s (%s) ausente o fuera de %d-%d ha" % (nm, code, lo, hi))
+    known = {c["code"] for c in doc["crops"]}
+    for kind, lo_n in (("province", 5), ("region", 8)):
+        zs = [a for a in doc.get("areas", []) if a["kind"] == kind]
+        if "areas" in doc and len(zs) < lo_n: errs.append("zonas %s: %d (minimo %d)" % (kind, len(zs), lo_n))
+        ids = [a["id"] for a in zs]
+        if len(ids) != len(set(ids)): errs.append("zonas %s con id repetido" % kind)
+        for a in zs:
+            if len(a["ha"]) != n or len(a["n"]) != n or any(len(v) != n for v in a["crops"].values()): errs.append("zona %s: longitudes" % a["id"]); return
+            if not set(a["crops"]) <= known: errs.append("zona %s: cultivo desconocido %s" % (a["id"], sorted(set(a["crops"]) - known)[:3]))
+        for i, y in enumerate(Y):
+            if not zs: break
+            sm = sum(a["ha"][i] for a in zs)
+            if not 0.985 * T["ha"][i] <= sm <= 1.04 * T["ha"][i]: errs.append("%s: la suma de zonas %s (%.0f ha) no cuadra con el total (%.0f)" % (y, kind, sm, T["ha"][i]))
+            for a in zs:
+                if sum(v[i] or 0 for v in a["crops"].values()) > a["ha"][i] + 1: errs.append("%s: zona %s: los cultivos suman mas que la zona" % (y, a["id"]))
+        if kind == "province" and zs:
+            lux = next((a for a in zs if a["id"] == "BE34"), None); hai = next((a for a in zs if a["id"] == "BE32"), None)
+            if lux and hai and hai["ha"][-1] < lux["ha"][-1]: warns.append("Hainaut tiene menos superficie que Luxemburgo: revisar los poligonos")
     if Y[-1] < __import__("datetime").date.today().year - 3: warns.append("cultivos BE-WAL: ultima campaña %s" % Y[-1])
-    stats["campañas"] = "%s-%s" % (Y[0], Y[-1]); stats["cultivos"] = len(doc["crops"])
+    stats["campañas"] = "%s-%s" % (Y[0], Y[-1]); stats["cultivos"] = len(doc["crops"]); stats["zonas"] = len(doc.get("areas", []))
 def nl_drought(doc, errs, warns, stats):
     import datetime as _dt
     C = doc["counties"]; P = doc["periods"]

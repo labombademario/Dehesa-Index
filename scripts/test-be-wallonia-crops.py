@@ -52,4 +52,36 @@ d3 = copy.deepcopy(doc); d3["years"][-1] += 1; d3["latestYear"] += 1
 e = m.check(d3); chk("campañas no consecutivas: error", any("consecutivas" in x for x in e))
 d4 = copy.deepcopy(doc); d4["totals"]["parcels"][2] = 10
 chk("parcelas imposibles: error", any("parcelas" in x for x in m.check(d4)))
+# zonas: consulta por poligono, zonas con varios poligonos, claves y cache de campañas cerradas
+real_post = m.post
+def fake_post(url, params, **k):
+    g = json.loads(params["geometry"])["rings"][0][0][0]
+    if g < 0: return {"error": {"code": 400, "message": "Unable to complete operation."}}
+    return {"features": [{"attributes": {"CULT_COD": "311", "HA": 100.0 * (g + 1), "N": 10}}, {"attributes": {"CULT_COD": "6", "HA": 200.0, "N": 20}}]}
+import json
+m.post = fake_post
+poly = lambda x: json.dumps({"rings": [[[x, 0], [x, 1], [x + 1, 1]]], "spatialReference": {"wkid": 3812}})
+r = m.area_stats("S", poly(1), 3812); chk("area_stats: suma por cultivo y numero de parcelas", r == {"311": (200.0, 10), "6": (200.0, 20)})
+chk("area_stats: el servidor rechaza el poligono -> None", m.area_stats("S", poly(-1), 3812) is None)
+z = m.zone_stats("S", {"geos": [poly(1), poly(2)], "wkid": 3812}); chk("zone_stats: suma los poligonos de la zona", z == {"311": (500.0, 20), "6": (400.0, 40)})
+chk("zone_stats: un poligono rechazado invalida la zona", m.zone_stats("S", {"geos": [poly(1), poly(-1)], "wkid": 3812}) is None)
+m.post = real_post
+AD = [{"kind": "province", "id": "BE%d" % (31 + i), "name": "P%d" % i} for i in range(5)] + [{"kind": "region", "id": "R%d" % i, "name": "Reg%d" % i} for i in range(9)]
+def areas(k):
+    out = {}
+    for y in range(2018, 2024):
+        out[y] = {}
+        for grp, n in (("BE", 5), ("R", 9)):
+            for i in range(n):
+                tot = (doc["totals"]["ha"][y - 2018] / n) * 1.012 * k
+                out[y][("BE%d" % (31 + i)) if grp == "BE" else "R%d" % i] = {"ha": tot, "n": 1000 + i, "crops": {"311": tot * 0.15, "6": tot * 0.5}}
+    return out
+d5 = m.build(raw, {}, now, areas(1.0), AD)
+chk("build con zonas: schemaVersion 2 y 14 zonas, provincias primero", d5["schemaVersion"] == 2 and len(d5["areas"]) == 14 and [a["kind"] for a in d5["areas"][:5]] == ["province"] * 5)
+chk("build con zonas: series por cultivo con huecos (null) donde la zona no llega a 50 ha", all(len(a["crops"]["311"]) == 6 for a in d5["areas"]))
+chk("check con zonas: un documento sano no da errores", m.check(d5) == [], )
+e = m.check(m.build(raw, {}, now, areas(1.5), AD)); chk("zonas que suman un 50 % de mas: error", any("no cuadra" in x for x in e))
+e = m.check(m.build(raw, {}, now, areas(1.0), AD[3:])); chk("menos de 5 provincias: error", any("zonas province" in x for x in e))
+bad = areas(1.0); bad[2020]["BE31"]["crops"]["311"] = 9e9
+e = m.check(m.build(raw, {}, now, bad, AD)); chk("cultivos que superan la zona: error", any("suman mas que la zona" in x for x in e))
 print("Valonia (SIGEC anonimo): %s" % ("0 fallos" if ok else "con fallos")); sys.exit(0 if ok else 1)
