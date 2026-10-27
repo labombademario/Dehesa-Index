@@ -1,3 +1,2 @@
-escaneo: 122 numeros probados, 1 ediciones,  0 sin respuesta
-EDICION ILEGIBLE IraCex25150 la ficha no trae el fichero esperado; ficheros: ['2025-150_Inforapcommerceext.pdf', 'conjinforap2025150ce_tdb.pdf', '2025_150donneescommerceext.xls', '2025-150_
-series de catalogo: 50
+escaneo: 162 numeros probados, 0 ediciones,  0 sin respuesta
+sin ediciones nuevas: se conserva lo publicado
