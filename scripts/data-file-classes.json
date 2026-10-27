@@ -489,6 +489,14 @@
     "file": "js/nuts3-drought.js",
     "pattern": "data/eu-drought-nuts3/' + cc + '.json"
    }
+  },
+  "data/catalog/HU.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Hungria (sin puntos; 509 series del KSH y otras): la ficha del pais los pide por DISeries.country('HU').",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
   }
  },
  "prefixes": {
