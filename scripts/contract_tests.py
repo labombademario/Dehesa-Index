@@ -2620,7 +2620,8 @@ def spain_land(doc, errs, warns, stats):
     g = doc["price"]["ccaa"]["ES"].get("PT")
     if not g or g[-1] is None or not 1000 <= g[-1] <= 60000: errs.append("spain-land: precio general nacional fuera de rango"); return
     r = doc["rent"]["ccaa"]["ES"].get("GEN")
-    if not r or r[-1] is None or not 20 <= r[-1] <= 2000: errs.append("spain-land: canon general nacional fuera de rango"); return
+    rl = [x for x in (r or []) if x is not None]   # el MAPA publica los canones un año despues que los precios: el ultimo año puede ser hueco
+    if not rl or not 20 <= rl[-1] <= 2000: errs.append("spain-land: canon general nacional fuera de rango"); return
     stats["spain-land anos"] = n
 
 def _lfi_mod():
