@@ -1,2 +1,1 @@
-secciones: [('Report Header', 11), ('Report Livestock Commodity', 108), ('Report Livestock Class', 28), ('Report Poultry Commodity', 27)]
-escrito slaughter.json {'cattle': 354, 'calves': 354, 'hogs': 354, 'sheep': 354, 'chicken': 354} ultimo dia 2026-10-26
+MARS 3208 error URLError(gaierror(-3, 'Temporary failure in name resolution'))
