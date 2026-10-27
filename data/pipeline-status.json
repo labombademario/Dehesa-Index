@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T09:10:00Z",
+ "generatedAt": "2026-10-27T09:27:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 292,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T06:54:09.101272+00:00",
   "repoGeneratedAt": "2026-10-27T06:54:09.101272+00:00",
-  "checkedAt": "2026-10-27T09:10:00Z"
+  "checkedAt": "2026-10-27T09:27:00Z"
  },
  "pipelines": [
   {
@@ -392,7 +392,7 @@
    "crons": [
     "20 9 * * 1-5"
    ],
-   "nextRun": "2026-10-27T09:20:00Z",
+   "nextRun": "2026-10-28T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -407,7 +407,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-be-drought.yml",
@@ -2108,7 +2108,7 @@
    "crons": [
     "20 9 * * 2,5"
    ],
-   "nextRun": "2026-10-27T09:20:00Z",
+   "nextRun": "2026-10-30T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3171,7 +3171,7 @@
    "crons": [
     "20 9 * * 2"
    ],
-   "nextRun": "2026-10-27T09:20:00Z",
+   "nextRun": "2026-11-03T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3382,14 +3382,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T20:42:38Z",
-    "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39851186542"
+    "event": "schedule",
+    "startedAt": "2026-10-27T09:17:18Z",
+    "durationSec": 42,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40479633927"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -4330,7 +4330,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-27T09:17:00Z",
+   "nextRun": "2026-10-27T12:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -4517,13 +4517,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T09:09:52Z",
-    "durationSec": 33,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39929856607"
+    "startedAt": "2026-10-27T09:15:38Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40479426725"
    },
    "recent": {
-    "runs": 8,
-    "success": 6,
+    "runs": 9,
+    "success": 7,
     "failed": 1
    },
    "status": "ok",
@@ -4657,7 +4657,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T08:57:06Z"
+     "lastChange": "2026-10-27T09:13:49Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5108,13 +5108,13 @@
    "last": {
     "conclusion": "cancelled",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T07:42:10Z",
-    "durationSec": 2963,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40468702749"
+    "startedAt": "2026-10-27T08:32:30Z",
+    "durationSec": 2431,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40474220097"
    },
    "recent": {
     "runs": 9,
-    "success": 3,
+    "success": 2,
     "failed": 3
    },
    "status": "ok",
@@ -5223,8 +5223,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-27T09:01:52Z",
-    "durationSec": 35,
+    "startedAt": "2026-10-27T09:17:04Z",
+    "durationSec": 40,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40477717584",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · precios de la tierra: Precios medios de las tierras de uso agrario. Resultados provisionales 2025 https://www.mapa.gob.es/dam/mapa/contenido/estadisticas/temas/estadisticas-agrarias/1.economicas/precios-medios-anuales-de-las-tierras-de"
    },
@@ -5656,7 +5656,7 @@
    "crons": [
     "20 9 * * 2,5"
    ],
-   "nextRun": "2026-10-27T09:20:00Z",
+   "nextRun": "2026-10-30T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
