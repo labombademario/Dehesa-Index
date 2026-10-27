@@ -4,6 +4,7 @@ Fuente: https://www.ksh.hu (STADAT, ficheros CSV en ingles). Licencia: CC BY 4.0
 (condiciones de uso del KSH, https://www.ksh.hu/copyright_eng; quedan fuera los ficheros consultados a peticion a las bases internas, que no usamos).
 Tablas (desde 1990): mez0001 resumen, mez0008 uso de la tierra, mez0009 alquiler y precio de la tierra, mez0012/15/18 superficie, produccion y rendimiento de cultivos
 herbaceos, mez0013/16/19 hortalizas, mez0014/17/20 frutas y uva, mez0027 y mez0029 censo ganadero, mez0032-0035 produccion animal, leche y huevos.
+Precios mensuales (ara0052 compra de cultivos, ara0053 compra de ganado y productos, ara0054 mercado del productor; desde 2022): se omiten las tablas acumuladas (ara0049).
 Formato STADAT: CSV ISO-8859-2 con ';', cabecera «Year;col;col...», '..' = sin dato. Nada se estima; una celda vacia se omite; una serie con <3 puntos o parada >3 anos no se publica."""
 import csv, datetime, io, json, re, time, urllib.request
 from pathlib import Path
@@ -94,8 +95,41 @@ def parse(tab, group, prefix, colunits, skip):
         if s: out.append(s)
     log(tab, len(out), "series")
     return out
+MONTHS = {m: i + 1 for i, m in enumerate("January February March April May June July August September October November December".split())}
+# tablas mensuales de precios (ara): (tabla, grupo, prefijo, unidad por defecto de la cabecera del titulo)
+MONTHLY = [("ara0052", "prices", "Procurement price", True), ("ara0053", "prices_lv", "Procurement price", True), ("ara0054", "prices", "Producer market price", True)]
+def parse_monthly(tab, group, prefix, _):
+    rows = list(csv.reader(io.StringIO(get("https://www.ksh.hu/stadat_files/ara/en/%s.csv" % tab)), delimiter=";", quotechar='"'))
+    tu = unit_of(clean(rows[0][0])); hi = next(i for i, r in enumerate(rows) if r and clean(r[0]) == "Year")
+    head = [clean(h) for h in rows[hi]]; year = None; data = {}
+    for r in rows[hi + 1:]:
+        if not r: continue
+        if clean(r[0]): year = clean(r[0])
+        m = MONTHS.get(clean(r[1]) if len(r) > 1 else "")
+        if not year or not re.fullmatch(r"\d{4}", year) or not m: continue
+        for j in range(2, len(head)):
+            data.setdefault(j, []).append(("%s-%02d" % (year, m), num(r[j]) if j < len(r) else None))
+    out = []
+    for j, pts in data.items():
+        mu = re.search(r",\s*(HUF/[A-Za-z]+)$", head[j])
+        name, unit = (head[j][:mu.start()], mu.group(1)) if mu else (head[j], tu)
+        pts = sorted({p: v for p, v in pts if v is not None}.items())
+        pts = [[p, round(v, 3)] for p, v in pts]
+        if len(pts) < 12 or not unit: continue
+        y, mo = datetime.date.today().year, datetime.date.today().month
+        ly, lm = map(int, pts[-1][0].split("-"))
+        if (y - ly) * 12 + mo - lm > 18: continue
+        prev = pts[-2][1]
+        out.append(dict(id="hu-ksh-%s-%s" % (tab[3:], slug(name)[:40]), group=group, label="%s: %s (%s, KSH)" % (prefix, name, unit), unit=unit, frequency="monthly",
+                        latestPeriod=pts[-1][0], latest=pts[-1][1], changePct=round((pts[-1][1] / prev - 1) * 100, 2) if prev else None, points=pts,
+                        sourceGroup="KSH STADAT %s" % tab))
+    log(tab, len(out), "series mensuales")
+    return out
 def main():
     ser = []
+    for t in MONTHLY:
+        try: ser += parse_monthly(*t)
+        except Exception as e: log("ERROR", t[0], repr(e)[:300])
     for t in TABLES:
         try: ser += parse(*t)
         except Exception as e: log("ERROR", t[0], repr(e)[:300])

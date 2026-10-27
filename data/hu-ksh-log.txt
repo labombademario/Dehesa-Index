@@ -1,3 +1,6 @@
+ara0052 15 series mensuales
+ara0053 11 series mensuales
+ara0054 14 series mensuales
 mez0001 5 series
 mez0008 6 series
 mez0009 10 series
