@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T14:43:00Z",
+ "generatedAt": "2026-10-27T15:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 297,
+  "ok": 298,
   "late": 2,
   "error": 0,
   "not_run": 2,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T12:56:15.684573+00:00",
   "repoGeneratedAt": "2026-10-27T12:56:15.684573+00:00",
-  "checkedAt": "2026-10-27T14:43:00Z"
+  "checkedAt": "2026-10-27T15:00:00Z"
  },
  "pipelines": [
   {
@@ -695,14 +695,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-23T02:32:57Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39890169699"
+    "event": "schedule",
+    "startedAt": "2026-10-27T14:59:03Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40526433344"
    },
    "recent": {
-    "runs": 2,
-    "success": 2,
+    "runs": 3,
+    "success": 3,
     "failed": 0
    },
    "status": "ok",
@@ -3143,6 +3143,29 @@
    "expectedEveryHours": 360.0
   },
   {
+   "workflow": "update-forest-damage.yml",
+   "name": "Update forest felling, damage and bark beetle (CSU, Skogsstyrelsen, Statistics Estonia, KSH)",
+   "crons": [
+    "25 7 * * 2"
+   ],
+   "nextRun": "2026-11-03T07:25:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T14:56:33Z",
+    "durationSec": 39,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40526025408"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-forest-fires.yml",
    "name": "Update forest fires by country (EFFIS and GWIS burnt-area estimates, Copernicus / JRC)",
    "crons": [
@@ -4675,7 +4698,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4692,7 +4715,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/products"
@@ -4703,19 +4726,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T14:29:19Z"
+     "lastChange": "2026-10-27T14:46:12Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/pack"
@@ -4731,7 +4754,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/country-pending.json",
@@ -4739,22 +4762,22 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -4762,7 +4785,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-27T14:40:44Z"
+     "lastChange": "2026-10-27T14:56:13Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5153,14 +5176,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T09:13:21Z",
-    "durationSec": 972,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40479139429"
+    "event": "schedule",
+    "startedAt": "2026-10-27T14:29:32Z",
+    "durationSec": 1175,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40521602166"
    },
    "recent": {
-    "runs": 9,
-    "success": 2,
+    "runs": 10,
+    "success": 3,
     "failed": 3
    },
    "status": "ok",
@@ -6045,8 +6068,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40423008489"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
