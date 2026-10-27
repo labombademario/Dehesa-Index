@@ -1,25 +1,51 @@
-07:25:30 nl Rijn Lobith: 699.0 cm, 904.64 m3/s, estado low, 30 dias
-07:25:30 nl Waal Tiel: 223.0 cm, 700.7 m3/s, estado None, 30 dias
-07:25:30 nl Nederrijn Driel: 651.0 cm, 11.9 m3/s, estado low, 30 dias
-07:25:30 nl Lek Hagestein: 223.0 cm, 15.35 m3/s, estado normal, 30 dias
-07:25:30 nl IJssel Olst: 22.0 cm, 139.13 m3/s, estado low, 30 dias
-07:25:30 nl Maas Venlo: 1120.0 cm, 91.65 m3/s, estado normal, 29 dias
-07:25:30 nl Maas Maastricht: 4417.0 cm, 94.09 m3/s, estado None, 29 dias
-07:25:30 nl Maas Eijsden: 4426.0 cm, 111.7 m3/s, estado normal, 29 dias
-07:25:30 rivers-nl.json: 8 estaciones, ultima lectura 2026-10-27T08:10
-07:42:37 fr Seine Paris: 88.1 cm, 127.0 m3/s, estado low, 430 dias
-07:42:37 fr Seine Vernon: 326.7 cm, 224.0 m3/s, estado low, 430 dias
-07:42:37 fr Marne Gournay-sur-Marne: 111.8 cm, 29.0 m3/s, estado low, 430 dias
-07:42:37 fr Loire Gien: -58.4 cm, 64.5 m3/s, estado low, 430 dias
-07:42:37 fr Loire Orléans: -103.4 cm, 56.3 m3/s, estado low, 430 dias
-07:42:37 fr Loire Tours: 61.7 cm, 78.3 m3/s, estado low, 430 dias
-07:42:37 fr Loire Montjean: -140.3 cm, 168.0 m3/s, estado low, 430 dias
-07:42:37 fr Saône Mâcon: 157.1 cm, 21.4 m3/s, estado low, 430 dias
-07:42:37 fr Rhône Lyon: - cm, 486.0 m3/s, estado normal, 430 dias
-07:42:37 fr Rhône Valence: 246.3 cm, 701.0 m3/s, estado normal, 430 dias
-07:42:37 fr Rhône Tarascon: 129.0 cm, 998.0 m3/s, estado normal, 430 dias
-07:42:37 fr Garonne Lamagistère: -59.1 cm, 97.1 m3/s, estado low, 430 dias
-07:42:37 fr Garonne Tonneins: -64.1 cm, 106.0 m3/s, estado low, 430 dias
-07:42:38 fr Dordogne Cénac: 24.2 cm, 33.5 m3/s, estado low, 430 dias
-07:42:38 fr Meuse Sedan: 278.8 cm, 27.4 m3/s, estado normal, 430 dias
-07:42:38 rivers-fr.json: 15 estaciones, ultima lectura 2026-10-27T08:30
+08:42:43 aviso: nl venlo: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> URLError(TimeoutError('timed out'))
+08:44:49 aviso: nl maastricht.sintpieter.zuid: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> presupuesto de tiempo del pais agotado
+08:44:49 aviso: nl eijsden.grens: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> presupuesto de tiempo del pais agotado
+08:44:49 nl Rijn Lobith: 699.0 cm, 892.61 m3/s, estado low, 30 dias
+08:44:49 nl Waal Tiel: 224.0 cm, 706.72 m3/s, estado None, 30 dias
+08:44:49 nl Nederrijn Driel: 652.0 cm, 12.5 m3/s, estado low, 30 dias
+08:44:49 nl Lek Hagestein: 222.0 cm, 22.9 m3/s, estado normal, 30 dias
+08:44:49 nl IJssel Olst: 21.0 cm, 138.24 m3/s, estado low, 30 dias
+08:44:49 rivers-nl.json: 5 estaciones, ultima lectura 2026-10-27T09:30
+08:53:06 fr Seine Paris: 89.2 cm, 118.0 m3/s, estado low, 430 dias
+08:53:06 fr Seine Vernon: 327.9 cm, 243.0 m3/s, estado normal, 430 dias
+08:53:06 fr Marne Gournay-sur-Marne: 113.4 cm, 30.1 m3/s, estado low, 430 dias
+08:53:06 fr Loire Gien: -58.4 cm, 64.5 m3/s, estado low, 430 dias
+08:53:06 fr Loire Orléans: -103.5 cm, 56.1 m3/s, estado low, 430 dias
+08:53:06 fr Loire Tours: 61.4 cm, 77.8 m3/s, estado low, 430 dias
+08:53:06 fr Loire Montjean: -139.8 cm, 169.0 m3/s, estado low, 430 dias
+08:53:07 fr Saône Mâcon: 157.1 cm, 21.4 m3/s, estado low, 430 dias
+08:53:07 fr Rhône Lyon: - cm, 488.0 m3/s, estado normal, 430 dias
+08:53:07 fr Rhône Valence: 248.8 cm, 646.0 m3/s, estado normal, 430 dias
+08:53:07 fr Rhône Tarascon: 133.0 cm, 1020.0 m3/s, estado normal, 430 dias
+08:53:07 fr Garonne Lamagistère: -57.7 cm, 99.4 m3/s, estado low, 430 dias
+08:53:07 fr Garonne Tonneins: -63.6 cm, 107.0 m3/s, estado low, 430 dias
+08:53:07 fr Dordogne Cénac: 23.9 cm, 33.2 m3/s, estado low, 430 dias
+08:53:07 fr Meuse Sedan: 278.5 cm, 27.0 m3/s, estado normal, 430 dias
+08:53:07 rivers-fr.json: 15 estaciones, ultima lectura 2026-10-27T09:40
+08:59:26 ca Fraser Hope: 362.6 cm, 1340.0 m3/s, estado low, 25 dias
+08:59:26 ca Thompson Kamloops: 226.3 cm, - m3/s, estado None, 31 dias
+08:59:26 ca Bow Calgary: 87.5 cm, 48.8 m3/s, estado low, 31 dias
+08:59:26 ca Oldman Lethbridge: 38.5 cm, 31.2 m3/s, estado normal, 31 dias
+08:59:26 ca South Saskatchewan Medicine Hat: 212.8 cm, 105.0 m3/s, estado normal, 31 dias
+08:59:26 ca South Saskatchewan Saskatoon: 222.0 cm, 151.0 m3/s, estado normal, 31 dias
+08:59:26 ca North Saskatchewan Edmonton: 286.7 cm, 101.0 m3/s, estado low, 31 dias
+08:59:27 ca Red Emerson: 22843.8 cm, 65.2 m3/s, estado normal, 31 dias
+08:59:27 ca Assiniboine Headingley: 23181.8 cm, 92.6 m3/s, estado high, 31 dias
+08:59:27 ca Peace Peace River: 715.0 cm, 1960.0 m3/s, estado high, 31 dias
+08:59:27 ca Athabasca Athabasca: 118.8 cm, 304.0 m3/s, estado normal, 31 dias
+08:59:27 ca Ottawa Britannia: 5783.2 cm, 598.0 m3/s, estado low, 31 dias
+08:59:27 ca Saint Lawrence LaSalle: 87.3 cm, 7520.0 m3/s, estado low, 31 dias
+08:59:27 ca Saint John Fredericton: 88.1 cm, - m3/s, estado None, 31 dias
+08:59:27 ca Grand Galt: 70.1 cm, 14.7 m3/s, estado low, 31 dias
+08:59:27 rivers-ca.json: 15 estaciones, ultima lectura 2026-10-27T04:10
+09:08:21 aviso: be 01L09_136: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource=0&format=json&request=getTimeseriesList& -> TimeoutError('The read operation timed out')
+09:12:38 aviso: be 01L09_138: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource= -> presupuesto de tiempo del pais agotado
+09:12:38 aviso: be 01L08_093: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource= -> presupuesto de tiempo del pais agotado
+09:12:38 aviso: be 01L08_193: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource= -> presupuesto de tiempo del pais agotado
+09:12:38 aviso: be 01L10_077: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource= -> presupuesto de tiempo del pais agotado
+09:12:38 aviso: be 01L10_055: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource= -> presupuesto de tiempo del pais agotado
+09:12:38 aviso: be 01L05_409: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource= -> presupuesto de tiempo del pais agotado
+09:12:38 aviso: be 01L11_022: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource= -> presupuesto de tiempo del pais agotado
+09:12:38 aviso: be 01L09_152: https://download.waterinfo.be/tsmdownload/KiWIS/KiWIS?service=kisters&type=queryServices&datasource= -> presupuesto de tiempo del pais agotado
+09:12:38 FALLO be: be: datos insuficientes (0 estaciones)
