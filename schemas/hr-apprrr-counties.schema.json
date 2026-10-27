@@ -12,7 +12,8 @@
   "farms",
   "size",
   "use",
-  "vineyard"
+  "vineyard",
+  "history"
  ],
  "properties": {
   "schemaVersion": {
@@ -200,6 +201,49 @@
       "total": {
        "type": "object"
       }
+     }
+    }
+   }
+  },
+  "history": {
+   "type": "object",
+   "required": [
+    "farms",
+    "size",
+    "use",
+    "vineyard"
+   ],
+   "properties": {
+    "farms": {
+     "type": "object",
+     "minProperties": 1,
+     "additionalProperties": {
+      "type": "object",
+      "minProperties": 21
+     }
+    },
+    "size": {
+     "type": "object",
+     "minProperties": 1,
+     "additionalProperties": {
+      "type": "object",
+      "minProperties": 21
+     }
+    },
+    "use": {
+     "type": "object",
+     "minProperties": 1,
+     "additionalProperties": {
+      "type": "object",
+      "minProperties": 21
+     }
+    },
+    "vineyard": {
+     "type": "object",
+     "minProperties": 1,
+     "additionalProperties": {
+      "type": "object",
+      "minProperties": 21
      }
     }
    }

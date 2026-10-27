@@ -5221,6 +5221,21 @@ def hr_apprrr(doc, errs, warns, stats):
     for c, x in V["active"]["rows"].items():
         if x["ha"] >= 5 and not 1000 < x["vines"] / x["ha"] < 20000: errs.append("vinedo %s: %.0f cepas por ha" % (c, x["vines"] / x["ha"]))
     if not 8000 < V["active"]["total"]["ha"] < 40000: errs.append("vinedo: superficie total imposible")
+    H = doc["history"]
+    if len(H["farms"]) < 3: errs.append("serie de explotaciones con menos de 3 años")
+    for k, lo, hi in (("farms", 80000, 400000), ("size", 700000, 2500000), ("use", 700000, 2500000), ("vineyard", 8000, 40000)):
+        prev = None
+        for y, rows in sorted(H[k].items()):
+            miss = [c for c in C if c not in rows]
+            if miss: errs.append("serie %s %s: faltan provincias %s" % (k, y, miss[:2])); continue
+            v = sum(r["total"] for r in rows.values()) if k == "farms" else sum(r["ha"] for r in rows.values()) if k == "vineyard" else sum(x["ha"] for r in rows.values() for x in r.values())
+            if not lo < v < hi: errs.append("serie %s %s: total %.0f imposible" % (k, y, v))
+            if prev and abs(v / prev - 1) > 0.25: errs.append("serie %s %s: salto del %.0f%%" % (k, y, (v / prev - 1) * 100))
+            prev = v
+        ly = doc["asOf"][k][:4]
+        if ly not in H[k]: errs.append("serie %s: falta el año %s" % (k, ly))
+    ly = doc["asOf"]["farms"][:4]
+    if ly in H["farms"] and abs(sum(r["total"] for r in H["farms"][ly].values()) - F["total"]) > 1: errs.append("serie de explotaciones: el ultimo año no coincide con el detalle")
     stats["provincias"] = len(C); stats["filas"] = n
 def hr_dzs(doc, errs, warns, stats):
     """Estadistica agraria de Croacia (DZS): cada tabla con tantos valores como celdas, un eje de años al dia, sin negativos; cultivos: 4 regiones suman la Republica en superficie y produccion y el rendimiento publicado cuadra con produccion/superficie, el trigo suma sus clases; ganado y leche en rangos posibles; indices de precios con 2020 = 100; balances y abonos con totales posibles."""

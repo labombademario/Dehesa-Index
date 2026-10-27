@@ -10,7 +10,7 @@ Fuente: conjuntos de la organizacion de la APPRRR en data.gov.hr (CKAN, licencia
 El conjunto de cada tema se descubre por titulo en CKAN y se toma el año mas reciente (no hay URLs fijas). Nada se estima: '-' es 0 (la fuente lo usa para «sin parcelas»).
 Si algo no cuadra (provincias que faltan, totales que no suman, ordenes de magnitud imposibles) el fichero no se toca.
 Uso: python3 scripts/update-hr-apprrr.py [--local carpeta con farms.xlsx size.xlsx use.xlsx vineyard.xlsx]"""
-import argparse, datetime, io, json, re, sys, time, urllib.parse, urllib.request
+import argparse, datetime, difflib, io, json, re, sys, time, urllib.parse, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CKAN = "https://data.gov.hr/ckan/api/3/action/package_search?fq=organization:agencija-za-placanja-u-poljoprivredi-ribarstvu-i-ruralnom-razvoju&rows=200"
@@ -26,8 +26,11 @@ CK = {c.casefold(): c for c in COUNTIES}
 def county(x):
     """Nombre de provincia canonico o None (admite 'Istarska županija', 'Šibensko-Kninska')."""
     if not isinstance(x, str): return None
+    x = re.sub(r"_x[0-9a-fA-F]{4}_", "", x).replace("ż", "ž").replace("Ż", "Ž")
     s = re.sub(r"\s*županija\s*$", "", x.strip(), flags=re.I).casefold()
-    return CK.get(s)
+    if s in CK: return CK[s]
+    m = difflib.get_close_matches(s, list(CK), n=1, cutoff=0.88)  # algun libro antiguo trae el nombre con la codificacion rota (Pożeíko)
+    return CK[m[0]] if m else None
 def num(v):
     if v is None: return 0.0
     if isinstance(v, (int, float)): return float(v)
@@ -57,17 +60,17 @@ def kind_of(title):
     if "veličin" in t or "velicin" in t: return "size"
     return None
 def discover():
-    """{tipo: (año, titulo, url)} con el XLSX mas reciente de cada tipo."""
+    """{tipo: {año: (titulo, url)}} con todos los XLSX abiertos de cada tipo."""
     d = http_json(CKAN)["result"]["results"]
     best = {}
     for p in d:
         if p.get("license_id") != "open-license": continue
         k = kind_of(p.get("title", ""))
         yrs = re.findall(r"20\d\d", p.get("title", ""))
-        xl = [r for r in p.get("resources", []) if (r.get("format") or "").upper() == "XLSX"]
-        if not k or not yrs or not xl: continue
-        y = int(yrs[-1])
-        if k not in best or y > best[k][0]: best[k] = (y, p["title"], xl[0]["url"])
+        xl = [r for r in p.get("resources", []) if r.get("url") and ((r.get("format") or "").upper() == "XLSX" or r["url"].lower().endswith(".xlsx"))]
+        if not k or not xl: continue
+        y = int(yrs[-1]) if yrs else (2021 if k == "farms" else None)
+        if y: best.setdefault(k, {})[y] = (p["title"], xl[0]["url"])
     return best
 def load_rows(blob, sheet=0):
     import openpyxl
@@ -164,9 +167,22 @@ def check(doc):
         ha = sum(x["ha"] for x in v[k]["rows"].values())
         if abs(ha - t["ha"]) > max(1, 0.005 * t["ha"]): errs.append("vineyard %s: las provincias suman %.1f ha y el total es %.1f" % (k, ha, t["ha"]))
     if "active" in v and not 8000 < (v["active"]["total"] or {}).get("ha", 0) < 40000: errs.append("vineyard: superficie total fuera de rango")
+    H = doc.get("history", {})
+    for k, lo, hi in (("farms", 80000, 400000), ("size", 700000, 2500000), ("use", 700000, 2500000), ("vineyard", 8000, 40000)):
+        prev = None
+        for y, rows in H.get(k, {}).items():
+            if k == "farms": v = sum(r["total"] for r in rows.values())
+            elif k == "vineyard": v = sum(r["ha"] for r in rows.values())
+            else: v = sum(x["ha"] for r in rows.values() for x in r.values())
+            if not lo < v < hi: errs.append("serie %s %s: total %.0f fuera de rango" % (k, y, v))
+            if prev and abs(v / prev - 1) > 0.25: errs.append("serie %s %s: salto del %.0f%% frente al año anterior" % (k, y, (v / prev - 1) * 100))
+            prev = v
+        if doc["asOf"][k][:4] not in H.get(k, {}): errs.append("serie %s: falta el ultimo año" % k)
     return errs
-def build(blobs, meta):
-    doc = {"schemaVersion": 1, "generatedAt": now(),
+PARSE = {"farms": parse_farms, "size": parse_size, "use": parse_use, "vineyard": parse_vineyard}
+def build(blobs, meta, hist=None):
+    """blobs/meta: ultimo año de cada tipo; hist: {tipo: {año: (bytes, titulo, url)}} con los años anteriores (opcional)."""
+    doc = {"schemaVersion": 2, "generatedAt": now(),
            "source": {"id": "apprrr_hr", "name": "Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju (APPRRR)", "url": "https://data.gov.hr/organization/agencija-za-placanja-u-poljoprivredi-ribarstvu-i-ruralnom-razvoju",
                       "license": "Otvorena dozvola RH (data.gov.hr, open-license)"},
            "counties": COUNTIES, "asOf": {}, "datasets": {}}
@@ -176,6 +192,20 @@ def build(blobs, meta):
     doc["vineyard"] = parse_vineyard(load_rows(blobs["vineyard"]))
     for k, (y, title, url) in meta.items():
         doc["asOf"][k] = "%d-12-31" % y; doc["datasets"][k] = {"title": title, "url": url}
+    # serie historica por provincia: un bloque por tipo y año (el ultimo año tambien, para que la serie sea completa)
+    H = dict((k, {}) for k in PARSE)
+    for k in PARSE:
+        H[k][str(meta[k][0])] = doc[k]["rows"] if k != "vineyard" else doc["vineyard"]["active"]["rows"]
+    for k, ys in (hist or {}).items():
+        for y, (blob, title, url) in sorted(ys.items()):
+            if str(y) in H[k]: continue
+            try:
+                r = PARSE[k](load_rows(blob))
+                rows = r["rows"] if k != "vineyard" else r["active"]["rows"]
+                if any(c not in rows for c in COUNTIES): raise RuntimeError("provincias incompletas (%d)" % len(rows))
+                H[k][str(y)] = rows
+            except Exception as e: log("aviso: %s %s no se usa en la serie: %s" % (k, y, str(e)[:100]))
+    doc["history"] = dict((k, dict(sorted(v.items()))) for k, v in H.items())
     return doc
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", default=str(ROOT / "data" / "hr-apprrr")); ap.add_argument("--local", default="")
@@ -183,14 +213,25 @@ def main():
     try:
         if a.local:
             blobs = dict((k, (Path(a.local) / (k + ".xlsx")).read_bytes()) for k in ("farms", "size", "use", "vineyard"))
-            meta = dict((k, (2025, "local " + k, "file://" + k)) for k in blobs)
+            meta = dict((k, (2025, "local " + k, "file://" + k)) for k in blobs); hist = {}
+            for f in sorted(Path(a.local).glob("*_20??.xlsx")):
+                k, y = f.stem.rsplit("_", 1)
+                if k in PARSE and int(y) != meta[k][0]: hist.setdefault(k, {})[int(y)] = (f.read_bytes(), "local", "file://" + f.name)
         else:
-            best = discover(); miss = [k for k in ("farms", "size", "use", "vineyard") if k not in best]
+            allk = discover(); miss = [k for k in ("farms", "size", "use", "vineyard") if k not in allk]
             if miss: raise RuntimeError("conjuntos no encontrados en CKAN: %s" % miss)
-            meta = best; blobs = {}
-            for k, (y, title, url) in best.items():
-                log("descargando", k, y, url[-60:]); blobs[k] = http_bytes(url)
-        doc = build(blobs, meta)
+            meta, blobs, hist = {}, {}, {}
+            for k, ys in allk.items():
+                top = max(ys)
+                for y, (title, url) in sorted(ys.items()):
+                    try: b = http_bytes(url)
+                    except Exception as e:
+                        if y == top: raise
+                        log("aviso: %s %s no descargable: %s" % (k, y, str(e)[:80])); continue
+                    log("descargado", k, y)
+                    if y == top: meta[k] = (y, title, url); blobs[k] = b
+                    else: hist.setdefault(k, {})[y] = (b, title, url)
+        doc = build(blobs, meta, hist)
         errs = check(doc)
         if errs:
             for e in errs: log("ERROR", e)

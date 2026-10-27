@@ -4,28 +4,28 @@
   'use strict';
   var T = {
     es: { h: 'Croacia por provincia (APPRRR)', tabs: { farms: 'Explotaciones', land: 'Tierra ARKOD', vines: 'Viñedo' },
-      measure: 'Medida', view: 'Ver', type: 'Tipo de explotación', all: 'Todas', ha: 'Superficie (ha)', parcels: 'Parcelas', farmsN: 'Explotaciones', vinesN: 'Cepas', avg: 'Tamaño medio (ha por explotación)',
+      trend: 'Evolución por provincia', cAll: 'Toda Croacia', yrs: 'Años con dato', measure: 'Medida', view: 'Ver', type: 'Tipo de explotación', all: 'Todas', ha: 'Superficie (ha)', parcels: 'Parcelas', farmsN: 'Explotaciones', vinesN: 'Cepas', avg: 'Tamaño medio (ha por explotación)',
       national: 'Total Croacia', top: 'Provincia con más', share: 'del total', byCounty: 'Por provincia (župana)', byUse: 'Por tipo de uso', bySize: 'Por tamaño de explotación', use: 'Uso del suelo', size: 'Clase de tamaño',
       active: 'Viñedo en producción', cleared: 'Viñedo arrancado', mixed: 'Vid en plantaciones mixtas', density: 'Cepas por hectárea', asOf: 'Datos a', nodata: 'Sin datos por ahora.',
       nFarms: 'Registro de explotaciones agrarias (Upisnik) de la APPRRR. Una explotación con sede en una provincia cuenta en esa provincia.',
       nLand: 'ARKOD es el registro de parcelas agrarias de Croacia (equivalente al SIGPAC). Los totales provinciales son la suma de los asentamientos del fichero; el número de explotaciones no se suma porque una explotación con parcelas en varios asentamientos se repetiría. Las clases de tamaño son el tamaño total de la explotación en ha.',
       nVines: 'Registro vitivinícola (Vinogradarski registar) de la APPRRR. Una explotación con parcelas en varias provincias cuenta en cada una; la suma de provincias supera el número de explotaciones únicas.', src: 'Fuente:' },
     en: { h: 'Croatia by county (APPRRR)', tabs: { farms: 'Farms', land: 'ARKOD land', vines: 'Vineyards' },
-      measure: 'Measure', view: 'View', type: 'Farm type', all: 'All', ha: 'Area (ha)', parcels: 'Parcels', farmsN: 'Farms', vinesN: 'Vines', avg: 'Average size (ha per farm)',
+      trend: 'Trend by county', cAll: 'All Croatia', yrs: 'Years with data', measure: 'Measure', view: 'View', type: 'Farm type', all: 'All', ha: 'Area (ha)', parcels: 'Parcels', farmsN: 'Farms', vinesN: 'Vines', avg: 'Average size (ha per farm)',
       national: 'Croatia total', top: 'Largest county', share: 'of the total', byCounty: 'By county (županija)', byUse: 'By land use', bySize: 'By farm size', use: 'Land use', size: 'Size class',
       active: 'Vineyard in production', cleared: 'Grubbed-up vineyard', mixed: 'Vines within mixed plantings', density: 'Vines per hectare', asOf: 'Data as of', nodata: 'No data yet.',
       nFarms: 'APPRRR register of agricultural holdings (Upisnik). A farm seated in a county counts in that county.',
       nLand: 'ARKOD is Croatia’s agricultural parcel register (the equivalent of the Spanish SIGPAC). County totals are the sum of the settlements in the file; the number of farms is not summed because a farm with parcels in several settlements would be counted twice. Size classes are the farm’s total area in ha.',
       nVines: 'APPRRR wine-growing register (Vinogradarski registar). A farm with parcels in several counties counts in each one, so the county sum exceeds the number of unique farms.', src: 'Source:' },
     fr: { h: 'Croatie par comitat (APPRRR)', tabs: { farms: 'Exploitations', land: 'Terres ARKOD', vines: 'Vignoble' },
-      measure: 'Mesure', view: 'Voir', type: 'Type d’exploitation', all: 'Toutes', ha: 'Surface (ha)', parcels: 'Parcelles', farmsN: 'Exploitations', vinesN: 'Pieds de vigne', avg: 'Taille moyenne (ha par exploitation)',
+      trend: 'Évolution par comitat', cAll: 'Toute la Croatie', yrs: 'Années disponibles', measure: 'Mesure', view: 'Voir', type: 'Type d’exploitation', all: 'Toutes', ha: 'Surface (ha)', parcels: 'Parcelles', farmsN: 'Exploitations', vinesN: 'Pieds de vigne', avg: 'Taille moyenne (ha par exploitation)',
       national: 'Total Croatie', top: 'Comitat le plus important', share: 'du total', byCounty: 'Par comitat (županija)', byUse: 'Par type d’usage', bySize: 'Par taille d’exploitation', use: 'Usage du sol', size: 'Classe de taille',
       active: 'Vignoble en production', cleared: 'Vignoble arraché', mixed: 'Vigne dans des plantations mixtes', density: 'Pieds par hectare', asOf: 'Données au', nodata: 'Pas encore de données.',
       nFarms: 'Registre des exploitations agricoles (Upisnik) de l’APPRRR. Une exploitation dont le siège est dans un comitat compte dans ce comitat.',
       nLand: 'L’ARKOD est le registre parcellaire agricole de la Croatie (équivalent du SIGPAC espagnol). Les totaux par comitat sont la somme des localités du fichier ; le nombre d’exploitations n’est pas additionné car une exploitation ayant des parcelles dans plusieurs localités serait comptée deux fois. Les classes de taille sont la surface totale de l’exploitation en ha.',
       nVines: 'Registre viticole (Vinogradarski registar) de l’APPRRR. Une exploitation ayant des parcelles dans plusieurs comitats compte dans chacun ; la somme dépasse donc le nombre d’exploitations uniques.', src: 'Source :' },
     it: { h: 'Croazia per contea (APPRRR)', tabs: { farms: 'Aziende', land: 'Terra ARKOD', vines: 'Vigneto' },
-      measure: 'Misura', view: 'Vista', type: 'Tipo di azienda', all: 'Tutte', ha: 'Superficie (ha)', parcels: 'Particelle', farmsN: 'Aziende', vinesN: 'Viti', avg: 'Dimensione media (ha per azienda)',
+      trend: 'Andamento per contea', cAll: 'Tutta la Croazia', yrs: 'Anni disponibili', measure: 'Misura', view: 'Vista', type: 'Tipo di azienda', all: 'Tutte', ha: 'Superficie (ha)', parcels: 'Particelle', farmsN: 'Aziende', vinesN: 'Viti', avg: 'Dimensione media (ha per azienda)',
       national: 'Totale Croazia', top: 'Contea maggiore', share: 'del totale', byCounty: 'Per contea (županija)', byUse: 'Per uso del suolo', bySize: 'Per dimensione aziendale', use: 'Uso del suolo', size: 'Classe di dimensione',
       active: 'Vigneto in produzione', cleared: 'Vigneto estirpato', mixed: 'Vite in impianti misti', density: 'Viti per ettaro', asOf: 'Dati al', nodata: 'Ancora nessun dato.',
       nFarms: 'Registro delle aziende agricole (Upisnik) dell’APPRRR. Un’azienda con sede in una contea conta in quella contea.',
@@ -53,7 +53,7 @@
     'OSTALE VRSTE UPORABE ZEMLJIŠTA': 'Otros usos|Other land uses|Autres usages|Altri usi', 'PRIVREMENO NEODRŽAVANA PARCELA': 'Parcela temporalmente sin mantener|Temporarily unmaintained parcel|Parcelle temporairement non entretenue|Particella temporaneamente non mantenuta'
   };
   var SZ = { lt3: '< 3 ha', '3_20': '3 – 20 ha', '20_100': '20 – 100 ha', '100_1500': '100 – 1.500 ha', ge1500: '≥ 1.500 ha' };
-  var U = global.ESUI, ST = { tab: 'farms', ft: 'total', fm: 'n', lv: 'use', lu: 'ORANICA', ls: 'lt3', lm: 'ha', vb: 'active', vm: 'ha' }, D = null;
+  var U = global.ESUI, ST = { tab: 'farms', ft: 'total', fm: 'n', lv: 'use', lu: 'ORANICA', ls: 'lt3', lm: 'ha', vb: 'active', vm: 'ha', cc: 'all' }, D = null;
   function nm(raw, lg) { var s = N[raw]; return s ? (s.split('|')[LG[lg]] || raw) : raw; }
   function card(n, v, note) { return '<div class="di-card cof-card"><div class="cof-lbl">' + n + '</div><div class="cof-val">' + v + '</div>' + (note ? '<div class="cof-note" style="margin:2px 0 0">' + note + '</div>' : '') + '</div>'; }
   function note(t, k) { return '<p class="cof-note" style="margin:10px 0 0">' + U.esc(t[k]) + '</p>'; }
@@ -64,6 +64,14 @@
     return U.bars(rows, rows.length ? rows[0][1] || 1 : 1, dec, unit);
   }
   function asof(d, k, t) { return '<p class="cof-note" style="margin:6px 0 0">' + U.esc(t.asOf + ' ' + (d.asOf[k] || '')) + '</p>'; }
+  function trend(d, lg, t, H, get, unit) {
+    var ys = Object.keys(H || {}).sort(); if (ys.length < 2) return '';
+    var cs = ST.cc !== 'all' && d.counties.indexOf(ST.cc) >= 0 ? [ST.cc] : d.counties, name = cs.length === 1 ? cs[0] : t.cAll;
+    var v = ys.map(function (y) { var tot = 0, any = false; cs.forEach(function (c) { var x = get(H[y][c], y); if (x != null) { tot += x; any = true; } }); return any ? tot : null; });
+    if (v.filter(function (x) { return x != null; }).length < 2) return '';
+    var opts = U.opt('all', t.cAll, ST.cc) + d.counties.map(function (c) { return U.opt(c, c, ST.cc); }).join('');
+    return '<h3 class="cof-h3">' + U.esc(t.trend) + '</h3>' + U.sel('hra-cc', t.byCounty, opts, ST.cc) + U.chart([{ name: name, v: v }], ys, unit, name, 0) + '<p class="cof-note" style="margin:4px 0 0">' + U.esc(t.yrs + ': ' + ys.join(', ')) + '</p>';
+  }
   var VIEWS = {
     farms: function (d, lg, t) {
       var F = d.farms, types = F.types;
@@ -76,6 +84,7 @@
       if (list.length) out += card(U.esc(t.top), U.esc(list[0][0]), U.nf(list[0][1] / tot * 100, 1) + ' % ' + U.esc(t.share));
       if (ST.ft === 'total' && F.total) out += card(U.esc(nm('OBITELJSKO GOSPODARSTVO', lg)), U.nf(fam / F.total * 100, 1) + ' %', U.nf(fam, 0));
       out += '</div><h3 class="cof-h3">' + U.esc(t.byCounty) + '</h3>' + barsOf(list, tot, '', 0);
+      out += trend(d, lg, t, d.history && d.history.farms, function (r) { return r ? r[key] : null; }, '');
       return out + asof(d, 'farms', t) + note(t, 'nFarms');
     },
     land: function (d, lg, t) {
@@ -97,6 +106,7 @@
         var nat = Us.uses.map(function (k) { return [nm(k, lg), d.counties.reduce(function (s, c) { return s + (((Us.rows[c] || {})[k] || {}).ha || 0); }, 0)]; }).filter(function (x) { return x[1] > 0; }).sort(function (a, b) { return b[1] - a[1]; });
         out += '<h3 class="cof-h3">' + U.esc(t.byUse) + ' · ' + U.esc(t.national) + '</h3>' + barsOf(nat, all, 'ha', 0);
       }
+      out += trend(d, lg, t, d.history && d.history[byUse ? 'use' : 'size'], function (r) { var x = r ? (byUse ? r[ST.lu] : r[ST.ls]) : null; return x ? x[m] : null; }, unit);
       return out + asof(d, byUse ? 'use' : 'size', t) + note(t, 'nLand');
     },
     vines: function (d, lg, t) {
@@ -112,6 +122,7 @@
       out += '<div class="cof-cards">' + card(U.esc(t.national), U.nf(dens ? tot : (m === 'farms' ? sum(d.counties.reduce(function (o, c) { o[c] = (b.rows[c] || {}).farms || 0; return o; }, {})) : tot), 0) + (unit ? ' ' + unit : ''), U.esc(t[ST.vb]));
       if (list.length) out += card(U.esc(t.top), U.esc(list[0][0]), dens ? U.nf(list[0][1], 0) + ' /ha' : U.nf(list[0][1] / (tot || 1) * 100, 1) + ' % ' + U.esc(t.share));
       out += '</div><h3 class="cof-h3">' + U.esc(t.byCounty) + '</h3>' + barsOf(list, dens ? 0 : tot, unit, 0);
+      if (hasV) out += trend(d, lg, t, d.history && d.history.vineyard, function (r) { return r && !dens ? r[m] : null; }, unit);
       return out + asof(d, 'vineyard', t) + note(t, 'nVines');
     }
   };
@@ -140,7 +151,7 @@
       el.addEventListener('change', function (ev) {
         var id = ev.target.id || '', v = ev.target.value;
         if (id === 'hra-ft') ST.ft = v; else if (id === 'hra-lv') ST.lv = v; else if (id === 'hra-lu') ST.lu = v; else if (id === 'hra-ls') ST.ls = v; else if (id === 'hra-lm') ST.lm = v;
-        else if (id === 'hra-vb') ST.vb = v; else if (id === 'hra-vm') ST.vm = v;
+        else if (id === 'hra-vb') ST.vb = v; else if (id === 'hra-cc') ST.cc = v; else if (id === 'hra-vm') ST.vm = v;
         draw('#' + id);
       });
     }

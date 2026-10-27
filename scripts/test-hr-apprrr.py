@@ -59,4 +59,11 @@ chk("check: provincia ausente detectada", any("faltan provincias" in e for e in 
 # descubrimiento por titulo
 chk("kind_of: tipos por titulo", [m.kind_of(t) for t in ("Upisnik_poljoprivrednika - broj PG-a 31.12.2024.", "Podaci iz Vinogradarskog registra za 2024. godinu", "Broj i površina ARKOD-a po naseljima i vrsti uporabe poljoprivrednog zemljišta 31.12.2025.", "Površine ARKOD-a i broja-PG-a s obzirom na veličinu i sjedište PG-a 31.12.2025.", "otra cosa")] == ["farms", "vineyard", "use", "size", None])
 chk("county: variantes", m.county("Šibensko-Kninska") == "Šibensko-kninska" and m.county("Istarska županija") == "Istarska" and m.county("Ukupno") is None)
+chk("county: codificacion rota de libros antiguos", m.county("Pożeíko-slavonska żupanija_x0000__x0000_") == "Požeško-slavonska" and m.county("Koprivničko-kriżevačka żupanija") == "Koprivničko-križevačka" and m.county("Grad Zagreb_x0000_") == "Grad Zagreb" and m.county("Izvor:ARKOD") is None)
+# serie historica: un año anterior valido entra, uno con provincias de menos se descarta con aviso
+prev = book(fr[:3] + [[c, 1, 1, 2, 0, 1, 1, None, None, None, 3] for c in C] + [fr[-1]])
+bad = book(fr[:-4] + [fr[-1]])
+doc3 = m.build({"farms": book(fr), "size": book(sr), "use": book(ur), "vineyard": book(vr)}, meta, {"farms": {2023: (prev, "t", "u"), 2022: (bad, "t", "u")}})
+chk("history: año anterior valido incluido y orden ascendente", list(doc3["history"]["farms"]) == ["2023", "2025"] and doc3["history"]["farms"]["2023"]["Istarska"]["total"] == 3)
+chk("history: año con provincias de menos descartado", "2022" not in doc3["history"]["farms"])
 sys.exit(0 if ok else 1)

@@ -1,5 +1,15 @@
-descargando size 2025 a-pg-a-s-obzirom-na-velicinu-i-sjediste-pg-a-31.12.2025.xlsx
-descargando vineyard 2024 0ce/download/podaci-iz-vinogradarskog-registra-za-2024..xlsx
-descargando farms 2024 /download/upisnik_poljoprivrednika_broj_pg-a_2024_12_31.xlsx
-descargando use 2025 ma-i-vrsti-uporabe-poljoprivrednog-zemljita-31.12.2025..xlsx
+descargado size 2022
+descargado size 2024
+descargado size 2025
+descargado vineyard 2022
+descargado vineyard 2023
+descargado vineyard 2024
+descargado farms 2021
+descargado farms 2022
+descargado farms 2023
+descargado farms 2024
+descargado use 2022
+descargado use 2023
+descargado use 2024
+descargado use 2025
 OK counties.json {'size': '2025-12-31', 'vineyard': '2024-12-31', 'farms': '2024-12-31', 'use': '2025-12-31'}
