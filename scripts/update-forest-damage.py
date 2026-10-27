@@ -4,6 +4,8 @@
   SE  Suecia   Skogsstyrelsen (PxWeb): JO0312_07 bosque derribado por tormenta (millones de m3sk), JO0312_01 cortas brutas y por surtido,
                y la captura semanal de escarabajo de la corteza del abeto (Ips typographus) en trampas de feromonas: media de las trampas, desde 2016.
   EE  Estonia  Statistics Estonia KK513: rodales forestales destruidos por causa (insectos, viento, incendio, enfermedades...), ha, anual desde 1991.
+  Ampliacion (27 oct): CZ LES0101 (propiedad), LES0102 (13 regiones: cortas, tala fortuita, superficie, repoblacion), LES0103 (claros); SE JO0312_02a (cortas brutas por provincia);
+               EE KK514 (rodales dañados por causa); HU kor0006 (cortas por especie). Las series regionales llevan el campo "region".
   HU  Hungria  KSH STADAT kor0010: superficie de bosque danada por grupo de daños (insectos, abioticos, vertebrados...), ha, anual desde 2017.
 Cada serie lleva sus periodos. Los paises que fallan conservan su serie anterior (maximo 1 fallo). Uso: python3 scripts/update-forest-damage.py"""
 import csv, datetime, io, json, re, sys, time, urllib.parse, urllib.request
@@ -58,6 +60,51 @@ def adapter_cz():
         if len(d) < 5: continue
         out.append(S(sid, "CZ", grp, lab, "A", "m3 (sin corteza)", d, CZ_SRC, "Tala en bosques de Chequia en m3 sin corteza; la fortuita (de saneamiento) es la que sigue a plagas, tormentas y sequia."))
     if not any(s["id"] == "cz-salvage-insect" for s in out): raise RuntimeError("falta la tala por insectos")
+    return out + adapter_cz_more()
+
+CZ_SRC1 = dict(CZ_SRC, name="Czech Statistical Office (CSU), open dataset LES0101: Forest ownership and categories", url="https://data.csu.gov.cz/opendata/sady/LES0101")
+CZ_SRC2 = dict(CZ_SRC, name="Czech Statistical Office (CSU), open dataset LES0102: Forestry by region", url="https://data.csu.gov.cz/opendata/sady/LES0102")
+CZ_SRC3 = dict(CZ_SRC, name="Czech Statistical Office (CSU), open dataset LES0103: Clearings and afforestation", url="https://data.csu.gov.cz/opendata/sady/LES0103")
+CZ_OWN = [("4582J", "cz-forestland-total", "Forest land, total"), ("5873J01", "cz-forestland-state", "Forest land: state forests"), ("5873J02", "cz-forestland-municipal", "Forest land: municipal forests"),
+          ("5873J03", "cz-forestland-private", "Forest land: private forests"), ("5873J024", "cz-forestland-other", "Forest land: other owners")]
+CZ_CLR = [("6501R", "cz-clearings-area", "Clearings (felled, not yet regenerated), area at 31 December"), ("5875T", "cz-clearings-new-felling", "New clearings: from felling"),
+          ("5875ZI", "cz-clearings-new-natural", "New clearings: from natural disasters"), ("5883J", "cz-afforestation", "Afforestation, total")]
+CZ_REG = [("4582LES", "forestland", "area", "Forest land", "ha"), ("5980J", "felling-total", "felling", "Total felling", "m3 (sin corteza)"), ("5981J", "salvage-total", "salvage", "Salvage (incidental) felling, total", "m3 (sin corteza)"),
+          ("5981J1", "salvage-natural", "salvage", "Salvage felling: natural causes (wind, snow, drought)", "m3 (sin corteza)"), ("5981J2", "salvage-insect", "salvage", "Salvage felling: insects (bark beetle)", "m3 (sin corteza)"),
+          ("5883J", "afforestation", "regen", "Afforestation, total", "ha")]
+def _csu(dsid): return list(csv.DictReader(io.StringIO(http("https://data.csu.gov.cz/opendata/sady/%s/distribuce/csv" % dsid).decode("utf-8-sig"))))
+def adapter_cz_more():
+    out = []
+    r = _csu("LES0101"); got = {}
+    for x in r:
+        try: got[(x["IndicatorType"], x["Roky"])] = float(x["Hodnota"])
+        except ValueError: pass
+    for code, sid, lab in CZ_OWN:
+        d = {y: round(v) for (c, y), v in got.items() if c == code}
+        if len(d) < 10: raise RuntimeError("LES0101 %s con %d años" % (code, len(d)))
+        out.append(S(sid, "CZ", "area", lab, "A", "ha", d, CZ_SRC1, "Superficie de terreno forestal de Chequia a 31 de diciembre, por tipo de propietario (estimación cualificada del CSU para la propiedad)."))
+    r = _csu("LES0103"); got = {}
+    for x in r:
+        try: got[(x["IndicatorType"], x["Roky"])] = float(x["Hodnota"])
+        except ValueError: pass
+    for code, sid, lab in CZ_CLR:
+        d = {y: round(v) for (c, y), v in got.items() if c == code}
+        if len(d) < 10: raise RuntimeError("LES0103 %s con %d años" % (code, len(d)))
+        out.append(S(sid, "CZ", "clearing" if "clearings" in sid else "regen", lab, "A", "ha", d, CZ_SRC3, "Claros (superficie talada aun sin regenerar) y repoblación en los bosques de Chequia, en hectareas."))
+    r = _csu("LES0102"); acc = {}; names = {}
+    for x in r:
+        k = x["UZ02HZ.KRAJ"]
+        if not k: continue
+        try: acc.setdefault((k, x["IndicatorType"]), {})[x["Roky"]] = round(float(x["Hodnota"]))
+        except ValueError: pass
+        names[k] = x["Území-Kraj"]
+    for k in sorted(names):
+        for code, tag, grp, lab, unit in CZ_REG:
+            d = acc.get((k, code), {})
+            if len(d) < 5: raise RuntimeError("LES0102 %s %s con %d años" % (k, code, len(d)))
+            o = S("cz-%s-%s" % (tag, k), "CZ", grp, lab, "A", unit, d, CZ_SRC2, "Dato regional de Chequia (kraj); Praga se publica junto con la region de Bohemia Central.")
+            o["region"] = names[k]; out.append(o)
+    if len(names) < 12: raise RuntimeError("LES0102: %d regiones" % len(names))
     return out
 # ------------------------------------------------------------------ Suecia
 SKS = "https://pxweb.skogsstyrelsen.se/api/v1/sv/Skogsstyrelsens%20statistikdatabas/"
@@ -98,6 +145,19 @@ def adapter_se():
     if len(wk) < 50: raise RuntimeError("escarabajo: %d semanas" % len(wk))
     out.append(S("se-bark-beetle-trap-mean", "SE", "beetle", "Spruce bark beetle (Ips typographus): mean catch per pheromone trap", "W", "escarabajos por trampa", wk,
                  dict(SE_SRC, name="Skogsstyrelsen, Granbarkborresvärmning 01: average number of spruce bark beetles per trap"), "Media entre las trampas con dato de cada semana (cálculo propio sobre las medias por trampa de Skogsstyrelsen); semanas de vuelo, de abril a agosto, desde 2016."))
+    # cortas brutas por provincia (län), 4 años
+    d = jpost(SKS + "Avverkning/JO0312_02a.px", [{"code": "År", "selection": {"filter": "all", "values": ["*"]}}])
+    c, lab = cells(d); reg = {}
+    for k, v in c.items():
+        rg = lab["Region"][k[0]]; yr = lab["År"][k[1]]
+        m = re.match(r"(\d{2}) (.+)$", rg)
+        if not m or m.group(1) == "00" or not re.fullmatch(r"\d{4}( Prel\.)?", yr): continue
+        reg.setdefault((m.group(1), m.group(2)), {})[yr[:4]] = round(float(v), 3)
+    if len(reg) < 20: raise RuntimeError("regiones suecas: %d" % len(reg))
+    for (code, name), dd in sorted(reg.items()):
+        if len(dd) < 3: continue
+        o = S("se-felling-gross-%s" % code, "SE", "felling", "Gross felling", "A", "milj. m3sk", dd, dict(SE_SRC, name="Skogsstyrelsen, JO0312_02a: gross felling volume by region"), "Corta bruta por provincia (län) en millones de m3sk; el ultimo año es preliminar. La tabla solo cubre los ultimos años.")
+        o["region"] = name; out.append(o)
     return out
 # ------------------------------------------------------------------ Estonia
 EE_URL = "https://andmed.stat.ee/api/v1/en/stat/keskkond/loodusvarad-ja-nende-kasutamine/metsavaru/KK513.px"
@@ -117,6 +177,25 @@ def adapter_ee():
         dd = rows.get(reason, {})
         if len(dd) < 5: raise RuntimeError("Estonia %s con %d años" % (reason, len(dd)))
         out.append(S(sid, "EE", grp, name, "A", "ha", dd, EE_SRC, "Superficie de rodales forestales destruidos en el año, por causa; las causas con cero años sin dato no se rellenan."))
+    return out + adapter_ee_more()
+EE_URL2 = EE_URL.replace("KK513", "KK514")
+EE_SRC2 = dict(EE_SRC, name="Statistics Estonia, KK514: Damaged forest stands by county, 31 December", url="https://andmed.stat.ee/en/stat/keskkond__loodusvarad-ja-nende-kasutamine__metsavaru/KK514")
+EE_MAP2 = {"Total": ("ee-damaged-total", "all", "Damaged forest stands, total"), "Needle pests": ("ee-damaged-needle", "beetle", "Damaged stands: needle pests"), "Leaf pests": ("ee-damaged-leaf", "beetle", "Damaged stands: leaf pests"),
+           "Stem pests": ("ee-damaged-stem", "beetle", "Damaged stands: stem pests"), "Root rot": ("ee-damaged-rootrot", "disease", "Damaged stands: root rot"), "Unfavourable weather conditions": ("ee-damaged-weather", "storm", "Damaged stands: unfavourable weather"),
+           "Windfall": ("ee-damaged-wind", "storm", "Damaged stands: windfall"), "Forest fires": ("ee-damaged-fire", "fire", "Damaged stands: forest fires"), "Mechanic damages caused by games": ("ee-damaged-game", "other", "Damaged stands: game damage"),
+           "Unfavourable water conditions": ("ee-damaged-water", "other", "Damaged stands: unfavourable water conditions"), "Human activities": ("ee-damaged-human", "other", "Damaged stands: human activities")}
+def adapter_ee_more():
+    d = jpost(EE_URL2, [{"code": "Maakond", "selection": {"filter": "item", "values": ["00"]}}, {"code": "Aasta", "selection": {"filter": "all", "values": ["*"]}}, {"code": "Kahjustuse põhjus", "selection": {"filter": "all", "values": ["*"]}}])
+    c, lab = cells(d); rows = {}
+    for k, v in c.items():
+        reason = lab["Kahjustuse põhjus"][k[2]]; yr = lab["Aasta"][k[1]]
+        if reason in EE_MAP2: rows.setdefault(reason, {})[yr] = round(float(v), 1)
+    out = []
+    for reason, (sid, grp, name) in EE_MAP2.items():
+        dd = rows.get(reason, {})
+        if dd and int(max(dd)) < max(int(y) for r in rows.values() for y in r) - 2: continue          # causa dejada de publicar
+        if len(dd) < 5: raise RuntimeError("Estonia KK514 %s con %d años" % (reason, len(dd)))
+        out.append(S(sid, "EE", grp, name, "A", "ha", dd, EE_SRC2, "Superficie de rodales forestales dañados (no destruidos) a 31 de diciembre, por causa."))
     return out
 # ------------------------------------------------------------------ Hungria
 HU_SRC = {"name": "Hungarian Central Statistical Office (KSH), STADAT 15.1.1.12: Forest damage by damage group", "url": "https://www.ksh.hu/stadat_files/kor/en/kor0010.html", "license": "CC BY 4.0 (KSH)"}
@@ -146,6 +225,25 @@ def adapter_hu():
         dd = res.get(name, {})
         if len(dd) < 4: raise RuntimeError("Hungria %s con %d años" % (name, len(dd)))
         out.append(S(sid, "HU", grp, lab, "A", "ha", dd, HU_SRC, "Superficie de bosque dañada en el año (fila «Total» de la tabla en hectareas), por grupo de daño."))
+    return out + adapter_hu_more()
+HU_SRC2 = {"name": "Hungarian Central Statistical Office (KSH), STADAT 15.1.1.8: Harvesting of wood on forest land by species group", "url": "https://www.ksh.hu/stadat_files/kor/en/kor0006.html", "license": "CC BY 4.0 (KSH)"}
+HU_HARV = {"Total": ("hu-harvest-total", "Felling: total, all species", "ezer m3"), "Oaks": ("hu-harvest-oaks", "Felling: oaks", "ezer m3"), "Turkey oak": ("hu-harvest-turkey-oak", "Felling: Turkey oak", "ezer m3"),
+           "Beech": ("hu-harvest-beech", "Felling: beech", "ezer m3"), "Hornbeam": ("hu-harvest-hornbeam", "Felling: hornbeam", "ezer m3"), "Black locust": ("hu-harvest-locust", "Felling: black locust", "ezer m3"),
+           "Improved poplars": ("hu-harvest-poplar", "Felling: improved poplars", "ezer m3"), "Pines": ("hu-harvest-pines", "Felling: pines", "ezer m3"), "Wood harvesting ratio, %": ("hu-harvest-ratio", "Felling as a share of increment (harvesting ratio)", "%")}
+def adapter_hu_more():
+    raw = http("https://www.ksh.hu/stadat_files/kor/en/kor0006.csv").decode("iso-8859-2")
+    rows = list(csv.reader(io.StringIO(raw), delimiter=";"))
+    hdr = next(r for r in rows if r and r[0].strip() == "Denomination"); yrs = [h.strip() for h in hdr]
+    out = []
+    for r in rows:
+        if not r or r[0].strip() not in HU_HARV: continue
+        sid, lab, unit = HU_HARV[r[0].strip()]; d = {}
+        for y, v in zip(yrs[1:], r[1:]):
+            v = v.strip().replace("\xa0", "").replace(" ", "").replace(",", ".")
+            if re.fullmatch(r"\d{4}", y) and re.fullmatch(r"\d+(\.\d+)?", v): d[y] = float(v) if "." in v else int(v)
+        if len(d) < 10: raise RuntimeError("Hungria kor0006 %s con %d años" % (sid, len(d)))
+        out.append(S(sid, "HU", "ratio" if unit == "%" else "felling", lab, "A", unit, d, HU_SRC2, "Cortas en terreno forestal de Hungria, miles de m3 (ezer m3) por grupo de especies; la ratio compara la corta con el crecimiento."))
+    if len(out) != len(HU_HARV): raise RuntimeError("Hungria kor0006: faltan filas")
     return out
 ADAPTERS = [("CZ", adapter_cz), ("SE", adapter_se), ("EE", adapter_ee), ("HU", adapter_hu)]
 def main():
@@ -160,7 +258,7 @@ def main():
     if len(fails) > MAX_FAIL or not series:
         print("ERROR: fallan %d paises; no se toca el fichero" % len(fails)); return 1
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-           "groups": ["felling", "salvage", "storm", "beetle", "disease", "fire", "all", "other"], "series": series}
+           "groups": ["felling", "salvage", "storm", "beetle", "disease", "fire", "all", "other", "area", "regen", "clearing", "ratio"], "series": series}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print("forest-damage.json", OUT.stat().st_size, "bytes;", len(series), "series; fallos:", len(fails)); return 0
 if __name__ == "__main__": sys.exit(main())

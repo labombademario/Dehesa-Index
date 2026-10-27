@@ -4684,7 +4684,7 @@ def forest_timber_prices(doc, errs, warns, stats):
     stats["series"] = sum(len(c["series"]) for c in cs.values())
 # Energia de la madera: pellets y astillas
 WOOD_ENERGY_RANGE = {"us-pellet-domestic-price": (80, 600), "us-pellet-export-price": (80, 600), "us-pellet-domestic-qty": (1, 3e6), "us-pellet-export-qty": (1, 3e6),
-                     "fi-pellet-consumer-price": (100, 1200), "fi-forest-chips-price": (5, 120)}
+                     "fi-pellet-consumer-price": (100, 1200), "fi-forest-chips-price": (5, 120), "hu-firewood-price": (1000, 40000)}
 def wood_energy(doc, errs, warns, stats):
     import re as _re, datetime as _d
     today = _d.date.today(); ids = {s["id"]: s for s in doc["series"]}
@@ -4707,8 +4707,8 @@ def wood_energy(doc, errs, warns, stats):
         if a in ids and b in ids and ids[a]["periods"] != ids[b]["periods"]: errs.append("%s y %s con periodos distintos" % (a, b))
     stats["series"] = len(ids)
 # Cortas, daños y plagas forestales (CZ, SE, EE, HU)
-FOREST_DAMAGE_MAX = {"m3 (sin corteza)": 5e7, "milj. m3sk": 200, "milj. m3fub": 200, "ha": 5e5, "escarabajos por trampa": 1e5}
-FOREST_DAMAGE_MUST = ["cz-felling-total", "cz-salvage-total", "cz-salvage-insect", "se-storm-felled", "se-felling-gross", "se-bark-beetle-trap-mean", "ee-destroyed-total", "ee-destroyed-insects", "hu-damage-total", "hu-damage-insects"]
+FOREST_DAMAGE_MAX = {"m3 (sin corteza)": 5e7, "milj. m3sk": 200, "milj. m3fub": 200, "ha": 5e6, "escarabajos por trampa": 1e5, "ezer m3": 1e5, "%": 150}
+FOREST_DAMAGE_MUST = ["cz-forestland-total", "cz-clearings-area", "ee-damaged-total", "hu-harvest-total", "hu-harvest-ratio", "cz-felling-total", "cz-salvage-total", "cz-salvage-insect", "se-storm-felled", "se-felling-gross", "se-bark-beetle-trap-mean", "ee-destroyed-total", "ee-destroyed-insects", "hu-damage-total", "hu-damage-insects"]
 def forest_damage(doc, errs, warns, stats):
     import re as _re, datetime as _d
     cy = _d.date.today().year; ids = {}
@@ -4743,6 +4743,46 @@ def forest_damage(doc, errs, warns, stats):
     hu = cz("hu-damage-total"); hi = cz("hu-damage-insects")
     for y, v in hi.items():
         if y in hu and v > hu[y] * 1.001: errs.append("HU %s: daños por insectos superan al total" % y)
+    # Chequia: partes de la propiedad <= total; regiones: tala fortuita <= tala total y la suma regional ~ el total nacional
+    own = cz("cz-forestland-total")
+    for k in ("cz-forestland-state", "cz-forestland-municipal", "cz-forestland-private"):
+        for y, v in cz(k).items():
+            if y in own and v > own[y] * 1.001: errs.append("CZ %s: %s supera a la superficie forestal total" % (y, k))
+    regs = {}
+    for sid, s in ids.items():
+        if s.get("region"): regs.setdefault(sid.rsplit("-", 1)[0], []).append(s)
+    for base, ss in regs.items():
+        if base.startswith("cz-") and any(not s.get("region") for s in ss): errs.append("%s: serie regional sin region" % base)
+    for sv in ("cz-felling-total", "cz-salvage-total"):
+        base = sv.replace("cz-", "cz-", 1)
+        rs = [s for sid, s in ids.items() if sid.startswith(base + "-") and s.get("region")]
+        nat = cz(sv); tot = {}; cnt = {}
+        for s in rs:
+            for y, v in zip(s["periods"], s["values"]): tot[y] = tot.get(y, 0) + v; cnt[y] = cnt.get(y, 0) + 1
+        for y, v in tot.items():
+            if y in nat and len(rs) >= 12 and cnt[y] == len(rs) and abs(v - nat[y]) > 0.05 * nat[y] + 1000: errs.append("CZ %s: la suma de regiones de %s (%s) no coincide con el total nacional (%s)" % (y, sv, round(v), nat[y]))
+    fs = [s for s in ids.values() if s["id"].startswith("cz-felling-total-") and s.get("region")]; ss = {s["region"]: s for s in ids.values() if s["id"].startswith("cz-salvage-total-") and s.get("region")}
+    for f in fs:
+        sv = ss.get(f["region"])
+        if sv:
+            fd_ = dict(zip(f["periods"], f["values"]))
+            for y, v in zip(sv["periods"], sv["values"]):
+                if y in fd_ and v > fd_[y] * 1.001: errs.append("CZ %s %s: la tala fortuita regional supera a la tala total" % (f["region"], y))
+    sr = [s for s in ids.values() if s["id"].startswith("se-felling-gross-") and s.get("region")]
+    if len(sr) < 20: errs.append("SE: solo %d provincias con corta bruta" % len(sr))
+    seg = cz("se-felling-gross"); tot = {}
+    for s in sr:
+        for y, v in zip(s["periods"], s["values"]): tot[y] = tot.get(y, 0) + v
+    for y, v in tot.items():
+        if y in seg and len(sr) >= 20 and abs(v - seg[y]) > 0.03 * seg[y]: errs.append("SE %s: la suma de provincias (%.2f) no coincide con la corta bruta nacional (%.2f)" % (y, v, seg[y]))
+    et = cz("ee-damaged-total")
+    for k in [k for k in ids if k.startswith("ee-damaged-") and k != "ee-damaged-total"]:
+        for y, v in cz(k).items():
+            if y in et and v > et[y] * 1.001 + 1: errs.append("EE %s: %s supera al total de rodales dañados" % (y, k))
+    ht = cz("hu-harvest-total")
+    for k in [k for k in ids if k.startswith("hu-harvest-") and k not in ("hu-harvest-total", "hu-harvest-ratio")]:
+        for y, v in cz(k).items():
+            if y in ht and v > ht[y] * 1.001: errs.append("HU %s: %s supera a la corta total" % (y, k))
     se = cz("se-felling-gross"); sn = cz("se-felling-net")
     for y, v in sn.items():
         if y in se and v * 0.95 > se[y]: errs.append("SE %s: la corta neta (m3fub) no puede superar a la bruta (m3sk)" % y)

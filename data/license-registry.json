@@ -8325,9 +8325,10 @@
   "data/wood-energy.json": {
    "sources": [
     "eia",
-    "statfin_fi"
+    "statfin_fi",
+    "ksh_hu"
    ],
-   "notes": "Pellets de EE. UU. (EIA-63C, acumulados desde que se empezo a guardar) y pellets y astillas forestales de Finlandia (StatFin 12gv y 12gb). scripts/update-wood-energy.py."
+   "notes": "Pellets de EE. UU. (EIA-63C: informe de diciembre archivado 2017 en adelante y año en curso), pellets y astillas forestales de Finlandia (StatFin 12gv y 12gb) y precio de la leña de Hungria (KSH ara0044). scripts/update-wood-energy.py."
   },
   "data/worldbank-timber.json": {
    "sources": [
@@ -8342,7 +8343,7 @@
     "stat_ee",
     "ksh_hu"
    ],
-   "notes": "Tala fortuita de Chequia (CSU LES0104), tormenta, cortas y escarabajo de la corteza de Suecia (Skogsstyrelsen; la media de trampas es calculo propio), rodales destruidos de Estonia (KK513) y daños forestales de Hungria (KSH kor0010). scripts/update-forest-damage.py."
+   "notes": "Chequia (CSU LES0101-0104: cortas, tala fortuita, propiedad, claros y datos por region), Suecia (Skogsstyrelsen: tormenta, cortas, cortas por provincia JO0312_02a y escarabajo; la media de trampas es calculo propio), Estonia (KK513 destruidos, KK514 dañados) y Hungria (KSH kor0010 daños y kor0006 cortas). scripts/update-forest-damage.py."
   },
   "data/uk-timber-prices.json": {
    "sources": [

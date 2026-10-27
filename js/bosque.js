@@ -13,7 +13,7 @@
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function num(v, d) { return v == null ? '—' : v.toLocaleString(LOC[lg()], { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
   function pct(v) { return v == null ? '—' : v.toLocaleString(LOC[lg()], { minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: 'exceptZero' }).replace('-', '−') + ' %'; }
-  var INT = { 'm3 (sin corteza)': 1, ha: 1, t: 1 };
+  var INT = { 'm3 (sin corteza)': 1, ha: 1, t: 1, 'ezer m3': 1, 'HUF/100 kg': 1 };
   function dec(v, u) { var a = Math.abs(v); return INT[u] ? 0 : a >= 1000 ? 0 : a >= 100 ? 1 : a >= 10 ? 1 : 2; }
   var T = {
     title: L('Bosque y madera', 'Forests and timber', 'Forêts et bois', 'Foreste e legno'),
@@ -63,10 +63,10 @@
                'Felling and damage as each country publishes them; definitions (salvage felling, destroyed stands, damaged area) are not equivalent between countries. The Swedish weekly mean of beetles per trap is a Dehesa Index calculation over Skogsstyrelsen’s per-trap means.',
                'Coupes et dégâts tels que chaque pays les publie ; les définitions (coupe de salubrité, peuplements détruits, surface endommagée) ne sont pas équivalentes entre pays. La moyenne hebdomadaire de scolytes par piège en Suède est un calcul de Dehesa Index sur les moyennes par piège de Skogsstyrelsen.',
                'Tagli e danni come li pubblica ciascun paese; le definizioni (taglio fortuito, popolamenti distrutti, superficie danneggiata) non sono equivalenti tra paesi. La media settimanale di bostrici per trappola in Svezia è un calcolo di Dehesa Index sulle medie per trappola di Skogsstyrelsen.'),
-    enNote: L('Pellets de EE. UU. (EIA): la EIA solo publica el año en curso, así que la serie se acumula desde el día en que Dehesa Index empezó a guardarla. Finlandia: pellet al consumidor con IVA y astillas forestales entregadas sin IVA, trimestrales.',
-              'US pellets (EIA): the EIA only publishes the current year, so the series accumulates from the day Dehesa Index started storing it. Finland: consumer pellet price incl. VAT and delivered forest chips excl. VAT, quarterly.',
-              'Granulés des États-Unis (EIA) : l’EIA ne publie que l’année en cours, la série s’accumule donc depuis le jour où Dehesa Index a commencé à la conserver. Finlande : granulés au consommateur TVA incluse et plaquettes forestières livrées hors TVA, trimestriels.',
-              'Pellet degli Stati Uniti (EIA): l’EIA pubblica solo l’anno in corso, quindi la serie si accumula dal giorno in cui Dehesa Index ha iniziato a conservarla. Finlandia: pellet al consumatore IVA inclusa e cippato forestale consegnato IVA esclusa, trimestrali.'),
+    enNote: L('Pellets de EE. UU. (EIA): años cerrados desde el informe de diciembre archivado por la EIA (2017 en adelante) y el año en curso desde el informe mensual vigente; la EIA revisa cifras. Finlandia: pellet al consumidor con IVA y astillas forestales entregadas sin IVA, trimestrales. Hungría: precio al consumidor de la leña aserrada estándar, con IVA, mensual.',
+              'US pellets (EIA): closed years come from the December report archived by the EIA (2017 onwards) and the current year from the live monthly report; the EIA revises figures. Finland: consumer pellet price incl. VAT and delivered forest chips excl. VAT, quarterly. Hungary: consumer price of standard sawn firewood, incl. VAT, monthly.',
+              'Granulés des États-Unis (EIA) : les années closes viennent du rapport de décembre archivé par l’EIA (2017 et suivantes), l’année en cours du rapport mensuel en vigueur ; l’EIA révise ses chiffres. Finlande : granulés au consommateur TVA incluse et plaquettes forestières livrées hors TVA, trimestriels. Hongrie : prix à la consommation du bois de chauffage scié standard, TVA incluse, mensuel.',
+              'Pellet degli Stati Uniti (EIA): gli anni chiusi provengono dal rapporto di dicembre archiviato dall’EIA (dal 2017) e l’anno in corso dal rapporto mensile vigente; l’EIA rivede le cifre. Finlandia: pellet al consumatore IVA inclusa e cippato forestale consegnato IVA esclusa, trimestrali. Ungheria: prezzo al consumo della legna da ardere segata standard, IVA inclusa, mensile.'),
     src: L('Fuente:', 'Source:', 'Source :', 'Fonte:'), lic: L('Licencia:', 'Licence:', 'Licence :', 'Licenza:')
   };
   var CN = { EU: 0, AT: L('Austria', 'Austria', 'Autriche', 'Austria'), BE: L('Bélgica', 'Belgium', 'Belgique', 'Belgio'), BG: L('Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'), HR: L('Croacia', 'Croatia', 'Croatie', 'Croazia'),
@@ -79,7 +79,7 @@
     AR: L('Argentina', 'Argentina', 'Argentine', 'Argentina'), CL: L('Chile', 'Chile', 'Chili', 'Cile'), UY: L('Uruguay', 'Uruguay', 'Uruguay', 'Uruguay') };
   CN.EU = T.EU;
   var UNIT = { 'EUR/m3': '€/m³', 'CZK/m3': 'CZK/m³', 'PLN/m3': 'PLN/m³', 'USD/t': 'USD/t', 'EUR/t': '€/t', 'EUR/MWh': '€/MWh', 'USD/m3': 'USD/m³', 'USc/sheet': 'US¢/' + 'sheet', 't': 't', 'ha': 'ha',
-    'm3 (sin corteza)': 'm³', 'milj. m3sk': 'M m³sk', 'milj. m3fub': 'M m³fub', 'escarabajos por trampa': '/trap' };
+    'm3 (sin corteza)': 'm³', 'ezer m3': '1000 m³', 'HUF/100 kg': 'HUF/100 kg', '%': '%', 'milj. m3sk': 'M m³sk', 'milj. m3fub': 'M m³fub', 'escarabajos por trampa': '/trap' };
   function unit(u) { return UNIT[u] || u; }
   /* ---- nombres de surtidos y series en los 4 idiomas (las fuentes los publican en inglés; los datos siguen en inglés, se traduce al pintar) ---- */
   var SP = { 'pine': ['pino', 'pin', 'pino'], 'spruce': ['abeto rojo', 'épicéa', 'abete rosso'], 'birch': ['abedul', 'bouleau', 'betulla'], 'black alder': ['aliso negro', 'aulne noir', 'ontano nero'], 'asp': ['álamo temblón', 'tremble', 'pioppo tremulo'], 'oak': ['roble', 'chêne', 'quercia'], 'beech': ['haya', 'hêtre', 'faggio'] };
@@ -91,6 +91,37 @@
   ];
   var QUAL = { 'total': ['total', 'total', 'totale'], 'coniferous': ['coníferas', 'résineux', 'conifere'], 'non-coniferous': ['frondosas', 'feuillus', 'latifoglie'], 'broadleaf': ['frondosas', 'feuillus', 'latifoglie'], 'non-coniferous, others': ['otras frondosas', 'autres feuillus', 'altre latifoglie'], 'round and split, total': ['rolliza y partida, total', 'ronds et fendus, total', 'tondo e spaccato, totale'], 'round and split, coniferous': ['rolliza y partida, coníferas', 'ronds et fendus, résineux', 'tondo e spaccato, conifere'], 'round and split, non-coniferous': ['rolliza y partida, frondosas', 'ronds et fendus, feuillus', 'tondo e spaccato, latifoglie'] };
   var EX = {
+    'Forest land, total': ['Superficie forestal, total', 'Terrains forestiers, total', 'Superficie forestale, totale'],
+    'Forest land: state forests': ['Superficie forestal: bosques estatales', 'Terrains forestiers : forêts d’État', 'Superficie forestale: foreste statali'],
+    'Forest land: municipal forests': ['Superficie forestal: bosques municipales', 'Terrains forestiers : forêts communales', 'Superficie forestale: foreste comunali'],
+    'Forest land: private forests': ['Superficie forestal: bosques privados', 'Terrains forestiers : forêts privées', 'Superficie forestale: foreste private'],
+    'Forest land: other owners': ['Superficie forestal: otros propietarios', 'Terrains forestiers : autres propriétaires', 'Superficie forestale: altri proprietari'],
+    'Forest land': ['Superficie forestal', 'Terrains forestiers', 'Superficie forestale'],
+    'Clearings (felled, not yet regenerated), area at 31 December': ['Claros (talados y sin regenerar), superficie a 31 de diciembre', 'Coupes rases (non régénérées), surface au 31 décembre', 'Superfici tagliate non rigenerate, area al 31 dicembre'],
+    'New clearings: from felling': ['Claros nuevos: por cortas', 'Nouvelles coupes rases : par exploitation', 'Nuove superfici tagliate: da tagli'],
+    'New clearings: from natural disasters': ['Claros nuevos: por catástrofes naturales', 'Nouvelles coupes rases : catastrophes naturelles', 'Nuove superfici tagliate: calamità naturali'],
+    'Afforestation, total': ['Repoblación, total', 'Boisement, total', 'Rimboschimento, totale'],
+    'Damaged forest stands, total': ['Masas forestales dañadas, total', 'Peuplements forestiers endommagés, total', 'Popolamenti forestali danneggiati, totale'],
+    'Damaged stands: needle pests': ['Masas dañadas: plagas de las acículas', 'Peuplements endommagés : ravageurs des aiguilles', 'Popolamenti danneggiati: parassiti degli aghi'],
+    'Damaged stands: leaf pests': ['Masas dañadas: plagas de las hojas', 'Peuplements endommagés : ravageurs des feuilles', 'Popolamenti danneggiati: parassiti delle foglie'],
+    'Damaged stands: stem pests': ['Masas dañadas: plagas del tronco', 'Peuplements endommagés : ravageurs du tronc', 'Popolamenti danneggiati: parassiti del fusto'],
+    'Damaged stands: root rot': ['Masas dañadas: podredumbre de raíz', 'Peuplements endommagés : pourridié', 'Popolamenti danneggiati: marciume radicale'],
+    'Damaged stands: unfavourable weather': ['Masas dañadas: clima desfavorable', 'Peuplements endommagés : météo défavorable', 'Popolamenti danneggiati: meteo sfavorevole'],
+    'Damaged stands: windfall': ['Masas dañadas: derribo por viento', 'Peuplements endommagés : chablis', 'Popolamenti danneggiati: schianti da vento'],
+    'Damaged stands: forest fires': ['Masas dañadas: incendios forestales', 'Peuplements endommagés : incendies de forêt', 'Popolamenti danneggiati: incendi boschivi'],
+    'Damaged stands: game damage': ['Masas dañadas: daños de la caza', 'Peuplements endommagés : dégâts de gibier', 'Popolamenti danneggiati: danni della fauna selvatica'],
+    'Damaged stands: unfavourable water conditions': ['Masas dañadas: condiciones hídricas desfavorables', 'Peuplements endommagés : conditions hydriques défavorables', 'Popolamenti danneggiati: condizioni idriche sfavorevoli'],
+    'Damaged stands: human activities': ['Masas dañadas: actividad humana', 'Peuplements endommagés : activités humaines', 'Popolamenti danneggiati: attività umane'],
+    'Felling: total, all species': ['Cortas: total, todas las especies', 'Coupes : total, toutes essences', 'Tagli: totale, tutte le specie'],
+    'Felling: oaks': ['Cortas: robles', 'Coupes : chênes', 'Tagli: querce'],
+    'Felling: Turkey oak': ['Cortas: roble cerris', 'Coupes : chêne chevelu', 'Tagli: cerro'],
+    'Felling: beech': ['Cortas: haya', 'Coupes : hêtre', 'Tagli: faggio'],
+    'Felling: hornbeam': ['Cortas: carpe', 'Coupes : charme', 'Tagli: carpino'],
+    'Felling: black locust': ['Cortas: robinia', 'Coupes : robinier', 'Tagli: robinia'],
+    'Felling: improved poplars': ['Cortas: chopos mejorados', 'Coupes : peupliers améliorés', 'Tagli: pioppi selezionati'],
+    'Felling: pines': ['Cortas: pinos', 'Coupes : pins', 'Tagli: pini'],
+    'Felling as a share of increment (harvesting ratio)': ['Cortas como proporción del crecimiento (ratio de aprovechamiento)', 'Coupes en part de l’accroissement (taux de prélèvement)', 'Tagli in quota dell’incremento (tasso di utilizzazione)'],
+    'Standard sawn firewood, consumer price (100 kg)': ['Leña aserrada estándar, precio al consumidor (100 kg)', 'Bois de chauffage scié standard, prix à la consommation (100 kg)', 'Legna da ardere segata standard, prezzo al consumo (100 kg)'],
     'Sawlogs, total': ['Rollizos para aserrío, total', 'Grumes de sciage, total', 'Tronchi da sega, totale'],
     'Sawlogs, coniferous': ['Rollizos para aserrío, coníferas', 'Grumes de sciage, résineux', 'Tronchi da sega, conifere'],
     'Sawlogs, oak': ['Rollizos para aserrío, roble', 'Grumes de sciage, chêne', 'Tronchi da sega, quercia'],
@@ -154,7 +185,7 @@
       return KIND[m[2].toLowerCase()][k] + ': ' + SP[m[1].toLowerCase()][k] + tail + cat; }
     return s + tail;
   }
-  var DATA = null, ST = { s: 'prices', pc: 'SI', reg: '', sel: {}, fc: 'ES', dc: 'CZ', ec: 'us-pellet-domestic-price' };
+  var DATA = null, ST = { s: 'prices', pc: 'SI', reg: '', dreg: '', sel: {}, fc: 'ES', dc: 'CZ', ec: 'us-pellet-domestic-price' };
   function getJ(f) { return fetch('data/' + f + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   function loadAll() {
     return Promise.all([getJ('forest-timber-prices'), getJ('worldbank-timber'), getJ('forest-fires'), getJ('forest-damage'), getJ('wood-energy')]).then(function (r) {
@@ -267,8 +298,15 @@
     var fd = D.fd; if (!fd) return '';
     var cs = ['CZ', 'SE', 'EE', 'HU'].filter(function (c) { return fd.series.some(function (s) { return s.country === c; }); });
     if (cs.indexOf(ST.dc) < 0) ST.dc = cs[0];
-    var list = fd.series.filter(function (s) { return s.country === ST.dc; }).map(function (s) { var o = {}, k; for (k in s) o[k] = s[k]; o.label = trl(s.label); return o; });
-    return chips('bq-dc', cs.map(function (c) { return [c, tx(T.cty[c])]; }), ST.dc) + seriesBlock(list, 'd' + ST.dc) + '<div class="di-info-scope-note">' + esc(tx(T.dmgNote)) + '</div>';
+    var all = fd.series.filter(function (s) { return s.country === ST.dc; }), regs = {}, head = '';
+    all.forEach(function (s) { if (s.region) regs[s.region] = 1; });
+    if (Object.keys(regs).length) {
+      var ro = [['', tx(T.wholeCountry)]].concat(Object.keys(regs).sort(function (a, b) { return a.localeCompare(b, LOC[lg()]); }).map(function (r) { return [r, r]; }));
+      if (!ro.some(function (o) { return o[0] === ST.dreg; })) ST.dreg = '';
+      head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-dreg">' + ro.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.dreg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label></div>';
+    } else ST.dreg = '';
+    var list = all.filter(function (s) { return (s.region || '') === ST.dreg; }).map(function (s) { var o = {}, k; for (k in s) o[k] = s[k]; o.label = trl(s.label); return o; });
+    return chips('bq-dc', cs.map(function (c) { return [c, tx(T.cty[c])]; }), ST.dc) + head + seriesBlock(list, 'd' + ST.dc + ST.dreg) + '<div class="di-info-scope-note">' + esc(tx(T.dmgNote)) + '</div>';
   }
   /* ---- energia ---- */
   function energyView(D) {
@@ -294,10 +332,10 @@
       keep(function () {
         if (b.hasAttribute('data-bq-s')) { ST.s = b.getAttribute('data-bq-s'); url(); }
         else if (b.hasAttribute('data-bq-pc')) { ST.pc = b.getAttribute('data-bq-pc'); ST.reg = ''; }
-        else if (b.hasAttribute('data-bq-dc')) ST.dc = b.getAttribute('data-bq-dc');
+        else if (b.hasAttribute('data-bq-dc')) { ST.dc = b.getAttribute('data-bq-dc'); ST.dreg = ''; }
         else if (b.hasAttribute('data-fc')) ST.fc = b.getAttribute('data-fc');
         else if (b.hasAttribute('data-sid')) {
-          var k = ST.s === 'prices' ? 'p' + ST.pc + ST.reg : ST.s === 'damage' ? 'd' + ST.dc : 'e'; ST.sel[k] = b.getAttribute('data-sid');
+          var k = ST.s === 'prices' ? 'p' + ST.pc + ST.reg : ST.s === 'damage' ? 'd' + ST.dc + ST.dreg : 'e'; ST.sel[k] = b.getAttribute('data-sid');
         }
         page();
       });
@@ -305,6 +343,7 @@
     root.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' && ev.target.getAttribute && (ev.target.getAttribute('data-sid') || ev.target.getAttribute('data-fc'))) ev.target.click(); });
     root.addEventListener('change', function (ev) {
       if (ev.target.id === 'bq-fc') { ST.fc = ev.target.value; page(); var e = document.getElementById('bq-fc'); if (e) e.focus(); }
+      else if (ev.target.id === 'bq-dreg') { ST.dreg = ev.target.value; page(); var q = document.getElementById('bq-dreg'); if (q) q.focus(); }
       else if (ev.target.id === 'bq-reg') { ST.reg = ev.target.value; page(); var r = document.getElementById('bq-reg'); if (r) r.focus(); }
     });
   }

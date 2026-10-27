@@ -79,6 +79,19 @@ def eia(old):
                                     ("us-pellet-export-qty", "Densified biomass fuel (pellets), exports: quantity", expq, "t", "Toneladas exportadas.")):
         out.append(pack(sid, lab, "pellets", "M", unit, "USD" if unit == "USD/t" else None, "n/d", merge(merge(arch_for[sid], old_series(old, sid)), d), src, note + " Años cerrados: informe de diciembre de cada año archivado por la EIA; el año en curso, informe mensual vigente."))
     return out
+def hu_firewood():
+    raw = http("https://www.ksh.hu/stadat_files/ara/en/ara0044.csv").decode("iso-8859-2")
+    rows = list(csv.reader(io.StringIO(raw), delimiter=";"))
+    hdr = next(r for r in rows if r and r[0].strip() == "Code")
+    row = next((r for r in rows if r and r[0].strip() == "50202"), None)
+    if row is None: raise RuntimeError("KSH ara0044: falta la fila 50202 (lena aserrada estandar)")
+    out = {}
+    for h, v in zip(hdr[2:], row[2:]):
+        m = re.match(r"(\d{4}) (%s)$" % "|".join(MONTHS), h.strip()); v = v.strip().replace("\xa0", "").replace(" ", "")
+        if m and v.isdigit(): out["%s-%02d" % (m.group(1), MONTHS.index(m.group(2)) + 1)] = int(v)
+    if len(out) < 60: raise RuntimeError("KSH lena: %d meses" % len(out))
+    src = {"name": "Hungarian Central Statistical Office (KSH), STADAT 1.2.1.8: Average consumer price of selected products, monthly (code 50202)", "url": "https://www.ksh.hu/stadat_files/ara/en/ara0044.html", "license": "CC BY 4.0 (KSH)"}
+    return pack("hu-firewood-price", "Standard sawn firewood, consumer price (100 kg)", "firewood", "M", "HUF/100 kg", "HUF", "incl", out, src, "Precio medio al consumidor de la leña aserrada estandar en Hungria, forint por 100 kg; serie mensual del indice de precios de consumo (KSH).")
 def px(table, query):
     return json.loads(http(STATFIN + table + ".px", json.dumps({"query": query, "response": {"format": "json-stat2"}}).encode(), {"Content-Type": "application/json"}).decode("utf-8-sig"))
 def stat_series(d, cat_dim_filter=None):
@@ -105,14 +118,14 @@ def main():
     try: old = json.loads(OUT.read_text(encoding="utf-8"))
     except Exception: old = None
     series = []; fails = []
-    for name, fn in (("EIA", lambda: eia(old)), ("FI pellet", lambda: [fi_pellet()]), ("FI chips", lambda: [fi_chips()])):
+    for name, fn in (("EIA", lambda: eia(old)), ("FI pellet", lambda: [fi_pellet()]), ("FI chips", lambda: [fi_chips()]), ("HU leña", lambda: [hu_firewood()])):
         try:
             r = fn(); series += r; print(name, "OK", [(s["id"], s["periods"][-1], s["values"][-1]) for s in r])
         except Exception as e:
             fails.append(name); print("FALLO", name, str(e)[:200])
-            keep = {"EIA": "us-", "FI pellet": "fi-pellet", "FI chips": "fi-forest-chips"}[name]
+            keep = {"EIA": "us-", "FI pellet": "fi-pellet", "FI chips": "fi-forest-chips", "HU leña": "hu-firewood"}[name]
             series += [s for s in (old or {}).get("series", []) if s["id"].startswith(keep)]
-    if len(fails) == 3 or not series:
+    if len(fails) == 4 or not series:
         print("ERROR: fallan todas las fuentes; no se toca el fichero"); return 1
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "series": series}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
