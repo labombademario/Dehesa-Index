@@ -139,10 +139,13 @@ def parse_price(wb):
         if isinstance(c.value, str) and c.value.strip() in TYPES and c.value.strip() != "PT": cols[c.column] = c.value.strip()
     if len(cols) != len(TYPES) - 1: raise ValueError("Cuadro 20: columnas de tipos %d, se esperaban %d" % (len(cols), len(TYPES) - 1))
     values = {}; names = {}
+    # desde 2025 el libro trae CCAA | Código | Provincia | tipos...; antes Código | Provincia | tipos...: las columnas se buscan por su cabecera
+    ccol = next((c.column for c in ws[hdr] if isinstance(c.value, str) and norm(c.value) == "codigo"), 1)
+    ncol = next((c.column for c in ws[hdr] if isinstance(c.value, str) and norm(c.value) == "provincia"), 2)
     for r in range(hdr + 1, hdr + 1 + 60):
-        code = ws.cell(r, 1).value
+        code = ws.cell(r, ccol).value
         if not isinstance(code, int): continue
-        pid = "%02d" % code; names[pid] = str(ws.cell(r, 2).value).strip()
+        pid = "%02d" % code; names[pid] = str(ws.cell(r, ncol).value).strip()
         row = {}
         for c, t in cols.items():
             v = num(ws.cell(r, c).value)

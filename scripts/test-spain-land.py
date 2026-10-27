@@ -75,5 +75,10 @@ def rent_total(pw, rw): rw["Cuadro 1 "]["H22"] = 999
 rejects("canon general que no cuadra", rent_total, "canon Total Nacional")
 def rent_missing(pw, rw): rw["Cuadro 1 "]["A5"] = "Narnia"
 rejects("canon: comunidad desconocida", rent_missing, "comunidad desconocida")
+# libro de 2025: una columna «CCAA» delante (CCAA | Código | Provincia | tipos); las columnas se buscan por cabecera
+pw, rw = wbs(); ws = pw["Cuadro 20_PT_2024_provinciales"]; ws.insert_cols(1)
+for row in ws.iter_rows(min_row=1, max_row=8):
+    if any(isinstance(c.value, str) and c.value.strip() == "Provincia" for c in row): ws.cell(row[0].row, 1).value = "CCAA"
+d2 = build(pw, rw); check(d2["price"]["prov"]["names"]["02"] == "Albacete" and len(d2["price"]["prov"]["values"]) == 50 and d2["price"]["prov"]["values"]["02"]["TAR"] == 14081.38, "provincias con la columna CCAA delante")
 print("FALLOS:" if fails else "test-spain-land OK", *fails, sep="\n" if fails else " ")
 sys.exit(1 if fails else 0)
