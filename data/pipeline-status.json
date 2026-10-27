@@ -1,15 +1,15 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T07:39:00Z",
+ "generatedAt": "2026-10-27T07:54:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 290,
+  "ok": 291,
   "late": 2,
-  "error": 1,
+  "error": 0,
   "not_run": 4,
   "unknown": 0
  },
- "global": "error",
+ "global": "late",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T06:54:09.101272+00:00",
   "repoGeneratedAt": "2026-10-27T06:54:09.101272+00:00",
-  "checkedAt": "2026-10-27T07:39:00Z"
+  "checkedAt": "2026-10-27T07:54:00Z"
  },
  "pipelines": [
   {
@@ -185,7 +185,7 @@
    "crons": [
     "50 7 * * *"
    ],
-   "nextRun": "2026-10-27T07:50:00Z",
+   "nextRun": "2026-10-28T07:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -415,7 +415,7 @@
    "crons": [
     "40 7 * * *"
    ],
-   "nextRun": "2026-10-27T07:40:00Z",
+   "nextRun": "2026-10-28T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2052,7 +2052,7 @@
    "crons": [
     "40 7 * * 2,4"
    ],
-   "nextRun": "2026-10-27T07:40:00Z",
+   "nextRun": "2026-10-29T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2217,7 +2217,7 @@
    "crons": [
     "50 7 * * 2,5"
    ],
-   "nextRun": "2026-10-27T07:50:00Z",
+   "nextRun": "2026-10-30T07:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2287,7 +2287,7 @@
    "crons": [
     "40 7 * * *"
    ],
-   "nextRun": "2026-10-27T07:40:00Z",
+   "nextRun": "2026-10-28T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3093,7 +3093,7 @@
    "crons": [
     "40 7 * * 2,5"
    ],
-   "nextRun": "2026-10-27T07:40:00Z",
+   "nextRun": "2026-10-30T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3701,13 +3701,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T07:49:20Z",
-    "durationSec": 43,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39920343909"
+    "startedAt": "2026-10-27T07:52:41Z",
+    "durationSec": 48,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40469780959"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -4638,7 +4638,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T07:26:47Z"
+     "lastChange": "2026-10-27T07:42:11Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4923,7 +4923,7 @@
    "crons": [
     "40 7 * * 2,5"
    ],
-   "nextRun": "2026-10-27T07:40:00Z",
+   "nextRun": "2026-10-30T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5087,19 +5087,18 @@
    "nextRun": "2026-10-27T13:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-27T06:14:20Z",
-    "durationSec": 2445,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40459903970",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-rivers.py' has timed out after 40 minutes."
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T07:11:03Z",
+    "durationSec": 1903,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40465581075"
    },
    "recent": {
-    "runs": 7,
+    "runs": 8,
     "success": 3,
     "failed": 3
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 8.0
   },
   {
