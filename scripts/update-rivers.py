@@ -33,9 +33,11 @@ def log(*a):
     except Exception: pass
 
 
+DEADLINE = [None]   # tope de tiempo por pais (segundos desde el inicio de su adaptador): una API caida no debe agotar los 40 min de todo el flujo
 def http(url, data=None, tries=4, timeout=120):
     last = None
     for i in range(tries):
+        if DEADLINE[0] and time.time() > DEADLINE[0]: raise RuntimeError("%s -> presupuesto de tiempo del pais agotado" % url[:100])
         try:
             h = dict(UA)
             body = None
@@ -452,6 +454,7 @@ def run(cc, now):
     if out_f.exists():
         try: old = {s["id"]: s for s in json.loads(out_f.read_text(encoding="utf-8")).get("stations", [])}
         except Exception: old = {}
+    DEADLINE[0] = time.time() + 12 * 60
     metas = fn(now, old); out = []
     for m in metas:
         s = build_station(m, now, old.get(m["id"]))
