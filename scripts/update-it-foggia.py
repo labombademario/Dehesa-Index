@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Italia: Borsa Merci di Foggia (Camera di Commercio di Foggia), listini settimanali -> data/italy-foggia.json
 
-Fuente: conjuntos «Foggia - listini dei prezzi dei prodotti cerealicoli / olivicoli anno AAAA» del catálogo nacional dati.gov.it (CKAN), licencia CC BY 4.0;
+Fuente: conjuntos «Foggia - listini dei prezzi dei prodotti cerealicoli / olivicoli anno AAAA» (Camera di Commercio di Foggia), publicados en el portal
+opengovernment.unioncamere.gov.it y recogidos en el catálogo nacional dati.gov.it (desde GitHub Actions dati.gov.it no responde: se usa primero la ficha de Unioncamere), licencia CC BY 4.0;
 un CSV (';') por mes en opengovernment.unioncamere.gov.it, con una columna de precio mínimo y otra de máximo por cada miércoles de cotización.
 Productos: trigo duro por calidad (fino, buono mercantile, mercantile, biológico), sémolas de trigo duro, aceite de oliva virgen extra por acidez, DOP Dauno,
 IGP Puglia, virgen y lampante. Las aceitunas (pocas sesiones al año) no se publican.
@@ -35,6 +36,23 @@ def get(url, name=None, tries=4):
             if getattr(e, "code", None) == 404: break
             time.sleep(5 * (k + 1))
     raise RuntimeError("%s: %r" % (url[-100:], last))
+UC = "https://opengovernment.unioncamere.gov.it/dataset/foggia-listini-dei-prezzi-dei-prodotti-%s-anno-%d"
+def resources(kind_ds, y):
+    """URLs de los CSV del conjunto. Primero la ficha del conjunto en el portal de Unioncamere (la que responde desde GitHub Actions);
+    si falla, el catálogo dati.gov.it. None si la licencia no es CC BY 4.0."""
+    try:
+        h = get(UC % (kind_ds, y), "uc-%s-%d.html" % (kind_ds, y)).decode("utf-8", "replace")
+        if "foggia" not in h.lower(): raise ValueError("ficha sin contenido")
+        if not re.search(r"CC\.?\s*BY\.?\s*4\.0|Creative Commons Attribuzione 4\.0", h): return None
+        u = list(dict.fromkeys(re.findall(r'href="(https://opengovernment\.unioncamere\.gov\.it/download/\d+)"', h)))
+        if u: return u
+        raise ValueError("ficha sin ficheros")
+    except Exception as e:
+        log("AVISO: ficha de Unioncamere %s %d no disponible (%s); se prueba dati.gov.it" % (kind_ds, y, str(e)[:80]))
+    pkg = json.loads(get(CKAN % (kind_ds, y), "pkg-%s-%d.json" % (kind_ds, y)))["result"]
+    lic = pkg.get("license_id") or ""
+    if "CC BY" not in lic and "cc-by" not in lic.lower(): return None
+    return [r.get("url") for r in pkg.get("resources", []) if r.get("url")]
 def text(b):
     try: return b.decode("utf-8-sig")
     except UnicodeDecodeError: return b.decode("cp1252")
@@ -51,7 +69,7 @@ def classify(name, kind):
     """(id, nombre, unidad) o None"""
     n = norm(name)
     if kind == "olio":
-        if "olio" not in n: return None
+        if "olio" not in n or n.startswith(("olive", "varieta")): return None   # «Olive da olio varietà Coratina» son aceitunas, no aceite
         base = re.sub(r"\s+", " ", name.strip()); key = re.sub(r"[^a-z0-9]+", "-", n).strip("-")
         up = sum(ch.isupper() for ch in base); lo = sum(ch.islower() for ch in base)
         if up > lo:   # «OLIO EXTRAVERGINE D.O.P. DAUNO, Gargano» -> «Olio extravergine DOP Dauno, Gargano»
@@ -122,15 +140,13 @@ def main():
     acc, names, files = {}, {}, 0
     for y in range(FIRST_YEAR, datetime.date.today().year + 1):
         for kind_ds in ("cerealicoli", "olivicoli"):
-            try: pkg = json.loads(get(CKAN % (kind_ds, y), "pkg-%s-%d.json" % (kind_ds, y)))["result"]
-            except Exception as e: log("AVISO: sin conjunto %s %d (%s)" % (kind_ds, y, str(e)[:80])); continue
-            if "CC BY" not in (pkg.get("license_id") or "") and "cc-by" not in (pkg.get("license_id") or "").lower(): log("ERROR: licencia inesperada en %s %d: %s" % (kind_ds, y, pkg.get("license_id"))); return 1
-            for r in pkg.get("resources", []):
-                nm = norm(r.get("name") or ""); kind = "grano" if kind_ds == "cerealicoli" else ("olio" if " olio " in " %s " % nm else None)
-                if not kind: continue
-                u = r.get("url") or ""
-                try: n = parse(text(get(u, "r" + u.rsplit("/", 1)[-1] + ".csv")), kind, acc, names); files += 1
-                except Exception as e: log("AVISO: %s: %s" % (r.get("name"), str(e)[:100])); continue
+            kind = "grano" if kind_ds == "cerealicoli" else "olio"
+            try: urls = resources(kind_ds, y)
+            except Exception as e: log("AVISO: sin conjunto %s %d (%s)" % (kind_ds, y, str(e)[:100])); continue
+            if urls is None: log("ERROR: licencia inesperada en %s %d" % (kind_ds, y)); return 1
+            for u in urls:
+                try: parse(text(get(u, "r" + u.rsplit("/", 1)[-1] + ".csv")), kind, acc, names); files += 1
+                except Exception as e: log("AVISO: %s: %s" % (u, str(e)[:100])); continue
     dropped = clean(acc, names)
     series = []
     for sid, pts in sorted(acc.items()):
