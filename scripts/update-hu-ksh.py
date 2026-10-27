@@ -15,6 +15,7 @@ URL = "https://www.ksh.hu/stadat_files/%s/en/%s.csv"
 H = {"User-Agent": "Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)"}
 SRC = {"name": "Hungarian Central Statistical Office (KSH), STADAT (CC BY 4.0)", "url": "https://www.ksh.hu/stadat", "license": "CC BY 4.0"}
 LOG = []
+USED = set()
 def log(*a): LOG.append(" ".join(str(x) for x in a)); print(*a)
 # (tabla, grupo, prefijo de etiqueta, hoja con unidad en cabecera, columnas a saltar tras el ano)
 TABLES = [
@@ -109,7 +110,11 @@ def parse(tab, group, prefix, colunits, skip):
         elif not unit and "share" in low: unit = "%"
         if not unit: log("sin unidad, se omite:", tab, name[:60]); continue
         lab = "%s: %s%s (%s, KSH)" % (prefix, name, (", " + sec.lower()) if sec else "", unit)
-        s = build("hu-ksh-%s-%s%s" % (tab[3:] if tab[0] == "m" else "a" + tab[3:], slug(name)[:40], ("-" + slug(sec)[:40]) if sec else ""), group, lab, unit, pts, tab,
+        base = "hu-ksh-%s-%s" % (tab[3:] if tab[0] == "m" else "a" + tab[3:], slug(name)[:40])
+        sid = base + (("-" + slug(sec)[:20]) if sec else "")   # 20 letras de seccion = los ids ya publicados; solo si chocan se alarga
+        if sid in USED: sid = base + "-" + slug(sec)[:40]
+        USED.add(sid)
+        s = build(sid, group, lab, unit, pts, tab,
                   note_for(tab, name, pts))
         if s: out.append(s)
     log(tab, len(out), "series")
