@@ -809,6 +809,17 @@ CASES = [
  ("forest-timber-prices.json", "precio por encima del tope", lambda d: d["countries"]["FI"]["series"][0]["values"].__setitem__(-1, 9999)),
  ("forest-timber-prices.json", "salto de x10", lambda d: d["countries"]["SI"]["series"][0]["values"].__setitem__(-2, 700 if False else d["countries"]["SI"]["series"][0]["values"][-3] * 9)),
  ("forest-timber-prices.json", "serie repetida", lambda d: d["countries"]["CZ"]["series"].append(copy.deepcopy(d["countries"]["CZ"]["series"][0]))),
+ ("wood-energy.json", "serie que falta", lambda d: d["series"].pop(0)),
+ ("wood-energy.json", "pellet a precio imposible", lambda d: d["series"][0]["values"].__setitem__(-1, 5000)),
+ ("wood-energy.json", "valores y periodos descuadrados", lambda d: d["series"][1]["values"].pop()),
+ ("wood-energy.json", "periodo con formato erroneo", lambda d: d["series"][4]["periods"].__setitem__(-1, "2026M05")),
+ ("wood-energy.json", "periodos desordenados", lambda d: d["series"][5]["periods"].__setitem__(-1, "2016-Q1")),
+ ("wood-energy.json", "precio y cantidad desfasados", lambda d: (d["series"][2]["periods"].pop(), d["series"][2]["values"].pop())),
+ ("worldbank-timber.json", "serie que falta", lambda d: d["series"].pop(0)),
+ ("worldbank-timber.json", "precio imposible", lambda d: d["series"][0]["points"][-1].__setitem__(1, 99999)),
+ ("worldbank-timber.json", "periodos repetidos", lambda d: d["series"][1]["points"].append(list(d["series"][1]["points"][-1]))),
+ ("worldbank-timber.json", "unidad cruzada", lambda d: d["series"][-1].__setitem__("unit", "USD/m3")),
+ ("worldbank-timber.json", "mes con formato erroneo", lambda d: d["series"][2]["points"][-1].__setitem__(0, "2026M09")),
  ("forest-timber-prices.json", "unidad inesperada", lambda d: d["countries"]["LV"].__setitem__("unit", "USD/ft3")),
 ]
 bad = 0

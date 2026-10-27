@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-311 workflows (261 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+313 workflows (263 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -337,11 +337,13 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json, world-production.json | finish, validate-files |
 | update-wb-panel-prices.yml | a mano | mensual | build-wb-panel-obs.py | - | price-engine, publish |
 | update-wine-prices.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-wine-prices.py | wine-prices.json | finish, validate-files |
+| update-wood-energy.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-energy.py | wood-energy.json | finish, validate-files |
 | update-wood-prices-de.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-prices-de.py | wood-prices-de.json | finish, validate-files |
 | update-wood-prices-na.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-wood-prices-na.py | wood-prices-na.json | finish, validate-files |
 | update-wood-removals.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-removals.py | wood-removals.json | finish, validate-files |
 | update-worldbank-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-agri.py | worldbank-agri.json | finish, validate-files |
 | update-worldbank-fertilizers.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-fertilizers.py | worldbank-fertilizers.json | finish, validate-files |
+| update-worldbank-timber.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-timber.py | worldbank-timber.json | finish, validate-files |
 | update-worldbank-urea.yml | a mano | diaria | qa-navigation.mjs, update-worldbank-urea-eu.py | - | price-engine, publish |
 | watchdog-cancelled-runs.yml | a mano | varias veces al dia | rerun-cancelled.py | - | - |
 

@@ -1909,6 +1909,18 @@
    [
     "forest_timber_prices"
    ]
+  ],
+  "wood-energy.json": [
+   "wood-energy",
+   [
+    "wood_energy"
+   ]
+  ],
+  "worldbank-timber.json": [
+   "worldbank-timber",
+   [
+    "worldbank_timber"
+   ]
   ]
  },
  "globs": {

@@ -8321,6 +8321,19 @@
     "gus_poland"
    ],
    "notes": "Precios oficiales de la madera por surtido: Eslovenia (SURS, mensual), Chequia (CSU, trimestral, CZK), Letonia (CSP, semestral), Finlandia (Luke, semanal, pais y regiones) y Polonia (GUS, anual, precio del impuesto forestal). No son cifras armonizadas entre paises. scripts/update-forest-timber-prices.py."
+  },
+  "data/wood-energy.json": {
+   "sources": [
+    "eia",
+    "statfin_fi"
+   ],
+   "notes": "Pellets de EE. UU. (EIA-63C, acumulados desde que se empezo a guardar) y pellets y astillas forestales de Finlandia (StatFin 12gv y 12gb). scripts/update-wood-energy.py."
+  },
+  "data/worldbank-timber.json": {
+   "sources": [
+    "world_bank"
+   ],
+   "notes": "Precios internacionales mensuales de troncos y madera aserrada tropicales (Camerun, Malasia) y contrachapado (World Bank Commodity Price Data, Pink Sheet). No son precios de la madera europea."
   }
  },
  "derived": [

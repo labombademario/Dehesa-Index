@@ -314,6 +314,15 @@ sources:
     continue: true
     data: [forest-timber-prices.json]
     message: Precios oficiales de la madera por surtido (Eslovenia, Chequia, Letonia, Finlandia y Polonia)
+  - id: wood-energy
+    name: Update wood pellet and forest chip prices (EIA-63C, StatFin)
+    cron: ['40 7 * * 3']   # EIA publica a mitad de mes; StatFin, trimestral
+    script: scripts/update-wood-energy.py
+    timeout: 10
+    script_timeout: 8
+    continue: true
+    data: [wood-energy.json]
+    message: Precios de pellets (EE. UU. y Finlandia) y astillas forestales (Finlandia)
   - id: wood-prices-na
     name: Update US and Canada timber price indices (BLS PPI, Statistics Canada IPPI)
     cron: ['35 15 18 * *']   # BLS publica el PPI a mitad de mes; StatCan el IPPI a final de mes: el 18 recoge el primero y el mes anterior del segundo
@@ -760,6 +769,16 @@ sources:
     continue: true
     data: [worldbank-fertilizers.json]
     message: Precios internacionales de fertilizantes (Banco Mundial, Pink Sheet)
+  - id: worldbank-timber
+    name: Update World Bank tropical timber prices (Pink Sheet)
+    cron: ['55 7 6 * *']
+    pre: ['pip install openpyxl']
+    script: scripts/update-worldbank-timber.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [worldbank-timber.json]
+    message: Precios internacionales de la madera tropical (Banco Mundial, Pink Sheet)
   - id: cpi
     name: Update consumer price indices (Eurostat, ONS, BLS, StatCan)
     cron: ['25 9 * * 3']

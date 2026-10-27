@@ -1821,6 +1821,22 @@ def worldbank_fertilizers(doc, errs, warns, stats):
     last = max(x["points"][-1][0] for x in doc["series"])
     if last < (_dt.date.today() - _dt.timedelta(days=100)).strftime("%Y-%m"): warns.append("fertilizantes BM: ultimo mes %s, con retraso" % last)
     stats["series"] = len(doc["series"]); stats["ultimo"] = last
+def worldbank_timber(doc, errs, warns, stats):
+    import datetime as _dt
+    ids = {x["id"]: x for x in doc["series"]}
+    for must in ("logs-cameroon", "sawnwood-cameroon", "sawnwood-malaysia"):
+        if must not in ids: errs.append("madera tropical Banco Mundial: falta %s" % must)
+    for sid, x in ids.items():
+        ps = [p[0] for p in x["points"]]
+        if ps != sorted(set(ps)): errs.append("madera BM %s: periodos no ascendentes o repetidos" % sid); continue
+        lo, hi = (20, 3000) if x["unit"] == "USD/m3" else (50, 3000)
+        for p, v in x["points"]:
+            if not re.fullmatch(r"\d{4}-\d{2}", p): errs.append("madera BM %s: periodo %s no es AAAA-MM" % (sid, p)); break
+            if not isinstance(v, (int, float)) or not lo <= v <= hi: errs.append("madera BM %s %s: precio fuera de rango (%s %s)" % (sid, p, v, x["unit"])); break
+        if (sid == "plywood") != (x["unit"] == "USc/sheet"): errs.append("madera BM %s: unidad %s no corresponde" % (sid, x["unit"]))
+    last = max(x["points"][-1][0] for x in doc["series"])
+    if last < (_dt.date.today() - _dt.timedelta(days=100)).strftime("%Y-%m"): warns.append("madera BM: ultimo mes %s, con retraso" % last)
+    stats["series"] = len(doc["series"]); stats["ultimo"] = last
 def worldbank_agri(doc, errs, warns, stats):
     """Banco Mundial (WDI): licencia CC BY-4.0 por indicador, series sin huecos en los extremos, rangos fisicos y coherencia produccion = rendimiento x superficie."""
     import datetime as _d, math as _m
@@ -4666,6 +4682,30 @@ def forest_timber_prices(doc, errs, warns, stats):
         if nb == 0 and cc != "PL": warns.append("%s: ninguna serie marcada como referencia" % cc)
     stats["countries"] = len(cs)
     stats["series"] = sum(len(c["series"]) for c in cs.values())
+# Energia de la madera: pellets y astillas
+WOOD_ENERGY_RANGE = {"us-pellet-domestic-price": (80, 600), "us-pellet-export-price": (80, 600), "us-pellet-domestic-qty": (1, 3e6), "us-pellet-export-qty": (1, 3e6),
+                     "fi-pellet-consumer-price": (100, 1200), "fi-forest-chips-price": (5, 120)}
+def wood_energy(doc, errs, warns, stats):
+    import re as _re, datetime as _d
+    today = _d.date.today(); ids = {s["id"]: s for s in doc["series"]}
+    for must in WOOD_ENERGY_RANGE:
+        if must not in ids: errs.append("falta la serie %s" % must)
+    for sid, s in ids.items():
+        pat = r"^\d{4}-(0[1-9]|1[0-2])$" if s["freq"] == "M" else r"^\d{4}-Q[1-4]$"
+        per = s["periods"]
+        if len(per) != len(s["values"]): errs.append("%s: %d periodos y %d valores" % (sid, len(per), len(s["values"]))); continue
+        if any(not _re.match(pat, p) for p in per): errs.append("%s: periodo con formato invalido" % sid); continue
+        if per != sorted(set(per)): errs.append("%s: periodos repetidos o desordenados" % sid)
+        lo, hi = WOOD_ENERGY_RANGE.get(sid, (0, 1e9))
+        if any(v is None or not isinstance(v, (int, float)) or v < lo or v > hi for v in s["values"]): errs.append("%s: valor fuera de %s-%s %s" % (sid, lo, hi, s["unit"]))
+        y = int(per[-1][:4]); m = int(per[-1][5:]) if s["freq"] == "M" else int(per[-1][-1]) * 3
+        age = (today - _d.date(y, m, 28)).days
+        if age < -45: errs.append("%s: ultimo periodo %s en el futuro" % (sid, per[-1]))
+        lim = 150 if sid.startswith("us-") else 240
+        if age > lim: warns.append("%s: ultimo periodo %s antiguo (%d dias)" % (sid, per[-1], age))
+    for a, b in (("us-pellet-domestic-price", "us-pellet-domestic-qty"), ("us-pellet-export-price", "us-pellet-export-qty")):
+        if a in ids and b in ids and ids[a]["periods"] != ids[b]["periods"]: errs.append("%s y %s con periodos distintos" % (a, b))
+    stats["series"] = len(ids)
 def wood_prices_na(doc, errs, warns, stats):
     """Indices de madera de EE. UU. (BLS) y Canada (StatCan): meses ascendentes, series de la misma longitud, indices en rango y llegando a un mes reciente."""
     import datetime as _dt

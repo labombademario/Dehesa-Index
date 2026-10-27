@@ -1,0 +1,95 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Energia de la madera: pellets (EE. UU., Finlandia) y astillas forestales (Finlandia)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "series"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "series": {
+   "type": "array",
+   "minItems": 4,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "label",
+     "group",
+     "freq",
+     "unit",
+     "vat",
+     "periods",
+     "values",
+     "source",
+     "note"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "group": {
+      "type": "string"
+     },
+     "freq": {
+      "type": "string",
+      "enum": [
+       "M",
+       "Q"
+      ]
+     },
+     "unit": {
+      "type": "string"
+     },
+     "vat": {
+      "type": "string"
+     },
+     "periods": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1
+     },
+     "values": {
+      "type": "array"
+     },
+     "source": {
+      "type": "object",
+      "required": [
+       "name",
+       "url",
+       "license"
+      ],
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string",
+        "pattern": "^https://"
+       },
+       "license": {
+        "type": "string"
+       }
+      }
+     },
+     "note": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}
