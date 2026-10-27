@@ -237,9 +237,9 @@
     var p = europe(el, cc, name, lg, t);
     return p && p.then ? p.then(function (ok) { rivers(el, cc, lg); return ok; }) : p;
   }
-  // nivel y caudal de los rios de Paises Bajos, Francia, Canada y Belgica (js/rivers.js, data/rivers-{cc}.json), a peticion
+  // nivel y caudal de los rios de Paises Bajos, Francia, Canada, Belgica y Polonia (js/rivers.js, data/rivers-{cc}.json), a peticion
   function rivers(el, cc, lg) {
-    if ({ NL: 1, FR: 1, CA: 1, BE: 1 }[cc] !== 1 || !el) return;
+    if ({ NL: 1, FR: 1, CA: 1, BE: 1, PL: 1 }[cc] !== 1 || !el) return;
     var box = document.createElement('div'); box.style.marginTop = '14px'; el.appendChild(box);
     var go = function () { if (global.DIRivers) global.DIRivers.mount(box, lg.slice(0, 2), cc.toLowerCase()); };
     if (global.DIRivers) go(); else { var sc = document.createElement('script'); sc.src = 'js/rivers.js?v=20261026'; sc.onload = go; document.head.appendChild(sc); }

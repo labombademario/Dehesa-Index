@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update river levels and discharge (Netherlands, France, Canada, Flanders)
+name: Update river levels and discharge (Netherlands, France, Canada, Flanders, Poland)
 on:
   schedule:
     - cron: '40 5,13,21 * * *'
@@ -23,13 +23,13 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json
+          files: data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json
+        run: python3 scripts/detect-revisions.py data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Rios - nivel y caudal (Paises Bajos, Francia, Canada, Flandes)" data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Rios - nivel y caudal (Paises Bajos, Francia, Canada, Flandes, Polonia)" data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json data/rivers-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

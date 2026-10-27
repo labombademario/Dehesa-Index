@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T00:24:36Z",
+ "generatedAt": "2026-10-27T00:59:42Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,8 +10,8 @@
   "sourcesApto": 165,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 393,
-  "datasets_apto": 257,
+  "datasets": 394,
+  "datasets_apto": 258,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -1440,7 +1440,7 @@
   },
   {
    "id": "imgw_pib",
-   "name": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne)",
+   "name": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne, hydro API y archivo hidrológico diario)",
    "url": "https://danepubliczne.imgw.pl/",
    "country": "PL",
    "licenseId": "PL-PSI-IMGW",
@@ -6979,6 +6979,14 @@
    "verdict": "apto",
    "sources": [
     "rijkswaterstaat"
+   ]
+  },
+  {
+   "path": "data/rivers-pl.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "imgw_pib"
    ]
   },
   {

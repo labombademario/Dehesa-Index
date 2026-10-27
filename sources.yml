@@ -1693,14 +1693,14 @@ sources:
     data: [de-rivers.json, de-rivers-log.txt]
     message: Rios alemanes - nivel y caudal (PEGELONLINE)
   - id: rivers
-    name: Update river levels and discharge (Netherlands, France, Canada, Flanders)
+    name: Update river levels and discharge (Netherlands, France, Canada, Flanders, Poland)
     cron: ['40 5,13,21 * * *']
     script: scripts/update-rivers.py
     timeout: 45
     script_timeout: 40
     continue: true
-    data: [rivers-nl.json, rivers-fr.json, rivers-ca.json, rivers-be.json, rivers-log.txt]
-    message: Rios - nivel y caudal (Paises Bajos, Francia, Canada, Flandes)
+    data: [rivers-nl.json, rivers-fr.json, rivers-ca.json, rivers-be.json, rivers-pl.json, rivers-log.txt]
+    message: Rios - nivel y caudal (Paises Bajos, Francia, Canada, Flandes, Polonia)
   - id: eu-input-prices
     name: Update EU input trade unit values and origins (Eurostat Comext, fertilisers, energy, feed)
     cron: ['30 10 17,19,23 * *']

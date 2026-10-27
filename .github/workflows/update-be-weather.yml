@@ -34,7 +34,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Tiempo observado y déficit de precipitación de Bélgica (KMI-IRM)" data/be-weather.json data/revisions.json
+        run: bash scripts/publish-data.sh "Meteorología observada y déficit de precipitación de Bélgica (KMI-IRM)" data/be-weather.json data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

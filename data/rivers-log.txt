@@ -1,51 +1,17 @@
-22:16:35 nl Rijn Lobith: 694.0 cm, 879.69 m3/s, estado low, 29 dias
-22:16:35 nl Waal Tiel: 212.0 cm, 700.7 m3/s, estado None, 29 dias
-22:16:35 nl Nederrijn Driel: 647.0 cm, 10.1 m3/s, estado low, 29 dias
-22:16:35 nl Lek Hagestein: 223.0 cm, 25.6 m3/s, estado normal, 29 dias
-22:16:35 nl IJssel Olst: 22.0 cm, 139.13 m3/s, estado low, 29 dias
-22:16:35 nl Maas Venlo: 1130.0 cm, 126.13 m3/s, estado normal, 29 dias
-22:16:35 nl Maas Maastricht: 4417.0 cm, 90.65 m3/s, estado None, 29 dias
-22:16:35 nl Maas Eijsden: 4430.0 cm, 138.6 m3/s, estado high, 29 dias
-22:16:35 rivers-nl.json: 8 estaciones, ultima lectura 2026-10-26T23:10
-22:29:52 fr Seine Paris: 98.7 cm, 127.0 m3/s, estado low, 430 dias
-22:29:52 fr Seine Vernon: 318.6 cm, 140.0 m3/s, estado low, 430 dias
-22:29:53 fr Marne Gournay-sur-Marne: 112.7 cm, 29.6 m3/s, estado low, 430 dias
-22:29:53 fr Loire Gien: -57.3 cm, 66.2 m3/s, estado low, 430 dias
-22:29:53 fr Loire Orléans: -102.7 cm, 57.3 m3/s, estado low, 430 dias
-22:29:53 fr Loire Tours: 61.3 cm, 77.6 m3/s, estado low, 430 dias
-22:29:53 fr Loire Montjean: -142.2 cm, 164.0 m3/s, estado low, 430 dias
-22:29:53 fr Saône Mâcon: 161.8 cm, 30.3 m3/s, estado low, 430 dias
-22:29:53 fr Rhône Lyon: - cm, 461.0 m3/s, estado normal, 430 dias
-22:29:53 fr Rhône Valence: 246.6 cm, 828.0 m3/s, estado normal, 430 dias
-22:29:53 fr Rhône Tarascon: 159.0 cm, 1170.0 m3/s, estado normal, 430 dias
-22:29:53 fr Garonne Lamagistère: -64.3 cm, 88.9 m3/s, estado low, 430 dias
-22:29:53 fr Garonne Tonneins: -45.7 cm, 138.0 m3/s, estado low, 430 dias
-22:29:53 fr Dordogne Cénac: 24.5 cm, 33.8 m3/s, estado low, 430 dias
-22:29:53 fr Meuse Sedan: 286.8 cm, 39.1 m3/s, estado normal, 430 dias
-22:29:53 rivers-fr.json: 15 estaciones, ultima lectura 2026-10-26T23:20
-22:37:28 ca Fraser Hope: 364.2 cm, 1350.0 m3/s, estado low, 24 dias
-22:37:28 ca Thompson Kamloops: 227.2 cm, - m3/s, estado None, 30 dias
-22:37:28 ca Bow Calgary: 83.2 cm, 43.6 m3/s, estado low, 30 dias
-22:37:28 ca Oldman Lethbridge: 38.4 cm, 31.1 m3/s, estado normal, 30 dias
-22:37:28 ca South Saskatchewan Medicine Hat: 212.3 cm, 104.0 m3/s, estado normal, 30 dias
-22:37:28 ca South Saskatchewan Saskatoon: 222.8 cm, 156.0 m3/s, estado normal, 30 dias
-22:37:28 ca North Saskatchewan Edmonton: 300.7 cm, 124.0 m3/s, estado normal, 30 dias
-22:37:28 ca Red Emerson: 22844.2 cm, 65.4 m3/s, estado normal, 30 dias
-22:37:28 ca Assiniboine Headingley: 23181.0 cm, 91.7 m3/s, estado high, 30 dias
-22:37:28 ca Peace Peace River: 716.6 cm, 1990.0 m3/s, estado high, 30 dias
-22:37:28 ca Athabasca Athabasca: 119.7 cm, 307.0 m3/s, estado normal, 30 dias
-22:37:28 ca Ottawa Britannia: 5783.8 cm, 604.0 m3/s, estado low, 30 dias
-22:37:28 ca Saint Lawrence LaSalle: 83.8 cm, 7400.0 m3/s, estado low, 30 dias
-22:37:28 ca Saint John Fredericton: 107.6 cm, - m3/s, estado None, 30 dias
-22:37:28 ca Grand Galt: 69.1 cm, 13.9 m3/s, estado low, 30 dias
-22:37:28 rivers-ca.json: 15 estaciones, ultima lectura 2026-10-26T18:05
-22:39:23 be Demer Hasselt: -14.5 cm, 1.61 m3/s, estado normal, 430 dias
-22:39:23 be Demer Bilzen: 4106.7 cm, 0.354 m3/s, estado normal, 430 dias
-22:39:23 be Dijle Wilsele: 1304.6 cm, 6.56 m3/s, estado normal, 430 dias
-22:39:23 be Zenne Lot: 2318.6 cm, 2.04 m3/s, estado normal, 430 dias
-22:39:23 be Grote Nete Geel: 1805.3 cm, 3.97 m3/s, estado high, 430 dias
-22:39:23 be Kleine Nete Herentals: 1037.8 cm, 4.04 m3/s, estado high, 430 dias
-22:39:23 be Mandel Oostrozebeke: 819.1 cm, 1.71 m3/s, estado normal, 430 dias
-22:39:23 be Dommel Overpelt: 117.9 cm, 0.597 m3/s, estado normal, 430 dias
-22:39:23 be Gete Halen: 2111.0 cm, 2.2 m3/s, estado low, 430 dias
-22:39:23 rivers-be.json: 9 estaciones, ultima lectura 2026-10-26T23:30
+20:56:44 pl Wisła Zawichost: 180.0 cm, 129.0 m3/s, estado low, 1 dias
+20:56:44 pl Wisła Sandomierz: 62.0 cm, 90.8 m3/s, estado low, 1 dias
+20:56:44 pl Wisła Warszawa-Bulwary: 111.0 cm, 167.0 m3/s, estado low, 1 dias
+20:56:44 pl Wisła Włocławek: 95.0 cm, 308.0 m3/s, estado low, 1 dias
+20:56:44 pl Wisła Tczew: 230.0 cm, 330.0 m3/s, estado low, 1 dias
+20:56:44 pl Odra Racibórz-Miedonia: 134.0 cm, 22.1 m3/s, estado low, 1 dias
+20:56:44 pl Odra Malczyce: 152.0 cm, 57.0 m3/s, estado low, 1 dias
+20:56:44 pl Odra Głogów: 177.0 cm, 68.9 m3/s, estado low, 1 dias
+20:56:44 pl Odra Gozdowice: 194.0 cm, 165.0 m3/s, estado low, 1 dias
+20:56:44 pl Odra Słubice: 87.0 cm, 79.7 m3/s, estado low, 1 dias
+20:56:44 pl Warta Poznań: 125.0 cm, 29.3 m3/s, estado low, 1 dias
+20:56:44 pl Warta Gorzów Wielkopolski: 177.0 cm, 78.6 m3/s, estado low, 1 dias
+20:56:44 pl Bug Wyszków: 161.0 cm, 29.8 m3/s, estado low, 1 dias
+20:56:44 pl Narew Wizna: 181.0 cm, 28.3 m3/s, estado low, 1 dias
+20:56:44 pl San Rzuchów: 210.0 cm, 28.9 m3/s, estado low, 1 dias
+20:56:44 pl Noteć Ujście: 188.0 cm, 8.28 m3/s, estado low, 1 dias
+20:56:44 rivers-pl.json: 16 estaciones, ultima lectura 2026-10-27T00:30

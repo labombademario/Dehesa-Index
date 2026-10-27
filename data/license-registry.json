@@ -3177,7 +3177,7 @@
    "legalConfidenceReason": "VERIFIED: Note legali de ISPRA, leídas el 12 oct 2026: «i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 4.0»."
   },
   "imgw_pib": {
-   "name": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne)",
+   "name": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne, hydro API y archivo hidrológico diario)",
    "url": "https://danepubliczne.imgw.pl/",
    "country": "PL",
    "licenseId": "PL-PSI-IMGW",
@@ -3197,7 +3197,7 @@
    "evidence": "Portal danepubliczne.imgw.pl leído el 12 oct 2026: «Każdemu przysługuje prawo do ponownego wykorzystania informacji sektora publicznego»; el reglamento exige citar «Źródłem pochodzenia danych jest IMGW-PIB» y señalar el procesamiento; uso gratuito.",
    "used": true,
    "aliases": [],
-   "notes": "Recuentos por voivodato e histórico diario: cálculo de Dehesa Index.",
+   "notes": "Recuentos por voivodato e histórico diario: cálculo de Dehesa Index. Niveles y caudales de ríos: hydro API (api/data/hydro) y archivo dobowe (dane_hydrologiczne), mismo reglamento. Nota: el conjunto equivalente en dane.gov.pl figura con CC BY-NC-ND; aquí se usa el reglamento del propio IMGW (confianza alta solo para la fuente primaria danepubliczne.imgw.pl).",
    "short": "IMGW-PIB",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: reglamento de datos del IMGW-PIB (reutilización libre con cita)."
@@ -8113,6 +8113,10 @@
     "kmi_be"
    ],
    "notes": "Meteorología observada y déficit de precipitación de Bélgica (scripts/update-be-weather.py), de las estaciones automáticas del KMI-IRM."
+  },
+  "data/rivers-pl.json": {
+   "default": "imgw_pib",
+   "notes": "Nivel y caudal de 16 estaciones de ríos de Polonia (Vístula, Óder, Warta, Bug, Narew, San, Noteć); la serie diaria propia, la referencia (cuartiles de ±7 días de 2005–2025 del archivo de medias diarias del IMGW), el percentil y el estado: cálculo de Dehesa Index (datos procesados)."
   }
  },
  "derived": [

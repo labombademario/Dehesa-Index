@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Nivel y caudal de rios de Paises Bajos, Francia, Canada y Belgica (Flandes) -> data/rivers-{nl,fr,ca,be}.json y data/rivers-log.txt.
+"""Nivel y caudal de rios de Paises Bajos, Francia, Canada, Belgica (Flandes) y Polonia -> data/rivers-{nl,fr,ca,be,pl}.json y data/rivers-log.txt.
 Un adaptador por pais; cada uno devuelve, por estacion, las lecturas recientes (nivel y caudal) y, si la fuente lo da, la serie diaria historica larga:
  - nl: Rijkswaterstaat, Waterwebservices (DD-API 2.0). Lecturas cada 10 min de los ultimos 30 dias. Sin historia larga -> sin estado. Licencia CC0.
  - fr: Hub'Eau Hydrometrie (SCHAPI/Eaufrance), observations_tr (H en mm, Q en l/s) y obs_elab QmnJ (caudal medio diario desde la apertura). Licencia: Licence Ouverte Etalab (Hub'Eau).
  - ca: ECCC / Water Survey of Canada, API geomet-OGC hydrometric-realtime (30 dias) y hydrometric-daily-mean (hasta el ano anterior). ECCC Data Services End-use Licence v2.1.1.
  - be: VMM / Hydrologisch Informatiecentrum Vlaanderen, KiWIS waterinfo.be (series P.15/O.15 y DagGem). Licencia: Modellicentie voor gratis hergebruik (Vlaanderen).
+ - pl: IMGW-PIB, danepubliczne.imgw.pl: API /api/data/hydro (ultima lectura de nivel y caudal de cada estacion) + archivo de medias diarias (dane_hydrologiczne/dobowe, hasta el ano hidrologico cerrado). La API no da historia: la serie propia se acumula con la ultima lectura de cada dia; el archivo solo alimenta la referencia. Licencia: reglamento de datos del IMGW-PIB (reutilizacion citando la fuente).
 Media diaria: dia local con lecturas en >= 20 horas distintas; el dia en curso se descarta. La historia propia (points) se une a la ya guardada (KEEP_DAYS) y, donde hay serie larga, se rellena con ella.
 Referencia propia (calculo de Dehesa Index, no oficial): para la fecha de la ultima lectura, valores diarios de +-7 dias en los anos anteriores (>= 8 anos); cuartiles y percentil de la lectura actual.
 Estado: bajo (percentil < 25), normal, alto (percentil > 75), solo con referencia.
-Uso: python3 scripts/update-rivers.py [nl fr ca be]  (sin argumentos: todos)."""
+Uso: python3 scripts/update-rivers.py [nl fr ca be pl]  (sin argumentos: todos)."""
 import datetime, json, statistics, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 try:
@@ -97,6 +98,10 @@ def build_station(meta, now, old):
         if d in dq: e[1] = round(dq[d], 3)
         days[d] = e
     days.pop(now.date().isoformat(), None)
+    if meta.get("snap"):   # fuentes sin historia (IMGW): la serie propia es la ultima lectura de cada dia, que se pisa con la siguiente del mismo dia
+        for k, last in ((0, last_w), (1, last_q)):
+            if last:
+                e = days.get(last[0][:10], [None, None]); e[k] = round(last[1], 1 if k == 0 else 3); days[last[0][:10]] = e
     ks = sorted(days)[-KEEP_DAYS:]
     basis = "Q" if (last_q and (qh or not wh)) else ("W" if last_w else "Q")
     hist, cur, d0 = (qh, last_q[1] if last_q else None, last_q[0][:10] if last_q else None) if basis == "Q" else (wh, last_w[1] if last_w else None, last_w[0][:10] if last_w else None)
@@ -290,11 +295,117 @@ def adapt_be(now, old=None):
     return res
 
 
+# ---------- Polonia (IMGW-PIB) ----------
+PL_API = "https://danepubliczne.imgw.pl/api/data/hydro"
+PL_ARCH = "https://danepubliczne.imgw.pl/data/dane_pomiarowo_obserwacyjne/dane_hydrologiczne/dobowe"
+PL_FIRST_YEAR = 2005
+# (rio en la nomenclatura del IMGW, codigo de estacion, nombre mostrado); el codigo es el id_stacji de la API y el PSKDSZS del archivo
+PL_STATIONS = [("Wisła", "150210190", "Zawichost"), ("Wisła", "150210170", "Sandomierz"), ("Wisła", "152210170", "Warszawa-Bulwary"), ("Wisła", "152190030", "Włocławek"), ("Wisła", "154180150", "Tczew"),
+               ("Odra", "150180060", "Racibórz-Miedonia"), ("Odra", "151160150", "Malczyce"), ("Odra", "151160060", "Głogów"), ("Odra", "152140020", "Gozdowice"), ("Odra", "152140050", "Słubice"),
+               ("Warta", "152160140", "Poznań"), ("Warta", "152150040", "Gorzów Wielkopolski"), ("Bug", "152210090", "Wyszków"), ("Narew", "153220070", "Wizna"), ("San", "150220070", "Rzuchów"),
+               ("Noteć", "153160170", "Ujście")]
+PL_STALE_Q = 3   # dias: un caudal mas viejo que el nivel en mas de esto se descarta (algunas estaciones dejan de calcular el caudal)
+
+
+def pl_time(s):
+    return str(s)[:10] + "T" + str(s)[11:16] if s else None
+
+
+def pl_file_months(d0, y):
+    """meses calendario que cubren d0 +-7 dias en el ano y -> [(ano hidrologico, indice de mes, ano calendario, mes calendario)]"""
+    try: c = datetime.date(y, int(d0[5:7]), int(d0[8:10]))
+    except ValueError: c = datetime.date(y, int(d0[5:7]), 28)
+    ms = []
+    for k in (-7, 7):
+        x = c + datetime.timedelta(days=k); ms.append((x.year, x.month))
+    return sorted(set(ms))
+
+
+def pl_zip_csv(url):
+    import io, zipfile
+    last = None
+    for i in range(3):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=180) as r: raw = r.read()
+            z = zipfile.ZipFile(io.BytesIO(raw)); return z.read(z.namelist()[0]).decode("cp1250", "replace")
+        except urllib.error.HTTPError as e:
+            if e.code == 404: return None
+            last = e; time.sleep(4)
+        except Exception as e: last = e; time.sleep(4)
+    raise RuntimeError("%s -> %s" % (url, repr(last)[:120]))
+
+
+def pl_rows(text, codes, out_w, out_q, want=None):
+    """lineas del CSV del IMGW -> out_w/out_q {codigo: {fecha: valor}}. Nivel 9999 y caudal 99999.999 son 'sin dato' (desde 2024, vacio)."""
+    import csv
+    for r in csv.reader(text.splitlines()):
+        if len(r) < 10: continue
+        code = r[0].strip().strip('"').strip()
+        if code not in codes: continue
+        try:
+            hy, hm, dd, cm = int(r[3]), int(r[4]), int(r[5]), int(r[9])
+            y = hy - 1 if cm >= 11 else hy
+            d = "%04d-%02d-%02d" % (y, cm, dd); datetime.date(y, cm, dd)
+        except (ValueError, IndexError): continue
+        if want and d not in want: continue
+        try:
+            w = float(r[6]) if r[6].strip() else None
+            if w is not None and w >= 9999: w = None
+        except ValueError: w = None
+        try:
+            q = float(r[7]) if r[7].strip() else None
+            if q is not None and q >= 99999: q = None
+        except ValueError: q = None
+        if w is not None: out_w.setdefault(code, {})[d] = w
+        if q is not None: out_q.setdefault(code, {})[d] = q
+
+
+def pl_history(codes, d0, now):
+    """medias diarias del archivo del IMGW en la ventana d0 +-7 dias de cada ano cerrado -> (nivel, caudal) por codigo"""
+    ow, oq = {}, {}
+    for y in range(PL_FIRST_YEAR, now.year):
+        want = {(datetime.date(y, int(d0[5:7]), min(int(d0[8:10]), 28)) + datetime.timedelta(days=k)).isoformat() for k in range(-7, 8)}
+        files = set()
+        for (cy, cm) in pl_file_months(d0, y):
+            hy = cy + 1 if cm >= 11 else cy
+            if hy >= 2023: files.add("%s/%d/codz_%d.zip" % (PL_ARCH, hy, hy))
+            else: files.add("%s/%d/codz_%d_%02d.zip" % (PL_ARCH, hy, hy, (cm - 11) % 12 + 1))
+        for u in sorted(files):
+            try: t = pl_zip_csv(u)
+            except Exception as e: log("aviso: pl archivo %s: %s" % (u[-22:], e)); continue
+            if t: pl_rows(t, codes, ow, oq, want)
+    return ow, oq
+
+
+def adapt_pl(now, old=None):
+    api = http(PL_API, timeout=120); by = {str(x.get("id_stacji")): x for x in api}
+    metas = []
+    for river, code, name in PL_STATIONS:
+        x = by.get(code)
+        if not x or x.get("stan_wody") in (None, "") or not x.get("stan_wody_data_pomiaru"): log("aviso: pl %s %s sin lectura en la API" % (river, name)); continue
+        tw = pl_time(x["stan_wody_data_pomiaru"])
+        w = [(tw, float(x["stan_wody"]))]
+        q = []
+        if x.get("przeplyw") not in (None, "") and x.get("przeplyw_data"):
+            tq = pl_time(x["przeplyw_data"])
+            if (datetime.date.fromisoformat(tw[:10]) - datetime.date.fromisoformat(tq[:10])).days <= PL_STALE_Q: q = [(tq, float(x["przeplyw"]))]
+        metas.append({"id": code, "river": river, "name": name, "lon": round(float(x["lon"]), 4) if x.get("lon") else None, "lat": round(float(x["lat"]), 4) if x.get("lat") else None, "w": w, "q": q, "snap": True, "prefill": False,
+                      "base": {"km": float(x["kilometr_biegu_rzeki"])} if x.get("kilometr_biegu_rzeki") not in (None, "") else None})
+    if not metas: raise RuntimeError("pl: la API no devolvio ninguna estacion elegida")
+    d0 = max(m["w"][0][0] for m in metas)[:10]
+    wh, qh = pl_history({m["id"] for m in metas}, d0, now)
+    for m in metas:
+        m["wh"], m["qh"] = wh.get(m["id"], {}), qh.get(m["id"], {})
+        if not m["base"]: m.pop("base")
+    return metas
+
+
 ADAPTERS = {
     "nl": (adapt_nl, {"id": "rijkswaterstaat", "name": "Rijkswaterstaat, Waterwebservices (DD-API 2.0), ruwe data", "url": "https://waterwebservices.rijkswaterstaat.nl/", "license": "CC0-1.0"}),
     "fr": (adapt_fr, {"id": "hubeau_hydrometrie", "name": "Hub'Eau, API Hydrométrie (SCHAPI, Eaufrance)", "url": "https://hubeau.eaufrance.fr/page/api-hydrometrie", "license": "Licence Ouverte 2.0"}),
     "ca": (adapt_ca, {"id": "eccc_hydrometric", "name": "Environment and Climate Change Canada, Water Survey of Canada (geomet-OGC)", "url": "https://api.weather.gc.ca/", "license": "ECCC Data Services End-use Licence 2.1.1"}),
     "be": (adapt_be, {"id": "vmm_waterinfo", "name": "Vlaamse Milieumaatschappij, Hydrologisch Informatiecentrum (waterinfo.be KiWIS)", "url": "https://www.waterinfo.be/", "license": "Modellicentie voor gratis hergebruik v1.0"}),
+    "pl": (adapt_pl, {"id": "imgw_pib", "name": "Instytut Meteorologii i Gospodarki Wodnej (IMGW-PIB), dane publiczne: hydro API y archivo de medias diarias", "url": "https://danepubliczne.imgw.pl/", "license": "IMGW-PIB: reutilizacion citando la fuente"}),
 }
 
 

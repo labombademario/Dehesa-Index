@@ -95,7 +95,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `hubeau_ades` | ADES (BRGM) — Qualité des eaux souterraines, vía Hub'Eau | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `hubeau_hydrometrie` | Hub'Eau — API Hidrometría (SCHAPI / Eaufrance, nivel y caudal) | FR | LO-2.0 | si/si | si | 0 | Citar la fuente. Datos de tiempo real sin validar (los productores son responsables de su calidad). |
 | `hubeau_onde` | OFB — Observatoire national des étiages (ONDE), vía Hub'Eau | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
-| `imgw_pib` | IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne) | PL | PL-PSI-IMGW | si/si | si | 0 | Citar la fuente con la frase del reglamento e indicar que los datos se han procesado. |
+| `imgw_pib` | IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne, hydro API y archivo hidrológico diario) | PL | PL-PSI-IMGW | si/si | si | 0 | Citar la fuente con la frase del reglamento e indicar que los datos se han procesado. |
 | `inao_aires` | INAO - Aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `inao_siqo` | INAO - Delimitación de las áreas geográficas y referencial de productos de los SIQO (data.gouv.fr) | FR | ETALAB-2.0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `indec` | Argentina - INDEC, Indice de Precios al Consumidor nacional (IPC), via la API de series de datos.gob.ar | AR | CC-BY-INDEC | si/si | si | 0 | Acreditar la obra, citar la fuente primaria (INDEC) e indicar cambios: la inflacion interanual es calculo propio. El ultimo mes es provision… |
