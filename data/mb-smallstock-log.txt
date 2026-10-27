@@ -1,2 +1,2 @@
-escrito sheep-goat.json 63 ventas; 4 informes leidos
-escrito hogs.json 97 semanas; 3 informes leidos
+sin cambios en sheep-goat.json
+escrito hogs.json 98 semanas; 4 informes leidos
