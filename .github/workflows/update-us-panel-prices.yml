@@ -1,7 +1,7 @@
 name: Dehesa Data — EE. UU. panel (lácteos, bioenergía, carne y ganado AMS)
 on:
   schedule:
-    - cron: '10 20 * * 1-5'
+    - cron: '40 23 * * 1-5'   # despues de update-us-markets (22:10), que escribe lmr.json: antes iba 2 h por delante y el ganado AMS llevaba un dia de retraso
   workflow_dispatch:
 permissions:
   contents: write
