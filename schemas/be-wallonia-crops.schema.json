@@ -209,7 +209,7 @@
      },
      "crops": {
       "type": "object",
-      "additionalProperties": {
+      "additionalSchema": {
        "type": "array",
        "items": {
         "type": [

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T21:45:41Z",
+ "generatedAt": "2026-10-27T04:03:43Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 208,
+  "total": 214,
   "byStatus": {
-   "ACTIVE": 178,
+   "ACTIVE": 184,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2164,6 +2164,45 @@
    ]
   },
   {
+   "sourceId": "apprrr_hr",
+   "registryId": "apprrr_hr",
+   "country": "HR",
+   "scope": "integrated",
+   "institution": "Croatia — APPRRR (Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju), datos abiertos en data.gov.hr",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "HR-OTVORENA-DOZVOLA",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju (APPRRR), data.gov.hr, Otvorena dozvola RH. Elaboracion de dehesaindex.com.",
+   "lastChecked": "2026-10-26",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "argentina_datos_abiertos",
    "registryId": "argentina_datos_abiertos",
    "country": "AR",
@@ -3387,6 +3426,45 @@
    ]
   },
   {
+   "sourceId": "dmi",
+   "registryId": "dmi",
+   "country": "DK",
+   "scope": "integrated",
+   "institution": "DMI — Danmarks Meteorologiske Institut (datos abiertos, friedata)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: DMI (datos procesados por Dehesa Index)",
+   "lastChecked": "2026-10-26",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "dre_pt",
    "registryId": "dre_pt",
    "country": "PT",
@@ -3510,6 +3588,45 @@
    "lastChecked": "2026-10-12",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "dzs_hr",
+   "registryId": "dzs_hr",
+   "country": "HR",
+   "scope": "integrated",
+   "institution": "Croatia — Državni zavod za statistiku (Croatian Bureau of Statistics), base PxWeb",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "HR-DZS-REUSE",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Državni zavod za statistiku (Croatian Bureau of Statistics), web.dzs.hr. Elaboracion de dehesaindex.com.",
+   "lastChecked": "2026-10-26",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
@@ -5053,7 +5170,7 @@
    "registryId": "imgw_pib",
    "country": "PL",
    "scope": "integrated",
-   "institution": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne)",
+   "institution": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne, hydro API y archivo hidrológico diario)",
    "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
    "products": [],
    "productsConfirmed": false,
@@ -5652,6 +5769,45 @@
     "data/license-registry.json"
    ],
    "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "kmi_be",
+   "registryId": "kmi_be",
+   "country": "BE",
+   "scope": "integrated",
+   "institution": "Belgium — Royal Meteorological Institute (KMI-IRM), open data platform: automatic weather stations (AWS)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Real Instituto Meteorológico de Bélgica (KMI-IRM), opendata.meteo.be, CC BY 4.0. Cálculos de dehesaindex.com.",
+   "lastChecked": "2026-10-26",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
   },
   {
    "sourceId": "knmi_daggegevens",
@@ -7553,6 +7709,45 @@
    ]
   },
   {
+   "sourceId": "smhi",
+   "registryId": "smhi",
+   "country": "SE",
+   "scope": "integrated",
+   "institution": "SMHI — Sveriges meteorologiska och hydrologiska institut (datos abiertos: observaciones meteorológicas e hidrológicas)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0-SE",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: SMHI (datos procesados por Dehesa Index)",
+   "lastChecked": "2026-10-26",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "snice_mx",
    "registryId": "snice_mx",
    "country": "MX",
@@ -7614,6 +7809,45 @@
    "derivatives": "yes",
    "attribution": "SPF Economie, DG Energie — tarif officiel des produits pétroliers (via be.STAT, Statbel)",
    "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "spw_sigec_anon",
+   "registryId": "spw_sigec_anon",
+   "country": "BE",
+   "scope": "integrated",
+   "institution": "Service public de Wallonie (SPW) — Parcellaire agricole anonyme (SIGEC, Organisme payeur de Wallonie)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Service public de Wallonie (SPW), Parcellaire agricole anonyme, CC BY 4.0. Agregación por cultivo de dehesaindex.com.",
+   "lastChecked": "2026-10-26",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
