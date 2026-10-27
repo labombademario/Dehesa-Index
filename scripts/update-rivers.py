@@ -121,8 +121,8 @@ NL_STATIONS = [("Rijn", "lobith.bovenrijn.tolkamer", "Lobith"), ("Waal", "tiel.w
                ("IJssel", "olst", "Olst"), ("Maas", "venlo", "Venlo"), ("Maas", "maastricht.sintpieter.zuid", "Maastricht"), ("Maas", "eijsden.grens", "Eijsden")]
 
 
-def nl_series(code, g, start, end):
-    r = http(NL_API, {"Locatie": {"Code": code}, "AquoPlusWaarnemingMetadata": {"AquoMetadata": {"Compartiment": {"Code": "OW"}, "Grootheid": {"Code": g}}},
+def nl_series(code, g, start, end, tries=4, timeout=120):
+    r = http(NL_API, tries=tries, timeout=timeout, data={"Locatie": {"Code": code}, "AquoPlusWaarnemingMetadata": {"AquoMetadata": {"Compartiment": {"Code": "OW"}, "Grootheid": {"Code": g}}},
                       "Periode": {"Begindatumtijd": start, "Einddatumtijd": end}})
     out, loc = [], None
     for wl in r.get("WaarnemingenLijst") or []:
@@ -143,11 +143,11 @@ def nl_baseline(code, now, cached):
     if cached and cached.get("d0") and (d0 - datetime.date.fromisoformat(cached["d0"])).days <= 5 and cached.get("q"): return cached
     qh = {}; seguidos = 0
     for y in range(now.year - 20, now.year):
-        if seguidos >= 3: log("aviso: nl %s historia: 3 fallos seguidos, se corta (la API no responde); se usa lo guardado" % code); break   # sin esto una estacion caida agota los 40 min del flujo
+        if seguidos >= 2: log("aviso: nl %s historia: 2 fallos seguidos, se corta (la API no responde; cada intento aislado, 60 s); se usa lo guardado" % code); break   # sin esto una estacion caida agota los 40 min del flujo
         try: c = datetime.date(y, d0.month, d0.day)
         except ValueError: c = datetime.date(y, d0.month, 28)
         a, b = c - datetime.timedelta(days=10), c + datetime.timedelta(days=11)
-        try: ser, _ = nl_series(code, "Q", a.strftime("%Y-%m-%dT00:00:00.000+01:00"), b.strftime("%Y-%m-%dT00:00:00.000+01:00"))
+        try: ser, _ = nl_series(code, "Q", a.strftime("%Y-%m-%dT00:00:00.000+01:00"), b.strftime("%Y-%m-%dT00:00:00.000+01:00"), tries=1, timeout=60)
         except Exception as e: seguidos += 1; log("aviso: nl %s historia %d: %s" % (code, y, e)); continue
         seguidos = 0; acc = {}
         for t, v in ser: acc.setdefault(t[:10], []).append(v)
