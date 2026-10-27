@@ -1,1 +1,2 @@
+fichero: https://agricultura.gencat.cat/web/.content/de_departament/de02_estadistiques_observatoris/20_observatori_agroalimentari_de_preus/03_preus/02_ippa__index_preus_percebuts_agraris/ippa_fitxers_estatics/Plantilla_indexs_mensuals_anuals_compostos_2020_2026_20.xls
 escrito: 24 series, último 2026-08
