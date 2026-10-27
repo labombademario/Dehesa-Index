@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T18:53:18Z",
+ "generatedAt": "2026-10-27T19:47:33Z",
  "sourceIds": [
   "eu_agrifood",
   "european_commission",
@@ -116,10 +116,10 @@
    "region": "eu",
    "sourceId": "european_commission",
    "observationDate": "2026-09-30",
-   "value": 45.53,
+   "value": 46.02,
    "currency": "EUR",
    "unit": "100kg",
-   "changePct": 0,
+   "changePct": 1.0762,
    "market": [
     "España · leche cruda al productor",
     "Spain · raw milk paid to farmers",

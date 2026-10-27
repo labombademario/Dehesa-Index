@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76332
+  "rows": 76327
  },
  "files": [
   {
@@ -1760,13 +1760,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1039,
-   "first": "2006-11-05",
+   "rows": 1038,
+   "first": "2006-11-12",
    "last": "2026-10-18",
    "csv": "data/pack/eu/oliva.csv",
    "xlsx": "data/pack/eu/oliva.xlsx",
-   "csvBytes": 193215,
-   "xlsxBytes": 55132
+   "csvBytes": 193029,
+   "xlsxBytes": 55049
   },
   {
    "product": "aceite_palma",
@@ -1915,13 +1915,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 954,
-   "first": "2006-11-05",
+   "rows": 953,
+   "first": "2006-11-12",
    "last": "2026-10-18",
    "csv": "data/pack/eu/arroz.csv",
    "xlsx": "data/pack/eu/arroz.xlsx",
-   "csvBytes": 170536,
-   "xlsxBytes": 48638
+   "csvBytes": 170357,
+   "xlsxBytes": 48624
   },
   {
    "product": "arroz_tai_25",
@@ -2101,13 +2101,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "monthly",
-   "rows": 240,
+   "rows": 242,
    "first": "2006-07",
-   "last": "2026-06",
+   "last": "2026-08",
    "csv": "data/pack/eu/azucar.csv",
    "xlsx": "data/pack/eu/azucar.xlsx",
-   "csvBytes": 43245,
-   "xlsxBytes": 18266
+   "csvBytes": 43609,
+   "xlsxBytes": 18370
   },
   {
    "product": "azucar_us",
@@ -2907,13 +2907,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 871,
-   "first": "2006-11-05",
+   "rows": 870,
+   "first": "2006-11-12",
    "last": "2026-10-18",
    "csv": "data/pack/eu/huevos.csv",
    "xlsx": "data/pack/eu/huevos.xlsx",
-   "csvBytes": 154737,
-   "xlsxBytes": 47070
+   "csvBytes": 154560,
+   "xlsxBytes": 47032
   },
   {
    "product": "leche",
@@ -2944,7 +2944,7 @@
    "csv": "data/pack/eu/leche.csv",
    "xlsx": "data/pack/eu/leche.xlsx",
    "csvBytes": 46000,
-   "xlsxBytes": 18612
+   "xlsxBytes": 18627
   },
   {
    "product": "leche_polvo",
@@ -2969,13 +2969,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1042,
-   "first": "2006-11-05",
+   "rows": 1041,
+   "first": "2006-11-12",
    "last": "2026-10-18",
    "csv": "data/pack/eu/leche_polvo.csv",
    "xlsx": "data/pack/eu/leche_polvo.xlsx",
-   "csvBytes": 208931,
-   "xlsxBytes": 54879
+   "csvBytes": 208731,
+   "xlsxBytes": 54829
   },
   {
    "product": "mantequilla",
@@ -3000,13 +3000,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1042,
-   "first": "2006-11-05",
+   "rows": 1041,
+   "first": "2006-11-12",
    "last": "2026-10-18",
    "csv": "data/pack/eu/mantequilla.csv",
    "xlsx": "data/pack/eu/mantequilla.xlsx",
-   "csvBytes": 195405,
-   "xlsxBytes": 55363
+   "csvBytes": 195218,
+   "xlsxBytes": 55314
   },
   {
    "product": "maiz",
@@ -3124,13 +3124,13 @@
    "unit": "kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1042,
-   "first": "2006-11-05",
+   "rows": 1041,
+   "first": "2006-11-12",
    "last": "2026-10-18",
    "csv": "data/pack/eu/pollo.csv",
    "xlsx": "data/pack/eu/pollo.xlsx",
-   "csvBytes": 180249,
-   "xlsxBytes": 53683
+   "csvBytes": 180076,
+   "xlsxBytes": 53657
   },
   {
    "product": "pollo_mundo",
@@ -3465,13 +3465,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1042,
-   "first": "2006-11-05",
+   "rows": 1041,
+   "first": "2006-11-12",
    "last": "2026-10-18",
    "csv": "data/pack/eu/vaca.csv",
    "xlsx": "data/pack/eu/vaca.xlsx",
-   "csvBytes": 190657,
-   "xlsxBytes": 55271
+   "csvBytes": 190475,
+   "xlsxBytes": 55203
   },
   {
    "product": "ternera_mundo",
@@ -3663,12 +3663,12 @@
    "currency": "GBP",
    "frequency": "weekly",
    "rows": 520,
-   "first": "2016-11-07",
-   "last": "2026-10-19",
+   "first": "2016-11-14",
+   "last": "2026-10-26",
    "csv": "data/pack/uk/gasolina_uk.csv",
    "xlsx": "data/pack/uk/gasolina_uk.xlsx",
    "csvBytes": 169549,
-   "xlsxBytes": 31381
+   "xlsxBytes": 31502
   },
   {
    "product": "diesel_uk",
@@ -3694,12 +3694,12 @@
    "currency": "GBP",
    "frequency": "weekly",
    "rows": 520,
-   "first": "2016-11-07",
-   "last": "2026-10-19",
+   "first": "2016-11-14",
+   "last": "2026-10-26",
    "csv": "data/pack/uk/diesel_uk.csv",
    "xlsx": "data/pack/uk/diesel_uk.xlsx",
    "csvBytes": 163318,
-   "xlsxBytes": 30773
+   "xlsxBytes": 31055
   },
   {
    "product": "huevos_campero_uk",
