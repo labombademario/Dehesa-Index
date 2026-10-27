@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T02:25:00Z",
+ "generatedAt": "2026-10-27T02:36:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 288,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T01:01:17.709335+00:00",
   "repoGeneratedAt": "2026-10-27T01:01:17.709335+00:00",
-  "checkedAt": "2026-10-27T02:25:00Z"
+  "checkedAt": "2026-10-27T02:36:00Z"
  },
  "pipelines": [
   {
@@ -4551,7 +4551,7 @@
      "path": "data/us-weekly-stats.json",
      "valid": "ok",
      "series": 32,
-     "points": 4472,
+     "points": 4473,
      "lines": 0,
      "lastChange": "2026-10-26T21:46:25Z"
     },
@@ -4592,7 +4592,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T02:13:01Z"
+     "lastChange": "2026-10-27T02:27:12Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4600,11 +4600,11 @@
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-27T01:42:27Z"
+     "lastChange": "2026-10-27T02:37:23Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-27T01:42:27Z"
+     "lastChange": "2026-10-27T02:37:23Z"
     },
     {
      "path": "data/pack"
@@ -4680,8 +4680,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40434409664"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -6685,7 +6685,7 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-10-27T02:30:00Z",
+   "nextRun": "2026-10-28T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6849,9 +6849,9 @@
    "last": {
     "conclusion": "cancelled",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T01:45:08Z",
-    "durationSec": 14,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40434412202"
+    "startedAt": "2026-10-27T02:35:08Z",
+    "durationSec": 140,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40439279905"
    },
    "recent": {
     "runs": 10,
