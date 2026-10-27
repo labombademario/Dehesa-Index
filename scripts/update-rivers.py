@@ -6,6 +6,7 @@ Un adaptador por pais; cada uno devuelve, por estacion, las lecturas recientes (
  - ca: ECCC / Water Survey of Canada, API geomet-OGC hydrometric-realtime (30 dias) y hydrometric-daily-mean (hasta el ano anterior). ECCC Data Services End-use Licence v2.1.1.
  - be: VMM / Hydrologisch Informatiecentrum Vlaanderen, KiWIS waterinfo.be (series P.15/O.15 y DagGem). Licencia: Modellicentie voor gratis hergebruik (Vlaanderen).
  - pl: IMGW-PIB, danepubliczne.imgw.pl: API /api/data/hydro (ultima lectura de nivel y caudal de cada estacion) + archivo de medias diarias (dane_hydrologiczne/dobowe, hasta el ano hidrologico cerrado). La API no da historia: la serie propia se acumula con la ultima lectura de cada dia; el archivo solo alimenta la referencia. Licencia: reglamento de datos del IMGW-PIB (reutilizacion citando la fuente).
+ - se: SMHI, opendata-download-hydroobs.smhi.se, parametro 1 (Vattenforing, Dygn): caudal medio diario, archivo corregido (desde 1900-1980 segun la estacion) que en las estaciones del SMHI llega hasta ayer. Solo caudal (la API de SMHI no da nivel). Licencia CC BY 4.0 SE.
 Media diaria: dia local con lecturas en >= 20 horas distintas; el dia en curso se descarta. La historia propia (points) se une a la ya guardada (KEEP_DAYS) y, donde hay serie larga, se rellena con ella.
 Referencia propia (calculo de Dehesa Index, no oficial): para la fecha de la ultima lectura, valores diarios de +-7 dias en los anos anteriores (>= 8 anos); cuartiles y percentil de la lectura actual.
 Estado: bajo (percentil < 25), normal, alto (percentil > 75), solo con referencia.
@@ -400,11 +401,46 @@ def adapt_pl(now, old=None):
     return metas
 
 
+# ---------- Suecia ----------
+SE_API = "https://opendata-download-hydroobs.smhi.se/api/version/1.0/parameter/1/station/%s/period/corrected-archive/data.json"
+SE_STATIONS = [("Kalix älv", "17", "Räktfors"), ("Torne älv", "2395", "Kallio 2"), ("Ume älv", "2237", "Granåker"), ("Pite älv", "1387", "Gransel"), ("Indalsälven", "2117", "Fyrås"),
+               ("Ljusnan", "740", "Nybro"), ("Dalälven", "2407", "Svärdsjö"), ("Norrström", "2139", "Karlslund 2"), ("Göta älv", "1221", "Moholm"), ("Motala ström", "2293", "Tolhem"),
+               ("Nyköpingsån", "1273", "Hallbosjön"), ("Viskan", "2201", "Åsbro 3"), ("Ätran", "364", "Hillared"), ("Nissan", "2340", "Snapparp"), ("Lagan", "200", "Rörvik"),
+               ("Emån", "1622", "Brusafors"), ("Mörrumsån", "186", "Mörrum"), ("Helge å", "1069", "Möckeln"), ("Rönne å", "1635", "Klippan 2"), ("Kävlingeån", "2126", "Ellinge")]
+SE_STALE_DAYS = 6   # una estacion cuya ultima lectura es mas antigua se deja fuera
+SE_MIN_YEARS = 8
+
+
+def adapt_se(now, old=None):
+    """Caudal medio diario de 20 estaciones del SMHI. Las fechas de la API son la medianoche local en milisegundos UTC; se pasan a fecha local de Estocolmo."""
+    tz = ZoneInfo("Europe/Stockholm") if ZoneInfo else datetime.timezone(datetime.timedelta(hours=1))
+    cat = http("https://opendata-download-hydroobs.smhi.se/api/version/1.0/parameter/1.json", timeout=120); pos = {str(x["id"]): x for x in cat.get("station", [])}
+    metas = []
+    for river, code, name in SE_STATIONS:
+        try: d = http(SE_API % code, timeout=180)
+        except Exception as e: log("aviso: se %s %s: %s" % (river, name, e)); continue
+        qh = {}
+        for r in d.get("value", []):
+            if r.get("value") is None: continue
+            day = datetime.datetime.fromtimestamp(r["date"] / 1000, datetime.timezone.utc).astimezone(tz).date().isoformat()
+            qh[day] = float(r["value"])
+        if not qh: log("aviso: se %s %s sin datos" % (river, name)); continue
+        last = max(qh)
+        if (now.date() - datetime.date.fromisoformat(last)).days > SE_STALE_DAYS: log("aviso: se %s %s: ultima lectura %s, antigua" % (river, name, last)); continue
+        x = pos.get(code, {})
+        metas.append({"id": code, "river": river, "name": name, "lon": round(x["longitude"], 4) if x.get("longitude") is not None else None, "lat": round(x["latitude"], 4) if x.get("latitude") is not None else None,
+                      "w": [], "q": [(last + "T00:00", qh[last])], "qh": qh, "wh": {}, "base": {"catchmentKm2": round(x["catchmentSize"], 1)} if x.get("catchmentSize") not in (None, -9999.0) else None})
+        if not metas[-1]["base"]: metas[-1].pop("base")
+    if not metas: raise RuntimeError("se: la API no devolvio ninguna estacion elegida")
+    return metas
+
+
 ADAPTERS = {
     "nl": (adapt_nl, {"id": "rijkswaterstaat", "name": "Rijkswaterstaat, Waterwebservices (DD-API 2.0), ruwe data", "url": "https://waterwebservices.rijkswaterstaat.nl/", "license": "CC0-1.0"}),
     "fr": (adapt_fr, {"id": "hubeau_hydrometrie", "name": "Hub'Eau, API Hydrométrie (SCHAPI, Eaufrance)", "url": "https://hubeau.eaufrance.fr/page/api-hydrometrie", "license": "Licence Ouverte 2.0"}),
     "ca": (adapt_ca, {"id": "eccc_hydrometric", "name": "Environment and Climate Change Canada, Water Survey of Canada (geomet-OGC)", "url": "https://api.weather.gc.ca/", "license": "ECCC Data Services End-use Licence 2.1.1"}),
     "be": (adapt_be, {"id": "vmm_waterinfo", "name": "Vlaamse Milieumaatschappij, Hydrologisch Informatiecentrum (waterinfo.be KiWIS)", "url": "https://www.waterinfo.be/", "license": "Modellicentie voor gratis hergebruik v1.0"}),
+    "se": (adapt_se, {"id": "smhi", "name": "SMHI (Swedish Meteorological and Hydrological Institute), Hydrologiska observationer: Vattenföring (Dygn), arkiv med kontrollerade värden", "url": "https://opendata-download-hydroobs.smhi.se/", "license": "CC BY 4.0 SE (Creative Commons Erkännande 4.0 SE)"}),
     "pl": (adapt_pl, {"id": "imgw_pib", "name": "Instytut Meteorologii i Gospodarki Wodnej (IMGW-PIB), dane publiczne: hydro API y archivo de medias diarias", "url": "https://danepubliczne.imgw.pl/", "license": "IMGW-PIB: reutilizacion citando la fuente"}),
 }
 

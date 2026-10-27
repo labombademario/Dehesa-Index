@@ -3176,6 +3176,32 @@
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: Note legali de ISPRA, leídas el 12 oct 2026: «i dati pubblicati sul presente sito sono messi a disposizione con licenza CC-BY 4.0»."
   },
+  "smhi": {
+   "name": "SMHI — Sveriges meteorologiska och hydrologiska institut (datos abiertos: observaciones meteorológicas e hidrológicas)",
+   "url": "https://www.smhi.se/data/utforskaren-oppna-data",
+   "country": "SE",
+   "licenseId": "CC-BY-4.0-SE",
+   "licenseName": "Creative Commons Erkännande 4.0 SE (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.sv",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: SMHI (datos procesados por Dehesa Index)",
+   "additionalRestrictions": "Citar a SMHI como fuente e indicar que los datos se han procesado; no sugerir que SMHI respalda el uso.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Condiciones de los datos abiertos del SMHI leídas el 26 oct 2026: «Creative commons Erkännande 4.0 SE», uso comercial permitido citando al SMHI; sin acuerdo ni clave de API.",
+   "used": true,
+   "aliases": [],
+   "notes": "API de observaciones hidrológicas (opendata-download-hydroobs.smhi.se, parámetro 1 Vattenföring Dygn). Tres de las 20 estaciones (Ljusnan, Dalälven, Motala ström) figuran en el catálogo del SMHI como «Extern/SMHI» (propietario externo, datos publicados por el SMHI en la misma API y bajo sus mismas condiciones); no consta una licencia distinta.",
+   "short": "SMHI",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones de datos abiertos del SMHI (CC BY 4.0 SE)."
+  },
   "imgw_pib": {
    "name": "IMGW-PIB — dane publiczne (ostrzeżenia hydrologiczne, hydro API y archivo hidrológico diario)",
    "url": "https://danepubliczne.imgw.pl/",
@@ -8150,6 +8176,10 @@
   "data/rivers-pl.json": {
    "default": "imgw_pib",
    "notes": "Nivel y caudal de 16 estaciones de ríos de Polonia (Vístula, Óder, Warta, Bug, Narew, San, Noteć); la serie diaria propia, la referencia (cuartiles de ±7 días de 2005–2025 del archivo de medias diarias del IMGW), el percentil y el estado: cálculo de Dehesa Index (datos procesados)."
+  },
+  "data/rivers-se.json": {
+   "default": "smhi",
+   "notes": "Caudal medio diario de 20 estaciones de ríos de Suecia (SMHI, Vattenföring Dygn); la serie diaria propia de 430 días, la referencia (cuartiles de ±7 días en años anteriores, de 1900–1980 según la estación), el percentil y el estado: cálculo de Dehesa Index (datos procesados)."
   },
   "data/be-wallonia-crops.json": {
    "sources": [

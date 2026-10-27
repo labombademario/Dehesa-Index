@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 180 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
+Resumen: 181 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
 
-## VERIFIED (180)
+## VERIFIED (181)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -153,6 +153,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `sima_gpp` | Portugal — SIMA (GPP) weekly prices | PT | CUSTOM | unclear/unclear | si | 0 | Written authorisation from the GPP would be required before use. |
 | `sjv_se` | Sweden — Jordbruksverket (Swedish Board of Agriculture): official statistics database (producer prices, A-index, farm stocks) | SE | CC0-1.0-OR-CC-BY | si/si | si | 253 | The policy page does not label each statistics table with a licence; the statistics database is offered as open data with an API. Credit is … |
 | `skogsstyrelsen` | Sweden — Skogsstyrelsen (Swedish Forest Agency): official forestry statistics database (roundwood prices) | SE | CC0-1.0 | si/si | si | 0 | Terms page: statistical database data is CC0; the API section asks for the source to be cited, so credit is given anyway. Commercial reuse i… |
+| `smhi` | SMHI — Sveriges meteorologiska och hydrologiska institut (datos abiertos: observaciones meteorológicas e hidrológicas) | SE | CC-BY-4.0-SE | si/si | si | 0 | Citar a SMHI como fuente e indicar que los datos se han procesado; no sugerir que SMHI respalda el uso. |
 | `spf_economie_energie` | SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos) | BE | BE-FPS-ECONOMY-REUSE | si/si | si | 0 | Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente. |
 | `spw_sigec_anon` | Service public de Wallonie (SPW) — Parcellaire agricole anonyme (SIGEC, Organisme payeur de Wallonie) | BE | CC-BY-4.0 | si/si | si | 0 | Citar al SPW como fuente. Se publican sumas por cultivo y campaña (no se redistribuyen geometrías ni parcelas). Desglose por provincia y reg… |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |

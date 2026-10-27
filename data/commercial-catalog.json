@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T02:35:43Z",
+ "generatedAt": "2026-10-27T02:51:52Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 182,
-  "sourcesApto": 166,
+  "sources": 183,
+  "sourcesApto": 167,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 396,
-  "datasets_apto": 260,
+  "datasets": 397,
+  "datasets_apto": 261,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -2437,6 +2437,23 @@
    "redistribution": "yes",
    "attribution": "Source: Skogsstyrelsen (Swedish Forest Agency), statistical database.",
    "conditions": "Terms page: statistical database data is CC0; the API section asks for the source to be cited, so credit is given anyway. Commercial reuse is not addressed explicitly."
+  },
+  {
+   "id": "smhi",
+   "name": "SMHI — Sveriges meteorologiska och hydrologiska institut (datos abiertos: observaciones meteorológicas e hidrológicas)",
+   "url": "https://www.smhi.se/data/utforskaren-oppna-data",
+   "country": "SE",
+   "licenseId": "CC-BY-4.0-SE",
+   "licenseName": "Creative Commons Erkännande 4.0 SE (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.sv",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: SMHI (datos procesados por Dehesa Index)",
+   "conditions": "Citar a SMHI como fuente e indicar que los datos se han procesado; no sugerir que SMHI respalda el uso."
   },
   {
    "id": "snice_mx",
@@ -7021,6 +7038,14 @@
    "verdict": "apto",
    "sources": [
     "imgw_pib"
+   ]
+  },
+  {
+   "path": "data/rivers-se.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "smhi"
    ]
   },
   {
