@@ -29,6 +29,7 @@ for (const l of LANGS) {
   const seen = {}; prods.forEach(e => { const k = norm(e.n[l]); seen[k] = (seen[k] || 0) + 1; });
   for (const e of prods) {
     const nm = String(e.n[l] || '').toLowerCase(); if (!nm || seen[norm(nm)] > 1) continue;
+    if (slugOf(e) === 'trigo_duro') continue; // «precio de trigo duro» tiene respuesta propia (tarjetas de varios países, js/answers.js rDurum); el nombre a secas lo cubre search-natural-cases.json
     const urls = prodUrls(e);
     TPL[l].forEach(t => add('prod', t.replace('{p}', nm), l, { urls }));
     // erratas: dos letras centrales intercambiadas en la palabra más larga, y sin tildes
