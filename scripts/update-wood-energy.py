@@ -32,12 +32,7 @@ def old_series(old, sid):
     for s in (old or {}).get("series", []):
         if s["id"] == sid: return dict(zip(s["periods"], s["values"]))
     return {}
-def eia(old):
-    page = http(EIA).decode("utf-8", "replace")
-    m = re.search(r"(%s) (20\d\d) (?:were|was|averaged)" % "|".join(MONTHS), page) or re.search(r"in (%s) (20\d\d)" % "|".join(MONTHS), page)
-    if not m: raise RuntimeError("no se pudo leer el mes y el año de la pagina de la EIA")
-    year = int(m.group(2))
-    t7 = http(EIA + "csv/EIA_63C_Table_7.csv").decode("utf-8-sig"); t8 = http(EIA + "csv/EIA_63C_Table_8.csv").decode("utf-8-sig")
+def parse63c(t7, t8, year):
     dom = {}; domq = {}; exp = {}; expq = {}
     region = None
     for row in csv.reader(io.StringIO(t7)):
@@ -52,15 +47,37 @@ def eia(old):
             p = "%d-%02d" % (year, int(row[0]))
             try: expq[p] = int(row[1]); exp[p] = float(row[2])
             except ValueError: pass
+    return dom, domq, exp, expq
+def eia_archive(old, year):
+    """Rellena años anteriores con el informe de diciembre archivado por la EIA (archive/AAAA/12/csv). Solo años que aun no estan guardados."""
+    have = old_series(old, "us-pellet-domestic-price")
+    acc = [{}, {}, {}, {}]
+    for y in range(2017, year):
+        if "%d-12" % y in have: continue
+        try:
+            t7 = http(EIA + "archive/%d/12/csv/EIA_63C_Table_7.csv" % y, tries=2).decode("cp1252", "replace").lstrip("\ufeff"); t8 = http(EIA + "archive/%d/12/csv/EIA_63C_Table_8.csv" % y, tries=2).decode("cp1252", "replace").lstrip("\ufeff")
+        except RuntimeError as e:
+            print("aviso: archivo EIA %d no disponible (%s)" % (y, str(e)[:80]), file=sys.stderr); continue
+        for k, d in enumerate(parse63c(t7, t8, y)): acc[k].update(d)
+    return acc
+def eia(old):
+    page = http(EIA).decode("utf-8", "replace")
+    m = re.search(r"(%s) (20\d\d) (?:were|was|averaged)" % "|".join(MONTHS), page) or re.search(r"in (%s) (20\d\d)" % "|".join(MONTHS), page)
+    if not m: raise RuntimeError("no se pudo leer el mes y el año de la pagina de la EIA")
+    year = int(m.group(2))
+    t7 = http(EIA + "csv/EIA_63C_Table_7.csv").decode("utf-8-sig"); t8 = http(EIA + "csv/EIA_63C_Table_8.csv").decode("utf-8-sig")
+    dom, domq, exp, expq = parse63c(t7, t8, year)
     if not dom or not exp: raise RuntimeError("tablas 7 u 8 vacias")
+    arch = eia_archive(old, year)
     src = {"name": "U.S. Energy Information Administration, Form EIA-63C Densified Biomass Fuel Report", "url": EIA, "license": "US public domain (EIA)"}
     n1 = "Precio medio de los pellets de biomasa densificada vendidos por los fabricantes de EE. UU."
+    arch_for = dict(zip(("us-pellet-domestic-price", "us-pellet-export-price", "us-pellet-domestic-qty", "us-pellet-export-qty"), (arch[0], arch[2], arch[1], arch[3])))
     out = []
     for sid, lab, d, unit, note in (("us-pellet-domestic-price", "Densified biomass fuel (pellets), domestic sales: average price", dom, "USD/t", n1 + " en el mercado interior."),
                                     ("us-pellet-export-price", "Densified biomass fuel (pellets), exports: average price", exp, "USD/t", n1 + " exportados."),
                                     ("us-pellet-domestic-qty", "Densified biomass fuel (pellets), domestic sales: quantity", domq, "t", "Toneladas vendidas en el mercado interior."),
                                     ("us-pellet-export-qty", "Densified biomass fuel (pellets), exports: quantity", expq, "t", "Toneladas exportadas.")):
-        out.append(pack(sid, lab, "pellets", "M", unit, "USD" if unit == "USD/t" else None, "n/d", merge(old_series(old, sid), d), src, note + " Desde que la serie se empezo a guardar aqui."))
+        out.append(pack(sid, lab, "pellets", "M", unit, "USD" if unit == "USD/t" else None, "n/d", merge(merge(arch_for[sid], old_series(old, sid)), d), src, note + " Años cerrados: informe de diciembre de cada año archivado por la EIA; el año en curso, informe mensual vigente."))
     return out
 def px(table, query):
     return json.loads(http(STATFIN + table + ".px", json.dumps({"query": query, "response": {"format": "json-stat2"}}).encode(), {"Content-Type": "application/json"}).decode("utf-8-sig"))

@@ -81,6 +81,79 @@
   var UNIT = { 'EUR/m3': '€/m³', 'CZK/m3': 'CZK/m³', 'PLN/m3': 'PLN/m³', 'USD/t': 'USD/t', 'EUR/t': '€/t', 'EUR/MWh': '€/MWh', 'USD/m3': 'USD/m³', 'USc/sheet': 'US¢/' + 'sheet', 't': 't', 'ha': 'ha',
     'm3 (sin corteza)': 'm³', 'milj. m3sk': 'M m³sk', 'milj. m3fub': 'M m³fub', 'escarabajos por trampa': '/trap' };
   function unit(u) { return UNIT[u] || u; }
+  /* ---- nombres de surtidos y series en los 4 idiomas (las fuentes los publican en inglés; los datos siguen en inglés, se traduce al pintar) ---- */
+  var SP = { 'pine': ['pino', 'pin', 'pino'], 'spruce': ['abeto rojo', 'épicéa', 'abete rosso'], 'birch': ['abedul', 'bouleau', 'betulla'], 'black alder': ['aliso negro', 'aulne noir', 'ontano nero'], 'asp': ['álamo temblón', 'tremble', 'pioppo tremulo'], 'oak': ['roble', 'chêne', 'quercia'], 'beech': ['haya', 'hêtre', 'faggio'] };
+  var KIND = { 'sawlogs': ['Rollizos para aserrío', 'Grumes de sciage', 'Tronchi da sega'], 'logs': ['Rollizos para aserrío', 'Grumes de sciage', 'Tronchi da sega'], 'pulpwood': ['Madera para trituración', 'Bois de trituration', 'Legname da cellulosa'], 'veneer logs': ['Rollizos de desenrollo', 'Grumes de déroulage', 'Tronchi da sfogliatura'] };
+  var DIA = [
+    [/ up to (\d+) cm in diameter$/, [' hasta $1 cm de diámetro', ' jusqu’à $1 cm de diamètre', ' fino a $1 cm di diametro']],
+    [/ more than (\d+) cm in diameter$/, [' de más de $1 cm de diámetro', ' de plus de $1 cm de diamètre', ' di oltre $1 cm di diametro']],
+    [/ (\d+-\d+) cm in diameter$/, [' de $1 cm de diámetro', ' de $1 cm de diamètre', ' di $1 cm di diametro']]
+  ];
+  var QUAL = { 'total': ['total', 'total', 'totale'], 'coniferous': ['coníferas', 'résineux', 'conifere'], 'non-coniferous': ['frondosas', 'feuillus', 'latifoglie'], 'broadleaf': ['frondosas', 'feuillus', 'latifoglie'], 'non-coniferous, others': ['otras frondosas', 'autres feuillus', 'altre latifoglie'], 'round and split, total': ['rolliza y partida, total', 'ronds et fendus, total', 'tondo e spaccato, totale'], 'round and split, coniferous': ['rolliza y partida, coníferas', 'ronds et fendus, résineux', 'tondo e spaccato, conifere'], 'round and split, non-coniferous': ['rolliza y partida, frondosas', 'ronds et fendus, feuillus', 'tondo e spaccato, latifoglie'] };
+  var EX = {
+    'Sawlogs, total': ['Rollizos para aserrío, total', 'Grumes de sciage, total', 'Tronchi da sega, totale'],
+    'Sawlogs, coniferous': ['Rollizos para aserrío, coníferas', 'Grumes de sciage, résineux', 'Tronchi da sega, conifere'],
+    'Sawlogs, oak': ['Rollizos para aserrío, roble', 'Grumes de sciage, chêne', 'Tronchi da sega, quercia'],
+    'Sawlogs, beech': ['Rollizos para aserrío, haya', 'Grumes de sciage, hêtre', 'Tronchi da sega, faggio'],
+    'Sawlogs, non-coniferous, others': ['Rollizos para aserrío, otras frondosas', 'Grumes de sciage, autres feuillus', 'Tronchi da sega, altre latifoglie'],
+    'Pulpwood, round and split, total': ['Madera para trituración, rolliza y partida, total', 'Bois de trituration, ronds et fendus, total', 'Legname da cellulosa, tondo e spaccato, totale'],
+    'Pulpwood, round and split, coniferous': ['Madera para trituración, rolliza y partida, coníferas', 'Bois de trituration, ronds et fendus, résineux', 'Legname da cellulosa, tondo e spaccato, conifere'],
+    'Pulpwood, round and split, non-coniferous': ['Madera para trituración, rolliza y partida, frondosas', 'Bois de trituration, ronds et fendus, feuillus', 'Legname da cellulosa, tondo e spaccato, latifoglie'],
+    'Other industrial roundwood, total': ['Otra madera industrial en rollo, total', 'Autres bois ronds industriels, total', 'Altro legname industriale in tondo, totale'],
+    'Wood fuel, total': ['Leña y combustible de madera, total', 'Bois de chauffage et énergie, total', 'Legna e combustibile legnoso, totale'],
+    'Sawlogs class III.A/B, spruce': ['Rollizos para aserrío clase III.A/B: abeto rojo', 'Grumes de sciage classe III.A/B : épicéa', 'Tronchi da sega classe III.A/B: abete rosso'],
+    'Sawlogs class III.A/B, pine': ['Rollizos para aserrío clase III.A/B: pino', 'Grumes de sciage classe III.A/B : pin', 'Tronchi da sega classe III.A/B: pino'],
+    'Sawlogs class III.A/B, oak': ['Rollizos para aserrío clase III.A/B: roble', 'Grumes de sciage classe III.A/B : chêne', 'Tronchi da sega classe III.A/B: quercia'],
+    'Sawlogs class III.A/B, beech': ['Rollizos para aserrío clase III.A/B: haya', 'Grumes de sciage classe III.A/B : hêtre', 'Tronchi da sega classe III.A/B: faggio'],
+    'Pulpwood (class V), spruce': ['Madera para trituración (clase V): abeto rojo', 'Bois de trituration (classe V) : épicéa', 'Legname da cellulosa (classe V): abete rosso'],
+    'Pulpwood (class V), beech': ['Madera para trituración (clase V): haya', 'Bois de trituration (classe V) : hêtre', 'Legname da cellulosa (classe V): faggio'],
+    'Fuelwood (class VI), coniferous': ['Leña (clase VI): coníferas', 'Bois de chauffage (classe VI) : résineux', 'Legna (classe VI): conifere'],
+    'Fuelwood (class VI), broadleaf': ['Leña (clase VI): frondosas', 'Bois de chauffage (classe VI) : feuillus', 'Legna (classe VI): latifoglie'],
+    'Packing case timber (hardwood)': ['Madera para embalajes (frondosas)', 'Bois d’emballage (feuillus)', 'Legname per imballaggi (latifoglie)'],
+    'Average timber sale price of State Forests districts, Q1-Q3 (forest-tax base)': ['Precio medio de venta de madera de las direcciones de Bosques del Estado, T1-T3 (base del impuesto forestal)', 'Prix moyen de vente du bois des directions des Forêts d’État, T1-T3 (base de la taxe forestière)', 'Prezzo medio di vendita del legname delle direzioni delle Foreste di Stato, T1-T3 (base dell’imposta forestale)'],
+    'Total felling': ['Cortas totales', 'Coupes totales', 'Tagli totali'],
+    'Salvage (incidental) felling, total': ['Cortas de salvamento (accidentales), total', 'Coupes de sauvetage (accidentelles), total', 'Tagli di recupero (accidentali), totale'],
+    'Salvage felling: natural causes (wind, snow, drought)': ['Cortas de salvamento: causas naturales (viento, nieve, sequía)', 'Coupes de sauvetage : causes naturelles (vent, neige, sécheresse)', 'Tagli di recupero: cause naturali (vento, neve, siccità)'],
+    'Salvage felling: insects (bark beetle)': ['Cortas de salvamento: insectos (escarabajo de la corteza)', 'Coupes de sauvetage : insectes (scolyte)', 'Tagli di recupero: insetti (bostrico)'],
+    'Salvage felling: air pollution': ['Cortas de salvamento: contaminación atmosférica', 'Coupes de sauvetage : pollution atmosphérique', 'Tagli di recupero: inquinamento atmosferico'],
+    'Salvage felling: other causes': ['Cortas de salvamento: otras causas', 'Coupes de sauvetage : autres causes', 'Tagli di recupero: altre cause'],
+    'Storm-felled forest (volume of trees blown down)': ['Arbolado derribado por tormentas (volumen)', 'Bois abattu par les tempêtes (volume)', 'Legname abbattuto dalle tempeste (volume)'],
+    'Gross felling': ['Cortas brutas', 'Coupes brutes', 'Tagli lordi'],
+    'Felling: sawlogs': ['Cortas: rollizos para aserrío', 'Coupes : grumes de sciage', 'Tagli: tronchi da sega'],
+    'Felling: pulpwood': ['Cortas: madera para trituración', 'Coupes : bois de trituration', 'Tagli: legname da cellulosa'],
+    'Felling: fuelwood': ['Cortas: leña', 'Coupes : bois de chauffage', 'Tagli: legna'],
+    'Net felling': ['Cortas netas', 'Coupes nettes', 'Tagli netti'],
+    'Spruce bark beetle (Ips typographus): mean catch per pheromone trap': ['Escarabajo de la corteza del abeto (Ips typographus): captura media por trampa de feromonas', 'Scolyte de l’épicéa (Ips typographus) : capture moyenne par piège à phéromones', 'Bostrico tipografo (Ips typographus): cattura media per trappola a feromoni'],
+    'Destroyed forest stands, total': ['Masas forestales destruidas, total', 'Peuplements forestiers détruits, total', 'Popolamenti forestali distrutti, totale'],
+    'Destroyed stands: insect pests': ['Masas destruidas: plagas de insectos', 'Peuplements détruits : insectes ravageurs', 'Popolamenti distrutti: insetti dannosi'],
+    'Destroyed stands: windfall': ['Masas destruidas: derribo por viento', 'Peuplements détruits : chablis', 'Popolamenti distrutti: schianti da vento'],
+    'Destroyed stands: forest fires': ['Masas destruidas: incendios forestales', 'Peuplements détruits : incendies de forêt', 'Popolamenti distrutti: incendi boschivi'],
+    'Destroyed stands: forest diseases': ['Masas destruidas: enfermedades forestales', 'Peuplements détruits : maladies forestières', 'Popolamenti distrutti: malattie forestali'],
+    'Destroyed stands: game damage': ['Masas destruidas: daños de la caza', 'Peuplements détruits : dégâts de gibier', 'Popolamenti distrutti: danni della fauna selvatica'],
+    'Destroyed stands: unfavourable water conditions': ['Masas destruidas: condiciones hídricas desfavorables', 'Peuplements détruits : conditions hydriques défavorables', 'Popolamenti distrutti: condizioni idriche sfavorevoli'],
+    'Forest damage, all groups': ['Daños forestales, todos los grupos', 'Dégâts forestiers, tous groupes', 'Danni forestali, tutti i gruppi'],
+    'Forest damage: insects': ['Daños forestales: insectos', 'Dégâts forestiers : insectes', 'Danni forestali: insetti'],
+    'Forest damage: abiotic (weather, drought, fire)': ['Daños forestales: abióticos (clima, sequía, fuego)', 'Dégâts forestiers : abiotiques (météo, sécheresse, feu)', 'Danni forestali: abiotici (meteo, siccità, fuoco)'],
+    'Forest damage: vertebrates (game)': ['Daños forestales: vertebrados (caza)', 'Dégâts forestiers : vertébrés (gibier)', 'Danni forestali: vertebrati (fauna selvatica)'],
+    'Forest damage: pathogens': ['Daños forestales: patógenos', 'Dégâts forestiers : agents pathogènes', 'Danni forestali: patogeni'],
+    'Densified biomass fuel (pellets), domestic sales: average price': ['Biomasa densificada (pellets), ventas interiores: precio medio', 'Biomasse densifiée (granulés), ventes intérieures : prix moyen', 'Biomassa densificata (pellet), vendite interne: prezzo medio'],
+    'Densified biomass fuel (pellets), exports: average price': ['Biomasa densificada (pellets), exportaciones: precio medio', 'Biomasse densifiée (granulés), exportations : prix moyen', 'Biomassa densificata (pellet), esportazioni: prezzo medio'],
+    'Densified biomass fuel (pellets), domestic sales: quantity': ['Biomasa densificada (pellets), ventas interiores: cantidad', 'Biomasse densifiée (granulés), ventes intérieures : quantité', 'Biomassa densificata (pellet), vendite interne: quantità'],
+    'Densified biomass fuel (pellets), exports: quantity': ['Biomasa densificada (pellets), exportaciones: cantidad', 'Biomasse densifiée (granulés), exportations : quantité', 'Biomassa densificata (pellet), esportazioni: quantità'],
+    'Wood pellet, consumer price (heat production)': ['Pellet de madera, precio al consumidor (producción de calor)', 'Granulés de bois, prix à la consommation (production de chaleur)', 'Pellet di legno, prezzo al consumo (produzione di calore)'],
+    'Forest chips delivered, energy production': ['Astillas forestales entregadas, producción de energía', 'Plaquettes forestières livrées, production d’énergie', 'Cippato forestale consegnato, produzione di energia']
+  };
+  function trl(s) {
+    var k = IX[lg()] - (IX[lg()] > 0 ? 1 : 0); if (lg() === 'en' || !s) return s;
+    k = { es: 0, fr: 1, it: 2 }[lg()];
+    if (EX[s]) return EX[s][k];
+    var tail = '', i, m;
+    for (i = 0; i < DIA.length; i++) if (DIA[i][0].test(s)) { tail = s.replace(DIA[i][0], DIA[i][1][k]); s = s.replace(DIA[i][0], ''); tail = tail.slice(s.length); break; }
+    m = /^(Pine|Spruce|Birch|Black alder|Asp|Oak|Beech) (sawlogs|logs|pulpwood|veneer logs)(?: \((\w) category\))?$/i.exec(s);
+    if (m) { var cat = m[3] ? ({ es: ' (categoría ', fr: ' (catégorie ', it: ' (categoria ' })[lg()] + m[3] + ')' : '';
+      return KIND[m[2].toLowerCase()][k] + ': ' + SP[m[1].toLowerCase()][k] + tail + cat; }
+    return s + tail;
+  }
   var DATA = null, ST = { s: 'prices', pc: 'SI', reg: '', sel: {}, fc: 'ES', dc: 'CZ', ec: 'us-pellet-domestic-price' };
   function getJ(f) { return fetch('data/' + f + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   function loadAll() {
@@ -151,7 +224,7 @@
         head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-reg">' + ro.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.reg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label></div>';
       }
       list = c.series.filter(function (s) { return hasReg ? (s.region || '') === ST.reg : true; }).map(function (s) {
-        return { id: s.id, label: s.label, unit: c.unit, freq: c.freq, periods: c.periods, values: s.values, source: c.source, tag: s.bench ? '' : '' };
+        return { id: s.id, label: trl(s.label), unit: c.unit, freq: c.freq, periods: c.periods, values: s.values, source: c.source, tag: s.bench ? '' : '' };
       });
       note = tx(T.pricesNote) + ' ' + c.note + ' (' + tx(T.freq[c.freq]) + ', ' + tx(T.vat[c.vat] || T.vat['n/d']) + ')';
     }
@@ -194,13 +267,13 @@
     var fd = D.fd; if (!fd) return '';
     var cs = ['CZ', 'SE', 'EE', 'HU'].filter(function (c) { return fd.series.some(function (s) { return s.country === c; }); });
     if (cs.indexOf(ST.dc) < 0) ST.dc = cs[0];
-    var list = fd.series.filter(function (s) { return s.country === ST.dc; });
+    var list = fd.series.filter(function (s) { return s.country === ST.dc; }).map(function (s) { var o = {}, k; for (k in s) o[k] = s[k]; o.label = trl(s.label); return o; });
     return chips('bq-dc', cs.map(function (c) { return [c, tx(T.cty[c])]; }), ST.dc) + seriesBlock(list, 'd' + ST.dc) + '<div class="di-info-scope-note">' + esc(tx(T.dmgNote)) + '</div>';
   }
   /* ---- energia ---- */
   function energyView(D) {
     var we = D.we; if (!we) return '';
-    var list = we.series.map(function (s) { return { id: s.id, label: s.label, unit: s.unit, freq: s.freq, periods: s.periods, values: s.values, source: s.source, tag: s.id.slice(0, 2).toUpperCase() }; });
+    var list = we.series.map(function (s) { return { id: s.id, label: trl(s.label), unit: s.unit, freq: s.freq, periods: s.periods, values: s.values, source: s.source, tag: s.id.slice(0, 2).toUpperCase() }; });
     return seriesBlock(list, 'e') + '<div class="di-info-scope-note">' + esc(tx(T.enNote)) + '</div>';
   }
   function page() {
@@ -257,11 +330,11 @@
         var b = tp.series.filter(function (x) { return !x.region && x.bench; })[0] || tp.series.filter(function (x) { return !x.region; })[0] || tp.series[0];
         var li = lastIdx(b.values);
         if (li >= 0) { var c = yoy({ freq: tp.freq, values: b.values });
-          rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.price)) + ': ' + esc(b.label) + ' (' + esc(tp.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(b.values[li], dec(b.values[li], tp.unit)) + '</b> ' + esc(unit(tp.unit)) + (c == null ? '' : ' · ' + pct(c)) + '</span></div>'); }
+          rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.price)) + ': ' + esc(trl(b.label)) + ' (' + esc(tp.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(b.values[li], dec(b.values[li], tp.unit)) + '</b> ' + esc(unit(tp.unit)) + (c == null ? '' : ' · ' + pct(c)) + '</span></div>'); }
       }
       fd.filter(function (x) { return x.freq === 'A'; }).slice(0, 2).forEach(function (x) {
         var li = lastIdx(x.values); if (li < 0) return;
-        rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.dmg)) + ': ' + esc(x.label) + ' (' + esc(x.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(x.values[li], INT[x.unit] ? 0 : 1) + '</b> ' + esc(unit(x.unit)) + '</span></div>');
+        rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.dmg)) + ': ' + esc(trl(x.label)) + ' (' + esc(x.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(x.values[li], INT[x.unit] ? 0 : 1) + '</b> ' + esc(unit(x.unit)) + '</span></div>');
       });
       if (!rows.length) { el.innerHTML = ''; return false; }
       var tab = ff ? 'fires' : tp ? 'prices' : 'damage';
