@@ -1978,6 +1978,32 @@ sources:
     data: [italy-foggia.json]
     log: italy-foggia-log.txt
     message: Precios de la Borsa Merci di Foggia (trigo duro, sémolas y aceite de oliva)
+  - id: de-climate-laender
+    name: Update Germany monthly rainfall and temperature by Land (DWD regional averages)
+    cron: ['45 7 4,15 * *']
+    script: scripts/update-de-climate-laender.py
+    timeout: 15
+    data: [de-climate-laender.json]
+    log: de-climate-log.txt
+    message: Lluvia y temperatura mensual por Land de Alemania (DWD)
+  - id: de-more
+    name: Update Germany food HICP and agricultural employment and value added by Land (Eurostat, VGRdL)
+    cron: ['20 8 18 * *']
+    script: scripts/update-de-more.py
+    pre: ['pip install openpyxl']
+    timeout: 20
+    data: [germany-more-stats.json]
+    log: germany-more-log.txt
+    message: IPCA de alimentos y ocupados y valor añadido agrario por Land de Alemania
+  - id: de-land-prices
+    name: Update Germany farmland sale prices by Regierungsbezirk (Destatis 61521-0020)
+    cron: ['35 16 9 * *']
+    script: scripts/update-de-land-prices.py
+    env: {GENESIS_TOKEN: '${{ secrets.GENESIS_TOKEN }}'}
+    timeout: 15
+    data: [de-land-prices.json]
+    log: de-land-prices-log.txt
+    message: Precio de la tierra agrícola por Regierungsbezirk de Alemania (Destatis)
   - id: france-hicp
     name: Update France consumer price indices for butter, cheese and olive oil (Eurostat HICP)
     cron: ['50 9 4,18 * *']

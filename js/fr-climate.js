@@ -29,58 +29,74 @@
       calc: 'Calcolo di Dehesa Index su dati di Météo-France.', src: 'Fonte:', srcN: 'Météo-France, Données climatologiques de base (data.gouv.fr)', miss: 'Nessun dato recente per mancanza di stazioni: {d}.',
       lp: ['molto secco (<50 %)', 'secco (50-80 %)', 'normale (80-120 %)', 'umido (120-150 %)', 'molto umido (>150 %)'], lt: ['< −1,5', '−1,5 a −0,5', '−0,5 a +0,5', '+0,5 a +1,5', '> +1,5'] }
   };
-  var LOC = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }, CACHE = null, ST = { m: 'p', per: null };
+  var LOC = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }, CACHE = {}, ST = { m: 'p', per: null };
+  /* Alemania (js/fr-climate.js sirve a los dos países): medias de área por Land del DWD, data/de-climate-laender.json (scripts/update-de-climate-laender.py) */
+  var TDE = {
+    es: { h: 'Lluvia y temperatura por Land', sub: 'Medias de cada Land que publica el Deutscher Wetterdienst, comparadas con la normal 1991-2020.', hint: 'Pasa el cursor o toca un Land para ver su último año.', none: 'sin dato',
+      dry: 'Länder con menos del 50 % de la lluvia normal', wet: 'Länder con más del 150 % de la lluvia normal', warm: 'Alemania (media del DWD): diferencia de temperatura', nat: 'Alemania (media del DWD): lluvia', calc: 'La normal y la diferencia las calcula Dehesa Index con la serie del DWD.', srcN: 'Deutscher Wetterdienst, Climate Data Center (medias regionales)', area: 'área del DWD: {a}' },
+    en: { h: 'Rainfall and temperature by Land', sub: 'Area averages for each Land published by the Deutscher Wetterdienst, compared with the 1991-2020 normal.', hint: 'Hover or tap a Land to see its last year.', none: 'no data',
+      dry: 'Länder with under 50 % of normal rainfall', wet: 'Länder with over 150 % of normal rainfall', warm: 'Germany (DWD average): temperature difference', nat: 'Germany (DWD average): rainfall', calc: 'The normal and the difference are calculated by Dehesa Index from the DWD series.', srcN: 'Deutscher Wetterdienst, Climate Data Center (regional averages)', area: 'DWD area: {a}' },
+    fr: { h: 'Pluie et température par Land', sub: 'Moyennes de chaque Land publiées par le Deutscher Wetterdienst, comparées à la normale 1991-2020.', hint: 'Survolez ou touchez un Land pour voir sa dernière année.', none: 'pas de donnée',
+      dry: 'Länder à moins de 50 % de la pluie normale', wet: 'Länder à plus de 150 % de la pluie normale', warm: 'Allemagne (moyenne du DWD) : écart de température', nat: 'Allemagne (moyenne du DWD) : pluie', calc: 'La normale et l’écart sont calculés par Dehesa Index à partir de la série du DWD.', srcN: 'Deutscher Wetterdienst, Climate Data Center (moyennes régionales)', area: 'zone du DWD : {a}' },
+    it: { h: 'Pioggia e temperatura per Land', sub: 'Medie di ogni Land pubblicate dal Deutscher Wetterdienst, confrontate con la normale 1991-2020.', hint: 'Passa il cursore o tocca un Land per vedere il suo ultimo anno.', none: 'nessun dato',
+      dry: 'Länder con meno del 50 % della pioggia normale', wet: 'Länder con più del 150 % della pioggia normale', warm: 'Germania (media del DWD): scarto di temperatura', nat: 'Germania (media del DWD): pioggia', calc: 'La normale e lo scarto sono calcolati da Dehesa Index sulla serie del DWD.', srcN: 'Deutscher Wetterdienst, Climate Data Center (medie regionali)', area: 'area del DWD: {a}' }
+  };
+  var CFG = { FR: { url: 'data/fr-climate-departements.json', map: null, id: 'ps-fr-clim', lic: 'Licence Ouverte 2.0', tx: null },
+    DE: { url: 'data/de-climate-laender.json', map: ['DEHESA_DE_LAENDER', 'vendor/de-laender.js'], id: 'ps-de-clim', lic: 'CC BY 4.0', tx: TDE, nat: 'DE' } };
+  function tx(c, lg) { var t = T[lg], o = c.tx && c.tx[lg], r = {}, k; for (k in t) r[k] = t[k]; if (o) for (k in o) r[k] = o[k]; return r; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d, lg) { return v == null ? '—' : v.toLocaleString(LOC[lg] || 'es-ES', { minimumFractionDigits: d, maximumFractionDigits: d }); }
   function sg(v, d, lg) { return v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), d, lg); }
   function mname(p, lg) { try { return new Date(Date.UTC(+p.slice(0, 4), +p.slice(5, 7) - 1, 1)).toLocaleDateString(LOC[lg], { month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return p; } }
-  function load() { return CACHE || (CACHE = fetch('data/fr-climate-departements.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function load(u) { u = u || CFG.FR.url; return CACHE[u] || (CACHE[u] = fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function units(D) { return D ? (D.departements || D.units || []) : []; }
   function at(d, per) { for (var i = 0; i < d.months.length; i++) if (d.months[i].period === per) return d.months[i]; return null; }
   /* tabla del último año de un departamento */
-  function deptTable(d, lg) {
-    var t = T[lg], th = 'padding:6px;font-size:11px;font-weight:700;color:var(--text-faint);text-align:right', td = 'padding:6px;border-top:1px solid var(--border);text-align:right;font-variant-numeric:tabular-nums';
+  function deptTable(d, lg, t) {
+    t = t || T[lg]; var th = 'padding:6px;font-size:11px;font-weight:700;color:var(--text-faint);text-align:right', td = 'padding:6px;border-top:1px solid var(--border);text-align:right;font-variant-numeric:tabular-nums';
     var rows = d.months.slice().reverse().map(function (m) { var pp = m.precipAnomalyPct == null ? null : 100 + m.precipAnomalyPct;
       return '<tr><td style="' + td + ';text-align:left">' + esc(mname(m.period, lg)) + '</td><td style="' + td + '">' + nf(m.precipMm, 0, lg) + '</td><td style="' + td + '">' + (pp == null ? '—' : nf(pp, 0, lg) + ' %') + '</td><td style="' + td + '">' + nf(m.tempC, 1, lg) + '</td><td style="' + td + '">' + sg(m.tempAnomalyC, 1, lg) + '</td></tr>'; }).join('');
     return '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:420px;font-size:13px"><caption style="text-align:left;font-weight:700;padding:4px 0">' + esc(t.tbl.replace('{d}', d.name + ' (' + d.id + ')')) + '</caption><thead><tr><th scope="col" style="' + th + ';text-align:left">' + esc(t.month) + '</th><th scope="col" style="' + th + '">' + esc(t.pa) + '</th><th scope="col" style="' + th + '">' + esc(t.pPct) + '</th><th scope="col" style="' + th + '">' + esc(t.tc) + '</th><th scope="col" style="' + th + '">' + esc(t.ta) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
   }
-  function mount(el, lg) {
-    if (!el) return Promise.resolve(false); lg = T[lg] ? lg : 'es';
+  function mount(el, lg, cc) {
+    if (!el) return Promise.resolve(false); lg = T[lg] ? lg : 'es'; var C = CFG[cc] || CFG.FR;
     var M = global.DIFrDeptMap;
-    return Promise.all([load(), M ? M.load() : null]).then(function (a) {
-      var D = a[0], MAP = a[1]; if (!D || !D.departements || !D.departements.length) { el.innerHTML = ''; return false; }
-      var t = T[lg], pers = {}, byId = {};
-      D.departements.forEach(function (d) { byId[d.id] = d; d.months.forEach(function (m) { pers[m.period] = 1; }); });
+    return Promise.all([load(C.url), M ? (C.map ? M.load(C.map[0], C.map[1]) : M.load()) : null]).then(function (a) {
+      var D = a[0], MAP = a[1], U = units(D); if (!U.length) { el.innerHTML = ''; return false; }
+      var t = tx(C, lg), pers = {}, byId = {}, NAT = C.nat ? byId : null;
+      U.forEach(function (d) { byId[d.id] = d; d.months.forEach(function (m) { pers[m.period] = 1; }); });
       var P = Object.keys(pers).sort(); if (!ST.per || P.indexOf(ST.per) < 0) ST.per = D.lastPeriod;
       var vals = {}, dry = 0, wet = 0, n = 0, ta = [], k;
-      D.departements.forEach(function (d) { var m = at(d, ST.per); if (!m) return;
+      U.forEach(function (d) { var m = at(d, ST.per); if (!m || d.id === C.nat) return;
         var v = ST.m === 'p' ? (m.precipAnomalyPct == null ? null : 100 + m.precipAnomalyPct) : m.tempAnomalyC;
         if (v != null) { vals[d.id] = v; if (d.id === '20') { vals['2A'] = v; vals['2B'] = v; } }
         if (m.precipAnomalyPct != null) { n++; if (m.precipAnomalyPct < -50) dry++; if (m.precipAnomalyPct > 50) wet++; }
         if (m.tempAnomalyC != null) ta.push(m.tempAnomalyC); });
-      var tav = ta.length ? ta.reduce(function (s, x) { return s + x; }, 0) / ta.length : null;
+      var tav = ta.length ? ta.reduce(function (s, x) { return s + x; }, 0) / ta.length : null, nm0 = C.nat && byId[C.nat] ? at(byId[C.nat], ST.per) : null;
+      if (nm0) tav = nm0.tempAnomalyC;   /* Alemania: la media nacional es la del DWD, no la media de los Länder */
       var mp = MAP && M ? M.html(MAP, ST.m === 'p' ? { values: vals, cuts: [50, 80, 120, 150], labels: t.lp, fmt: function (v) { return nf(v, 0, lg) + ' %'; }, label: t.mapP, none: t.none }
         : { values: vals, cuts: [-1.5, -0.5, 0.5, 1.5], labels: t.lt, fmt: function (v) { return sg(v, 1, lg) + ' °C'; }, label: t.mapT, none: t.none }) : null;
       var chip = function (on, data, txt) { return '<button type="button" class="esp-chip' + (on ? ' on' : '') + '" ' + data + ' aria-pressed="' + on + '">' + esc(txt) + '</button>'; };
       var opts = P.slice().reverse().map(function (p) { return '<option value="' + p + '"' + (p === ST.per ? ' selected' : '') + '>' + esc(mname(p, lg)) + '</option>'; }).join('');
       var row = function (l, v) { return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(l) + '</span><span class="di-info-stat-value">' + v + '</span></div>'; };
       var miss = (D.missing || []).map(function (id) { return id; });
-      el.innerHTML = '<section class="di-card ps-rm gb-card frc-card ' + (ST.m === 'p' ? 'frc-p' : 'frc-t') + '" id="ps-fr-clim" style="max-width:none"><h2 class="ps-rm-h">' + esc(t.h) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.sub) + '</p>' +
+      el.innerHTML = '<section class="di-card ps-rm gb-card frc-card ' + (ST.m === 'p' ? 'frc-p' : 'frc-t') + '" id="' + C.id + '" style="max-width:none"><h2 class="ps-rm-h">' + esc(t.h) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.sub) + '</p>' +
         '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px"><div class="esp-tabs" role="group">' + chip(ST.m === 'p', 'data-frc="p"', '🌧️ ' + t.p) + chip(ST.m === 't', 'data-frc="t"', '🌡️ ' + t.t) + '</div>' +
         '<label style="font-size:13px">' + esc(t.month) + ' <select class="frc-per" style="margin-left:4px">' + opts + '</select></label></div>' +
-        '<div class="di-info-stat-list" style="max-width:640px">' + row(t.dry, '<b>' + dry + '</b> ' + esc(t.of) + ' ' + n) + row(t.wet, '<b>' + wet + '</b> ' + esc(t.of) + ' ' + n) + row(t.warm, '<b>' + sg(tav, 1, lg) + ' °C</b>') + '</div>' +
+        '<div class="di-info-stat-list" style="max-width:640px">' + row(t.dry, '<b>' + dry + '</b> ' + esc(t.of) + ' ' + n) + row(t.wet, '<b>' + wet + '</b> ' + esc(t.of) + ' ' + n) + (nm0 && nm0.precipAnomalyPct != null ? row(t.nat, '<b>' + nf(100 + nm0.precipAnomalyPct, 0, lg) + ' %</b> ' + esc(t.vsN)) : '') + row(t.warm, '<b>' + sg(tav, 1, lg) + ' °C</b>') + '</div>' +
         (mp ? '<div class="di-info-card-title gb-sub">' + esc((ST.m === 'p' ? t.mapP : t.mapT) + ' · ' + mname(ST.per, lg)) + '</div><div class="wp-readout frc-tip" aria-live="polite">' + esc(t.hint) + '</div>' + mp.html : '') +
         '<div class="frc-dept" style="margin-top:10px"></div>' +
         '<p class="di-movers-hint" style="margin:10px 0 0">' + esc((D.methodology && D.methodology[lg]) || (D.methodology && D.methodology.en) || '') + (miss.length ? ' ' + esc(t.miss.replace('{d}', miss.join(', '))) : '') + '</p>' +
-        '<p class="di-field-hint" style="margin:8px 0 0">' + esc(t.src) + ' <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcN) + '</a> (Licence Ouverte 2.0). ' + esc(t.calc) + '</p></section>';
-      Array.prototype.forEach.call(el.querySelectorAll('[data-frc]'), function (b) { b.onclick = function () { ST.m = b.getAttribute('data-frc'); mount(el, lg); }; });
-      var sel = el.querySelector('.frc-per'); if (sel) sel.onchange = function () { ST.per = sel.value; mount(el, lg); };
+        '<p class="di-field-hint" style="margin:8px 0 0">' + esc(t.src) + ' <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcN) + '</a> (' + esc(C.lic) + '). ' + esc(t.calc) + '</p></section>';
+      Array.prototype.forEach.call(el.querySelectorAll('[data-frc]'), function (b) { b.onclick = function () { ST.m = b.getAttribute('data-frc'); mount(el, lg, cc); }; });
+      var sel = el.querySelector('.frc-per'); if (sel) sel.onchange = function () { ST.per = sel.value; mount(el, lg, cc); };
       var box = el.querySelector('.frc-dept');
       if (mp) M.bind(el, el.querySelector('.frc-tip'), t.hint, function (id) {
         var d = byId[id] || ((id === '2A' || id === '2B') ? byId['20'] : null), nm = d ? d.name : (mp.names[id] || id);
         if (!d) { box.innerHTML = ''; return '<b>' + esc(nm) + '</b> · ' + esc(t.none); }
-        box.innerHTML = deptTable(d, lg);
+        box.innerHTML = deptTable(d, lg, t);
         var m = at(d, ST.per); if (!m) return '<b>' + esc(nm) + '</b> · ' + esc(t.none);
-        return '<b>' + esc(nm) + '</b> · ' + esc(t.p) + ' <b>' + nf(m.precipMm, 0, lg) + ' ' + t.mm + '</b> (' + (m.precipAnomalyPct == null ? '—' : nf(100 + m.precipAnomalyPct, 0, lg) + ' % ' + esc(t.vsN)) + ') · ' + esc(t.t) + ' <b>' + nf(m.tempC, 1, lg) + ' °C</b> (' + sg(m.tempAnomalyC, 1, lg) + ' °C) · ' + (m.nPrecip || m.nTemp || 0) + ' ' + esc(t.st);
+        return '<b>' + esc(nm) + '</b> · ' + esc(t.p) + ' <b>' + nf(m.precipMm, 0, lg) + ' ' + t.mm + '</b> (' + (m.precipAnomalyPct == null ? '—' : nf(100 + m.precipAnomalyPct, 0, lg) + ' % ' + esc(t.vsN)) + ') · ' + esc(t.t) + ' <b>' + nf(m.tempC, 1, lg) + ' °C</b> (' + sg(m.tempAnomalyC, 1, lg) + ' °C)' + ((m.nPrecip || m.nTemp) ? ' · ' + (m.nPrecip || m.nTemp) + ' ' + esc(t.st) : '') + (d.dwdArea && d.dwdArea !== d.name && t.area ? ' · ' + esc(t.area.replace('{a}', d.dwdArea)) : '');
       });
       return true;
     });

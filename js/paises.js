@@ -385,6 +385,15 @@
     var el = document.createElement('div'); el.id = 'pp-de-diesel'; after.parentNode.insertBefore(el, after.nextSibling);
     var go = function () { if (window.DIDeDiesel && ST.c === cc) window.DIDeDiesel.mount(el, lang()); };
     if (window.DIDeDiesel) go(); else { var sc = document.createElement('script'); sc.src = 'js/de-diesel.js?v=20261013'; sc.onload = go; document.head.appendChild(sc); }
+    /* lluvia y temperatura por Land (medias del DWD; js/fr-climate.js con la configuración de Alemania y el mapa de js/fr-dept-map.js) */
+    var cl = document.createElement('div'); cl.id = 'pp-de-clim'; cl.style.minHeight = '1px'; after.parentNode.insertBefore(cl, after.nextSibling);
+    var js1 = function (src, ok) { var x = document.createElement('script'); x.src = src; x.onload = ok; document.head.appendChild(x); };
+    var goC = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(cl, lang(), 'DE'); };
+    nearView(cl, function () { var m2 = function () { if (window.DIFrClimate) goC(); else js1('js/fr-climate.js?v=20261027', goC); }; if (window.DIFrDeptMap) m2(); else js1('js/fr-dept-map.js?v=20261015', m2); });
+    /* precio de la tierra agrícola por Regierungsbezirk (Destatis 61521-0020; js/de-land-prices.js con el mapa NUTS 2 de vendor/de-nuts2.js) */
+    var ld = document.createElement('div'); ld.id = 'pp-de-land'; ld.style.minHeight = '1px'; cl.parentNode.insertBefore(ld, cl.nextSibling);
+    var goL = function () { if (window.DIDeLand && ST.c === cc) window.DIDeLand.mount(ld, lang()); };
+    nearView(ld, function () { var m3 = function () { if (window.DIDeLand) goL(); else js1('js/de-land-prices.js?v=20261027', goL); }; if (window.DIFrDeptMap) m3(); else js1('js/fr-dept-map.js?v=20261015', m3); });
   }
   /* Italia: gasóleo de automoción y de calefacción y mapa por región (js/it-fuel.js) */
   function itUp() {

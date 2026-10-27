@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-321 workflows (271 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+323 workflows (273 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -102,8 +102,10 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-de-climate-laender.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-climate-laender.py | de-climate-laender.json | finish, validate-files |
 | update-de-diesel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-de-diesel.py | de-diesel.json | finish, validate-files |
 | update-de-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | de-ghg-agri.json | finish, validate-files |
+| update-de-more.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-more.py | germany-more-stats.json | finish, validate-files |
 | update-de-rivers.yml | generado | varias veces al dia | detect-revisions.py, gen-workflows.py, update-de-rivers.py | de-rivers.json | finish, validate-files |
 | update-de-soil-moisture.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-soil-moisture.py | de-soil-moisture.json | finish, validate-files |
 

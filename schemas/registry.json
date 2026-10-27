@@ -1951,6 +1951,18 @@
    [
     "italy_foggia"
    ]
+  ],
+  "de-climate-laender.json": [
+   "de-climate-laender",
+   [
+    "de_climate_laender"
+   ]
+  ],
+  "de-land-prices.json": [
+   "de-land-prices",
+   [
+    "de_land_prices"
+   ]
   ]
  },
  "globs": {
@@ -2248,7 +2260,8 @@
  "optional": [
   "italy-land/land.json",
   "es-climate-provinces.json",
-  "eu-region-climate.json"
+  "eu-region-climate.json",
+  "de-land-prices.json"
  ],
  "uk-tiff-regions.json": [
   "uk-tiff-regions",

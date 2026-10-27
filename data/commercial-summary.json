@@ -1,14 +1,14 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T22:37:32Z",
+ "generatedAt": "2026-10-27T23:28:31Z",
  "summary": {
-  "sources": 191,
-  "sourcesApto": 175,
+  "sources": 192,
+  "sourcesApto": 176,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 411,
-  "datasets_apto": 273,
-  "datasets_condiciones": 127,
+  "datasets": 413,
+  "datasets_apto": 274,
+  "datasets_condiciones": 128,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -745,6 +745,10 @@
   },
   "usgs_water": {
    "name": "U.S. Geological Survey, National Water Information System (daily values)",
+   "verdict": "apto"
+  },
+  "vgrdl": {
+   "name": "Arbeitskreis Volkswirtschaftliche Gesamtrechnungen der Länder (VGRdL), Statistische Ämter des Bundes und der Länder",
    "verdict": "apto"
   },
   "vigieau": {

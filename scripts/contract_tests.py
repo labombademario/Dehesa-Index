@@ -4892,6 +4892,37 @@ def spain_prices_obs(doc, errs, warns, stats):
     for k, n in st.items():
         if n < 25: errs.append("obs: solo %d series de %s (se esperan >=25)" % (n, k))
     stats["series"] = len(S)
+def de_climate_laender(doc, errs, warns, stats):
+    """Clima por Land (DWD): mismas comprobaciones que Francia sobre las 16 regiones y Alemania (17 unidades), con la media nacional presente."""
+    D = doc["units"]
+    if len(D) != 17 or not any(u["id"] == "DE" for u in D): errs.append("de-clima: se esperan los 16 Länder y Alemania (hay %d)" % len(D))
+    tmp = dict(doc); tmp["departements"] = D; e2 = []
+    fr_climate_departements(tmp, e2, warns, stats)
+    errs.extend(x.replace("fr-clima", "de-clima") for x in e2 if "solo" not in x)
+DE_NUTS2 = {"DE11", "DE12", "DE13", "DE14", "DE21", "DE22", "DE23", "DE24", "DE25", "DE26", "DE27", "DE30", "DE40", "DE50", "DE60", "DE71", "DE72", "DE73", "DE80", "DE91", "DE92",
+            "DE93", "DE94", "DEA1", "DEA2", "DEA3", "DEA4", "DEA5", "DEB1", "DEB2", "DEB3", "DEC0", "DED2", "DED4", "DED5", "DEE0", "DEF0", "DEG0"}
+def de_land_prices(doc, errs, warns, stats):
+    """Precio de la tierra por Regierungsbezirk (Destatis): ids NUTS 2 de Alemania únicos y coherentes con «missing», años crecientes, precios posibles
+    (1.000-400.000 €/ha), lastYear = último año con precio y no muy antiguo, y casi todas las regiones con precio ese año."""
+    U = doc["units"]; ids = [u["id"] for u in U]
+    if len(set(ids)) != len(ids): errs.append("tierra-de: ids repetidos")
+    bad = [i for i in ids if i not in DE_NUTS2]
+    if bad: errs.append("tierra-de: ids que no son NUTS 2 de Alemania: %s" % bad[:5])
+    if set(doc["missing"]) != DE_NUTS2 - set(ids): errs.append("tierra-de: «missing» no cuadra con las regiones publicadas")
+    last = None
+    for u in U:
+        Y = [r["year"] for r in u["years"]]
+        if Y != sorted(set(Y)): errs.append("tierra-de %s: años desordenados o repetidos" % u["id"]); continue
+        for r in u["years"]:
+            p = r.get("priceEurHa")
+            if p is None: continue
+            if not 1000 <= p <= 400000: errs.append("tierra-de %s %s: precio imposible %s €/ha" % (u["id"], r["year"], p)); break
+            last = max(last or r["year"], r["year"])
+    if last != doc["lastYear"]: errs.append("tierra-de: lastYear %s no es el último año con precio (%s)" % (doc["lastYear"], last))
+    if last and int(last) < datetime.date.today().year - 3: errs.append("tierra-de: último año %s demasiado antiguo" % last)
+    n = sum(1 for u in U if any(r["year"] == last and r.get("priceEurHa") is not None for r in u["years"]))
+    if n < 30: errs.append("tierra-de: solo %d regiones con precio en %s" % (n, last))
+    stats["regions"] = len(U)
 FOGGIA_RANGE = {"€/t": (100, 1500), "€/kg": (0.5, 30)}
 def italy_foggia(doc, errs, warns, stats):
     """Borsa Merci di Foggia: >=6 series únicas con trigo y aceite, sesiones crecientes, mínimo <= máximo, precios dentro de un rango posible para su unidad,

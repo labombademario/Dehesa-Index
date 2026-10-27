@@ -211,6 +211,21 @@
       });
     }
 
+    /* ---- Alemania: lluvia y temperatura del Land en los últimos meses (medias de área del DWD; data/de-climate-laender.json). Sin dato, el punto de NASA POWER ---- */
+    function deClim(x) {
+      var DT = { es: ['Lluvia y temperatura', 'Medias del Land que publica el Deutscher Wetterdienst, frente a la normal 1991-2020 (la normal y la diferencia, cálculo de Dehesa Index).', 'Mes', 'Lluvia (mm)', '% de lo normal', 'Temp. media (°C)', 'Diferencia (°C)', 'Ver el mapa de Alemania', 'Área del DWD'],
+        en: ['Rainfall and temperature', 'Area averages for the Land published by the Deutscher Wetterdienst, compared with the 1991-2020 normal (normal and difference calculated by Dehesa Index).', 'Month', 'Rainfall (mm)', '% of normal', 'Mean temp. (°C)', 'Difference (°C)', 'See the map of Germany', 'DWD area'],
+        fr: ['Pluie et température', 'Moyennes du Land publiées par le Deutscher Wetterdienst, par rapport à la normale 1991-2020 (normale et écart calculés par Dehesa Index).', 'Mois', 'Pluie (mm)', '% de la normale', 'Temp. moyenne (°C)', 'Écart (°C)', 'Voir la carte de l’Allemagne', 'Zone du DWD'],
+        it: ['Pioggia e temperatura', 'Medie del Land pubblicate dal Deutscher Wetterdienst, rispetto alla normale 1991-2020 (normale e scarto calcolati da Dehesa Index).', 'Mese', 'Pioggia (mm)', '% della norma', 'Temp. media (°C)', 'Scarto (°C)', 'Vedi la mappa della Germania', 'Area del DWD'] };
+      return get('data/de-climate-laender.json').then(function (d) {
+        var u = null; (d && d.units || []).forEach(function (z) { if (z.id === x.r) u = z; }); if (!u || !u.months || !u.months.length) return clim(x);
+        var f = DT[H.lang()] || DT.es, sgn = function (v) { return v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1); };
+        var rows = u.months.slice(-6).reverse().map(function (m) { return [esc(mon(m.period)), m.precipMm == null ? '—' : nf(m.precipMm, 0), m.precipAnomalyPct == null ? '—' : nf(100 + m.precipAnomalyPct, 0) + ' %', m.tempC == null ? '—' : nf(m.tempC, 1), sgn(m.tempAnomalyC)]; });
+        var area = u.dwdArea && u.dwdArea !== u.name ? '<p class="di-movers-hint" style="margin:6px 0 0">' + esc(f[8]) + ': ' + esc(u.dwdArea) + '</p>' : '';
+        return card(f[0], f[1], table([f[2], f[3], f[4], f[5], f[6]], rows, 520) + area + link('paises.html?c=DE#ps-de-clim', f[7]), cite('dwd_cdc', d.lastPeriod));
+      });
+    }
+
     /* ---- clima (todos los países) ---- */
     function clim(x) {
       var ids = CLIM[x.c] && CLIM[x.c][x.r]; if (!ids) return regClim(x); if (typeof ids === 'string') ids = [ids];
@@ -640,7 +655,7 @@
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
-        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('eudr', eudr), C('clim', clim)],
+        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('eudr', eudr), C('clim', deClim)],
         NL: [C('nlcrops', nlCbs), C('clim', clim)],
         AT: [C('eudr', eudr), C('clim', clim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', clim)], AU: [C('clim', clim)], BE: [C('eudr', eudr), C('clim', clim)], DK: [C('clim', clim)], EL: [C('eudr', eudr), C('clim', clim)]
       },

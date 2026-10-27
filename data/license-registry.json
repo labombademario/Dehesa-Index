@@ -5789,6 +5789,35 @@
    "short": "Borsa Merci di Foggia",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Licencia CC BY 4.0 declarada por la Cámara de Comercio en cada conjunto del catálogo nacional dati.gov.it."
+  },
+  "vgrdl": {
+   "name": "Arbeitskreis Volkswirtschaftliche Gesamtrechnungen der Länder (VGRdL), Statistische Ämter des Bundes und der Länder",
+   "url": "https://www.statistikportal.de/de/vgrdl",
+   "country": "DE",
+   "licenseId": "CUSTOM-ATTRIBUTION",
+   "licenseName": "Reproduction and distribution permitted with source attribution (VGRdL publication imprint)",
+   "licenseUrl": "https://www.statistikportal.de/de/vgrdl/ergebnisse-laenderebene/bruttoinlandsprodukt-bruttowertschoepfung",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Quelle: Arbeitskreis „Volkswirtschaftliche Gesamtrechnungen der Länder“ (VGRdL), Reihe 1 Band 1",
+   "additionalRestrictions": "Employment figures may not be published more precisely than thousands of persons with one decimal (Arbeitskreis Erwerbstätigenrechnung); Dehesa Index rounds accordingly.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Imprint of the Excel workbook vgrdl_r1b1_bs2025.xlsx (March 2026): «Vervielfältigung und Verbreitung, auch auszugsweise, mit Quellenangabe gestattet», plus the one-decimal rule for employment.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Explicit reproduction permission with attribution in the publication imprint, but no named standard licence; commercial reuse is not addressed separately.",
+   "short": "VGRdL",
+   "used": true,
+   "aliases": [
+    "VGRdL",
+    "statistikportal"
+   ],
+   "notes": null
   }
  },
  "files": {
@@ -8492,6 +8521,25 @@
     "cciaa_foggia"
    ],
    "notes": "Precios mínimo y máximo de cada sesión semanal de la Borsa Merci di Foggia (trigo duro por calidad, sémolas, aceite de oliva), tal cual; erratas evidentes descartadas y anotadas; scripts/update-it-foggia.py."
+  },
+  "data/de-climate-laender.json": {
+   "sources": [
+    "dwd_cdc"
+   ],
+   "notes": "Lluvia y temperatura media mensual por Land: medias de área del DWD (regional_averages_DE) tal cual; normal 1991-2020 y anomalía calculadas por Dehesa Index; scripts/update-de-climate-laender.py."
+  },
+  "data/germany-more-stats.json": {
+   "bySourceGroupPrefix": {
+    "Eurostat": "eurostat",
+    "VGRdL": "vgrdl"
+   },
+   "notes": "Alemania: IPCA de alimentos por subclase ECOICOP v2 (Eurostat prc_hicp_minr, elaborado por Destatis) y, por Land, VAB de la sección A a precios corrientes y en volumen, ocupados y VAB por ocupado (VGRdL, Reihe 1 Band 1); scripts/update-de-more.py."
+  },
+  "data/de-land-prices.json": {
+   "sources": [
+    "destatis"
+   ],
+   "notes": "Precio medio de compraventa de tierra agrícola, superficie vendida y número de ventas por Regierungsbezirk (Destatis GENESIS 61521-0020) tal cual; scripts/update-de-land-prices.py. Mapa: vendor/de-nuts2.js (Eurostat/GISCO NUTS 2021)."
   }
  },
  "derived": [

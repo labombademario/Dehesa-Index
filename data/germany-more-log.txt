@@ -1,0 +1,8 @@
+se omite de-hicp-cp01136: solo 22 puntos
+se omite de-hicp-cp01149: solo 22 puntos
+se omite de-hicp-cp01168: solo 22 puntos
+se omite de-hicp-cp01184: solo 22 puntos
+IPCA: 62 series, último 2026-09
+VGRdL: https://www.statistikportal.de/sites/default/files/2026-03/vgrdl_r1b1_bs2025.xlsx
+VGRdL: 68 series, último 2025
+escrito: 130 series

@@ -1,18 +1,18 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T22:37:32Z",
+ "generatedAt": "2026-10-27T23:28:31Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 191,
-  "sourcesApto": 175,
+  "sources": 192,
+  "sourcesApto": 176,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 411,
-  "datasets_apto": 273,
-  "datasets_condiciones": 127,
+  "datasets": 413,
+  "datasets_apto": 274,
+  "datasets_condiciones": 128,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -3136,6 +3136,23 @@
    "conditions": "No implied USGS endorsement; provisional data are subject to revision."
   },
   {
+   "id": "vgrdl",
+   "name": "Arbeitskreis Volkswirtschaftliche Gesamtrechnungen der Länder (VGRdL), Statistische Ämter des Bundes und der Länder",
+   "url": "https://www.statistikportal.de/de/vgrdl",
+   "country": "DE",
+   "licenseId": "CUSTOM-ATTRIBUTION",
+   "licenseName": "Reproduction and distribution permitted with source attribution (VGRdL publication imprint)",
+   "licenseUrl": "https://www.statistikportal.de/de/vgrdl/ergebnisse-laenderebene/bruttoinlandsprodukt-bruttowertschoepfung",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Quelle: Arbeitskreis „Volkswirtschaftliche Gesamtrechnungen der Länder“ (VGRdL), Reihe 1 Band 1",
+   "conditions": "Employment figures may not be published more precisely than thousands of persons with one decimal (Arbeitskreis Erwerbstätigenrechnung); Dehesa Index rounds accordingly."
+  },
+  {
    "id": "vigieau",
    "name": "VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau)",
    "url": "https://vigieau.gouv.fr/",
@@ -4107,6 +4124,14 @@
      "sourceId": "csu_cz",
      "verdict": "apto"
     }
+   ]
+  },
+  {
+   "path": "data/de-climate-laender.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "dwd_cdc"
    ]
   },
   {
@@ -6392,6 +6417,27 @@
    "verdict": "apto",
    "sources": [
     "destatis"
+   ]
+  },
+  {
+   "path": "data/germany-more-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat",
+    "vgrdl"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Eurostat",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    },
+    {
+     "scope": "grupo:VGRdL",
+     "sourceId": "vgrdl",
+     "verdict": "apto"
+    }
    ]
   },
   {
