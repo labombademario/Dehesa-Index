@@ -1,3 +1,31 @@
+crops bp2 ultimo año 2025 celdas 3870
+crops bp3 ultimo año 2025 celdas 2340
+crops bp4 ultimo año 2025 celdas 2160
+crops bp5 ultimo año 2025 celdas 30
+crops bp6 ultimo año 2025 celdas 30
+escrito crops.json 43 KB
+livestock cattle ultimo año 2025 celdas 300
+livestock pigs ultimo año 2025 celdas 275
+livestock sheep ultimo año 2025 celdas 125
+livestock goats ultimo año 2025 celdas 125
+livestock poultry ultimo año 2025 celdas 200
+livestock cattle_h ultimo año 2020 celdas 756
+livestock pigs_h ultimo año 2020 celdas 693
+livestock sheep_h ultimo año 2020 celdas 315
+livestock goats_h ultimo año 2020 celdas 315
+livestock poultry_h ultimo año 2020 celdas 504
+livestock milk ultimo año 2025 celdas 78
+livestock eggs ultimo año 2025 celdas 52
+livestock wool ultimo año 2025 celdas 26
+livestock honey ultimo año 2025 celdas 26
+escrito livestock.json 30 KB
+dairy collected ultimo año 2025 celdas 54
+dairy fresh ultimo año 2025 celdas 162
+dairy products ultimo año 2025 celdas 234
+escrito dairy.json 4 KB
+prices output ultimo año 2026 celdas 2860
+prices input ultimo año 2026 celdas 1980
+escrito prices.json 27 KB
 balance cereals ultimo año 2024 celdas 1155
 balance oilseeds ultimo año 2024 celdas 495
 balance rice ultimo año 2024 celdas 540
