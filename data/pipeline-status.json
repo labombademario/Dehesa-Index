@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T23:13:00Z",
+ "generatedAt": "2026-10-27T23:28:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 302,
+  "ok": 303,
   "late": 2,
-  "error": 3,
+  "error": 2,
   "not_run": 2,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
   "repoGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
-  "checkedAt": "2026-10-27T23:13:00Z"
+  "checkedAt": "2026-10-27T23:28:00Z"
  },
  "pipelines": [
   {
@@ -4145,19 +4145,18 @@
    "nextRun": "2026-11-02T12:10:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T22:55:19Z",
-    "durationSec": 868,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40598413190",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · AVISO: sin conjunto cerealicoli 2023 (t/opendata/api/3/action/package_show?id=foggia-listini-dei-prezzi-dei-prodotti-c)"
+    "startedAt": "2026-10-27T23:13:42Z",
+    "durationSec": 160,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40600650186"
    },
    "recent": {
-    "runs": 2,
-    "success": 0,
+    "runs": 3,
+    "success": 1,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -4842,7 +4841,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T23:00:42Z"
+     "lastChange": "2026-10-27T23:16:10Z"
     },
     {
      "path": "data/source-candidates.json",
