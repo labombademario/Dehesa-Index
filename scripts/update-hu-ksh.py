@@ -4,13 +4,14 @@ Fuente: https://www.ksh.hu (STADAT, ficheros CSV en ingles). Licencia: CC BY 4.0
 (condiciones de uso del KSH, https://www.ksh.hu/copyright_eng; quedan fuera los ficheros consultados a peticion a las bases internas, que no usamos).
 Tablas (desde 1990): mez0001 resumen, mez0008 uso de la tierra, mez0009 alquiler y precio de la tierra, mez0012/15/18 superficie, produccion y rendimiento de cultivos
 herbaceos, mez0013/16/19 hortalizas, mez0014/17/20 frutas y uva, mez0027 y mez0029 censo ganadero, mez0032-0035 produccion animal, leche y huevos.
+Precios anuales ara0013-0026, insumos mez0041-0042 y balances mez0048-0059 tambien.
 Precios mensuales (ara0052 compra de cultivos, ara0053 compra de ganado y productos, ara0054 mercado del productor; desde 2022): se omiten las tablas acumuladas (ara0049).
 Formato STADAT: CSV ISO-8859-2 con ';', cabecera «Year;col;col...», '..' = sin dato. Nada se estima; una celda vacia se omite; una serie con <3 puntos o parada >3 anos no se publica."""
 import csv, datetime, io, json, re, time, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "hu-ksh-stats.json"
-URL = "https://www.ksh.hu/stadat_files/mez/en/%s.csv"
+URL = "https://www.ksh.hu/stadat_files/%s/en/%s.csv"
 H = {"User-Agent": "Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)"}
 SRC = {"name": "Hungarian Central Statistical Office (KSH), STADAT (CC BY 4.0)", "url": "https://www.ksh.hu/stadat", "license": "CC BY 4.0"}
 LOG = []
@@ -26,7 +27,14 @@ TABLES = [
     ("mez0027", "livestock", "Livestock, 1 December", False, 1), ("mez0029", "livestock", "Poultry stock, 1 December", False, 1),
     ("mez0032", "production", "Production of animals for slaughter", False, 0), ("mez0033", "production", "Meat production", False, 0),
     ("mez0034", "milk", "Production", True, 0), ("mez0035", "milk", "Average production", True, 0),
-]
+    # precios anuales (ara) y balances (mez0048-0059)
+    ("ara0013", "prices", "Procurement price, annual", False, 0), ("ara0014", "prices", "Procurement price, annual", False, 0), ("ara0015", "prices", "Procurement price, annual", False, 0),
+    ("ara0016", "prices", "Procurement price, annual", False, 0), ("ara0017", "prices", "Procurement price, annual", False, 0), ("ara0018", "prices", "Procurement price, annual", False, 0),
+    ("ara0020", "prices", "Procurement price, annual", False, 0), ("ara0021", "prices_lv", "Procurement price, annual", False, 0), ("ara0022", "prices_lv", "Procurement price, annual", True, 0),
+    ("ara0023", "prices", "Market price, annual", False, 0), ("ara0024", "prices", "Market price, annual", False, 0), ("ara0025", "prices", "Market price, annual", False, 0),
+    ("ara0026", "prices_lv", "Market price, annual", True, 0),
+    ("mez0041", "inputs", "Fertilisers", False, 0), ("mez0042", "inputs", "Fertiliser application", False, 0),
+] + [("mez00%d" % n, "production", "Balance", False, 0) for n in range(48, 60)]
 def get(u, t=90, tries=4):
     last = None
     for i in range(tries):
@@ -65,10 +73,12 @@ def note_for(tab, name, pts):
     if tab == "mez0008" and "kitchen" in name.lower(): n.append("Large steps in this series (1992, 2020) may reflect changes in KSH's land-use classification rather than real change; see the KSH table notes.")
     return " ".join(n) or None
 def parse(tab, group, prefix, colunits, skip):
-    rows = list(csv.reader(io.StringIO(get(URL % tab)), delimiter=";", quotechar='"'))
+    rows = list(csv.reader(io.StringIO(get(URL % (tab[:3], tab))), delimiter=";", quotechar='"'))
     title = clean(rows[0][0]); tu = unit_of(title)
     hi = next(i for i, r in enumerate(rows) if r and clean(r[0]) == "Year")
+    if prefix == "Balance": prefix = re.sub(r"^[\d.\s]+", "", title).rstrip(".")
     head = [clean(h) for h in rows[hi]]; section = ""; data = {}
+    if tab == "ara0016" and "Colza seeds, other" in head: head[head.index("Colza seeds, other")] = "Colza seeds, total"  # errata de la fuente: la segunda columna «other» es el total
     for r in rows[hi + 1:]:
         if not r or not clean(r[0]): continue
         if not re.fullmatch(r"\d{4}", clean(r[0])):
@@ -83,6 +93,15 @@ def parse(tab, group, prefix, colunits, skip):
     for (sec, j), pts in data.items():
         name, unit = (col_unit(head[j]) if colunits else (head[j], tu))
         if not unit: unit = tu
+        mb = re.search(r"\s(thousand tonnes|million litres|million pieces)$", head[j])
+        if mb: name, unit = head[j][:mb.start()], {"thousand tonnes": "thousand t", "million litres": "million litres", "million pieces": "million pcs"}[mb.group(1)]
+        mh = re.search(r"[,\s]\s*(HUF/[A-Za-z]+)$", head[j])
+        if mh: name, unit = head[j][:mh.start()], mh.group(1).replace("pcs", "piece")
+        if "per capita" in head[j]:
+            mp = re.search(r"\s(kg|litres?|pieces)$", head[j])
+            if mp: name, unit = head[j][:mp.start()], {"kg": "kg/person", "litre": "litres/person", "litres": "litres/person", "pieces": "pcs/person"}[mp.group(1)]
+        if head[j].startswith("Sold fertilizer, thousand tonne of nutrients"): name, unit = "Sold fertilizer, " + head[j].rsplit(" ", 1)[1], "thousand t nutrients"
+        if head[j].startswith("Fertilizer per hectare"): name, unit = "Fertilizer per hectare of agricultural area", "kg/ha"
         if "previous year = 100" in unit: unit = "index (previous year = 100)"
         low = name.lower()
         if "huf/hectares" in head[j].lower(): name, unit = clean(head[j].split(",")[0]), "HUF/ha"
@@ -90,7 +109,7 @@ def parse(tab, group, prefix, colunits, skip):
         elif not unit and "share" in low: unit = "%"
         if not unit: log("sin unidad, se omite:", tab, name[:60]); continue
         lab = "%s: %s%s (%s, KSH)" % (prefix, name, (", " + sec.lower()) if sec else "", unit)
-        s = build("hu-ksh-%s-%s%s" % (tab[3:], slug(name)[:40], ("-" + slug(sec)[:20]) if sec else ""), group, lab, unit, pts, tab,
+        s = build("hu-ksh-%s-%s%s" % (tab[3:] if tab[0] == "m" else "a" + tab[3:], slug(name)[:40], ("-" + slug(sec)[:40]) if sec else ""), group, lab, unit, pts, tab,
                   note_for(tab, name, pts))
         if s: out.append(s)
     log(tab, len(out), "series")
