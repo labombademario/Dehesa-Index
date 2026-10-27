@@ -2,7 +2,7 @@ MAPA campaña 2022/2023: 52 boletines
 MAPA campaña 2023/2024: 52 boletines
 MAPA campaña 2024/2025: 52 boletines
 MAPA campaña 2025/2026: 53 boletines
-MAPA campaña 2026/2027: 11 boletines
+MAPA campaña 2026/2027: 12 boletines
 AVISO boletin no leido: 012023boletinpreciosdelvinodel2al8deenero.pdf sin cifras
 AVISO boletin no leido: 022023boletinpreciosdelvinodel9al15deenero.pdf sin cifras
 AVISO boletin no leido: 032023boletinpreciosdelvinodel16al22deenero.pdf sin cifras
@@ -13,8 +13,8 @@ AVISO boletin no leido: 072023boletinpreciosdelvinodel13al19defebrero.pdf sin ci
 AVISO boletin no leido: 082023boletinpreciosdelvinodel20al26defebrero.pdf sin cifras
 AVISO boletin no leido: 092023boletinpreciosdelvinodel27defebreroal5demarzo.pdf sin cifras
 AVISO boletin no leido: 102023boletinpreciosdelvinodel6al12demarzo.pdf sin cifras
-España: 96 semanas (1 nuevas), 121 boletines sin leer
-Francia: fichero COT-VIN-HISTORIQUE_COTATION_UE_DEPUIS2009-C25-26.xls (2 disponibles)
+España: 97 semanas (1 nuevas), 121 boletines sin leer
+Francia: ficheros COT-VIN-HISTORIQUE_COTATION_UE_DEPUIS2009-C24-25.xls, COT-VIN-HISTORIQUE_COTATION_UE_DEPUIS2009-C25-26.xls (2 disponibles)
 Francia: descartado red.vsig 2024-05 168.84 frente a mediana 65.75
 Francia: descartado white.vsig 2010-04 22.44 frente a mediana 50.66
 Francia: descartado red.aop 2024-11 258.6 frente a mediana 113.68
