@@ -4917,6 +4917,7 @@ def de_land_prices(doc, errs, warns, stats):
             p = r.get("priceEurHa")
             if p is None: continue
             if not 1000 <= p <= 400000: errs.append("tierra-de %s %s: precio imposible %s €/ha" % (u["id"], r["year"], p)); break
+            if r.get("areaHa") is not None and r.get("sales") and r["areaHa"] < 0.1 * r["sales"]: errs.append("tierra-de %s %s: superficie %s ha menor que el mínimo de 0,1 ha por compraventa (%s): ¿superficie media por venta en vez de total?" % (u["id"], r["year"], r["areaHa"], r["sales"])); break
             last = max(last or r["year"], r["year"])
     if last != doc["lastYear"]: errs.append("tierra-de: lastYear %s no es el último año con precio (%s)" % (doc["lastYear"], last))
     if last and int(last) < datetime.date.today().year - 3: errs.append("tierra-de: último año %s demasiado antiguo" % last)

@@ -5,7 +5,7 @@ Fuente: Statistisches Bundesamt (Destatis), GENESIS-Online, tabla 61521-0020 «K
 (Datenlizenz Deutschland – Namensnennung – Version 2.0; registro destatis). Necesita GENESIS_TOKEN (el mismo de update-germany); sin token no se toca nada.
 Por año y región: precio medio de compraventa en euros por hectárea de superficie agraria, superficie vendida (ha) y número de compraventas, tal cual.
 Las 38 regiones son las NUTS 2 de Alemania: los Regierungsbezirke (o regiones estadísticas en Niedersachsen y Rheinland-Pfalz, Direktionsbezirke en Sachsen) y
-los Länder que no los tienen. Se identifican por el código oficial (AGS) que trae la tabla y, si faltara, por el nombre; se asignan al id NUTS 2 del mapa
+los Länder que no los tienen. Se identifican por el código oficial (AGS; la tabla trae «010», «020»… para los Länder sin Regierungsbezirke) que trae la tabla y, si faltara, por el nombre; se asignan al id NUTS 2 del mapa
 (vendor/de-nuts2.js). Si la tabla trae también Länder o Alemania, se guardan aparte. Si la estructura no es la esperada, se escribe en el registro y no se toca nada.
 Uso: GENESIS_TOKEN=... python3 scripts/update-de-land-prices.py [--out DIR]"""
 import csv, datetime, io, json, os, re, sys, time, urllib.parse, urllib.request, zipfile
@@ -50,12 +50,8 @@ def cls(r):
         m = re.match(r"^(\d+)_variable_code$", k)
         if m: n = m.group(1); out.append((int(n), (r[k] or "").strip(), (r.get(n + "_variable_attribute_code") or "").strip(), (r.get(n + "_variable_attribute_label") or "").strip()))
     return sorted(out)
-def kind(lab):
-    l = lab.lower()
-    if "kaufwert" in l or "kaufpreis" in l or ("eur" in l and "ha" in l): return "price"
-    if "veräußerungsfälle" in l or "veraeusserungsfaelle" in l or "fälle" in l or "anzahl" in l: return "cases"
-    if "fläche" in l or "flaeche" in l: return "area"
-    return None
+VAR = {"KAU004": "price", "FLC023": "area", "VKF002": "cases"}   # Durchschnittlicher Kaufwert (EUR/ha), Veräußerte Fläche (ha), Veräußerungsfälle (Anzahl)
+def kind(r): return VAR.get((r.get("value_variable_code") or "").strip())
 def describe(R):
     log("filas:", len(R), "columnas:", list(R[0].keys())[:30] if R else [])
     vv = sorted({r.get("value_variable_label", "").strip() + " [" + r.get("value_variable_code", "").strip() + "] " + r.get("value_unit", "").strip() for r in R})
@@ -76,10 +72,11 @@ def main():
     byname = {v[1].lower(): (k, v) for k, v in REG.items()}
     units, nat, kinds, other = {}, {}, set(), set()
     for r in R:
-        k = kind(r.get("value_variable_label", ""))
+        k = kind(r)
         if not k: continue
         C = cls(r); reg = None; ok = True
         for n, vc, ac, al in C:
+            if vc == "REGBEZ" and len(ac) == 3 and ac.endswith("0") and ac[:2] in REG: ac = ac[:2]   # «010» Schleswig-Holstein, «020» Hamburg… (Länder sin Regierungsbezirke)
             hit = REG.get(ac) or LAENDER.get(ac) and ("LAND", LAENDER[ac])
             if not hit:
                 nm = re.sub(r",.*$", "", al).strip().lower()
@@ -111,7 +108,7 @@ def main():
              "en": "Average price of agricultural land sales (farmland, without buildings or inventory) recorded in the year, in euros per hectare, with the area sold and the number of sales, as published by Destatis by Regierungsbezirk. Regions with few sales can swing a lot from year to year.",
              "fr": "Prix moyen des ventes de terres agricoles (surface agricole, sans bâtiments ni inventaire) enregistrées dans l’année, en euros par hectare, avec la surface vendue et le nombre de ventes, tels que publiés par Destatis par Regierungsbezirk. Les régions avec peu de ventes peuvent varier fortement d’une année à l’autre.",
              "it": "Prezzo medio delle compravendite di terreni agricoli (superficie agricola, senza fabbricati né scorte) registrate nell’anno, in euro per ettaro, con la superficie venduta e il numero di compravendite, come li pubblica Destatis per Regierungsbezirk. Le regioni con poche vendite possono oscillare molto da un anno all’altro."},
-           "missing": missing, "units": U, "totals": [{"name": k, "years": rows(v)} for k, v in sorted(nat.items())], "log": LOG[-14:]}
+           "missing": missing, "units": U, "notes": {"missingWhy": "Destatis no publica precio para las ciudades-estado sin apenas superficie agraria vendida, o lo oculta por secreto estadístico."} if missing else {}, "totals": [{"name": k, "years": rows(v)} for k, v in sorted(nat.items())], "log": LOG[-14:]}
     outdir.mkdir(parents=True, exist_ok=True)
     tmp = outdir / "de-land-prices.json.tmp"; tmp.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); os.replace(tmp, outdir / "de-land-prices.json")
     log("escrito: %d regiones, último año %s, faltan %s" % (len(U), last, missing)); return 0
