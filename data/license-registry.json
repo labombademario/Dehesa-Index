@@ -5763,6 +5763,32 @@
    "short": "Météo-France",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Licence Ouverte 2.0 declarada en el conjunto de datos de data.gouv.fr publicado por Météo-France."
+  },
+  "cciaa_foggia": {
+   "country": "IT",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "used": true,
+   "aliases": [],
+   "notes": "data/italy-foggia.json; scripts/update-it-foggia.py.",
+   "name": "Camera di Commercio di Foggia — Borsa Merci, listini settimanali (dati.gov.it)",
+   "url": "https://www.dati.gov.it/opendata/dataset?q=foggia+listini+dei+prezzi",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.it",
+   "attributionText": "Fonte: Camera di Commercio di Foggia, Borsa Merci — listini settimanali (dati.gov.it, CC BY 4.0)",
+   "additionalRestrictions": "Citar la fuente.",
+   "evidence": "Catálogo dati.gov.it (CKAN package_show «foggia-listini-dei-prezzi-dei-prodotti-cerealicoli-anno-2026» y «...-olivicoli-anno-2026», consultado el 27-oct-2026): license_id «Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)», titular Camera di Commercio, Industria, Artigianato e Agricoltura di Foggia; recursos CSV en opengovernment.unioncamere.gov.it. El script comprueba la licencia de cada conjunto en cada ejecución.",
+   "short": "Borsa Merci di Foggia",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia CC BY 4.0 declarada por la Cámara de Comercio en cada conjunto del catálogo nacional dati.gov.it."
   }
  },
  "files": {
@@ -8453,6 +8479,19 @@
     "meteo_france"
    ],
    "notes": "Lluvia y temperatura media mensual por departamento: media de las estaciones de Météo-France con el mes completo y anomalía frente a su normal 1991-2020 (cálculo de Dehesa Index); scripts/update-fr-climate-departements.py."
+  },
+  "data/italy-istat-more-stats.json": {
+   "bySourceGroupPrefix": {
+    "Eurostat": "eurostat",
+    "ISTAT": "istat"
+   },
+   "notes": "Italia: IPCA de alimentos por subclase ECOICOP v2 (Eurostat prc_hicp_minr, elaborado por ISTAT), ocupados en la sección A por región (ISTAT, forze di lavoro) y VAB de la rama A por región a precios corrientes y en volumen encadenado (ISTAT, conti territoriali); scripts/update-it-istat-more.py."
+  },
+  "data/italy-foggia.json": {
+   "sources": [
+    "cciaa_foggia"
+   ],
+   "notes": "Precios mínimo y máximo de cada sesión semanal de la Borsa Merci di Foggia (trigo duro por calidad, sémolas, aceite de oliva), tal cual; erratas evidentes descartadas y anotadas; scripts/update-it-foggia.py."
   }
  },
  "derived": [

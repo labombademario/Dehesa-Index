@@ -4892,6 +4892,22 @@ def spain_prices_obs(doc, errs, warns, stats):
     for k, n in st.items():
         if n < 25: errs.append("obs: solo %d series de %s (se esperan >=25)" % (n, k))
     stats["series"] = len(S)
+FOGGIA_RANGE = {"€/t": (100, 1500), "€/kg": (0.5, 30)}
+def italy_foggia(doc, errs, warns, stats):
+    """Borsa Merci di Foggia: >=6 series únicas con trigo y aceite, sesiones crecientes, mínimo <= máximo, precios dentro de un rango posible para su unidad,
+    una serie de sémola presente y última sesión no muy antigua (la fuente publica con hasta tres meses de retraso)."""
+    S = doc["series"]; ids = set()
+    for s in S:
+        if s["id"] in ids: errs.append("foggia: id repetido %s" % s["id"])
+        ids.add(s["id"]); D = [p[0] for p in s["points"]]
+        if D != sorted(set(D)): errs.append("foggia %s: sesiones desordenadas o repetidas" % s["id"]); continue
+        lo, hi = FOGGIA_RANGE[s["unit"]]
+        for d, mn, mx in s["points"]:
+            if mn is not None and mx is not None and mn > mx: errs.append("foggia %s %s: mínimo %s mayor que máximo %s" % (s["id"], d, mn, mx)); break
+            if any(v is not None and not (lo <= v <= hi) for v in (mn, mx)): errs.append("foggia %s %s: precio fuera de %s-%s %s" % (s["id"], d, lo, hi, s["unit"])); break
+    if not any(s["id"].startswith("it-foggia-semola") for s in S): errs.append("foggia: falta la sémola")
+    if doc["lastDate"] < (datetime.date.today() - datetime.timedelta(days=150)).isoformat(): errs.append("foggia: última sesión %s demasiado antigua" % doc["lastDate"])
+    stats["series"] = len(S)
 def fr_climate_departements(doc, errs, warns, stats):
     """Clima por departamento (Météo-France): >=85 departamentos únicos, meses crecientes y cerrados, último mes reciente, valores físicamente posibles,
     anomalías coherentes con valor y normal, y el historial con un hueco por mes desde «from»."""

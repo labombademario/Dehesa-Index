@@ -1,14 +1,14 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T22:04:41Z",
+ "generatedAt": "2026-10-27T22:37:32Z",
  "summary": {
-  "sources": 190,
-  "sourcesApto": 174,
+  "sources": 191,
+  "sourcesApto": 175,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 409,
-  "datasets_apto": 272,
-  "datasets_condiciones": 126,
+  "datasets": 411,
+  "datasets_apto": 273,
+  "datasets_condiciones": 127,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -138,6 +138,10 @@
   "cbsa_tariff": {
    "name": "Canada Border Services Agency — Customs Tariff",
    "verdict": "condiciones"
+  },
+  "cciaa_foggia": {
+   "name": "Camera di Commercio di Foggia — Borsa Merci, listini settimanali (dati.gov.it)",
+   "verdict": "apto"
   },
   "census": {
    "name": "U.S. Census Bureau",

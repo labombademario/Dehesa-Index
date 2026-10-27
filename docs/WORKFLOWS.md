@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-319 workflows (269 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+321 workflows (271 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -216,9 +216,11 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
 | update-it-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-it-drought.py | it-drought.json | finish, validate-files |
+| update-it-foggia.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-it-foggia.py | italy-foggia.json | finish, validate-files |
 | update-it-fuel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-it-fuel.py | it-fuel.json | finish, validate-files |
 | update-it-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | it-ghg-agri.json | finish, validate-files |
 | update-it-istat-2.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat-2.py | italy-istat/agritourism.json, italy-istat/comuni.json, italy-istat/crops-prov.json … | finish, validate-files |
+| update-it-istat-more.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat-more.py | italy-istat-more-stats.json | finish, validate-files |
 | update-it-istat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat.py | italy-istat/fertilisers.json, italy-istat/herds.json, italy-istat/pesticides.json … | finish, validate-files |
 | update-it-water-severity.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-it-severity.py | it-water-severity.json | finish, validate-files |
 

@@ -1,0 +1,32 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Borsa Merci di Foggia weekly durum wheat, semolina and olive oil prices (Camera di Commercio di Foggia)
+on:
+  schedule:
+    - cron: '10 12 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-it-foggia
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-it-foggia.py
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/italy-foggia.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/italy-foggia.json
+      - name: Publicar
+        run: bash scripts/publish-data.sh "Precios de la Borsa Merci di Foggia (trigo duro, sémolas y aceite de oliva)" data/italy-foggia.json data/italy-foggia-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

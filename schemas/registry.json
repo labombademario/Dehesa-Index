@@ -1945,6 +1945,12 @@
    [
     "fr_climate_departements"
    ]
+  ],
+  "italy-foggia.json": [
+   "italy-foggia",
+   [
+    "italy_foggia"
+   ]
   ]
  },
  "globs": {

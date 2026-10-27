@@ -392,9 +392,10 @@
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var after = document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || tr;
     var el = document.createElement('div'); el.id = 'pp-it-fuel'; after.parentNode.insertBefore(el, after.nextSibling);
+    var fg = document.createElement('div'); fg.id = 'pp-it-foggia'; after.parentNode.insertBefore(fg, after.nextSibling);   /* Borsa Merci di Foggia (js/it-foggia.js) antes del gasóleo */
     function js(src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
-    var go = function () { if (window.DIItFuel && ST.c === cc) window.DIItFuel.mount(el, lang()); };
-    var mod = function () { if (window.DIItFuel) go(); else js('js/it-fuel.js?v=20261013', go); };
+    var go = function () { if (ST.c !== cc) return; if (window.DIItFoggia) window.DIItFoggia.mount(fg, lang()); if (window.DIItFuel) window.DIItFuel.mount(el, lang()); };
+    var mod = function () { var n = 0, done = function () { if (++n === 2) go(); }; if (window.DIItFuel) done(); else js('js/it-fuel.js?v=20261013', done); if (window.DIItFoggia) done(); else js('js/it-foggia.js?v=0', done); };
     if (window.DIFrDeptMap) mod(); else js('js/fr-dept-map.js?v=20261015', mod);
   }
   /* Italia: estadísticas agrarias del ISTAT (js/it-istat.js; precios agrarios, sacrificios, censo ganadero, fertilizantes y fitosanitarios) */

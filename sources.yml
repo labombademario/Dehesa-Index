@@ -1962,6 +1962,22 @@ sources:
     data: [fr-climate-departements.json]
     log: fr-climate-log.txt
     message: Lluvia y temperatura mensual por departamento de Francia (Météo-France)
+  - id: it-istat-more
+    name: Update Italy food consumer prices, farm employment and regional farm value added (ISTAT, Eurostat HICP)
+    cron: ['35 11 4,19 * *']
+    script: scripts/update-it-istat-more.py
+    timeout: 30
+    data: [italy-istat-more-stats.json]
+    log: italy-istat-more-log.txt
+    message: Precios al consumo de alimentos, ocupados agrarios y valor añadido agrario por región de Italia (ISTAT)
+  - id: it-foggia
+    name: Update Borsa Merci di Foggia weekly durum wheat, semolina and olive oil prices (Camera di Commercio di Foggia)
+    cron: ['10 12 * * 1']
+    script: scripts/update-it-foggia.py
+    timeout: 20
+    data: [italy-foggia.json]
+    log: italy-foggia-log.txt
+    message: Precios de la Borsa Merci di Foggia (trigo duro, sémolas y aceite de oliva)
   - id: france-hicp
     name: Update France consumer price indices for butter, cheese and olive oil (Eurostat HICP)
     cron: ['50 9 4,18 * *']

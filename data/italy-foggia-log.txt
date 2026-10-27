@@ -1,0 +1,12 @@
+AVISO: sin conjunto olivicoli 2023 (.it/opendata/api/3/action/package_show?id=foggia-listini-dei-prezzi-dei-prodotti)
+descartado: ['semola-086-090', '2023-07-12', 540.0, 454.0, 'mínimo mayor que el máximo']
+descartado: ['semola-086-090', '2026-03-18', 455.0, 165.0, 'mínimo mayor que el máximo']
+descartado: ['semola-086-090', '2026-03-25', 455.0, 165.0, 'mínimo mayor que el máximo']
+descartado: ['semola-086-090', '2026-04-22', 455.0, 165.0, 'mínimo mayor que el máximo']
+descartado: ['semola-086-090', '2026-04-29', 455.0, 165.0, 'mínimo mayor que el máximo']
+descartado: ['semola-086-090', '2026-05-27', 455.0, 165.0, 'mínimo mayor que el máximo']
+descartado: ['semola-086-090', '2026-06-24', 455.0, 165.0, 'mínimo mayor que el máximo']
+descartado: ['oil-olio-extravergine-di-oliva-acidita-0-4', '2025-11-19', 7.0, 730.0, 'se aparta más de un 40 % de la mediana de sus vecinos (7.12)']
+descartado: ['oil-olio-extravergine-di-oliva-acidita-0-8', '2026-06-17', 5.0, 4.3, 'mínimo mayor que el máximo']
+descartado: ['oil-olio-extravergine-di-oliva-acidita-0-8', '2026-06-24', 5.0, 4.3, 'mínimo mayor que el máximo']
+escrito: 14 series de 63 ficheros; última sesión 2026-07-29; 10 valores descartados

@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 187 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40333 series en el catalogo unificado.
+Resumen: 188 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40458 series en el catalogo unificado.
 
-## VERIFIED (187)
+## VERIFIED (188)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -42,6 +42,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `bundesanzeiger` | Bundesanzeiger (amtlicher Teil) — Bekanntmachungen des Bundes | DE | CUSTOM | si/si | si | 0 | Only the amtlicher Teil (official notices of the Federal Government) is used, never the commercial parts of the Bundesanzeiger. The basis is… |
 | `cbs_nl` | Statistics Netherlands (CBS StatLine) | NL | CUSTOM | si/si | si | 129 | Cite CBS as the source (mandatory); state when figures are modified or derived. The separate Dutch 'Disclaimer open data' text was not read. |
 | `cbsa_tariff` | Canada Border Services Agency — Customs Tariff | CA | CUSTOM | si/conditional | si | 0 | Decision del propietario (18-oct-2026): uso comercial aceptado. Condiciones mantenidas: citar CBSA y URL, no alterar los tipos, calculos pro… |
+| `cciaa_foggia` | Camera di Commercio di Foggia — Borsa Merci, listini settimanali (dati.gov.it) | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente. |
 | `census` | U.S. Census Bureau | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `cftc` | U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment) | US | US-PD | si/si | no | 0 | Acknowledgement of the CFTC requested. Contributed or licensed third-party materials on cftc.gov may be copyrighted; the Commitments of Trad… |
 | `cgc` | Canadian Grain Commission — Grain Statistics Weekly | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
@@ -79,7 +80,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eumofa` | EUMOFA - European Market Observatory for Fisheries and Aquaculture Products (European Commission, DG MARE) | EU | CC-BY-4.0 | si/si | si | 0 | CC BY 4.0 covers content owned by the EU; third-party content (consumption panels, Euromonitor, MABUX, Trade Data Monitor, and data from non… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17296 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17358 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 2241 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `fadn_fsdn` | European Commission - FADN/FSDN public database (standard results) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Reuse allowed with acknowledgement of the source; changes must be indicated. The agridata pages themselves state no licence and point to a d… |
 | `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |
@@ -108,7 +109,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `insee` | Institut national de la statistique et des études économiques (INSEE) | FR | Etalab-2.0 | si/si | si | 261 | Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información. |
 | `irs_sales_tax` | U.S. Internal Revenue Service - Optional State Sales Tax Tables | US | US-PD | si/si | no | 0 | Only the state general sales tax rate is used; local rates are not included. Not tax advice. |
 | `ispra` | ISPRA — Stato di severità idrica a scala nazionale | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
-| `istat` | Italy — Istituto Nazionale di Statistica (ISTAT) | IT | CC-BY-4.0 | si/si | si | 0 | Cite the source; flag changes. Dehesa Index converts units (quintals to tonnes) and says so on screen. |
+| `istat` | Italy — Istituto Nazionale di Statistica (ISTAT) | IT | CC-BY-4.0 | si/si | si | 63 | Cite the source; flag changes. Dehesa Index converts units (quintals to tonnes) and says so on screen. |
 | `it_regioni_dop` | Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana) | IT | CC-BY-4.0/CC0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `jcyl_open_data` | Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robo… |
 | `junta_andalucia_observatorio` | Junta de Andalucía — Observatorio de Precios y Mercados (precios agrarios semanales) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente. |
