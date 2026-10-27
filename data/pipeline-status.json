@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T22:42:00Z",
+ "generatedAt": "2026-10-27T22:58:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 302,
+  "ok": 303,
   "late": 2,
   "error": 1,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
   "repoGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
-  "checkedAt": "2026-10-27T22:42:00Z"
+  "checkedAt": "2026-10-27T22:58:00Z"
  },
  "pipelines": [
   {
@@ -4137,6 +4137,19 @@
    "expectedEveryHours": 24.0
   },
   {
+   "workflow": "update-it-foggia.yml",
+   "name": "Update Borsa Merci di Foggia weekly durum wheat, semolina and olive oil prices (Camera di Commercio di Foggia)",
+   "crons": [
+    "10 12 * * 1"
+   ],
+   "nextRun": "2026-11-02T12:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-it-fuel.yml",
    "name": "Update Italy diesel prices (MASE weekly, MIMIT stations)",
    "crons": [
@@ -4204,6 +4217,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-it-istat-more.yml",
+   "name": "Update Italy food consumer prices, farm employment and regional farm value added (ISTAT, Eurostat HICP)",
+   "crons": [
+    "35 11 4,19 * *"
+   ],
+   "nextRun": "2026-11-04T11:35:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T22:55:18Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40598410348"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 360.0
   },
   {
    "workflow": "update-it-istat.yml",
@@ -4760,14 +4796,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-27T21:44:22Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4784,7 +4820,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/products"
@@ -4795,19 +4831,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T22:28:36Z"
+     "lastChange": "2026-10-27T22:45:25Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/pack"
@@ -4823,30 +4859,30 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-27T21:44:22Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -4854,7 +4890,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-27T22:12:36Z"
+     "lastChange": "2026-10-27T22:54:41Z"
     },
     {
      "path": "data/home-explore.json",
