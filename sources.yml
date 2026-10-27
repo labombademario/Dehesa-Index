@@ -296,6 +296,15 @@ sources:
     continue: true
     data: [wood-prices-de.json]
     message: Indice de precios de la madera alemana (Destatis)
+  - id: forest-fires
+    name: Update forest fires by country (EFFIS and GWIS burnt-area estimates, Copernicus / JRC)
+    cron: ['50 6 * * *']   # el acumulado del año en curso cambia a diario en temporada
+    script: scripts/update-forest-fires.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [forest-fires.json]
+    message: Incendios forestales por pais (EFFIS y GWIS, Copernicus)
   - id: wood-prices-na
     name: Update US and Canada timber price indices (BLS PPI, Statistics Canada IPPI)
     cron: ['35 15 18 * *']   # BLS publica el PPI a mitad de mes; StatCan el IPPI a final de mes: el 18 recoge el primero y el mes anterior del segundo

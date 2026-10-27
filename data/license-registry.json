@@ -5603,6 +5603,35 @@
    "short": "SPW Valonia",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: ficha oficial del geoportal con licencia CC BY 4.0."
+  },
+  "effis_gwis": {
+   "name": "EFFIS and GWIS — European / Global Wildfire Information Systems (Copernicus, JRC): burnt-area estimates by country",
+   "url": "https://forest-fire.emergency.copernicus.eu/",
+   "country": "INT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (Commission reuse policy, Decision 2011/833/EU; EFFIS Data License page)",
+   "licenseUrl": "https://forest-fire.emergency.copernicus.eu/about-effis/data-license",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: EFFIS / GWIS (Copernicus Emergency Management Service, European Commission Joint Research Centre). Adapted by dehesaindex.com.",
+   "additionalRestrictions": "Credit and indication of changes required; third-party content, logos and trade marks are excluded from the licence. Figures are satellite-mapped burnt-area estimates and must not be presented as national fire statistics.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Content not owned by the EU may need permission from its right-holders.",
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "The EFFIS 'Data License' page (copyright notice European Union 1995-2025) states that content owned by the EU is licensed under CC BY 4.0 under the Commission reuse decision of 12 December 2011. The statistics come from the API of the EFFIS statistics application (/statistics/v2/{effis|gwis}); GWIS is run by the same JRC team, but the page does not name GWIS explicitly.",
+   "used": true,
+   "aliases": [
+    "effis",
+    "gwis"
+   ],
+   "notes": "API no documentada (api2.effis.emergency.copernicus.eu/statistics/v2): puede cambiar sin aviso.",
+   "short": "EFFIS/GWIS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia CC BY 4.0 explicita para el contenido de la UE en EFFIS; la cobertura de GWIS se deduce, no esta nombrada en esa pagina."
   }
  },
  "files": {
@@ -8224,6 +8253,12 @@
     "spw_sigec_anon"
    ],
    "notes": "Superficie y parcelas por cultivo de Valonia, campañas 2015–2023, del parcelario agrícola anónimo del SIGEC (scripts/update-be-wallonia-crops.py); sumas por cultivo calculadas por el servidor del SPW."
+  },
+  "data/forest-fires.json": {
+   "sources": [
+    "effis_gwis"
+   ],
+   "notes": "Superficie quemada (ha) y numero de incendios cartografiados por pais y año, y acumulado del año en curso. UE-27, Reino Unido y Suiza: EFFIS desde 2006; EE. UU., Canada, Australia, Argentina, Chile y Uruguay: GWIS desde 2012. Estimaciones por satelite, no estadisticas nacionales. scripts/update-forest-fires.py."
   }
  },
  "derived": [

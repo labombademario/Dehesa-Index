@@ -1897,6 +1897,12 @@
    [
     "be_wallonia_crops"
    ]
+  ],
+  "forest-fires.json": [
+   "forest-fires",
+   [
+    "forest_fires"
+   ]
   ]
  },
  "globs": {

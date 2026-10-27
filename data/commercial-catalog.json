@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T03:02:21Z",
+ "generatedAt": "2026-10-27T13:38:18Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 184,
-  "sourcesApto": 168,
+  "sources": 185,
+  "sourcesApto": 169,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 399,
-  "datasets_apto": 263,
+  "datasets": 400,
+  "datasets_apto": 264,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -939,6 +939,23 @@
    "redistribution": "yes",
    "attribution": "Source: European Drought Observatory (EDO), https://drought.emergency.copernicus.eu © European Commission - JRC",
    "conditions": "Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission. Country polygons come from Natural Earth (public domain)."
+  },
+  {
+   "id": "effis_gwis",
+   "name": "EFFIS and GWIS — European / Global Wildfire Information Systems (Copernicus, JRC): burnt-area estimates by country",
+   "url": "https://forest-fire.emergency.copernicus.eu/",
+   "country": "INT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (Commission reuse policy, Decision 2011/833/EU; EFFIS Data License page)",
+   "licenseUrl": "https://forest-fire.emergency.copernicus.eu/about-effis/data-license",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: EFFIS / GWIS (Copernicus Emergency Management Service, European Commission Joint Research Centre). Adapted by dehesaindex.com.",
+   "conditions": "Credit and indication of changes required; third-party content, logos and trade marks are excluded from the licence. Figures are satellite-mapped burnt-area estimates and must not be presented as national fire statistics."
   },
   {
    "id": "eia",
@@ -5768,6 +5785,14 @@
      "sourceId": "statfin_fi",
      "verdict": "apto"
     }
+   ]
+  },
+  {
+   "path": "data/forest-fires.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "effis_gwis"
    ]
   },
   {

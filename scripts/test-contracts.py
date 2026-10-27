@@ -794,6 +794,13 @@ CASES = [
  ("cap/es/rules.json", "fuente que no es el BOE", lambda d: d["source"].__setitem__("id", "mapa_es")),
  ("cap/es/rules.json", "traduccion de una regla inexistente", lambda d: d["i18n"]["rules"].__setitem__("no-existe", {"en": "x"})),
  ("cap/es/rules.json", "regla sin base legal", lambda d: d["rules"][2].__setitem__("legalBasis", "")),
+ ("forest-fires.json", "pais que falta", lambda d: d["countries"].pop("ES")),
+ ("forest-fires.json", "superficie quemada negativa", lambda d: d["countries"]["ES"]["ba"].__setitem__(-2, -5)),
+ ("forest-fires.json", "superficie sin incendios", lambda d: (d["countries"]["FR"]["ba"].__setitem__(-2, 500), d["countries"]["FR"]["nf"].__setitem__(-2, 0))),
+ ("forest-fires.json", "serie de longitud distinta", lambda d: d["countries"]["PT"]["nf"].pop()),
+ ("forest-fires.json", "dato de GWIS anterior a 2012", lambda d: (d["countries"]["US"]["ba"].__setitem__(0, 10), d["countries"]["US"]["nf"].__setitem__(0, 1))),
+ ("forest-fires.json", "hueco dentro del rango del sistema", lambda d: (d["countries"]["DE"]["ba"].__setitem__(5, None), d["countries"]["DE"]["nf"].__setitem__(5, None))),
+ ("forest-fires.json", "total UE implausible", lambda d: d["countries"]["EU"]["ba"].__setitem__(-2, 50)),
 ]
 bad = 0
 for rel, name, fn in CASES:

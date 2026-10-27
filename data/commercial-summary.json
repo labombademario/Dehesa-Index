@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T03:02:21Z",
+ "generatedAt": "2026-10-27T13:38:18Z",
  "summary": {
-  "sources": 184,
-  "sourcesApto": 168,
+  "sources": 185,
+  "sourcesApto": 169,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 399,
-  "datasets_apto": 263,
+  "datasets": 400,
+  "datasets_apto": 264,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -229,6 +229,10 @@
   },
   "edo_cdi": {
    "name": "European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS)",
+   "verdict": "apto"
+  },
+  "effis_gwis": {
+   "name": "EFFIS and GWIS — European / Global Wildfire Information Systems (Copernicus, JRC): burnt-area estimates by country",
    "verdict": "apto"
   },
   "eia": {

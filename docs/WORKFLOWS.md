@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-309 workflows (259 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+310 workflows (260 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -276,6 +276,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-finland-fmi.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fi-fmi.py | finland-fmi-stats.json | finish, validate-files |
 | update-finland-luke.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-fi-luke.py | finland-luke-stats.json | finish, validate-files |
 | update-finland-statfin.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fi-statfin.py | finland-statfin-stats.json | finish, validate-files |
+| update-forest-fires.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-forest-fires.py | forest-fires.json | finish, validate-files |
 | update-france-hicp.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-france-hicp.py | france-hicp-stats.json | finish, validate-files |
 | update-france-organic.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-france-organic.py | france-organic-stats.json | finish, validate-files |
 | update-france-rnm-potato.yml | generado | semanal (4,5) | detect-revisions.py, gen-workflows.py, update-france-rnm-potato.py | france-rnm-stats.json | finish, validate-files |

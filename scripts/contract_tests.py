@@ -4594,6 +4594,33 @@ def wood_prices_de(doc, errs, warns, stats):
     if doc["last"] != ms[-1]: errs.append("madera DE: last no coincide con el ultimo mes")
     if ms[-1] < (_dt.date.today() - _dt.timedelta(days=120)).strftime("%Y-%m"): warns.append("madera DE: ultimo mes %s, con retraso" % ms[-1])
     stats["meses"] = n
+# Incendios forestales por pais (EFFIS / GWIS)
+FOREST_FIRE_CC = ["AT", "BE", "BG", "CH", "CY", "CZ", "DE", "DK", "EE", "EL", "ES", "EU", "FI", "FR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", "RO", "SE", "SI", "SK", "UK",
+                  "AR", "AU", "CA", "CL", "US", "UY"]
+def forest_fires(doc, errs, warns, stats):
+    import datetime as _dt
+    ys = doc["years"]; n = len(ys); today = _dt.date.today()
+    if ys != list(range(ys[0], ys[0] + n)) or ys[0] != 2006: errs.append("incendios: años no consecutivos desde 2006"); return
+    if ys[-1] != doc["currentYear"]: errs.append("incendios: currentYear no es el ultimo año"); return
+    if ys[-1] > today.year or ys[-1] < today.year - 1: errs.append("incendios: ultimo año %d lejos del actual" % ys[-1]); return
+    miss = [c for c in FOREST_FIRE_CC if c not in doc["countries"]]
+    if miss: errs.append("incendios: faltan paises %s" % miss); return
+    for cc, c in doc["countries"].items():
+        if len(c["ba"]) != n or len(c["nf"]) != n: errs.append("incendios %s: longitud distinta de los años" % cc); return
+        first = 2012 if c["system"] == "gwis" else 2006
+        for i, y in enumerate(ys):
+            b, f = c["ba"][i], c["nf"][i]
+            if (b is None) != (f is None): errs.append("incendios %s %d: superficie e incendios no coinciden en hueco" % (cc, y)); return
+            if y < first and b is not None: errs.append("incendios %s %d: dato anterior al inicio del sistema (%d)" % (cc, y, first)); return
+            if y >= first and b is None: errs.append("incendios %s %d: hueco dentro del rango del sistema" % (cc, y)); return
+            if b is None: continue
+            if b > 100_000_000 or f > 300_000: errs.append("incendios %s %d: cifra fuera de rango (%s ha, %s incendios)" % (cc, y, b, f)); return
+            if b > 0 and f == 0: errs.append("incendios %s %d: superficie sin ningun incendio" % (cc, y)); return
+    eu = doc["countries"]["EU"]
+    if eu["system"] != "effis" or eu["ba"][-2] is None: errs.append("incendios UE: falta el total del ultimo año completo"); return
+    if not 20_000 <= eu["ba"][-2] <= 3_000_000: errs.append("incendios UE %d: %s ha fuera de lo plausible" % (ys[-2], eu["ba"][-2]))
+    if doc["asOf"] < (today - _dt.timedelta(days=5)).isoformat(): warns.append("incendios: datos de %s, con retraso" % doc["asOf"])
+    stats["paises"] = len(doc["countries"]); stats["años"] = n
 def wood_prices_na(doc, errs, warns, stats):
     """Indices de madera de EE. UU. (BLS) y Canada (StatCan): meses ascendentes, series de la misma longitud, indices en rango y llegando a un mes reciente."""
     import datetime as _dt

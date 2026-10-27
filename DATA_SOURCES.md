@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 182 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 40136 series en el catalogo unificado.
+Resumen: 183 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 40136 series en el catalogo unificado.
 
-## VERIFIED (182)
+## VERIFIED (183)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -65,6 +65,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eccc_ghg` | Environment and Climate Change Canada — Canada's Official Greenhouse Gas Inventory | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `eccc_hydrometric` | Environment and Climate Change Canada — Water Survey of Canada, datos hidrométricos (GeoMet-OGC) | CA | ECCC-ENDUSE-2.1.1 | si/si | si | 0 | Citar la fuente; sin sugerir aval oficial; excluye información personal, derechos de terceros y símbolos oficiales; «as is», sin garantías. |
 | `edo_cdi` | European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS) | EU | CC-BY-4.0 | si/si | si | 0 | Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission… |
+| `effis_gwis` | EFFIS and GWIS — European / Global Wildfire Information Systems (Copernicus, JRC): burnt-area estimates by country | INT | CC-BY-4.0 | si/si | si | 0 | Credit and indication of changes required; third-party content, logos and trade marks are excluded from the licence. Figures are satellite-m… |
 | `eia` | U.S. Energy Information Administration (Open Data API) | US | US-PD | si/conditional | si | 8 | Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API k… |
 | `elgo_dimitra` | Greece — ELGO-DIMITRA (Hellenic Agricultural Organisation), via data.gov.gr | EL | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar los cambios. Las filas son las que publica ELGO; los totales nacionales y anuales son sumas nuestras. |
 | `elstat` | Greece — ELSTAT (Hellenic Statistical Authority) | EL | OPEN-REUSE-ATTRIBUTION | si/si | si | 0 | Citar la fuente; no deformar el sentido de los datos. Quedan fuera microdatos, datos personales, material de terceros (mapas y limites) y pu… |
