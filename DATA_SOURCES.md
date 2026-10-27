@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 183 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 40136 series en el catalogo unificado.
+Resumen: 184 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40136 series en el catalogo unificado.
 
-## VERIFIED (183)
+## VERIFIED (184)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -164,6 +164,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `statfin_fi` | Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI | FI | CC-BY-4.0 | si/si | si | 185 | Statistics Finland's open data is CC BY 4.0 but excludes third-party data; API limit 40 calls per 60 s and 120,000 cells. |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `statistik_austria_vb` | Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications) | AT | STATISTIK-AUSTRIA-REUSE | si/si | si | 11 | Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en … |
+| `surs_si` | Slovenia — SURS (Statistical Office of the Republic of Slovenia): SiStat database | SI | SURS-FREE-REUSE | si/si | si | 0 | Changes must be clearly indicated (e.g. 'Source: SURS. Calculated by Dehesa Index'); the permission does not extend to third-party rights, p… |
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
 | `ttb` | Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics) | US | US-PD | si/si | no | 7 | La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresa… |
@@ -196,7 +197,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
 | `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
-## PENDING (18)
+## PENDING (19)
 
 licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso.
 
@@ -210,6 +211,7 @@ licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya est
 | `france_bois_foret` | France Bois Forêt / ONF, prix des bois sur pied (communiqué annuel) | FR | UNKNOWN | unclear/unclear | si | 0 | Cifras de un comunicado de prensa difundido para su publicación; no hay licencia abierta declarada. |
 | `gep_pt` | GEP — Gabinete de Estratégia e Planeamento (MTSSS, Portugal) | PT | UNKNOWN | unclear/unclear | si | 0 | Los «Termos e Condições» del BTE Online (leídos 2026-10-01) solo tratan privacidad y estadísticas de acceso; no dicen nada sobre reutilizaci… |
 | `kansas_city_fed` | Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District) | US | KCFED-NOT-COMMERCIAL | no/unclear | si | 47 | Sin uso comercial por decisión del propietario. No implied endorsement by the Federal Reserve. |
+| `nsi_bg` | Bulgaria — NSI (National Statistical Institute): statistical information and databases | BG | NSI-LICENSE | si/unclear | si | 0 | Clause 2.1: the author must be named with each use and 'you may not disseminate derivative or collective works'; data must not be used in a … |
 | `pepacc_pt` | PEPAC Continente (pepacc.pt) | PT | UNKNOWN | unclear/unclear | si | 0 | Solo se guardan títulos y enlaces de las entradas del RSS y su fecha; no se copia texto. |
 | `snice_mx` | Mexico — Secretaría de Economía (SNICE, LIGIE tariff) | MX | UNKNOWN | no/unclear | si | 0 | Commercial use and automated redistribution are unresolved. If Libre Uso MX applied it would allow commercial use and derivatives with attri… |
 | `swissimpex_ch` | Switzerland — FOCBS/BAZG, SwissImpex and Tares foreign trade statistics | CH | PERMISSION-REQUIRED | conditional/unclear | si | 0 | SwissImpex/Tares terms: commercial use requires permission of the data owner. |

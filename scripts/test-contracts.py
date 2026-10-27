@@ -801,6 +801,15 @@ CASES = [
  ("forest-fires.json", "dato de GWIS anterior a 2012", lambda d: (d["countries"]["US"]["ba"].__setitem__(0, 10), d["countries"]["US"]["nf"].__setitem__(0, 1))),
  ("forest-fires.json", "hueco dentro del rango del sistema", lambda d: (d["countries"]["DE"]["ba"].__setitem__(5, None), d["countries"]["DE"]["nf"].__setitem__(5, None))),
  ("forest-fires.json", "total UE implausible", lambda d: d["countries"]["EU"]["ba"].__setitem__(-2, 50)),
+ ("forest-timber-prices.json", "pais que falta", lambda d: d["countries"].pop("SI")),
+ ("forest-timber-prices.json", "precio negativo", lambda d: d["countries"]["SI"]["series"][0]["values"].__setitem__(-3, -5)),
+ ("forest-timber-prices.json", "serie mas corta que los periodos", lambda d: d["countries"]["CZ"]["series"][0]["values"].pop()),
+ ("forest-timber-prices.json", "periodo con formato de otra frecuencia", lambda d: d["countries"]["LV"]["periods"].__setitem__(-1, "2026-06")),
+ ("forest-timber-prices.json", "periodos desordenados", lambda d: d["countries"]["SI"]["periods"].__setitem__(-1, "2006-01")),
+ ("forest-timber-prices.json", "precio por encima del tope", lambda d: d["countries"]["FI"]["series"][0]["values"].__setitem__(-1, 9999)),
+ ("forest-timber-prices.json", "salto de x10", lambda d: d["countries"]["SI"]["series"][0]["values"].__setitem__(-2, 700 if False else d["countries"]["SI"]["series"][0]["values"][-3] * 9)),
+ ("forest-timber-prices.json", "serie repetida", lambda d: d["countries"]["CZ"]["series"].append(copy.deepcopy(d["countries"]["CZ"]["series"][0]))),
+ ("forest-timber-prices.json", "unidad inesperada", lambda d: d["countries"]["LV"].__setitem__("unit", "USD/ft3")),
 ]
 bad = 0
 for rel, name, fn in CASES:

@@ -5632,6 +5632,58 @@
    "short": "EFFIS/GWIS",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Licencia CC BY 4.0 explicita para el contenido de la UE en EFFIS; la cobertura de GWIS se deduce, no esta nombrada en esa pagina."
+  },
+  "surs_si": {
+   "name": "Slovenia — SURS (Statistical Office of the Republic of Slovenia): SiStat database",
+   "url": "https://pxweb.stat.si/SiStatData/",
+   "country": "SI",
+   "licenseId": "SURS-FREE-REUSE",
+   "licenseName": "SURS Copyright notice: royalty-free reuse for any purpose, including commercial, with source credit",
+   "licenseUrl": "https://www.stat.si/StatWeb/en/StaticPages/Index/Copyright",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Statistical Office of the Republic of Slovenia (SURS)",
+   "additionalRestrictions": "Changes must be clearly indicated (e.g. 'Source: SURS. Calculated by Dehesa Index'); the permission does not extend to third-party rights, photos, icons or the cartographic bases (GURS); the SURS emblem follows its own guidelines.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Photos, icons and cartographic bases on stat.si belong to third parties.",
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "The SURS Copyright page states that statistical data are royalty-free and may be used free of charge to reproduce, distribute, modify, create derivative works and use for any purpose, including commercial, without restriction provided SURS is acknowledged as the source.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "SURS",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion, incluido el uso comercial y las obras derivadas."
+  },
+  "nsi_bg": {
+   "name": "Bulgaria — NSI (National Statistical Institute): statistical information and databases",
+   "url": "https://www.nsi.bg/en",
+   "country": "BG",
+   "licenseId": "NSI-LICENSE",
+   "licenseName": "NSI license to use statistical information (commercial use with attribution; derivative or collective works not to be disseminated)",
+   "licenseUrl": "https://www.nsi.bg/en/pages/license-to-use-statistical-information-produced-and-disseminated-by-the-national-statistical-institute-485",
+   "commercialUse": "yes",
+   "derivatives": "unclear",
+   "redistribution": "conditional",
+   "attributionRequired": true,
+   "attributionText": "Source: National Statistical Institute of Bulgaria (NSI)",
+   "additionalRestrictions": "Clause 2.1: the author must be named with each use and 'you may not disseminate derivative or collective works'; data must not be used in a way that infringes their original meaning; information produced by other institutions is excluded.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Information produced by other institutions and disseminated by NSI is excluded (clause 2.2.6).",
+   "verifiedAt": "2026-10-27",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "The NSI licence page allows reproduction, dissemination and use of statistical information including for commercial purposes with attribution, but each grant adds 'You may not disseminate derivative or collective works'. Whether charts and comparisons built from NSI figures count as derivative works is unclear, so the source is not used until the owner decides.",
+   "used": false,
+   "aliases": [],
+   "notes": "Adaptador escrito en scripts/update-forest-timber-prices.py (adapter_bg), desactivado. Forestry1.1_EUR.xlsx: 13 series trimestrales desde 2022.",
+   "short": "NSI-BG",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Hay uso comercial con cita, pero la prohibicion de difundir obras derivadas hace dudosa su combinacion con otras fuentes."
   }
  },
  "files": {
@@ -8259,6 +8311,16 @@
     "effis_gwis"
    ],
    "notes": "Superficie quemada (ha) y numero de incendios cartografiados por pais y año, y acumulado del año en curso. UE-27, Reino Unido y Suiza: EFFIS desde 2006; EE. UU., Canada, Australia, Argentina, Chile y Uruguay: GWIS desde 2012. Estimaciones por satelite, no estadisticas nacionales. scripts/update-forest-fires.py."
+  },
+  "data/forest-timber-prices.json": {
+   "sources": [
+    "surs_si",
+    "csu_cz",
+    "csp_lv",
+    "luke_fi",
+    "gus_poland"
+   ],
+   "notes": "Precios oficiales de la madera por surtido: Eslovenia (SURS, mensual), Chequia (CSU, trimestral, CZK), Letonia (CSP, semestral), Finlandia (Luke, semanal, pais y regiones) y Polonia (GUS, anual, precio del impuesto forestal). No son cifras armonizadas entre paises. scripts/update-forest-timber-prices.py."
   }
  },
  "derived": [

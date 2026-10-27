@@ -305,6 +305,15 @@ sources:
     continue: true
     data: [forest-fires.json]
     message: Incendios forestales por pais (EFFIS y GWIS, Copernicus)
+  - id: forest-timber-prices
+    name: Update official timber prices by assortment (SURS, CSU, CSP, Luke, GUS)
+    cron: ['20 7 * * 1']   # Luke publica el precio semanal el lunes/martes; el resto es mensual a anual
+    script: scripts/update-forest-timber-prices.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [forest-timber-prices.json]
+    message: Precios oficiales de la madera por surtido (Eslovenia, Chequia, Letonia, Finlandia y Polonia)
   - id: wood-prices-na
     name: Update US and Canada timber price indices (BLS PPI, Statistics Canada IPPI)
     cron: ['35 15 18 * *']   # BLS publica el PPI a mitad de mes; StatCan el IPPI a final de mes: el 18 recoge el primero y el mes anterior del segundo

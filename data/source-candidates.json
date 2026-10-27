@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T14:00:47Z",
+ "generatedAt": "2026-10-27T14:21:02Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 215,
+  "total": 216,
   "byStatus": {
-   "ACTIVE": 185,
+   "ACTIVE": 186,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -8234,6 +8234,45 @@
    "derivatives": "yes",
    "attribution": "Quelle/Fuente: STATISTIK AUSTRIA, Versorgungsbilanzen. Valores extraidos de las tablas de la publicacion (extracto).",
    "lastChecked": "2026-10-10",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "surs_si",
+   "registryId": "surs_si",
+   "country": "SI",
+   "scope": "integrated",
+   "institution": "Slovenia — SURS (Statistical Office of the Republic of Slovenia): SiStat database",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "SURS-FREE-REUSE",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Statistical Office of the Republic of Slovenia (SURS)",
+   "lastChecked": "2026-10-27",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",

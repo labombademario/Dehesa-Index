@@ -4621,6 +4621,51 @@ def forest_fires(doc, errs, warns, stats):
     if not 20_000 <= eu["ba"][-2] <= 3_000_000: errs.append("incendios UE %d: %s ha fuera de lo plausible" % (ys[-2], eu["ba"][-2]))
     if doc["asOf"] < (today - _dt.timedelta(days=5)).isoformat(): warns.append("incendios: datos de %s, con retraso" % doc["asOf"])
     stats["paises"] = len(doc["countries"]); stats["años"] = n
+# Precios oficiales de la madera por surtido (SI, CZ, LV, FI, PL)
+TIMBER_FREQ = {"M": (r"^\d{4}-(0[1-9]|1[0-2])$", 120), "Q": (r"^\d{4}-Q[1-4]$", 200), "H": (r"^\d{4}-H[12]$", 420), "W": (r"^\d{4}-W(0[1-9]|[1-4]\d|5[0-3])$", 45), "A": (r"^\d{4}$", 600)}
+TIMBER_MAX = {"EUR/m3": 600, "CZK/m3": 12000, "PLN/m3": 1500}
+def _timber_period_end(f, p):
+    import datetime as _d
+    y = int(p[:4])
+    if f == "M": return _d.date(y + (int(p[5:]) == 12), int(p[5:]) % 12 + 1, 1)
+    if f == "Q": return _d.date(y + (int(p[6]) == 4), (int(p[6]) * 3) % 12 + 1, 1)
+    if f == "H": return _d.date(y + (int(p[6]) == 2), 7 if p[6] == "1" else 1, 1)
+    if f == "W": return _d.date(y, 1, 1) + _d.timedelta(days=7 * int(p[6:]))
+    return _d.date(y, 10, 31)   # anual (PL): el dato de enero-septiembre sale en octubre
+def forest_timber_prices(doc, errs, warns, stats):
+    import re as _re, datetime as _d
+    today = _d.date.today()
+    cs = doc.get("countries", {})
+    for must in ("SI", "CZ", "LV", "FI", "PL"):
+        if must not in cs: errs.append("falta el pais %s" % must)
+    for cc, c in cs.items():
+        f = c.get("freq"); pat, maxage = TIMBER_FREQ.get(f, (None, None))
+        if not pat: errs.append("%s: frecuencia desconocida %r" % (cc, f)); continue
+        per = c["periods"]; n = len(per)
+        bad = [p for p in per if not _re.match(pat, p)]
+        if bad: errs.append("%s: periodos con formato invalido (%s)" % (cc, bad[:2])); continue
+        if per != sorted(set(per)): errs.append("%s: periodos repetidos o desordenados" % cc)
+        end = _timber_period_end(f, per[-1])
+        if (today - end).days > maxage: warns.append("%s: ultimo periodo %s antiguo (%d dias desde su fin)" % (cc, per[-1], (today - end).days))
+        if end > today + _d.timedelta(days=14): errs.append("%s: ultimo periodo %s en el futuro" % (cc, per[-1]))
+        if c.get("unit") not in TIMBER_MAX: errs.append("%s: unidad inesperada %r" % (cc, c.get("unit"))); continue
+        top = TIMBER_MAX[c["unit"]]; ids = set(); nb = 0
+        for s in c["series"]:
+            if s["id"] in ids: errs.append("%s: serie repetida %s" % (cc, s["id"]))
+            ids.add(s["id"]); nb += bool(s["bench"])
+            if s["group"] not in doc["groups"]: errs.append("%s/%s: grupo desconocido %r" % (cc, s["id"], s["group"]))
+            v = s["values"]
+            if len(v) != n: errs.append("%s/%s: %d valores para %d periodos" % (cc, s["id"], len(v), n)); continue
+            nums = [x for x in v if x is not None]
+            if not nums: errs.append("%s/%s: serie vacia" % (cc, s["id"])); continue
+            if any((not isinstance(x, (int, float))) or x <= 0 or x > top for x in nums): errs.append("%s/%s: precio no positivo o por encima de %s %s" % (cc, s["id"], top, c["unit"]))
+            if v[-1] is None and cc not in ("FI",) : warns.append("%s/%s: sin dato en el ultimo periodo" % (cc, s["id"]))
+            if len(nums) >= 2 and cc != "PL":
+                jump = max(nums[i + 1] / nums[i] for i in range(len(nums) - 1))
+                if jump > 4: errs.append("%s/%s: salto de x%.1f entre periodos" % (cc, s["id"], jump))
+        if nb == 0 and cc != "PL": warns.append("%s: ninguna serie marcada como referencia" % cc)
+    stats["countries"] = len(cs)
+    stats["series"] = sum(len(c["series"]) for c in cs.values())
 def wood_prices_na(doc, errs, warns, stats):
     """Indices de madera de EE. UU. (BLS) y Canada (StatCan): meses ascendentes, series de la misma longitud, indices en rango y llegando a un mes reciente."""
     import datetime as _dt

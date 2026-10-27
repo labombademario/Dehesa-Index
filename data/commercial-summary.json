@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T13:38:18Z",
+ "generatedAt": "2026-10-27T14:15:38Z",
  "summary": {
-  "sources": 185,
-  "sourcesApto": 169,
+  "sources": 186,
+  "sourcesApto": 170,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 400,
-  "datasets_apto": 264,
+  "datasets": 401,
+  "datasets_apto": 265,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -629,6 +629,10 @@
   },
   "statistik_austria_vb": {
    "name": "Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications)",
+   "verdict": "apto"
+  },
+  "surs_si": {
+   "name": "Slovenia — SURS (Statistical Office of the Republic of Slovenia): SiStat database",
    "verdict": "apto"
   },
   "svensk_forfattningssamling": {
