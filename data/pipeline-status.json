@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T14:26:00Z",
+ "generatedAt": "2026-10-27T14:43:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 295,
+  "ok": 297,
   "late": 2,
   "error": 0,
   "not_run": 2,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T12:56:15.684573+00:00",
   "repoGeneratedAt": "2026-10-27T12:56:15.684573+00:00",
-  "checkedAt": "2026-10-27T14:26:00Z"
+  "checkedAt": "2026-10-27T14:43:00Z"
  },
  "pipelines": [
   {
@@ -4668,14 +4668,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4692,7 +4692,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/products"
@@ -4703,19 +4703,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T14:13:17Z"
+     "lastChange": "2026-10-27T14:29:19Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/pack"
@@ -4731,30 +4731,30 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-27T12:54:13Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -4762,7 +4762,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-27T14:22:54Z"
+     "lastChange": "2026-10-27T14:40:44Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5159,8 +5159,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40479139429"
    },
    "recent": {
-    "runs": 10,
-    "success": 3,
+    "runs": 9,
+    "success": 2,
     "failed": 3
    },
    "status": "ok",
@@ -5517,7 +5517,7 @@
    "crons": [
     "35 14 * * 2,5"
    ],
-   "nextRun": "2026-10-27T14:35:00Z",
+   "nextRun": "2026-10-30T14:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6996,6 +6996,29 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-wood-energy.yml",
+   "name": "Update wood pellet and forest chip prices (EIA-63C, StatFin)",
+   "crons": [
+    "40 7 * * 3"
+   ],
+   "nextRun": "2026-10-28T07:40:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T14:41:11Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40523493832"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-wood-prices-de.yml",
    "name": "Update Germany state-forest timber price index (Destatis 61231)",
    "crons": [
@@ -7101,6 +7124,29 @@
     "startedAt": "2026-10-18T18:03:30Z",
     "durationSec": 25,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39152404283"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-worldbank-timber.yml",
+   "name": "Update World Bank tropical timber prices (Pink Sheet)",
+   "crons": [
+    "55 7 6 * *"
+   ],
+   "nextRun": "2026-11-06T07:55:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T14:41:13Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40523498411"
    },
    "recent": {
     "runs": 1,
