@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T08:24:00Z",
+ "generatedAt": "2026-10-27T08:40:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 291,
-  "late": 2,
+  "ok": 292,
+  "late": 3,
   "error": 0,
-  "not_run": 4,
+  "not_run": 2,
   "unknown": 0
  },
  "global": "late",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T06:54:09.101272+00:00",
   "repoGeneratedAt": "2026-10-27T06:54:09.101272+00:00",
-  "checkedAt": "2026-10-27T08:24:00Z"
+  "checkedAt": "2026-10-27T08:40:00Z"
  },
  "pipelines": [
   {
@@ -1568,9 +1568,19 @@
    ],
    "nextRun": "2026-10-28T08:02:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-10-27T08:34:32Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40474464091"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 24.0
   },
   {
@@ -1960,7 +1970,7 @@
    "crons": [
     "30 8 * * *"
    ],
-   "nextRun": "2026-10-27T08:30:00Z",
+   "nextRun": "2026-10-28T08:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2222,13 +2232,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T08:20:39Z",
-    "durationSec": 55,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39923965875"
+    "startedAt": "2026-10-27T08:26:14Z",
+    "durationSec": 61,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40473479800"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -2263,7 +2273,7 @@
    "crons": [
     "25 8 * * *"
    ],
-   "nextRun": "2026-10-27T08:25:00Z",
+   "nextRun": "2026-10-28T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
@@ -3369,7 +3379,7 @@
    "crons": [
     "40 8 * * 2"
    ],
-   "nextRun": "2026-10-27T08:40:00Z",
+   "nextRun": "2026-11-03T08:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3724,9 +3734,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-26T08:29:33Z",
-    "durationSec": 40,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40292620785"
+    "startedAt": "2026-10-27T08:26:30Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40473512223"
    },
    "recent": {
     "runs": 10,
@@ -3974,9 +3984,19 @@
    ],
    "nextRun": "2026-10-28T07:58:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-10-27T08:28:33Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40473749378"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 24.0
   },
   {
@@ -4493,7 +4513,7 @@
    "crons": [
     "40 8 * * 2,5"
    ],
-   "nextRun": "2026-10-27T08:40:00Z",
+   "nextRun": "2026-10-30T08:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4638,7 +4658,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T08:11:08Z"
+     "lastChange": "2026-10-27T08:27:53Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5089,12 +5109,12 @@
    "last": {
     "conclusion": "cancelled",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T07:11:03Z",
-    "durationSec": 1903,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40465581075"
+    "startedAt": "2026-10-27T07:42:10Z",
+    "durationSec": 2963,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40468702749"
    },
    "recent": {
-    "runs": 8,
+    "runs": 9,
     "success": 3,
     "failed": 3
    },
@@ -5199,7 +5219,7 @@
    "crons": [
     "25 8 * * 2"
    ],
-   "nextRun": "2026-10-27T08:25:00Z",
+   "nextRun": "2026-11-03T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "startup_failure",
@@ -5213,7 +5233,7 @@
     "success": 1,
     "failed": 0
    },
-   "status": "ok",
+   "status": "late",
    "expectedEveryHours": 168.0
   },
   {
