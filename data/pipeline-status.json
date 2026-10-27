@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T23:28:00Z",
+ "generatedAt": "2026-10-27T23:44:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 303,
+  "ok": 306,
   "late": 2,
   "error": 2,
   "not_run": 2,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
   "repoGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
-  "checkedAt": "2026-10-27T23:28:00Z"
+  "checkedAt": "2026-10-27T23:44:00Z"
  },
  "pipelines": [
   {
@@ -829,7 +829,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-10-27T23:40:00Z",
+   "nextRun": "2026-10-28T23:40:00Z",
    "files": [
     {
      "path": "data/ca"
@@ -848,7 +848,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-canada.yml",
@@ -1353,6 +1353,29 @@
    "expectedEveryHours": 408.0
   },
   {
+   "workflow": "update-de-climate-laender.yml",
+   "name": "Update Germany monthly rainfall and temperature by Land (DWD regional averages)",
+   "crons": [
+    "45 7 4,15 * *"
+   ],
+   "nextRun": "2026-11-04T07:45:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T23:40:32Z",
+    "durationSec": 80,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40603734140"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 456.0
+  },
+  {
    "workflow": "update-de-diesel.yml",
    "name": "Update Germany diesel, heating oil and Agrardiesel refund (EU Weekly Oil Bulletin, Zoll)",
    "crons": [
@@ -1389,6 +1412,52 @@
     "startedAt": "2026-10-12T16:30:57Z",
     "durationSec": 23,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38277929590"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-de-land-prices.yml",
+   "name": "Update Germany farmland sale prices by Regierungsbezirk (Destatis 61521-0020)",
+   "crons": [
+    "35 16 9 * *"
+   ],
+   "nextRun": "2026-11-09T16:35:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T23:40:35Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40603739394"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-de-more.yml",
+   "name": "Update Germany food HICP and agricultural employment and value added by Land (Eurostat, VGRdL)",
+   "crons": [
+    "20 8 18 * *"
+   ],
+   "nextRun": "2026-11-18T08:20:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T23:40:34Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40603736810"
    },
    "recent": {
     "runs": 1,
@@ -4806,14 +4875,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4830,7 +4899,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/products"
@@ -4841,19 +4910,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T23:16:10Z"
+     "lastChange": "2026-10-27T23:31:15Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/pack"
@@ -4869,30 +4938,30 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -4900,7 +4969,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-27T22:54:41Z"
+     "lastChange": "2026-10-27T23:40:20Z"
     },
     {
      "path": "data/home-explore.json",
@@ -6219,7 +6288,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-10-27T23:30:00Z",
+   "nextRun": "2026-10-28T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6774,7 +6843,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-10-27T23:40:00Z",
+   "nextRun": "2026-10-28T23:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6789,7 +6858,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-ppi.yml",
