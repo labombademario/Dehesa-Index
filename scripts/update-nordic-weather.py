@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 UA = {"User-Agent": "Dehesa-Index-data-bot/1.0 (https://dehesaindex.com)", "Accept": "application/json"}
-SINCE = 2005; MINYEARS = 15; MINST = 6; NMONTHS = 12
+SINCE = 2005; MINYEARS = 12; MINST = 6; NMONTHS = 12
 SE_ST = [("53430", "Lund"), ("64030", "Kristianstad"), ("64510", "Växjö"), ("71420", "Göteborg"), ("78400", "Visby"), ("83270", "Skara"), ("85240", "Linköping-Malmslätt"),
          ("96190", "Eskilstuna"), ("96350", "Västerås"), ("97510", "Uppsala"), ("105370", "Falun"), ("107420", "Gävle"), ("162860", "Luleå")]
 SE_API = "https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/%d/station/%s/period/%s/data.%s"
@@ -140,7 +140,7 @@ def build(cc, st, src, now):
         r30 = [s["r"][(end_d - datetime.timedelta(days=k)).isoformat()] for k in range(30) if (end_d - datetime.timedelta(days=k)).isoformat() in s["r"]]
         t7 = [s["t"][(end_d - datetime.timedelta(days=k)).isoformat()] for k in range(7) if (end_d - datetime.timedelta(days=k)).isoformat() in s["t"]]
         stations.append({"id": sid, "name": s["name"], "last": last, "rain30": round(sum(r30), 1) if len(r30) >= 27 else None, "temp7": round(sum(t7) / len(t7), 1) if len(t7) >= 6 else None})
-    yrs = sorted({int(m[:4]) for m in mr}); first = SINCE
+    yrs = sorted({int(m[:4]) for m in mr}); first = min(w30r) if w30r else SINCE
     return {"schemaVersion": 1, "generatedAt": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "country": cc.upper(), "asOf": end, "source": src, "since": first, "stations": stations,
             "l30": {"rain": cur(w30r), "rainN": rd(rn30[0]), "temp": cur(w30t), "tempN": rd(tn30[0]), "from": (end_d - datetime.timedelta(days=29)).isoformat(), "years": rn30[1]},
             "sinceApr": {"rain": cur(sa), "rainN": rd(san[0]), "years": san[1]} if y0 in sa else None, "monthly": months}

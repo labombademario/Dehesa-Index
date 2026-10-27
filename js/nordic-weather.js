@@ -23,7 +23,7 @@
   function card(n, v, note) { return '<div class="di-card cof-card"><div class="cof-lbl">' + n + '</div><div class="cof-val">' + v + '</div>' + (note ? '<div class="cof-note" style="margin:2px 0 0">' + note + '</div>' : '') + '</div>'; }
   function sg(a, b, d) { var x = a - b; return (x > 0 ? '+' : x < 0 ? '−' : '') + U.nf(Math.abs(x), d); }
   function html(d, cc, lg) {
-    var t = T[lg], c = CC[cc], o = function (s) { return s.replace(/\{n\}/g, c.n[lg]).replace(/\{i\}/g, c.inst[lg]).replace('{s}', d.since).replace('{m}', 15).replace('{y}', d.asOf.slice(0, 4) - 1).replace('{d}', dlong(d.asOf, lg)); };
+    var t = T[lg], c = CC[cc], o = function (s) { return s.replace(/\{n\}/g, c.n[lg]).replace(/\{i\}/g, c.inst[lg]).replace('{s}', d.since).replace('{m}', 12).replace('{y}', d.asOf.slice(0, 4) - 1).replace('{d}', dlong(d.asOf, lg)); };
     var L = d.l30 || {}, A = d.sinceApr, cards = '';
     if (L.rain != null) cards += card(U.esc(t.rain30), U.nf(L.rain, 0) + ' ' + t.mm, U.esc(dlong(L.from, lg) + ' – ' + dlong(d.asOf, lg)));
     if (L.rain != null && L.rainN != null) cards += card(U.esc(o(t.normal)), U.nf(L.rainN, 0) + ' ' + t.mm, U.nf(L.rain / L.rainN * 100, 0) + ' % ' + U.esc(t.pct));
