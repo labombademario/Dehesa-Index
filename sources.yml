@@ -1091,6 +1091,16 @@ sources:
     continue: true
     data: [be-ghg-agri.json]
     message: Emisiones de la agricultura belga (Eurostat)
+  - id: be-weather
+    name: Update Belgium observed weather and precipitation deficit (KMI-IRM automatic weather stations)
+    cron: ['40 6 * * *']
+    script: scripts/update-be-weather.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/be-weather.json
+    data: [be-weather.json]
+    message: Meteorología observada y déficit de precipitación de Bélgica (KMI-IRM)
   - id: be-drought
     name: Update Flanders water abstraction bans and drought status (VMM waterinfo)
     cron: ['40 7 * * *']

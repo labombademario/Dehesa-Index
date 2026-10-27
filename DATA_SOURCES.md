@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 178 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
+Resumen: 179 VERIFIED, 18 PENDING, 7 RESTRICTED, 6 BLOCKED; 39823 series en el catalogo unificado.
 
-## VERIFIED (178)
+## VERIFIED (179)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -108,6 +108,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `istat` | Italy — Istituto Nazionale di Statistica (ISTAT) | IT | CC-BY-4.0 | si/si | si | 0 | Cite the source; flag changes. Dehesa Index converts units (quintals to tonnes) and says so on screen. |
 | `it_regioni_dop` | Listados abiertos de denominaciones de las regiones italianas (Umbria, Puglia, Trento, Bolzano, Lombardia, Toscana) | IT | CC-BY-4.0/CC0 | si/si | si | 0 | Logos y marcas excluidos. |
 | `jcyl_open_data` | Junta de Castilla y León — Datos abiertos (Observatorio de precios agrícolas y ganaderos) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente e indicar si se han hecho cambios. Las hojas semanales de lonjas de la Consejería (ruta /binarios/) están excluidas por robo… |
+| `kmi_be` | Belgium — Royal Meteorological Institute (KMI-IRM), open data platform: automatic weather stations (AWS) | BE | CC-BY-4.0 | si/si | si | 0 | Citar al KMI-IRM como fuente de los datos brutos. Los datos climáticos en malla de 5x5 km del KMI NO son reutilizables y no se usan. El défi… |
 | `knmi_daggegevens` | KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación) | NL | CC-BY-4.0 | si/si | si | 0 | Cálculo propio: no es la cifra del neerslagtekort publicada por el KNMI. |
 | `ksh_hu` | Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables | HU | CC-BY-4.0 | si/si | si | 196 | La licencia cubre el contenido publicado en el sitio (tablas, graficos). Quedan fuera los ficheros consultados a peticion a las bases intern… |
 | `luke_fi` | Finland — Natural Resources Institute Finland (Luke): agricultural statistics database (producer prices, slaughterings, milk received, weekly prices, crops, census, balances, forest) | FI | CC-BY-4.0 | si/si | si | 232 | Luke's terms of use for statistics declare CC BY 4.0 without naming the PxWeb database explicitly; its tables carry «Natural Resources Insti… |

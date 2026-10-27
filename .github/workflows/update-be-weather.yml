@@ -1,0 +1,42 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Belgium observed weather and precipitation deficit (KMI-IRM automatic weather stations)
+on:
+  schedule:
+    - cron: '40 6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-be-weather
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-be-weather.py
+        timeout-minutes: 10
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/be-weather.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/be-weather.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files data/be-weather.json
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Tiempo observado y déficit de precipitación de Bélgica (KMI-IRM)" data/be-weather.json data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

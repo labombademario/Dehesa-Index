@@ -5499,6 +5499,32 @@
    "short": "APPRRR Croacia",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "VERIFIED: licencia abierta declarada en el catalogo; no se ha leido el texto completo de la Otvorena dozvola en esta pasada."
+  },
+  "kmi_be": {
+   "name": "Belgium — Royal Meteorological Institute (KMI-IRM), open data platform: automatic weather stations (AWS)",
+   "url": "https://opendata.meteo.be/",
+   "country": "BE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (datos de alto valor del KMI-IRM)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Real Instituto Meteorológico de Bélgica (KMI-IRM), opendata.meteo.be, CC BY 4.0. Cálculos de dehesaindex.com.",
+   "additionalRestrictions": "Citar al KMI-IRM como fuente de los datos brutos. Los datos climáticos en malla de 5x5 km del KMI NO son reutilizables y no se usan. El déficit y las medias son cálculo de Dehesa Index, no cifras del KMI.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Condiciones de la plataforma opendata.meteo.be (texto del propio sitio, leido 2026-10-26): contenidos reutilizables citando al KMI; los datos de alto valor (HVD, Reglamento 2023/138) bajo CC BY 4.0. Las observaciones de estaciones meteorologicas son HVD. El catalogo CKAN del portal climatico no declara licencia.",
+   "used": true,
+   "aliases": [],
+   "notes": "Observaciones diarias de las estaciones automaticas (lluvia, temperatura, radiacion, suelo) por WFS publico (scripts/update-be-weather.py).",
+   "short": "KMI Bélgica",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "VERIFIED: texto de condiciones del sitio; la clasificacion de las observaciones AWS como datos de alto valor es una lectura nuestra (la lista HVD incluye observaciones de estaciones meteorologicas)."
   }
  },
  "files": {
@@ -8081,6 +8107,12 @@
     "apprrr_hr"
    ],
    "notes": "Explotaciones, ARKOD y viñedo por provincia de Croacia (scripts/update-hr-apprrr.py), de los ficheros abiertos de la APPRRR."
+  },
+  "data/be-weather.json": {
+   "sources": [
+    "kmi_be"
+   ],
+   "notes": "Meteorología observada y déficit de precipitación de Bélgica (scripts/update-be-weather.py), de las estaciones automáticas del KMI-IRM."
   }
  },
  "derived": [

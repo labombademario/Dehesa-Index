@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T23:42:40Z",
+ "generatedAt": "2026-10-27T00:24:36Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 180,
-  "sourcesApto": 164,
+  "sources": 181,
+  "sourcesApto": 165,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 392,
-  "datasets_apto": 256,
+  "datasets": 393,
+  "datasets_apto": 257,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -1676,6 +1676,23 @@
    "attribution": "Source: Federal Reserve Bank of Kansas City, Agricultural Credit Survey",
    "conditions": "Sin uso comercial por decisión del propietario. No implied endorsement by the Federal Reserve.",
    "why": "licencia PENDING en el registro"
+  },
+  {
+   "id": "kmi_be",
+   "name": "Belgium — Royal Meteorological Institute (KMI-IRM), open data platform: automatic weather stations (AWS)",
+   "url": "https://opendata.meteo.be/",
+   "country": "BE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (datos de alto valor del KMI-IRM)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Real Instituto Meteorológico de Bélgica (KMI-IRM), opendata.meteo.be, CC BY 4.0. Cálculos de dehesaindex.com.",
+   "conditions": "Citar al KMI-IRM como fuente de los datos brutos. Los datos climáticos en malla de 5x5 km del KMI NO son reutilizables y no se usan. El déficit y las medias son cálculo de Dehesa Index, no cifras del KMI."
   },
   {
    "id": "knmi_daggegevens",
@@ -3431,6 +3448,14 @@
    "verdict": "apto",
    "sources": [
     "vmm_waterinfo"
+   ]
+  },
+  {
+   "path": "data/be-weather.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "kmi_be"
    ]
   },
   {

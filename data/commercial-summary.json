@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-26T23:42:40Z",
+ "generatedAt": "2026-10-27T00:24:36Z",
  "summary": {
-  "sources": 180,
-  "sourcesApto": 164,
+  "sources": 181,
+  "sourcesApto": 165,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 392,
-  "datasets_apto": 256,
+  "datasets": 393,
+  "datasets_apto": 257,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -402,6 +402,10 @@
   "kansas_city_fed": {
    "name": "Federal Reserve Bank of Kansas City (Agricultural Credit Survey, Tenth District)",
    "verdict": "no-apto"
+  },
+  "kmi_be": {
+   "name": "Belgium — Royal Meteorological Institute (KMI-IRM), open data platform: automatic weather stations (AWS)",
+   "verdict": "apto"
   },
   "knmi_daggegevens": {
    "name": "KNMI — Daggegevens (datos climatológicos diarios: evaporación de referencia de Makkink y precipitación)",

@@ -4250,6 +4250,42 @@ def nl_nitrates(doc, errs, warns, stats):
             if not 0 < v < hi: errs.append("nitratos NL %s %s: %s" % (key, y, v))
     if doc["leaching"]["zand"][-1][0] < __import__("datetime").date.today().year - 3: warns.append("nitratos NL: ultimo ano del LMM %s" % doc["leaching"]["zand"][-1][0])
     stats["ultimoLMM"] = doc["leaching"]["zand"][-1][0]
+def be_weather(doc, errs, warns, stats):
+    """Belgica (KMI): curvas de deficit de 214 dias en rango, ultimo dia del deficit = asOf, 12 meses seguidos con normales posibles, lluvia de 30 dias coherente con las estaciones y estaciones en provincias belgas con valores fisicos."""
+    import datetime as _dt
+    D = doc["deficit"]; n = D["days"]
+    if n != 214 or not 0 < len(D["cur"]) <= n: errs.append("deficit BE: longitudes de curvas")
+    if any(v is not None and not -150 < v < 600 for k in ("cur", "prev", "med", "p10", "p90") for v in D[k]): errs.append("deficit BE: valores fuera de rango")
+    for i in range(n):
+        a, b, c = D["p10"][i], D["med"][i], D["p90"][i]
+        if None not in (a, b, c) and not a <= b <= c: errs.append("deficit BE: p10 <= mediana <= p90 no se cumple el dia %d" % i); break
+    if not 8 <= D["stations"] <= 20: errs.append("deficit BE: %s estaciones" % D["stations"])
+    if D["curYear"] != D["prevYear"] + 1: errs.append("deficit BE: años no consecutivos")
+    if not any(m[0] == D["curYear"] for m in D["yearMax"]): errs.append("deficit BE: yearMax sin el año en curso")
+    if D["asOf"] != doc["asOf"]: errs.append("deficit BE: asOf distinto")
+    if doc["asOf"] < (_dt.date.today() - _dt.timedelta(days=5)).isoformat(): warns.append("tiempo BE: ultimo dato %s" % doc["asOf"])
+    M = doc["monthly"]
+    for i, m in enumerate(M):
+        if not 1 <= m["m"] <= 12: errs.append("mensual BE: mes %s" % m["m"]); break
+        if i and (m["y"] * 12 + m["m"]) - (M[i - 1]["y"] * 12 + M[i - 1]["m"]) != 1: errs.append("mensual BE: meses no consecutivos en %s-%s" % (m["y"], m["m"])); break
+        for k, lo, hi in (("rain", 0, 400), ("rainNormal", 10, 200), ("temp", -10, 30), ("tempNormal", -5, 25)):
+            if m[k] is not None and not lo <= m[k] <= hi: errs.append("mensual BE %s-%s: %s %s" % (m["y"], m["m"], k, m[k]))
+    L = doc["last30"]
+    if L["rain"] is not None and not 0 <= L["rain"] < 500: errs.append("lluvia 30 dias BE: %s" % L["rain"])
+    if L["rainNormal"] is not None and not 10 < L["rainNormal"] < 250: errs.append("lluvia normal 30 dias BE: %s" % L["rainNormal"])
+    codes = set()
+    for s in doc["stations"]:
+        if s["code"] in codes: errs.append("estacion repetida: " + s["code"])
+        codes.add(s["code"])
+        if not (s["province"] or "").startswith("BE"): errs.append("estacion %s sin provincia" % s["name"])
+        if not (49.4 < s["lat"] < 51.6 and 2.5 < s["lon"] < 6.5): errs.append("estacion %s fuera de Belgica" % s["name"])
+        if s["rain30"] is not None and not 0 <= s["rain30"] < 600: errs.append("estacion %s: lluvia 30 d %s" % (s["name"], s["rain30"]))
+        if s["temp7"] is not None and not -25 < s["temp7"] < 40: errs.append("estacion %s: temperatura %s" % (s["name"], s["temp7"]))
+        if s["soil10"] is not None and not -15 < s["soil10"] < 40: errs.append("estacion %s: suelo %s" % (s["name"], s["soil10"]))
+        if not 0 <= s["frost30"] <= 30: errs.append("estacion %s: heladas %s" % (s["name"], s["frost30"]))
+        if s["tmin7"] is not None and s["temp7"] is not None and s["tmin7"] > s["temp7"] + 0.01: errs.append("estacion %s: minima mayor que la media" % s["name"])
+    if len(doc["stations"]) < 10: errs.append("solo %d estaciones" % len(doc["stations"]))
+    stats["estaciones"] = len(doc["stations"]); stats["deficitHasta"] = D["asOf"]
 def nl_drought(doc, errs, warns, stats):
     import datetime as _dt
     C = doc["counties"]; P = doc["periods"]

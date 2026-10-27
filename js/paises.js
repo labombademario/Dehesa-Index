@@ -476,6 +476,12 @@
     var go = function () { if (ST.c !== cc) return; if (window.DIBeDiesel) window.DIBeDiesel.mount(el, lang()); if (window.DIBeNitrates) window.DIBeNitrates.mount(el2, lang()); };
     var n = 0, done = function () { if (++n === 2) go(); }, js = function (src) { var sc = document.createElement('script'); sc.src = src; sc.onload = done; sc.onerror = done; document.head.appendChild(sc); };
     if (window.DIBeDiesel && window.DIBeNitrates) go(); else { js('js/be-diesel.js?v=20261013'); js('js/be-nitrates.js?v=20261013'); }
+    /* Belgica: tiempo observado y deficit de precipitacion del KMI-IRM (js/be-weather.js; data/be-weather.json) */
+    var el3 = document.createElement('div'); el3.id = 'pp-be-weather'; el3.style.minHeight = '1px'; el2.parentNode.insertBefore(el3, el2.nextSibling);
+    function js3(src, ok) { var s3 = document.createElement('script'); s3.src = src; s3.onload = ok; document.head.appendChild(s3); }
+    var go3 = function () { if (window.DIBeWeather && ST.c === cc) window.DIBeWeather.mount(el3, lang()); };
+    var mod3 = function () { var run = function () { if (window.DIBeWeather) go3(); else js3('js/be-weather.js?v=20261026', go3); }; if (window.DICite) run(); else js3('js/cite.js?v=0', run); };
+    nearView(el3, function () { if (window.ESUI) mod3(); else js3('js/es-ui.js?v=20261015', mod3); });
   }
   /* Austria: gasoleo y devolucion Agrardiesel (js/at-diesel.js) */
   function atUp() {
