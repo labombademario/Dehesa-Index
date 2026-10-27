@@ -1,16 +1,16 @@
-14:10:08 Rhein MAXAU: 335.0 cm (low), 469.0 m3/s, 30 dias de historia propia
-14:10:12 Rhein KAUB: 57.0 cm (low), 682.0 m3/s, 30 dias de historia propia
-14:10:15 Rhein KÖLN: 143.0 cm (normal), 957.0 m3/s, 30 dias de historia propia
-14:10:19 Rhein DUISBURG-RUHRORT: 241.0 cm (normal), 1080.0 m3/s, 30 dias de historia propia
-14:10:21 Rhein EMMERICH: 63.0 cm (normal), 977.0 m3/s, 29 dias de historia propia
-14:10:24 Main FRANKFURT OSTHAFEN: 148.0 cm (low), 18.0 m3/s, 30 dias de historia propia
-14:10:26 Elbe DRESDEN: 72.0 cm (normal), 107.0 m3/s, 30 dias de historia propia
-14:10:29 Elbe MAGDEBURG-STROMBRÜCKE: 52.0 cm (low), 155.0 m3/s, 30 dias de historia propia
-14:10:30 Donau PASSAU DONAU: 415.0 cm (normal), 30 dias de historia propia
-14:10:33 Mosel Cochem: 239.0 cm (normal), 149.0 m3/s, 30 dias de historia propia
-14:10:34 Mosel Trier UP: 245.0 cm (normal), 30 dias de historia propia
-14:10:36 Neckar Heidelberg UP: 211.0 cm (normal), 224.0 m3/s, 30 dias de historia propia
-14:10:38 Neckar Lauffen: 223.0 cm (normal), 32.1 m3/s, 30 dias de historia propia
-14:10:41 Weser VLOTHO: 112.0 cm (low), 30 dias de historia propia
-14:10:42 Weser INTSCHEDE: 32.0 cm (low), 30 dias de historia propia
-14:10:42 de-rivers.json: 15 estaciones, ultima lectura 2026-10-27T15:00:00+01:00
+21:55:14 Rhein MAXAU: 324.0 cm (low), 439.0 m3/s, 30 dias de historia propia
+21:55:20 Rhein KAUB: 56.0 cm (low), 677.0 m3/s, 30 dias de historia propia
+21:55:23 Rhein KÖLN: 136.0 cm (normal), 924.0 m3/s, 30 dias de historia propia
+21:55:26 Rhein DUISBURG-RUHRORT: 242.0 cm (normal), 1080.0 m3/s, 30 dias de historia propia
+21:55:29 Rhein EMMERICH: 72.0 cm (normal), 1020.0 m3/s, 29 dias de historia propia
+21:55:33 Main FRANKFURT OSTHAFEN: 155.0 cm (normal), 60.0 m3/s, 30 dias de historia propia
+21:55:36 Elbe DRESDEN: 76.0 cm (normal), 112.0 m3/s, 30 dias de historia propia
+21:55:39 Elbe MAGDEBURG-STROMBRÜCKE: 51.0 cm (low), 153.0 m3/s, 30 dias de historia propia
+21:55:40 Donau PASSAU DONAU: 411.0 cm (normal), 30 dias de historia propia
+21:55:44 Mosel Cochem: 235.0 cm (normal), 140.0 m3/s, 30 dias de historia propia
+21:55:46 Mosel Trier UP: 226.0 cm (normal), 30 dias de historia propia
+21:55:48 Neckar Heidelberg UP: 211.0 cm (normal), 224.0 m3/s, 30 dias de historia propia
+21:55:52 Neckar Lauffen: 222.0 cm (normal), 29.7 m3/s, 30 dias de historia propia
+21:55:53 Weser VLOTHO: 112.0 cm (low), 30 dias de historia propia
+21:55:55 Weser INTSCHEDE: 34.0 cm (low), 30 dias de historia propia
+21:55:55 de-rivers.json: 15 estaciones, ultima lectura 2026-10-27T22:45:00+01:00
