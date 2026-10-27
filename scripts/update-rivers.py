@@ -141,14 +141,15 @@ def nl_baseline(code, now, cached):
     """Caudal diario de +-10 dias alrededor de hoy en los 20 anos anteriores (Rijkswaterstaat: diario hasta ~2017, cada 10 min despues). Se guarda en el fichero y se refresca cada 5 dias."""
     d0 = now.date()
     if cached and cached.get("d0") and (d0 - datetime.date.fromisoformat(cached["d0"])).days <= 5 and cached.get("q"): return cached
-    qh = {}
+    qh = {}; seguidos = 0
     for y in range(now.year - 20, now.year):
+        if seguidos >= 3: log("aviso: nl %s historia: 3 fallos seguidos, se corta (la API no responde); se usa lo guardado" % code); break   # sin esto una estacion caida agota los 40 min del flujo
         try: c = datetime.date(y, d0.month, d0.day)
         except ValueError: c = datetime.date(y, d0.month, 28)
         a, b = c - datetime.timedelta(days=10), c + datetime.timedelta(days=11)
         try: ser, _ = nl_series(code, "Q", a.strftime("%Y-%m-%dT00:00:00.000+01:00"), b.strftime("%Y-%m-%dT00:00:00.000+01:00"))
-        except Exception as e: log("aviso: nl %s historia %d: %s" % (code, y, e)); continue
-        acc = {}
+        except Exception as e: seguidos += 1; log("aviso: nl %s historia %d: %s" % (code, y, e)); continue
+        seguidos = 0; acc = {}
         for t, v in ser: acc.setdefault(t[:10], []).append(v)
         for d, vs in acc.items(): qh[d] = sum(vs) / len(vs)
         time.sleep(0.2)
