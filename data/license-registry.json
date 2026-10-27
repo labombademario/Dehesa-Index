@@ -5737,6 +5737,32 @@
    "short": "DACC (Cataluña)",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Texto oficial explícito (condiciones generales de reutilización de gencat.cat) que concede la reutilización comercial citando la fuente."
+  },
+  "meteo_france": {
+   "country": "FR",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "used": true,
+   "aliases": [],
+   "notes": "data/fr-climate-departements.json; scripts/update-fr-climate-departements.py. Medias por departamento y anomalías frente a la normal 1991-2020 calculadas por Dehesa Index.",
+   "name": "Météo-France — Données climatologiques de base (mensuelles)",
+   "url": "https://www.data.gouv.fr/fr/datasets/donnees-climatologiques-de-base-mensuelles/",
+   "licenseId": "Etalab-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "attributionText": "Source : Météo-France (données climatologiques de base, data.gouv.fr) — calculs de Dehesa Index",
+   "additionalRestrictions": "Citar la fuente y la fecha de la última actualización; no alterar el sentido de la información (los valores por departamento son un cálculo propio y se rotulan así).",
+   "evidence": "Conjunto «Données climatologiques de base - mensuelles» en data.gouv.fr (API, consultada el 27-oct-2026): license «lov2» (Licence Ouverte 2.0); productor Météo-France; ficheros por departamento en el almacén de Météo-France enlazados desde el conjunto.",
+   "short": "Météo-France",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licence Ouverte 2.0 declarada en el conjunto de datos de data.gouv.fr publicado por Météo-France."
   }
  },
  "files": {
@@ -8421,6 +8447,12 @@
     "junta_andalucia_observatorio"
    ],
    "notes": "Precios semanales del Observatorio de Precios y Mercados de la Junta de Andalucía por producto, posición comercial, categoría, formato y canal, tal cual; scripts/update-es-andalucia-prices.py."
+  },
+  "data/fr-climate-departements.json": {
+   "sources": [
+    "meteo_france"
+   ],
+   "notes": "Lluvia y temperatura media mensual por departamento: media de las estaciones de Météo-France con el mes completo y anomalía frente a su normal 1991-2020 (cálculo de Dehesa Index); scripts/update-fr-climate-departements.py."
   }
  },
  "derived": [

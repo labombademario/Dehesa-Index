@@ -370,11 +370,11 @@
     if (ST.c !== 'FR') return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
     var after = document.getElementById('pp-ghg-slot') || document.getElementById('pp-drought-slot') || tr;
-    var a = document.createElement('div'); a.id = 'pp-fr-gnr'; var b = document.createElement('div'); b.id = 'pp-fr-nit';
-    after.parentNode.insertBefore(b, after.nextSibling); after.parentNode.insertBefore(a, after.nextSibling);
+    var a = document.createElement('div'); a.id = 'pp-fr-gnr'; var b = document.createElement('div'); b.id = 'pp-fr-nit'; var c = document.createElement('div'); c.id = 'pp-fr-clim';
+    after.parentNode.insertBefore(b, after.nextSibling); after.parentNode.insertBefore(a, after.nextSibling); after.parentNode.insertBefore(c, after.nextSibling);   /* clima por departamento (Météo-France, js/fr-climate.js) primero */
     function js(src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
-    var go = function () { if (ST.c !== cc) return; if (window.DIFrGNR) window.DIFrGNR.mount(a, lang()); if (window.DIFrNitrates) window.DIFrNitrates.mount(b, lang()); };
-    var mods = function () { if (window.DIFrGNR && window.DIFrNitrates) return go(); var n = 0, done = function () { if (++n === 2) go(); }; js('js/fr-gnr.js?v=20261013', done); js('js/fr-nitrates.js?v=20261012', done); };
+    var go = function () { if (ST.c !== cc) return; if (window.DIFrClimate) window.DIFrClimate.mount(c, lang()); if (window.DIFrGNR) window.DIFrGNR.mount(a, lang()); if (window.DIFrNitrates) window.DIFrNitrates.mount(b, lang()); };
+    var mods = function () { if (window.DIFrGNR && window.DIFrNitrates && window.DIFrClimate) return go(); var n = 0, done = function () { if (++n === 3) go(); }; js('js/fr-gnr.js?v=20261013', done); js('js/fr-nitrates.js?v=20261012', done); js('js/fr-climate.js?v=0', done); };
     if (window.DIFrDeptMap) mods(); else js('js/fr-dept-map.js?v=20261015', mods);
   }
   /* Alemania: gasóleo y devolución Agrardiesel (js/de-diesel.js) */

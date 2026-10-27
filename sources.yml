@@ -189,7 +189,7 @@ sources:
     timeout: 30
     script_timeout: 20
     continue: true
-    data: [wine-prices.json]
+    data: [wine-prices.json, france-extras-stats.json]
     log: wine-prices-log.txt
     message: Precio del vino a granel (MAPA, FranceAgriMer)
   - id: wood-removals
@@ -1954,6 +1954,14 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/spain-prices/andalucia.json
     data: [spain-prices/andalucia.json, spain-andalucia-log.txt]
     message: Precios agrarios semanales de Andalucía (Observatorio de Precios y Mercados de la Junta de Andalucía)
+  - id: fr-climate-departements
+    name: Update France monthly rainfall and temperature by departement (Meteo-France stations)
+    cron: ['20 6 3,12 * *']
+    script: scripts/update-fr-climate-departements.py
+    timeout: 30
+    data: [fr-climate-departements.json]
+    log: fr-climate-log.txt
+    message: Lluvia y temperatura mensual por departamento de Francia (Météo-France)
   - id: france-hicp
     name: Update France consumer price indices for butter, cheese and olive oil (Eurostat HICP)
     cron: ['50 9 4,18 * *']

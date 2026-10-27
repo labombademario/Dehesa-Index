@@ -105,23 +105,27 @@ def france():
     if not files: raise RuntimeError('FranceAgriMer: sin fichero de precios a granel')
     def camp_of(f):
         m = re.search(r'-C(\d\d)-(\d\d)', f); return int(m.group(1)) if m else 0
-    files.sort(key=camp_of); f = files[-1]; log('Francia: fichero', f.split('/')[-1], '(%d disponibles)' % len(files))
-    b = vdownload(f)
-    sh = xlrd.open_workbook(file_contents=b).sheet_by_index(0)
-    camp = None; series = {}; drop = 0
-    for r in range(sh.nrows):
-        row = sh.row_values(r)
-        if len(row) < 10: continue
-        c0 = str(row[0]).strip(); m = str(row[1]).strip().lower()
-        if re.match(r'^\d{4}-\d{4}$', c0): camp = int(c0[:4])
-        mo = FR_MONTH.get(m)
-        if not camp or not mo: continue
-        y = camp if mo >= 8 else camp + 1
-        ym = '%d-%02d' % (y, mo)
-        for col, kind, i in FR_COLS:
-            v = fnum(row[i])
-            if v is None or not (15 <= v <= 400): continue
-            series.setdefault(col + '.' + kind, {})[ym] = v
+    files.sort(key=camp_of); f = files[-1]; log('Francia: ficheros', ', '.join(x.split('/')[-1] for x in files[-2:]), '(%d disponibles)' % len(files))
+    series = {}; drop = 0
+    # se leen el fichero de la campaña anterior y el actual; el más reciente manda (la cotización de julio se completa al mes siguiente y
+    # los meses pueden revisarse). Antes del 27-oct-2026 solo se leía el último y la campaña se reconocía solo como «2020-2021»: las
+    # campañas rotuladas «2020-21» se atribuían a la campaña anterior y sobrescribían sus meses.
+    for fu in files[-2:]:
+        sh = xlrd.open_workbook(file_contents=vdownload(fu)).sheet_by_index(0)
+        camp = None
+        for r in range(sh.nrows):
+            row = sh.row_values(r)
+            if len(row) < 10: continue
+            c0 = str(row[0]).strip(); m = str(row[1]).strip().lower().replace('(*)', '').replace('*', '').strip()
+            if re.match(r'^\d{4}-\d{2,4}$', c0): camp = int(c0[:4])
+            mo = FR_MONTH.get(m)
+            if not camp or not mo: continue
+            y = camp if mo >= 8 else camp + 1
+            ym = '%d-%02d' % (y, mo)
+            for col, kind, i in FR_COLS:
+                v = fnum(row[i])
+                if v is None or not (15 <= v <= 400): continue
+                series.setdefault(col + '.' + kind, {})[ym] = v
     # valores aislados incompatibles con su entorno (p. ej. un rojo AOP de 258 en un año de 105-135): se descartan y se anotan
     for k, d in series.items():
         ks = sorted(d); bad = []
@@ -154,5 +158,25 @@ def main():
     OUT.write_text(json.dumps(res, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     LOG.write_text('\n'.join(LOGS) + '\n', encoding='utf-8')
     log('wine-prices.json', OUT.stat().st_size, 'bytes')
+    try: sync_extras(fr)
+    except Exception as e: log('AVISO: no se pudo actualizar france-extras-stats.json:', repr(e)[:200])
     return 0 if ok else 1
+EXTRAS = ROOT / 'data' / 'france-extras-stats.json'
+EXTRA_IDS = {'red.aop': 'red-aop', 'red.igp': 'red-igp', 'red.vsig_var': 'red-vsig-var', 'red.vsig': 'red-vsig', 'white.aop': 'white-aop', 'white.igp': 'white-igp', 'white.vsig_var': 'white-vsig-var', 'white.vsig': 'white-vsig'}
+def sync_extras(fr):
+    """Las series de vino de la ficha de Francia (fr-fam-wine-* en data/france-extras-stats.json) salen de este mismo fichero de FranceAgriMer:
+    antes se cargaban a mano con build-france-extras.py y se quedaban atrás."""
+    if not fr or not fr.get('series') or not EXTRAS.exists(): return
+    doc = json.loads(EXTRAS.read_text(encoding='utf-8')); S = doc['countries']['FR']['series']; n = 0
+    for s in S:
+        k = next((a for a, b in EXTRA_IDS.items() if s['id'] == 'fr-fam-wine-' + b), None)
+        pts = fr['series'].get(k) if k else None
+        if not pts or len(pts) < 13: continue
+        s['points'] = [[p, round(v, 4)] for p, v in pts]; s['latestPeriod'] = pts[-1][0]; s['latest'] = round(pts[-1][1], 4)
+        s['changePct'] = round((pts[-1][1] - pts[-2][1]) / pts[-2][1] * 100, 2) if pts[-2][1] else None
+        s['sourceGroup'] = 'FranceAgriMer – prix moyens vrac communiqués à la Commission européenne (VISIONet)'
+        s['note'] = 'Último mes publicado por FranceAgriMer en %s: %s. Los meses que la fuente marca como no disponibles quedan como hueco.' % (fr.get('file', ''), pts[-1][0]); n += 1
+    if n:
+        doc['generatedAt'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+        EXTRAS.write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8'); log('france-extras-stats.json: %d series de vino actualizadas' % n)
 if __name__ == '__main__': sys.exit(main())

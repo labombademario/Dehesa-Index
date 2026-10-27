@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T21:00:52Z",
+ "generatedAt": "2026-10-27T22:04:41Z",
  "summary": {
-  "sources": 189,
-  "sourcesApto": 173,
+  "sources": 190,
+  "sourcesApto": 174,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 408,
-  "datasets_apto": 271,
+  "datasets": 409,
+  "datasets_apto": 272,
   "datasets_condiciones": 126,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -469,6 +469,10 @@
   },
   "met_office": {
    "name": "Met Office (UK) — HadUK-Grid UK and regional climate series",
+   "verdict": "apto"
+  },
+  "meteo_france": {
+   "name": "Météo-France — Données climatologiques de base (mensuelles)",
    "verdict": "apto"
   },
   "meteoswiss": {

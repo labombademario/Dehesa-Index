@@ -4892,6 +4892,30 @@ def spain_prices_obs(doc, errs, warns, stats):
     for k, n in st.items():
         if n < 25: errs.append("obs: solo %d series de %s (se esperan >=25)" % (n, k))
     stats["series"] = len(S)
+def fr_climate_departements(doc, errs, warns, stats):
+    """Clima por departamento (Météo-France): >=85 departamentos únicos, meses crecientes y cerrados, último mes reciente, valores físicamente posibles,
+    anomalías coherentes con valor y normal, y el historial con un hueco por mes desde «from»."""
+    D = doc["departements"]; ids = set(); lp = doc["lastPeriod"]
+    if len(D) < 85: errs.append("fr-clima: solo %d departamentos" % len(D))
+    today = datetime.date.today(); cur = "%d-%02d" % (today.year, today.month)
+    if lp >= cur: errs.append("fr-clima: lastPeriod %s es el mes en curso o futuro" % lp)
+    lim = (today.replace(day=1) - datetime.timedelta(days=75)).strftime("%Y-%m")
+    if lp < lim: errs.append("fr-clima: lastPeriod %s demasiado antiguo" % lp)
+    for d in D:
+        if d["id"] in ids: errs.append("fr-clima: departamento repetido %s" % d["id"])
+        ids.add(d["id"]); P = [m["period"] for m in d["months"]]
+        if P != sorted(set(P)): errs.append("fr-clima %s: meses desordenados" % d["id"]); continue
+        if P[-1] > lp: errs.append("fr-clima %s: mes %s posterior a lastPeriod" % (d["id"], P[-1]))
+        for m in d["months"]:
+            if "precipMm" in m:
+                if not (0 <= m["precipMm"] <= 1500 and m["precipBaselineMm"] > 0): errs.append("fr-clima %s %s: lluvia imposible %s" % (d["id"], m["period"], m["precipMm"])); break
+                if abs((m["precipMm"] / m["precipBaselineMm"] - 1) * 100 - m["precipAnomalyPct"]) > 1.0: errs.append("fr-clima %s %s: anomalía de lluvia incoherente" % (d["id"], m["period"])); break
+            if "tempC" in m:
+                if not (-15 <= m["tempC"] <= 35): errs.append("fr-clima %s %s: temperatura imposible %s" % (d["id"], m["period"], m["tempC"])); break
+                if abs(m["tempAnomalyC"]) > 8: errs.append("fr-clima %s %s: anomalía de temperatura imposible %s" % (d["id"], m["period"], m["tempAnomalyC"])); break
+        h = d["history"]
+        if len(h["precipAnomalyPct"]) != len(h["tempAnomalyC"]): errs.append("fr-clima %s: historial con longitudes distintas" % d["id"])
+    stats["series"] = len(D)
 AND_UNIT_MAX = {"€/kg": 100, "€/t": 5000, "€/100 kg vivo": 2000, "€/100 kg canal": 3000, "€/100 l": 500}
 def spain_prices_andalucia(doc, errs, warns, stats):
     """Observatorio de precios de Andalucía: semanas lunes a lunes sin saltos, >=150 series con tantos valores como semanas, ids únicos, unidad conocida,

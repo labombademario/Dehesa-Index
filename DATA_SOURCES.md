@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 186 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40333 series en el catalogo unificado.
+Resumen: 187 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40333 series en el catalogo unificado.
 
-## VERIFIED (186)
+## VERIFIED (187)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -124,6 +124,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `mase_dgsaie` | Ministero dell'Ambiente e della Sicurezza Energetica (DGSAIE) — Prezzi medi settimanali dei carburanti | IT | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
 | `mb_agri` | Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba) | CA | OpenMB-1.0 | si/si | si | 0 | No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights. |
 | `met_office` | Met Office (UK) — HadUK-Grid UK and regional climate series | UK | OGL-UK-3.0 | si/si | si | 0 | Solo las series areales mensuales publicadas en abierto (lluvia y temperatura media). Los productos de pago, los de registro y DataPoint tie… |
+| `meteo_france` | Météo-France — Données climatologiques de base (mensuelles) | FR | Etalab-2.0 | si/si | si | 0 | Citar la fuente y la fecha de la última actualización; no alterar el sentido de la información (los valores por departamento son un cálculo … |
 | `meteoswiss` | Switzerland — MeteoSwiss (Federal Office of Meteorology and Climatology), Open Government Data: automatic weather stations SwissMetNet | CH | CC-BY-4.0 | si/si | si | 18 | Source must read 'Source: MeteoSwiss'; MeteoSwiss warnings must not be altered; no implication of MeteoSwiss endorsement; avoid high-frequen… |
 | `mimit_carburanti` | Ministero delle Imprese e del Made in Italy — Osservaprezzi carburanti (open data) | IT | IODL-2.0 | si/si | si | 0 | Citar la fuente y, si es posible, el enlace a la página original. |
 | `miteco_carburantes` | MITECO — Precios de carburantes en las estaciones de servicio (Geoportal de Gasolineras) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |

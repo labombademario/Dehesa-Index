@@ -1939,6 +1939,12 @@
    [
     "spain_prices_andalucia"
    ]
+  ],
+  "fr-climate-departements.json": [
+   "fr-climate-departements",
+   [
+    "fr_climate_departements"
+   ]
   ]
  },
  "globs": {

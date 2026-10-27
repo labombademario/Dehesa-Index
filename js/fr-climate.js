@@ -1,0 +1,100 @@
+/* Dehesa Index — Francia: lluvia y temperatura del mes por departamento, estaciones de Météo-France frente a su normal 1991-2020.
+   data/fr-climate-departements.json (scripts/update-fr-climate-departements.py). Bloque de la ficha de Francia (paises.js frUp) y tabla de la región
+   (region-more.js). Mapa con js/fr-dept-map.js. ES5. */
+(function (global) {
+  'use strict';
+  var T = {
+    es: { h: 'Lluvia y temperatura por departamento', sub: 'Estaciones de Météo-France de cada departamento comparadas con su normal 1991-2020.', month: 'Mes', p: 'Lluvia', t: 'Temperatura',
+      mapP: 'Lluvia del mes frente a lo normal (%)', mapT: 'Temperatura media frente a lo normal (°C)', hint: 'Pasa el cursor o toca un departamento para ver su último año.', none: 'sin estaciones suficientes',
+      dry: 'Departamentos con menos del 50 % de la lluvia normal', wet: 'Departamentos con más del 150 % de la lluvia normal', warm: 'Anomalía media de temperatura (media de departamentos)', of: 'de',
+      mm: 'mm', vsN: 'frente a lo normal', normal: 'normal', st: 'estaciones', dep: 'Departamento', tbl: 'Último año en {d}', pa: 'Lluvia (mm)', pPct: '% de lo normal', tc: 'Temp. media (°C)', ta: 'Diferencia (°C)',
+      calc: 'Cálculo de Dehesa Index con datos de Météo-France.', src: 'Fuente:', srcN: 'Météo-France, Données climatologiques de base (data.gouv.fr)', miss: 'Sin dato reciente por falta de estaciones: {d}.',
+      lp: ['muy seco (<50 %)', 'seco (50-80 %)', 'normal (80-120 %)', 'húmedo (120-150 %)', 'muy húmedo (>150 %)'], lt: ['< −1,5', '−1,5 a −0,5', '−0,5 a +0,5', '+0,5 a +1,5', '> +1,5'] },
+    en: { h: 'Rainfall and temperature by département', sub: 'Météo-France stations in each département compared with their 1991-2020 normal.', month: 'Month', p: 'Rainfall', t: 'Temperature',
+      mapP: 'Rainfall this month vs normal (%)', mapT: 'Mean temperature vs normal (°C)', hint: 'Hover or tap a département to see its last year.', none: 'not enough stations',
+      dry: 'Départements with under 50 % of normal rainfall', wet: 'Départements with over 150 % of normal rainfall', warm: 'Average temperature anomaly (mean of départements)', of: 'of',
+      mm: 'mm', vsN: 'vs normal', normal: 'normal', st: 'stations', dep: 'Département', tbl: 'Last year in {d}', pa: 'Rainfall (mm)', pPct: '% of normal', tc: 'Mean temp. (°C)', ta: 'Difference (°C)',
+      calc: 'Calculated by Dehesa Index from Météo-France data.', src: 'Source:', srcN: 'Météo-France, Données climatologiques de base (data.gouv.fr)', miss: 'No recent data for lack of stations: {d}.',
+      lp: ['very dry (<50 %)', 'dry (50-80 %)', 'normal (80-120 %)', 'wet (120-150 %)', 'very wet (>150 %)'], lt: ['< −1.5', '−1.5 to −0.5', '−0.5 to +0.5', '+0.5 to +1.5', '> +1.5'] },
+    fr: { h: 'Pluie et température par département', sub: 'Stations Météo-France de chaque département comparées à leur normale 1991-2020.', month: 'Mois', p: 'Pluie', t: 'Température',
+      mapP: 'Pluie du mois par rapport à la normale (%)', mapT: 'Température moyenne par rapport à la normale (°C)', hint: 'Survolez ou touchez un département pour voir sa dernière année.', none: 'pas assez de stations',
+      dry: 'Départements à moins de 50 % de la pluie normale', wet: 'Départements à plus de 150 % de la pluie normale', warm: 'Écart moyen de température (moyenne des départements)', of: 'sur',
+      mm: 'mm', vsN: 'par rapport à la normale', normal: 'normale', st: 'stations', dep: 'Département', tbl: 'Dernière année : {d}', pa: 'Pluie (mm)', pPct: '% de la normale', tc: 'Temp. moyenne (°C)', ta: 'Écart (°C)',
+      calc: 'Calcul de Dehesa Index à partir des données de Météo-France.', src: 'Source :', srcN: 'Météo-France, Données climatologiques de base (data.gouv.fr)', miss: 'Pas de donnée récente faute de stations : {d}.',
+      lp: ['très sec (<50 %)', 'sec (50-80 %)', 'normal (80-120 %)', 'humide (120-150 %)', 'très humide (>150 %)'], lt: ['< −1,5', '−1,5 à −0,5', '−0,5 à +0,5', '+0,5 à +1,5', '> +1,5'] },
+    it: { h: 'Pioggia e temperatura per dipartimento', sub: 'Stazioni di Météo-France di ogni dipartimento confrontate con la loro normale 1991-2020.', month: 'Mese', p: 'Pioggia', t: 'Temperatura',
+      mapP: 'Pioggia del mese rispetto alla norma (%)', mapT: 'Temperatura media rispetto alla norma (°C)', hint: 'Passa il cursore o tocca un dipartimento per vedere il suo ultimo anno.', none: 'stazioni insufficienti',
+      dry: 'Dipartimenti con meno del 50 % della pioggia normale', wet: 'Dipartimenti con più del 150 % della pioggia normale', warm: 'Scarto medio di temperatura (media dei dipartimenti)', of: 'su',
+      mm: 'mm', vsN: 'rispetto alla norma', normal: 'normale', st: 'stazioni', dep: 'Dipartimento', tbl: 'Ultimo anno: {d}', pa: 'Pioggia (mm)', pPct: '% della norma', tc: 'Temp. media (°C)', ta: 'Scarto (°C)',
+      calc: 'Calcolo di Dehesa Index su dati di Météo-France.', src: 'Fonte:', srcN: 'Météo-France, Données climatologiques de base (data.gouv.fr)', miss: 'Nessun dato recente per mancanza di stazioni: {d}.',
+      lp: ['molto secco (<50 %)', 'secco (50-80 %)', 'normale (80-120 %)', 'umido (120-150 %)', 'molto umido (>150 %)'], lt: ['< −1,5', '−1,5 a −0,5', '−0,5 a +0,5', '+0,5 a +1,5', '> +1,5'] }
+  };
+  var LOC = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }, CACHE = null, ST = { m: 'p', per: null };
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function nf(v, d, lg) { return v == null ? '—' : v.toLocaleString(LOC[lg] || 'es-ES', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  function sg(v, d, lg) { return v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), d, lg); }
+  function mname(p, lg) { try { return new Date(Date.UTC(+p.slice(0, 4), +p.slice(5, 7) - 1, 1)).toLocaleDateString(LOC[lg], { month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return p; } }
+  function load() { return CACHE || (CACHE = fetch('data/fr-climate-departements.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })); }
+  function at(d, per) { for (var i = 0; i < d.months.length; i++) if (d.months[i].period === per) return d.months[i]; return null; }
+  /* tabla del último año de un departamento */
+  function deptTable(d, lg) {
+    var t = T[lg], th = 'padding:6px;font-size:11px;font-weight:700;color:var(--text-faint);text-align:right', td = 'padding:6px;border-top:1px solid var(--border);text-align:right;font-variant-numeric:tabular-nums';
+    var rows = d.months.slice().reverse().map(function (m) { var pp = m.precipAnomalyPct == null ? null : 100 + m.precipAnomalyPct;
+      return '<tr><td style="' + td + ';text-align:left">' + esc(mname(m.period, lg)) + '</td><td style="' + td + '">' + nf(m.precipMm, 0, lg) + '</td><td style="' + td + '">' + (pp == null ? '—' : nf(pp, 0, lg) + ' %') + '</td><td style="' + td + '">' + nf(m.tempC, 1, lg) + '</td><td style="' + td + '">' + sg(m.tempAnomalyC, 1, lg) + '</td></tr>'; }).join('');
+    return '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:420px;font-size:13px"><caption style="text-align:left;font-weight:700;padding:4px 0">' + esc(t.tbl.replace('{d}', d.name + ' (' + d.id + ')')) + '</caption><thead><tr><th scope="col" style="' + th + ';text-align:left">' + esc(t.month) + '</th><th scope="col" style="' + th + '">' + esc(t.pa) + '</th><th scope="col" style="' + th + '">' + esc(t.pPct) + '</th><th scope="col" style="' + th + '">' + esc(t.tc) + '</th><th scope="col" style="' + th + '">' + esc(t.ta) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+  }
+  function mount(el, lg) {
+    if (!el) return Promise.resolve(false); lg = T[lg] ? lg : 'es';
+    var M = global.DIFrDeptMap;
+    return Promise.all([load(), M ? M.load() : null]).then(function (a) {
+      var D = a[0], MAP = a[1]; if (!D || !D.departements || !D.departements.length) { el.innerHTML = ''; return false; }
+      var t = T[lg], pers = {}, byId = {};
+      D.departements.forEach(function (d) { byId[d.id] = d; d.months.forEach(function (m) { pers[m.period] = 1; }); });
+      var P = Object.keys(pers).sort(); if (!ST.per || P.indexOf(ST.per) < 0) ST.per = D.lastPeriod;
+      var vals = {}, dry = 0, wet = 0, n = 0, ta = [], k;
+      D.departements.forEach(function (d) { var m = at(d, ST.per); if (!m) return;
+        var v = ST.m === 'p' ? (m.precipAnomalyPct == null ? null : 100 + m.precipAnomalyPct) : m.tempAnomalyC;
+        if (v != null) { vals[d.id] = v; if (d.id === '20') { vals['2A'] = v; vals['2B'] = v; } }
+        if (m.precipAnomalyPct != null) { n++; if (m.precipAnomalyPct < -50) dry++; if (m.precipAnomalyPct > 50) wet++; }
+        if (m.tempAnomalyC != null) ta.push(m.tempAnomalyC); });
+      var tav = ta.length ? ta.reduce(function (s, x) { return s + x; }, 0) / ta.length : null;
+      var mp = MAP && M ? M.html(MAP, ST.m === 'p' ? { values: vals, cuts: [50, 80, 120, 150], labels: t.lp, fmt: function (v) { return nf(v, 0, lg) + ' %'; }, label: t.mapP, none: t.none }
+        : { values: vals, cuts: [-1.5, -0.5, 0.5, 1.5], labels: t.lt, fmt: function (v) { return sg(v, 1, lg) + ' °C'; }, label: t.mapT, none: t.none }) : null;
+      var chip = function (on, data, txt) { return '<button type="button" class="esp-chip' + (on ? ' on' : '') + '" ' + data + ' aria-pressed="' + on + '">' + esc(txt) + '</button>'; };
+      var opts = P.slice().reverse().map(function (p) { return '<option value="' + p + '"' + (p === ST.per ? ' selected' : '') + '>' + esc(mname(p, lg)) + '</option>'; }).join('');
+      var row = function (l, v) { return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(l) + '</span><span class="di-info-stat-value">' + v + '</span></div>'; };
+      var miss = (D.missing || []).map(function (id) { return id; });
+      el.innerHTML = '<section class="di-card ps-rm gb-card frc-card ' + (ST.m === 'p' ? 'frc-p' : 'frc-t') + '" id="ps-fr-clim" style="max-width:none"><h2 class="ps-rm-h">' + esc(t.h) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.sub) + '</p>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px"><div class="esp-tabs" role="group">' + chip(ST.m === 'p', 'data-frc="p"', '🌧️ ' + t.p) + chip(ST.m === 't', 'data-frc="t"', '🌡️ ' + t.t) + '</div>' +
+        '<label style="font-size:13px">' + esc(t.month) + ' <select class="frc-per" style="margin-left:4px">' + opts + '</select></label></div>' +
+        '<div class="di-info-stat-list" style="max-width:640px">' + row(t.dry, '<b>' + dry + '</b> ' + esc(t.of) + ' ' + n) + row(t.wet, '<b>' + wet + '</b> ' + esc(t.of) + ' ' + n) + row(t.warm, '<b>' + sg(tav, 1, lg) + ' °C</b>') + '</div>' +
+        (mp ? '<div class="di-info-card-title gb-sub">' + esc((ST.m === 'p' ? t.mapP : t.mapT) + ' · ' + mname(ST.per, lg)) + '</div><div class="wp-readout frc-tip" aria-live="polite">' + esc(t.hint) + '</div>' + mp.html : '') +
+        '<div class="frc-dept" style="margin-top:10px"></div>' +
+        '<p class="di-movers-hint" style="margin:10px 0 0">' + esc((D.methodology && D.methodology[lg]) || (D.methodology && D.methodology.en) || '') + (miss.length ? ' ' + esc(t.miss.replace('{d}', miss.join(', '))) : '') + '</p>' +
+        '<p class="di-field-hint" style="margin:8px 0 0">' + esc(t.src) + ' <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcN) + '</a> (Licence Ouverte 2.0). ' + esc(t.calc) + '</p></section>';
+      Array.prototype.forEach.call(el.querySelectorAll('[data-frc]'), function (b) { b.onclick = function () { ST.m = b.getAttribute('data-frc'); mount(el, lg); }; });
+      var sel = el.querySelector('.frc-per'); if (sel) sel.onchange = function () { ST.per = sel.value; mount(el, lg); };
+      var box = el.querySelector('.frc-dept');
+      if (mp) M.bind(el, el.querySelector('.frc-tip'), t.hint, function (id) {
+        var d = byId[id] || ((id === '2A' || id === '2B') ? byId['20'] : null), nm = d ? d.name : (mp.names[id] || id);
+        if (!d) { box.innerHTML = ''; return '<b>' + esc(nm) + '</b> · ' + esc(t.none); }
+        box.innerHTML = deptTable(d, lg);
+        var m = at(d, ST.per); if (!m) return '<b>' + esc(nm) + '</b> · ' + esc(t.none);
+        return '<b>' + esc(nm) + '</b> · ' + esc(t.p) + ' <b>' + nf(m.precipMm, 0, lg) + ' ' + t.mm + '</b> (' + (m.precipAnomalyPct == null ? '—' : nf(100 + m.precipAnomalyPct, 0, lg) + ' % ' + esc(t.vsN)) + ') · ' + esc(t.t) + ' <b>' + nf(m.tempC, 1, lg) + ' °C</b> (' + sg(m.tempAnomalyC, 1, lg) + ' °C) · ' + (m.nPrecip || m.nTemp || 0) + ' ' + esc(t.st);
+      });
+      return true;
+    });
+  }
+  /* filas para la tabla de la región (region-more.js): último mes de cada departamento de la región */
+  function regionRows(reg, lg) {
+    lg = T[lg] ? lg : 'es';
+    return load().then(function (D) {
+      if (!D || !D.departements) return null;
+      var deps = D.departements.filter(function (d) { return d.region === reg; }); if (!deps.length) return null;
+      var per = D.lastPeriod;
+      return { period: per, month: mname(per, lg), source: D.source, rows: deps.map(function (d) { var m = at(d, per) || {};
+        return [esc(d.name) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(d.id) + '</span>', nf(m.precipMm, 0, lg), m.precipAnomalyPct == null ? '—' : nf(100 + m.precipAnomalyPct, 0, lg) + ' %', nf(m.tempC, 1, lg), sg(m.tempAnomalyC, 1, lg)]; }) };
+    });
+  }
+  global.DIFrClimate = { mount: mount, regionRows: regionRows, T: T };
+})(window);

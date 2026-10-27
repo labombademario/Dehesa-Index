@@ -196,6 +196,21 @@
       });
     }
 
+    /* ---- Francia: lluvia y temperatura del último mes por departamento (estaciones de Météo-France; data/fr-climate-departements.json). Sin dato, el punto de NASA POWER ---- */
+    function frClim(x) {
+      var FT = { es: ['Lluvia y temperatura por departamento', 'Media de las estaciones de Météo-France de cada departamento en {m}, frente a su normal 1991-2020 (cálculo de Dehesa Index).', 'Departamento', 'Lluvia (mm)', '% de lo normal', 'Temp. media (°C)', 'Diferencia (°C)', 'Ver el mapa de Francia'],
+        en: ['Rainfall and temperature by département', 'Average of the Météo-France stations in each département in {m}, compared with their 1991-2020 normal (calculated by Dehesa Index).', 'Département', 'Rainfall (mm)', '% of normal', 'Mean temp. (°C)', 'Difference (°C)', 'See the map of France'],
+        fr: ['Pluie et température par département', 'Moyenne des stations Météo-France de chaque département en {m}, comparée à leur normale 1991-2020 (calcul de Dehesa Index).', 'Département', 'Pluie (mm)', '% de la normale', 'Temp. moyenne (°C)', 'Écart (°C)', 'Voir la carte de France'],
+        it: ['Pioggia e temperatura per dipartimento', 'Media delle stazioni di Météo-France di ogni dipartimento in {m}, rispetto alla loro normale 1991-2020 (calcolo di Dehesa Index).', 'Dipartimento', 'Pioggia (mm)', '% della norma', 'Temp. media (°C)', 'Scarto (°C)', 'Vedi la mappa della Francia'] };
+      return get('data/fr-climate-departements.json').then(function (d) {
+        var deps = (d && d.departements || []).filter(function (z) { return z.region === x.r; }); if (!deps.length) return clim(x);
+        var f = FT[H.lang()] || FT.es, per = d.lastPeriod, sgn = function (v) { return v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1); };
+        var rows = deps.map(function (z) { var m = null; z.months.forEach(function (q) { if (q.period === per) m = q; }); m = m || {};
+          return [esc(z.name) + ' ' + faint(z.id), m.precipMm == null ? '—' : nf(m.precipMm, 0), m.precipAnomalyPct == null ? '—' : nf(100 + m.precipAnomalyPct, 0) + ' %', m.tempC == null ? '—' : nf(m.tempC, 1), sgn(m.tempAnomalyC)]; });
+        return card(f[0], f[1].replace('{m}', mon(per)), table([f[2], f[3], f[4], f[5], f[6]], rows, 520) + link('paises.html?c=FR#ps-fr-clim', f[7]), cite('meteo_france', per));
+      });
+    }
+
     /* ---- clima (todos los países) ---- */
     function clim(x) {
       var ids = CLIM[x.c] && CLIM[x.c][x.r]; if (!ids) return regClim(x); if (typeof ids === 'string') ids = [ids];
@@ -624,7 +639,7 @@
         US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('usrecv', usReceipts), C('uscensus', usCensus), C('ins', usIns), C('uscprog', usCropProg), C('clim', clim)],
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
-        FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', clim)],
+        FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('eudr', eudr), C('clim', clim)],
         NL: [C('nlcrops', nlCbs), C('clim', clim)],
         AT: [C('eudr', eudr), C('clim', clim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', clim)], AU: [C('clim', clim)], BE: [C('eudr', eudr), C('clim', clim)], DK: [C('clim', clim)], EL: [C('eudr', eudr), C('clim', clim)]

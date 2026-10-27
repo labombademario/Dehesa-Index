@@ -2195,6 +2195,11 @@ html[data-theme="dark"] .ute-chip.ute-normal{color:var(--ute-n)}html[data-theme=
 #in-es-gb{margin-top:18px}
 .gb-card{max-width:760px;--gb0:#F6E3D5;--gb1:#EDBFA0;--gb2:#DD9268;--gb3:#BF5F38;--gb4:#8A361C;--gbx:#E9E6E1}
 html[data-theme="dark"] .gb-card{--gb0:#3E2A1F;--gb1:#6E3E25;--gb2:#A2582F;--gb3:#D07D4D;--gb4:#F3AC7C;--gbx:#2A2D2B}
+/* Francia, lluvia y temperatura por departamento (js/fr-climate.js): escalas divergentes con el centro gris (lo normal) */
+.gb-card.frc-p{--gb0:#8C510A;--gb1:#D8B365;--gb2:#C9C3B6;--gb3:#5AB4AC;--gb4:#01665E}
+.gb-card.frc-t{--gb0:#2166AC;--gb1:#92C5DE;--gb2:#C9C3B6;--gb3:#F4A582;--gb4:#B2182B}
+html[data-theme="dark"] .gb-card.frc-p{--gb0:#B07A2C;--gb1:#7A6038;--gb2:#5B5E5C;--gb3:#2E7C75;--gb4:#5FC2B6}
+html[data-theme="dark"] .gb-card.frc-t{--gb0:#4F8FD0;--gb1:#2F5677;--gb2:#5B5E5C;--gb3:#8A4B3A;--gb4:#E0584C}
 .gb-sub{margin-top:14px}
 .gb-map,.di-card svg.gb-map{display:block;width:100%;max-width:560px;height:auto;margin:2px 0 6px}
 .di-card svg.fr-dmap{max-width:520px;max-height:560px}

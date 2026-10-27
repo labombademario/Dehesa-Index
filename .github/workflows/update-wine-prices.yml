@@ -25,13 +25,13 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/wine-prices.json
+          files: data/wine-prices.json data/france-extras-stats.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/wine-prices.json
+        run: python3 scripts/detect-revisions.py data/wine-prices.json data/france-extras-stats.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Precio del vino a granel (MAPA, FranceAgriMer)" data/wine-prices.json data/wine-prices-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Precio del vino a granel (MAPA, FranceAgriMer)" data/wine-prices.json data/france-extras-stats.json data/wine-prices-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

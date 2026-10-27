@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-318 workflows (268 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+319 workflows (269 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -189,6 +189,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-fr-agreste-more.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-agreste-more.py | france-agreste-more-stats.json, france-agreste-more/index.json | finish, validate-files |
 | update-fr-bulconj.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-bulconj.py | france-bulconj-stats.json, france-bulconj/index.json | finish, validate-files |
 | update-fr-cereobs.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-fr-cereobs.py | france-cereobs.json | finish, validate-files |
+| update-fr-climate-departements.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fr-climate-departements.py | fr-climate-departements.json | finish, validate-files |
 | update-fr-comex.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-comex.py | france-comex-stats.json, france-comex/index.json | finish, validate-files |
 | update-fr-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | fr-ghg-agri.json | finish, validate-files |
 | update-fr-gnr.yml | generado | semanal (1,3,5) | detect-revisions.py, gen-workflows.py, update-fr-gnr.py | fr-gnr.json | finish, validate-files |
@@ -340,7 +341,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-usda-calendar.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-usda-calendar.py | usda-calendar.json | finish, validate-files |
 | update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json, world-production.json | finish, validate-files |
 | update-wb-panel-prices.yml | a mano | mensual | build-wb-panel-obs.py | - | price-engine, publish |
-| update-wine-prices.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-wine-prices.py | wine-prices.json | finish, validate-files |
+| update-wine-prices.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-wine-prices.py | france-extras-stats.json, wine-prices.json | finish, validate-files |
 | update-wood-energy.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-energy.py | wood-energy.json | finish, validate-files |
 | update-wood-prices-de.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-wood-prices-de.py | wood-prices-de.json | finish, validate-files |
 | update-wood-prices-na.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-wood-prices-na.py | wood-prices-na.json | finish, validate-files |

@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T21:10:18Z",
+ "generatedAt": "2026-10-27T22:04:41Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 189,
-  "sourcesApto": 173,
+  "sources": 190,
+  "sourcesApto": 174,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 408,
-  "datasets_apto": 271,
+  "datasets": 409,
+  "datasets_apto": 272,
   "datasets_condiciones": 126,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -1963,6 +1963,23 @@
    "redistribution": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Met Office.",
    "conditions": "Solo las series areales mensuales publicadas en abierto (lluvia y temperatura media). Los productos de pago, los de registro y DataPoint tienen otras condiciones y no se usan."
+  },
+  {
+   "id": "meteo_france",
+   "name": "Météo-France — Données climatologiques de base (mensuelles)",
+   "url": "https://www.data.gouv.fr/fr/datasets/donnees-climatologiques-de-base-mensuelles/",
+   "country": "FR",
+   "licenseId": "Etalab-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : Météo-France (données climatologiques de base, data.gouv.fr) — calculs de Dehesa Index",
+   "conditions": "Citar la fuente y la fecha de la última actualización; no alterar el sentido de la información (los valores por departamento son un cálculo propio y se rotulan así)."
   },
   {
    "id": "meteoswiss",
@@ -5883,6 +5900,14 @@
     "gus_poland",
     "luke_fi",
     "surs_si"
+   ]
+  },
+  {
+   "path": "data/fr-climate-departements.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "meteo_france"
    ]
   },
   {
