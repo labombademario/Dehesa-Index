@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T16:38:00Z",
+ "generatedAt": "2026-10-27T16:54:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 298,
+  "ok": 299,
   "late": 2,
   "error": 0,
   "not_run": 2,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T15:57:42.840297+00:00",
   "repoGeneratedAt": "2026-10-27T15:57:42.840297+00:00",
-  "checkedAt": "2026-10-27T16:38:00Z"
+  "checkedAt": "2026-10-27T16:54:00Z"
  },
  "pipelines": [
   {
@@ -604,13 +604,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-26T16:47:53Z",
-    "durationSec": 73,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40362551215"
+    "startedAt": "2026-10-27T16:50:19Z",
+    "durationSec": 71,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40544822083"
    },
    "recent": {
-    "runs": 6,
-    "success": 5,
+    "runs": 7,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -4726,7 +4726,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T16:21:15Z"
+     "lastChange": "2026-10-27T16:40:46Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4988,7 +4988,7 @@
    "crons": [
     "40 16 * * 2,5"
    ],
-   "nextRun": "2026-10-27T16:40:00Z",
+   "nextRun": "2026-10-30T16:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5970,6 +5970,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-uk-timber.yml",
+   "name": "Update UK timber price indices (Forest Research)",
+   "crons": [
+    "15 8 12 5,6,11,12 *"
+   ],
+   "nextRun": "2026-11-12T08:15:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T16:34:44Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40542283854"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 3624.0
   },
   {
    "workflow": "update-uk-trade.yml",
