@@ -31,7 +31,7 @@
     freq: { M: L('mensual', 'monthly', 'mensuel', 'mensile'), Q: L('trimestral', 'quarterly', 'trimestriel', 'trimestrale'), H: L('semestral', 'half-yearly', 'semestriel', 'semestrale'),
             W: L('semanal', 'weekly', 'hebdomadaire', 'settimanale'), A: L('anual', 'annual', 'annuel', 'annuale') },
     vat: { incl: L('con IVA', 'incl. VAT', 'TVA incluse', 'IVA inclusa'), excl: L('sin IVA', 'excl. VAT', 'hors TVA', 'IVA esclusa'), 'n/d': L('IVA no indicado por la fuente', 'VAT not stated by the source', 'TVA non précisée par la source', 'IVA non indicata dalla fonte') },
-    region: L('Región de precios', 'Price region', 'Région de prix', 'Regione di prezzo'), wholeCountry: L('Todo el país', 'Whole country', 'Tout le pays', 'Tutto il paese'),
+    region: L('Región', 'Region', 'Région', 'Regione'), wholeCountry: L('Todo el país', 'Whole country', 'Tout le pays', 'Tutto il paese'),
     hSeries: L('Serie', 'Series', 'Série', 'Serie'), hLast: L('Último dato', 'Latest', 'Dernier', 'Ultimo'), hChg: L('Frente a un año antes', 'Vs a year earlier', 'Vs un an avant', 'Rispetto a un anno prima'),
     hPer: L('Periodo', 'Period', 'Période', 'Periodo'), vsNote: L('La variación frente a un año antes es un cálculo de Dehesa Index con las cifras publicadas.', 'The change against a year earlier is a Dehesa Index calculation from the published figures.',
             'La variation sur un an est un calcul de Dehesa Index à partir des chiffres publiés.', 'La variazione su un anno è un calcolo di Dehesa Index sui dati pubblicati.'),
@@ -185,7 +185,7 @@
       return KIND[m[2].toLowerCase()][k] + ': ' + SP[m[1].toLowerCase()][k] + tail + cat; }
     return s + tail;
   }
-  var DATA = null, ST = { s: 'prices', pc: 'SI', reg: '', dreg: '', sel: {}, fc: 'ES', dc: 'CZ', ec: 'us-pellet-domestic-price' };
+  var DATA = null, ST = { s: 'prices', pc: 'SI', reg: '', dreg: '', rk: '', ry: '', sel: {}, fc: 'ES', dc: 'CZ', ec: 'us-pellet-domestic-price' };
   function getJ(f) { return fetch('data/' + f + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   function loadAll() {
     return Promise.all([getJ('forest-timber-prices'), getJ('worldbank-timber'), getJ('forest-fires'), getJ('forest-damage'), getJ('wood-energy')]).then(function (r) {
@@ -294,6 +294,29 @@
       '<div class="di-info-scope-note">' + esc(tx(T.fireNote)) + '</div>' + srcLine(ff.source);
   }
   /* ---- cortas y daños ---- */
+  /* ranking de regiones en un mismo año (cortas y daños: CZ y SE) */
+  var RKT = { h: L('Ranking de regiones', 'Region ranking', 'Classement des régions', 'Classifica delle regioni'), ind: L('Indicador', 'Indicator', 'Indicateur', 'Indicatore'), yr: L('Año', 'Year', 'Année', 'Anno'),
+    reg: L('Región', 'Region', 'Région', 'Regione'), val: L('Valor', 'Value', 'Valeur', 'Valore'), sh: L('% de la suma', '% of sum', '% de la somme', '% della somma'),
+    note: L('Solo regiones con dato ese año; el porcentaje es sobre la suma de esas regiones (cálculo de Dehesa Index).', 'Only regions with data that year; the share is of the sum of those regions (Dehesa Index calculation).', 'Seules les régions avec donnée cette année ; la part est calculée sur la somme de ces régions (calcul de Dehesa Index).', 'Solo regioni con dato in quell’anno; la quota è sulla somma di quelle regioni (calcolo di Dehesa Index).') };
+  function rankView(all) {
+    var bases = {}, order = [];
+    all.forEach(function (s) { if (!s.region) return; var b = s.id.replace(/-[^-]+$/, ''); if (!bases[b]) { bases[b] = []; order.push(b); } bases[b].push(s); });
+    if (!order.length) return '';
+    if (!bases[ST.rk]) ST.rk = order[0];
+    var ss = bases[ST.rk], cnt = {}, ys = [];
+    ss.forEach(function (x) { x.periods.forEach(function (p) { cnt[p] = (cnt[p] || 0) + 1; }); });
+    ys = Object.keys(cnt).sort().reverse();
+    if (ys.indexOf(ST.ry) < 0) { var best = ys[0]; ys.forEach(function (y) { if (cnt[y] > cnt[best]) best = y; }); ST.ry = ST.ryAuto = best; }
+    var rows = [], tot = 0, mx = 0, u = ss[0].unit;
+    ss.forEach(function (x) { var i = x.periods.indexOf(ST.ry); if (i >= 0 && x.values[i] != null) { rows.push({ r: x.region, v: x.values[i] }); tot += x.values[i]; if (x.values[i] > mx) mx = x.values[i]; } });
+    rows.sort(function (a, b) { return b.v - a.v; });
+    var d = INT[u] ? 0 : 2;
+    var body = rows.map(function (x) { return '<tr><td>' + esc(x.r) + '</td><td class="num">' + num(x.v, d) + ' <span class="fsh-m">' + esc(unit(u)) + '</span></td><td class="num">' + (tot ? num(x.v / tot * 100, 1) : '—') + ' %</td><td><div style="height:8px;border-radius:2px;background:#2f6b4a;width:' + (mx ? Math.max(2, Math.round(x.v / mx * 100)) : 0) + '%"></div></td></tr>'; }).join('');
+    var io = order.map(function (b) { return '<option value="' + esc(b) + '"' + (b === ST.rk ? ' selected' : '') + '>' + esc(trl(bases[b][0].label)) + '</option>'; }).join('');
+    var yo = ys.map(function (y) { return '<option value="' + y + '"' + (y === ST.ry ? ' selected' : '') + '>' + y + '</option>'; }).join('');
+    return '<div class="di-card di-info-card wp-card"><div class="di-info-card-title">' + esc(tx(RKT.h)) + '</div><div class="fsh-pick"><label>' + esc(tx(RKT.ind)) + ' <select id="bq-rk">' + io + '</select></label> <label>' + esc(tx(RKT.yr)) + ' <select id="bq-ry">' + yo + '</select></label></div>' +
+      '<div class="fsh-tblw"><table class="fsh-tbl"><thead><tr><th>' + esc(tx(RKT.reg)) + '</th><th class="num">' + esc(tx(RKT.val)) + '</th><th class="num">' + esc(tx(RKT.sh)) + '</th><th></th></tr></thead><tbody>' + body + '</tbody></table></div><div class="di-info-scope-note">' + esc(tx(RKT.note)) + '</div></div>';
+  }
   function damageView(D) {
     var fd = D.fd; if (!fd) return '';
     var cs = ['CZ', 'SE', 'EE', 'HU'].filter(function (c) { return fd.series.some(function (s) { return s.country === c; }); });
@@ -306,7 +329,7 @@
       head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-dreg">' + ro.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.dreg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label></div>';
     } else ST.dreg = '';
     var list = all.filter(function (s) { return (s.region || '') === ST.dreg; }).map(function (s) { var o = {}, k; for (k in s) o[k] = s[k]; o.label = trl(s.label); return o; });
-    return chips('bq-dc', cs.map(function (c) { return [c, tx(T.cty[c])]; }), ST.dc) + head + seriesBlock(list, 'd' + ST.dc + ST.dreg) + '<div class="di-info-scope-note">' + esc(tx(T.dmgNote)) + '</div>';
+    return chips('bq-dc', cs.map(function (c) { return [c, tx(T.cty[c])]; }), ST.dc) + head + seriesBlock(list, 'd' + ST.dc + ST.dreg) + (ST.dreg === '' ? rankView(all) : '') + '<div class="di-info-scope-note">' + esc(tx(T.dmgNote)) + '</div>';
   }
   /* ---- energia ---- */
   function energyView(D) {
@@ -343,6 +366,7 @@
     root.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' && ev.target.getAttribute && (ev.target.getAttribute('data-sid') || ev.target.getAttribute('data-fc'))) ev.target.click(); });
     root.addEventListener('change', function (ev) {
       if (ev.target.id === 'bq-fc') { ST.fc = ev.target.value; page(); var e = document.getElementById('bq-fc'); if (e) e.focus(); }
+      else if (ev.target.id === 'bq-rk' || ev.target.id === 'bq-ry') { var rid = ev.target.id; if (rid === 'bq-rk') { ST.rk = ev.target.value; ST.ry = ''; } else ST.ry = ev.target.value; page(); var rr = document.getElementById(rid); if (rr) rr.focus(); }
       else if (ev.target.id === 'bq-dreg') { ST.dreg = ev.target.value; page(); var q = document.getElementById('bq-dreg'); if (q) q.focus(); }
       else if (ev.target.id === 'bq-reg') { ST.reg = ev.target.value; page(); var r = document.getElementById('bq-reg'); if (r) r.focus(); }
     });
