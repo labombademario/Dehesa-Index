@@ -8334,6 +8334,15 @@
     "world_bank"
    ],
    "notes": "Precios internacionales mensuales de troncos y madera aserrada tropicales (Camerun, Malasia) y contrachapado (World Bank Commodity Price Data, Pink Sheet). No son precios de la madera europea."
+  },
+  "data/forest-damage.json": {
+   "sources": [
+    "csu_cz",
+    "skogsstyrelsen",
+    "stat_ee",
+    "ksh_hu"
+   ],
+   "notes": "Tala fortuita de Chequia (CSU LES0104), tormenta, cortas y escarabajo de la corteza de Suecia (Skogsstyrelsen; la media de trampas es calculo propio), rodales destruidos de Estonia (KK513) y daños forestales de Hungria (KSH kor0010). scripts/update-forest-damage.py."
   }
  },
  "derived": [

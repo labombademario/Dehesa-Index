@@ -4706,6 +4706,47 @@ def wood_energy(doc, errs, warns, stats):
     for a, b in (("us-pellet-domestic-price", "us-pellet-domestic-qty"), ("us-pellet-export-price", "us-pellet-export-qty")):
         if a in ids and b in ids and ids[a]["periods"] != ids[b]["periods"]: errs.append("%s y %s con periodos distintos" % (a, b))
     stats["series"] = len(ids)
+# Cortas, daños y plagas forestales (CZ, SE, EE, HU)
+FOREST_DAMAGE_MAX = {"m3 (sin corteza)": 5e7, "milj. m3sk": 200, "milj. m3fub": 200, "ha": 5e5, "escarabajos por trampa": 1e5}
+FOREST_DAMAGE_MUST = ["cz-felling-total", "cz-salvage-total", "cz-salvage-insect", "se-storm-felled", "se-felling-gross", "se-bark-beetle-trap-mean", "ee-destroyed-total", "ee-destroyed-insects", "hu-damage-total", "hu-damage-insects"]
+def forest_damage(doc, errs, warns, stats):
+    import re as _re, datetime as _d
+    cy = _d.date.today().year; ids = {}
+    for s in doc["series"]:
+        if s["id"] in ids: errs.append("serie repetida %s" % s["id"])
+        ids[s["id"]] = s
+    for must in FOREST_DAMAGE_MUST:
+        if must not in ids: errs.append("falta la serie %s" % must)
+    for sid, s in ids.items():
+        if not sid.startswith(s["country"].lower() + "-"): errs.append("%s: el id no corresponde al pais %s" % (sid, s["country"]))
+        pat = r"^\d{4}$" if s["freq"] == "A" else r"^\d{4}-W(0[1-9]|[1-4]\d|5[0-3])$"
+        per = s["periods"]
+        if len(per) != len(s["values"]): errs.append("%s: %d periodos y %d valores" % (sid, len(per), len(s["values"]))); continue
+        if any(not _re.match(pat, p) for p in per): errs.append("%s: periodo con formato invalido" % sid); continue
+        if per != sorted(set(per)): errs.append("%s: periodos repetidos o desordenados" % sid)
+        top = FOREST_DAMAGE_MAX.get(s["unit"])
+        if top is None: errs.append("%s: unidad inesperada %r" % (sid, s["unit"])); continue
+        if any(not isinstance(v, (int, float)) or v < 0 or v > top for v in s["values"]): errs.append("%s: valor negativo o por encima de %s %s" % (sid, top, s["unit"]))
+        ly = int(per[-1][:4])
+        if ly > cy: errs.append("%s: ultimo periodo %s en el futuro" % (sid, per[-1]))
+        if ly < cy - (2 if s["freq"] == "A" else 1): warns.append("%s: ultimo periodo %s antiguo" % (sid, per[-1]))
+    cz = lambda k: dict(zip(ids[k]["periods"], ids[k]["values"])) if k in ids else {}
+    tot = cz("cz-salvage-total"); parts = [cz(k) for k in ("cz-salvage-natural", "cz-salvage-insect", "cz-salvage-emissions", "cz-salvage-other")]
+    for y, v in tot.items():
+        if all(y in p for p in parts) and abs(sum(p[y] for p in parts) - v) > 0.02 * v + 10: errs.append("CZ %s: la tala fortuita total (%s) no suma sus causas (%s)" % (y, v, sum(p[y] for p in parts)))
+    ft = cz("cz-felling-total")
+    for y, v in tot.items():
+        if y in ft and v > ft[y] * 1.001: errs.append("CZ %s: la tala fortuita supera a la tala total" % y)
+    eu = cz("ee-destroyed-total"); ei = cz("ee-destroyed-insects")
+    for y, v in ei.items():
+        if y in eu and v > eu[y] * 1.001 + 1: errs.append("EE %s: rodales destruidos por insectos (%s) superan al total (%s)" % (y, v, eu[y]))
+    hu = cz("hu-damage-total"); hi = cz("hu-damage-insects")
+    for y, v in hi.items():
+        if y in hu and v > hu[y] * 1.001: errs.append("HU %s: daños por insectos superan al total" % y)
+    se = cz("se-felling-gross"); sn = cz("se-felling-net")
+    for y, v in sn.items():
+        if y in se and v * 0.95 > se[y]: errs.append("SE %s: la corta neta (m3fub) no puede superar a la bruta (m3sk)" % y)
+    stats["series"] = len(ids)
 def wood_prices_na(doc, errs, warns, stats):
     """Indices de madera de EE. UU. (BLS) y Canada (StatCan): meses ascendentes, series de la misma longitud, indices en rango y llegando a un mes reciente."""
     import datetime as _dt

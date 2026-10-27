@@ -820,6 +820,14 @@ CASES = [
  ("worldbank-timber.json", "periodos repetidos", lambda d: d["series"][1]["points"].append(list(d["series"][1]["points"][-1]))),
  ("worldbank-timber.json", "unidad cruzada", lambda d: d["series"][-1].__setitem__("unit", "USD/m3")),
  ("worldbank-timber.json", "mes con formato erroneo", lambda d: d["series"][2]["points"][-1].__setitem__(0, "2026M09")),
+ ("forest-damage.json", "serie que falta", lambda d: d["series"].pop(0)),
+ ("forest-damage.json", "valor negativo", lambda d: d["series"][3]["values"].__setitem__(-1, -4)),
+ ("forest-damage.json", "valores y periodos descuadrados", lambda d: d["series"][8]["values"].pop()),
+ ("forest-damage.json", "semana imposible", lambda d: next(s for s in d["series"] if s["freq"] == "W")["periods"].__setitem__(-1, "2026-W60")),
+ ("forest-damage.json", "tala fortuita mayor que la total", lambda d: next(s for s in d["series"] if s["id"] == "cz-salvage-total")["values"].__setitem__(-1, 90000000)),
+ ("forest-damage.json", "causas que no suman", lambda d: next(s for s in d["series"] if s["id"] == "cz-salvage-insect")["values"].__setitem__(-1, 9000000)),
+ ("forest-damage.json", "insectos mayores que el total", lambda d: next(s for s in d["series"] if s["id"] == "ee-destroyed-insects")["values"].__setitem__(-1, 99999)),
+ ("forest-damage.json", "pais que no corresponde al id", lambda d: d["series"][0].__setitem__("country", "SE")),
  ("forest-timber-prices.json", "unidad inesperada", lambda d: d["countries"]["LV"].__setitem__("unit", "USD/ft3")),
 ]
 bad = 0

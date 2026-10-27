@@ -323,6 +323,15 @@ sources:
     continue: true
     data: [wood-energy.json]
     message: Precios de pellets (EE. UU. y Finlandia) y astillas forestales (Finlandia)
+  - id: forest-damage
+    name: Update forest felling, damage and bark beetle (CSU, Skogsstyrelsen, Statistics Estonia, KSH)
+    cron: ['25 7 * * 2']   # semanal: la captura de escarabajo de Suecia se actualiza cada semana en temporada; el resto, una vez al año
+    script: scripts/update-forest-damage.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [forest-damage.json]
+    message: Cortas, daños y escarabajo de la corteza (Chequia, Suecia, Estonia y Hungría)
   - id: wood-prices-na
     name: Update US and Canada timber price indices (BLS PPI, Statistics Canada IPPI)
     cron: ['35 15 18 * *']   # BLS publica el PPI a mitad de mes; StatCan el IPPI a final de mes: el 18 recoge el primero y el mes anterior del segundo
