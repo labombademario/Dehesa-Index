@@ -1,16 +1,8 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-27T18:56:58.239Z",
+  "generatedAt": "2026-10-27T19:31:34.642Z",
   "status": "informational",
   "rules": [
-    {
-      "type": "stale_data",
-      "product": "azucar",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "message": "Latest observation is older than the configured freshness threshold."
-    },
     {
       "type": "stale_data",
       "product": "colza_fr",
