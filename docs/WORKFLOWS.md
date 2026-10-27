@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-306 workflows (256 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+307 workflows (257 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -50,6 +50,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-be-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | be-ghg-agri.json | finish, validate-files |
 | update-be-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-be-nitrates.py | be-nitrates.json | finish, validate-files |
 | update-be-statbel-more.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-belgium-more.py | belgium-more-stats.json, belgium-more/index.json | finish, validate-files |
+| update-be-wallonia-crops.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-be-wallonia-crops.py | be-wallonia-crops.json | finish, validate-files |
 | update-be-weather.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-be-weather.py | be-weather.json | finish, validate-files |
 
 ## CA

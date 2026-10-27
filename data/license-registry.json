@@ -5525,6 +5525,32 @@
    "short": "KMI Bélgica",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "VERIFIED: texto de condiciones del sitio; la clasificacion de las observaciones AWS como datos de alto valor es una lectura nuestra (la lista HVD incluye observaciones de estaciones meteorologicas)."
+  },
+  "spw_sigec_anon": {
+   "name": "Service public de Wallonie (SPW) — Parcellaire agricole anonyme (SIGEC, Organisme payeur de Wallonie)",
+   "url": "https://geoportail.wallonie.be/catalogue/49294570-2a8d-49ca-995c-1b0890672bc8.html",
+   "country": "BE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (ficha del geoportal de Valonia)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Service public de Wallonie (SPW), Parcellaire agricole anonyme, CC BY 4.0. Agregación por cultivo de dehesaindex.com.",
+   "additionalRestrictions": "Citar al SPW como fuente. Se publican sumas por cultivo y campaña (no se redistribuyen geometrías ni parcelas). El parcelario anónimo es la superficie declarada a la PAC, no la superficie agraria total de Valonia.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-26",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Ficha del geoportal de Valonia (catálogo 49294570-2a8d-49ca-995c-1b0890672bc8), leída el 26 oct 2026: «Pas de limitation d'accès public», «Licence CC-BY 4.0: l'utilisateur peut utiliser et modifier les données [...] à condition de citer les sources». Servicios ArcGIS de geoservices.wallonie.be.",
+   "used": true,
+   "aliases": [],
+   "notes": "Superficie y número de parcelas por cultivo y campaña (2015–2023) por consulta de estadísticas del servidor (scripts/update-be-wallonia-crops.py). Cambios de nomenclatura entre campañas (p. ej. «Autres»).",
+   "short": "SPW Valonia",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: ficha oficial del geoportal con licencia CC BY 4.0."
   }
  },
  "files": {
@@ -8117,6 +8143,12 @@
   "data/rivers-pl.json": {
    "default": "imgw_pib",
    "notes": "Nivel y caudal de 16 estaciones de ríos de Polonia (Vístula, Óder, Warta, Bug, Narew, San, Noteć); la serie diaria propia, la referencia (cuartiles de ±7 días de 2005–2025 del archivo de medias diarias del IMGW), el percentil y el estado: cálculo de Dehesa Index (datos procesados)."
+  },
+  "data/be-wallonia-crops.json": {
+   "sources": [
+    "spw_sigec_anon"
+   ],
+   "notes": "Superficie y parcelas por cultivo de Valonia, campañas 2015–2023, del parcelario agrícola anónimo del SIGEC (scripts/update-be-wallonia-crops.py); sumas por cultivo calculadas por el servidor del SPW."
   }
  },
  "derived": [

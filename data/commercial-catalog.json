@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T00:59:42Z",
+ "generatedAt": "2026-10-27T01:40:45Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 181,
-  "sourcesApto": 165,
+  "sources": 182,
+  "sourcesApto": 166,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 394,
-  "datasets_apto": 258,
+  "datasets": 395,
+  "datasets_apto": 259,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -2474,6 +2474,23 @@
    "conditions": "Recomienda citar la fuente y la fecha. Las restricciones solo se aplican a material multimedia o cuando se indiquen expresamente."
   },
   {
+   "id": "spw_sigec_anon",
+   "name": "Service public de Wallonie (SPW) — Parcellaire agricole anonyme (SIGEC, Organisme payeur de Wallonie)",
+   "url": "https://geoportail.wallonie.be/catalogue/49294570-2a8d-49ca-995c-1b0890672bc8.html",
+   "country": "BE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (ficha del geoportal de Valonia)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Service public de Wallonie (SPW), Parcellaire agricole anonyme, CC BY 4.0. Agregación por cultivo de dehesaindex.com.",
+   "conditions": "Citar al SPW como fuente. Se publican sumas por cultivo y campaña (no se redistribuyen geometrías ni parcelas). El parcelario anónimo es la superficie declarada a la PAC, no la superficie agraria total de Valonia."
+  },
+  {
    "id": "stat_ee",
    "name": "Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy)",
    "url": "https://andmed.stat.ee/",
@@ -3448,6 +3465,14 @@
    "verdict": "apto",
    "sources": [
     "vmm_waterinfo"
+   ]
+  },
+  {
+   "path": "data/be-wallonia-crops.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "spw_sigec_anon"
    ]
   },
   {

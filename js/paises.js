@@ -482,6 +482,11 @@
     var go3 = function () { if (window.DIBeWeather && ST.c === cc) window.DIBeWeather.mount(el3, lang()); };
     var mod3 = function () { var run = function () { if (window.DIBeWeather) go3(); else js3('js/be-weather.js?v=20261026', go3); }; if (window.DICite) run(); else js3('js/cite.js?v=0', run); };
     nearView(el3, function () { if (window.ESUI) mod3(); else js3('js/es-ui.js?v=20261015', mod3); });
+    /* Valonia: superficie por cultivo del parcelario agricola anonimo del SIGEC (js/be-wallonia-crops.js; data/be-wallonia-crops.json) */
+    var el4 = document.createElement('div'); el4.id = 'pp-be-wallonia-crops'; el4.style.minHeight = '1px'; el3.parentNode.insertBefore(el4, el3.nextSibling);
+    var go4 = function () { if (window.DIBeWalCrops && ST.c === cc) window.DIBeWalCrops.mount(el4, lang()); };
+    var mod4 = function () { var run = function () { if (window.DIBeWalCrops) go4(); else js3('js/be-wallonia-crops.js?v=20261026', go4); }; if (window.DICite) run(); else js3('js/cite.js?v=0', run); };
+    nearView(el4, function () { if (window.ESUI) mod4(); else js3('js/es-ui.js?v=20261015', mod4); });
   }
   /* Austria: gasoleo y devolucion Agrardiesel (js/at-diesel.js) */
   function atUp() {

@@ -1875,6 +1875,12 @@
    [
     "be_weather"
    ]
+  ],
+  "be-wallonia-crops.json": [
+   "be-wallonia-crops",
+   [
+    "be_wallonia_crops"
+   ]
   ]
  },
  "globs": {

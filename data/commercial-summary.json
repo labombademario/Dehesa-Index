@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T00:59:42Z",
+ "generatedAt": "2026-10-27T01:40:45Z",
  "summary": {
-  "sources": 181,
-  "sourcesApto": 165,
+  "sources": 182,
+  "sourcesApto": 166,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 394,
-  "datasets_apto": 258,
+  "datasets": 395,
+  "datasets_apto": 259,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -589,6 +589,10 @@
   },
   "spf_economie_energie": {
    "name": "SPF Economía — DG Energía: tarifa oficial de los productos petrolíferos (precios máximos)",
+   "verdict": "apto"
+  },
+  "spw_sigec_anon": {
+   "name": "Service public de Wallonie (SPW) — Parcellaire agricole anonyme (SIGEC, Organisme payeur de Wallonie)",
    "verdict": "apto"
   },
   "stat_ee": {

@@ -92,6 +92,8 @@
   {"q":"viñedo Croacia por provincia","lang":"es","top":3,"u":"ps-hr-apprrr"},
   {"q":"déficit de precipitación Bélgica","lang":"es","top":3,"u":"ps-be-weather"},
   {"q":"Belgium soil temperature rainfall KMI","lang":"en","top":3,"u":"ps-be-weather"},
+  {"q":"superficie de cultivos en Valonia","lang":"es","top":3,"u":"ps-be-wallonia-crops"},
+  {"q":"Wallonia crop area wheat potato","lang":"en","top":3,"u":"ps-be-wallonia-crops"},
   {"q":"Croatia ARKOD parcels by county","lang":"en","top":3,"u":"ps-hr-apprrr"},
   {"q":"sequía Grecia por unidad regional","lang":"es","top":3,"u":"elsq"},
   {"q":"siccità Grecia","lang":"it","top":3,"u":"elsq"}

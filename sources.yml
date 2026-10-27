@@ -1101,6 +1101,16 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files data/be-weather.json
     data: [be-weather.json]
     message: Meteorología observada y déficit de precipitación de Bélgica (KMI-IRM)
+  - id: be-wallonia-crops
+    name: Update Wallonia crop areas (SPW anonymised SIGEC parcel register, CAP)
+    cron: ['20 7 8 * *']
+    script: scripts/update-be-wallonia-crops.py
+    timeout: 15
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/be-wallonia-crops.json
+    data: [be-wallonia-crops.json]
+    message: Superficie por cultivo de Valonia (SPW, parcelario agrícola anónimo del SIGEC)
   - id: be-drought
     name: Update Flanders water abstraction bans and drought status (VMM waterinfo)
     cron: ['40 7 * * *']

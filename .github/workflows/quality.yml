@@ -145,6 +145,8 @@ jobs:
         run: pip install openpyxl && python3 scripts/test-hr-apprrr.py
       - name: Bélgica (KMI) - Makkink, déficit acumulado, mínimo de estaciones y fallo cerrado (scripts/test-be-weather.py)
         run: python3 scripts/test-be-weather.py
+      - name: Valonia (SIGEC anonimo) - filas por cultivo, campañas cerradas reutilizadas, comprobaciones y fallo cerrado (scripts/test-be-wallonia-crops.py)
+        run: python3 scripts/test-be-wallonia-crops.py
       - name: Tierra y regadio de FR, IT, PL, PT, DE, BE, HR y EL (scripts/test-eu-land.py)
         run: python3 scripts/test-eu-land.py
       - name: API de datos al dia con el paquete descargable (scripts/build-api.py --check)

@@ -4286,6 +4286,28 @@ def be_weather(doc, errs, warns, stats):
         if s["tmin7"] is not None and s["temp7"] is not None and s["tmin7"] > s["temp7"] + 0.01: errs.append("estacion %s: minima mayor que la media" % s["name"])
     if len(doc["stations"]) < 10: errs.append("solo %d estaciones" % len(doc["stations"]))
     stats["estaciones"] = len(doc["stations"]); stats["deficitHasta"] = D["asOf"]
+def be_wallonia_crops(doc, errs, warns, stats):
+    """Valonia (SPW, SIGEC anonimo): campañas consecutivas, cultivos y grupos que suman el total de cada campaña, total declarado y parcelas en rango, sin saltos de mas del 5 % entre campañas, trigo y pradera presentes y en rango."""
+    Y = doc["years"]; n = len(Y); T = doc["totals"]
+    if n < 5 or Y != list(range(Y[0], Y[0] + n)) or doc["latestYear"] != Y[-1]: errs.append("campañas BE-WAL: %s" % Y)
+    if len(T["ha"]) != n or len(T["parcels"]) != n: errs.append("totales BE-WAL: longitud"); return
+    codes = set()
+    for c in doc["crops"]:
+        if c["code"] in codes: errs.append("cultivo repetido: " + c["code"])
+        codes.add(c["code"])
+        if len(c["ha"]) != n or len(c["n"]) != n: errs.append("cultivo %s: longitud de serie" % c["code"]); return
+        if any(v is not None and not 0 <= v < 500000 for v in c["ha"]): errs.append("cultivo %s: superficie imposible" % c["code"])
+    for i, y in enumerate(Y):
+        if not 650000 < T["ha"][i] < 950000: errs.append("%s: total %s ha fuera de rango" % (y, T["ha"][i]))
+        if not 250000 < T["parcels"][i] < 450000: errs.append("%s: %s parcelas fuera de rango" % (y, T["parcels"][i]))
+        if i and abs(T["ha"][i] / T["ha"][i - 1] - 1) > 0.05: errs.append("%s: salto del total de mas del 5 %%" % y)
+        if abs(sum(c["ha"][i] or 0 for c in doc["crops"]) - T["ha"][i]) > 1: errs.append("%s: los cultivos no suman el total" % y)
+        if abs(sum(g["ha"][i] for g in doc["groups"]) - T["ha"][i]) > 1: errs.append("%s: los grupos no suman el total" % y)
+    for code, lo, hi, nm in (("311", 80000, 170000, "froment d'hiver"), ("6", 300000, 450000, "prairie")):
+        c = next((x for x in doc["crops"] if x["code"] == code), None)
+        if not c or any(v is None or not lo < v < hi for v in c["ha"]): errs.append("%s (%s) ausente o fuera de %d-%d ha" % (nm, code, lo, hi))
+    if Y[-1] < __import__("datetime").date.today().year - 3: warns.append("cultivos BE-WAL: ultima campaña %s" % Y[-1])
+    stats["campañas"] = "%s-%s" % (Y[0], Y[-1]); stats["cultivos"] = len(doc["crops"])
 def nl_drought(doc, errs, warns, stats):
     import datetime as _dt
     C = doc["counties"]; P = doc["periods"]
