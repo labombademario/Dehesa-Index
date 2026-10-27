@@ -158,6 +158,22 @@ def adapter_se():
         if len(dd) < 3: continue
         o = S("se-felling-gross-%s" % code, "SE", "felling", "Gross felling", "A", "milj. m3sk", dd, dict(SE_SRC, name="Skogsstyrelsen, JO0312_02a: gross felling volume by region"), "Corta bruta por provincia (län) en millones de m3sk; el ultimo año es preliminar. La tabla solo cubre los ultimos años.")
         o["region"] = name; out.append(o)
+    # historia mas larga: media de 3 años por provincia (1996-2020), todas las categorias de propietario
+    d = jpost(SKS + "Avverkning/JO0312_02b.px", [{"code": "Ägarkategori", "selection": {"filter": "item", "values": ["2"]}}, {"code": "Region", "selection": {"filter": "all", "values": ["*"]}}, {"code": "År (3-årsmedelvärde)", "selection": {"filter": "all", "values": ["*"]}}])
+    c, lab = cells(d); reg3 = {}; dim = [i for i in d["id"] if i.startswith("År")][0]
+    for k, v in c.items():
+        rg = lab["Region"][k[d["id"].index("Region")]]; yr = lab[dim][k[d["id"].index(dim)]]
+        m = re.match(r"(\d{2}) (.+)$", rg)
+        if not m or m.group(1) == "00": continue
+        reg3.setdefault((m.group(1), m.group(2)), {})[yr] = round(float(v))
+    if len(reg3) < 20: raise RuntimeError("regiones suecas 02b: %d" % len(reg3))
+    names3 = {code: name for (code, name) in reg3}
+    for o in out:                                                        # mismo nombre de provincia en las dos tablas
+        if o["id"].startswith("se-felling-gross-") and o.get("region") and o["id"][-2:] in names3: o["region"] = names3[o["id"][-2:]]
+    for (code, name), dd in sorted(reg3.items()):
+        if len(dd) < 10: continue
+        o = S("se-felling3y-%s" % code, "SE", "felling", "Gross felling, 3-year mean (1996-2020)", "A", "1000 m3sk", dd, dict(SE_SRC, name="Skogsstyrelsen, JO0312_02b: gross felling volume by region and owner category (3-year mean)"), "Corta bruta por provincia, media movil de 3 años (miles de m3sk), todas las categorias de propietario; la serie anual de 2022-2025 es otra tabla y no es comparable punto a punto.")
+        o["region"] = name; out.append(o)
     return out
 # ------------------------------------------------------------------ Estonia
 EE_URL = "https://andmed.stat.ee/api/v1/en/stat/keskkond/loodusvarad-ja-nende-kasutamine/metsavaru/KK513.px"

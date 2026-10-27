@@ -459,6 +459,380 @@
    "verifiedAt": "2026-10-16",
    "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_ec_poula?lang=EN&geo=BE&hatchitm=IMP&animals=A5130P&unit=THS",
    "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "BG/bg-es-crop-i1100-area",
+   "file": "eurostat-eu-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Superficie cultivada de oleaginosas (BG): el aviso salta de 22500.0 a 772010.0 en 2007 (mediana de los 12 puntos previos 2.11e+04). Valores en torno al salto: 2004=21100.0, 2005=21900.0, 2006=22500.0, 2007=772010.0, 2008=797400.0.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "apro_cpsh1",
+    "filters": {
+     "geo": "BG",
+     "crops": "I1100",
+     "strucpro": "AR_THS_HA"
+    },
+    "scale": 1000,
+    "periods": [
+     "2004",
+     "2005",
+     "2006",
+     "2007",
+     "2008"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2004 21100.0/21100.0; 2005 21900.0/21900.0; 2006 22500.0/22500.0; 2007 772010.0/772010.0; 2008 797400.0/797400.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2004: 21100.0; 2005: 21900.0; 2006: 22500.0; 2007: 772010.0; 2008: 797400.0). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_cpsh1?lang=EN&geo=BG&crops=I1100&strucpro=AR_THS_HA",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "PL/pl-es-crop-i1130-area",
+   "file": "poland-eurostat-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Superficie de soja (PL): el aviso salta de 6200.0 a 7600.0 en 2016 (mediana de los 12 puntos previos 300). Valores en torno al salto: 2013=0.0, 2014=1110.0, 2015=6200.0, 2016=7600.0, 2017=9330.0.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "apro_cpsh1",
+    "filters": {
+     "geo": "PL",
+     "crops": "I1130",
+     "strucpro": "AR_THS_HA"
+    },
+    "scale": 1000,
+    "periods": [
+     "2013",
+     "2014",
+     "2015",
+     "2016",
+     "2017"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2013 0.0/0.0; 2014 1110.0/1110.0; 2015 6200.0/6200.0; 2016 7600.0/7600.0; 2017 9330.0/9330.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2013: 0.0; 2014: 1110.0; 2015: 6200.0; 2016: 7600.0; 2017: 9330.0). Marcas de calidad de Eurostat en esos periodos: e. Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_cpsh1?lang=EN&geo=PL&crops=I1130&strucpro=AR_THS_HA",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "DE/de-es-meatm-b1210-ths_hd",
+   "file": "eurostat-euw-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Sacrificio mensual de novillos (DE): el aviso salta de 14660.0 a 43310.0 en 1979-10 (mediana de los 12 puntos previos 1.58e+03). Valores en torno al salto: 1979-07=850.0, 1979-08=3870.0, 1979-09=14660.0, 1979-10=43310.0, 1979-11=12840.0.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "apro_mt_pwgtm",
+    "filters": {
+     "geo": "DE",
+     "meatitem": "SLAUGHT",
+     "meat": "B1210",
+     "unit": "THS_HD"
+    },
+    "scale": 1000,
+    "periods": [
+     "1979-07",
+     "1979-08",
+     "1979-09",
+     "1979-10",
+     "1979-11"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "1979-07 850.0/850.0; 1979-08 3870.0/3870.0; 1979-09 14660.0/14660.0; 1979-10 43310.0/43310.0; 1979-11 12840.0/12840.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (1979-07: 850.0; 1979-08: 3870.0; 1979-09: 14660.0; 1979-10: 43310.0; 1979-11: 12840.0). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pwgtm?lang=EN&geo=DE&meatitem=SLAUGHT&meat=B1210&unit=THS_HD",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "CZ/cz-es-meatm-b7490-ths_hd",
+   "file": "eurostat-eu2-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Sacrificio mensual de otras aves (CZ): el aviso salta de 2030.0 a 5920.0 en 2022-11 (mediana de los 12 puntos previos 160). Valores en torno al salto: 2022-08=350.0, 2022-09=260.0, 2022-10=2030.0, 2022-11=5920.0, 2022-12=240.0.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "apro_mt_pwgtm",
+    "filters": {
+     "geo": "CZ",
+     "meatitem": "SLAUGHT",
+     "meat": "B7490",
+     "unit": "THS_HD"
+    },
+    "scale": 1000,
+    "periods": [
+     "2022-08",
+     "2022-09",
+     "2022-10",
+     "2022-11",
+     "2022-12"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2022-08 350.0/350.0; 2022-09 260.0/260.0; 2022-10 2030.0/2030.0; 2022-11 5920.0/5920.0; 2022-12 240.0/240.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2022-08: 350.0; 2022-09: 260.0; 2022-10: 2030.0; 2022-11: 5920.0; 2022-12: 240.0). Marcas de calidad de Eurostat en esos periodos: e. Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pwgtm?lang=EN&geo=CZ&meatitem=SLAUGHT&meat=B7490&unit=THS_HD",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "RO/ro-es-meatm-b4110-ths_hd",
+   "file": "eurostat-eu3-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Sacrificio mensual de cordero (RO): el aviso salta de 90.0 a 83410.0 en 2010-03 (mediana de los 12 puntos previos 770). Valores en torno al salto: 2009-12=360.0, 2010-01=50.0, 2010-02=90.0, 2010-03=83410.0, 2010-04=5020.0.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "apro_mt_pwgtm",
+    "filters": {
+     "geo": "RO",
+     "meatitem": "SLAUGHT",
+     "meat": "B4110",
+     "unit": "THS_HD"
+    },
+    "scale": 1000,
+    "periods": [
+     "2009-12",
+     "2010-01",
+     "2010-02",
+     "2010-03",
+     "2010-04"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2009-12 360.0/360.0; 2010-01 50.0/50.0; 2010-02 90.0/90.0; 2010-03 83410.0/83410.0; 2010-04 5020.0/5020.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2009-12: 360.0; 2010-01: 50.0; 2010-02: 90.0; 2010-03: 83410.0; 2010-04: 5020.0). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pwgtm?lang=EN&geo=RO&meatitem=SLAUGHT&meat=B4110&unit=THS_HD",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "IT/it-es-eaa-am021100",
+   "file": "italy-eurostat-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Produccion de colza (IT, EUR millones): el aviso salta de 6.44 a 21.84 en 1986 (mediana de los 12 puntos previos 0.27). Valores en torno al salto: 1983=0.27, 1984=2.67, 1985=6.44, 1986=21.84, 1987=23.12.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "aact_eaa01",
+    "filters": {
+     "geo": "IT",
+     "unit": "MIO_EUR",
+     "indic_agr": "PRD_BP",
+     "am_item": "AM021100"
+    },
+    "periods": [
+     "1983",
+     "1984",
+     "1985",
+     "1986",
+     "1987"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "1983 0.27/0.27; 1984 2.67/2.67; 1985 6.44/6.44; 1986 21.84/21.84; 1987 23.12/23.12"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (1983: 0.27; 1984: 2.67; 1985: 6.44; 1986: 21.84; 1987: 23.12). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/aact_eaa01?lang=EN&geo=IT&unit=MIO_EUR&indic_agr=PRD_BP&am_item=AM021100",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "ES/es-es-st-orgprod-r2000",
+   "file": "eurostat-structure-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Produccion ecologica de remolacha (ES): el aviso salta de 57 a 2098 en 2018 (mediana de los 12 puntos previos 57). Valores en torno al salto: 2015=121, 2016=0, 2017=57, 2018=2098, 2019=2030.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "org_croppro",
+    "filters": {
+     "geo": "ES",
+     "crops": "R2000"
+    },
+    "periods": [
+     "2015",
+     "2016",
+     "2017",
+     "2018",
+     "2019"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2015 121/121.0; 2016 0/0.0; 2017 57/57.0; 2018 2098/2098.0; 2019 2030/2030.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2015: 121.0; 2016: 0.0; 2017: 57.0; 2018: 2098.0; 2019: 2030.0). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/org_croppro?lang=EN&geo=ES&crops=R2000",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "BG/bg-es-st-orgprod-p0000",
+   "file": "eurostat-structure2-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Produccion ecologica de leguminosas secas (BG): el aviso salta de 30154 a 33296 en 2019 (mediana de los 12 puntos previos 1.08e+03). Valores en torno al salto: 2016=177, 2017=1596, 2018=30154, 2019=33296, 2020=29289.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "org_croppro",
+    "filters": {
+     "geo": "BG",
+     "crops": "P0000"
+    },
+    "periods": [
+     "2016",
+     "2017",
+     "2018",
+     "2019",
+     "2020"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2016 177/177.0; 2017 1596/1596.0; 2018 30154/30154.0; 2019 33296/33296.0; 2020 29289/29289.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2016: 177.0; 2017: 1596.0; 2018: 30154.0; 2019: 33296.0; 2020: 29289.0). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/org_croppro?lang=EN&geo=BG&crops=P0000",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "FR/fr-fish-ca-area-47",
+   "file": "eurostat-fish-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Capturas de Atlantico sudeste (FR): el aviso salta de 343.1 a 1391.9 en 2016 (mediana de los 12 puntos previos 20). Valores en torno al salto: 2013=1737.4, 2014=2199.75, 2015=343.1, 2016=1391.9, 2017=5116.65.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "fish_ca_main",
+    "filters": {
+     "geo": "FR",
+     "unit": "TLW",
+     "species": "F00",
+     "fishreg": "47"
+    },
+    "periods": [
+     "2013",
+     "2014",
+     "2015",
+     "2016",
+     "2017"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2013 1737.4/1737.4; 2014 2199.75/2199.75; 2015 343.1/343.1; 2016 1391.9/1391.9; 2017 5116.65/5116.65"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2013: 1737.4; 2014: 2199.75; 2015: 343.1; 2016: 1391.9; 2017: 5116.65). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/fish_ca_main?lang=EN&geo=FR&unit=TLW&species=F00&fishreg=47",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "ES/es-mo-irspec-exp-cfir-thsm3",
+   "file": "eurostat-more-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Exportacion de madera en rollo de abeto (ES): el aviso salta de 24.87 a 117.29 en 2014 (mediana de los 12 puntos previos 1.46). Valores en torno al salto: 2011=6.98, 2012=0.17, 2013=24.87, 2014=117.29, 2015=17.58.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "for_irspec",
+    "filters": {
+     "geo": "ES",
+     "stk_flow": "EXP",
+     "prod_wd": "RW_IN",
+     "treespec": "C_FIR",
+     "unit": "THS_M3"
+    },
+    "periods": [
+     "2011",
+     "2012",
+     "2013",
+     "2014",
+     "2015"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2011 6.98/6.98; 2012 0.17/0.17; 2013 24.87/24.87; 2014 117.29/117.29; 2015 17.58/17.58"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2011: 6.98; 2012: 0.17; 2013: 24.87; 2014: 117.29; 2015: 17.58). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/for_irspec?lang=EN&geo=ES&stk_flow=EXP&prod_wd=RW_IN&treespec=C_FIR&unit=THS_M3",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "BE/be-eus-poultry-exp_xeu-a5130pn",
+   "file": "eurostat-depth-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Exportacion extra-UE de pollitos de razas de carne (BE): el aviso salta de 53300.0 a 1245700.0 en 2007 (mediana de los 12 puntos previos 2.9e+04). Valores en torno al salto: 2004=0, 2005=0, 2006=53300.0, 2007=1245700.0, 2008=459600.0.",
+   "hypothesis": "Posible cambio de cobertura o de definicion en la fuente, o base muy pequeña antes del salto; sin verificar.",
+   "since": "2026-10-27",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "apro_ec_poula",
+    "filters": {
+     "geo": "BE",
+     "hatchitm": "EXP_XEU",
+     "animals": "A5130PN"
+    },
+    "scale": 1000,
+    "periods": [
+     "2004",
+     "2005",
+     "2006",
+     "2007",
+     "2008"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-27T19:29:13Z",
+    "result": "REPRODUCED",
+    "detail": "2004 0/0.0; 2005 0/0.0; 2006 53300.0/53300.0; 2007 1245700.0/1245700.0; 2008 459600.0/459600.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-27: los 5 periodos revisados coinciden exactamente con los que publica la fuente (2004: 0.0; 2005: 0.0; 2006: 53300.0; 2007: 1245700.0; 2008: 459600.0). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-27",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_ec_poula?lang=EN&geo=BE&hatchitm=EXP_XEU&animals=A5130PN",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
   }
  ]
 }

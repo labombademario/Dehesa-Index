@@ -4707,7 +4707,7 @@ def wood_energy(doc, errs, warns, stats):
         if a in ids and b in ids and ids[a]["periods"] != ids[b]["periods"]: errs.append("%s y %s con periodos distintos" % (a, b))
     stats["series"] = len(ids)
 # Cortas, daños y plagas forestales (CZ, SE, EE, HU)
-FOREST_DAMAGE_MAX = {"m3 (sin corteza)": 5e7, "milj. m3sk": 200, "milj. m3fub": 200, "ha": 5e6, "escarabajos por trampa": 1e5, "ezer m3": 1e5, "%": 150}
+FOREST_DAMAGE_MAX = {"m3 (sin corteza)": 5e7, "milj. m3sk": 200, "milj. m3fub": 200, "ha": 5e6, "escarabajos por trampa": 1e5, "ezer m3": 1e5, "1000 m3sk": 2e5, "%": 150}
 FOREST_DAMAGE_MUST = ["cz-forestland-total", "cz-clearings-area", "ee-damaged-total", "hu-harvest-total", "hu-harvest-ratio", "cz-felling-total", "cz-salvage-total", "cz-salvage-insect", "se-storm-felled", "se-felling-gross", "se-bark-beetle-trap-mean", "ee-destroyed-total", "ee-destroyed-insects", "hu-damage-total", "hu-damage-insects"]
 def forest_damage(doc, errs, warns, stats):
     import re as _re, datetime as _d
@@ -4729,7 +4729,7 @@ def forest_damage(doc, errs, warns, stats):
         if any(not isinstance(v, (int, float)) or v < 0 or v > top for v in s["values"]): errs.append("%s: valor negativo o por encima de %s %s" % (sid, top, s["unit"]))
         ly = int(per[-1][:4])
         if ly > cy: errs.append("%s: ultimo periodo %s en el futuro" % (sid, per[-1]))
-        if ly < cy - (2 if s["freq"] == "A" else 1): warns.append("%s: ultimo periodo %s antiguo" % (sid, per[-1]))
+        if ly < cy - (2 if s["freq"] == "A" else 1) and "3y" not in sid: warns.append("%s: ultimo periodo %s antiguo" % (sid, per[-1]))     # las medias de 3 años (SE, 1996-2020) son una serie cerrada
     cz = lambda k: dict(zip(ids[k]["periods"], ids[k]["values"])) if k in ids else {}
     tot = cz("cz-salvage-total"); parts = [cz(k) for k in ("cz-salvage-natural", "cz-salvage-insect", "cz-salvage-emissions", "cz-salvage-other")]
     for y, v in tot.items():
@@ -5781,8 +5781,12 @@ def _ira_pts(pts, where, errs):
 def france_infosrapides_index(doc, errs, warns, stats):
     bad = [k for k, e in doc["editions"].items() if e.get("kind") not in ("Lai", "Gcu", "Cex", "Fru") or e.get("status") not in ("ok", "error")]
     if bad: errs.append("france-infosrapides index: ediciones con tipo o estado raro: %s" % bad[:3]); return
-    nerr = sum(1 for e in doc["editions"].values() if e["status"] == "error")
-    if nerr: warns.append("france-infosrapides index: %d ediciones ilegibles" % nerr)
+    # Una edicion ilegible solo avisa si ninguna edicion posterior del mismo informe se leyo bien: las posteriores traen las mismas series con su historico
+    oks = {}
+    for e in doc["editions"].values():
+        if e["status"] == "ok" and e.get("published"): oks[e["kind"]] = max(oks.get(e["kind"], ""), e["published"])
+    nerr = sum(1 for e in doc["editions"].values() if e["status"] == "error" and not (e.get("published") and oks.get(e["kind"], "") > e["published"]))
+    if nerr: warns.append("france-infosrapides index: %d ediciones ilegibles sin edicion posterior que las sustituya" % nerr)
     stats["ediciones"] = len(doc["editions"])
 
 

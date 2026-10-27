@@ -13,7 +13,7 @@
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function num(v, d) { return v == null ? '—' : v.toLocaleString(LOC[lg()], { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
   function pct(v) { return v == null ? '—' : v.toLocaleString(LOC[lg()], { minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: 'exceptZero' }).replace('-', '−') + ' %'; }
-  var INT = { 'm3 (sin corteza)': 1, ha: 1, t: 1, 'ezer m3': 1, 'HUF/100 kg': 1 };
+  var INT = { 'm3 (sin corteza)': 1, ha: 1, t: 1, 'ezer m3': 1, '1000 m3sk': 1, 'HUF/100 kg': 1 };
   function dec(v, u) { var a = Math.abs(v); return INT[u] ? 0 : a >= 1000 ? 0 : a >= 100 ? 1 : a >= 10 ? 1 : 2; }
   var T = {
     title: L('Bosque y madera', 'Forests and timber', 'Forêts et bois', 'Foreste e legno'),
@@ -79,7 +79,7 @@
     AR: L('Argentina', 'Argentina', 'Argentine', 'Argentina'), CL: L('Chile', 'Chile', 'Chili', 'Cile'), UY: L('Uruguay', 'Uruguay', 'Uruguay', 'Uruguay') };
   CN.EU = T.EU;
   var UNIT = { 'EUR/m3': '€/m³', 'CZK/m3': 'CZK/m³', 'PLN/m3': 'PLN/m³', 'USD/t': 'USD/t', 'EUR/t': '€/t', 'EUR/MWh': '€/MWh', 'USD/m3': 'USD/m³', 'USc/sheet': 'US¢/' + 'sheet', 't': 't', 'ha': 'ha',
-    'm3 (sin corteza)': 'm³', 'ezer m3': '1000 m³', 'HUF/100 kg': 'HUF/100 kg', '%': '%', 'milj. m3sk': 'M m³sk', 'milj. m3fub': 'M m³fub', 'escarabajos por trampa': '/trap' };
+    'm3 (sin corteza)': 'm³', 'ezer m3': '1000 m³', '1000 m3sk': '1000 m³sk', 'HUF/100 kg': 'HUF/100 kg', '%': '%', 'milj. m3sk': 'M m³sk', 'milj. m3fub': 'M m³fub', 'escarabajos por trampa': '/trap' };
   function unit(u) { return UNIT[u] || u; }
   /* ---- nombres de surtidos y series en los 4 idiomas (las fuentes los publican en inglés; los datos siguen en inglés, se traduce al pintar) ---- */
   var SP = { 'pine': ['pino', 'pin', 'pino'], 'spruce': ['abeto rojo', 'épicéa', 'abete rosso'], 'birch': ['abedul', 'bouleau', 'betulla'], 'black alder': ['aliso negro', 'aulne noir', 'ontano nero'], 'asp': ['álamo temblón', 'tremble', 'pioppo tremulo'], 'oak': ['roble', 'chêne', 'quercia'], 'beech': ['haya', 'hêtre', 'faggio'] };
@@ -91,6 +91,7 @@
   ];
   var QUAL = { 'total': ['total', 'total', 'totale'], 'coniferous': ['coníferas', 'résineux', 'conifere'], 'non-coniferous': ['frondosas', 'feuillus', 'latifoglie'], 'broadleaf': ['frondosas', 'feuillus', 'latifoglie'], 'non-coniferous, others': ['otras frondosas', 'autres feuillus', 'altre latifoglie'], 'round and split, total': ['rolliza y partida, total', 'ronds et fendus, total', 'tondo e spaccato, totale'], 'round and split, coniferous': ['rolliza y partida, coníferas', 'ronds et fendus, résineux', 'tondo e spaccato, conifere'], 'round and split, non-coniferous': ['rolliza y partida, frondosas', 'ronds et fendus, feuillus', 'tondo e spaccato, latifoglie'] };
   var EX = {
+    'Gross felling, 3-year mean (1996-2020)': ['Corta bruta, media de 3 años (1996-2020)', 'Coupe brute, moyenne sur 3 ans (1996-2020)', 'Taglio lordo, media su 3 anni (1996-2020)'],
     'Forest land, total': ['Superficie forestal, total', 'Terrains forestiers, total', 'Superficie forestale, totale'],
     'Forest land: state forests': ['Superficie forestal: bosques estatales', 'Terrains forestiers : forêts d’État', 'Superficie forestale: foreste statali'],
     'Forest land: municipal forests': ['Superficie forestal: bosques municipales', 'Terrains forestiers : forêts communales', 'Superficie forestale: foreste comunali'],
@@ -378,6 +379,7 @@
     price: L('Precio de la madera', 'Timber price', 'Prix du bois', 'Prezzo del legname'),
     dmg: L('Daños y cortas', 'Damage and felling', 'Dégâts et coupes', 'Danni e tagli'),
     more: L('Ver todo el bosque y la madera', 'See all forests and timber', 'Voir toutes les forêts et le bois', 'Vedi tutte le foreste e il legno'),
+    en: L('Energía', 'Energy', 'Énergie', 'Energia'),
     vsPrev: L('año anterior', 'previous year', 'année précédente', 'anno precedente')
   };
   function mountCountry(el, lang, cc) {
@@ -398,6 +400,10 @@
       fd.filter(function (x) { return x.freq === 'A'; }).slice(0, 2).forEach(function (x) {
         var li = lastIdx(x.values); if (li < 0) return;
         rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.dmg)) + ': ' + esc(trl(x.label)) + ' (' + esc(x.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(x.values[li], INT[x.unit] ? 0 : 1) + '</b> ' + esc(unit(x.unit)) + '</span></div>');
+      });
+      (D.we && D.we.series ? D.we.series.filter(function (x) { return x.id.slice(0, 2) === cc.toLowerCase() && /price/.test(x.id); }) : []).forEach(function (x) {
+        var li = lastIdx(x.values); if (li < 0) return; var c2 = yoy(x);
+        rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.en)) + ': ' + esc(trl(x.label)) + ' (' + esc(x.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(x.values[li], dec(x.values[li], x.unit)) + '</b> ' + esc(unit(x.unit)) + (c2 == null ? '' : ' · ' + pct(c2)) + '</span></div>');
       });
       if (!rows.length) { el.innerHTML = ''; return false; }
       var tab = ff ? 'fires' : tp ? 'prices' : 'damage';
