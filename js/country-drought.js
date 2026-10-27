@@ -135,6 +135,13 @@
         var hmod = function () { if (global.DIHrDrought) hgo(); else hjs('js/hr-drought.js?v=20261019', hgo); };
         if (global.DIFrDeptMap) hmod(); else hjs('js/fr-dept-map.js?v=20261015', hmod);
       }
+      if ({ DE: 1, FR: 1, DK: 1, SE: 1, FI: 1, CZ: 1, HU: 1, RO: 1, BG: 1, SK: 1, SI: 1, LT: 1, LV: 1, EE: 1 }[cc]) {   // sequia por unidad NUTS 3 (EDO calculado, js/nuts3-drought.js), a peticion
+        var n3box = document.createElement('div'); n3box.style.marginTop = '14px'; el.appendChild(n3box);
+        var n3go = function () { if (global.DINuts3Drought) global.DINuts3Drought.mount(n3box, lg.slice(0, 2), cc); };
+        var n3js = function (src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); };
+        var n3mod = function () { if (global.DINuts3Drought) n3go(); else n3js('js/nuts3-drought.js?v=0', n3go); };
+        if (global.DIFrDeptMap) n3mod(); else n3js('js/fr-dept-map.js?v=20261015', n3mod);
+      }
       if (cc === 'IT') {   // sequia por provincia (EDO calculado para las 107 provincias NUTS 3, js/it-drought.js), a peticion
         var tbox = document.createElement('div'); tbox.style.marginTop = '14px'; el.appendChild(tbox);
         var tgo = function () { if (global.DIItDrought) global.DIItDrought.mount(tbox, lg.slice(0, 2)); };

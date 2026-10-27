@@ -1,0 +1,30 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update drought by NUTS 3 unit in 14 countries (EDO Combined Drought Indicator)
+on:
+  schedule:
+    - cron: '25 8 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-eu-drought-nuts3
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 -m pip install --quiet numpy netCDF4 shapely
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-eu-drought-nuts3.py
+        timeout-minutes: 20
+        continue-on-error: true
+      - name: Publicar
+        if: always()
+        run: bash scripts/publish-data.sh "Sequia por provincia en 14 paises (EDO)" data/eu-drought-nuts3
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

@@ -845,6 +845,17 @@ sources:
     data: [eu-drought.json]
     extra: ['!data/eu-drought-regions']
     message: Datos sequia Europa (EDO CDI)
+  - id: eu-drought-nuts3
+    name: Update drought by NUTS 3 unit in 14 countries (EDO Combined Drought Indicator)
+    cron: ['25 8 * * *']
+    pre: ['python3 -m pip install --quiet numpy netCDF4 shapely']
+    script: scripts/update-eu-drought-nuts3.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    data: []
+    extra: ['!data/eu-drought-nuts3']
+    message: Sequia por provincia en 14 paises (EDO)
   - id: eu-drought-ind
     name: Update EU soil moisture and SPI-3 (EDO)
     cron: ['20 8 * * 2']

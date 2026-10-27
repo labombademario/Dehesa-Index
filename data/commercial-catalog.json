@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T01:40:45Z",
+ "generatedAt": "2026-10-27T02:35:43Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,8 +10,8 @@
   "sourcesApto": 166,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 395,
-  "datasets_apto": 259,
+  "datasets": 396,
+  "datasets_apto": 260,
   "datasets_condiciones": 125,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -2488,7 +2488,7 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attribution": "Fuente: Service public de Wallonie (SPW), Parcellaire agricole anonyme, CC BY 4.0. Agregación por cultivo de dehesaindex.com.",
-   "conditions": "Citar al SPW como fuente. Se publican sumas por cultivo y campaña (no se redistribuyen geometrías ni parcelas). El parcelario anónimo es la superficie declarada a la PAC, no la superficie agraria total de Valonia."
+   "conditions": "Citar al SPW como fuente. Se publican sumas por cultivo y campaña (no se redistribuyen geometrías ni parcelas). Desglose por provincia y región agrícola: los límites (servicios LIMITES_ADMINISTRATIVES y LIMITES_REGIONSAGRICOLES del SPW) solo se usan como filtro espacial en el servidor y no se publican geometrías; licencia propia de esas dos capas no verificada (ficha no localizada). El parcelario anónimo es la superficie declarada a la PAC, no la superficie agraria total de Valonia."
   },
   {
    "id": "stat_ee",
@@ -4223,6 +4223,15 @@
   },
   {
    "path": "data/eu-drought-ind/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ]
+  },
+  {
+   "path": "data/eu-drought-nuts3/",
    "scope": "carpeta",
    "verdict": "apto",
    "sources": [

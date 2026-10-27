@@ -6760,6 +6760,13 @@
     "miteco_embalses"
    ]
   },
+  "data/eu-drought-nuts3/": {
+   "sources": [
+    "edo_cdi",
+    "gisco_nuts"
+   ],
+   "notes": "CDI por unidad NUTS 3 en 14 paises (update-eu-drought-nuts3.py): la rejilla del EDO agregada a los poligonos NUTS 3 de GISCO."
+  },
   "data/eu-drought-ind/": {
    "sources": [
     "edo_cdi",
