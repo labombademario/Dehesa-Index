@@ -272,40 +272,40 @@
   var WOOD = {
     es: {
       badge: 'DATO OFICIAL REAL',
-      ukTitle: 'Reino Unido — Forest Research (dato trimestral, marzo 2026)',
+      ukTitle: 'Reino Unido — Forest Research',
       ukStats: [
-        { label: 'Índice de venta en pie, coníferas', value: '35,17 £/m³' },
-        { label: 'Variación interanual', value: '+12,9%' },
+        { label: 'Precio medio de venta en pie, coníferas', value: '—' },
+        { label: 'Variación interanual', value: '—' },
         { label: 'Qué mide', value: 'Madera en pie sin talar, no aserrada' }
       ],
       scopeNote: "La madera no tiene un mercado internacional centralizado como el trigo o el maíz, así que no hay una referencia global. Se muestra el índice trimestral de venta en pie de coníferas de Forest Research (Reino Unido; madera sin aserrar, todavía en el bosque), publicado con licencia abierta, y debajo el índice oficial de precios de la madera de Alemania (Destatis). Faltan otros mercados por licencia o por falta de fuente: el futuro de madera del CME Group (EE. UU.) no permite redistribuir la cotización; la media de venta en pie de France Bois Forêt/ONF (Francia) no tiene licencia de reutilización confirmada; España solo tiene datos regionales desactualizados (Castilla y León, 2020); e Italia no tiene una fuente nacional citable."
     },
     en: {
       badge: 'REAL OFFICIAL DATA',
-      ukTitle: 'United Kingdom — Forest Research (quarterly data, March 2026)',
+      ukTitle: 'United Kingdom — Forest Research',
       ukStats: [
-        { label: 'Coniferous standing sales price index', value: '£35.17/m³' },
-        { label: 'Year-over-year change', value: '+12.9%' },
+        { label: 'Coniferous standing sales: average price', value: '—' },
+        { label: 'Year-over-year change', value: '—' },
         { label: 'What it measures', value: 'Standing (unfelled) timber, not sawn' }
       ],
       scopeNote: "Timber has no centralized international market the way wheat or corn does, so there is no global benchmark. Shown here is Forest Research's quarterly coniferous standing-sales price index (United Kingdom; unfelled timber, still in the forest), published under an open licence, and below it Germany's official timber price index (Destatis). Other markets are missing because of licensing or lack of a source: CME Group's lumber futures (US) do not allow the quote to be redistributed; France Bois Forêt/ONF's standing-sale average (France) has no confirmed reuse licence; Spain only has outdated regional data (Castile and León, 2020); and Italy has no citable national source."
     },
     fr: {
       badge: 'DONNÉE OFFICIELLE RÉELLE',
-      ukTitle: 'Royaume-Uni — Forest Research (donnée trimestrielle, mars 2026)',
+      ukTitle: 'Royaume-Uni — Forest Research',
       ukStats: [
-        { label: 'Indice de prix de vente sur pied, résineux', value: '35,17 £/m³' },
-        { label: 'Variation sur un an', value: '+12,9 %' },
+        { label: 'Prix moyen de vente sur pied, résineux', value: '—' },
+        { label: 'Variation sur un an', value: '—' },
         { label: 'Ce que ça mesure', value: 'Bois sur pied, non abattu, non scié' }
       ],
       scopeNote: "Le bois n'a pas de marché international centralisé comme le blé ou le maïs : il n'existe donc pas de référence mondiale. On présente l'indice trimestriel de prix de vente sur pied des résineux de Forest Research (Royaume-Uni ; bois non abattu, encore en forêt), publié sous licence ouverte, et en dessous l'indice officiel des prix du bois en Allemagne (Destatis). D'autres marchés manquent pour des raisons de licence ou faute de source : le contrat à terme sur le bois du CME Group (États-Unis) n'autorise pas la redistribution de la cotation ; la moyenne des ventes sur pied de France Bois Forêt/ONF (France) n'a pas de licence de réutilisation confirmée ; l'Espagne n'a que des données régionales anciennes (Castille-et-León, 2020) ; et l'Italie n'a pas de source nationale citable."
     },
     it: {
       badge: 'DATO UFFICIALE REALE',
-      ukTitle: 'Regno Unito — Forest Research (dato trimestrale, marzo 2026)',
+      ukTitle: 'Regno Unito — Forest Research',
       ukStats: [
-        { label: 'Indice prezzo vendita in piedi, conifere', value: '35,17 £/m³' },
-        { label: 'Variazione annua', value: '+12,9%' },
+        { label: 'Prezzo medio di vendita in piedi, conifere', value: '—' },
+        { label: 'Variazione annua', value: '—' },
         { label: 'Cosa misura', value: 'Legname in piedi, non abbattuto né segato' }
       ],
       scopeNote: "Il legname non ha un mercato internazionale centralizzato come il grano o il mais, quindi non esiste un riferimento globale. Si mostra l'indice trimestrale del prezzo di vendita in piedi delle conifere di Forest Research (Regno Unito; legname non abbattuto, ancora nel bosco), pubblicato con licenza aperta, e sotto l'indice ufficiale dei prezzi del legno della Germania (Destatis). Mancano altri mercati per motivi di licenza o per assenza di fonte: il future sul legname del CME Group (USA) non consente di ridistribuire la quotazione; la media delle vendite in piedi di France Bois Forêt/ONF (Francia) non ha una licenza di riutilizzo confermata; la Spagna ha solo dati regionali datati (Castiglia e León, 2020); e l'Italia non ha una fonte nazionale citabile."

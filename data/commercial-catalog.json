@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T14:46:35Z",
+ "generatedAt": "2026-10-27T16:14:59Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 186,
-  "sourcesApto": 170,
+  "sources": 187,
+  "sourcesApto": 171,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 404,
-  "datasets_apto": 267,
+  "datasets": 405,
+  "datasets_apto": 268,
   "datasets_condiciones": 126,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -1284,6 +1284,22 @@
    "redistribution": "yes",
    "attribution": "Source: Federal Office for Agriculture FOAG/BLW, Agricultural market data (Marktzahlen), via LINDAS / opendata.swiss | Licence: opendata.swiss Open use, must provide the source | Original: https://opendata.swiss/en/organization/bundesamt-fur-landwirtschaft-blw",
    "conditions": "Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same cubes (EU, Austria, Italy, USA, NZ...; CLAL, AMA, BLE, FranceAgriMer...) are not used."
+  },
+  {
+   "id": "forest_research",
+   "name": "Forest Research (UK), Timber Price Indices (official statistics)",
+   "url": "https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/timber-statistics/timber-price-indices/",
+   "country": "GB",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source: Forest Research, Timber Price Indices. Contains public sector information licensed under the Open Government Licence v3.0."
   },
   {
    "id": "franceagrimer",
@@ -7657,6 +7673,14 @@
    "verdict": "apto",
    "sources": [
     "defra"
+   ]
+  },
+  {
+   "path": "data/uk-timber-prices.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "forest_research"
    ]
   },
   {

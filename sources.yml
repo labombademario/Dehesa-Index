@@ -332,6 +332,16 @@ sources:
     continue: true
     data: [forest-damage.json]
     message: Cortas, daños y escarabajo de la corteza (Chequia, Suecia, Estonia y Hungría)
+  - id: uk-timber
+    name: Update UK timber price indices (Forest Research)
+    cron: ['15 8 12 5,6,11,12 *']   # boletines de mayo y noviembre; se repite en junio y diciembre por si se retrasan
+    pre: ['pip install pdfplumber']
+    script: scripts/update-uk-timber.py
+    timeout: 10
+    script_timeout: 8
+    continue: true
+    data: [uk-timber-prices.json]
+    message: Indices de precios de la madera del Reino Unido (Forest Research)
   - id: wood-prices-na
     name: Update US and Canada timber price indices (BLS PPI, Statistics Canada IPPI)
     cron: ['35 15 18 * *']   # BLS publica el PPI a mitad de mes; StatCan el IPPI a final de mes: el 18 recoge el primero y el mes anterior del segundo

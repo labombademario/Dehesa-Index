@@ -828,6 +828,11 @@ CASES = [
  ("forest-damage.json", "causas que no suman", lambda d: next(s for s in d["series"] if s["id"] == "cz-salvage-insect")["values"].__setitem__(-1, 9000000)),
  ("forest-damage.json", "insectos mayores que el total", lambda d: next(s for s in d["series"] if s["id"] == "ee-destroyed-insects")["values"].__setitem__(-1, 99999)),
  ("forest-damage.json", "pais que no corresponde al id", lambda d: d["series"][0].__setitem__("country", "SE")),
+ ("uk-timber-prices.json", "serie que falta", lambda d: d["series"].pop(0)),
+ ("uk-timber-prices.json", "precio imposible", lambda d: d["series"][0]["values"].__setitem__(-1, 900)),
+ ("uk-timber-prices.json", "periodo que no es semestre", lambda d: d["series"][1]["periods"].__setitem__(-1, "2025-07")),
+ ("uk-timber-prices.json", "pie mayor que aserrio", lambda d: d["series"][0]["values"].__setitem__(-1, 150)),
+ ("uk-timber-prices.json", "valores descuadrados", lambda d: d["series"][2]["values"].pop()),
  ("forest-timber-prices.json", "unidad inesperada", lambda d: d["countries"]["LV"].__setitem__("unit", "USD/ft3")),
 ]
 bad = 0

@@ -1927,6 +1927,12 @@
    [
     "forest_damage"
    ]
+  ],
+  "uk-timber-prices.json": [
+   "uk-timber-prices",
+   [
+    "uk_timber_prices"
+   ]
   ]
  },
  "globs": {

@@ -1065,6 +1065,22 @@
     return '<div class="di-field-hint di-info-sources">' + esc(t.fuenteLabel) + ' ' + links + '</div>';
   }
 
+  // Madera del Reino Unido: cifras de data/uk-timber-prices.json (scripts/update-uk-timber.py); si no carga, quedan las de js/data.js.
+  (function () {
+    var MN = { '03': ['marzo', 'March', 'mars', 'marzo'], '09': ['septiembre', 'September', 'septembre', 'settembre'] };
+    fetch('data/uk-timber-prices.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      var s = d && d.series && d.series.filter(function (x) { return x.id === 'uk-standing-conifer'; })[0];
+      if (!s || s.periods.length < 3 || !D.WOOD) return;
+      var n = s.periods.length, v = s.values[n - 1], a = s.values[n - 3], ch = a ? (v / a - 1) * 100 : null, mo = MN[s.periods[n - 1].slice(5)], y = s.periods[n - 1].slice(0, 4);
+      ['es', 'en', 'fr', 'it'].forEach(function (lg, i) {
+        var w = D.WOOD[lg], loc = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', it: 'it-IT' }[lg];
+        var vs = v.toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 }), cs = ch == null ? '—' : ch.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: 'exceptZero' }) + (lg === 'fr' || lg === 'es' ? ' %' : '%');
+        w.ukTitle = { es: 'Reino Unido — Forest Research (doce meses hasta ' + mo[i] + ' de ' + y + ')', en: 'United Kingdom — Forest Research (twelve months to ' + mo[i] + ' ' + y + ')', fr: 'Royaume-Uni — Forest Research (douze mois à ' + mo[i] + ' ' + y + ')', it: 'Regno Unito — Forest Research (dodici mesi a ' + mo[i] + ' ' + y + ')' }[lg];
+        w.ukStats[0].value = (lg === 'en' ? '£' + vs : vs + ' £') + '/m³';
+        w.ukStats[1].value = cs;
+      });
+    }).catch(function () {});
+  })();
   function renderInfoCategoryHtml(catId) {
     if (catId === 'vino') {
       // Sin cifras fijas: las tarjetas las pinta js/wine-prices.js con data/wine-prices.json (MAPA y FranceAgriMer, actualizado por el pipeline).

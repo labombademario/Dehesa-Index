@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T14:46:35Z",
+ "generatedAt": "2026-10-27T16:14:59Z",
  "summary": {
-  "sources": 186,
-  "sourcesApto": 170,
+  "sources": 187,
+  "sourcesApto": 171,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 404,
-  "datasets_apto": 267,
+  "datasets": 405,
+  "datasets_apto": 268,
   "datasets_condiciones": 126,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -309,6 +309,10 @@
   },
   "foag_ch": {
    "name": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
+   "verdict": "apto"
+  },
+  "forest_research": {
+   "name": "Forest Research (UK), Timber Price Indices (official statistics)",
    "verdict": "apto"
   },
   "franceagrimer": {

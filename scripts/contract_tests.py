@@ -4747,6 +4747,24 @@ def forest_damage(doc, errs, warns, stats):
     for y, v in sn.items():
         if y in se and v * 0.95 > se[y]: errs.append("SE %s: la corta neta (m3fub) no puede superar a la bruta (m3sk)" % y)
     stats["series"] = len(ids)
+def uk_timber_prices(doc, errs, warns, stats):
+    import re as _re, datetime as _d
+    ids = {s["id"]: s for s in doc["series"]}
+    for must in ("uk-standing-conifer", "uk-sawlog-softwood", "uk-small-roundwood"):
+        if must not in ids: errs.append("falta la serie %s" % must)
+    for sid, s in ids.items():
+        per = s["periods"]
+        if len(per) != len(s["values"]): errs.append("%s: %d periodos y %d valores" % (sid, len(per), len(s["values"]))); continue
+        if any(not _re.fullmatch(r"\d{4}-(03|09)", p) for p in per): errs.append("%s: periodo que no es marzo ni septiembre" % sid); continue
+        if per != sorted(set(per)): errs.append("%s: periodos repetidos o desordenados" % sid)
+        if any(not isinstance(v, (int, float)) or not 10 <= v <= 200 for v in s["values"]): errs.append("%s: precio fuera de 10-200 GBP/m3" % sid)
+    if "uk-standing-conifer" in ids and "uk-sawlog-softwood" in ids:
+        a, b = ids["uk-standing-conifer"], ids["uk-sawlog-softwood"]
+        if a["periods"] == b["periods"] and any(x >= y for x, y in zip(a["values"], b["values"])): errs.append("la madera en pie no puede valer mas que el rollo de aserrio")
+    last = max(s["periods"][-1] for s in ids.values()) if ids else "0000-00"
+    y, m = int(last[:4]), int(last[5:]); age = (_d.date.today() - _d.date(y + (m == 12), m % 12 + 1, 1)).days
+    if age > 330: warns.append("madera UK: ultimo periodo %s, con %d dias de retraso" % (last, age))
+    stats["series"] = len(ids); stats["ultimo"] = last
 def wood_prices_na(doc, errs, warns, stats):
     """Indices de madera de EE. UU. (BLS) y Canada (StatCan): meses ascendentes, series de la misma longitud, indices en rango y llegando a un mes reciente."""
     import datetime as _dt

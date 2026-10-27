@@ -3585,7 +3585,7 @@
    "status": "VERIFIED",
    "confidence": "medium",
    "evidence": "Forest Research official statistics are Crown copyright released under the OGL v3.0 (standard for UK official statistics; data.gov.uk catalogues them under OGL).",
-   "used": false,
+   "used": true,
    "aliases": [],
    "notes": "Cifra trimestral copiada a mano en js/data.js (WOOD.ukStats); no hay fichero de datos, por eso used:false para el comprobador.",
    "legalConfidence": "MEDIUM",
@@ -8343,6 +8343,12 @@
     "ksh_hu"
    ],
    "notes": "Tala fortuita de Chequia (CSU LES0104), tormenta, cortas y escarabajo de la corteza de Suecia (Skogsstyrelsen; la media de trampas es calculo propio), rodales destruidos de Estonia (KK513) y daños forestales de Hungria (KSH kor0010). scripts/update-forest-damage.py."
+  },
+  "data/uk-timber-prices.json": {
+   "sources": [
+    "forest_research"
+   ],
+   "notes": "Precio medio nominal de la madera en pie, rollos de aserrio y madera pequeña de coniferas de Gran Bretaña (Forest Research, Timber Price Indices). scripts/update-uk-timber.py; sustituye al valor fijo de js/data.js."
   }
  },
  "derived": [
