@@ -148,6 +148,7 @@
       pd('rendimientos.html', L('Rendimientos (EE. UU.)', 'Yields (US)', 'Rendements (É.-U.)', 'Rese (USA)'), L('EE. UU. · rendimiento, superficie y producción por estado', 'US · yield, acreage and output by state', 'États-Unis · rendement, surface et production par État', 'USA · resa, superficie e produzione per stato')),
       pd('ganaderia.html', L('Ganadería (EE. UU.)', 'Livestock (US)', 'Élevage (É.-U.)', 'Zootecnia (USA)'), L('EE. UU. · censos, leche por estado y existencias en frío', 'US · inventories, milk by state and cold storage', 'États-Unis · cheptels, lait par État et stocks frigorifiques', 'USA · consistenze, latte per stato e scorte in frigo')),
       pd('pesca.html', L('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura'), L('Capturas, desembarques, precios y flota por país', 'Catches, landings, prices and fleet by country', 'Captures, débarquements, prix et flotte par pays', 'Catture, sbarchi, prezzi e flotta per paese')),
+      pd('bosque.html', L('Bosque y madera', 'Forests and timber', 'Forêts et bois', 'Foreste e legno'), L('Precios de la madera, incendios, cortas, daños y pellets', 'Timber prices, fires, felling, damage and pellets', 'Prix du bois, incendies, coupes, dégâts et granulés', 'Prezzi del legname, incendi, tagli, danni e pellet')),
       pd('semana.html', L('La semana en cada país', 'The week in each country', 'La semaine dans chaque pays', 'La settimana in ogni paese'), L('Datos publicados esta semana y titulares de los medios agrarios', 'Data published this week and farm-media headlines', 'Données publiées cette semaine et titres de la presse agricole', 'Dati pubblicati questa settimana e titoli dei media agricoli')),
       pd('dehesa.html', L('Mercados Dehesa', 'Dehesa markets', 'Marchés de la dehesa', 'Mercati della dehesa'), L('Cerdo ibérico, pastos y corcho: datos oficiales y precios pendientes', 'Iberian pigs, pastures and cork: official data and pending prices', 'Porc ibérique, pâturages et liège : données officielles et prix en attente', 'Suino iberico, pascoli e sughero: dati ufficiali e prezzi in sospeso')),
       pd('produccion-mundial.html', L('¿Quién produce qué en el mundo?', 'Who produces what in the world?', 'Qui produit quoi dans le monde ?', 'Chi produce cosa nel mondo?'), L('Mundo · líder productor de cada alimento', 'World · leading producer of each food', 'Monde · premier producteur de chaque aliment', 'Mondo · primo produttore di ogni alimento')),
@@ -236,6 +237,7 @@
       dl('Exportaciones', 'Exports', 'Exportations', 'Esportazioni', [one('exportaciones.html')]),
       dl('Insumos', 'Inputs', 'Intrants', 'Input agricoli', [one('insumos.html')]),
       dl('Quién produce qué', 'Who produces what', 'Qui produit quoi', 'Chi produce cosa', [one('produccion-mundial.html')]),
+      dl('Bosque y madera', 'Forests and timber', 'Forêts et bois', 'Foreste e legno', [one('bosque.html')]),
       dl('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura', [one('pesca.html')])
     ]);
   })();
