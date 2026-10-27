@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T06:47:00Z",
+ "generatedAt": "2026-10-27T07:05:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 290,
@@ -15,9 +15,9 @@
   "site": "https://dehesaindex.com",
   "build": null,
   "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-27T03:45:19.477967+00:00",
-  "repoGeneratedAt": "2026-10-27T03:45:19.477967+00:00",
-  "checkedAt": "2026-10-27T06:47:00Z"
+  "prodGeneratedAt": "2026-10-27T06:54:09.101272+00:00",
+  "repoGeneratedAt": "2026-10-27T06:54:09.101272+00:00",
+  "checkedAt": "2026-10-27T07:05:00Z"
  },
  "pipelines": [
   {
@@ -3586,9 +3586,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-26T06:59:54Z",
-    "durationSec": 28,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40283094136"
+    "startedAt": "2026-10-27T06:55:49Z",
+    "durationSec": 29,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40464024632"
    },
    "recent": {
     "runs": 10,
@@ -4315,35 +4315,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-27T03:45:20Z"
+     "lastChange": "2026-10-27T06:54:10Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-27T03:45:20Z"
+     "lastChange": "2026-10-27T06:54:10Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-27T03:45:20Z"
+     "lastChange": "2026-10-27T06:54:10Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-27T03:45:20Z"
+     "lastChange": "2026-10-27T06:54:10Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-10-27T03:45:20Z"
+     "lastChange": "2026-10-27T06:54:10Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-27T03:40:22Z",
-    "durationSec": 303,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40445467583"
+    "startedAt": "2026-10-27T06:47:27Z",
+    "durationSec": 408,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40463195635"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4516,7 +4516,7 @@
    "crons": [
     "50 6 * * *"
    ],
-   "nextRun": "2026-10-27T06:50:00Z",
+   "nextRun": "2026-10-28T06:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4610,11 +4610,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-27T05:36:18Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/catalog"
@@ -4627,7 +4627,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/products"
@@ -4638,11 +4638,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T06:08:45Z"
+     "lastChange": "2026-10-27T06:50:28Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -4666,7 +4666,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/country-pending.json",
@@ -4674,22 +4674,22 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -4697,7 +4697,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-27T06:31:33Z"
+     "lastChange": "2026-10-27T06:51:53Z"
     },
     {
      "path": "data/home-explore.json",
@@ -4719,18 +4719,18 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T05:21:18Z",
-    "durationSec": 324,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40454838728"
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-10-27T06:46:25Z",
+    "durationSec": 334,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40463094929"
    },
    "recent": {
-    "runs": 9,
-    "success": 4,
+    "runs": 10,
+    "success": 5,
     "failed": 3
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 3.0
   },
   {
@@ -5087,18 +5087,19 @@
    "nextRun": "2026-10-27T13:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "cancelled",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T04:11:50Z",
-    "durationSec": 5338,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40448394704"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-10-27T06:14:20Z",
+    "durationSec": 2445,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40459903970",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-rivers.py' has timed out after 40 minutes."
    },
    "recent": {
-    "runs": 6,
+    "runs": 7,
     "success": 3,
-    "failed": 2
+    "failed": 3
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 8.0
   },
   {
