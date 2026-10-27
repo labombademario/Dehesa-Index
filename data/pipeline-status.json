@@ -1,15 +1,15 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T12:02:00Z",
+ "generatedAt": "2026-10-27T12:18:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 292,
+  "ok": 293,
   "late": 2,
-  "error": 1,
+  "error": 0,
   "not_run": 2,
   "unknown": 0
  },
- "global": "error",
+ "global": "late",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T09:53:52.714441+00:00",
   "repoGeneratedAt": "2026-10-27T09:53:52.714441+00:00",
-  "checkedAt": "2026-10-27T12:02:00Z"
+  "checkedAt": "2026-10-27T12:18:00Z"
  },
  "pipelines": [
   {
@@ -4330,7 +4330,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-27T12:17:00Z",
+   "nextRun": "2026-10-27T15:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -4610,7 +4610,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-27T12:10:00Z",
+   "nextRun": "2026-10-27T15:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -4657,7 +4657,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T11:47:00Z"
+     "lastChange": "2026-10-27T12:05:15Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5221,19 +5221,18 @@
    "nextRun": "2026-11-03T08:25:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T11:59:33Z",
-    "durationSec": 38,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40500280858",
-    "reason": "hubo datos invalidos descartados · datos invalidos: se descarta el cambio de data/spain-land/land.json · ERROR    spain-land/land.json               spain-land: canon general nacional fuera de rango"
+    "startedAt": "2026-10-27T12:04:05Z",
+    "durationSec": 58,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40500870302"
    },
    "recent": {
-    "runs": 4,
-    "success": 1,
+    "runs": 5,
+    "success": 2,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -6542,9 +6541,9 @@
    "workflow": "update-us-panel-prices.yml",
    "name": "Dehesa Data — EE. UU. panel (lácteos, bioenergía, carne y ganado AMS)",
    "crons": [
-    "10 20 * * 1-5"
+    "40 23 * * 1-5"
    ],
-   "nextRun": "2026-10-27T20:10:00Z",
+   "nextRun": "2026-10-27T23:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
