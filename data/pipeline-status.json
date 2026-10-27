@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T02:36:00Z",
+ "generatedAt": "2026-10-27T02:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 288,
   "late": 2,
-  "error": 1,
+  "error": 2,
   "not_run": 4,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T01:01:17.709335+00:00",
   "repoGeneratedAt": "2026-10-27T01:01:17.709335+00:00",
-  "checkedAt": "2026-10-27T02:36:00Z"
+  "checkedAt": "2026-10-27T02:48:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-27T01:42:27Z"
+     "lastChange": "2026-10-27T02:37:23Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -2257,6 +2257,30 @@
    },
    "status": "ok",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-eu-drought-nuts3.yml",
+   "name": "Update drought by NUTS 3 unit in 14 countries (EDO Combined Drought Indicator)",
+   "crons": [
+    "25 8 * * *"
+   ],
+   "nextRun": "2026-10-27T08:25:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-27T02:37:53Z",
+    "durationSec": 596,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40439546063",
+    "note": "duplicate-after-success"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-eu-drought.yml",
@@ -4592,7 +4616,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T02:27:12Z"
+     "lastChange": "2026-10-27T02:38:15Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4673,18 +4697,18 @@
     }
    ],
    "last": {
-    "conclusion": "cancelled",
+    "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T01:45:06Z",
-    "durationSec": 4,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40434409664"
+    "startedAt": "2026-10-27T02:35:07Z",
+    "durationSec": 275,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40439277735"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 7,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 3.0
   },
   {
