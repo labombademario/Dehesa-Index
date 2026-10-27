@@ -1112,6 +1112,7 @@
       '<div class="di-info-grid">' + order.map(function (k) { return cards[k]; }).join('') + '</div>' +
       (isDe ? '<div id="pr-wood-de" class="wr-wrap"></div>' : '') +
       '<div id="pr-wood" class="wr-wrap"></div>' +
+      '<div class="di-info-scope-note" id="pr-wood-forest"><a href="bosque.html?s=prices">' + esc(({ es: 'Bosque y madera: precios oficiales por tipo de madera, incendios, daños y pellets →', en: 'Forests and timber: official prices by timber type, fires, damage and pellets →', fr: 'Forêts et bois : prix officiels par type de bois, incendies, dégâts et granulés →', it: 'Foreste e legno: prezzi ufficiali per tipo di legname, incendi, danni e pellet →' })[lang()] || '') + '</a></div>' +
       '<div class="di-info-scope-note" id="pr-madera-note">' + esc(mad.scopeNote) + '</div>' +
       infoSourcesHtml('madera')
     );

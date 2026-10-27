@@ -235,9 +235,46 @@
       else if (ev.target.id === 'bq-reg') { ST.reg = ev.target.value; page(); var r = document.getElementById('bq-reg'); if (r) r.focus(); }
     });
   }
+  /* ---- bloque de la ficha de país (js/paises.js, forestUp) ---- */
+  var MC = {
+    h: L('Bosque y madera', 'Forests and timber', 'Forêts et bois', 'Foreste e legno'),
+    fire: L('Incendios forestales', 'Forest fires', 'Incendies de forêt', 'Incendi boschivi'),
+    price: L('Precio de la madera', 'Timber price', 'Prix du bois', 'Prezzo del legname'),
+    dmg: L('Daños y cortas', 'Damage and felling', 'Dégâts et coupes', 'Danni e tagli'),
+    more: L('Ver todo el bosque y la madera', 'See all forests and timber', 'Voir toutes les forêts et le bois', 'Vedi tutte le foreste e il legno'),
+    vsPrev: L('año anterior', 'previous year', 'année précédente', 'anno precedente')
+  };
+  function mountCountry(el, lang, cc) {
+    if (!el) return Promise.resolve(false);
+    return loadAll().then(function (D) {
+      var rows = [], ff = D.ff && D.ff.countries && D.ff.countries[cc] ? D.ff : null, tp = D.tp && D.tp.countries && D.tp.countries[cc] ? D.tp.countries[cc] : null;
+      var fd = D.fd && D.fd.series ? D.fd.series.filter(function (x) { return x.country === cc; }) : [];
+      if (ff) {
+        var st = fireStats(ff, cc);
+        if (st.ba != null) rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.fire)) + ' ' + st.cy + ' (' + esc(tx(T.ytd)) + ')</span><span class="di-info-stat-value"><b>' + num(st.ba) + '</b> ha · ' + num(st.nf) + ' · ' + esc(tx(MC.vsPrev)) + ' ' + num(st.prev) + ' ha</span></div>');
+      }
+      if (tp) {
+        var b = tp.series.filter(function (x) { return !x.region && x.bench; })[0] || tp.series.filter(function (x) { return !x.region; })[0] || tp.series[0];
+        var li = lastIdx(b.values);
+        if (li >= 0) { var c = yoy({ freq: tp.freq, values: b.values });
+          rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.price)) + ': ' + esc(b.label) + ' (' + esc(tp.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(b.values[li], dec(b.values[li], tp.unit)) + '</b> ' + esc(unit(tp.unit)) + (c == null ? '' : ' · ' + pct(c)) + '</span></div>'); }
+      }
+      fd.filter(function (x) { return x.freq === 'A'; }).slice(0, 2).forEach(function (x) {
+        var li = lastIdx(x.values); if (li < 0) return;
+        rows.push('<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(tx(MC.dmg)) + ': ' + esc(x.label) + ' (' + esc(x.periods[li]) + ')</span><span class="di-info-stat-value"><b>' + num(x.values[li], INT[x.unit] ? 0 : 1) + '</b> ' + esc(unit(x.unit)) + '</span></div>');
+      });
+      if (!rows.length) { el.innerHTML = ''; return false; }
+      var tab = ff ? 'fires' : tp ? 'prices' : 'damage';
+      el.innerHTML = '<section class="di-card di-info-card wp-card gb-card" id="ps-forest" style="max-width:none"><h2 class="ps-rm-h">' + esc(tx(MC.h)) + '</h2><div class="di-info-stat-list">' + rows.join('') + '</div>' +
+        '<p style="margin:10px 0 0"><a href="bosque.html?s=' + tab + '&c=' + encodeURIComponent(cc) + '">' + esc(tx(MC.more)) + '</a></p></section>';
+      return true;
+    });
+  }
+  global.DIForest = { mountCountry: mountCountry };
   if (document.getElementById('bq-body')) {
     if (S.init) S.init('production');
-    try { var q = new URLSearchParams(global.location.search).get('s'); if (q && T.tabs[q]) ST.s = q; } catch (e) {}
+    try { var qs = new URLSearchParams(global.location.search), q = qs.get('s'), qc = (qs.get('c') || '').toUpperCase(); if (q && T.tabs[q]) ST.s = q;
+      if (qc) { ST.fc = qc; if (['SI', 'CZ', 'LV', 'FI', 'PL'].indexOf(qc) >= 0) ST.pc = qc; if (['CZ', 'SE', 'EE', 'HU'].indexOf(qc) >= 0) ST.dc = qc; } } catch (e) {}
     S.onLangChange = function () { page(); };
     document.getElementById('bq-body').innerHTML = '<p class="di-movers-hint">' + esc(tx(T.loading)) + '</p>';
     bind();
