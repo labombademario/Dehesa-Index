@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T15:34:00Z",
+ "generatedAt": "2026-10-27T15:51:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 298,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T12:56:15.684573+00:00",
   "repoGeneratedAt": "2026-10-27T12:56:15.684573+00:00",
-  "checkedAt": "2026-10-27T15:34:00Z"
+  "checkedAt": "2026-10-27T15:51:00Z"
  },
  "pipelines": [
   {
@@ -553,7 +553,7 @@
    "crons": [
     "45 15 * * 2,5"
    ],
-   "nextRun": "2026-10-27T15:45:00Z",
+   "nextRun": "2026-10-30T15:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3590,9 +3590,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T15:36:11Z",
-    "durationSec": 54,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39979682773"
+    "startedAt": "2026-10-27T15:45:36Z",
+    "durationSec": 163,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40534164514"
    },
    "recent": {
     "runs": 10,
@@ -3682,7 +3682,7 @@
    "crons": [
     "50 15 * * 2"
    ],
-   "nextRun": "2026-10-27T15:50:00Z",
+   "nextRun": "2026-11-03T15:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4376,7 +4376,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-27T15:47:00Z",
+   "nextRun": "2026-10-27T18:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4430,8 +4430,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40506812138"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -4726,7 +4726,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-27T15:20:55Z"
+     "lastChange": "2026-10-27T15:37:35Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -4814,8 +4814,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40506744197"
    },
    "recent": {
-    "runs": 10,
-    "success": 5,
+    "runs": 9,
+    "success": 4,
     "failed": 3
    },
    "status": "ok",
