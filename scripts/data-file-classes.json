@@ -473,6 +473,22 @@
   "data/eu-fish-first-sales.json": {
    "class": "BUILD_ONLY",
    "note": "Precio en primera venta (EUMOFA) por pais y especie, semanal (10 paises) y mensual (18). Solo lo lee scripts/build-views.py; el navegador descarga data/views/fish/<CC>.json."
+  },
+  "data/italy-istat/crops-prov.json": {
+   "class": "RUNTIME",
+   "note": "Cultivos por provincia de Italia (ISTAT, 111 provincias): el navegador lo descarga una vez al elegir Provincias en el bloque de cultivos de la ficha de Italia.",
+   "via": {
+    "file": "js/it-istat.js",
+    "pattern": "data/italy-istat/' + f + '.json"
+   }
+  },
+  "data/eu-drought-nuts3/DE.json": {
+   "class": "RUNTIME",
+   "note": "Sequia por unidad NUTS 3 de un pais (EDO, CC BY 4.0): js/nuts3-drought.js descarga solo el del pais que se esta viendo (una vez). Los demas paises son del mismo tamano o menores.",
+   "via": {
+    "file": "js/nuts3-drought.js",
+    "pattern": "data/eu-drought-nuts3/' + cc + '.json"
+   }
   }
  },
  "prefixes": {

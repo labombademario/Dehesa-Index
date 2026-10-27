@@ -17,6 +17,19 @@ def split_sentences(t):
 
 # ---- frases repetidas
 S = {
+# ---- trigo duro de la UE (Sevilla)
+ 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo duro en el mercado de Sevilla (España), salida de silo tras almacenamiento en camión, EUR/tonelada.': (
+  'European Commission, Agri-food Data Portal: weekly durum wheat price at the Seville market (Spain), ex-silo after storage on truck, EUR/tonne.',
+  "Commission européenne, Agri-food Data Portal : prix hebdomadaire du blé dur sur le marché de Séville (Espagne), départ silo après stockage sur camion, EUR/tonne.",
+  "Commissione europea, Agri-food Data Portal: prezzo settimanale del grano duro sul mercato di Siviglia (Spagna), franco silo dopo stoccaggio su camion, EUR/tonnellata."),
+ 'Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro.': (
+  'It is a regional market, not the national average (the portal’s national average is out of date) nor a futures price.',
+  "Il s'agit d'un marché régional, pas de la moyenne nationale (celle du portail n'est plus à jour) ni d'un contrat à terme.",
+  "È un mercato regionale, non la media nazionale (quella del portale non è aggiornata) né un future."),
+ 'Italia, el mayor productor de la UE, publica sus propios mercados (Bolonia, Roma, Foggia…): se ven al elegir Italia y en la página de Europa.': (
+  'Italy, the EU’s largest producer, publishes its own markets (Bologna, Rome, Foggia…): they appear when you choose Italy and on the Europe page.',
+  "L'Italie, premier producteur de l'UE, publie ses propres marchés (Bologne, Rome, Foggia…) : ils apparaissent en choisissant l'Italie et sur la page Europe.",
+  "L'Italia, il maggior produttore dell'UE, pubblica i propri mercati (Bologna, Roma, Foggia…): si vedono scegliendo l'Italia e nella pagina Europa."),
  'USDA ERS, Sugar and Sweeteners Yearbook, table 5: wholesale refined beet sugar price, Midwest markets, bulk, monthly average; USD/lb (ERS publishes cents/lb).': (
   'USDA ERS, Sugar and Sweeteners Yearbook, table 5: wholesale refined beet sugar price, Midwest markets, bulk, monthly average; USD/lb (ERS publishes cents/lb).',
   "USDA ERS, Sugar and Sweeteners Yearbook, tableau 5 : prix de gros du sucre de betterave raffiné, marchés du Midwest, en vrac, moyenne mensuelle ; USD/lb (l'ERS publie en cents/lb).",
