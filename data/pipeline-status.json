@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T05:58:00Z",
+ "generatedAt": "2026-10-28T06:14:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 310,
@@ -17,7 +17,7 @@
   "lagHours": 7.9,
   "prodGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
   "repoGeneratedAt": "2026-10-28T05:39:55.919151+00:00",
-  "checkedAt": "2026-10-28T05:58:00Z"
+  "checkedAt": "2026-10-28T06:14:00Z"
  },
  "pipelines": [
   {
@@ -4920,7 +4920,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-28T06:10:00Z",
+   "nextRun": "2026-10-28T09:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -4967,7 +4967,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-28T05:47:50Z"
+     "lastChange": "2026-10-28T06:00:51Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6395,16 +6395,16 @@
    "files": [],
    "last": {
     "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-28T01:39:13Z",
-    "durationSec": 1802,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40605386038",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · no se pudo publicar tras 10 intentos · informe 2960: ERROR: URLError (se conserva el ultimo dataset valido)"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-28T05:30:05Z",
+    "durationSec": 1843,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40638348384",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-us-cash-bids.py --discover --backfill-days 0' has timed out after 30 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 8,
-    "failed": 1
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 62.8
