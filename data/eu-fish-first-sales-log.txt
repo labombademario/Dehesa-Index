@@ -1,17 +1,17 @@
-02:39:00 2019: 46.6 MB, 304383 filas de Estados miembros
-02:39:04 2020: 46.3 MB, 301849 filas de Estados miembros
-02:39:09 2021: 46.4 MB, 301167 filas de Estados miembros
-02:39:13 2022: 45.3 MB, 295563 filas de Estados miembros
-02:39:18 2023: 46.6 MB, 300871 filas de Estados miembros
-02:39:23 2024: 45.5 MB, 293413 filas de Estados miembros
-02:39:28 2025: 56.4 MB, 361417 filas de Estados miembros
-02:39:33 2026: 42.3 MB, 270588 filas de Estados miembros
-02:39:38 mensual 2019: 59.8 MB, 288666 filas de Estados miembros
-02:39:44 mensual 2020: 59.5 MB, 292858 filas de Estados miembros
-02:39:49 mensual 2021: 61.8 MB, 302369 filas de Estados miembros
-02:39:55 mensual 2022: 60.1 MB, 293643 filas de Estados miembros
-02:40:00 mensual 2023: 58.7 MB, 281834 filas de Estados miembros
-02:40:05 mensual 2024: 53.1 MB, 269759 filas de Estados miembros
-02:40:10 mensual 2025: 52.8 MB, 268389 filas de Estados miembros
-02:40:14 mensual 2026: 39.1 MB, 199844 filas de Estados miembros
-02:40:14 eu-fish-first-sales.json: 10 paises (BE, DE, EE, ES, FI, FR, LV, PL, PT, SE), ultima semana 2026-W42, 2429251 filas leidas; mensual 18 paises (BE, BG, CY, DE, DK, EE, EL, ES, FI, FR, HR, IE, IT, LV, NL, PL, PT, SE)
+10:19:44 2019: 46.6 MB, 304383 filas de Estados miembros
+10:19:48 2020: 46.3 MB, 301849 filas de Estados miembros
+10:19:51 2021: 46.4 MB, 301167 filas de Estados miembros
+10:19:55 2022: 45.3 MB, 295563 filas de Estados miembros
+10:19:58 2023: 46.6 MB, 300871 filas de Estados miembros
+10:20:01 2024: 45.5 MB, 293413 filas de Estados miembros
+10:20:05 2025: 56.4 MB, 361417 filas de Estados miembros
+10:20:09 2026: 43.8 MB, 279869 filas de Estados miembros
+10:20:13 mensual 2019: 59.8 MB, 288666 filas de Estados miembros
+10:20:16 mensual 2020: 59.5 MB, 292858 filas de Estados miembros
+10:20:21 mensual 2021: 61.8 MB, 302369 filas de Estados miembros
+10:20:25 mensual 2022: 60.1 MB, 293643 filas de Estados miembros
+10:20:28 mensual 2023: 58.7 MB, 281834 filas de Estados miembros
+10:20:32 mensual 2024: 53.1 MB, 269759 filas de Estados miembros
+10:20:36 mensual 2025: 52.8 MB, 268395 filas de Estados miembros
+10:20:39 mensual 2026: 39.2 MB, 200440 filas de Estados miembros
+10:20:39 eu-fish-first-sales.json: 10 paises (BE, DE, EE, ES, FI, FR, LV, PL, PT, SE), ultima semana 2026-W42, 2438532 filas leidas; mensual 18 paises (BE, BG, CY, DE, DK, EE, EL, ES, FI, FR, HR, IE, IT, LV, NL, PL, PT, SE)
