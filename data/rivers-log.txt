@@ -1,93 +1,90 @@
-22:17:54 aviso: nl venlo historia 2022: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> URLError(TimeoutError('timed out'))
-22:18:59 aviso: nl venlo historia 2023: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> URLError(TimeoutError('timed out'))
-22:18:59 aviso: nl venlo historia: 2 fallos seguidos, se corta (la API no responde; cada intento aislado, 60 s); se usa lo guardado
-22:21:04 aviso: nl maastricht.sintpieter.zuid: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> presupuesto de tiempo del pais agotado
-22:21:04 aviso: nl eijsden.grens: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> presupuesto de tiempo del pais agotado
-22:21:04 nl Rijn Lobith: 714.0 cm, 965.39 m3/s, estado low, 30 dias
-22:21:04 nl Waal Tiel: 234.0 cm, 734.08 m3/s, estado None, 30 dias
-22:21:04 nl Nederrijn Driel: 663.0 cm, 13.3 m3/s, estado low, 30 dias
-22:21:04 nl Lek Hagestein: 234.0 cm, 2.85 m3/s, estado normal, 30 dias
-22:21:04 nl IJssel Olst: 27.0 cm, 143.64 m3/s, estado low, 30 dias
-22:21:04 nl Maas Venlo: 1113.0 cm, 44.07 m3/s, estado low, 29 dias
-22:21:04 rivers-nl.json: 6 estaciones, ultima lectura 2026-10-27T23:10
-22:27:09 aviso: fr V300002002 sin historia diaria (https://hubeau.eaufrance.fr/api/v2/hydrometrie/obs_elab?code_entite=V300002002&grandeur_hydro_elab=Q -> presupuesto de tiempo del pais agotado)
-22:27:09 aviso: fr V401001002: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=V401001002&format=j -> presupuesto de tiempo del pais agotado
-22:27:09 aviso: fr V720001002: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=V720001002&format=j -> presupuesto de tiempo del pais agotado
-22:27:09 aviso: fr O614001001: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=O614001001&format=j -> presupuesto de tiempo del pais agotado
-22:27:09 aviso: fr O900001002: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=O900001002&format=j -> presupuesto de tiempo del pais agotado
-22:27:09 aviso: fr P238001001: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=P238001001&format=j -> presupuesto de tiempo del pais agotado
-22:27:09 aviso: fr B502001001: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=B502001001&format=j -> presupuesto de tiempo del pais agotado
-22:27:09 fr Seine Paris: 96.6 cm, 78.8 m3/s, estado low, 430 dias
-22:27:09 fr Seine Vernon: 320.6 cm, 140.0 m3/s, estado low, 430 dias
-22:27:09 fr Marne Gournay-sur-Marne: 113.2 cm, 30.0 m3/s, estado low, 430 dias
-22:27:09 fr Loire Gien: -59.6 cm, 62.6 m3/s, estado low, 430 dias
-22:27:09 fr Loire Orléans: -103.9 cm, 55.5 m3/s, estado low, 430 dias
-22:27:09 fr Loire Tours: 64.4 cm, 83.2 m3/s, estado low, 430 dias
-22:27:09 fr Loire Montjean: -139.2 cm, 170.0 m3/s, estado low, 430 dias
-22:27:09 fr Saône Mâcon: 161.2 cm, 29.1 m3/s, estado low, 430 dias
-22:27:09 fr Rhône Lyon: - cm, 354.0 m3/s, estado None, 29 dias
-22:27:09 rivers-fr.json: 9 estaciones, ultima lectura 2026-10-27T23:10
-22:30:49 ca Fraser Hope: 360.1 cm, 1320.0 m3/s, estado low, 25 dias
-22:30:49 ca Thompson Kamloops: 225.3 cm, - m3/s, estado None, 31 dias
-22:30:49 ca Bow Calgary: 94.9 cm, 58.6 m3/s, estado normal, 31 dias
-22:30:49 ca Oldman Lethbridge: 39.0 cm, 31.6 m3/s, estado normal, 31 dias
-22:30:49 ca South Saskatchewan Medicine Hat: 220.3 cm, 118.0 m3/s, estado normal, 31 dias
-22:30:49 ca South Saskatchewan Saskatoon: 221.7 cm, 149.0 m3/s, estado normal, 31 dias
-22:30:49 ca North Saskatchewan Edmonton: 299.3 cm, 122.0 m3/s, estado normal, 31 dias
-22:30:49 ca Red Emerson: 22841.5 cm, 63.9 m3/s, estado normal, 31 dias
-22:30:49 ca Assiniboine Headingley: 23181.7 cm, 92.5 m3/s, estado high, 31 dias
-22:30:49 ca Peace Peace River: 713.1 cm, 1940.0 m3/s, estado high, 31 dias
-22:30:49 ca Athabasca Athabasca: 117.4 cm, 299.0 m3/s, estado normal, 31 dias
-22:30:49 ca Ottawa Britannia: 5784.0 cm, 607.0 m3/s, estado low, 31 dias
-22:30:49 ca Saint Lawrence LaSalle: 88.7 cm, 7560.0 m3/s, estado low, 31 dias
-22:30:49 ca Saint John Fredericton: 87.5 cm, - m3/s, estado None, 31 dias
-22:30:49 ca Grand Galt: 69.9 cm, 14.5 m3/s, estado low, 31 dias
-22:30:49 rivers-ca.json: 15 estaciones, ultima lectura 2026-10-27T17:30
-22:32:53 be Demer Hasselt: -10.9 cm, 1.88 m3/s, estado normal, 430 dias
-22:32:54 be Demer Bilzen: 4107.1 cm, 0.364 m3/s, estado normal, 430 dias
-22:32:54 be Dijle Wilsele: 1292.5 cm, 5.04 m3/s, estado normal, 430 dias
-22:32:54 be Zenne Lot: 2315.0 cm, 1.55 m3/s, estado low, 430 dias
-22:32:54 be Grote Nete Geel: 1801.5 cm, 3.66 m3/s, estado high, 430 dias
-22:32:54 be Kleine Nete Herentals: 1031.7 cm, 3.48 m3/s, estado normal, 430 dias
-22:32:54 be Mandel Oostrozebeke: 817.7 cm, 1.48 m3/s, estado normal, 430 dias
-22:32:54 be Dommel Overpelt: 116.7 cm, 0.549 m3/s, estado normal, 430 dias
-22:32:54 be Gete Halen: 2104.9 cm, 1.89 m3/s, estado low, 430 dias
-22:32:54 rivers-be.json: 9 estaciones, ultima lectura 2026-10-27T23:15
-22:33:29 se Kalix älv Räktfors: - cm, 299.0 m3/s, estado normal, 430 dias
-22:33:29 se Torne älv Kallio 2: - cm, 178.0 m3/s, estado high, 430 dias
-22:33:29 se Ume älv Granåker: - cm, 172.0 m3/s, estado normal, 430 dias
-22:33:29 se Pite älv Gransel: - cm, 116.0 m3/s, estado normal, 430 dias
-22:33:29 se Indalsälven Fyrås: - cm, 41.0 m3/s, estado high, 430 dias
-22:33:29 se Ljusnan Nybro: - cm, 39.1 m3/s, estado high, 430 dias
-22:33:29 se Dalälven Svärdsjö: - cm, 11.7 m3/s, estado normal, 430 dias
-22:33:29 se Norrström Karlslund 2: - cm, 10.1 m3/s, estado normal, 430 dias
-22:33:30 se Göta älv Moholm: - cm, 3.93 m3/s, estado low, 430 dias
-22:33:30 se Motala ström Tolhem: - cm, 4.07 m3/s, estado low, 430 dias
-22:33:30 se Nyköpingsån Hallbosjön: - cm, 0.872 m3/s, estado low, 430 dias
-22:33:30 se Viskan Åsbro 3: - cm, 54.7 m3/s, estado normal, 430 dias
-22:33:30 se Ätran Hillared: - cm, 5.63 m3/s, estado normal, 430 dias
-22:33:30 se Nissan Snapparp: - cm, 14.4 m3/s, estado high, 430 dias
-22:33:30 se Lagan Rörvik: - cm, 0.262 m3/s, estado normal, 430 dias
-22:33:30 se Emån Brusafors: - cm, 0.438 m3/s, estado low, 430 dias
-22:33:30 se Mörrumsån Mörrum: - cm, 9.05 m3/s, estado low, 430 dias
-22:33:31 se Helge å Möckeln: - cm, 1.27 m3/s, estado low, 430 dias
-22:33:31 se Rönne å Klippan 2: - cm, 3.27 m3/s, estado normal, 430 dias
-22:33:31 se Kävlingeån Ellinge: - cm, 1.15 m3/s, estado normal, 430 dias
-22:33:31 rivers-se.json: 20 estaciones, ultima lectura 2026-10-25T00:00
-22:34:24 pl Wisła Zawichost: 177.0 cm, 124.0 m3/s, estado low, 1 dias
-22:34:24 pl Wisła Sandomierz: 61.0 cm, 89.6 m3/s, estado low, 1 dias
-22:34:24 pl Wisła Warszawa-Bulwary: 114.0 cm, 175.0 m3/s, estado low, 1 dias
-22:34:24 pl Wisła Włocławek: 95.0 cm, 308.0 m3/s, estado low, 1 dias
-22:34:24 pl Wisła Tczew: 227.0 cm, 325.0 m3/s, estado low, 1 dias
-22:34:24 pl Odra Racibórz-Miedonia: 133.0 cm, 21.6 m3/s, estado low, 1 dias
-22:34:24 pl Odra Malczyce: 127.0 cm, 44.0 m3/s, estado low, 1 dias
-22:34:24 pl Odra Głogów: 163.0 cm, 59.1 m3/s, estado low, 1 dias
-22:34:24 pl Odra Gozdowice: 195.0 cm, 167.0 m3/s, estado low, 1 dias
-22:34:24 pl Odra Słubice: 94.0 cm, 88.2 m3/s, estado low, 1 dias
-22:34:24 pl Warta Poznań: 127.0 cm, 30.1 m3/s, estado low, 1 dias
-22:34:24 pl Warta Gorzów Wielkopolski: 177.0 cm, 78.6 m3/s, estado low, 1 dias
-22:34:24 pl Bug Wyszków: 163.0 cm, 30.5 m3/s, estado low, 1 dias
-22:34:24 pl Narew Wizna: 181.0 cm, 28.3 m3/s, estado low, 1 dias
-22:34:24 pl San Rzuchów: 211.0 cm, 30.2 m3/s, estado low, 1 dias
-22:34:24 pl Noteć Ujście: 185.0 cm, 7.99 m3/s, estado low, 1 dias
-22:34:24 rivers-pl.json: 16 estaciones, ultima lectura 2026-10-27T21:50
+11:45:42 aviso: nl olst: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> presupuesto de tiempo del pais agotado
+11:45:42 aviso: nl venlo: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> presupuesto de tiempo del pais agotado
+11:45:42 aviso: nl maastricht.sintpieter.zuid: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> presupuesto de tiempo del pais agotado
+11:45:42 aviso: nl eijsden.grens: https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen -> presupuesto de tiempo del pais agotado
+11:45:42 nl Rijn Lobith: 724.0 cm, 1004.93 m3/s, estado low, 31 dias
+11:45:42 nl Waal Tiel: 240.0 cm, 758.71 m3/s, estado None, 31 dias
+11:45:42 nl Nederrijn Driel: 674.0 cm, 16.2 m3/s, estado low, 31 dias
+11:45:42 nl Lek Hagestein: 242.0 cm, 1.8 m3/s, estado low, 31 dias
+11:45:42 rivers-nl.json: 4 estaciones, ultima lectura 2026-10-28T12:30
+11:52:44 aviso: fr K490003010 sin historia diaria (https://hubeau.eaufrance.fr/api/v2/hydrometrie/obs_elab?code_entite=K490003010&grandeur_hydro_elab=Q -> presupuesto de tiempo del pais agotado)
+11:52:44 aviso: fr M530001010: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=M530001010&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 aviso: fr U430001001: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=U430001001&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 aviso: fr V300002002: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=V300002002&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 aviso: fr V401001002: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=V401001002&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 aviso: fr V720001002: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=V720001002&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 aviso: fr O614001001: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=O614001001&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 aviso: fr O900001002: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=O900001002&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 aviso: fr P238001001: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=P238001001&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 aviso: fr B502001001: https://hubeau.eaufrance.fr/api/v2/hydrometrie/referentiel/stations?code_station=B502001001&format=j -> presupuesto de tiempo del pais agotado
+11:52:44 fr Seine Paris: 92.5 cm, 107.0 m3/s, estado low, 430 dias
+11:52:44 fr Seine Vernon: 326.1 cm, 210.0 m3/s, estado low, 430 dias
+11:52:44 fr Marne Gournay-sur-Marne: 110.3 cm, 28.0 m3/s, estado low, 430 dias
+11:52:44 fr Loire Gien: -59.0 cm, 63.6 m3/s, estado low, 430 dias
+11:52:44 fr Loire Orléans: -105.5 cm, 53.2 m3/s, estado low, 430 dias
+11:52:44 fr Loire Tours: 65.5 cm, 85.2 m3/s, estado None, 430 dias
+11:52:44 rivers-fr.json: 6 estaciones, ultima lectura 2026-10-28T12:35
+11:57:45 ca Fraser Hope: 359.4 cm, 1310.0 m3/s, estado low, 26 dias
+11:57:45 ca Thompson Kamloops: 224.1 cm, - m3/s, estado None, 32 dias
+11:57:45 ca Bow Calgary: 94.1 cm, 57.5 m3/s, estado normal, 32 dias
+11:57:45 ca Oldman Lethbridge: 39.9 cm, 32.3 m3/s, estado normal, 32 dias
+11:57:45 ca South Saskatchewan Medicine Hat: 221.1 cm, 119.0 m3/s, estado normal, 32 dias
+11:57:45 ca South Saskatchewan Saskatoon: 221.6 cm, 149.0 m3/s, estado normal, 32 dias
+11:57:46 ca North Saskatchewan Edmonton: 285.1 cm, 98.8 m3/s, estado low, 32 dias
+11:57:46 ca Red Emerson: 22841.9 cm, 64.0 m3/s, estado normal, 32 dias
+11:57:46 ca Assiniboine Headingley: 23181.7 cm, 92.5 m3/s, estado high, 32 dias
+11:57:46 ca Peace Peace River: 711.5 cm, 1910.0 m3/s, estado high, 32 dias
+11:57:46 ca Athabasca Athabasca: 117.4 cm, 299.0 m3/s, estado normal, 32 dias
+11:57:46 ca Ottawa Britannia: 5781.4 cm, 577.0 m3/s, estado low, 32 dias
+11:57:46 ca Saint Lawrence LaSalle: 84.5 cm, 7420.0 m3/s, estado low, 32 dias
+11:57:46 ca Saint John Fredericton: 105.4 cm, - m3/s, estado None, 32 dias
+11:57:46 ca Grand Galt: 69.2 cm, 14.0 m3/s, estado low, 32 dias
+11:57:46 rivers-ca.json: 15 estaciones, ultima lectura 2026-10-28T07:05
+11:59:36 be Demer Hasselt: -20.4 cm, 1.2 m3/s, estado normal, 430 dias
+11:59:36 be Demer Bilzen: 4101.7 cm, 0.239 m3/s, estado low, 430 dias
+11:59:36 be Dijle Wilsele: 1287.9 cm, 4.46 m3/s, estado low, 430 dias
+11:59:36 be Zenne Lot: 2315.3 cm, 1.53 m3/s, estado low, 430 dias
+11:59:36 be Grote Nete Geel: 1801.6 cm, 3.65 m3/s, estado high, 430 dias
+11:59:36 be Kleine Nete Herentals: 1025.0 cm, 2.85 m3/s, estado normal, 430 dias
+11:59:36 be Mandel Oostrozebeke: 817.3 cm, 1.42 m3/s, estado normal, 430 dias
+11:59:36 be Dommel Overpelt: 116.1 cm, 0.528 m3/s, estado normal, 430 dias
+11:59:36 be Gete Halen: 2105.7 cm, 2.0 m3/s, estado low, 430 dias
+11:59:36 rivers-be.json: 9 estaciones, ultima lectura 2026-10-28T12:45
+12:00:14 se Kalix älv Räktfors: - cm, 331.0 m3/s, estado high, 430 dias
+12:00:14 se Torne älv Kallio 2: - cm, 190.0 m3/s, estado high, 430 dias
+12:00:14 se Ume älv Granåker: - cm, 178.0 m3/s, estado normal, 430 dias
+12:00:14 se Pite älv Gransel: - cm, 121.0 m3/s, estado normal, 430 dias
+12:00:14 se Indalsälven Fyrås: - cm, 48.0 m3/s, estado high, 430 dias
+12:00:15 se Ljusnan Nybro: - cm, 51.6 m3/s, estado high, 430 dias
+12:00:15 se Dalälven Svärdsjö: - cm, 12.3 m3/s, estado normal, 430 dias
+12:00:15 se Norrström Karlslund 2: - cm, 10.1 m3/s, estado normal, 430 dias
+12:00:15 se Göta älv Moholm: - cm, 4.66 m3/s, estado normal, 430 dias
+12:00:15 se Motala ström Tolhem: - cm, 4.05 m3/s, estado low, 430 dias
+12:00:15 se Nyköpingsån Hallbosjön: - cm, 0.876 m3/s, estado low, 430 dias
+12:00:15 se Viskan Åsbro 3: - cm, 51.0 m3/s, estado normal, 430 dias
+12:00:15 se Ätran Hillared: - cm, 5.72 m3/s, estado normal, 430 dias
+12:00:15 se Nissan Snapparp: - cm, 14.2 m3/s, estado high, 430 dias
+12:00:15 se Lagan Rörvik: - cm, 0.266 m3/s, estado normal, 430 dias
+12:00:16 se Emån Brusafors: - cm, 0.466 m3/s, estado low, 430 dias
+12:00:16 se Mörrumsån Mörrum: - cm, 7.74 m3/s, estado low, 430 dias
+12:00:16 se Helge å Möckeln: - cm, 1.3 m3/s, estado low, 430 dias
+12:00:16 se Rönne å Klippan 2: - cm, 3.39 m3/s, estado normal, 430 dias
+12:00:16 se Kävlingeån Ellinge: - cm, 1.1 m3/s, estado normal, 430 dias
+12:00:16 rivers-se.json: 20 estaciones, ultima lectura 2026-10-26T00:00
+12:01:08 pl Wisła Zawichost: 179.0 cm, 129.0 m3/s, estado low, 2 dias
+12:01:08 pl Wisła Sandomierz: 65.0 cm, 94.2 m3/s, estado low, 2 dias
+12:01:08 pl Wisła Warszawa-Bulwary: 118.0 cm, 186.0 m3/s, estado low, 2 dias
+12:01:08 pl Wisła Włocławek: 95.0 cm, 308.0 m3/s, estado low, 1 dias
+12:01:08 pl Wisła Tczew: 231.0 cm, 334.0 m3/s, estado low, 2 dias
+12:01:08 pl Odra Racibórz-Miedonia: 129.0 cm, 19.5 m3/s, estado low, 2 dias
+12:01:08 pl Odra Malczyce: 156.0 cm, 60.2 m3/s, estado low, 2 dias
+12:01:08 pl Odra Głogów: 162.0 cm, 58.4 m3/s, estado low, 2 dias
+12:01:08 pl Odra Gozdowice: 196.0 cm, 169.0 m3/s, estado low, 2 dias
+12:01:08 pl Odra Słubice: 94.0 cm, 89.5 m3/s, estado low, 2 dias
+12:01:08 pl Warta Poznań: 128.0 cm, 30.5 m3/s, estado low, 2 dias
+12:01:08 pl Warta Gorzów Wielkopolski: 178.0 cm, 79.4 m3/s, estado low, 2 dias
+12:01:08 pl Bug Wyszków: 163.0 cm, 31.2 m3/s, estado low, 2 dias
+12:01:08 pl Narew Wizna: 180.0 cm, 28.0 m3/s, estado low, 2 dias
+12:01:08 pl San Rzuchów: 213.0 cm, 31.8 m3/s, estado low, 2 dias
+12:01:08 pl Noteć Ujście: 186.0 cm, 8.12 m3/s, estado low, 2 dias
+12:01:08 rivers-pl.json: 16 estaciones, ultima lectura 2026-10-28T11:20
