@@ -2,11 +2,20 @@
  "schemaVersion": 1,
  "weeks": [
   {
+   "week": "2026-W44",
+   "from": "2026-10-26",
+   "to": "2026-11-01",
+   "complete": false,
+   "items": 611,
+   "sources": 231,
+   "coverageFrom": "2026-10-26"
+  },
+  {
    "week": "2026-W43",
    "from": "2026-10-19",
    "to": "2026-10-25",
    "complete": true,
-   "items": 2984,
+   "items": 2988,
    "sources": 533,
    "coverageFrom": "2026-10-19"
   },
@@ -15,7 +24,7 @@
    "from": "2026-10-12",
    "to": "2026-10-18",
    "complete": true,
-   "items": 3027,
+   "items": 3028,
    "sources": 527,
    "coverageFrom": "2026-10-12"
   },
@@ -38,5 +47,5 @@
    "coverageFrom": "2026-09-29"
   }
  ],
- "generatedAt": "2026-10-26T07:33:32Z"
+ "generatedAt": "2026-10-28T00:49:19Z"
 }
