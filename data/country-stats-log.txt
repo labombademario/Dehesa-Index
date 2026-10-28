@@ -1,8 +1,8 @@
 Series: {'DK': 59, 'NL': 67, 'AU': 89}
-  dk-cattle-prod | Cattle: meat production (total) | 2026-07 10.0 | n= 379 | first 1995-01
-  dk-cattle-slaught | Cattle: slaughterings and live exports (total) | 2026-07 40.0 | n= 379 | first 1995-01
-  dk-pig-prod | Pigs: meat production (total) | 2026-07 162.9 | n= 379 | first 1995-01
-  dk-pig-slaught | Pigs: slaughterings and live exports (total) | 2026-07 2859.6 | n= 379 | first 1995-01
+  dk-cattle-prod | Cattle: meat production (total) | 2026-08 10.3 | n= 380 | first 1995-01
+  dk-cattle-slaught | Cattle: slaughterings and live exports (total) | 2026-08 40.0 | n= 380 | first 1995-01
+  dk-pig-prod | Pigs: meat production (total) | 2026-08 156.2 | n= 380 | first 1995-01
+  dk-pig-slaught | Pigs: slaughterings and live exports (total) | 2026-08 2693.2 | n= 380 | first 1995-01
   dk-milk-prod | Milk ex farm, total | 2026-08 519.95 | n= 380 | first 1995-01
   dk-butter-prod | Butter production | 2026-08 6.9 | n= 380 | first 1995-01
   dk-cheese-prod | Cheese production | 2026-08 45.0 | n= 380 | first 1995-01
@@ -118,13 +118,13 @@ Series: {'DK': 59, 'NL': 67, 'AU': 89}
   nl-animals-A044005 | Livestock on holdings: Laying hens for production (>=20 months) | 2026-04 6266.0 | n= 17 | first 2018-04
   nl-animals-A044006 | Livestock on holdings: Breeding stock for laying hens (total) | 2026-04 1586.0 | n= 17 | first 2018-04
   nl-animals-A047778 | Livestock on holdings: Breeding stock for laying hens, rearing | 2026-04 394.0 | n= 17 | first 2018-04
-  nl-manure-totalexcretion-T001263 | Livestock manure (Total manure types): total excretion | 2025 74130.0 | n= 48 | first 1950
-  nl-manure-totalexcretion-A028942 | Livestock manure (Nitrogen (N)): total excretion | 2025 440.0 | n= 41 | first 1980
-  nl-manure-totalexcretion-A028943 | Livestock manure (Phosphate (P205)): total excretion | 2025 142.0 | n= 48 | first 1950
-  nl-manure-ammoniaemissionsn-A028942 | Livestock manure (Nitrogen (N)): ammonia emissions (N) | 2025 41.0 | n= 41 | first 1980
-  nl-manure-useoflivestockmanureinagriculture-T001263 | Livestock manure (Total manure types): use in agriculture | 2023 70123.0 | n= 31 | first 1986
-  nl-manure-useoflivestockmanureinagriculture-A028942 | Livestock manure (Nitrogen (N)): use in agriculture | 2023 334.0 | n= 30 | first 1994
-  nl-manure-useoflivestockmanureinagriculture-A028943 | Livestock manure (Phosphate (P205)): use in agriculture | 2023 108.0 | n= 31 | first 1986
+  nl-manure-totalexcretion-T001263 | Livestock manure (Total manure types): total excretion | 2025 74025.0 | n= 48 | first 1950
+  nl-manure-totalexcretion-A028942 | Livestock manure (Nitrogen (N)): total excretion | 2025 439.0 | n= 41 | first 1980
+  nl-manure-totalexcretion-A028943 | Livestock manure (Phosphate (P205)): total excretion | 2025 141.0 | n= 48 | first 1950
+  nl-manure-ammoniaemissionsn-A028942 | Livestock manure (Nitrogen (N)): ammonia emissions (N) | 2025 42.0 | n= 41 | first 1980
+  nl-manure-useoflivestockmanureinagriculture-T001263 | Livestock manure (Total manure types): use in agriculture | 2024 69369.0 | n= 32 | first 1986
+  nl-manure-useoflivestockmanureinagriculture-A028942 | Livestock manure (Nitrogen (N)): use in agriculture | 2024 314.0 | n= 31 | first 1994
+  nl-manure-useoflivestockmanureinagriculture-A028943 | Livestock manure (Phosphate (P205)): use in agriculture | 2024 105.0 | n= 32 | first 1986
   au-cattle-slaught | Cattle (excl. calves) slaughtered | 2026-Q2 2521.6 | n= 146 | first 1990-Q1
   au-pig-slaught | Pigs slaughtered | 2026-Q2 1467.4 | n= 146 | first 1990-Q1
   au-sheep-slaught | Sheep slaughtered | 2026-Q2 1334.2 | n= 146 | first 1990-Q1
