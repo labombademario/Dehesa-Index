@@ -8,7 +8,7 @@ nitrogeno: estiercol 83983NED 78 combinaciones
 nitrogeno: por animal 83982NED 7 categorias
 nitrogeno: fitosanitarios 6 grupos
 nitrogeno: derechos 19 regiones
-nitrogeno: leido (fuente al 2026-06-29, 27 tablas, 227 series)
+nitrogeno: leido (fuente al 2026-10-27, 27 tablas, 227 series)
 cadena: PPI 26 lineas
 cadena: IPC 19 categorias
 cadena: leido (fuente al 2026-10-13, 4 tablas, 94 series)
