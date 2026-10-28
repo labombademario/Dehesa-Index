@@ -42,8 +42,55 @@ descartada eu-prod-uk-oilseeds-sunflower-seed-production: 20 puntos, ultimo 2019
 descartada eu-prod-uk-oilseeds-sunflower-seed-yield: 20 puntos, ultimo 2019
 oilseeds: 5239 filas, +440 series
 rice: 583 filas, +99 series
-FALLO sugar: https://api.tech.ec.europa.eu/agrifood/api/sugar/production: <HTTPError 404: ''>
+descartada eu-prod-at-sugar-austria-area: 2 puntos, ultimo 2024
+descartada eu-prod-at-sugar-austria-production: 2 puntos, ultimo 2024
+descartada eu-prod-at-sugar-austria-yield: 2 puntos, ultimo 2024
+descartada eu-prod-be-sugar-belgium-area: 2 puntos, ultimo 2024
+descartada eu-prod-be-sugar-belgium-production: 2 puntos, ultimo 2024
+descartada eu-prod-be-sugar-belgium-yield: 2 puntos, ultimo 2024
+descartada eu-prod-cz-sugar-czechia-area: 2 puntos, ultimo 2024
+descartada eu-prod-cz-sugar-czechia-production: 2 puntos, ultimo 2024
+descartada eu-prod-cz-sugar-czechia-yield: 2 puntos, ultimo 2024
+descartada eu-prod-de-sugar-germany-area: 2 puntos, ultimo 2024
+descartada eu-prod-de-sugar-germany-production: 2 puntos, ultimo 2024
+descartada eu-prod-de-sugar-germany-yield: 2 puntos, ultimo 2024
+descartada eu-prod-es-sugar-spain-area: 2 puntos, ultimo 2024
+descartada eu-prod-es-sugar-spain-production: 2 puntos, ultimo 2024
+descartada eu-prod-es-sugar-spain-yield: 2 puntos, ultimo 2024
+descartada eu-prod-eu-sugar-denmark-finland-sweden-area: 2 puntos, ultimo 2024
+descartada eu-prod-eu-sugar-denmark-finland-sweden-production: 2 puntos, ultimo 2024
+descartada eu-prod-eu-sugar-denmark-finland-sweden-yield: 2 puntos, ultimo 2024
+descartada eu-prod-fr-sugar-france-dom-area: 2 puntos, ultimo 2024
+descartada eu-prod-fr-sugar-france-dom-production: 2 puntos, ultimo 2024
+descartada eu-prod-fr-sugar-france-dom-yield: 2 puntos, ultimo 2024
+descartada eu-prod-fr-sugar-france-met-area: 2 puntos, ultimo 2024
+descartada eu-prod-fr-sugar-france-met-production: 2 puntos, ultimo 2024
+descartada eu-prod-fr-sugar-france-met-yield: 2 puntos, ultimo 2024
+descartada eu-prod-hr-sugar-croatia-area: 2 puntos, ultimo 2024
+descartada eu-prod-hr-sugar-croatia-production: 2 puntos, ultimo 2024
+descartada eu-prod-hr-sugar-croatia-yield: 2 puntos, ultimo 2024
+descartada eu-prod-hu-sugar-hungary-area: 2 puntos, ultimo 2024
+descartada eu-prod-hu-sugar-hungary-production: 2 puntos, ultimo 2024
+descartada eu-prod-hu-sugar-hungary-yield: 2 puntos, ultimo 2024
+descartada eu-prod-it-sugar-italy-area: 2 puntos, ultimo 2024
+descartada eu-prod-it-sugar-italy-production: 2 puntos, ultimo 2024
+descartada eu-prod-it-sugar-italy-yield: 2 puntos, ultimo 2024
+descartada eu-prod-lt-sugar-lithuania-area: 2 puntos, ultimo 2024
+descartada eu-prod-lt-sugar-lithuania-production: 2 puntos, ultimo 2024
+descartada eu-prod-lt-sugar-lithuania-yield: 2 puntos, ultimo 2024
+descartada eu-prod-nl-sugar-netherlands-area: 2 puntos, ultimo 2024
+descartada eu-prod-nl-sugar-netherlands-production: 2 puntos, ultimo 2024
+descartada eu-prod-nl-sugar-netherlands-yield: 2 puntos, ultimo 2024
+descartada eu-prod-pl-sugar-poland-area: 2 puntos, ultimo 2024
+descartada eu-prod-pl-sugar-poland-production: 2 puntos, ultimo 2024
+descartada eu-prod-pl-sugar-poland-yield: 2 puntos, ultimo 2024
+descartada eu-prod-ro-sugar-romania-area: 2 puntos, ultimo 2024
+descartada eu-prod-ro-sugar-romania-production: 2 puntos, ultimo 2024
+descartada eu-prod-ro-sugar-romania-yield: 2 puntos, ultimo 2024
+descartada eu-prod-sk-sugar-slovakia-area: 2 puntos, ultimo 2024
+descartada eu-prod-sk-sugar-slovakia-production: 2 puntos, ultimo 2024
+descartada eu-prod-sk-sugar-slovakia-yield: 2 puntos, ultimo 2024
+sugar: 65 filas, +9 series
 descartada eu-prod-cy-olive-oil-monthly: 65 puntos, ultimo 2020-12
 descartada eu-prod-mt-olive-oil-monthly: 18 puntos, ultimo 2015-11
 olive: 667 filas, +7 series
-MANTENIDO sugar: 9 series del fichero anterior (la fuente fallo; se reintenta en la proxima ejecucion)
