@@ -5,6 +5,7 @@ Fuente: https://www.ksh.hu (STADAT, ficheros CSV en ingles). Licencia: CC BY 4.0
 Tablas (desde 1990): mez0001 resumen, mez0008 uso de la tierra, mez0009 alquiler y precio de la tierra, mez0012/15/18 superficie, produccion y rendimiento de cultivos
 herbaceos, mez0013/16/19 hortalizas, mez0014/17/20 frutas y uva, mez0027 y mez0029 censo ganadero, mez0032-0035 produccion animal, leche y huevos.
 Precios anuales ara0013-0026, insumos mez0041-0042 y balances mez0048-0059 tambien.
+Precios trimestrales de insumos (ara0050: fertilizantes, piensos, carburantes...; desde 2022).
 Precios mensuales (ara0052 compra de cultivos, ara0053 compra de ganado y productos, ara0054 mercado del productor; desde 2022): se omiten las tablas acumuladas (ara0049).
 Formato STADAT: CSV ISO-8859-2 con ';', cabecera «Year;col;col...», '..' = sin dato. Nada se estima; una celda vacia se omite; una serie con <3 puntos o parada >3 anos no se publica."""
 import csv, datetime, io, json, re, time, urllib.request
@@ -149,8 +150,39 @@ def parse_monthly(tab, group, prefix, _):
                         sourceGroup="KSH STADAT %s" % tab))
     log(tab, len(out), "series mensuales")
     return out
+def parse_quarterly(tab, group):
+    """ara0050: precios medios trimestrales de insumos. Cabecera «Denomination;Q1 2022;...»; filas de sección «Fertilizers, HUF/t» sin valores
+    dan la unidad de las filas siguientes. Periodo AAAA-Qn. Una fila sin ningún valor reciente (6 trimestres) no se publica."""
+    rows = list(csv.reader(io.StringIO(get("https://www.ksh.hu/stadat_files/ara/en/%s.csv" % tab)), delimiter=";", quotechar='"'))
+    hi = next(i for i, r in enumerate(rows) if r and clean(r[0]) == "Denomination")
+    per = []
+    for h in rows[hi][1:]:
+        m = re.fullmatch(r"Q([1-4])\s+(\d{4})", clean(h)); per.append("%s-Q%s" % (m.group(2), m.group(1)) if m else None)
+    sec, unit, out = None, None, []
+    for r in rows[hi + 1:]:
+        if not r or not clean(r[0]): continue
+        vals = [num(x) for x in r[1:len(per) + 1]]
+        if all(v is None for v in vals):
+            m = re.match(r"(.+?),\s*(HUF/[A-Za-z0-9 ]+)$", clean(r[0]))
+            if m: sec, unit = clean(m.group(1)), clean(m.group(2))
+            continue
+        if not unit: continue
+        name = re.sub(r"(\w)- (\w)", r"\1\2", clean(r[0].replace("\x96", "–")))   # el KSH escribe la raya en cp1250 (0x96): «11–53%»   # «Super- phosphate» -> «Superphosphate» (guion de corte de línea)
+        pts = sorted((p, v) for p, v in zip(per, vals) if p and v is not None)
+        if len(pts) < 4: continue
+        y, q = datetime.date.today().year, (datetime.date.today().month - 1) // 3 + 1
+        ly, lq = int(pts[-1][0][:4]), int(pts[-1][0][-1])
+        if (y - ly) * 4 + q - lq > 6: continue
+        prev = pts[-2][1]
+        out.append(dict(id="hu-ksh-%s-%s-%s" % (tab[3:], slug(sec)[:8], slug(name)[:60]), group=group, label="Average input price: %s, %s (%s, KSH)" % (sec.lower(), name, unit), unit=unit,
+                        frequency="quarterly", latestPeriod=pts[-1][0], latest=pts[-1][1], changePct=round((pts[-1][1] / prev - 1) * 100, 2) if prev else None,
+                        points=[[p, round(v, 3)] for p, v in pts], sourceGroup="KSH STADAT %s" % tab))
+    log(tab, len(out), "series trimestrales")
+    return out
 def main():
     ser = []
+    try: ser += parse_quarterly("ara0050", "inputs")
+    except Exception as e: log("ERROR", "ara0050", repr(e)[:300])
     for t in MONTHLY:
         try: ser += parse_monthly(*t)
         except Exception as e: log("ERROR", t[0], repr(e)[:300])

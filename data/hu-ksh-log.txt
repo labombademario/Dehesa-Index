@@ -1,3 +1,4 @@
+ara0050 19 series trimestrales
 ara0052 15 series mensuales
 ara0053 11 series mensuales
 ara0054 14 series mensuales

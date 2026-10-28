@@ -439,6 +439,14 @@
     var bar = document.querySelector('.di-frame-bar'), bh = bar && !bar.hidden && bar.getClientRects().length ? bar.offsetHeight : 0, ps = bar ? window.getComputedStyle(bar).position : '';
     var y = window.pageYOffset + t.getBoundingClientRect().top - frHdr() - (ps === 'sticky' || ps === 'fixed' ? bh : 0) - 18;
     window.scrollTo(0, Math.max(0, y));
+    /* los bloques que cargan al acercarse (encima del destino) empujan la página tras el salto: se reajusta unas veces durante 3 s, y se para en cuanto la persona mueve la página */
+    if (FR.goT) { FR.goT.forEach(clearTimeout); }
+    var stop = false, off = function () { stop = true; ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.removeEventListener(ev, off, true); }); };
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.addEventListener(ev, off, true); });
+    FR.goT = [250, 600, 1100, 1800, 3000].map(function (ms, i, a) { return setTimeout(function () {
+      if (!stop) { var d = t.getBoundingClientRect().top - frHdr() - (ps === 'sticky' || ps === 'fixed' ? bh : 0) - 18; if (Math.abs(d) > 4) window.scrollBy(0, d); }
+      if (i === a.length - 1) off();
+    }, ms); });
   }
   function frCrumbs(el, items) {
     if (!el) return; var e = function (x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };

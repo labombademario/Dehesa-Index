@@ -313,12 +313,14 @@
     var DIESEL = ['pp-fr-gnr', 'pp-de-diesel', 'pp-it-fuel', 'pp-pl-diesel', 'pp-be-diesel', 'pp-at-diesel', 'pp-hr-diesel', 'pp-ie-diesel', 'pp-nl-diesel', 'pp-pt-diesel', 'pp-eu-diesel'];
     var hasC = function (id) { var e = document.getElementById(id); return !!(e && e.firstElementChild && e.offsetHeight > 2); };
     var diesel = null; DIESEL.forEach(function (id) { if (!diesel && hasC(id)) diesel = id; });
-    var MORE = ['pp-forecast', 'pp-eu-nit', 'pp-land-es', 'pp-gi', 'pp-eu-tariff'], extra = [];
+    var CLIMID = 'pp-' + String(ST.c).toLowerCase() + '-clim';   /* lluvia y temperatura por región (FR, DE y los países con la rejilla de NASA POWER) */
+    var MORE = [CLIMID, 'pp-forecast', 'pp-eu-nit', 'pp-land-es', 'pp-gi', 'pp-eu-tariff'], extra = [];
     if (hasId('pp-eu-land') && !document.getElementById('pp-eu-land').hidden) extra.push('pp-eu-land'); if (diesel) extra.push(diesel);
     if (hasId('pp-census') || hasId('pp-managers') || hasId('pp-eu-tariff')) MORE.concat(extra).forEach(function (id) { if (!more && (hasId(id) || extra.indexOf(id) >= 0)) more = id; });
     /* lo que cuelga de «Comercio» en el orden de la página: cada bloque largo con su propio apartado (pesca, edad de los jefes, censo agrario, resto) */
     var ML = { es: { 'pp-forecast': 'Previsiones de producción de carne', 'pp-eu-nit': 'Nitratos en el agua', 'pp-land-es': 'Precio de la tierra y cánones', 'pp-gi': 'Denominaciones de origen', 'pp-eu-tariff': 'Aranceles en vigor' }, en: { 'pp-forecast': 'Meat production forecasts', 'pp-eu-nit': 'Nitrates in water', 'pp-land-es': 'Land prices and rents', 'pp-gi': 'Protected designations of origin', 'pp-eu-tariff': 'Tariff measures in force' }, fr: { 'pp-forecast': 'Prévisions de production de viande', 'pp-eu-nit': 'Nitrates dans l’eau', 'pp-land-es': 'Prix des terres et fermages', 'pp-gi': 'Appellations d’origine', 'pp-eu-tariff': 'Mesures tarifaires en vigueur' }, it: { 'pp-forecast': 'Previsioni di produzione di carne', 'pp-eu-nit': 'Nitrati nell’acqua', 'pp-land-es': 'Prezzo della terra e canoni', 'pp-gi': 'Denominazioni di origine', 'pp-eu-tariff': 'Misure tariffarie in vigore' } }[lang()] || {};
     var XL = { es: ['Tierra y regadío', 'Gasóleo agrícola'], en: ['Land and irrigation', 'Agricultural diesel'], fr: ['Terres et irrigation', 'Gazole agricole'], it: ['Terra e irrigazione', 'Gasolio agricolo'] }[lang()] || ['Tierra y regadío', 'Gasóleo agrícola'];
+    ML[CLIMID] = ({ es: 'Lluvia y temperatura', en: 'Rainfall and temperature', fr: 'Pluie et température', it: 'Pioggia e temperatura' })[lang()] || 'Lluvia y temperatura';
     var moreSubs = function () { var r = MORE.filter(hasId).map(function (id) { return [id, ML[id] || id]; }); if (extra.indexOf('pp-eu-land') >= 0) r.push(['pp-eu-land', XL[0]]); if (diesel) r.push([diesel, XL[1]]); return r; };
     F.bar(document.getElementById('pa-bar'), nm, [['ps-regmap', L[8]], ['pp-kpi', L[0]], ['pp-trade', L[1]], ['pp-eu-econ', ({ es: 'Economía agraria', en: 'Farm economics', fr: 'Économie agricole', it: 'Economia agricola' })[lang()]], ['pp-fish', L[11]], ['pp-managers', L[12]], ['pp-census', L[13]], [more || 'pp-more-none', L[14], moreSubs()], ['pp-ask', L[7]], ['ps-explorer', L[2]], ['ps-detail', L[3]], ['ps-drought', L[9]], ['ps-ghg', L[10]], ['ps-sources', L[4]]]); /* misma barra, mismo orden en todos los paises */
   }
@@ -374,7 +376,7 @@
     after.parentNode.insertBefore(b, after.nextSibling); after.parentNode.insertBefore(a, after.nextSibling); after.parentNode.insertBefore(c, after.nextSibling);   /* clima por departamento (Météo-France, js/fr-climate.js) primero */
     function js(src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
     var go = function () { if (ST.c !== cc) return; if (window.DIFrClimate) window.DIFrClimate.mount(c, lang()); if (window.DIFrGNR) window.DIFrGNR.mount(a, lang()); if (window.DIFrNitrates) window.DIFrNitrates.mount(b, lang()); };
-    var mods = function () { if (window.DIFrGNR && window.DIFrNitrates && window.DIFrClimate) return go(); var n = 0, done = function () { if (++n === 3) go(); }; js('js/fr-gnr.js?v=20261013', done); js('js/fr-nitrates.js?v=20261012', done); js('js/fr-climate.js?v=0', done); };
+    var mods = function () { if (window.DIFrGNR && window.DIFrNitrates && window.DIFrClimate) return go(); var n = 0, done = function () { if (++n === 3) go(); }; js('js/fr-gnr.js?v=20261013', done); js('js/fr-nitrates.js?v=20261012', done); js('js/fr-climate.js?v=20261028b', done); };
     if (window.DIFrDeptMap) mods(); else js('js/fr-dept-map.js?v=20261015', mods);
   }
   /* Alemania: gasóleo y devolución Agrardiesel (js/de-diesel.js) */
@@ -389,7 +391,7 @@
     var cl = document.createElement('div'); cl.id = 'pp-de-clim'; cl.style.minHeight = '1px'; after.parentNode.insertBefore(cl, after.nextSibling);
     var js1 = function (src, ok) { var x = document.createElement('script'); x.src = src; x.onload = ok; document.head.appendChild(x); };
     var goC = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(cl, lang(), 'DE'); };
-    nearView(cl, function () { var m2 = function () { if (window.DIFrClimate) goC(); else js1('js/fr-climate.js?v=20261028', goC); }; if (window.DIFrDeptMap) m2(); else js1('js/fr-dept-map.js?v=20261015', m2); });
+    nearView(cl, function () { var m2 = function () { if (window.DIFrClimate) goC(); else js1('js/fr-climate.js?v=20261028b', goC); }; if (window.DIFrDeptMap) m2(); else js1('js/fr-dept-map.js?v=20261015', m2); });
     /* precio de la tierra agrícola por Regierungsbezirk (Destatis 61521-0020; js/de-land-prices.js con el mapa NUTS 2 de vendor/de-nuts2.js) */
     var ld = document.createElement('div'); ld.id = 'pp-de-land'; ld.style.minHeight = '1px'; cl.parentNode.insertBefore(ld, cl.nextSibling);
     var goL = function () { if (window.DIDeLand && ST.c === cc) window.DIDeLand.mount(ld, lang()); };
@@ -711,7 +713,7 @@
     var el = document.createElement('div'); el.id = 'pp-' + cc.toLowerCase() + '-clim'; el.style.minHeight = '1px'; after.parentNode.insertBefore(el, after.nextSibling);
     var js1 = function (src, ok) { var x = document.createElement('script'); x.src = src; x.onload = ok; document.head.appendChild(x); };
     var go = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(el, lang(), cc); };
-    nearView(el, function () { var m = function () { if (window.DIFrClimate) go(); else js1('js/fr-climate.js?v=20261028', go); }; if (window.DIFrDeptMap) m(); else js1('js/fr-dept-map.js?v=20261015', m); });
+    nearView(el, function () { var m = function () { if (window.DIFrClimate) go(); else js1('js/fr-climate.js?v=20261028b', go); }; if (window.DIFrDeptMap) m(); else js1('js/fr-dept-map.js?v=20261015', m); });
   }
   function elUp() {
     if (ST.c !== 'EL') return;

@@ -76,6 +76,8 @@
       return '<tr><td style="' + td + ';text-align:left">' + esc(mname(m.period, lg)) + '</td><td style="' + td + '">' + nf(m.precipMm, 0, lg) + '</td><td style="' + td + '">' + (pp == null ? '—' : nf(pp, 0, lg) + ' %') + '</td><td style="' + td + '">' + nf(m.tempC, 1, lg) + '</td><td style="' + td + '">' + sg(m.tempAnomalyC, 1, lg) + '</td></tr>'; }).join('');
     return '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:420px;font-size:13px"><caption style="text-align:left;font-weight:700;padding:4px 0">' + esc(t.tbl.replace('{d}', d.name + ' (' + d.id + ')')) + '</caption><thead><tr><th scope="col" style="' + th + ';text-align:left">' + esc(t.month) + '</th><th scope="col" style="' + th + '">' + esc(t.pa) + '</th><th scope="col" style="' + th + '">' + esc(t.pPct) + '</th><th scope="col" style="' + th + '">' + esc(t.tc) + '</th><th scope="col" style="' + th + '">' + esc(t.ta) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
   }
+  var FOLD = { es: ['Ocultar ▴', 'Mostrar ▾'], en: ['Hide ▴', 'Show ▾'], fr: ['Masquer ▴', 'Afficher ▾'], it: ['Nascondi ▴', 'Mostra ▾'] };
+  function hid() { if (ST.hid == null) { try { ST.hid = localStorage.getItem('dehesaClimHidden') === '1'; } catch (e) { ST.hid = false; } } return ST.hid; }
   function mount(el, lg, cc) {
     if (!el) return Promise.resolve(false); lg = T[lg] ? lg : 'es'; var C = CFG[cc] || CFG.FR;
     var M = global.DIFrDeptMap;
@@ -98,14 +100,19 @@
       var opts = P.slice().reverse().map(function (p) { return '<option value="' + p + '"' + (p === ST.per ? ' selected' : '') + '>' + esc(mname(p, lg)) + '</option>'; }).join('');
       var row = function (l, v) { return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(l) + '</span><span class="di-info-stat-value">' + v + '</span></div>'; };
       var miss = (D.missing || []).map(function (id) { return id; });
-      el.innerHTML = '<section class="di-card ps-rm gb-card frc-card ' + (ST.m === 'p' ? 'frc-p' : 'frc-t') + '" id="' + C.id + '" style="max-width:none"><h2 class="ps-rm-h">' + esc(t.h) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.sub) + '</p>' +
+      el.innerHTML = '<section class="di-card ps-rm gb-card frc-card ' + (ST.m === 'p' ? 'frc-p' : 'frc-t') + '" id="' + C.id + '" style="max-width:none"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap"><h2 class="ps-rm-h" style="margin:0">' + esc(t.h) + '</h2>' +
+        '<button type="button" class="esp-chip frc-fold" aria-expanded="' + !hid() + '" aria-controls="' + C.id + '-body">' + esc(hid() ? FOLD[lg][1] : FOLD[lg][0]) + '</button></div><p class="di-movers-hint" style="margin:6px 0 10px">' + esc(t.sub) + '</p>' +
+        '<div class="frc-body" id="' + C.id + '-body"' + (hid() ? ' hidden' : '') + '>' +
         '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px"><div class="esp-tabs" role="group">' + chip(ST.m === 'p', 'data-frc="p"', '🌧️ ' + t.p) + chip(ST.m === 't', 'data-frc="t"', '🌡️ ' + t.t) + '</div>' +
         '<label style="font-size:13px">' + esc(t.month) + ' <select class="frc-per" style="margin-left:4px">' + opts + '</select></label></div>' +
         '<div class="di-info-stat-list" style="max-width:640px">' + row(t.dry, '<b>' + dry + '</b> ' + esc(t.of) + ' ' + n) + row(t.wet, '<b>' + wet + '</b> ' + esc(t.of) + ' ' + n) + (nm0 && nm0.precipAnomalyPct != null ? row(t.nat, '<b>' + nf(100 + nm0.precipAnomalyPct, 0, lg) + ' %</b> ' + esc(t.vsN)) : '') + row(t.warm, '<b>' + sg(tav, 1, lg) + ' °C</b>') + '</div>' +
         (mp ? '<div class="di-info-card-title gb-sub">' + esc((ST.m === 'p' ? t.mapP : t.mapT) + ' · ' + mname(ST.per, lg)) + '</div><div class="wp-readout frc-tip" aria-live="polite">' + esc(t.hint) + '</div>' + mp.html : '') +
         '<div class="frc-dept" style="margin-top:10px"></div>' +
         '<p class="di-movers-hint" style="margin:10px 0 0">' + esc((D.methodology && D.methodology[lg]) || (D.methodology && D.methodology.en) || '') + (miss.length ? ' ' + esc(t.miss.replace('{d}', miss.join(', '))) : '') + '</p>' +
-        '<p class="di-field-hint" style="margin:8px 0 0">' + esc(t.src) + ' <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcN) + '</a> (' + esc(C.lic) + '). ' + esc(t.calc) + '</p></section>';
+        '<p class="di-field-hint" style="margin:8px 0 0">' + esc(t.src) + ' <a href="' + esc(D.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.srcN) + '</a> (' + esc(C.lic) + '). ' + esc(t.calc) + '</p></div></section>';
+      /* plegar y desplegar sin volver a dibujar el mapa; la preferencia se recuerda en este navegador (si el navegador no deja guardar, solo vale para esta visita) */
+      var fb = el.querySelector('.frc-fold'), body = el.querySelector('.frc-body');
+      if (fb && body) fb.onclick = function () { var h = !body.hidden; body.hidden = h; fb.setAttribute('aria-expanded', String(!h)); fb.textContent = h ? FOLD[lg][1] : FOLD[lg][0]; ST.hid = h; try { localStorage.setItem('dehesaClimHidden', h ? '1' : '0'); } catch (e) {} };
       Array.prototype.forEach.call(el.querySelectorAll('[data-frc]'), function (b) { b.onclick = function () { ST.m = b.getAttribute('data-frc'); mount(el, lg, cc); }; });
       var sel = el.querySelector('.frc-per'); if (sel) sel.onchange = function () { ST.per = sel.value; mount(el, lg, cc); };
       var box = el.querySelector('.frc-dept');

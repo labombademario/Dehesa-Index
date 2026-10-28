@@ -3209,3 +3209,7 @@ a.di-nav-chip { min-width: 0; gap: 7px; padding-left: 10px; padding-right: 10px;
 .fsh-ysel{border-left:0;border-right:0;border-radius:0;padding:0 12px;min-width:112px;text-align:center;text-align-last:center;font-weight:600}
 .fsh-ybtn:disabled{opacity:.4;cursor:not-allowed}
 .fsh-ybtn:focus-visible,.fsh-ysel:focus-visible{outline:2px solid var(--focus,#2b5f9e);outline-offset:2px}
+
+/* bloque de lluvia y temperatura plegable (js/fr-climate.js) */
+.frc-body[hidden]{display:none}
+.frc-fold{white-space:nowrap}

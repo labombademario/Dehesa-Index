@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T02:31:54Z",
+ "generatedAt": "2026-10-28T03:24:30Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -6074,7 +6074,7 @@
    "country": "HU",
    "scope": "integrated",
    "institution": "Hungary — KSH (Hungarian Central Statistical Office), STADAT agriculture tables",
-   "dataset": "Ya integrada (509 series en el catalogo unificado)",
+   "dataset": "Ya integrada (528 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
