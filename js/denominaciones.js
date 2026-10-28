@@ -22,9 +22,9 @@
       var d = rr[0], inao = rr[1], zset = {}; if (inao && inao.z) inao.z.forEach(function (f) { zset[f] = 1; });
       if (!d || (!d.wine.length && !d.cheese.length)) { el.innerHTML = ''; return; }
       var st = { k: d.wine.length ? 'wine' : 'cheese', ty: 'all', q: '', open: false, r: '', det: false, zf: '' }, gnames = {}; d.wine.forEach(function (e) { gnames[e.f] = e.n.join(' / '); });
-      var MAPK = 'DEHESA_' + cc + '_REGIONS';
+      var N3 = !!(d.regionSource && d.regionSource.map === 'nuts3'), MAPK = N3 ? 'DEHESA_NUTS3_' + cc : 'DEHESA_' + cc + '_REGIONS';
       var hasR = d.wine.concat(d.cheese).some(function (e) { return e.r && e.r.length; });
-      var RN = function (r) { var N = window.DehesaRegionNames && window.DehesaRegionNames[cc], v = N && N[r]; return v ? v.split('|')[{ en: 0, es: 1, fr: 2, it: 3 }[lg] || 0] : r; };
+      var RN = function (r) { if (N3) { var M3 = window[MAPK], x3 = M3 && M3.states.filter(function (z) { return z.id === r; })[0]; return x3 ? x3.name : r; } var N = window.DehesaRegionNames && window.DehesaRegionNames[cc], v = N && N[r]; return v ? v.split('|')[{ en: 0, es: 1, fr: 2, it: 3 }[lg] || 0] : r; };
       function list() {
         var L = d[st.k].filter(function (e) { return (st.ty === 'all' || e.t === st.ty) && (!st.zf || e.f === st.zf) && (!st.r || (e.r && e.r.indexOf(st.r) > -1)) && (!st.q || norm(e.n.join(' ') + ' ' + (e.tr || []).join(' ')).indexOf(norm(st.q)) > -1); });
         var shown = st.open ? L : L.slice(0, SHOW);
@@ -40,7 +40,7 @@
       }
       function regs() { var o = {}; d[st.k].forEach(function (e) { (e.r || []).forEach(function (r) { o[r] = 1; }); }); return Object.keys(o).sort(function (a, b) { return RN(a).localeCompare(RN(b)); }); }
       function mapHtml() {
-        var M = window[MAPK]; if (!M || !hasR) return '';
+        var M = window[MAPK]; if (!M || !hasR || !d[st.k].some(function (e) { return e.r && e.r.length; })) return '';
         var cnt = {}, mx = 0; d[st.k].forEach(function (e) { if (st.ty !== 'all' && e.t !== st.ty) return; (e.r || []).forEach(function (r) { cnt[r] = (cnt[r] || 0) + 1; if (cnt[r] > mx) mx = cnt[r]; }); });
         var paths = M.states.map(function (x) {
           var n = cnt[x.id] || 0, f = n && mx ? Math.sqrt(n / mx) : 0, a = [226, 221, 205], z = [47, 107, 74];
@@ -74,8 +74,8 @@
       });
       el.addEventListener('keydown', function (ev) { if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.getAttribute && ev.target.getAttribute('data-gi-zn')) { ev.preventDefault(); ev.target.dispatchEvent(new MouseEvent('click', { bubbles: true })); } });
       el.addEventListener('change', function (ev) { if (ev.target.className.indexOf('di-gi-r') > -1) { st.r = ev.target.value; st.open = false; draw(); } });
-      if (hasR && !window[MAPK]) { var sm = document.createElement('script'); sm.src = 'vendor/' + cc.toLowerCase() + '-regions.js'; sm.onload = draw; document.head.appendChild(sm); }
-      if (hasR && !window.DehesaRegionNames) { var sc = document.createElement('script'); sc.src = 'js/region-names.js?v=20261012'; sc.onload = draw; document.head.appendChild(sc); }
+      if (hasR && !window[MAPK]) { var sm = document.createElement('script'); sm.src = N3 ? 'vendor/nuts3/' + cc.toLowerCase() + '.js' : 'vendor/' + cc.toLowerCase() + '-regions.js'; sm.onload = draw; document.head.appendChild(sm); }
+      if (hasR && !N3 && !window.DehesaRegionNames) { var sc = document.createElement('script'); sc.src = 'js/region-names.js?v=20261012'; sc.onload = draw; document.head.appendChild(sc); }
       el.addEventListener('input', function (ev) { if (ev.target.className === 'di-gi-q') { st.q = ev.target.value; el.querySelector('.di-gi-body').innerHTML = list(); } });
     });
   }

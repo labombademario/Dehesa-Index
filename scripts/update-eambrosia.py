@@ -173,6 +173,10 @@ def main():
                     else: miss += 1; nomatch.append(e['n'][0])
             log('Francia: region asignada a', hit, 'denominaciones; sin region', miss, '(%s)' % ', '.join(nomatch[:40]))
         except Exception as e: log('Francia sin regiones (INAO no disponible):', repr(e)[:200])
+    # Dinamarca: la zona de cada vino sale del pliego de condiciones (Fodevarestyrelsen) y se asigna a unidades NUTS 3; los quesos no tienen zona
+    DK_NUTS3 = {'Bornholm': ['DK014'], 'Dons': ['DK032'], 'Fyn': ['DK031'], 'Jylland': ['DK032', 'DK041', 'DK042', 'DK050'], 'Sjælland': ['DK011', 'DK012', 'DK013', 'DK021', 'DK022']}
+    for e in (out.get('DK') or {}).get('wine', []):
+        if e['n'][0] in DK_NUTS3: e['r'] = DK_NUTS3[e['n'][0]]
     it_used = []
     if 'IT' in out and '--no-it' not in sys.argv:
         idx, it_used = it_regions(); hit = 0
@@ -191,6 +195,7 @@ def main():
         for k in v: v[k].sort(key=lambda e: e['n'][0].lower())
         doc = {'schemaVersion': 1, 'generatedAt': now, 'country': c, 'source': src, 'wine': v['wine'], 'cheese': v['cheese']}
         if c == 'IT' and it_used: doc['regionSource'] = {'name': 'Listados abiertos de las regiones: ' + ', '.join(it_used), 'url': 'https://www.dati.gov.it/', 'license': 'CC BY 4.0 / CC0 según la región', 'partial': True}
+        if c == 'DK': doc['regionSource'] = {'name': 'Pliegos de condiciones de cada denominación (Fødevarestyrelsen): zona leída en cada pliego y asignada por Dehesa Index a las unidades NUTS 3 (Eurostat/GISCO). Los quesos (Danablu, Danbo…) no tienen zona en el pliego', 'url': 'https://foedevarestyrelsen.dk/', 'license': 'Asignación propia a partir de textos de normas públicas', 'map': 'nuts3'}
         if c == 'FR': doc['regionSource'] = {'name': 'INAO, aires géographiques des AOC/AOP et des IGP/IG (data.gouv.fr)', 'url': 'https://www.data.gouv.fr/datasets/aires-geographiques-des-aoc-aop', 'license': 'Licence Ouverte / Open Licence 2.0 (Etalab)'}
         (d / ('%s.json' % c)).write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
         idx[c] = {'wine': len(v['wine']), 'cheese': len(v['cheese']),
