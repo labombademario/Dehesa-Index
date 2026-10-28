@@ -300,7 +300,7 @@
     var body = rows.map(function (x) { return '<tr><td>' + esc(x.r) + '</td><td class="num">' + num(x.v, d) + ' <span class="fsh-m">' + esc(unit(u)) + '</span></td><td class="num">' + (tot ? num(x.v / tot * 100, 1) : '—') + ' %</td><td><div style="height:8px;border-radius:2px;background:#2f6b4a;width:' + (mx ? Math.max(2, Math.round(x.v / mx * 100)) : 0) + '%"></div></td></tr>'; }).join('');
     var io = order.map(function (b) { return '<option value="' + esc(b) + '"' + (b === ST.rk ? ' selected' : '') + '>' + esc(trl(bases[b][0].label)) + '</option>'; }).join('');
     var yo = ys.map(function (y) { return '<option value="' + y + '"' + (y === ST.ry ? ' selected' : '') + '>' + y + '</option>'; }).join('');
-    return '<div class="di-card di-info-card wp-card"><div class="di-info-card-title">' + esc(tx(RKT.h)) + '</div><div class="fsh-pick"><label>' + esc(tx(RKT.ind)) + ' <select id="bq-rk">' + io + '</select></label> <label>' + esc(tx(RKT.yr)) + ' <select id="bq-ry">' + yo + '</select></label></div>' +
+    return '<div class="di-card di-info-card wp-card"><div class="di-info-card-title">' + esc(tx(RKT.h)) + '</div><div class="fsh-pick"><label>' + esc(tx(RKT.ind)) + ' <select id="bq-rk" data-search="1">' + io + '</select></label> <label>' + esc(tx(RKT.yr)) + ' <select id="bq-ry">' + yo + '</select></label></div>' +
       '<div class="fsh-tblw"><table class="fsh-tbl"><thead><tr><th>' + esc(tx(RKT.reg)) + '</th><th class="num">' + esc(tx(RKT.val)) + '</th><th class="num">' + esc(tx(RKT.sh)) + '</th><th></th></tr></thead><tbody>' + body + '</tbody></table></div><div class="di-info-scope-note">' + esc(tx(RKT.note)) + '</div></div>';
   }
   /* ==== Página por país, como pesca.html: selector de país y año, cifras clave, series largas, precios por surtido, precio frente al índice
@@ -463,7 +463,7 @@
     if (!p || !p.series.length) return sec('bq-prices', tx(FX.hPrices), '<p class="di-movers-hint">' + esc(v.ppi ? tx(FX.noPrice) : tx(FX.noPrice2)) + '</p>');
     var regs = {}; p.series.forEach(function (s) { if (s.region) regs[s.region] = 1; });
     var rk = Object.keys(regs).sort(), head = '';
-    if (rk.length) { if (PREG && !regs[PREG]) PREG = ''; head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-reg"><option value="">' + esc(tx(T.wholeCountry)) + '</option>' + rk.map(function (r) { return '<option value="' + esc(r) + '"' + (r === PREG ? ' selected' : '') + '>' + esc(r) + '</option>'; }).join('') + '</select></label></div>'; } else PREG = '';
+    if (rk.length) { if (PREG && !regs[PREG]) PREG = ''; head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-reg" data-search="1"><option value="">' + esc(tx(T.wholeCountry)) + '</option>' + rk.map(function (r) { return '<option value="' + esc(r) + '"' + (r === PREG ? ' selected' : '') + '>' + esc(r) + '</option>'; }).join('') + '</select></label></div>'; } else PREG = '';
     var list = p.series.filter(function (s) { return (s.region || '') === PREG && s.pts.length; }), key = CUR + PREG, back = BACK[p.freq] || 1;
     if (!list.length) return '';
     var cur = list.filter(function (s) { return s.id === PSEL[key]; })[0] || list.filter(function (s) { return s.bench; })[0] || list[0]; PSEL[key] = cur.id;
@@ -539,7 +539,7 @@
     if (!v.damage || !v.damage.length) return '';
     var all = v.damage.map(asOld), regs = {}; all.forEach(function (s) { if (s.region) regs[s.region] = 1; });
     var rk = Object.keys(regs).sort(function (a, b) { return a.localeCompare(b, LOC[lg()]); }), head = '';
-    if (rk.length) { if (DREG && !regs[DREG]) DREG = ''; head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-dreg"><option value="">' + esc(tx(T.wholeCountry)) + '</option>' + rk.map(function (r) { return '<option value="' + esc(r) + '"' + (r === DREG ? ' selected' : '') + '>' + esc(r) + '</option>'; }).join('') + '</select></label></div>'; } else DREG = '';
+    if (rk.length) { if (DREG && !regs[DREG]) DREG = ''; head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-dreg" data-search="1"><option value="">' + esc(tx(T.wholeCountry)) + '</option>' + rk.map(function (r) { return '<option value="' + esc(r) + '"' + (r === DREG ? ' selected' : '') + '>' + esc(r) + '</option>'; }).join('') + '</select></label></div>'; } else DREG = '';
     var list = all.filter(function (s) { return (s.region || '') === DREG; }); if (!list.length) return '';
     ST.sel = DSEL; return sec('bq-dmg', tx(FX.hDmg), head + seriesBlock(list, 'd' + CUR + DREG) + (DREG === '' ? rankView(all) : '') + '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(T.dmgNote)) + '</p>');
   }
@@ -600,7 +600,7 @@
   function header(v) {
     var cs = IDX.countries.map(function (r) { return r.cc; }).sort(function (a, b) { return a === 'EU' ? -1 : b === 'EU' ? 1 : cname(a).localeCompare(cname(b), LOC[lg()]); });
     var ys = yearsOf(v);
-    return '<div class="fsh-pick"><label>' + esc(tx(T.country)) + ' <select id="bq-cc">' + cs.map(function (c) { return '<option value="' + c + '"' + (c === CUR ? ' selected' : '') + '>' + flag(c) + esc(cname(c)) + '</option>'; }).join('') + '</select></label>' +
+    return '<div class="fsh-pick"><label>' + esc(tx(T.country)) + ' <select id="bq-cc" data-cpick="1">' + cs.map(function (c) { return '<option value="' + c + '"' + (c === CUR ? ' selected' : '') + '>' + flag(c) + esc(cname(c)) + '</option>'; }).join('') + '</select></label>' +
       '<label>' + esc(tx(FX.year)) + ' <select id="bq-yr"><option value="">' + esc(tx(FX.latest)) + '</option>' + ys.map(function (y) { return '<option value="' + y + '"' + (y === YR ? ' selected' : '') + '>' + y + '</option>'; }).join('') + '</select></label></div>';
   }
   function page() {

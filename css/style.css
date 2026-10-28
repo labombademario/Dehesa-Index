@@ -2748,6 +2748,7 @@ html[data-theme="dark"] .di-gi-zm { fill: #7FCF9B; }
 .fsh-ku{font-size:12px;font-weight:600;color:var(--text-muted)}
 .fsh-kp{font-size:11.5px;color:var(--text-muted);margin-top:3px}
 .fsh-sec{margin:0 0 14px;max-width:none}
+.di-card.fsh-sec{padding:20px 22px}@media(max-width:600px){.di-card.fsh-sec{padding:14px 14px}}
 .fsh-h2{font-size:16px;margin:0 0 4px}
 .fsh-tbl{width:100%;border-collapse:collapse;font-size:13px}
 .fsh-tbl th{text-align:left;font-size:11.5px;font-weight:700;color:var(--text-muted);padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap}

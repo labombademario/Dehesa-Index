@@ -1067,6 +1067,15 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
 
+// Norma del sitio (28-oct-2026): los desplegables marcados con data-search (listas largas) se convierten en un selector con buscador (js/search-select.js), cargado solo cuando aparecen.
+(function () {
+  var loaded = false;
+  function need(r) { return r && r.querySelector && (r.matches && r.matches('select[data-search]') || r.querySelector('select[data-search]')); }
+  function load() { if (loaded) return; loaded = true; var sc = document.createElement('script'); sc.src = 'js/search-select.js?v=20261028'; document.head.appendChild(sc); }
+  function start() { if (need(document)) { load(); return; } new MutationObserver(function (ms, ob) { for (var i = 0; i < ms.length; i++) for (var j = 0; j < ms[i].addedNodes.length; j++) if (need(ms[i].addedNodes[j])) { ob.disconnect(); load(); return; } }).observe(document.documentElement, { childList: true, subtree: true }); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+
 // Norma del sitio (21-oct-2026): los desplegables marcados con data-chips se convierten en botones con emoticono (js/chip-select.js), cargado solo cuando aparecen.
 (function () {
   var loaded = false;
