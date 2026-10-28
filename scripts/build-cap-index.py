@@ -74,7 +74,13 @@ NO_WATCH = {
     'RO': 'sin vigilancia automatica: legislatie.just.ro no se puede leer con robots (ROBOTS_DISALLOWED)',
     'HU': 'sin vigilancia automatica: no se ha probado la lectura de Magyar Kozlony ni del Nemzeti Jogszabalytar desde estos servidores',
     'CZ': 'sin vigilancia automatica: e-Sbirka no se pudo leer; el texto se leyo en una copia editorial',
-    'SE': 'sin vigilancia automatica: no se ha probado la lectura de la Svensk forfattningssamling desde estos servidores'}
+    'SE': 'sin vigilancia automatica: no se ha probado la lectura de la Svensk forfattningssamling desde estos servidores',
+    'BG': 'sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Bulgaria desde estos servidores',
+    'LV': 'sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Letonia desde estos servidores',
+    'EE': 'sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Estonia desde estos servidores',
+    'FI': 'sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Finlandia desde estos servidores',
+    'SK': 'sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Eslovaquia desde estos servidores',
+    'SI': 'sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Eslovenia desde estos servidores'}
 def country_nat(cc, name, amounts_comp):
     """FR, IT y PL: reglas curadas (rules.json), vigilancia (watch.json) e importes si los hay. Solo pagos directos: el resto de la PAC no se ha leido."""
     r, w = J('%s/rules.json' % cc.lower()), J('%s/watch.json' % cc.lower())
@@ -122,6 +128,18 @@ def country_cz():
     return country_nat('CZ', 'Chequia', (ni('solo tipos planificados de 2026 de BISS, CRISS, lupulo y hortalizas; faltan ecorregimenes, jovenes y el resto de asociadas', 'NOT_READ'), []))
 def country_se():
     return country_nat('SE', 'Suecia', (ni('margenes del anexo 3 de la ordenanza y cifras planificadas de 2026 o ya fijadas de 2025 figuran en las reglas; no se han leido los definitivos de 2026', 'NOT_READ'), []))
+def country_fi():
+    return country_nat('FI', 'Finlandia', (ni('los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes', 'NOT_READ'), []))
+def country_sk():
+    return country_nat('SK', 'Eslovaquia', (ni('los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes', 'NOT_READ'), []))
+def country_si():
+    return country_nat('SI', 'Eslovenia', (ni('los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes', 'NOT_READ'), []))
+def country_ee():
+    return country_nat('EE', 'Estonia', (ni('los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes', 'NOT_READ'), []))
+def country_bg():
+    return country_nat('BG', 'Bulgaria', (ni('los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes', 'NOT_READ'), []))
+def country_lv():
+    return country_nat('LV', 'Letonia', (ni('los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes', 'NOT_READ'), []))
 def country_be():
     return country_nat('BE', 'Belgica', (ni('en Valonia el ministro fija los importes y en Flandes no se han leido; no hay importes por hectarea', 'NOT_READ'), []))
 def country_eu():
@@ -150,7 +168,7 @@ def next_occurrence(cal, today):
 def build(today):
     cs = [x for x in (country_es(), country_dk(), country_eu()) if x]
     cs += [blocked(cc, n, r, c) for cc, n, r, c in PENDING]
-    cs += [x for x in (country_de(), country_fr(), country_it(), country_pl(), country_pt(), country_be(), country_hr(), country_el(), country_nl(), country_at(), country_ie(), country_ro(), country_hu(), country_cz(), country_se()) if x]   # al final: las pruebas de contrato indexan los primeros paises
+    cs += [x for x in (country_de(), country_fr(), country_it(), country_pl(), country_pt(), country_be(), country_hr(), country_el(), country_nl(), country_at(), country_ie(), country_ro(), country_hu(), country_cz(), country_se(), country_fi(), country_sk(), country_si(), country_ee(), country_bg(), country_lv()) if x]   # al final: las pruebas de contrato indexan los primeros paises
     rules, events, deadlines = J('es/rules.json'), [], []
     for cc, f in (('ES', 'es/watch.json'), ('DK', 'dk/watch.json')):
         w = J(f)

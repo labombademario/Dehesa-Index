@@ -898,6 +898,288 @@
      "reasonCode": "SOURCE_UNREACHABLE"
     }
    }
+  },
+  {
+   "cc": "FI",
+   "name": "Finlandia",
+   "scheme": "Pagos directos de la PAC 2023-2027 en Finlandia (Plan Estratégico de la PAC)",
+   "legalAct": {
+    "title": "Ley 1332/2022 (viljelijätuet) y ley 1334/2022 (toimeenpano), decretos 77/2023, 1384/2022, 65/2023, 86/2026 y 1431/2025; guía Ruokavirasto 2026",
+    "ref": "Finlex, textos consolidados (no auténticos; el original es el de Säädöskokoelma)",
+    "url": "https://www.finlex.fi/fi/lainsaadanto/2022/1332",
+    "sourceId": "finlex_fi"
+   },
+   "updatedAt": "2026-10-28",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "fi/rules.json",
+     "count": 12,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "fi/rules.json",
+     "count": 17,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "fi/rules.json",
+     "count": 4,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Finlandia desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "SK",
+   "name": "Eslovaquia",
+   "scheme": "Strategický plán spoločnej poľnohospodárskej politiky SR 2023-2027 (priame platby: nariadenie vlády č. 436/2022 Z. z.)",
+   "legalAct": {
+    "title": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory v poľnohospodárstve formou priamych platieb (znenie od 15. 3. 2026, v znení 121/2023, 516/2023, 413/2024, 49/2025, 95/2025, 410/2025 y 37/2026); NV č. 120/2023 Z. z. sobre solicitudes y reducciones (znenie od 1. 1. 2026, en la redacción de 71/2024, 100/2024, 411/2024 y 409/2025); NV č. 435/2022 Z. z. sobre agricultor activo y condicionalidad (znenie od 1. 7. 2026, en la redacción de 515/2023, 222/2024, 414/2024, 7/2026 y 150/2026); Zbierka zákonov SR vía Slov-lex; convocatoria y tasas de la PPA",
+    "ref": "NV SR č. 436/2022 Z. z.",
+    "url": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
+    "sourceId": "slov_lex"
+   },
+   "updatedAt": "2026-10-28",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "sk/rules.json",
+     "count": 12,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "sk/rules.json",
+     "count": 12,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "sk/rules.json",
+     "count": 6,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Eslovaquia desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "SI",
+   "name": "Eslovenia",
+   "scheme": "Strateški načrt skupne kmetijske politike 2023–2027: Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027",
+   "legalAct": {
+    "title": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23) con sus reformas 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25 y 107/25; Uredba o izvedbi intervencij kmetijske politike za leto 2026 (Ur. l. RS 4/2026); Uredba o pravilih pogojenosti (Ur. l. RS 2/24)",
+    "ref": "Ur. l. RS 17/2023 (y reformas); 4/2026; 2/2024",
+    "url": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+    "sourceId": "uradni_list_rs"
+   },
+   "updatedAt": "2026-10-28",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "si/rules.json",
+     "count": 10,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "si/rules.json",
+     "count": 15,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "si/rules.json",
+     "count": 3,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Eslovenia desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "EE",
+   "name": "Estonia",
+   "scheme": "Euroopa Liidu ühise põllumajanduspoliitika Eesti strateegiakava aastateks 2023–2027 (otsetoetused: ELÜPS ja maaeluministri määrused nr 71, 72, 73)",
+   "legalAct": {
+    "title": "Euroopa Liidu ühise põllumajanduspoliitika rakendamise seadus (ELÜPS, RT I, 14.02.2025, 4); maaeluministri määrused nr 71 (RT I, 02.08.2025, 7), nr 72 (RT I, 19.03.2026, 13), nr 73 (RT I, 11.02.2026, 6), nr 68 ristvastavus (RT I, 06.05.2026, 4) ja nr 4 / 17.01.2025 (RT I, 21.01.2025, 9); sekkumiste loetelu (RT I, 01.09.2026, 8); toetuste määrused ÖKO, ÖST, MESI, KSM, MAHE; PRIA 2026 juhendid",
+    "ref": "ELÜPS; määrus nr 71",
+    "url": "https://www.riigiteataja.ee/akt/102082025007",
+    "sourceId": "riigi_teataja_ee"
+   },
+   "updatedAt": "2026-10-28",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "ee/rules.json",
+     "count": 14,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "ee/rules.json",
+     "count": 16,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "ee/rules.json",
+     "count": 10,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Estonia desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "BG",
+   "name": "Bulgaria",
+   "scheme": "Стратегически план за развитие на земеделието и селските райони 2023-2027 (СПРЗСР): директни плащания, Наредба № 3 и Наредба № 4 от 2023 г.",
+   "legalAct": {
+    "title": "Наредба № 3 от 10.03.2023 г. за условията и реда за прилагане на интервенциите под формата на директни плащания (ДВ, бр. 23 от 2023 г.; copia consolidada de 21-01-2026 con reformas hasta ДВ, бр. 6 от 2026 г.) y Наредба № 4 от 30.03.2023 г. за условията и реда за подаване на заявления за подпомагане по интервенции за подпомагане на площ и за животни (ДВ, бр. 30 от 2023 г.; copia consolidada de 26-02-2025 con reformas hasta ДВ, бр. 16 от 2025 г.); ЗПЗП (copia no oficial hasta ДВ, бр. 66 от 2023 г.)",
+    "ref": "Наредба № 3/2023 y Наредба № 4/2023 del Министерство на земеделието и храните (copias consolidadas alojadas por el ministerio)",
+    "url": "https://www.mzh.government.bg/media/filer_public/2026/01/21/naredba_3_ot_10032023_g_za_usloviqta_i_reda_za_prilagane_na_intervenciite_pod_formata_na_direktni_pl.pdf",
+    "sourceId": "mzh_naredba_3_4_2023"
+   },
+   "updatedAt": "2026-10-28",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "bg/rules.json",
+     "count": 8,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "bg/rules.json",
+     "count": 15,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "bg/rules.json",
+     "count": 6,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Bulgaria desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "LV",
+   "name": "Letonia",
+   "scheme": "Kopējās lauksaimniecības politikas stratēģiskais plāns 2023.–2027. gadam (tiešie maksājumi: Ministru kabineta noteikumi Nr. 198)",
+   "legalAct": {
+    "title": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (Latvijas Vēstnesis nr. 77, 20-4-2023), con las modificaciones MK 393/2023, 446/2023, 537/2023, 623/2023, 230/2024, 685/2024 (leídas en la copia letona) y las posteriores de 17-12-2024, 18-3-2025, 372/2025 (17-6-2025) y 10-2-2026 (no leídas)",
+    "ref": "MK noteikumi Nr. 198",
+    "url": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+    "sourceId": "likumi_lv"
+   },
+   "updatedAt": "2026-10-28",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el texto del plan estrategico no se ha leido: solo las reglas de los pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "PARTIAL",
+     "file": "lv/rules.json",
+     "count": 24,
+     "note": "Intervenciones de pagos directos con su base legal; el desarrollo rural y las intervenciones sectoriales no se han leido"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes publicados (previstos o definitivos, segun cada fuente) figuran en el texto de las reglas, con su año; no se ingieren tablas de importes",
+     "reasonCode": "NOT_READ"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "lv/rules.json",
+     "count": 17,
+     "note": "Reglas de pagos directos leidas a mano de la norma oficial; no es el articulado completo ni consejo juridico"
+    },
+    "importantDates": {
+     "state": "PARTIAL",
+     "file": "lv/rules.json",
+     "count": 10,
+     "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Letonia desde estos servidores",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
   }
  ],
  "watch": {

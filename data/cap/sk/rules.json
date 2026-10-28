@@ -1,0 +1,604 @@
+{
+ "schemaVersion": 1,
+ "country": "SK",
+ "scheme": "Strategický plán spoločnej poľnohospodárskej politiky SR 2023-2027 (priame platby: nariadenie vlády č. 436/2022 Z. z.)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-28",
+ "source": {
+  "id": "slov_lex",
+  "instrument": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory v poľnohospodárstve formou priamych platieb (znenie od 15. 3. 2026, v znení 121/2023, 516/2023, 413/2024, 49/2025, 95/2025, 410/2025 y 37/2026); NV č. 120/2023 Z. z. sobre solicitudes y reducciones (znenie od 1. 1. 2026, en la redacción de 71/2024, 100/2024, 411/2024 y 409/2025); NV č. 435/2022 Z. z. sobre agricultor activo y condicionalidad (znenie od 1. 7. 2026, en la redacción de 515/2023, 222/2024, 414/2024, 7/2026 y 150/2026); Zbierka zákonov SR vía Slov-lex; convocatoria y tasas de la PPA",
+  "ref": "NV SR č. 436/2022 Z. z.",
+  "url": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html"
+ },
+ "note": "Reglas leídas a mano del texto íntegro de tres nariadenia vlády en la versión consolidada informativa de la web oficial Slov-lex (static.slov-lex.sk; la web advierte que solo vale el PDF de la Zbierka zákonov): NV 436/2022 (versión de 15-3-2026, completa salvo anexos), NV 120/2023 (versión de 1-1-2026, completa salvo anexo 1) y NV 435/2022 (versión de 1-7-2026, completa salvo anexo 2). Las tasas de 2025 y 2026 salen de los ficheros xlsx de la PPA (apa.sk/priame-podpory/sadzby, de 24-2-2026 y actualizado el 16-10-2026) y, para jóvenes 2025, también del Vestník MPRV 4/2026; el plazo de 2026 sale de la convocatoria de la PPA (apa.sk). NO se leyó: anexos de los decretos (anexo 2 de NV 435/2022 con las normas DPEP y requisitos legales de gestión; anexo 1 de NV 120/2023; anexos 1-8 de NV 436/2022), las notas a pie con las remisiones, el Plan Estratégico completo, el NV 3/2023 de pagos no proyectables (desarrollo rural), el reglamento delegado 2022/1172 de sanciones de condicionalidad ni los valores del Vestník para los criterios de condicionalidad, ni las tasas de 2026 del eco-régimen y del pastoreo (sin publicar el 16-10-2026). Los ficheros de tasas no dicen si son definitivas o provisionales, y el de 2026 rotula en EUR/ha pagos por animal (posible error). El aviso de la PPA de presentación sin sanción durante un fin de semana en 2026 no lleva fecha y no se usó como excepción. Sin vigilancia automática. Son resúmenes de Dehesa Index, no el texto legal: manda el texto oficial.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Základná podpora príjmu v záujme udržateľnosti",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 6",
+   "articles": [
+    "§ 6"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Komplementárna redistributívna podpora príjmu v záujme udržateľnosti",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 7",
+   "articles": [
+    "§ 7"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Komplementárna podpora príjmu pre mladého poľnohospodára",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 8",
+   "articles": [
+    "§ 8"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Podpora formou celofarmovej eko-schémy",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 9-21",
+   "articles": [
+    "§ 9",
+    "§ 10",
+    "§ 11",
+    "§ 12"
+   ]
+  },
+  {
+   "id": "grazing",
+   "kind": "other",
+   "name": "Podpora na zlepšenie životných podmienok zvierat podporou pastevného chovu",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 22",
+   "articles": [
+    "§ 22"
+   ]
+  },
+  {
+   "id": "coupled-protein",
+   "kind": "coupled",
+   "name": "Viazaná podpora príjmu na pestovanie vybraných druhov bielkovinových plodín",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 23",
+   "articles": [
+    "§ 23"
+   ]
+  },
+  {
+   "id": "coupled-dairy-cows",
+   "kind": "coupled",
+   "name": "Viazaná podpora príjmu na kravy chované v systéme s trhovou produkciou mlieka",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 24",
+   "articles": [
+    "§ 24"
+   ]
+  },
+  {
+   "id": "coupled-sheep-goats",
+   "kind": "coupled",
+   "name": "Viazaná podpora príjmu na ovce a kozy",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 25",
+   "articles": [
+    "§ 25"
+   ]
+  },
+  {
+   "id": "coupled-hops",
+   "kind": "coupled",
+   "name": "Viazaná podpora príjmu na pestovanie chmeľu",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 26",
+   "articles": [
+    "§ 26"
+   ]
+  },
+  {
+   "id": "coupled-sugar-beet",
+   "kind": "coupled",
+   "name": "Viazaná podpora príjmu na pestovanie cukrovej repy",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 27",
+   "articles": [
+    "§ 27"
+   ]
+  },
+  {
+   "id": "coupled-fruit",
+   "kind": "coupled",
+   "name": "Viazaná podpora príjmu na pestovanie vybraných druhov ovocia",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 28",
+   "articles": [
+    "§ 28"
+   ]
+  },
+  {
+   "id": "coupled-vegetables",
+   "kind": "coupled",
+   "name": "Viazaná podpora príjmu na pestovanie vybraných druhov zeleniny",
+   "nameLang": "sk",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 29",
+   "articles": [
+    "§ 29"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Nariadenie vlády SR č. 435/2022 Z. z. o udržiavaní poľnohospodárskej plochy, aktívnom poľnohospodárovi a kondicionalite (znenie účinné od 1. 7. 2026), § 4",
+   "articles": [
+    "§ 4 ods. 1",
+    "§ 4 ods. 2",
+    "§ 4 ods. 5",
+    "§ 4 ods. 6",
+    "§ 4 ods. 8"
+   ],
+   "text": "Agricultor activo (aktívny poľnohospodár): basta cumplir una de estas vías. Persona física: los pagos directos del año anterior son al menos el 5 % de sus ingresos no agrarios del año anterior (sin contar ingresos forestales ni de conservación de la naturaleza), o sus ingresos agrarios del año anterior son al menos un tercio de sus ingresos totales. Persona física empresaria o persona jurídica: su objeto de actividad registrado es solo la actividad agraria y las relacionadas, o cumple la vía de la persona física. Además, quien no cumpla lo anterior es activo si cumple una de estas: cobró como máximo 5.000 € de pagos directos el año anterior; alcanzó una carga media de 0,25 UGM/ha de la superficie agraria de la explotación del 1 de junio al 30 de septiembre del año anterior; el año anterior solo cobró pagos asociados de ganadería; cobró pagos asociados por superficie sobre al menos el 10 % de la superficie agraria; o el valor de su producción vegetal propia del año anterior es al menos igual a los pagos directos cobrados. También cuentan los institutos de formación profesional agraria y las personas jurídicas de investigación y desarrollo. Si no hay resolución firme del año anterior, los pagos se estiman con las hectáreas o animales declarados por la tasa del año anterior. Texto leído en la versión de la web oficial Slov-lex vigente desde el 1 de julio de 2026 (150/2026); no se han leído las notas a pie con las remisiones.",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/435/20260701.html",
+   "values": {
+    "directPaymentsVsNonAgriIncomePct": 5,
+    "agriIncomeShare": "1/3",
+    "priorYearDirectPaymentsMaxEur": 5000,
+    "livestockUnitsPerHa": 0.25,
+    "coupledAreaMinPct": 10
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 3 a § 4",
+   "articles": [
+    "§ 3 ods. 1",
+    "§ 3 ods. 2",
+    "§ 4 ods. 1",
+    "§ 4 ods. 3"
+   ],
+   "text": "Superficie mínima: para cobrar un pago directo hay que disponer de al menos 1 ha de superficie admisible, que puede componerse de varias superficies continuas de al menos 0,3 ha dentro de un bloque (diel pôdneho bloku). Excepción: quien cobra el pago de pastoreo (§ 22) o los pagos asociados de vacas lecheras u ovino y caprino (§ 24 y 25) y tiene menos de 1 ha cobra si la suma del año llega al menos a 100 €. La superficie admisible declarada debe estar a disposición del solicitante el 31 de mayo del año de la solicitud y cumplir la definición durante todo el año, con límites visibles. Se admiten árboles dispersos hasta 100 por ha en la superficie agraria. Texto leído en la versión de Slov-lex vigente desde el 15 de marzo de 2026.",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
+   "values": {
+    "minHa": 1,
+    "minParcelHa": 0.3,
+    "minTotalSupportEur": 100,
+    "landAvailableBy": "05-31",
+    "maxScatteredTreesPerHa": 100
+   }
+  },
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 3-6, § 28; PPA, Výzva na predkladanie Jednotnej žiadosti za rok 2026 (aktualizovaná 21. 4. 2026)",
+   "articles": [
+    "§ 3 ods. 1",
+    "§ 4 ods. 1",
+    "§ 5 ods. 1",
+    "§ 6 ods. 1",
+    "§ 28"
+   ],
+   "text": "Solicitud única (jednotná žiadosť), que se presenta por vía electrónica: el plazo empieza en la fecha fijada en la convocatoria de la agencia pagadora PPA (Pôdohospodárska platobná agentúra) y termina el 15 de mayo de cada año; en 2026 la convocatoria fue hasta el 15 de mayo de 2026. Una solicitud completa presentada del 16 al 31 de mayo se reduce un 1 % por cada día hábil de retraso, aunque haya empezado; después del 31 de mayo no se acepta (la convocatoria de 2026 trata como no presentada la solicitud incompleta a esa fecha). La reducción por retraso no se aplicó en 2023 ni en 2024. Hasta el 31 de mayo se puede completar la solicitud con superficie o con otro tipo de ayuda. Modificación o retirada, total o parcial: ayudas por superficie hasta el 15 de octubre; pagos asociados de vacas lecheras y de ovino y caprino hasta el 30 de septiembre (las condiciones de identificación y registro de animales, hasta el 31 de mayo); pago de pastoreo, hasta 7 días después de acabar el periodo de pastoreo (1 de mayo a 31 de octubre). Traspaso de la explotación entre la solicitud y el 15 de noviembre: la ayuda pasa al adquirente si cumple las condiciones y presenta el contrato en 15 días. No se ha leído el anexo 1 con la lista de documentos y plazos de los anexos.",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2023/120/20260101.html",
+   "values": {
+    "campaign": 2026,
+    "to": "2026-05-15",
+    "rule": "15 May",
+    "lateReductionPctPerWorkingDay": 1,
+    "noPaymentAfter": "05-31",
+    "addLandUntil": "05-31",
+    "changeAreaUntil": "10-15",
+    "changeAnimalsUntil": "09-30",
+    "transferCutoff": "11-15"
+   }
+  },
+  {
+   "id": "basic",
+   "topic": "basic",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 6; PPA, «Sadzby priamych platieb» 2025 (publikované 24. 2. 2026) y 2026 (aktualizované 16. 10. 2026)",
+   "articles": [
+    "§ 6"
+   ],
+   "text": "Ayuda básica a la renta para la sostenibilidad (základná podpora príjmu v záujme udržateľnosti): se paga cada año por hectárea admisible a quien es agricultor activo y cumple la condicionalidad. El decreto no fija el importe: lo publica el ministerio en su boletín (Vestník MPRV). Tasa publicada por la PPA: 105,05 €/ha en la campaña 2025 (fichero publicado el 24-2-2026, tras cerrar la campaña) y 117,31 €/ha en la campaña 2026 (fichero actualizado el 16-10-2026; el fichero no dice si es definitiva o provisional). Si el total de pagos supera el límite neto de pagos directos, todos se reducen linealmente. Antes de aplicar reducciones se descuentan de la ayuda básica los costes laborales agrarios (salarios con impuestos y cotizaciones del año anterior, trabajo no pagado a coste estándar y costes laborales de contratos), y se recorta el 85 % del tramo de ayuda básica ajustada entre 60.000 y 100.000 € y el 100 % del tramo por encima de 100.000 € (limitación de pagos, § 5).",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
+   "values": {
+    "campaign": 2026,
+    "eurPerHa2026": 117.31,
+    "eurPerHa2025": 105.05,
+    "cappingPct60to100k": 85,
+    "cappingPctAbove100k": 100
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 7; PPA, «Sadzby priamych platieb» 2025 (publikované 24. 2. 2026) y 2026 (aktualizované 16. 10. 2026)",
+   "articles": [
+    "§ 7"
+   ],
+   "text": "Pago redistributivo (komplementárna redistributívna podpora príjmu): se paga por hectárea admisible a quien tiene derecho a la ayuda básica, hasta 150,99 ha por beneficiario, en dos tramos: hasta 100,99 ha y de 101 a 150,99 ha. Tasas publicadas por la PPA: campaña 2025, 79,70 €/ha en el primer tramo y 38,00 €/ha en el segundo (fichero publicado el 24-2-2026); campaña 2026, 87,80 €/ha y 43,50 €/ha (fichero actualizado el 16-10-2026; no indica si es definitiva o provisional).",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
+   "values": {
+    "maxHa": 150.99,
+    "tier1MaxHa": 100.99,
+    "campaign": 2026,
+    "tier1EurPerHa2026": 87.8,
+    "tier2EurPerHa2026": 43.5,
+    "tier1EurPerHa2025": 79.7,
+    "tier2EurPerHa2025": 38.0
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 8; PPA, «Sadzby priamych platieb» 2025 (publikované 24. 2. 2026) y 2026 (aktualizované 16. 10. 2026)",
+   "articles": [
+    "§ 8 ods. 1",
+    "§ 8 ods. 2",
+    "§ 8 ods. 3",
+    "§ 8 ods. 6",
+    "§ 8 ods. 8"
+   ],
+   "text": "Jóvenes agricultores (komplementárna podpora príjmu pre mladého poľnohospodára): ayuda por hectárea admisible, hasta 100 ha, durante un máximo de cinco años desde el primer año de solicitud y como muy tarde hasta 2027. Condiciones: ser beneficiario de la ayuda básica; establecerse por primera vez como responsable de la explotación o haberlo hecho en los dos años anteriores a la primera solicitud de ayuda básica; tener como máximo 40 años en el año de la solicitud; y tener formación o experiencia: estudios medios o superiores agrarios, alimentarios, veterinarios, forestales o ambientales, o al menos 18 meses de experiencia en producción primaria más un programa de formación acreditado en empresa agraria. Si el beneficiario es persona jurídica, el joven debe tener control efectivo (poder de actuar y derecho al menos al 50 % del beneficio) y duradero (todo el año). Tasas publicadas por la PPA: campaña 2025, 108,89 €/ha (también en el Vestník MPRV 4/2026, aviso 3477/2026); campaña 2026, 82,37 €/ha (fichero actualizado el 16-10-2026; no indica si es definitiva o provisional).",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
+   "values": {
+    "maxAge": 40,
+    "maxHa": 100,
+    "maxYears": 5,
+    "lastYear": 2027,
+    "establishedWithinYears": 2,
+    "minExperienceMonths": 18,
+    "campaign": 2026,
+    "eurPerHa2026": 82.37,
+    "eurPerHa2025": 108.89
+   }
+  },
+  {
+   "id": "eco-scheme",
+   "topic": "eco",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 9-21; PPA, «Sadzby priamych platieb» 2025 (publikované 24. 2. 2026) y 2026 (aktualizované 16. 10. 2026)",
+   "articles": [
+    "§ 9",
+    "§ 10",
+    "§ 11",
+    "§ 12",
+    "§ 13",
+    "§ 14",
+    "§ 15",
+    "§ 17",
+    "§ 18",
+    "§ 19"
+   ],
+   "text": "Eco-régimen de toda la explotación (celofarmová eko-schéma): se paga por hectárea admisible a quien tiene derecho a la ayuda básica y cumple las prácticas que le tocan según su tamaño. Hasta 10 ha de superficie agraria: mejora de la estructura de la tierra de cultivo (§ 13: estiércol, cultivos intermedios, compost o paja en al menos el 25 % de la tierra de cultivo sin hierbas, forrajes plurianuales ni barbecho), cobertura verde en viñedos, frutales y lúpulo (§ 20), cuidado de leñosas de crecimiento rápido (§ 21) y, en prados permanentes, siega tardía en al menos el 3 % del prado (§ 18) o pastoreo (§ 19, mínimo 0,3 UGM/ha). Más de 10 ha con al menos el 50 % de prado, pasto o forraje herbáceo: además superficie no productiva (§ 14) de al menos el 1,6 % de la tierra de cultivo en 2026 y el 1,8 % en 2027 (1,0 % en 2023, 1,2 % en 2024 y 1,4 % en 2025), bloque continuo de tierra de cultivo de como máximo 50 ha (§ 15, con franjas de biodiversidad de 12 m o islas de biodiversidad), mezclas para polinizadores en el 10 % de la superficie no productiva (§ 17) y siega tardía en al menos el 15 % del prado. Más de 10 ha con predominio de tierra de cultivo: superficie no productiva del 1,6 % (2026) o 1,8 % (2027) fuera de la zona protegida y del 3,5 % en la zona protegida, bloque máximo de 50 ha (20 ha en la parte de zona protegida incluida en Natura 2000), polinizadores y siega tardía en al menos el 10 % del prado (3 % si hay pastoreo en el 10 %). Tasas publicadas por la PPA: campaña 2025, 93,15 €/ha en zona protegida y 58,06 €/ha fuera; campaña 2026, la PPA aún no las había publicado en el fichero actualizado el 16-10-2026. No se han leído los anexos de plantas, fechas de siega ni cultivos.",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
+   "values": {
+    "smallFarmMaxHa": 10,
+    "nonProductivePct2026": 1.6,
+    "nonProductivePct2027": 1.8,
+    "nonProductivePctProtectedArea": 3.5,
+    "maxArableBlockHa": 50,
+    "lateMowingMinPctGrassland": 15,
+    "campaign": 2025,
+    "protectedAreaEurPerHa2025": 93.15,
+    "otherAreaEurPerHa2025": 58.06
+   }
+  },
+  {
+   "id": "coupled",
+   "topic": "associated",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 22-29; PPA, «Sadzby priamych platieb» 2025 (publikované 24. 2. 2026) y 2026 (aktualizované 16. 10. 2026)",
+   "articles": [
+    "§ 22",
+    "§ 23",
+    "§ 24",
+    "§ 25",
+    "§ 26",
+    "§ 27",
+    "§ 28",
+    "§ 29"
+   ],
+   "text": "Pagos asociados y pago de pastoreo (viazané podpory a podpora pastevného chovu). El decreto prevé siete pagos asociados: proteaginosas (§ 23, cultivo de las especies del anexo 6, parcela continua de al menos 0,3 ha); vacas lecheras (§ 24: vacas de orientación lechera que hayan parido al menos una vez, excluidas las razas cárnicas del anexo 1, criadas el 31 de mayo y en poder del solicitante del 1 de junio al 31 de julio, con acceso al registro central de ganado); ovino y caprino (§ 25: hembras de 12 meses o que hayan parido y machos o jóvenes de 6 meses, en las mismas condiciones); lúpulo (§ 26, inscrito en el registro de lúpulo y con entrega a transformador demostrada antes del 30 de septiembre); remolacha azucarera (§ 27, con contrato con azucarera); fruta (§ 28) y hortalizas (§ 29, con prueba de venta o entrega antes del 30 de septiembre). El pago de pastoreo (§ 22) exige pastar del 1 de mayo al 31 de octubre al menos 120 días (ovejas y cabras de 12 meses, vacas lecheras) o 150 días (novillas), con registro de pastoreo. Las tasas publicadas por la PPA son: campaña 2025, proteaginosas 75,77 €/ha, vacas lecheras 276,02 € por cabeza, ovino y caprino 24,96 € por cabeza, lúpulo 880,00 €/ha, remolacha 565,00 €/ha, fruta 531,92 €/ha, hortalizas de mucha mano de obra 688,00 €/ha y de mano de obra media 490,00 €/ha, y pastoreo 121,34 (ovino y caprino), 275,88 (vacas lecheras) y 55,23 €/UGM (novillas), con las unidades tal como las rotula el fichero; campaña 2026, proteaginosas 88,88, vacas lecheras 352,73, ovino y caprino 27,77, lúpulo 985,60, remolacha 632,80, fruta 589,72, hortalizas de mucha mano de obra 668,00 y de mano de obra media 450,00 (el fichero de 2026 las rotula todas «EUR/ha», incluso las de animales, lo que parece un error de rotulado), y el pastoreo de 2026 aún no estaba publicado el 16-10-2026. No se han leído los anexos 5-8 (coeficientes de UGM, especies y densidades).",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
+   "values": {
+    "campaign": 2026,
+    "proteinEurPerHa2026": 88.88,
+    "dairyCowRate2026": 352.73,
+    "sheepGoatRate2026": 27.77,
+    "hopsEurPerHa2026": 985.6,
+    "sugarBeetEurPerHa2026": 632.8,
+    "fruitEurPerHa2026": 589.72,
+    "vegHighLabourEurPerHa2026": 668.0,
+    "vegLabourEurPerHa2026": 450.0,
+    "grazingMinDays": 120,
+    "grazingHeiferMinDays": 150
+   }
+  },
+  {
+   "id": "conditionality",
+   "topic": "controls",
+   "legalBasis": "Nariadenie vlády SR č. 435/2022 Z. z. o udržiavaní poľnohospodárskej plochy, aktívnom poľnohospodárovi a kondicionalite (znenie účinné od 1. 7. 2026), § 3, § 5, § 6; Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 25",
+   "articles": [
+    "NV 435/2022 § 3",
+    "NV 435/2022 § 5",
+    "NV 435/2022 § 6",
+    "NV 120/2023 § 25"
+   ],
+   "text": "Condicionalidad (kondicionalita) y condicionalidad social: quien cobra pagos directos debe cumplir los requisitos legales de gestión y las normas de buenas condiciones agrarias y medioambientales (DPEP) que lista el anexo 2 del NV 435/2022, y las condiciones laborales del anexo IV del reglamento 2021/2115 (condicionalidad social, § 6). La norma DPEP 7 (rotación de cultivos) rige desde el 1 de enero de 2024, y la DPEP 2 (humedales y turberas) y la condicionalidad social desde el 1 de enero de 2025. Los agricultores ecológicos certificados se consideran en regla con las DPEP 1 y 3 a 7. Las explotaciones de hasta 10 ha de superficie agraria declarada no se controlan ni se reducen por condicionalidad, y las de hasta 30 ha tampoco por la DPEP 7. Además hay que mantener la superficie agraria apta para pastar o cultivar: en prados permanentes, la primera labor (siega o pastoreo) antes del 31 de agosto, y retirar la hierba segada en 14 días. Sanciones (NV 120/2023, § 25): si el incumplimiento es por negligencia, la reducción se fija por criterios cuyos valores y porcentajes (1 %, 3 % o 5 %) comunica el ministerio en su Vestník; si el mismo incumplimiento se repite o dura en tres años seguidos y se informó al agricultor, la reducción pasa a 5 %, 10 % o 15 %, respectivamente; una nueva repetición sin justificación se considera intencional, y en ese caso se aplica el reglamento delegado de la UE y el porcentaje, si se repite, se duplica. Las reducciones de condicionalidad y de condicionalidad social se suman. No se ha leído el anexo 2 (lista de requisitos y normas), los valores de los criterios del Vestník ni el reglamento delegado 2022/1172.",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/435/20260701.html",
+   "values": {
+    "exemptHaConditionality": 10,
+    "exemptHaDpep7": 30,
+    "negligentRepeatPct": [
+     5,
+     10,
+     15
+    ],
+    "repeatYears": 3,
+    "firstOperationGrasslandBy": "08-31",
+    "mownBiomassRemovalDays": 14
+   }
+  },
+  {
+   "id": "controls",
+   "topic": "controls",
+   "legalBasis": "Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 8-11, § 24, § 27",
+   "articles": [
+    "§ 8",
+    "§ 9",
+    "§ 10",
+    "§ 11",
+    "§ 24",
+    "§ 27"
+   ],
+   "text": "Controles y cálculo de la superficie y de los animales. Si la superficie determinada en el control es mayor que la declarada, se paga la declarada. Si no se declararon todas las superficies y la diferencia respecto a la superficie total supera el 3 % de la declarada, la ayuda por superficie del año se reduce un 3 %. Superficie declarada mayor que la determinada: se paga la determinada; si la diferencia supera el 3 % de la superficie determinada o 2 ha, se paga sobre la determinada menos 1,5 veces la diferencia, y si supera el 20 %, menos 2 veces la diferencia; si la reducción excede la superficie determinada no se paga y el exceso se compensa en los tres años siguientes (la regla no se aplica al eco-régimen, que tiene la suya). Animales no admisibles: si todos lo son, no hay ayuda; hasta 3 animales (o 3 UGM en ovino, caprino, aves y porcino) con un 51 % o más de no admisibles, la reducción es la mitad del porcentaje; con más de 3, la reducción es el porcentaje si es inferior al 20 % y 1,5 veces el porcentaje si es del 20 % o más. Condiciones creadas artificialmente: no se paga y además se aplica una reducción de 1,5 veces lo obtenido. Fuerza mayor y circunstancias excepcionales: se notifican con pruebas por el formulario de la PPA en 15 días hábiles desde que sea posible. No se han leído los porcentajes de control sobre el terreno ni los reglamentos de la UE de control.",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2023/120/20260101.html",
+   "values": {
+    "toleranceAreaPct": 3,
+    "toleranceAreaHa": 2,
+    "overDeclarationMultiplier": 1.5,
+    "overDeclarationMultiplierOver20Pct": 2,
+    "undeclaredAreaThresholdPct": 3,
+    "forceMajeureWorkingDays": 15
+   }
+  },
+  {
+   "id": "penalties",
+   "topic": "penalties",
+   "legalBasis": "Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 6, § 14-24, § 26, § 30; Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 5",
+   "articles": [
+    "NV 120/2023 § 6",
+    "NV 120/2023 § 12",
+    "NV 120/2023 § 22",
+    "NV 120/2023 § 23",
+    "NV 120/2023 § 26",
+    "NV 120/2023 § 30"
+   ],
+   "text": "Sanciones. Retraso en la solicitud: reducción del 1 % por día hábil de retraso hasta el 31 de mayo (no se aplicó en 2023 ni en 2024); un anexo imprescindible presentado tarde reduce la ayuda un 1 %, y si no se presenta ni en el plazo de la PPA, no se paga. Eco-régimen (§ 12-22): la superficie base se reduce según la práctica incumplida en múltiplos de la superficie afectada: 1,5 veces en estructura de la tierra de cultivo; 5 veces en superficie no productiva, zona de polinizadores y praderización en zona protegida; 2 veces en siega y pastoreo de prados y en leñosas de crecimiento rápido; 25 veces si falta la isla de biodiversidad; entre el 10 % y el 100 % de la parcela en la cubierta verde de viñedos, frutales y lúpulo; un registro de pastoreo o un justificante de semillas entregado tarde reduce un 1 % de la superficie por día. La reducción por exceso de superficie del eco-régimen (§ 22) se limitó al 20 % de la ayuda en solicitudes de 2025 y al 25 % en las de 2026. Pago de pastoreo (§ 23): 1 % por cada día en que falta el pastoreo exigido (hasta 10 días), 1,5 % por día entre 11 y 49 días, y nada si faltan más de 50 días. Condicionalidad: ver su regla. Orden de las reducciones: condiciones artificiales; exceso de superficie o de animales; eco-régimen y pastoreo; retraso; no declaración de superficies; y después limitación de pagos y condicionalidad. No se han leído los reglamentos de la UE sobre sanciones ni los porcentajes de control.",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2023/120/20260101.html",
+   "values": {
+    "lateReductionPctPerWorkingDay": 1,
+    "lateUntil": "05-31",
+    "ecoOverDeclarationCap2026Pct": 25,
+    "ecoOverDeclarationCap2025Pct": 20,
+    "grazingPctPerDayUpTo10": 1,
+    "grazingPctPerDay11to49": 1.5
+   }
+  },
+  {
+   "id": "unit-amounts",
+   "topic": "amounts",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 30; Vestník MPRV SR, čiastka 4/2026, Oznámenie č. 3477/2026 (sadzby priamych platieb na rok 2025); PPA, «Sadzby priamych platieb» 2025 (publikované 24. 2. 2026) y 2026 (aktualizované 16. 10. 2026)",
+   "articles": [
+    "NV 436/2022 § 30 ods. 1",
+    "NV 436/2022 § 30 ods. 2"
+   ],
+   "text": "Cómo se fijan los importes: el decreto no contiene importes unitarios; el ministerio (MPRV) publica las tasas de cada pago directo en su boletín (Vestník MPRV), y la PPA las publica en su web. Si el total de pagos del año supera la dotación financiera, los pagos se reducen (§ 30) y, según el aviso del ministerio, todos se recortan linealmente. Campaña 2025: tasas publicadas el 24-2-2026 por la PPA (el aviso del Vestník 4/2026, de 19-2-2026, número 3477/2026, recoge solo la de jóvenes: 108,89 €/ha). Campaña 2026: fichero de la PPA actualizado el 16-10-2026 con ayuda básica 117,31 €/ha, redistributivo 87,80 y 43,50 €/ha, jóvenes 82,37 €/ha y los pagos asociados citados en su regla; eco-régimen y pastoreo de 2026 sin publicar a esa fecha; el fichero no dice si las cifras de 2026 son definitivas. Los importes están en las reglas de cada pago.",
+   "officialUrl": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
+   "values": {
+    "campaign": 2026,
+    "ratesFileUpdated": "2026-10-16",
+    "basicEurPerHa2026": 117.31,
+    "basicEurPerHa2025": 105.05
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "application-deadline",
+   "kind": "deadline",
+   "legalBasis": "Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 3 ods. 1",
+   "articles": [
+    "§ 3 ods. 1"
+   ],
+   "when": {
+    "month": 5,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Último día del plazo de la solicitud única (15 de mayo)."
+  },
+  {
+   "id": "late-limit",
+   "kind": "deadline",
+   "legalBasis": "Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 6 ods. 1",
+   "articles": [
+    "§ 6 ods. 1"
+   ],
+   "when": {
+    "month": 5,
+    "day": 31,
+    "yearOffset": 0
+   },
+   "text": "Último día para presentar una solicitud completa con retraso, con reducción del 1 % por día hábil (31 de mayo)."
+  },
+  {
+   "id": "changes-add",
+   "kind": "deadline",
+   "legalBasis": "Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 5 ods. 1",
+   "articles": [
+    "§ 5 ods. 1"
+   ],
+   "when": {
+    "month": 5,
+    "day": 31,
+    "yearOffset": 0
+   },
+   "text": "Último día para completar la solicitud con superficie o con otro tipo de ayuda (31 de mayo)."
+  },
+  {
+   "id": "changes-animals",
+   "kind": "deadline",
+   "legalBasis": "Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 4 ods. 1 písm. b)",
+   "articles": [
+    "§ 4 ods. 1 písm. b)"
+   ],
+   "when": {
+    "month": 9,
+    "day": 30,
+    "yearOffset": 0
+   },
+   "text": "Último día para modificar o retirar la solicitud de los pagos asociados de vacas lecheras y de ovino y caprino (30 de septiembre)."
+  },
+  {
+   "id": "proof-delivery",
+   "kind": "deadline",
+   "legalBasis": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory formou priamych platieb (znenie účinné od 15. 3. 2026), § 26 ods. 3, § 28 ods. 3, § 29 ods. 3",
+   "articles": [
+    "§ 26 ods. 3",
+    "§ 28 ods. 3",
+    "§ 29 ods. 3"
+   ],
+   "when": {
+    "month": 9,
+    "day": 30,
+    "yearOffset": 0
+   },
+   "text": "Último día para demostrar la entrega o venta de la producción de lúpulo, fruta y hortalizas del pago asociado (30 de septiembre)."
+  },
+  {
+   "id": "changes-area",
+   "kind": "deadline",
+   "legalBasis": "Nariadenie vlády SR č. 120/2023 Z. z. o predkladaní žiadostí a znižovaní priamych podpôr (znenie účinné od 1. 1. 2026), § 4 ods. 1 písm. a)",
+   "articles": [
+    "§ 4 ods. 1 písm. a)"
+   ],
+   "when": {
+    "month": 10,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Último día para modificar o retirar, total o parcialmente, la solicitud de ayudas por superficie (15 de octubre)."
+  }
+ ],
+ "campaignOverrides": [],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "Active farmer (aktívny poľnohospodár): meeting one of these routes is enough. Natural person: the previous year's direct payments are at least 5 % of their non-agricultural income of the previous year (forestry and nature-conservation income excluded), or their agricultural income of the previous year is at least one third of their total income. Sole trader or legal person: their registered business purpose is only agricultural activity and related activities, or they meet the natural-person route. In addition, anyone who meets none of the above is still active if they meet one of these: received at most €5,000 of direct payments the previous year; reached an average stocking of 0.25 LU/ha of the farm's agricultural area from 1 June to 30 September of the previous year; received only coupled livestock payments the previous year; received coupled area payments on at least 10 % of the agricultural area; or the value of their own crop production of the previous year is at least equal to the direct payments received. Vocational agricultural schools and legal persons doing research and development also count. If there is no final decision for the previous year, payments are estimated with the declared hectares or animals times the previous year's rate. Text read in the official Slov-lex web version in force from 1 July 2026 (150/2026); the footnotes with cross-references were not read.",
+    "fr": "Agriculteur actif (aktívny poľnohospodár) : il suffit de remplir l'une de ces voies. Personne physique : les paiements directs de l'année précédente représentent au moins 5 % de ses revenus non agricoles de l'année précédente (hors revenus forestiers et de conservation de la nature), ou ses revenus agricoles de l'année précédente représentent au moins un tiers de ses revenus totaux. Entrepreneur individuel ou personne morale : son objet d'activité enregistré est uniquement l'activité agricole et les activités connexes, ou il remplit la voie de la personne physique. En outre, celui qui ne remplit rien de ce qui précède est actif s'il remplit l'une de ces conditions : avoir perçu au plus 5 000 € de paiements directs l'année précédente ; avoir atteint une charge moyenne de 0,25 UGB/ha de la surface agricole de l'exploitation du 1er juin au 30 septembre de l'année précédente ; n'avoir perçu l'année précédente que des paiements couplés d'élevage ; avoir perçu des paiements couplés à la surface sur au moins 10 % de la surface agricole ; ou la valeur de sa production végétale propre de l'année précédente est au moins égale aux paiements directs perçus. Comptent aussi les établissements d'enseignement agricole professionnel et les personnes morales de recherche et développement. S'il n'y a pas de décision définitive pour l'année précédente, les paiements sont estimés avec les hectares ou animaux déclarés multipliés par le taux de l'année précédente. Texte lu dans la version du site officiel Slov-lex en vigueur depuis le 1er juillet 2026 (150/2026) ; les notes de bas de page avec les renvois n'ont pas été lues.",
+    "it": "Agricoltore attivo (aktívny poľnohospodár): basta soddisfare una di queste vie. Persona fisica: i pagamenti diretti dell'anno precedente sono almeno il 5 % dei suoi redditi non agricoli dell'anno precedente (esclusi redditi forestali e di tutela della natura), oppure i suoi redditi agricoli dell'anno precedente sono almeno un terzo dei redditi totali. Imprenditore individuale o persona giuridica: l'oggetto di attività registrato è solo l'attività agricola e le attività connesse, oppure soddisfa la via della persona fisica. Inoltre, chi non soddisfa nulla di quanto sopra è attivo se soddisfa una di queste: ha percepito al massimo 5.000 € di pagamenti diretti l'anno precedente; ha raggiunto un carico medio di 0,25 UBA/ha della superficie agricola dell'azienda dal 1° giugno al 30 settembre dell'anno precedente; l'anno precedente ha percepito solo pagamenti accoppiati per l'allevamento; ha percepito pagamenti accoppiati a superficie su almeno il 10 % della superficie agricola; oppure il valore della sua produzione vegetale propria dell'anno precedente è almeno pari ai pagamenti diretti percepiti. Contano anche gli istituti professionali agrari e le persone giuridiche di ricerca e sviluppo. Se manca la decisione definitiva dell'anno precedente, i pagamenti sono stimati con gli ettari o gli animali dichiarati per la tariffa dell'anno precedente. Testo letto nella versione del sito ufficiale Slov-lex in vigore dal 1° luglio 2026 (150/2026); le note a piè di pagina con i rinvii non sono state lette."
+   },
+   "minimum": {
+    "en": "Minimum area: to receive a direct payment one must have at least 1 ha of eligible land, which may consist of several continuous areas of at least 0.3 ha within a block (diel pôdneho bloku). Exception: those who receive the grazing payment (§ 22) or the coupled payments for dairy cows or sheep and goats (§ 24 and 25) and have less than 1 ha are paid if the year's total reaches at least €100. The declared eligible area must be at the applicant's disposal on 31 May of the application year and meet the definition throughout the year, with visible boundaries. Scattered trees are accepted up to 100 per ha on agricultural land. Text read in the Slov-lex version in force from 15 March 2026.",
+    "fr": "Superficie minimale : pour percevoir un paiement direct il faut disposer d'au moins 1 ha de surface admissible, qui peut se composer de plusieurs surfaces continues d'au moins 0,3 ha dans un bloc (diel pôdneho bloku). Exception : celui qui perçoit le paiement pastoral (§ 22) ou les paiements couplés pour vaches laitières ou ovins et caprins (§ 24 et 25) et dispose de moins de 1 ha est payé si le total de l'année atteint au moins 100 €. La surface admissible déclarée doit être à la disposition du demandeur le 31 mai de l'année de la demande et respecter la définition toute l'année, avec des limites visibles. Les arbres épars sont admis jusqu'à 100 par ha sur la surface agricole. Texte lu dans la version de Slov-lex en vigueur depuis le 15 mars 2026.",
+    "it": "Superficie minima: per ricevere un pagamento diretto occorre disporre di almeno 1 ha di superficie ammissibile, che può comporsi di più superfici continue di almeno 0,3 ha all'interno di un blocco (diel pôdneho bloku). Eccezione: chi riceve il pagamento per il pascolo (§ 22) o i pagamenti accoppiati per vacche da latte od ovicaprini (§ 24 e 25) e ha meno di 1 ha è pagato se il totale dell'anno raggiunge almeno 100 €. La superficie ammissibile dichiarata deve essere a disposizione del richiedente il 31 maggio dell'anno della domanda e rispettare la definizione per tutto l'anno, con confini visibili. Gli alberi sparsi sono ammessi fino a 100 per ha sulla superficie agricola. Testo letto nella versione di Slov-lex in vigore dal 15 marzo 2026."
+   },
+   "application": {
+    "en": "Single application (jednotná žiadosť), submitted electronically: the window opens on the date set in the call of the paying agency PPA (Pôdohospodárska platobná agentúra) and ends on 15 May each year; in 2026 the call ran to 15 May 2026. A complete application filed from 16 to 31 May is reduced by 1 % per working day of delay, even a started one; after 31 May it is not accepted (the 2026 call treats an application that is incomplete on that date as not filed). The late reduction was not applied in 2023 or 2024. Until 31 May the application can be completed with land or another type of aid. Change or withdrawal, in whole or in part: area aid until 15 October; coupled payments for dairy cows and for sheep and goats until 30 September (animal identification and registration conditions until 31 May); grazing payment, until 7 days after the end of the grazing period (1 May to 31 October). Transfer of the holding between the application and 15 November: the aid passes to the acquirer if they meet the conditions and file the contract within 15 days. Annex 1 with the list of documents and deadlines was not read.",
+    "fr": "Demande unique (jednotná žiadosť), déposée par voie électronique : la période s'ouvre à la date fixée dans l'appel de l'agence de paiement PPA (Pôdohospodárska platobná agentúra) et se termine le 15 mai de chaque année ; en 2026 l'appel allait jusqu'au 15 mai 2026. Une demande complète déposée du 16 au 31 mai est réduite de 1 % par jour ouvré de retard, même entamé ; après le 31 mai elle n'est pas acceptée (l'appel 2026 traite comme non déposée la demande incomplète à cette date). La réduction pour retard n'a pas été appliquée en 2023 ni en 2024. Jusqu'au 31 mai on peut compléter la demande avec des surfaces ou un autre type d'aide. Modification ou retrait, total ou partiel : aides à la surface jusqu'au 15 octobre ; paiements couplés pour vaches laitières et pour ovins et caprins jusqu'au 30 septembre (conditions d'identification et d'enregistrement des animaux, jusqu'au 31 mai) ; paiement pastoral, jusqu'à 7 jours après la fin de la période de pâturage (1er mai au 31 octobre). Transfert de l'exploitation entre la demande et le 15 novembre : l'aide passe au repreneur s'il remplit les conditions et dépose le contrat sous 15 jours. L'annexe 1 avec la liste des documents et délais n'a pas été lue.",
+    "it": "Domanda unica (jednotná žiadosť), presentata per via elettronica: il periodo si apre alla data fissata nel bando dell'organismo pagatore PPA (Pôdohospodárska platobná agentúra) e termina il 15 maggio di ogni anno; nel 2026 il bando arrivava al 15 maggio 2026. Una domanda completa presentata dal 16 al 31 maggio è ridotta dell'1 % per ogni giorno lavorativo di ritardo, anche iniziato; dopo il 31 maggio non è accettata (il bando 2026 considera non presentata la domanda incompleta a quella data). La riduzione per ritardo non è stata applicata nel 2023 né nel 2024. Fino al 31 maggio si può integrare la domanda con superficie o con un altro tipo di aiuto. Modifica o ritiro, totale o parziale: aiuti a superficie fino al 15 ottobre; pagamenti accoppiati per vacche da latte e per ovicaprini fino al 30 settembre (condizioni di identificazione e registrazione degli animali, fino al 31 maggio); pagamento per il pascolo, fino a 7 giorni dopo la fine del periodo di pascolo (1° maggio-31 ottobre). Trasferimento dell'azienda tra la domanda e il 15 novembre: l'aiuto passa al subentrante se rispetta le condizioni e presenta il contratto entro 15 giorni. L'allegato 1 con l'elenco di documenti e termini non è stato letto."
+   },
+   "basic": {
+    "en": "Basic income support for sustainability (základná podpora príjmu v záujme udržateľnosti): paid each year per eligible hectare to an active farmer who meets conditionality. The decree does not set the amount: the ministry publishes it in its bulletin (Vestník MPRV). Rate published by the PPA: €105.05/ha for campaign 2025 (file published on 24-2-2026, after the campaign closed) and €117.31/ha for campaign 2026 (file updated on 16-10-2026; the file does not say whether it is final or provisional). If total payments exceed the net ceiling for direct payments, all are cut linearly. Before reductions, agricultural labour costs are deducted from basic support (wages with taxes and contributions of the previous year, unpaid labour at standard cost and labour costs within contracts), and 85 % of the part of the adjusted basic support between €60,000 and €100,000 and 100 % of the part above €100,000 is cut (capping, § 5).",
+    "fr": "Aide de base au revenu pour la durabilité (základná podpora príjmu v záujme udržateľnosti) : versée chaque année par hectare admissible à un agriculteur actif qui respecte la conditionnalité. Le décret ne fixe pas le montant : le ministère le publie dans son bulletin (Vestník MPRV). Taux publié par la PPA : 105,05 €/ha pour la campagne 2025 (fichier publié le 24-2-2026, après la clôture de la campagne) et 117,31 €/ha pour la campagne 2026 (fichier mis à jour le 16-10-2026 ; le fichier ne dit pas s'il est définitif ou provisoire). Si le total des paiements dépasse le plafond net des paiements directs, tous sont réduits linéairement. Avant les réductions, les coûts de main-d'œuvre agricole sont déduits de l'aide de base (salaires avec impôts et cotisations de l'année précédente, travail non rémunéré au coût standard et coûts de main-d'œuvre des contrats), et 85 % de la part de l'aide de base ajustée entre 60 000 et 100 000 € et 100 % de la part au-delà de 100 000 € sont retranchés (plafonnement, § 5).",
+    "it": "Sostegno di base al reddito per la sostenibilità (základná podpora príjmu v záujme udržateľnosti): pagato ogni anno per ettaro ammissibile a un agricoltore attivo che rispetta la condizionalità. Il decreto non fissa l'importo: lo pubblica il ministero nel suo bollettino (Vestník MPRV). Tariffa pubblicata dalla PPA: 105,05 €/ha per la campagna 2025 (file pubblicato il 24-2-2026, a campagna chiusa) e 117,31 €/ha per la campagna 2026 (file aggiornato il 16-10-2026; il file non dice se è definitiva o provvisoria). Se il totale dei pagamenti supera il massimale netto dei pagamenti diretti, tutti sono ridotti linearmente. Prima delle riduzioni si detraggono dal sostegno di base i costi del lavoro agricolo (salari con imposte e contributi dell'anno precedente, lavoro non retribuito a costo standard e costi del lavoro nei contratti), e si taglia l'85 % della quota di sostegno di base rettificato tra 60.000 e 100.000 € e il 100 % della quota oltre 100.000 € (limitazione dei pagamenti, § 5)."
+   },
+   "redistributive": {
+    "en": "Redistributive payment (komplementárna redistributívna podpora príjmu): paid per eligible hectare to those entitled to basic support, up to 150.99 ha per beneficiary, in two tiers: up to 100.99 ha and from 101 to 150.99 ha. Rates published by the PPA: campaign 2025, €79.70/ha in the first tier and €38.00/ha in the second (file published on 24-2-2026); campaign 2026, €87.80/ha and €43.50/ha (file updated on 16-10-2026; it does not say whether final or provisional).",
+    "fr": "Paiement redistributif (komplementárna redistributívna podpora príjmu) : versé par hectare admissible à ceux qui ont droit à l'aide de base, jusqu'à 150,99 ha par bénéficiaire, en deux tranches : jusqu'à 100,99 ha et de 101 à 150,99 ha. Taux publiés par la PPA : campagne 2025, 79,70 €/ha dans la première tranche et 38,00 €/ha dans la seconde (fichier publié le 24-2-2026) ; campagne 2026, 87,80 €/ha et 43,50 €/ha (fichier mis à jour le 16-10-2026 ; il ne dit pas s'il est définitif ou provisoire).",
+    "it": "Pagamento redistributivo (komplementárna redistributívna podpora príjmu): pagato per ettaro ammissibile a chi ha diritto al sostegno di base, fino a 150,99 ha per beneficiario, in due scaglioni: fino a 100,99 ha e da 101 a 150,99 ha. Tariffe pubblicate dalla PPA: campagna 2025, 79,70 €/ha nel primo scaglione e 38,00 €/ha nel secondo (file pubblicato il 24-2-2026); campagna 2026, 87,80 €/ha e 43,50 €/ha (file aggiornato il 16-10-2026; non dice se definitiva o provvisoria)."
+   },
+   "young-farmers": {
+    "en": "Young farmers (komplementárna podpora príjmu pre mladého poľnohospodára): per-hectare aid on eligible land, up to 100 ha, for a maximum of five years from the first application year and at the latest until 2027. Conditions: be a recipient of basic support; set up for the first time as head of the holding or have done so in the two years before the first basic support application; be at most 40 years old in the application year; and have training or experience: secondary or higher education in agriculture, food, veterinary, forestry or environmental fields, or at least 18 months of primary production experience plus an accredited training programme in farm business. If the recipient is a legal person, the young farmer must have effective control (power to act and a right to at least 50 % of the profit) and lasting control (throughout the year). Rates published by the PPA: campaign 2025, €108.89/ha (also in Vestník MPRV 4/2026, notice 3477/2026); campaign 2026, €82.37/ha (file updated on 16-10-2026; it does not say whether final or provisional).",
+    "fr": "Jeunes agriculteurs (komplementárna podpora príjmu pre mladého poľnohospodára) : aide à l'hectare admissible, jusqu'à 100 ha, pendant cinq ans au plus à partir de la première année de demande et au plus tard jusqu'en 2027. Conditions : bénéficier de l'aide de base ; s'installer pour la première fois comme chef d'exploitation ou l'avoir fait dans les deux ans précédant la première demande d'aide de base ; avoir au plus 40 ans l'année de la demande ; et avoir une formation ou une expérience : études secondaires ou supérieures en agriculture, alimentation, vétérinaire, forêt ou environnement, ou au moins 18 mois d'expérience en production primaire plus un programme de formation accrédité en entreprise agricole. Si le bénéficiaire est une personne morale, le jeune doit avoir un contrôle effectif (pouvoir d'agir et droit à au moins 50 % du bénéfice) et durable (toute l'année). Taux publiés par la PPA : campagne 2025, 108,89 €/ha (aussi dans le Vestník MPRV 4/2026, avis 3477/2026) ; campagne 2026, 82,37 €/ha (fichier mis à jour le 16-10-2026 ; il ne dit pas s'il est définitif ou provisoire).",
+    "it": "Giovani agricoltori (komplementárna podpora príjmu pre mladého poľnohospodára): aiuto per ettaro ammissibile, fino a 100 ha, per un massimo di cinque anni dal primo anno di domanda e al più tardi fino al 2027. Condizioni: essere beneficiario del sostegno di base; insediarsi per la prima volta come capo dell'azienda o averlo fatto nei due anni precedenti la prima domanda di sostegno di base; avere al massimo 40 anni nell'anno della domanda; e avere formazione o esperienza: studi secondari o superiori in agricoltura, alimentare, veterinaria, forestale o ambiente, oppure almeno 18 mesi di esperienza nella produzione primaria più un programma di formazione accreditato in impresa agricola. Se il beneficiario è una persona giuridica, il giovane deve avere un controllo effettivo (potere di agire e diritto ad almeno il 50 % degli utili) e duraturo (per tutto l'anno). Tariffe pubblicate dalla PPA: campagna 2025, 108,89 €/ha (anche nel Vestník MPRV 4/2026, avviso 3477/2026); campagna 2026, 82,37 €/ha (file aggiornato il 16-10-2026; non dice se definitiva o provvisoria)."
+   },
+   "eco-scheme": {
+    "en": "Whole-farm eco-scheme (celofarmová eko-schéma): paid per eligible hectare to those entitled to basic support who follow the practices that apply to their size. Up to 10 ha of agricultural land: improving arable soil structure (§ 13: manure, intermediate crops, compost or straw on at least 25 % of arable land without grasses, perennial fodder or fallow), year-round green cover in vineyards, orchards and hop gardens (§ 20), care of fast-growing woody crops (§ 21) and, on permanent grassland, late mowing on at least 3 % of the grassland (§ 18) or grazing (§ 19, minimum 0.3 LU/ha). Over 10 ha with at least 50 % grassland, grass or herbaceous fodder: in addition a non-productive area (§ 14) of at least 1.6 % of arable land in 2026 and 1.8 % in 2027 (1.0 % in 2023, 1.2 % in 2024 and 1.4 % in 2025), a continuous arable block of at most 50 ha (§ 15, with 12 m biodiversity strips or biodiversity islands), pollinator mixes on 10 % of the non-productive area (§ 17) and late mowing on at least 15 % of the grassland. Over 10 ha with mostly arable land: non-productive area of 1.6 % (2026) or 1.8 % (2027) outside the protected area and 3.5 % inside it, a maximum block of 50 ha (20 ha in the part of the protected area within Natura 2000), pollinators and late mowing on at least 10 % of the grassland (3 % if grazing is done on 10 %). Rates published by the PPA: campaign 2025, €93.15/ha in the protected area and €58.06/ha outside; campaign 2026, the PPA had not yet published them in the file updated on 16-10-2026. The annexes on plants, mowing dates and crops were not read.",
+    "fr": "Éco-régime de toute l'exploitation (celofarmová eko-schéma) : versé par hectare admissible à ceux qui ont droit à l'aide de base et appliquent les pratiques correspondant à leur taille. Jusqu'à 10 ha de surface agricole : amélioration de la structure des terres arables (§ 13 : fumier, cultures intermédiaires, compost ou paille sur au moins 25 % des terres arables sans herbe, fourrages pluriannuels ni jachère), couvert vert toute l'année dans vignes, vergers et houblonnières (§ 20), entretien des ligneux à croissance rapide (§ 21) et, sur prairie permanente, fauche tardive sur au moins 3 % de la prairie (§ 18) ou pâturage (§ 19, minimum 0,3 UGB/ha). Plus de 10 ha avec au moins 50 % de prairie, herbe ou fourrage herbacé : en plus une surface non productive (§ 14) d'au moins 1,6 % des terres arables en 2026 et 1,8 % en 2027 (1,0 % en 2023, 1,2 % en 2024 et 1,4 % en 2025), un bloc continu de terres arables d'au plus 50 ha (§ 15, avec bandes de biodiversité de 12 m ou îlots de biodiversité), des mélanges pour pollinisateurs sur 10 % de la surface non productive (§ 17) et fauche tardive sur au moins 15 % de la prairie. Plus de 10 ha à dominante de terres arables : surface non productive de 1,6 % (2026) ou 1,8 % (2027) hors zone protégée et de 3,5 % en zone protégée, bloc maximal de 50 ha (20 ha dans la partie de la zone protégée située en Natura 2000), pollinisateurs et fauche tardive sur au moins 10 % de la prairie (3 % si pâturage sur 10 %). Taux publiés par la PPA : campagne 2025, 93,15 €/ha en zone protégée et 58,06 €/ha hors zone ; campagne 2026, la PPA ne les avait pas encore publiés dans le fichier mis à jour le 16-10-2026. Les annexes sur les plantes, dates de fauche et cultures n'ont pas été lues.",
+    "it": "Ecoregime di tutta l'azienda (celofarmová eko-schéma): pagato per ettaro ammissibile a chi ha diritto al sostegno di base e applica le pratiche previste per la sua dimensione. Fino a 10 ha di superficie agricola: miglioramento della struttura del seminativo (§ 13: letame, colture intermedie, compost o paglia su almeno il 25 % del seminativo senza erbe, foraggere poliennali o maggese), copertura verde tutto l'anno in vigneti, frutteti e luppoleti (§ 20), cura delle specie legnose a rapida crescita (§ 21) e, sul prato permanente, sfalcio tardivo su almeno il 3 % del prato (§ 18) o pascolo (§ 19, minimo 0,3 UBA/ha). Oltre 10 ha con almeno il 50 % di prato, erba o foraggio erbaceo: in più una superficie non produttiva (§ 14) di almeno l'1,6 % del seminativo nel 2026 e l'1,8 % nel 2027 (1,0 % nel 2023, 1,2 % nel 2024 e 1,4 % nel 2025), un blocco continuo di seminativo di al massimo 50 ha (§ 15, con fasce di biodiversità di 12 m o isole di biodiversità), miscele per gli impollinatori sul 10 % della superficie non produttiva (§ 17) e sfalcio tardivo su almeno il 15 % del prato. Oltre 10 ha con prevalenza di seminativo: superficie non produttiva dell'1,6 % (2026) o dell'1,8 % (2027) fuori dall'area protetta e del 3,5 % nell'area protetta, blocco massimo di 50 ha (20 ha nella parte di area protetta in Natura 2000), impollinatori e sfalcio tardivo su almeno il 10 % del prato (3 % se si pascola sul 10 %). Tariffe pubblicate dalla PPA: campagna 2025, 93,15 €/ha in area protetta e 58,06 €/ha fuori; campagna 2026, la PPA non le aveva ancora pubblicate nel file aggiornato il 16-10-2026. Gli allegati su piante, date di sfalcio e colture non sono stati letti."
+   },
+   "coupled": {
+    "en": "Coupled payments and grazing payment (viazané podpory a podpora pastevného chovu). The decree provides seven coupled payments: protein crops (§ 23, growing the species of annex 6, continuous plot of at least 0.3 ha); dairy cows (§ 24: cows of dairy orientation that have calved at least once, excluding the beef breeds of annex 1, kept on 31 May and held by the applicant from 1 June to 31 July, with access to the central livestock register); sheep and goats (§ 25: females of 12 months or that have lambed or kidded, and males or young females of 6 months, under the same conditions); hops (§ 26, entered in the hop register and with delivery to a processor shown before 30 September); sugar beet (§ 27, with a contract with a sugar mill); fruit (§ 28) and vegetables (§ 29, with proof of sale or delivery before 30 September). The grazing payment (§ 22) requires grazing from 1 May to 31 October for at least 120 days (ewes and goats of 12 months, dairy cows) or 150 days (heifers), with a grazing record. Rates published by the PPA: campaign 2025, protein crops €75.77/ha, dairy cows €276.02 per head, sheep and goats €24.96 per head, hops €880.00/ha, sugar beet €565.00/ha, fruit €531.92/ha, high-labour vegetables €688.00/ha and labour-intensive vegetables €490.00/ha, and grazing 121.34 (sheep and goats), 275.88 (dairy cows) and €55.23/LU (heifers), with the units as the file labels them; campaign 2026, protein crops 88.88, dairy cows 352.73, sheep and goats 27.77, hops 985.60, sugar beet 632.80, fruit 589.72, high-labour vegetables 668.00 and labour-intensive vegetables 450.00 (the 2026 file labels all of them \"EUR/ha\", even the animal ones, which looks like a labelling error), and the 2026 grazing rates were not yet published on 16-10-2026. Annexes 5-8 (livestock-unit coefficients, species and densities) were not read.",
+    "fr": "Paiements couplés et paiement pastoral (viazané podpory a podpora pastevného chovu). Le décret prévoit sept paiements couplés : protéagineux (§ 23, culture des espèces de l'annexe 6, parcelle continue d'au moins 0,3 ha) ; vaches laitières (§ 24 : vaches d'orientation laitière ayant vêlé au moins une fois, hors races à viande de l'annexe 1, détenues le 31 mai et par le demandeur du 1er juin au 31 juillet, avec accès au registre central du cheptel) ; ovins et caprins (§ 25 : femelles de 12 mois ou ayant mis bas et mâles ou jeunes femelles de 6 mois, dans les mêmes conditions) ; houblon (§ 26, inscrit au registre du houblon et livraison à un transformateur prouvée avant le 30 septembre) ; betterave sucrière (§ 27, avec contrat avec une sucrerie) ; fruits (§ 28) et légumes (§ 29, avec preuve de vente ou de livraison avant le 30 septembre). Le paiement pastoral (§ 22) exige de faire pâturer du 1er mai au 31 octobre au moins 120 jours (brebis et chèvres de 12 mois, vaches laitières) ou 150 jours (génisses), avec un registre de pâturage. Taux publiés par la PPA : campagne 2025, protéagineux 75,77 €/ha, vaches laitières 276,02 € par tête, ovins et caprins 24,96 € par tête, houblon 880,00 €/ha, betterave 565,00 €/ha, fruits 531,92 €/ha, légumes à forte main-d'œuvre 688,00 €/ha et à main-d'œuvre moyenne 490,00 €/ha, et pâturage 121,34 (ovins et caprins), 275,88 (vaches laitières) et 55,23 €/UGB (génisses), avec les unités telles que le fichier les libelle ; campagne 2026, protéagineux 88,88, vaches laitières 352,73, ovins et caprins 27,77, houblon 985,60, betterave 632,80, fruits 589,72, légumes à forte main-d'œuvre 668,00 et à main-d'œuvre moyenne 450,00 (le fichier 2026 les libelle toutes « EUR/ha », même celles des animaux, ce qui semble une erreur de libellé), et les taux de pâturage 2026 n'étaient pas encore publiés le 16-10-2026. Les annexes 5-8 (coefficients UGB, espèces et densités) n'ont pas été lues.",
+    "it": "Pagamenti accoppiati e pagamento per il pascolo (viazané podpory a podpora pastevného chovu). Il decreto prevede sette pagamenti accoppiati: proteaginose (§ 23, coltivazione delle specie dell'allegato 6, appezzamento continuo di almeno 0,3 ha); vacche da latte (§ 24: vacche a orientamento lattiero che hanno partorito almeno una volta, escluse le razze da carne dell'allegato 1, allevate il 31 maggio e detenute dal richiedente dal 1° giugno al 31 luglio, con accesso al registro centrale del bestiame); ovicaprini (§ 25: femmine di 12 mesi o che hanno partorito e maschi o giovani femmine di 6 mesi, alle stesse condizioni); luppolo (§ 26, iscritto nel registro del luppolo e con consegna a un trasformatore dimostrata prima del 30 settembre); barbabietola da zucchero (§ 27, con contratto con uno zuccherificio); frutta (§ 28) e ortaggi (§ 29, con prova di vendita o consegna prima del 30 settembre). Il pagamento per il pascolo (§ 22) richiede di pascolare dal 1° maggio al 31 ottobre almeno 120 giorni (pecore e capre di 12 mesi, vacche da latte) o 150 giorni (giovenche), con registro del pascolo. Tariffe pubblicate dalla PPA: campagna 2025, proteaginose 75,77 €/ha, vacche da latte 276,02 € a capo, ovicaprini 24,96 € a capo, luppolo 880,00 €/ha, barbabietola 565,00 €/ha, frutta 531,92 €/ha, ortaggi ad alta intensità di lavoro 688,00 €/ha e a media intensità 490,00 €/ha, e pascolo 121,34 (ovicaprini), 275,88 (vacche da latte) e 55,23 €/UBA (giovenche), con le unità come le indica il file; campagna 2026, proteaginose 88,88, vacche da latte 352,73, ovicaprini 27,77, luppolo 985,60, barbabietola 632,80, frutta 589,72, ortaggi ad alta intensità di lavoro 668,00 e a media intensità 450,00 (il file 2026 le indica tutte «EUR/ha», anche quelle degli animali, il che sembra un errore di etichetta), e le tariffe di pascolo 2026 non erano ancora pubblicate il 16-10-2026. Gli allegati 5-8 (coefficienti UBA, specie e densità) non sono stati letti."
+   },
+   "conditionality": {
+    "en": "Conditionality (kondicionalita) and social conditionality: whoever receives direct payments must meet the statutory management requirements and the standards of good agricultural and environmental condition (DPEP) listed in annex 2 of NV 435/2022, and the labour conditions of annex IV of Regulation 2021/2115 (social conditionality, § 6). Standard DPEP 7 (crop rotation) applies from 1 January 2024, and DPEP 2 (wetlands and peatlands) and social conditionality from 1 January 2025. Certified organic farmers are deemed compliant with DPEP 1 and 3 to 7. Holdings with up to 10 ha of declared agricultural land are not checked or reduced for conditionality, and those with up to 30 ha are not for DPEP 7 either. In addition, agricultural land must be kept fit for grazing or cultivation: on permanent grassland, the first operation (mowing or grazing) before 31 August, and mown grass removed within 14 days. Penalties (NV 120/2023, § 25): for negligent non-compliance, the reduction is set by criteria whose values and percentages (1 %, 3 % or 5 %) the ministry announces in its Vestník; if the same non-compliance persists or recurs within three consecutive years and the farmer was informed, the reduction becomes 5 %, 10 % or 15 % respectively; a further repetition without justification counts as intentional, in which case the EU delegated regulation applies and the percentage, if repeated, is doubled. Conditionality and social conditionality reductions are added together. Annex 2 (list of requirements and standards), the criteria values of the Vestník and delegated regulation 2022/1172 were not read.",
+    "fr": "Conditionnalité (kondicionalita) et conditionnalité sociale : celui qui perçoit des paiements directs doit respecter les exigences réglementaires en matière de gestion et les normes de bonnes conditions agricoles et environnementales (DPEP) listées à l'annexe 2 du NV 435/2022, et les conditions de travail de l'annexe IV du règlement 2021/2115 (conditionnalité sociale, § 6). La norme DPEP 7 (rotation des cultures) s'applique depuis le 1er janvier 2024, et la DPEP 2 (zones humides et tourbières) et la conditionnalité sociale depuis le 1er janvier 2025. Les agriculteurs bio certifiés sont réputés en règle pour les DPEP 1 et 3 à 7. Les exploitations jusqu'à 10 ha de surface agricole déclarée ne sont ni contrôlées ni réduites au titre de la conditionnalité, et celles jusqu'à 30 ha ne le sont pas non plus pour la DPEP 7. En outre, la surface agricole doit être maintenue apte au pâturage ou à la culture : sur prairie permanente, première opération (fauche ou pâturage) avant le 31 août, et herbe fauchée évacuée sous 14 jours. Sanctions (NV 120/2023, § 25) : en cas de manquement par négligence, la réduction est fixée selon des critères dont le ministère annonce les valeurs et pourcentages (1 %, 3 % ou 5 %) dans son Vestník ; si le même manquement persiste ou se répète sur trois années consécutives et que l'agriculteur en a été informé, la réduction passe à 5 %, 10 % ou 15 % respectivement ; une nouvelle répétition sans justification est considérée comme intentionnelle, auquel cas le règlement délégué de l'UE s'applique et le pourcentage, en cas de répétition, est doublé. Les réductions de conditionnalité et de conditionnalité sociale s'additionnent. L'annexe 2 (liste des exigences et normes), les valeurs des critères du Vestník et le règlement délégué 2022/1172 n'ont pas été lus.",
+    "it": "Condizionalità (kondicionalita) e condizionalità sociale: chi riceve pagamenti diretti deve rispettare i criteri di gestione obbligatori e le norme sulle buone condizioni agronomiche e ambientali (DPEP) elencati nell'allegato 2 del NV 435/2022, e le condizioni di lavoro dell'allegato IV del regolamento 2021/2115 (condizionalità sociale, § 6). La norma DPEP 7 (rotazione delle colture) si applica dal 1° gennaio 2024, e la DPEP 2 (zone umide e torbiere) e la condizionalità sociale dal 1° gennaio 2025. Gli agricoltori biologici certificati sono considerati in regola con le DPEP 1 e 3-7. Le aziende fino a 10 ha di superficie agricola dichiarata non sono controllate né ridotte per la condizionalità, e quelle fino a 30 ha nemmeno per la DPEP 7. Inoltre la superficie agricola va mantenuta idonea al pascolo o alla coltivazione: sul prato permanente, la prima operazione (sfalcio o pascolo) prima del 31 agosto, e l'erba sfalciata rimossa entro 14 giorni. Sanzioni (NV 120/2023, § 25): per inosservanza per negligenza, la riduzione è fissata con criteri i cui valori e percentuali (1 %, 3 % o 5 %) il ministero comunica nel suo Vestník; se la stessa inosservanza persiste o si ripete in tre anni consecutivi e l'agricoltore è stato informato, la riduzione diventa 5 %, 10 % o 15 % rispettivamente; un'ulteriore ripetizione senza giustificazione è considerata intenzionale, e allora si applica il regolamento delegato UE e la percentuale, se si ripete, è raddoppiata. Le riduzioni di condizionalità e di condizionalità sociale si sommano. L'allegato 2 (elenco di requisiti e norme), i valori dei criteri del Vestník e il regolamento delegato 2022/1172 non sono stati letti."
+   },
+   "controls": {
+    "en": "Checks and calculation of area and animals. If the area determined in a check is larger than the declared one, the declared area is paid. If not all areas were declared and the difference from the total area exceeds 3 % of the declared area, the year's area aid is reduced by 3 %. Declared area larger than determined: the determined area is paid; if the difference exceeds 3 % of the determined area or 2 ha, payment is on the determined area minus 1.5 times the difference, and if it exceeds 20 %, minus 2 times the difference; if the reduction exceeds the determined area nothing is paid and the excess is offset over the following three years (the rule does not apply to the eco-scheme, which has its own). Ineligible animals: if all are ineligible, no aid; up to 3 animals (or 3 LU for sheep, goats, poultry and pigs) with 51 % or more ineligible, the reduction is half of the percentage; with more than 3, the reduction is the percentage if below 20 % and 1.5 times the percentage if 20 % or more. Artificially created conditions: nothing is paid and a further reduction of 1.5 times what was obtained applies. Force majeure and exceptional circumstances: notified with evidence through the PPA form within 15 working days from when possible. On-the-spot check rates and the EU control regulations were not read.",
+    "fr": "Contrôles et calcul de la surface et des animaux. Si la surface déterminée lors du contrôle est supérieure à celle déclarée, la surface déclarée est payée. Si toutes les surfaces n'ont pas été déclarées et que l'écart avec la surface totale dépasse 3 % de la surface déclarée, l'aide à la surface de l'année est réduite de 3 %. Surface déclarée supérieure à la surface déterminée : la surface déterminée est payée ; si l'écart dépasse 3 % de la surface déterminée ou 2 ha, le paiement porte sur la surface déterminée moins 1,5 fois l'écart, et s'il dépasse 20 %, moins 2 fois l'écart ; si la réduction dépasse la surface déterminée, rien n'est payé et l'excédent est compensé sur les trois années suivantes (la règle ne s'applique pas à l'éco-régime, qui a la sienne). Animaux non admissibles : si tous le sont, pas d'aide ; jusqu'à 3 animaux (ou 3 UGB pour ovins, caprins, volailles et porcins) avec 51 % ou plus de non admissibles, la réduction est la moitié du pourcentage ; au-delà de 3, la réduction est le pourcentage s'il est inférieur à 20 % et 1,5 fois le pourcentage s'il est de 20 % ou plus. Conditions créées artificiellement : rien n'est payé et une réduction supplémentaire de 1,5 fois ce qui a été obtenu s'applique. Force majeure et circonstances exceptionnelles : notifiées avec preuves par le formulaire de la PPA sous 15 jours ouvrés à compter du moment où c'est possible. Les taux de contrôle sur place et les règlements de contrôle de l'UE n'ont pas été lus.",
+    "it": "Controlli e calcolo di superficie e animali. Se la superficie accertata nel controllo è maggiore di quella dichiarata, si paga quella dichiarata. Se non tutte le superfici sono state dichiarate e la differenza rispetto alla superficie totale supera il 3 % di quella dichiarata, l'aiuto a superficie dell'anno è ridotto del 3 %. Superficie dichiarata maggiore di quella accertata: si paga quella accertata; se la differenza supera il 3 % della superficie accertata o 2 ha, si paga sulla superficie accertata meno 1,5 volte la differenza, e se supera il 20 %, meno 2 volte la differenza; se la riduzione supera la superficie accertata non si paga nulla e l'eccedenza si compensa nei tre anni successivi (la regola non si applica all'ecoregime, che ha la propria). Animali non ammissibili: se lo sono tutti, nessun aiuto; fino a 3 animali (o 3 UBA per ovini, caprini, pollame e suini) con il 51 % o più di non ammissibili, la riduzione è la metà della percentuale; con più di 3, la riduzione è la percentuale se inferiore al 20 % e 1,5 volte la percentuale se pari o superiore al 20 %. Condizioni create artificialmente: non si paga nulla e si applica una riduzione ulteriore di 1,5 volte quanto ottenuto. Forza maggiore e circostanze eccezionali: si notificano con prove tramite il modulo della PPA entro 15 giorni lavorativi da quando è possibile. Le percentuali di controllo in loco e i regolamenti UE di controllo non sono stati letti."
+   },
+   "penalties": {
+    "en": "Penalties. Late application: 1 % reduction per working day of delay until 31 May (not applied in 2023 or 2024); a necessary annex filed late reduces the aid by 1 %, and if not filed even within the PPA deadline, nothing is paid. Eco-scheme (§ 12-22): the base area is reduced according to the practice breached, in multiples of the area concerned: 1.5 times for arable soil structure; 5 times for non-productive area, pollinator area and grassing-over in the protected area; 2 times for mowing and grazing of grassland and for fast-growing woody crops; 25 times if the biodiversity island is missing; between 10 % and 100 % of the plot for year-round green cover in vineyards, orchards and hop gardens; a grazing record or seed proof filed late reduces 1 % of the area per day. The reduction for over-declared eco-scheme area (§ 22) was capped at 20 % of the aid for 2025 applications and 25 % for 2026 ones. Grazing payment (§ 23): 1 % for each day the required grazing is missing (up to 10 days), 1.5 % per day between 11 and 49 days, and nothing if more than 50 days are missing. Conditionality: see its rule. Order of reductions: artificial conditions; area or animal over-declaration; eco-scheme and grazing; late filing; non-declaration of areas; and then capping and conditionality. The EU penalty regulations and control percentages were not read.",
+    "fr": "Sanctions. Retard de la demande : réduction de 1 % par jour ouvré de retard jusqu'au 31 mai (non appliquée en 2023 ni en 2024) ; une annexe nécessaire déposée en retard réduit l'aide de 1 %, et si elle n'est pas déposée même dans le délai de la PPA, rien n'est payé. Éco-régime (§ 12-22) : la surface de base est réduite selon la pratique non respectée en multiples de la surface concernée : 1,5 fois pour la structure des terres arables ; 5 fois pour la surface non productive, la zone pour pollinisateurs et l'enherbement en zone protégée ; 2 fois pour la fauche et le pâturage des prairies et pour les ligneux à croissance rapide ; 25 fois si l'îlot de biodiversité manque ; entre 10 % et 100 % de la parcelle pour le couvert vert toute l'année des vignes, vergers et houblonnières ; un registre de pâturage ou un justificatif de semences déposé en retard réduit 1 % de la surface par jour. La réduction pour surface surdéclarée de l'éco-régime (§ 22) a été plafonnée à 20 % de l'aide pour les demandes de 2025 et à 25 % pour celles de 2026. Paiement pastoral (§ 23) : 1 % pour chaque jour où le pâturage exigé manque (jusqu'à 10 jours), 1,5 % par jour entre 11 et 49 jours, et rien s'il manque plus de 50 jours. Conditionnalité : voir sa règle. Ordre des réductions : conditions artificielles ; surdéclaration de surface ou d'animaux ; éco-régime et pâturage ; retard ; non-déclaration de surfaces ; puis plafonnement et conditionnalité. Les règlements de l'UE sur les sanctions et les pourcentages de contrôle n'ont pas été lus.",
+    "it": "Sanzioni. Ritardo della domanda: riduzione dell'1 % per giorno lavorativo di ritardo fino al 31 maggio (non applicata nel 2023 né nel 2024); un allegato necessario presentato in ritardo riduce l'aiuto dell'1 %, e se non è presentato nemmeno nel termine della PPA, non si paga nulla. Ecoregime (§ 12-22): la superficie di base è ridotta secondo la pratica violata in multipli della superficie interessata: 1,5 volte per la struttura del seminativo; 5 volte per superficie non produttiva, area per impollinatori e inerbimento in area protetta; 2 volte per sfalcio e pascolo dei prati e per le specie legnose a rapida crescita; 25 volte se manca l'isola di biodiversità; tra il 10 % e il 100 % della parcella per la copertura verde tutto l'anno di vigneti, frutteti e luppoleti; un registro del pascolo o un giustificativo delle sementi presentato in ritardo riduce l'1 % della superficie al giorno. La riduzione per eccesso di superficie dell'ecoregime (§ 22) è stata limitata al 20 % dell'aiuto per le domande 2025 e al 25 % per quelle 2026. Pagamento per il pascolo (§ 23): 1 % per ogni giorno in cui manca il pascolo richiesto (fino a 10 giorni), 1,5 % al giorno tra 11 e 49 giorni, e nulla se mancano più di 50 giorni. Condizionalità: vedi la sua regola. Ordine delle riduzioni: condizioni artificiali; eccesso di superficie o animali; ecoregime e pascolo; ritardo; mancata dichiarazione di superfici; poi limitazione dei pagamenti e condizionalità. I regolamenti UE sulle sanzioni e le percentuali di controllo non sono stati letti."
+   },
+   "unit-amounts": {
+    "en": "How amounts are set: the decree contains no unit amounts; the ministry (MPRV) publishes the rates of each direct payment in its bulletin (Vestník MPRV), and the PPA publishes them on its website. If the year's total payments exceed the financial allocation, payments are reduced (§ 30) and, according to the ministry notice, all are cut linearly. Campaign 2025: rates published on 24-2-2026 by the PPA (the notice in Vestník 4/2026, of 19-2-2026, number 3477/2026, carries only the young farmers rate: €108.89/ha). Campaign 2026: PPA file updated on 16-10-2026 with basic support €117.31/ha, redistributive €87.80 and €43.50/ha, young farmers €82.37/ha and the coupled payments quoted in their rule; 2026 eco-scheme and grazing rates unpublished at that date; the file does not say whether the 2026 figures are final. The amounts are in each payment's rule.",
+    "fr": "Comment les montants sont fixés : le décret ne contient pas de montants unitaires ; le ministère (MPRV) publie les taux de chaque paiement direct dans son bulletin (Vestník MPRV), et la PPA les publie sur son site. Si le total des paiements de l'année dépasse l'enveloppe financière, les paiements sont réduits (§ 30) et, selon l'avis du ministère, tous sont réduits linéairement. Campagne 2025 : taux publiés le 24-2-2026 par la PPA (l'avis du Vestník 4/2026, du 19-2-2026, numéro 3477/2026, ne reprend que celui des jeunes : 108,89 €/ha). Campagne 2026 : fichier de la PPA mis à jour le 16-10-2026 avec aide de base 117,31 €/ha, redistributif 87,80 et 43,50 €/ha, jeunes 82,37 €/ha et les paiements couplés cités dans leur règle ; éco-régime et pâturage 2026 non publiés à cette date ; le fichier ne dit pas si les chiffres 2026 sont définitifs. Les montants figurent dans la règle de chaque paiement.",
+    "it": "Come si fissano gli importi: il decreto non contiene importi unitari; il ministero (MPRV) pubblica le tariffe di ciascun pagamento diretto nel suo bollettino (Vestník MPRV), e la PPA le pubblica sul suo sito. Se il totale dei pagamenti dell'anno supera la dotazione finanziaria, i pagamenti sono ridotti (§ 30) e, secondo l'avviso del ministero, tutti sono tagliati linearmente. Campagna 2025: tariffe pubblicate il 24-2-2026 dalla PPA (l'avviso del Vestník 4/2026, del 19-2-2026, numero 3477/2026, riporta solo quella dei giovani: 108,89 €/ha). Campagna 2026: file della PPA aggiornato il 16-10-2026 con sostegno di base 117,31 €/ha, redistributivo 87,80 e 43,50 €/ha, giovani 82,37 €/ha e i pagamenti accoppiati citati nella loro regola; ecoregime e pascolo 2026 non pubblicati a quella data; il file non dice se le cifre 2026 sono definitive. Gli importi sono nella regola di ciascun pagamento."
+   }
+  },
+  "calendar": {
+   "application-deadline": {
+    "en": "Last day of the single application window (15 May).",
+    "fr": "Dernier jour de la période de la demande unique (15 mai).",
+    "it": "Ultimo giorno del periodo della domanda unica (15 maggio)."
+   },
+   "late-limit": {
+    "en": "Last day to file a complete application late, with a 1 % reduction per working day (31 May).",
+    "fr": "Dernier jour pour déposer une demande complète en retard, avec réduction de 1 % par jour ouvré (31 mai).",
+    "it": "Ultimo giorno per presentare una domanda completa in ritardo, con riduzione dell'1 % per giorno lavorativo (31 maggio)."
+   },
+   "changes-add": {
+    "en": "Last day to complete the application with land or another type of aid (31 May).",
+    "fr": "Dernier jour pour compléter la demande avec des surfaces ou un autre type d'aide (31 mai).",
+    "it": "Ultimo giorno per integrare la domanda con superficie o con un altro tipo di aiuto (31 maggio)."
+   },
+   "changes-animals": {
+    "en": "Last day to change or withdraw the application for the coupled payments for dairy cows and for sheep and goats (30 September).",
+    "fr": "Dernier jour pour modifier ou retirer la demande des paiements couplés pour vaches laitières et pour ovins et caprins (30 septembre).",
+    "it": "Ultimo giorno per modificare o ritirare la domanda dei pagamenti accoppiati per vacche da latte e per ovicaprini (30 settembre)."
+   },
+   "proof-delivery": {
+    "en": "Last day to prove delivery or sale of the hop, fruit and vegetable production for the coupled payment (30 September).",
+    "fr": "Dernier jour pour prouver la livraison ou la vente de la production de houblon, fruits et légumes du paiement couplé (30 septembre).",
+    "it": "Ultimo giorno per dimostrare la consegna o la vendita della produzione di luppolo, frutta e ortaggi del pagamento accoppiato (30 settembre)."
+   },
+   "changes-area": {
+    "en": "Last day to change or withdraw, in whole or in part, the application for area aid (15 October).",
+    "fr": "Dernier jour pour modifier ou retirer, en tout ou partie, la demande d'aides à la surface (15 octobre).",
+    "it": "Ultimo giorno per modificare o ritirare, in tutto o in parte, la domanda di aiuti a superficie (15 ottobre)."
+   }
+  },
+  "overrides": {}
+ }
+}

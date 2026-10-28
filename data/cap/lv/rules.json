@@ -1,0 +1,1128 @@
+{
+ "schemaVersion": 1,
+ "country": "LV",
+ "scheme": "Kopējās lauksaimniecības politikas stratēģiskais plāns 2023.–2027. gadam (tiešie maksājumi: Ministru kabineta noteikumi Nr. 198)",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-28",
+ "source": {
+  "id": "likumi_lv",
+  "instrument": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (Latvijas Vēstnesis nr. 77, 20-4-2023), con las modificaciones MK 393/2023, 446/2023, 537/2023, 623/2023, 230/2024, 685/2024 (leídas en la copia letona) y las posteriores de 17-12-2024, 18-3-2025, 372/2025 (17-6-2025) y 10-2-2026 (no leídas)",
+  "ref": "MK noteikumi Nr. 198",
+  "url": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem"
+ },
+ "note": "Reglas leídas a mano con WebFetch (que resume la página) de dos copias de likumi.lv, portal oficial de legislación editado por Latvijas Vēstnesis: la versión letona consolidada (puntos 1-111, hasta MK 685 de 29-10-2024; el texto se corta en el 111.3) y la traducción inglesa oficial del Centro de la Lengua Estatal, DESACTUALIZADA (vigente 8-12-2023 a 12-4-2024; puntos 109-214, se corta en el 214). De ahí salen agricultor activo, superficie mínima, tope, pequeños agricultores, redistributivo, jóvenes, ecoesquemas y ayudas asociadas por animales, hortalizas, frutas y patata. Los importes salen de las tablas provisionales de LAD (agencia pagadora) de 2026 y de 2025 fijado, no de la norma (anexo 16, no leído). Plazos de la solicitud de 2024-2026 de fichas y guías de LAD. NO se ha leído: el capítulo de solicitud y plazos y los de controles, reducciones y sanciones (puntos 215 en adelante, incluidos 357.3-357.4), los anexos, las ayudas asociadas de semillas, colza, cebada, centeno y proteaginosas, EKO3, ni el texto de las reformas de 2024-2026 (solo notas de prensa/ministerio: 17-6-2025 prórroga al 30 de junio, 10-2-2026 controles 5 %→3 %/2 % y advertencia en lugar del 1 % en condicionalidad social, propuesta de 28-8-2026 para 2027). Sin vigilancia automática. Son explicaciones breves, no el texto legal: manda el texto oficial.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Ilgtspēju sekmējošais ienākumu pamatatbalsts (ISIP)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.1 y 107-108",
+   "articles": [
+    "2.1",
+    "107",
+    "108"
+   ]
+  },
+  {
+   "id": "small-farmers",
+   "kind": "other",
+   "name": "Maksājums mazajiem lauksaimniekiem (MLS)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.2 y 109-112",
+   "articles": [
+    "2.2",
+    "109",
+    "110",
+    "111",
+    "112"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Ilgtspēju sekmējošais pārdalošais ienākumu papildatbalsts (PAR)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.3 y 113-114 (traducción de 2023)",
+   "articles": [
+    "2.3",
+    "113",
+    "114"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Ienākumu papildatbalsts gados jauniem lauksaimniekiem (JAL)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.4 y 115-130 (traducción de 2023)",
+   "articles": [
+    "2.4",
+    "115",
+    "116",
+    "118",
+    "119",
+    "127"
+   ]
+  },
+  {
+   "id": "eco1",
+   "kind": "eco",
+   "name": "Ekoshēmas atbalsts par videi un klimatam labvēlīgu lauksaimniecības praksi (EKO1)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.5 y 133-140 (traducción de 2023)",
+   "articles": [
+    "2.5",
+    "133",
+    "140"
+   ]
+  },
+  {
+   "id": "eco2",
+   "kind": "eco",
+   "name": "Ekoshēmas atbalsts par ekoloģiski nozīmīgu platību (EKO2)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.6 y 141-148 (traducción de 2023)",
+   "articles": [
+    "2.6",
+    "141",
+    "144"
+   ]
+  },
+  {
+   "id": "eco4",
+   "kind": "eco",
+   "name": "Ekoshēmas atbalsts par saudzējošo lauksaimniecības praksi (EKO4)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.7 y 149-156 (traducción de 2023)",
+   "articles": [
+    "2.7",
+    "149"
+   ]
+  },
+  {
+   "id": "eco5",
+   "kind": "eco",
+   "name": "Ekoshēmas atbalsts par slāpekļa un amonjaka emisiju un piesārņojumu mazinošu lauksaimniecības praksi (EKO5)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.8 y 157-164 (traducción de 2023)",
+   "articles": [
+    "2.8",
+    "157"
+   ]
+  },
+  {
+   "id": "eco6",
+   "kind": "eco",
+   "name": "Ekoshēmas atbalsts par zālāju saglabāšanas veicināšanu (EKO6)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.9 y 165-174 (traducción de 2023)",
+   "articles": [
+    "2.9",
+    "165",
+    "167"
+   ]
+  },
+  {
+   "id": "eco7",
+   "kind": "eco",
+   "name": "Ekoshēmas atbalsts par agroekoloģijas praksi bioloģiskās saimniecībās (EKO7)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.10 y 175-185 (traducción de 2023)",
+   "articles": [
+    "2.10",
+    "175"
+   ]
+  },
+  {
+   "id": "coupled-dairy",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par slaucamām govīm (SSG)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.11 y 189-192 (traducción de 2023)",
+   "articles": [
+    "2.11",
+    "189"
+   ]
+  },
+  {
+   "id": "coupled-cattle",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par liellopiem (SLM)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.12 y 193-195 (traducción de 2023)",
+   "articles": [
+    "2.12",
+    "193"
+   ]
+  },
+  {
+   "id": "coupled-sheep",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par aitām (SAI)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.13 y 196-198 (traducción de 2023)",
+   "articles": [
+    "2.13",
+    "196",
+    "197"
+   ]
+  },
+  {
+   "id": "coupled-goats",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par kazām (SKZ)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.14 y 199-201 (traducción de 2023)",
+   "articles": [
+    "2.14",
+    "199",
+    "200"
+   ]
+  },
+  {
+   "id": "coupled-vegetables",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par dārzeņiem (SDA)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.15 y 202 (traducción de 2023)",
+   "articles": [
+    "2.15",
+    "202"
+   ]
+  },
+  {
+   "id": "coupled-fruit",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par augļiem un ogām (SAU)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.16 y 203 (traducción de 2023)",
+   "articles": [
+    "2.16",
+    "203"
+   ]
+  },
+  {
+   "id": "coupled-starch",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par cietes kartupeļiem (SKC)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.17 y 204-212 (traducción de 2023)",
+   "articles": [
+    "2.17",
+    "204",
+    "205"
+   ]
+  },
+  {
+   "id": "coupled-seed-potato",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par sertificētas sēklas kartupeļiem (SSK)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 2.18 y 213 (traducción de 2023)",
+   "articles": [
+    "2.18",
+    "213"
+   ]
+  },
+  {
+   "id": "coupled-cereal-seed",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par sertificētām labības sēklām (SLS)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 2.19",
+   "articles": [
+    "2.19"
+   ]
+  },
+  {
+   "id": "coupled-grass-seed",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par sertificētām stiebrzāļu un lopbarības augu sēklām (SSA)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 2.20",
+   "articles": [
+    "2.20"
+   ]
+  },
+  {
+   "id": "coupled-rapeseed",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par vasaras rapsi un vasaras ripsi (SVR)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 2.21",
+   "articles": [
+    "2.21"
+   ]
+  },
+  {
+   "id": "coupled-barley",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par miežiem (SMI)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 2.22",
+   "articles": [
+    "2.22"
+   ]
+  },
+  {
+   "id": "coupled-rye",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par rudzu populācijas šķirnēm (SRP)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 2.23",
+   "articles": [
+    "2.23"
+   ]
+  },
+  {
+   "id": "coupled-protein",
+   "kind": "coupled",
+   "name": "Saistītais ienākumu atbalsts par proteīnaugiem (SAP)",
+   "nameLang": "lv",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 2.24",
+   "articles": [
+    "2.24"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 35-47",
+   "articles": [
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "43",
+    "45"
+   ],
+   "text": "Agricultor activo (aktīvais lauksaimnieks): solo él puede cobrar los pagos directos (p. 35). Cuenta como activo si el total de pagos directos antes de reducciones no pasa de 500 € al año, o si cumple al menos uno de siete criterios (p. 36): 1) al menos una unidad de ganado (nosacītā liellopu vienība) registrada el 1 de marzo del año; 2) figurar el 1 de octubre del año anterior o del actual en el registro de producción integrada del Servicio Estatal de Protección Vegetal (VAAD); 3) estar registrado como productor de semillas ese día, con al menos un campo aprobado en inspección; 4) al menos un tercio de la tierra de la explotación en ecológico; 5) al menos un asalariado, o una unidad de trabajo por cada 100 ha; 6) producción estándar de al menos 300 € por hectárea admisible (sin pastos de alto valor natural reconocidos); 7) costes agrarios medios (sin impuesto de bienes inmuebles) de al menos 120 € por hectárea. Una unidad de trabajo es un asalariado con al menos 65 días u 520 horas al año (p. 40). La documentación de empleo (anexo 6) y de costes (anexo 7) debe presentarse a LAD como muy tarde el 1 de octubre del año en curso (p. 43 y 45). Las guías de LAD de 2024 y 2025 mencionan además una regla especial para quien tiene hasta 20 ha de superficie agraria; su texto exacto no se ha leído. Se leyó la versión letona consolidada hasta MK 685 de 29-10-2024: las reformas posteriores (diciembre de 2024, 2025, febrero de 2026) no se han leído y pudieron cambiar umbrales.",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "directPaymentsMaxEur": 500,
+    "minLivestockUnits": 1,
+    "standardOutputEurPerHa": 300,
+    "costsEurPerHa": 120,
+    "labourUnitPerHa": 100,
+    "evidenceDeadline": "10-01"
+   }
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 33-34; LAD, guía «Platību un dzīvnieku atbalsta veidi 2025. gadā»",
+   "articles": [
+    "32",
+    "33",
+    "34"
+   ],
+   "text": "Superficie mínima: los pagos por superficie exigen al menos 1 ha de superficie agraria admisible en total (p. 32). Un bloque de campo (lauku bloks) debe tener al menos 0,3 ha y cada parcela dentro del bloque al menos 0,1 ha (p. 33). Los pagos que solo dependen de animales se conceden únicamente si el importe a pagar llega a 100 € (p. 34). La guía de LAD de 2025 añade que la superficie total mínima es de 0,3 ha para las ayudas de biotopos de pastos (BDUZ) y de 0,1 ha para las franjas verdes (ZJ) y los ecoesquemas. Fuerza mayor: el agricultor debe presentar a LAD la descripción y los documentos en 15 días hábiles desde que pueda (p. 3-5). Versión letona hasta MK 685 de 29-10-2024; no se han leído reformas posteriores.",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "minTotalHa": 1,
+    "minBlockHa": 0.3,
+    "minParcelHa": 0.1,
+    "minAnimalOnlyAidEur": 100,
+    "forceMajeureWorkingDays": 15
+   }
+  },
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "LAD, fichas y guías de 2025 y 2026 (la norma que fija el plazo no se pudo leer); LAD, guía «Ģeotelpiskā iesnieguma labojumu/papildinājumu veikšana un iesniegšana EPS, 2026. gads»",
+   "articles": [],
+   "text": "Solicitud (ģeotelpiskais iesniegums, solicitud geoespacial en el sistema electrónico EPS de LAD). Según LAD, en 2026 se pudo presentar del 14 de abril al 22 de mayo sin reducción, y del 23 de mayo al 15 de junio con una reducción del 1 % por cada día hábil de retraso; las correcciones se admitían hasta el 15 de junio. En 2025 fueron del 15 de abril al 22 de mayo y, con el 1 % por día hábil, hasta el 16 de junio (el 15 era domingo); en 2024, hasta el 17 de junio. En junio de 2025 el plazo se amplió hasta el 30 de junio sin reducción por las lluvias de mayo (reforma de MK 198 aprobada el 17-6-2025, según prensa; el texto no se ha leído). Las nuevas ayudas pedidas después del 22 de mayo de 2026 llevan el 1 % por día hábil. La superficie debe estar a disposición del solicitante el 15 de junio. Los pagos de la campaña 2025 empezaron con anticipos desde el 16 de octubre (70 % de la ayuda básica) y los pagos finales desde el 1 de diciembre (calendario provisional de LAD). No se ha leído el capítulo de la norma sobre la solicitud (más allá del punto 214), por lo que el plazo exacto de la norma, las modificaciones posteriores y la retirada de la solicitud no están verificados.",
+   "officialUrl": "https://www.lad.gov.lv/lv/katalogs/saistitie-ienakumu-atbalsti-par-platibam-2026-gada",
+   "values": {
+    "campaign": 2026,
+    "openFrom": "2026-04-14",
+    "to": "2026-05-22",
+    "lateTo": "2026-06-15",
+    "lateReductionPctPerWorkingDay": 1,
+    "correctionsUntil": "2026-06-15",
+    "advanceFrom2025": "2025-10-16",
+    "advancePct2025": 70,
+    "finalPaymentsFrom2025": "2025-12-01"
+   }
+  },
+  {
+   "id": "basic",
+   "topic": "basic",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 107-108 y anexo 16; Lauku atbalsta dienests (LAD), «Provizoriskās atbalsta pasākumu likmes 2026. gadā»",
+   "articles": [
+    "107",
+    "108",
+    "anexo 16"
+   ],
+   "text": "Ayuda básica a la renta para la sostenibilidad (ilgtspēju sekmējošais ienākumu pamatatbalsts, ISIP): se diferencia por dos grupos de territorios con condiciones socioeconómicas y agronómicas parecidas (p. 107): 25 municipios que no limitan con países no UE y que tienen un periodo vegetativo de al menos 195 días o una calidad de suelo de al menos 38 puntos; y 11 municipios con periodo vegetativo menor de 195 días y calidad de suelo menor de 38 puntos, o que limitan con países no UE. El anexo 16 de la norma (no leído) fija para cada grupo el importe indicativo, el unitario previsto y el mínimo y máximo. LAD publica dos tarifas, ISIP1 e ISIP2 (esta última, «novados con condiciones especiales»). Para 2026 LAD da importes previstos (provisionales) de 71 a 106 €/ha (ISIP1) y de 79 a 118 €/ha (ISIP2); para 2025, ya fijados, 82,82 y 92,82 €/ha. Importes definitivos de 2026 no leídos. En septiembre de 2026 el Ministerio propuso a la Comisión aumentar la ayuda de 2027 (unos 5 €/ha según prensa): propuesta, no vigente.",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "campaign": 2026,
+    "plannedMinEurPerHa1": 71,
+    "plannedMaxEurPerHa1": 106,
+    "plannedMinEurPerHa2": 79,
+    "plannedMaxEurPerHa2": 118,
+    "fixed2025EurPerHa1": 82.82,
+    "fixed2025EurPerHa2": 92.82,
+    "municipalitiesGroup1": 25,
+    "municipalitiesGroup2": 11
+   }
+  },
+  {
+   "id": "basic-cap",
+   "topic": "basic",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 98-106",
+   "articles": [
+    "98",
+    "99",
+    "100",
+    "101",
+    "103",
+    "106"
+   ],
+   "text": "Tope de la ayuda básica (maksimums): la parte de la ayuda básica por encima de 100.000 € al año por agricultor se reduce un 100 % (p. 98). A petición del agricultor, antes de aplicar el tope se descuentan los salarios agrarios del año anterior más los impuestos y cotizaciones asociados (p. 99); el cálculo depende de si la explotación solo hace actividad agraria (datos de la Hacienda, VID) o también otra (horas y salarios por actividad), y si faltan datos hay cuatro métodos alternativos, uno de ellos con la media salarial de la Oficina Central de Estadística y 1.840 horas por unidad de trabajo anual (p. 100-105). La declaración de los salarios del año anterior se presenta en EPS a más tardar el 1 de octubre de cada año (p. 106). Versión letona hasta MK 685 de 29-10-2024; el anexo 15 (contenido mínimo de la declaración) no se ha leído.",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "capEur": 100000,
+    "capReductionPct": 100,
+    "hoursPerWorkUnit": 1840,
+    "declarationDeadline": "10-01"
+   }
+  },
+  {
+   "id": "small-farmers",
+   "topic": "payments",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 109-112; LAD, ficha «Maksājums mazajiem lauksaimniekiem (MLS) 2026. gadā»",
+   "articles": [
+    "109",
+    "110",
+    "111",
+    "112"
+   ],
+   "text": "Pago a pequeños agricultores (maksājums mazajiem lauksaimniekiem, MLS): importe fijo de 500 € por explotación. Hay que declarar en la solicitud geoespacial toda la tierra agraria que se tiene y que sea admisible, y no haber creado condiciones artificiales para obtenerlo (p. 109). Quien lo pide no recibe otros pagos directos (p. 110). Para no haber creado condiciones artificiales basta, según el texto letón, que la primera solicitud de pagos directos a LAD fuese anterior al 15 de junio de 2022 o que la superficie admisible declarada sea de al menos 4 ha (p. 111.1 y 111.2); la traducción inglesa de 2023 añade otras vías (otros pagos directos de al menos 400 €, explotación obtenida por compra o arrendamiento íntegro, herencia o sentencia) y un certificado (anexo 17) para quien no cobró antes, a presentar el 15 de junio; el texto letón posterior corta en el 111.3 y no se ha podido comprobar si esas vías siguen. LAD fija para 2025 y 2026 el pago en 500 €; en 2026 la solicitud fue del 14 de abril al 22 de mayo sin reducción.",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "fixedEur": 500,
+    "minHaAlternative": 4,
+    "firstApplicationBefore": "2022-06-15"
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (traducción inglesa oficial desactualizada, versión de 8-12-2023), puntos 113-114 y anexo 16; Lauku atbalsta dienests (LAD), «Provizoriskās atbalsta pasākumu likmes 2026. gadā»",
+   "articles": [
+    "113",
+    "114",
+    "anexo 16"
+   ],
+   "text": "Ayuda complementaria redistributiva para la sostenibilidad (ilgtspēju sekmējošais pārdalošais ienākumu papildatbalsts, PAR): se concede por la superficie con derecho a la ayuda básica entre 3,01 y 100 ha, en dos tramos: de 3,01 a 30 ha y de 30,01 a 100 ha (p. 113-114 de la traducción inglesa de 2023; no se ha leído la versión vigente). Los importes están en el anexo 16 (no leído). LAD da para 2026 importes previstos (provisionales) de 45 a 67 €/ha en el primer tramo y de 10 a 15 €/ha en el segundo; para 2025, ya fijados, 66 y 12,08 €/ha. Importes definitivos de 2026 no leídos. La noticia de septiembre de 2026 dice que el Ministerio propuso subir el segundo tramo en 2027: propuesta, no vigente.",
+   "officialUrl": "https://likumi.lv/ta/en/en/id/341260",
+   "values": {
+    "minHa": 3.01,
+    "maxHa": 100,
+    "tierEndHa": 30,
+    "campaign": 2026,
+    "plannedTier1EurPerHa": [
+     45,
+     67
+    ],
+    "plannedTier2EurPerHa": [
+     10,
+     15
+    ],
+    "fixed2025EurPerHa": [
+     66,
+     12.08
+    ]
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (traducción inglesa oficial desactualizada, versión de 8-12-2023), puntos 115-130 y anexo 16; Lauku atbalsta dienests (LAD), «Provizoriskās atbalsta pasākumu likmes 2026. gadā»",
+   "articles": [
+    "115",
+    "116",
+    "118",
+    "119",
+    "120",
+    "122",
+    "127",
+    "130"
+   ],
+   "text": "Ayuda complementaria a jóvenes agricultores (ienākumu papildatbalsts gados jauniem lauksaimniekiem, JAL): pago anual desacoplado (p. 115). Joven agricultor: persona física que no cumple 40 años en el año de la primera solicitud; jefe y propietario de la explotación con control efectivo y duradero; y con formación agraria de grado superior o profesional con 320 horas de materias agrarias, o cursos básicos de al menos 160 horas, a 1 de agosto (p. 116). Se paga por la superficie con derecho a ayuda básica hasta 150 ha (p. 118). La explotación se creó como máximo cinco años antes de la primera solicitud (p. 119); la creación se acredita, por ejemplo, con la primera solicitud de ayudas, la declaración de ingresos agrarios o al menos 3 unidades de ganado registradas (p. 120). Control efectivo hasta el 1 de octubre: un joven con más del 50 % del capital, o varios con más del 50 % y cada uno al menos el 20 %, con poder de firma (p. 122). Se concede un máximo de cinco años seguidos y, como muy tarde, hasta 2027 (p. 127). Texto de la traducción inglesa de 2023; no se ha leído la versión vigente. LAD da para 2026 importes previstos de 32 a 48 €/ha; para 2025, ya fijado, 39,85 €/ha. Importes definitivos de 2026 no leídos.",
+   "officialUrl": "https://likumi.lv/ta/en/en/id/341260",
+   "values": {
+    "maxAge": 40,
+    "maxHa": 150,
+    "maxYears": 5,
+    "lastYear": 2027,
+    "establishedWithinYears": 5,
+    "minControlSharePct": 50,
+    "minPerOwnerSharePct": 20,
+    "campaign": 2026,
+    "plannedMinEurPerHa": 32,
+    "plannedMaxEurPerHa": 48,
+    "fixed2025EurPerHa": 39.85
+   }
+  },
+  {
+   "id": "eco-schemes",
+   "topic": "eco",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 2.5-2.10; Lauku atbalsta dienests (LAD), «Provizoriskās atbalsta pasākumu likmes 2026. gadā»",
+   "articles": [
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "2.10"
+   ],
+   "text": "Ecoesquemas (ekoshēmas): la norma enumera seis, voluntarios, para quien hace actividad agraria en tierra con derecho a la ayuda básica: EKO1 práctica agraria favorable al medio ambiente y al clima, EKO2 superficie de interés ecológico (incluida la encalada básica, EKO2.1), EKO4 prácticas agrarias conservadoras, EKO5 reducción de emisiones de nitrógeno y amoniaco, EKO6 conservación de pastos y EKO7 agroecología en explotaciones ecológicas. LAD añade en sus tarifas un EKO3 (creación y mantenimiento de elementos del paisaje), cuya norma no se ha leído. Importes unitarios en €/ha, previstos para 2026 (mín.-máx.) y, entre corchetes, el de 2025 ya fijado según LAD: EKO1 30,10-55,90 [30,10]; EKO2 plantas melíferas, fijadoras de nitrógeno y mezclas de gramíneas y leguminosas 105,70-193 [105,70], abono verde 148,40-218 [209,83], cultivo intercalado 56-93 [56], resiembra de pastos 35-65 [51,03]; EKO2.1 encalado 45,50-71 [71]; EKO3 2,40-3,60 [3,60]; EKO4 10,50-19,50 [11,55]; EKO5 purín de precisión 21,70-40,03 [21,70], abonado mineral y cal de precisión 14-24 [14]; EKO6 49-76 [68,15]; EKO7 39,20-72,80 [62,52]. Son importes provisionales de LAD, no la norma; los definitivos de 2026 no se han leído. Para 2027 el Ministerio propuso a la Comisión (28-8-2026) subir las tarifas de los ecoesquemas: propuesta, no vigente.",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "campaign": 2026,
+    "eko1PlannedEurPerHa": [
+     30.1,
+     55.9
+    ],
+    "eko2NectarPlannedEurPerHa": [
+     105.7,
+     193
+    ],
+    "eko2GreenManurePlannedEurPerHa": [
+     148.4,
+     218
+    ],
+    "eko2IntercropPlannedEurPerHa": [
+     56,
+     93
+    ],
+    "eko2GrasslandOverseedPlannedEurPerHa": [
+     35,
+     65
+    ],
+    "eko21LimingPlannedEurPerHa": [
+     45.5,
+     71
+    ],
+    "eko4PlannedEurPerHa": [
+     10.5,
+     19.5
+    ],
+    "eko5SlurryPlannedEurPerHa": [
+     21.7,
+     40.03
+    ],
+    "eko5MineralPlannedEurPerHa": [
+     14,
+     24
+    ],
+    "eko6PlannedEurPerHa": [
+     49,
+     76
+    ],
+    "eko7PlannedEurPerHa": [
+     39.2,
+     72.8
+    ]
+   }
+  },
+  {
+   "id": "eco-conditions",
+   "topic": "eco",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (traducción inglesa oficial desactualizada, versión de 8-12-2023), puntos 131-185 (versión de 8-12-2023)",
+   "articles": [
+    "131",
+    "133",
+    "141",
+    "144",
+    "149",
+    "157",
+    "165",
+    "167",
+    "175"
+   ],
+   "text": "Condiciones de los ecoesquemas según la traducción inglesa de 2023 (la reforma de 10-2-2026 cambió EKO2 y EKO6 y no se ha leído). EKO1: diversificación de cultivos en tierra de cultivo (1-10 ha: cultivo principal hasta el 75 %; 10,01-30 ha: al menos 3 cultivos, principal hasta 65 % y dos principales hasta 90 %; más de 30 ha: al menos 4, principal 65 %, dos 90 % y tres 99 %; exento si al menos el 80 % es pradera, barbecho o leguminosas) y cobertura del suelo del 15 de noviembre al 15 de febrero en al menos el 75 % (zonas vulnerables a nitratos), 65 % (Vidzeme y Latgale) o 70 % (resto). EKO2: una parcela de cultivo con plantas melíferas, fijadoras de nitrógeno, abono verde (máx. 10 % de la tierra de cultivo), cultivo intermedio sembrado a más tardar el 1 de septiembre y mantenido hasta el 31 de octubre, o cereal con pradera bajo cubierta; prohibidos fitosanitarios en esas parcelas; encalado una vez en 2023-2027 con pH bajo 5,5-6,5 según el suelo. EKO4: siembra con laboreo mínimo (hasta 15 cm), en franjas o directa; herbicidas como máximo dos veces. EKO5: purín incorporado (al menos 10 t/ha) o abonado mineral/fitosanitarios de precisión, con plan de abonado en EPS el 22 de mayo e informes el 22 de mayo, 30 de junio, 31 de agosto y 5 de noviembre. EKO6: no arar ni remover el pasto dos años seguidos, con carga media de al menos 0,4 UGM por hectárea (0,3 si hay ayuda a jóvenes o ganado ovino, caprino o cérvido) del 15 de mayo al 15 de septiembre; si se incumple se devuelve el pago del año previo. EKO7: toda la superficie en control ecológico (Reglamento 2018/848) con diversificación y cobertura similares a EKO1; no compatible con EKO1. Los números de punto pueden haber cambiado con las reformas.",
+   "officialUrl": "https://likumi.lv/ta/en/en/id/341260",
+   "values": {
+    "organicCoverMinPctNvz": 75,
+    "coverVidzemeLatgalePct": 65,
+    "coverRestPct": 70,
+    "coverFrom": "11-15",
+    "coverTo": "02-15",
+    "greenManureMaxPctArable": 10,
+    "catchCropSowByDate": "09-01",
+    "grasslandStockingLu": 0.4,
+    "grasslandStockingLuReduced": 0.3,
+    "grasslandCommitmentYears": 2
+   }
+  },
+  {
+   "id": "coupled-animals",
+   "topic": "associated",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (traducción inglesa oficial desactualizada, versión de 8-12-2023), puntos 186-201 y anexo 16; Lauku atbalsta dienests (LAD), «Provizoriskās atbalsta pasākumu likmes 2026. gadā»",
+   "articles": [
+    "186",
+    "188",
+    "189",
+    "193",
+    "196",
+    "197",
+    "199",
+    "200",
+    "anexo 16"
+   ],
+   "text": "Ayudas asociadas por animales (saistītais ienākumu atbalsts): solo para agricultores activos (p. 186) y nunca por más animales que los registrados en el Centro de Datos Agrarios el primer día del periodo de tenencia (p. 188). Vacas lecheras (SSG): tenidas en el rebaño tres meses seguidos desde el 15 de mayo, identificadas, y con una lactación estándar media de al menos 6.300 kg (4.650 kg en ecológico o razas conservadas Latvijas brūnā y zilā; sin requisito en primera lactación) (p. 189). Bovino de carne o mixto (SLM, razas del anexo 19 y cruces): novillas y machos que alcanzan 16 meses tras seis meses de tenencia, y nodrizas que han parido en los dos años hasta el 15 de noviembre y se tienen seis meses seguidos desde el 15 de mayo (p. 193). Ovejas (SAI): al menos 3 ovejas aptas entre el 1 de octubre y el 30 de septiembre, que hayan parido, de razas de carne o lana-carne (anexo 20), tenidas tres meses seguidos desde el 1 de marzo (p. 196-197). Cabras (SKZ): al menos 3 cabras madres, que hayan parido, tenidas tres meses seguidos desde el 15 de mayo (p. 199-200). Importes unitarios previstos para 2026 (mín.-máx. €/animal) y, entre corchetes, el de 2025 fijado según LAD: vacas lecheras 233-350 [288,17]; bovino 87-131 [107,83]; ovejas 27-41 [33,78]; cabras 27-41 [35,64]. Texto de la traducción inglesa de 2023; la reforma de 10-2-2026 bajó los controles sobre el terreno de estas ayudas del 5 % al 2 % según el Ministerio. Importes definitivos de 2026 no leídos.",
+   "officialUrl": "https://likumi.lv/ta/en/en/id/341260",
+   "values": {
+    "campaign": 2026,
+    "dairyPlannedEurPerHead": [
+     233,
+     350
+    ],
+    "beefPlannedEurPerHead": [
+     87,
+     131
+    ],
+    "sheepPlannedEurPerHead": [
+     27,
+     41
+    ],
+    "goatsPlannedEurPerHead": [
+     27,
+     41
+    ],
+    "fixed2025Dairy": 288.17,
+    "fixed2025Beef": 107.83,
+    "fixed2025Sheep": 33.78,
+    "fixed2025Goats": 35.64,
+    "dairyMinYieldKg": 6300,
+    "minEwes": 3,
+    "minGoats": 3
+   }
+  },
+  {
+   "id": "coupled-crops",
+   "topic": "associated",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (traducción inglesa oficial desactualizada, versión de 8-12-2023), puntos 202-213 y anexo 16; LAD, ficha «Saistītie ienākumu atbalsti par platībām 2026. gadā»; Lauku atbalsta dienests (LAD), «Provizoriskās atbalsta pasākumu likmes 2026. gadā»",
+   "articles": [
+    "202",
+    "203",
+    "204",
+    "205",
+    "213",
+    "anexo 16"
+   ],
+   "text": "Ayudas asociadas por cultivos: hortalizas (SDA) y frutas y bayas (SAU): al menos 1 ha admisible con ayuda básica y, para más de 3 ha, contabilidad por campo (p. 202-203). Patata para fécula (SKC): contrato con una fábrica de fécula, al menos 1 ha y 3,5 t de fécula entregadas por hectárea; la fábrica envía el contrato a LAD antes del 1 de diciembre (p. 204-207). Patata de siembra certificada (SSK): siembra de prebase, base o certificada de primera generación, rendimiento medio de al menos 10,3 t/ha (8,0 t/ha en ecológico) y al menos 1 ha (p. 213). LAD añade para 2026 que solo se puede pedir una ayuda asociada por superficie y que las pedidas de hortalizas y frutas se rechazan si el cultivo no se cosecha en madurez o no se prueba su comercialización. No se han leído las condiciones de semilla certificada de cereales (SLS) y de gramíneas y forrajeras (SSA), colza de verano (SVR), cebada (SMI), centeno de poblaciones (SRP) ni proteaginosas (SAP), porque el texto se cortó en el punto 214. Importes previstos para 2026 (mín.-máx. €/ha) y, entre corchetes, el de 2025 según LAD: SDA 476-714 [594,97]; SAU 119-178 [128,81]; SKC 211-316 [253,45]; SSK 372-558 [438,81]; SLS 63-95 [63]; SSA 65-97 [65]; SVR 31-45 [38,72]; SMI 31-45 [38,61]; SRP 60-90 [75]; SAP 131-197 [129]. Definitivos de 2026 no leídos.",
+   "officialUrl": "https://likumi.lv/ta/en/en/id/341260",
+   "values": {
+    "campaign": 2026,
+    "vegetablesPlannedEurPerHa": [
+     476,
+     714
+    ],
+    "fruitBerryPlannedEurPerHa": [
+     119,
+     178
+    ],
+    "starchPotatoPlannedEurPerHa": [
+     211,
+     316
+    ],
+    "seedPotatoPlannedEurPerHa": [
+     372,
+     558
+    ],
+    "cerealSeedPlannedEurPerHa": [
+     63,
+     95
+    ],
+    "grassSeedPlannedEurPerHa": [
+     65,
+     97
+    ],
+    "rapeseedPlannedEurPerHa": [
+     31,
+     45
+    ],
+    "barleyPlannedEurPerHa": [
+     31,
+     45
+    ],
+    "ryePlannedEurPerHa": [
+     60,
+     90
+    ],
+    "proteinPlannedEurPerHa": [
+     131,
+     197
+    ],
+    "minHa": 1,
+    "starchTPerHa": 3.5
+   }
+  },
+  {
+   "id": "conditionality",
+   "topic": "controls",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 49-97; LAD, guía «Platību un dzīvnieku atbalsta veidi 2025. gadā»",
+   "articles": [
+    "49",
+    "50",
+    "51",
+    "53",
+    "54",
+    "62",
+    "63",
+    "65",
+    "66",
+    "70",
+    "71",
+    "73",
+    "86",
+    "88",
+    "96"
+   ],
+   "text": "Condicionalidad (nosacījumu sistēma): los pagos directos exigen cumplir las BCAM/GAEC (LLVS) en tierra agraria y los requisitos legales de gestión del anexo 8 (p. 49-51); su incumplimiento reduce el pago (subcapítulo 14.10, no leído). Según la versión letona hasta MK 685 de 29-10-2024: BCAM 1, el cociente de pastos permanentes no puede bajar más de un 5 %; si baja, quien convirtió pasto en los últimos cinco años lo restituye antes del 15 de junio del año siguiente (p. 54; LAD avisa antes del 30 de septiembre, p. 56). BCAM 2, humedales y turberas: arado como mucho una vez cada cinco años y sin nuevo drenaje (p. 61, desde 2025). BCAM 3: prohibido quemar rastrojos y hierba seca sin permiso (p. 62). BCAM 4: franjas de 10 m junto a masas de agua y 3 m junto a zanjas sin abonos ni fitosanitarios (p. 63-64; la guía de LAD de 2025 añade 1 m en zanjas de pequeña cuenca). BCAM 5: en pendientes de más de 6° o 10,5 % cobertura vegetal del 1 de octubre al 15 de marzo (p. 65). BCAM 6: del 15 de noviembre al 15 de febrero, cobertura del suelo en al menos el 65 % (zonas vulnerables a nitratos), 55 % (Vidzeme y Latgale) o 60 % (resto) (p. 66). BCAM 7: al menos el 35 % de la tierra de cultivo cambia de cultivo cada año y ningún cultivo anual más de tres años seguidos; exentas las explotaciones con 10 ha o menos de cultivo o con más del 75 % de pasto o forraje, y las ecológicas certificadas (p. 70-74). BCAM 8: la exigencia del 4 % de superficie no productiva (p. 75) fue retirada desde 2025 según LAD. Setos y árboles (biodiversidad, BCAM 8) no se podan del 15 de marzo al 31 de julio en espacios protegidos ni del 1 de abril al 30 de junio en el resto (p. 86). BCAM 9: los pastos permanentes ecológicamente sensibles no se aran ni convierten y, si se hace, se restituyen antes del 15 de junio del año siguiente (p. 88, 96). Reformas de 2026 (según nota del Ministerio, no leída la norma): se rebaja el valor de referencia de la BCAM 1, la BCAM 7 puede cumplirse mediante diversificación, y en 2026 las BCAM 5, 6 y 7 no se aplican a explotaciones que notificaron daños por lluvias en 2025.",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "permanentGrasslandMaxDeclinePct": 5,
+    "cropChangeMinPct": 35,
+    "maxSameCropYears": 3,
+    "bufferWaterM": 10,
+    "bufferDitchM": 3,
+    "steepSlopeDeg": 6,
+    "steepSlopePct": 10.5,
+    "coverFrom": "11-15",
+    "coverTo": "02-15",
+    "coverNvzPct": 65,
+    "coverVidzemeLatgalePct": 55,
+    "coverRestPct": 60,
+    "exemptArableHa": 10,
+    "hedgePruningBan": "04-01/06-30"
+   }
+  },
+  {
+   "id": "social-conditions",
+   "topic": "controls",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 51.1-51.2; LV portāls, nota del Ministerio de Agricultura de 10-2-2026 sobre la reforma de MK 198 (no es la norma)",
+   "articles": [
+    "51.1",
+    "51.2"
+   ],
+   "text": "Condicionalidad social (sociālo nosacījumu sistēma): el beneficiario de pagos directos debe cumplir las condiciones laborales y de empleo del anexo 4 del Reglamento 2021/2115 recogidas en el anexo 8.1 de la norma (p. 51.1). Si no las cumple, el pago se reduce según los puntos 357.3 y 357.4, el anexo 8.1 y el art. 85(6) del Reglamento 2021/2116 (p. 51.2). LAD indica que la condicionalidad social se aplica desde el 1 de enero de 2025. Según la nota del Ministerio sobre la reforma aprobada el 10-2-2026, la reducción del 1 % en este sistema se sustituyó por una advertencia. No se han leído ni los puntos 357.3-357.4 ni el anexo 8.1, ni el texto de la reforma, de modo que no se sabe cuándo ni cómo se escalan las reducciones tras la advertencia.",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "applicableFrom": "2025-01-01",
+    "previousReductionPct": 1
+   }
+  },
+  {
+   "id": "controls",
+   "topic": "controls",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 3-5; LAD, guía «Platību un dzīvnieku atbalsta veidi 2025. gadā»; LV portāls, nota del Ministerio de Agricultura de 10-2-2026 sobre la reforma de MK 198 (no es la norma)",
+   "articles": [
+    "3",
+    "4",
+    "5"
+   ],
+   "text": "Controles. LAD (agencia pagadora), el Servicio de Protección Vegetal (VAAD), el Servicio de Alimentación y Veterinaria y el Centro de Datos Agrarios son los organismos competentes del sistema integrado de gestión y control; LAD vigila las declaraciones de superficie con un sistema de seguimiento (satélite) y hace controles sobre el terreno. Según la nota del Ministerio sobre la reforma aprobada el 10-2-2026, la proporción de controles sobre el terreno bajó del 5 % al 3 % en las ayudas por superficie y del 5 % al 2 % en las ayudas asociadas por animales. Fuerza mayor y circunstancias excepcionales: se notifican a LAD con documentos en 15 días hábiles (p. 3-5), y si impiden cumplir los requisitos se paga por lo que era admisible antes del hecho, con las reducciones que correspondan. No se han leído los capítulos de la norma sobre el cálculo de la superficie determinada, las tolerancias, la tramitación de controles y las reducciones por diferencias (más allá del punto 214).",
+   "officialUrl": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
+   "values": {
+    "onSiteAreaPctFrom2026": 3,
+    "onSiteAnimalCoupledPctFrom2026": 2,
+    "onSiteBefore2026Pct": 5,
+    "forceMajeureWorkingDays": 15
+   }
+  },
+  {
+   "id": "penalties",
+   "topic": "penalties",
+   "legalBasis": "LAD, guía «Platību un dzīvnieku atbalsta veidi 2025. gadā»; LAD, ficha «Saistītie ienākumu atbalsti par platībām 2026. gadā»; Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 51, 98",
+   "articles": [
+    "51",
+    "98"
+   ],
+   "text": "Sanciones. Retraso en la solicitud: reducción del 1 % por cada día hábil de retraso entre el 23 de mayo y el 15 de junio (2026; en 2025 hasta el 16 y en 2024 hasta el 17, por caer el 15 en fin de semana), y pasada esa fecha no se aceptan solicitudes (guía de LAD de 2025); en 2025 la reforma de 17 de junio las admitió hasta el 30 de junio sin reducción. EKO3 no sufre reducción si se pide antes del 16 de junio (2025). Tope: la parte de la ayuda básica por encima de 100.000 € se reduce un 100 % (ver la regla del tope). Condicionalidad: el incumplimiento reduce los pagos según el subcapítulo 14.10 de la norma, que no se ha leído, por lo que no se conocen los porcentajes; en la condicionalidad social la reducción del 1 % fue sustituida por una advertencia en 2026 (nota del Ministerio). Tampoco se han leído las reducciones por diferencias de superficie o animales ni la reducción por disciplina financiera.",
+   "officialUrl": "https://www.lad.gov.lv/lv/katalogs/saistitie-ienakumu-atbalsti-par-platibam-2026-gada",
+   "values": {
+    "lateReductionPctPerWorkingDay": 1,
+    "lateWindow2026": [
+     "2026-05-23",
+     "2026-06-15"
+    ],
+    "capEur": 100000
+   }
+  },
+  {
+   "id": "unit-amounts",
+   "topic": "amounts",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 108, 114, 130, 132, 187 y anexo 16; Lauku atbalsta dienests (LAD), «Provizoriskās atbalsta pasākumu likmes 2026. gadā»",
+   "articles": [
+    "108",
+    "114",
+    "130",
+    "132",
+    "187",
+    "anexo 16"
+   ],
+   "text": "Cómo se fijan los importes: la norma remite al anexo 16 (no leído), que da para cada pago el importe indicativo, el unitario previsto y los unitarios mínimo y máximo (p. 108, 114, 130, 132, 187). LAD publica cada año una tabla provisional con el margen previsto (mín.-máx.) y, después, el importe unitario efectivamente pagadero, que se fija cuando se han evaluado todas las solicitudes y puede variar frente al previsto. Ejemplo de 2023 según LAD: ayuda básica ISIP1 prevista 87,70 €/ha y pagada 84,64 €/ha. Para 2026 solo están publicados los márgenes provisionales (ver la regla de cada pago); los definitivos de 2026 no se han leído. La nota de 2-9-2026 dice que el Ministerio presentó el 28-8-2026 a la Comisión una modificación del plan estratégico que sube la financiación de pagos directos de 2027 en 35,25 millones hasta 398 millones, sobre todo para tres ecoesquemas: es una propuesta pendiente de aprobación.",
+   "officialUrl": "https://www.lad.gov.lv/lv/media/18011/download",
+   "values": {
+    "campaign": 2026,
+    "status": "provisional",
+    "isip1Planned2023": 87.7,
+    "isip1Paid2023": 84.64,
+    "budget2027ProposedMEur": 398,
+    "budget2027IncreaseMEur": 35.25
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "su-close",
+   "kind": "deadline",
+   "legalBasis": "LAD, fichas y guías de 2024, 2025 y 2026 (la norma que fija el plazo no se pudo leer)",
+   "articles": [],
+   "when": {
+    "month": 5,
+    "day": 22,
+    "yearOffset": 0
+   },
+   "text": "Fin del plazo de la solicitud geoespacial sin reducción (22 de mayo). LAD lo da como fecha en 2024, 2025 y 2026; la apertura cambia cada año (14 de abril en 2026). No se ha leído la norma que lo fija."
+  },
+  {
+   "id": "su-late-close",
+   "kind": "deadline",
+   "legalBasis": "LAD, guía de 2025 y fichas de 2026 (la norma que fija el plazo no se pudo leer)",
+   "articles": [],
+   "when": {
+    "month": 6,
+    "day": 15,
+    "yearOffset": 0
+   },
+   "text": "Último día para presentar la solicitud con reducción del 1 % por día hábil de retraso (15 de junio; si cae en fin de semana, el siguiente día hábil, como el 17 de junio de 2024 y el 16 de junio de 2025). Pasado ese día no se admiten solicitudes salvo prórroga."
+  },
+  {
+   "id": "wage-declaration",
+   "kind": "deadline",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 106",
+   "articles": [
+    "106"
+   ],
+   "when": {
+    "month": 10,
+    "day": 1,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite para presentar en EPS la declaración de los salarios agrarios del año anterior (1 de octubre), que permite descontarlos antes del tope de 100.000 €."
+  },
+  {
+   "id": "active-evidence",
+   "kind": "deadline",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 43 y 45",
+   "articles": [
+    "43",
+    "45"
+   ],
+   "when": {
+    "month": 10,
+    "day": 1,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite para entregar a LAD la información de empleo (anexo 6) y la prueba de costes agrarios (anexo 7) del criterio de agricultor activo (1 de octubre)."
+  },
+  {
+   "id": "espg-map",
+   "kind": "publication",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 91",
+   "articles": [
+    "91"
+   ],
+   "when": {
+    "month": 2,
+    "day": 1,
+    "yearOffset": 0
+   },
+   "text": "LAD incorpora cada año antes del 1 de febrero al mapa de bloques de campo los pastos permanentes ecológicamente sensibles recién reconocidos."
+  },
+  {
+   "id": "espg-notify",
+   "kind": "deadline",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 92",
+   "articles": [
+    "92"
+   ],
+   "when": {
+    "month": 4,
+    "day": 1,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite (1 de abril) para avisar por escrito a la Agencia de Protección de la Naturaleza (DAP) de los pastos sensibles recién reconocidos que se araron o convirtieron antes del 1 de febrero."
+  },
+  {
+   "id": "grassland-notice",
+   "kind": "publication",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», punto 56",
+   "articles": [
+    "56"
+   ],
+   "when": {
+    "month": 9,
+    "day": 30,
+    "yearOffset": 0
+   },
+   "text": "LAD avisa antes del 30 de septiembre a los agricultores afectados cuando el cociente de pastos permanentes cae por debajo del límite y deben restituir pasto."
+  },
+  {
+   "id": "grassland-restore",
+   "kind": "deadline",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem», puntos 54 y 96",
+   "articles": [
+    "54",
+    "96"
+   ],
+   "when": {
+    "month": 6,
+    "day": 15,
+    "yearOffset": 1
+   },
+   "text": "Fecha límite (15 de junio del año siguiente) para restituir pasto permanente convertido en los últimos cinco años, o pasto sensible arado o convertido, y declararlo en la solicitud siguiente."
+  },
+  {
+   "id": "starch-contract",
+   "kind": "deadline",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (traducción inglesa oficial desactualizada, versión de 8-12-2023), puntos 207 y 210",
+   "articles": [
+    "207",
+    "210"
+   ],
+   "when": {
+    "month": 12,
+    "day": 1,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite (1 de diciembre) para que la fábrica de fécula envíe a LAD la copia del contrato y los datos de cada entrega de patata (ayuda asociada SKC). Texto de la traducción de 2023."
+  },
+  {
+   "id": "eco5-plan",
+   "kind": "deadline",
+   "legalBasis": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (traducción inglesa oficial desactualizada, versión de 8-12-2023), puntos 158 y 161",
+   "articles": [
+    "158",
+    "161"
+   ],
+   "when": {
+    "month": 5,
+    "day": 22,
+    "yearOffset": 0
+   },
+   "text": "Fecha límite (22 de mayo) para tener en el sistema EPS el plan de abonado y los análisis de suelo exigidos por el ecoesquema EKO5. Texto de la traducción de 2023."
+  }
+ ],
+ "campaignOverrides": [
+  {
+   "campaign": 2026,
+   "calendarId": "su-close",
+   "region": null,
+   "date": "2026-05-22",
+   "legalBasis": "LAD, ficha «Saistītie ienākumu atbalsti par platībām 2026. gadā»; LAD, ficha «Maksājums mazajiem lauksaimniekiem (MLS) 2026. gadā»",
+   "text": "En 2026 la solicitud se pudo presentar del 14 de abril al 22 de mayo sin reducción (LAD)."
+  },
+  {
+   "campaign": 2026,
+   "calendarId": "su-late-close",
+   "region": null,
+   "date": "2026-06-15",
+   "legalBasis": "LAD, ficha «Saistītie ienākumu atbalsti par platībām 2026. gadā»; LAD, guía «Ģeotelpiskā iesnieguma labojumu/papildinājumu veikšana un iesniegšana EPS, 2026. gads»",
+   "text": "En 2026 el plazo con reducción del 1 % por día hábil terminó el 15 de junio y las correcciones también se admitían hasta esa fecha (LAD)."
+  },
+  {
+   "campaign": 2025,
+   "calendarId": "su-late-close",
+   "region": null,
+   "date": "2025-06-30",
+   "legalBasis": "iFinanses, noticia sobre la reforma de MK 198 aprobada el 17-6-2025 (no es la norma)",
+   "text": "En 2025 el plazo con reducción terminaba el 16 de junio (LAD, guía de 2025), pero la reforma de MK 198 aprobada el 17 de junio, por las lluvias de mayo, lo amplió hasta el 30 de junio sin reducción por el retraso, según prensa; no se ha leído el texto de la reforma."
+  },
+  {
+   "campaign": 2024,
+   "calendarId": "su-late-close",
+   "region": null,
+   "date": "2024-06-17",
+   "legalBasis": "LAD, guía de tipos de ayuda de 2024 (media/8802)",
+   "text": "En 2024 el plazo con reducción del 1 % por día hábil llegó hasta el 17 de junio (el 15 era sábado) (LAD)."
+  }
+ ],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "Active farmer (aktīvais lauksaimnieks): only an active farmer may receive direct payments (point 35). A farmer counts as active if total direct payments before reductions do not exceed EUR 500 a year, or if at least one of seven criteria is met (point 36): 1) at least one livestock unit (nosacītā liellopu vienība) registered on 1 March of the year; 2) being on the State Plant Protection Service (VAAD) integrated production register on 1 October of the previous or current year; 3) being registered as a seed producer on that day, with at least one field approved at inspection; 4) at least one third of the holding's land under organic farming; 5) at least one paid employee, or one labour unit per 100 ha; 6) standard output of at least EUR 300 per eligible hectare (excluding recognised high-nature-value grassland); 7) average farming costs (excluding property tax) of at least EUR 120 per hectare. A labour unit is an employee working at least 65 days or 520 hours a year (point 40). Employment (annex 6) and cost (annex 7) documents must reach LAD by 1 October of the current year at the latest (points 43 and 45). The 2024 and 2025 LAD guides also mention a special rule for holdings with up to 20 ha of agricultural land; its exact text has not been read. The Latvian consolidated version up to MK 685 of 29-10-2024 was read: later amendments (December 2024, 2025, February 2026) were not read and may have changed thresholds.",
+    "fr": "Agriculteur actif (aktīvais lauksaimnieks) : seul un agriculteur actif peut percevoir les paiements directs (point 35). Est actif celui dont le total des paiements directs avant réductions ne dépasse pas 500 € par an, ou qui remplit au moins un de sept critères (point 36) : 1) au moins une unité de bétail (nosacītā liellopu vienība) enregistrée au 1er mars de l'année ; 2) figurer au 1er octobre de l'année précédente ou en cours au registre de production intégrée du Service national de protection des végétaux (VAAD) ; 3) être enregistré comme producteur de semences ce jour-là, avec au moins un champ approuvé lors de l'inspection ; 4) au moins un tiers des terres de l'exploitation en bio ; 5) au moins un salarié, ou une unité de travail par 100 ha ; 6) production standard d'au moins 300 € par hectare admissible (hors prairies reconnues de haute valeur naturelle) ; 7) coûts agricoles moyens (hors taxe foncière) d'au moins 120 € par hectare. Une unité de travail est un salarié travaillant au moins 65 jours ou 520 heures par an (point 40). Les justificatifs d'emploi (annexe 6) et de coûts (annexe 7) doivent parvenir à LAD au plus tard le 1er octobre de l'année en cours (points 43 et 45). Les guides LAD de 2024 et 2025 mentionnent aussi une règle spéciale pour les exploitations jusqu'à 20 ha de surface agricole ; son texte exact n'a pas été lu. La version lettone consolidée jusqu'à MK 685 du 29-10-2024 a été lue : les modifications ultérieures (décembre 2024, 2025, février 2026) n'ont pas été lues et ont pu changer des seuils.",
+    "it": "Agricoltore attivo (aktīvais lauksaimnieks): solo lui può ricevere i pagamenti diretti (punto 35). È attivo se il totale dei pagamenti diretti prima delle riduzioni non supera 500 € all'anno, oppure se soddisfa almeno uno di sette criteri (punto 36): 1) almeno un'unità di bestiame (nosacītā liellopu vienība) registrata il 1° marzo dell'anno; 2) essere iscritto il 1° ottobre dell'anno precedente o in corso nel registro della produzione integrata del Servizio statale di protezione delle piante (VAAD); 3) essere registrato come produttore di sementi quel giorno, con almeno un campo approvato in ispezione; 4) almeno un terzo dei terreni dell'azienda in biologico; 5) almeno un dipendente, o un'unità di lavoro ogni 100 ha; 6) produzione standard di almeno 300 € per ettaro ammissibile (esclusi i prati riconosciuti di alto valore naturale); 7) costi agricoli medi (esclusa l'imposta immobiliare) di almeno 120 € per ettaro. Un'unità di lavoro è un dipendente che lavora almeno 65 giorni o 520 ore all'anno (punto 40). I documenti sull'occupazione (allegato 6) e sui costi (allegato 7) devono arrivare a LAD entro il 1° ottobre dell'anno in corso al più tardi (punti 43 e 45). Le guide LAD 2024 e 2025 menzionano anche una regola speciale per le aziende fino a 20 ha di superficie agricola; il testo esatto non è stato letto. È stata letta la versione lettone consolidata fino a MK 685 del 29-10-2024: le modifiche successive (dicembre 2024, 2025, febbraio 2026) non sono state lette e possono aver cambiato le soglie."
+   },
+   "minimum": {
+    "en": "Minimum area: area payments require at least 1 ha of eligible agricultural land in total (point 32). A field block (lauku bloks) must be at least 0.3 ha and each parcel within the block at least 0.1 ha (point 33). Payments that depend only on animals are granted only if the amount payable reaches EUR 100 (point 34). The 2025 LAD guide adds that the minimum total area is 0.3 ha for the grassland biotope aid (BDUZ) and 0.1 ha for green strips (ZJ) and the eco-schemes. Force majeure: the farmer must send LAD a description and documents within 15 working days from when this becomes possible (points 3-5). Latvian version up to MK 685 of 29-10-2024; later amendments have not been read.",
+    "fr": "Superficie minimale : les paiements à la surface exigent au moins 1 ha de surface agricole admissible au total (point 32). Un bloc de champ (lauku bloks) doit faire au moins 0,3 ha et chaque parcelle du bloc au moins 0,1 ha (point 33). Les paiements qui ne dépendent que des animaux ne sont accordés que si le montant à payer atteint 100 € (point 34). Le guide LAD de 2025 ajoute que la surface totale minimale est de 0,3 ha pour l'aide aux biotopes de prairies (BDUZ) et de 0,1 ha pour les bandes vertes (ZJ) et les éco-régimes. Force majeure : l'agriculteur doit envoyer à LAD la description et les justificatifs dans les 15 jours ouvrés à compter du moment où c'est possible (points 3-5). Version lettone jusqu'à MK 685 du 29-10-2024 ; les modifications ultérieures n'ont pas été lues.",
+    "it": "Superficie minima: i pagamenti a superficie richiedono almeno 1 ha di superficie agricola ammissibile in totale (punto 32). Un blocco di campo (lauku bloks) deve avere almeno 0,3 ha e ogni particella del blocco almeno 0,1 ha (punto 33). I pagamenti che dipendono solo dagli animali sono concessi unicamente se l'importo da pagare raggiunge 100 € (punto 34). La guida LAD 2025 aggiunge che la superficie totale minima è di 0,3 ha per l'aiuto ai biotopi dei prati (BDUZ) e di 0,1 ha per le fasce verdi (ZJ) e gli ecoregimi. Forza maggiore: l'agricoltore deve inviare a LAD la descrizione e i documenti entro 15 giorni lavorativi da quando è possibile (punti 3-5). Versione lettone fino a MK 685 del 29-10-2024; le modifiche successive non sono state lette."
+   },
+   "application": {
+    "en": "Application (ģeotelpiskais iesniegums, a geospatial application in LAD's electronic system EPS). According to LAD, in 2026 it could be filed from 14 April to 22 May without reduction, and from 23 May to 15 June with a 1 % reduction per working day of delay; corrections were accepted until 15 June. In 2025 the periods were 15 April to 22 May and, with 1 % per working day, until 16 June (the 15th was a Sunday); in 2024, until 17 June. In June 2025 the deadline was extended to 30 June without reduction because of the May rains (a reform of MK 198 approved on 17-6-2025, according to the press; the text has not been read). New aids applied for after 22 May 2026 carry 1 % per working day. The land must be at the applicant's disposal on 15 June. Payments for campaign 2025 began with advances from 16 October (70 % of basic support) and final payments from 1 December (LAD provisional schedule). The chapter of the regulation on the application (beyond point 214) has not been read, so the exact deadline in the rule, later amendments and withdrawal of the application are not verified.",
+    "fr": "Demande (ģeotelpiskais iesniegums, demande géospatiale dans le système électronique EPS de LAD). Selon LAD, en 2026 elle pouvait être déposée du 14 avril au 22 mai sans réduction, et du 23 mai au 15 juin avec une réduction de 1 % par jour ouvré de retard ; les corrections étaient admises jusqu'au 15 juin. En 2025, du 15 avril au 22 mai puis, avec 1 % par jour ouvré, jusqu'au 16 juin (le 15 était un dimanche) ; en 2024, jusqu'au 17 juin. En juin 2025 le délai a été prorogé au 30 juin sans réduction à cause des pluies de mai (réforme de MK 198 approuvée le 17-6-2025, selon la presse ; le texte n'a pas été lu). Les nouvelles aides demandées après le 22 mai 2026 subissent 1 % par jour ouvré. La terre doit être à la disposition du demandeur le 15 juin. Les paiements de la campagne 2025 ont commencé par des avances dès le 16 octobre (70 % de l'aide de base) et les paiements finaux dès le 1er décembre (calendrier provisoire de LAD). Le chapitre de la norme sur la demande (au-delà du point 214) n'a pas été lu : la date limite exacte de la norme, les modifications ultérieures et le retrait de la demande ne sont pas vérifiés.",
+    "it": "Domanda (ģeotelpiskais iesniegums, domanda geospaziale nel sistema elettronico EPS di LAD). Secondo LAD, nel 2026 poteva essere presentata dal 14 aprile al 22 maggio senza riduzione, e dal 23 maggio al 15 giugno con una riduzione dell'1 % per giorno lavorativo di ritardo; le correzioni erano ammesse fino al 15 giugno. Nel 2025 dal 15 aprile al 22 maggio e, con l'1 % per giorno lavorativo, fino al 16 giugno (il 15 era domenica); nel 2024 fino al 17 giugno. A giugno 2025 il termine è stato prorogato al 30 giugno senza riduzione per le piogge di maggio (riforma di MK 198 approvata il 17-6-2025, secondo la stampa; il testo non è stato letto). Gli aiuti nuovi richiesti dopo il 22 maggio 2026 subiscono l'1 % per giorno lavorativo. La terra deve essere a disposizione del richiedente il 15 giugno. I pagamenti della campagna 2025 sono iniziati con anticipi dal 16 ottobre (70 % del sostegno di base) e i pagamenti finali dal 1° dicembre (calendario provvisorio di LAD). Il capitolo della norma sulla domanda (oltre il punto 214) non è stato letto: il termine esatto della norma, le modifiche successive e il ritiro della domanda non sono verificati."
+   },
+   "basic": {
+    "en": "Basic income support for sustainability (ilgtspēju sekmējošais ienākumu pamatatbalsts, ISIP): differentiated by two groups of territories with similar socio-economic and agronomic conditions (point 107): 25 municipalities that do not border non-EU countries and have a growing season of at least 195 days or a land-quality score of at least 38 points; and 11 municipalities with a growing season under 195 days and a land-quality score below 38, or that border non-EU countries. Annex 16 of the regulation (not read) sets the indicative, planned unit, minimum and maximum amounts for each group. LAD publishes two rates, ISIP1 and ISIP2 (the latter for areas with special conditions). For 2026 LAD gives planned (provisional) amounts of EUR 71 to 106/ha (ISIP1) and EUR 79 to 118/ha (ISIP2); for 2025, already fixed, EUR 82.82 and 92.82/ha. Final 2026 amounts have not been read. In September 2026 the Ministry proposed to the Commission to raise the 2027 support (about EUR 5/ha according to the press): a proposal, not in force.",
+    "fr": "Aide de base au revenu pour la durabilité (ilgtspēju sekmējošais ienākumu pamatatbalsts, ISIP) : différenciée selon deux groupes de territoires aux conditions socio-économiques et agronomiques proches (point 107) : 25 communes qui ne bordent pas de pays hors UE et ont une période de végétation d'au moins 195 jours ou une qualité de sol d'au moins 38 points ; et 11 communes avec période de végétation de moins de 195 jours et qualité de sol inférieure à 38, ou qui bordent des pays hors UE. L'annexe 16 de la norme (non lue) fixe pour chaque groupe les montants indicatif, unitaire prévu, minimal et maximal. LAD publie deux taux, ISIP1 et ISIP2 (ce dernier pour les zones à conditions particulières). Pour 2026 LAD donne des montants prévus (provisoires) de 71 à 106 €/ha (ISIP1) et de 79 à 118 €/ha (ISIP2) ; pour 2025, déjà fixés, 82,82 et 92,82 €/ha. Les montants définitifs 2026 n'ont pas été lus. En septembre 2026 le ministère a proposé à la Commission d'augmenter l'aide de 2027 (environ 5 €/ha selon la presse) : proposition, non en vigueur.",
+    "it": "Sostegno di base al reddito per la sostenibilità (ilgtspēju sekmējošais ienākumu pamatatbalsts, ISIP): differenziato in due gruppi di territori con condizioni socioeconomiche e agronomiche simili (punto 107): 25 comuni che non confinano con paesi extra-UE e hanno un periodo vegetativo di almeno 195 giorni o una qualità del suolo di almeno 38 punti; e 11 comuni con periodo vegetativo inferiore a 195 giorni e qualità del suolo inferiore a 38, o che confinano con paesi extra-UE. L'allegato 16 della norma (non letto) fissa per ogni gruppo gli importi indicativo, unitario previsto, minimo e massimo. LAD pubblica due tariffe, ISIP1 e ISIP2 (quest'ultima per le zone con condizioni speciali). Per il 2026 LAD indica importi previsti (provvisori) da 71 a 106 €/ha (ISIP1) e da 79 a 118 €/ha (ISIP2); per il 2025, già fissati, 82,82 e 92,82 €/ha. Gli importi definitivi 2026 non sono stati letti. A settembre 2026 il ministero ha proposto alla Commissione di aumentare il sostegno del 2027 (circa 5 €/ha secondo la stampa): proposta, non in vigore."
+   },
+   "basic-cap": {
+    "en": "Cap on basic support (maksimums): the part of basic support above EUR 100,000 a year per farmer is reduced by 100 % (point 98). At the farmer's request, before the cap is applied, the previous year's farm wages plus related taxes and contributions are deducted (point 99); the calculation depends on whether the holding does only farming (tax authority VID data) or other activity too (hours and wages per activity), and if data are missing there are four alternative methods, one using the Central Statistical Bureau average wage and 1,840 hours per annual work unit (points 100-105). The declaration of the previous year's wages is filed in EPS by 1 October each year at the latest (point 106). Latvian version up to MK 685 of 29-10-2024; annex 15 (minimum content of the declaration) has not been read.",
+    "fr": "Plafonnement de l'aide de base (maksimums) : la part de l'aide de base au-dessus de 100 000 € par an et par agriculteur est réduite de 100 % (point 98). À la demande de l'agriculteur, avant d'appliquer le plafond, on déduit les salaires agricoles de l'année précédente plus les impôts et cotisations associés (point 99) ; le calcul dépend de la seule activité agricole (données du fisc, VID) ou d'une autre activité aussi (heures et salaires par activité), et si les données manquent il existe quatre méthodes alternatives, dont une avec le salaire moyen du Bureau central de statistique et 1 840 heures par unité de travail annuelle (points 100-105). La déclaration des salaires de l'année précédente est déposée dans EPS au plus tard le 1er octobre de chaque année (point 106). Version lettone jusqu'à MK 685 du 29-10-2024 ; l'annexe 15 (contenu minimal de la déclaration) n'a pas été lue.",
+    "it": "Tetto del sostegno di base (maksimums): la parte del sostegno di base oltre 100.000 € all'anno per agricoltore è ridotta del 100 % (punto 98). Su richiesta dell'agricoltore, prima di applicare il tetto si detraggono i salari agricoli dell'anno precedente più le imposte e i contributi associati (punto 99); il calcolo dipende dal fatto che l'azienda svolga solo attività agricola (dati del fisco, VID) o anche altra (ore e salari per attività), e se mancano dati esistono quattro metodi alternativi, uno con il salario medio dell'Ufficio centrale di statistica e 1.840 ore per unità di lavoro annua (punti 100-105). La dichiarazione dei salari dell'anno precedente si presenta in EPS entro il 1° ottobre di ogni anno (punto 106). Versione lettone fino a MK 685 del 29-10-2024; l'allegato 15 (contenuto minimo della dichiarazione) non è stato letto."
+   },
+   "small-farmers": {
+    "en": "Payment for small farmers (maksājums mazajiem lauksaimniekiem, MLS): a fixed EUR 500 per holding. The farmer must declare in the geospatial application all the eligible agricultural land they have and must not have created artificial conditions to obtain it (point 109). Those who apply receive no other direct payments (point 110). To show no artificial conditions it is enough, according to the Latvian text, that the first direct-payment application to LAD was before 15 June 2022 or that the declared eligible area is at least 4 ha (points 111.1 and 111.2); the 2023 English translation adds other routes (other direct payments of at least EUR 400, a holding obtained by sale or whole lease, inheritance or court judgment) and a certificate (annex 17) for those who had not been paid before, due on 15 June; the later Latvian text breaks off at 111.3 and it could not be checked whether those routes remain. LAD sets the payment at EUR 500 for 2025 and 2026; in 2026 applications ran from 14 April to 22 May without reduction.",
+    "fr": "Paiement aux petits agriculteurs (maksājums mazajiem lauksaimniekiem, MLS) : montant fixe de 500 € par exploitation. L'agriculteur doit déclarer dans la demande géospatiale toutes les terres agricoles admissibles dont il dispose et ne pas avoir créé de conditions artificielles pour l'obtenir (point 109). Qui le demande ne perçoit pas d'autres paiements directs (point 110). Pour ne pas avoir créé de conditions artificielles, il suffit, selon le texte letton, que la première demande de paiements directs à LAD soit antérieure au 15 juin 2022 ou que la surface admissible déclarée soit d'au moins 4 ha (points 111.1 et 111.2) ; la traduction anglaise de 2023 ajoute d'autres voies (autres paiements directs d'au moins 400 €, exploitation obtenue par achat ou location intégrale, héritage ou jugement) et un certificat (annexe 17) pour qui n'a pas perçu auparavant, à remettre le 15 juin ; le texte letton plus récent s'interrompt au point 111.3 et on n'a pas pu vérifier si ces voies subsistent. LAD fixe le paiement à 500 € pour 2025 et 2026 ; en 2026 la demande a couru du 14 avril au 22 mai sans réduction.",
+    "it": "Pagamento ai piccoli agricoltori (maksājums mazajiem lauksaimniekiem, MLS): importo fisso di 500 € per azienda. L'agricoltore deve dichiarare nella domanda geospaziale tutta la terra agricola ammissibile di cui dispone e non aver creato condizioni artificiali per ottenerlo (punto 109). Chi lo chiede non riceve altri pagamenti diretti (punto 110). Per non aver creato condizioni artificiali basta, secondo il testo lettone, che la prima domanda di pagamenti diretti a LAD sia anteriore al 15 giugno 2022 o che la superficie ammissibile dichiarata sia di almeno 4 ha (punti 111.1 e 111.2); la traduzione inglese del 2023 aggiunge altre vie (altri pagamenti diretti di almeno 400 €, azienda ottenuta per acquisto o affitto integrale, eredità o sentenza) e un certificato (allegato 17) per chi non aveva ricevuto pagamenti prima, da presentare il 15 giugno; il testo lettone più recente si interrompe al punto 111.3 e non si è potuto verificare se quelle vie restino. LAD fissa il pagamento a 500 € per il 2025 e il 2026; nel 2026 la domanda è andata dal 14 aprile al 22 maggio senza riduzione."
+   },
+   "redistributive": {
+    "en": "Complementary redistributive income support for sustainability (ilgtspēju sekmējošais pārdalošais ienākumu papildatbalsts, PAR): granted on the area eligible for basic support between 3.01 and 100 ha, in two bands: 3.01 to 30 ha and 30.01 to 100 ha (points 113-114 of the 2023 English translation; the current version has not been read). The amounts are in annex 16 (not read). For 2026 LAD gives planned (provisional) amounts of EUR 45 to 67/ha in the first band and EUR 10 to 15/ha in the second; for 2025, already fixed, EUR 66 and 12.08/ha. Final 2026 amounts have not been read. The September 2026 news says the Ministry proposed raising the second band in 2027: a proposal, not in force.",
+    "fr": "Aide complémentaire redistributive pour la durabilité (ilgtspēju sekmējošais pārdalošais ienākumu papildatbalsts, PAR) : accordée sur la surface ouvrant droit à l'aide de base entre 3,01 et 100 ha, en deux tranches : de 3,01 à 30 ha et de 30,01 à 100 ha (points 113-114 de la traduction anglaise de 2023 ; la version en vigueur n'a pas été lue). Les montants figurent à l'annexe 16 (non lue). Pour 2026 LAD donne des montants prévus (provisoires) de 45 à 67 €/ha dans la première tranche et de 10 à 15 €/ha dans la seconde ; pour 2025, déjà fixés, 66 et 12,08 €/ha. Les montants définitifs 2026 n'ont pas été lus. L'article de septembre 2026 dit que le ministère a proposé de relever la seconde tranche en 2027 : proposition, non en vigueur.",
+    "it": "Sostegno complementare redistributivo per la sostenibilità (ilgtspēju sekmējošais pārdalošais ienākumu papildatbalsts, PAR): concesso sulla superficie con diritto al sostegno di base tra 3,01 e 100 ha, in due fasce: da 3,01 a 30 ha e da 30,01 a 100 ha (punti 113-114 della traduzione inglese del 2023; la versione vigente non è stata letta). Gli importi sono nell'allegato 16 (non letto). Per il 2026 LAD indica importi previsti (provvisori) da 45 a 67 €/ha nella prima fascia e da 10 a 15 €/ha nella seconda; per il 2025, già fissati, 66 e 12,08 €/ha. Gli importi definitivi 2026 non sono stati letti. La notizia di settembre 2026 dice che il ministero ha proposto di alzare la seconda fascia nel 2027: proposta, non in vigore."
+   },
+   "young-farmers": {
+    "en": "Complementary income support for young farmers (ienākumu papildatbalsts gados jauniem lauksaimniekiem, JAL): an annual decoupled payment (point 115). A young farmer is a natural person who has not reached 40 in the year of the first application; head and owner of the holding with effective and lasting control; and holding higher or vocational agricultural education with 320 hours of agricultural subjects, or basic courses of at least 160 hours, by 1 August (point 116). It is paid on the area eligible for basic support up to 150 ha (point 118). The holding was set up at most five years before the first application (point 119); setting up is shown, for example, by a first aid application, a declaration of farm income or at least 3 livestock units registered (point 120). Effective control until 1 October: one young farmer with more than 50 % of the capital, or several with more than 50 % and each at least 20 %, with signing power (point 122). Support is granted for at most five consecutive years and, at the latest, until 2027 (point 127). Text of the 2023 English translation; the current version has not been read. LAD gives planned amounts of EUR 32 to 48/ha for 2026; for 2025, already fixed, EUR 39.85/ha. Final 2026 amounts have not been read.",
+    "fr": "Aide complémentaire aux jeunes agriculteurs (ienākumu papildatbalsts gados jauniem lauksaimniekiem, JAL) : paiement annuel découplé (point 115). Jeune agriculteur : personne physique n'ayant pas atteint 40 ans l'année de la première demande ; chef et propriétaire de l'exploitation avec un contrôle effectif et durable ; titulaire d'une formation agricole supérieure ou professionnelle avec 320 heures de matières agricoles, ou de cours de base d'au moins 160 heures, au 1er août (point 116). Il est payé sur la surface ouvrant droit à l'aide de base jusqu'à 150 ha (point 118). L'exploitation a été créée au plus cinq ans avant la première demande (point 119) ; la création se prouve, par exemple, par une première demande d'aide, une déclaration de revenus agricoles ou au moins 3 unités de bétail enregistrées (point 120). Contrôle effectif jusqu'au 1er octobre : un jeune détenant plus de 50 % du capital, ou plusieurs détenant plus de 50 % et chacun au moins 20 %, avec pouvoir de signature (point 122). L'aide est accordée cinq années consécutives au plus et, au plus tard, jusqu'en 2027 (point 127). Texte de la traduction anglaise de 2023 ; la version en vigueur n'a pas été lue. LAD donne pour 2026 des montants prévus de 32 à 48 €/ha ; pour 2025, déjà fixé, 39,85 €/ha. Les montants définitifs 2026 n'ont pas été lus.",
+    "it": "Sostegno complementare ai giovani agricoltori (ienākumu papildatbalsts gados jauniem lauksaimniekiem, JAL): pagamento annuale disaccoppiato (punto 115). Giovane agricoltore: persona fisica che non ha compiuto 40 anni nell'anno della prima domanda; capo e proprietario dell'azienda con controllo effettivo e duraturo; con formazione agraria superiore o professionale con 320 ore di materie agrarie, o corsi di base di almeno 160 ore, al 1° agosto (punto 116). È pagato sulla superficie con diritto al sostegno di base fino a 150 ha (punto 118). L'azienda è stata costituita al massimo cinque anni prima della prima domanda (punto 119); la costituzione si dimostra, ad esempio, con una prima domanda di aiuti, una dichiarazione di redditi agricoli o almeno 3 unità di bestiame registrate (punto 120). Controllo effettivo fino al 1° ottobre: un giovane con oltre il 50 % del capitale, o più giovani con oltre il 50 % e ciascuno almeno il 20 %, con potere di firma (punto 122). L'aiuto è concesso per al massimo cinque anni consecutivi e, al più tardi, fino al 2027 (punto 127). Testo della traduzione inglese del 2023; la versione vigente non è stata letta. LAD indica per il 2026 importi previsti da 32 a 48 €/ha; per il 2025, già fissato, 39,85 €/ha. Gli importi definitivi 2026 non sono stati letti."
+   },
+   "eco-schemes": {
+    "en": "Eco-schemes (ekoshēmas): the regulation lists six voluntary ones, for those carrying out farming on land eligible for basic support: EKO1 environment- and climate-friendly farming practice, EKO2 ecological focus area (including basic liming, EKO2.1), EKO4 conservation farming practices, EKO5 reducing nitrogen and ammonia emissions, EKO6 grassland conservation and EKO7 agroecology on organic holdings. LAD adds an EKO3 (creating and maintaining landscape elements) to its rates, whose rule has not been read. Unit amounts in EUR/ha, planned for 2026 (min-max) and, in square brackets, the already fixed 2025 amount according to LAD: EKO1 30.10-55.90 [30.10]; EKO2 nectar plants, nitrogen-fixing crops and grass-legume mixtures 105.70-193 [105.70], green manure 148.40-218 [209.83], intercropping 56-93 [56], grassland overseeding 35-65 [51.03]; EKO2.1 liming 45.50-71 [71]; EKO3 2.40-3.60 [3.60]; EKO4 10.50-19.50 [11.55]; EKO5 precision slurry 21.70-40.03 [21.70], precision mineral fertiliser and lime 14-24 [14]; EKO6 49-76 [68.15]; EKO7 39.20-72.80 [62.52]. These are LAD provisional amounts, not the rule; final 2026 amounts have not been read. For 2027 the Ministry proposed to the Commission (28-8-2026) to raise eco-scheme rates: a proposal, not in force.",
+    "fr": "Éco-régimes (ekoshēmas) : la norme en énumère six, volontaires, pour qui exerce une activité agricole sur des terres ouvrant droit à l'aide de base : EKO1 pratique agricole favorable à l'environnement et au climat, EKO2 surface d'intérêt écologique (y compris le chaulage de base, EKO2.1), EKO4 pratiques agricoles de conservation, EKO5 réduction des émissions d'azote et d'ammoniac, EKO6 conservation des prairies et EKO7 agroécologie dans les exploitations bio. LAD ajoute à ses barèmes un EKO3 (création et entretien d'éléments du paysage), dont la norme n'a pas été lue. Montants unitaires en €/ha, prévus pour 2026 (min-max) et, entre crochets, celui de 2025 déjà fixé selon LAD : EKO1 30,10-55,90 [30,10] ; EKO2 plantes mellifères, cultures fixatrices d'azote et mélanges graminées-légumineuses 105,70-193 [105,70], engrais vert 148,40-218 [209,83], culture intercalaire 56-93 [56], sursemis de prairie 35-65 [51,03] ; EKO2.1 chaulage 45,50-71 [71] ; EKO3 2,40-3,60 [3,60] ; EKO4 10,50-19,50 [11,55] ; EKO5 lisier de précision 21,70-40,03 [21,70], engrais minéral et chaux de précision 14-24 [14] ; EKO6 49-76 [68,15] ; EKO7 39,20-72,80 [62,52]. Ce sont des montants provisoires de LAD, pas la norme ; les montants définitifs 2026 n'ont pas été lus. Pour 2027 le ministère a proposé à la Commission (28-8-2026) de relever les taux des éco-régimes : proposition, non en vigueur.",
+    "it": "Ecoregimi (ekoshēmas): la norma ne elenca sei, volontari, per chi svolge attività agricola su terreni con diritto al sostegno di base: EKO1 pratica agricola favorevole all'ambiente e al clima, EKO2 area di interesse ecologico (compresa la calcitazione di base, EKO2.1), EKO4 pratiche agricole conservative, EKO5 riduzione delle emissioni di azoto e ammoniaca, EKO6 conservazione dei prati e EKO7 agroecologia nelle aziende biologiche. LAD aggiunge alle sue tariffe un EKO3 (creazione e mantenimento di elementi del paesaggio), la cui norma non è stata letta. Importi unitari in €/ha, previsti per il 2026 (min-max) e, tra parentesi quadre, quello 2025 già fissato secondo LAD: EKO1 30,10-55,90 [30,10]; EKO2 piante mellifere, colture azotofissatrici e miscugli graminacee-leguminose 105,70-193 [105,70], sovescio 148,40-218 [209,83], coltura intercalare 56-93 [56], trasemina dei prati 35-65 [51,03]; EKO2.1 calcitazione 45,50-71 [71]; EKO3 2,40-3,60 [3,60]; EKO4 10,50-19,50 [11,55]; EKO5 liquame di precisione 21,70-40,03 [21,70], concime minerale e calce di precisione 14-24 [14]; EKO6 49-76 [68,15]; EKO7 39,20-72,80 [62,52]. Sono importi provvisori di LAD, non la norma; gli importi definitivi 2026 non sono stati letti. Per il 2027 il ministero ha proposto alla Commissione (28-8-2026) di aumentare le tariffe degli ecoregimi: proposta, non in vigore."
+   },
+   "eco-conditions": {
+    "en": "Eco-scheme conditions according to the 2023 English translation (the 10-2-2026 reform changed EKO2 and EKO6 and has not been read). EKO1: crop diversification on arable land (1-10 ha: main crop up to 75 %; 10.01-30 ha: at least 3 crops, main one up to 65 % and two main ones up to 90 %; over 30 ha: at least 4, main 65 %, two 90 % and three 99 %; exempt if at least 80 % is grassland, fallow or legumes) and soil cover from 15 November to 15 February on at least 75 % (nitrate-vulnerable zones), 65 % (Vidzeme and Latgale) or 70 % (rest). EKO2: an arable parcel with nectar plants, nitrogen-fixing crops, green manure (max 10 % of arable land), a catch crop sown by 1 September at the latest and kept until 31 October, or cereal undersown with grass; plant protection products prohibited on those parcels; liming once in 2023-2027 with pH below 5.5-6.5 depending on soil. EKO4: sowing with minimum tillage (up to 15 cm), strip or direct drilling; herbicides at most twice. EKO5: slurry incorporated (at least 10 t/ha) or precision mineral fertiliser/spraying, with a fertilisation plan in EPS by 22 May and reports on 22 May, 30 June, 31 August and 5 November. EKO6: no ploughing or loosening of the grassland for two consecutive years, with average stocking of at least 0.4 LU per hectare (0.3 if young-farmer support or sheep, goats or deer) from 15 May to 15 September; if breached, the previous year's payment is repaid. EKO7: the whole area under organic control (Regulation 2018/848) with diversification and cover similar to EKO1; not combinable with EKO1. Point numbers may have changed with the amendments.",
+    "fr": "Conditions des éco-régimes selon la traduction anglaise de 2023 (la réforme du 10-2-2026 a modifié EKO2 et EKO6 et n'a pas été lue). EKO1 : diversification des cultures sur terres arables (1-10 ha : culture principale jusqu'à 75 % ; 10,01-30 ha : au moins 3 cultures, principale jusqu'à 65 % et deux principales jusqu'à 90 % ; plus de 30 ha : au moins 4, principale 65 %, deux 90 % et trois 99 % ; exemption si au moins 80 % est prairie, jachère ou légumineuses) et couverture du sol du 15 novembre au 15 février sur au moins 75 % (zones vulnérables aux nitrates), 65 % (Vidzeme et Latgale) ou 70 % (reste). EKO2 : une parcelle arable avec plantes mellifères, cultures fixatrices d'azote, engrais vert (max 10 % des terres arables), culture dérobée semée au plus tard le 1er septembre et maintenue jusqu'au 31 octobre, ou céréale sous couvert de prairie ; produits phytosanitaires interdits sur ces parcelles ; chaulage une fois en 2023-2027 avec pH inférieur à 5,5-6,5 selon le sol. EKO4 : semis en travail minimal (jusqu'à 15 cm), en bandes ou direct ; herbicides au plus deux fois. EKO5 : lisier incorporé (au moins 10 t/ha) ou fertilisation minérale/pulvérisation de précision, avec plan de fertilisation dans EPS au 22 mai et rapports les 22 mai, 30 juin, 31 août et 5 novembre. EKO6 : ne pas labourer ni ameublir la prairie deux années consécutives, avec une charge moyenne d'au moins 0,4 UGB par hectare (0,3 si aide jeunes ou ovins, caprins, cervidés) du 15 mai au 15 septembre ; en cas de manquement le paiement de l'année précédente est remboursé. EKO7 : toute la surface sous contrôle bio (règlement 2018/848) avec diversification et couverture analogues à EKO1 ; non cumulable avec EKO1. Les numéros de point ont pu changer avec les modifications.",
+    "it": "Condizioni degli ecoregimi secondo la traduzione inglese del 2023 (la riforma del 10-2-2026 ha modificato EKO2 e EKO6 e non è stata letta). EKO1: diversificazione colturale sui seminativi (1-10 ha: coltura principale fino al 75 %; 10,01-30 ha: almeno 3 colture, principale fino al 65 % e due principali fino al 90 %; oltre 30 ha: almeno 4, principale 65 %, due 90 % e tre 99 %; esenzione se almeno l'80 % è prato, maggese o leguminose) e copertura del suolo dal 15 novembre al 15 febbraio su almeno il 75 % (zone vulnerabili ai nitrati), 65 % (Vidzeme e Latgale) o 70 % (resto). EKO2: una particella a seminativo con piante mellifere, colture azotofissatrici, sovescio (max 10 % dei seminativi), coltura intercalare seminata entro il 1° settembre e mantenuta fino al 31 ottobre, o cereale con prato sottosemina; vietati i prodotti fitosanitari su quelle particelle; calcitazione una volta nel 2023-2027 con pH inferiore a 5,5-6,5 secondo il suolo. EKO4: semina con lavorazione minima (fino a 15 cm), a strisce o diretta; erbicidi al massimo due volte. EKO5: liquame interrato (almeno 10 t/ha) o concimazione minerale/irrorazione di precisione, con piano di concimazione in EPS entro il 22 maggio e relazioni il 22 maggio, 30 giugno, 31 agosto e 5 novembre. EKO6: non arare né smuovere il prato per due anni consecutivi, con carico medio di almeno 0,4 UBA per ettaro (0,3 se sostegno giovani o ovini, caprini, cervidi) dal 15 maggio al 15 settembre; in caso di inadempienza si restituisce il pagamento dell'anno precedente. EKO7: tutta la superficie sotto controllo biologico (regolamento 2018/848) con diversificazione e copertura simili a EKO1; non cumulabile con EKO1. I numeri di punto possono essere cambiati con le modifiche."
+   },
+   "coupled-animals": {
+    "en": "Coupled aid per animal (saistītais ienākumu atbalsts): only for active farmers (point 186) and never for more animals than those registered in the Agricultural Data Centre on the first day of the keeping period (point 188). Dairy cows (SSG): kept in the herd three consecutive months from 15 May, identified, and with an average standard lactation of at least 6,300 kg (4,650 kg for organic or conserved Latvian Brown and Blue breeds; no requirement in first lactation) (point 189). Beef or dual-purpose cattle (SLM, annex 19 breeds and crosses): heifers and bulls reaching 16 months after six months' keeping, and suckler cows that calved in the two years up to 15 November and are kept six consecutive months from 15 May (point 193). Sheep (SAI): at least 3 eligible ewes between 1 October and 30 September, which have lambed, of meat or wool-meat breeds (annex 20), kept three consecutive months from 1 March (points 196-197). Goats (SKZ): at least 3 mother goats which have kidded, kept three consecutive months from 15 May (points 199-200). Planned 2026 unit amounts (min-max EUR/animal) and, in square brackets, the fixed 2025 amount according to LAD: dairy cows 233-350 [288.17]; cattle 87-131 [107.83]; sheep 27-41 [33.78]; goats 27-41 [35.64]. Text of the 2023 English translation; the 10-2-2026 reform cut on-the-spot checks on these aids from 5 % to 2 % according to the Ministry. Final 2026 amounts have not been read.",
+    "fr": "Aides couplées par animal (saistītais ienākumu atbalsts) : réservées aux agriculteurs actifs (point 186) et jamais pour plus d'animaux que ceux enregistrés au Centre de données agricoles le premier jour de la période de détention (point 188). Vaches laitières (SSG) : gardées dans le troupeau trois mois consécutifs à partir du 15 mai, identifiées, avec une lactation standard moyenne d'au moins 6 300 kg (4 650 kg en bio ou races conservées Latvijas brūnā et zilā ; pas d'exigence en première lactation) (point 189). Bovins à viande ou mixtes (SLM, races de l'annexe 19 et croisements) : génisses et mâles atteignant 16 mois après six mois de détention, et vaches allaitantes ayant vêlé dans les deux ans jusqu'au 15 novembre et gardées six mois consécutifs à partir du 15 mai (point 193). Brebis (SAI) : au moins 3 brebis admissibles entre le 1er octobre et le 30 septembre, ayant agnelé, de races à viande ou lainière-viande (annexe 20), gardées trois mois consécutifs à partir du 1er mars (points 196-197). Chèvres (SKZ) : au moins 3 chèvres mères ayant mis bas, gardées trois mois consécutifs à partir du 15 mai (points 199-200). Montants unitaires prévus pour 2026 (min-max €/animal) et, entre crochets, celui de 2025 fixé selon LAD : vaches laitières 233-350 [288,17] ; bovins 87-131 [107,83] ; brebis 27-41 [33,78] ; chèvres 27-41 [35,64]. Texte de la traduction anglaise de 2023 ; la réforme du 10-2-2026 a réduit les contrôles sur place de ces aides de 5 % à 2 % selon le ministère. Les montants définitifs 2026 n'ont pas été lus.",
+    "it": "Aiuti accoppiati per animale (saistītais ienākumu atbalsts): solo per agricoltori attivi (punto 186) e mai per più animali di quelli registrati presso il Centro dati agricoli il primo giorno del periodo di detenzione (punto 188). Vacche da latte (SSG): tenute nella mandria tre mesi consecutivi dal 15 maggio, identificate, con una lattazione standard media di almeno 6.300 kg (4.650 kg in biologico o razze conservate Latvijas brūnā e zilā; nessun requisito alla prima lattazione) (punto 189). Bovini da carne o a duplice attitudine (SLM, razze dell'allegato 19 e incroci): manze e maschi che raggiungono 16 mesi dopo sei mesi di detenzione, e nutrici che hanno partorito nei due anni fino al 15 novembre e sono tenute sei mesi consecutivi dal 15 maggio (punto 193). Pecore (SAI): almeno 3 pecore ammissibili tra il 1° ottobre e il 30 settembre, che abbiano partorito, di razze da carne o lana-carne (allegato 20), tenute tre mesi consecutivi dal 1° marzo (punti 196-197). Capre (SKZ): almeno 3 capre madri che abbiano partorito, tenute tre mesi consecutivi dal 15 maggio (punti 199-200). Importi unitari previsti per il 2026 (min-max €/capo) e, tra parentesi quadre, quello 2025 fissato secondo LAD: vacche da latte 233-350 [288,17]; bovini 87-131 [107,83]; pecore 27-41 [33,78]; capre 27-41 [35,64]. Testo della traduzione inglese del 2023; la riforma del 10-2-2026 ha ridotto i controlli in loco su questi aiuti dal 5 % al 2 % secondo il ministero. Gli importi definitivi 2026 non sono stati letti."
+   },
+   "coupled-crops": {
+    "en": "Coupled aid per crop: vegetables (SDA) and fruit and berries (SAU): at least 1 ha eligible with basic support and, for more than 3 ha, field-level accounts (points 202-203). Starch potatoes (SKC): a contract with a starch factory, at least 1 ha and 3.5 t of starch delivered per hectare; the factory sends the contract to LAD before 1 December (points 204-207). Certified seed potatoes (SSK): sowing prebase, base or certified first-generation seed, an average yield of at least 10.3 t/ha (8.0 t/ha organic) and at least 1 ha (point 213). LAD adds for 2026 that only one coupled area aid can be claimed per area and that vegetable and fruit claims are rejected if the crop is not harvested at maturity or its marketing is not shown. The conditions for certified cereal seed (SLS), grass and fodder seed (SSA), summer rape (SVR), barley (SMI), rye populations (SRP) and protein crops (SAP) have not been read, because the text broke off at point 214. Planned 2026 amounts (min-max EUR/ha) and, in square brackets, the 2025 amount according to LAD: SDA 476-714 [594.97]; SAU 119-178 [128.81]; SKC 211-316 [253.45]; SSK 372-558 [438.81]; SLS 63-95 [63]; SSA 65-97 [65]; SVR 31-45 [38.72]; SMI 31-45 [38.61]; SRP 60-90 [75]; SAP 131-197 [129]. Final 2026 amounts have not been read.",
+    "fr": "Aides couplées par culture : légumes (SDA) et fruits et baies (SAU) : au moins 1 ha admissible avec l'aide de base et, au-delà de 3 ha, comptabilité par champ (points 202-203). Pommes de terre féculières (SKC) : contrat avec une féculerie, au moins 1 ha et 3,5 t de fécule livrées par hectare ; la féculerie envoie le contrat à LAD avant le 1er décembre (points 204-207). Plants de pommes de terre certifiés (SSK) : semis de prébase, base ou certifiés de première génération, rendement moyen d'au moins 10,3 t/ha (8,0 t/ha en bio) et au moins 1 ha (point 213). LAD ajoute pour 2026 qu'une seule aide couplée à la surface peut être demandée par parcelle et que les demandes de légumes et fruits sont rejetées si la culture n'est pas récoltée à maturité ou si sa commercialisation n'est pas prouvée. Les conditions des semences certifiées de céréales (SLS), de graminées et fourragères (SSA), du colza de printemps (SVR), de l'orge (SMI), du seigle de populations (SRP) et des protéagineux (SAP) n'ont pas été lues, le texte s'étant interrompu au point 214. Montants prévus 2026 (min-max €/ha) et, entre crochets, celui de 2025 selon LAD : SDA 476-714 [594,97] ; SAU 119-178 [128,81] ; SKC 211-316 [253,45] ; SSK 372-558 [438,81] ; SLS 63-95 [63] ; SSA 65-97 [65] ; SVR 31-45 [38,72] ; SMI 31-45 [38,61] ; SRP 60-90 [75] ; SAP 131-197 [129]. Les montants définitifs 2026 n'ont pas été lus.",
+    "it": "Aiuti accoppiati per coltura: ortaggi (SDA) e frutta e bacche (SAU): almeno 1 ha ammissibile con il sostegno di base e, oltre 3 ha, contabilità per campo (punti 202-203). Patate da fecola (SKC): contratto con un'azienda di fecola, almeno 1 ha e 3,5 t di fecola consegnate per ettaro; l'azienda invia il contratto a LAD prima del 1° dicembre (punti 204-207). Patate da semina certificate (SSK): semina di prebase, base o certificate di prima generazione, resa media di almeno 10,3 t/ha (8,0 t/ha in biologico) e almeno 1 ha (punto 213). LAD aggiunge per il 2026 che si può chiedere un solo aiuto accoppiato per superficie e che le domande di ortaggi e frutta sono respinte se la coltura non è raccolta a maturazione o non se ne prova la commercializzazione. Le condizioni delle sementi certificate di cereali (SLS), di graminacee e foraggere (SSA), della colza estiva (SVR), dell'orzo (SMI), della segale di popolazioni (SRP) e delle proteaginose (SAP) non sono state lette, perché il testo si è interrotto al punto 214. Importi previsti 2026 (min-max €/ha) e, tra parentesi quadre, quello 2025 secondo LAD: SDA 476-714 [594,97]; SAU 119-178 [128,81]; SKC 211-316 [253,45]; SSK 372-558 [438,81]; SLS 63-95 [63]; SSA 65-97 [65]; SVR 31-45 [38,72]; SMI 31-45 [38,61]; SRP 60-90 [75]; SAP 131-197 [129]. Gli importi definitivi 2026 non sono stati letti."
+   },
+   "conditionality": {
+    "en": "Conditionality (nosacījumu sistēma): direct payments require compliance with the GAEC standards (LLVS) on agricultural land and with the statutory management requirements of annex 8 (points 49-51); breaches reduce the payment (sub-chapter 14.10, not read). According to the Latvian version up to MK 685 of 29-10-2024: GAEC 1, the permanent-grassland ratio may not fall by more than 5 %; if it does, whoever converted grassland in the last five years restores it before 15 June of the following year (point 54; LAD gives notice before 30 September, point 56). GAEC 2, wetlands and peatland: ploughing at most once every five years and no new drainage (point 61, from 2025). GAEC 3: no burning of stubble and dry grass without a permit (point 62). GAEC 4: strips of 10 m beside water bodies and 3 m beside ditches with no fertilisers or plant protection products (points 63-64; the 2025 LAD guide adds 1 m on small-catchment ditches). GAEC 5: on slopes over 6° or 10.5 % keep vegetation cover from 1 October to 15 March (point 65). GAEC 6: from 15 November to 15 February, soil cover on at least 65 % (nitrate-vulnerable zones), 55 % (Vidzeme and Latgale) or 60 % (rest) (point 66). GAEC 7: at least 35 % of arable land changes crop each year and no annual crop more than three years in a row; exempt are holdings with 10 ha or less of arable land or more than 75 % grass or forage, and certified organic ones (points 70-74). GAEC 8: the 4 % non-productive area requirement (point 75) was removed from 2025 according to LAD. Hedges and trees (biodiversity, GAEC 8) are not pruned from 15 March to 31 July in protected areas nor from 1 April to 30 June elsewhere (point 86). GAEC 9: ecologically sensitive permanent grassland may not be ploughed or converted and, if it is, is restored before 15 June of the following year (points 88, 96). 2026 reforms (according to the Ministry note; the rule has not been read): the GAEC 1 reference value is lowered, GAEC 7 can be met through diversification, and in 2026 GAEC 5, 6 and 7 do not apply to holdings that reported rain damage in 2025.",
+    "fr": "Conditionnalité (nosacījumu sistēma) : les paiements directs exigent de respecter les BCAE/GAEC (LLVS) sur les terres agricoles et les exigences réglementaires en matière de gestion de l'annexe 8 (points 49-51) ; tout manquement réduit le paiement (sous-chapitre 14.10, non lu). Selon la version lettone jusqu'à MK 685 du 29-10-2024 : BCAE 1, le ratio de prairies permanentes ne peut baisser de plus de 5 % ; s'il baisse, celui qui a converti de la prairie ces cinq dernières années la rétablit avant le 15 juin de l'année suivante (point 54 ; LAD notifie avant le 30 septembre, point 56). BCAE 2, zones humides et tourbières : labour au plus une fois tous les cinq ans et pas de nouveau drainage (point 61, dès 2025). BCAE 3 : interdiction de brûler chaumes et herbe sèche sans permis (point 62). BCAE 4 : bandes de 10 m le long des plans d'eau et de 3 m le long des fossés sans engrais ni produits phytosanitaires (points 63-64 ; le guide LAD 2025 ajoute 1 m pour les fossés de petit bassin). BCAE 5 : sur pentes de plus de 6° ou 10,5 %, couverture végétale du 1er octobre au 15 mars (point 65). BCAE 6 : du 15 novembre au 15 février, couverture du sol sur au moins 65 % (zones vulnérables aux nitrates), 55 % (Vidzeme et Latgale) ou 60 % (reste) (point 66). BCAE 7 : au moins 35 % des terres arables changent de culture chaque année et aucune culture annuelle plus de trois ans de suite ; exemptées les exploitations de 10 ha ou moins de terres arables ou de plus de 75 % d'herbe ou fourrage, et les exploitations bio certifiées (points 70-74). BCAE 8 : l'exigence de 4 % de surface non productive (point 75) a été supprimée dès 2025 selon LAD. Haies et arbres (biodiversité, BCAE 8) ne sont pas taillés du 15 mars au 31 juillet en zones protégées ni du 1er avril au 30 juin ailleurs (point 86). BCAE 9 : les prairies permanentes écologiquement sensibles ne sont ni labourées ni converties et, sinon, rétablies avant le 15 juin de l'année suivante (points 88, 96). Réformes 2026 (selon la note du ministère ; la norme n'a pas été lue) : la valeur de référence de la BCAE 1 est abaissée, la BCAE 7 peut être respectée par diversification, et en 2026 les BCAE 5, 6 et 7 ne s'appliquent pas aux exploitations ayant signalé des dégâts de pluie en 2025.",
+    "it": "Condizionalità (nosacījumu sistēma): i pagamenti diretti richiedono il rispetto delle BCAA/GAEC (LLVS) sui terreni agricoli e dei criteri di gestione obbligatori dell'allegato 8 (punti 49-51); le violazioni riducono il pagamento (sottocapitolo 14.10, non letto). Secondo la versione lettone fino a MK 685 del 29-10-2024: BCAA 1, il rapporto dei prati permanenti non può calare di oltre il 5 %; se cala, chi ha convertito prato negli ultimi cinque anni lo ripristina entro il 15 giugno dell'anno successivo (punto 54; LAD avvisa prima del 30 settembre, punto 56). BCAA 2, zone umide e torbiere: aratura al massimo una volta ogni cinque anni e nessun nuovo drenaggio (punto 61, dal 2025). BCAA 3: vietato bruciare stoppie ed erba secca senza permesso (punto 62). BCAA 4: fasce di 10 m lungo i corpi idrici e di 3 m lungo i fossi senza concimi né fitosanitari (punti 63-64; la guida LAD 2025 aggiunge 1 m per i fossi di piccolo bacino). BCAA 5: su pendenze oltre 6° o 10,5 % copertura vegetale dal 1° ottobre al 15 marzo (punto 65). BCAA 6: dal 15 novembre al 15 febbraio, copertura del suolo su almeno il 65 % (zone vulnerabili ai nitrati), 55 % (Vidzeme e Latgale) o 60 % (resto) (punto 66). BCAA 7: almeno il 35 % dei seminativi cambia coltura ogni anno e nessuna coltura annuale per più di tre anni di fila; esentate le aziende con 10 ha o meno di seminativo o con oltre il 75 % di erba o foraggio, e quelle biologiche certificate (punti 70-74). BCAA 8: l'obbligo del 4 % di superficie non produttiva (punto 75) è stato eliminato dal 2025 secondo LAD. Siepi e alberi (biodiversità, BCAA 8) non si potano dal 15 marzo al 31 luglio nelle aree protette né dal 1° aprile al 30 giugno altrove (punto 86). BCAA 9: i prati permanenti ecologicamente sensibili non si arano né si convertono e, se accade, si ripristinano entro il 15 giugno dell'anno successivo (punti 88, 96). Riforme 2026 (secondo la nota del ministero; la norma non è stata letta): il valore di riferimento della BCAA 1 è abbassato, la BCAA 7 può essere rispettata con la diversificazione, e nel 2026 le BCAA 5, 6 e 7 non si applicano alle aziende che hanno segnalato danni da pioggia nel 2025."
+   },
+   "social-conditions": {
+    "en": "Social conditionality (sociālo nosacījumu sistēma): recipients of direct payments must comply with the labour and employment conditions of annex IV to Regulation 2021/2115 set out in annex 8.1 of the regulation (point 51.1). If they do not, the payment is reduced under points 357.3 and 357.4, annex 8.1 and Article 85(6) of Regulation 2021/2116 (point 51.2). LAD states that social conditionality applies from 1 January 2025. According to the Ministry's note on the reform approved on 10-2-2026, the 1 % reduction in this system was replaced by a warning. Points 357.3-357.4, annex 8.1 and the text of the reform have not been read, so it is not known when or how reductions escalate after the warning.",
+    "fr": "Conditionnalité sociale (sociālo nosacījumu sistēma) : le bénéficiaire de paiements directs doit respecter les conditions de travail et d'emploi de l'annexe IV du règlement 2021/2115 reprises à l'annexe 8.1 de la norme (point 51.1). S'il ne les respecte pas, le paiement est réduit selon les points 357.3 et 357.4, l'annexe 8.1 et l'art. 85(6) du règlement 2021/2116 (point 51.2). LAD indique que la conditionnalité sociale s'applique depuis le 1er janvier 2025. Selon la note du ministère sur la réforme approuvée le 10-2-2026, la réduction de 1 % dans ce système a été remplacée par un avertissement. Les points 357.3-357.4, l'annexe 8.1 et le texte de la réforme n'ont pas été lus : on ne sait donc pas quand ni comment les réductions s'aggravent après l'avertissement.",
+    "it": "Condizionalità sociale (sociālo nosacījumu sistēma): il beneficiario di pagamenti diretti deve rispettare le condizioni di lavoro e di occupazione dell'allegato IV del regolamento 2021/2115 riprese nell'allegato 8.1 della norma (punto 51.1). Se non le rispetta, il pagamento è ridotto secondo i punti 357.3 e 357.4, l'allegato 8.1 e l'art. 85(6) del regolamento 2021/2116 (punto 51.2). LAD indica che la condizionalità sociale si applica dal 1° gennaio 2025. Secondo la nota del ministero sulla riforma approvata il 10-2-2026, la riduzione dell'1 % in questo sistema è stata sostituita da un avvertimento. I punti 357.3-357.4, l'allegato 8.1 e il testo della riforma non sono stati letti: non si sa quindi quando né come le riduzioni aumentino dopo l'avvertimento."
+   },
+   "controls": {
+    "en": "Checks. LAD (paying agency), the Plant Protection Service (VAAD), the Food and Veterinary Service and the Agricultural Data Centre are the competent bodies of the integrated administration and control system; LAD monitors area declarations through a (satellite) monitoring system and carries out on-the-spot checks. According to the Ministry's note on the reform approved on 10-2-2026, the share of on-the-spot checks fell from 5 % to 3 % for area aids and from 5 % to 2 % for animal coupled aids. Force majeure and exceptional circumstances are notified to LAD with documents within 15 working days (points 3-5), and if they prevent meeting requirements, payment is made for what was eligible before the event, with any applicable reductions. The chapters on calculating the determined area, tolerances, handling of checks and reductions for differences (beyond point 214) have not been read.",
+    "fr": "Contrôles. LAD (organisme payeur), le Service de protection des végétaux (VAAD), le Service de l'alimentation et vétérinaire et le Centre de données agricoles sont les organismes compétents du système intégré de gestion et de contrôle ; LAD surveille les déclarations de surface par un système de suivi (satellite) et effectue des contrôles sur place. Selon la note du ministère sur la réforme approuvée le 10-2-2026, la proportion de contrôles sur place est passée de 5 % à 3 % pour les aides à la surface et de 5 % à 2 % pour les aides couplées aux animaux. Force majeure et circonstances exceptionnelles : notification à LAD avec justificatifs dans les 15 jours ouvrés (points 3-5) ; si elles empêchent de respecter les exigences, on paie ce qui était admissible avant l'événement, avec les réductions applicables. Les chapitres sur le calcul de la surface déterminée, les tolérances, le traitement des contrôles et les réductions pour écarts (au-delà du point 214) n'ont pas été lus.",
+    "it": "Controlli. LAD (organismo pagatore), il Servizio di protezione delle piante (VAAD), il Servizio alimentare e veterinario e il Centro dati agricoli sono gli organismi competenti del sistema integrato di gestione e controllo; LAD sorveglia le dichiarazioni di superficie con un sistema di monitoraggio (satellitare) e svolge controlli in loco. Secondo la nota del ministero sulla riforma approvata il 10-2-2026, la quota di controlli in loco è scesa dal 5 % al 3 % per gli aiuti a superficie e dal 5 % al 2 % per gli aiuti accoppiati per animali. Forza maggiore e circostanze eccezionali: si notificano a LAD con i documenti entro 15 giorni lavorativi (punti 3-5) e, se impediscono di rispettare i requisiti, si paga per quanto era ammissibile prima dell'evento, con le riduzioni applicabili. I capitoli sul calcolo della superficie determinata, le tolleranze, la gestione dei controlli e le riduzioni per differenze (oltre il punto 214) non sono stati letti."
+   },
+   "penalties": {
+    "en": "Penalties. Late application: a 1 % reduction per working day of delay between 23 May and 15 June (2026; in 2025 until 16 June and in 2024 until 17 June, because the 15th fell on a weekend), and after that date no applications are accepted (2025 LAD guide); in 2025 the reform of 17 June accepted them until 30 June without reduction. EKO3 is not reduced if applied for before 16 June (2025). Cap: the part of basic support above EUR 100,000 is reduced by 100 % (see the cap rule). Conditionality: breaches reduce payments under sub-chapter 14.10 of the regulation, which has not been read, so the percentages are not known; in social conditionality the 1 % reduction was replaced by a warning in 2026 (Ministry note). Reductions for area or animal differences and financial discipline have not been read either.",
+    "fr": "Sanctions. Retard de la demande : réduction de 1 % par jour ouvré de retard entre le 23 mai et le 15 juin (2026 ; en 2025 jusqu'au 16 juin et en 2024 jusqu'au 17 juin, le 15 tombant un week-end), et passé cette date les demandes ne sont plus acceptées (guide LAD 2025) ; en 2025 la réforme du 17 juin les a admises jusqu'au 30 juin sans réduction. EKO3 n'est pas réduit s'il est demandé avant le 16 juin (2025). Plafond : la part de l'aide de base au-dessus de 100 000 € est réduite de 100 % (voir la règle du plafond). Conditionnalité : les manquements réduisent les paiements selon le sous-chapitre 14.10 de la norme, qui n'a pas été lu ; les pourcentages sont donc inconnus ; en conditionnalité sociale la réduction de 1 % a été remplacée par un avertissement en 2026 (note du ministère). Les réductions pour écarts de surface ou d'animaux et la discipline financière n'ont pas été lues non plus.",
+    "it": "Sanzioni. Ritardo della domanda: riduzione dell'1 % per giorno lavorativo di ritardo tra il 23 maggio e il 15 giugno (2026; nel 2025 fino al 16 giugno e nel 2024 fino al 17 giugno, perché il 15 cadeva nel fine settimana), e dopo quella data le domande non sono accettate (guida LAD 2025); nel 2025 la riforma del 17 giugno le ha ammesse fino al 30 giugno senza riduzione. EKO3 non subisce riduzione se richiesto prima del 16 giugno (2025). Tetto: la parte del sostegno di base oltre 100.000 € è ridotta del 100 % (vedi la regola del tetto). Condizionalità: le violazioni riducono i pagamenti secondo il sottocapitolo 14.10 della norma, che non è stato letto, quindi le percentuali non sono note; nella condizionalità sociale la riduzione dell'1 % è stata sostituita da un avvertimento nel 2026 (nota del ministero). Non sono state lette nemmeno le riduzioni per differenze di superficie o animali né la disciplina finanziaria."
+   },
+   "unit-amounts": {
+    "en": "How amounts are set: the regulation refers to annex 16 (not read), which gives for each payment the indicative amount, the planned unit amount and the minimum and maximum unit amounts (points 108, 114, 130, 132, 187). LAD publishes each year a provisional table with the planned range (min-max) and afterwards the unit amount actually payable, which is set once all applications have been assessed and may differ from the planned one. 2023 example according to LAD: basic support ISIP1 planned EUR 87.70/ha and paid EUR 84.64/ha. For 2026 only the provisional ranges are published (see each payment's rule); the final 2026 amounts have not been read. The 2-9-2026 news says that on 28-8-2026 the Ministry submitted to the Commission an amendment of the strategic plan raising 2027 direct-payment funding by EUR 35.25 million to EUR 398 million, mainly for three eco-schemes: a proposal pending approval.",
+    "fr": "Comment les montants sont fixés : la norme renvoie à l'annexe 16 (non lue), qui donne pour chaque paiement le montant indicatif, le montant unitaire prévu et les montants unitaires minimal et maximal (points 108, 114, 130, 132, 187). LAD publie chaque année un tableau provisoire avec la fourchette prévue (min-max) puis le montant unitaire effectivement payable, fixé une fois toutes les demandes évaluées et pouvant différer du prévu. Exemple 2023 selon LAD : aide de base ISIP1 prévue 87,70 €/ha et payée 84,64 €/ha. Pour 2026 seules les fourchettes provisoires sont publiées (voir la règle de chaque paiement) ; les montants définitifs 2026 n'ont pas été lus. L'article du 2-9-2026 dit que le 28-8-2026 le ministère a soumis à la Commission une modification du plan stratégique relevant de 35,25 millions le financement des paiements directs de 2027, à 398 millions, surtout pour trois éco-régimes : une proposition en attente d'approbation.",
+    "it": "Come si fissano gli importi: la norma rinvia all'allegato 16 (non letto), che indica per ogni pagamento l'importo indicativo, l'importo unitario previsto e gli importi unitari minimo e massimo (punti 108, 114, 130, 132, 187). LAD pubblica ogni anno una tabella provvisoria con l'intervallo previsto (min-max) e poi l'importo unitario effettivamente pagabile, fissato dopo la valutazione di tutte le domande e che può differire da quello previsto. Esempio 2023 secondo LAD: sostegno di base ISIP1 previsto 87,70 €/ha e pagato 84,64 €/ha. Per il 2026 sono pubblicati solo gli intervalli provvisori (vedi la regola di ogni pagamento); gli importi definitivi 2026 non sono stati letti. La notizia del 2-9-2026 dice che il 28-8-2026 il ministero ha presentato alla Commissione una modifica del piano strategico che aumenta di 35,25 milioni il finanziamento dei pagamenti diretti del 2027, a 398 milioni, soprattutto per tre ecoregimi: una proposta in attesa di approvazione."
+   }
+  },
+  "calendar": {
+   "su-close": {
+    "en": "End of the geospatial application period without reduction (22 May). LAD gives it as the date in 2024, 2025 and 2026; the opening changes each year (14 April in 2026). The rule that sets it has not been read.",
+    "fr": "Fin de la période de la demande géospatiale sans réduction (22 mai). LAD l'indique comme date en 2024, 2025 et 2026 ; l'ouverture change chaque année (14 avril en 2026). La norme qui la fixe n'a pas été lue.",
+    "it": "Fine del periodo della domanda geospaziale senza riduzione (22 maggio). LAD la indica come data nel 2024, 2025 e 2026; l'apertura cambia ogni anno (14 aprile nel 2026). La norma che la fissa non è stata letta."
+   },
+   "su-late-close": {
+    "en": "Last day to file the application with a 1 % reduction per working day of delay (15 June; if it falls on a weekend, the next working day, as 17 June 2024 and 16 June 2025). After that day no applications are accepted unless extended.",
+    "fr": "Dernier jour pour déposer la demande avec une réduction de 1 % par jour ouvré de retard (15 juin ; s'il tombe un week-end, le jour ouvré suivant, comme le 17 juin 2024 et le 16 juin 2025). Passé ce jour, plus aucune demande n'est acceptée sauf prorogation.",
+    "it": "Ultimo giorno per presentare la domanda con riduzione dell'1 % per giorno lavorativo di ritardo (15 giugno; se cade nel fine settimana, il giorno lavorativo successivo, come il 17 giugno 2024 e il 16 giugno 2025). Dopo quel giorno non si accettano domande salvo proroga."
+   },
+   "wage-declaration": {
+    "en": "Deadline to file in EPS the declaration of the previous year's farm wages (1 October), which allows deducting them before the EUR 100,000 cap.",
+    "fr": "Date limite pour déposer dans EPS la déclaration des salaires agricoles de l'année précédente (1er octobre), qui permet de les déduire avant le plafond de 100 000 €.",
+    "it": "Termine per presentare in EPS la dichiarazione dei salari agricoli dell'anno precedente (1° ottobre), che consente di detrarli prima del tetto di 100.000 €."
+   },
+   "active-evidence": {
+    "en": "Deadline to give LAD the employment information (annex 6) and the proof of farming costs (annex 7) for the active-farmer criterion (1 October).",
+    "fr": "Date limite pour remettre à LAD les informations sur l'emploi (annexe 6) et la preuve des coûts agricoles (annexe 7) pour le critère d'agriculteur actif (1er octobre).",
+    "it": "Termine per consegnare a LAD le informazioni sull'occupazione (allegato 6) e la prova dei costi agricoli (allegato 7) per il criterio di agricoltore attivo (1° ottobre)."
+   },
+   "espg-map": {
+    "en": "Each year before 1 February LAD adds newly recognised ecologically sensitive permanent grassland to the field-block map.",
+    "fr": "Chaque année avant le 1er février LAD intègre à la carte des blocs de champ les prairies permanentes écologiquement sensibles nouvellement reconnues.",
+    "it": "Ogni anno entro il 1° febbraio LAD inserisce nella mappa dei blocchi di campo i prati permanenti ecologicamente sensibili di nuovo riconosciuti."
+   },
+   "espg-notify": {
+    "en": "Deadline (1 April) to notify the Nature Conservation Agency (DAP) in writing of newly recognised sensitive grassland that was ploughed or converted before 1 February.",
+    "fr": "Date limite (1er avril) pour informer par écrit l'Agence de protection de la nature (DAP) des prairies sensibles nouvellement reconnues labourées ou converties avant le 1er février.",
+    "it": "Termine (1° aprile) per avvisare per iscritto l'Agenzia per la protezione della natura (DAP) dei prati sensibili di nuovo riconosciuti arati o convertiti prima del 1° febbraio."
+   },
+   "grassland-notice": {
+    "en": "Before 30 September LAD notifies the affected farmers when the permanent-grassland ratio falls below the limit and grassland must be restored.",
+    "fr": "Avant le 30 septembre LAD informe les agriculteurs concernés lorsque le ratio de prairies permanentes passe sous la limite et qu'il faut rétablir de la prairie.",
+    "it": "Entro il 30 settembre LAD avvisa gli agricoltori interessati quando il rapporto dei prati permanenti scende sotto il limite e occorre ripristinare prato."
+   },
+   "grassland-restore": {
+    "en": "Deadline (15 June of the following year) to restore permanent grassland converted in the last five years, or sensitive grassland ploughed or converted, and declare it in the next application.",
+    "fr": "Date limite (15 juin de l'année suivante) pour rétablir la prairie permanente convertie ces cinq dernières années, ou la prairie sensible labourée ou convertie, et la déclarer dans la demande suivante.",
+    "it": "Termine (15 giugno dell'anno successivo) per ripristinare il prato permanente convertito negli ultimi cinque anni, o il prato sensibile arato o convertito, e dichiararlo nella domanda successiva."
+   },
+   "starch-contract": {
+    "en": "Deadline (1 December) for the starch factory to send LAD the contract copy and the data of each potato delivery (coupled aid SKC). Text of the 2023 translation.",
+    "fr": "Date limite (1er décembre) pour que la féculerie envoie à LAD la copie du contrat et les données de chaque livraison de pommes de terre (aide couplée SKC). Texte de la traduction de 2023.",
+    "it": "Termine (1° dicembre) per l'azienda di fecola per inviare a LAD la copia del contratto e i dati di ogni consegna di patate (aiuto accoppiato SKC). Testo della traduzione del 2023."
+   },
+   "eco5-plan": {
+    "en": "Deadline (22 May) to have in the EPS system the fertilisation plan and soil analyses required by eco-scheme EKO5. Text of the 2023 translation.",
+    "fr": "Date limite (22 mai) pour avoir dans le système EPS le plan de fertilisation et les analyses de sol exigés par l'éco-régime EKO5. Texte de la traduction de 2023.",
+    "it": "Termine (22 maggio) per avere nel sistema EPS il piano di concimazione e le analisi del suolo richiesti dall'ecoregime EKO5. Testo della traduzione del 2023."
+   }
+  },
+  "overrides": {
+   "2026:su-close": {
+    "en": "In 2026 the application could be filed from 14 April to 22 May without reduction (LAD).",
+    "fr": "En 2026 la demande pouvait être déposée du 14 avril au 22 mai sans réduction (LAD).",
+    "it": "Nel 2026 la domanda poteva essere presentata dal 14 aprile al 22 maggio senza riduzione (LAD)."
+   },
+   "2026:su-late-close": {
+    "en": "In 2026 the period with a 1 % reduction per working day ended on 15 June and corrections were also accepted until that date (LAD).",
+    "fr": "En 2026 la période avec réduction de 1 % par jour ouvré s'est achevée le 15 juin et les corrections étaient aussi admises jusqu'à cette date (LAD).",
+    "it": "Nel 2026 il periodo con riduzione dell'1 % per giorno lavorativo è terminato il 15 giugno e le correzioni erano ammesse fino a quella data (LAD)."
+   },
+   "2025:su-late-close": {
+    "en": "In 2025 the period with reduction ended on 16 June (LAD 2025 guide), but the reform of MK 198 approved on 17 June, because of the May rains, extended it to 30 June with no reduction for delay, according to the press; the text of the reform has not been read.",
+    "fr": "En 2025 la période avec réduction s'achevait le 16 juin (guide LAD 2025), mais la réforme de MK 198 approuvée le 17 juin, à cause des pluies de mai, l'a prorogée au 30 juin sans réduction pour retard, selon la presse ; le texte de la réforme n'a pas été lu.",
+    "it": "Nel 2025 il periodo con riduzione terminava il 16 giugno (guida LAD 2025), ma la riforma di MK 198 approvata il 17 giugno, per le piogge di maggio, lo ha prorogato al 30 giugno senza riduzione per ritardo, secondo la stampa; il testo della riforma non è stato letto."
+   },
+   "2024:su-late-close": {
+    "en": "In 2024 the period with a 1 % reduction per working day ran until 17 June (the 15th was a Saturday) (LAD).",
+    "fr": "En 2024 la période avec réduction de 1 % par jour ouvré a couru jusqu'au 17 juin (le 15 était un samedi) (LAD).",
+    "it": "Nel 2024 il periodo con riduzione dell'1 % per giorno lavorativo è arrivato al 17 giugno (il 15 era sabato) (LAD)."
+   }
+  }
+ }
+}

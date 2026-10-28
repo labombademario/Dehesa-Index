@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T17:56:14Z",
+ "generatedAt": "2026-10-28T18:10:26Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 225,
+  "total": 231,
   "byStatus": {
-   "ACTIVE": 195,
+   "ACTIVE": 201,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -4757,6 +4757,45 @@
    ]
   },
   {
+   "sourceId": "finlex_fi",
+   "registryId": "finlex_fi",
+   "country": "FI",
+   "scope": "integrated",
+   "institution": "Ley 1332/2022 (viljelijätuet) y ley 1334/2022 (toimeenpano), decretos 77/2023, 1384/2022, 65/2023, 86/2026 y 1431/2025; guía Ruokavirasto 2026",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Finlex, textos consolidados (no auténticos; el original es el de Säädöskokoelma). Extractos y resúmenes propios de Dehesa Index.",
+   "lastChecked": "2026-10-28",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "fmi_fi",
    "registryId": "fmi_fi",
    "country": "FI",
@@ -6181,6 +6220,45 @@
    ]
   },
   {
+   "sourceId": "likumi_lv",
+   "registryId": "likumi_lv",
+   "country": "LV",
+   "scope": "integrated",
+   "institution": "Ministru kabineta 2023. gada 18. aprīļa noteikumi Nr. 198 «Tiešo maksājumu piešķiršanas kārtība lauksaimniekiem» (Latvijas Vēstnesis nr. 77, 20-4-2023), con las modificaciones MK 393/2023, 446/2023, 537/2023, 623/2023, 230/2024, 685/2024 (l",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: MK noteikumi Nr. 198. Extractos y resúmenes propios de Dehesa Index.",
+   "lastChecked": "2026-10-28",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "luke_fi",
    "registryId": "luke_fi",
    "country": "FI",
@@ -7073,6 +7151,45 @@
    ]
   },
   {
+   "sourceId": "mzh_naredba_3_4_2023",
+   "registryId": "mzh_naredba_3_4_2023",
+   "country": "BG",
+   "scope": "integrated",
+   "institution": "Наредба № 3 от 10.03.2023 г. за условията и реда за прилагане на интервенциите под формата на директни плащания (ДВ, бр. 23 от 2023 г.; copia consolidada de 21-01-2026 con reformas hasta ДВ, бр. 6 от 2026 г.) y Наредба № 4 от 30.03.2023 г. ",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Наредба № 3/2023 y Наредба № 4/2023 del Министерство на земеделието и храните (copias consolidadas alojadas por el ministerio). Extractos y resúmenes propios de Dehesa Index.",
+   "lastChecked": "2026-10-28",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "nasa_power",
    "registryId": "nasa_power",
    "country": "US",
@@ -7613,6 +7730,45 @@
    ]
   },
   {
+   "sourceId": "riigi_teataja_ee",
+   "registryId": "riigi_teataja_ee",
+   "country": "EE",
+   "scope": "integrated",
+   "institution": "Euroopa Liidu ühise põllumajanduspoliitika rakendamise seadus (ELÜPS, RT I, 14.02.2025, 4); maaeluministri määrused nr 71 (RT I, 02.08.2025, 7), nr 72 (RT I, 19.03.2026, 13), nr 73 (RT I, 11.02.2026, 6), nr 68 ristvastavus (RT I, 06.05.2026",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: ELÜPS; määrus nr 71. Extractos y resúmenes propios de Dehesa Index.",
+   "lastChecked": "2026-10-28",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "rijkswaterstaat",
    "registryId": "rijkswaterstaat",
    "country": "NL",
@@ -8042,6 +8198,45 @@
    "derivatives": "yes",
    "attribution": "Source: Skogsstyrelsen (Swedish Forest Agency), statistical database.",
    "lastChecked": "2026-10-22",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "slov_lex",
+   "registryId": "slov_lex",
+   "country": "SK",
+   "scope": "integrated",
+   "institution": "Nariadenie vlády SR č. 436/2022 Z. z. o poskytovaní podpory v poľnohospodárstve formou priamych platieb (znenie od 15. 3. 2026, v znení 121/2023, 516/2023, 413/2024, 49/2025, 95/2025, 410/2025 y 37/2026); NV č. 120/2023 Z. z. sobre solicitu",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: NV SR č. 436/2022 Z. z.. Extractos y resúmenes propios de Dehesa Index.",
+   "lastChecked": "2026-10-28",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",
@@ -8764,6 +8959,45 @@
    "derivatives": "yes",
    "attribution": "Source: U.S. Alcohol and Tobacco Tax and Trade Bureau (TTB), wine statistics",
    "lastChecked": "2026-10-08",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "uradni_list_rs",
+   "registryId": "uradni_list_rs",
+   "country": "SI",
+   "scope": "integrated",
+   "institution": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23) con sus reformas 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25 y 107/25; Uredba o izvedbi intervencij kmetijske politike za leto 2026",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "PUBLIC-LAW",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Ur. l. RS 17/2023 (y reformas); 4/2026; 2/2024. Extractos y resúmenes propios de Dehesa Index.",
+   "lastChecked": "2026-10-28",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

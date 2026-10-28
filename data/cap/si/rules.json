@@ -1,0 +1,635 @@
+{
+ "schemaVersion": 1,
+ "country": "SI",
+ "scheme": "Strateški načrt skupne kmetijske politike 2023–2027: Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027",
+ "status": "CURRENT",
+ "curated": true,
+ "verifiedAt": "2026-10-28",
+ "source": {
+  "id": "uradni_list_rs",
+  "instrument": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23) con sus reformas 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25 y 107/25; Uredba o izvedbi intervencij kmetijske politike za leto 2026 (Ur. l. RS 4/2026); Uredba o pravilih pogojenosti (Ur. l. RS 2/24)",
+  "ref": "Ur. l. RS 17/2023 (y reformas); 4/2026; 2/2024",
+  "url": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311"
+ },
+ "note": "Leído el 28-10-2026 en el Uradni list RS (texto oficial): la Uredba de pagos directos 17/23 y las reformas hasta 107/25, la Uredba de ejecución de 2026 (4/2026) y la Uredba de condicionalidad en su texto original (2/24). La reforma 442/26 (25-4-2026) solo se vio en una copia no oficial de Tax-Fin-Lex, y el texto consolidado del ministerio (hasta 2/25) es informativo y no oficial. Importes y detalles de 2026 salen de las fichas oficiales de ARSKTRP/MKGP para la solicitud única 2026 y son previstos, no definitivos. NO se ha leído: el cuarto cambio del plan estratégico (aviso 1224/26, 15-7-2026), la condicionalidad social, las reformas 109/24, 100/25 y 107/25 de la condicionalidad, los anexos (sanciones, combinaciones de esquemas, carga ganadera), el ZKme-2, los reglamentos de la UE, los textos consolidados de PISRS (no legibles) ni los importes definitivos de 2026. Discrepancia sin resolver: mínimo del pago redistributivo 21,90 en la norma y 21,09 en la ficha 2026. Vale siempre el texto oficial.",
+ "interventions": [
+  {
+   "id": "basic",
+   "kind": "basic",
+   "name": "Osnovna dohodkovna podpora za trajnostnost (ODPT, INP01)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 9-10",
+   "articles": [
+    "9",
+    "10"
+   ]
+  },
+  {
+   "id": "redistributive",
+   "kind": "redistributive",
+   "name": "Dopolnilna prerazporeditvena dohodkovna podpora za trajnostnost (DPDPT, INP02)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 11",
+   "articles": [
+    "11"
+   ]
+  },
+  {
+   "id": "young",
+   "kind": "young",
+   "name": "Dopolnilna dohodkovna podpora za mlade kmete (MK, INP09)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 12-13",
+   "articles": [
+    "12",
+    "13"
+   ]
+  },
+  {
+   "id": "eco",
+   "kind": "eco",
+   "name": "Sheme za podnebje in okolje (SOPO, INP08: EKST, TRT, NIZI, INHIBIT/KRMDOD, NPP, ZEL, KONZ, POŠK, VGP, OGNTN, BIORAZTN, NPE)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 14-34a",
+   "articles": [
+    "14",
+    "15",
+    "16",
+    "23",
+    "24",
+    "25",
+    "34a"
+   ]
+  },
+  {
+   "id": "coupled-sheep",
+   "kind": "coupled",
+   "name": "Vezana dohodkovna podpora za rejo drobnice (INP03)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 38",
+   "articles": [
+    "38"
+   ]
+  },
+  {
+   "id": "coupled-beef",
+   "kind": "coupled",
+   "name": "Vezana dohodkovna podpora za rejo govedi (INP04)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 39",
+   "articles": [
+    "39"
+   ]
+  },
+  {
+   "id": "coupled-suckler",
+   "kind": "coupled",
+   "name": "Vezana dohodkovna podpora za krave dojilje (INP05)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 40",
+   "articles": [
+    "40"
+   ]
+  },
+  {
+   "id": "coupled-mountain-milk",
+   "kind": "coupled",
+   "name": "Vezana dohodkovna podpora za mleko v gorskih območjih (INP06)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 41",
+   "articles": [
+    "41"
+   ]
+  },
+  {
+   "id": "coupled-protein",
+   "kind": "coupled",
+   "name": "Vezana dohodkovna podpora za beljakovinske rastline (INP07)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 42",
+   "articles": [
+    "42"
+   ]
+  },
+  {
+   "id": "coupled-vegetables",
+   "kind": "coupled",
+   "name": "Vezana dohodkovna podpora za zelenjavo (INP10)",
+   "nameLang": "sl",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 42.a",
+   "articles": [
+    "42a"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "active-farmer",
+   "topic": "farmer",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 6(3)-(5), (16), (19) y 7; MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026",
+   "articles": [
+    "6",
+    "7"
+   ],
+   "text": "Agricultor activo (aktivni kmet): es activo sin más pruebas quien el año anterior tuvo aprobados 5.000 € o menos de pagos directos, tras sanciones (texto consolidado y ficha 2026: «vključno ali manj»). Si superó esa cifra, debe cumplir uno de seis criterios: 1) seguro obligatorio de agricultor (pensiones, invalidez y salud) del 1 de enero al 30 de noviembre del año (la ficha 2026 solo admite el código de base 051); 2) carga ganadera de al menos 0,2 UGM (GVŽ) por ha de superficie agrícola utilizada, con datos de los registros CRG, CRD y CRPš a 1 de febrero y en cuatro fechas representativas; 3) tierra de cultivo y cultivos permanentes en más de la mitad de la superficie agrícola; 4) ingresos agrarios de al menos un tercio de los no agrarios; 5) tractor de ruedas propio inscrito al menos 30 días entre el 1 de enero y el 30 de junio, o servicios agrícolas pagados (facturas del 1 de enero al 15 de octubre) sobre al menos el 50 % de la superficie; 6) al menos el 50 % de la superficie en las intervenciones KOPOP-NV, KOPOP-BK, ecológico, protección biológica de plantas, variedades locales o Natura 2000, según la solicitud en la fecha final de cambios (13 de noviembre de 2026). ARSKTRP comprueba de oficio los criterios 1, 2, 3, 6 y el tractor; los criterios 4 y 5 por servicios se prueban con documentos enviados antes del 31 de diciembre y no hay requerimiento previo. Si el año anterior no hubo solicitud, fue rechazada por no ser agricultor activo o quedó en cero por sanciones, el pago previo se estima como superficie declarada por la media nacional por ha del año anterior (art. 7(3), reformado por 36/25). En 2026 hay una excepción por la lengua azul (BTV): se suman a la carga los animales con fuerza mayor reconocida en 2025. No se ha leído el anexo 2 (cálculo de la carga) ni la definición de actividad de la Uredba sobre el seguro.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "priorYearDirectPaymentsMaxEur": 5000,
+    "minLivestockUnitsPerHa": 0.2,
+    "minEnvironmentAreaPct": 50,
+    "minServiceAreaPct": 50,
+    "proofDeadline": "12-31"
+   }
+  },
+  {
+   "id": "agricultural-activity",
+   "topic": "farmer",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 2(2) y 2(7) (reformado por Ur. l. RS 107/25, art. 1); MKGP/ARSKTRP, «Skupna pravila za neposredna plačila in druge intervencije», zbirna vloga 2026; GOV.SI, «Začetek kampanje oddaje zbirnih vlog za leto 2026» (17-2-2026)",
+   "articles": [
+    "2"
+   ],
+   "text": "Actividad agraria (kmetijska dejavnost) y hectárea admisible (upravičen hektar): es actividad agraria producir, criar o cultivar productos agrarios, o mantener la superficie apta para pasto o cultivo sin medidas preparatorias especiales. En tierra de cultivo basta una medida agrotécnica que impida la floración de las malas hierbas (como mínimo labor superficial o siega antes de la semillación); en cultivos permanentes, siega al menos una vez al año hasta el 15 de octubre y poda. En pastos permanentes, desde la reforma 107/25 basta una siega al menos una vez en el año de la solicitud única, sin el tope del 15 de octubre (la ficha 2026 mantiene la excepción de la siega en el año siguiente para ciertos pastos de hábitats Natura 2000). Es admisible la superficie agrícola usada para actividad agraria; el uso no agrario en el periodo vegetativo no puede pasar de 30 días al año, salvo que se pruebe que no estorba la actividad; cuentan los elementos del paisaje de hasta 100 m² o 2 m de ancho; el cáñamo solo si el THC no pasa de 0,3 % y hay permiso; la superficie debe cumplir la definición todo el año natural (salvo fuerza mayor) y estar a disposición del titular inscrito en el RKG. No se han leído los listados de usos del suelo (GERK) más allá de lo citado.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311"
+  },
+  {
+   "id": "minimum",
+   "topic": "payments",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 6(1)-(2), 9(1)-(2), 16; MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026",
+   "articles": [
+    "6",
+    "9",
+    "16"
+   ],
+   "text": "Condiciones generales y umbral mínimo: cobra pagos directos quien ejerce actividad agraria, tiene al menos 1 ha de superficie admisible determinada (cada parcela agrícola, al menos 0,1 ha) y cumple el requisito de agricultor activo y las condiciones de cada intervención (art. 6(1)). Excepción: quien solicita las ayudas asociadas a ovino, bovino, vacas nodrizas o leche de montaña y no llega a 1 ha (o no declara superficie) entra si le corresponden al menos 100 € de pagos directos en el año, antes de sanciones (art. 6(2); ficha 2026). En los ecoesquemas cada parcela debe tener 0,1 ha y cada esquema debe abarcar al menos 0,3 ha en la explotación, con excepciones (protección de nidos de avefría y franjas de protección: 0,1 ha; setos: 25 m²) según la ficha 2026. La superficie se toma de la solicitud del año y debe estar inscrita en el registro de explotaciones (RKG) en la fecha final de solicitud (arts. 9(1), 16(1)). Si la Comisión activa la disciplina financiera (finančna disciplina), solo afecta a quien tenga más de 2.000 € de pagos directos aprobados (ficha 2026).",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "minHa": 1,
+    "minParcelHa": 0.1,
+    "minTotalSupportEur": 100,
+    "ecoSchemeMinHa": 0.3,
+    "financialDisciplineFromEur": 2000
+   }
+  },
+  {
+   "id": "application",
+   "topic": "calendar",
+   "legalBasis": "Uredba o izvedbi intervencij kmetijske politike za leto 2026 (Ur. l. RS 4/2026), čl. 8, 11 y 16; MKGP/ARSKTRP, «Integrirani administrativni in kontrolni sistem», zbirna vloga 2026; Uredba o izvedbi intervencij kmetijske politike za leto 2025 (copia del ministerio)",
+   "articles": [
+    "8",
+    "11",
+    "16"
+   ],
+   "text": "Solicitud única (zbirna vloga): la fecha la fija cada año la Uredba o izvedbi intervencij, no es una fecha fija. En 2026 se presenta del 20 de febrero al 15 de mayo de 2026 (solo en línea, por e-Kmetijstvo); el formulario de bienestar animal para ovino y caprino, a más tardar el 5 de mayo de 2026. En 2025 fue del 19 de marzo al 6 de junio de 2025 (copia del ministerio de la Uredba de 2025). La ficha ARSKTRP de 2026 dice que tampoco en 2026 hay presentación tardía; no se ha leído la norma que la elimina. Después del plazo se pueden modificar o retirar solicitudes de superficie (con el sistema de seguimiento de superficies, Sopotnik): ARSKTRP publica resultados provisionales del 1 de agosto al 15 de octubre de 2026 y los definitivos al menos 14 días antes del último día de cambios; el último día para declaraciones, pruebas, cambios y retiradas es el 13 de noviembre de 2026 para las solicitudes de superficie y el 15 de febrero de 2027 para los esquemas de cobertura de invierno (ZEL), cultivos intermedios y de cobertura (NPP), laboreo de conservación como cultivo posterior (KONZ) y la operación de variedades locales. Si aún no queda claro, ARSKTRP requiere pruebas y el titular responde en 8 días hábiles desde la publicación (el requerimiento, a más tardar el 12 de diciembre de 2026, o el 15 de marzo de 2027 para esos esquemas). Las retiradas de animales y de jóvenes agricultores se admiten hasta 15 días antes del primer pago.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2026-01-0083/uredba-o-izvedbi-intervencij-kmetijske-politike-za-leto-2026",
+   "values": {
+    "campaign": 2026,
+    "from": "2026-02-20",
+    "to": "2026-05-15",
+    "sheepWelfareClaimTo": "2026-05-05",
+    "lateSubmission": false,
+    "amsProvisionalFrom": "2026-08-01",
+    "amsProvisionalTo": "2026-10-15",
+    "changesAreaTo": "2026-11-13",
+    "changesSomeSchemesTo": "2027-02-15",
+    "prior": {
+     "campaign": 2025,
+     "from": "2025-03-19",
+     "to": "2025-06-06"
+    }
+   }
+  },
+  {
+   "id": "basic",
+   "topic": "basic",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 9-10; MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026",
+   "articles": [
+    "9",
+    "10"
+   ],
+   "text": "Ayuda básica a la renta para la sostenibilidad (osnovna dohodkovna podpora za trajnostnost, ODPT, INP01): pago único por hectárea admisible declarada en la solicitud del año e inscrita en el RKG en la fecha final de solicitud; sustituye a los derechos de pago, que desaparecieron el 1 de enero de 2023. El reglamento fija un importe previsto de 184,20 €/ha, con mínimo de 168,00 y máximo de 200,00 €/ha (art. 9(3), vigente en la ficha 2026, previsto, no definitivo). El importe realizado depende de las hectáreas finales y puede ser menor o mayor (art. 4(2)); no se ha leído el importe definitivo de 2026. Reducción progresiva (art. 10): sobre la ayuda básica aprobada tras sanciones, 35 % en el tramo de más de 60.000 hasta 160.000 €, 45 % hasta 260.000 €, 55 % hasta 360.000 € y 65 % por encima; los salarios agrarios ya no se descuentan, y el dinero ahorrado pasa al pago redistributivo (ficha 2026). A la ODPT se destina el 63,02 % del sobre de 2026 (131.530.052 €, según la ficha).",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "campaign": 2026,
+    "status": "planned",
+    "plannedEurPerHa": 184.2,
+    "minEurPerHa": 168.0,
+    "maxEurPerHa": 200.0,
+    "degressivityFromEur": 60000,
+    "degressivityPct": [
+     35,
+     45,
+     55,
+     65
+    ],
+    "envelopeSharePct": 63.02
+   }
+  },
+  {
+   "id": "redistributive",
+   "topic": "redistributive",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 11 (reformado por Ur. l. RS 107/25, art. 4); MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026; GOV.SI, «Začetek kampanje oddaje zbirnih vlog za leto 2026» (17-2-2026)",
+   "articles": [
+    "11"
+   ],
+   "text": "Pago redistributivo (dopolnilna prerazporeditvena dohodkovna podpora za trajnostnost, DPDPT, INP02): suplemento por hectárea para las primeras 8,2 ha de quien cobra la ayuda básica. Desde la reforma 107/25 (publicada el 19 de diciembre de 2025) se limita a explotaciones con superficie admisible determinada de hasta 50 ha inclusive; la ficha 2026 y la nota del 17 de febrero de 2026 lo aplican a la campaña 2026 (con 52 ha no se cobra; con 20 ha, 8,2 ha). Para llegar a 8,2 ha se cuentan primero las hectáreas sin sanciones administrativas. El reglamento fija un importe previsto de 27,38 €/ha, mínimo 21,90 y máximo 35,59 €/ha (art. 11(3)); la ficha 2026 imprime el mínimo como 21,09, una discrepancia que no se ha resuelto, y aquí se sigue el texto del reglamento (previsto, no definitivo). Se financia con el 5 % del sobre de pagos directos más lo ahorrado con la reducción progresiva. No se ha leído el importe definitivo de 2026.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "firstHa": 8.2,
+    "maxHoldingHa": 50,
+    "campaign": 2026,
+    "status": "planned",
+    "plannedEurPerHa": 27.38,
+    "minEurPerHa": 21.9,
+    "maxEurPerHa": 35.59,
+    "envelopeSharePct": 5
+   }
+  },
+  {
+   "id": "young-farmers",
+   "topic": "young",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 12-13; MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026",
+   "articles": [
+    "12",
+    "13"
+   ],
+   "text": "Jóvenes agricultores (dopolnilna dohodkovna podpora za mlade kmete, MK, INP09): pago anual único por hectárea admisible, en las mismas hectáreas que la ayuda básica y hasta 90 ha por titular. Joven agricultor es la persona física o jurídica que es jefe de la explotación, no tiene más de 40 años (no cumple 41 en el año de la primera solicitud) y tiene la formación necesaria, que es al menos tres años de experiencia en la explotación: seguro de agricultor, pertenencia a la explotación en el RKG, o declaración del anterior titular. Se instala por primera vez como titular en el año de la primera solicitud o en los cinco años anteriores. Si es sociedad, debe ser unipersonal y el socio único debe ser también gerente. No cobra quien tenga un titular anterior que ya recibió esta ayuda (salvo fallecimiento), ni la sociedad cuyo socio sea ya socio mayoritario de otra empresa agraria. Se paga como máximo cinco años, descontados los años entre la instalación y la primera solicitud; quien no termine los cinco años antes de 2027 pierde el derecho el 1 de enero de 2028. El reglamento fija un importe previsto de 78,91 €/ha, mínimo 59,33 y máximo 98,64 €/ha (previsto, no definitivo; art. 13(13)); el sobre de 2026 es el 1,5 % (ficha). No se ha leído el importe definitivo de 2026.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "maxAge": 40,
+    "maxHa": 90,
+    "maxYears": 5,
+    "establishedWithinYears": 5,
+    "minExperienceYears": 3,
+    "lastYear": 2027,
+    "campaign": 2026,
+    "status": "planned",
+    "plannedEurPerHa": 78.91,
+    "minEurPerHa": 59.33,
+    "maxEurPerHa": 98.64,
+    "envelopeSharePct": 1.5
+   }
+  },
+  {
+   "id": "eco-schemes",
+   "topic": "eco",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 14-34a; MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026",
+   "articles": [
+    "14",
+    "15",
+    "16",
+    "23",
+    "24",
+    "25",
+    "34a"
+   ],
+   "text": "Esquemas para el clima y el medio ambiente (sheme za podnebje in okolje, SOPO, INP08): el ecoesquema esloveno, voluntario y anual; el titular elige cada año a qué esquemas entra. En 2026 hay doce: pasto extensivo (EKST), uso tradicional del pasto (TRT), abonado con abonos orgánicos de bajas emisiones (NIZI), aditivos que reducen amoníaco y gases de efecto invernadero (INHIBIT, KRMDOD), cultivos posteriores y subcultivos (NPP), cobertura de tierra de cultivo en invierno (ZEL), laboreo de conservación (KONZ), manchas sin sembrar para la alondra (POŠK), protección de nidos de avefría (VGP), solo abonos orgánicos en cultivos permanentes (OGNTN), biodiversidad en cultivos permanentes (BIORAZTN) y superficies y elementos no productivos (NPE). Importes previstos de 2026 según la ficha ARSKTRP (no el reglamento; entre paréntesis mínimo-máximo, € por ha salvo indicación): EKST 45,65 (36,52-45,65), TRT 129,03 (103,22-161,29), NIZI 95,41 (76,33-159,02), INHIBIT 60,00 (48,00-75,00), KRMDOD 60,00 por UGM (48,00-75,00), NPP 137,60 (110,08-172,00), ZEL 148,00 (118,40-185,00), KONZ 18,32 (14,66-22,90), POŠK 60,00 (48,00-60,00), VGP 200,00 por nido en la etapa I y por ha en la II (160,00-200,00), OGNTN 312,00 (249,60-390,00), BIORAZTN 273,20 (218,56-341,50); NPE: barbecho 160,00 (128,00-200,00) y franjas de protección 145,60 (116,48-182,00); mantenimiento de elementos del paisaje y elementos nuevos, con importes por ha o por m² que la ficha da y que aquí no se detallan. EKST pide 0,2 a 0,9 UGM por ha y TRT más de 0,9 UGM por ha, con TRT en como máximo el 20 % del pasto. Al conjunto se destina el 15,48 % del sobre de 2026. Cada esquema exige 0,1 ha por parcela y 0,3 ha en la explotación (salvo excepciones) y registros de labores. No se han leído los requisitos de cada esquema salvo EKST y TRT, ni el catálogo de sanciones ni las combinaciones (anexos 6 y 10), ni los importes definitivos de 2026.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "campaign": 2026,
+    "status": "planned",
+    "envelopeSharePct": 15.48,
+    "plannedEurPerUnit": {
+     "EKST": 45.65,
+     "TRT": 129.03,
+     "NIZI": 95.41,
+     "INHIBIT": 60.0,
+     "KRMDOD": 60.0,
+     "NPP": 137.6,
+     "ZEL": 148.0,
+     "KONZ": 18.32,
+     "POSK": 60.0,
+     "VGP": 200.0,
+     "OGNTN": 312.0,
+     "BIORAZTN": 273.2,
+     "NPE_PRAHA": 160.0,
+     "NPE_VAR": 145.6
+    }
+   }
+  },
+  {
+   "id": "coupled-livestock",
+   "topic": "associated",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 38-41 (reformado por Ur. l. RS 107/25, art. 15); MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026",
+   "articles": [
+    "38",
+    "39",
+    "40",
+    "41"
+   ],
+   "text": "Ayudas asociadas a la ganadería (vezana dohodkovna podpora): importes previstos de 2026 (previsto, mínimo-máximo; no definitivo). Ovino y caprino (INP03, rejo drobnice): al menos 14 animales presentes en la fecha de inicio de la solicitud (20 de febrero de 2026) y con al menos nueve meses ese mes, presentes en la explotación hasta el 31 de julio, y registrados en el CRD; 18,09 € por animal (16,27-27,92; el máximo de 2026 lo fijó 107/25); en 2026, con fuerza mayor reconocida por la lengua azul en 2025, basta con 7 animales. Bovino (INP04, rejo govedi): al menos dos machos, bueyes o terneras que lleven seis meses seguidos en la explotación y se sacrifiquen o exporten del 1 de noviembre de 2025 al 31 de octubre de 2026, con al menos nueve meses; 48,67 € por animal (43,80-60,84), o 63,28 € (56,95-79,10) con cría ecológica o esquema de calidad Izbrana kakovost. Vacas nodrizas (INP05, krave dojilje): al menos dos vacas de razas de carne admitidas que hayan parido entre el 1 de septiembre de 2025 y el 31 de agosto de 2026 y estén dos meses con el ternero; 97,25 € en explotaciones de zonas con limitaciones (OMD) (87,52-121,56) y 74,81 € fuera (67,32-93,51). Leche en zonas de montaña (INP06): explotación clasificada en zona de montaña, al menos dos vacas lecheras presentes del 20 de febrero al 31 de julio de 2026 y paridas en los dos años anteriores; 88,87 € por vaca (79,98-111,08); el máximo de vacas se calcula con la leche entregada o vendida dividida por 5.924 kg (4.529 kg en ecológico). Cada animal solo cobra una vez al año. Sobres anuales del texto consolidado: ovino 1.284.760,85 €, nodrizas 6.037.278,17 €, leche de montaña 3.725.090,03 €. No se han leído las listas de razas completas ni el importe definitivo de 2026.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "campaign": 2026,
+    "status": "planned",
+    "sheep": {
+     "minAnimals": 14,
+     "holdingTo": "07-31",
+     "plannedEurPerAnimal": 18.09,
+     "minEur": 16.27,
+     "maxEur2026": 27.92,
+     "minAnimalsBtv": 7
+    },
+    "beef": {
+     "minAnimals": 2,
+     "plannedEur": 48.67,
+     "plannedEurOrganicOrQuality": 63.28
+    },
+    "suckler": {
+     "minCows": 2,
+     "plannedEurOmd": 97.25,
+     "plannedEurOther": 74.81
+    },
+    "mountainMilk": {
+     "minCows": 2,
+     "plannedEur": 88.87
+    }
+   }
+  },
+  {
+   "id": "coupled-crops",
+   "topic": "associated",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 42 y 42.a; MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026",
+   "articles": [
+    "42",
+    "42a"
+   ],
+   "text": "Ayudas asociadas a cultivos (vezana dohodkovna podpora): importes previstos de 2026 (previsto, mínimo-máximo; no definitivo). Plantas proteicas (INP07, beljakovinske rastline): solo se siembran las especies admitidas (alfalfa, tréboles, mezclas de trébol y hierba, haba forrajera, guisante, soja, veza, altramuz, judía, lenteja, garbanzo, nokota, etc.); deben dominar en la parcela y estar como cultivo principal hasta la madurez tecnológica, salvo alfalfa, tréboles, mezclas trébol-hierba y nokota, para las que se exige carga ganadera de al menos 0,5 UGM por ha de superficie en uso (0,3 si hay producción ecológica de cultivos u hortalizas o cría ecológica de bovino) y al menos dos siegas; al menos 0,3 ha de plantas proteicas, 1 ha de explotación y 0,1 ha por parcela; 215,62 €/ha (172,50-269,52); sobre de 2026: 2.630.600,65 € según el texto consolidado. Hortalizas (INP10, zelenjava): inscripción en el registro de productores de hortalizas, al menos 0,5 ha al aire libre o 0,1 ha en invernadero, comercialización de al menos el 40 % de la producción anual por organizaciones de productores, cooperativas u otras vías conjuntas, o contabilidad separada de las ventas; hasta 15 ha; 388,35 €/ha (349,51-485,43), o 504,86 € (454,37-631,07) con hortalizas ecológicas; las pruebas de venta se envían a ARSKTRP antes del 15 de febrero de 2027. Las habas, guisantes, judías, lentejas y garbanzos solo pueden cobrar una de las dos ayudas. No se ha leído el texto de la Uredba para las hortalizas (art. 42.a) ni el importe definitivo de 2026.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "campaign": 2026,
+    "status": "planned",
+    "proteinCrops": {
+     "plannedEurPerHa": 215.62,
+     "minEurPerHa": 172.5,
+     "maxEurPerHa": 269.52,
+     "minHa": 0.3,
+     "minLuPerHaForage": 0.5,
+     "minLuPerHaOrganicForage": 0.3
+    },
+    "vegetables": {
+     "plannedEurPerHa": 388.35,
+     "plannedEurPerHaOrganic": 504.86,
+     "minHaOpen": 0.5,
+     "minHaGreenhouse": 0.1,
+     "minMarketedPct": 40,
+     "maxHa": 15
+    }
+   }
+  },
+  {
+   "id": "controls",
+   "topic": "controls",
+   "legalBasis": "Uredba o izvedbi intervencij kmetijske politike za leto 2026 (Ur. l. RS 4/2026), čl. 13-22; Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 8",
+   "articles": [
+    "13",
+    "16",
+    "17",
+    "19",
+    "8"
+   ],
+   "text": "Controles: la agencia pagadora ARSKTRP (Agencija RS za kmetijske trge in razvoj podeželja) comprueba las solicitudes con controles administrativos (cruces con registros, incluido el de vehículos para el tractor y los de animales CRG, CRD y CRPš) y con controles sobre el terreno. Casi todas las solicitudes de superficie se vigilan además con el sistema de seguimiento de superficies (Sopotnik), que publica discrepancias en rojo por parcela y llama al titular a retirar o corregir la solicitud o a aportar pruebas, con fotografías georreferenciadas (aplicación Fotosopotnik); no se vigilan así los setos ni las prácticas de franjas, mantenimiento y nuevos elementos del paisaje. Porcentajes mínimos de la muestra de controles sobre el terreno en 2026: ecoesquemas 3 % de beneficiarios (salvo protección de nidos de avefría y aditivos de metano); ovino y caprino 10 %, con al menos el 10 % de los animales; bovino 5 %; vacas nodrizas 5 %; leche de montaña 5 %; plantas proteicas 3 % (en superficies con mezcla de trébol y hierba); hortalizas 3 %; y al menos el 30 % de la superficie de cáñamo. Quien impide un control sobre el terreno pierde todos los pagos de la solicitud única (art. 23(6)). No se ha leído el resto de controles por intervención ni los de desarrollo rural.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2026-01-0083/uredba-o-izvedbi-intervencij-kmetijske-politike-za-leto-2026",
+   "values": {
+    "campaign": 2026,
+    "onTheSpotMinPct": {
+     "ecoSchemes": 3,
+     "sheep": 10,
+     "beef": 5,
+     "sucklerCows": 5,
+     "mountainMilk": 5,
+     "proteinCrops": 3,
+     "vegetables": 3
+    },
+    "hempAreaMinPct": 30
+   }
+  },
+  {
+   "id": "penalties",
+   "topic": "penalties",
+   "legalBasis": "Uredba o izvedbi intervencij kmetijske politike za leto 2026 (Ur. l. RS 4/2026), čl. 23-29",
+   "articles": [
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29"
+   ],
+   "text": "Sanciones administrativas por la solicitud única (upravne sankcije) en la Uredba de 2026. Superficie declarada de más (čezmerna prijava), por grupo de cultivos: hasta el 20 % de la superficie determinada, se rechaza el exceso y además el pago de otro tanto del exceso (el doble en total); por encima del 20 %, se rechaza todo el pago de ese grupo; por encima del 50 %, además una sanción igual al pago pedido por el exceso, que se descuenta de pagos de los tres años siguientes y se condona si no se puede cobrar. Superficie mal declarada (cultivo o uso distinto): reducción de todos los pagos de superficie igual al porcentaje de superficie mal declarada del cultivo principal sobre la superficie total declarada, con tope del 3 %. Superficie no declarada: reducción por el porcentaje de superficie omitida, también con tope del 3 %. Animales: sin identificación o registro correctos, se rechaza el animal; si el exceso es de hasta el 20 % de los animales determinados, el pago baja en ese porcentaje; por encima del 20 %, el doble; por encima del 30 %, se rechaza todo el pago del grupo; por encima del 50 %, sanción adicional. Pruebas falsas, negligencia grave u ocultación dolosa con consecuencias graves: se rechaza el pago del año y el del mismo reclamo en uno o dos años siguientes. Si no se cumple una condición sin sanción propia, se aplica la de la uredba de cada intervención según gravedad, alcance, duración y repetición. Orden de cálculo: exceso, mala declaración, omisión, catálogo por intervención, disciplina financiera, condicionalidad y condicionalidad social. Con fuerza mayor o circunstancias excepcionales (muerte o incapacidad de un miembro con al menos 0,5 UTA, muerte de animales por enfermedad no epizoótica, expropiación, desastre natural) no se aplican sanciones y se paga en su totalidad. La ficha ARSKTRP de 2026 dice que no hay presentación tardía en 2026 (es decir, no existe periodo con penalización diaria); no se ha leído la regla que la elimina. No se han leído los catálogos de sanciones por intervención (anexo 10).",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2026-01-0083/uredba-o-izvedbi-intervencij-kmetijske-politike-za-leto-2026"
+  },
+  {
+   "id": "conditionality-controls",
+   "topic": "controls",
+   "legalBasis": "Uredba o pravilih pogojenosti (Ur. l. RS 2/24, texto original), čl. 3-5; MKGP/ARSKTRP, «Pogojenost», zbirna vloga 2026",
+   "articles": [
+    "3",
+    "4",
+    "5"
+   ],
+   "text": "Condicionalidad (pogojenost): obliga a quienes piden pagos directos o pagos de desarrollo rural (art. 4) a cumplir las normas de buenas condiciones agrarias y medioambientales (DKOP, 9 estándares) y los requisitos legales de gestión (PZR, 11 requisitos) en clima y medio ambiente, salud pública y vegetal y bienestar animal. ARSKTRP comprueba el cumplimiento en al menos el 1 % de los obligados; del 20 al 25 % del mínimo se elige al azar. Los controles incluyen los administrativos, el sistema de seguimiento de superficies y los de campo, se hacen en el mismo año natural de la solicitud, y se tienen en cuenta las irregularidades que detecten otras inspecciones. Quien impide un control sobre el terreno pierde todos los pagos de las intervenciones afectadas. La ficha 2026 añade que las explotaciones con 10 ha o menos de superficie agrícola solicitada quedan exentas de sanciones de condicionalidad (reforma de la UE de 2024), aunque siguen obligadas a cumplir las normas; en 2026 se concretan reglas de rotación (DKOP 7) y se retira la fecha del 15 de octubre para el laboreo obligatorio. Existe además una condicionalidad social, regulada por una uredba aparte (Uredba o pravilih socialne pogojenosti), que la Uredba de 2026 cita y que no se ha leído. La Uredba de pogojenost se leyó en su texto original de 2024; no se han leído sus reformas 109/24, 100/25 y 107/25 ni sus anexos.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2024-01-0098",
+   "values": {
+    "minControlPct": 1,
+    "dkopStandards": 9,
+    "pzrRequirements": 11,
+    "smallFarmExemptHa": 10
+   }
+  },
+  {
+   "id": "conditionality-sanctions",
+   "topic": "penalties",
+   "legalBasis": "Uredba o pravilih pogojenosti (Ur. l. RS 2/24, texto original), čl. 7-9; MKGP/ARSKTRP, «Pogojenost», zbirna vloga 2026",
+   "articles": [
+    "7",
+    "8",
+    "9"
+   ],
+   "text": "Sanciones de condicionalidad (pogojenost): se calculan sobre los pagos de las intervenciones afectadas del año en que ocurrió el incumplimiento. Si es no intencionado, el porcentaje es del 1 %, 3 %, 5 % o 10 % según sea leve, medio, grave o muy grave; la primera vez que lo detecta el sistema de seguimiento de superficies se aplica la mitad. La repetición del mismo incumplimiento en tres años se castiga normalmente con el 10 % (entre el 5 % y el 15 % según la ficha 2026). El incumplimiento es intencional si se sabía y se quiso o consintió, o si se repite por tercera vez tras dos sanciones en tres años seguidos; entonces la sanción va del 15 % al 100 % según gravedad, alcance y duración (anexo 3, según la ficha 2026, que no se ha leído en el texto oficial). Si no hay consecuencias o son despreciables no hay reducción, solo aviso y envío al asesoramiento agrario. Las sanciones se suman, sin pasar del 100 % de los pagos de las intervenciones solicitadas. Durante 36 meses desde la decisión de ayuda a jóvenes agricultores no cuentan los incumplimientos de nitratos y protección de animales de cría cubiertos por el plan de empresa. Los porcentajes de los anexos 2 y 3 de la Uredba por requisito no se han leído.",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2024-01-0098",
+   "values": {
+    "unintentionalPct": [
+     1,
+     3,
+     5,
+     10
+    ],
+    "firstDetectionAmsFactor": 0.5,
+    "intentionalPctFrom": 15,
+    "intentionalPctTo": 100,
+    "capPct": 100
+   }
+  },
+  {
+   "id": "amounts",
+   "topic": "amounts",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), modificada por 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25, 107/25 y 442/26, čl. 3-4; MKGP/ARSKTRP, navodila «Neposredna plačila», zbirna vloga 2026; GOV.SI, «Neposredna plačila za kmetije»",
+   "articles": [
+    "3",
+    "4"
+   ],
+   "text": "Cómo se fijan los importes: no hay un importe fijo por la norma sino un importe previsto por unidad, con un mínimo y un máximo, para cada pago directo (art. 4); los importes de cada intervención están en su regla. El importe realizado se calcula cada año como hectáreas o animales determinados por el importe previsto; si el presupuesto asignado se supera o sobra, el importe por unidad puede quedar por debajo del previsto o del mínimo para respetar el límite nacional de pagos directos, y es igual al máximo si no se alcanzan las unidades previstas (art. 4(2)). El límite nacional anual se reparte en un presupuesto orientativo por intervención (art. 3(1)). Según la ficha 2026, el sobre de pagos directos de 2026 es de 131.530.052 € y se reparte así: ayuda básica 63,02 %, redistributivo 5 %, ayudas asociadas 13 % más un 2 % adicional para plantas proteicas, ecoesquemas 15,48 % y jóvenes agricultores 1,5 %. El GOV.SI da 657,6 millones de euros para pagos directos en 2023-2027. Los fondos se pagan, salvo anticipos del Reglamento 2021/2116, hasta el 30 de junio del año siguiente al de la solicitud y en dos plazos (art. 3(2)); si la Comisión activa la disciplina financiera, el recorte afecta a quien tenga más de 2.000 € aprobados. Los importes de 2026 de la ficha son previstos; no se han leído importes definitivos ni el 4.º cambio del plan estratégico (aviso de 15-7-2026).",
+   "officialUrl": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
+   "values": {
+    "campaign": 2026,
+    "status": "planned",
+    "envelope2026Eur": 131530052.0,
+    "sharesPct": {
+     "basic": 63.02,
+     "redistributive": 5,
+     "coupled": 13,
+     "coupledExtraProtein": 2,
+     "ecoSchemes": 15.48,
+     "young": 1.5
+    },
+    "envelope2023_2027MEur": 657.6,
+    "paymentWindowEnd": "06-30"
+   }
+  }
+ ],
+ "calendar": [
+  {
+   "id": "active-farmer-proof",
+   "kind": "deadline",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 6(19)",
+   "articles": [
+    "6"
+   ],
+   "when": {
+    "month": 12,
+    "day": 31,
+    "yearOffset": 0
+   },
+   "text": "Último día para enviar a ARSKTRP los documentos del criterio de agricultor activo por ingresos agrarios o por pago de servicios agrícolas (31 de diciembre del año de la solicitud)."
+  },
+  {
+   "id": "coupled-holding-end",
+   "kind": "deadline",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 38(2), 41(2)",
+   "articles": [
+    "38",
+    "41"
+   ],
+   "when": {
+    "month": 7,
+    "day": 31,
+    "yearOffset": 0
+   },
+   "text": "Fin del periodo obligatorio de permanencia de los animales en la ayuda asociada a ovino y caprino y en la de leche de montaña (31 de julio del año de la solicitud); empieza en la fecha de inicio de la solicitud única."
+  },
+  {
+   "id": "payment-window-end",
+   "kind": "deadline",
+   "legalBasis": "Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23), čl. 3(2)",
+   "articles": [
+    "3"
+   ],
+   "when": {
+    "month": 6,
+    "day": 30,
+    "yearOffset": 1
+   },
+   "text": "Último día del plazo para pagar las intervenciones de pagos directos de la solicitud única: 30 de junio del año siguiente al de la solicitud, en dos plazos (sin contar los anticipos previstos en el Reglamento 2021/2116)."
+  }
+ ],
+ "campaignOverrides": [],
+ "i18n": {
+  "note": "Traducción de Dehesa Index de las explicaciones de «rules», «calendar» y «campaignOverrides» (un resumen propio, no el texto legal). Solo es auténtico el texto oficial. Lo que no tenga traducción aquí se muestra en español.",
+  "rules": {
+   "active-farmer": {
+    "en": "Active farmer (aktivni kmet): anyone whose approved direct payments for the previous year, after sanctions, were EUR 5,000 or less is active without further proof (consolidated text and 2026 page: \"vključno ali manj\"). Above that, the holder must meet one of six criteria: 1) compulsory farmer insurance (pension, disability and health) from 1 January to 30 November of the year (the 2026 page admits only insurance-basis code 051); 2) stocking of at least 0.2 livestock units (GVŽ) per ha of agricultural area in use, with data from the CRG, CRD and CRPš registers on 1 February and on four representative dates; 3) arable land and permanent crops on more than half of the agricultural area; 4) farm income of at least one third of non-farm income; 5) an own wheeled tractor registered for at least 30 days between 1 January and 30 June, or paid agricultural services (invoices from 1 January to 15 October) on at least 50 % of the area; 6) at least 50 % of the area in the KOPOP-NV, KOPOP-BK, organic, biological plant protection, local varieties or Natura 2000 interventions, according to the application on the final change date (13 November 2026). ARSKTRP checks criteria 1, 2, 3, 6 and the tractor ex officio; criteria 4 and the services route of 5 are proven with documents sent by 31 December, with no prior request. If there was no application the previous year, it was rejected for not being an active farmer or ended at zero because of sanctions, the previous payment is estimated as declared area times the previous year's national average per ha (art. 7(3), amended by 36/25). In 2026 there is a bluetongue (BTV) exception: animals with force majeure recognised in 2025 are added to the stocking. Annex 2 (stocking calculation) and the definition of the insurance regulation have not been read.",
+    "fr": "Agriculteur actif (aktivni kmet) : est actif sans autre preuve celui dont les paiements directs approuvés l'année précédente, après sanctions, étaient de 5 000 € ou moins (texte consolidé et fiche 2026 : « vključno ali manj »). Au-delà, il faut remplir l'un de six critères : 1) assurance obligatoire d'agriculteur (retraite, invalidité et maladie) du 1er janvier au 30 novembre de l'année (la fiche 2026 n'admet que le code de base 051) ; 2) chargement d'au moins 0,2 UGB (GVŽ) par ha de surface agricole utilisée, avec les données des registres CRG, CRD et CRPš au 1er février et à quatre dates représentatives ; 3) terres arables et cultures permanentes sur plus de la moitié de la surface agricole ; 4) revenus agricoles d'au moins un tiers des revenus non agricoles ; 5) tracteur à roues propre immatriculé au moins 30 jours entre le 1er janvier et le 30 juin, ou services agricoles payés (factures du 1er janvier au 15 octobre) sur au moins 50 % de la surface ; 6) au moins 50 % de la surface dans les interventions KOPOP-NV, KOPOP-BK, bio, protection biologique des plantes, variétés locales ou Natura 2000, selon la demande à la date finale de modification (13 novembre 2026). ARSKTRP vérifie d'office les critères 1, 2, 3, 6 et le tracteur ; le critère 4 et la voie des services du 5 se prouvent par des documents envoyés avant le 31 décembre, sans demande préalable. S'il n'y a pas eu de demande l'année précédente, si elle a été rejetée faute d'être agriculteur actif ou si elle est tombée à zéro par sanctions, le paiement antérieur est estimé comme la surface déclarée multipliée par la moyenne nationale par ha de l'année précédente (art. 7(3), modifié par 36/25). En 2026 il existe une exception pour la fièvre catarrhale (BTV) : les animaux avec force majeure reconnue en 2025 s'ajoutent au chargement. L'annexe 2 (calcul du chargement) et la définition de la réglementation sur l'assurance n'ont pas été lues.",
+    "it": "Agricoltore attivo (aktivni kmet): è attivo senza altre prove chi l'anno precedente aveva pagamenti diretti approvati, dopo le sanzioni, pari o inferiori a 5.000 € (testo consolidato e scheda 2026: «vključno ali manj»). Oltre tale cifra occorre soddisfare uno di sei criteri: 1) assicurazione obbligatoria da agricoltore (pensione, invalidità e malattia) dal 1° gennaio al 30 novembre dell'anno (la scheda 2026 ammette solo il codice di base 051); 2) carico di almeno 0,2 UBA (GVŽ) per ha di superficie agricola utilizzata, con dati dei registri CRG, CRD e CRPš al 1° febbraio e in quattro date rappresentative; 3) seminativi e colture permanenti su oltre la metà della superficie agricola; 4) redditi agricoli pari ad almeno un terzo di quelli non agricoli; 5) trattore a ruote proprio immatricolato per almeno 30 giorni tra il 1° gennaio e il 30 giugno, oppure servizi agricoli pagati (fatture dal 1° gennaio al 15 ottobre) su almeno il 50 % della superficie; 6) almeno il 50 % della superficie negli interventi KOPOP-NV, KOPOP-BK, biologico, protezione biologica delle piante, varietà locali o Natura 2000, secondo la domanda alla data finale di modifica (13 novembre 2026). ARSKTRP verifica d'ufficio i criteri 1, 2, 3, 6 e il trattore; il criterio 4 e la via dei servizi del 5 si provano con documenti inviati entro il 31 dicembre, senza richiesta preventiva. Se l'anno precedente non c'è stata domanda, è stata respinta perché non agricoltore attivo o è finita a zero per sanzioni, il pagamento precedente è stimato come superficie dichiarata per la media nazionale per ha dell'anno precedente (art. 7(3), modificato da 36/25). Nel 2026 c'è un'eccezione per la lingua blu (BTV): si sommano al carico gli animali con forza maggiore riconosciuta nel 2025. L'allegato 2 (calcolo del carico) e la definizione del regolamento sull'assicurazione non sono stati letti."
+   },
+   "agricultural-activity": {
+    "en": "Agricultural activity (kmetijska dejavnost) and eligible hectare (upravičen hektar): farming means producing, rearing or growing agricultural products, or keeping the area suitable for grazing or cultivation without special preparatory measures. On arable land one agrotechnical measure that prevents weed seeding is enough (at least shallow tillage or mowing before seeding); on permanent crops, mowing at least once a year by 15 October and pruning. On permanent grassland, since amendment 107/25 one mowing at least once in the year of the single application is enough, without the 15 October cut-off (the 2026 page keeps the exception of mowing in the following year for some Natura 2000 habitat grasslands). Agricultural land used for farming is eligible; non-agricultural use in the growing season may not exceed 30 days a year unless it is shown not to hinder farming; landscape features of up to 100 m² or 2 m width count; hemp only if THC does not exceed 0.3 % and a permit exists; the area must meet the definition throughout the calendar year (except force majeure) and be at the disposal of the holder registered in the RKG. The land-use code lists (GERK) have not been read beyond what is cited.",
+    "fr": "Activité agricole (kmetijska dejavnost) et hectare admissible (upravičen hektar) : l'activité agricole consiste à produire, élever ou cultiver des produits agricoles, ou à maintenir la surface apte au pâturage ou à la culture sans mesures préparatoires particulières. Sur les terres arables, une mesure agrotechnique empêchant la montée en graines des adventices suffit (au minimum un travail superficiel du sol ou un fauchage avant la montée en graines) ; sur les cultures permanentes, fauchage au moins une fois par an jusqu'au 15 octobre et taille. Sur les prairies permanentes, depuis la modification 107/25, un fauchage au moins une fois dans l'année de la demande unique suffit, sans la limite du 15 octobre (la fiche 2026 maintient l'exception du fauchage l'année suivante pour certaines prairies d'habitats Natura 2000). Est admissible la surface agricole utilisée pour l'activité agricole ; l'usage non agricole pendant la période de végétation ne peut dépasser 30 jours par an, sauf preuve qu'il ne gêne pas l'activité ; les éléments du paysage jusqu'à 100 m² ou 2 m de large comptent ; le chanvre seulement si le THC ne dépasse pas 0,3 % et avec autorisation ; la surface doit répondre à la définition toute l'année civile (sauf force majeure) et être à la disposition du titulaire inscrit au RKG. Les listes de codes d'usage des sols (GERK) n'ont pas été lues au-delà de ce qui est cité.",
+    "it": "Attività agricola (kmetijska dejavnost) ed ettaro ammissibile (upravičen hektar): è attività agricola produrre, allevare o coltivare prodotti agricoli, oppure mantenere la superficie idonea al pascolo o alla coltivazione senza misure preparatorie particolari. Sui seminativi basta una misura agrotecnica che impedisca la disseminazione delle infestanti (almeno una lavorazione superficiale o uno sfalcio prima della disseminazione); sulle colture permanenti, sfalcio almeno una volta l'anno entro il 15 ottobre e potatura. Sui prati permanenti, dalla modifica 107/25 basta uno sfalcio almeno una volta nell'anno della domanda unica, senza il limite del 15 ottobre (la scheda 2026 mantiene l'eccezione dello sfalcio nell'anno successivo per alcuni prati di habitat Natura 2000). È ammissibile la superficie agricola usata per l'attività agricola; l'uso non agricolo nel periodo vegetativo non può superare 30 giorni l'anno, salvo prova che non ostacola l'attività; contano gli elementi del paesaggio fino a 100 m² o 2 m di larghezza; la canapa solo se il THC non supera lo 0,3 % e c'è il permesso; la superficie deve rispettare la definizione per tutto l'anno solare (salvo forza maggiore) ed essere a disposizione del titolare iscritto nel RKG. Gli elenchi dei codici d'uso del suolo (GERK) non sono stati letti oltre quanto citato."
+   },
+   "minimum": {
+    "en": "General conditions and minimum threshold: direct payments go to those who farm, have at least 1 ha of determined eligible area (each agricultural parcel at least 0.1 ha) and meet the active-farmer test and the conditions of each intervention (art. 6(1)). Exception: those claiming the coupled support for sheep and goats, cattle, suckler cows or mountain milk who do not reach 1 ha (or declare no area) qualify if they are entitled to at least EUR 100 of direct payments in the year, before sanctions (art. 6(2); 2026 page). For eco-schemes each parcel must be 0.1 ha and each scheme must cover at least 0.3 ha on the holding, with exceptions (lapwing nest protection and protective strips: 0.1 ha; hedgerows: 25 m²) according to the 2026 page. The area is taken from that year's application and must be entered in the farm register (RKG) on the final application date (arts. 9(1), 16(1)). If the Commission activates financial discipline (finančna disciplina), it affects only holders with more than EUR 2,000 of approved direct payments (2026 page).",
+    "fr": "Conditions générales et seuil minimal : les paiements directs reviennent à celui qui exerce une activité agricole, dispose d'au moins 1 ha de surface admissible déterminée (chaque parcelle agricole au moins 0,1 ha) et remplit le critère d'agriculteur actif et les conditions de chaque intervention (art. 6(1)). Exception : celui qui demande l'aide couplée aux ovins et caprins, aux bovins, aux vaches allaitantes ou au lait de montagne et n'atteint pas 1 ha (ou ne déclare aucune surface) entre s'il a droit à au moins 100 € de paiements directs dans l'année, avant sanctions (art. 6(2) ; fiche 2026). Pour les éco-régimes, chaque parcelle doit faire 0,1 ha et chaque régime doit couvrir au moins 0,3 ha dans l'exploitation, avec des exceptions (protection des nids de vanneau et bandes de protection : 0,1 ha ; haies : 25 m²) selon la fiche 2026. La surface est prise dans la demande de l'année et doit être inscrite au registre des exploitations (RKG) à la date finale de demande (art. 9(1), 16(1)). Si la Commission active la discipline financière (finančna disciplina), elle ne touche que ceux qui ont plus de 2 000 € de paiements directs approuvés (fiche 2026).",
+    "it": "Condizioni generali e soglia minima: i pagamenti diretti spettano a chi esercita attività agricola, ha almeno 1 ha di superficie ammissibile accertata (ogni particella agricola di almeno 0,1 ha) e soddisfa il criterio di agricoltore attivo e le condizioni di ciascun intervento (art. 6(1)). Eccezione: chi chiede il sostegno accoppiato per ovicaprini, bovini, vacche nutrici o latte di montagna e non raggiunge 1 ha (o non dichiara superficie) rientra se ha diritto ad almeno 100 € di pagamenti diretti nell'anno, prima delle sanzioni (art. 6(2); scheda 2026). Negli eco-schemi ogni particella deve essere di 0,1 ha e ogni schema deve coprire almeno 0,3 ha in azienda, con eccezioni (protezione dei nidi di pavoncella e fasce di protezione: 0,1 ha; siepi: 25 m²) secondo la scheda 2026. La superficie è quella della domanda dell'anno e deve essere iscritta nel registro delle aziende (RKG) alla data finale di domanda (art. 9(1), 16(1)). Se la Commissione attiva la disciplina finanziaria (finančna disciplina), riguarda solo chi ha più di 2.000 € di pagamenti diretti approvati (scheda 2026)."
+   },
+   "application": {
+    "en": "Single application (zbirna vloga): the date is set every year by the Uredba o izvedbi intervencij; it is not a fixed date. In 2026 it is filed from 20 February to 15 May 2026 (online only, through e-Kmetijstvo); the animal-welfare form for sheep and goats at the latest by 5 May 2026. In 2025 it ran from 19 March to 6 June 2025 (ministry copy of the 2025 Uredba). The 2026 ARSKTRP page says there is no late filing in 2026 either; the rule that removes it has not been read. After the deadline, area claims can be changed or withdrawn (with the area monitoring system, Sopotnik): ARSKTRP publishes provisional results from 1 August to 15 October 2026 and final ones at least 14 days before the last day for changes; the last day for statements, evidence, changes and withdrawals is 13 November 2026 for area claims and 15 February 2027 for the winter cover (ZEL), catch and cover crops (NPP), conservation tillage as a following crop (KONZ) schemes and the local varieties operation. If things are still unclear, ARSKTRP asks for evidence and the holder replies within 8 working days of the notice (the request at the latest by 12 December 2026, or 15 March 2027 for those schemes). Withdrawals for animals and for young farmers are accepted until 15 days before the first payment.",
+    "fr": "Demande unique (zbirna vloga) : la date est fixée chaque année par l'Uredba o izvedbi intervencij ; ce n'est pas une date fixe. En 2026 elle se dépose du 20 février au 15 mai 2026 (uniquement en ligne, via e-Kmetijstvo) ; le formulaire de bien-être animal pour ovins et caprins, au plus tard le 5 mai 2026. En 2025 elle allait du 19 mars au 6 juin 2025 (copie du ministère de l'Uredba 2025). La fiche ARSKTRP 2026 dit qu'il n'y a pas non plus de dépôt tardif en 2026 ; la règle qui le supprime n'a pas été lue. Après l'échéance, les demandes de surface peuvent être modifiées ou retirées (avec le système de suivi des surfaces, Sopotnik) : ARSKTRP publie des résultats provisoires du 1er août au 15 octobre 2026 et les définitifs au moins 14 jours avant le dernier jour de modification ; le dernier jour pour déclarations, preuves, modifications et retraits est le 13 novembre 2026 pour les demandes de surface et le 15 février 2027 pour les régimes de couverture hivernale (ZEL), cultures intermédiaires et dérobées (NPP), travail du sol de conservation comme culture suivante (KONZ) et l'opération variétés locales. Si la situation reste floue, ARSKTRP demande des preuves et le titulaire répond sous 8 jours ouvrés après la publication (la demande au plus tard le 12 décembre 2026, ou le 15 mars 2027 pour ces régimes). Les retraits pour les animaux et pour les jeunes agriculteurs sont admis jusqu'à 15 jours avant le premier paiement.",
+    "it": "Domanda unica (zbirna vloga): la data è fissata ogni anno dalla Uredba o izvedbi intervencij; non è una data fissa. Nel 2026 si presenta dal 20 febbraio al 15 maggio 2026 (solo online, tramite e-Kmetijstvo); il modulo di benessere animale per ovicaprini, al più tardi entro il 5 maggio 2026. Nel 2025 andava dal 19 marzo al 6 giugno 2025 (copia del ministero dell'Uredba 2025). La scheda ARSKTRP 2026 dice che neppure nel 2026 c'è la presentazione tardiva; la norma che la elimina non è stata letta. Dopo la scadenza, le domande di superficie si possono modificare o ritirare (con il sistema di monitoraggio delle superfici, Sopotnik): ARSKTRP pubblica risultati provvisori dal 1° agosto al 15 ottobre 2026 e quelli definitivi almeno 14 giorni prima dell'ultimo giorno di modifica; l'ultimo giorno per dichiarazioni, prove, modifiche e ritiri è il 13 novembre 2026 per le domande di superficie e il 15 febbraio 2027 per gli schemi di copertura invernale (ZEL), colture intermedie e di copertura (NPP), lavorazione conservativa come coltura successiva (KONZ) e l'operazione varietà locali. Se la situazione resta poco chiara, ARSKTRP chiede prove e il titolare risponde entro 8 giorni lavorativi dalla pubblicazione (la richiesta al più tardi il 12 dicembre 2026, o il 15 marzo 2027 per quegli schemi). I ritiri per gli animali e per i giovani agricoltori sono ammessi fino a 15 giorni prima del primo pagamento."
+   },
+   "basic": {
+    "en": "Basic income support for sustainability (osnovna dohodkovna podpora za trajnostnost, ODPT, INP01): a single payment per eligible hectare declared in that year's application and entered in the RKG on the final application date; it replaced the payment entitlements, which ended on 1 January 2023. The regulation sets a planned amount of EUR 184.20/ha, with a minimum of EUR 168.00 and a maximum of EUR 200.00/ha (art. 9(3), still shown in the 2026 page; planned, not final). The realised amount depends on the final hectares and can be lower or higher (art. 4(2)); the final 2026 amount has not been read. Progressive reduction (art. 10): on basic support approved after sanctions, 35 % in the tranche above EUR 60,000 up to 160,000, 45 % up to 260,000, 55 % up to 360,000 and 65 % above; farm wages are no longer deducted, and the money saved goes to the redistributive payment (2026 page). ODPT receives 63.02 % of the 2026 envelope (EUR 131,530,052, per the page).",
+    "fr": "Aide de base au revenu pour la durabilité (osnovna dohodkovna podpora za trajnostnost, ODPT, INP01) : paiement unique par hectare admissible déclaré dans la demande de l'année et inscrit au RKG à la date finale de demande ; il a remplacé les droits au paiement, supprimés le 1er janvier 2023. Le règlement fixe un montant prévu de 184,20 €/ha, avec un minimum de 168,00 et un maximum de 200,00 €/ha (art. 9(3), repris dans la fiche 2026 ; prévisionnel, pas définitif). Le montant réalisé dépend des hectares finaux et peut être inférieur ou supérieur (art. 4(2)) ; le montant définitif 2026 n'a pas été lu. Réduction progressive (art. 10) : sur l'aide de base approuvée après sanctions, 35 % dans la tranche de plus de 60 000 jusqu'à 160 000 €, 45 % jusqu'à 260 000, 55 % jusqu'à 360 000 et 65 % au-delà ; les salaires agricoles ne sont plus déduits, et l'argent économisé va au paiement redistributif (fiche 2026). L'ODPT reçoit 63,02 % de l'enveloppe 2026 (131 530 052 €, selon la fiche).",
+    "it": "Sostegno di base al reddito per la sostenibilità (osnovna dohodkovna podpora za trajnostnost, ODPT, INP01): pagamento unico per ettaro ammissibile dichiarato nella domanda dell'anno e iscritto nel RKG alla data finale di domanda; ha sostituito i diritti al pagamento, cessati il 1° gennaio 2023. Il regolamento fissa un importo previsto di 184,20 €/ha, con minimo di 168,00 e massimo di 200,00 €/ha (art. 9(3), ripreso nella scheda 2026; previsto, non definitivo). L'importo realizzato dipende dagli ettari finali e può essere inferiore o superiore (art. 4(2)); l'importo definitivo 2026 non è stato letto. Riduzione progressiva (art. 10): sul sostegno di base approvato dopo le sanzioni, 35 % nello scaglione oltre 60.000 fino a 160.000 €, 45 % fino a 260.000, 55 % fino a 360.000 e 65 % oltre; i salari agricoli non si detraggono più, e il denaro risparmiato va al pagamento redistributivo (scheda 2026). All'ODPT va il 63,02 % della dotazione 2026 (131.530.052 €, secondo la scheda)."
+   },
+   "redistributive": {
+    "en": "Redistributive payment (dopolnilna prerazporeditvena dohodkovna podpora za trajnostnost, DPDPT, INP02): a per-hectare supplement for the first 8.2 ha of those who receive basic support. Since amendment 107/25 (published on 19 December 2025) it is limited to holdings with determined eligible area of up to and including 50 ha; the 2026 page and the 17 February 2026 news item apply it to the 2026 campaign (with 52 ha nothing is paid; with 20 ha, 8.2 ha). To reach 8.2 ha, hectares without administrative sanctions are counted first. The regulation sets a planned amount of EUR 27.38/ha, minimum 21.90 and maximum 35.59 EUR/ha (art. 11(3)); the 2026 page prints the minimum as 21.09, a discrepancy that has not been resolved, and the regulation text is followed here (planned, not final). It is funded with 5 % of the direct-payments envelope plus what the progressive reduction saves. The final 2026 amount has not been read.",
+    "fr": "Paiement redistributif (dopolnilna prerazporeditvena dohodkovna podpora za trajnostnost, DPDPT, INP02) : supplément par hectare pour les 8,2 premiers ha de celui qui perçoit l'aide de base. Depuis la modification 107/25 (publiée le 19 décembre 2025), il est limité aux exploitations dont la surface admissible déterminée va jusqu'à 50 ha inclus ; la fiche 2026 et la nouvelle du 17 février 2026 l'appliquent à la campagne 2026 (avec 52 ha rien n'est payé ; avec 20 ha, 8,2 ha). Pour atteindre 8,2 ha, on compte d'abord les hectares sans sanctions administratives. Le règlement fixe un montant prévu de 27,38 €/ha, minimum 21,90 et maximum 35,59 €/ha (art. 11(3)) ; la fiche 2026 imprime le minimum comme 21,09, une divergence non résolue, et on suit ici le texte du règlement (prévisionnel, pas définitif). Il est financé par 5 % de l'enveloppe des paiements directs plus ce qu'économise la réduction progressive. Le montant définitif 2026 n'a pas été lu.",
+    "it": "Pagamento redistributivo (dopolnilna prerazporeditvena dohodkovna podpora za trajnostnost, DPDPT, INP02): supplemento per ettaro per i primi 8,2 ha di chi riceve il sostegno di base. Dalla modifica 107/25 (pubblicata il 19 dicembre 2025) è limitato alle aziende con superficie ammissibile accertata fino a 50 ha inclusi; la scheda 2026 e la notizia del 17 febbraio 2026 lo applicano alla campagna 2026 (con 52 ha non si paga nulla; con 20 ha, 8,2 ha). Per arrivare a 8,2 ha si contano per primi gli ettari senza sanzioni amministrative. Il regolamento fissa un importo previsto di 27,38 €/ha, minimo 21,90 e massimo 35,59 €/ha (art. 11(3)); la scheda 2026 stampa il minimo come 21,09, una discrepanza non risolta, e qui si segue il testo del regolamento (previsto, non definitivo). È finanziato con il 5 % della dotazione dei pagamenti diretti più quanto risparmiato con la riduzione progressiva. L'importo definitivo 2026 non è stato letto."
+   },
+   "young-farmers": {
+    "en": "Young farmers (dopolnilna dohodkovna podpora za mlade kmete, MK, INP09): an annual single payment per eligible hectare, on the same hectares as basic support and up to 90 ha per holder. A young farmer is a natural or legal person who is head of the holding, is no more than 40 years old (does not turn 41 in the year of the first application) and has the required skills, meaning at least three years of experience on the holding: farmer insurance, membership of the holding in the RKG, or a statement by the previous holder. They set up as holder for the first time in the year of the first application or in the previous five years. A company must be single-member and the sole member must also be the manager. Not eligible are holdings where a previous holder already received this support (except in case of death) or a company whose member is already majority member of another farming company. It is paid for at most five years, minus the years between setting up and the first application; those who do not complete the five years before 2027 lose the right on 1 January 2028. The regulation sets a planned amount of EUR 78.91/ha, minimum 59.33 and maximum 98.64 EUR/ha (planned, not final; art. 13(13)); the 2026 envelope share is 1.5 % (page). The final 2026 amount has not been read.",
+    "fr": "Jeunes agriculteurs (dopolnilna dohodkovna podpora za mlade kmete, MK, INP09) : paiement annuel unique par hectare admissible, sur les mêmes hectares que l'aide de base et jusqu'à 90 ha par titulaire. Est jeune agriculteur la personne physique ou morale qui est chef de l'exploitation, n'a pas plus de 40 ans (n'atteint pas 41 ans l'année de la première demande) et a les compétences requises, soit au moins trois ans d'expérience dans l'exploitation : assurance d'agriculteur, appartenance à l'exploitation au RKG, ou déclaration de l'ancien titulaire. Il s'installe pour la première fois comme titulaire l'année de la première demande ou dans les cinq années précédentes. Une société doit être unipersonnelle et l'associé unique doit aussi être gérant. N'y a pas droit l'exploitation dont un titulaire précédent a déjà reçu cette aide (sauf décès), ni la société dont l'associé est déjà associé majoritaire d'une autre société agricole. Il est payé cinq ans au plus, diminués des années écoulées entre l'installation et la première demande ; celui qui n'achève pas les cinq ans avant 2027 perd le droit le 1er janvier 2028. Le règlement fixe un montant prévu de 78,91 €/ha, minimum 59,33 et maximum 98,64 €/ha (prévisionnel, pas définitif ; art. 13(13)) ; l'enveloppe 2026 est de 1,5 % (fiche). Le montant définitif 2026 n'a pas été lu.",
+    "it": "Giovani agricoltori (dopolnilna dohodkovna podpora za mlade kmete, MK, INP09): pagamento annuo unico per ettaro ammissibile, sugli stessi ettari del sostegno di base e fino a 90 ha per titolare. È giovane agricoltore la persona fisica o giuridica che è capo dell'azienda, non ha più di 40 anni (non compie 41 anni nell'anno della prima domanda) e ha le competenze necessarie, cioè almeno tre anni di esperienza in azienda: assicurazione da agricoltore, appartenenza all'azienda nel RKG, o dichiarazione del precedente titolare. Si insedia per la prima volta come titolare nell'anno della prima domanda o nei cinque anni precedenti. Una società deve essere unipersonale e il socio unico deve essere anche amministratore. Non ha diritto l'azienda in cui un precedente titolare ha già ricevuto questo sostegno (salvo decesso), né la società il cui socio è già socio di maggioranza di un'altra impresa agricola. Si paga per al massimo cinque anni, meno gli anni trascorsi tra l'insediamento e la prima domanda; chi non completa i cinque anni entro il 2027 perde il diritto il 1° gennaio 2028. Il regolamento fissa un importo previsto di 78,91 €/ha, minimo 59,33 e massimo 98,64 €/ha (previsto, non definitivo; art. 13(13)); la dotazione 2026 è l'1,5 % (scheda). L'importo definitivo 2026 non è stato letto."
+   },
+   "eco-schemes": {
+    "en": "Climate and environment schemes (sheme za podnebje in okolje, SOPO, INP08): the Slovenian eco-scheme, voluntary and annual; the holder chooses every year which schemes to join. In 2026 there are twelve: extensive grassland (EKST), traditional grassland use (TRT), spreading organic fertilisers with low emissions (NIZI), additives that reduce ammonia and greenhouse gases (INHIBIT, KRMDOD), catch and undersown crops (NPP), winter cover of arable land (ZEL), conservation tillage (KONZ), unsown patches for the skylark (POŠK), lapwing nest protection (VGP), organic fertilisers only on permanent crops (OGNTN), biodiversity on permanent crops (BIORAZTN) and non-productive areas and elements (NPE). Planned 2026 amounts according to the ARSKTRP page (not the regulation; minimum-maximum in brackets, EUR per ha unless stated): EKST 45.65 (36.52-45.65), TRT 129.03 (103.22-161.29), NIZI 95.41 (76.33-159.02), INHIBIT 60.00 (48.00-75.00), KRMDOD 60.00 per livestock unit (48.00-75.00), NPP 137.60 (110.08-172.00), ZEL 148.00 (118.40-185.00), KONZ 18.32 (14.66-22.90), POŠK 60.00 (48.00-60.00), VGP 200.00 per nest in stage I and per ha in stage II (160.00-200.00), OGNTN 312.00 (249.60-390.00), BIORAZTN 273.20 (218.56-341.50); NPE: fallow 160.00 (128.00-200.00) and protective strips 145.60 (116.48-182.00); maintenance of landscape features and new features have per-ha or per-m² amounts that the page gives and that are not detailed here. EKST requires 0.2 to 0.9 livestock units per ha and TRT more than 0.9 per ha, with TRT on at most 20 % of the grassland. The group receives 15.48 % of the 2026 envelope. Each scheme requires 0.1 ha per parcel and 0.3 ha on the holding (with exceptions) and work records. The requirements of each scheme other than EKST and TRT, the sanctions catalogue and the combinations (annexes 6 and 10), and the final 2026 amounts have not been read.",
+    "fr": "Régimes pour le climat et l'environnement (sheme za podnebje in okolje, SOPO, INP08) : l'éco-régime slovène, volontaire et annuel ; le titulaire choisit chaque année les régimes auxquels il adhère. En 2026 il y en a douze : prairie extensive (EKST), usage traditionnel de la prairie (TRT), épandage d'engrais organiques à faibles émissions (NIZI), additifs réduisant l'ammoniac et les gaz à effet de serre (INHIBIT, KRMDOD), cultures dérobées et sous-semis (NPP), couverture hivernale des terres arables (ZEL), travail du sol de conservation (KONZ), zones non semées pour l'alouette (POŠK), protection des nids de vanneau (VGP), engrais organiques seulement sur cultures permanentes (OGNTN), biodiversité sur cultures permanentes (BIORAZTN) et surfaces et éléments non productifs (NPE). Montants prévus 2026 selon la fiche ARSKTRP (et non le règlement ; minimum-maximum entre parenthèses, € par ha sauf indication) : EKST 45,65 (36,52-45,65), TRT 129,03 (103,22-161,29), NIZI 95,41 (76,33-159,02), INHIBIT 60,00 (48,00-75,00), KRMDOD 60,00 par UGB (48,00-75,00), NPP 137,60 (110,08-172,00), ZEL 148,00 (118,40-185,00), KONZ 18,32 (14,66-22,90), POŠK 60,00 (48,00-60,00), VGP 200,00 par nid au niveau I et par ha au niveau II (160,00-200,00), OGNTN 312,00 (249,60-390,00), BIORAZTN 273,20 (218,56-341,50) ; NPE : jachère 160,00 (128,00-200,00) et bandes de protection 145,60 (116,48-182,00) ; l'entretien des éléments du paysage et les éléments nouveaux ont des montants par ha ou par m² que la fiche donne et qui ne sont pas détaillés ici. EKST exige 0,2 à 0,9 UGB par ha et TRT plus de 0,9 UGB par ha, avec TRT sur 20 % au plus de la prairie. L'ensemble reçoit 15,48 % de l'enveloppe 2026. Chaque régime exige 0,1 ha par parcelle et 0,3 ha dans l'exploitation (avec exceptions) et des registres de travaux. Les exigences de chaque régime autre qu'EKST et TRT, le catalogue de sanctions et les combinaisons (annexes 6 et 10), et les montants définitifs 2026 n'ont pas été lus.",
+    "it": "Regimi per il clima e l'ambiente (sheme za podnebje in okolje, SOPO, INP08): l'eco-schema sloveno, volontario e annuale; il titolare sceglie ogni anno a quali regimi aderire. Nel 2026 sono dodici: prato estensivo (EKST), uso tradizionale del prato (TRT), spandimento di concimi organici a basse emissioni (NIZI), additivi che riducono ammoniaca e gas serra (INHIBIT, KRMDOD), colture intermedie e sottosemine (NPP), copertura invernale dei seminativi (ZEL), lavorazione conservativa (KONZ), zone non seminate per l'allodola (POŠK), protezione dei nidi di pavoncella (VGP), solo concimi organici sulle colture permanenti (OGNTN), biodiversità sulle colture permanenti (BIORAZTN) e superfici ed elementi non produttivi (NPE). Importi previsti 2026 secondo la scheda ARSKTRP (non il regolamento; minimo-massimo tra parentesi, € per ha salvo diversa indicazione): EKST 45,65 (36,52-45,65), TRT 129,03 (103,22-161,29), NIZI 95,41 (76,33-159,02), INHIBIT 60,00 (48,00-75,00), KRMDOD 60,00 per UBA (48,00-75,00), NPP 137,60 (110,08-172,00), ZEL 148,00 (118,40-185,00), KONZ 18,32 (14,66-22,90), POŠK 60,00 (48,00-60,00), VGP 200,00 per nido al livello I e per ha al II (160,00-200,00), OGNTN 312,00 (249,60-390,00), BIORAZTN 273,20 (218,56-341,50); NPE: maggese 160,00 (128,00-200,00) e fasce di protezione 145,60 (116,48-182,00); la manutenzione degli elementi del paesaggio e i nuovi elementi hanno importi per ha o per m² che la scheda riporta e che qui non si dettagliano. EKST richiede 0,2-0,9 UBA per ha e TRT più di 0,9 UBA per ha, con TRT su al massimo il 20 % del prato. L'insieme riceve il 15,48 % della dotazione 2026. Ogni regime richiede 0,1 ha per particella e 0,3 ha in azienda (con eccezioni) e registri delle lavorazioni. I requisiti di ciascun regime diverso da EKST e TRT, il catalogo delle sanzioni e le combinazioni (allegati 6 e 10), e gli importi definitivi 2026 non sono stati letti."
+   },
+   "coupled-livestock": {
+    "en": "Coupled support for livestock (vezana dohodkovna podpora): planned 2026 amounts (planned, minimum-maximum; not final). Sheep and goats (INP03, rejo drobnice): at least 14 animals present on the start date of the application (20 February 2026), aged at least nine months that month, kept on the holding until 31 July and registered in the CRD; EUR 18.09 per animal (16.27-27.92; the 2026 maximum was set by 107/25); in 2026, with force majeure recognised for bluetongue in 2025, 7 animals are enough. Cattle (INP04, rejo govedi): at least two bulls, oxen or heifers kept six months continuously on the holding and slaughtered or exported from 1 November 2025 to 31 October 2026, at least nine months old; EUR 48.67 per animal (43.80-60.84), or EUR 63.28 (56.95-79.10) with organic rearing or the Izbrana kakovost quality scheme. Suckler cows (INP05, krave dojilje): at least two cows of admitted beef breeds that calved between 1 September 2025 and 31 August 2026 and stay two months with the calf; EUR 97.25 on holdings in areas with natural constraints (OMD) (87.52-121.56) and EUR 74.81 elsewhere (67.32-93.51). Mountain milk (INP06): holding classified as mountain area, at least two dairy cows present from 20 February to 31 July 2026 and calved in the previous two years; EUR 88.87 per cow (79.98-111.08); the maximum number of cows is the milk delivered or sold divided by 5,924 kg (4,529 kg for organic). Each animal is paid only once a year. Annual envelopes in the consolidated text: sheep EUR 1,284,760.85, suckler cows EUR 6,037,278.17, mountain milk EUR 3,725,090.03. The full breed lists and the final 2026 amount have not been read.",
+    "fr": "Aides couplées à l'élevage (vezana dohodkovna podpora) : montants prévus 2026 (prévisionnel, minimum-maximum ; pas définitif). Ovins et caprins (INP03, rejo drobnice) : au moins 14 animaux présents à la date de début de la demande (20 février 2026), âgés d'au moins neuf mois ce mois-là, présents dans l'exploitation jusqu'au 31 juillet et enregistrés au CRD ; 18,09 € par animal (16,27-27,92 ; le maximum 2026 a été fixé par 107/25) ; en 2026, avec force majeure reconnue pour la fièvre catarrhale en 2025, 7 animaux suffisent. Bovins (INP04, rejo govedi) : au moins deux taureaux, bœufs ou génisses détenus six mois de suite dans l'exploitation et abattus ou exportés du 1er novembre 2025 au 31 octobre 2026, d'au moins neuf mois ; 48,67 € par animal (43,80-60,84), ou 63,28 € (56,95-79,10) avec élevage biologique ou régime de qualité Izbrana kakovost. Vaches allaitantes (INP05, krave dojilje) : au moins deux vaches de races à viande admises ayant vêlé entre le 1er septembre 2025 et le 31 août 2026 et restant deux mois avec le veau ; 97,25 € dans les exploitations des zones à contraintes naturelles (OMD) (87,52-121,56) et 74,81 € ailleurs (67,32-93,51). Lait de montagne (INP06) : exploitation classée en zone de montagne, au moins deux vaches laitières présentes du 20 février au 31 juillet 2026 et ayant vêlé dans les deux années précédentes ; 88,87 € par vache (79,98-111,08) ; le nombre maximal de vaches est le lait livré ou vendu divisé par 5 924 kg (4 529 kg en bio). Chaque animal n'est payé qu'une fois par an. Enveloppes annuelles du texte consolidé : ovins 1 284 760,85 €, allaitantes 6 037 278,17 €, lait de montagne 3 725 090,03 €. Les listes complètes de races et le montant définitif 2026 n'ont pas été lus.",
+    "it": "Sostegni accoppiati all'allevamento (vezana dohodkovna podpora): importi previsti 2026 (previsto, minimo-massimo; non definitivo). Ovicaprini (INP03, rejo drobnice): almeno 14 animali presenti alla data di inizio della domanda (20 febbraio 2026), di almeno nove mesi in quel mese, in azienda fino al 31 luglio e registrati nel CRD; 18,09 € per animale (16,27-27,92; il massimo 2026 è stato fissato da 107/25); nel 2026, con forza maggiore riconosciuta per la lingua blu nel 2025, bastano 7 animali. Bovini (INP04, rejo govedi): almeno due tori, buoi o manze tenuti sei mesi di seguito in azienda e macellati o esportati dal 1° novembre 2025 al 31 ottobre 2026, di almeno nove mesi; 48,67 € per animale (43,80-60,84), o 63,28 € (56,95-79,10) con allevamento biologico o regime di qualità Izbrana kakovost. Vacche nutrici (INP05, krave dojilje): almeno due vacche di razze da carne ammesse che hanno partorito tra il 1° settembre 2025 e il 31 agosto 2026 e restano due mesi con il vitello; 97,25 € nelle aziende delle zone con vincoli naturali (OMD) (87,52-121,56) e 74,81 € altrove (67,32-93,51). Latte di montagna (INP06): azienda classificata in zona montana, almeno due vacche da latte presenti dal 20 febbraio al 31 luglio 2026 e che hanno partorito nei due anni precedenti; 88,87 € per vacca (79,98-111,08); il numero massimo di vacche è il latte consegnato o venduto diviso per 5.924 kg (4.529 kg per il biologico). Ogni animale è pagato una sola volta l'anno. Dotazioni annue del testo consolidato: ovicaprini 1.284.760,85 €, nutrici 6.037.278,17 €, latte di montagna 3.725.090,03 €. Gli elenchi completi delle razze e l'importo definitivo 2026 non sono stati letti."
+   },
+   "coupled-crops": {
+    "en": "Coupled support for crops (vezana dohodkovna podpora): planned 2026 amounts (planned, minimum-maximum; not final). Protein crops (INP07, beljakovinske rastline): only the admitted species are sown (lucerne, clovers, clover-grass mixtures, field bean, pea, soya, vetch, lupin, bean, lentil, chickpea, nokota, etc.); they must dominate the parcel and be the main crop until technological maturity, except lucerne, clovers, clover-grass mixtures and nokota, for which stocking of at least 0.5 livestock units per ha of land in use is required (0.3 with organic crop or vegetable production or organic cattle) and at least two cuts; at least 0.3 ha of protein crops, 1 ha on the holding and 0.1 ha per parcel; EUR 215.62/ha (172.50-269.52); 2026 envelope: EUR 2,630,600.65 according to the consolidated text. Vegetables (INP10, zelenjava): entry in the register of vegetable producers, at least 0.5 ha in the open or 0.1 ha under glass, marketing of at least 40 % of the annual production through producer organisations, cooperatives or other joint routes, or separate accounting of sales; up to 15 ha; EUR 388.35/ha (349.51-485.43), or EUR 504.86 (454.37-631.07) for organic vegetables; sales evidence goes to ARSKTRP before 15 February 2027. Beans, peas, lentils and chickpeas can claim only one of the two supports. The Uredba text on vegetables (art. 42.a) and the final 2026 amount have not been read.",
+    "fr": "Aides couplées aux cultures (vezana dohodkovna podpora) : montants prévus 2026 (prévisionnel, minimum-maximum ; pas définitif). Protéagineux (INP07, beljakovinske rastline) : on ne sème que les espèces admises (luzerne, trèfles, mélanges trèfle-graminées, féverole, pois, soja, vesce, lupin, haricot, lentille, pois chiche, nokota, etc.) ; elles doivent dominer la parcelle et être la culture principale jusqu'à maturité technologique, sauf luzerne, trèfles, mélanges trèfle-graminées et nokota, pour lesquels on exige un chargement d'au moins 0,5 UGB par ha de surface utilisée (0,3 avec production biologique de cultures ou de légumes ou élevage bovin biologique) et au moins deux fauches ; au moins 0,3 ha de protéagineux, 1 ha d'exploitation et 0,1 ha par parcelle ; 215,62 €/ha (172,50-269,52) ; enveloppe 2026 : 2 630 600,65 € selon le texte consolidé. Légumes (INP10, zelenjava) : inscription au registre des producteurs de légumes, au moins 0,5 ha en plein champ ou 0,1 ha sous serre, commercialisation d'au moins 40 % de la production annuelle par des organisations de producteurs, coopératives ou autres voies collectives, ou comptabilité séparée des ventes ; jusqu'à 15 ha ; 388,35 €/ha (349,51-485,43), ou 504,86 € (454,37-631,07) pour les légumes biologiques ; les preuves de vente sont envoyées à ARSKTRP avant le 15 février 2027. Fèves, pois, haricots, lentilles et pois chiches ne peuvent demander qu'une des deux aides. Le texte de l'Uredba sur les légumes (art. 42.a) et le montant définitif 2026 n'ont pas été lus.",
+    "it": "Sostegni accoppiati alle colture (vezana dohodkovna podpora): importi previsti 2026 (previsto, minimo-massimo; non definitivo). Proteaginose (INP07, beljakovinske rastline): si seminano solo le specie ammesse (erba medica, trifogli, miscugli di trifoglio e graminacee, favino, pisello, soia, veccia, lupino, fagiolo, lenticchia, cece, nokota, ecc.); devono dominare la particella ed essere la coltura principale fino alla maturità tecnologica, tranne erba medica, trifogli, miscugli trifoglio-graminacee e nokota, per i quali serve un carico di almeno 0,5 UBA per ha di superficie in uso (0,3 con produzione biologica di colture o ortaggi o allevamento bovino biologico) e almeno due sfalci; almeno 0,3 ha di proteaginose, 1 ha in azienda e 0,1 ha per particella; 215,62 €/ha (172,50-269,52); dotazione 2026: 2.630.600,65 € secondo il testo consolidato. Ortaggi (INP10, zelenjava): iscrizione nel registro dei produttori di ortaggi, almeno 0,5 ha in pieno campo o 0,1 ha in serra, commercializzazione di almeno il 40 % della produzione annua tramite organizzazioni di produttori, cooperative o altre vie collettive, oppure contabilità separata delle vendite; fino a 15 ha; 388,35 €/ha (349,51-485,43), o 504,86 € (454,37-631,07) per gli ortaggi biologici; le prove di vendita vanno ad ARSKTRP entro il 15 febbraio 2027. Fave, piselli, fagioli, lenticchie e ceci possono chiedere solo uno dei due sostegni. Il testo dell'Uredba sugli ortaggi (art. 42.a) e l'importo definitivo 2026 non sono stati letti."
+   },
+   "controls": {
+    "en": "Controls: the paying agency ARSKTRP (Agencija RS za kmetijske trge in razvoj podeželja) checks applications through administrative checks (cross-checks with registers, including the vehicle register for the tractor and the animal registers CRG, CRD and CRPš) and on-the-spot checks. Almost all area claims are also monitored by the area monitoring system (Sopotnik), which publishes discrepancies in red per parcel and calls on the holder to withdraw or correct the claim or provide evidence, with geotagged photos (Fotosopotnik app); hedgerows and the protective-strip, maintenance and new landscape-feature practices are not monitored this way. Minimum on-the-spot sample rates in 2026: eco-schemes 3 % of beneficiaries (except lapwing nest protection and methane additives); sheep and goats 10 %, covering at least 10 % of the animals; cattle 5 %; suckler cows 5 %; mountain milk 5 %; protein crops 3 % (on areas with clover-grass mixture); vegetables 3 %; and at least 30 % of the hemp area. Anyone who obstructs an on-the-spot check loses all payments of the single application (art. 23(6)). The remaining per-intervention checks and the rural development ones have not been read.",
+    "fr": "Contrôles : l'organisme payeur ARSKTRP (Agencija RS za kmetijske trge in razvoj podeželja) vérifie les demandes par des contrôles administratifs (recoupements avec les registres, dont celui des véhicules pour le tracteur et ceux des animaux CRG, CRD et CRPš) et des contrôles sur place. Presque toutes les demandes de surface sont en outre suivies par le système de suivi des surfaces (Sopotnik), qui publie les écarts en rouge par parcelle et invite le titulaire à retirer ou corriger la demande ou à fournir des preuves, avec des photos géolocalisées (application Fotosopotnik) ; les haies et les pratiques de bandes de protection, d'entretien et de nouveaux éléments du paysage ne sont pas suivies ainsi. Taux minimaux de l'échantillon des contrôles sur place en 2026 : éco-régimes 3 % des bénéficiaires (sauf protection des nids de vanneau et additifs méthane) ; ovins et caprins 10 %, couvrant au moins 10 % des animaux ; bovins 5 % ; vaches allaitantes 5 % ; lait de montagne 5 % ; protéagineux 3 % (sur surfaces avec mélange trèfle-graminées) ; légumes 3 % ; et au moins 30 % de la surface de chanvre. Qui empêche un contrôle sur place perd tous les paiements de la demande unique (art. 23(6)). Le reste des contrôles par intervention et ceux du développement rural n'ont pas été lus.",
+    "it": "Controlli: l'organismo pagatore ARSKTRP (Agencija RS za kmetijske trge in razvoj podeželja) verifica le domande con controlli amministrativi (incroci con i registri, incluso quello dei veicoli per il trattore e quelli degli animali CRG, CRD e CRPš) e controlli in loco. Quasi tutte le domande di superficie sono inoltre sorvegliate dal sistema di monitoraggio delle superfici (Sopotnik), che pubblica le discrepanze in rosso per particella e invita il titolare a ritirare o correggere la domanda o a fornire prove, con foto georeferenziate (app Fotosopotnik); le siepi e le pratiche di fasce di protezione, manutenzione e nuovi elementi del paesaggio non sono sorvegliate così. Percentuali minime del campione dei controlli in loco nel 2026: eco-schemi 3 % dei beneficiari (salvo protezione dei nidi di pavoncella e additivi per il metano); ovicaprini 10 %, con almeno il 10 % degli animali; bovini 5 %; vacche nutrici 5 %; latte di montagna 5 %; proteaginose 3 % (su superfici con miscuglio trifoglio-graminacee); ortaggi 3 %; e almeno il 30 % della superficie a canapa. Chi impedisce un controllo in loco perde tutti i pagamenti della domanda unica (art. 23(6)). Gli altri controlli per intervento e quelli dello sviluppo rurale non sono stati letti."
+   },
+   "penalties": {
+    "en": "Administrative sanctions for the single application (upravne sankcije) in the 2026 Uredba. Over-declared area (čezmerna prijava), per crop group: up to 20 % of the determined area, the excess is rejected and so is a further payment equal to the excess (twice in all); above 20 %, the whole payment for that group is rejected; above 50 %, an additional sanction equal to the payment claimed for the excess, deducted from payments of the next three years and written off if it cannot be collected. Incorrectly declared area (different crop or use): all area payments are cut by the share of incorrectly declared main-crop area in total declared area, capped at 3 %. Undeclared area: cut by the share of omitted area, also capped at 3 %. Animals: without correct identification or registration the animal is rejected; if the excess is up to 20 % of determined animals the payment falls by that percentage; above 20 %, twice that; above 30 %, the whole payment for the group is rejected; above 50 %, an additional sanction. False evidence, serious negligence or deliberate non-disclosure with serious consequences: the payment for the year and for the same claim in the next one or two years is rejected. If a condition with no sanction of its own is not met, the sanction in the regulation of each intervention applies according to seriousness, extent, duration and repetition. Order of calculation: over-declaration, incorrect declaration, omission, per-intervention catalogue, financial discipline, conditionality and social conditionality. With force majeure or exceptional circumstances (death or incapacity of a member with at least 0.5 annual work units, death of animals from a non-epizootic disease, expropriation, natural disaster) no sanctions apply and payment is made in full. The 2026 ARSKTRP page says there is no late filing in 2026 (that is, no period with a daily penalty); the rule that removes it has not been read. The per-intervention sanction catalogues (annex 10) have not been read.",
+    "fr": "Sanctions administratives pour la demande unique (upravne sankcije) dans l'Uredba 2026. Surface surdéclarée (čezmerna prijava), par groupe de cultures : jusqu'à 20 % de la surface déterminée, l'excédent est rejeté ainsi qu'un paiement supplémentaire égal à l'excédent (le double au total) ; au-delà de 20 %, tout le paiement de ce groupe est rejeté ; au-delà de 50 %, une sanction supplémentaire égale au paiement demandé pour l'excédent, déduite des paiements des trois années suivantes et effacée si elle ne peut être recouvrée. Surface mal déclarée (autre culture ou usage) : tous les paiements de surface sont réduits du pourcentage de surface mal déclarée de la culture principale sur la surface totale déclarée, plafonné à 3 %. Surface non déclarée : réduction du pourcentage de surface omise, également plafonné à 3 %. Animaux : sans identification ou enregistrement corrects l'animal est rejeté ; si l'excédent atteint 20 % des animaux déterminés, le paiement baisse de ce pourcentage ; au-delà de 20 %, du double ; au-delà de 30 %, tout le paiement du groupe est rejeté ; au-delà de 50 %, sanction supplémentaire. Fausses preuves, négligence grave ou dissimulation délibérée aux conséquences graves : le paiement de l'année et celui de la même demande l'année ou les deux années suivantes sont rejetés. Si une condition sans sanction propre n'est pas remplie, on applique celle du règlement de chaque intervention selon la gravité, l'étendue, la durée et la répétition. Ordre de calcul : surdéclaration, mauvaise déclaration, omission, catalogue par intervention, discipline financière, conditionnalité et conditionnalité sociale. En cas de force majeure ou de circonstances exceptionnelles (décès ou incapacité d'un membre d'au moins 0,5 UTA, mort d'animaux par maladie non épizootique, expropriation, catastrophe naturelle), aucune sanction ne s'applique et le paiement est intégral. La fiche ARSKTRP 2026 dit qu'il n'y a pas de dépôt tardif en 2026 (donc pas de période à pénalité journalière) ; la règle qui le supprime n'a pas été lue. Les catalogues de sanctions par intervention (annexe 10) n'ont pas été lus.",
+    "it": "Sanzioni amministrative per la domanda unica (upravne sankcije) nell'Uredba 2026. Superficie dichiarata in eccesso (čezmerna prijava), per gruppo di colture: fino al 20 % della superficie accertata, l'eccesso è respinto e anche un ulteriore pagamento pari all'eccesso (il doppio in tutto); oltre il 20 %, è respinto tutto il pagamento di quel gruppo; oltre il 50 %, una sanzione aggiuntiva pari al pagamento richiesto per l'eccesso, detratta dai pagamenti dei tre anni successivi e cancellata se non riscuotibile. Superficie dichiarata in modo errato (altra coltura o uso): tutti i pagamenti di superficie sono ridotti della percentuale di superficie errata della coltura principale sulla superficie totale dichiarata, con tetto del 3 %. Superficie non dichiarata: riduzione della percentuale di superficie omessa, anch'essa con tetto del 3 %. Animali: senza corretta identificazione o registrazione l'animale è respinto; se l'eccesso arriva al 20 % degli animali accertati, il pagamento scende di quella percentuale; oltre il 20 %, del doppio; oltre il 30 %, è respinto tutto il pagamento del gruppo; oltre il 50 %, sanzione aggiuntiva. Prove false, grave negligenza o omissione dolosa con conseguenze gravi: sono respinti il pagamento dell'anno e quello della stessa domanda nell'anno o nei due anni successivi. Se non è rispettata una condizione senza sanzione propria, si applica quella del regolamento di ciascun intervento secondo gravità, portata, durata e ripetizione. Ordine di calcolo: eccesso, errata dichiarazione, omissione, catalogo per intervento, disciplina finanziaria, condizionalità e condizionalità sociale. Con forza maggiore o circostanze eccezionali (morte o incapacità di un membro con almeno 0,5 ULA, morte di animali per malattia non epizootica, esproprio, calamità naturale) non si applicano sanzioni e si paga per intero. La scheda ARSKTRP 2026 dice che nel 2026 non c'è presentazione tardiva (cioè nessun periodo con penalità giornaliera); la norma che la elimina non è stata letta. I cataloghi di sanzioni per intervento (allegato 10) non sono stati letti."
+   },
+   "conditionality-controls": {
+    "en": "Conditionality (pogojenost): holders who apply for direct payments or rural development payments (art. 4) must comply with the standards of good agricultural and environmental condition (DKOP, 9 standards) and the statutory management requirements (PZR, 11 requirements) on climate and environment, public and plant health and animal welfare. ARSKTRP checks compliance for at least 1 % of those obliged; 20 to 25 % of the minimum is chosen at random. The checks include administrative ones, the area monitoring system and field checks, take place in the same calendar year as the application, and irregularities found by other inspectorates are taken into account. Anyone who obstructs an on-the-spot check loses all payments of the affected interventions. The 2026 page adds that holdings with 10 ha or less of applied agricultural area are exempt from conditionality sanctions (2024 EU reform), though they must still comply with the rules; in 2026 crop-rotation rules (DKOP 7) are detailed and the 15 October date for compulsory tillage is dropped. There is also a social conditionality, regulated by a separate uredba (Uredba o pravilih socialne pogojenosti), which the 2026 Uredba cites and which has not been read. The conditionality Uredba was read in its original 2024 text; its amendments 109/24, 100/25 and 107/25 and its annexes have not been read.",
+    "fr": "Conditionnalité (pogojenost) : elle oblige ceux qui demandent des paiements directs ou des paiements de développement rural (art. 4) à respecter les normes de bonnes conditions agricoles et environnementales (DKOP, 9 normes) et les exigences réglementaires en matière de gestion (PZR, 11 exigences) sur le climat et l'environnement, la santé publique et végétale et le bien-être animal. ARSKTRP contrôle le respect chez au moins 1 % des assujettis ; de 20 à 25 % du minimum est tiré au sort. Les contrôles comprennent les contrôles administratifs, le système de suivi des surfaces et les contrôles de terrain, ont lieu pendant la même année civile que la demande, et les irrégularités constatées par d'autres inspections sont prises en compte. Qui empêche un contrôle sur place perd tous les paiements des interventions concernées. La fiche 2026 ajoute que les exploitations de 10 ha ou moins de surface agricole demandée sont exemptées des sanctions de conditionnalité (réforme de l'UE de 2024), tout en restant tenues de respecter les règles ; en 2026 les règles de rotation (DKOP 7) sont précisées et la date du 15 octobre pour le travail du sol obligatoire est supprimée. Il existe aussi une conditionnalité sociale, régie par une uredba distincte (Uredba o pravilih socialne pogojenosti), que l'Uredba 2026 cite et qui n'a pas été lue. L'Uredba sur la conditionnalité a été lue dans son texte original de 2024 ; ses modifications 109/24, 100/25 et 107/25 et ses annexes n'ont pas été lues.",
+    "it": "Condizionalità (pogojenost): obbliga chi chiede pagamenti diretti o pagamenti di sviluppo rurale (art. 4) a rispettare le norme di buone condizioni agronomiche e ambientali (DKOP, 9 norme) e i criteri di gestione obbligatori (PZR, 11 requisiti) su clima e ambiente, salute pubblica e vegetale e benessere animale. ARSKTRP verifica il rispetto in almeno l'1 % dei soggetti obbligati; dal 20 al 25 % del minimo è scelto a caso. I controlli comprendono quelli amministrativi, il sistema di monitoraggio delle superfici e i controlli in campo, si svolgono nello stesso anno solare della domanda, e si tengono conto delle irregolarità rilevate da altre ispezioni. Chi impedisce un controllo in loco perde tutti i pagamenti degli interventi interessati. La scheda 2026 aggiunge che le aziende con 10 ha o meno di superficie agricola richiesta sono esentate dalle sanzioni di condizionalità (riforma UE del 2024), pur restando tenute a rispettare le norme; nel 2026 si precisano le regole di rotazione (DKOP 7) e si elimina la data del 15 ottobre per la lavorazione obbligatoria. Esiste anche una condizionalità sociale, regolata da una uredba separata (Uredba o pravilih socialne pogojenosti), che l'Uredba 2026 cita e che non è stata letta. L'Uredba sulla condizionalità è stata letta nel testo originale del 2024; le sue modifiche 109/24, 100/25 e 107/25 e i suoi allegati non sono stati letti."
+   },
+   "conditionality-sanctions": {
+    "en": "Conditionality sanctions (pogojenost): calculated on the payments of the affected interventions of the year in which the breach occurred. If unintentional, the percentage is 1 %, 3 %, 5 % or 10 % depending on whether it is minor, medium, serious or very serious; the first time it is detected by the area monitoring system half is applied. Repeating the same breach within three years is normally punished with 10 % (between 5 % and 15 % according to the 2026 page). A breach is intentional if it was known and wanted or accepted, or if it recurs a third time after two sanctions in three consecutive years; the sanction is then 15 % to 100 % depending on seriousness, extent and duration (annex 3, according to the 2026 page, which has not been read in the official text). If there are no consequences or they are negligible there is no reduction, only a notice and referral to farm advice. Sanctions add up, without exceeding 100 % of the payments of the interventions applied for. For 36 months from the decision on young-farmer support, breaches of nitrate and farm-animal protection requirements covered by the business plan are not counted. The per-requirement percentages in annexes 2 and 3 of the Uredba have not been read.",
+    "fr": "Sanctions de conditionnalité (pogojenost) : calculées sur les paiements des interventions concernées de l'année où le manquement s'est produit. S'il est non intentionnel, le pourcentage est de 1 %, 3 %, 5 % ou 10 % selon qu'il est léger, moyen, grave ou très grave ; la première fois qu'il est détecté par le système de suivi des surfaces, la moitié s'applique. La répétition du même manquement en trois ans est normalement punie de 10 % (entre 5 % et 15 % selon la fiche 2026). Le manquement est intentionnel s'il était connu et voulu ou accepté, ou s'il se répète une troisième fois après deux sanctions en trois années consécutives ; la sanction va alors de 15 % à 100 % selon la gravité, l'étendue et la durée (annexe 3, selon la fiche 2026, qui n'a pas été lue dans le texte officiel). S'il n'y a pas de conséquences ou si elles sont négligeables, pas de réduction, seulement un avis et une orientation vers le conseil agricole. Les sanctions s'additionnent, sans dépasser 100 % des paiements des interventions demandées. Pendant 36 mois à compter de la décision d'aide aux jeunes agriculteurs, les manquements aux exigences sur les nitrates et la protection des animaux d'élevage couverts par le plan d'entreprise ne comptent pas. Les pourcentages par exigence des annexes 2 et 3 de l'Uredba n'ont pas été lus.",
+    "it": "Sanzioni di condizionalità (pogojenost): calcolate sui pagamenti degli interventi interessati dell'anno in cui si è verificata l'infrazione. Se non intenzionale, la percentuale è 1 %, 3 %, 5 % o 10 % a seconda che sia lieve, media, grave o molto grave; la prima volta che è rilevata dal sistema di monitoraggio delle superfici si applica la metà. La ripetizione della stessa infrazione in tre anni è normalmente punita con il 10 % (tra il 5 % e il 15 % secondo la scheda 2026). L'infrazione è intenzionale se era nota e voluta o accettata, o se si ripete per la terza volta dopo due sanzioni in tre anni consecutivi; la sanzione va allora dal 15 % al 100 % secondo gravità, portata e durata (allegato 3, secondo la scheda 2026, che non è stata letta nel testo ufficiale). Se non ci sono conseguenze o sono trascurabili non c'è riduzione, solo avviso e rinvio alla consulenza agricola. Le sanzioni si sommano, senza superare il 100 % dei pagamenti degli interventi richiesti. Per 36 mesi dalla decisione sull'aiuto ai giovani agricoltori non contano le infrazioni ai requisiti su nitrati e protezione degli animali d'allevamento coperti dal piano aziendale. Le percentuali per requisito degli allegati 2 e 3 dell'Uredba non sono state lette."
+   },
+   "amounts": {
+    "en": "How amounts are set: the rule does not fix an amount but a planned unit amount, with a minimum and a maximum, for each direct payment (art. 4); the amounts of each intervention are in its rule. The realised amount is calculated every year as determined hectares or animals times the planned amount; if the allocated budget is exceeded or left over, the unit amount may fall below the planned amount or the minimum so that the national direct-payments ceiling is respected, and it equals the maximum if the planned units are not reached (art. 4(2)). The annual national ceiling is split into an indicative budget per intervention (art. 3(1)). According to the 2026 page, the 2026 direct-payments envelope is EUR 131,530,052 and is split as follows: basic support 63.02 %, redistributive 5 %, coupled support 13 % plus an additional 2 % for protein crops, eco-schemes 15.48 % and young farmers 1.5 %. GOV.SI gives EUR 657.6 million for direct payments in 2023-2027. Funds are paid, except for advances under Regulation 2021/2116, up to 30 June of the year after the application and in two instalments (art. 3(2)); if the Commission activates financial discipline, the cut affects holders with more than EUR 2,000 approved. The 2026 amounts on the page are planned; no final amounts and not the 4th amendment of the strategic plan (notice of 15-7-2026) have been read.",
+    "fr": "Comment les montants sont fixés : la règle ne fixe pas un montant mais un montant unitaire prévu, avec un minimum et un maximum, pour chaque paiement direct (art. 4) ; les montants de chaque intervention figurent dans sa règle. Le montant réalisé est calculé chaque année comme hectares ou animaux déterminés multipliés par le montant prévu ; si le budget alloué est dépassé ou non utilisé, le montant unitaire peut tomber sous le montant prévu ou le minimum pour respecter le plafond national des paiements directs, et il est égal au maximum si les unités prévues ne sont pas atteintes (art. 4(2)). Le plafond national annuel est réparti en un budget indicatif par intervention (art. 3(1)). Selon la fiche 2026, l'enveloppe des paiements directs 2026 est de 131 530 052 € et se répartit ainsi : aide de base 63,02 %, redistributif 5 %, aides couplées 13 % plus 2 % supplémentaires pour les protéagineux, éco-régimes 15,48 % et jeunes agriculteurs 1,5 %. GOV.SI indique 657,6 millions d'euros pour les paiements directs en 2023-2027. Les fonds sont versés, hors avances du règlement 2021/2116, jusqu'au 30 juin de l'année suivant la demande et en deux tranches (art. 3(2)) ; si la Commission active la discipline financière, la réduction touche ceux qui ont plus de 2 000 € approuvés. Les montants 2026 de la fiche sont prévisionnels ; ni montants définitifs ni la 4e modification du plan stratégique (avis du 15-7-2026) n'ont été lus.",
+    "it": "Come si fissano gli importi: la norma non fissa un importo ma un importo unitario previsto, con un minimo e un massimo, per ciascun pagamento diretto (art. 4); gli importi di ogni intervento sono nella sua regola. L'importo realizzato si calcola ogni anno come ettari o animali accertati per l'importo previsto; se il bilancio assegnato è superato o avanza, l'importo unitario può scendere sotto quello previsto o il minimo per rispettare il massimale nazionale dei pagamenti diretti, ed è pari al massimo se le unità previste non sono raggiunte (art. 4(2)). Il massimale nazionale annuo è ripartito in un bilancio indicativo per intervento (art. 3(1)). Secondo la scheda 2026, la dotazione dei pagamenti diretti 2026 è di 131.530.052 € e si ripartisce così: sostegno di base 63,02 %, redistributivo 5 %, sostegni accoppiati 13 % più un ulteriore 2 % per le proteaginose, eco-schemi 15,48 % e giovani agricoltori 1,5 %. GOV.SI indica 657,6 milioni di euro per i pagamenti diretti nel 2023-2027. I fondi sono pagati, salvo anticipi del regolamento 2021/2116, fino al 30 giugno dell'anno successivo alla domanda e in due rate (art. 3(2)); se la Commissione attiva la disciplina finanziaria, il taglio riguarda chi ha più di 2.000 € approvati. Gli importi 2026 della scheda sono previsti; non sono stati letti importi definitivi né la 4ª modifica del piano strategico (avviso del 15-7-2026)."
+   }
+  },
+  "calendar": {
+   "active-farmer-proof": {
+    "en": "Last day to send ARSKTRP the documents for the active-farmer criterion based on farm income or on payment for agricultural services (31 December of the application year).",
+    "fr": "Dernier jour pour envoyer à ARSKTRP les documents du critère d'agriculteur actif fondé sur les revenus agricoles ou sur le paiement de services agricoles (31 décembre de l'année de la demande).",
+    "it": "Ultimo giorno per inviare ad ARSKTRP i documenti del criterio di agricoltore attivo basato sui redditi agricoli o sul pagamento di servizi agricoli (31 dicembre dell'anno della domanda)."
+   },
+   "coupled-holding-end": {
+    "en": "End of the compulsory holding period for animals under the coupled support for sheep and goats and for mountain milk (31 July of the application year); it starts on the opening date of the single application.",
+    "fr": "Fin de la période de détention obligatoire des animaux pour l'aide couplée aux ovins et caprins et au lait de montagne (31 juillet de l'année de la demande) ; elle commence à la date d'ouverture de la demande unique.",
+    "it": "Fine del periodo obbligatorio di detenzione degli animali per il sostegno accoppiato a ovicaprini e latte di montagna (31 luglio dell'anno della domanda); inizia alla data di apertura della domanda unica."
+   },
+   "payment-window-end": {
+    "en": "Last day of the period for paying the direct-payment interventions of the single application: 30 June of the year after the application, in two instalments (advances under Regulation 2021/2116 not counted).",
+    "fr": "Dernier jour de la période de paiement des interventions de paiements directs de la demande unique : 30 juin de l'année suivant la demande, en deux tranches (hors avances prévues par le règlement 2021/2116).",
+    "it": "Ultimo giorno del periodo di pagamento degli interventi di pagamenti diretti della domanda unica: 30 giugno dell'anno successivo alla domanda, in due rate (esclusi gli anticipi previsti dal regolamento 2021/2116)."
+   }
+  },
+  "overrides": {}
+ }
+}

@@ -4,12 +4,12 @@
    La cuota sobre la UE-27 y las variaciones son cálculos de Dehesa Index sobre esas cifras. ES5, sin librerías. */
 (function () {
   'use strict';
-  var WORK = ['ES', 'FR', 'IT', 'PL', 'DE', 'BE', 'AT', 'PT', 'DK', 'NL', 'HR', 'EL', 'IE', 'RO', 'HU', 'CZ', 'SE'];   // países europeos con los que trabaja la web
-  var CSP = { ES: ['spain'], FR: ['france'], IT: ['italy'], PL: ['poland'], DE: ['germany'], BE: ['belgium-flanders', 'belgium-wallonia'], AT: ['austria'], PT: ['portugal'], HR: ['croatia'], EL: ['greece'], IE: ['ireland'], RO: ['romania'], HU: ['hungary'], CZ: ['czechia'], SE: ['sweden'], DK: ['denmark'], NL: ['netherlands'] };
+  var WORK = ['ES', 'FR', 'IT', 'PL', 'DE', 'BE', 'AT', 'PT', 'DK', 'NL', 'HR', 'EL', 'IE', 'RO', 'HU', 'CZ', 'SE', 'FI', 'SK', 'SI', 'EE', 'BG', 'LV'];   // países europeos con los que trabaja la web
+  var CSP = { ES: ['spain'], FR: ['france'], IT: ['italy'], PL: ['poland'], DE: ['germany'], BE: ['belgium-flanders', 'belgium-wallonia'], AT: ['austria'], PT: ['portugal'], HR: ['croatia'], EL: ['greece'], IE: ['ireland'], RO: ['romania'], HU: ['hungary'], CZ: ['czechia'], SE: ['sweden'], DK: ['denmark'], NL: ['netherlands'] , FI: ['finland'], SK: ['slovakia'], SI: ['slovenia'], EE: ['estonia'], BG: ['bulgaria'], LV: ['latvia']};
   var LI = { es: 0, en: 1, fr: 2, it: 3 };
   var N = {
     EU: ['Unión Europea', 'European Union', 'Union européenne', 'Unione Europea'], ES: ['España', 'Spain', 'Espagne', 'Spagna'], FR: ['Francia', 'France', 'France', 'Francia'], DE: ['Alemania', 'Germany', 'Allemagne', 'Germania'], IT: ['Italia', 'Italy', 'Italie', 'Italia'], PL: ['Polonia', 'Poland', 'Pologne', 'Polonia'],
-    BE: ['Bélgica', 'Belgium', 'Belgique', 'Belgio'], HR: ['Croacia', 'Croatia', 'Croatie', 'Croazia'], EL: ['Grecia', 'Greece', 'Grèce', 'Grecia'], IE: ['Irlanda', 'Ireland', 'Irlande', 'Irlanda'], RO: ['Rumanía', 'Romania', 'Roumanie', 'Romania'], HU: ['Hungría', 'Hungary', 'Hongrie', 'Ungheria'], CZ: ['Chequia', 'Czechia', 'Tchéquie', 'Cechia'], SE: ['Suecia', 'Sweden', 'Suède', 'Svezia'], AT: ['Austria', 'Austria', 'Autriche', 'Austria'], PT: ['Portugal', 'Portugal', 'Portugal', 'Portogallo'], DK: ['Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], NL: ['Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi']
+    BE: ['Bélgica', 'Belgium', 'Belgique', 'Belgio'], HR: ['Croacia', 'Croatia', 'Croatie', 'Croazia'], EL: ['Grecia', 'Greece', 'Grèce', 'Grecia'], IE: ['Irlanda', 'Ireland', 'Irlande', 'Irlanda'], RO: ['Rumanía', 'Romania', 'Roumanie', 'Romania'], HU: ['Hungría', 'Hungary', 'Hongrie', 'Ungheria'], CZ: ['Chequia', 'Czechia', 'Tchéquie', 'Cechia'], SE: ['Suecia', 'Sweden', 'Suède', 'Svezia'], AT: ['Austria', 'Austria', 'Autriche', 'Austria'], PT: ['Portugal', 'Portugal', 'Portugal', 'Portogallo'], DK: ['Dinamarca', 'Denmark', 'Danemark', 'Danimarca'], NL: ['Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'], LV: ['Letonia', 'Latvia', 'Lettonie', 'Lettonia'], BG: ['Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'], EE: ['Estonia', 'Estonia', 'Estonie', 'Estonia'], SI: ['Eslovenia', 'Slovenia', 'Slovénie', 'Slovenia'], SK: ['Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia'], FI: ['Finlandia', 'Finland', 'Finlande', 'Finlandia']
   };
   var T = {
     es: { bar: 'PAC por país', eu: 'UE', h1EU: 'PAC en la Unión Europea: asignaciones por país (2023-2027)', h1C: 'PAC en {c}: asignaciones de la UE (2023-2027)',
@@ -211,9 +211,9 @@
         '<p><a class="di-link-btn" href="paises.html?c=DK">' + esc(x.dkMore) + '</a></p>' + cite('retsinformation', String(DK.campaign || ''));
     } else if (c === 'DE' && DE && DE.items) h += deHtml() + dWatchHtml();
     else if (c === 'FR' && FR && FR.items) h += frHtml();
-    else if (c === 'IT' || c === 'PL' || c === 'FR' || c === 'PT' || c === 'BE' || c === 'HR' || c === 'EL' || c === 'NL' || c === 'AT' || c === 'IE' || c === 'RO' || c === 'HU' || c === 'CZ' || c === 'SE') h += '';
+    else if (c === 'IT' || c === 'PL' || c === 'FR' || c === 'PT' || c === 'BE' || c === 'HR' || c === 'EL' || c === 'NL' || c === 'AT' || c === 'IE' || c === 'RO' || c === 'HU' || c === 'CZ' || c === 'SE' || c === 'FI' || c === 'SK' || c === 'SI' || c === 'EE' || c === 'BG' || c === 'LV') h += '';
     else h += '<p class="di-movers-hint">' + esc(x.natNone) + '</p>';
-    if (c === 'FR' || c === 'IT' || c === 'PL' || c === 'PT' || c === 'BE' || c === 'HR' || c === 'EL' || c === 'NL' || c === 'AT' || c === 'IE' || c === 'RO' || c === 'HU' || c === 'CZ' || c === 'SE') h += '<div id="pac-nat" data-cc="' + c + '"></div>';
+    if (c === 'FR' || c === 'IT' || c === 'PL' || c === 'PT' || c === 'BE' || c === 'HR' || c === 'EL' || c === 'NL' || c === 'AT' || c === 'IE' || c === 'RO' || c === 'HU' || c === 'CZ' || c === 'SE' || c === 'FI' || c === 'SK' || c === 'SI' || c === 'EE' || c === 'BG' || c === 'LV') h += '<div id="pac-nat" data-cc="' + c + '"></div>';
     h += '<p>' + (CSP[c] || []).map(function (s) { return '<a class="di-link-btn" href="https://agriculture.ec.europa.eu/cap-my-country/cap-strategic-plans/' + s + '_en" rel="noopener" target="_blank">' + esc(x.csp) + (CSP[c].length > 1 ? ' (' + (s.indexOf('flanders') > 0 ? 'Vlaanderen' : 'Wallonie') + ')' : '') + '</a> '; }).join('') + '</p>' + (c === 'BE' ? '<p class="di-movers-hint">' + esc(x.beNote) + '</p>' : '');
     return h;
   }
