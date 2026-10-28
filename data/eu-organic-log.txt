@@ -1,4 +1,4 @@
-filas 4507, descartadas 0, series candidatas 114
+filas 4534, descartadas 0, series candidatas 114
 descartada eu-org-at-fruit-and-vegetables-organic-apples-fuji-vs-apples-fuji-organic: 2 puntos, ultimo 2023-02
 descartada eu-org-at-fruit-and-vegetables-organic-apples-fuji-vs-apples-fuji-overall: 2 puntos, ultimo 2023-02
 descartada eu-org-at-fruit-and-vegetables-organic-apples-fuji-vs-apples-fuji-premium: 2 puntos, ultimo 2023-02
