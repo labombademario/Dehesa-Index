@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T04:18:00Z",
+ "generatedAt": "2026-10-28T04:34:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 309,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
   "repoGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
-  "checkedAt": "2026-10-28T04:18:00Z"
+  "checkedAt": "2026-10-28T04:34:00Z"
  },
  "pipelines": [
   {
@@ -1133,7 +1133,7 @@
    "crons": [
     "20 4 * * 2-6"
    ],
-   "nextRun": "2026-10-28T04:20:00Z",
+   "nextRun": "2026-10-29T04:20:00Z",
    "files": [
     {
      "path": "data/cl"
@@ -1152,7 +1152,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-chile.yml",
@@ -4928,7 +4928,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4945,7 +4945,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/products"
@@ -4956,11 +4956,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-28T03:55:03Z"
+     "lastChange": "2026-10-28T04:21:00Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -4984,7 +4984,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/country-pending.json",
@@ -4992,22 +4992,22 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -5015,7 +5015,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-28T04:06:50Z"
+     "lastChange": "2026-10-28T04:24:40Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5375,7 +5375,7 @@
   },
   {
    "workflow": "update-region-grid-climate.yml",
-   "name": "Update monthly rainfall and temperature averaged over each region (NASA POWER grid; EL, ES, IT, AT, BE, NL, DK)",
+   "name": "Update monthly rainfall and temperature averaged over each region (NASA POWER grid; EL, ES, IT, AT, BE, NL, DK, RO, HU, SK)",
    "crons": [
     "25 6 6,16 * *"
    ],
