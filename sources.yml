@@ -2031,12 +2031,12 @@ sources:
     log: greece-more-log.txt
     message: IPCA de alimentos y ocupados y valor añadido agrario por región de Grecia (Eurostat)
   - id: region-grid-climate
-    name: Update monthly rainfall and temperature averaged over each region (NASA POWER grid; EL, ES, IT, AT, BE, NL, DK)
+    name: Update monthly rainfall and temperature averaged over each region (NASA POWER grid; EL, ES, IT, AT, BE, NL, DK, RO, HU, SK)
     cron: ['25 6 6,16 * *']
     script: scripts/update-region-grid-climate.py
     pre: ['pip install shapely']
     timeout: 50
-    data: [region-grid-climate/EL.json, region-grid-climate/ES.json, region-grid-climate/IT.json, region-grid-climate/AT.json, region-grid-climate/BE.json, region-grid-climate/NL.json, region-grid-climate/DK.json]
+    data: [region-grid-climate/EL.json, region-grid-climate/ES.json, region-grid-climate/IT.json, region-grid-climate/AT.json, region-grid-climate/BE.json, region-grid-climate/NL.json, region-grid-climate/DK.json, region-grid-climate/RO.json, region-grid-climate/HU.json, region-grid-climate/SK.json]
     log: region-grid-climate-log.txt
     message: Lluvia y temperatura por región (media de la rejilla de NASA POWER)
   - id: france-hicp

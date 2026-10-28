@@ -376,7 +376,7 @@
     after.parentNode.insertBefore(b, after.nextSibling); after.parentNode.insertBefore(a, after.nextSibling); after.parentNode.insertBefore(c, after.nextSibling);   /* clima por departamento (Météo-France, js/fr-climate.js) primero */
     function js(src, ok) { var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
     var go = function () { if (ST.c !== cc) return; if (window.DIFrClimate) window.DIFrClimate.mount(c, lang()); if (window.DIFrGNR) window.DIFrGNR.mount(a, lang()); if (window.DIFrNitrates) window.DIFrNitrates.mount(b, lang()); };
-    var mods = function () { if (window.DIFrGNR && window.DIFrNitrates && window.DIFrClimate) return go(); var n = 0, done = function () { if (++n === 3) go(); }; js('js/fr-gnr.js?v=20261013', done); js('js/fr-nitrates.js?v=20261012', done); js('js/fr-climate.js?v=20261028b', done); };
+    var mods = function () { if (window.DIFrGNR && window.DIFrNitrates && window.DIFrClimate) return go(); var n = 0, done = function () { if (++n === 3) go(); }; js('js/fr-gnr.js?v=20261013', done); js('js/fr-nitrates.js?v=20261012', done); js('js/fr-climate.js?v=20261028c', done); };
     if (window.DIFrDeptMap) mods(); else js('js/fr-dept-map.js?v=20261015', mods);
   }
   /* Alemania: gasóleo y devolución Agrardiesel (js/de-diesel.js) */
@@ -391,7 +391,7 @@
     var cl = document.createElement('div'); cl.id = 'pp-de-clim'; cl.style.minHeight = '1px'; after.parentNode.insertBefore(cl, after.nextSibling);
     var js1 = function (src, ok) { var x = document.createElement('script'); x.src = src; x.onload = ok; document.head.appendChild(x); };
     var goC = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(cl, lang(), 'DE'); };
-    nearView(cl, function () { var m2 = function () { if (window.DIFrClimate) goC(); else js1('js/fr-climate.js?v=20261028b', goC); }; if (window.DIFrDeptMap) m2(); else js1('js/fr-dept-map.js?v=20261015', m2); });
+    nearView(cl, function () { var m2 = function () { if (window.DIFrClimate) goC(); else js1('js/fr-climate.js?v=20261028c', goC); }; if (window.DIFrDeptMap) m2(); else js1('js/fr-dept-map.js?v=20261015', m2); });
     /* precio de la tierra agrícola por Regierungsbezirk (Destatis 61521-0020; js/de-land-prices.js con el mapa NUTS 2 de vendor/de-nuts2.js) */
     var ld = document.createElement('div'); ld.id = 'pp-de-land'; ld.style.minHeight = '1px'; cl.parentNode.insertBefore(ld, cl.nextSibling);
     var goL = function () { if (window.DIDeLand && ST.c === cc) window.DIDeLand.mount(ld, lang()); };
@@ -705,7 +705,7 @@
   /* Nitratos en aguas subterráneas y balance de nitrógeno (Eurostat) en 17 países sin bloque propio (js/eu-nitrates.js, data/eu-nitrates.json) */
   /* Grecia: estadísticas agrarias de ELSTAT (js/el-elstat.js; precios en origen, insumos, productos y cuentas por región; data/el-elstat/) */
   /* lluvia y temperatura por región como media de la rejilla de NASA POWER (js/fr-climate.js con la configuración de cada país; data/region-grid-climate/<PAIS>.json) */
-  var GRIDCLIM = ['EL', 'ES', 'IT', 'AT', 'BE', 'NL', 'DK'];
+  var GRIDCLIM = ['EL', 'ES', 'IT', 'AT', 'BE', 'NL', 'DK', 'RO', 'HU', 'SK'];
   function gridClimUp() {
     if (GRIDCLIM.indexOf(ST.c) < 0) return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
@@ -713,7 +713,7 @@
     var el = document.createElement('div'); el.id = 'pp-' + cc.toLowerCase() + '-clim'; el.style.minHeight = '1px'; after.parentNode.insertBefore(el, after.nextSibling);
     var js1 = function (src, ok) { var x = document.createElement('script'); x.src = src; x.onload = ok; document.head.appendChild(x); };
     var go = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(el, lang(), cc); };
-    nearView(el, function () { var m = function () { if (window.DIFrClimate) go(); else js1('js/fr-climate.js?v=20261028b', go); }; if (window.DIFrDeptMap) m(); else js1('js/fr-dept-map.js?v=20261015', m); });
+    nearView(el, function () { var m = function () { if (window.DIFrClimate) go(); else js1('js/fr-climate.js?v=20261028c', go); }; if (window.DIFrDeptMap) m(); else js1('js/fr-dept-map.js?v=20261015', m); });
   }
   function elUp() {
     if (ST.c !== 'EL') return;

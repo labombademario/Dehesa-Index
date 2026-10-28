@@ -2006,6 +2006,24 @@
     "region_grid_climate"
    ]
   ],
+  "region-grid-climate/RO.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
+  "region-grid-climate/HU.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
+  "region-grid-climate/SK.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
   "us-climate-states.json": [
    "us-climate-states",
    [
