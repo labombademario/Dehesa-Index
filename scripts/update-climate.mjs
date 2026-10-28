@@ -103,12 +103,19 @@ for(const loc of LOCATIONS){
  const c=await getJson(`${B}/climatology/point?${q}`);
  if(!m||!c){missing.push({id:loc.id,reason:'fuente no disponible'});continue}
  const P=m.properties.parameter.PRECTOTCORR,T=m.properties.parameter.T2M,CP=c.properties.parameter.PRECTOTCORR,CT=c.properties.parameter.T2M;
+ // artefactos de lluvia de la fuente: mas de 48 mm/dia de media en el mes o, desde 2021, mas del triple del maximo 1991-2020 de ese punto en ese mes.
+ // Ese mes no se publica en la lista de meses (como los valores imposibles de siempre) y en el historico la lluvia queda null; la temperatura del historico se conserva
+ const MX=Array(12).fill(0);for(let y=1991;y<=2020;y++)for(let mi=0;mi<12;mi++){const v=P[y+String(mi+1).padStart(2,'0')];if(typeof v==='number'&&v>-990&&v<=48&&v>MX[mi])MX[mi]=v}
+ const flagged=k=>{const v=P[k],y=+k.slice(0,4),mi=+k.slice(4)-1;return typeof v==='number'&&v>-990&&(v>48||(y>2020&&v>3&&MX[mi]>0&&v>3*MX[mi]))};
+ const fl=Object.keys(P).filter(k=>/^\d{6}$/.test(k)&&!k.endsWith('13')&&flagged(k)).map(k=>k.slice(0,4)+'-'+k.slice(4));
+ if(fl.length)console.log(loc.id+': lluvia con artefactos de la fuente, se descarta: '+fl.slice(-8).join(', '));
  const months=[];
  for(const k of Object.keys(P).sort()){
   if(!/^\d{6}$/.test(k)||k.endsWith('13'))continue;
   const y=+k.slice(0,4),mi=+k.slice(4)-1;
   const p=P[k],t=T[k],cp=CP[MON[mi]],ct=CT[MON[mi]];
   if([p,t,cp,ct].some(v=>typeof v!=='number'||v<=-990))continue;
+  if(flagged(k))continue;
   const days=new Date(Date.UTC(y,mi+1,0)).getUTCDate();
   months.push({period:y+'-'+String(mi+1).padStart(2,'0'),
    precipMm:round(p*days),precipBaselineMm:round(cp*days),precipAnomalyPct:round(100*(p/cp-1)),
@@ -117,16 +124,16 @@ for(const loc of LOCATIONS){
  if(months.length<3){missing.push({id:loc.id,reason:'menos de 3 meses válidos'});continue}
  // histórico compacto: una posición por mes desde HIST_START-01; null = sin dato válido (mes en curso o hueco de la fuente)
  const hp=[],ht=[];
- for(let y=HIST_START;y<=year;y++)for(let mi=0;mi<12;mi++){const k=y+String(mi+1).padStart(2,'0');const p=P[k],t=T[k];const ok=typeof p==='number'&&p>-990&&typeof t==='number'&&t>-990;hp.push(ok?round(p,2):null);ht.push(ok?round(t,2):null)}
+ for(let y=HIST_START;y<=year;y++)for(let mi=0;mi<12;mi++){const k=y+String(mi+1).padStart(2,'0');const p=P[k],t=T[k];const ok=typeof p==='number'&&p>-990&&typeof t==='number'&&t>-990;hp.push(ok&&!flagged(k)?round(p,2):null);ht.push(ok?round(t,2):null)}
  hist.push({id:loc.id,precipMmDay:hp,tempC:ht,baselinePrecipMmDay:MON.map(k=>round(CP[k],2)),baselineTempC:MON.map(k=>round(CT[k],2))});
- out.push({id:loc.id,name:loc.name,...(NAMES[loc.id]?{names:{en:NAMES[loc.id][0],fr:NAMES[loc.id][1],it:NAMES[loc.id][2]}}:{}),region:loc.region,country:loc.country,lat:loc.lat,lon:loc.lon,crops:loc.crops,months:months.slice(-12)});
+ out.push({id:loc.id,name:loc.name,...(NAMES[loc.id]?{names:{en:NAMES[loc.id][0],fr:NAMES[loc.id][1],it:NAMES[loc.id][2]}}:{}),region:loc.region,country:loc.country,lat:loc.lat,lon:loc.lon,crops:loc.crops,months:months.slice(-12),...(fl.length?{precipFlagged:fl.filter(x=>x>='2021-01')}:{})});
 }
 if(out.length<8){console.error('Demasiados puntos sin datos ('+missing.length+'); no se sobrescribe data/climate.json');process.exit(1)}
 const lastPeriod=out.map(l=>l.months[l.months.length-1].period).sort().pop();
 const result={schemaVersion:'1.0',generatedAt:new Date().toISOString(),lastPeriod,baseline:'2001-2020',
  source:{name:'NASA POWER (Prediction Of Worldwide Energy Resources), reanálisis MERRA-2',url:'https://power.larc.nasa.gov/',license:'Datos de NASA de uso libre; se cita la fuente.',parameters:{precipitation:'PRECTOTCORR (mm/día, convertido a mm/mes)',temperature:'T2M (°C, media mensual a 2 m)'}},
- methodology:{es:'Para cada punto representativo de una región productora se toma la precipitación y la temperatura media mensuales del reanálisis MERRA-2 (NASA POWER) y se comparan con la climatología 2001-2020 del mismo mes. La precipitación se expresa como % sobre la media y la temperatura como diferencia en °C. Son datos de reanálisis en una celda de malla (~50 km), no de estaciones ni promedios de la región entera, y solo se publican los meses cerrados con dato válido. Miden desviación climática, no predicen cosechas ni precios.',
-  en:'For each representative point in a producing region, monthly precipitation and mean temperature from the MERRA-2 reanalysis (NASA POWER) are compared with the 2001-2020 climatology for the same month. Precipitation is shown as % of the mean and temperature as a difference in °C. It is reanalysis data for a grid cell (~50 km), not station data or a whole-region average, and only closed months with valid data are published. They measure climatic deviation and do not forecast crops or prices.'},
+ methodology:{es:'Para cada punto representativo de una región productora se toma la precipitación y la temperatura media mensuales del reanálisis MERRA-2 (NASA POWER) y se comparan con la climatología 2001-2020 del mismo mes. La precipitación se expresa como % sobre la media y la temperatura como diferencia en °C. Son datos de reanálisis en una celda de malla (~50 km), no de estaciones ni promedios de la región entera, y solo se publican los meses cerrados con dato válido. Miden desviación climática, no predicen cosechas ni precios. La lluvia de la fuente trae a veces valores imposibles (sobre todo en el sur de Italia y Cerdeña desde 2025 y en Dinamarca en marzo y abril de 2024): si un mes pasa de 48 mm al día de media o triplica el máximo 1991-2020 de ese mes en ese punto, no se publica.',
+  en:'For each representative point in a producing region, monthly precipitation and mean temperature from the MERRA-2 reanalysis (NASA POWER) are compared with the 2001-2020 climatology for the same month. Precipitation is shown as % of the mean and temperature as a difference in °C. It is reanalysis data for a grid cell (~50 km), not station data or a whole-region average, and only closed months with valid data are published. They measure climatic deviation and do not forecast crops or prices. The source rainfall sometimes has impossible values (above all in southern Italy and Sardinia since 2025, and in Denmark in March and April 2024): if a month averages over 48 mm a day or triples the 1991-2020 maximum for that month at that point, it is not published.'},
  missing,locations:out};
 await writeFile(path.join(root,'data','climate-history.json'),JSON.stringify({schemaVersion:'1.0',generatedAt:result.generatedAt,start:HIST_START+'-01',baseline:'2001-2020',source:result.source,units:{precipMmDay:'mm/día (media del mes)',tempC:'°C (media mensual)'},note:'Una posición por mes desde start; null = sin dato válido. La climatología (baseline*) es la media 2001-2020 de cada mes del año (enero a diciembre).',locations:hist})+'\n');
 await writeFile(path.join(root,'data','climate.json'),JSON.stringify(result,null,2)+'\n');

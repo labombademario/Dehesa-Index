@@ -129,7 +129,7 @@ def climate(doc, errs, warns, stats):
         ids.add(l["id"])
         ps = [m["period"] for m in l["months"]]
         _asc(ps, l["id"], errs)
-        if ps and ps[-1] != doc["lastPeriod"]: errs.append("%s: ultimo mes %s != lastPeriod %s" % (l["id"], ps[-1], doc["lastPeriod"]))
+        if ps and ps[-1] != doc["lastPeriod"] and doc["lastPeriod"] not in l.get("precipFlagged", []): errs.append("%s: ultimo mes %s != lastPeriod %s" % (l["id"], ps[-1], doc["lastPeriod"]))   # el ultimo mes puede faltar si su lluvia es un artefacto de la fuente
         for m in l["months"]:
             if m["tempC"] is not None and not -60 <= m["tempC"] <= 60: errs.append("%s %s: temperatura %s fuera de rango" % (l["id"], m["period"], m["tempC"])); break
             if m["precipMm"] is not None and not 0 <= m["precipMm"] <= 3000: errs.append("%s %s: precipitacion %s fuera de rango" % (l["id"], m["period"], m["precipMm"])); break

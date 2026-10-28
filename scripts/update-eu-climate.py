@@ -4,6 +4,7 @@ Fuente: NASA POWER (reanalisis MERRA-2, rejilla 0,5 x 0,625 grados), API regiona
 que se pasa a mm/mes). https://power.larc.nasa.gov/ (datos de NASA de uso libre citando la fuente). Resolucion gruesa: sirve para el pais, no para una parcela.
 Por pais (poligonos Natural Earth, scripts/ref/ne-countries-eu.json) y UE-27: media de las celdas cuyo centro cae dentro del pais (ponderada por cos latitud; para paises sin ninguna
 celda, la mas cercana a menos de 0,7 grados). Normal = media 1991-2020 de ese mes. Se publican los ultimos 36 meses completos con la temperatura, la lluvia y sus normales.
+Lluvia: las celdas-mes con artefactos de la fuente (mas de 48 mm/dia de media o mas del triple de su maximo 1991-2020) se excluyen de la media; si pesan mas del 5 % del pais, la lluvia de ese mes queda vacia.
 Si algo falla se conserva el fichero anterior. Uso: python3 scripts/update-eu-climate.py"""
 import calendar, datetime, json, sys, time, urllib.request
 from pathlib import Path
@@ -44,6 +45,18 @@ def main():
             for par, d in cells[k].items():
                 for m, v in d.items():
                     if m in mi and v is not None and v > -900: arr[par][ci, mi[m]] = v
+        # artefactos de lluvia de la fuente (p. ej. 755 mm en un dia de enero de 2026 en Cerdena; ~15 mm/dia en toda Dinamarca en marzo de 2024): una celda-mes con mas
+        # de 48 mm/dia de media o, despues de la normal, con mas del triple del maximo 1991-2020 de esa celda en ese mes, no entra en la media de lluvia de ese mes;
+        # si las celdas excluidas pesan mas del 5 % del pais, la lluvia de ese mes del pais no se publica. La temperatura no se toca. Misma regla que update-region-grid-climate.py
+        ylab0 = np.array([int(m[:4]) for m in months]); mon0 = np.array([int(m[4:]) for m in months]); P = arr["PRECTOTCORR"]
+        MX = np.full((len(keys), 13), np.nan)
+        for mm in range(1, 13):
+            cols = np.where((mon0 == mm) & (ylab0 >= B0) & (ylab0 <= B1))[0]
+            if len(cols): MX[:, mm] = np.nanmax(np.where(P[:, cols] <= 48, P[:, cols], np.nan), axis=1)
+        FLAG = (P > 48) | ((ylab0[None, :] > B1) & (P > 3) & (P > 3 * MX[:, mon0]))
+        FLAG &= np.isfinite(P)
+        if FLAG.any(): print("artefactos de lluvia: %d celdas-mes excluidas (%d meses)" % (int(FLAG.sum()), int(FLAG.any(0).sum())))
+        arr["PRECTOTCORR"] = np.where(FLAG, np.nan, P)
         # ultimo mes completo con dato en casi todas las celdas
         ok = [i for i in range(len(months)) if np.isfinite(arr["T2M"][:, i]).mean() > 0.9 and np.isfinite(arr["PRECTOTCORR"][:, i]).mean() > 0.9]
         if not ok: raise ValueError("sin meses completos")
@@ -68,7 +81,10 @@ def main():
             for par, key in (("T2M", "t"), ("PRECTOTCORR", "p")):
                 a = arr[par][m]; ok2 = np.isfinite(a); ww = w[:, None] * ok2
                 ser = np.where(ww.sum(0) > 0, (np.nan_to_num(a) * ww).sum(0) / np.where(ww.sum(0) > 0, ww.sum(0), 1), np.nan)
-                if key == "p": ser = ser * np.array([calendar.monthrange(ylab[i], mon[i])[1] for i in range(len(months))])
+                if key == "p":
+                    ser = ser * np.array([calendar.monthrange(ylab[i], mon[i])[1] for i in range(len(months))])
+                    fw = (w[:, None] * FLAG[m]).sum(0) / w.sum()   # peso de las celdas con artefacto
+                    ser = np.where(fw > 0.05, np.nan, ser)
                 norm = {mm: float(np.nanmean([ser[i] for i in base if mon[i] == mm])) for mm in range(1, 13)}
                 row[key] = [None if not np.isfinite(ser[i]) else round(float(ser[i]), 2 if key == "t" else 1) for i in sel]
                 row[key + "n"] = [round(norm[mon[i]], 2 if key == "t" else 1) for i in sel]

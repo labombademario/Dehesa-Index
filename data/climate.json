@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-27T10:34:56.094Z",
+  "generatedAt": "2026-10-28T02:30:58.747Z",
   "lastPeriod": "2026-09",
   "baseline": "2001-2020",
   "source": {
@@ -13,8 +13,8 @@
     }
   },
   "methodology": {
-    "es": "Para cada punto representativo de una región productora se toma la precipitación y la temperatura media mensuales del reanálisis MERRA-2 (NASA POWER) y se comparan con la climatología 2001-2020 del mismo mes. La precipitación se expresa como % sobre la media y la temperatura como diferencia en °C. Son datos de reanálisis en una celda de malla (~50 km), no de estaciones ni promedios de la región entera, y solo se publican los meses cerrados con dato válido. Miden desviación climática, no predicen cosechas ni precios.",
-    "en": "For each representative point in a producing region, monthly precipitation and mean temperature from the MERRA-2 reanalysis (NASA POWER) are compared with the 2001-2020 climatology for the same month. Precipitation is shown as % of the mean and temperature as a difference in °C. It is reanalysis data for a grid cell (~50 km), not station data or a whole-region average, and only closed months with valid data are published. They measure climatic deviation and do not forecast crops or prices."
+    "es": "Para cada punto representativo de una región productora se toma la precipitación y la temperatura media mensuales del reanálisis MERRA-2 (NASA POWER) y se comparan con la climatología 2001-2020 del mismo mes. La precipitación se expresa como % sobre la media y la temperatura como diferencia en °C. Son datos de reanálisis en una celda de malla (~50 km), no de estaciones ni promedios de la región entera, y solo se publican los meses cerrados con dato válido. Miden desviación climática, no predicen cosechas ni precios. La lluvia de la fuente trae a veces valores imposibles (sobre todo en el sur de Italia y Cerdeña desde 2025 y en Dinamarca en marzo y abril de 2024): si un mes pasa de 48 mm al día de media o triplica el máximo 1991-2020 de ese mes en ese punto, no se publica.",
+    "en": "For each representative point in a producing region, monthly precipitation and mean temperature from the MERRA-2 reanalysis (NASA POWER) are compared with the 2001-2020 climatology for the same month. Precipitation is shown as % of the mean and temperature as a difference in °C. It is reanalysis data for a grid cell (~50 km), not station data or a whole-region average, and only closed months with valid data are published. They measure climatic deviation and do not forecast crops or prices. The source rainfall sometimes has impossible values (above all in southern Italy and Sardinia since 2025, and in Denmark in March and April 2024): if a month averages over 48 mm a day or triples the 1991-2020 maximum for that month at that point, it is not published."
   },
   "missing": [],
   "locations": [
@@ -6744,6 +6744,15 @@
       ],
       "months": [
         {
+          "period": "2025-09",
+          "precipMm": 153.3,
+          "precipBaselineMm": 62.1,
+          "precipAnomalyPct": 146.9,
+          "tempC": 20.6,
+          "tempBaselineC": 20.8,
+          "tempAnomalyC": -0.2
+        },
+        {
           "period": "2025-10",
           "precipMm": 248,
           "precipBaselineMm": 77.2,
@@ -6769,15 +6778,6 @@
           "tempC": 6.3,
           "tempBaselineC": 4.1,
           "tempAnomalyC": 2.1
-        },
-        {
-          "period": "2026-01",
-          "precipMm": 494.8,
-          "precipBaselineMm": 40.9,
-          "precipAnomalyPct": 1109.1,
-          "tempC": 3,
-          "tempBaselineC": 3.4,
-          "tempAnomalyC": -0.3
         },
         {
           "period": "2026-02",
@@ -6851,6 +6851,9 @@
           "tempBaselineC": 20.8,
           "tempAnomalyC": 1.9
         }
+      ],
+      "precipFlagged": [
+        "2026-01"
       ]
     },
     {
@@ -9528,6 +9531,10 @@
           "tempBaselineC": 13.4,
           "tempAnomalyC": 1
         }
+      ],
+      "precipFlagged": [
+        "2024-03",
+        "2024-04"
       ]
     },
     {
@@ -9656,6 +9663,9 @@
           "tempBaselineC": 14.5,
           "tempAnomalyC": 1.1
         }
+      ],
+      "precipFlagged": [
+        "2024-03"
       ]
     },
     {

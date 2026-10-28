@@ -22,15 +22,18 @@ const countries={},missing=[],bad=[];
 for(const cc of Object.keys(C)){ const regs={};
 for(const [code,city,lat,lon] of C[cc]){
  const q=`parameters=PRECTOTCORR,T2M&community=AG&longitude=${lon}&latitude=${lat}&format=JSON`;
- const m=await getJson(`${B}/monthly/point?${q}&start=2001&end=${year}`); await wait(300);
+ const m=await getJson(`${B}/monthly/point?${q}&start=1991&end=${year}`); await wait(300);
  if(!m){missing.push({id:cc+'/'+code,reason:'fuente no disponible'});continue}
  let Pr,Tm;
  try{Pr=m.properties.parameter.PRECTOTCORR;Tm=m.properties.parameter.T2M}catch(e){missing.push({id:cc+'/'+code,reason:'respuesta inesperada'});continue}
  // valores imposibles de la fuente (p. ej. >48 mm/dia = mas de 1500 mm al mes, como los de ene-mar 2026 en el sur de Italia y Cerdena): se descartan y se listan, nunca se corrigen
- const ok=(p,t)=>{const v=typeof p==='number'&&p>-990&&typeof t==='number'&&t>-990;if(v&&p>48){bad.push({id:cc+'/'+code,reason:'precipitacion imposible en la fuente ('+p+' mm/dia)'});return false}return v};
+ // y, desde 2021, una lluvia mensual de mas del triple del maximo 1991-2020 de ese punto en ese mes (Cagliari, marzo de 2026: 39 mm/dia de media, 1.217 mm en el mes)
+ const MX=Array(12).fill(0);for(let y=1991;y<=2020;y++)for(let mi=0;mi<12;mi++){const v=Pr[y+String(mi+1).padStart(2,'0')];if(typeof v==='number'&&v>-990&&v<=48&&v>MX[mi])MX[mi]=v}
+ let K='';const ok=(p,t)=>{const v=typeof p==='number'&&p>-990&&typeof t==='number'&&t>-990;const y=+K.slice(0,4),mi=+K.slice(4)-1;
+  if(v&&(p>48||(y>2020&&p>3&&MX[mi]>0&&p>3*MX[mi]))){bad.push({id:cc+'/'+code,reason:'precipitacion imposible en la fuente ('+p+' mm/dia en '+K.slice(0,4)+'-'+K.slice(4)+')'});return false}return v};
  // media 2001-2020 de cada mes calendario (mm/dia y grados), calculada aqui con los mismos datos mensuales: hacen falta 15 anos validos
  const sp=Array(12).fill(0),st=Array(12).fill(0),n=Array(12).fill(0);
- for(let y=2001;y<=2020;y++)for(let mi=0;mi<12;mi++){const k=y+String(mi+1).padStart(2,'0');if(ok(Pr[k],Tm[k])){sp[mi]+=Pr[k];st[mi]+=Tm[k];n[mi]++}}
+ for(let y=2001;y<=2020;y++)for(let mi=0;mi<12;mi++){const k=y+String(mi+1).padStart(2,'0');K=k;if(ok(Pr[k],Tm[k])){sp[mi]+=Pr[k];st[mi]+=Tm[k];n[mi]++}}
  if(n.some(v=>v<15)){missing.push({id:cc+'/'+code,reason:'menos de 15 años válidos para la media 2001-2020'});continue}
  // medias por mes calendario con las cifras que se publican (mm/dia a 6 decimales, grados a 3): la pagina recalcula con ellas el historico y coincide con lo que se publica
  const bp=sp.map((v,i)=>round(v/n[i],6)),bt=st.map((v,i)=>round(v/n[i],3));
@@ -38,7 +41,7 @@ for(const [code,city,lat,lon] of C[cc]){
  for(const k of Object.keys(Pr).sort()){
   if(!/^\d{6}$/.test(k)||k.endsWith('13'))continue;
   const y=+k.slice(0,4),mi=+k.slice(4)-1;
-  if(y<year-2||!ok(Pr[k],Tm[k]))continue;
+  K=k;if(y<year-2||!ok(Pr[k],Tm[k]))continue;
   const cp=bp[mi],ct=bt[mi]; if(!(cp>0))continue;
   const days=new Date(Date.UTC(y,mi+1,0)).getUTCDate(),p=Pr[k],t=Tm[k];
   const rp=round(p*days),rb=round(cp*days),rt=round(t),rbt=round(ct); if(!(rb>0))continue;  // las anomalías se calculan con las cifras ya redondeadas, para que cuadren con lo que se publica
@@ -48,7 +51,7 @@ for(const [code,city,lat,lon] of C[cc]){
  const hk=Object.keys(Pr).filter(k=>/^\d{6}$/.test(k)&&!k.endsWith('13')&&+k.slice(0,4)>=2001).sort();
  const hp=[],ht=[];
  for(const k of hk){const y=+k.slice(0,4),mi=+k.slice(4)-1,days=new Date(Date.UTC(y,mi+1,0)).getUTCDate();
-  if(ok(Pr[k],Tm[k])){hp.push(round(Pr[k]*days));ht.push(round(Tm[k]))}else{hp.push(null);ht.push(null)}}
+  K=k;const tv=typeof Tm[k]==='number'&&Tm[k]>-990;if(ok(Pr[k],Tm[k])){hp.push(round(Pr[k]*days));ht.push(round(Tm[k]))}else{hp.push(null);ht.push(tv?round(Tm[k]):null)}}   // lluvia descartada: la temperatura del mes se conserva
  const history={from:'2001-01',p:hp,t:ht,baseMmDay:bp,baseTempC:bt};
  if(months.length<3){missing.push({id:cc+'/'+code,reason:'menos de 3 meses válidos'});continue}
  regs[code]={city,lat,lon,months:months.slice(-12),history};
@@ -61,8 +64,8 @@ const lastPeriod=Object.values(countries).flatMap(r=>Object.values(r)).map(v=>v.
 const result={schemaVersion:'1.0',generatedAt:new Date().toISOString(),lastPeriod,baseline:'2001-2020',
  source:{id:'nasa_power',name:'NASA POWER (Prediction Of Worldwide Energy Resources), reanálisis MERRA-2',url:'https://power.larc.nasa.gov/',license:'Datos de NASA de uso libre; se cita la fuente.',parameters:{precipitation:'PRECTOTCORR (mm/día, convertido a mm/mes)',temperature:'T2M (°C, media mensual a 2 m)'}},
  methodology:{
-  es:'Para cada región se toma el punto de su ciudad principal y se obtienen la precipitación y la temperatura media mensuales del reanálisis MERRA-2 (NASA POWER), que se comparan con la climatología 2001-2020 del mismo mes. Es la celda de malla (~50 km) que contiene esa ciudad, no una estación ni el promedio de toda la región; en costas y montaña la celda puede no representar la región entera. Solo se publican los meses cerrados con dato válido. Miden desviación climática, no predicen cosechas ni precios.',
-  en:'For each region the point of its main city is used and the monthly precipitation and mean temperature from the MERRA-2 reanalysis (NASA POWER) are compared with the 2001-2020 climatology for the same month. It is the grid cell (~50 km) containing that city, not a station or a whole-region average; on coasts and in mountains the cell may not represent the whole region. Only closed months with valid data are published. They measure climate deviation and do not predict harvests or prices.'},
+  es:'Para cada región se toma el punto de su ciudad principal y se obtienen la precipitación y la temperatura media mensuales del reanálisis MERRA-2 (NASA POWER), que se comparan con la climatología 2001-2020 del mismo mes. Es la celda de malla (~50 km) que contiene esa ciudad, no una estación ni el promedio de toda la región; en costas y montaña la celda puede no representar la región entera. Solo se publican los meses cerrados con dato válido. Miden desviación climática, no predicen cosechas ni precios. La lluvia de la fuente trae a veces valores imposibles (sobre todo en el sur de Italia y Cerdeña desde 2025 y en Dinamarca en marzo y abril de 2024): si un mes pasa de 48 mm al día de media o triplica el máximo 1991-2020 de ese mes en ese punto, no se publica.',
+  en:'For each region the point of its main city is used and the monthly precipitation and mean temperature from the MERRA-2 reanalysis (NASA POWER) are compared with the 2001-2020 climatology for the same month. It is the grid cell (~50 km) containing that city, not a station or a whole-region average; on coasts and in mountains the cell may not represent the whole region. Only closed months with valid data are published. They measure climate deviation and do not predict harvests or prices. The source rainfall sometimes has impossible values (above all in southern Italy and Sardinia since 2025, and in Denmark in March and April 2024): if a month averages over 48 mm a day or triples the 1991-2020 maximum for that month at that point, it is not published.'},
  countries,missing};
 await writeFile(path.join(root,'data','eu-region-climate.json'),JSON.stringify(result)+'\n');
-console.log('Clima por región: '+total+' regiones, último mes '+lastPeriod+(missing.length?' · sin datos: '+missing.map(x=>x.id).join(','):''));
+console.log('Clima por región: '+total+' regiones, último mes '+lastPeriod+(missing.length?' · sin datos o con meses descartados por la fuente: '+missing.map(x=>x.id).join(','):''));
