@@ -8553,6 +8553,12 @@
     "gisco_nuts"
    ],
    "notes": "Lluvia y temperatura mensual como media de cada región NUTS 2: rejilla regional de NASA POWER (MERRA-2) ponderada por superficie dentro de la geometría NUTS 2021 de Eurostat/GISCO; normal 1991-2020 y anomalía calculadas por Dehesa Index; scripts/update-region-grid-climate.py."
+  },
+  "data/us-climate-states.json": {
+   "sources": [
+    "noaa_ncei"
+   ],
+   "notes": "Últimos 13 meses por estado de NOAA Climate at a Glance (nClimDiv): temperatura media, lluvia y PDSI con la diferencia con la normal 1991-2020 que calcula NOAA; scripts/update-us-climate.py."
   }
  },
  "derived": [

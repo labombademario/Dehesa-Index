@@ -1,14 +1,117 @@
 EL EL30: 11 celdas, último 2026-09
-EL EL41: 15 celdas, último 2026-09
-EL EL42: 26 celdas, último 2026-09
-EL EL43: 10 celdas, último 2026-09
-EL EL51: 16 celdas, último 2026-09
-EL EL52: 16 celdas, último 2026-09
-EL EL53: 7 celdas, último 2026-09
-EL EL54: 10 celdas, último 2026-09
-EL EL61: 16 celdas, último 2026-09
-EL EL62: 12 celdas, último 2026-09
-EL EL63: 11 celdas, último 2026-09
 EL EL64: 17 celdas, último 2026-09
+EL EL53: 7 celdas, último 2026-09
+EL EL51: 16 celdas, último 2026-09
+EL EL62: 12 celdas, último 2026-09
+EL EL54: 10 celdas, último 2026-09
+EL EL52: 16 celdas, último 2026-09
+EL EL43: 10 celdas, último 2026-09
+EL EL41: 15 celdas, último 2026-09
+EL EL65: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-04, 2025-05
 EL EL65: 13 celdas, último 2026-09
+EL EL42: 26 celdas, último 2026-09
+EL EL61: 16 celdas, último 2026-09
+EL EL63: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-05
+EL EL63: 11 celdas, último 2026-09
 EL escrito: 13 regiones, último 2026-09
+ES ES61: 47 celdas, último 2026-09
+ES ES24: 28 celdas, último 2026-09
+ES ES12: 9 celdas, último 2026-09
+ES ES13: 8 celdas, último 2026-09
+ES ES41: 52 celdas, último 2026-09
+ES ES42: 47 celdas, último 2026-09
+ES ES70: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2022-05, 2023-06
+ES ES70: 20 celdas, último 2026-09
+ES ES51: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2026-05
+ES ES51: 23 celdas, último 2026-09
+ES ES43: 27 celdas, último 2026-09
+ES ES11: 18 celdas, último 2026-09
+ES ES53: 12 celdas, último 2026-09
+ES ES62: 9 celdas, último 2026-09
+ES ES30: 9 celdas, último 2026-09
+ES ES22: 12 celdas, último 2026-09
+ES ES21: 8 celdas, último 2026-09
+ES ES23: 6 celdas, último 2026-09
+ES ES52: 18 celdas, último 2026-09
+ES escrito: 17 regiones, último 2026-09
+IT ITF1: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2026-02, 2026-03
+IT ITF1: 10 celdas, último 2026-09
+IT ITF5: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2021-02, 2025-10, 2026-02, 2026-03
+IT ITF5: 9 celdas, último 2026-09
+IT ITF6: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-10, 2025-11, 2025-12, 2026-01, 2026-02, 2026-03
+IT ITF6: 13 celdas, último 2026-09
+IT ITF3: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-05, 2025-10, 2026-02, 2026-03
+IT ITF3: 13 celdas, último 2026-09
+IT ITH5: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-08, 2025-11, 2026-01, 2026-08
+IT ITH5: 16 celdas, último 2026-09
+IT ITH4: 8 celdas, último 2026-09
+IT ITI4: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2026-02
+IT ITI4: 14 celdas, último 2026-09
+IT ITC3: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2026-01, 2026-08
+IT ITC3: 9 celdas, último 2026-09
+IT ITC4: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-08, 2025-11, 2026-01
+IT ITC4: 17 celdas, último 2026-09
+IT ITI3: 9 celdas, último 2026-09
+IT ITF2: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-10, 2026-02, 2026-03
+IT ITF2: 5 celdas, último 2026-09
+IT ITC1: 21 celdas, último 2026-09
+IT ITF4: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2021-02, 2025-10, 2026-02, 2026-03
+IT ITF4: 18 celdas, último 2026-09
+IT ITG2: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2021-04, 2021-06, 2023-12, 2025-07, 2025-10, 2025-11, 2026-01, 2026-02, 2026-03, 2026-04, 2026-05, 2026-07
+IT ITG2: 19 celdas, último 2026-09
+IT ITG1: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2023-05, 2025-05, 2025-11, 2025-12, 2026-01, 2026-02
+IT ITG1: 27 celdas, último 2026-09
+IT ITH1+ITH2: 13 celdas, último 2026-09
+IT ITI1: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-11, 2026-01, 2026-08
+IT ITI1: 21 celdas, último 2026-09
+IT ITI2: 9 celdas, último 2026-09
+IT ITC2: 6 celdas, último 2026-09
+IT ITH3: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2025-08, 2025-11, 2026-01
+IT ITH3: 16 celdas, último 2026-09
+IT escrito: 20 regiones, último 2026-09
+AT AT11: 5 celdas, último 2026-09
+AT AT21: 10 celdas, último 2026-09
+AT AT12: 16 celdas, último 2026-09
+AT AT31: 13 celdas, último 2026-09
+AT AT32: 10 celdas, último 2026-09
+AT AT22: 15 celdas, último 2026-09
+AT AT33: 13 celdas, último 2026-09
+AT AT34: 4 celdas, último 2026-09
+AT AT13: 3 celdas, último 2026-09
+AT escrito: 9 regiones, último 2026-09
+BE BE10: 1 celdas, último 2026-09
+BE BE21: 4 celdas, último 2026-09
+BE BE24: 6 celdas, último 2026-09
+BE BE22: 6 celdas, último 2026-09
+BE BE23: 7 celdas, último 2026-09
+BE BE25: 6 celdas, último 2026-09
+BE BE31: 4 celdas, último 2026-09
+BE BE32: 6 celdas, último 2026-09
+BE BE33: 7 celdas, último 2026-09
+BE BE34: 8 celdas, último 2026-09
+BE BE35: 5 celdas, último 2026-09
+BE escrito: 11 regiones, último 2026-09
+NL NL13: 4 celdas, último 2026-09
+NL NL23: 4 celdas, último 2026-09
+NL NL12: 6 celdas, último 2026-09
+NL NL22: 9 celdas, último 2026-09
+NL NL11: 5 celdas, último 2026-09
+NL NL42: 5 celdas, último 2026-09
+NL NL41: 7 celdas, último 2026-09
+NL NL32: 8 celdas, último 2026-09
+NL NL21: 7 celdas, último 2026-09
+NL NL31: 4 celdas, último 2026-09
+NL NL34: 5 celdas, último 2026-09
+NL NL33: 7 celdas, último 2026-09
+NL escrito: 12 regiones, último 2026-09
+DK DK01: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2024-03
+DK DK01: 7 celdas, último 2026-09
+DK DK04: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2024-03, 2024-04
+DK DK04: 17 celdas, último 2026-09
+DK DK05: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2024-03, 2024-04
+DK DK05: 14 celdas, último 2026-09
+DK DK02: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2024-03
+DK DK02: 10 celdas, último 2026-09
+DK DK03: lluvia anulada por artefactos de la fuente (una celda > 48 mm/día de media o más del triple de su máximo 1991-2020): 2024-03, 2024-04
+DK DK03: 13 celdas, último 2026-09
+DK escrito: 5 regiones, último 2026-09

@@ -2013,12 +2013,12 @@ sources:
     log: greece-more-log.txt
     message: IPCA de alimentos y ocupados y valor añadido agrario por región de Grecia (Eurostat)
   - id: region-grid-climate
-    name: Update monthly rainfall and temperature averaged over each NUTS 2 region (NASA POWER grid)
+    name: Update monthly rainfall and temperature averaged over each region (NASA POWER grid; EL, ES, IT, AT, BE, NL, DK)
     cron: ['25 6 6,16 * *']
     script: scripts/update-region-grid-climate.py
     pre: ['pip install shapely']
-    timeout: 25
-    data: [region-grid-climate/EL.json]
+    timeout: 50
+    data: [region-grid-climate/EL.json, region-grid-climate/ES.json, region-grid-climate/IT.json, region-grid-climate/AT.json, region-grid-climate/BE.json, region-grid-climate/NL.json, region-grid-climate/DK.json]
     log: region-grid-climate-log.txt
     message: Lluvia y temperatura por región (media de la rejilla de NASA POWER)
   - id: france-hicp
@@ -2502,7 +2502,7 @@ sources:
     script: scripts/update-us-climate.py
     timeout: 20
     script_timeout: 12
-    data: [us-climate-stats.json]
+    data: [us-climate-stats.json, us-climate-states.json]
     log: us-climate-log.txt
     message: Datos EEUU clima por estado (NOAA NCEI)
   - id: us-kcfed

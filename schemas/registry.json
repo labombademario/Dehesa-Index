@@ -1969,6 +1969,48 @@
    [
     "region_grid_climate"
    ]
+  ],
+  "region-grid-climate/ES.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
+  "region-grid-climate/IT.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
+  "region-grid-climate/AT.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
+  "region-grid-climate/BE.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
+  "region-grid-climate/NL.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
+  "region-grid-climate/DK.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
+  ],
+  "us-climate-states.json": [
+   "us-climate-states",
+   [
+    "us_climate_states"
+   ]
   ]
  },
  "globs": {

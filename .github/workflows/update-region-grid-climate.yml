@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update monthly rainfall and temperature averaged over each NUTS 2 region (NASA POWER grid)
+name: Update monthly rainfall and temperature averaged over each region (NASA POWER grid; EL, ES, IT, AT, BE, NL, DK)
 on:
   schedule:
     - cron: '25 6 6,16 * *'
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v6
       - run: pip install shapely
@@ -21,11 +21,11 @@ jobs:
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         uses: ./.github/actions/validate-files
         with:
-          files: data/region-grid-climate/EL.json
+          files: data/region-grid-climate/EL.json data/region-grid-climate/ES.json data/region-grid-climate/IT.json data/region-grid-climate/AT.json data/region-grid-climate/BE.json data/region-grid-climate/NL.json data/region-grid-climate/DK.json
       - name: Detectar revisiones oficiales
-        run: python3 scripts/detect-revisions.py data/region-grid-climate/EL.json
+        run: python3 scripts/detect-revisions.py data/region-grid-climate/EL.json data/region-grid-climate/ES.json data/region-grid-climate/IT.json data/region-grid-climate/AT.json data/region-grid-climate/BE.json data/region-grid-climate/NL.json data/region-grid-climate/DK.json
       - name: Publicar
-        run: bash scripts/publish-data.sh "Lluvia y temperatura por región (media de la rejilla de NASA POWER)" data/region-grid-climate/EL.json data/region-grid-climate-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Lluvia y temperatura por región (media de la rejilla de NASA POWER)" data/region-grid-climate/EL.json data/region-grid-climate/ES.json data/region-grid-climate/IT.json data/region-grid-climate/AT.json data/region-grid-climate/BE.json data/region-grid-climate/NL.json data/region-grid-climate/DK.json data/region-grid-climate-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

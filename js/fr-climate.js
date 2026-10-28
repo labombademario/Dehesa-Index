@@ -54,7 +54,13 @@
   };
   var CFG = { FR: { url: 'data/fr-climate-departements.json', map: null, id: 'ps-fr-clim', lic: 'Licence Ouverte 2.0', tx: null },
     DE: { url: 'data/de-climate-laender.json', map: ['DEHESA_DE_LAENDER', 'vendor/de-laender.js'], id: 'ps-de-clim', lic: 'CC BY 4.0', tx: TDE, nat: 'DE' },
-    EL: { url: 'data/region-grid-climate/EL.json', map: ['DEHESA_EL_REGIONS', 'vendor/el-regions.js'], id: 'ps-el-clim', lic: 'NASA', tx: TGR } };
+    EL: { url: 'data/region-grid-climate/EL.json', map: ['DEHESA_EL_REGIONS', 'vendor/el-regions.js'], id: 'ps-el-clim', lic: 'NASA', tx: TGR },
+    ES: { url: 'data/region-grid-climate/ES.json', map: ['DEHESA_ES_CCAA', 'vendor/es-ccaa.js'], id: 'ps-es-clim', lic: 'NASA', tx: TGR },
+    IT: { url: 'data/region-grid-climate/IT.json', map: ['DEHESA_IT_REGIONS', 'vendor/it-regions.js'], id: 'ps-it-clim', lic: 'NASA', tx: TGR },
+    AT: { url: 'data/region-grid-climate/AT.json', map: ['DEHESA_AT_LAENDER', 'vendor/at-laender.js'], id: 'ps-at-clim', lic: 'NASA', tx: TGR },
+    BE: { url: 'data/region-grid-climate/BE.json', map: ['DEHESA_BE_PROVINCES', 'vendor/be-provinces.js'], id: 'ps-be-clim', lic: 'NASA', tx: TGR },
+    NL: { url: 'data/region-grid-climate/NL.json', map: ['DEHESA_NL_PROVINCES', 'vendor/nl-provinces.js'], id: 'ps-nl-clim', lic: 'NASA', tx: TGR },
+    DK: { url: 'data/region-grid-climate/DK.json', map: ['DEHESA_DK_REGIONS', 'vendor/dk-regions.js'], id: 'ps-dk-clim', lic: 'NASA', tx: TGR } };
   function tx(c, lg) { var t = T[lg], o = c.tx && c.tx[lg], r = {}, k; for (k in t) r[k] = t[k]; if (o) for (k in o) r[k] = o[k]; return r; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d, lg) { return v == null ? '—' : v.toLocaleString(LOC[lg] || 'es-ES', { minimumFractionDigits: d, maximumFractionDigits: d }); }

@@ -389,7 +389,7 @@
     var cl = document.createElement('div'); cl.id = 'pp-de-clim'; cl.style.minHeight = '1px'; after.parentNode.insertBefore(cl, after.nextSibling);
     var js1 = function (src, ok) { var x = document.createElement('script'); x.src = src; x.onload = ok; document.head.appendChild(x); };
     var goC = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(cl, lang(), 'DE'); };
-    nearView(cl, function () { var m2 = function () { if (window.DIFrClimate) goC(); else js1('js/fr-climate.js?v=20261027', goC); }; if (window.DIFrDeptMap) m2(); else js1('js/fr-dept-map.js?v=20261015', m2); });
+    nearView(cl, function () { var m2 = function () { if (window.DIFrClimate) goC(); else js1('js/fr-climate.js?v=20261028', goC); }; if (window.DIFrDeptMap) m2(); else js1('js/fr-dept-map.js?v=20261015', m2); });
     /* precio de la tierra agrícola por Regierungsbezirk (Destatis 61521-0020; js/de-land-prices.js con el mapa NUTS 2 de vendor/de-nuts2.js) */
     var ld = document.createElement('div'); ld.id = 'pp-de-land'; ld.style.minHeight = '1px'; cl.parentNode.insertBefore(ld, cl.nextSibling);
     var goL = function () { if (window.DIDeLand && ST.c === cc) window.DIDeLand.mount(ld, lang()); };
@@ -702,6 +702,17 @@
   }
   /* Nitratos en aguas subterráneas y balance de nitrógeno (Eurostat) en 17 países sin bloque propio (js/eu-nitrates.js, data/eu-nitrates.json) */
   /* Grecia: estadísticas agrarias de ELSTAT (js/el-elstat.js; precios en origen, insumos, productos y cuentas por región; data/el-elstat/) */
+  /* lluvia y temperatura por región como media de la rejilla de NASA POWER (js/fr-climate.js con la configuración de cada país; data/region-grid-climate/<PAIS>.json) */
+  var GRIDCLIM = ['EL', 'ES', 'IT', 'AT', 'BE', 'NL', 'DK'];
+  function gridClimUp() {
+    if (GRIDCLIM.indexOf(ST.c) < 0) return;
+    var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
+    var after = document.getElementById('pp-drought-slot') || tr;
+    var el = document.createElement('div'); el.id = 'pp-' + cc.toLowerCase() + '-clim'; el.style.minHeight = '1px'; after.parentNode.insertBefore(el, after.nextSibling);
+    var js1 = function (src, ok) { var x = document.createElement('script'); x.src = src; x.onload = ok; document.head.appendChild(x); };
+    var go = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(el, lang(), cc); };
+    nearView(el, function () { var m = function () { if (window.DIFrClimate) go(); else js1('js/fr-climate.js?v=20261028', go); }; if (window.DIFrDeptMap) m(); else js1('js/fr-dept-map.js?v=20261015', m); });
+  }
   function elUp() {
     if (ST.c !== 'EL') return;
     var tr = document.getElementById('pp-trade'), cc = ST.c; if (!tr || !tr.parentNode) return;
@@ -716,10 +727,6 @@
     var go2 = function () { if (window.DIElElgo && ST.c === cc) window.DIElElgo.mount(el2, lang()); };
     var mod2 = function () { if (window.DIElElgo) go2(); else js('js/el-elgo.js?v=20261026', go2); };
     nearView(el2, function () { if (window.ESUI) mod2(); else js('js/es-ui.js?v=20261015', mod2); });
-    /* lluvia y temperatura por región: media de la rejilla de NASA POWER (js/fr-climate.js con la configuración de Grecia; data/region-grid-climate/EL.json) */
-    var el3 = document.createElement('div'); el3.id = 'pp-el-clim'; el3.style.minHeight = '1px'; el2.parentNode.insertBefore(el3, el2.nextSibling);
-    var go3 = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(el3, lang(), 'EL'); };
-    nearView(el3, function () { var m3 = function () { if (window.DIFrClimate) go3(); else js('js/fr-climate.js?v=20261027', go3); }; if (window.DIFrDeptMap) m3(); else js('js/fr-dept-map.js?v=20261015', m3); });
   }
   var LANDCC = ['FR', 'IT', 'PL', 'PT', 'DE', 'BE', 'HR', 'EL'];
   function euLandUp() {
@@ -933,7 +940,7 @@
     ((window.DehesaShared.countryLinks && window.DehesaShared.countryLinks(ST.c)) || []).forEach(function (l) { if (own.indexOf(l.file) < 0) own += '<a class="di-card" href="' + l.href + '" style="display:block;padding:14px 18px;margin-top:14px;text-decoration:none;color:inherit"><b>' + esc(l.label) + ' →</b><div class="di-movers-hint" style="margin:4px 0 0">' + esc(l.d) + '</div></a>'; });
     html += '<div id="ps-detail"><h3 id="ps-own" class="ps-own-h">' + esc(OWN[lang()] ? OWN[lang()][0] : OWN.es[0]) + '</h3>' + own + '<div id="ps-ownnote"></div>'; if (REGMAP[ST.c] && !window.DIProfile) html += '<div id="ps-regmap"></div>';
     if (ST.c === 'PT') html += foldBox('ps-ifap', 'ifap'); html += (ST.c === 'DE' ? '<div id="ps-de"></div>' : '') + (ST.c === 'CA' ? '<div id="ps-mb"></div>' : '') + (ST.c === 'US' ? '<div id="ps-us"></div>' : '') + (ST.c === 'ES' ? '<div id="ps-es"></div>' : '') + (ST.c === 'CL' ? '<div id="ps-cl"></div>' : '') + (/^(DK|NL|FR)$/.test(ST.c) ? '<div id="ps-eu"></div>' : '') + '<div id="ps-agri"></div>' + foldBox('ps-tp', 'tp') + '</div>' + srcHtml;
-    root.innerHTML = html; giUp(); droughtUp(c); ghgUp(c); frUp(); agrUp(); deUp(); itUp(); landUp(); itIstatUp(); plUp(); plLandUp(); plRegionsUp(); plFarmShopUp(); beUp(); nordicUp(); atUp(); hrUp(); ieUp(); nlUp(); nlMoreUp(); beMoreUp(); ptUp(); ptMoreUp(); plZsrirUp(); farmHeadUp(); mgrUp(); censusUp(); forecastUp(); fishUp(); forestUp(); euDieselUp(); elUp(); euLandUp(); euNitUp(); sectorUp(); pageBlocks(c); if (ST.c === 'US') usDepth(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); [1500, 4000, 9000].forEach(function (ms) { setTimeout(function () { if (document.getElementById("pa-bar")) frameUp(c); }, ms); }); if (REGMAP[ST.c]) regMap(ST.c); else slotNote('ps-regmap', 'reg'); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (!hh && REQS) hh = document.getElementById('ps-explorer'); /* enlace a una serie concreta (buscador, avisos, fichas): se abre en su gráfico, no en la cabecera del perfil */ if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
+    root.innerHTML = html; giUp(); droughtUp(c); ghgUp(c); frUp(); agrUp(); deUp(); itUp(); landUp(); itIstatUp(); plUp(); plLandUp(); plRegionsUp(); plFarmShopUp(); beUp(); nordicUp(); atUp(); hrUp(); ieUp(); nlUp(); nlMoreUp(); beMoreUp(); ptUp(); ptMoreUp(); plZsrirUp(); farmHeadUp(); mgrUp(); censusUp(); forecastUp(); fishUp(); forestUp(); euDieselUp(); elUp(); gridClimUp(); euLandUp(); euNitUp(); sectorUp(); pageBlocks(c); if (ST.c === 'US') usDepth(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); [1500, 4000, 9000].forEach(function (ms) { setTimeout(function () { if (document.getElementById("pa-bar")) frameUp(c); }, ms); }); if (REGMAP[ST.c]) regMap(ST.c); else slotNote('ps-regmap', 'reg'); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (!hh && REQS) hh = document.getElementById('ps-explorer'); /* enlace a una serie concreta (buscador, avisos, fichas): se abre en su gráfico, no en la cabecera del perfil */ if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
     var ub = root.querySelector('[data-unusual]'); if (ub) ub.onclick = function () { ub.disabled = true; ub.textContent = ub.getAttribute('data-busy'); Promise.all(c.series.filter(function (x) { return !x.points && x.n >= 24; }).map(pt)).then(function () { build(); }); };
     if (ST.c === 'DE') { var den = document.getElementById('ps-de'), mdf = function () { if (window.DEFarm && den) window.DEFarm.mount(den, lang()); }; if (window.DEFarm) mdf(); else { var dsc = document.createElement('script'); dsc.src = 'js/de-agri.js?v=20261003'; dsc.onload = mdf; document.head.appendChild(dsc); } }
     if (ST.c === 'CA') { var mbn = document.getElementById('ps-mb'); if (mbn) { /* Manitoba (vacuno, ovino y caprino, porcino): cabeceras aqui, modulos (js/mb-cattle.js, js/mb-smallstock.js) solo al abrir */

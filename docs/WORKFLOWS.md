@@ -319,7 +319,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-portugal-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal-eurostat.py | portugal-eurostat-stats.json | finish, validate-files |
 | update-portugal.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal.py | portugal-stats.json | finish, validate-files |
 | update-recan.yml | a mano | semanal (4) | update-recan.py | recan.json | finish, validate-files |
-| update-region-grid-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-region-grid-climate.py | region-grid-climate/EL.json | finish, validate-files |
+| update-region-grid-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-region-grid-climate.py | region-grid-climate/AT.json, region-grid-climate/BE.json, region-grid-climate/DK.json … | finish, validate-files |
 | update-regions-pl.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-poland-regions.py | poland-regions/regions.json | finish, validate-files |
 | update-rivers.yml | generado | varias veces al dia | detect-revisions.py, gen-workflows.py, update-rivers.py | rivers-be.json, rivers-ca.json, rivers-fr.json … | finish, validate-files |
 | update-spain-balances.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-balances.py | spain-balances/cereals.json | finish, validate-files |
@@ -410,7 +410,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-arcplc.yml | generado | mensual | detect-revisions.py, gen-workflows.py, source-status.py | us-arcplc/index.json, us-arcplc/national.json | finish, publish, validate-files |
 | update-us-cash-bids.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-cash-bids.py | us-cash-bids/ingestion-status.json, us-cash-bids/manifest.json, us-cash-bids/reports.json … | finish, validate-files |
 | update-us-cash-receipts.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-cash-receipts.py | us-cash-receipts.json | finish, validate-files |
-| update-us-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-climate.py | us-climate-stats.json | finish, validate-files |
+| update-us-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-climate.py | us-climate-states.json, us-climate-stats.json | finish, validate-files |
 | update-us-county-yields.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-county-yields.py | us-county/status.json | finish, validate-files |
 | update-us-crop-progress-states.yml | a mano | 2 veces/semana | update-us-crop-progress-states.mjs | us-crop-progress/*.json | finish, validate-files |
 | update-us-dairy.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-dairy.py | us-dairy.json | finish, validate-files |

@@ -27,6 +27,7 @@ def main():
     for code, name in ENT:
         for par, txt, unit in PARAMS:
             u = 'https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/%s/time-series/%d/%s/1/0/%d-%d.json' % ('national' if code == 110 else 'statewide', code, par, Y0, now.year)
+            u += '?base_prd=true&begbaseyear=1991&endbaseyear=2020'   # trae además la diferencia con la normal 1991-2020 (departure, y pctavg en la lluvia)
             if code == 110: u = u.replace('national/time-series/110', 'national/time-series/110')
             try: d = get(u)
             except Exception as e: log('ERROR', name, par, repr(e)[:120]); continue
@@ -34,6 +35,8 @@ def main():
             for k, v in sorted((d.get('data') or {}).items()):
                 x = v.get('value') if isinstance(v, dict) else v
                 if re.fullmatch(r'\d{6}', k) and isinstance(x, (int, float)) and x > -99: pts.append(['%s-%s' % (k[:4], k[4:]), x])
+                if re.fullmatch(r'\d{6}', k) and isinstance(x, (int, float)) and x > -99 and isinstance(v, dict) and code != 110:
+                    DEP.setdefault(name, {}).setdefault('%s-%s' % (k[:4], k[4:]), {})[par] = (x, v.get('departure'), v.get('pctavg'))
             if len(pts) < 24: log('pocos datos', name, par, len(pts)); continue
             last, prev = pts[-1], pts[-2]
             out.append({'id': 'us-noaa-%s-%s' % (re.sub(r'[^a-z]+', '-', name.lower()).strip('-'), par), 'group': 'climate', 'label': '%s: %s (NOAA)' % (name, txt), 'unit': unit, 'frequency': 'monthly',
@@ -45,4 +48,33 @@ def main():
     src = {'name': 'NOAA National Centers for Environmental Information - Climate at a Glance (nClimDiv)', 'url': 'https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/', 'license': 'US Government work (public domain); cite NOAA NCEI'}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'countries': {'US': {'name': 'United States', 'extend': True, 'source': src, 'series': out}}, 'log': LOG[-30:]}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    states()
+POSTAL = {'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA', 'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA', 'Idaho': 'ID',
+          'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA', 'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD', 'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN',
+          'Mississippi': 'MS', 'Missouri': 'MO', 'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ', 'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC',
+          'North Dakota': 'ND', 'Ohio': 'OH', 'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC', 'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX',
+          'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY'}
+DEP = {}
+def states():
+    """data/us-climate-states.json: últimos 13 meses por estado con la diferencia con la normal 1991-2020 que calcula NOAA (tarjeta de clima de region.html).
+    Unidades tal como las publica NOAA (°F, pulgadas); la página convierte a °C y mm para mostrarlas."""
+    out = {}
+    for name, M in DEP.items():
+        code = POSTAL.get(name)
+        if not code: continue
+        rows = []
+        for per in sorted(M)[-13:]:
+            r = {'period': per}
+            if 'tavg' in M[per]: r.update(tempF=M[per]['tavg'][0], tempDepF=M[per]['tavg'][1])
+            if 'pcp' in M[per]: r.update(precipIn=M[per]['pcp'][0], precipDepIn=M[per]['pcp'][1], precipPctAvg=M[per]['pcp'][2])
+            if 'pdsi' in M[per]: r.update(pdsi=M[per]['pdsi'][0])
+            rows.append(r)
+        if rows: out[code] = {'name': name, 'months': rows}
+    if len(out) < 45: log('us-climate-states: solo %d estados; no se escribe' % len(out)); return
+    last = max(v['months'][-1]['period'] for v in out.values())
+    doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'lastPeriod': last, 'baseline': '1991-2020',
+           'source': {'id': 'noaa_ncei', 'name': 'NOAA NCEI Climate at a Glance (nClimDiv), statewide', 'url': 'https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/', 'license': 'US Government work (public domain); cite NOAA NCEI'},
+           'units': {'temp': 'degF', 'precip': 'inches'}, 'states': out}
+    (ROOT / 'data/us-climate-states.json').write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    log('us-climate-states: %d estados, último %s' % (len(out), last))
 main()

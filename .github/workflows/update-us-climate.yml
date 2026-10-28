@@ -21,11 +21,11 @@ jobs:
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         uses: ./.github/actions/validate-files
         with:
-          files: data/us-climate-stats.json
+          files: data/us-climate-stats.json data/us-climate-states.json
       - name: Detectar revisiones oficiales
-        run: python3 scripts/detect-revisions.py data/us-climate-stats.json
+        run: python3 scripts/detect-revisions.py data/us-climate-stats.json data/us-climate-states.json
       - name: Publicar
-        run: bash scripts/publish-data.sh "Datos EEUU clima por estado (NOAA NCEI)" data/us-climate-stats.json data/us-climate-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Datos EEUU clima por estado (NOAA NCEI)" data/us-climate-stats.json data/us-climate-states.json data/us-climate-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
