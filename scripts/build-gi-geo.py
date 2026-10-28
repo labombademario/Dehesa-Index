@@ -12,9 +12,9 @@ from shapely.geometry import MultiPolygon, Polygon
 from shapely.geometry.polygon import orient
 from shapely.ops import transform as shp_transform
 
-CC = {'ES': 'ES', 'PT': 'PT', 'GB': 'UK', 'CZ': 'CZ'}    # codigo del dataset -> codigo del sitio
-TOL = {'ES': 0.012, 'PT': 0.012, 'GB': 0.01, 'CZ': 0.006}  # simplificacion en grados
-MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'GB': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5)}  # (lon0, lat0, lon1, lat1) del territorio peninsular/principal
+CC = {'ES': 'ES', 'PT': 'PT', 'GB': 'UK', 'CZ': 'CZ', 'AT': 'AT', 'BE': 'BE', 'BG': 'BG', 'HR': 'HR', 'DE': 'DE', 'GR': 'EL', 'HU': 'HU', 'NL': 'NL', 'RO': 'RO', 'SK': 'SK', 'SI': 'SI'}    # codigo del dataset -> codigo del sitio
+TOL = {'ES': 0.012, 'PT': 0.012, 'GB': 0.01, 'CZ': 0.006, 'AT': 0.006, 'BE': 0.006, 'BG': 0.008, 'HR': 0.008, 'DE': 0.008, 'GR': 0.01, 'HU': 0.006, 'NL': 0.005, 'RO': 0.008, 'SK': 0.006, 'SI': 0.005}  # simplificacion en grados
+MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'GB': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5), 'AT': (9.4, 46.3, 17.2, 49.1), 'BE': (2.5, 49.4, 6.5, 51.6), 'BG': (22.3, 41.2, 28.7, 44.3), 'HR': (13.4, 42.3, 19.5, 46.6), 'DE': (5.8, 47.2, 15.1, 55.1), 'GR': (19.3, 34.7, 28.3, 41.8), 'HU': (16, 45.7, 23, 48.7), 'NL': (3.3, 50.7, 7.3, 53.6), 'RO': (20.2, 43.6, 29.8, 48.3), 'SK': (16.8, 47.7, 22.6, 49.7), 'SI': (13.3, 45.4, 16.7, 46.9)}  # (lon0, lat0, lon1, lat1) del territorio peninsular/principal
 SRC = {'name': 'Candiago et al. (2022), EU-PDO: A geospatial inventory of regulatory information for wine PDOs in Europe (Scientific Data; figshare)', 'url': 'https://doi.org/10.6084/m9.figshare.c.5877659.v1', 'license': 'CC0 1.0'}
 
 def geom_from_gpkg(blob):

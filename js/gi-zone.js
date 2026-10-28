@@ -33,8 +33,8 @@
     }));
   }
   function info() { return json('data/gi/FR-inao.json'); }
-  var GEO = { ES: 1, PT: 1, UK: 1, CZ: 1 };
-  function ccOf(f) { var c = (String(f).split('-')[1] || '').toUpperCase(); return c === 'GB' ? 'UK' : c; }
+  var GEO = { ES: 1, PT: 1, UK: 1, CZ: 1, AT: 1, BE: 1, BG: 1, HR: 1, DE: 1, EL: 1, HU: 1, NL: 1, RO: 1, SK: 1, SI: 1 };
+  function ccOf(f) { var c = (String(f).split('-')[1] || '').toUpperCase(); return c === 'GB' ? 'UK' : c === 'GR' ? 'EL' : c; }
   // paises con zonas del dataset EU-PDO: devuelve { z: [ids con zona], geo: documento }
   function geoInfo(cc) { return GEO[cc] ? json('data/gi/' + cc + '-geo.json').then(function (g) { return g && g.areas ? { z: Object.keys(g.areas), geo: g } : null; }) : Promise.resolve(null); }
   function zoneMap(g, names, sel, lg) {

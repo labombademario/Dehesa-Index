@@ -4,8 +4,8 @@ Fuente: Natural Earth 1:10m admin_0 countries (dominio publico). Solo el territo
 Uso: python3 scripts/build-gi-outline.py RUTA/ne_10m_admin_0_countries.geojson"""
 import json, math, sys
 from shapely.geometry import shape, box, MultiPolygon, Polygon
-MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'UK': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5)}
-ISO = {'ES': 'ESP', 'PT': 'PRT', 'UK': 'GBR', 'CZ': 'CZE'}
+MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'UK': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5), 'AT': (9.4, 46.3, 17.2, 49.1), 'BE': (2.5, 49.4, 6.5, 51.6), 'BG': (22.3, 41.2, 28.7, 44.3), 'HR': (13.4, 42.3, 19.5, 46.6), 'DE': (5.8, 47.2, 15.1, 55.1), 'EL': (19.3, 34.7, 28.3, 41.8), 'HU': (16, 45.7, 23, 48.7), 'NL': (3.3, 50.7, 7.3, 53.6), 'RO': (20.2, 43.6, 29.8, 48.3), 'SK': (16.8, 47.7, 22.6, 49.7), 'SI': (13.3, 45.4, 16.7, 46.9)}
+ISO = {'ES': 'ESP', 'PT': 'PRT', 'UK': 'GBR', 'CZ': 'CZE', 'AT': 'AUT', 'BE': 'BEL', 'BG': 'BGR', 'HR': 'HRV', 'DE': 'DEU', 'EL': 'GRC', 'HU': 'HUN', 'NL': 'NLD', 'RO': 'ROU', 'SK': 'SVK', 'SI': 'SVN'}
 TOL = 0.01
 def path(g, X, Y):
     polys = list(g.geoms) if isinstance(g, MultiPolygon) else [g]
