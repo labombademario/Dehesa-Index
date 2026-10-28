@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T15:26:00Z",
+ "generatedAt": "2026-10-28T15:42:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 314,
@@ -9,15 +9,15 @@
   "not_run": 0,
   "unknown": 0
  },
- "global": "late",
+ "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "error",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 0.0,
+  "lagHours": 9.8,
   "prodGeneratedAt": "2026-10-28T05:39:55.919151+00:00",
-  "repoGeneratedAt": "2026-10-28T05:39:55.919151+00:00",
-  "checkedAt": "2026-10-28T15:26:00Z"
+  "repoGeneratedAt": "2026-10-28T15:27:24.432846+00:00",
+  "checkedAt": "2026-10-28T15:42:00Z"
  },
  "pipelines": [
   {
@@ -1237,19 +1237,19 @@
      "series": 215,
      "points": 21489,
      "lines": 0,
-     "lastChange": "2026-10-21T15:19:45Z"
+     "lastChange": "2026-10-28T15:38:10Z"
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-28T09:59:47Z"
+     "lastChange": "2026-10-28T15:38:10Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-21T15:14:56Z",
-    "durationSec": 294,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39623903330"
+    "startedAt": "2026-10-28T15:32:52Z",
+    "durationSec": 325,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40717059783"
    },
    "recent": {
     "runs": 10,
@@ -3899,7 +3899,7 @@
    "crons": [
     "40 15 * * 3"
    ],
-   "nextRun": "2026-10-28T15:40:00Z",
+   "nextRun": "2026-11-04T15:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4895,7 +4895,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-28T09:59:47Z"
+     "lastChange": "2026-10-28T15:38:10Z"
     }
    ],
    "last": {
@@ -4966,7 +4966,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-28T15:13:28Z"
+     "lastChange": "2026-10-28T15:29:06Z"
     },
     {
      "path": "data/source-candidates.json",
