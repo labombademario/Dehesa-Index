@@ -23,13 +23,13 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/forest-fires.json
+          files: data/forest-fires.json data/forest-fires-season.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/forest-fires.json
+        run: python3 scripts/detect-revisions.py data/forest-fires.json data/forest-fires-season.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Incendios forestales por pais (EFFIS y GWIS, Copernicus)" data/forest-fires.json data/revisions.json
+        run: bash scripts/publish-data.sh "Incendios forestales por pais (EFFIS y GWIS, Copernicus)" data/forest-fires.json data/forest-fires-season.json data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

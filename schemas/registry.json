@@ -1904,6 +1904,12 @@
     "forest_fires"
    ]
   ],
+  "forest-fires-season.json": [
+   "forest-fires-season",
+   [
+    "forest_fires_season"
+   ]
+  ],
   "forest-timber-prices.json": [
    "forest-timber-prices",
    [

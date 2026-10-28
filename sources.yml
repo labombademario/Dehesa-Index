@@ -303,7 +303,7 @@ sources:
     timeout: 15
     script_timeout: 10
     continue: true
-    data: [forest-fires.json]
+    data: [forest-fires.json, forest-fires-season.json]
     message: Incendios forestales por pais (EFFIS y GWIS, Copernicus)
   - id: forest-timber-prices
     name: Update official timber prices by assortment (SURS, CSU, CSP, Luke, GUS)

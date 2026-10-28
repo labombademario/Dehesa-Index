@@ -522,6 +522,111 @@ def fish():
     except Exception as e: print('fish US', e)
     if rows: write('fish/index.json', {'schemaVersion': 1, 'generatedAt': max([eu.get('generatedAt') or '']), 'countries': rows})
 
+def forest():
+    """data/views/forest/index.json (comparativa de paises) y data/views/forest/<CC>.json para bosque.html, por pais como pesca:
+    incendios anuales y de la temporada (EFFIS/GWIS), cortas (Eurostat for_remov), superficie forestal (Eurostat for_area), precio oficial de la madera
+    por surtido (SI, CZ, LV, FI, PL, SE, DE, UK, US), indice de precios industriales de la madera (Eurostat sts_inpp_m C16/C161), danos (CZ, SE, EE, HU),
+    energia de la madera (US, FI, HU) y, en Espana y Portugal, corcho; en Espana tambien pinon y castana (data/dehesa.json). Nada se estima aqui:
+    las cuentas son copias o divisiones (cortas por hectarea, variaciones), y la vista dice de donde sale cada cifra."""
+    ff = load('forest-fires.json')
+    try: fs = load('forest-fires-season.json')
+    except Exception: fs = {'countries': {}}
+    rm = load('wood-removals.json'); tp = load('forest-timber-prices.json'); ew = load('eu-wood-prices.json')
+    fd = load('forest-damage.json'); we = load('wood-energy.json'); de = load('wood-prices-de.json'); na = load('wood-prices-na.json'); uk = load('uk-timber-prices.json')
+    try: dh = load('dehesa.json')
+    except Exception: dh = {}
+    try: em = load('eurostat-more-stats.json')['countries']
+    except Exception: em = {}
+    def pts(periods, values): return [[str(p), v] for p, v in zip(periods, values) if v is not None]
+    def lastp(a): return a[-1] if a else None
+    def yoy(a, back):
+        if len(a) <= back: return None
+        x, y = a[-1], a[-1 - back]
+        return round((x[1] / y[1] - 1) * 100, 2) if y[1] else None
+    BACK = {'A': 1, 'M': 12, 'Q': 4, 'H': 2, 'W': 52}
+    QK = lambda p: re.sub(r'^(\d{4})K([1-4])$', r'\1-Q\2', p)
+    out = {}
+    def C(cc): return out.setdefault(cc, {'schemaVersion': 1, 'generatedAt': now(), 'cc': cc})
+    # incendios
+    ys = ff['years']
+    for cc, c in ff['countries'].items():
+        v = C(cc); rows = [[y, b, n] for y, b, n in zip(ys, c['ba'], c['nf']) if b is not None]
+        v['fires'] = {'system': c['system'], 'asOf': ff['asOf'], 'currentYear': ff['currentYear'], 'years': rows, 'src': ff['source']}
+        s = (fs.get('countries') or {}).get(cc)
+        if s: v['fires']['season'] = {'year': fs['year'], 'fromYear': s['fromYear'], 'weeks': s['weeks'], 'sumOf': s.get('sumOf')}
+    # cortas
+    RK = {'total': 'TOTAL.RW', 'conif': 'CONIF.RW', 'nonconif': 'NCONIF.RW', 'fuel': 'TOTAL.RW_FW', 'industrial': 'TOTAL.RW_IN', 'saw': 'TOTAL.RW_IN_LG', 'pulp': 'TOTAL.RW_IN_PW', 'other': 'TOTAL.RW_IN_O'}
+    for cc, c in rm['countries'].items():
+        ser = {k: [[y, x] for y, x in zip(rm['years'], c['series'].get(code) or []) if x is not None] for k, code in RK.items()}
+        ser = {k: a for k, a in ser.items() if a}
+        if ser.get('total'): C(cc)['removals'] = {'unit': 'thousand m3 under bark', 'series': ser, 'estimated': c.get('estimated') or [], 'src': rm['source']}
+    # superficie forestal (miles de ha)
+    for cc, c in em.items():
+        for s in c.get('series', []):
+            if s['id'] == cc.lower() + '-mo-area-for-thsha' and s.get('points'):
+                C(cc)['area'] = {'unit': 'thousand ha', 'points': [[int(p), v] for p, v in s['points'] if v is not None], 'src': {'name': 'Eurostat, for_area', 'url': 'https://ec.europa.eu/eurostat/databrowser/view/for_area/default/table', 'license': 'Eurostat copyright notice'}}
+    # precio oficial de la madera
+    for cc, c in tp['countries'].items():
+        C(cc)['prices'] = {'freq': c['freq'], 'unit': c['unit'], 'currency': c['currency'], 'vat': c.get('vat'), 'priceType': c.get('priceType'), 'note': c.get('note'), 'src': c['source'],
+                           'series': [dict({'id': s['id'], 'label': s['label'], 'group': s.get('group'), 'bench': bool(s.get('bench')), 'pts': pts(c['periods'], s['values'])}, **({'region': s['region']} if s.get('region') else {})) for s in c['series']]}
+    se = (ew.get('national') or {}).get('SE')
+    if se: C('SE')['prices'] = {'freq': 'Q', 'unit': se['series'][0]['unit'], 'currency': 'SEK', 'vat': 'excl', 'priceType': 'delivery', 'note': None, 'preliminary': [QK(p) for p in se.get('preliminary') or []],
+                                'src': {'name': se['name'], 'url': se['url'], 'license': se['license']},
+                                'series': [{'id': s['id'], 'label': s['name'], 'group': 'sawlog' if 'sawlog' in s['id'] else 'pulpwood', 'bench': s['id'] == 'se-roundwood-sawlogs-pine-and-spruce', 'pts': [[QK(p), v] for p, v in s['pts'] if v is not None]} for s in se['series']]}
+    DEL = {'total': 'Roundwood from state forests, total', 'logs': 'Sawlogs', 'pulp': 'Pulpwood', 'fuel': 'Fuelwood', 'spruce': 'Spruce sawlogs', 'pine': 'Pine sawlogs', 'beech': 'Beech sawlogs', 'oak': 'Oak sawlogs'}
+    C('DE')['prices'] = {'freq': 'M', 'unit': 'index ' + de['base'], 'currency': None, 'vat': 'excl', 'priceType': 'index', 'note': None, 'src': de['source'],
+                         'series': [{'id': 'de-wood-' + k, 'label': DEL.get(k, k), 'group': k, 'bench': k == 'total', 'pts': pts(de['months'], v)} for k, v in de['series'].items()]}
+    C('UK')['prices'] = {'freq': 'H', 'unit': uk['series'][0]['unit'], 'currency': 'GBP', 'vat': 'n/d', 'priceType': 'twelve-month average', 'note': uk.get('note'), 'src': uk['source'],
+                         'series': [{'id': s['id'], 'label': s['label'], 'group': s['id'], 'bench': s['id'] == 'uk-sawlog-softwood', 'pts': pts(s['periods'], s['values'])} for s in uk['series']]}
+    us = na['countries']['US']; UL = {'lumber': 'Lumber', 'softwood': 'Softwood lumber', 'hardwood': 'Hardwood lumber', 'plywood': 'Plywood', 'logs': 'Logs, bolts, timber, pulpwood and wood chips'}
+    C('US')['prices'] = {'freq': 'M', 'unit': 'index ' + us['source'].get('base', ''), 'currency': None, 'vat': 'n/d', 'priceType': 'index', 'note': None, 'src': us['source'],
+                         'series': [{'id': 'us-ppi-' + k, 'label': UL.get(k, k), 'group': k, 'bench': k == 'logs', 'pts': pts(us['months'], v)} for k, v in us['series'].items()]}
+    # indice de precios industriales de la madera
+    pp = ew['ppi']
+    for cc, c in pp['countries'].items():
+        C(cc)['ppi'] = {'unit': pp['unit'], 'products': pp['products'], 'C16': c.get('C16') or [], 'C161': c.get('C161') or [], 'src': pp['source']}
+    # danos y energia
+    for s in fd['series']:
+        C(s['country']).setdefault('damage', []).append({'id': s['id'], 'group': s['group'], 'label': s['label'], 'freq': s['freq'], 'unit': s['unit'], 'region': s.get('region'), 'note': s.get('note'), 'src': s['source'], 'pts': pts(s['periods'], s['values'])})
+    for s in we['series']:
+        cc = s['id'][:2].upper()
+        C(cc).setdefault('energy', []).append({'id': s['id'], 'group': s['group'], 'label': s['label'], 'freq': s['freq'], 'unit': s['unit'], 'currency': s.get('currency'), 'vat': s.get('vat'), 'note': s.get('note'), 'src': s['source'], 'pts': pts(s['periods'], s['values'])})
+    # corcho, pinon y castana
+    ck = dh.get('cork') or {}
+    for cc, c in (ck.get('countries') or {}).items():
+        C(cc)['cork'] = {'unit': ck.get('unit'), 'exports': c.get('exports') or [], 'imports': c.get('imports') or [], 'src': ck.get('source')}
+    if 'ES' in out and dh.get('forest'):
+        f = dh['forest']; out['ES']['nonWood'] = {k: f[k] for k in ('pineNut', 'chestnut') if f.get(k)}
+        if (ck.get('production') or {}).get('years'): out['ES'].setdefault('cork', {})['production'] = ck['production']
+    # resumen por pais para la comparativa y el selector
+    rows = []
+    for cc, v in sorted(out.items()):
+        r = {'cc': cc}
+        f = v.get('fires')
+        if f:
+            cy = [x for x in f['years'] if x[0] == f['currentYear']]
+            full = [x for x in f['years'] if x[0] < f['currentYear']]
+            if cy: r['fireYtd'] = [cy[0][0], cy[0][1], cy[0][2]]
+            if full: r['fireLast'] = [full[-1][0], full[-1][1]]
+            w = [x for x in (f.get('season') or {}).get('weeks', []) if x[2] is not None]
+            if w: r['fireVsAvg'] = [w[-1][1], w[-1][2], w[-1][3]]
+        m = (v.get('removals') or {}).get('series', {}).get('total')
+        if m:
+            r['removals'] = m[-1] + ([True] if m[-1][0] in v['removals']['estimated'] else [])
+            ar = {y: a for y, a in (v.get('area') or {}).get('points', [])}
+            a = ar.get(m[-1][0]) or (ar[max(ar)] if ar else None)
+            if a: r['removalsPerHa'] = [m[-1][0], round(m[-1][1] / a, 2)]
+        p = v.get('prices')
+        if p and p['series']:
+            b = [s for s in p['series'] if s['bench'] and not s.get('region') and s['pts']] or [s for s in p['series'] if not s.get('region') and s['pts']]
+            if b: b = b[0]; r['price'] = {'label': b['label'], 'unit': p['unit'], 'freq': p['freq'], 'period': b['pts'][-1][0], 'value': b['pts'][-1][1], 'yoy': yoy(b['pts'], BACK.get(p['freq'], 1))}
+        q = (v.get('ppi') or {}).get('C16')
+        if q: r['ppi'] = [q[-1][0], q[-1][1], yoy(q, 12)]
+        v['summary'] = r
+        if len(r) > 1: rows.append(r)
+        write('forest/%s.json' % cc, v)
+    write('forest/index.json', {'schemaVersion': 1, 'generatedAt': now(), 'countries': rows})
+    print('forest views:', len(rows), 'paises')
 def farm_managers():
     """data/views/farm-managers.json: jefes de explotacion por edad (numero de explotaciones), total y mujeres, de los 26 paises de la UE
     (data/eurostat-structure*-stats.json, Eurostat ef_fsi_agesex). Cifras tal cual; los porcentajes los calcula la ficha (js/farm-managers.js) y los rotula como calculo."""
@@ -611,8 +716,9 @@ def main():
     diesel_eu_more()
     farm_headlines()
     fish()
+    forest()
     farm_managers()
     census()
     forecasts()
-if len(sys.argv) > 1 and sys.argv[1] in ('census', 'forecasts', 'farm_managers', 'fish'): globals()[sys.argv[1]]()   # uso: build-views.py census (solo esa vista)
+if len(sys.argv) > 1 and sys.argv[1] in ('census', 'forecasts', 'farm_managers', 'fish', 'forest'): globals()[sys.argv[1]]()   # uso: build-views.py census (solo esa vista)
 else: main()

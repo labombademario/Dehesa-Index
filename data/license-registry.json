@@ -8623,6 +8623,12 @@
     "SK": "susr_sk"
    },
    "notes": "Eslovaquia: precios medios mensuales de productos agrarios (desde 2018), precios trimestrales de suministros a la agricultura (desde 2015), superficie, producción y rendimiento por cultivo y censo y rendimientos ganaderos (desde 1970); ŠÚ SR STATdata. scripts/update-sk-statdata.py."
+  },
+  "data/forest-fires-season.json": {
+   "sources": [
+    "effis_gwis"
+   ],
+   "notes": "Acumulado semanal de superficie quemada e incendios del año en curso por pais, con el minimo, la media y el maximo de los años anteriores (EFFIS desde 2006, GWIS desde 2012) que calcula EFFIS/GWIS. Estimaciones por satelite. scripts/update-forest-fires.py."
   }
  },
  "derived": [

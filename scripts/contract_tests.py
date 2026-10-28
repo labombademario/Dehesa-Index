@@ -4637,6 +4637,33 @@ def forest_fires(doc, errs, warns, stats):
     if not 20_000 <= eu["ba"][-2] <= 3_000_000: errs.append("incendios UE %d: %s ha fuera de lo plausible" % (ys[-2], eu["ba"][-2]))
     if doc["asOf"] < (today - _dt.timedelta(days=5)).isoformat(): warns.append("incendios: datos de %s, con retraso" % doc["asOf"])
     stats["paises"] = len(doc["countries"]); stats["años"] = n
+# Incendios: acumulado semanal del año en curso (EFFIS/GWIS) frente a la media de años anteriores
+def forest_fires_season(doc, errs, warns, stats):
+    import datetime as _dt
+    today = _dt.date.today()
+    if doc["year"] not in (today.year, today.year - 1): errs.append("temporada de incendios: año %s lejos del actual" % doc["year"]); return
+    if len(doc["columns"]) != 8: errs.append("temporada de incendios: columnas inesperadas"); return
+    miss = [c for c in ("ES", "PT", "FR", "IT", "EL", "US") if c not in doc["countries"]]
+    if miss: errs.append("temporada de incendios: faltan paises %s" % miss); return
+    for cc, c in doc["countries"].items():
+        W = c["weeks"]
+        if not 50 <= len(W) <= 53: errs.append("temporada %s: %d semanas" % (cc, len(W))); return
+        if [w[0] for w in W] != list(range(1, len(W) + 1)): errs.append("temporada %s: semanas no consecutivas" % cc); return
+        prev = 0; seen_gap = False
+        for w in W:
+            if len(w) != 8: errs.append("temporada %s semana %s: fila de %d columnas" % (cc, w[0], len(w))); return
+            if not str(w[1]).startswith(str(doc["year"])) and w[0] > 2: errs.append("temporada %s semana %s: fecha %s fuera del año" % (cc, w[0], w[1])); return
+            a = w[2]
+            if a is None: seen_gap = True; continue
+            if seen_gap: errs.append("temporada %s semana %s: dato despues de un hueco" % (cc, w[0])); return
+            if a < 0 or a > 100_000_000: errs.append("temporada %s semana %s: %s ha fuera de rango" % (cc, w[0], a)); return
+            if a + 1 < prev: errs.append("temporada %s semana %s: el acumulado baja (%s < %s)" % (cc, w[0], a, prev)); return
+            if w[1] > today.isoformat(): errs.append("temporada %s semana %s: dato de una semana que aun no ha terminado" % (cc, w[0])); return
+            if w[3] is None or w[3] < 0: errs.append("temporada %s semana %s: sin media de referencia" % (cc, w[0])); return
+            if w[4] is not None and w[5] is not None and not w[4] <= w[3] <= w[5]: errs.append("temporada %s semana %s: media fuera de minimo-maximo" % (cc, w[0])); return
+            prev = a
+    if doc["asOf"] < (today - _dt.timedelta(days=9)).isoformat(): warns.append("temporada de incendios: datos de %s, con retraso" % doc["asOf"])
+    stats["paises"] = len(doc["countries"])
 # Precios oficiales de la madera por surtido (SI, CZ, LV, FI, PL)
 TIMBER_FREQ = {"M": (r"^\d{4}-(0[1-9]|1[0-2])$", 120), "Q": (r"^\d{4}-Q[1-4]$", 200), "H": (r"^\d{4}-H[12]$", 420), "W": (r"^\d{4}-W(0[1-9]|[1-4]\d|5[0-3])$", 45), "A": (r"^\d{4}$", 600)}
 TIMBER_MAX = {"EUR/m3": 600, "CZK/m3": 12000, "PLN/m3": 1500}

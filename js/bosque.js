@@ -91,6 +91,26 @@
   ];
   var QUAL = { 'total': ['total', 'total', 'totale'], 'coniferous': ['coníferas', 'résineux', 'conifere'], 'non-coniferous': ['frondosas', 'feuillus', 'latifoglie'], 'broadleaf': ['frondosas', 'feuillus', 'latifoglie'], 'non-coniferous, others': ['otras frondosas', 'autres feuillus', 'altre latifoglie'], 'round and split, total': ['rolliza y partida, total', 'ronds et fendus, total', 'tondo e spaccato, totale'], 'round and split, coniferous': ['rolliza y partida, coníferas', 'ronds et fendus, résineux', 'tondo e spaccato, conifere'], 'round and split, non-coniferous': ['rolliza y partida, frondosas', 'ronds et fendus, feuillus', 'tondo e spaccato, latifoglie'] };
   var EX = {
+    'Hardwood pulpwood': ['Madera para trituración de frondosas', 'Bois de trituration de feuillus', 'Legname da cellulosa di latifoglie'],
+    'Softwood pulpwood': ['Madera para trituración de coníferas', 'Bois de trituration de résineux', 'Legname da cellulosa di conifere'],
+    'Pulpwood, total': ['Madera para trituración, total', 'Bois de trituration, total', 'Legname da cellulosa, totale'],
+    'Sawlogs (pine and spruce)': ['Rollizos para aserrío (pino y abeto rojo)', 'Grumes de sciage (pin et épicéa)', 'Tronchi da sega (pino e abete rosso)'],
+    'Roundwood from state forests, total': ['Madera en rollo de los bosques estatales, total', 'Bois rond des forêts domaniales, total', 'Tondame delle foreste statali, totale'],
+    'Sawlogs': ['Rollizos para aserrío', 'Grumes de sciage', 'Tronchi da sega'],
+    'Pulpwood': ['Madera para trituración', 'Bois de trituration', 'Legname da cellulosa'],
+    'Fuelwood': ['Leña', 'Bois de chauffage', 'Legna da ardere'],
+    'Spruce sawlogs': ['Rollizos para aserrío: abeto rojo', 'Grumes de sciage : épicéa', 'Tronchi da sega: abete rosso'],
+    'Pine sawlogs': ['Rollizos para aserrío: pino', 'Grumes de sciage : pin', 'Tronchi da sega: pino'],
+    'Beech sawlogs': ['Rollizos para aserrío: haya', 'Grumes de sciage : hêtre', 'Tronchi da sega: faggio'],
+    'Oak sawlogs': ['Rollizos para aserrío: roble', 'Grumes de sciage : chêne', 'Tronchi da sega: quercia'],
+    'Coniferous standing sales: average price': ['Ventas en pie de coníferas: precio medio', 'Ventes sur pied de résineux : prix moyen', 'Vendite in piedi di conifere: prezzo medio'],
+    'Softwood sawlogs: average price': ['Rollizos de coníferas para aserrío: precio medio', 'Grumes de sciage résineuses : prix moyen', 'Tronchi da sega di conifere: prezzo medio'],
+    'Small roundwood: average price': ['Madera en rollo de pequeño diámetro: precio medio', 'Petit bois rond : prix moyen', 'Tondame di piccolo diametro: prezzo medio'],
+    'Lumber': ['Madera aserrada', 'Bois scié', 'Legname segato'],
+    'Softwood lumber': ['Madera aserrada de coníferas', 'Sciages résineux', 'Segati di conifere'],
+    'Hardwood lumber': ['Madera aserrada de frondosas', 'Sciages feuillus', 'Segati di latifoglie'],
+    'Plywood': ['Contrachapado', 'Contreplaqué', 'Compensato'],
+    'Logs, bolts, timber, pulpwood and wood chips': ['Trozas, madera en rollo, madera para trituración y astillas', 'Grumes, bois rond, bois de trituration et plaquettes', 'Tronchi, tondame, legname da cellulosa e cippato'],
     'Gross felling, 3-year mean (1996-2020)': ['Corta bruta, media de 3 años (1996-2020)', 'Coupe brute, moyenne sur 3 ans (1996-2020)', 'Taglio lordo, media su 3 anni (1996-2020)'],
     'Forest land, total': ['Superficie forestal, total', 'Terrains forestiers, total', 'Superficie forestale, totale'],
     'Forest land: state forests': ['Superficie forestal: bosques estatales', 'Terrains forestiers : forêts d’État', 'Superficie forestale: foreste statali'],
@@ -237,62 +257,11 @@
       '<div class="di-card di-info-card wp-card"><div class="di-info-card-title">' + esc(cur.label) + ' · ' + esc(unit(cur.unit)) + (cur.freq ? ' · ' + esc(tx(T.freq[cur.freq])) : '') + '</div>' + (ch || '') + (extra ? extra(cur) : '') + '</div>' + (cur.source ? srcLine(cur.source) : '');
   }
   /* ---- precios ---- */
-  function pricesView(D) {
-    var tp = D.tp, cs = ['SI', 'CZ', 'LV', 'FI', 'PL'].filter(function (c) { return tp && tp.countries && tp.countries[c]; });
-    var items = cs.map(function (c) { return [c, tx(T.cty[c])]; });
-    if (D.wb && D.wb.series) items.push(['TR', tx(T.cty.TR)]);
-    if (!items.length) return '';
-    if (!items.some(function (o) { return o[0] === ST.pc; })) ST.pc = items[0][0];
-    var html = chips('bq-pc', items, ST.pc), list, note, head = '';
-    if (ST.pc === 'TR') {
-      list = D.wb.series.map(function (s) { return { id: s.id, label: s.name[lg()] || s.name.en, unit: s.unit, freq: 'M', periods: s.points.map(function (p) { return p[0]; }), values: s.points.map(function (p) { return p[1]; }), source: D.wb.source }; });
-      note = tx(T.trNote);
-    } else {
-      var c = tp.countries[ST.pc], regs = {}, hasReg = false;
-      c.series.forEach(function (s) { if (s.region) { regs[s.region] = 1; hasReg = true; } });
-      if (hasReg) {
-        var ro = [['', tx(T.wholeCountry)]].concat(Object.keys(regs).sort().map(function (r) { return [r, r]; }));
-        if (!ro.some(function (o) { return o[0] === ST.reg; })) ST.reg = '';
-        head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-reg">' + ro.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.reg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label></div>';
-      }
-      list = c.series.filter(function (s) { return hasReg ? (s.region || '') === ST.reg : true; }).map(function (s) {
-        return { id: s.id, label: trl(s.label), unit: c.unit, freq: c.freq, periods: c.periods, values: s.values, source: c.source, tag: s.bench ? '' : '' };
-      });
-      note = tx(T.pricesNote) + ' ' + c.note + ' (' + tx(T.freq[c.freq]) + ', ' + tx(T.vat[c.vat] || T.vat['n/d']) + ')';
-    }
-    return html + head + seriesBlock(list, 'p' + ST.pc + ST.reg) + '<div class="di-info-scope-note">' + esc(note) + '</div>' + (ST.pc === 'TR' ? '' : '<div class="di-info-scope-note">' + esc(tx(T.bgNote)) + '</div>');
-  }
   /* ---- incendios ---- */
   function fireStats(ff, cc) {
     var c = ff.countries[cc], n = ff.years.length, cy = ff.currentYear, i = n - 1, prev = n >= 2 ? c.ba[n - 2] : null, s = 0, k = 0, j;
     for (j = n - 11; j < n - 1; j++) if (j >= 0 && c.ba[j] != null) { s += c.ba[j]; k++; }
     return { ba: c.ba[i], nf: c.nf[i], prev: prev, avg: k >= 5 ? s / k : null, cy: cy };
-  }
-  function firesView(D) {
-    var ff = D.ff; if (!ff) return '';
-    var keys = Object.keys(ff.countries);
-    if (!ff.countries[ST.fc]) ST.fc = 'ES';
-    var opts = keys.slice().sort(function (a, b) { return tx(CN[a] || [a, a, a, a]).localeCompare(tx(CN[b] || [b, b, b, b]), LOC[lg()]); }).map(function (k) {
-      return '<option value="' + k + '"' + (k === ST.fc ? ' selected' : '') + '>' + esc(tx(CN[k] || [k, k, k, k])) + '</option>';
-    }).join('');
-    var st = fireStats(ff, ST.fc), c = ff.countries[ST.fc];
-    var series = { freq: 'A', periods: ff.years.map(String), values: c.ba };
-    var ch = chart(series, { name: tx(T.ba), yTitle: 'ha', aria: tx(T.fireTitle) });
-    var kp = function (l, v, u, sub) { return '<div class="fsh-kpi"><div class="fsh-kl">' + esc(l) + '</div><div class="fsh-kv">' + v + ' <span class="fsh-ku">' + esc(u) + '</span></div>' + (sub ? '<div class="fsh-kp">' + sub + '</div>' : '') + '</div>'; };
-    var vs = st.avg && st.ba != null ? pct((st.ba / st.avg - 1) * 100) : '—';
-    var kpis = '<div class="fsh-kpis">' + kp(tx(T.ba) + ' ' + st.cy + ' (' + tx(T.ytd) + ')', num(st.ba), 'ha') + kp(tx(T.nf) + ' ' + st.cy, num(st.nf), '') + kp(tx(T.prevY) + ' ' + (st.cy - 1), num(st.prev), 'ha') +
-      kp(tx(T.avg10), num(st.avg == null ? null : Math.round(st.avg)), 'ha', esc(tx(T.vsAvg)) + ': ' + vs) + '</div>';
-    var rank = keys.map(function (k) { var x = fireStats(ff, k); x.k = k; return x; }).filter(function (x) { return x.ba != null; }).sort(function (a, b) { return b.ba - a.ba; });
-    var rows = rank.map(function (x) {
-      var v = x.avg ? (x.ba / x.avg - 1) * 100 : null;
-      return '<tr class="fsh-row' + (x.k === ST.fc ? ' on' : '') + '" tabindex="0" data-fc="' + x.k + '"><td>' + esc(tx(CN[x.k] || [x.k, x.k, x.k, x.k])) + '</td><td class="num">' + num(x.ba) + '</td><td class="num">' + num(x.nf) + '</td><td class="num">' + num(x.prev) + '</td><td class="num">' + num(x.avg == null ? null : Math.round(x.avg)) +
-        '</td><td class="num"><span class="fsh-chg ' + (v == null ? '' : v >= 0 ? 'up' : 'dn') + '">' + pct(v) + '</span></td></tr>';
-    }).join('');
-    return '<div class="fsh-pick"><label>' + esc(tx(T.country)) + ' <select id="bq-fc">' + opts + '</select></label></div>' + kpis +
-      '<div class="di-card di-info-card wp-card"><div class="di-info-card-title">' + esc(tx(T.fireTitle)) + ' · ' + esc(tx(CN[ST.fc] || [ST.fc, ST.fc, ST.fc, ST.fc])) + ' · ' + esc(c.system.toUpperCase()) + '</div>' + ch + '</div>' +
-      '<div class="fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.fireTbl)) + ' (' + st.cy + ')</h2><div style="overflow-x:auto"><table class="fsh-tbl"><thead><tr><th>' + esc(tx(T.country)) + '</th><th class="num">' + esc(tx(T.ba)) + ' (ha)</th><th class="num">' + esc(tx(T.nf)) + '</th><th class="num">' + esc(tx(T.prevY)) +
-      ' (ha)</th><th class="num">' + esc(tx(T.avg10)) + ' (ha)</th><th class="num">' + esc(tx(T.vsAvg)) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div></div>' +
-      '<div class="di-info-scope-note">' + esc(tx(T.fireNote)) + '</div>' + srcLine(ff.source);
   }
   /* ---- cortas y daños ---- */
   /* ranking de regiones en un mismo año (cortas y daños: CZ y SE) */
@@ -318,58 +287,322 @@
     return '<div class="di-card di-info-card wp-card"><div class="di-info-card-title">' + esc(tx(RKT.h)) + '</div><div class="fsh-pick"><label>' + esc(tx(RKT.ind)) + ' <select id="bq-rk">' + io + '</select></label> <label>' + esc(tx(RKT.yr)) + ' <select id="bq-ry">' + yo + '</select></label></div>' +
       '<div class="fsh-tblw"><table class="fsh-tbl"><thead><tr><th>' + esc(tx(RKT.reg)) + '</th><th class="num">' + esc(tx(RKT.val)) + '</th><th class="num">' + esc(tx(RKT.sh)) + '</th><th></th></tr></thead><tbody>' + body + '</tbody></table></div><div class="di-info-scope-note">' + esc(tx(RKT.note)) + '</div></div>';
   }
-  function damageView(D) {
-    var fd = D.fd; if (!fd) return '';
-    var cs = ['CZ', 'SE', 'EE', 'HU'].filter(function (c) { return fd.series.some(function (s) { return s.country === c; }); });
-    if (cs.indexOf(ST.dc) < 0) ST.dc = cs[0];
-    var all = fd.series.filter(function (s) { return s.country === ST.dc; }), regs = {}, head = '';
-    all.forEach(function (s) { if (s.region) regs[s.region] = 1; });
-    if (Object.keys(regs).length) {
-      var ro = [['', tx(T.wholeCountry)]].concat(Object.keys(regs).sort(function (a, b) { return a.localeCompare(b, LOC[lg()]); }).map(function (r) { return [r, r]; }));
-      if (!ro.some(function (o) { return o[0] === ST.dreg; })) ST.dreg = '';
-      head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-dreg">' + ro.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === ST.dreg ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label></div>';
-    } else ST.dreg = '';
-    var list = all.filter(function (s) { return (s.region || '') === ST.dreg; }).map(function (s) { var o = {}, k; for (k in s) o[k] = s[k]; o.label = trl(s.label); return o; });
-    return chips('bq-dc', cs.map(function (c) { return [c, tx(T.cty[c])]; }), ST.dc) + head + seriesBlock(list, 'd' + ST.dc + ST.dreg) + (ST.dreg === '' ? rankView(all) : '') + '<div class="di-info-scope-note">' + esc(tx(T.dmgNote)) + '</div>';
+  /* ==== Página por país, como pesca.html: selector de país y año, cifras clave, series largas, precios por surtido, precio frente al índice
+     industrial, temporada de incendios, daños, energía, mapa y comparativa. Datos: data/views/forest/<CC>.json e index.json (scripts/build-views.py) ==== */
+  var FX = {
+    sub: L('Bosque y madera por país: cortas, superficie quemada, precio oficial de la madera por surtido, precios industriales de la madera, daños y energía de la madera. Cifras oficiales de cada fuente, sin armonizar entre países.',
+           'Forests and timber by country: wood removals, burnt area, official timber prices by assortment, industrial wood prices, damage and wood energy. Official figures from each source, not harmonised between countries.',
+           'Forêts et bois par pays : prélèvements de bois, surface brûlée, prix officiels du bois par assortiment, prix industriels du bois, dégâts et bois-énergie. Chiffres officiels de chaque source, non harmonisés entre pays.',
+           'Foreste e legno per paese: prelievi di legname, superficie bruciata, prezzi ufficiali del legname per assortimento, prezzi industriali del legno, danni ed energia dal legno. Dati ufficiali di ciascuna fonte, non armonizzati tra paesi.'),
+    year: L('Año', 'Year', 'Année', 'Anno'), latest: L('Último disponible', 'Latest available', 'Dernière disponible', 'Ultimo disponibile'),
+    kRem: L('Madera cortada', 'Wood removals', 'Bois prélevé', 'Legname prelevato'), kRemU: L('miles de m³', 'thousand m³', 'milliers de m³', 'migliaia di m³'),
+    kHa: L('Cortas por hectárea de bosque', 'Removals per hectare of forest', 'Prélèvements par hectare de forêt', 'Prelievi per ettaro di bosco'),
+    kArea: L('Superficie forestal', 'Forest area', 'Surface forestière', 'Superficie forestale'), kAreaU: L('miles de ha', 'thousand ha', 'milliers d’ha', 'migliaia di ha'),
+    kBa: L('Superficie quemada', 'Burnt area', 'Surface brûlée', 'Superficie bruciata'), kNf: L('Incendios cartografiados', 'Mapped fires', 'Incendies cartographiés', 'Incendi mappati'),
+    kPrice: L('Precio de la madera', 'Timber price', 'Prix du bois', 'Prezzo del legname'), kPpi: L('Precios industriales de la madera', 'Industrial wood prices', 'Prix industriels du bois', 'Prezzi industriali del legno'),
+    kCork: L('Corcho: exportaciones', 'Cork: exports', 'Liège : exportations', 'Sughero: esportazioni'),
+    vsPrevY: L('frente al año anterior', 'vs previous year', 'vs année précédente', 'rispetto all’anno precedente'), vsYear: L('frente a un año antes', 'vs a year earlier', 'vs un an avant', 'rispetto a un anno prima'),
+    vsAvgTo: L('frente a la media {a} a esta fecha', 'vs the {a} average to date', 'vs la moyenne {a} à cette date', 'rispetto alla media {a} a questa data'),
+    vsAvgYr: L('frente a la media anual {a}', 'vs the {a} annual average', 'vs la moyenne annuelle {a}', 'rispetto alla media annuale {a}'),
+    ytd: L('en lo que va de año', 'year to date', 'depuis janvier', 'da inizio anno'), est: L('estimación de Eurostat', 'Eurostat estimate', 'estimation d’Eurostat', 'stima di Eurostat'),
+    idx: L('índice 2021 = 100', 'index 2021 = 100', 'indice 2021 = 100', 'indice 2021 = 100'),
+    chRem: L('Madera cortada por año (miles de m³ sin corteza)', 'Wood removals per year (thousand m³ under bark)', 'Bois prélevé par an (milliers de m³ sous écorce)', 'Legname prelevato per anno (migliaia di m³ sotto corteccia)'),
+    chBa: L('Superficie quemada por año (ha)', 'Burnt area per year (ha)', 'Surface brûlée par an (ha)', 'Superficie bruciata per anno (ha)'),
+    sConif: L('Coníferas', 'Coniferous', 'Résineux', 'Conifere'), sBroad: L('Frondosas', 'Broadleaved', 'Feuillus', 'Latifoglie'), sTot: L('Total', 'Total', 'Total', 'Totale'),
+    remSplit: L('Destino de la madera cortada', 'What the removed wood is used for', 'Usage du bois prélevé', 'Destinazione del legname prelevato'),
+    uSaw: L('Rollizos para aserrío y chapa', 'Sawlogs and veneer logs', 'Grumes de sciage et de placage', 'Tronchi da sega e da tranciatura'), uPulp: L('Madera para trituración', 'Pulpwood', 'Bois de trituration', 'Legname da cellulosa'),
+    uOther: L('Otra madera industrial', 'Other industrial roundwood', 'Autres bois ronds industriels', 'Altro legname industriale'), uFuel: L('Leña y combustible', 'Fuelwood', 'Bois de chauffage', 'Legna da ardere'),
+    share: L('% del total', '% of total', '% du total', '% del totale'),
+    hPrices: L('Precio de la madera por surtido', 'Timber price by assortment', 'Prix du bois par assortiment', 'Prezzo del legname per assortimento'),
+    hPrev: L('Frente al periodo anterior', 'Vs previous period', 'Vs période précédente', 'Rispetto al periodo precedente'), hYear: L('Frente a un año antes', 'Vs a year earlier', 'Vs un an avant', 'Rispetto a un anno prima'),
+    hSpark: L('Últimos 2 años', 'Last 2 years', '2 dernières années', 'Ultimi 2 anni'),
+    noPrice: L('Sin precio oficial de la madera por surtido para este país en las fuentes que usamos. Abajo, los precios industriales de la madera (Eurostat) cuando existen.', 'No official timber price by assortment for this country in the sources we use. Below, industrial wood prices (Eurostat) where available.', 'Pas de prix officiel du bois par assortiment pour ce pays dans nos sources. Plus bas, les prix industriels du bois (Eurostat) lorsqu’ils existent.', 'Nessun prezzo ufficiale del legname per assortimento per questo paese nelle fonti che usiamo. Più sotto, i prezzi industriali del legno (Eurostat) dove esistono.'),
+    hCross: L('Precio de la madera frente a los precios industriales de la madera', 'Timber price vs industrial wood prices', 'Prix du bois vs prix industriels du bois', 'Prezzo del legname rispetto ai prezzi industriali del legno'),
+    crossSub: L('Cada surtido frente al índice de precios de producción de la industria de la madera del país (Eurostat, sts_inpp_m, C16), en el mismo periodo. Si el precio de la madera en rollo sube más que el de lo que se fabrica con ella, se estrecha el margen de la industria.',
+                'Each assortment against the country’s producer price index for the wood industry (Eurostat, sts_inpp_m, C16), over the same period. If roundwood rises faster than what is made from it, the industry’s margin narrows.',
+                'Chaque assortiment face à l’indice des prix à la production de l’industrie du bois du pays (Eurostat, sts_inpp_m, C16), sur la même période. Si le bois rond augmente plus vite que ce qu’on en fabrique, la marge de l’industrie se réduit.',
+                'Ogni assortimento rispetto all’indice dei prezzi alla produzione dell’industria del legno del paese (Eurostat, sts_inpp_m, C16), nello stesso periodo. Se il tondame sale più di ciò che se ne produce, il margine dell’industria si restringe.'),
+    hcPrice: L('Precio, 12 meses', 'Price, 12 months', 'Prix, 12 mois', 'Prezzo, 12 mesi'), hcPpi: L('Índice industrial, 12 meses', 'Industry index, 12 months', 'Indice industriel, 12 mois', 'Indice industriale, 12 mesi'),
+    hcGap: L('Diferencia (puntos)', 'Gap (points)', 'Écart (points)', 'Differenza (punti)'),
+    crossCh: L('{s} frente al índice industrial (100 = primer periodo común, {b})', '{s} vs the industry index (100 = first common period, {b})', '{s} face à l’indice industriel (100 = première période commune, {b})', '{s} rispetto all’indice industriale (100 = primo periodo comune, {b})'),
+    crossNote: L('Cálculo de Dehesa Index con cifras oficiales: el índice mensual se promedia en el periodo de cada precio (trimestre, semestre, año o mes de la semana) y ambos se llevan a 100 en el primer periodo común. No son la misma cosa: uno es el precio de la madera en rollo y otro el de los productos de la industria (aserrado, tableros, embalaje).',
+                 'Dehesa Index calculation with official figures: the monthly index is averaged over each price’s period (quarter, half-year, year or the month of the week) and both are set to 100 in the first common period. They are not the same thing: one is the roundwood price, the other the price of the industry’s products (sawn wood, panels, packaging).',
+                 'Calcul de Dehesa Index à partir de chiffres officiels : l’indice mensuel est moyenné sur la période de chaque prix (trimestre, semestre, année ou mois de la semaine) et les deux sont ramenés à 100 sur la première période commune. Ce n’est pas la même chose : l’un est le prix du bois rond, l’autre celui des produits de l’industrie (sciages, panneaux, emballages).',
+                 'Calcolo di Dehesa Index su dati ufficiali: l’indice mensile è mediato sul periodo di ciascun prezzo (trimestre, semestre, anno o mese della settimana) e i due sono portati a 100 nel primo periodo comune. Non sono la stessa cosa: uno è il prezzo del tondame, l’altro quello dei prodotti dell’industria (segati, pannelli, imballaggi).'),
+    ppiOnly: L('Precios de producción de la industria de la madera ({u})', 'Producer prices of the wood industry ({u})', 'Prix à la production de l’industrie du bois ({u})', 'Prezzi alla produzione dell’industria del legno ({u})'),
+    ppiC16: L('Industria de la madera y el corcho (sin muebles)', 'Wood and cork products (excl. furniture)', 'Industrie du bois et du liège (hors meubles)', 'Industria del legno e del sughero (esclusi mobili)'),
+    ppiC161: L('Aserrado y cepillado de la madera', 'Sawmilling and planing of wood', 'Sciage et rabotage du bois', 'Taglio e piallatura del legno'),
+    hSeason: L('Incendios de la temporada {y}', 'Fire season {y}', 'Saison des incendies {y}', 'Stagione degli incendi {y}'),
+    seasonSub: L('Superficie quemada acumulada desde el 1 de enero, semana a semana, frente a la media, el mínimo y el máximo del mismo acumulado en {a} (cálculo de EFFIS/GWIS). Abajo, el cierre de cada mes.',
+                 'Burnt area accumulated since 1 January, week by week, against the average, minimum and maximum of the same cumulative figure in {a} (calculated by EFFIS/GWIS). Below, the close of each month.',
+                 'Surface brûlée cumulée depuis le 1er janvier, semaine après semaine, face à la moyenne, au minimum et au maximum du même cumul sur {a} (calcul d’EFFIS/GWIS). Plus bas, la clôture de chaque mois.',
+                 'Superficie bruciata cumulata dal 1° gennaio, settimana per settimana, rispetto a media, minimo e massimo dello stesso cumulato nel {a} (calcolo EFFIS/GWIS). Sotto, la chiusura di ogni mese.'),
+    sThis: L('{y}', '{y}', '{y}', '{y}'), sAvg: L('Media {a}', 'Average {a}', 'Moyenne {a}', 'Media {a}'), sMax: L('Máximo {a}', 'Maximum {a}', 'Maximum {a}', 'Massimo {a}'),
+    month: L('Mes', 'Month', 'Mois', 'Mese'), cumY: L('Acumulado {y} (ha)', 'Cumulative {y} (ha)', 'Cumul {y} (ha)', 'Cumulato {y} (ha)'), cumA: L('Media a esa fecha (ha)', 'Average to that date (ha)', 'Moyenne à cette date (ha)', 'Media a quella data (ha)'),
+    vsA: L('Frente a la media', 'Vs the average', 'Vs la moyenne', 'Rispetto alla media'), fires: L('Incendios', 'Fires', 'Incendies', 'Incendi'),
+    weekTo: L('semana hasta el {d}', 'week to {d}', 'semaine jusqu’au {d}', 'settimana fino al {d}'),
+    zeroAvg: L('media inferior a 100 ha', 'average under 100 ha', 'moyenne inférieure à 100 ha', 'media inferiore a 100 ha'),
+    hDmg: L('Cortas y daños', 'Felling and damage', 'Coupes et dégâts', 'Tagli e danni'), hEn: L('Energía de la madera', 'Wood energy', 'Bois-énergie', 'Energia dal legno'),
+    hMap: L('Comparativa entre países', 'Country comparison', 'Comparaison entre pays', 'Confronto tra paesi'),
+    mapSub: L('El país elegido, marcado. Pulsa un país del mapa o de la tabla para ver su ficha. Cifras de fuentes distintas: compara con cuidado.', 'The chosen country is outlined. Select a country on the map or in the table to see it. Figures come from different sources: compare with care.', 'Le pays choisi est entouré. Sélectionnez un pays sur la carte ou dans le tableau. Chiffres de sources différentes : comparez avec prudence.', 'Il paese scelto è evidenziato. Seleziona un paese sulla mappa o nella tabella. Dati di fonti diverse: confronta con cautela.'),
+    mHa: L('Cortas por hectárea (m³/ha)', 'Removals per hectare (m³/ha)', 'Prélèvements par hectare (m³/ha)', 'Prelievi per ettaro (m³/ha)'),
+    mFire: L('Quemado este año frente a la media (%)', 'Burnt this year vs average (%)', 'Brûlé cette année vs moyenne (%)', 'Bruciato quest’anno vs media (%)'),
+    mPpi: L('Precios industriales de la madera, 12 meses (%)', 'Industrial wood prices, 12 months (%)', 'Prix industriels du bois, 12 mois (%)', 'Prezzi industriali del legno, 12 mesi (%)'),
+    show: L('Ver en el mapa', 'Show on the map', 'Afficher sur la carte', 'Mostra sulla mappa'), noData: L('sin dato', 'no data', 'pas de donnée', 'nessun dato'),
+    lower: L('menos', 'less', 'moins', 'meno'), higher: L('más', 'more', 'plus', 'più'),
+    cRem: L('Madera cortada (miles de m³)', 'Removals (thousand m³)', 'Prélèvements (milliers de m³)', 'Prelievi (migliaia di m³)'),
+    cHa: L('m³/ha', 'm³/ha', 'm³/ha', 'm³/ha'), cBa: L('Quemado este año (ha)', 'Burnt this year (ha)', 'Brûlé cette année (ha)', 'Bruciato quest’anno (ha)'),
+    cPrice: L('Precio de referencia', 'Reference price', 'Prix de référence', 'Prezzo di riferimento'), cPpi: L('Índice industrial, 12 meses', 'Industry index, 12 months', 'Indice industriel, 12 mois', 'Indice industriale, 12 mesi'),
+    none: L('Sin dato oficial para este país en las fuentes que usamos.', 'No official data for this country in the sources we use.', 'Pas de donnée officielle pour ce pays dans nos sources.', 'Nessun dato ufficiale per questo paese nelle fonti che usiamo.'),
+    tropical: L('Madera tropical (precios de exportación del Banco Mundial)', 'Tropical timber (World Bank export prices)', 'Bois tropical (prix à l’exportation de la Banque mondiale)', 'Legname tropicale (prezzi all’esportazione della Banca mondiale)'),
+    corkMore: L('Ver el corcho y los productos del monte en Mercados Dehesa', 'See cork and forest products in Dehesa markets', 'Voir le liège et les produits forestiers dans Marchés de la dehesa', 'Vedi il sughero e i prodotti forestali in Mercati della dehesa'),
+    remNote: L('Madera cortada: Eurostat for_remov (cuestionario conjunto del sector forestal), miles de m³ sin corteza. Superficie forestal: Eurostat for_area. Las cortas por hectárea son un cálculo de Dehesa Index (cortas del año entre la superficie forestal de ese año o la última publicada).',
+               'Wood removals: Eurostat for_remov (Joint Forest Sector Questionnaire), thousand m³ under bark. Forest area: Eurostat for_area. Removals per hectare are a Dehesa Index calculation (the year’s removals over that year’s forest area, or the latest published).',
+               'Prélèvements : Eurostat for_remov (questionnaire conjoint du secteur forestier), milliers de m³ sous écorce. Surface forestière : Eurostat for_area. Les prélèvements par hectare sont un calcul de Dehesa Index (prélèvements de l’année sur la surface forestière de l’année ou la dernière publiée).',
+               'Prelievi: Eurostat for_remov (questionario congiunto del settore forestale), migliaia di m³ sotto corteccia. Superficie forestale: Eurostat for_area. I prelievi per ettaro sono un calcolo di Dehesa Index (prelievi dell’anno sulla superficie forestale dello stesso anno o l’ultima pubblicata).')
+  };
+  var MINREF = 100;   /* por debajo de 100 ha de media de referencia el porcentaje no dice nada (1.164 ha frente a 44 = +2.545 %) */
+  var VIEW = {}, IDX = null, CUR = 'ES', YR = null, PSEL = {}, CSEL = 0, MAPM = 'ha', PREG = '', DREG = '', DSEL = {}, ESEL = {}, TSEL = {}, WB = null;
+  function getV(n) { if (!VIEW[n]) VIEW[n] = fetch(S && S.sitePath ? S.sitePath('data/views/forest/' + n + '.json') : 'data/views/forest/' + n + '.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); return VIEW[n]; }
+  function cname(cc) { return tx(CN[cc] || [cc, cc, cc, cc]); }
+  function flag(cc) { var iso = { EL: 'GR', UK: 'GB', EU: 'EU' }[cc] || cc; return /^[A-Z]{2}$/.test(iso) ? String.fromCodePoint(127397 + iso.charCodeAt(0), 127397 + iso.charCodeAt(1)) + ' ' : ''; }
+  function chgSpan(v) { return '<span class="fsh-chg ' + (v == null ? '' : v >= 0 ? 'up' : 'dn') + '">' + pct(v) + '</span>'; }
+  function freqOf(p) { return /^\d{4}$/.test(p) ? 'A' : /-Q\d$/.test(p) ? 'Q' : /-H\d$/.test(p) ? 'H' : /-W\d\d$/.test(p) ? 'W' : 'M'; }
+  function plabel(p) { var f = freqOf(p); if (f === 'M') { try { return new Date(ts(p, 'M')).toLocaleDateString(LOC[lg()], { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return p; } } return p; }
+  function pAt(a, back) { return a.length > back ? a[a.length - 1 - back] : null; }
+  function rel(a, b) { return a && b && b[1] ? (a[1] / b[1] - 1) * 100 : null; }
+  function yrPick(a) { if (!a || !a.length) return null; if (YR == null) return a[a.length - 1]; for (var i = a.length - 1; i >= 0; i--) if (+String(a[i][0]).slice(0, 4) <= YR) return a[i]; return null; }
+  function kpi(l, v, u, sub) { return '<div class="fsh-kpi"><div class="fsh-kl">' + esc(l) + '</div><div class="fsh-kv">' + v + (u ? ' <span class="fsh-ku">' + esc(u) + '</span>' : '') + '</div>' + (sub ? '<div class="fsh-kp">' + sub + '</div>' : '') + '</div>'; }
+  function src(s) { return s && s.url ? srcLine({ name: s.name, url: s.url, license: s.license || s.licence || '' }) : ''; }
+  function sec(id, title, body, sub) { return '<section class="di-card fsh-sec wp-card" id="' + id + '"><h2 class="fsh-h2">' + esc(title) + '</h2>' + (sub ? '<p class="di-movers-hint" style="margin:0 0 10px">' + esc(sub) + '</p>' : '') + body + '</section>'; }
+  function lineChart(series, o) {
+    var C = global.DehesaChart; if (!C) return '';
+    var ss = series.filter(function (s) { return s.pts.length > 1; }); if (!ss.length) return '';
+    return C.render({ series: ss, xMode: 'time', yTitle: o.yTitle, aria: o.aria, noLegend: ss.length < 2, trend: o.trend, trendUnit: o.trendUnit, vFmt: o.vFmt || function (v) { return num(v, dec(v)); }, yMin: o.yMin });
   }
-  /* ---- energia ---- */
-  function energyView(D) {
-    var we = D.we; if (!we) return '';
-    var list = we.series.map(function (s) { return { id: s.id, label: trl(s.label), unit: s.unit, freq: s.freq, periods: s.periods, values: s.values, source: s.source, tag: s.id.slice(0, 2).toUpperCase() }; });
-    return seriesBlock(list, 'e') + '<div class="di-info-scope-note">' + esc(tx(T.enNote)) + '</div>';
+  function toPts(a) { return a.map(function (p) { var f = freqOf(String(p[0])); return { x: ts(String(p[0]), f), y: p[1], l: plabel(String(p[0])) }; }); }
+  function spark(a, f) {
+    var n = (BACK[f] || 12) * 2, v = a.slice(-n - 1); if (v.length < 4) return '';
+    var mn = Math.min.apply(null, v.map(function (p) { return p[1]; })), mx = Math.max.apply(null, v.map(function (p) { return p[1]; })), rg = mx - mn || 1;
+    return '<svg width="96" height="22" viewBox="0 0 96 22" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="1.4" points="' + v.map(function (p, i) { return (i / (v.length - 1) * 94 + 1).toFixed(1) + ',' + (20 - (p[1] - mn) / rg * 18).toFixed(1); }).join(' ') + '"/></svg>';
+  }
+  /* ---- cifras clave ---- */
+  function kpis(v) {
+    var h = '', r = v.removals, f = v.fires, p = v.prices, q = v.ppi, ar = v.area;
+    if (r) { var t = r.series.total, x = yrPick(t), px = x ? t.filter(function (z) { return z[0] === x[0] - 1; })[0] : null;
+      if (x) h += kpi(tx(FX.kRem) + ' · ' + x[0], num(x[1], 0), tx(FX.kRemU), (px ? chgSpan(rel(x, px)) + ' ' + esc(tx(FX.vsPrevY)) : '') + (r.estimated.indexOf(x[0]) >= 0 ? ' · ' + esc(tx(FX.est)) : ''));
+      var a = ar && yrPick(ar.points.filter(function (z) { return x && z[0] <= x[0]; }));
+      if (x && a && a[1]) h += kpi(tx(FX.kHa) + ' · ' + x[0], num(x[1] / a[1], 2), 'm³/ha', esc(tx(FX.kArea)) + ': ' + num(a[1], 0) + ' ' + esc(tx(FX.kAreaU)) + ' (' + a[0] + ')'); }
+    else if (ar) { var a2 = yrPick(ar.points); if (a2) h += kpi(tx(FX.kArea) + ' · ' + a2[0], num(a2[1], 0), tx(FX.kAreaU)); }
+    if (f) { var fy = YR == null ? f.currentYear : YR, row = f.years.filter(function (z) { return z[0] === fy; })[0], se = f.season, sub = '';
+      if (row) {
+        if (fy === f.currentYear && se) { var w = se.weeks.filter(function (z) { return z[2] != null; }).pop(); if (w) { var dv = w[3] >= MINREF ? (w[2] / w[3] - 1) * 100 : null; sub = (dv == null ? esc(tx(FX.zeroAvg)) : chgSpan(dv) + ' ' + esc(tx(FX.vsAvgTo).replace('{a}', se.fromYear + '–' + (se.year - 1)))); } }
+        else if (se) { var avg = se.weeks[se.weeks.length - 1][3]; sub = avg >= MINREF ? chgSpan((row[1] / avg - 1) * 100) + ' ' + esc(tx(FX.vsAvgYr).replace('{a}', se.fromYear + '–' + (se.year - 1))) : ''; }
+        h += kpi(tx(FX.kBa) + ' · ' + fy + (fy === f.currentYear ? ' (' + tx(FX.ytd) + ')' : ''), num(row[1], 0), 'ha', sub);
+        h += kpi(tx(FX.kNf) + ' · ' + fy, num(row[2], 0), '', f.system.toUpperCase());
+      } }
+    if (p && p.series.length) { var b = p.series.filter(function (s) { return s.bench && !s.region && s.pts.length; })[0] || p.series.filter(function (s) { return !s.region && s.pts.length; })[0];
+      if (b) { var lp = yrPick(b.pts); if (lp) { var i = b.pts.indexOf(lp), yb = i >= (BACK[p.freq] || 1) ? b.pts[i - (BACK[p.freq] || 1)] : null;
+        h += kpi(tx(FX.kPrice) + ': ' + trl(b.label) + ' · ' + plabel(String(lp[0])), num(lp[1], dec(lp[1], p.unit)), unit(p.unit), yb ? chgSpan(rel(lp, yb)) + ' ' + esc(tx(FX.vsYear)) : ''); } } }
+    if (q && q.C16.length) { var lq = yrPick(q.C16); if (lq) { var j = q.C16.indexOf(lq), yq = j >= 12 ? q.C16[j - 12] : null; h += kpi(tx(FX.kPpi) + ' · ' + plabel(lq[0]), num(lq[1], 1), tx(FX.idx), yq ? chgSpan(rel(lq, yq)) + ' ' + esc(tx(FX.vsYear)) : ''); } }
+    if (v.cork && v.cork.exports && v.cork.exports.length) { var ce = yrPick(v.cork.exports.map(function (z) { return [z[0], z[1]]; })), cp = ce ? v.cork.exports.filter(function (z) { return z[0] === ce[0] - 1; })[0] : null;
+      if (ce) h += kpi(tx(FX.kCork) + ' · ' + ce[0], num(ce[1], 1), tx(MC.meur), (cp ? chgSpan(rel(ce, cp)) + ' ' + esc(tx(FX.vsPrevY)) + ' · ' : '') + '<a href="dehesa.html#dh-cork">' + esc(tx(L('ver', 'see', 'voir', 'vedi'))) + '</a>'); }
+    return h ? '<div class="fsh-kpis">' + h + '</div>' : '';
+  }
+  /* ---- series largas: cortas y superficie quemada (dos gráficas: unidades distintas) ---- */
+  function longBlock(v) {
+    var out = '', r = v.removals, f = v.fires;
+    if (r) {
+      var s = r.series, ser = [{ name: tx(FX.sTot), color: '#2f6b4a', pts: toPts(s.total.filter(function (z) { return z[0] >= 2000; })) }];
+      if (s.conif && s.nonconif) { ser.push({ name: tx(FX.sConif), color: '#8a6d3b', pts: toPts(s.conif.filter(function (z) { return z[0] >= 2000; })) }); ser.push({ name: tx(FX.sBroad), color: '#6f8fa6', pts: toPts(s.nonconif.filter(function (z) { return z[0] >= 2000; })), dash: '4 3' }); }
+      out += '<div class="di-info-card-title gb-sub">' + esc(tx(FX.chRem)) + '</div>' + lineChart(ser, { yTitle: tx(FX.kRemU), aria: tx(FX.chRem), vFmt: function (x) { return num(x, 0); } });
+      var last = s.total[s.total.length - 1], parts = [['saw', FX.uSaw], ['pulp', FX.uPulp], ['other', FX.uOther], ['fuel', FX.uFuel]].map(function (k) { var a = (s[k[0]] || []).filter(function (z) { return z[0] === last[0]; })[0]; return a ? [tx(k[1]), a[1]] : null; }).filter(Boolean);
+      if (parts.length > 1 && last[1]) out += '<div class="fsh-age" style="margin:10px 0 4px"><div class="fsh-kl" style="margin-bottom:4px">' + esc(tx(FX.remSplit)) + ' · ' + last[0] + '</div>' + parts.map(function (p) { var sh = p[1] / last[1] * 100; return '<div class="fsh-age-r"><span>' + esc(p[0]) + '</span><span class="fsh-bar wide"><i style="width:' + Math.max(1, Math.min(100, sh)).toFixed(1) + '%"></i></span><b>' + num(sh, 0) + ' %</b></div>'; }).join('') + '</div>';
+      out += '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(FX.remNote)) + (r.estimated.length ? ' ' + esc(tx(FX.est)) + ': ' + r.estimated.join(', ') + '.' : '') + '</p>' + src(r.src);
+    }
+    if (f) {
+      out += '<div class="di-info-card-title gb-sub" style="margin-top:14px">' + esc(tx(FX.chBa)) + ' · ' + esc(f.system.toUpperCase()) + '</div>' + lineChart([{ name: tx(FX.kBa), color: '#b4552d', pts: toPts(f.years.map(function (z) { return [z[0], z[1]]; })) }], { yTitle: 'ha', aria: tx(FX.chBa), vFmt: function (x) { return num(x, 0); } });
+    }
+    return out ? '<section class="di-card fsh-sec wp-card" id="bq-long">' + out + '</section>' : '';
+  }
+  /* ---- precios por surtido (como la tabla de lonja de pesca) ---- */
+  function pricesBlock(v) {
+    var p = v.prices;
+    if (!p || !p.series.length) return sec('bq-prices', tx(FX.hPrices), '<p class="di-movers-hint">' + esc(tx(FX.noPrice)) + '</p>');
+    var regs = {}; p.series.forEach(function (s) { if (s.region) regs[s.region] = 1; });
+    var rk = Object.keys(regs).sort(), head = '';
+    if (rk.length) { if (PREG && !regs[PREG]) PREG = ''; head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-reg"><option value="">' + esc(tx(T.wholeCountry)) + '</option>' + rk.map(function (r) { return '<option value="' + esc(r) + '"' + (r === PREG ? ' selected' : '') + '>' + esc(r) + '</option>'; }).join('') + '</select></label></div>'; } else PREG = '';
+    var list = p.series.filter(function (s) { return (s.region || '') === PREG && s.pts.length; }), key = CUR + PREG, back = BACK[p.freq] || 1;
+    if (!list.length) return '';
+    var cur = list.filter(function (s) { return s.id === PSEL[key]; })[0] || list.filter(function (s) { return s.bench; })[0] || list[0]; PSEL[key] = cur.id;
+    var rows = list.map(function (s) {
+      var a = s.pts, l = a[a.length - 1];
+      return '<tr class="fsh-row' + (s.id === cur.id ? ' on' : '') + '" tabindex="0" data-psid="' + esc(s.id) + '"><td>' + esc(trl(s.label)) + '</td><td class="num">' + esc(plabel(String(l[0]))) + '</td><td class="num"><b>' + num(l[1], dec(l[1], p.unit)) + '</b> <span class="fsh-m">' + esc(unit(p.unit)) + '</span></td><td class="num">' + chgSpan(rel(l, pAt(a, 1))) + '</td><td class="num">' + chgSpan(rel(l, pAt(a, back))) + '</td><td class="num" style="color:var(--accent)">' + spark(a, p.freq) + '</td></tr>';
+    }).join('');
+    var tbl = '<div class="di-table-wrap"><table class="fsh-tbl"><thead><tr><th>' + esc(tx(T.hSeries)) + '</th><th class="num">' + esc(tx(T.hPer)) + '</th><th class="num">' + esc(tx(T.hLast)) + '</th><th class="num">' + esc(tx(FX.hPrev)) + '</th><th class="num">' + esc(tx(FX.hYear)) + '</th><th class="num">' + esc(tx(FX.hSpark)) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+    var ch = lineChart([{ name: trl(cur.label), color: '#2f6b4a', pts: toPts(cur.pts) }], { yTitle: unit(p.unit), trendUnit: unit(p.unit), aria: trl(cur.label) });
+    var note = (p.note ? p.note + ' ' : '') + '(' + tx(T.freq[p.freq] || T.freq.M) + (p.vat ? ', ' + tx(T.vat[p.vat] || T.vat['n/d']) : '') + '). ' + tx(T.pricesNote) + (p.preliminary && p.preliminary.length ? ' ' + tx(L('Provisional: ', 'Preliminary: ', 'Provisoire : ', 'Provvisorio: ')) + p.preliminary.join(', ') + '.' : '');
+    return sec('bq-prices', tx(FX.hPrices), head + '<div class="fsh-m" style="margin-bottom:4px">' + esc(tx(T.pickRow)) + '</div>' + tbl + '<div class="di-info-card-title gb-sub" style="margin-top:14px">' + esc(trl(cur.label)) + ' · ' + esc(unit(p.unit)) + ' · ' + esc(tx(T.freq[p.freq] || T.freq.M)) + '</div>' + ch +
+      '<p class="di-movers-hint" style="max-width:860px">' + esc(note) + '</p>' + (CUR === 'CZ' || CUR === 'SI' || CUR === 'LV' || CUR === 'FI' || CUR === 'PL' ? '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(T.bgNote)) + '</p>' : '') + src(p.src));
+  }
+  /* ---- precio frente al índice industrial ---- */
+  function ppiFor(q, per) {
+    var f = freqOf(per), y = per.slice(0, 4), ms = [];
+    if (f === 'M') ms = [per]; else if (f === 'A') for (var i = 1; i <= 12; i++) ms.push(y + '-' + (i < 10 ? '0' : '') + i);
+    else if (f === 'Q') { var qq = +per.slice(6); for (var k = 1; k <= 3; k++) { var m = (qq - 1) * 3 + k; ms.push(y + '-' + (m < 10 ? '0' : '') + m); } }
+    else if (f === 'H') { var h = +per.slice(6); for (var k2 = 1; k2 <= 6; k2++) { var m2 = (h - 1) * 6 + k2; ms.push(y + '-' + (m2 < 10 ? '0' : '') + m2); } }
+    else { var d = new Date(ts(per, 'W') + 3 * 864e5); ms = [d.getUTCFullYear() + '-' + (d.getUTCMonth() < 9 ? '0' : '') + (d.getUTCMonth() + 1)]; }
+    var mp = q.map || (q.map = (function () { var o = {}; q.C16.forEach(function (z) { o[z[0]] = z[1]; }); return o; })()), s = 0;
+    for (var j = 0; j < ms.length; j++) { if (mp[ms[j]] == null) return null; s += mp[ms[j]]; }
+    return s / ms.length;
+  }
+  function crossBlock(v) {
+    var p = v.prices, q = v.ppi;
+    if (!q || !q.C16.length) return '';
+    if (!p || !p.series.length || p.priceType === 'index' && CUR === 'US') {
+      var ser = [{ name: tx(FX.ppiC16), color: '#2f6b4a', pts: toPts(q.C16) }]; if (q.C161 && q.C161.length) ser.push({ name: tx(FX.ppiC161), color: '#b4552d', pts: toPts(q.C161), dash: '4 3' });
+      return sec('bq-ppi', tx(FX.ppiOnly).replace('{u}', tx(FX.idx)), lineChart(ser, { yTitle: tx(FX.idx), aria: tx(FX.kPpi), vFmt: function (x) { return num(x, 1); } }) + src(q.src));
+    }
+    var back = BACK[p.freq] || 1, rows = [], list = p.series.filter(function (s) { return !s.region && s.pts.length > back; });
+    list.forEach(function (s, i) {
+      var a = s.pts, l = a[a.length - 1], o = a[a.length - 1 - back], pl = ppiFor(q, String(l[0])), po = ppiFor(q, String(o[0]));
+      var cp = rel(l, o), cq = pl != null && po ? (pl / po - 1) * 100 : null;
+      rows.push({ i: i, s: s, cp: cp, cq: cq, per: String(l[0]) });
+    });
+    if (!rows.length) return '';
+    if (CSEL >= rows.length) CSEL = 0;
+    var c = rows[CSEL].s, com = c.pts.filter(function (z) { return ppiFor(q, String(z[0])) != null; });
+    var tb = '<div class="di-table-wrap"><table class="fsh-tbl"><thead><tr><th>' + esc(tx(T.hSeries)) + '</th><th class="num">' + esc(tx(T.hPer)) + '</th><th class="num">' + esc(tx(FX.hcPrice)) + '</th><th class="num">' + esc(tx(FX.hcPpi)) + '</th><th class="num">' + esc(tx(FX.hcGap)) + '</th></tr></thead><tbody>' +
+      rows.map(function (r) { var g = r.cp != null && r.cq != null ? r.cp - r.cq : null; return '<tr class="fsh-row' + (r.i === CSEL ? ' on' : '') + '" tabindex="0" data-cx="' + r.i + '"><td>' + esc(trl(r.s.label)) + '</td><td class="num">' + esc(plabel(r.per)) + '</td><td class="num">' + chgSpan(r.cp) + '</td><td class="num">' + chgSpan(r.cq) + '</td><td class="num">' + (g == null ? '—' : (g > 0 ? '+' : '') + num(g, 1)) + '</td></tr>'; }).join('') + '</tbody></table></div>';
+    var ch = '';
+    if (com.length > 2) { var b0 = com[0][1], q0 = ppiFor(q, String(com[0][0])), f0 = freqOf(String(com[0][0]));
+      ch = '<div class="di-info-card-title gb-sub" style="margin-top:14px">' + esc(tx(FX.crossCh).replace('{s}', trl(c.label)).replace('{b}', plabel(String(com[0][0])))) + '</div>' +
+        lineChart([{ name: trl(c.label), color: '#2f6b4a', pts: com.map(function (z) { return { x: ts(String(z[0]), f0), y: z[1] / b0 * 100, l: plabel(String(z[0])) }; }) },
+                   { name: tx(FX.ppiC16), color: '#b4552d', pts: com.map(function (z) { return { x: ts(String(z[0]), f0), y: ppiFor(q, String(z[0])) / q0 * 100, l: plabel(String(z[0])) }; }) }], { yTitle: '100 = ' + plabel(String(com[0][0])), aria: tx(FX.hCross), vFmt: function (x) { return num(x, 1); } }); }
+    return sec('bq-cross', tx(FX.hCross), tb + ch + '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(FX.crossNote)) + '</p>' + src(q.src), tx(FX.crossSub));
+  }
+  /* ---- temporada de incendios ---- */
+  function seasonBlock(v) {
+    var f = v.fires, se = f && f.season; if (!se || (YR != null && YR !== se.year)) return '';
+    var a = se.fromYear + '–' + (se.year - 1), W = se.weeks, done = W.filter(function (w) { return w[2] != null; });
+    if (!done.length) return '';
+    var dts = function (w) { var p = w[1].split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]); };
+    var lab = function (w) { try { return tx(FX.weekTo).replace('{d}', new Date(dts(w)).toLocaleDateString(LOC[lg()], { day: 'numeric', month: 'short', timeZone: 'UTC' })); } catch (e) { return w[1]; } };
+    var ser = [{ name: tx(FX.sThis).replace('{y}', se.year), color: '#b4552d', pts: done.map(function (w) { return { x: dts(w), y: w[2], l: lab(w) }; }) },
+               { name: tx(FX.sAvg).replace('{a}', a), color: '#2f6b4a', pts: W.map(function (w) { return { x: dts(w), y: w[3], l: lab(w) }; }) }];
+    if (W[0][5] != null) ser.push({ name: tx(FX.sMax).replace('{a}', a), color: '#9a9284', pts: W.map(function (w) { return { x: dts(w), y: w[5], l: lab(w) }; }), dash: '4 3' });
+    var ch = lineChart(ser, { yTitle: 'ha', aria: tx(FX.hSeason).replace('{y}', se.year), vFmt: function (x) { return num(x, 0); }, trend: false });
+    var months = {}, ord = []; W.forEach(function (w) { var m = w[1].slice(0, 7); if (w[2] == null) return; if (!months[m]) ord.push(m); months[m] = w; });
+    var rows = ord.filter(function (m) { return months[m][2] != null; }).map(function (m) { var w = months[m], d = w[3] >= MINREF ? (w[2] / w[3] - 1) * 100 : null;
+      return '<tr><td>' + esc(plabel(m)) + ' <span class="fsh-m">' + esc(lab(w)) + '</span></td><td class="num">' + num(w[2], 0) + '</td><td class="num">' + num(w[3], 0) + '</td><td class="num">' + (d == null ? '<span class="fsh-m">' + esc(tx(FX.zeroAvg)) + '</span>' : chgSpan(d)) + '</td><td class="num">' + num(w[6], 0) + '</td></tr>'; }).join('');
+    var tb = '<div class="di-table-wrap"><table class="fsh-tbl"><thead><tr><th>' + esc(tx(FX.month)) + '</th><th class="num">' + esc(tx(FX.cumY).replace('{y}', se.year)) + '</th><th class="num">' + esc(tx(FX.cumA)) + '</th><th class="num">' + esc(tx(FX.vsA)) + '</th><th class="num">' + esc(tx(FX.fires)) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+    return sec('bq-season', tx(FX.hSeason).replace('{y}', se.year), ch + tb + '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(T.fireNote).replace(/ La media de 10 años.*$| The 10-year average.*$| La moyenne sur 10 ans.*$| La media a 10 anni.*$/, '')) + (se.sumOf ? ' ' + esc(tx(L('UE: suma de los 27 países (el mínimo y el máximo no se pueden sumar).', 'EU: sum of the 27 countries (minimum and maximum cannot be summed).', 'UE : somme des 27 pays (le minimum et le maximum ne s’additionnent pas).', 'UE: somma dei 27 paesi (minimo e massimo non si possono sommare).'))) : '') + '</p>' + src(f.src), tx(FX.seasonSub).replace('{a}', a));
+  }
+  /* ---- daños y energía: tabla + gráfica de la fila elegida (formato de seriesBlock) ---- */
+  function asOld(s) { return { id: s.id, label: trl(s.label), unit: s.unit, freq: s.freq, periods: s.pts.map(function (z) { return z[0]; }), values: s.pts.map(function (z) { return z[1]; }), source: s.src, region: s.region }; }
+  function dmgBlock(v) {
+    if (!v.damage || !v.damage.length) return '';
+    var all = v.damage.map(asOld), regs = {}; all.forEach(function (s) { if (s.region) regs[s.region] = 1; });
+    var rk = Object.keys(regs).sort(function (a, b) { return a.localeCompare(b, LOC[lg()]); }), head = '';
+    if (rk.length) { if (DREG && !regs[DREG]) DREG = ''; head = '<div class="fsh-pick"><label>' + esc(tx(T.region)) + ' <select id="bq-dreg"><option value="">' + esc(tx(T.wholeCountry)) + '</option>' + rk.map(function (r) { return '<option value="' + esc(r) + '"' + (r === DREG ? ' selected' : '') + '>' + esc(r) + '</option>'; }).join('') + '</select></label></div>'; } else DREG = '';
+    var list = all.filter(function (s) { return (s.region || '') === DREG; }); if (!list.length) return '';
+    ST.sel = DSEL; return sec('bq-dmg', tx(FX.hDmg), head + seriesBlock(list, 'd' + CUR + DREG) + (DREG === '' ? rankView(all) : '') + '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(T.dmgNote)) + '</p>');
+  }
+  function energyBlock(v) {
+    if (!v.energy || !v.energy.length) return '';
+    ST.sel = ESEL; return sec('bq-energy', tx(FX.hEn), seriesBlock(v.energy.map(asOld), 'e' + CUR) + '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(T.enNote)) + '</p>');
+  }
+  function tropicalBlock() {
+    if (!WB || !WB.series) return '';
+    var list = WB.series.map(function (s) { return { id: s.id, label: s.name[lg()] || s.name.en, unit: s.unit, freq: 'M', periods: s.points.map(function (p) { return p[0]; }), values: s.points.map(function (p) { return p[1]; }), source: WB.source }; });
+    ST.sel = TSEL; return '<details class="di-card fsh-sec wp-card" id="bq-tropical"><summary class="fsh-h2" style="cursor:pointer">' + esc(tx(FX.tropical)) + '</summary>' + seriesBlock(list, 'tr') + '<p class="di-movers-hint">' + esc(tx(T.trNote)) + '</p></details>';
+  }
+  /* ---- mapa de Europa y comparativa ---- */
+  var MAPL = 0;
+  function mval(r) {
+    if (MAPM === 'ha') return r.removalsPerHa ? r.removalsPerHa[1] : null;
+    if (MAPM === 'fire') return r.fireVsAvg && r.fireVsAvg[2] >= MINREF ? (r.fireVsAvg[1] / r.fireVsAvg[2] - 1) * 100 : null;
+    return r.ppi ? r.ppi[2] : null;
+  }
+  function mapSvg() {
+    var G = global.DEHESA_EU_COUNTRIES_MAP;
+    if (!G) { if (!MAPL) { MAPL = 1; var s = document.createElement('script'); s.src = 'vendor/eu-countries-map.js'; s.onload = function () { var b = document.getElementById('bq-mapbox'); if (b) b.innerHTML = mapSvg(); }; document.head.appendChild(s); } return ''; }
+    var by = {}; (IDX.countries || []).forEach(function (r) { by[{ EL: 'GR', UK: 'GB' }[r.cc] || r.cc] = r; });
+    var vals = Object.keys(by).map(function (k) { return mval(by[k]); }).filter(function (x) { return x != null; }).sort(function (a, b) { return a - b; });
+    var div = MAPM !== 'ha', pal = div ? ['#2f6b8a', '#8fb4c9', '#e8e2d4', '#e0a37a', '#b4552d'] : ['#eef0e2', '#c9d8b0', '#93b77f', '#5c8f57', '#2f6b4a'];
+    var brk = div ? [-25, -5, 5, 25] : (function () { var q = function (f) { return vals.length ? vals[Math.min(vals.length - 1, Math.floor(f * vals.length))] : 0; }; return [q(.2), q(.4), q(.6), q(.8)]; })();
+    var col = function (x) { if (x == null) return 'var(--border)'; for (var i = 0; i < brk.length; i++) if (x < brk[i]) return pal[i]; return pal[4]; };
+    var curIso = { EL: 'GR', UK: 'GB' }[CUR] || CUR;
+    var paths = G.countries.map(function (c) { var r = by[c.id], x = r ? mval(r) : null, cc = r ? r.cc : null;
+      return '<path d="' + c.d + '" fill="' + col(x) + '" stroke="' + (c.id === curIso ? 'var(--text)' : 'var(--surface,#fff)') + '" stroke-width="' + (c.id === curIso ? 2 : .6) + '"' + (cc ? ' data-mcc="' + cc + '" style="cursor:pointer"' : '') + '><title>' + esc(cc ? cname(cc) : c.name) + ': ' + (x == null ? tx(FX.noData) : num(x, MAPM === 'ha' ? 2 : 1) + (MAPM === 'ha' ? ' m³/ha' : ' %')) + '</title></path>'; }).join('');
+    var leg = pal.map(function (p, i) { var lo = i ? brk[i - 1] : null, hi = i < 4 ? brk[i] : null, f = function (z) { return num(z, MAPM === 'ha' ? 1 : 0); };
+      return '<span style="display:inline-flex;align-items:center;gap:4px;margin-right:10px"><i style="width:12px;height:12px;border-radius:2px;background:' + p + ';display:inline-block"></i>' + (lo == null ? '< ' + f(hi) : hi == null ? '≥ ' + f(lo) : f(lo) + '–' + f(hi)) + (MAPM === 'ha' ? '' : ' %') + '</span>'; }).join('') +
+      '<span style="display:inline-flex;align-items:center;gap:4px"><i style="width:12px;height:12px;border-radius:2px;background:var(--border);display:inline-block"></i>' + esc(tx(FX.noData)) + '</span>';
+    return '<svg viewBox="' + G.viewBox + '" role="img" aria-label="' + esc(tx(FX.hMap)) + '" style="width:100%;max-width:640px;height:auto;display:block">' + paths + '</svg><div class="fsh-m" style="font-size:12px;margin-top:6px">' + leg + '</div>';
+  }
+  function compareBlock() {
+    if (!IDX) return '';
+    var opts = [['ha', FX.mHa], ['fire', FX.mFire], ['ppi', FX.mPpi]].map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === MAPM ? ' selected' : '') + '>' + esc(tx(o[1])) + '</option>'; }).join('');
+    var rows = IDX.countries.slice().sort(function (a, b) { return cname(a.cc).localeCompare(cname(b.cc), LOC[lg()]); });
+    var tr = rows.map(function (r) {
+      var fv = r.fireVsAvg && r.fireVsAvg[2] >= MINREF ? (r.fireVsAvg[1] / r.fireVsAvg[2] - 1) * 100 : null;
+      return '<tr class="fsh-row' + (r.cc === CUR ? ' on' : '') + '" tabindex="0" data-cc="' + r.cc + '"><td>' + flag(r.cc) + esc(cname(r.cc)) + '</td>' +
+        '<td class="num">' + (r.removals ? num(r.removals[1], 0) + ' <span class="fsh-m">' + r.removals[0] + (r.removals[2] ? '*' : '') + '</span>' : '—') + '</td>' +
+        '<td class="num">' + (r.removalsPerHa ? num(r.removalsPerHa[1], 2) : '—') + '</td>' +
+        '<td class="num">' + (r.fireYtd ? num(r.fireYtd[1], 0) : '—') + '</td><td class="num">' + (r.fireVsAvg ? (fv == null ? '<span class="fsh-m">—</span>' : chgSpan(fv)) : '—') + '</td>' +
+        '<td class="num">' + (r.price ? num(r.price.value, dec(r.price.value, r.price.unit)) + ' <span class="fsh-m">' + esc(unit(r.price.unit)) + ' · ' + esc(plabel(String(r.price.period))) + '</span>' : '—') + '</td>' +
+        '<td class="num">' + (r.ppi ? chgSpan(r.ppi[2]) : '—') + '</td></tr>';
+    }).join('');
+    return sec('bq-compare', tx(FX.hMap), '<div class="fsh-pick"><label>' + esc(tx(FX.show)) + ' <select id="bq-mapm">' + opts + '</select></label></div><div id="bq-mapbox">' + mapSvg() + '</div>' +
+      '<div class="di-table-wrap" style="margin-top:12px"><table class="fsh-tbl"><thead><tr><th>' + esc(tx(T.country)) + '</th><th class="num">' + esc(tx(FX.cRem)) + '</th><th class="num">' + esc(tx(FX.cHa)) + '</th><th class="num">' + esc(tx(FX.cBa)) + '</th><th class="num">' + esc(tx(FX.vsA)) + '</th><th class="num">' + esc(tx(FX.cPrice)) + '</th><th class="num">' + esc(tx(FX.cPpi)) + '</th></tr></thead><tbody>' + tr + '</tbody></table></div>' +
+      '<p class="di-movers-hint" style="max-width:860px">* ' + esc(tx(FX.est)) + '. ' + esc(tx(L('La comparación con la media de incendios solo se da si esa media llega a 100 ha.', 'The comparison with the fire average is only shown when that average reaches 100 ha.', 'La comparaison avec la moyenne des incendies n’apparaît que si cette moyenne atteint 100 ha.', 'Il confronto con la media degli incendi compare solo se tale media raggiunge 100 ha.'))) + ' ' + esc(tx(T.pricesNote)) + '</p>', tx(FX.mapSub));
+  }
+  /* ---- selector de país y año ---- */
+  function yearsOf(v) {
+    var m = {}; if (v.removals) v.removals.series.total.forEach(function (z) { m[z[0]] = 1; }); if (v.fires) v.fires.years.forEach(function (z) { m[z[0]] = 1; });
+    return Object.keys(m).map(Number).filter(function (y) { return y >= 2000; }).sort(function (a, b) { return b - a; });
+  }
+  function header(v) {
+    var cs = IDX.countries.map(function (r) { return r.cc; }).sort(function (a, b) { return a === 'EU' ? -1 : b === 'EU' ? 1 : cname(a).localeCompare(cname(b), LOC[lg()]); });
+    var ys = yearsOf(v);
+    return '<div class="fsh-pick"><label>' + esc(tx(T.country)) + ' <select id="bq-cc">' + cs.map(function (c) { return '<option value="' + c + '"' + (c === CUR ? ' selected' : '') + '>' + flag(c) + esc(cname(c)) + '</option>'; }).join('') + '</select></label>' +
+      '<label>' + esc(tx(FX.year)) + ' <select id="bq-yr"><option value="">' + esc(tx(FX.latest)) + '</option>' + ys.map(function (y) { return '<option value="' + y + '"' + (y === YR ? ' selected' : '') + '>' + y + '</option>'; }).join('') + '</select></label></div>';
   }
   function page() {
     var root = document.getElementById('bq-body'); if (!root) return;
-    if (!DATA) return;
-    var D = DATA, tabs = ['prices', 'fires', 'damage', 'energy'].map(function (k) { return [k, tx(T.tabs[k])]; });
-    var body = ST.s === 'fires' ? firesView(D) : ST.s === 'damage' ? damageView(D) : ST.s === 'energy' ? energyView(D) : pricesView(D);
-    root.innerHTML = '<div class="di-badge di-badge-green di-info-badge">' + esc(tx(L('DATOS OFICIALES REALES', 'REAL OFFICIAL DATA', 'DONNÉES OFFICIELLES RÉELLES', 'DATI UFFICIALI REALI'))) + '</div>' + chips('bq-s', tabs, ST.s) + (body || '<p class="di-movers-hint">' + esc(tx(T.fail)) + '</p>');
-    document.getElementById('bq-h1').textContent = tx(T.title); document.getElementById('bq-sub').textContent = tx(T.sub);
-    try { document.title = tx(T.title) + ' | Dehesa Index'; } catch (e) {}
+    document.getElementById('bq-h1').textContent = tx(T.title); document.getElementById('bq-sub').textContent = tx(FX.sub);
+    try { document.title = tx(T.title) + ' · ' + cname(CUR) + ' | Dehesa Index'; } catch (e) {}
+    getV(CUR).then(function (v) {
+      if (!v) { root.innerHTML = '<p class="di-movers-hint">' + esc(tx(T.fail)) + '</p>'; return; }
+      var body = kpis(v) + longBlock(v) + seasonBlock(v) + pricesBlock(v) + crossBlock(v) + dmgBlock(v) + energyBlock(v);
+      root.innerHTML = '<div class="di-badge di-badge-green di-info-badge">' + esc(tx(L('DATOS OFICIALES REALES', 'REAL OFFICIAL DATA', 'DONNÉES OFFICIELLES RÉELLES', 'DATI UFFICIALI REALI'))) + '</div>' + header(v) +
+        (body || '<p class="di-movers-hint">' + esc(tx(FX.none)) + '</p>') + compareBlock() + tropicalBlock();
+      if (global.DICite && global.DICite.compact) try { global.DICite.compact(root, 'section'); } catch (e) {}
+    });
   }
-  function keep(fn) { var a = document.activeElement, id = a && a.getAttribute ? (a.getAttribute('data-bq-s') || a.getAttribute('data-bq-pc') || a.getAttribute('data-bq-dc') || a.getAttribute('data-sid') || a.getAttribute('data-fc')) : null; fn(); if (id) { var e = document.querySelector('[data-bq-s="' + id + '"],[data-bq-pc="' + id + '"],[data-bq-dc="' + id + '"],[data-sid="' + id + '"],[data-fc="' + id + '"]'); if (e && e.focus) e.focus(); } }
-  function url() { try { var u = new URL(global.location.href); u.searchParams.set('s', ST.s); global.history.replaceState(null, '', u.toString()); } catch (e) {} }
+  function go(cc) { CUR = cc; PREG = ''; DREG = ''; CSEL = 0; YR = null; try { var u = new URL(global.location.href); u.searchParams.set('c', cc); u.searchParams.delete('s'); global.history.replaceState(null, '', u.toString()); } catch (e) {} page(); }
+  function refocus(sel) { var e = document.querySelector(sel); if (e && e.focus) e.focus(); }
   function bind() {
     var root = document.getElementById('bq-body');
     root.addEventListener('click', function (ev) {
-      var t = ev.target, b = t.closest ? t.closest('[data-bq-s],[data-bq-pc],[data-bq-dc],tr[data-sid],tr[data-fc]') : null; if (!b) return;
-      keep(function () {
-        if (b.hasAttribute('data-bq-s')) { ST.s = b.getAttribute('data-bq-s'); url(); }
-        else if (b.hasAttribute('data-bq-pc')) { ST.pc = b.getAttribute('data-bq-pc'); ST.reg = ''; }
-        else if (b.hasAttribute('data-bq-dc')) { ST.dc = b.getAttribute('data-bq-dc'); ST.dreg = ''; }
-        else if (b.hasAttribute('data-fc')) ST.fc = b.getAttribute('data-fc');
-        else if (b.hasAttribute('data-sid')) {
-          var k = ST.s === 'prices' ? 'p' + ST.pc + ST.reg : ST.s === 'damage' ? 'd' + ST.dc + ST.dreg : 'e'; ST.sel[k] = b.getAttribute('data-sid');
-        }
-        page();
-      });
+      var t = ev.target, b = t.closest ? t.closest('tr[data-psid],tr[data-cx],tr[data-cc],tr[data-sid],path[data-mcc]') : null; if (!b) return;
+      if (b.hasAttribute('data-mcc')) { go(b.getAttribute('data-mcc')); return; }
+      if (b.hasAttribute('data-cc')) { go(b.getAttribute('data-cc')); global.scrollTo(0, 0); return; }
+      if (b.hasAttribute('data-psid')) { var id = b.getAttribute('data-psid'); PSEL[CUR + PREG] = id; page(); setTimeout(function () { refocus('tr[data-psid="' + id + '"]'); }, 60); return; }
+      if (b.hasAttribute('data-cx')) { CSEL = +b.getAttribute('data-cx'); page(); setTimeout(function () { refocus('tr[data-cx="' + CSEL + '"]'); }, 60); return; }
+      if (b.hasAttribute('data-sid')) { var sid = b.getAttribute('data-sid'), box = b.closest('section,details'), k = box && box.id;
+        if (k === 'bq-dmg') DSEL['d' + CUR + DREG] = sid; else if (k === 'bq-energy') ESEL['e' + CUR] = sid; else if (k === 'bq-tropical') TSEL.tr = sid;
+        page(); setTimeout(function () { var d = document.getElementById('bq-tropical'); if (k === 'bq-tropical' && d) d.open = true; refocus('#' + k + ' tr[data-sid="' + sid + '"]'); }, 60); }
     });
-    root.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' && ev.target.getAttribute && (ev.target.getAttribute('data-sid') || ev.target.getAttribute('data-fc'))) ev.target.click(); });
+    root.addEventListener('keydown', function (ev) { var t = ev.target; if (ev.key === 'Enter' && t.tagName === 'TR') t.click(); });
     root.addEventListener('change', function (ev) {
-      if (ev.target.id === 'bq-fc') { ST.fc = ev.target.value; page(); var e = document.getElementById('bq-fc'); if (e) e.focus(); }
-      else if (ev.target.id === 'bq-rk' || ev.target.id === 'bq-ry') { var rid = ev.target.id; if (rid === 'bq-rk') { ST.rk = ev.target.value; ST.ry = ''; } else ST.ry = ev.target.value; page(); var rr = document.getElementById(rid); if (rr) rr.focus(); }
-      else if (ev.target.id === 'bq-dreg') { ST.dreg = ev.target.value; page(); var q = document.getElementById('bq-dreg'); if (q) q.focus(); }
-      else if (ev.target.id === 'bq-reg') { ST.reg = ev.target.value; page(); var r = document.getElementById('bq-reg'); if (r) r.focus(); }
+      var id = ev.target.id;
+      if (id === 'bq-cc') { go(ev.target.value); setTimeout(function () { refocus('#bq-cc'); }, 60); }
+      else if (id === 'bq-yr') { YR = ev.target.value ? +ev.target.value : null; page(); setTimeout(function () { refocus('#bq-yr'); }, 60); }
+      else if (id === 'bq-reg') { PREG = ev.target.value; page(); setTimeout(function () { refocus('#bq-reg'); }, 60); }
+      else if (id === 'bq-dreg') { DREG = ev.target.value; page(); setTimeout(function () { refocus('#bq-dreg'); }, 60); }
+      else if (id === 'bq-rk' || id === 'bq-ry') { if (id === 'bq-rk') { ST.rk = ev.target.value; ST.ry = ''; } else ST.ry = ev.target.value; page(); setTimeout(function () { refocus('#' + id); }, 60); }
+      else if (id === 'bq-mapm') { MAPM = ev.target.value; var bx = document.getElementById('bq-mapbox'); if (bx) bx.innerHTML = mapSvg(); }
     });
   }
   /* ---- bloque de la ficha de país (js/paises.js, forestUp) ---- */
@@ -432,18 +665,22 @@
       if (!rows.length) { el.innerHTML = ''; return false; }
       var tab = ff ? 'fires' : tp ? 'prices' : 'damage';
       el.innerHTML = '<section class="di-card di-info-card wp-card gb-card" id="ps-forest" style="max-width:none"><h2 class="ps-rm-h">' + esc(tx(MC.h)) + '</h2><div class="di-info-stat-list">' + rows.join('') + '</div>' +
-        '<p style="margin:10px 0 0"><a href="bosque.html?s=' + tab + '&c=' + encodeURIComponent(cc) + '">' + esc(tx(MC.more)) + '</a>' + (cork.length ? ' · <a href="dehesa.html#dh-cork">' + esc(tx(MC.corkMore)) + '</a>' : '') + '</p></section>';
+        '<p style="margin:10px 0 0"><a href="bosque.html?c=' + encodeURIComponent(cc) + '">' + esc(tx(MC.more)) + '</a>' + (cork.length ? ' · <a href="dehesa.html#dh-cork">' + esc(tx(MC.corkMore)) + '</a>' : '') + '</p></section>';
       return true;
     });
   }
   global.DIForest = { mountCountry: mountCountry };
   if (document.getElementById('bq-body')) {
     if (S.init) S.init('production');
-    try { var qs = new URLSearchParams(global.location.search), q = qs.get('s'), qc = (qs.get('c') || '').toUpperCase(); if (q && T.tabs[q]) ST.s = q;
-      if (qc) { ST.fc = qc; if (['SI', 'CZ', 'LV', 'FI', 'PL'].indexOf(qc) >= 0) ST.pc = qc; if (['CZ', 'SE', 'EE', 'HU'].indexOf(qc) >= 0) ST.dc = qc; } } catch (e) {}
+    try { var qs = new URLSearchParams(global.location.search), qc = (qs.get('c') || '').toUpperCase(); if (/^[A-Z]{2}$/.test(qc)) CUR = qc; } catch (e) {}
     S.onLangChange = function () { page(); };
     document.getElementById('bq-body').innerHTML = '<p class="di-movers-hint">' + esc(tx(T.loading)) + '</p>';
     bind();
-    loadAll().then(function (D) { DATA = D; if (!D.tp && !D.ff && !D.fd && !D.we) { document.getElementById('bq-body').innerHTML = '<p class="di-movers-hint">' + esc(tx(T.fail)) + '</p>'; return; } page(); });
+    Promise.all([getV('index'), getJ('worldbank-timber')]).then(function (r) {
+      IDX = r[0]; WB = r[1];
+      if (!IDX || !IDX.countries) { document.getElementById('bq-body').innerHTML = '<p class="di-movers-hint">' + esc(tx(T.fail)) + '</p>'; return; }
+      if (!IDX.countries.some(function (x) { return x.cc === CUR; })) CUR = 'ES';
+      page();
+    });
   }
 })(window);
