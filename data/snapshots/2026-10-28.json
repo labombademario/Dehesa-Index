@@ -41418,7 +41418,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-28T00:03:59Z",
       "comparability": "directional",
-      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Jam\u00f3n de cerdo (pieza fresca), FOB planta (informe LM_PK602). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
+      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Jamón de cerdo (pieza fresca), FOB planta (informe LM_PK602). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
       "value": 60.19,
       "currency": "USD",
       "unit": "cwt",
@@ -46616,7 +46616,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-28T00:03:59Z",
       "comparability": "directional",
-      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Cerdos sacrificados el d\u00eda anterior, precio base de la canal, compra directa (informe LM_HG201). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
+      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Cerdos sacrificados el día anterior, precio base de la canal, compra directa (informe LM_HG201). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
       "value": 70.34,
       "currency": "USD",
       "unit": "cwt",
@@ -49215,7 +49215,7 @@
       "status": "verified",
       "verifiedAt": "2026-10-28T00:03:59Z",
       "comparability": "directional",
-      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Cerdos sacrificados el d\u00eda anterior, precio neto de la canal, compra directa (informe LM_HG201). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
+      "methodology": "USDA AMS, Livestock Mandatory Reporting (LMR): Cerdos sacrificados el día anterior, precio neto de la canal, compra directa (informe LM_HG201). Serie diaria en dolares de EE. UU. por 100 libras (cwt); sin cambio de unidad.",
       "value": 71.84,
       "currency": "USD",
       "unit": "cwt",
@@ -162782,6 +162782,4977 @@
           "period": 9,
           "year": 2026,
           "value": 25.42
+        }
+      ]
+    },
+    {
+      "id": "di_pienso_colza_fr_eu",
+      "product": "colza_fr",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-10-04",
+      "publicationDate": "2026-10-28",
+      "status": "verified",
+      "verifiedAt": "2026-10-28T19:28:41Z",
+      "comparability": "not_comparable",
+      "methodology": "Comision Europea, Agri-food Data Portal: precio semanal de la colza en Francia, entrega a la industria en Rouen, EUR/tonelada. Es un precio fisico, no el futuro de Euronext (Matif). La API no publica fecha de publicacion: se registra el dia en que se recupero.",
+      "value": 532.0,
+      "currency": "EUR",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "changePct": -2.5641,
+      "history": [
+        {
+          "period": "05-02",
+          "year": 2021,
+          "value": 580.0
+        },
+        {
+          "period": "06-13",
+          "year": 2021,
+          "value": 551.0
+        },
+        {
+          "period": "06-20",
+          "year": 2021,
+          "value": 518.0
+        },
+        {
+          "period": "06-27",
+          "year": 2021,
+          "value": 502.0
+        },
+        {
+          "period": "07-04",
+          "year": 2021,
+          "value": 536.0
+        },
+        {
+          "period": "07-18",
+          "year": 2021,
+          "value": 568.0
+        },
+        {
+          "period": "07-25",
+          "year": 2021,
+          "value": 530.0
+        },
+        {
+          "period": "08-01",
+          "year": 2021,
+          "value": 530.0
+        },
+        {
+          "period": "08-15",
+          "year": 2021,
+          "value": 541.0
+        },
+        {
+          "period": "08-22",
+          "year": 2021,
+          "value": 573.0
+        },
+        {
+          "period": "08-29",
+          "year": 2021,
+          "value": 564.0
+        },
+        {
+          "period": "09-05",
+          "year": 2021,
+          "value": 572.0
+        },
+        {
+          "period": "11-21",
+          "year": 2021,
+          "value": 705.0
+        },
+        {
+          "period": "12-12",
+          "year": 2021,
+          "value": 687.0
+        },
+        {
+          "period": "01-16",
+          "year": 2022,
+          "value": 776.0
+        },
+        {
+          "period": "02-27",
+          "year": 2022,
+          "value": 743.0
+        },
+        {
+          "period": "03-13",
+          "year": 2022,
+          "value": 875.0
+        },
+        {
+          "period": "03-20",
+          "year": 2022,
+          "value": 911.0
+        },
+        {
+          "period": "03-27",
+          "year": 2022,
+          "value": 1006.0
+        },
+        {
+          "period": "04-03",
+          "year": 2022,
+          "value": 994.0
+        },
+        {
+          "period": "04-10",
+          "year": 2022,
+          "value": 955.0
+        },
+        {
+          "period": "04-17",
+          "year": 2022,
+          "value": 976.0
+        },
+        {
+          "period": "05-08",
+          "year": 2022,
+          "value": 824.0
+        },
+        {
+          "period": "05-22",
+          "year": 2022,
+          "value": 876.0
+        },
+        {
+          "period": "05-29",
+          "year": 2022,
+          "value": 819.0
+        },
+        {
+          "period": "07-10",
+          "year": 2022,
+          "value": 661.0
+        },
+        {
+          "period": "07-31",
+          "year": 2022,
+          "value": 636.0
+        },
+        {
+          "period": "08-21",
+          "year": 2022,
+          "value": 622.0
+        },
+        {
+          "period": "08-28",
+          "year": 2022,
+          "value": 620.0
+        },
+        {
+          "period": "09-11",
+          "year": 2022,
+          "value": 609.0
+        },
+        {
+          "period": "09-25",
+          "year": 2022,
+          "value": 568.0
+        },
+        {
+          "period": "10-02",
+          "year": 2022,
+          "value": 599.0
+        },
+        {
+          "period": "10-09",
+          "year": 2022,
+          "value": 636.0
+        },
+        {
+          "period": "10-30",
+          "year": 2022,
+          "value": 631.0
+        },
+        {
+          "period": "11-06",
+          "year": 2022,
+          "value": 659.0
+        },
+        {
+          "period": "11-20",
+          "year": 2022,
+          "value": 611.0
+        },
+        {
+          "period": "12-04",
+          "year": 2022,
+          "value": 577.0
+        },
+        {
+          "period": "12-18",
+          "year": 2022,
+          "value": 556.0
+        },
+        {
+          "period": "01-01",
+          "year": 2023,
+          "value": 576.5
+        },
+        {
+          "period": "01-29",
+          "year": 2023,
+          "value": 524.0
+        },
+        {
+          "period": "02-19",
+          "year": 2023,
+          "value": 548.0
+        },
+        {
+          "period": "02-26",
+          "year": 2023,
+          "value": 552.0
+        },
+        {
+          "period": "03-05",
+          "year": 2023,
+          "value": 526.0
+        },
+        {
+          "period": "03-12",
+          "year": 2023,
+          "value": 516.0
+        },
+        {
+          "period": "03-19",
+          "year": 2023,
+          "value": 475.0
+        },
+        {
+          "period": "04-02",
+          "year": 2023,
+          "value": 459.0
+        },
+        {
+          "period": "05-14",
+          "year": 2023,
+          "value": 423.0
+        },
+        {
+          "period": "05-21",
+          "year": 2023,
+          "value": 406.0
+        },
+        {
+          "period": "06-04",
+          "year": 2023,
+          "value": 391.0
+        },
+        {
+          "period": "06-11",
+          "year": 2023,
+          "value": 421.0
+        },
+        {
+          "period": "06-25",
+          "year": 2023,
+          "value": 456.0
+        },
+        {
+          "period": "07-16",
+          "year": 2023,
+          "value": 443.0
+        },
+        {
+          "period": "08-20",
+          "year": 2023,
+          "value": 452.0
+        },
+        {
+          "period": "08-27",
+          "year": 2023,
+          "value": 459.0
+        },
+        {
+          "period": "09-03",
+          "year": 2023,
+          "value": 462.0
+        },
+        {
+          "period": "09-10",
+          "year": 2023,
+          "value": 461.0
+        },
+        {
+          "period": "10-01",
+          "year": 2023,
+          "value": 443.0
+        },
+        {
+          "period": "10-29",
+          "year": 2023,
+          "value": 415.0
+        },
+        {
+          "period": "11-12",
+          "year": 2023,
+          "value": 432.0
+        },
+        {
+          "period": "11-19",
+          "year": 2023,
+          "value": 435.0
+        },
+        {
+          "period": "11-26",
+          "year": 2023,
+          "value": 432.0
+        },
+        {
+          "period": "12-03",
+          "year": 2023,
+          "value": 438.0
+        },
+        {
+          "period": "12-10",
+          "year": 2023,
+          "value": 436.0
+        },
+        {
+          "period": "01-28",
+          "year": 2024,
+          "value": 430.0
+        },
+        {
+          "period": "02-04",
+          "year": 2024,
+          "value": 420.0
+        },
+        {
+          "period": "02-11",
+          "year": 2024,
+          "value": 417.0
+        },
+        {
+          "period": "02-18",
+          "year": 2024,
+          "value": 419.0
+        },
+        {
+          "period": "02-25",
+          "year": 2024,
+          "value": 415.0
+        },
+        {
+          "period": "03-03",
+          "year": 2024,
+          "value": 408.0
+        },
+        {
+          "period": "03-10",
+          "year": 2024,
+          "value": 414.0
+        },
+        {
+          "period": "03-17",
+          "year": 2024,
+          "value": 438.0
+        },
+        {
+          "period": "03-24",
+          "year": 2024,
+          "value": 440.0
+        },
+        {
+          "period": "03-31",
+          "year": 2024,
+          "value": 445.0
+        },
+        {
+          "period": "04-07",
+          "year": 2024,
+          "value": 439.0
+        },
+        {
+          "period": "04-14",
+          "year": 2024,
+          "value": 435.0
+        },
+        {
+          "period": "04-21",
+          "year": 2024,
+          "value": 444.0
+        },
+        {
+          "period": "04-28",
+          "year": 2024,
+          "value": 444.0
+        },
+        {
+          "period": "05-05",
+          "year": 2024,
+          "value": 447.0
+        },
+        {
+          "period": "05-26",
+          "year": 2024,
+          "value": 474.0
+        },
+        {
+          "period": "06-02",
+          "year": 2024,
+          "value": 481.0
+        },
+        {
+          "period": "06-09",
+          "year": 2024,
+          "value": 463.0
+        },
+        {
+          "period": "06-16",
+          "year": 2024,
+          "value": 461.0
+        },
+        {
+          "period": "06-23",
+          "year": 2024,
+          "value": 451.0
+        },
+        {
+          "period": "06-30",
+          "year": 2024,
+          "value": 453.0
+        },
+        {
+          "period": "07-07",
+          "year": 2024,
+          "value": 481.0
+        },
+        {
+          "period": "07-14",
+          "year": 2024,
+          "value": 481.0
+        },
+        {
+          "period": "07-21",
+          "year": 2024,
+          "value": 460.0
+        },
+        {
+          "period": "07-28",
+          "year": 2024,
+          "value": 489.0
+        },
+        {
+          "period": "08-04",
+          "year": 2024,
+          "value": 467.0
+        },
+        {
+          "period": "08-11",
+          "year": 2024,
+          "value": 448.0
+        },
+        {
+          "period": "08-18",
+          "year": 2024,
+          "value": 450.0
+        },
+        {
+          "period": "08-25",
+          "year": 2024,
+          "value": 443.0
+        },
+        {
+          "period": "09-01",
+          "year": 2024,
+          "value": 458.0
+        },
+        {
+          "period": "09-08",
+          "year": 2024,
+          "value": 461.0
+        },
+        {
+          "period": "09-15",
+          "year": 2024,
+          "value": 464.0
+        },
+        {
+          "period": "09-22",
+          "year": 2024,
+          "value": 460.0
+        },
+        {
+          "period": "09-29",
+          "year": 2024,
+          "value": 475.5
+        },
+        {
+          "period": "10-06",
+          "year": 2024,
+          "value": 474.0
+        },
+        {
+          "period": "10-13",
+          "year": 2024,
+          "value": 486.0
+        },
+        {
+          "period": "10-20",
+          "year": 2024,
+          "value": 492.0
+        },
+        {
+          "period": "10-27",
+          "year": 2024,
+          "value": 508.0
+        },
+        {
+          "period": "11-03",
+          "year": 2024,
+          "value": 508.0
+        },
+        {
+          "period": "11-10",
+          "year": 2024,
+          "value": 509.0
+        },
+        {
+          "period": "11-17",
+          "year": 2024,
+          "value": 533.0
+        },
+        {
+          "period": "11-24",
+          "year": 2024,
+          "value": 543.0
+        },
+        {
+          "period": "12-01",
+          "year": 2024,
+          "value": 505.0
+        },
+        {
+          "period": "12-08",
+          "year": 2024,
+          "value": 522.0
+        },
+        {
+          "period": "12-15",
+          "year": 2024,
+          "value": 530.0
+        },
+        {
+          "period": "12-22",
+          "year": 2024,
+          "value": 525.0
+        },
+        {
+          "period": "01-12",
+          "year": 2025,
+          "value": 508.0
+        },
+        {
+          "period": "01-19",
+          "year": 2025,
+          "value": 539.0
+        },
+        {
+          "period": "01-26",
+          "year": 2025,
+          "value": 530.0
+        },
+        {
+          "period": "02-02",
+          "year": 2025,
+          "value": 515.25
+        },
+        {
+          "period": "02-09",
+          "year": 2025,
+          "value": 519.4
+        },
+        {
+          "period": "02-16",
+          "year": 2025,
+          "value": 521.5
+        },
+        {
+          "period": "02-23",
+          "year": 2025,
+          "value": 528.0
+        },
+        {
+          "period": "03-02",
+          "year": 2025,
+          "value": 525.0
+        },
+        {
+          "period": "03-09",
+          "year": 2025,
+          "value": 516.0
+        },
+        {
+          "period": "03-16",
+          "year": 2025,
+          "value": 482.5
+        },
+        {
+          "period": "03-23",
+          "year": 2025,
+          "value": 470.0
+        },
+        {
+          "period": "03-30",
+          "year": 2025,
+          "value": 505.0
+        },
+        {
+          "period": "04-06",
+          "year": 2025,
+          "value": 522.0
+        },
+        {
+          "period": "04-13",
+          "year": 2025,
+          "value": 503.0
+        },
+        {
+          "period": "04-27",
+          "year": 2025,
+          "value": 475.0
+        },
+        {
+          "period": "05-04",
+          "year": 2025,
+          "value": 481.0
+        },
+        {
+          "period": "05-18",
+          "year": 2025,
+          "value": 484.0
+        },
+        {
+          "period": "05-25",
+          "year": 2025,
+          "value": 479.0
+        },
+        {
+          "period": "06-08",
+          "year": 2025,
+          "value": 471.0
+        },
+        {
+          "period": "06-15",
+          "year": 2025,
+          "value": 485.0
+        },
+        {
+          "period": "06-22",
+          "year": 2025,
+          "value": 485.0
+        },
+        {
+          "period": "06-29",
+          "year": 2025,
+          "value": 480.0
+        },
+        {
+          "period": "07-06",
+          "year": 2025,
+          "value": 459.0
+        },
+        {
+          "period": "07-27",
+          "year": 2025,
+          "value": 467.7
+        },
+        {
+          "period": "08-03",
+          "year": 2025,
+          "value": 470.0
+        },
+        {
+          "period": "08-24",
+          "year": 2025,
+          "value": 464.0
+        },
+        {
+          "period": "08-31",
+          "year": 2025,
+          "value": 466.0
+        },
+        {
+          "period": "09-07",
+          "year": 2025,
+          "value": 463.0
+        },
+        {
+          "period": "09-14",
+          "year": 2025,
+          "value": 457.0
+        },
+        {
+          "period": "09-21",
+          "year": 2025,
+          "value": 465.0
+        },
+        {
+          "period": "09-28",
+          "year": 2025,
+          "value": 463.0
+        },
+        {
+          "period": "10-05",
+          "year": 2025,
+          "value": 458.0
+        },
+        {
+          "period": "10-19",
+          "year": 2025,
+          "value": 462.0
+        },
+        {
+          "period": "10-26",
+          "year": 2025,
+          "value": 461.6
+        },
+        {
+          "period": "11-09",
+          "year": 2025,
+          "value": 473.0
+        },
+        {
+          "period": "11-16",
+          "year": 2025,
+          "value": 474.0
+        },
+        {
+          "period": "11-23",
+          "year": 2025,
+          "value": 476.0
+        },
+        {
+          "period": "11-30",
+          "year": 2025,
+          "value": 476.16
+        },
+        {
+          "period": "12-21",
+          "year": 2025,
+          "value": 464.5
+        },
+        {
+          "period": "01-18",
+          "year": 2026,
+          "value": 458.0
+        },
+        {
+          "period": "01-25",
+          "year": 2026,
+          "value": 464.0
+        },
+        {
+          "period": "02-01",
+          "year": 2026,
+          "value": 467.0
+        },
+        {
+          "period": "02-22",
+          "year": 2026,
+          "value": 480.25
+        },
+        {
+          "period": "03-01",
+          "year": 2026,
+          "value": 474.0
+        },
+        {
+          "period": "03-08",
+          "year": 2026,
+          "value": 483.4
+        },
+        {
+          "period": "03-15",
+          "year": 2026,
+          "value": 500.5
+        },
+        {
+          "period": "03-22",
+          "year": 2026,
+          "value": 497.0
+        },
+        {
+          "period": "03-29",
+          "year": 2026,
+          "value": 493.4
+        },
+        {
+          "period": "04-05",
+          "year": 2026,
+          "value": 507.0
+        },
+        {
+          "period": "04-12",
+          "year": 2026,
+          "value": 502.0
+        },
+        {
+          "period": "04-19",
+          "year": 2026,
+          "value": 496.0
+        },
+        {
+          "period": "05-17",
+          "year": 2026,
+          "value": 505.0
+        },
+        {
+          "period": "05-24",
+          "year": 2026,
+          "value": 528.0
+        },
+        {
+          "period": "06-14",
+          "year": 2026,
+          "value": 514.5
+        },
+        {
+          "period": "06-21",
+          "year": 2026,
+          "value": 508.89
+        },
+        {
+          "period": "06-28",
+          "year": 2026,
+          "value": 507.0
+        },
+        {
+          "period": "07-05",
+          "year": 2026,
+          "value": 502.0
+        },
+        {
+          "period": "07-19",
+          "year": 2026,
+          "value": 527.0
+        },
+        {
+          "period": "07-26",
+          "year": 2026,
+          "value": 551.0
+        },
+        {
+          "period": "08-02",
+          "year": 2026,
+          "value": 524.0
+        },
+        {
+          "period": "08-09",
+          "year": 2026,
+          "value": 516.0
+        },
+        {
+          "period": "08-16",
+          "year": 2026,
+          "value": 531.0
+        },
+        {
+          "period": "08-23",
+          "year": 2026,
+          "value": 542.0
+        },
+        {
+          "period": "09-06",
+          "year": 2026,
+          "value": 546.0
+        },
+        {
+          "period": "09-20",
+          "year": 2026,
+          "value": 545.0
+        },
+        {
+          "period": "09-27",
+          "year": 2026,
+          "value": 546.0
+        },
+        {
+          "period": "10-04",
+          "year": 2026,
+          "value": 532.0
+        }
+      ]
+    },
+    {
+      "id": "di_pienso_colza_de_eu",
+      "product": "colza_de",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-10-25",
+      "publicationDate": "2026-10-28",
+      "status": "verified",
+      "verifiedAt": "2026-10-28T19:28:41Z",
+      "comparability": "not_comparable",
+      "methodology": "Comision Europea, Agri-food Data Portal: precio semanal de la colza en Alemania, media nacional, salida de silo del agricultor, EUR/tonelada. Es un precio fisico, no el futuro de Euronext (Matif). La API no publica fecha de publicacion: se registra el dia en que se recupero.",
+      "value": 515.36,
+      "currency": "EUR",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "changePct": -0.7511,
+      "history": [
+        {
+          "period": "06-06",
+          "year": 2021,
+          "value": 518.81
+        },
+        {
+          "period": "06-13",
+          "year": 2021,
+          "value": 534.61
+        },
+        {
+          "period": "06-20",
+          "year": 2021,
+          "value": 527.3
+        },
+        {
+          "period": "06-27",
+          "year": 2021,
+          "value": 513.6
+        },
+        {
+          "period": "07-04",
+          "year": 2021,
+          "value": 508.2
+        },
+        {
+          "period": "07-11",
+          "year": 2021,
+          "value": 490.36
+        },
+        {
+          "period": "07-18",
+          "year": 2021,
+          "value": 512.19
+        },
+        {
+          "period": "07-25",
+          "year": 2021,
+          "value": 513.71
+        },
+        {
+          "period": "08-01",
+          "year": 2021,
+          "value": 507.91
+        },
+        {
+          "period": "08-08",
+          "year": 2021,
+          "value": 504.41
+        },
+        {
+          "period": "08-15",
+          "year": 2021,
+          "value": 515.02
+        },
+        {
+          "period": "08-22",
+          "year": 2021,
+          "value": 543.26
+        },
+        {
+          "period": "08-29",
+          "year": 2021,
+          "value": 540.87
+        },
+        {
+          "period": "09-05",
+          "year": 2021,
+          "value": 549.22
+        },
+        {
+          "period": "09-12",
+          "year": 2021,
+          "value": 549.24
+        },
+        {
+          "period": "09-19",
+          "year": 2021,
+          "value": 553.84
+        },
+        {
+          "period": "09-26",
+          "year": 2021,
+          "value": 571.96
+        },
+        {
+          "period": "10-03",
+          "year": 2021,
+          "value": 594.6
+        },
+        {
+          "period": "10-10",
+          "year": 2021,
+          "value": 619.11
+        },
+        {
+          "period": "10-17",
+          "year": 2021,
+          "value": 622.65
+        },
+        {
+          "period": "10-24",
+          "year": 2021,
+          "value": 642.32
+        },
+        {
+          "period": "10-31",
+          "year": 2021,
+          "value": 654.18
+        },
+        {
+          "period": "11-07",
+          "year": 2021,
+          "value": 666.06
+        },
+        {
+          "period": "11-14",
+          "year": 2021,
+          "value": 666.6
+        },
+        {
+          "period": "11-21",
+          "year": 2021,
+          "value": 686.46
+        },
+        {
+          "period": "11-28",
+          "year": 2021,
+          "value": 675.57
+        },
+        {
+          "period": "12-05",
+          "year": 2021,
+          "value": 651.0
+        },
+        {
+          "period": "12-12",
+          "year": 2021,
+          "value": 665.86
+        },
+        {
+          "period": "12-19",
+          "year": 2021,
+          "value": 690.33
+        },
+        {
+          "period": "12-26",
+          "year": 2021,
+          "value": 706.24
+        },
+        {
+          "period": "01-09",
+          "year": 2022,
+          "value": 733.92
+        },
+        {
+          "period": "01-16",
+          "year": 2022,
+          "value": 764.58
+        },
+        {
+          "period": "01-23",
+          "year": 2022,
+          "value": 722.34
+        },
+        {
+          "period": "01-30",
+          "year": 2022,
+          "value": 697.43
+        },
+        {
+          "period": "02-06",
+          "year": 2022,
+          "value": 702.97
+        },
+        {
+          "period": "02-13",
+          "year": 2022,
+          "value": 692.11
+        },
+        {
+          "period": "02-20",
+          "year": 2022,
+          "value": 687.3
+        },
+        {
+          "period": "02-27",
+          "year": 2022,
+          "value": 707.68
+        },
+        {
+          "period": "03-06",
+          "year": 2022,
+          "value": 749.78
+        },
+        {
+          "period": "03-13",
+          "year": 2022,
+          "value": 830.68
+        },
+        {
+          "period": "04-10",
+          "year": 2022,
+          "value": 931.41
+        },
+        {
+          "period": "04-17",
+          "year": 2022,
+          "value": 953.26
+        },
+        {
+          "period": "04-24",
+          "year": 2022,
+          "value": 967.58
+        },
+        {
+          "period": "05-01",
+          "year": 2022,
+          "value": 982.69
+        },
+        {
+          "period": "05-08",
+          "year": 2022,
+          "value": 923.13
+        },
+        {
+          "period": "05-15",
+          "year": 2022,
+          "value": 927.23
+        },
+        {
+          "period": "05-22",
+          "year": 2022,
+          "value": 926.79
+        },
+        {
+          "period": "05-29",
+          "year": 2022,
+          "value": 912.64
+        },
+        {
+          "period": "06-05",
+          "year": 2022,
+          "value": 892.99
+        },
+        {
+          "period": "06-12",
+          "year": 2022,
+          "value": 878.51
+        },
+        {
+          "period": "06-19",
+          "year": 2022,
+          "value": 815.56
+        },
+        {
+          "period": "06-26",
+          "year": 2022,
+          "value": 782.87
+        },
+        {
+          "period": "07-03",
+          "year": 2022,
+          "value": 684.51
+        },
+        {
+          "period": "07-10",
+          "year": 2022,
+          "value": 637.73
+        },
+        {
+          "period": "07-17",
+          "year": 2022,
+          "value": 658.7
+        },
+        {
+          "period": "07-24",
+          "year": 2022,
+          "value": 649.71
+        },
+        {
+          "period": "07-31",
+          "year": 2022,
+          "value": 610.49
+        },
+        {
+          "period": "08-07",
+          "year": 2022,
+          "value": 633.79
+        },
+        {
+          "period": "08-14",
+          "year": 2022,
+          "value": 625.86
+        },
+        {
+          "period": "08-21",
+          "year": 2022,
+          "value": 612.55
+        },
+        {
+          "period": "08-28",
+          "year": 2022,
+          "value": 597.85
+        },
+        {
+          "period": "09-04",
+          "year": 2022,
+          "value": 596.83
+        },
+        {
+          "period": "09-11",
+          "year": 2022,
+          "value": 586.79
+        },
+        {
+          "period": "09-18",
+          "year": 2022,
+          "value": 587.9
+        },
+        {
+          "period": "09-25",
+          "year": 2022,
+          "value": 562.35
+        },
+        {
+          "period": "10-02",
+          "year": 2022,
+          "value": 577.39
+        },
+        {
+          "period": "10-09",
+          "year": 2022,
+          "value": 607.53
+        },
+        {
+          "period": "10-16",
+          "year": 2022,
+          "value": 614.61
+        },
+        {
+          "period": "10-23",
+          "year": 2022,
+          "value": 603.6
+        },
+        {
+          "period": "10-30",
+          "year": 2022,
+          "value": 611.17
+        },
+        {
+          "period": "11-06",
+          "year": 2022,
+          "value": 633.58
+        },
+        {
+          "period": "11-13",
+          "year": 2022,
+          "value": 626.84
+        },
+        {
+          "period": "11-20",
+          "year": 2022,
+          "value": 605.6
+        },
+        {
+          "period": "11-27",
+          "year": 2022,
+          "value": 584.49
+        },
+        {
+          "period": "12-04",
+          "year": 2022,
+          "value": 568.6
+        },
+        {
+          "period": "12-11",
+          "year": 2022,
+          "value": 554.1
+        },
+        {
+          "period": "12-18",
+          "year": 2022,
+          "value": 543.37
+        },
+        {
+          "period": "12-25",
+          "year": 2022,
+          "value": 538.21
+        },
+        {
+          "period": "01-08",
+          "year": 2023,
+          "value": 564.02
+        },
+        {
+          "period": "01-15",
+          "year": 2023,
+          "value": 547.88
+        },
+        {
+          "period": "01-22",
+          "year": 2023,
+          "value": 540.4
+        },
+        {
+          "period": "01-29",
+          "year": 2023,
+          "value": 506.73
+        },
+        {
+          "period": "02-05",
+          "year": 2023,
+          "value": 514.76
+        },
+        {
+          "period": "02-12",
+          "year": 2023,
+          "value": 522.08
+        },
+        {
+          "period": "02-19",
+          "year": 2023,
+          "value": 525.33
+        },
+        {
+          "period": "02-26",
+          "year": 2023,
+          "value": 529.19
+        },
+        {
+          "period": "03-05",
+          "year": 2023,
+          "value": 512.34
+        },
+        {
+          "period": "03-12",
+          "year": 2023,
+          "value": 503.6
+        },
+        {
+          "period": "03-19",
+          "year": 2023,
+          "value": 463.68
+        },
+        {
+          "period": "03-26",
+          "year": 2023,
+          "value": 437.04
+        },
+        {
+          "period": "04-02",
+          "year": 2023,
+          "value": 433.0
+        },
+        {
+          "period": "04-09",
+          "year": 2023,
+          "value": 447.06
+        },
+        {
+          "period": "04-16",
+          "year": 2023,
+          "value": 430.82
+        },
+        {
+          "period": "04-23",
+          "year": 2023,
+          "value": 433.24
+        },
+        {
+          "period": "04-30",
+          "year": 2023,
+          "value": 425.58
+        },
+        {
+          "period": "05-07",
+          "year": 2023,
+          "value": 414.72
+        },
+        {
+          "period": "05-14",
+          "year": 2023,
+          "value": 404.77
+        },
+        {
+          "period": "05-21",
+          "year": 2023,
+          "value": 393.28
+        },
+        {
+          "period": "05-28",
+          "year": 2023,
+          "value": 366.38
+        },
+        {
+          "period": "06-04",
+          "year": 2023,
+          "value": 368.1
+        },
+        {
+          "period": "06-11",
+          "year": 2023,
+          "value": 383.64
+        },
+        {
+          "period": "06-18",
+          "year": 2023,
+          "value": 407.3
+        },
+        {
+          "period": "06-25",
+          "year": 2023,
+          "value": 421.7
+        },
+        {
+          "period": "07-02",
+          "year": 2023,
+          "value": 404.92
+        },
+        {
+          "period": "07-09",
+          "year": 2023,
+          "value": 425.83
+        },
+        {
+          "period": "07-16",
+          "year": 2023,
+          "value": 421.94
+        },
+        {
+          "period": "07-30",
+          "year": 2023,
+          "value": 443.12
+        },
+        {
+          "period": "08-06",
+          "year": 2023,
+          "value": 411.57
+        },
+        {
+          "period": "08-13",
+          "year": 2023,
+          "value": 422.08
+        },
+        {
+          "period": "08-20",
+          "year": 2023,
+          "value": 412.54
+        },
+        {
+          "period": "08-27",
+          "year": 2023,
+          "value": 423.57
+        },
+        {
+          "period": "09-03",
+          "year": 2023,
+          "value": 427.48
+        },
+        {
+          "period": "09-10",
+          "year": 2023,
+          "value": 422.96
+        },
+        {
+          "period": "09-17",
+          "year": 2023,
+          "value": 405.66
+        },
+        {
+          "period": "09-24",
+          "year": 2023,
+          "value": 396.32
+        },
+        {
+          "period": "10-01",
+          "year": 2023,
+          "value": 397.94
+        },
+        {
+          "period": "10-08",
+          "year": 2023,
+          "value": 403.1
+        },
+        {
+          "period": "10-15",
+          "year": 2023,
+          "value": 394.25
+        },
+        {
+          "period": "10-22",
+          "year": 2023,
+          "value": 391.92
+        },
+        {
+          "period": "10-29",
+          "year": 2023,
+          "value": 382.3
+        },
+        {
+          "period": "11-05",
+          "year": 2023,
+          "value": 387.8
+        },
+        {
+          "period": "11-12",
+          "year": 2023,
+          "value": 393.76
+        },
+        {
+          "period": "11-19",
+          "year": 2023,
+          "value": 399.0
+        },
+        {
+          "period": "11-26",
+          "year": 2023,
+          "value": 396.56
+        },
+        {
+          "period": "12-03",
+          "year": 2023,
+          "value": 403.02
+        },
+        {
+          "period": "12-10",
+          "year": 2023,
+          "value": 407.73
+        },
+        {
+          "period": "12-17",
+          "year": 2023,
+          "value": 408.7
+        },
+        {
+          "period": "12-24",
+          "year": 2023,
+          "value": 403.09
+        },
+        {
+          "period": "01-07",
+          "year": 2024,
+          "value": 408.9
+        },
+        {
+          "period": "01-14",
+          "year": 2024,
+          "value": 395.54
+        },
+        {
+          "period": "01-21",
+          "year": 2024,
+          "value": 396.7
+        },
+        {
+          "period": "01-28",
+          "year": 2024,
+          "value": 406.41
+        },
+        {
+          "period": "02-04",
+          "year": 2024,
+          "value": 401.19
+        },
+        {
+          "period": "02-11",
+          "year": 2024,
+          "value": 395.68
+        },
+        {
+          "period": "02-18",
+          "year": 2024,
+          "value": 392.12
+        },
+        {
+          "period": "02-25",
+          "year": 2024,
+          "value": 393.88
+        },
+        {
+          "period": "03-03",
+          "year": 2024,
+          "value": 383.0
+        },
+        {
+          "period": "03-10",
+          "year": 2024,
+          "value": 384.74
+        },
+        {
+          "period": "03-17",
+          "year": 2024,
+          "value": 394.7
+        },
+        {
+          "period": "03-24",
+          "year": 2024,
+          "value": 402.8
+        },
+        {
+          "period": "03-31",
+          "year": 2024,
+          "value": 414.5
+        },
+        {
+          "period": "04-07",
+          "year": 2024,
+          "value": 408.59
+        },
+        {
+          "period": "04-14",
+          "year": 2024,
+          "value": 408.65
+        },
+        {
+          "period": "04-21",
+          "year": 2024,
+          "value": 415.62
+        },
+        {
+          "period": "04-28",
+          "year": 2024,
+          "value": 416.63
+        },
+        {
+          "period": "05-05",
+          "year": 2024,
+          "value": 412.86
+        },
+        {
+          "period": "05-12",
+          "year": 2024,
+          "value": 423.08
+        },
+        {
+          "period": "05-19",
+          "year": 2024,
+          "value": 434.85
+        },
+        {
+          "period": "05-26",
+          "year": 2024,
+          "value": 432.0
+        },
+        {
+          "period": "06-02",
+          "year": 2024,
+          "value": 441.06
+        },
+        {
+          "period": "06-09",
+          "year": 2024,
+          "value": 432.63
+        },
+        {
+          "period": "06-16",
+          "year": 2024,
+          "value": 425.07
+        },
+        {
+          "period": "06-23",
+          "year": 2024,
+          "value": 418.04
+        },
+        {
+          "period": "06-30",
+          "year": 2024,
+          "value": 417.74
+        },
+        {
+          "period": "07-07",
+          "year": 2024,
+          "value": 428.14
+        },
+        {
+          "period": "07-14",
+          "year": 2024,
+          "value": 449.27
+        },
+        {
+          "period": "07-21",
+          "year": 2024,
+          "value": 434.33
+        },
+        {
+          "period": "07-28",
+          "year": 2024,
+          "value": 455.83
+        },
+        {
+          "period": "08-11",
+          "year": 2024,
+          "value": 424.42
+        },
+        {
+          "period": "08-18",
+          "year": 2024,
+          "value": 424.75
+        },
+        {
+          "period": "08-25",
+          "year": 2024,
+          "value": 418.19
+        },
+        {
+          "period": "09-01",
+          "year": 2024,
+          "value": 423.47
+        },
+        {
+          "period": "09-08",
+          "year": 2024,
+          "value": 429.37
+        },
+        {
+          "period": "09-15",
+          "year": 2024,
+          "value": 434.67
+        },
+        {
+          "period": "09-22",
+          "year": 2024,
+          "value": 432.77
+        },
+        {
+          "period": "09-29",
+          "year": 2024,
+          "value": 438.73
+        },
+        {
+          "period": "10-06",
+          "year": 2024,
+          "value": 441.17
+        },
+        {
+          "period": "10-13",
+          "year": 2024,
+          "value": 454.8
+        },
+        {
+          "period": "10-20",
+          "year": 2024,
+          "value": 462.46
+        },
+        {
+          "period": "10-27",
+          "year": 2024,
+          "value": 473.06
+        },
+        {
+          "period": "11-03",
+          "year": 2024,
+          "value": 475.38
+        },
+        {
+          "period": "11-10",
+          "year": 2024,
+          "value": 481.36
+        },
+        {
+          "period": "11-17",
+          "year": 2024,
+          "value": 499.27
+        },
+        {
+          "period": "11-24",
+          "year": 2024,
+          "value": 509.48
+        },
+        {
+          "period": "12-01",
+          "year": 2024,
+          "value": 485.95
+        },
+        {
+          "period": "12-08",
+          "year": 2024,
+          "value": 485.17
+        },
+        {
+          "period": "12-15",
+          "year": 2024,
+          "value": 496.52
+        },
+        {
+          "period": "12-22",
+          "year": 2024,
+          "value": 510.27
+        },
+        {
+          "period": "12-29",
+          "year": 2024,
+          "value": 510.17
+        },
+        {
+          "period": "01-05",
+          "year": 2025,
+          "value": 506.39
+        },
+        {
+          "period": "01-12",
+          "year": 2025,
+          "value": 487.5
+        },
+        {
+          "period": "01-19",
+          "year": 2025,
+          "value": 506.48
+        },
+        {
+          "period": "01-26",
+          "year": 2025,
+          "value": 502.61
+        },
+        {
+          "period": "02-02",
+          "year": 2025,
+          "value": 491.77
+        },
+        {
+          "period": "02-09",
+          "year": 2025,
+          "value": 492.21
+        },
+        {
+          "period": "02-16",
+          "year": 2025,
+          "value": 492.34
+        },
+        {
+          "period": "02-23",
+          "year": 2025,
+          "value": 502.43
+        },
+        {
+          "period": "03-02",
+          "year": 2025,
+          "value": 500.32
+        },
+        {
+          "period": "03-09",
+          "year": 2025,
+          "value": 495.71
+        },
+        {
+          "period": "03-16",
+          "year": 2025,
+          "value": 468.18
+        },
+        {
+          "period": "03-23",
+          "year": 2025,
+          "value": 450.26
+        },
+        {
+          "period": "03-30",
+          "year": 2025,
+          "value": 476.17
+        },
+        {
+          "period": "04-06",
+          "year": 2025,
+          "value": 500.5
+        },
+        {
+          "period": "04-13",
+          "year": 2025,
+          "value": 500.11
+        },
+        {
+          "period": "04-20",
+          "year": 2025,
+          "value": 510.02
+        },
+        {
+          "period": "04-27",
+          "year": 2025,
+          "value": 505.8
+        },
+        {
+          "period": "05-04",
+          "year": 2025,
+          "value": 490.73
+        },
+        {
+          "period": "05-11",
+          "year": 2025,
+          "value": 479.45
+        },
+        {
+          "period": "05-18",
+          "year": 2025,
+          "value": 484.75
+        },
+        {
+          "period": "05-25",
+          "year": 2025,
+          "value": 478.18
+        },
+        {
+          "period": "06-01",
+          "year": 2025,
+          "value": 488.56
+        },
+        {
+          "period": "06-08",
+          "year": 2025,
+          "value": 475.65
+        },
+        {
+          "period": "06-15",
+          "year": 2025,
+          "value": 480.67
+        },
+        {
+          "period": "06-22",
+          "year": 2025,
+          "value": 487.72
+        },
+        {
+          "period": "06-29",
+          "year": 2025,
+          "value": 483.72
+        },
+        {
+          "period": "07-06",
+          "year": 2025,
+          "value": 461.38
+        },
+        {
+          "period": "07-13",
+          "year": 2025,
+          "value": 449.62
+        },
+        {
+          "period": "07-20",
+          "year": 2025,
+          "value": 448.97
+        },
+        {
+          "period": "07-27",
+          "year": 2025,
+          "value": 450.42
+        },
+        {
+          "period": "08-10",
+          "year": 2025,
+          "value": 445.94
+        },
+        {
+          "period": "08-17",
+          "year": 2025,
+          "value": 440.36
+        },
+        {
+          "period": "08-24",
+          "year": 2025,
+          "value": 441.42
+        },
+        {
+          "period": "08-31",
+          "year": 2025,
+          "value": 443.64
+        },
+        {
+          "period": "09-07",
+          "year": 2025,
+          "value": 438.96
+        },
+        {
+          "period": "09-14",
+          "year": 2025,
+          "value": 435.77
+        },
+        {
+          "period": "09-21",
+          "year": 2025,
+          "value": 441.3
+        },
+        {
+          "period": "09-28",
+          "year": 2025,
+          "value": 445.09
+        },
+        {
+          "period": "10-05",
+          "year": 2025,
+          "value": 442.11
+        },
+        {
+          "period": "10-12",
+          "year": 2025,
+          "value": 441.55
+        },
+        {
+          "period": "10-19",
+          "year": 2025,
+          "value": 441.62
+        },
+        {
+          "period": "10-26",
+          "year": 2025,
+          "value": 440.03
+        },
+        {
+          "period": "11-02",
+          "year": 2025,
+          "value": 448.53
+        },
+        {
+          "period": "11-09",
+          "year": 2025,
+          "value": 452.33
+        },
+        {
+          "period": "11-16",
+          "year": 2025,
+          "value": 451.65
+        },
+        {
+          "period": "11-23",
+          "year": 2025,
+          "value": 455.87
+        },
+        {
+          "period": "11-30",
+          "year": 2025,
+          "value": 455.89
+        },
+        {
+          "period": "12-07",
+          "year": 2025,
+          "value": 456.5
+        },
+        {
+          "period": "12-14",
+          "year": 2025,
+          "value": 455.51
+        },
+        {
+          "period": "12-21",
+          "year": 2025,
+          "value": 452.0
+        },
+        {
+          "period": "01-11",
+          "year": 2026,
+          "value": 442.92
+        },
+        {
+          "period": "01-18",
+          "year": 2026,
+          "value": 448.84
+        },
+        {
+          "period": "01-25",
+          "year": 2026,
+          "value": 450.98
+        },
+        {
+          "period": "02-01",
+          "year": 2026,
+          "value": 458.01
+        },
+        {
+          "period": "02-08",
+          "year": 2026,
+          "value": 457.16
+        },
+        {
+          "period": "02-15",
+          "year": 2026,
+          "value": 461.49
+        },
+        {
+          "period": "02-22",
+          "year": 2026,
+          "value": 469.65
+        },
+        {
+          "period": "03-01",
+          "year": 2026,
+          "value": 472.42
+        },
+        {
+          "period": "03-08",
+          "year": 2026,
+          "value": 475.37
+        },
+        {
+          "period": "03-15",
+          "year": 2026,
+          "value": 484.5
+        },
+        {
+          "period": "03-22",
+          "year": 2026,
+          "value": 479.69
+        },
+        {
+          "period": "03-29",
+          "year": 2026,
+          "value": 475.33
+        },
+        {
+          "period": "04-05",
+          "year": 2026,
+          "value": 479.38
+        },
+        {
+          "period": "04-12",
+          "year": 2026,
+          "value": 480.65
+        },
+        {
+          "period": "04-19",
+          "year": 2026,
+          "value": 479.58
+        },
+        {
+          "period": "04-26",
+          "year": 2026,
+          "value": 484.1
+        },
+        {
+          "period": "05-03",
+          "year": 2026,
+          "value": 492.77
+        },
+        {
+          "period": "05-10",
+          "year": 2026,
+          "value": 502.19
+        },
+        {
+          "period": "05-17",
+          "year": 2026,
+          "value": 498.62
+        },
+        {
+          "period": "05-24",
+          "year": 2026,
+          "value": 506.77
+        },
+        {
+          "period": "05-31",
+          "year": 2026,
+          "value": 504.46
+        },
+        {
+          "period": "06-07",
+          "year": 2026,
+          "value": 504.46
+        },
+        {
+          "period": "06-14",
+          "year": 2026,
+          "value": 499.51
+        },
+        {
+          "period": "06-21",
+          "year": 2026,
+          "value": 493.31
+        },
+        {
+          "period": "06-28",
+          "year": 2026,
+          "value": 494.9
+        },
+        {
+          "period": "07-05",
+          "year": 2026,
+          "value": 482.85
+        },
+        {
+          "period": "07-12",
+          "year": 2026,
+          "value": 480.0
+        },
+        {
+          "period": "07-26",
+          "year": 2026,
+          "value": 515.84
+        },
+        {
+          "period": "08-02",
+          "year": 2026,
+          "value": 503.79
+        },
+        {
+          "period": "08-09",
+          "year": 2026,
+          "value": 489.87
+        },
+        {
+          "period": "08-16",
+          "year": 2026,
+          "value": 501.25
+        },
+        {
+          "period": "08-23",
+          "year": 2026,
+          "value": 512.62
+        },
+        {
+          "period": "08-30",
+          "year": 2026,
+          "value": 500.39
+        },
+        {
+          "period": "09-06",
+          "year": 2026,
+          "value": 515.36
+        },
+        {
+          "period": "09-13",
+          "year": 2026,
+          "value": 521.21
+        },
+        {
+          "period": "09-20",
+          "year": 2026,
+          "value": 521.74
+        },
+        {
+          "period": "09-27",
+          "year": 2026,
+          "value": 525.97
+        },
+        {
+          "period": "10-04",
+          "year": 2026,
+          "value": 518.84
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 520.36
+        },
+        {
+          "period": "10-18",
+          "year": 2026,
+          "value": 519.26
+        },
+        {
+          "period": "10-25",
+          "year": 2026,
+          "value": 515.36
+        }
+      ]
+    },
+    {
+      "id": "di_pienso_colza_pl_eu",
+      "product": "colza_pl",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-10-18",
+      "publicationDate": "2026-10-28",
+      "status": "verified",
+      "verifiedAt": "2026-10-28T19:28:41Z",
+      "comparability": "not_comparable",
+      "methodology": "Comision Europea, Agri-food Data Portal: precio semanal de la colza en Polonia, media nacional (la Comision no define la fase de mercado), EUR/tonelada. Es un precio fisico, no el futuro de Euronext (Matif). La API no publica fecha de publicacion: se registra el dia en que se recupero.",
+      "value": 572.82,
+      "currency": "EUR",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "changePct": 0.2678,
+      "history": [
+        {
+          "period": "01-10",
+          "year": 2021,
+          "value": 399.77
+        },
+        {
+          "period": "01-17",
+          "year": 2021,
+          "value": 405.6
+        },
+        {
+          "period": "01-24",
+          "year": 2021,
+          "value": 408.99
+        },
+        {
+          "period": "02-07",
+          "year": 2021,
+          "value": 415.46
+        },
+        {
+          "period": "02-14",
+          "year": 2021,
+          "value": 265.84
+        },
+        {
+          "period": "02-21",
+          "year": 2021,
+          "value": 406.82
+        },
+        {
+          "period": "02-28",
+          "year": 2021,
+          "value": 439.68
+        },
+        {
+          "period": "03-07",
+          "year": 2021,
+          "value": 437.87
+        },
+        {
+          "period": "03-14",
+          "year": 2021,
+          "value": 434.17
+        },
+        {
+          "period": "03-21",
+          "year": 2021,
+          "value": 455.16
+        },
+        {
+          "period": "03-28",
+          "year": 2021,
+          "value": 459.43
+        },
+        {
+          "period": "04-04",
+          "year": 2021,
+          "value": 444.86
+        },
+        {
+          "period": "04-11",
+          "year": 2021,
+          "value": 490.43
+        },
+        {
+          "period": "04-18",
+          "year": 2021,
+          "value": 451.33
+        },
+        {
+          "period": "04-25",
+          "year": 2021,
+          "value": 437.28
+        },
+        {
+          "period": "05-02",
+          "year": 2021,
+          "value": 474.81
+        },
+        {
+          "period": "05-09",
+          "year": 2021,
+          "value": 493.23
+        },
+        {
+          "period": "05-16",
+          "year": 2021,
+          "value": 251.63
+        },
+        {
+          "period": "05-23",
+          "year": 2021,
+          "value": 498.84
+        },
+        {
+          "period": "05-30",
+          "year": 2021,
+          "value": 475.33
+        },
+        {
+          "period": "06-06",
+          "year": 2021,
+          "value": 491.63
+        },
+        {
+          "period": "06-13",
+          "year": 2021,
+          "value": 446.63
+        },
+        {
+          "period": "06-20",
+          "year": 2021,
+          "value": 441.75
+        },
+        {
+          "period": "06-27",
+          "year": 2021,
+          "value": 601.51
+        },
+        {
+          "period": "07-04",
+          "year": 2021,
+          "value": 549.09
+        },
+        {
+          "period": "07-11",
+          "year": 2021,
+          "value": 695.95
+        },
+        {
+          "period": "07-18",
+          "year": 2021,
+          "value": 546.31
+        },
+        {
+          "period": "07-25",
+          "year": 2021,
+          "value": 444.13
+        },
+        {
+          "period": "08-08",
+          "year": 2021,
+          "value": 467.47
+        },
+        {
+          "period": "08-15",
+          "year": 2021,
+          "value": 465.02
+        },
+        {
+          "period": "08-22",
+          "year": 2021,
+          "value": 463.82
+        },
+        {
+          "period": "08-29",
+          "year": 2021,
+          "value": 467.44
+        },
+        {
+          "period": "09-05",
+          "year": 2021,
+          "value": 484.51
+        },
+        {
+          "period": "09-12",
+          "year": 2021,
+          "value": 505.3
+        },
+        {
+          "period": "09-19",
+          "year": 2021,
+          "value": 527.39
+        },
+        {
+          "period": "09-26",
+          "year": 2021,
+          "value": 541.23
+        },
+        {
+          "period": "10-03",
+          "year": 2021,
+          "value": 547.45
+        },
+        {
+          "period": "10-10",
+          "year": 2021,
+          "value": 586.57
+        },
+        {
+          "period": "10-17",
+          "year": 2021,
+          "value": 256.51
+        },
+        {
+          "period": "10-24",
+          "year": 2021,
+          "value": 630.02
+        },
+        {
+          "period": "10-31",
+          "year": 2021,
+          "value": 673.34
+        },
+        {
+          "period": "11-07",
+          "year": 2021,
+          "value": 661.73
+        },
+        {
+          "period": "11-14",
+          "year": 2021,
+          "value": 670.99
+        },
+        {
+          "period": "11-21",
+          "year": 2021,
+          "value": 685.79
+        },
+        {
+          "period": "11-28",
+          "year": 2021,
+          "value": 676.74
+        },
+        {
+          "period": "12-05",
+          "year": 2021,
+          "value": 631.68
+        },
+        {
+          "period": "12-12",
+          "year": 2021,
+          "value": 690.34
+        },
+        {
+          "period": "12-26",
+          "year": 2021,
+          "value": 751.57
+        },
+        {
+          "period": "01-02",
+          "year": 2022,
+          "value": 768.78
+        },
+        {
+          "period": "01-09",
+          "year": 2022,
+          "value": 709.62
+        },
+        {
+          "period": "01-16",
+          "year": 2022,
+          "value": 750.18
+        },
+        {
+          "period": "01-23",
+          "year": 2022,
+          "value": 746.1
+        },
+        {
+          "period": "01-30",
+          "year": 2022,
+          "value": 723.42
+        },
+        {
+          "period": "02-06",
+          "year": 2022,
+          "value": 691.53
+        },
+        {
+          "period": "02-13",
+          "year": 2022,
+          "value": 705.12
+        },
+        {
+          "period": "02-20",
+          "year": 2022,
+          "value": 687.45
+        },
+        {
+          "period": "02-27",
+          "year": 2022,
+          "value": 725.81
+        },
+        {
+          "period": "03-06",
+          "year": 2022,
+          "value": 707.71
+        },
+        {
+          "period": "03-13",
+          "year": 2022,
+          "value": 731.92
+        },
+        {
+          "period": "03-20",
+          "year": 2022,
+          "value": 768.84
+        },
+        {
+          "period": "03-27",
+          "year": 2022,
+          "value": 779.47
+        },
+        {
+          "period": "04-03",
+          "year": 2022,
+          "value": 823.92
+        },
+        {
+          "period": "04-10",
+          "year": 2022,
+          "value": 863.0
+        },
+        {
+          "period": "04-17",
+          "year": 2022,
+          "value": 833.76
+        },
+        {
+          "period": "04-24",
+          "year": 2022,
+          "value": 890.25
+        },
+        {
+          "period": "05-01",
+          "year": 2022,
+          "value": 892.43
+        },
+        {
+          "period": "05-08",
+          "year": 2022,
+          "value": 981.23
+        },
+        {
+          "period": "05-15",
+          "year": 2022,
+          "value": 1007.94
+        },
+        {
+          "period": "05-22",
+          "year": 2022,
+          "value": 983.87
+        },
+        {
+          "period": "05-29",
+          "year": 2022,
+          "value": 1015.72
+        },
+        {
+          "period": "06-05",
+          "year": 2022,
+          "value": 968.27
+        },
+        {
+          "period": "06-12",
+          "year": 2022,
+          "value": 955.11
+        },
+        {
+          "period": "06-19",
+          "year": 2022,
+          "value": 922.06
+        },
+        {
+          "period": "07-10",
+          "year": 2022,
+          "value": 917.52
+        },
+        {
+          "period": "07-17",
+          "year": 2022,
+          "value": 719.83
+        },
+        {
+          "period": "07-31",
+          "year": 2022,
+          "value": 654.24
+        },
+        {
+          "period": "08-07",
+          "year": 2022,
+          "value": 665.66
+        },
+        {
+          "period": "08-14",
+          "year": 2022,
+          "value": 678.81
+        },
+        {
+          "period": "08-21",
+          "year": 2022,
+          "value": 681.31
+        },
+        {
+          "period": "09-11",
+          "year": 2022,
+          "value": 659.41
+        },
+        {
+          "period": "09-18",
+          "year": 2022,
+          "value": 646.65
+        },
+        {
+          "period": "09-25",
+          "year": 2022,
+          "value": 608.61
+        },
+        {
+          "period": "10-02",
+          "year": 2022,
+          "value": 616.2
+        },
+        {
+          "period": "10-09",
+          "year": 2022,
+          "value": 670.9
+        },
+        {
+          "period": "10-16",
+          "year": 2022,
+          "value": 619.16
+        },
+        {
+          "period": "10-23",
+          "year": 2022,
+          "value": 660.22
+        },
+        {
+          "period": "10-30",
+          "year": 2022,
+          "value": 659.78
+        },
+        {
+          "period": "11-06",
+          "year": 2022,
+          "value": 635.38
+        },
+        {
+          "period": "11-13",
+          "year": 2022,
+          "value": 665.65
+        },
+        {
+          "period": "11-20",
+          "year": 2022,
+          "value": 658.68
+        },
+        {
+          "period": "11-27",
+          "year": 2022,
+          "value": 674.31
+        },
+        {
+          "period": "12-04",
+          "year": 2022,
+          "value": 654.83
+        },
+        {
+          "period": "12-11",
+          "year": 2022,
+          "value": 666.4
+        },
+        {
+          "period": "12-18",
+          "year": 2022,
+          "value": 640.98
+        },
+        {
+          "period": "12-25",
+          "year": 2022,
+          "value": 635.06
+        },
+        {
+          "period": "01-01",
+          "year": 2023,
+          "value": 625.06
+        },
+        {
+          "period": "01-08",
+          "year": 2023,
+          "value": 617.48
+        },
+        {
+          "period": "01-15",
+          "year": 2023,
+          "value": 608.6
+        },
+        {
+          "period": "01-22",
+          "year": 2023,
+          "value": 586.76
+        },
+        {
+          "period": "02-05",
+          "year": 2023,
+          "value": 566.66
+        },
+        {
+          "period": "02-12",
+          "year": 2023,
+          "value": 567.62
+        },
+        {
+          "period": "02-19",
+          "year": 2023,
+          "value": 553.98
+        },
+        {
+          "period": "02-26",
+          "year": 2023,
+          "value": 565.52
+        },
+        {
+          "period": "03-05",
+          "year": 2023,
+          "value": 559.3
+        },
+        {
+          "period": "03-12",
+          "year": 2023,
+          "value": 551.49
+        },
+        {
+          "period": "03-19",
+          "year": 2023,
+          "value": 532.84
+        },
+        {
+          "period": "04-09",
+          "year": 2023,
+          "value": 487.19
+        },
+        {
+          "period": "04-16",
+          "year": 2023,
+          "value": 336.01
+        },
+        {
+          "period": "04-23",
+          "year": 2023,
+          "value": 495.78
+        },
+        {
+          "period": "04-30",
+          "year": 2023,
+          "value": 479.52
+        },
+        {
+          "period": "05-07",
+          "year": 2023,
+          "value": 478.96
+        },
+        {
+          "period": "05-14",
+          "year": 2023,
+          "value": 465.97
+        },
+        {
+          "period": "05-21",
+          "year": 2023,
+          "value": 468.89
+        },
+        {
+          "period": "06-04",
+          "year": 2023,
+          "value": 415.11
+        },
+        {
+          "period": "06-11",
+          "year": 2023,
+          "value": 427.62
+        },
+        {
+          "period": "06-18",
+          "year": 2023,
+          "value": 423.43
+        },
+        {
+          "period": "06-25",
+          "year": 2023,
+          "value": 424.07
+        },
+        {
+          "period": "07-02",
+          "year": 2023,
+          "value": 424.85
+        },
+        {
+          "period": "07-09",
+          "year": 2023,
+          "value": 430.36
+        },
+        {
+          "period": "07-16",
+          "year": 2023,
+          "value": 438.84
+        },
+        {
+          "period": "07-23",
+          "year": 2023,
+          "value": 455.75
+        },
+        {
+          "period": "07-30",
+          "year": 2023,
+          "value": 455.91
+        },
+        {
+          "period": "08-06",
+          "year": 2023,
+          "value": 447.69
+        },
+        {
+          "period": "08-13",
+          "year": 2023,
+          "value": 451.62
+        },
+        {
+          "period": "08-20",
+          "year": 2023,
+          "value": 457.94
+        },
+        {
+          "period": "08-27",
+          "year": 2023,
+          "value": 448.56
+        },
+        {
+          "period": "09-03",
+          "year": 2023,
+          "value": 463.06
+        },
+        {
+          "period": "09-10",
+          "year": 2023,
+          "value": 446.16
+        },
+        {
+          "period": "09-17",
+          "year": 2023,
+          "value": 430.29
+        },
+        {
+          "period": "09-24",
+          "year": 2023,
+          "value": 435.23
+        },
+        {
+          "period": "10-15",
+          "year": 2023,
+          "value": 441.33
+        },
+        {
+          "period": "10-22",
+          "year": 2023,
+          "value": 458.87
+        },
+        {
+          "period": "10-29",
+          "year": 2023,
+          "value": 456.07
+        },
+        {
+          "period": "11-05",
+          "year": 2023,
+          "value": 457.93
+        },
+        {
+          "period": "11-12",
+          "year": 2023,
+          "value": 457.87
+        },
+        {
+          "period": "11-19",
+          "year": 2023,
+          "value": 457.08
+        },
+        {
+          "period": "11-26",
+          "year": 2023,
+          "value": 460.8
+        },
+        {
+          "period": "12-03",
+          "year": 2023,
+          "value": 467.5
+        },
+        {
+          "period": "12-17",
+          "year": 2023,
+          "value": 468.24
+        },
+        {
+          "period": "12-24",
+          "year": 2023,
+          "value": 460.26
+        },
+        {
+          "period": "12-31",
+          "year": 2023,
+          "value": 443.68
+        },
+        {
+          "period": "01-07",
+          "year": 2024,
+          "value": 465.16
+        },
+        {
+          "period": "01-14",
+          "year": 2024,
+          "value": 467.84
+        },
+        {
+          "period": "02-18",
+          "year": 2024,
+          "value": 453.58
+        },
+        {
+          "period": "02-25",
+          "year": 2024,
+          "value": 451.74
+        },
+        {
+          "period": "03-03",
+          "year": 2024,
+          "value": 447.33
+        },
+        {
+          "period": "03-10",
+          "year": 2024,
+          "value": 443.22
+        },
+        {
+          "period": "03-31",
+          "year": 2024,
+          "value": 442.0
+        },
+        {
+          "period": "04-07",
+          "year": 2024,
+          "value": 444.75
+        },
+        {
+          "period": "04-14",
+          "year": 2024,
+          "value": 447.18
+        },
+        {
+          "period": "04-21",
+          "year": 2024,
+          "value": 445.92
+        },
+        {
+          "period": "05-05",
+          "year": 2024,
+          "value": 447.74
+        },
+        {
+          "period": "05-19",
+          "year": 2024,
+          "value": 457.45
+        },
+        {
+          "period": "05-26",
+          "year": 2024,
+          "value": 459.22
+        },
+        {
+          "period": "06-02",
+          "year": 2024,
+          "value": 462.18
+        },
+        {
+          "period": "06-09",
+          "year": 2024,
+          "value": 468.32
+        },
+        {
+          "period": "06-16",
+          "year": 2024,
+          "value": 461.43
+        },
+        {
+          "period": "06-23",
+          "year": 2024,
+          "value": 461.65
+        },
+        {
+          "period": "06-30",
+          "year": 2024,
+          "value": 465.05
+        },
+        {
+          "period": "07-07",
+          "year": 2024,
+          "value": 475.83
+        },
+        {
+          "period": "07-14",
+          "year": 2024,
+          "value": 472.62
+        },
+        {
+          "period": "07-21",
+          "year": 2024,
+          "value": 473.12
+        },
+        {
+          "period": "07-28",
+          "year": 2024,
+          "value": 477.46
+        },
+        {
+          "period": "08-04",
+          "year": 2024,
+          "value": 470.79
+        },
+        {
+          "period": "08-11",
+          "year": 2024,
+          "value": 473.48
+        },
+        {
+          "period": "08-18",
+          "year": 2024,
+          "value": 485.22
+        },
+        {
+          "period": "08-25",
+          "year": 2024,
+          "value": 485.08
+        },
+        {
+          "period": "09-01",
+          "year": 2024,
+          "value": 474.42
+        },
+        {
+          "period": "09-08",
+          "year": 2024,
+          "value": 470.54
+        },
+        {
+          "period": "09-15",
+          "year": 2024,
+          "value": 483.44
+        },
+        {
+          "period": "10-06",
+          "year": 2024,
+          "value": 494.26
+        },
+        {
+          "period": "10-13",
+          "year": 2024,
+          "value": 496.54
+        },
+        {
+          "period": "10-20",
+          "year": 2024,
+          "value": 500.63
+        },
+        {
+          "period": "10-27",
+          "year": 2024,
+          "value": 508.62
+        },
+        {
+          "period": "11-10",
+          "year": 2024,
+          "value": 529.7
+        },
+        {
+          "period": "11-17",
+          "year": 2024,
+          "value": 535.37
+        },
+        {
+          "period": "11-24",
+          "year": 2024,
+          "value": 537.43
+        },
+        {
+          "period": "12-01",
+          "year": 2024,
+          "value": 547.06
+        },
+        {
+          "period": "12-08",
+          "year": 2024,
+          "value": 519.7
+        },
+        {
+          "period": "12-15",
+          "year": 2024,
+          "value": 560.87
+        },
+        {
+          "period": "12-22",
+          "year": 2024,
+          "value": 564.93
+        },
+        {
+          "period": "01-05",
+          "year": 2025,
+          "value": 568.04
+        },
+        {
+          "period": "01-12",
+          "year": 2025,
+          "value": 574.2
+        },
+        {
+          "period": "01-19",
+          "year": 2025,
+          "value": 571.58
+        },
+        {
+          "period": "01-26",
+          "year": 2025,
+          "value": 576.99
+        },
+        {
+          "period": "02-02",
+          "year": 2025,
+          "value": 575.61
+        },
+        {
+          "period": "02-09",
+          "year": 2025,
+          "value": 566.73
+        },
+        {
+          "period": "02-23",
+          "year": 2025,
+          "value": 575.87
+        },
+        {
+          "period": "03-02",
+          "year": 2025,
+          "value": 576.61
+        },
+        {
+          "period": "03-09",
+          "year": 2025,
+          "value": 589.78
+        },
+        {
+          "period": "03-16",
+          "year": 2025,
+          "value": 588.45
+        },
+        {
+          "period": "03-23",
+          "year": 2025,
+          "value": 582.26
+        },
+        {
+          "period": "03-30",
+          "year": 2025,
+          "value": 574.46
+        },
+        {
+          "period": "04-06",
+          "year": 2025,
+          "value": 578.16
+        },
+        {
+          "period": "04-13",
+          "year": 2025,
+          "value": 578.99
+        },
+        {
+          "period": "04-20",
+          "year": 2025,
+          "value": 578.83
+        },
+        {
+          "period": "04-27",
+          "year": 2025,
+          "value": 579.18
+        },
+        {
+          "period": "05-04",
+          "year": 2025,
+          "value": 581.4
+        },
+        {
+          "period": "05-25",
+          "year": 2025,
+          "value": 559.08
+        },
+        {
+          "period": "06-08",
+          "year": 2025,
+          "value": 553.96
+        },
+        {
+          "period": "06-22",
+          "year": 2025,
+          "value": 562.54
+        },
+        {
+          "period": "06-29",
+          "year": 2025,
+          "value": 562.24
+        },
+        {
+          "period": "07-06",
+          "year": 2025,
+          "value": 545.45
+        },
+        {
+          "period": "07-13",
+          "year": 2025,
+          "value": 536.31
+        },
+        {
+          "period": "07-20",
+          "year": 2025,
+          "value": 507.54
+        },
+        {
+          "period": "07-27",
+          "year": 2025,
+          "value": 486.28
+        },
+        {
+          "period": "08-03",
+          "year": 2025,
+          "value": 485.25
+        },
+        {
+          "period": "08-10",
+          "year": 2025,
+          "value": 447.27
+        },
+        {
+          "period": "08-17",
+          "year": 2025,
+          "value": 454.37
+        },
+        {
+          "period": "08-24",
+          "year": 2025,
+          "value": 460.23
+        },
+        {
+          "period": "08-31",
+          "year": 2025,
+          "value": 467.51
+        },
+        {
+          "period": "09-07",
+          "year": 2025,
+          "value": 472.4
+        },
+        {
+          "period": "09-14",
+          "year": 2025,
+          "value": 469.72
+        },
+        {
+          "period": "09-21",
+          "year": 2025,
+          "value": 471.48
+        },
+        {
+          "period": "09-28",
+          "year": 2025,
+          "value": 470.78
+        },
+        {
+          "period": "10-05",
+          "year": 2025,
+          "value": 461.76
+        },
+        {
+          "period": "10-12",
+          "year": 2025,
+          "value": 472.98
+        },
+        {
+          "period": "10-19",
+          "year": 2025,
+          "value": 484.81
+        },
+        {
+          "period": "10-26",
+          "year": 2025,
+          "value": 489.84
+        },
+        {
+          "period": "11-02",
+          "year": 2025,
+          "value": 489.35
+        },
+        {
+          "period": "11-09",
+          "year": 2025,
+          "value": 492.24
+        },
+        {
+          "period": "11-16",
+          "year": 2025,
+          "value": 495.92
+        },
+        {
+          "period": "11-23",
+          "year": 2025,
+          "value": 495.49
+        },
+        {
+          "period": "12-07",
+          "year": 2025,
+          "value": 501.95
+        },
+        {
+          "period": "12-14",
+          "year": 2025,
+          "value": 499.2
+        },
+        {
+          "period": "12-21",
+          "year": 2025,
+          "value": 490.55
+        },
+        {
+          "period": "12-28",
+          "year": 2025,
+          "value": 493.38
+        },
+        {
+          "period": "01-04",
+          "year": 2026,
+          "value": 500.87
+        },
+        {
+          "period": "01-11",
+          "year": 2026,
+          "value": 505.42
+        },
+        {
+          "period": "01-18",
+          "year": 2026,
+          "value": 501.7
+        },
+        {
+          "period": "01-25",
+          "year": 2026,
+          "value": 500.61
+        },
+        {
+          "period": "02-01",
+          "year": 2026,
+          "value": 506.05
+        },
+        {
+          "period": "02-08",
+          "year": 2026,
+          "value": 508.63
+        },
+        {
+          "period": "02-15",
+          "year": 2026,
+          "value": 510.02
+        },
+        {
+          "period": "02-22",
+          "year": 2026,
+          "value": 512.92
+        },
+        {
+          "period": "03-01",
+          "year": 2026,
+          "value": 514.63
+        },
+        {
+          "period": "03-08",
+          "year": 2026,
+          "value": 519.12
+        },
+        {
+          "period": "03-15",
+          "year": 2026,
+          "value": 530.43
+        },
+        {
+          "period": "03-22",
+          "year": 2026,
+          "value": 525.03
+        },
+        {
+          "period": "03-29",
+          "year": 2026,
+          "value": 525.12
+        },
+        {
+          "period": "04-12",
+          "year": 2026,
+          "value": 525.71
+        },
+        {
+          "period": "04-19",
+          "year": 2026,
+          "value": 537.17
+        },
+        {
+          "period": "04-26",
+          "year": 2026,
+          "value": 533.12
+        },
+        {
+          "period": "05-03",
+          "year": 2026,
+          "value": 533.98
+        },
+        {
+          "period": "05-10",
+          "year": 2026,
+          "value": 543.32
+        },
+        {
+          "period": "05-17",
+          "year": 2026,
+          "value": 543.47
+        },
+        {
+          "period": "05-24",
+          "year": 2026,
+          "value": 534.49
+        },
+        {
+          "period": "05-31",
+          "year": 2026,
+          "value": 546.4
+        },
+        {
+          "period": "06-07",
+          "year": 2026,
+          "value": 551.57
+        },
+        {
+          "period": "06-14",
+          "year": 2026,
+          "value": 550.35
+        },
+        {
+          "period": "06-21",
+          "year": 2026,
+          "value": 560.45
+        },
+        {
+          "period": "06-28",
+          "year": 2026,
+          "value": 531.44
+        },
+        {
+          "period": "07-05",
+          "year": 2026,
+          "value": 540.65
+        },
+        {
+          "period": "07-12",
+          "year": 2026,
+          "value": 539.26
+        },
+        {
+          "period": "07-19",
+          "year": 2026,
+          "value": 535.12
+        },
+        {
+          "period": "07-26",
+          "year": 2026,
+          "value": 538.58
+        },
+        {
+          "period": "08-02",
+          "year": 2026,
+          "value": 532.05
+        },
+        {
+          "period": "08-23",
+          "year": 2026,
+          "value": 538.54
+        },
+        {
+          "period": "08-30",
+          "year": 2026,
+          "value": 525.06
+        },
+        {
+          "period": "09-06",
+          "year": 2026,
+          "value": 535.91
+        },
+        {
+          "period": "09-20",
+          "year": 2026,
+          "value": 567.01
+        },
+        {
+          "period": "09-27",
+          "year": 2026,
+          "value": 565.64
+        },
+        {
+          "period": "10-04",
+          "year": 2026,
+          "value": 563.75
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 571.29
+        },
+        {
+          "period": "10-18",
+          "year": 2026,
+          "value": 572.82
+        }
+      ]
+    },
+    {
+      "id": "di_pienso_colza_hu_eu",
+      "product": "colza_hu",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-10-18",
+      "publicationDate": "2026-10-28",
+      "status": "verified",
+      "verifiedAt": "2026-10-28T19:28:41Z",
+      "comparability": "not_comparable",
+      "methodology": "Comision Europea, Agri-food Data Portal: precio semanal de la colza en Hungria, media nacional (la Comision no define la fase de mercado), EUR/tonelada. Es un precio fisico, no el futuro de Euronext (Matif). La API no publica fecha de publicacion: se registra el dia en que se recupero.",
+      "value": 543.82,
+      "currency": "EUR",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "changePct": 1.9401,
+      "history": [
+        {
+          "period": "01-10",
+          "year": 2021,
+          "value": 383.51
+        },
+        {
+          "period": "01-17",
+          "year": 2021,
+          "value": 413.6
+        },
+        {
+          "period": "01-24",
+          "year": 2021,
+          "value": 414.68
+        },
+        {
+          "period": "01-31",
+          "year": 2021,
+          "value": 414.28
+        },
+        {
+          "period": "02-07",
+          "year": 2021,
+          "value": 416.8
+        },
+        {
+          "period": "02-14",
+          "year": 2021,
+          "value": 417.86
+        },
+        {
+          "period": "02-21",
+          "year": 2021,
+          "value": 448.14
+        },
+        {
+          "period": "02-28",
+          "year": 2021,
+          "value": 426.95
+        },
+        {
+          "period": "03-07",
+          "year": 2021,
+          "value": 425.54
+        },
+        {
+          "period": "03-14",
+          "year": 2021,
+          "value": 411.92
+        },
+        {
+          "period": "03-21",
+          "year": 2021,
+          "value": 427.1
+        },
+        {
+          "period": "03-28",
+          "year": 2021,
+          "value": 514.49
+        },
+        {
+          "period": "04-04",
+          "year": 2021,
+          "value": 443.28
+        },
+        {
+          "period": "04-11",
+          "year": 2021,
+          "value": 474.13
+        },
+        {
+          "period": "04-18",
+          "year": 2021,
+          "value": 455.68
+        },
+        {
+          "period": "04-25",
+          "year": 2021,
+          "value": 502.81
+        },
+        {
+          "period": "05-02",
+          "year": 2021,
+          "value": 466.22
+        },
+        {
+          "period": "05-09",
+          "year": 2021,
+          "value": 475.77
+        },
+        {
+          "period": "05-16",
+          "year": 2021,
+          "value": 490.1
+        },
+        {
+          "period": "05-23",
+          "year": 2021,
+          "value": 467.6
+        },
+        {
+          "period": "06-06",
+          "year": 2021,
+          "value": 491.6
+        },
+        {
+          "period": "07-04",
+          "year": 2021,
+          "value": 540.21
+        },
+        {
+          "period": "07-11",
+          "year": 2021,
+          "value": 479.63
+        },
+        {
+          "period": "07-18",
+          "year": 2021,
+          "value": 483.98
+        },
+        {
+          "period": "07-25",
+          "year": 2021,
+          "value": 480.26
+        },
+        {
+          "period": "08-01",
+          "year": 2021,
+          "value": 485.63
+        },
+        {
+          "period": "08-08",
+          "year": 2021,
+          "value": 509.16
+        },
+        {
+          "period": "08-15",
+          "year": 2021,
+          "value": 523.81
+        },
+        {
+          "period": "08-22",
+          "year": 2021,
+          "value": 535.36
+        },
+        {
+          "period": "08-29",
+          "year": 2021,
+          "value": 554.47
+        },
+        {
+          "period": "09-05",
+          "year": 2021,
+          "value": 563.83
+        },
+        {
+          "period": "09-12",
+          "year": 2021,
+          "value": 523.42
+        },
+        {
+          "period": "09-19",
+          "year": 2021,
+          "value": 579.05
+        },
+        {
+          "period": "09-26",
+          "year": 2021,
+          "value": 580.62
+        },
+        {
+          "period": "10-03",
+          "year": 2021,
+          "value": 552.66
+        },
+        {
+          "period": "10-10",
+          "year": 2021,
+          "value": 563.44
+        },
+        {
+          "period": "10-17",
+          "year": 2021,
+          "value": 607.34
+        },
+        {
+          "period": "10-24",
+          "year": 2021,
+          "value": 589.73
+        },
+        {
+          "period": "10-31",
+          "year": 2021,
+          "value": 571.93
+        },
+        {
+          "period": "11-07",
+          "year": 2021,
+          "value": 629.93
+        },
+        {
+          "period": "11-14",
+          "year": 2021,
+          "value": 715.45
+        },
+        {
+          "period": "11-21",
+          "year": 2021,
+          "value": 577.11
+        },
+        {
+          "period": "11-28",
+          "year": 2021,
+          "value": 548.29
+        },
+        {
+          "period": "12-05",
+          "year": 2021,
+          "value": 597.48
+        },
+        {
+          "period": "12-12",
+          "year": 2021,
+          "value": 723.47
+        },
+        {
+          "period": "12-19",
+          "year": 2021,
+          "value": 606.16
+        },
+        {
+          "period": "12-26",
+          "year": 2021,
+          "value": 603.8
+        },
+        {
+          "period": "01-09",
+          "year": 2022,
+          "value": 675.53
+        },
+        {
+          "period": "01-16",
+          "year": 2022,
+          "value": 758.55
+        },
+        {
+          "period": "01-23",
+          "year": 2022,
+          "value": 649.61
+        },
+        {
+          "period": "01-30",
+          "year": 2022,
+          "value": 636.39
+        },
+        {
+          "period": "02-06",
+          "year": 2022,
+          "value": 606.21
+        },
+        {
+          "period": "02-13",
+          "year": 2022,
+          "value": 664.22
+        },
+        {
+          "period": "02-20",
+          "year": 2022,
+          "value": 650.27
+        },
+        {
+          "period": "02-27",
+          "year": 2022,
+          "value": 719.71
+        },
+        {
+          "period": "03-13",
+          "year": 2022,
+          "value": 666.2
+        },
+        {
+          "period": "03-20",
+          "year": 2022,
+          "value": 602.46
+        },
+        {
+          "period": "03-27",
+          "year": 2022,
+          "value": 721.95
+        },
+        {
+          "period": "04-03",
+          "year": 2022,
+          "value": 718.53
+        },
+        {
+          "period": "04-10",
+          "year": 2022,
+          "value": 688.28
+        },
+        {
+          "period": "04-17",
+          "year": 2022,
+          "value": 697.21
+        },
+        {
+          "period": "04-24",
+          "year": 2022,
+          "value": 625.95
+        },
+        {
+          "period": "05-01",
+          "year": 2022,
+          "value": 751.42
+        },
+        {
+          "period": "05-15",
+          "year": 2022,
+          "value": 624.18
+        },
+        {
+          "period": "05-22",
+          "year": 2022,
+          "value": 618.54
+        },
+        {
+          "period": "05-29",
+          "year": 2022,
+          "value": 714.52
+        },
+        {
+          "period": "06-05",
+          "year": 2022,
+          "value": 618.46
+        },
+        {
+          "period": "06-19",
+          "year": 2022,
+          "value": 857.78
+        },
+        {
+          "period": "06-26",
+          "year": 2022,
+          "value": 683.91
+        },
+        {
+          "period": "07-03",
+          "year": 2022,
+          "value": 678.65
+        },
+        {
+          "period": "07-10",
+          "year": 2022,
+          "value": 695.49
+        },
+        {
+          "period": "07-17",
+          "year": 2022,
+          "value": 688.73
+        },
+        {
+          "period": "07-24",
+          "year": 2022,
+          "value": 709.76
+        },
+        {
+          "period": "07-31",
+          "year": 2022,
+          "value": 707.53
+        },
+        {
+          "period": "08-07",
+          "year": 2022,
+          "value": 716.84
+        },
+        {
+          "period": "08-14",
+          "year": 2022,
+          "value": 683.71
+        },
+        {
+          "period": "08-21",
+          "year": 2022,
+          "value": 659.48
+        },
+        {
+          "period": "08-28",
+          "year": 2022,
+          "value": 688.23
+        },
+        {
+          "period": "09-04",
+          "year": 2022,
+          "value": 692.52
+        },
+        {
+          "period": "09-11",
+          "year": 2022,
+          "value": 664.75
+        },
+        {
+          "period": "09-18",
+          "year": 2022,
+          "value": 647.98
+        },
+        {
+          "period": "09-25",
+          "year": 2022,
+          "value": 633.18
+        },
+        {
+          "period": "10-02",
+          "year": 2022,
+          "value": 622.94
+        },
+        {
+          "period": "10-09",
+          "year": 2022,
+          "value": 629.85
+        },
+        {
+          "period": "10-16",
+          "year": 2022,
+          "value": 631.23
+        },
+        {
+          "period": "10-23",
+          "year": 2022,
+          "value": 646.67
+        },
+        {
+          "period": "10-30",
+          "year": 2022,
+          "value": 674.44
+        },
+        {
+          "period": "11-06",
+          "year": 2022,
+          "value": 685.25
+        },
+        {
+          "period": "11-13",
+          "year": 2022,
+          "value": 688.84
+        },
+        {
+          "period": "11-20",
+          "year": 2022,
+          "value": 657.1
+        },
+        {
+          "period": "11-27",
+          "year": 2022,
+          "value": 658.34
+        },
+        {
+          "period": "12-04",
+          "year": 2022,
+          "value": 642.31
+        },
+        {
+          "period": "12-11",
+          "year": 2022,
+          "value": 631.16
+        },
+        {
+          "period": "12-18",
+          "year": 2022,
+          "value": 588.68
+        },
+        {
+          "period": "01-15",
+          "year": 2023,
+          "value": 585.18
+        },
+        {
+          "period": "01-22",
+          "year": 2023,
+          "value": 573.74
+        },
+        {
+          "period": "01-29",
+          "year": 2023,
+          "value": 556.13
+        },
+        {
+          "period": "02-12",
+          "year": 2023,
+          "value": 534.3
+        },
+        {
+          "period": "02-19",
+          "year": 2023,
+          "value": 560.65
+        },
+        {
+          "period": "02-26",
+          "year": 2023,
+          "value": 569.72
+        },
+        {
+          "period": "03-05",
+          "year": 2023,
+          "value": 565.52
+        },
+        {
+          "period": "03-12",
+          "year": 2023,
+          "value": 506.57
+        },
+        {
+          "period": "03-26",
+          "year": 2023,
+          "value": 485.31
+        },
+        {
+          "period": "04-02",
+          "year": 2023,
+          "value": 497.37
+        },
+        {
+          "period": "04-09",
+          "year": 2023,
+          "value": 469.74
+        },
+        {
+          "period": "05-07",
+          "year": 2023,
+          "value": 422.23
+        },
+        {
+          "period": "05-14",
+          "year": 2023,
+          "value": 427.43
+        },
+        {
+          "period": "05-21",
+          "year": 2023,
+          "value": 412.99
+        },
+        {
+          "period": "05-28",
+          "year": 2023,
+          "value": 400.57
+        },
+        {
+          "period": "06-04",
+          "year": 2023,
+          "value": 402.58
+        },
+        {
+          "period": "06-11",
+          "year": 2023,
+          "value": 399.68
+        },
+        {
+          "period": "06-18",
+          "year": 2023,
+          "value": 405.73
+        },
+        {
+          "period": "06-25",
+          "year": 2023,
+          "value": 398.14
+        },
+        {
+          "period": "07-02",
+          "year": 2023,
+          "value": 413.36
+        },
+        {
+          "period": "07-09",
+          "year": 2023,
+          "value": 418.19
+        },
+        {
+          "period": "07-16",
+          "year": 2023,
+          "value": 416.31
+        },
+        {
+          "period": "07-23",
+          "year": 2023,
+          "value": 420.25
+        },
+        {
+          "period": "07-30",
+          "year": 2023,
+          "value": 424.38
+        },
+        {
+          "period": "08-06",
+          "year": 2023,
+          "value": 418.45
+        },
+        {
+          "period": "08-13",
+          "year": 2023,
+          "value": 429.3
+        },
+        {
+          "period": "08-20",
+          "year": 2023,
+          "value": 422.63
+        },
+        {
+          "period": "08-27",
+          "year": 2023,
+          "value": 434.59
+        },
+        {
+          "period": "09-03",
+          "year": 2023,
+          "value": 431.81
+        },
+        {
+          "period": "09-10",
+          "year": 2023,
+          "value": 419.96
+        },
+        {
+          "period": "09-17",
+          "year": 2023,
+          "value": 403.68
+        },
+        {
+          "period": "09-24",
+          "year": 2023,
+          "value": 424.85
+        },
+        {
+          "period": "10-01",
+          "year": 2023,
+          "value": 410.62
+        },
+        {
+          "period": "10-08",
+          "year": 2023,
+          "value": 414.6
+        },
+        {
+          "period": "10-15",
+          "year": 2023,
+          "value": 407.9
+        },
+        {
+          "period": "10-22",
+          "year": 2023,
+          "value": 412.68
+        },
+        {
+          "period": "11-05",
+          "year": 2023,
+          "value": 408.14
+        },
+        {
+          "period": "11-12",
+          "year": 2023,
+          "value": 410.68
+        },
+        {
+          "period": "11-19",
+          "year": 2023,
+          "value": 430.0
+        },
+        {
+          "period": "11-26",
+          "year": 2023,
+          "value": 423.07
+        },
+        {
+          "period": "12-03",
+          "year": 2023,
+          "value": 406.2
+        },
+        {
+          "period": "12-10",
+          "year": 2023,
+          "value": 424.12
+        },
+        {
+          "period": "12-17",
+          "year": 2023,
+          "value": 421.51
+        },
+        {
+          "period": "01-21",
+          "year": 2024,
+          "value": 391.97
+        },
+        {
+          "period": "01-28",
+          "year": 2024,
+          "value": 433.66
+        },
+        {
+          "period": "02-04",
+          "year": 2024,
+          "value": 418.12
+        },
+        {
+          "period": "02-11",
+          "year": 2024,
+          "value": 420.65
+        },
+        {
+          "period": "02-18",
+          "year": 2024,
+          "value": 422.24
+        },
+        {
+          "period": "02-25",
+          "year": 2024,
+          "value": 405.15
+        },
+        {
+          "period": "03-03",
+          "year": 2024,
+          "value": 404.04
+        },
+        {
+          "period": "03-10",
+          "year": 2024,
+          "value": 407.88
+        },
+        {
+          "period": "03-17",
+          "year": 2024,
+          "value": 389.84
+        },
+        {
+          "period": "03-24",
+          "year": 2024,
+          "value": 391.4
+        },
+        {
+          "period": "03-31",
+          "year": 2024,
+          "value": 414.77
+        },
+        {
+          "period": "04-07",
+          "year": 2024,
+          "value": 406.15
+        },
+        {
+          "period": "04-14",
+          "year": 2024,
+          "value": 397.31
+        },
+        {
+          "period": "04-21",
+          "year": 2024,
+          "value": 409.73
+        },
+        {
+          "period": "04-28",
+          "year": 2024,
+          "value": 405.72
+        },
+        {
+          "period": "05-05",
+          "year": 2024,
+          "value": 411.32
+        },
+        {
+          "period": "05-12",
+          "year": 2024,
+          "value": 392.19
+        },
+        {
+          "period": "05-19",
+          "year": 2024,
+          "value": 412.43
+        },
+        {
+          "period": "05-26",
+          "year": 2024,
+          "value": 421.42
+        },
+        {
+          "period": "06-02",
+          "year": 2024,
+          "value": 425.11
+        },
+        {
+          "period": "06-09",
+          "year": 2024,
+          "value": 423.67
+        },
+        {
+          "period": "06-16",
+          "year": 2024,
+          "value": 427.98
+        },
+        {
+          "period": "06-23",
+          "year": 2024,
+          "value": 424.2
+        },
+        {
+          "period": "06-30",
+          "year": 2024,
+          "value": 422.08
+        },
+        {
+          "period": "07-07",
+          "year": 2024,
+          "value": 435.68
+        },
+        {
+          "period": "07-14",
+          "year": 2024,
+          "value": 441.89
+        },
+        {
+          "period": "07-21",
+          "year": 2024,
+          "value": 442.48
+        },
+        {
+          "period": "07-28",
+          "year": 2024,
+          "value": 452.29
+        },
+        {
+          "period": "08-04",
+          "year": 2024,
+          "value": 444.89
+        },
+        {
+          "period": "08-11",
+          "year": 2024,
+          "value": 443.85
+        },
+        {
+          "period": "08-18",
+          "year": 2024,
+          "value": 453.46
+        },
+        {
+          "period": "08-25",
+          "year": 2024,
+          "value": 454.37
+        },
+        {
+          "period": "09-01",
+          "year": 2024,
+          "value": 448.14
+        },
+        {
+          "period": "09-08",
+          "year": 2024,
+          "value": 458.1
+        },
+        {
+          "period": "09-15",
+          "year": 2024,
+          "value": 468.16
+        },
+        {
+          "period": "09-22",
+          "year": 2024,
+          "value": 459.6
+        },
+        {
+          "period": "09-29",
+          "year": 2024,
+          "value": 455.16
+        },
+        {
+          "period": "10-06",
+          "year": 2024,
+          "value": 456.09
+        },
+        {
+          "period": "10-13",
+          "year": 2024,
+          "value": 460.21
+        },
+        {
+          "period": "10-20",
+          "year": 2024,
+          "value": 457.15
+        },
+        {
+          "period": "10-27",
+          "year": 2024,
+          "value": 503.58
+        },
+        {
+          "period": "11-03",
+          "year": 2024,
+          "value": 488.66
+        },
+        {
+          "period": "11-10",
+          "year": 2024,
+          "value": 485.43
+        },
+        {
+          "period": "11-24",
+          "year": 2024,
+          "value": 483.33
+        },
+        {
+          "period": "12-01",
+          "year": 2024,
+          "value": 507.54
+        },
+        {
+          "period": "12-08",
+          "year": 2024,
+          "value": 518.36
+        },
+        {
+          "period": "12-15",
+          "year": 2024,
+          "value": 496.3
+        },
+        {
+          "period": "12-22",
+          "year": 2024,
+          "value": 469.15
+        },
+        {
+          "period": "01-12",
+          "year": 2025,
+          "value": 499.41
+        },
+        {
+          "period": "01-19",
+          "year": 2025,
+          "value": 531.33
+        },
+        {
+          "period": "01-26",
+          "year": 2025,
+          "value": 515.14
+        },
+        {
+          "period": "02-02",
+          "year": 2025,
+          "value": 504.07
+        },
+        {
+          "period": "02-09",
+          "year": 2025,
+          "value": 518.83
+        },
+        {
+          "period": "03-02",
+          "year": 2025,
+          "value": 542.6
+        },
+        {
+          "period": "03-09",
+          "year": 2025,
+          "value": 539.5
+        },
+        {
+          "period": "03-30",
+          "year": 2025,
+          "value": 533.02
+        },
+        {
+          "period": "04-06",
+          "year": 2025,
+          "value": 526.5
+        },
+        {
+          "period": "04-13",
+          "year": 2025,
+          "value": 555.42
+        },
+        {
+          "period": "04-20",
+          "year": 2025,
+          "value": 533.82
+        },
+        {
+          "period": "04-27",
+          "year": 2025,
+          "value": 505.03
+        },
+        {
+          "period": "05-04",
+          "year": 2025,
+          "value": 535.32
+        },
+        {
+          "period": "05-11",
+          "year": 2025,
+          "value": 530.1
+        },
+        {
+          "period": "05-18",
+          "year": 2025,
+          "value": 540.52
+        },
+        {
+          "period": "05-25",
+          "year": 2025,
+          "value": 528.14
+        },
+        {
+          "period": "06-01",
+          "year": 2025,
+          "value": 523.54
+        },
+        {
+          "period": "06-15",
+          "year": 2025,
+          "value": 514.54
+        },
+        {
+          "period": "06-22",
+          "year": 2025,
+          "value": 490.01
+        },
+        {
+          "period": "06-29",
+          "year": 2025,
+          "value": 481.98
+        },
+        {
+          "period": "07-06",
+          "year": 2025,
+          "value": 501.41
+        },
+        {
+          "period": "07-13",
+          "year": 2025,
+          "value": 501.51
+        },
+        {
+          "period": "07-20",
+          "year": 2025,
+          "value": 500.22
+        },
+        {
+          "period": "07-27",
+          "year": 2025,
+          "value": 503.48
+        },
+        {
+          "period": "08-03",
+          "year": 2025,
+          "value": 501.27
+        },
+        {
+          "period": "08-10",
+          "year": 2025,
+          "value": 506.2
+        },
+        {
+          "period": "08-17",
+          "year": 2025,
+          "value": 504.65
+        },
+        {
+          "period": "08-24",
+          "year": 2025,
+          "value": 502.8
+        },
+        {
+          "period": "08-31",
+          "year": 2025,
+          "value": 502.83
+        },
+        {
+          "period": "09-07",
+          "year": 2025,
+          "value": 488.47
+        },
+        {
+          "period": "09-14",
+          "year": 2025,
+          "value": 488.34
+        },
+        {
+          "period": "09-21",
+          "year": 2025,
+          "value": 472.88
+        },
+        {
+          "period": "09-28",
+          "year": 2025,
+          "value": 505.51
+        },
+        {
+          "period": "10-05",
+          "year": 2025,
+          "value": 479.45
+        },
+        {
+          "period": "10-12",
+          "year": 2025,
+          "value": 483.1
+        },
+        {
+          "period": "10-26",
+          "year": 2025,
+          "value": 473.78
+        },
+        {
+          "period": "11-02",
+          "year": 2025,
+          "value": 486.36
+        },
+        {
+          "period": "11-09",
+          "year": 2025,
+          "value": 499.44
+        },
+        {
+          "period": "11-16",
+          "year": 2025,
+          "value": 492.08
+        },
+        {
+          "period": "11-23",
+          "year": 2025,
+          "value": 481.19
+        },
+        {
+          "period": "11-30",
+          "year": 2025,
+          "value": 494.28
+        },
+        {
+          "period": "12-07",
+          "year": 2025,
+          "value": 507.58
+        },
+        {
+          "period": "12-14",
+          "year": 2025,
+          "value": 483.29
+        },
+        {
+          "period": "12-21",
+          "year": 2025,
+          "value": 491.45
+        },
+        {
+          "period": "01-11",
+          "year": 2026,
+          "value": 493.05
+        },
+        {
+          "period": "01-25",
+          "year": 2026,
+          "value": 495.32
+        },
+        {
+          "period": "02-01",
+          "year": 2026,
+          "value": 490.22
+        },
+        {
+          "period": "02-08",
+          "year": 2026,
+          "value": 483.4
+        },
+        {
+          "period": "02-15",
+          "year": 2026,
+          "value": 497.44
+        },
+        {
+          "period": "02-22",
+          "year": 2026,
+          "value": 503.72
+        },
+        {
+          "period": "03-01",
+          "year": 2026,
+          "value": 508.66
+        },
+        {
+          "period": "03-08",
+          "year": 2026,
+          "value": 492.25
+        },
+        {
+          "period": "03-15",
+          "year": 2026,
+          "value": 513.8
+        },
+        {
+          "period": "03-22",
+          "year": 2026,
+          "value": 493.8
+        },
+        {
+          "period": "03-29",
+          "year": 2026,
+          "value": 498.25
+        },
+        {
+          "period": "04-05",
+          "year": 2026,
+          "value": 506.72
+        },
+        {
+          "period": "04-12",
+          "year": 2026,
+          "value": 514.44
+        },
+        {
+          "period": "04-19",
+          "year": 2026,
+          "value": 509.38
+        },
+        {
+          "period": "04-26",
+          "year": 2026,
+          "value": 509.3
+        },
+        {
+          "period": "05-03",
+          "year": 2026,
+          "value": 499.18
+        },
+        {
+          "period": "05-10",
+          "year": 2026,
+          "value": 525.62
+        },
+        {
+          "period": "05-24",
+          "year": 2026,
+          "value": 509.79
+        },
+        {
+          "period": "05-31",
+          "year": 2026,
+          "value": 525.86
+        },
+        {
+          "period": "06-07",
+          "year": 2026,
+          "value": 547.93
+        },
+        {
+          "period": "06-14",
+          "year": 2026,
+          "value": 521.58
+        },
+        {
+          "period": "06-21",
+          "year": 2026,
+          "value": 507.98
+        },
+        {
+          "period": "06-28",
+          "year": 2026,
+          "value": 510.92
+        },
+        {
+          "period": "07-05",
+          "year": 2026,
+          "value": 518.58
+        },
+        {
+          "period": "07-12",
+          "year": 2026,
+          "value": 516.91
+        },
+        {
+          "period": "07-19",
+          "year": 2026,
+          "value": 518.56
+        },
+        {
+          "period": "07-26",
+          "year": 2026,
+          "value": 534.47
+        },
+        {
+          "period": "08-02",
+          "year": 2026,
+          "value": 541.04
+        },
+        {
+          "period": "08-09",
+          "year": 2026,
+          "value": 533.97
+        },
+        {
+          "period": "08-16",
+          "year": 2026,
+          "value": 536.32
+        },
+        {
+          "period": "08-23",
+          "year": 2026,
+          "value": 533.43
+        },
+        {
+          "period": "08-30",
+          "year": 2026,
+          "value": 542.06
+        },
+        {
+          "period": "09-06",
+          "year": 2026,
+          "value": 528.6
+        },
+        {
+          "period": "09-13",
+          "year": 2026,
+          "value": 541.18
+        },
+        {
+          "period": "09-20",
+          "year": 2026,
+          "value": 542.95
+        },
+        {
+          "period": "09-27",
+          "year": 2026,
+          "value": 546.68
+        },
+        {
+          "period": "10-04",
+          "year": 2026,
+          "value": 538.05
+        },
+        {
+          "period": "10-11",
+          "year": 2026,
+          "value": 533.47
+        },
+        {
+          "period": "10-18",
+          "year": 2026,
+          "value": 543.82
         }
       ]
     }
