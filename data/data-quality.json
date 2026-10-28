@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T21:40:57Z",
+ "generatedAt": "2026-10-28T05:34:07Z",
  "summary": {
-  "files": 98,
+  "files": 103,
   "errors": 0,
-  "warnings": 31
+  "warnings": 32
  },
  "files": [
   {
@@ -79,10 +79,10 @@
    "warnings": [],
    "stats": {
     "series": 28,
-    "points": 1588,
+    "points": 1593,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T03:50:10Z",
+   "generatedAt": "2026-10-27T22:15:38Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -396,11 +396,11 @@
     "HU/hu-ksh-a0016-colza-seeds-for-sowing: salto 282263.0 -> 8241433.0 en 2019 (mediana previa 3.12e+05)"
    ],
    "stats": {
-    "series": 509,
-    "points": 17852,
+    "series": 528,
+    "points": 18194,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T06:26:14Z",
+   "generatedAt": "2026-10-28T03:41:29Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
@@ -1320,6 +1320,22 @@
    "nErrors": 0
   },
   {
+   "file": "italy-istat-more-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 125,
+    "points": 14031,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-27T22:55:59Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
    "file": "france-hicp-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -1584,6 +1600,40 @@
    "nErrors": 0
   },
   {
+   "file": "austria-ama-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 100,
+    "points": 14973,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-28T04:08:34Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "sk-statdata-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "SK/sk-sus-2003-prod-1111510110: salto 8.0 -> 407.0 en 1996 (mediana previa 8)"
+   ],
+   "stats": {
+    "series": 353,
+    "points": 18768,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-28T04:07:36Z",
+   "info": [],
+   "nWarnings": 1,
+   "nErrors": 0
+  },
+  {
    "file": "germany-extra-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -1600,6 +1650,38 @@
    "nErrors": 0
   },
   {
+   "file": "germany-more-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 130,
+    "points": 11183,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-27T23:41:12Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "greece-more-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 206,
+    "points": 11957,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-28T01:29:50Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
    "file": "us-weekly-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -1607,10 +1689,10 @@
    "warnings": [],
    "stats": {
     "series": 32,
-    "points": 4477,
+    "points": 4478,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T05:26:59Z",
+   "generatedAt": "2026-10-27T21:43:24Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1746,7 +1828,7 @@
     "points": 29949,
     "lines": 0
    },
-   "generatedAt": "2026-10-12T08:34:20Z",
+   "generatedAt": "2026-10-28T02:02:32Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0

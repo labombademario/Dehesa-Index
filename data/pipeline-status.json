@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T05:07:00Z",
+ "generatedAt": "2026-10-28T05:34:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 309,
+  "ok": 310,
   "late": 2,
-  "error": 3,
-  "not_run": 2,
+  "error": 4,
+  "not_run": 0,
   "unknown": 0
  },
  "global": "error",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
   "repoGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
-  "checkedAt": "2026-10-28T05:07:00Z"
+  "checkedAt": "2026-10-28T05:34:00Z"
  },
  "pipelines": [
   {
@@ -1496,7 +1496,7 @@
    "crons": [
     "25 5,13,21 * * *"
    ],
-   "nextRun": "2026-10-28T05:25:00Z",
+   "nextRun": "2026-10-28T13:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1683,9 +1683,20 @@
    ],
    "nextRun": "2026-11-24T09:50:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-28T05:30:27Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40638387130",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · milk: 11490 filas, 80 meses (2020-01..2026-08)"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 0,
+    "failed": 1
+   },
+   "status": "error",
    "expectedEveryHours": 744.0
   },
   {
@@ -4660,7 +4671,7 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40588847543"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 9,
     "failed": 0
    },
@@ -4915,7 +4926,7 @@
      "path": "data/us-weekly-stats.json",
      "valid": "ok",
      "series": 32,
-     "points": 4477,
+     "points": 4478,
      "lines": 0,
      "lastChange": "2026-10-27T21:44:22Z"
     },
@@ -4945,7 +4956,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-28T04:56:08Z"
+     "lastChange": "2026-10-28T05:31:41Z"
     },
     {
      "path": "data/products"
@@ -4956,7 +4967,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-28T04:36:41Z"
+     "lastChange": "2026-10-28T05:09:49Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5044,7 +5055,7 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40588670980"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 6,
     "failed": 3
    },
@@ -5448,7 +5459,7 @@
    "crons": [
     "10 5 * * *"
    ],
-   "nextRun": "2026-10-28T05:10:00Z",
+   "nextRun": "2026-10-29T05:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6391,8 +6402,8 @@
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · no se pudo publicar tras 10 intentos · informe 2960: ERROR: URLError (se conserva el ultimo dataset valido)"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 1
    },
    "status": "error",
@@ -6831,8 +6842,8 @@
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · no se pudo publicar tras 10 intentos · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-us-markets.py' has timed out after 20 minutes."
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 1
    },
    "status": "error",
@@ -7055,16 +7066,16 @@
    "files": [],
    "last": {
     "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-28T01:39:14Z",
-    "durationSec": 110,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40593564171",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-28T05:29:22Z",
+    "durationSec": 111,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40638281667",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · MARS 3208 error URLError(gaierror(-3, 'Temporary failure in name resolution'))"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 8,
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 72.0
@@ -7284,9 +7295,19 @@
    ],
    "nextRun": "2026-11-04T09:40:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-28T05:31:00Z",
+    "durationSec": 51,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40638444804"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
