@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T15:42:00Z",
+ "generatedAt": "2026-10-28T15:59:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 314,
+  "ok": 313,
   "late": 2,
-  "error": 0,
+  "error": 1,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 9.8,
   "prodGeneratedAt": "2026-10-28T05:39:55.919151+00:00",
   "repoGeneratedAt": "2026-10-28T15:27:24.432846+00:00",
-  "checkedAt": "2026-10-28T15:42:00Z"
+  "checkedAt": "2026-10-28T15:59:00Z"
  },
  "pipelines": [
   {
@@ -599,7 +599,7 @@
    "crons": [
     "50 15 * * 3,4,5"
    ],
-   "nextRun": "2026-10-28T15:50:00Z",
+   "nextRun": "2026-10-29T15:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -806,7 +806,7 @@
    "crons": [
     "50 15 * * 3"
    ],
-   "nextRun": "2026-10-28T15:50:00Z",
+   "nextRun": "2026-11-04T15:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4616,7 +4616,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-28T15:47:00Z",
+   "nextRun": "2026-10-28T18:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4966,7 +4966,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-28T15:29:06Z"
+     "lastChange": "2026-10-28T15:45:41Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6809,18 +6809,19 @@
    "nextRun": "2026-10-29T15:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-27T15:56:14Z",
-    "durationSec": 43,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40535927800"
+    "startedAt": "2026-10-28T16:01:08Z",
+    "durationSec": 46,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40721778904",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien)"
    },
    "recent": {
     "runs": 10,
-    "success": 10,
-    "failed": 0
+    "success": 9,
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 72.0
   },
   {
