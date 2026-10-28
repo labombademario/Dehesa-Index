@@ -57,14 +57,20 @@ def clean(name):
     """«1111160101 Grain maize» -> «Grain maize» (se quita el codigo de la clasificacion) y se normalizan espacios."""
     return re.sub(r"\s+", " ", re.sub(r"^\d+\s+", "", name)).strip()
 
+def prev_period(p, freq):
+    if freq == "annual": return str(int(p) - 1)
+    if freq == "quarterly": y, q = int(p[:4]), int(p[-1]); return "%d-Q%d" % ((y, q - 1) if q > 1 else (y - 1, 4))
+    y, m = int(p[:4]), int(p[5:7]); return "%d-%02d" % ((y, m - 1) if m > 1 else (y - 1, 12))
 def series(sid, group, label, unit, freq, pts, sg, note=None):
     pts = sorted((p, v) for p, v in pts.items() if v is not None)
     if len(pts) < 3: return None
     last = pts[-1][0]; yr = int(last[:4])
     if datetime.date.today().year - yr > 3: return None
-    prev = pts[-2][1]
+    prev = pts[-2]
+    # variacion frente al periodo anterior solo si es de verdad el anterior (series estacionales con meses sin dato: None)
+    consec = prev[0] == prev_period(last, freq)
     s = {"id": sid, "group": group, "label": label, "unit": unit, "frequency": freq, "latestPeriod": last, "latest": pts[-1][1],
-         "changePct": round((pts[-1][1] - prev) / prev * 100, 2) if prev else None, "points": [[p, v] for p, v in pts], "sourceGroup": sg}
+         "changePct": round((pts[-1][1] - prev[1]) / prev[1] * 100, 2) if prev[1] and consec else None, "points": [[p, v] for p, v in pts], "sourceGroup": sg}
     if note: s["periodNote"] = note
     return s
 
@@ -140,7 +146,7 @@ def livestock_annual(out):
         u = U.get(unit, unit)
         if ind.startswith("Number of reared"): u = "head"
         if ind.startswith("Average number of eggs"): u = "eggs"
-        if "daily weight gains" in ind: u = "g/day" if max(v for v in pts.values() if v is not None) > 50 else "kg/day"
+        if "daily weight gains" in ind: u = "kg/day" if unit == "Kilogram" else u + "/day"   # la fuente da la unidad (Kilogram); no se deduce del tamaño
         g = "milk" if "milk" in ind.lower() else "production"
         s = series("sk-sus-2015-" + slug(ind), g, "%s (%s, ŠÚ SR)" % (ind, u), u, "annual", pts, "ŠÚ SR STATdata pl2015rs")
         if s: out.append(s)

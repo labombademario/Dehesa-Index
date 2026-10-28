@@ -539,10 +539,16 @@ def forest():
     except Exception: em = {}
     def pts(periods, values): return [[str(p), v] for p, v in zip(periods, values) if v is not None]
     def lastp(a): return a[-1] if a else None
-    def yoy(a, back):
-        if len(a) <= back: return None
-        x, y = a[-1], a[-1 - back]
-        return round((x[1] / y[1] - 1) * 100, 2) if y[1] else None
+    def year_ago(p):
+        """el mismo periodo un año antes, por etiqueta (las series se saltan semanas o meses sin dato)"""
+        p = str(p)
+        if re.match(r'^\d{4}$', p): return str(int(p) - 1)
+        if re.match(r'^\d{4}-W\d\d$', p): return '%d%s' % (int(p[:4]) - 1, p[4:])
+        return '%d%s' % (int(p[:4]) - 1, p[4:])          # AAAA-MM, AAAA-Qn, AAAA-Hn
+    def yoy(a, back=None):
+        if not a: return None
+        x = a[-1]; y = next((z for z in reversed(a) if str(z[0]) == year_ago(x[0])), None)
+        return round((x[1] / y[1] - 1) * 100, 4) if y and y[1] else None
     BACK = {'A': 1, 'M': 12, 'Q': 4, 'H': 2, 'W': 52}
     QK = lambda p: re.sub(r'^(\d{4})K([1-4])$', r'\1-Q\2', p)
     out = {}
@@ -553,7 +559,7 @@ def forest():
         v = C(cc); rows = [[y, b, n] for y, b, n in zip(ys, c['ba'], c['nf']) if b is not None]
         v['fires'] = {'system': c['system'], 'asOf': ff['asOf'], 'currentYear': ff['currentYear'], 'years': rows, 'src': ff['source']}
         s = (fs.get('countries') or {}).get(cc)
-        if s: v['fires']['season'] = {'year': fs['year'], 'fromYear': s['fromYear'], 'weeks': s['weeks'], 'sumOf': s.get('sumOf')}
+        if s and fs.get('year') == ff['currentYear']: v['fires']['season'] = {'year': fs['year'], 'fromYear': s['fromYear'], 'weeks': s['weeks'], 'sumOf': s.get('sumOf')}
     # cortas
     RK = {'total': 'TOTAL.RW', 'conif': 'CONIF.RW', 'nonconif': 'NCONIF.RW', 'fuel': 'TOTAL.RW_FW', 'industrial': 'TOTAL.RW_IN', 'saw': 'TOTAL.RW_IN_LG', 'pulp': 'TOTAL.RW_IN_PW', 'other': 'TOTAL.RW_IN_O'}
     for cc, c in rm['countries'].items():
@@ -570,17 +576,21 @@ def forest():
         C(cc)['prices'] = {'freq': c['freq'], 'unit': c['unit'], 'currency': c['currency'], 'vat': c.get('vat'), 'priceType': c.get('priceType'), 'note': c.get('note'), 'src': c['source'],
                            'series': [dict({'id': s['id'], 'label': s['label'], 'group': s.get('group'), 'bench': bool(s.get('bench')), 'pts': pts(c['periods'], s['values'])}, **({'region': s['region']} if s.get('region') else {})) for s in c['series']]}
     se = (ew.get('national') or {}).get('SE')
-    if se: C('SE')['prices'] = {'freq': 'Q', 'unit': se['series'][0]['unit'], 'currency': 'SEK', 'vat': 'excl', 'priceType': 'delivery', 'note': None, 'preliminary': [QK(p) for p in se.get('preliminary') or []],
+    if se and se.get('series'): C('SE')['prices'] = {'freq': 'Q', 'unit': se['series'][0]['unit'], 'currency': 'SEK', 'vat': 'excl', 'priceType': 'delivery', 'note': None, 'preliminary': [QK(p) for p in se.get('preliminary') or []],
                                 'src': {'name': se['name'], 'url': se['url'], 'license': se['license']},
                                 'series': [{'id': s['id'], 'label': s['name'], 'group': 'sawlog' if 'sawlog' in s['id'] else 'pulpwood', 'bench': s['id'] == 'se-roundwood-sawlogs-pine-and-spruce', 'pts': [[QK(p), v] for p, v in s['pts'] if v is not None]} for s in se['series']]}
+    def safe(name, fn):
+        try: fn()
+        except Exception as e: print('AVISO forest: bloque %s omitido: %s' % (name, str(e)[:160]))
     DEL = {'total': 'Roundwood from state forests, total', 'logs': 'Sawlogs', 'pulp': 'Pulpwood', 'fuel': 'Fuelwood', 'spruce': 'Spruce sawlogs', 'pine': 'Pine sawlogs', 'beech': 'Beech sawlogs', 'oak': 'Oak sawlogs'}
-    C('DE')['prices'] = {'freq': 'M', 'unit': 'index ' + de['base'], 'currency': None, 'vat': 'excl', 'priceType': 'index', 'note': None, 'src': de['source'],
-                         'series': [{'id': 'de-wood-' + k, 'label': DEL.get(k, k), 'group': k, 'bench': k == 'total', 'pts': pts(de['months'], v)} for k, v in de['series'].items()]}
-    C('UK')['prices'] = {'freq': 'H', 'unit': uk['series'][0]['unit'], 'currency': 'GBP', 'vat': 'n/d', 'priceType': 'twelve-month average', 'note': uk.get('note'), 'src': uk['source'],
-                         'series': [{'id': s['id'], 'label': s['label'], 'group': s['id'], 'bench': s['id'] == 'uk-sawlog-softwood', 'pts': pts(s['periods'], s['values'])} for s in uk['series']]}
-    us = na['countries']['US']; UL = {'lumber': 'Lumber', 'softwood': 'Softwood lumber', 'hardwood': 'Hardwood lumber', 'plywood': 'Plywood', 'logs': 'Logs, bolts, timber, pulpwood and wood chips'}
-    C('US')['prices'] = {'freq': 'M', 'unit': 'index ' + us['source'].get('base', ''), 'currency': None, 'vat': 'n/d', 'priceType': 'index', 'note': None, 'src': us['source'],
-                         'series': [{'id': 'us-ppi-' + k, 'label': UL.get(k, k), 'group': k, 'bench': k == 'logs', 'pts': pts(us['months'], v)} for k, v in us['series'].items()]}
+    safe('DE', lambda: C('DE').__setitem__('prices', {'freq': 'M', 'unit': 'index ' + de['base'], 'currency': None, 'vat': 'excl', 'priceType': 'index', 'note': None, 'src': de['source'],
+                         'series': [{'id': 'de-wood-' + k, 'label': DEL.get(k, k), 'group': k, 'bench': k == 'total', 'pts': pts(de['months'], v)} for k, v in de['series'].items()]}))
+    safe('UK', lambda: C('UK').__setitem__('prices', {'freq': 'H', 'unit': uk['series'][0]['unit'], 'currency': 'GBP', 'vat': 'n/d', 'priceType': 'twelve-month average', 'note': uk.get('note'), 'src': uk['source'],
+                         'series': [{'id': s['id'], 'label': s['label'], 'group': s['id'], 'bench': s['id'] == 'uk-sawlog-softwood', 'pts': pts(s['periods'], s['values'])} for s in uk['series']]}))
+    UL = {'lumber': 'Lumber', 'softwood': 'Softwood lumber', 'hardwood': 'Hardwood lumber', 'plywood': 'Plywood', 'logs': 'Logs, bolts, timber, pulpwood and wood chips'}
+    us = (na.get('countries') or {}).get('US') or {}
+    if us.get('series'): safe('US', lambda: C('US').__setitem__('prices', {'freq': 'M', 'unit': 'index ' + us['source'].get('base', ''), 'currency': None, 'vat': 'n/d', 'priceType': 'index', 'note': None, 'src': us['source'],
+                         'series': [{'id': 'us-ppi-' + k, 'label': UL.get(k, k), 'group': k, 'bench': k == 'logs', 'pts': pts(us['months'], v)} for k, v in us['series'].items()]}))
     # indice de precios industriales de la madera
     pp = ew['ppi']
     for cc, c in pp['countries'].items():
@@ -614,14 +624,15 @@ def forest():
         if m:
             r['removals'] = m[-1] + ([True] if m[-1][0] in v['removals']['estimated'] else [])
             ar = {y: a for y, a in (v.get('area') or {}).get('points', [])}
-            a = ar.get(m[-1][0]) or (ar[max(ar)] if ar else None)
+            prev = [y for y in ar if y <= m[-1][0]]          # la misma regla que la ficha: superficie del año o la última publicada antes
+            a = ar[max(prev)] if prev else None
             if a: r['removalsPerHa'] = [m[-1][0], round(m[-1][1] / a, 2)]
         p = v.get('prices')
         if p and p['series']:
             b = [s for s in p['series'] if s['bench'] and not s.get('region') and s['pts']] or [s for s in p['series'] if not s.get('region') and s['pts']]
             if b: b = b[0]; r['price'] = {'label': b['label'], 'unit': p['unit'], 'freq': p['freq'], 'period': b['pts'][-1][0], 'value': b['pts'][-1][1], 'yoy': yoy(b['pts'], BACK.get(p['freq'], 1))}
         q = (v.get('ppi') or {}).get('C16')
-        if q: r['ppi'] = [q[-1][0], q[-1][1], yoy(q, 12)]
+        if q: r['ppi'] = [q[-1][0], q[-1][1], yoy(q)]
         v['summary'] = r
         if len(r) > 1: rows.append(r)
         write('forest/%s.json' % cc, v)

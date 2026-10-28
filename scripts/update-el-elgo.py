@@ -71,6 +71,7 @@ def fetch_all(key, local):
     pk, needle = RESOURCES[key]
     p = http(API + "package_show?id=" + PACKAGES[pk])["result"]
     cand = [r for r in p["resources"] if r.get("datastore_active") and needle in (r.get("name") or "")]
+    if key == "dairy": cand = [r for r in cand if "ΠΟΠ" not in (r.get("name") or "")]   # el recurso de productos ΠΟΠ (DOP) repite la misma frase en su titulo
     if len(cand) != 1: raise RuntimeError("%s: %d recursos con %r" % (key, len(cand), needle))
     r = cand[0]
     lic = (r.get("license") or "")

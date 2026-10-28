@@ -103,9 +103,14 @@ def archive(state):
         state["ingested"].append(u)
 
 def week_monday(kw, pub):
-    """lunes de la semana ISO kw del año que corresponde a la fecha de publicación"""
-    y = pub.year if kw <= pub.isocalendar()[1] + 1 else pub.year - 1
-    return datetime.date.fromisocalendar(y, kw, 1).isoformat()
+    """lunes de la semana ISO kw a la que se refiere un informe publicado el día pub: la semana ya empezada más cercana antes de la
+    publicación (como mucho 5 semanas antes), en el año ISO de la publicación o en el anterior (KW 52/53 publicadas en enero). Sin encaje: None."""
+    iy = pub.isocalendar()[0]
+    for y in (iy, iy - 1):
+        try: mo = datetime.date.fromisocalendar(y, kw, 1)
+        except ValueError: continue                      # KW 53 en un año ISO de 52 semanas
+        if mo <= pub and (pub - mo).days <= 35: return mo.isoformat()
+    return None
 
 def web(state):
     n = 0
@@ -120,6 +125,7 @@ def web(state):
             m = re.search(r"KW\s*(\d+)", rows[0][0] if rows and rows[0] else "")
             if not m: log("aviso: %s sin semana" % url); continue
             wk = week_monday(int(m.group(1)), datetime.date(int(yy), int(mm), int(dd)))
+            if not wk: log("aviso: %s: KW %s no encaja con la fecha %s.%s.%s; se omite" % (url, m.group(1), dd, mm, yy)); continue
             for r in rows[1:]:
                 if len(r) < 2: continue
                 nm = re.sub(r"\s+", " ", r[0]).strip()

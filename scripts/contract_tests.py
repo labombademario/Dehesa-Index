@@ -4663,6 +4663,7 @@ def forest_fires_season(doc, errs, warns, stats):
             if w[4] is not None and w[5] is not None and not w[4] <= w[3] <= w[5]: errs.append("temporada %s semana %s: media fuera de minimo-maximo" % (cc, w[0])); return
             prev = a
     if doc["asOf"] < (today - _dt.timedelta(days=9)).isoformat(): warns.append("temporada de incendios: datos de %s, con retraso" % doc["asOf"])
+    if str(doc["year"]) != doc["asOf"][:4]: warns.append("temporada de incendios: el fichero es de %s y los datos de %s (primeros dias de enero: la ficha no la enseña)" % (doc["year"], doc["asOf"][:4]))
     stats["paises"] = len(doc["countries"])
 # Precios oficiales de la madera por surtido (SI, CZ, LV, FI, PL)
 TIMBER_FREQ = {"M": (r"^\d{4}-(0[1-9]|1[0-2])$", 120), "Q": (r"^\d{4}-Q[1-4]$", 200), "H": (r"^\d{4}-H[12]$", 420), "W": (r"^\d{4}-W(0[1-9]|[1-4]\d|5[0-3])$", 45), "A": (r"^\d{4}$", 600)}

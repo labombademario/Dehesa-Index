@@ -1,6 +1,6 @@
 {
  "base": "http://localhost:8123",
- "at": "2026-10-16T05:15:24.644Z",
+ "at": "2026-10-28T05:43:08.928Z",
  "report": [
   {
    "tag": "desktop /",
@@ -28,7 +28,7 @@
    "axe": 0
   },
   {
-   "tag": "desktop /semana.html?c=ES",
+   "tag": "desktop /blog.html#resumen-ES",
    "errors": [],
    "axe": 0
   },
@@ -153,6 +153,66 @@
    "axe": 0
   },
   {
+   "tag": "desktop /produccion-mundial.html?p=trigo&c=US",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /comercio-pais.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /monitor-insumos.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /monitor-insumos.html?c=FR",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /agreste.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /netherlands.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /belgium.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /portugal.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /poland.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /costes-pais.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /bosque.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "desktop /pesca.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
    "tag": "desktop /ganaderia.html",
    "errors": [],
    "axe": 0
@@ -218,7 +278,7 @@
    "axe": 0
   },
   {
-   "tag": "mobile /semana.html?c=ES",
+   "tag": "mobile /blog.html#resumen-ES",
    "errors": [],
    "axe": 0
   },
@@ -339,6 +399,66 @@
   },
   {
    "tag": "mobile /sequia.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /produccion-mundial.html?p=trigo&c=US",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /comercio-pais.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /monitor-insumos.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /monitor-insumos.html?c=FR",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /agreste.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /netherlands.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /belgium.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /portugal.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /poland.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /costes-pais.html?c=ES",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /bosque.html",
+   "errors": [],
+   "axe": 0
+  },
+  {
+   "tag": "mobile /pesca.html?c=ES",
    "errors": [],
    "axe": 0
   },
