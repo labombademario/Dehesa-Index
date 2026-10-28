@@ -1963,6 +1963,12 @@
    [
     "de_land_prices"
    ]
+  ],
+  "region-grid-climate/EL.json": [
+   "region-grid-climate",
+   [
+    "region_grid_climate"
+   ]
   ]
  },
  "globs": {

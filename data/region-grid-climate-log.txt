@@ -1,0 +1,14 @@
+EL EL30: 11 celdas, último 2026-09
+EL EL41: 15 celdas, último 2026-09
+EL EL42: 26 celdas, último 2026-09
+EL EL43: 10 celdas, último 2026-09
+EL EL51: 16 celdas, último 2026-09
+EL EL52: 16 celdas, último 2026-09
+EL EL53: 7 celdas, último 2026-09
+EL EL54: 10 celdas, último 2026-09
+EL EL61: 16 celdas, último 2026-09
+EL EL62: 12 celdas, último 2026-09
+EL EL63: 11 celdas, último 2026-09
+EL EL64: 17 celdas, último 2026-09
+EL EL65: 13 celdas, último 2026-09
+EL escrito: 13 regiones, último 2026-09

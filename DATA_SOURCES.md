@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 189 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40588 series en el catalogo unificado.
+Resumen: 189 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40794 series en el catalogo unificado.
 
 ## VERIFIED (189)
 
@@ -80,7 +80,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eumofa` | EUMOFA - European Market Observatory for Fisheries and Aquaculture Products (European Commission, DG MARE) | EU | CC-BY-4.0 | si/si | si | 0 | CC BY 4.0 covers content owned by the EU; third-party content (consumption panels, Euromonitor, MABUX, Trade Data Monitor, and data from non… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17420 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17626 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 2241 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `fadn_fsdn` | European Commission - FADN/FSDN public database (standard results) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Reuse allowed with acknowledgement of the source; changes must be indicated. The agridata pages themselves state no licence and point to a d… |
 | `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |

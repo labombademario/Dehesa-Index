@@ -158,6 +158,14 @@
     "pattern": "e.catalog"
    }
   },
+  "data/catalog/EL.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Grecia (sin puntos): la ficha del pais los pide por DISeries.country('EL'); supera los 500 KB desde que entran el IPCA de alimentos y el empleo y VAB agrario por unidad regional (27-oct).",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
+  },
   "data/catalog/IT.json": {
    "class": "RUNTIME",
    "note": "Metadatos de las series de Italia (sin puntos): la ficha del pais los pide por DISeries.country('IT'); unos 40 KB comprimidos.",

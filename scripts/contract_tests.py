@@ -4899,6 +4899,26 @@ def de_climate_laender(doc, errs, warns, stats):
     tmp = dict(doc); tmp["departements"] = D; e2 = []
     fr_climate_departements(tmp, e2, warns, stats)
     errs.extend(x.replace("fr-clima", "de-clima") for x in e2 if "solo" not in x)
+def region_grid_climate(doc, errs, warns, stats):
+    """Clima por región con la rejilla de NASA POWER: todas las regiones NUTS 2 del país (las de scripts/ref/nuts2-eu.geojson), únicas, con id del mapa único,
+    al menos una celda, historial alineado (un valor por mes desde «from» hasta lastPeriod) y las mismas comprobaciones físicas que el clima de Francia."""
+    import json as _j
+    from pathlib import Path as _P
+    cc = doc["country"]; U = doc["units"]
+    want = {f["properties"]["id"] for f in _j.loads((_P(__file__).resolve().parent / "ref" / "nuts2-eu.geojson").read_text(encoding="utf-8"))["features"] if f["properties"]["id"].startswith(cc) and len(f["properties"]["id"]) == 4}
+    got = [u["id"] for u in U]
+    if sorted(got) != sorted(want): errs.append("clima-rejilla %s: regiones %s, se esperaban %s" % (cc, sorted(set(got) ^ want)[:6], len(want)))
+    M = [u.get("mapId") for u in U if u.get("mapId")]
+    if len(M) != len(set(M)): errs.append("clima-rejilla %s: id de mapa repetido" % cc)
+    lp = doc["lastPeriod"]
+    for u in U:
+        if u.get("cells", 0) < 1: errs.append("clima-rejilla %s: sin celdas" % u["id"])
+        h = u["history"]; y, m = int(h["from"][:4]), int(h["from"][5:]); n = (int(lp[:4]) - y) * 12 + int(lp[5:]) - m + 1
+        if u["months"][-1]["period"] == lp and len(h["tempAnomalyC"]) != n: errs.append("clima-rejilla %s: historial de %d meses, se esperaban %d" % (u["id"], len(h["tempAnomalyC"]), n))
+    tmp = {"lastPeriod": lp, "departements": [dict(u, months=[{k: v for k, v in x.items() if not (k.startswith("precip") and x.get("precipAnomalyPct") is None)} for x in u["months"]]) for u in U]}
+    e2 = []; fr_climate_departements(tmp, e2, warns, stats)
+    errs.extend(x.replace("fr-clima", "clima-rejilla " + cc) for x in e2 if "solo" not in x)
+    stats["regions"] = len(U)
 DE_NUTS2 = {"DE11", "DE12", "DE13", "DE14", "DE21", "DE22", "DE23", "DE24", "DE25", "DE26", "DE27", "DE30", "DE40", "DE50", "DE60", "DE71", "DE72", "DE73", "DE80", "DE91", "DE92",
             "DE93", "DE94", "DEA1", "DEA2", "DEA3", "DEA4", "DEA5", "DEB1", "DEB2", "DEB3", "DEC0", "DED2", "DED4", "DED5", "DEE0", "DEF0", "DEG0"}
 def de_land_prices(doc, errs, warns, stats):

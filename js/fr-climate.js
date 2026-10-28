@@ -41,8 +41,20 @@
     it: { h: 'Pioggia e temperatura per Land', sub: 'Medie di ogni Land pubblicate dal Deutscher Wetterdienst, confrontate con la normale 1991-2020.', hint: 'Passa il cursore o tocca un Land per vedere il suo ultimo anno.', none: 'nessun dato',
       dry: 'Länder con meno del 50 % della pioggia normale', wet: 'Länder con più del 150 % della pioggia normale', warm: 'Germania (media del DWD): scarto di temperatura', nat: 'Germania (media del DWD): pioggia', calc: 'La normale e lo scarto sono calcolati da Dehesa Index sulla serie del DWD.', srcN: 'Deutscher Wetterdienst, Climate Data Center (medie regionali)', area: 'area del DWD: {a}' }
   };
+  /* Grecia y demás países con rejilla de NASA POWER promediada por región NUTS 2: data/region-grid-climate/<PAIS>.json (scripts/update-region-grid-climate.py) */
+  var TGR = {
+    es: { h: 'Lluvia y temperatura por región', sub: 'Media de toda la región con la rejilla de NASA POWER (reanálisis MERRA-2), comparada con su normal 1991-2020.', hint: 'Pasa el cursor o toca una región para ver su último año.', none: 'sin dato',
+      dry: 'Regiones con menos del 50 % de la lluvia normal', wet: 'Regiones con más del 150 % de la lluvia normal', warm: 'Diferencia media de temperatura (media de las regiones)', calc: 'La media por región, la normal y la diferencia las calcula Dehesa Index con la rejilla de NASA POWER.', srcN: 'NASA POWER (MERRA-2), endpoint regional', tbl: 'Último año: {d}' },
+    en: { h: 'Rainfall and temperature by region', sub: 'Average over the whole region from the NASA POWER grid (MERRA-2 reanalysis), compared with its 1991-2020 normal.', hint: 'Hover or tap a region to see its last year.', none: 'no data',
+      dry: 'Regions with under 50 % of normal rainfall', wet: 'Regions with over 150 % of normal rainfall', warm: 'Average temperature difference (mean of the regions)', calc: 'The regional average, the normal and the difference are calculated by Dehesa Index from the NASA POWER grid.', srcN: 'NASA POWER (MERRA-2), regional endpoint', tbl: 'Last year: {d}' },
+    fr: { h: 'Pluie et température par région', sub: 'Moyenne sur toute la région à partir de la grille de NASA POWER (réanalyse MERRA-2), comparée à sa normale 1991-2020.', hint: 'Survolez ou touchez une région pour voir sa dernière année.', none: 'pas de donnée',
+      dry: 'Régions à moins de 50 % de la pluie normale', wet: 'Régions à plus de 150 % de la pluie normale', warm: 'Écart moyen de température (moyenne des régions)', calc: 'La moyenne régionale, la normale et l’écart sont calculés par Dehesa Index à partir de la grille de NASA POWER.', srcN: 'NASA POWER (MERRA-2), point d’accès régional', tbl: 'Dernière année : {d}' },
+    it: { h: 'Pioggia e temperatura per regione', sub: 'Media dell’intera regione dalla griglia di NASA POWER (rianalisi MERRA-2), confrontata con la sua normale 1991-2020.', hint: 'Passa il cursore o tocca una regione per vedere il suo ultimo anno.', none: 'nessun dato',
+      dry: 'Regioni con meno del 50 % della pioggia normale', wet: 'Regioni con più del 150 % della pioggia normale', warm: 'Scarto medio di temperatura (media delle regioni)', calc: 'La media regionale, la normale e lo scarto sono calcolati da Dehesa Index sulla griglia di NASA POWER.', srcN: 'NASA POWER (MERRA-2), endpoint regionale', tbl: 'Ultimo anno: {d}' }
+  };
   var CFG = { FR: { url: 'data/fr-climate-departements.json', map: null, id: 'ps-fr-clim', lic: 'Licence Ouverte 2.0', tx: null },
-    DE: { url: 'data/de-climate-laender.json', map: ['DEHESA_DE_LAENDER', 'vendor/de-laender.js'], id: 'ps-de-clim', lic: 'CC BY 4.0', tx: TDE, nat: 'DE' } };
+    DE: { url: 'data/de-climate-laender.json', map: ['DEHESA_DE_LAENDER', 'vendor/de-laender.js'], id: 'ps-de-clim', lic: 'CC BY 4.0', tx: TDE, nat: 'DE' },
+    EL: { url: 'data/region-grid-climate/EL.json', map: ['DEHESA_EL_REGIONS', 'vendor/el-regions.js'], id: 'ps-el-clim', lic: 'NASA', tx: TGR } };
   function tx(c, lg) { var t = T[lg], o = c.tx && c.tx[lg], r = {}, k; for (k in t) r[k] = t[k]; if (o) for (k in o) r[k] = o[k]; return r; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d, lg) { return v == null ? '—' : v.toLocaleString(LOC[lg] || 'es-ES', { minimumFractionDigits: d, maximumFractionDigits: d }); }
@@ -64,12 +76,12 @@
     return Promise.all([load(C.url), M ? (C.map ? M.load(C.map[0], C.map[1]) : M.load()) : null]).then(function (a) {
       var D = a[0], MAP = a[1], U = units(D); if (!U.length) { el.innerHTML = ''; return false; }
       var t = tx(C, lg), pers = {}, byId = {}, NAT = C.nat ? byId : null;
-      U.forEach(function (d) { byId[d.id] = d; d.months.forEach(function (m) { pers[m.period] = 1; }); });
+      U.forEach(function (d) { byId[d.mapId || d.id] = d; d.months.forEach(function (m) { pers[m.period] = 1; }); });
       var P = Object.keys(pers).sort(); if (!ST.per || P.indexOf(ST.per) < 0) ST.per = D.lastPeriod;
       var vals = {}, dry = 0, wet = 0, n = 0, ta = [], k;
       U.forEach(function (d) { var m = at(d, ST.per); if (!m || d.id === C.nat) return;
         var v = ST.m === 'p' ? (m.precipAnomalyPct == null ? null : 100 + m.precipAnomalyPct) : m.tempAnomalyC;
-        if (v != null) { vals[d.id] = v; if (d.id === '20') { vals['2A'] = v; vals['2B'] = v; } }
+        if (v != null) { vals[d.mapId || d.id] = v; if (d.id === '20') { vals['2A'] = v; vals['2B'] = v; } }
         if (m.precipAnomalyPct != null) { n++; if (m.precipAnomalyPct < -50) dry++; if (m.precipAnomalyPct > 50) wet++; }
         if (m.tempAnomalyC != null) ta.push(m.tempAnomalyC); });
       var tav = ta.length ? ta.reduce(function (s, x) { return s + x; }, 0) / ta.length : null, nm0 = C.nat && byId[C.nat] ? at(byId[C.nat], ST.per) : null;

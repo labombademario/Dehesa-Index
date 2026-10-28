@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-323 workflows (273 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+326 workflows (276 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -105,6 +105,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-de-climate-laender.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-climate-laender.py | de-climate-laender.json | finish, validate-files |
 | update-de-diesel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-de-diesel.py | de-diesel.json | finish, validate-files |
 | update-de-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | de-ghg-agri.json | finish, validate-files |
+| update-de-land-prices.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-land-prices.py | de-land-prices.json | finish, validate-files |
 | update-de-more.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-more.py | germany-more-stats.json | finish, validate-files |
 | update-de-rivers.yml | generado | varias veces al dia | detect-revisions.py, gen-workflows.py, update-de-rivers.py | de-rivers.json | finish, validate-files |
 | update-de-soil-moisture.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-soil-moisture.py | de-soil-moisture.json | finish, validate-files |
@@ -276,6 +277,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-el-elgo.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-el-elgo.py | el-elgo/dairy.json, el-elgo/meat.json, el-elgo/milk.json | finish, validate-files |
 | update-el-elstat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-el-elstat.py | el-elstat/accounts.json, el-elstat/prices.json, el-elstat/regions.json | finish, validate-files |
 | update-el-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | el-ghg-agri.json | finish, validate-files |
+| update-el-more.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-el-more.py | greece-more-stats.json | finish, validate-files |
 | update-embalses.yml | generado | semanal (3,4) | detect-revisions.py, gen-workflows.py, update-embalses.py | spain-reservoirs-points.json, spain-reservoirs.json | finish, validate-files |
 | update-energy-markets.yml | a mano | semanal (3,5) | update-eia-energy-markets.mjs, update-worldbank-gas-eu.py | - | finish, price-engine, publish |
 | update-energy.yml | a mano | semanal (5) | sync-diesel-trust.mjs, update-ec-diesel-eu.py, update-eia-diesel-us.mjs | - | price-engine, publish |
@@ -317,6 +319,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-portugal-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal-eurostat.py | portugal-eurostat-stats.json | finish, validate-files |
 | update-portugal.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal.py | portugal-stats.json | finish, validate-files |
 | update-recan.yml | a mano | semanal (4) | update-recan.py | recan.json | finish, validate-files |
+| update-region-grid-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-region-grid-climate.py | region-grid-climate/EL.json | finish, validate-files |
 | update-regions-pl.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-poland-regions.py | poland-regions/regions.json | finish, validate-files |
 | update-rivers.yml | generado | varias veces al dia | detect-revisions.py, gen-workflows.py, update-rivers.py | rivers-be.json, rivers-ca.json, rivers-fr.json … | finish, validate-files |
 | update-spain-balances.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-balances.py | spain-balances/cereals.json | finish, validate-files |

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-27T23:28:31Z",
+ "generatedAt": "2026-10-28T00:58:07Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,9 +10,9 @@
   "sourcesApto": 176,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 413,
-  "datasets_apto": 274,
-  "datasets_condiciones": 128,
+  "datasets": 416,
+  "datasets_apto": 276,
+  "datasets_condiciones": 129,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
@@ -4152,6 +4152,14 @@
    ]
   },
   {
+   "path": "data/de-land-prices.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "destatis"
+   ]
+  },
+  {
    "path": "data/de-rivers.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -6480,6 +6488,21 @@
    ]
   },
   {
+   "path": "data/greece-more-stats.json",
+   "scope": "fichero",
+   "verdict": "condiciones",
+   "sources": [
+    "eurostat"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:Eurostat",
+     "sourceId": "eurostat",
+     "verdict": "condiciones"
+    }
+   ]
+  },
+  {
    "path": "data/history.json",
    "scope": "observaciones",
    "verdict": "condiciones",
@@ -7255,6 +7278,15 @@
    "verdict": "apto",
    "sources": [
     "mapa_es"
+   ]
+  },
+  {
+   "path": "data/region-grid-climate/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "gisco_nuts",
+    "nasa_power"
    ]
   },
   {

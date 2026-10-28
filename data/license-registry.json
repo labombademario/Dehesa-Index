@@ -8540,6 +8540,19 @@
     "destatis"
    ],
    "notes": "Precio medio de compraventa de tierra agrícola, superficie vendida y número de ventas por Regierungsbezirk (Destatis GENESIS 61521-0020) tal cual; scripts/update-de-land-prices.py. Mapa: vendor/de-nuts2.js (Eurostat/GISCO NUTS 2021)."
+  },
+  "data/greece-more-stats.json": {
+   "bySourceGroupPrefix": {
+    "Eurostat": "eurostat"
+   },
+   "notes": "Grecia: IPCA de alimentos por subclase ECOICOP v2 (prc_hicp_minr, elaborado por ELSTAT), ocupados agrarios por región según la EPA (lfst_r_lfe2en2) y VAB y empleo de la sección A por región y unidad regional de las cuentas regionales (nama_10r_3gva, nama_10r_3empers); todo de Eurostat; scripts/update-el-more.py."
+  },
+  "data/region-grid-climate/": {
+   "sources": [
+    "nasa_power",
+    "gisco_nuts"
+   ],
+   "notes": "Lluvia y temperatura mensual como media de cada región NUTS 2: rejilla regional de NASA POWER (MERRA-2) ponderada por superficie dentro de la geometría NUTS 2021 de Eurostat/GISCO; normal 1991-2020 y anomalía calculadas por Dehesa Index; scripts/update-region-grid-climate.py."
   }
  },
  "derived": [

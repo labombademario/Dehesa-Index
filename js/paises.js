@@ -716,6 +716,10 @@
     var go2 = function () { if (window.DIElElgo && ST.c === cc) window.DIElElgo.mount(el2, lang()); };
     var mod2 = function () { if (window.DIElElgo) go2(); else js('js/el-elgo.js?v=20261026', go2); };
     nearView(el2, function () { if (window.ESUI) mod2(); else js('js/es-ui.js?v=20261015', mod2); });
+    /* lluvia y temperatura por región: media de la rejilla de NASA POWER (js/fr-climate.js con la configuración de Grecia; data/region-grid-climate/EL.json) */
+    var el3 = document.createElement('div'); el3.id = 'pp-el-clim'; el3.style.minHeight = '1px'; el2.parentNode.insertBefore(el3, el2.nextSibling);
+    var go3 = function () { if (window.DIFrClimate && ST.c === cc) window.DIFrClimate.mount(el3, lang(), 'EL'); };
+    nearView(el3, function () { var m3 = function () { if (window.DIFrClimate) go3(); else js('js/fr-climate.js?v=20261027', go3); }; if (window.DIFrDeptMap) m3(); else js('js/fr-dept-map.js?v=20261015', m3); });
   }
   var LANDCC = ['FR', 'IT', 'PL', 'PT', 'DE', 'BE', 'HR', 'EL'];
   function euLandUp() {

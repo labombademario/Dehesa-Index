@@ -153,6 +153,7 @@
   Object.keys(T).forEach(function (l) { var x = T[l]; x.usprices = x.usPr; x.usstocks = x.usSt; x.usslaughter = x.usSl; x.usdairy = x.usDa; x.usland = x.usLand; x.usincome = x.usIn; x.uscensus = x.usCe; });
   (function () { var N = { es: 'Estado de los cultivos', en: 'Crop condition', fr: 'État des cultures', it: 'Stato delle colture' }, R = { es: 'Ingresos por producto', en: 'Cash receipts by commodity', fr: 'Recettes par produit', it: 'Ricavi per prodotto' }; Object.keys(N).forEach(function (l) { if (T[l]) { T[l].uscprog = N[l]; T[l].usrecv = R[l]; } }); })();   // títulos de los bloques para el índice
   (function () { var N = { es: 'Sequía', en: 'Drought', fr: 'Sécheresse', it: 'Siccità' }; Object.keys(N).forEach(function (l) { if (T[l]) T[l].eudr = N[l]; }); })();
+  (function () { var N = { es: 'Empleo y valor añadido agrario', en: 'Farm employment and value added', fr: 'Emploi et valeur ajoutée agricoles', it: 'Occupazione e valore aggiunto agricoli' }; Object.keys(N).forEach(function (l) { if (T[l]) T[l].elagri = N[l]; }); })();
   window.DehesaRegionMore = function (H) {
     var get = H.get, card = H.card, cite = H.cite, table = H.table, nf = H.nf, esc = H.esc, tt = H.tt, day = H.day, pct = H.pct, dec = H.dec;
     function L(s) { var p = String(s).split('|'), i = IX[H.lang()]; return p[i == null ? 0 : i] || p[0]; }
@@ -226,6 +227,18 @@
       });
     }
 
+    /* ---- lluvia y temperatura como media de toda la región (rejilla de NASA POWER promediada por región NUTS 2; data/region-grid-climate/<PAIS>.json). Sin dato, el punto de siempre ---- */
+    function gridClim(x) {
+      return get('data/region-grid-climate/' + x.c + '.json').then(function (d) {
+        var u = null; (d && d.units || []).forEach(function (z) { if (z.mapId === x.r || z.id === x.r) u = z; }); if (!u || !u.months || !u.months.length) return clim(x);
+        var sgn = function (v) { return v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1); };
+        var rows = u.months.slice(-6).reverse().map(function (m) { return [esc(mon(m.period)), m.precipMm == null ? '—' : nf(m.precipMm, 0), m.precipAnomalyPct == null ? '—' : nf(100 + m.precipAnomalyPct, 0) + ' %', m.tempC == null ? '—' : nf(m.tempC, 1), sgn(m.tempAnomalyC)]; });
+        return card(L('Lluvia y temperatura|Rainfall and temperature|Pluie et température|Pioggia e temperatura'),
+          L('Media de toda la región, no de un punto: rejilla de NASA POWER (reanálisis MERRA-2) promediada dentro de la región ({n} celdas) y comparada con su normal 1991-2020 (cálculo de Dehesa Index). En islas y costas las celdas mezclan tierra y mar.|Average over the whole region, not one point: NASA POWER grid (MERRA-2 reanalysis) averaged within the region ({n} cells) and compared with its 1991-2020 normal (calculated by Dehesa Index). On islands and coasts cells mix land and sea.|Moyenne sur toute la région, pas en un point : grille de NASA POWER (réanalyse MERRA-2) moyennée dans la région ({n} mailles) et comparée à sa normale 1991-2020 (calcul de Dehesa Index). Sur les îles et les côtes, les mailles mêlent terre et mer.|Media dell’intera regione, non di un punto: griglia di NASA POWER (rianalisi MERRA-2) mediata nella regione ({n} celle) e confrontata con la sua normale 1991-2020 (calcolo di Dehesa Index). Su isole e coste le celle mescolano terra e mare.').replace('{n}', u.cells),
+          table([L('Mes|Month|Mois|Mese'), L('Lluvia (mm)|Rainfall (mm)|Pluie (mm)|Pioggia (mm)'), L('% de lo normal|% of normal|% de la normale|% della norma'), L('Temp. media (°C)|Mean temp. (°C)|Temp. moyenne (°C)|Temp. media (°C)'), L('Diferencia (°C)|Difference (°C)|Écart (°C)|Scarto (°C)')], rows, 520)
+          + link('paises.html?c=' + x.c + '#ps-' + x.c.toLowerCase() + '-clim', L('Ver el mapa del país|See the country map|Voir la carte du pays|Vedi la mappa del paese')), cite('nasa_power', d.lastPeriod));
+      });
+    }
     /* ---- clima (todos los países) ---- */
     function clim(x) {
       var ids = CLIM[x.c] && CLIM[x.c][x.r]; if (!ids) return regClim(x); if (typeof ids === 'string') ids = [ids];
@@ -422,6 +435,30 @@
           if (!p && !r) return; rows.push([esc(t[k]), p ? nf(p[1], 0) + ' ' + faint(p[0]) : '—', n != null ? nf(n, 0) : '—', r ? nf(r[1], 0) + ' ' + faint(r[0]) : '—']); });
         if (!rows.length) return null;
         return card(t.deland, t.delandSub, table([t.kindL, t.priceHa, t.salesN, t.rentHa], rows, 480) + (LP ? '' : '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.noLandPrice) + '</p>') + link('paises.html?c=DE#ps-de', t.openDe), cite('destatis'));
+      });
+    }
+    /* ---- Grecia: ocupados agrarios (EPA) y valor añadido y empleo de la sección A por unidad regional (cuentas regionales); Eurostat, data/greece-more-stats.json ---- */
+    function elAgri(x) {
+      return Promise.all([get('data/eu-regions-macro.json'), get('data/greece-more-stats.json')]).then(function (a) {
+        var M = a[0] && a[0].regions && a[0].regions.EL && a[0].regions.EL[x.r], S = a[1] && a[1].countries && a[1].countries.EL && a[1].countries.EL.series; if (!M || !M.nuts || !S) return null;
+        var n2 = M.nuts[0].toLowerCase(), by = {}; S.forEach(function (s) { by[s.id] = s; });
+        var at = function (s, y) { return s ? atY(s.points, y) : null; }, chg = function (s, k) { var p = s && lastPt(s.points); if (!p) return null; var b = at(s, +p[0] - k); return b ? (p[1] / b - 1) * 100 : null; };
+        var sp = function (v) { if (v == null) return '—'; var r = Math.round(v); return (r > 0 ? '+' : r < 0 ? '−' : '') + nf(Math.abs(r), 0) + ' %'; };
+        var lf = by['el-lfs-emp-agr-' + n2], gv = by['el-gva-agr-' + n2], ge = by['el-gva-agr-el'], ae = by['el-acc-emp-agr-' + n2];
+        if (!lf && !gv) return null;
+        var top = [], lp = lf && lastPt(lf.points), gp = gv && lastPt(gv.points), ap = ae && lastPt(ae.points);
+        if (lp) top.push([esc(L('Ocupados agrarios (encuesta de población activa, miles)|Farm employment (labour force survey, thousand)|Emploi agricole (enquête emploi, milliers)|Occupati agricoli (indagine forze lavoro, migliaia)')), esc(lp[0]), nf(lp[1], 1), sp(chg(lf, 5))]);
+        if (ap) top.push([esc(L('Personas ocupadas en la agricultura (cuentas regionales, miles)|Persons employed in agriculture (regional accounts, thousand)|Personnes occupées dans l’agriculture (comptes régionaux, milliers)|Persone occupate in agricoltura (conti regionali, migliaia)')), esc(ap[0]), nf(ap[1], 1), sp(chg(ae, 5))]);
+        if (gp) top.push([esc(L('Valor añadido agrario (millones de €)|Farm gross value added (EUR million)|Valeur ajoutée agricole (millions d’€)|Valore aggiunto agricolo (milioni di €)')) + (ge ? ' ' + faint(L('peso en Grecia|share of Greece|part de la Grèce|quota della Grecia') + ' ' + share(gp[1], at(ge, gp[0]))) : ''), esc(gp[0]), nf(gp[1], 0), sp(chg(gv, 5))]);
+        var units = S.filter(function (s) { return s.id.indexOf('el-gva-agr-' + n2) === 0 && s.id.length === ('el-gva-agr-' + n2).length + 1; }).map(function (s) {
+          var p = lastPt(s.points), e = by[s.id.replace('el-gva-agr-', 'el-acc-emp-agr-')], ep = e && lastPt(e.points), nm = s.label.split(': ').pop();
+          return { v: p ? p[1] : -1, row: [esc(nm), p ? nf(p[1], 1) + ' ' + faint(p[0]) : '—', sp(chg(s, 5)), ep ? nf(ep[1], 1) : '—'] };
+        }).sort(function (p, q) { return q.v - p.v; }).map(function (z) { return z.row; });
+        var body = table([L('Indicador|Indicator|Indicateur|Indicatore'), L('Año|Year|Année|Anno'), L('Valor|Value|Valeur|Valore'), L('En 5 años|Over 5 years|Sur 5 ans|In 5 anni')], top, 520);
+        if (units.length > 1) body += '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(L('Por unidad regional|By regional unit|Par unité régionale|Per unità regionale')) + '</h3>' + table([L('Unidad regional|Regional unit|Unité régionale|Unità regionale'), L('Valor añadido (M€)|Value added (EUR m)|Valeur ajoutée (M€)|Valore aggiunto (M€)'), L('En 5 años|Over 5 years|Sur 5 ans|In 5 anni'), L('Ocupados (miles)|Employed (thousand)|Actifs occupés (milliers)|Occupati (migliaia)')], units, 520);
+        return card(L('Empleo y valor añadido agrario|Farm employment and value added|Emploi et valeur ajoutée agricoles|Occupazione e valore aggiunto agricoli'),
+          L('Agricultura, silvicultura y pesca (sección A) de Eurostat, con datos de ELSTAT. La encuesta de población activa y las cuentas regionales miden el empleo de forma distinta: no se comparan entre sí. Valor añadido a precios corrientes; el último año puede revisarse.|Agriculture, forestry and fishing (section A) from Eurostat, based on ELSTAT data. The labour force survey and the regional accounts measure employment differently and should not be compared. Value added at current prices; the latest year may be revised.|Agriculture, sylviculture et pêche (section A) d’Eurostat, à partir des données d’ELSTAT. L’enquête emploi et les comptes régionaux mesurent l’emploi différemment : ne pas les comparer. Valeur ajoutée à prix courants ; la dernière année peut être révisée.|Agricoltura, silvicoltura e pesca (sezione A) di Eurostat, su dati ELSTAT. L’indagine sulle forze di lavoro e i conti regionali misurano l’occupazione in modo diverso: non vanno confrontati. Valore aggiunto a prezzi correnti; l’ultimo anno può essere rivisto.'),
+          body, cite('eurostat', gp ? gp[0] : (lp ? lp[0] : '')));
       });
     }
     function deLive(x) {
@@ -657,7 +694,7 @@
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('eudr', eudr), C('clim', deClim)],
         NL: [C('nlcrops', nlCbs), C('clim', clim)],
-        AT: [C('eudr', eudr), C('clim', clim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', clim)], AU: [C('clim', clim)], BE: [C('eudr', eudr), C('clim', clim)], DK: [C('clim', clim)], EL: [C('eudr', eudr), C('clim', clim)]
+        AT: [C('eudr', eudr), C('clim', clim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', clim)], AU: [C('clim', clim)], BE: [C('eudr', eudr), C('clim', clim)], DK: [C('clim', clim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
       optional: { eslonjas: 1, eudr: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1, uscprog: 1 }

@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T00:30:00Z",
+ "generatedAt": "2026-10-28T01:15:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 304,
-  "late": 3,
+  "ok": 305,
+  "late": 2,
   "error": 3,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 2
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
   "repoGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
-  "checkedAt": "2026-10-28T00:30:00Z"
+  "checkedAt": "2026-10-28T01:15:00Z"
  },
  "pipelines": [
   {
@@ -96,14 +96,14 @@
     }
    ],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T04:33:09Z",
-    "durationSec": 436,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40450356154"
+    "conclusion": "cancelled",
+    "event": "schedule",
+    "startedAt": "2026-10-28T00:08:26Z",
+    "durationSec": 2428,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40606824174"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 7,
     "failed": 2
    },
@@ -1709,6 +1709,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-el-more.yml",
+   "name": "Update Greece food HICP and agricultural employment and value added by region (Eurostat)",
+   "crons": [
+    "10 9 19 * *"
+   ],
+   "nextRun": "2026-11-19T09:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 744.0
   },
   {
@@ -4560,7 +4573,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-28T00:47:00Z",
+   "nextRun": "2026-10-28T03:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4910,7 +4923,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-28T00:17:46Z"
+     "lastChange": "2026-10-28T00:32:53Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5326,6 +5339,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-region-grid-climate.yml",
+   "name": "Update monthly rainfall and temperature averaged over each NUTS 2 region (NASA POWER grid)",
+   "crons": [
+    "25 6 6,16 * *"
+   ],
+   "nextRun": "2026-11-06T06:25:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 480.0
   },
   {
    "workflow": "update-regions-pl.yml",
@@ -7214,19 +7240,18 @@
     }
    ],
    "last": {
-    "conclusion": "cancelled",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T02:35:08Z",
-    "durationSec": 140,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40439279905",
-    "note": "cancelled"
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-10-28T00:14:42Z",
+    "durationSec": 2084,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40607507056"
    },
    "recent": {
-    "runs": 9,
-    "success": 4,
+    "runs": 10,
+    "success": 5,
     "failed": 1
    },
-   "status": "late",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {

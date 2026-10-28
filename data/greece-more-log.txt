@@ -1,0 +1,8 @@
+se omite el-hicp-cp01144: solo 10 puntos
+se omite el-hicp-cp01184: solo 10 puntos
+se omite el-hicp-cp01199: solo 10 puntos
+IPCA: 59 series, último 2026-09
+ocupados (encuesta): 17 series, último 2025
+nama_10r_3gva: 65 series, último 2024
+nama_10r_3empers: 65 series, último 2024
+escrito: 206 series

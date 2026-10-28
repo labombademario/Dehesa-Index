@@ -2004,6 +2004,23 @@ sources:
     data: [de-land-prices.json]
     log: de-land-prices-log.txt
     message: Precio de la tierra agrícola por Regierungsbezirk de Alemania (Destatis)
+  - id: el-more
+    name: Update Greece food HICP and agricultural employment and value added by region (Eurostat)
+    cron: ['10 9 19 * *']
+    script: scripts/update-el-more.py
+    timeout: 20
+    data: [greece-more-stats.json]
+    log: greece-more-log.txt
+    message: IPCA de alimentos y ocupados y valor añadido agrario por región de Grecia (Eurostat)
+  - id: region-grid-climate
+    name: Update monthly rainfall and temperature averaged over each NUTS 2 region (NASA POWER grid)
+    cron: ['25 6 6,16 * *']
+    script: scripts/update-region-grid-climate.py
+    pre: ['pip install shapely']
+    timeout: 25
+    data: [region-grid-climate/EL.json]
+    log: region-grid-climate-log.txt
+    message: Lluvia y temperatura por región (media de la rejilla de NASA POWER)
   - id: france-hicp
     name: Update France consumer price indices for butter, cheese and olive oil (Eurostat HICP)
     cron: ['50 9 4,18 * *']
