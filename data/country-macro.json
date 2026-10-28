@@ -1862,6 +1862,13 @@
     "v": 22.2786942016816,
     "y": 2024,
     "src": "wb-central"
+   },
+   "infl": {
+    "v": 0.15,
+    "y": 2025,
+    "m": null,
+    "src": "world_bank_wdi",
+    "kind": "cpi"
    }
   },
   "CL": {
@@ -1906,6 +1913,13 @@
     "v": 13.1456400046218,
     "y": 2000,
     "src": "wb-central"
+   },
+   "infl": {
+    "v": 4.21,
+    "y": 2025,
+    "m": null,
+    "src": "world_bank_wdi",
+    "kind": "cpi"
    }
   },
   "UY": {
@@ -1950,6 +1964,13 @@
     "v": 65.3068312327003,
     "y": 2024,
     "src": "wb-central"
+   },
+   "infl": {
+    "v": 4.65,
+    "y": 2025,
+    "m": null,
+    "src": "world_bank_wdi",
+    "kind": "cpi"
    }
   }
  }
