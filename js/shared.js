@@ -374,7 +374,12 @@
     if (/\/datos\/en\/[^/]+\/?$/.test(path)) return '../../../';
     return /\/(precios|datos)\/[^/]+\/?$/.test(path) ? '../../' : '';
   }
-  function sitePath(path) { return sitePrefix() + path; }
+  function sitePath(path) {
+    var u = sitePrefix() + path;
+    // En produccion el servidor responde 307 a /x.html -> /x: enlazar directo a la URL limpia evita la redireccion (Search Console cuenta 413 paginas con redireccion).
+    try { if (/(^|\.)dehesaindex\.com$/i.test(window.location.hostname) && /\.html(?=$|[?#])/.test(u)) u = u.replace(/(^|\/)index\.html(?=$|[?#])/, '$1').replace(/\.html(?=$|[?#])/, ''); } catch (e) { }
+    return u;
+  }
 
   (function a11yTables() {
     function fix(root) {

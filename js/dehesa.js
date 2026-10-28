@@ -21,7 +21,7 @@
         ['Cerdo ibérico (precio)', 'PENDIENTE', 'Las lonjas que lo cotizan (Extremadura, Salamanca, Mercolleida) no publican datos abiertos con permiso de reutilización.'],
         ['Bellota / montanera (precio)', 'PENDIENTE', 'Sin serie oficial abierta; solo cotizaciones de lonja de pago o de acceso restringido.'],
         ['Corcho (precio en plancha)', 'PENDIENTE', 'No hay serie oficial de precio abierta. Solo hay un dato puntual del Anuario forestal de 2021 (valor 2002-2021 y precio por comunidad de 2021, abajo); no hay serie continua.']],
-      src: 'Fuente:', cite: 'Sumas, cuotas y variaciones: cálculo de Dehesa Index.', rel: 'Relacionado:', relL: [['Ganadería de España por provincia', 'ganaderia'], ['Precio de la tierra en España', 'insumos'], ['Comercio exterior', 'comercio']] },
+      src: 'Fuente:', cite: 'Sumas, cuotas y variaciones: cálculo de Dehesa Index.', rel: 'Relacionado:', relL: [['Ganadería de España por provincia', 'ganaderia'], ['Precio de la tierra en España', 'insumos'], ['Comercio exterior', 'comercio-pais?c=ES']] },
     en: { yAn: 'animals', yMe: 'EUR million', title: 'Dehesa markets', sub: 'Iberian pigs, pastures and cork: what official sources publish, and what still has no public price.',
       loading: 'Loading…', fail: 'The data could not be loaded. Please try again in a few minutes.',
       pigH: 'Iberian pigs', pigS: 'Official census by province and trend in Spain.', pigK: 'Iberian pigs in Spain', pigShare: 'of all pigs', pigSince: 'Versus a year ago',
@@ -39,7 +39,7 @@
         ['Iberian pig (price)', 'PENDING', 'The exchanges that quote it (Extremadura, Salamanca, Mercolleida) do not publish open data with a reuse permit.'],
         ['Acorn / montanera (price)', 'PENDING', 'No open official series; only paid or restricted exchange quotes.'],
         ['Cork (price per slab)', 'PENDING', 'No open official price series. Only one-off figures from the 2021 forestry yearbook (value 2002-2021 and price by region for 2021, below); there is no continuous series.']],
-      src: 'Source:', cite: 'Sums, shares and changes: calculated by Dehesa Index.', rel: 'Related:', relL: [['Spain livestock by province', 'ganaderia'], ['Land prices in Spain', 'insumos'], ['Foreign trade', 'comercio']] },
+      src: 'Source:', cite: 'Sums, shares and changes: calculated by Dehesa Index.', rel: 'Related:', relL: [['Spain livestock by province', 'ganaderia'], ['Land prices in Spain', 'insumos'], ['Foreign trade', 'comercio-pais?c=ES']] },
     fr: { yAn: 'animaux', yMe: 'millions d’€', title: 'Marchés de la dehesa', sub: 'Porc ibérique, pâturages et liège : ce que publient les sources officielles et ce qui n’a pas encore de prix public.',
       loading: 'Chargement…', fail: 'Impossible de charger les données. Réessayez dans quelques minutes.',
       pigH: 'Porc ibérique', pigS: 'Recensement officiel par province et évolution en Espagne.', pigK: 'Porcs ibériques en Espagne', pigShare: 'de l’ensemble des porcs', pigSince: 'Par rapport à il y a un an',
@@ -57,7 +57,7 @@
         ['Porc ibérique (prix)', 'EN ATTENTE', 'Les bourses qui le cotent (Estrémadure, Salamanque, Mercolleida) ne publient pas de données ouvertes avec permis de réutilisation.'],
         ['Gland / montanera (prix)', 'EN ATTENTE', 'Pas de série officielle ouverte ; seulement des cotations payantes ou à accès restreint.'],
         ['Liège (prix de la planche)', 'EN ATTENTE', 'Pas de série de prix officielle ouverte. Seulement des chiffres ponctuels de l’annuaire forestier 2021 (valeur 2002-2021 et prix par région en 2021, ci-dessous) ; il n’y a pas de série continue.']],
-      src: 'Source :', cite: 'Sommes, parts et variations : calcul de Dehesa Index.', rel: 'À voir aussi :', relL: [['Élevage espagnol par province', 'ganaderia'], ['Prix des terres en Espagne', 'insumos'], ['Commerce extérieur', 'comercio']] },
+      src: 'Source :', cite: 'Sommes, parts et variations : calcul de Dehesa Index.', rel: 'À voir aussi :', relL: [['Élevage espagnol par province', 'ganaderia'], ['Prix des terres en Espagne', 'insumos'], ['Commerce extérieur', 'comercio-pais?c=ES']] },
     it: { yAn: 'capi', yMe: 'milioni di €', title: 'Mercati della dehesa', sub: 'Suino iberico, pascoli e sughero: cosa pubblicano le fonti ufficiali e cosa non ha ancora un prezzo pubblico.',
       loading: 'Caricamento…', fail: 'Impossibile caricare i dati. Riprova tra qualche minuto.',
       pigH: 'Suino iberico', pigS: 'Censimento ufficiale per provincia e andamento in Spagna.', pigK: 'Suini iberici in Spagna', pigShare: 'del totale dei suini', pigSince: 'Rispetto a un anno fa',
@@ -75,7 +75,7 @@
         ['Suino iberico (prezzo)', 'IN SOSPESO', 'Le borse che lo quotano (Estremadura, Salamanca, Mercolleida) non pubblicano dati aperti con permesso di riuso.'],
         ['Ghianda / montanera (prezzo)', 'IN SOSPESO', 'Nessuna serie ufficiale aperta; solo quotazioni a pagamento o ad accesso limitato.'],
         ['Sughero (prezzo della tavola)', 'IN SOSPESO', 'Nessuna serie ufficiale di prezzo aperta. Solo dati puntuali dell’annuario forestale 2021 (valore 2002-2021 e prezzo per regione nel 2021, sotto); non c’è una serie continua.']],
-      src: 'Fonte:', cite: 'Somme, quote e variazioni: calcolo di Dehesa Index.', rel: 'Vedi anche:', relL: [['Zootecnia spagnola per provincia', 'ganaderia'], ['Prezzi dei terreni in Spagna', 'insumos'], ['Commercio estero', 'comercio']] }
+      src: 'Fonte:', cite: 'Somme, quote e variazioni: calcolo di Dehesa Index.', rel: 'Vedi anche:', relL: [['Zootecnia spagnola per provincia', 'ganaderia'], ['Prezzi dei terreni in Spagna', 'insumos'], ['Commercio estero', 'comercio-pais?c=ES']] }
   };
   function lang() { var l = S && S.getLang ? S.getLang() : 'es'; return T[l] ? l : 'es'; }
   function t() { return T[lang()]; }
