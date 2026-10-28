@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T03:51:00Z",
+ "generatedAt": "2026-10-28T04:18:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 307,
+  "ok": 309,
   "late": 2,
   "error": 3,
   "not_run": 2,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
   "repoGeneratedAt": "2026-10-27T21:46:04.166526+00:00",
-  "checkedAt": "2026-10-28T03:51:00Z"
+  "checkedAt": "2026-10-28T04:18:00Z"
  },
  "pipelines": [
   {
@@ -152,6 +152,29 @@
     "runs": 10,
     "success": 7,
     "failed": 3
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-at-ama.yml",
+   "name": "Update Austria weekly AMA market prices (cattle, pigs, eggs, poultry) and fertilizer prices (Agrarmarkt Austria)",
+   "crons": [
+    "40 8 * * 4"
+   ],
+   "nextRun": "2026-10-29T08:40:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-28T04:07:06Z",
+    "durationSec": 94,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40630493070"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -4898,14 +4921,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/product-compare.json",
@@ -4922,7 +4945,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/products"
@@ -4933,19 +4956,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-28T03:30:18Z"
+     "lastChange": "2026-10-28T03:55:03Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-28T02:01:02Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-28T02:01:02Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/pack"
@@ -4961,30 +4984,30 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-28T01:28:49Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -4992,7 +5015,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-28T03:40:21Z"
+     "lastChange": "2026-10-28T04:06:50Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5441,6 +5464,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-sk-statdata.yml",
+   "name": "Update Slovakia monthly agricultural prices, quarterly input prices, crops and livestock (Statistical Office SR, STATdata)",
+   "crons": [
+    "25 9 2,29 * *"
+   ],
+   "nextRun": "2026-10-29T09:25:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-28T04:07:07Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40630496010"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 648.0
   },
   {
    "workflow": "update-spain-balances.yml",
