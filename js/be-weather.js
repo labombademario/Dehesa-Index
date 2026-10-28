@@ -65,11 +65,14 @@
       out += '</div>';
     }
     var head = '<thead><tr><th scope="col">' + U.esc(t.mon) + '</th><th scope="col" class="cof-n">' + U.esc(t.rain) + '</th><th scope="col" class="cof-n">' + U.esc(t.rainN) + '</th><th scope="col" class="cof-n">' + U.esc(t.temp) + '</th><th scope="col" class="cof-n">' + U.esc(t.tempN) + '</th></tr></thead>';
+    var mo = [];
     var rows = d.monthly.map(function (m) {
       var lab = new Date(Date.UTC(m.y, m.m - 1, 1, 12)).toLocaleDateString(LOC[lg], { month: 'short', year: 'numeric', timeZone: 'UTC' });
+      mo.push({ label: lab, rain: m.rain, rainN: m.rainNormal, temp: m.temp, tempN: m.tempNormal });
       return '<tr><th scope="row">' + U.esc(lab) + (m.rain == null ? ' <span class="cof-note">(' + U.esc(t.part) + ')</span>' : '') + '</th><td class="cof-n">' + (m.rain == null ? '—' : '<b>' + U.nf(m.rain, 0) + '</b>') + '</td><td class="cof-n">' + U.nf(m.rainNormal, 0) + '</td><td class="cof-n">' + U.nf(m.temp, 1) + '</td><td class="cof-n">' + U.nf(m.tempNormal, 1) + '</td></tr>';
     }).join('');
-    out += '<h3 class="cof-h3">' + U.esc(t.mh) + '</h3><div style="overflow-x:auto"><table class="cof-tbl" style="max-width:640px">' + head + '<tbody>' + rows + '</tbody></table></div>';
+    var mt = '<div style="overflow-x:auto"><table class="cof-tbl" style="max-width:640px">' + head + '<tbody>' + rows + '</tbody></table></div>';
+    out += '<h3 class="cof-h3">' + U.esc(t.mh) + '</h3>' + (global.DIWeatherView ? global.DIWeatherView.wrap(mt, mo, t, lg, U.nf) : mt);
     var sh = '<thead><tr><th scope="col">' + U.esc(t.st) + '</th><th scope="col">' + U.esc(t.prov) + '</th><th scope="col" class="cof-n">' + U.esc(t.r30) + '</th><th scope="col" class="cof-n">' + U.esc(t.t7) + '</th><th scope="col" class="cof-n">' + U.esc(t.tm7) + '</th><th scope="col" class="cof-n">' + U.esc(t.soil) + '</th><th scope="col" class="cof-n">' + U.esc(t.fr) + '</th></tr></thead>';
     var sr = d.stations.slice().sort(function (a, b) { return (b.rain30 == null ? -1 : b.rain30) - (a.rain30 == null ? -1 : a.rain30); }).map(function (s) {
       return '<tr><th scope="row">' + U.esc(s.name) + '</th><td>' + U.esc(PN[s.province] || s.province) + '</td><td class="cof-n">' + U.nf(s.rain30, 0) + '</td><td class="cof-n">' + U.nf(s.temp7, 1) + '</td><td class="cof-n">' + U.nf(s.tmin7, 1) + '</td><td class="cof-n">' + U.nf(s.soil10, 1) + '</td><td class="cof-n">' + s.frost30 + '</td></tr>';
@@ -81,7 +84,8 @@
   function load() { if (D) return Promise.resolve(D); return U.json('data/be-weather.json').then(function (r) { D = r || false; return D; }); }
   function mount(el, lg) {
     if (!el || !U) return Promise.resolve(false); lg = T[lg] ? lg : 'es';
-    return Promise.all([load(), global.DICite && global.DICite.load ? global.DICite.load().catch(function () { return null; }) : null]).then(function (a) {
+    var needView = function () { return global.DIWeatherView ? Promise.resolve() : new Promise(function (res) { var sc = document.createElement('script'); sc.src = 'js/weather-view.js?v=20261028'; sc.onload = res; sc.onerror = res; document.head.appendChild(sc); }); };
+    return Promise.all([load().then(function (r) { return needView().then(function () { return r; }); }), global.DICite && global.DICite.load ? global.DICite.load().catch(function () { return null; }) : null]).then(function (a) {
       var d = a[0]; if (!d || !d.deficit || !d.stations) { el.hidden = true; return false; }
       el.hidden = false; var t = T[lg], h = html(d, lg, t);
       el.innerHTML = '<section class="di-card cof wp-card" id="ps-be-weather" style="max-width:none"><h2 class="cof-h2">' + U.esc(t.h) + '</h2>' + h.html + U.cite('kmi_be') + '</section>';

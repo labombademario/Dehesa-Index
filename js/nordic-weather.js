@@ -22,6 +22,8 @@
   function dlong(iso, lg) { var p = iso.split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 12)).toLocaleDateString(LOC[lg], { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }); }
   function card(n, v, note) { return '<div class="di-card cof-card"><div class="cof-lbl">' + n + '</div><div class="cof-val">' + v + '</div>' + (note ? '<div class="cof-note" style="margin:2px 0 0">' + note + '</div>' : '') + '</div>'; }
   function sg(a, b, d) { var x = a - b; return (x > 0 ? '+' : x < 0 ? '−' : '') + U.nf(Math.abs(x), d); }
+  function vw(tbl, mo, t, lg) { return global.DIWeatherView ? global.DIWeatherView.wrap(tbl, mo, t, lg, U.nf) : tbl; }
+  function needView() { return global.DIWeatherView ? Promise.resolve() : new Promise(function (res) { var sc = document.createElement('script'); sc.src = 'js/weather-view.js?v=20261028'; sc.onload = res; sc.onerror = res; document.head.appendChild(sc); }); }
   function html(d, cc, lg) {
     var t = T[lg], c = CC[cc], o = function (s) { return s.replace(/\{n\}/g, c.n[lg]).replace(/\{i\}/g, c.inst[lg]).replace('{s}', d.since).replace('{m}', 12).replace('{y}', d.asOf.slice(0, 4) - 1).replace('{d}', dlong(d.asOf, lg)); };
     var L = d.l30 || {}, A = d.sinceApr, cards = '';
@@ -29,15 +31,17 @@
     if (L.rain != null && L.rainN != null) cards += card(U.esc(o(t.normal)), U.nf(L.rainN, 0) + ' ' + t.mm, U.nf(L.rain / L.rainN * 100, 0) + ' % ' + U.esc(t.pct));
     if (L.temp != null && L.tempN != null) cards += card(U.esc(t.t30), U.nf(L.temp, 1) + ' °C', U.esc(sg(L.temp, L.tempN, 1) + ' °C · ' + t.tN));
     if (A && A.rain != null && A.rainN != null) cards += card(U.esc(t.apr), U.nf(A.rain, 0) + ' ' + t.mm, U.nf(A.rain / A.rainN * 100, 0) + ' % ' + U.esc(t.pct + ' (' + U.nf(A.rainN, 0) + ' ' + t.mm + ')'));
+    var mo = [];
     var rows = d.monthly.map(function (m) {
       var lab = new Date(Date.UTC(+m.m.slice(0, 4), +m.m.slice(5, 7) - 1, 1, 12)).toLocaleDateString(LOC[lg], { month: 'short', year: 'numeric', timeZone: 'UTC' });
+      mo.push({ label: lab, rain: m.rain, rainN: m.rainN, temp: m.temp, tempN: m.tempN });
       return '<tr><th scope="row">' + U.esc(lab) + '</th><td class="cof-n">' + (m.rain == null ? '—' : '<b>' + U.nf(m.rain, 0) + '</b>') + '</td><td class="cof-n">' + (m.rainN == null ? '—' : U.nf(m.rainN, 0)) + '</td><td class="cof-n">' + (m.temp == null ? '—' : U.nf(m.temp, 1)) + '</td><td class="cof-n">' + (m.tempN == null ? '—' : U.nf(m.tempN, 1)) + '</td></tr>';
     }).join('');
     var sr = d.stations.slice().sort(function (a, b) { return (b.rain30 == null ? -1 : b.rain30) - (a.rain30 == null ? -1 : a.rain30); }).map(function (s) {
       return '<tr><th scope="row">' + U.esc(s.name) + '</th><td class="cof-n">' + (s.rain30 == null ? '—' : U.nf(s.rain30, 0)) + '</td><td class="cof-n">' + (s.temp7 == null ? '—' : U.nf(s.temp7, 1)) + '</td></tr>';
     }).join('');
     return '<h2 class="cof-h2">' + U.esc(o(t.h)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + U.esc(o(t.at)) + '</p>' + (cards ? '<h3 class="cof-h3">' + U.esc(t.l30) + '</h3><div class="cof-cards">' + cards + '</div>' : '') +
-      '<h3 class="cof-h3">' + U.esc(t.mh) + '</h3><div style="overflow-x:auto"><table class="cof-tbl" style="max-width:640px"><thead><tr><th scope="col">' + U.esc(t.mon) + '</th><th scope="col" class="cof-n">' + U.esc(t.rain) + '</th><th scope="col" class="cof-n">' + U.esc(t.rainN) + '</th><th scope="col" class="cof-n">' + U.esc(t.temp) + '</th><th scope="col" class="cof-n">' + U.esc(t.tempN) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '<h3 class="cof-h3">' + U.esc(t.mh) + '</h3>' + vw('<div style="overflow-x:auto"><table class="cof-tbl" style="max-width:640px"><thead><tr><th scope="col">' + U.esc(t.mon) + '</th><th scope="col" class="cof-n">' + U.esc(t.rain) + '</th><th scope="col" class="cof-n">' + U.esc(t.rainN) + '</th><th scope="col" class="cof-n">' + U.esc(t.temp) + '</th><th scope="col" class="cof-n">' + U.esc(t.tempN) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>', mo, t, lg) +
       '<h3 class="cof-h3">' + U.esc(t.sh) + ' (' + d.stations.length + ')</h3><div style="overflow-x:auto"><table class="cof-tbl" style="max-width:520px"><thead><tr><th scope="col">' + U.esc(t.st) + '</th><th scope="col" class="cof-n">' + U.esc(t.r30) + '</th><th scope="col" class="cof-n">' + U.esc(t.t7) + '</th></tr></thead><tbody>' + sr + '</tbody></table></div>' +
       '<p class="cof-note" style="margin:10px 0 0">' + U.esc(o(t.note)) + '</p>';
   }
@@ -45,7 +49,7 @@
   function mount(el, lg, cc) {
     U = U || global.ESUI; cc = String(cc || '').toLowerCase();
     if (!el || !U || !CC[cc]) return Promise.resolve(false); lg = T[lg] ? lg : 'es';
-    return Promise.all([load(cc), global.DICite && global.DICite.load ? global.DICite.load().catch(function () { return null; }) : null]).then(function (a) {
+    return Promise.all([load(cc).then(function (r) { return needView().then(function () { return r; }); }), global.DICite && global.DICite.load ? global.DICite.load().catch(function () { return null; }) : null]).then(function (a) {
       var d = a[0]; if (!d || !d.monthly || !d.stations) { el.hidden = true; return false; }
       el.hidden = false; el.innerHTML = '<section class="di-card cof wp-card" id="ps-' + cc + '-weather" style="max-width:none">' + html(d, cc, lg) + U.cite(CC[cc].id) + '</section>'; return true;
     });
