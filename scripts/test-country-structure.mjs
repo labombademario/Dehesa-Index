@@ -24,7 +24,7 @@ for (const [lang, w] of combos) {
     await page.waitForTimeout(600);
     const m = await page.evaluate((order) => {
       const pos = id => { const e = document.getElementById(id); if (!e) return -1; let n = 0, el = e; /* posicion en el documento */ const all = document.getElementsByTagName('*'); for (let i = 0; i < all.length; i++) if (all[i] === e) return i; return -1; };
-      const bar = Array.from(document.querySelectorAll('#pa-bar a')).map(a => (a.getAttribute('href') || '').replace('#', '') + '|' + a.textContent.trim()).filter(x => !/^(ps-drought|ps-ghg|pp-fish|pp-managers|pp-census|pp-forecast|pp-eu-nit|pp-land-es|pp-gi|pp-eu-econ|pp-eu-tariff)\|/.test(x)); // sequia, emisiones y los bloques largos (pesca, jefes de explotacion, censo, mas datos) solo salen en los paises que tienen esos datos
+      const bar = Array.from(document.querySelectorAll('#pa-bar a')).map(a => (a.getAttribute('href') || '').replace('#', '') + '|' + a.textContent.trim()).filter(x => !/^(ps-drought|ps-ghg|pp-fish|pp-managers|pp-census|pp-forecast|pp-eu-nit|pp-land-es|pp-gi|pp-eu-econ|pp-eu-tariff|pp-[a-z]{2}-clim)\|/.test(x)); // sequia (pp-xx-clim: lluvia y temperatura por region, solo en los paises con ese bloque), emisiones y los bloques largos (pesca, jefes de explotacion, censo, mas datos) solo salen en los paises que tienen esos datos
       const own = document.getElementById('ps-own');
       return { pos: order.map(pos), bar, ownText: own ? own.textContent.trim() : null, h1: (document.querySelector('h1') || {}).textContent, ownSibs: own ? own.parentNode.id : null };
     }, ORDER);
