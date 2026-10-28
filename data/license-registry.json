@@ -5818,6 +5818,58 @@
     "statistikportal"
    ],
    "notes": null
+  },
+  "ama_at": {
+   "name": "AMA (Agrarmarkt Austria) — Marktinformation: Preisberichte Vieh und Fleisch, Eier, Geflügel, Düngemittelpreise",
+   "url": "https://www.ama.at/marktinformationen/",
+   "country": "AT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Quelle: AMA (Agrarmarkt Austria), Marktinformation (CC BY 4.0)",
+   "additionalRestrictions": "La licencia cubre solo los datos que publica la propia AMA (fuente «AMA»); los de terceros que la AMA muestra en sus aplicaciones quedan fuera y no se usan.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Datos no recogidos por la AMA (p. ej. comparativas de otros países) no están cubiertos; el script solo lee las cifras austriacas de la AMA.",
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Ficha «Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA)» en data.gv.at / data.europa.eu (licencia CC-BY-4.0): «Nur jene von der AMA zur Verfügung gestellten Daten (siehe Quellenangabe: \"AMA\") werden von der AMA unter der Open Daten Lizenz CC-BY 4.0 bereitgestellt». Cubre Vieh und Fleisch, Eier und Geflügel, Düngemittel.",
+   "used": true,
+   "aliases": [],
+   "notes": "PDF semanales «Marktbericht Vieh und Fleisch», preisberichte web y PDF de precios de abonos; scripts/update-at-ama.py.",
+   "short": "AMA",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: ficha oficial de datos abiertos de la AMA con licencia CC BY 4.0."
+  },
+  "susr_sk": {
+   "name": "Slovakia — Štatistický úrad SR (Statistical Office of the Slovak Republic), STATdata open data",
+   "url": "https://statdata.statistics.sk",
+   "country": "SK",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Statistical Office of the Slovak Republic (ŠÚ SR), STATdata (CC BY 4.0)",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-27",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Página Open data de la Oficina (slovak.statistics.sk, Databases › Open data): «All information is subject to the license terms of the Creative Commons Attribution License (cc-by) 4.0». Los cubos se descargan de la API pública de datos abiertos de STATdata.",
+   "used": true,
+   "aliases": [],
+   "notes": "Cubos sp1826ms, sp1011qs, pl2003rs, pl2015rs, pl2016rs; scripts/update-sk-statdata.py.",
+   "short": "ŠÚ SR",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: condiciones de datos abiertos de la Oficina (CC BY 4.0)."
   }
  },
  "files": {
@@ -8559,6 +8611,18 @@
     "noaa_ncei"
    ],
    "notes": "Últimos 13 meses por estado de NOAA Climate at a Glance (nClimDiv): temperatura media, lluvia y PDSI con la diferencia con la normal 1991-2020 que calcula NOAA; scripts/update-us-climate.py."
+  },
+  "data/austria-ama-stats.json": {
+   "byCountry": {
+    "AT": "ama_at"
+   },
+   "notes": "Austria: precios semanales de canal de vacuno, porcino, huevos y aves por clase y región (AMA Marktinformation, desde 2023) y precios mensuales de abonos (AMA, desde 2015). scripts/update-at-ama.py."
+  },
+  "data/sk-statdata-stats.json": {
+   "byCountry": {
+    "SK": "susr_sk"
+   },
+   "notes": "Eslovaquia: precios medios mensuales de productos agrarios (desde 2018), precios trimestrales de suministros a la agricultura (desde 2015), superficie, producción y rendimiento por cultivo y censo y rendimientos ganaderos (desde 1970); ŠÚ SR STATdata. scripts/update-sk-statdata.py."
   }
  },
  "derived": [

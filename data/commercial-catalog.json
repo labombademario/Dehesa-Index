@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T01:48:07Z",
+ "generatedAt": "2026-10-28T03:48:36Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 192,
-  "sourcesApto": 176,
+  "sources": 194,
+  "sourcesApto": 178,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 417,
-  "datasets_apto": 277,
+  "datasets": 419,
+  "datasets_apto": 279,
   "datasets_condiciones": 129,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -307,6 +307,23 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attribution": "AMA, Infoblatt Agrardieselrückvergütung 2026 und 2027; § 7 MinStG"
+  },
+  {
+   "id": "ama_at",
+   "name": "AMA (Agrarmarkt Austria) — Marktinformation: Preisberichte Vieh und Fleisch, Eier, Geflügel, Düngemittelpreise",
+   "url": "https://www.ama.at/marktinformationen/",
+   "country": "AT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Quelle: AMA (Agrarmarkt Austria), Marktinformation (CC BY 4.0)",
+   "conditions": "La licencia cubre solo los datos que publica la propia AMA (fuente «AMA»); los de terceros que la AMA muestra en sus aplicaciones quedan fuera y no se usan."
   },
   {
    "id": "apprrr_hr",
@@ -2745,6 +2762,22 @@
    "conditions": "Changes must be clearly indicated (e.g. 'Source: SURS. Calculated by Dehesa Index'); the permission does not extend to third-party rights, photos, icons or the cartographic bases (GURS); the SURS emblem follows its own guidelines."
   },
   {
+   "id": "susr_sk",
+   "name": "Slovakia — Štatistický úrad SR (Statistical Office of the Slovak Republic), STATdata open data",
+   "url": "https://statdata.statistics.sk",
+   "country": "SK",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Statistical Office of the Slovak Republic (ŠÚ SR), STATdata (CC BY 4.0)"
+  },
+  {
    "id": "svensk_forfattningssamling",
    "name": "Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket",
    "url": "https://svenskforfattningssamling.se/",
@@ -3548,6 +3581,21 @@
     {
      "scope": "pais:AU",
      "sourceId": "abs",
+     "verdict": "apto"
+    }
+   ]
+  },
+  {
+   "path": "data/austria-ama-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "ama_at"
+   ],
+   "parts": [
+    {
+     "scope": "pais:AT",
+     "sourceId": "ama_at",
      "verdict": "apto"
     }
    ]
@@ -7375,6 +7423,21 @@
    "verdict": "condiciones",
    "sources": [
     "eurostat"
+   ]
+  },
+  {
+   "path": "data/sk-statdata-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "susr_sk"
+   ],
+   "parts": [
+    {
+     "scope": "pais:SK",
+     "sourceId": "susr_sk",
+     "verdict": "apto"
+    }
    ]
   },
   {

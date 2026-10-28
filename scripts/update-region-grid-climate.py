@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 B = "https://power.larc.nasa.gov/api/temporal/"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)"}
-COUNTRIES = ["EL", "ES", "IT", "AT", "BE", "NL", "DK"]   # países cuyas páginas de región usaban el punto de una ciudad; FR y DE tienen datos de su servicio meteorológico
+COUNTRIES = ["EL", "ES", "IT", "AT", "BE", "NL", "DK", "RO", "HU", "SK"]   # países cuyas páginas de región usaban el punto de una ciudad; FR y DE tienen datos de su servicio meteorológico
 NORMAL = (1991, 2020); FROM = 1991; DLAT, DLON = 0.5, 0.625; HIST_FROM = "2001-01"
 LOG = []; CACHE = None
 def log(*a):

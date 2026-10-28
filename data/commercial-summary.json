@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T01:48:07Z",
+ "generatedAt": "2026-10-28T03:48:36Z",
  "summary": {
-  "sources": 192,
-  "sourcesApto": 176,
+  "sources": 194,
+  "sourcesApto": 178,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 417,
-  "datasets_apto": 277,
+  "datasets": 419,
+  "datasets_apto": 279,
   "datasets_condiciones": 129,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -81,6 +81,10 @@
   },
   "ama_agrardiesel": {
    "name": "AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG",
+   "verdict": "apto"
+  },
+  "ama_at": {
+   "name": "AMA (Agrarmarkt Austria) — Marktinformation: Preisberichte Vieh und Fleisch, Eier, Geflügel, Düngemittelpreise",
    "verdict": "apto"
   },
   "apprrr_hr": {
@@ -653,6 +657,10 @@
   },
   "surs_si": {
    "name": "Slovenia — SURS (Statistical Office of the Republic of Slovenia): SiStat database",
+   "verdict": "apto"
+  },
+  "susr_sk": {
+   "name": "Slovakia — Štatistický úrad SR (Statistical Office of the Slovak Republic), STATdata open data",
    "verdict": "apto"
   },
   "svensk_forfattningssamling": {

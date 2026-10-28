@@ -498,6 +498,14 @@
     "pattern": "data/eu-drought-nuts3/' + cc + '.json"
    }
   },
+  "data/catalog/SK.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Eslovaquia (sin puntos; 353 series de STATdata y las de Eurostat): la ficha del pais los pide por DISeries.country('SK').",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
+  },
   "data/catalog/HU.json": {
    "class": "RUNTIME",
    "note": "Metadatos de las series de Hungria (sin puntos; 509 series del KSH y otras): la ficha del pais los pide por DISeries.country('HU').",

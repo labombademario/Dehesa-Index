@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T03:24:30Z",
+ "generatedAt": "2026-10-28T03:48:35Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 222,
+  "total": 224,
   "byStatus": {
-   "ACTIVE": 192,
+   "ACTIVE": 194,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2146,6 +2146,54 @@
    "derivatives": "yes",
    "attribution": "AMA, Infoblatt Agrardieselrückvergütung 2026 und 2027; § 7 MinStG",
    "lastChecked": "2026-10-12",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "ama_at",
+   "registryId": "ama_at",
+   "country": "AT",
+   "scope": "integrated",
+   "institution": "AMA (Agrarmarkt Austria) — Marktinformation: Preisberichte Vieh und Fleisch, Eier, Geflügel, Düngemittelpreise",
+   "dataset": "Ya integrada (100 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "eggs",
+    "fertilizer",
+    "pigs",
+    "poultry"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Quelle: AMA (Agrarmarkt Austria), Marktinformation (CC BY 4.0)",
+   "lastChecked": "2026-10-27",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
@@ -4477,7 +4525,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (17626 series en el catalogo unificado)",
+   "dataset": "Ya integrada (17622 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
@@ -8492,6 +8540,68 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Source: Statistical Office of the Republic of Slovenia (SURS)",
+   "lastChecked": "2026-10-27",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "susr_sk",
+   "registryId": "susr_sk",
+   "country": "SK",
+   "scope": "integrated",
+   "institution": "Slovakia — Štatistický úrad SR (Statistical Office of the Slovak Republic), STATdata open data",
+   "dataset": "Ya integrada (352 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "fertilizer",
+    "fruit",
+    "maize",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "soy",
+    "sugar",
+    "wheat",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price",
+    "production"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Statistical Office of the Slovak Republic (ŠÚ SR), STATdata (CC BY 4.0)",
    "lastChecked": "2026-10-27",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",

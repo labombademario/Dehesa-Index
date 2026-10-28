@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 189 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 40813 series en el catalogo unificado.
+Resumen: 191 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41261 series en el catalogo unificado.
 
-## VERIFIED (189)
+## VERIFIED (191)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -28,6 +28,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 27 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `alberta_inputs` | Alberta Agriculture and Irrigation — Alberta Farm Input Prices | CA | OGL-Alberta | si/si | si | 54 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `ama_agrardiesel` | AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG | AT | PUBLIC-LAW | si/si | si | 0 |  |
+| `ama_at` | AMA (Agrarmarkt Austria) — Marktinformation: Preisberichte Vieh und Fleisch, Eier, Geflügel, Düngemittelpreise | AT | CC-BY-4.0 | si/si | si | 100 | La licencia cubre solo los datos que publica la propia AMA (fuente «AMA»); los de terceros que la AMA muestra en sus aplicaciones quedan fue… |
 | `apprrr_hr` | Croatia — APPRRR (Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju), datos abiertos en data.gov.hr | HR | HR-OTVORENA-DOZVOLA | si/si | si | 0 | Citar la fuente. Datos agregados por provincia (suma de los asentamientos del fichero); un PG con parcelas en varias provincias cuenta en ca… |
 | `argentina_datos_abiertos` | Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca | AR | CC-BY-4.0 | si/si | si | 89 | Atribucion a la fuente. Los conjuntos con licencia ODbL (p. ej. SIO Carnes, Warrants) no se usan. |
 | `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 14 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
@@ -80,7 +81,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eumofa` | EUMOFA - European Market Observatory for Fisheries and Aquaculture Products (European Commission, DG MARE) | EU | CC-BY-4.0 | si/si | si | 0 | CC BY 4.0 covers content owned by the EU; third-party content (consumption panels, Euromonitor, MABUX, Trade Data Monitor, and data from non… |
 | `eur_lex` | EUR-Lex (Publications Office of the European Union) — EU legislation | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish fig… |
-| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17626 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
+| `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 17622 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 2241 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
 | `fadn_fsdn` | European Commission - FADN/FSDN public database (standard results) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Reuse allowed with acknowledgement of the source; changes must be indicated. The agridata pages themselves state no licence and point to a d… |
 | `fed_board` | Federal Reserve Board (H.15 Selected Interest Rates, effective federal funds rate) | US | US-PD | si/si | si | 11 | Cite the Board as the source. Board seals, logos and insignia need its written permission and are not used. No endorsement implied. Third-pa… |
@@ -169,6 +170,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `statistik_austria_vb` | Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications) | AT | STATISTIK-AUSTRIA-REUSE | si/si | si | 11 | Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en … |
 | `surs_si` | Slovenia — SURS (Statistical Office of the Republic of Slovenia): SiStat database | SI | SURS-FREE-REUSE | si/si | si | 0 | Changes must be clearly indicated (e.g. 'Source: SURS. Calculated by Dehesa Index'); the permission does not extend to third-party rights, p… |
+| `susr_sk` | Slovakia — Štatistický úrad SR (Statistical Office of the Slovak Republic), STATdata open data | SK | CC-BY-4.0 | si/si | si | 352 |  |
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
 | `ttb` | Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics) | US | US-PD | si/si | no | 7 | La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresa… |

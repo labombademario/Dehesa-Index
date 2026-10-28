@@ -619,6 +619,24 @@ sources:
     data: [austria-balances-stats.json]
     log: austria-balances-log.txt
     message: Datos Austria (Statistik Austria, balances de abastecimiento)
+  - id: at-ama
+    name: Update Austria weekly AMA market prices (cattle, pigs, eggs, poultry) and fertilizer prices (Agrarmarkt Austria)
+    cron: ['40 8 * * 4']
+    pre: ['sudo apt-get update -q >/dev/null', 'sudo apt-get install -y -q poppler-utils >/dev/null']
+    script: scripts/update-at-ama.py
+    timeout: 30
+    script_timeout: 25
+    data: [austria-ama-stats.json]
+    log: austria-ama-log.txt
+    message: Precios semanales de la AMA en Austria (vacuno, porcino, huevos, aves) y precios de abonos
+  - id: sk-statdata
+    name: Update Slovakia monthly agricultural prices, quarterly input prices, crops and livestock (Statistical Office SR, STATdata)
+    cron: ['25 9 2,29 * *']
+    script: scripts/update-sk-statdata.py
+    timeout: 25
+    script_timeout: 20
+    data: [sk-statdata-stats.json]
+    message: Eslovaquia - precios agrarios mensuales, precios de insumos, cultivos y ganado (Oficina de Estadistica, STATdata)
   - id: germany-extra
     name: Update Germany wine, timber, farm structure, hatcheries and aquaculture (Destatis)
     cron: ['50 15 * * 2']

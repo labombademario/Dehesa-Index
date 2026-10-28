@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-326 workflows (276 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+328 workflows (278 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -26,6 +26,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
+| update-at-ama.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-at-ama.py | austria-ama-stats.json | finish, validate-files |
 | update-at-diesel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-at-diesel.py | at-diesel.json | finish, validate-files |
 | update-at-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-at-drought.py | at-drought.json | finish, validate-files |
 | update-at-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | at-ghg-agri.json | finish, validate-files |
@@ -322,6 +323,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-region-grid-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-region-grid-climate.py | region-grid-climate/AT.json, region-grid-climate/BE.json, region-grid-climate/DK.json … | finish, validate-files |
 | update-regions-pl.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-poland-regions.py | poland-regions/regions.json | finish, validate-files |
 | update-rivers.yml | generado | varias veces al dia | detect-revisions.py, gen-workflows.py, update-rivers.py | rivers-be.json, rivers-ca.json, rivers-fr.json … | finish, validate-files |
+| update-sk-statdata.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-sk-statdata.py | sk-statdata-stats.json | finish, validate-files |
 | update-spain-balances.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-balances.py | spain-balances/cereals.json | finish, validate-files |
 | update-spain-crops.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-crops.py | spain-crops/index.json | finish, validate-files |
 | update-spain-hicp.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-spain-hicp.py | spain-hicp-stats.json | finish, validate-files |

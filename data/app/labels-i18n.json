@@ -11170,5 +11170,437 @@
   "es": "Centeno: rendimiento",
   "fr": "Seigle : rendement",
   "it": "Segale: resa"
+ },
+ "Austria, eggs, barn, size M: packing-station price (AMA)": {
+  "en": "Austria, eggs, barn, size M: packing-station price (AMA)",
+  "es": "Austria, huevos de gallinas en suelo, talla M: precio en centro de embalaje (AMA)",
+  "fr": "Autriche, œufs de poules élevées au sol, calibre M : prix au centre d’emballage (AMA)",
+  "it": "Austria, uova di galline allevate a terra, calibro M: prezzo al centro di imballaggio (AMA)"
+ },
+ "Austria, eggs, free range, size M: packing-station price (AMA)": {
+  "en": "Austria, eggs, free range, size M: packing-station price (AMA)",
+  "es": "Austria, huevos camperos, talla M: precio en centro de embalaje (AMA)",
+  "fr": "Autriche, œufs de plein air, calibre M : prix au centre d’emballage (AMA)",
+  "it": "Austria, uova da allevamento all’aperto, calibro M: prezzo al centro di imballaggio (AMA)"
+ },
+ "Austria, eggs, organic, size M: packing-station price (AMA)": {
+  "en": "Austria, eggs, organic, size M: packing-station price (AMA)",
+  "es": "Austria, huevos ecológicos, talla M: precio en centro de embalaje (AMA)",
+  "fr": "Autriche, œufs biologiques, calibre M : prix au centre d’emballage (AMA)",
+  "it": "Austria, uova biologiche, calibro M: prezzo al centro di imballaggio (AMA)"
+ },
+ "Austria, chicken fillet: wholesale price (AMA)": {
+  "en": "Austria, chicken fillet: wholesale price (AMA)",
+  "es": "Austria, filete de pollo: precio mayorista (AMA)",
+  "fr": "Autriche, filet de poulet : prix de gros (AMA)",
+  "it": "Austria, filetto di pollo: prezzo all’ingrosso (AMA)"
+ },
+ "Austria, chicken, whole oven-ready, loose: wholesale price (AMA)": {
+  "en": "Austria, chicken, whole oven-ready, loose: wholesale price (AMA)",
+  "es": "Austria, pollo entero listo para cocinar, a granel: precio mayorista (AMA)",
+  "fr": "Autriche, poulet entier prêt à cuire, en vrac : prix de gros (AMA)",
+  "it": "Austria, pollo intero pronto da cuocere, sfuso: prezzo all’ingrosso (AMA)"
+ },
+ "Austria, chicken, whole on tray: wholesale price (AMA)": {
+  "en": "Austria, chicken, whole on tray: wholesale price (AMA)",
+  "es": "Austria, pollo entero en bandeja: precio mayorista (AMA)",
+  "fr": "Autriche, poulet entier en barquette : prix de gros (AMA)",
+  "it": "Austria, pollo intero in vaschetta: prezzo all’ingrosso (AMA)"
+ },
+ "Austria, pigs E: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)": {
+  "en": "Austria, pigs E: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)",
+  "es": "Austria, cerdos E: precio al productor, peso canal, puesto en matadero, sin IVA (AMA)",
+  "fr": "Autriche, porcs E : prix à la production, poids carcasse, départ abattoir, hors TVA (AMA)",
+  "it": "Austria, suini E: prezzo alla produzione, peso carcassa, franco macello, IVA esclusa (AMA)"
+ },
+ "Austria, pigs S: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)": {
+  "en": "Austria, pigs S: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)",
+  "es": "Austria, cerdos S: precio al productor, peso canal, puesto en matadero, sin IVA (AMA)",
+  "fr": "Autriche, porcs S : prix à la production, poids carcasse, départ abattoir, hors TVA (AMA)",
+  "it": "Austria, suini S: prezzo alla produzione, peso carcassa, franco macello, IVA esclusa (AMA)"
+ },
+ "Austria, pigs S-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)": {
+  "en": "Austria, pigs S-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)",
+  "es": "Austria, cerdos S-P: precio al productor, peso canal, puesto en matadero, sin IVA (AMA)",
+  "fr": "Autriche, porcs S-P : prix à la production, poids carcasse, départ abattoir, hors TVA (AMA)",
+  "it": "Austria, suini S-P: prezzo alla produzione, peso carcassa, franco macello, IVA esclusa (AMA)"
+ },
+ "Austria, cows E-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)": {
+  "en": "Austria, cows E-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)",
+  "es": "Austria, vacas E-P: precio al productor, peso canal, puesto en matadero, sin IVA (AMA)",
+  "fr": "Autriche, vaches E-P : prix à la production, poids carcasse, départ abattoir, hors TVA (AMA)",
+  "it": "Austria, vacche E-P: prezzo alla produzione, peso carcassa, franco macello, IVA esclusa (AMA)"
+ },
+ "Austria, heifers E-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)": {
+  "en": "Austria, heifers E-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)",
+  "es": "Austria, novillas E-P: precio al productor, peso canal, puesto en matadero, sin IVA (AMA)",
+  "fr": "Autriche, génisses E-P : prix à la production, poids carcasse, départ abattoir, hors TVA (AMA)",
+  "it": "Austria, manze E-P: prezzo alla produzione, peso carcassa, franco macello, IVA esclusa (AMA)"
+ },
+ "Austria, young bulls E-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)": {
+  "en": "Austria, young bulls E-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)",
+  "es": "Austria, añojos E-P: precio al productor, peso canal, puesto en matadero, sin IVA (AMA)",
+  "fr": "Autriche, jeunes bovins E-P : prix à la production, poids carcasse, départ abattoir, hors TVA (AMA)",
+  "it": "Austria, vitelloni E-P: prezzo alla produzione, peso carcassa, franco macello, IVA esclusa (AMA)"
+ },
+ "Austria, calves E-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)": {
+  "en": "Austria, calves E-P: producer price, carcass weight, free slaughterhouse, excl. VAT (AMA)",
+  "es": "Austria, terneros E-P: precio al productor, peso canal, puesto en matadero, sin IVA (AMA)",
+  "fr": "Autriche, veaux E-P : prix à la production, poids carcasse, départ abattoir, hors TVA (AMA)",
+  "it": "Austria, vitelli E-P: prezzo alla produzione, peso carcassa, franco macello, IVA esclusa (AMA)"
+ },
+ "Austria, calves E-P: animals slaughtered at reporting slaughterhouses, domestic origin (AMA)": {
+  "en": "Austria, calves E-P: animals slaughtered at reporting slaughterhouses, domestic origin (AMA)",
+  "es": "Austria, terneros E-P: animales sacrificados en mataderos declarantes, origen nacional (AMA)",
+  "fr": "Autriche, veaux E-P : animaux abattus dans les abattoirs déclarants, origine nationale (AMA)",
+  "it": "Austria, vitelli E-P: capi macellati nei macelli dichiaranti, origine nazionale (AMA)"
+ },
+ "Austria, calcium ammonium nitrate 27% N: farmer price, bulk, excl. VAT (AMA)": {
+  "en": "Austria, calcium ammonium nitrate 27% N: farmer price, bulk, excl. VAT (AMA)",
+  "es": "Austria, nitrato amónico cálcico 27 % N: precio al agricultor, a granel, sin IVA (AMA)",
+  "fr": "Autriche, ammonitrate calcaire 27 % N : prix agriculteur, en vrac, hors TVA (AMA)",
+  "it": "Austria, nitrato ammonico calcareo 27 % N: prezzo all’agricoltore, sfuso, IVA esclusa (AMA)"
+ },
+ "Austria, diammonium phosphate 18/46/0: farmer price, bulk, excl. VAT (AMA)": {
+  "en": "Austria, diammonium phosphate 18/46/0: farmer price, bulk, excl. VAT (AMA)",
+  "es": "Austria, fosfato diamónico 18/46/0: precio al agricultor, a granel, sin IVA (AMA)",
+  "fr": "Autriche, phosphate diammonique 18/46/0 : prix agriculteur, en vrac, hors TVA (AMA)",
+  "it": "Austria, fosfato biammonico 18/46/0: prezzo all’agricoltore, sfuso, IVA esclusa (AMA)"
+ },
+ "Austria, NPK 15/15/15: farmer price, bulk, excl. VAT (AMA)": {
+  "en": "Austria, NPK 15/15/15: farmer price, bulk, excl. VAT (AMA)",
+  "es": "Austria, NPK 15/15/15: precio al agricultor, a granel, sin IVA (AMA)",
+  "fr": "Autriche, NPK 15/15/15 : prix agriculteur, en vrac, hors TVA (AMA)",
+  "it": "Austria, NPK 15/15/15: prezzo all’agricoltore, sfuso, IVA esclusa (AMA)"
+ },
+ "Austria, potash 60% K2O: farmer price, bulk, excl. VAT (AMA)": {
+  "en": "Austria, potash 60% K2O: farmer price, bulk, excl. VAT (AMA)",
+  "es": "Austria, potasa 60 % K2O: precio al agricultor, a granel, sin IVA (AMA)",
+  "fr": "Autriche, potasse 60 % K2O : prix agriculteur, en vrac, hors TVA (AMA)",
+  "it": "Austria, potassa 60 % K2O: prezzo all’agricoltore, sfuso, IVA esclusa (AMA)"
+ },
+ "Livestock, 31 December: Cattle (heads, ŠÚ SR)": {
+  "en": "Livestock, 31 December: Cattle (heads, ŠÚ SR)",
+  "es": "Censo a 31 de diciembre: Bovino (cabezas, ŠÚ SR)",
+  "fr": "Cheptel au 31 décembre : Bovins (têtes, ŠÚ SR)",
+  "it": "Consistenza al 31 dicembre: Bovini (capi, ŠÚ SR)"
+ },
+ "Livestock, 31 December: Cows (heads, ŠÚ SR)": {
+  "en": "Livestock, 31 December: Cows (heads, ŠÚ SR)",
+  "es": "Censo a 31 de diciembre: Vacas (cabezas, ŠÚ SR)",
+  "fr": "Cheptel au 31 décembre : Vaches (têtes, ŠÚ SR)",
+  "it": "Consistenza al 31 dicembre: Vacche (capi, ŠÚ SR)"
+ },
+ "Livestock, 31 December: Pigs (heads, ŠÚ SR)": {
+  "en": "Livestock, 31 December: Pigs (heads, ŠÚ SR)",
+  "es": "Censo a 31 de diciembre: Porcino (cabezas, ŠÚ SR)",
+  "fr": "Cheptel au 31 décembre : Porcins (têtes, ŠÚ SR)",
+  "it": "Consistenza al 31 dicembre: Suini (capi, ŠÚ SR)"
+ },
+ "Livestock, 31 December: Sows (heads, ŠÚ SR)": {
+  "en": "Livestock, 31 December: Sows (heads, ŠÚ SR)",
+  "es": "Censo a 31 de diciembre: Cerdas (cabezas, ŠÚ SR)",
+  "fr": "Cheptel au 31 décembre : Truies (têtes, ŠÚ SR)",
+  "it": "Consistenza al 31 dicembre: Scrofe (capi, ŠÚ SR)"
+ },
+ "Livestock, 31 December: Sheep (heads, ŠÚ SR)": {
+  "en": "Livestock, 31 December: Sheep (heads, ŠÚ SR)",
+  "es": "Censo a 31 de diciembre: Ovino (cabezas, ŠÚ SR)",
+  "fr": "Cheptel au 31 décembre : Ovins (têtes, ŠÚ SR)",
+  "it": "Consistenza al 31 dicembre: Ovini (capi, ŠÚ SR)"
+ },
+ "Livestock, 31 December: Poultry (heads, ŠÚ SR)": {
+  "en": "Livestock, 31 December: Poultry (heads, ŠÚ SR)",
+  "es": "Censo a 31 de diciembre: Aves de corral (cabezas, ŠÚ SR)",
+  "fr": "Cheptel au 31 décembre : Volailles (têtes, ŠÚ SR)",
+  "it": "Consistenza al 31 dicembre: Pollame (capi, ŠÚ SR)"
+ },
+ "Livestock, 31 December: Hens (heads, ŠÚ SR)": {
+  "en": "Livestock, 31 December: Hens (heads, ŠÚ SR)",
+  "es": "Censo a 31 de diciembre: Gallinas (cabezas, ŠÚ SR)",
+  "fr": "Cheptel au 31 décembre : Poules (têtes, ŠÚ SR)",
+  "it": "Consistenza al 31 dicembre: Galline (capi, ŠÚ SR)"
+ },
+ "Livestock, 31 December: Ewes (heads, ŠÚ SR)": {
+  "en": "Livestock, 31 December: Ewes (heads, ŠÚ SR)",
+  "es": "Censo a 31 de diciembre: Ovejas (cabezas, ŠÚ SR)",
+  "fr": "Cheptel au 31 décembre : Brebis (têtes, ŠÚ SR)",
+  "it": "Consistenza al 31 dicembre: Pecore (capi, ŠÚ SR)"
+ },
+ "Average price: Trout-standard (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Trout-standard (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Trucha estándar (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Truite standard (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Trota standard (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Carp I. (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Carp I. (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Carpa clase I (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Carpe classe I (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Carpa classe I (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Wheat for industrial use (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Wheat for industrial use (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Trigo para uso industrial (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Blé à usage industriel (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Frumento per uso industriale (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Food-growing wheat (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Food-growing wheat (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Trigo para alimentación (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Blé alimentaire (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Frumento alimentare (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Barley for human consumption (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Barley for human consumption (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Cebada para consumo humano (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Orge pour la consommation humaine (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Orzo per consumo umano (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Malting barley (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Malting barley (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Cebada maltera (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Orge de brasserie (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Orzo da birra (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Fodder barley (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Fodder barley (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Cebada forrajera (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Orge fourragère (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Orzo da foraggio (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Rye for human consumption (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Rye for human consumption (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Centeno para consumo humano (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Seigle pour la consommation humaine (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Segale per consumo umano (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Fodder rye (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Fodder rye (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Centeno forrajero (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Seigle fourrager (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Segale da foraggio (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Oats for human consumption (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Oats for human consumption (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Avena para consumo humano (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Avoine pour la consommation humaine (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Avena per consumo umano (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Bulls for slaughter-carcases, category R (EUR/t carcass weight, ŠÚ SR)": {
+  "en": "Average price: Bulls for slaughter-carcases, category R (EUR/t carcass weight, ŠÚ SR)",
+  "es": "Precio medio: Toros de abasto, canales clase R (EUR/t canal, ŠÚ SR)",
+  "fr": "Prix moyen : Taureaux de boucherie, carcasses classe R (EUR/t carcasse, ŠÚ SR)",
+  "it": "Prezzo medio: Tori da macello, carcasse classe R (EUR/t carcassa, ŠÚ SR)"
+ },
+ "Average price: Bulls for slaughter-carcases, category U (EUR/t carcass weight, ŠÚ SR)": {
+  "en": "Average price: Bulls for slaughter-carcases, category U (EUR/t carcass weight, ŠÚ SR)",
+  "es": "Precio medio: Toros de abasto, canales clase U (EUR/t canal, ŠÚ SR)",
+  "fr": "Prix moyen : Taureaux de boucherie, carcasses classe U (EUR/t carcasse, ŠÚ SR)",
+  "it": "Prezzo medio: Tori da macello, carcasse classe U (EUR/t carcassa, ŠÚ SR)"
+ },
+ "Average price: Bulls for slaughter-carcases, category E (EUR/t carcass weight, ŠÚ SR)": {
+  "en": "Average price: Bulls for slaughter-carcases, category E (EUR/t carcass weight, ŠÚ SR)",
+  "es": "Precio medio: Toros de abasto, canales clase E (EUR/t canal, ŠÚ SR)",
+  "fr": "Prix moyen : Taureaux de boucherie, carcasses classe E (EUR/t carcasse, ŠÚ SR)",
+  "it": "Prezzo medio: Tori da macello, carcasse classe E (EUR/t carcassa, ŠÚ SR)"
+ },
+ "Average price: Heifers for slaughter-carcases, category E (EUR/t carcass weight, ŠÚ SR)": {
+  "en": "Average price: Heifers for slaughter-carcases, category E (EUR/t carcass weight, ŠÚ SR)",
+  "es": "Precio medio: Novillas de abasto, canales clase E (EUR/t canal, ŠÚ SR)",
+  "fr": "Prix moyen : Génisses de boucherie, carcasses classe E (EUR/t carcasse, ŠÚ SR)",
+  "it": "Prezzo medio: Manze da macello, carcasse classe E (EUR/t carcassa, ŠÚ SR)"
+ },
+ "Average price: Heifers for slaughter-carcases, category R (EUR/t carcass weight, ŠÚ SR)": {
+  "en": "Average price: Heifers for slaughter-carcases, category R (EUR/t carcass weight, ŠÚ SR)",
+  "es": "Precio medio: Novillas de abasto, canales clase R (EUR/t canal, ŠÚ SR)",
+  "fr": "Prix moyen : Génisses de boucherie, carcasses classe R (EUR/t carcasse, ŠÚ SR)",
+  "it": "Prezzo medio: Manze da macello, carcasse classe R (EUR/t carcassa, ŠÚ SR)"
+ },
+ "Average price: Heifers for slaughter-carcases, category U (EUR/t carcass weight, ŠÚ SR)": {
+  "en": "Average price: Heifers for slaughter-carcases, category U (EUR/t carcass weight, ŠÚ SR)",
+  "es": "Precio medio: Novillas de abasto, canales clase U (EUR/t canal, ŠÚ SR)",
+  "fr": "Prix moyen : Génisses de boucherie, carcasses classe U (EUR/t carcasse, ŠÚ SR)",
+  "it": "Prezzo medio: Manze da macello, carcasse classe U (EUR/t carcassa, ŠÚ SR)"
+ },
+ "Average price: Cows for slaughter-carcases, category R (EUR/t carcass weight, ŠÚ SR)": {
+  "en": "Average price: Cows for slaughter-carcases, category R (EUR/t carcass weight, ŠÚ SR)",
+  "es": "Precio medio: Vacas de abasto, canales clase R (EUR/t canal, ŠÚ SR)",
+  "fr": "Prix moyen : Vaches de boucherie, carcasses classe R (EUR/t carcasse, ŠÚ SR)",
+  "it": "Prezzo medio: Vacche da macello, carcasse classe R (EUR/t carcassa, ŠÚ SR)"
+ },
+ "Average price: Cows for slaughter-carcases, category U (EUR/t carcass weight, ŠÚ SR)": {
+  "en": "Average price: Cows for slaughter-carcases, category U (EUR/t carcass weight, ŠÚ SR)",
+  "es": "Precio medio: Vacas de abasto, canales clase U (EUR/t canal, ŠÚ SR)",
+  "fr": "Prix moyen : Vaches de boucherie, carcasses classe U (EUR/t carcasse, ŠÚ SR)",
+  "it": "Prezzo medio: Vacche da macello, carcasse classe U (EUR/t carcassa, ŠÚ SR)"
+ },
+ "Average price: Late-maturing onions without tops (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Late-maturing onions without tops (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Cebolla tardía sin hojas (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Oignons tardifs sans fanes (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Cipolle tardive senza foglie (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Beetroot (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Beetroot (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Remolacha de mesa (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Betterave potagère (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Barbabietola rossa (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Plucked apples (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Plucked apples (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Manzanas de recolección a mano (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Pommes cueillies (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Mele raccolte a mano (EUR/t, ŠÚ SR)"
+ },
+ "Average price: White cabbage (EUR/t, ŠÚ SR)": {
+  "en": "Average price: White cabbage (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Repollo blanco (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Chou blanc (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Cavolo cappuccio bianco (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Late-maturing carrots without tops (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Late-maturing carrots without tops (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Zanahoria tardía sin hojas (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Carottes tardives sans fanes (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Carote tardive senza foglie (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Parsley without tops (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Parsley without tops (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Raíz de perejil sin hojas (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Persil racine sans fanes (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Prezzemolo da radice senza foglie (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Late-maturing kohlrabi without tops (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Late-maturing kohlrabi without tops (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Colinabo tardío sin hojas (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Chou-rave tardif sans fanes (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Cavolo rapa tardivo senza foglie (EUR/t, ŠÚ SR)"
+ },
+ "Average price: Savoy cabbage (EUR/t, ŠÚ SR)": {
+  "en": "Average price: Savoy cabbage (EUR/t, ŠÚ SR)",
+  "es": "Precio medio: Col de Milán (EUR/t, ŠÚ SR)",
+  "fr": "Prix moyen : Chou de Milan (EUR/t, ŠÚ SR)",
+  "it": "Prezzo medio: Cavolo verza (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Arrat (EUR/kg, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Arrat (EUR/kg, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Arrat (herbicida) (EUR/kg, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Arrat (herbicide) (EUR/kg, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Arrat (erbicida) (EUR/kg, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Caramba (EUR/l, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Caramba (EUR/l, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Caramba (fungicida) (EUR/l, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Caramba (fongicide) (EUR/l, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Caramba (fungicida) (EUR/l, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Cleaning of cereals (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Cleaning of cereals (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Limpieza de cereales (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Nettoyage des céréales (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Pulitura dei cereali (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Combine harvesting of cereals (EUR/ha, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Combine harvesting of cereals (EUR/ha, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Cosecha de cereales con cosechadora (EUR/ha, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Moisson des céréales à la moissonneuse-batteuse (EUR/ha, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mietitrebbiatura dei cereali (EUR/ha, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Ammonium sulphate (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Ammonium sulphate (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Sulfato amónico (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Sulfate d’ammonium (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Solfato ammonico (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Amofos (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Amofos (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Amofos (fosfato amónico) (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Amofos (phosphate d’ammonium) (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Amofos (fosfato ammonico) (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: DAM - 390 (29 % N) (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: DAM - 390 (29 % N) (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: DAM 390 (29 % N) (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : DAM 390 (29 % N) (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: DAM 390 (29 % N) (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: DASA 26/13 (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: DASA 26/13 (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: DASA 26/13 (nitrosulfato amónico) (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : DASA 26/13 (sulfonitrate d’ammonium) (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: DASA 26/13 (solfonitrato ammonico) (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Granular potassium salt 60% (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Granular potassium salt 60% (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Sal potásica granulada 60 % (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Sel de potasse granulé 60 % (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Sale potassico granulare 60 % (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Ground limestone (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Ground limestone (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Caliza molida (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Calcaire broyé (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Calcare macinato (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: LAD 27% N (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: LAD 27% N (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Nitrato amónico cálcico 27 % N (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Ammonitrate calcaire 27 % N (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Nitrato ammonico calcareo 27 % N (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Potassium sulphate (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Potassium sulphate (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Sulfato potásico (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Sulfate de potassium (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Solfato di potassio (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Feeding mixture for broilers BR2, HYD-02 (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Feeding mixture for broilers BR2, HYD-02 (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Pienso compuesto para pollos de engorde BR2, HYD-02 (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Aliment composé pour poulets de chair BR2, HYD-02 (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mangime composto per polli da carne BR2, HYD-02 (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Feeding mixture for broilers BR3, HYD-03 (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Feeding mixture for broilers BR3, HYD-03 (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Pienso compuesto para pollos de engorde BR3, HYD-03 (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Aliment composé pour poulets de chair BR3, HYD-03 (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mangime composto per polli da carne BR3, HYD-03 (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Feeding mixture for calves HD TKS (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Feeding mixture for calves HD TKS (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Pienso compuesto para terneros HD TKS (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Aliment composé pour veaux HD TKS (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mangime composto per vitelli HD TKS (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Feeding mixture for calves HD-02 (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Feeding mixture for calves HD-02 (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Pienso compuesto para terneros HD-02 (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Aliment composé pour veaux HD-02 (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mangime composto per vitelli HD-02 (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Feeding mixture for dairy cattle DOG, HD-10 (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Feeding mixture for dairy cattle DOG, HD-10 (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Pienso compuesto para vacuno de leche DOG, HD-10 (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Aliment composé pour vaches laitières DOG, HD-10 (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mangime composto per bovini da latte DOG, HD-10 (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Feeding mixture for dairy cattle HD-12 (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Feeding mixture for dairy cattle HD-12 (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Pienso compuesto para vacuno de leche HD-12 (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Aliment composé pour vaches laitières HD-12 (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mangime composto per bovini da latte HD-12 (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Feeding mixture for lactating sows PKK, OŠ-09 (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Feeding mixture for lactating sows PKK, OŠ-09 (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Pienso compuesto para cerdas lactantes PKK, OŠ-09 (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Aliment composé pour truies allaitantes PKK, OŠ-09 (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mangime composto per scrofe in lattazione PKK, OŠ-09 (EUR/t, ŠÚ SR)"
+ },
+ "Price of supplies to agriculture: Feeding mixture for lambs ČOJ 2, OV-02 (EUR/t, ŠÚ SR)": {
+  "en": "Price of supplies to agriculture: Feeding mixture for lambs ČOJ 2, OV-02 (EUR/t, ŠÚ SR)",
+  "es": "Precio de suministros a la agricultura: Pienso compuesto para corderos ČOJ 2, OV-02 (EUR/t, ŠÚ SR)",
+  "fr": "Prix des fournitures agricoles : Aliment composé pour agneaux ČOJ 2, OV-02 (EUR/t, ŠÚ SR)",
+  "it": "Prezzo delle forniture agricole: Mangime composto per agnelli ČOJ 2, OV-02 (EUR/t, ŠÚ SR)"
  }
 }
