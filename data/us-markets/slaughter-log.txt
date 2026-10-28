@@ -1,1 +1,2 @@
-MARS 3208 error URLError(gaierror(-3, 'Temporary failure in name resolution'))
+secciones: [('Report Header', 10), ('Report Livestock Commodity', 96), ('Report Livestock Class', 24), ('Report Poultry Commodity', 24)]
+escrito slaughter.json {'cattle': 355, 'calves': 355, 'hogs': 355, 'sheep': 355, 'chicken': 355} ultimo dia 2026-10-27
