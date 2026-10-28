@@ -1,11 +1,12 @@
-PDF: 56
-meses leidos: 56 saltados: 0 rango: 2022-01 2026-08
+PDF: 57
+meses leidos: 57 saltados: 0 rango: 2022-01 2026-09
+descartada ca-ab-inputs-air-drill-50-60-400-500-bushels-double-shoot-variable-rate-sectional-c-m: 1 puntos, ultimo 2026-09
 descartada ca-ab-inputs-assert-300-sc-liquid-10-8-litre-m: 14 puntos, ultimo 2023-02
-descartada ca-ab-inputs-ivermectin-injection-for-cattle-sheep-and-swine-200-ml-injectable-m: 7 puntos, ultimo 2026-08
+descartada ca-ab-inputs-ivermectin-injection-for-cattle-sheep-and-swine-200-ml-injectable-m: 8 puntos, ultimo 2026-09
 descartada ca-ab-inputs-ivomec-injection-for-cattle-sheep-and-swine-250-ml-injectable-m: 8 puntos, ultimo 2026-01
 descartada ca-ab-inputs-penicillin-procaine-penicillin-g-injectable-short-acting-300-mg-ml-250-m: 15 puntos, ultimo 2023-03
 descartada ca-ab-inputs-sprayer-pull-type-800-900-gallon-tank-90-100-boom-new-each-m: 15 puntos, ultimo 2023-03
-descartada ca-ab-inputs-vitamin-a-d-e-oral-liquid-added-to-water-425-ml-bottle-m: 9 puntos, ultimo 2026-08
+descartada ca-ab-inputs-vitamin-a-d-e-oral-liquid-added-to-water-425-ml-bottle-m: 10 puntos, ultimo 2026-09
 descartada ca-ab-inputs-vitamin-a-d-oral-containing-vitamin-a-d-selenium-250-ml-bottle-m: 6 puntos, ultimo 2025-11
 producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-3-4-ton-truck-v-8-5-4l-or-5-9l-engine-4x4-4-speed-automatic-transmissi-m (ultimo 2025-05)
 producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-air-drill-40-42-3-compartment-tank-no-variable-rate-new-each-m (ultimo 2025-05)
@@ -35,4 +36,4 @@ producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-tractor-4w
 producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-tractor-fwd-105-130-hp-6-cylinder-diesel-12-24-speed-transmission-new-m (ultimo 2025-05)
 producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-v-belt-implement-1-2-x-70-fibre-each-m (ultimo 2025-05)
 producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-vitamin-a-d-and-e-injectable-iu-cc-a-500-000-d-75-000-e-50-250-ml-m (ultimo 2025-05)
-OK: 54 series, 56 meses
+OK: 54 series, 57 meses
