@@ -17,7 +17,7 @@
     it: { 107: 'Grano (tutte le classi)', 101: 'Grano duro rosso invernale (HRW)', 102: 'Grano tenero rosso invernale (SRW)', 103: 'Grano duro rosso primaverile (HRS)', 104: 'Grano bianco', 105: 'Grano duro (durum)', 401: 'Mais', 701: 'Sorgo', 301: 'Orzo', 801: 'Soia (semi)', 901: 'Farina di soia', 902: 'Olio di soia', 1404: 'Cotone upland', 1505: 'Riso (tutti)', 1701: 'Manzo (tagli muscolari)', 1702: 'Maiale (tagli muscolari)' }
   };
   var T = {
-    es: { title: 'Exportaciones: EE. UU., Canadá y España', sub: 'Exportaciones de EE. UU., Canadá y España. EE. UU.: ventas de exportación semanales (USDA FAS) y comercio mensual por país (USDA FAS, datos del Census Bureau). Cifras oficiales en su unidad original.',
+    es: { title: 'Export sales y exportaciones agrarias', sub: 'Exportaciones de EE. UU., Canadá y España. EE. UU.: ventas de exportación semanales (USDA FAS) y comercio mensual por país (USDA FAS, datos del Census Bureau). Cifras oficiales en su unidad original.',
       tabEsr: 'Ventas semanales', tabGats: 'Comercio mensual', product: 'Producto', flow: 'Flujo', ex: 'Exportaciones de EE. UU.', im: 'Importaciones de EE. UU.', period: 'Periodo', p12: 'Últimos 12 meses', p1: 'Último mes',
       weekEnd: 'Semana al', my: 'Campaña', acc: 'Exportado en la campaña', out: 'Ventas pendientes de embarcar', com: 'Compromiso total', net: 'Ventas netas de la semana', vsPrev: 'frente a la misma semana de la campaña anterior',
       chartAcc: 'Exportaciones acumuladas por semana de campaña', cur: 'Campaña actual', prev: 'Campaña anterior', weekN: 'semana de campaña',
