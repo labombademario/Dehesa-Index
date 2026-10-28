@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T08:40:00Z",
+ "generatedAt": "2026-10-28T08:56:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 311,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-28T05:39:55.919151+00:00",
   "repoGeneratedAt": "2026-10-28T05:39:55.919151+00:00",
-  "checkedAt": "2026-10-28T08:40:00Z"
+  "checkedAt": "2026-10-28T08:56:00Z"
  },
  "pipelines": [
   {
@@ -1663,13 +1663,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-27T08:34:32Z",
-    "durationSec": 40,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40474464091"
+    "startedAt": "2026-10-28T08:43:27Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40658843624"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -4134,9 +4134,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-27T08:44:07Z",
-    "durationSec": 53,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40475576932"
+    "startedAt": "2026-10-28T08:52:38Z",
+    "durationSec": 39,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40659946501"
    },
    "recent": {
     "runs": 10,
@@ -4683,7 +4683,7 @@
    "crons": [
     "50 8 * * 3"
    ],
-   "nextRun": "2026-10-28T08:50:00Z",
+   "nextRun": "2026-11-04T08:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4757,9 +4757,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-27T08:44:05Z",
-    "durationSec": 40,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40475571791"
+    "startedAt": "2026-10-28T08:52:47Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40659965000"
    },
    "recent": {
     "runs": 10,
@@ -4966,7 +4966,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-28T08:27:02Z"
+     "lastChange": "2026-10-28T08:42:41Z"
     },
     {
      "path": "data/source-candidates.json",
