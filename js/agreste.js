@@ -41,6 +41,7 @@
     lvD: L('Departamentos', 'Departments', 'Départements', 'Dipartimenti'), lvR: L('Regiones', 'Regions', 'Régions', 'Regioni'), ofArea: L('del territorio', 'of the area', 'du territoire', 'del territorio'),
     mapBaseL: L('Pasa el ratón o toca un territorio para ver su dato; púlsalo para ver su gráfica abajo.', 'Hover or tap an area to see its figure; click it to chart it below.', 'Survolez ou touchez un territoire pour voir son chiffre ; cliquez pour afficher son graphique en dessous.', 'Passa il mouse o tocca un territorio per vedere il dato; cliccaci per il grafico sotto.'),
     mapNoteL: L('El mapa muestra Francia metropolitana; los territorios de ultramar están en la lista.', 'The map shows metropolitan France; overseas territories are in the list.', 'La carte montre la France métropolitaine ; l’outre-mer figure dans la liste.', 'La mappa mostra la Francia metropolitana; i territori d’oltremare sono nell’elenco.'),
+    mapBaseR: L('Pasa el ratón o toca una región para ver su índice; púlsala para añadirla o quitarla de la gráfica (hasta 4).', 'Hover or tap a region to see its index; click it to add or remove it from the chart (up to 4).', 'Survolez ou touchez une région pour voir son indice ; cliquez pour l’ajouter ou la retirer du graphique (4 au maximum).', 'Passa il mouse o tocca una regione per vedere il suo indice; cliccala per aggiungerla o toglierla dal grafico (massimo 4).'),
     mapBaseW: L('Pasa el ratón o toca una cuenca para ver su dato; púlsala para añadirla o quitarla de la gráfica.', 'Hover or tap a wine region to see its figure; click it to add or remove it from the chart.', 'Survolez ou touchez un bassin pour voir son chiffre ; cliquez pour l’ajouter ou le retirer du graphique.', 'Passa il mouse o tocca un bacino per vedere il dato; cliccaci per aggiungerlo o toglierlo dal grafico.'),
     mapNoteW: L('Las cuencas se dibujan como grupos de departamentos (aproximado: sus límites reales no siguen los departamentos).', 'Wine regions are drawn as groups of départements (approximate: real boundaries do not follow départements).', 'Les bassins sont dessinés comme des groupes de départements (approximatif : les limites réelles ne suivent pas les départements).', 'I bacini sono disegnati come gruppi di dipartimenti (approssimativo: i confini reali non seguono i dipartimenti).'),
     uHa: L('ha', 'ha', 'ha', 'ha'), uIdx: L('índice', 'index', 'indice', 'indice'), uKhl: L('miles de hl', 'thousand hl', 'milliers d’hl', 'migliaia di hl'), uEtp: L('ETP', 'FTE', 'ETP', 'ETP'), uPers: L('personas', 'people', 'personnes', 'persone'), uEur: L('€/h', '€/h', '€/h', '€/h'),
@@ -183,7 +184,29 @@
     d.tables.forEach(function (t) { t.series.forEach(function (s) { if (s.id.slice(-code.length - 1) === '-' + code && s.points.length) rows = rows.concat(rowsOf([s], function () { return trl(t.label.replace(/ \(1\)$/, '')); })); }); });
     if (!rows.length) return '';
     var key = 'insreg-' + id;
-    return block(key, rows, { unit: tx(T.uIdx), dec: 1, sort: true, aria: tx(T.byreg), defSel: rows.slice(0, 3).map(function (r) { return r.id; }), first: true }) + '<p class="ag-m">' + esc(tx(T.curYear)) + '</p>';
+    setTimeout(function () { drawRMap(rows, key); }, 0);
+    return '<div class="ag-vgrid ag-rev"><div class="ag-vdata">' +
+      block(key, rows, { unit: tx(T.uIdx), dec: 1, sort: true, aria: tx(T.byreg), defSel: rows.slice(0, 3).map(function (r) { return r.id; }), first: true }) + '<p class="ag-m">' + esc(tx(T.curYear)) + '</p>' +
+      '</div><div class="ag-vmap ag-ipa"><div id="ag-rmap"></div></div></div>';
+  }
+  /* regiones metropolitanas: la clave es el trozo del id de Agreste (ipampa-reg-<región>-<código>) y el valor, el id del contorno de vendor/fr-regions.js; Córcega no tiene dato y se dibuja en gris */
+  var IRM = { 'auvergne-rhone-alpes': 'ARA', 'bourgogne-franche-comte': 'BFC', 'bretagne': 'BRE', 'centre-val-de-loire': 'CVL', 'grand-est': 'GES', 'hauts-de-france': 'HDF', 'ile-de-france': 'IDF', 'normandie': 'NOR', 'nouvelle-aquitaine': 'NAQ', 'occitanie': 'OCC', 'pays-de-la-loire': 'PDL', 'provence-alpes-cote-d-azur': 'PAC' };
+  function drawRMap(rows, key) {
+    need('vendor/fr-regions.js', 'DEHESA_FR_REGIONS').then(function (MAP) {
+      var host = document.getElementById('ag-rmap'); if (!host || !MAP) return;
+      var sel = STATE.sel[key] || [], by = {}, vals = [];
+      rows.forEach(function (r) { var m = /^ipampa-reg-(.+)-\d+$/.exec(r.id), c = m && IRM[m[1]]; if (c && r.last != null) { by[c] = r; vals.push(r.last); } });
+      if (!vals.length) { host.innerHTML = ''; return; }
+      var cuts = quant(vals), lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
+      var paths = MAP.states.map(function (st) {
+        var r = by[st.id];
+        if (!r) return '<path class="gb-prov gb-cx ag-bp" d="' + st.d + '" aria-hidden="true"/>';
+        var on = sel.indexOf(r.id) >= 0, tip = r.label + ': ' + nf(r.last, 1) + ' ' + tx(T.uIdx) + ' (' + r.per + ')';
+        return '<path class="gb-prov ag-bp ' + cls(r.last, cuts) + (on ? ' ag-on' : '') + '" data-k="' + esc(key) + '" data-id="' + esc(r.id) + '" data-tip="' + esc(tip) + '" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(tip) + '" d="' + st.d + '"/>';
+      }).join('');
+      host.innerHTML = '<svg viewBox="' + MAP.viewBox + '" role="group" aria-label="' + esc(tx(T.byreg)) + '">' + paths + '</svg>' + legend(cuts, lo, hi, function (v) { return nf(v, 0); }) +
+        '<p class="ag-m ag-ro" aria-live="polite" data-base="' + esc(tx(T.mapBaseR)) + '">' + esc(tx(T.mapBaseR)) + '</p><p class="ag-m">' + esc(tx(T.mapNoteL)) + '</p>';
+    });
   }
   /* cuencas vitivinícolas como grupos de departamentos (aproximado); clave = sufijo del id de Agreste */
   var VB = { als: ['67', '68'], bordo: ['33'], bourgo: ['21', '71', '89', '69'], centre: ['44', '49', '37', '41', '45', '18', '36', '72', '58', '79', '85'], champ: ['51', '10', '02', '52', '77'], cognac: ['16', '17'], corse: ['2A', '2B'], jura: ['39'], oc: ['11', '30', '34', '66', '48'], rhone: ['84', '26', '07', '13', '83', '04', '05', '06', '38'], savoie: ['73', '74', '01'], sudouest: ['24', '47', '46', '82', '81', '32', '40', '64', '65', '12', '31', '09'] };
