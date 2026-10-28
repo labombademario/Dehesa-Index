@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76327
+  "rows": 76328
  },
  "files": [
   {
@@ -2628,13 +2628,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 269,
+   "rows": 270,
    "first": "2021-06-06",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/colza_de.csv",
    "xlsx": "data/pack/eu/colza_de.xlsx",
-   "csvBytes": 56795,
-   "xlsxBytes": 19735
+   "csvBytes": 57006,
+   "xlsxBytes": 19777
   },
   {
    "product": "colza_hu",
