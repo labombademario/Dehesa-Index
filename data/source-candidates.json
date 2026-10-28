@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T12:49:10Z",
+ "generatedAt": "2026-10-28T17:56:14Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 224,
+  "total": 225,
   "byStatus": {
-   "ACTIVE": 194,
+   "ACTIVE": 195,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -7319,6 +7319,45 @@
    "derivatives": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
    "lastChecked": "2026-10-04",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "pdok_natura2000",
+   "registryId": "pdok_natura2000",
+   "country": "NL",
+   "scope": "integrated",
+   "institution": "PDOK / RVO — Natura 2000 (contornos de las zonas protegidas de los Países Bajos)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC0-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contornos: PDOK / RVO, Natura 2000 (CC0). Simplificados por Dehesa Index.",
+   "lastChecked": "2026-10-28",
    "verification": "REGISTRY",
    "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",

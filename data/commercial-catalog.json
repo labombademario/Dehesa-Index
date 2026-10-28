@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T04:38:01Z",
+ "generatedAt": "2026-10-28T17:56:14Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 194,
-  "sourcesApto": 178,
+  "sources": 195,
+  "sourcesApto": 179,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
   "datasets": 420,
@@ -2302,6 +2302,23 @@
    "redistribution": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
    "conditions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de precios de consumo (CPI, D7BT) y, vía NOMIS (servicio del ONS), la población, la tasa de paro y el valor añadido bruto por región (mismo régimen OGL v3.0)."
+  },
+  {
+   "id": "pdok_natura2000",
+   "name": "PDOK / RVO — Natura 2000 (contornos de las zonas protegidas de los Países Bajos)",
+   "url": "https://api.pdok.nl/rvo/natura2000/ogc/v1",
+   "country": "NL",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons Zero 1.0 (dominio público)",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.nl",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contornos: PDOK / RVO, Natura 2000 (CC0). Simplificados por Dehesa Index.",
+   "conditions": "Solo se usan los contornos para dibujar el mapa de la pestaña Naturaleza de la ficha de Países Bajos; se simplifican y se dejan fuera las zonas de alta mar."
   },
   {
    "id": "pegelonline",
@@ -6991,6 +7008,7 @@
    "verdict": "apto",
    "sources": [
     "cbs_nl",
+    "pdok_natura2000",
     "rivm_stikstof"
    ]
   },

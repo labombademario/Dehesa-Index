@@ -30,6 +30,8 @@
       cadena: L('De la industria al supermercado: índice de precios de productor (PPI) de la industria alimentaria, base 2021 = 100, e IPC de alimentos al consumidor, base 2025 = 100. Las dos bases son distintas: compara la forma de las curvas y las variaciones anuales, no los niveles.', 'From factory to supermarket: producer price index (PPI) of the food industry, 2021 = 100, and consumer food prices, 2025 = 100. The two bases differ: compare the shape of the curves and the annual changes, not the levels.', 'De l’usine au supermarché : indice des prix à la production (PPI) de l’industrie alimentaire, base 2021 = 100, et prix à la consommation des aliments, base 2025 = 100. Les deux bases diffèrent : comparez la forme des courbes et les variations annuelles, pas les niveaux.', 'Dalla fabbrica al supermercato: indice dei prezzi alla produzione (PPI) dell’industria alimentare, base 2021 = 100, e prezzi al consumo degli alimenti, base 2025 = 100. Le due basi sono diverse: confronta la forma delle curve e le variazioni annue, non i livelli.'),
       otros: L('Hortalizas por especie, pastoreo de las vacas de leche, huevos ecológicos y convencionales, finanzas de las explotaciones (activo, deuda, resultado; ecológico frente a convencional) y cuánto se corrige la estimación de cosecha entre la provisional y la definitiva.', 'Vegetables by species, dairy-cow grazing, organic and conventional eggs, farm finances (assets, debt, result; organic vs conventional) and how much the harvest estimate is revised between provisional and final.', 'Légumes par espèce, pâturage des vaches laitières, œufs biologiques et conventionnels, finances des exploitations (actif, dette, résultat ; bio contre conventionnel) et ampleur de la révision de l’estimation de récolte entre provisoire et définitive.', 'Ortaggi per specie, pascolo delle vacche da latte, uova biologiche e convenzionali, finanze delle aziende (attivo, debiti, risultato; biologico e convenzionale) e quanto viene corretta la stima del raccolto tra provvisoria e definitiva.')
     },
+    mapBaseN: L('Pasa el ratón o toca una zona para ver su dato; púlsala para marcarla en la tabla. También puedes pulsar una fila de la tabla para verla en el mapa.', 'Hover or tap an area to see its figure; click it to highlight it in the table. You can also click a table row to find it on the map.', 'Survolez ou touchez une zone pour voir son chiffre ; cliquez pour la repérer dans le tableau. Vous pouvez aussi cliquer sur une ligne du tableau pour la voir sur la carte.', 'Passa il mouse o tocca una zona per vedere il dato; cliccala per evidenziarla nella tabella. Puoi anche cliccare una riga della tabella per vederla sulla mappa.'),
+    mapNoteN: L('Zonas Natura 2000 de los Países Bajos (contornos de PDOK/RVO, CC0). En gris, las zonas sin dato en esta tabla. Las cuatro zonas de alta mar del Mar del Norte no están en esta tabla y no se dibujan.', 'Natura 2000 areas of the Netherlands (outlines from PDOK/RVO, CC0). Grey: areas with no figure in this table. The four offshore North Sea areas are not in this table and are not drawn.', 'Zones Natura 2000 des Pays-Bas (contours PDOK/RVO, CC0). En gris : zones sans chiffre dans ce tableau. Les quatre zones de haute mer de la mer du Nord ne figurent pas dans ce tableau et ne sont pas dessinées.', 'Zone Natura 2000 dei Paesi Bassi (contorni PDOK/RVO, CC0). In grigio: zone senza dato in questa tabella. Le quattro zone d’alto mare del Mare del Nord non sono in questa tabella e non sono disegnate.'),
     mapBase: L('Pasa el ratón o toca una provincia para ver su dato; púlsala para añadirla o quitarla de la gráfica.', 'Hover or tap a province to see its figure; click it to add or remove it from the chart.', 'Survolez ou touchez une province pour voir son chiffre ; cliquez pour l’ajouter ou la retirer du graphique.', 'Passa il mouse o tocca una provincia per vedere il dato; cliccaci per aggiungerla o toglierla dal grafico.'),
     mapNone: L('Sin dato', 'No data', 'Sans donnée', 'Senza dato'), grpName: {
       omzet: L('Facturación y explotaciones', 'Turnover and farms', 'Chiffre d’affaires et exploitations', 'Fatturato e aziende'),
@@ -40,7 +42,7 @@
     }
   };
   var FILE = { omzet: 'omzet.json', horti: 'horticultura.json', nitro: 'nitrogeno.json', cadena: 'cadena.json', otros: 'otros.json', natura: 'natura2000.json' };
-  var CACHE = {}, STATE = { tab: 'omzet', sel: {}, tid: {} }, BASE = 'data/netherlands-more/', COLORS = ['#1d5178', '#a9491f', '#2e7d5b', '#7a4a8c'];
+  var CACHE = {}, STATE = { zone: null, tab: 'omzet', sel: {}, tid: {} }, BASE = 'data/netherlands-more/', COLORS = ['#1d5178', '#a9491f', '#2e7d5b', '#7a4a8c'];
   function load(f) { if (CACHE[f]) return CACHE[f]; return CACHE[f] = fetch(BASE + f, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   function tsOf(p) { var y = +p.slice(0, 4), q = /-Q(\d)$/.exec(p), m = q ? (+q[1] - 1) * 3 + 1 : p.length > 4 ? +p.slice(5, 7) : 1; return Date.UTC(y, m - 1, 1); }
   function pc(a, b) { return a == null || b == null || !b ? null : (a / b - 1) * 100; }
@@ -60,6 +62,9 @@
   function legend(cuts, lo, hi, fmt) { return '<div class="wp-legend gb-leg">' + [0, 1, 2, 3, 4].map(function (i) { return '<span><i class="gb-key gb-c' + i + '"></i>' + esc(fmt(i ? cuts[i - 1] : lo) + '–' + fmt(i < 4 ? cuts[i] : hi)) + '</span>'; }).join('') + '<span><i class="gb-key gb-cx"></i>' + esc(tx(T.mapNone)) + '</span></div>'; }
   var MAPP = null;
   function needMap() { if (global.DEHESA_NL_PROVINCES) return Promise.resolve(global.DEHESA_NL_PROVINCES); return MAPP || (MAPP = new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'vendor/nl-provinces.js'; sc.onload = function () { ok(global.DEHESA_NL_PROVINCES || null); }; sc.onerror = function () { ok(null); }; document.head.appendChild(sc); })); }
+  var N2KP = null;
+  function needN2k() { if (global.DEHESA_NL_N2K) return Promise.resolve(global.DEHESA_NL_N2K); return N2KP || (N2KP = new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'vendor/nl-natura2000.js'; sc.onload = function () { ok(global.DEHESA_NL_N2K || null); }; sc.onerror = function () { ok(null); }; document.head.appendChild(sc); })); }
+  function zoneOf(id) { var m = /^nl-n2k-(?:ag-|over-)?(\d+)$/.exec(id || ''); return m && m[1] !== '0' ? m[1] : null; }
   var PVMAP = { GR: 'pv20', FR: 'pv21', DR: 'pv22', OV: 'pv23', FL: 'pv24', GE: 'pv25', UT: 'pv26', NH: 'pv27', ZH: 'pv28', ZE: 'pv29', NB: 'pv30', LI: 'pv31' };
   function rowsOf(t) {
     return t.series.map(function (s) {
@@ -88,7 +93,8 @@
     var mx = Math.max.apply(null, list.map(function (r) { return Math.abs(r.last || 0); })) || 1;
     var body = list.map(function (r) {
       var w = Math.max(0.5, Math.round(Math.abs(r.last || 0) / mx * 1000) / 10);
-      return '<tr><td' + (r.nl ? ' title="' + esc(r.nl) + '"' : '') + '>' + esc(r.label) + '</td><td class="num">' + nf(r.last, dec) + '</td><td class="nl-bar-cell"><span class="nl-bar' + (r.last < 0 ? ' neg' : '') + '" style="width:' + w + '%"></span></td><td>' + esc(r.per) + '</td></tr>';
+      var z = zoneOf(r.id);
+      return '<tr' + (z ? ' class="nl-zr' + (STATE.zone === z ? ' nl-zsel' : '') + '" data-zone="' + z + '" tabindex="0"' : '') + '><td' + (r.nl ? ' title="' + esc(r.nl) + '"' : '') + '>' + esc(r.label) + '</td><td class="num">' + nf(r.last, dec) + '</td><td class="nl-bar-cell"><span class="nl-bar' + (r.last < 0 ? ' neg' : '') + '" style="width:' + w + '%"></span></td><td>' + esc(r.per) + '</td></tr>';
     }).join('');
     return '<p class="ag-m">' + esc(tx(T.snapHint)) + (o.over ? ' ' + esc(tx(T.overNote)) : '') + '</p><div class="di-table-wrap"><table class="di-table ag-tbl"><thead><tr><th>' + esc(tx(T.hName)) + '</th><th class="num">' + esc(o.unit) + '</th><th aria-hidden="true"></th><th>' + esc(tx(T.hPer)) + '</th></tr></thead><tbody>' + body + '</tbody></table></div>';
   }
@@ -121,7 +127,39 @@
       setTimeout(function () { drawMap(key, rows, unit); }, 0);
       return '<p class="di-movers-hint">' + esc(tx(T.hint[tabk])) + '</p>' + pick + '<div class="ag-vgrid"><div class="ag-vmap ag-land nl-map"><div id="nl-map"></div></div><div class="ag-vdata">' + inner + '</div></div>' + note + head(d);
     }
+    if (/^natura-(total|agricultura|sobrecarga)$/.test(t.id) && rows.some(function (r) { return zoneOf(r.id); })) {
+      setTimeout(function () { drawN2k(rows, unit); }, 0);
+      return '<p class="di-movers-hint">' + esc(tx(T.hint[tabk])) + '</p>' + pick + '<div class="ag-vgrid ag-rev nl-first"><div class="ag-vdata">' + inner + '</div><div class="ag-vmap ag-ipa nl-map"><div id="nl-n2k"></div></div></div>' + note + head(d);
+    }
     return '<p class="di-movers-hint">' + esc(tx(T.hint[tabk])) + '</p>' + pick + inner + note + head(d);
+  }
+  function drawN2k(rows, unit) {
+    needN2k().then(function (MAP) {
+      var host = document.getElementById('nl-n2k'); if (!host || !MAP) return;
+      var by = {}, vals = [], dec = decOf(rows, unit);
+      rows.forEach(function (r) { var z = zoneOf(r.id); if (z) { by[z] = r; if (r.last != null) vals.push(r.last); } });
+      if (!vals.length) { host.innerHTML = ''; return; }
+      var cuts = quant(vals), lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
+      var paths = MAP.states.map(function (st) {
+        var r = by[st.id];
+        if (!r) return '<path class="nl-z gb-cx" data-tip="' + esc(st.name + ': ' + tx(T.mapNone)) + '" d="' + st.d + '"/>';
+        var on = STATE.zone === st.id, tip = r.label + ': ' + nf(r.last, dec) + ' ' + unit + ' (' + r.per + ')';
+        return '<path class="nl-z ' + cls(r.last, cuts) + (on ? ' ag-on' : '') + '" data-zone="' + st.id + '" data-tip="' + esc(tip) + '" tabindex="0" role="button" aria-pressed="' + on + '" aria-label="' + esc(tip) + '" d="' + st.d + '"/>';
+      }).join('');
+      host.innerHTML = '<svg viewBox="' + MAP.viewBox + '" role="group" aria-label="' + esc(tx(T.tabs.natura)) + '"><path class="nl-base" d="' + MAP.base + '" aria-hidden="true"/>' + paths + '</svg>' + legend(cuts, lo, hi, function (v) { return nf(v, dec); }) +
+        '<p class="ag-m ag-ro" aria-live="polite" data-base="' + esc(tx(T.mapBaseN)) + '">' + esc(tx(T.mapBaseN)) + '</p><p class="ag-m">' + esc(tx(T.mapNoteN)) + '</p>';
+    });
+  }
+  function markZone(z, fromMap) {
+    var body = document.getElementById('nl-body'); if (!body) return; STATE.zone = z;
+    var els = body.querySelectorAll('[data-zone]'), i, on, tip = '', row = null;
+    for (i = 0; i < els.length; i++) {
+      on = els[i].getAttribute('data-zone') === z;
+      if (els[i].tagName === 'path') { if (on) { els[i].classList.add('ag-on'); tip = els[i].getAttribute('data-tip'); } else els[i].classList.remove('ag-on'); els[i].setAttribute('aria-pressed', on ? 'true' : 'false'); }
+      else { if (on) { els[i].classList.add('nl-zsel'); row = els[i]; } else els[i].classList.remove('nl-zsel'); }
+    }
+    var ro = body.querySelector('.nl-map .ag-ro'); if (ro && tip) ro.textContent = tip;
+    if (row && fromMap && row.scrollIntoView) { try { row.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (x) { row.scrollIntoView(); } }
   }
   function drawMap(key, rows, unit) {
     needMap().then(function (MAP) {
@@ -161,7 +199,8 @@
     if (BOUND) { render(); return; }
     BOUND = true;
     document.addEventListener('click', function (e) {
-      var b = e.target.closest ? e.target.closest('[data-tab],[data-k]') : null; if (!b || !document.getElementById('nl-root')) return;
+      var b = e.target.closest ? e.target.closest('[data-tab],[data-k],[data-zone]') : null; if (!b || !document.getElementById('nl-root')) return;
+      if (b.getAttribute('data-zone')) { markZone(b.getAttribute('data-zone'), b.tagName === 'path'); return; }
       if (b.getAttribute('data-tab')) { STATE.tab = b.getAttribute('data-tab'); if (!EMBED) { try { history.replaceState(null, '', '#' + STATE.tab); } catch (x) { /* sin history */ } } render(); return; }
       var k = b.getAttribute('data-k'), id = b.getAttribute('data-id'), sel = STATE.sel[k] || [], i = sel.indexOf(id);
       if (i >= 0) { if (sel.length > 1) sel.splice(i, 1); } else { sel.push(id); if (sel.length > 4) sel.shift(); }
@@ -183,7 +222,7 @@
       for (i = 0; i < old.length; i++) old[i].classList.remove('ag-hl');
     }
     document.addEventListener('mouseover', hov); document.addEventListener('focusin', hov); document.addEventListener('mouseout', unhov); document.addEventListener('focusout', unhov);
-    document.addEventListener('keydown', function (e) { var el = e.target; if ((e.key === 'Enter' || e.key === ' ') && el && el.getAttribute && el.getAttribute('role') === 'button' && el.tagName === 'path') { e.preventDefault(); var ev = document.createEvent('MouseEvents'); ev.initEvent('click', true, true); el.dispatchEvent(ev); } });
+    document.addEventListener('keydown', function (e) { var el = e.target; if ((e.key === 'Enter' || e.key === ' ') && el && el.getAttribute && (el.getAttribute('role') === 'button' && el.tagName === 'path' || (el.tagName === 'TR' && el.getAttribute('data-zone')))) { e.preventDefault(); var ev = document.createEvent('MouseEvents'); ev.initEvent('click', true, true); el.dispatchEvent(ev); } });
     global.addEventListener('hashchange', function () { if (EMBED) return; var k = (location.hash || '').replace('#', ''); if (/^(omzet|horti|nitro|cadena|otros|natura)$/.test(k) && k !== STATE.tab) { STATE.tab = k; render(); } });
     if (!EMBED && S.init) S.init('informacion');
     if (!EMBED) S.onLangChange = function () { text(); render(); };

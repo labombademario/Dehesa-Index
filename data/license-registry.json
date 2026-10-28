@@ -5870,6 +5870,32 @@
    "short": "ŠÚ SR",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: condiciones de datos abiertos de la Oficina (CC BY 4.0)."
+  },
+  "pdok_natura2000": {
+   "name": "PDOK / RVO — Natura 2000 (contornos de las zonas protegidas de los Países Bajos)",
+   "url": "https://api.pdok.nl/rvo/natura2000/ogc/v1",
+   "country": "NL",
+   "licenseId": "CC0-1.0",
+   "licenseName": "Creative Commons Zero 1.0 (dominio público)",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.nl",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Contornos: PDOK / RVO, Natura 2000 (CC0). Simplificados por Dehesa Index.",
+   "additionalRestrictions": "Solo se usan los contornos para dibujar el mapa de la pestaña Naturaleza de la ficha de Países Bajos; se simplifican y se dejan fuera las zonas de alta mar.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-28",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "El GetCapabilities del servicio WFS de PDOK (service.pdok.nl/rvo/natura2000/wfs/v1_0, leído 2026-10-28) declara Fees: none y AccessConstraints: https://creativecommons.org/publicdomain/zero/1.0/deed.nl.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "PDOK · Natura 2000",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "La licencia CC0 figura en los metadatos del propio servicio oficial."
   }
  },
  "files": {
@@ -8271,9 +8297,10 @@
   "data/netherlands-more/": {
    "sources": [
     "cbs_nl",
-    "rivm_stikstof"
+    "rivm_stikstof",
+    "pdok_natura2000"
    ],
-   "notes": "Facturacion trimestral de las explotaciones (85159NED), invernaderos y flores (81302NED, 80783NED), balance de minerales y estiercol (83475NED, 83983NED, 83982NED, 83655NED), fitosanitarios (83566NED), derechos de produccion (80240NED), PPI de alimentacion (85770NED), IPC (86141NED), hortalizas (37738), pastoreo (85303NED), huevos (86338NED), finanzas (84448NED) y estimacion de cosecha (85676NED) del CBS (scripts/update-nl-cbs-more.py). Cita obligatoria de la fuente; conversiones exactas de unidad (are->ha, m2->ha, mln kg->kt). Nitrogeno en Natura 2000 (natura2000.json): RIVM Monitor Stikstofdepositie, dominio publico."
+   "notes": "Facturacion trimestral de las explotaciones (85159NED), invernaderos y flores (81302NED, 80783NED), balance de minerales y estiercol (83475NED, 83983NED, 83982NED, 83655NED), fitosanitarios (83566NED), derechos de produccion (80240NED), PPI de alimentacion (85770NED), IPC (86141NED), hortalizas (37738), pastoreo (85303NED), huevos (86338NED), finanzas (84448NED) y estimacion de cosecha (85676NED) del CBS (scripts/update-nl-cbs-more.py). Cita obligatoria de la fuente; conversiones exactas de unidad (are->ha, m2->ha, mln kg->kt). Nitrogeno en Natura 2000 (natura2000.json): RIVM Monitor Stikstofdepositie, dominio publico. Mapa de zonas Natura 2000 (vendor/nl-natura2000.js): contornos de PDOK/RVO, CC0."
   },
   "data/netherlands-more-stats.json": {
    "byCountry": {

@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T04:38:01Z",
+ "generatedAt": "2026-10-28T17:56:14Z",
  "summary": {
-  "sources": 194,
-  "sourcesApto": 178,
+  "sources": 195,
+  "sourcesApto": 179,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
   "datasets": 420,
@@ -549,6 +549,10 @@
   },
   "ons": {
    "name": "UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS)",
+   "verdict": "apto"
+  },
+  "pdok_natura2000": {
+   "name": "PDOK / RVO — Natura 2000 (contornos de las zonas protegidas de los Países Bajos)",
    "verdict": "apto"
   },
   "pegelonline": {
