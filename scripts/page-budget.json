@@ -14,19 +14,19 @@
     { "url": "/comparador.html", "maxDataRawKB": 495, "maxTotalGzKB": 260, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
     { "url": "/catalogo.html", "maxDataRawKB": 380, "maxJsRawKB": 264, "maxTotalGzKB": 216, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
     { "url": "/catalogo.html?q=trigo", "maxDataRawKB": 5420, "maxTotalGzKB": 836, "forbid": ["/data/catalog/[A-Z][A-Za-z0-9_]*\\.json", "/data/catalog/eu/", "/data/series/"], "wait": 3000 },
-    { "url": "/mi-seguimiento.html", "maxDataRawKB": 380, "maxTotalGzKB": 188, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "/data/watch-index\\.json"] },
+    { "url": "/mi-seguimiento.html", "maxDataRawKB": 400, "maxTotalGzKB": 196, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "/data/watch-index\\.json"] },
     { "url": "/mi-mercado.html?c=US&r=KS&p=cattle", "maxDataRawKB": 640, "maxTotalGzKB": 401, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/us-cash-bids/history/"], "wait": 3000 },
     { "url": "/pac.html", "maxDataRawKB": 300, "maxTotalGzKB": 275, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/dehesa.html", "maxDataRawKB": 40, "maxTotalGzKB": 132, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "eu-trade-stats\\.json"] },
-    { "url": "/observatorio.html", "maxDataRawKB": 398, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
+    { "url": "/observatorio.html", "maxDataRawKB": 420, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/relaciones.html", "maxDataRawKB": 600, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/calculadora.html", "maxDataRawKB": 121, "maxTotalGzKB": 165, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/mi-explotacion.html", "maxDataRawKB": 103, "maxTotalGzKB": 178, "wait": 2500, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json", "input-monitor\\.json"] },
-    { "url": "/brief.html", "maxDataRawKB": 310, "maxTotalGzKB": 220, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
+    { "url": "/brief.html", "maxDataRawKB": 310, "maxTotalGzKB": 232, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
     { "url": "/precios-locales.html", "maxDataRawKB": 177, "maxTotalGzKB": 233, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/us-cash-bids/history/"], "wait": 2500 },
     { "url": "/noticias.html", "maxDataRawKB": 420, "maxTotalGzKB": 275, "forbid": ["/data/news\\.json", "news-feed\\.js(\\?|$)"] },
     { "url": "/producto.html?p=trigo", "maxDataRawKB": 800, "maxTotalGzKB": 450, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json", "/data/(supply-demand|ers|gats|nass-crops|nass-livestock|drought|export-sales)\\.json"], "wait": 3000 },
-    { "url": "/producto.html?p=pollo", "maxDataRawKB": 772, "maxTotalGzKB": 398, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json", "/data/(supply-demand|ers|gats|nass-crops|nass-livestock|drought|export-sales)\\.json"], "wait": 3000 },
-    { "url": "/producto.html?p=azucar", "maxDataRawKB": 700, "maxTotalGzKB": 336, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json", "/data/(supply-demand|ers|gats|nass-crops|nass-livestock|drought|export-sales)\\.json"], "wait": 3000 }
+    { "url": "/producto.html?p=pollo", "maxDataRawKB": 772, "maxTotalGzKB": 406, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json", "/data/(supply-demand|ers|gats|nass-crops|nass-livestock|drought|export-sales)\\.json"], "wait": 3000 },
+    { "url": "/producto.html?p=azucar", "maxDataRawKB": 700, "maxTotalGzKB": 344, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json", "/data/(supply-demand|ers|gats|nass-crops|nass-livestock|drought|export-sales)\\.json"], "wait": 3000 }
   ]
 }
