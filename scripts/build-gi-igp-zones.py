@@ -17,18 +17,19 @@ def units(cc, level):
     if level == 'NUTS2':
         fc = json.load(open(ROOT / 'scripts/ref/nuts2-eu.geojson'))['features']
         return {f['properties']['id']: shape(f['geometry']) for f in fc}
-    fc = json.load(open(ROOT / 'scripts/ref/nuts3-%s.json' % cc.lower()))['features']
+    fc = json.load(open(ROOT / ('scripts/ref/nuts3-%s.json' % cc.lower())))['features']
     return {f['properties']['id']: shape(f['geometry']) for f in fc}
 def main():
     inp = json.load(open(ROOT / 'scripts/ref/gi-igp-zones.json'))
     by = {}
-    for f, e in inp.items():
+    for k, e in inp.items():
+        f = e.get('f', k)
         us = e.get('units') or e.get('nuts3')
         if not us: continue
         by.setdefault(e['cc'], []).append((f, e, us))
     for cc, items in by.items():
         ds = SITE2DS.get(cc, cc); lon0, lat0, lon1, lat1 = G.MAIN[ds]; tol = G.TOL[ds]
-        fn = ROOT / 'data/gi/%s-geo.json' % cc; d = json.load(open(fn))
+        fn = ROOT / ('data/gi/%s-geo.json' % cc); d = json.load(open(fn))
         lat_c = (lat0 + lat1) / 2; kx = math.cos(math.radians(lat_c)); S = 900.0 / max((lon1 - lon0) * kx, lat1 - lat0)
         X = lambda lon: (lon - lon0) * kx * S
         Y = lambda lat: (lat1 - lat) * S
@@ -54,6 +55,7 @@ def main():
             if e.get('partial'): a['pt'] = 1
             cx, cy = g.centroid.x, g.centroid.y
             if not (lon0 <= cx <= lon1 and lat0 <= cy <= lat1): a['i'] = 1
+            if f in d['areas'] and not d['areas'][f].get('p'): continue   # ya hay poligono municipal de EU-PDO: no se pisa
             d['areas'][f] = a; n += 1
         d['areasP'] = {'name': 'Zonas de IGP y otras DOP: unidades NUTS (Eurostat/GISCO 2021) que cubre la zona segun el pliego de condiciones de cada denominacion', 'url': 'https://ec.europa.eu/eurostat/web/gisco', 'license': 'Eurostat/GISCO, (c) EuroGeographics, reutilizacion libre citando la fuente'}
         json.dump(d, open(fn, 'w'), separators=(',', ':'))
