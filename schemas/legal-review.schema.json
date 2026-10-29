@@ -1,0 +1,60 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - aviso legal: comprobacion automatica de afirmaciones verificables",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "checkedAt",
+  "ok",
+  "textHash",
+  "textChangedAt",
+  "checks",
+  "note"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "checkedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "ok": {
+   "type": "boolean"
+  },
+  "textHash": {
+   "type": "string",
+   "pattern": "^[0-9a-f]{64}$"
+  },
+  "textChangedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "checks": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "ok",
+     "detail"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "ok": {
+      "type": "boolean"
+     },
+     "detail": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "note": {
+   "type": "string"
+  }
+ }
+}

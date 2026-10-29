@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28T18:10:27Z",
+ "generatedAt": "2026-10-29T03:34:38Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -16,7 +16,7 @@
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
-  "derived": 47
+  "derived": 48
  },
  "sources": [
   {
@@ -9153,6 +9153,10 @@
   },
   {
    "path": "data/intelligence.json",
+   "verdict": "derivado"
+  },
+  {
+   "path": "data/legal-review.json",
    "verdict": "derivado"
   },
   {

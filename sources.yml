@@ -2257,6 +2257,16 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
     data: [cap/si/watch.json]
     message: Seguimiento de la PAC de Eslovenia (gov.si)
+  - id: legal-review
+    name: Check the legal notice against the site code (local storage, third parties, cookies, contact email)
+    cron: ['10 6 * * *']
+    script: scripts/check-legal.py
+    timeout: 10
+    script_timeout: 5
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files data/legal-review.json
+    data: [legal-review.json]
+    message: Comprobación automática del aviso legal
   - id: us-states
     name: Update US data by state (USDA NASS Quick Stats and USDA ERS farm income)
     cron: ['40 21 * * 5']

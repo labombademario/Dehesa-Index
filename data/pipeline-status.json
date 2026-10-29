@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T03:23:00Z",
+ "generatedAt": "2026-10-29T03:40:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 313,
   "late": 2,
   "error": 1,
   "not_run": 6,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
   "repoGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
-  "checkedAt": "2026-10-29T03:23:00Z"
+  "checkedAt": "2026-10-29T03:40:00Z"
  },
  "pipelines": [
   {
@@ -4570,6 +4570,19 @@
    "expectedEveryHours": 744.0
   },
   {
+   "workflow": "update-legal-review.yml",
+   "name": "Check the legal notice against the site code (local storage, third parties, cookies, contact email)",
+   "crons": [
+    "10 6 * * *"
+   ],
+   "nextRun": "2026-10-29T06:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 24.0
+  },
+  {
    "workflow": "update-mars-us.yml",
    "name": "Dehesa Data — USDA AMS MARS (harina de soja)",
    "crons": [
@@ -5044,7 +5057,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T03:10:34Z"
+     "lastChange": "2026-10-29T03:26:50Z"
     },
     {
      "path": "data/source-candidates.json",

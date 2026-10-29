@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "checkedAt": "2026-10-28",
+ "ok": true,
+ "textHash": "87c521d5208baee1f249bc18a541084181ce0da417ee9be17f835b90d0577928",
+ "textChangedAt": "2026-10-28",
+ "checks": [
+  {
+   "id": "storage-keys-listed",
+   "ok": true,
+   "detail": "30 claves de almacenamiento local en el codigo, todas nombradas en el aviso"
+  },
+  {
+   "id": "four-languages-same-keys",
+   "ok": true,
+   "detail": "bloques de almacenamiento por idioma (es, en, fr, it): [7, 7, 7, 7]"
+  },
+  {
+   "id": "no-third-party-embeds",
+   "ok": true,
+   "detail": "ninguna pagina carga scripts, estilos, imagenes ni iframes de otros dominios"
+  },
+  {
+   "id": "no-analytics",
+   "ok": true,
+   "detail": "no hay analitica ni rastreo en el codigo"
+  },
+  {
+   "id": "no-cookies",
+   "ok": true,
+   "detail": "el codigo no escribe cookies"
+  },
+  {
+   "id": "third-party-requests-declared",
+   "ok": true,
+   "detail": "peticiones a otros dominios: solo las declaradas (IFAP Portugal)"
+  },
+  {
+   "id": "contact-email-matches",
+   "ok": true,
+   "detail": "el correo del aviso (dehesaindex@gmail.com) es el de la pagina de contacto"
+  }
+ ],
+ "note": "Control automatico de afirmaciones comprobables del aviso frente al codigo del sitio. No sustituye la revision juridica del texto, que hace una persona."
+}

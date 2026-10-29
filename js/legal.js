@@ -13,12 +13,16 @@
         { h: 'Cookies y almacenamiento local', id: 'cookies', p: ['Dehesa Index no usa cookies. Guarda unas pocas preferencias en el almacenamiento local de tu navegador, solo para que el sitio recuerde lo que has elegido; no salen de tu dispositivo:'], ul: [
           { b: 'dehesaIndexLang, dehesaIndexTheme:', t: 'idioma y tema (claro/oscuro).' },
           { b: 'dehesaIndexLocation, dehesaIndexEuCountry, dehesaIndexPlCcy, dehesaIndexSaCountry, dehesaLonja, dehesaCaProv:', t: 'ubicación, país de la UE moneda de Polonia (zloty o euro), mercado (lonja) y provincia de Canadá que elijas para ver los precios.' },
-          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'tus productos favoritos, las alertas de prueba y si prefieres ver el panel de precios en filas o en tarjetas.' }
+          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'tus productos favoritos, las alertas de prueba y si prefieres ver el panel de precios en filas o en tarjetas.' },
+          { b: 'di-watchlist-v1, di-watchlist-meta-v1:', t: 'los productos y series que sigues y lo último que viste de cada uno.' },
+          { b: 'di-mi-mercado-v1, di-cp-recent-*, di_macro_cur, dehesaBlogRegion, dehesaClimaRegions:', t: 'tu mercado o país habitual, los países elegidos hace poco, la moneda de los indicadores, la región del blog y las regiones del clima.' },
+          { b: 'di-calc-v1, di-margen-es-v1, di-pac-est-v1, di-pac-v1, di-siembra-v1, di-farm-v1, di-sector-v1, dehesaReceta, dehesaMisCompras, dehesaCalcAdv:', t: 'los datos que escribes en las calculadoras (por ejemplo tu explotación, tus compras, tu siembra o tu estimación de ayudas de la PAC; el guardado de «Mi explotación» es opcional y viene desactivado) y si muestras las opciones avanzadas. Se guardan solo en tu navegador.' },
+          { b: 'dehesaTrend, di-news-view, di-wv-mode, dehesaIndexHiddenBlocks, dehesaIndexBriefClosed, dehesaClimHidden, dehesaFuentesOff, dehesaGlosarioOff:', t: 'si ves la línea de tendencia en las gráficas, cómo ves las noticias y qué bloques o paneles has cerrado u ocultado, y la vista del tiempo.' }
         ], after: 'Como son preferencias que tú eliges para usar el servicio y no se usan para rastrearte, no mostramos un aviso de cookies. Puedes borrarlas cuando quieras desde los ajustes de tu navegador (datos del sitio).' },
         { h: 'Servicios de terceros', id: 'terceros', p: ['Las tipografías y las librerías, como la del mapa, se sirven desde este mismo sitio: al cargar la página no se envía tu dirección IP a terceros. La única excepción es el visor de parcelas de Portugal, que al abrirlo pide las imágenes de las capas al servidor del IFAP (www.ifap.pt), que recibe tu dirección IP y los datos técnicos habituales de cualquier petición. Los enlaces a noticias y fuentes te llevan a sitios externos con sus propias políticas.'] },
         { h: 'Propiedad intelectual y datos de terceros', id: 'licencias', p: ['El diseño y el código de Dehesa Index son de sus autores. Los datos pertenecen a sus fuentes y se usan según sus condiciones; las mostramos con su atribución:'], ul: [
         ], after: 'No mostramos datos de fuentes que prohíben su uso automatizado o comercial (por ejemplo AHDB, CME o DTN); esas tarjetas figuran como pendientes.' },
-        { h: 'Cambios', p: ['Podemos actualizar este texto cuando cambie el sitio. Última revisión: 17 de octubre de 2026.'] }
+        { h: 'Cambios', id: 'cambios', p: ['Podemos actualizar este texto cuando cambie el sitio.'] }
       ],
       links: [{ href: 'metodologia.html', t: 'Metodología' }, { href: 'contacto.html', t: 'Contacto' }]
     },
@@ -33,12 +37,16 @@
         { h: 'Cookies and local storage', id: 'cookies', p: ['Dehesa Index does not use cookies. It keeps a few preferences in your browser’s local storage, only so the site remembers what you chose; they never leave your device:'], ul: [
           { b: 'dehesaIndexLang, dehesaIndexTheme:', t: 'language and theme (light/dark).' },
           { b: 'dehesaIndexLocation, dehesaIndexEuCountry, dehesaIndexPlCcy, dehesaIndexSaCountry, dehesaLonja, dehesaCaProv:', t: 'the location, EU country, Polish currency (zloty or euro), market and Canadian province you pick for viewing prices.' },
-          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'your favourite products, preview alerts and whether you prefer the price panel as rows or cards.' }
+          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'your favourite products, preview alerts and whether you prefer the price panel as rows or cards.' },
+          { b: 'di-watchlist-v1, di-watchlist-meta-v1:', t: 'the products and series you follow and what you last saw of each.' },
+          { b: 'di-mi-mercado-v1, di-cp-recent-*, di_macro_cur, dehesaBlogRegion, dehesaClimaRegions:', t: 'your usual market or country, recently chosen countries, the currency of the indicators, the blog region and the climate regions.' },
+          { b: 'di-calc-v1, di-margen-es-v1, di-pac-est-v1, di-pac-v1, di-siembra-v1, di-farm-v1, di-sector-v1, dehesaReceta, dehesaMisCompras, dehesaCalcAdv:', t: 'what you type into the calculators (for example your farm, your purchases, your sowing plan or your CAP payment estimate; saving “My farm” is optional and off by default) and whether you show the advanced options. Stored only in your browser.' },
+          { b: 'dehesaTrend, di-news-view, di-wv-mode, dehesaIndexHiddenBlocks, dehesaIndexBriefClosed, dehesaClimHidden, dehesaFuentesOff, dehesaGlosarioOff:', t: 'whether charts show the trend line, how you view the news and which blocks or panels you closed or hid, and the weather view.' }
         ], after: 'Since these are preferences you choose to use the service and are not used to track you, we do not show a cookie banner. You can delete them at any time from your browser settings (site data).' },
         { h: 'Third-party services', id: 'terceros', p: ['Fonts and libraries, such as the map one, are served from this same site: loading a page does not send your IP address to third parties. The only exception is the Portugal parcel viewer, which, when opened, requests the layer images from the IFAP server (www.ifap.pt), which receives your IP address and the usual technical data of any request. Links to news and sources take you to external sites with their own policies.'] },
         { h: 'Intellectual property and third-party data', id: 'licencias', p: ['The design and code of Dehesa Index belong to its authors. The data belongs to its sources and is used under their terms; we display it with attribution:'], ul: [
         ], after: 'We do not show data from sources that prohibit automated or commercial use (for example AHDB, CME or DTN); those cards appear as pending.' },
-        { h: 'Changes', p: ['We may update this text when the site changes. Last reviewed: 17 October 2026.'] }
+        { h: 'Changes', id: 'cambios', p: ['We may update this text when the site changes.'] }
       ],
       links: [{ href: 'metodologia.html', t: 'Methodology' }, { href: 'contacto.html', t: 'Contact' }]
     },
@@ -53,12 +61,16 @@
         { h: 'Cookies et stockage local', id: 'cookies', p: ['Dehesa Index n’utilise pas de cookies. Il conserve quelques préférences dans le stockage local de votre navigateur, uniquement pour que le site se souvienne de vos choix ; elles ne quittent jamais votre appareil :'], ul: [
           { b: 'dehesaIndexLang, dehesaIndexTheme :', t: 'langue et thème (clair/sombre).' },
           { b: 'dehesaIndexLocation, dehesaIndexEuCountry, dehesaIndexPlCcy, dehesaIndexSaCountry, dehesaLonja, dehesaCaProv :', t: 'le lieu, le pays de l’UE, la devise de la Pologne (zloty ou euro), le marché et la province du Canada choisis pour afficher les prix.' },
-          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView :', t: 'vos produits favoris, les alertes d’essai et votre préférence d’affichage du panneau des prix (lignes ou cartes).' }
+          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView :', t: 'vos produits favoris, les alertes d’essai et votre préférence d’affichage du panneau des prix (lignes ou cartes).' },
+          { b: 'di-watchlist-v1, di-watchlist-meta-v1 :', t: 'les produits et séries que vous suivez et ce que vous avez vu en dernier.' },
+          { b: 'di-mi-mercado-v1, di-cp-recent-*, di_macro_cur, dehesaBlogRegion, dehesaClimaRegions :', t: 'votre marché ou pays habituel, les pays choisis récemment, la devise des indicateurs, la région du blog et les régions du climat.' },
+          { b: 'di-calc-v1, di-margen-es-v1, di-pac-est-v1, di-pac-v1, di-siembra-v1, di-farm-v1, di-sector-v1, dehesaReceta, dehesaMisCompras, dehesaCalcAdv :', t: 'ce que vous saisissez dans les calculateurs (par exemple votre exploitation, vos achats, votre semis ou votre estimation d’aides de la PAC ; l’enregistrement de « Mon exploitation » est facultatif et désactivé par défaut) et l’affichage des options avancées. Conservé uniquement dans votre navigateur.' },
+          { b: 'dehesaTrend, di-news-view, di-wv-mode, dehesaIndexHiddenBlocks, dehesaIndexBriefClosed, dehesaClimHidden, dehesaFuentesOff, dehesaGlosarioOff :', t: 'l’affichage de la ligne de tendance dans les graphiques, la façon de voir les actualités et les blocs ou panneaux que vous avez fermés ou masqués, et la vue météo.' }
         ], after: 'Comme il s’agit de préférences que vous choisissez pour utiliser le service et qui ne servent pas à vous suivre, nous n’affichons pas de bandeau cookies. Vous pouvez les supprimer à tout moment dans les réglages de votre navigateur (données du site).' },
         { h: 'Services tiers', id: 'terceros', p: ['Les polices et les bibliothèques, comme celle de la carte, sont servies depuis ce même site : le chargement d’une page n’envoie pas votre adresse IP à des tiers. La seule exception est le visualiseur de parcelles du Portugal qui, à son ouverture, demande les images des couches au serveur de l’IFAP (www.ifap.pt), lequel reçoit votre adresse IP et les données techniques habituelles de toute requête. Les liens vers des actualités et des sources mènent à des sites externes avec leurs propres politiques.'] },
         { h: 'Propriété intellectuelle et données de tiers', id: 'licencias', p: ['La conception et le code de Dehesa Index appartiennent à leurs auteurs. Les données appartiennent à leurs sources et sont utilisées selon leurs conditions ; nous les affichons avec attribution :'], ul: [
         ], after: 'Nous n’affichons pas de données de sources qui interdisent l’usage automatisé ou commercial (par exemple AHDB, CME ou DTN) ; ces fiches apparaissent en attente.' },
-        { h: 'Modifications', p: ['Nous pouvons mettre à jour ce texte lorsque le site évolue. Dernière révision : 17 octobre 2026.'] }
+        { h: 'Modifications', id: 'cambios', p: ['Nous pouvons mettre à jour ce texte lorsque le site évolue.'] }
       ],
       links: [{ href: 'metodologia.html', t: 'Méthodologie' }, { href: 'contacto.html', t: 'Contact' }]
     },
@@ -73,12 +85,16 @@
         { h: 'Cookie e archiviazione locale', id: 'cookies', p: ['Dehesa Index non usa cookie. Conserva alcune preferenze nell’archiviazione locale del tuo browser, solo perché il sito ricordi le tue scelte; non lasciano mai il tuo dispositivo:'], ul: [
           { b: 'dehesaIndexLang, dehesaIndexTheme:', t: 'lingua e tema (chiaro/scuro).' },
           { b: 'dehesaIndexLocation, dehesaIndexEuCountry, dehesaIndexPlCcy, dehesaIndexSaCountry, dehesaLonja, dehesaCaProv:', t: 'la posizione, il paese UE, la valuta della Polonia (zloty o euro), il mercato e la provincia del Canada scelti per vedere i prezzi.' },
-          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'i tuoi prodotti preferiti, gli avvisi di prova e se preferisci il pannello prezzi a righe o a schede.' }
+          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'i tuoi prodotti preferiti, gli avvisi di prova e se preferisci il pannello prezzi a righe o a schede.' },
+          { b: 'di-watchlist-v1, di-watchlist-meta-v1:', t: 'i prodotti e le serie che segui e l’ultimo valore che hai visto di ciascuno.' },
+          { b: 'di-mi-mercado-v1, di-cp-recent-*, di_macro_cur, dehesaBlogRegion, dehesaClimaRegions:', t: 'il tuo mercato o paese abituale, i paesi scelti di recente, la valuta degli indicatori, la regione del blog e le regioni del clima.' },
+          { b: 'di-calc-v1, di-margen-es-v1, di-pac-est-v1, di-pac-v1, di-siembra-v1, di-farm-v1, di-sector-v1, dehesaReceta, dehesaMisCompras, dehesaCalcAdv:', t: 'ciò che scrivi nei calcolatori (ad esempio la tua azienda, i tuoi acquisti, la semina o la stima degli aiuti PAC; il salvataggio di «La mia azienda» è facoltativo e disattivato per impostazione predefinita) e se mostri le opzioni avanzate. Conservato solo nel tuo browser.' },
+          { b: 'dehesaTrend, di-news-view, di-wv-mode, dehesaIndexHiddenBlocks, dehesaIndexBriefClosed, dehesaClimHidden, dehesaFuentesOff, dehesaGlosarioOff:', t: 'se i grafici mostrano la linea di tendenza, come vedi le notizie e quali blocchi o pannelli hai chiuso o nascosto, e la vista meteo.' }
         ], after: 'Trattandosi di preferenze che scegli per usare il servizio e che non servono a tracciarti, non mostriamo un banner cookie. Puoi eliminarle in qualsiasi momento dalle impostazioni del browser (dati del sito).' },
         { h: 'Servizi di terze parti', id: 'terceros', p: ['I caratteri e le librerie, come quella della mappa, sono serviti da questo stesso sito: il caricamento di una pagina non invia il tuo indirizzo IP a terzi. L’unica eccezione è il visualizzatore di particelle del Portogallo che, all’apertura, richiede le immagini dei livelli al server dell’IFAP (www.ifap.pt), che riceve il tuo indirizzo IP e i consueti dati tecnici di ogni richiesta. I link a notizie e fonti portano a siti esterni con proprie politiche.'] },
         { h: 'Proprietà intellettuale e dati di terzi', id: 'licencias', p: ['Il design e il codice di Dehesa Index appartengono ai loro autori. I dati appartengono alle loro fonti e sono usati secondo le loro condizioni; li mostriamo con attribuzione:'], ul: [
         ], after: 'Non mostriamo dati di fonti che vietano l’uso automatizzato o commerciale (ad esempio AHDB, CME o DTN); queste schede appaiono in attesa.' },
-        { h: 'Modifiche', p: ['Possiamo aggiornare questo testo quando il sito cambia. Ultima revisione: 17 ottobre 2026.'] }
+        { h: 'Modifiche', id: 'cambios', p: ['Possiamo aggiornare questo testo quando il sito cambia.'] }
       ],
       links: [{ href: 'metodologia.html', t: 'Metodologia' }, { href: 'contacto.html', t: 'Contatto' }]
     }
@@ -138,6 +154,9 @@
     });
     return { ul: items, after: w.ev + ' ' + w.pend + ' ' + w.unused + unused.map(function (k) { return reg.sources[k].name.split(' (')[0]; }).join(', ') + '.' };
   }
+  fetch('data/legal-review.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (rv) {
+    RV = rv; var prevS = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevS) prevS.apply(this, arguments); stamp(); }; stamp();
+  }).catch(function () {});
   fetch('data/license-registry.json').then(function (r) { if (!r.ok) throw new Error('x'); return r.json(); }).then(function (reg) {
     Object.keys(STRINGS).forEach(function (lg) { STRINGS[lg].sections.forEach(function (sec) { if (sec.id === 'licencias') { var g = licenseItems(reg, lg); sec.ul = g.ul; sec.after = g.after; } }); });
     if (window.DehesaShared && window.DehesaShared.onLangChange) window.DehesaShared.onLangChange();
@@ -152,6 +171,18 @@
     en: { q: 'Search a source', all: 'All', sum: '{v} with verified permission · {p} pending · {u} not used', cite: 'Citing a source (attribution) and being allowed to reuse its data (licence) are different things: a citation alone does not settle the licence.' },
     fr: { q: 'Chercher une source', all: 'Toutes', sum: '{v} avec autorisation vérifiée · {p} en attente · {u} non utilisées', cite: 'Citer une source (attribution) et avoir le droit de réutiliser ses données (licence) sont deux choses distinctes : la citation seule ne règle pas la licence.' },
     it: { q: 'Cerca una fonte', all: 'Tutte', sum: '{v} con permesso verificato · {p} in attesa · {u} non usate', cite: 'Citare una fonte (attribuzione) e avere il permesso di riusarne i dati (licenza) sono cose diverse: la citazione da sola non risolve la licenza.' } };
+  var RV = null;
+  var RS = { es: 'Última modificación del texto: {d}. Última comprobación automática contra el código del sitio: {c} ({n} controles{x}). La comprobación contrasta afirmaciones verificables (almacenamiento local, terceros, cookies, correo); no sustituye la revisión jurídica del texto.',
+    en: 'Text last changed: {d}. Last automatic check against the site code: {c} ({n} checks{x}). The check tests verifiable statements (local storage, third parties, cookies, email); it does not replace a legal review of the wording.',
+    fr: 'Dernière modification du texte : {d}. Dernier contrôle automatique par rapport au code du site : {c} ({n} contrôles{x}). Le contrôle vérifie des affirmations vérifiables (stockage local, tiers, cookies, e-mail) ; il ne remplace pas une relecture juridique du texte.',
+    it: 'Ultima modifica del testo: {d}. Ultimo controllo automatico rispetto al codice del sito: {c} ({n} controlli{x}). Il controllo verifica affermazioni verificabili (archiviazione locale, terzi, cookie, email); non sostituisce una revisione legale del testo.' };
+  var RX = { es: ', con fallos', en: ', with failures', fr: ', avec échecs', it: ', con errori' };
+  function stamp() {
+    var sec = document.getElementById('cambios'); if (!sec || !RV || sec.querySelector('[data-rv]')) return;
+    var lg = window.DehesaShared.getLang(), pr = document.createElement('p'); pr.setAttribute('data-rv', '1'); pr.className = 'di-movers-hint';
+    pr.textContent = (RS[lg] || RS.es).replace('{d}', RV.textChangedAt).replace('{c}', RV.checkedAt).replace('{n}', RV.checks.length).replace('{x}', RV.ok ? '' : (RX[lg] || RX.es));
+    sec.appendChild(pr);
+  }
   var REGL = null;
   function enhance() {
     var sec = document.getElementById('licencias'); if (!sec || !REGL || sec.querySelector('#lic-q')) return;
@@ -167,6 +198,9 @@
     var go = function () { var t2 = (document.getElementById('lic-q').value || '').toLowerCase(), st = document.getElementById('lic-s').value; Array.prototype.forEach.call(ul.children, function (li) { var ok = (!t2 || li.textContent.toLowerCase().indexOf(t2) > -1) && (!st || li.getAttribute('data-st') === st || (st === 'PENDING' && li.getAttribute('data-st') !== 'VERIFIED')); li.style.display = ok ? '' : 'none'; }); };
     document.getElementById('lic-q').oninput = go; document.getElementById('lic-s').onchange = go;
   }
+  fetch('data/legal-review.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (rv) {
+    RV = rv; var prevS = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevS) prevS.apply(this, arguments); stamp(); }; stamp();
+  }).catch(function () {});
   fetch('data/license-registry.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (reg) {
     REGL = reg; var prevR = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevR) prevR.apply(this, arguments); enhance(); }; enhance();
   }).catch(function () {});

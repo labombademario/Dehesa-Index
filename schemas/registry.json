@@ -1324,6 +1324,10 @@
     "cap_nat_watch"
    ]
   ],
+  "legal-review.json": [
+   "legal-review",
+   []
+  ],
   "cap/el/watch.json": [
    "cap-nat-watch",
    [

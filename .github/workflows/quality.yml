@@ -314,6 +314,9 @@ jobs:
           python3 scripts/check-licenses.py --strict
           python3 scripts/test-license-gate.py
 
+      - name: Aviso legal = lo que hace el sitio (claves de almacenamiento, terceros, cookies, correo)
+        run: python3 scripts/check-legal.py --check
+
       - name: DATA_SOURCES.md generated from the license registry
         # aviso, no bloqueo: sync-readme.yml lo regenera solo al llegar a main un cambio del registro o del catalogo
         run: python3 scripts/build-docs.py --check || echo "::warning::DATA_SOURCES.md por detras del registro; sync-readme.yml lo regenera"
