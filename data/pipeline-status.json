@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T09:31:00Z",
+ "generatedAt": "2026-10-29T09:47:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 311,
+  "ok": 310,
   "late": 2,
-  "error": 3,
+  "error": 4,
   "not_run": 7,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
   "repoGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
-  "checkedAt": "2026-10-29T09:31:00Z"
+  "checkedAt": "2026-10-29T09:47:00Z"
  },
  "pipelines": [
   {
@@ -4708,7 +4708,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-29T09:47:00Z",
+   "nextRun": "2026-10-29T12:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5058,7 +5058,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T09:18:13Z"
+     "lastChange": "2026-10-29T09:34:39Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5412,7 +5412,7 @@
    "crons": [
     "40 9 * * 4"
    ],
-   "nextRun": "2026-10-29T09:40:00Z",
+   "nextRun": "2026-11-05T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5876,18 +5876,19 @@
    "nextRun": "2026-11-05T09:05:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-22T09:28:14Z",
-    "durationSec": 28,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39755659770"
+    "startedAt": "2026-10-29T09:41:38Z",
+    "durationSec": 459,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40851635516",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR al leer los balances: GET https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/balance-del-vino -> <urlopen error [Errno 110] Connection timed out>"
    },
    "recent": {
-    "runs": 6,
+    "runs": 7,
     "success": 4,
-    "failed": 2
+    "failed": 3
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -5901,13 +5902,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T09:22:21Z",
-    "durationSec": 207,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39754903227"
+    "startedAt": "2026-10-29T09:34:42Z",
+    "durationSec": 200,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40850728188"
    },
    "recent": {
-    "runs": 6,
-    "success": 4,
+    "runs": 7,
+    "success": 5,
     "failed": 2
    },
    "status": "ok",
@@ -7437,7 +7438,7 @@
    "crons": [
     "40 9 * * 4"
    ],
-   "nextRun": "2026-10-29T09:40:00Z",
+   "nextRun": "2026-11-05T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
