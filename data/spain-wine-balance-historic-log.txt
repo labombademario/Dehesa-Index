@@ -1,1 +1,1 @@
-ERROR al leer los balances: GET https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/balance-del-vino -> <urlopen error [Errno 110] Connection timed out>
+balances sin cambios
