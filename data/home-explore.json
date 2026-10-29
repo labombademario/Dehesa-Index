@@ -1,19 +1,19 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-23T20:22:13Z",
+ "generatedAt": "2026-10-29T18:30:35Z",
  "facts": [
   {
    "id": "eu",
    "file": "eu/index.json",
-   "date": "2026-10-18",
-   "series": 619,
+   "date": "2026-10-25",
+   "series": 618,
    "families": 21
   },
   {
    "id": "drought",
    "file": "drought.json",
-   "date": "2026-10-20",
-   "pctD1": 50.67
+   "date": "2026-10-27",
+   "pctD1": 49.49
   },
   {
    "id": "cattle",
@@ -26,10 +26,10 @@
   {
    "id": "exports",
    "file": "export-sales.json",
-   "date": "2026-10-15",
+   "date": "2026-10-22",
    "commodity": "All Wheat",
    "unit": "Metric Tons",
-   "netSales": 239627
+   "netSales": 849770
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T14:17:34Z",
+ "generatedAt": "2026-10-29T18:30:28Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -9413,7 +9413,7 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
-   "dataset": "Ya integrada (1803 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1804 series en el catalogo unificado)",
    "products": [
     "butter",
     "cattle",
@@ -9477,10 +9477,11 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA FAS — Export Sales Reporting (ESR)",
-   "dataset": "Ya integrada (13 series en el catalogo unificado)",
+   "dataset": "Ya integrada (16 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
+    "maize",
     "pigs",
     "rice",
     "soy",

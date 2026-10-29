@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76311
+  "rows": 76328
  },
  "files": [
   {
@@ -1760,13 +1760,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1038,
+   "rows": 1039,
    "first": "2006-11-12",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/oliva.csv",
    "xlsx": "data/pack/eu/oliva.xlsx",
-   "csvBytes": 193029,
-   "xlsxBytes": 55049
+   "csvBytes": 193215,
+   "xlsxBytes": 55132
   },
   {
    "product": "aceite_palma",
@@ -1915,13 +1915,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 953,
+   "rows": 954,
    "first": "2006-11-12",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/arroz.csv",
    "xlsx": "data/pack/eu/arroz.xlsx",
-   "csvBytes": 170357,
-   "xlsxBytes": 48624
+   "csvBytes": 170537,
+   "xlsxBytes": 48668
   },
   {
    "product": "arroz_tai_25",
@@ -2070,13 +2070,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 11,
+   "rows": 12,
    "first": "2026-08-09",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/avena.csv",
    "xlsx": "data/pack/eu/avena.xlsx",
-   "csvBytes": 2059,
-   "xlsxBytes": 7441
+   "csvBytes": 2238,
+   "xlsxBytes": 7496
   },
   {
    "product": "azucar",
@@ -2473,13 +2473,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 560,
+   "rows": 561,
    "first": "2015-11-22",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/cebada.csv",
    "xlsx": "data/pack/eu/cebada.xlsx",
-   "csvBytes": 99772,
-   "xlsxBytes": 31364
+   "csvBytes": 99950,
+   "xlsxBytes": 31408
   },
   {
    "product": "centeno",
@@ -2504,13 +2504,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 15,
+   "rows": 16,
    "first": "2023-07-23",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/centeno.csv",
    "xlsx": "data/pack/eu/centeno.xlsx",
-   "csvBytes": 2836,
-   "xlsxBytes": 7674
+   "csvBytes": 3019,
+   "xlsxBytes": 7723
   },
   {
    "product": "cerdo",
@@ -2535,13 +2535,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 641,
+   "rows": 642,
    "first": "2014-07-13",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/cerdo.csv",
    "xlsx": "data/pack/eu/cerdo.xlsx",
-   "csvBytes": 112818,
-   "xlsxBytes": 36298
+   "csvBytes": 112994,
+   "xlsxBytes": 36342
   },
   {
    "product": "colza",
@@ -2566,13 +2566,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 286,
+   "rows": 287,
    "first": "2021-04-25",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/colza.csv",
    "xlsx": "data/pack/eu/colza.xlsx",
-   "csvBytes": 51237,
-   "xlsxBytes": 20226
+   "csvBytes": 51416,
+   "xlsxBytes": 20266
   },
   {
    "product": "colza_fr",
@@ -2721,13 +2721,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 616,
+   "rows": 617,
    "first": "2015-01-04",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/cordero.csv",
    "xlsx": "data/pack/eu/cordero.xlsx",
-   "csvBytes": 110867,
-   "xlsxBytes": 35272
+   "csvBytes": 111047,
+   "xlsxBytes": 35317
   },
   {
    "product": "cordero_mundo",
@@ -2876,13 +2876,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 298,
+   "rows": 299,
    "first": "2021-02-07",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/harina_soja.csv",
    "xlsx": "data/pack/eu/harina_soja.xlsx",
-   "csvBytes": 57848,
-   "xlsxBytes": 21045
+   "csvBytes": 58042,
+   "xlsxBytes": 21098
   },
   {
    "product": "huevos",
@@ -2907,13 +2907,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 870,
+   "rows": 871,
    "first": "2006-11-12",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/huevos.csv",
    "xlsx": "data/pack/eu/huevos.xlsx",
-   "csvBytes": 154560,
-   "xlsxBytes": 47032
+   "csvBytes": 154738,
+   "xlsxBytes": 47081
   },
   {
    "product": "leche",
@@ -2969,13 +2969,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1041,
+   "rows": 1042,
    "first": "2006-11-12",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/leche_polvo.csv",
    "xlsx": "data/pack/eu/leche_polvo.xlsx",
-   "csvBytes": 208731,
-   "xlsxBytes": 54829
+   "csvBytes": 208932,
+   "xlsxBytes": 54886
   },
   {
    "product": "mantequilla",
@@ -3000,13 +3000,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1041,
+   "rows": 1042,
    "first": "2006-11-12",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/mantequilla.csv",
    "xlsx": "data/pack/eu/mantequilla.xlsx",
-   "csvBytes": 195218,
-   "xlsxBytes": 55314
+   "csvBytes": 195403,
+   "xlsxBytes": 55375
   },
   {
    "product": "maiz",
@@ -3031,13 +3031,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 550,
+   "rows": 551,
    "first": "2015-11-22",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/maiz.csv",
    "xlsx": "data/pack/eu/maiz.xlsx",
-   "csvBytes": 96342,
-   "xlsxBytes": 30682
+   "csvBytes": 96517,
+   "xlsxBytes": 30724
   },
   {
    "product": "naranja",
@@ -3124,13 +3124,13 @@
    "unit": "kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1041,
+   "rows": 1042,
    "first": "2006-11-12",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/pollo.csv",
    "xlsx": "data/pack/eu/pollo.xlsx",
-   "csvBytes": 180076,
-   "xlsxBytes": 53657
+   "csvBytes": 180249,
+   "xlsxBytes": 53682
   },
   {
    "product": "pollo_mundo",
@@ -3279,13 +3279,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 453,
+   "rows": 454,
    "first": "2015-11-22",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/trigo.csv",
    "xlsx": "data/pack/eu/trigo.xlsx",
-   "csvBytes": 79918,
-   "xlsxBytes": 26731
+   "csvBytes": 80096,
+   "xlsxBytes": 26773
   },
   {
    "product": "trigo_srw_us",
@@ -3341,13 +3341,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 431,
+   "rows": 432,
    "first": "2015-11-22",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/trigo_duro.csv",
    "xlsx": "data/pack/eu/trigo_duro.xlsx",
-   "csvBytes": 80261,
-   "xlsxBytes": 25592
+   "csvBytes": 80447,
+   "xlsxBytes": 25625
   },
   {
    "product": "trigo_hrw_us",
@@ -3465,13 +3465,13 @@
    "unit": "100kg",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1041,
+   "rows": 1042,
    "first": "2006-11-12",
-   "last": "2026-10-18",
+   "last": "2026-10-25",
    "csv": "data/pack/eu/vaca.csv",
    "xlsx": "data/pack/eu/vaca.xlsx",
-   "csvBytes": 190475,
-   "xlsxBytes": 55203
+   "csvBytes": 190658,
+   "xlsxBytes": 55279
   },
   {
    "product": "ternera_mundo",
