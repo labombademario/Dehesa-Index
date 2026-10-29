@@ -11,6 +11,23 @@ META = json.loads((D / 'product-metadata.json').read_text())
 SD = json.loads((D / 'supply-demand.json').read_text())
 TAR = {'US': ('us-tariffs.json', 'us_tariffs'), 'EU': ('tariffs-eu.json', 'eu_taric'), 'CA': ('tariffs-ca.json', 'cbsa_tariff'), 'MX': ('tariffs-mx.json', 'snice_mx')}
 TD = {k: json.loads((D / f).read_text()) for k, (f, _) in TAR.items()}
+import sys
+sys.path.insert(0, str(ROOT / 'scripts'))
+from api_notes_i18n import translate_note
+LATEST = json.loads((D / 'latest.json').read_text())
+OBS = {(o['region'], o['product']): o for o in LATEST['observations']}
+
+def methodology_tl(m):
+    # Que mide cada serie de la ficha (campo methodology de latest.json) en en/fr/it, con la tabla de frases de scripts/api_notes_i18n.py. Si alguna frase no esta en la tabla, esa descripcion no se traduce y la ficha la deja en espanol.
+    out = {}
+    for i in (m.get('instruments') or []) + (m.get('indices') or []):
+        o = OBS.get((i['region'], i['product']))
+        txt = o and o.get('methodology')
+        if not txt or txt in out: continue
+        tr, miss = translate_note(txt)
+        if tr and not miss: out[txt] = tr
+    return out or None
+
 NOW = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
 def hhi(shares):  # shares en %, HHI 0-10000
@@ -81,7 +98,7 @@ def tariffs(hs_list):
 def main():
     OUT.mkdir(exist_ok=True)
     for pid, m in META['products'].items():
-        doc = {'schemaVersion': 1, 'generatedAt': NOW, 'product': pid, 'trade': trade(m['psd']) if m.get('psd') else None, 'supplyDemand': supply_demand(m['psd']) if m.get('psd') else None, 'tariffs': tariffs(m['hs'])}
+        doc = {'schemaVersion': 1, 'generatedAt': NOW, 'product': pid, 'methodologyTl': methodology_tl(m), 'trade': trade(m['psd']) if m.get('psd') else None, 'supplyDemand': supply_demand(m['psd']) if m.get('psd') else None, 'tariffs': tariffs(m['hs'])}
         (OUT / (pid + '.json')).write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')) + '\n')
     print('productos:', len(META['products']))
 main()

@@ -94,6 +94,23 @@
   function tf(k, x) { return t(k).replace('{0}', x); }
   var STEP = 20, LIM = { new: STEP, moves: STEP, late: STEP, up: STEP, ctry: STEP };  // render perezoso: 20 iniciales + 'Mostrar 20 mas'; los filtros se aplican a TODO el conjunto antes de paginar
   function pager(key, total) { var n = LIM[key]; return total > n ? '<p class="pt-sub" aria-live="polite">' + esc(t('showing').replace('{0}', n).replace('{1}', total)) + ' <button type="button" class="pt-chip" data-more="' + key + '">' + esc(t('more')) + '</button></p>' : ''; }
+  var RSR = [
+    [/^un paso de actualizacion fallo \(se publico lo que estaba bien\)$/, ['an update step failed (what was fine was published)', 'une étape de mise à jour a échoué (ce qui était correct a été publié)', 'un passaggio di aggiornamento non è riuscito (è stato pubblicato ciò che era corretto)']],
+    [/^hubo datos invalidos descartados$/, ['invalid data was discarded', 'des données invalides ont été écartées', 'sono stati scartati dati non validi']],
+    [/^datos invalidos: se descarta el cambio de (.+)$/, ['invalid data: the change to $1 is discarded', 'données invalides : la modification de $1 est écartée', 'dati non validi: la modifica di $1 viene scartata']],
+    [/^la pagina de la FSA no tiene enlaces reconocibles$/, ['the FSA page has no recognisable links', 'la page de la FSA ne contient aucun lien reconnaissable', 'la pagina della FSA non contiene collegamenti riconoscibili']],
+    [/^tabla (\S+) (\d+) celdas actualizada (\S+)$/, ['table $1: $2 cells, updated $3', 'tableau $1 : $2 cellules, mis à jour le $3', 'tabella $1: $2 celle, aggiornata il $3']],
+    [/^cosecha (\d+) valores$/, ['harvest: $1 values', 'récolte : $1 valeurs', 'raccolto: $1 valori']],
+    [/^PAUSADO \(/, ['PAUSED (', 'EN PAUSE (', 'IN PAUSA (']]
+  ];
+  function rs(x) {
+    var L = lang(), i = { en: 0, fr: 1, it: 2 }[L];
+    if (i === undefined || !x) return x;
+    return String(x).split(' · ').map(function (part) {
+      for (var k = 0; k < RSR.length; k++) { var r = RSR[k]; if (r[0].test(part)) return part.replace(r[0], r[1][i]); }
+      return part;
+    }).join(' · ');
+  }
   function esc(s) { return String(s === null || s === undefined ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function dstr(iso) { if (!iso) return '—'; var p = String(iso).slice(0, 10).split('-'); return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : iso; }
@@ -216,7 +233,7 @@
   function secPipes() {
     var p = DOC.pipelines, s = p.summary, h = '<p>' + ['ok', 'late', 'error', 'not_run', 'unknown'].filter(function (k) { return s[k]; }).map(function (k) { return '<span class="pt-badge ' + (k === 'ok' ? 'pt-fs-LIVE' : k === 'error' ? 'pt-fs-STALE' : 'pt-fs-DELAYED') + '">' + s[k] + ' ' + esc(t(k)) + '</span>'; }).join(' ') + ' <span class="pt-sub">/ ' + p.total + ' · ' + esc(dstr(p.generatedAt)) + '</span></p>';
     if (!p.attention.length) h += '<p class="pt-note">' + esc(t('allOk')) + '</p>';
-    else h += '<h3 class="rl-h">' + esc(t('attention')) + '</h3><ul class="pt-list">' + p.attention.map(function (x) { return '<li><span class="pt-badge ' + (x.status === 'error' ? 'pt-fs-STALE' : 'pt-fs-DELAYED') + '">' + esc(t(x.status)) + '</span> ' + (x.url ? '<a href="' + esc(x.url) + '" rel="noopener">' + esc(x.name) + '</a>' : esc(x.name)) + (x.lastAt ? ' <span class="pt-sub">· ' + esc(dstr(x.lastAt)) + '</span>' : '') + (x.reason ? '<br><span class="pt-sub">' + esc(t('why')) + ': ' + esc(x.reason) + '</span>' : '') + '</li>'; }).join('') + '</ul>';
+    else h += '<h3 class="rl-h">' + esc(t('attention')) + '</h3><ul class="pt-list">' + p.attention.map(function (x) { return '<li><span class="pt-badge ' + (x.status === 'error' ? 'pt-fs-STALE' : 'pt-fs-DELAYED') + '">' + esc(t(x.status)) + '</span> ' + (x.url ? '<a href="' + esc(x.url) + '" rel="noopener">' + esc(x.name) + '</a>' : esc(x.name)) + (x.lastAt ? ' <span class="pt-sub">· ' + esc(dstr(x.lastAt)) + '</span>' : '') + (x.reason ? '<br><span class="pt-sub">' + esc(t('why')) + ': ' + esc(rs(x.reason)) + '</span>' : '') + '</li>'; }).join('') + '</ul>';
     return sec('pipelines', t('pipelines'), '', h);
   }
   var PEND = null, PSRC = { eurostat_comext: 'Eurostat · Comext', sjv_se: 'Jordbruksverket', ble: 'BLE', statbel: 'Statbel', eurostat: 'Eurostat' };

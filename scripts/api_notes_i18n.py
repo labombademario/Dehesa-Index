@@ -248,7 +248,10 @@ def translate_sentence(s, lang):
     r = _statcan(s, lang)
     if r: return r
     if s.startswith(_AB) and s[len(_AB):] in _ABP: return _AB + _ABP[s[len(_AB):]][i]
-    return translate_more(s, i)
+    r = translate_more(s, i)
+    if r is not None: return r
+    from api_notes_i18n_idx import translate_idx
+    return translate_idx(s, i)
 
 def translate_note(es):
     """-> ({'en':..,'fr':..,'it':..}, [frases que faltan]). Si falta alguna frase, no se devuelve traduccion alguna de esa nota."""

@@ -299,10 +299,11 @@
   function obsKey(o) { return o.product + '/' + o.region; }
 
   /* ---------- cabecera ---------- */
+  function mtl(s) { var m = CTX && CTX.prof && CTX.prof.methodologyTl, l = li(), k = ['es', 'en', 'fr', 'it'][l]; return m && m[s] && m[s][k] ? m[s][k] : s; }
   function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   // Tarjeta de mercado. En pantallas estrechas se lee como una fila (mercado, valor, cambio, fecha, estado, fuente) y el resto (comparabilidad, minigrafico, que mide) se abre al tocar.
   function cardHtml(o, isIndex) {
-    var meas = o.methodology ? '<details style="margin-top:6px"><summary class="pt-sub" style="cursor:pointer">' + esc(t('measures')) + '</summary><div class="pt-sub">' + esc(o.methodology) + '</div></details>' : '';
+    var meas = o.methodology ? '<details style="margin-top:6px"><summary class="pt-sub" style="cursor:pointer">' + esc(t('measures')) + '</summary><div class="pt-sub">' + esc(mtl(o.methodology)) + '</div></details>' : '';
     var S3 = window.DehesaShared, extra = (isIndex ? '' : compBadge(o)) + (isIndex ? '' : spark(o.spark)) + meas + (S3 && S3.reportLink ? '<div style="margin-top:6px">' + S3.reportLink({ id: o.id, label: (S3.marketLabel ? S3.marketLabel(o, LANGS[li()]) : '') || o.region, period: o.observationDate, value: o.value, unit: o.currency + '/' + o.unit }) + '</div>' : '');
     var S2 = window.DehesaShared, mk = S2 && S2.marketLabel ? S2.marketLabel(o, LANGS[li()]) : '';
     // Primero el mercado exacto (pais · plaza · etapa); la region amplia queda como fuente del conjunto de datos (auditoria 8-oct-2026)
