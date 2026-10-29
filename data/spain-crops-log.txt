@@ -1,28 +1,6 @@
-campaña tomada del nombre del libro: re1_vi-edo_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_hortalizas_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_frutales_no_citricos_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1__citricos_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_otros_le-osos_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_olivar_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_aprovechamientos_forrajeros_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_cereales_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_energeticos_formato_tabla_global-_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_flores_formato_tabla_global_25-.xlsx -> 2025
-campaña tomada del nombre del libro: re1_forrajeros_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_ind_aromaticas_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_ind_azucareras_formato_tabla_global-_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_ind_grupo-varios_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_ind_oleaginosas_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_ind_textiles_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_leguminosas_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_ornamentales_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_plantones_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_semillas_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_tuberculos_formato_tabla_global_25.xlsx -> 2025
-campaña tomada del nombre del libro: re1_viveros_formato_tabla_global_25.xlsx -> 2025
-leido re1_cereales_formato_tabla_global_25.xlsx 54117923 bytes, campaña 2025 shared
+leido re1_cereales_formato_tabla_global_25.xlsx 54137888 bytes, campaña 2025 shared
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
-leido re1_vi-edo_formato_tabla_global_25.xlsx 54085979 bytes, campaña 2025 own
+leido re1_vi-edo_formato_tabla_global_25.xlsx 54083570 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -34,7 +12,7 @@ leido re1_vi-edo_formato_tabla_global_25.xlsx 54085979 bytes, campaña 2025 own
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_hortalizas_formato_tabla_global_25.xlsx 54192620 bytes, campaña 2025 own
+leido re1_hortalizas_formato_tabla_global_25.xlsx 54193814 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -46,7 +24,7 @@ leido re1_hortalizas_formato_tabla_global_25.xlsx 54192620 bytes, campaña 2025 
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_frutales_no_citricos_formato_tabla_global_25.xlsx 54146105 bytes, campaña 2025 own
+leido re1_frutales_no_citricos_formato_tabla_global_25.xlsx 54160116 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -58,7 +36,7 @@ leido re1_frutales_no_citricos_formato_tabla_global_25.xlsx 54146105 bytes, camp
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1__citricos_formato_tabla_global_25.xlsx 54124362 bytes, campaña 2025 own
+leido re1__citricos_formato_tabla_global_25.xlsx 54140757 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -70,7 +48,7 @@ leido re1__citricos_formato_tabla_global_25.xlsx 54124362 bytes, campaña 2025 o
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_otros_le-osos_formato_tabla_global_25.xlsx 54129183 bytes, campaña 2025 own
+leido re1_otros_le-osos_formato_tabla_global_25.xlsx 54130090 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -82,7 +60,7 @@ leido re1_otros_le-osos_formato_tabla_global_25.xlsx 54129183 bytes, campaña 20
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_olivar_formato_tabla_global_25.xlsx 54112232 bytes, campaña 2025 own
+leido re1_olivar_formato_tabla_global_25.xlsx 54133274 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -94,7 +72,7 @@ leido re1_olivar_formato_tabla_global_25.xlsx 54112232 bytes, campaña 2025 own
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_ind_aromaticas_formato_tabla_global_25.xlsx 53532882 bytes, campaña 2025 own
+leido re1_ind_aromaticas_formato_tabla_global_25.xlsx 53535484 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -106,7 +84,7 @@ leido re1_ind_aromaticas_formato_tabla_global_25.xlsx 53532882 bytes, campaña 2
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_ind_azucareras_formato_tabla_global-_25.xlsx 54080426 bytes, campaña 2025 own
+leido re1_ind_azucareras_formato_tabla_global-_25.xlsx 54097458 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -118,7 +96,7 @@ leido re1_ind_azucareras_formato_tabla_global-_25.xlsx 54080426 bytes, campaña 
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_ind_grupo-varios_formato_tabla_global_25.xlsx 54093941 bytes, campaña 2025 own
+leido re1_ind_grupo-varios_formato_tabla_global_25.xlsx 54108336 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -130,7 +108,7 @@ leido re1_ind_grupo-varios_formato_tabla_global_25.xlsx 54093941 bytes, campaña
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_ind_oleaginosas_formato_tabla_global_25.xlsx 54076344 bytes, campaña 2025 own
+leido re1_ind_oleaginosas_formato_tabla_global_25.xlsx 54088927 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -142,7 +120,7 @@ leido re1_ind_oleaginosas_formato_tabla_global_25.xlsx 54076344 bytes, campaña 
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_ind_textiles_formato_tabla_global_25.xlsx 54076795 bytes, campaña 2025 own
+leido re1_ind_textiles_formato_tabla_global_25.xlsx 54115029 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -154,7 +132,7 @@ leido re1_ind_textiles_formato_tabla_global_25.xlsx 54076795 bytes, campaña 202
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_leguminosas_formato_tabla_global_25.xlsx 54103660 bytes, campaña 2025 own
+leido re1_leguminosas_formato_tabla_global_25.xlsx 54101750 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
@@ -166,7 +144,7 @@ leido re1_leguminosas_formato_tabla_global_25.xlsx 54103660 bytes, campaña 2025
   grupo ya leido en la campaña 2025 olivar -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 vinedo -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 otros_lenosos -> cultivos nuevos: 0
-leido re1_tuberculos_formato_tabla_global_25.xlsx 54102528 bytes, campaña 2025 own
+leido re1_tuberculos_formato_tabla_global_25.xlsx 54093621 bytes, campaña 2025 own
   BD: {'rows': 914700, 'used': 82650, 'null': 0, 'nonnumeric': 0, 'negative': 0} grupos: ['cereales', 'citricos', 'frutales', 'hortalizas', 'industriales', 'leguminosas', 'olivar', 'otros_lenosos', 'tuberculos', 'vinedo']
   grupo ya leido en la campaña 2025 cereales -> cultivos nuevos: 0
   grupo ya leido en la campaña 2025 leguminosas -> cultivos nuevos: 0
