@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-28",
+ "generatedAt": "2026-10-29",
  "policy": "Solo fuentes con veredicto comercial apto o con condiciones (data/commercial-summary.json). Sin estimaciones ni relleno.",
  "columns": [
   "product_key",
@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76328
+  "rows": 76311
  },
  "files": [
   {
@@ -44,13 +44,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/paleta_cerdo.csv",
    "xlsx": "data/pack/us/paleta_cerdo.xlsx",
-   "csvBytes": 139873,
-   "xlsxBytes": 30534
+   "csvBytes": 139600,
+   "xlsxBytes": 30468
   },
   {
    "product": "arroz",
@@ -230,13 +230,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/cerdo_base_us.csv",
    "xlsx": "data/pack/us/cerdo_base_us.xlsx",
-   "csvBytes": 147165,
-   "xlsxBytes": 30722
+   "csvBytes": 146880,
+   "xlsxBytes": 30684
   },
   {
    "product": "cerdo_neto_us",
@@ -261,13 +261,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/cerdo_neto_us.csv",
    "xlsx": "data/pack/us/cerdo_neto_us.xlsx",
-   "csvBytes": 147167,
-   "xlsxBytes": 30739
+   "csvBytes": 146882,
+   "xlsxBytes": 30688
   },
   {
    "product": "colza",
@@ -354,13 +354,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/cutout_cerdo.csv",
    "xlsx": "data/pack/us/cutout_cerdo.xlsx",
-   "csvBytes": 136926,
-   "xlsxBytes": 30510
+   "csvBytes": 136661,
+   "xlsxBytes": 30467
   },
   {
    "product": "cutout_vacuno_choice",
@@ -385,13 +385,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/cutout_vacuno_choice.csv",
    "xlsx": "data/pack/us/cutout_vacuno_choice.xlsx",
-   "csvBytes": 139350,
-   "xlsxBytes": 30965
+   "csvBytes": 139077,
+   "xlsxBytes": 30913
   },
   {
    "product": "cutout_vacuno_select",
@@ -416,13 +416,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/cutout_vacuno_select.csv",
    "xlsx": "data/pack/us/cutout_vacuno_select.xlsx",
-   "csvBytes": 139349,
-   "xlsxBytes": 30955
+   "csvBytes": 139080,
+   "xlsxBytes": 30898
   },
   {
    "product": "coste_maiz_etanol_us",
@@ -478,13 +478,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/costilla_cerdo.csv",
    "xlsx": "data/pack/us/costilla_cerdo.xlsx",
-   "csvBytes": 135764,
-   "xlsxBytes": 30761
+   "csvBytes": 135501,
+   "xlsxBytes": 30703
   },
   {
    "product": "gas_natural",
@@ -726,13 +726,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/jamon_cerdo.csv",
    "xlsx": "data/pack/us/jamon_cerdo.xlsx",
-   "csvBytes": 135858,
-   "xlsxBytes": 30550
+   "csvBytes": 135594,
+   "xlsxBytes": 30500
   },
   {
    "product": "leche",
@@ -881,13 +881,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/lomo_cerdo.csv",
    "xlsx": "data/pack/us/lomo_cerdo.xlsx",
-   "csvBytes": 130591,
-   "xlsxBytes": 30303
+   "csvBytes": 130338,
+   "xlsxBytes": 30246
   },
   {
    "product": "mantequilla",
@@ -913,12 +913,12 @@
    "currency": "USD",
    "frequency": "weekly",
    "rows": 520,
-   "first": "2016-11-05",
-   "last": "2026-10-17",
+   "first": "2016-11-12",
+   "last": "2026-10-24",
    "csv": "data/pack/us/mantequilla.csv",
    "xlsx": "data/pack/us/mantequilla.xlsx",
    "csvBytes": 83753,
-   "xlsxBytes": 30567
+   "xlsxBytes": 30558
   },
   {
    "product": "maiz",
@@ -974,13 +974,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 248,
-   "first": "2024-10-18",
+   "rows": 247,
+   "first": "2024-10-21",
    "last": "2026-10-26",
    "csv": "data/pack/us/novilla_canal_us.csv",
    "xlsx": "data/pack/us/novilla_canal_us.xlsx",
-   "csvBytes": 70702,
-   "xlsxBytes": 18501
+   "csvBytes": 70419,
+   "xlsxBytes": 18459
   },
   {
    "product": "novilla_vivo_us",
@@ -1005,13 +1005,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 349,
-   "first": "2024-10-17",
+   "rows": 347,
+   "first": "2024-10-21",
    "last": "2026-10-26",
    "csv": "data/pack/us/novilla_vivo_us.csv",
    "xlsx": "data/pack/us/novilla_vivo_us.xlsx",
-   "csvBytes": 97873,
-   "xlsxBytes": 23161
+   "csvBytes": 97311,
+   "xlsxBytes": 23062
   },
   {
    "product": "novillo_canal_us",
@@ -1036,13 +1036,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 319,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 318,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/novillo_canal_us.csv",
    "xlsx": "data/pack/us/novillo_canal_us.xlsx",
-   "csvBytes": 90988,
-   "xlsxBytes": 21760
+   "csvBytes": 90702,
+   "xlsxBytes": 21713
   },
   {
    "product": "novillo_vivo_us",
@@ -1068,12 +1068,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 396,
-   "first": "2024-10-17",
-   "last": "2026-10-26",
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/novillo_vivo_us.csv",
    "xlsx": "data/pack/us/novillo_vivo_us.xlsx",
-   "csvBytes": 111034,
-   "xlsxBytes": 25254
+   "csvBytes": 111028,
+   "xlsxBytes": 25248
   },
   {
    "product": "picnic_cerdo",
@@ -1098,13 +1098,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/picnic_cerdo.csv",
    "xlsx": "data/pack/us/picnic_cerdo.xlsx",
-   "csvBytes": 142448,
-   "xlsxBytes": 30954
+   "csvBytes": 142172,
+   "xlsxBytes": 30905
   },
   {
    "product": "panceta_cerdo",
@@ -1129,13 +1129,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 516,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 515,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/panceta_cerdo.csv",
    "xlsx": "data/pack/us/panceta_cerdo.xlsx",
-   "csvBytes": 138294,
-   "xlsxBytes": 30621
+   "csvBytes": 138025,
+   "xlsxBytes": 30561
   },
   {
    "product": "petroleo_wti",
@@ -1223,12 +1223,12 @@
    "currency": "USD",
    "frequency": "weekly",
    "rows": 520,
-   "first": "2016-11-05",
-   "last": "2026-10-17",
+   "first": "2016-11-12",
+   "last": "2026-10-24",
    "csv": "data/pack/us/cheddar.csv",
    "xlsx": "data/pack/us/cheddar.xlsx",
    "csvBytes": 92085,
-   "xlsxBytes": 30520
+   "xlsxBytes": 30519
   },
   {
    "product": "soja_grano",
@@ -1316,12 +1316,12 @@
    "currency": "USD",
    "frequency": "weekly",
    "rows": 520,
-   "first": "2016-11-05",
-   "last": "2026-10-17",
+   "first": "2016-11-12",
+   "last": "2026-10-24",
    "csv": "data/pack/us/suero.csv",
    "xlsx": "data/pack/us/suero.xlsx",
    "csvBytes": 80115,
-   "xlsxBytes": 30438
+   "xlsxBytes": 30430
   },
   {
    "product": "trigo",
@@ -1408,13 +1408,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 342,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 341,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/vacuno_canal_us.csv",
    "xlsx": "data/pack/us/vacuno_canal_us.xlsx",
-   "csvBytes": 96581,
-   "xlsxBytes": 22873
+   "csvBytes": 96296,
+   "xlsxBytes": 22831
   },
   {
    "product": "vacuno_vivo_us",
@@ -1439,13 +1439,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 433,
-   "first": "2024-10-16",
-   "last": "2026-10-26",
+   "rows": 432,
+   "first": "2024-10-21",
+   "last": "2026-10-28",
    "csv": "data/pack/us/vacuno_vivo_us.csv",
    "xlsx": "data/pack/us/vacuno_vivo_us.xlsx",
-   "csvBytes": 120169,
-   "xlsxBytes": 27060
+   "csvBytes": 119891,
+   "xlsxBytes": 27016
   },
   {
    "product": "us_cereals_output_index",

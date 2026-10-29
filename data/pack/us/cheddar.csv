@@ -1,5 +1,4 @@
 ﻿product_key,product,market,date,value,unit,currency,frequency,source,license,attribution
-cheddar,Queso cheddar de bloque (40 lb),US,2016-11-05,1.6396,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 cheddar,Queso cheddar de bloque (40 lb),US,2016-11-12,1.7347,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 cheddar,Queso cheddar de bloque (40 lb),US,2016-11-19,1.8202,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 cheddar,Queso cheddar de bloque (40 lb),US,2016-11-26,1.8954,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
@@ -518,4 +517,5 @@ cheddar,Queso cheddar de bloque (40 lb),US,2026-09-19,1.5435,lb,USD,weekly,USDA 
 cheddar,Queso cheddar de bloque (40 lb),US,2026-09-26,1.4974,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 cheddar,Queso cheddar de bloque (40 lb),US,2026-10-03,1.4579,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 cheddar,Queso cheddar de bloque (40 lb),US,2026-10-10,1.4309,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
-cheddar,Queso cheddar de bloque (40 lb),US,2026-10-17,1.3856,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
+cheddar,Queso cheddar de bloque (40 lb),US,2026-10-17,1.3864,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
+cheddar,Queso cheddar de bloque (40 lb),US,2026-10-24,1.4178,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))

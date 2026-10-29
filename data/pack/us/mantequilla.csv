@@ -1,5 +1,4 @@
 ﻿product_key,product,market,date,value,unit,currency,frequency,source,license,attribution
-mantequilla,Mantequilla,US,2016-11-05,1.8683,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 mantequilla,Mantequilla,US,2016-11-12,1.8898,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 mantequilla,Mantequilla,US,2016-11-19,1.9417,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 mantequilla,Mantequilla,US,2016-11-26,1.998,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
@@ -518,4 +517,5 @@ mantequilla,Mantequilla,US,2026-09-19,1.4338,lb,USD,weekly,USDA AMS Market News 
 mantequilla,Mantequilla,US,2026-09-26,1.3805,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 mantequilla,Mantequilla,US,2026-10-03,1.364,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 mantequilla,Mantequilla,US,2026-10-10,1.3659,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
-mantequilla,Mantequilla,US,2026-10-17,1.3547,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
+mantequilla,Mantequilla,US,2026-10-17,1.3538,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
+mantequilla,Mantequilla,US,2026-10-24,1.3627,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))

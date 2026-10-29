@@ -940,9 +940,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Finlandia desde estos servidores",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "fi/watch.json",
+     "checkedAt": "2026-10-28",
+     "reviewNeeded": 0
     }
    }
   },
@@ -987,9 +988,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Eslovaquia desde estos servidores",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "sk/watch.json",
+     "checkedAt": "2026-10-28",
+     "reviewNeeded": 0
     }
    }
   },
@@ -1034,9 +1036,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Eslovenia desde estos servidores",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "si/watch.json",
+     "checkedAt": "2026-10-28",
+     "reviewNeeded": 0
     }
    }
   },
@@ -1081,9 +1084,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Estonia desde estos servidores",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "ee/watch.json",
+     "checkedAt": "2026-10-28",
+     "reviewNeeded": 0
     }
    }
   },
@@ -1128,9 +1132,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Bulgaria desde estos servidores",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "bg/watch.json",
+     "checkedAt": "2026-10-28",
+     "reviewNeeded": 0
     }
    }
   },
@@ -1175,9 +1180,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "NOT_INGESTED",
-     "reason": "sin vigilancia automatica: no se ha probado la lectura del boletin oficial de Letonia desde estos servidores",
-     "reasonCode": "SOURCE_UNREACHABLE"
+     "state": "INGESTED",
+     "file": "lv/watch.json",
+     "checkedAt": "2026-10-28",
+     "reviewNeeded": 0
     }
    }
   }
