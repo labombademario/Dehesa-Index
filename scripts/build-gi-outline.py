@@ -4,8 +4,8 @@ Fuente: Natural Earth 1:10m admin_0 countries (dominio publico). Solo el territo
 Uso: python3 scripts/build-gi-outline.py RUTA/ne_10m_admin_0_countries.geojson"""
 import json, math, sys
 from shapely.geometry import shape, box, MultiPolygon, Polygon
-MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'UK': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5), 'AT': (9.4, 46.3, 17.2, 49.1), 'BE': (2.5, 49.4, 6.5, 51.6), 'BG': (22.3, 41.2, 28.7, 44.3), 'HR': (13.4, 42.3, 19.5, 46.6), 'DE': (5.8, 47.2, 15.1, 55.1), 'EL': (19.3, 34.7, 28.3, 41.8), 'HU': (16, 45.7, 23, 48.7), 'NL': (3.3, 50.7, 7.3, 53.6), 'RO': (20.2, 43.6, 29.8, 48.3), 'SK': (16.8, 47.7, 22.6, 49.7), 'SI': (13.3, 45.4, 16.7, 46.9)}
-ISO = {'ES': 'ESP', 'PT': 'PRT', 'UK': 'GBR', 'CZ': 'CZE', 'AT': 'AUT', 'BE': 'BEL', 'BG': 'BGR', 'HR': 'HRV', 'DE': 'DEU', 'EL': 'GRC', 'HU': 'HUN', 'NL': 'NLD', 'RO': 'ROU', 'SK': 'SVK', 'SI': 'SVN'}
+MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'UK': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5), 'AT': (9.4, 46.3, 17.2, 49.1), 'BE': (2.5, 49.4, 6.5, 51.6), 'BG': (22.3, 41.2, 28.7, 44.3), 'HR': (13.4, 42.3, 19.5, 46.6), 'DE': (5.8, 47.2, 15.1, 55.1), 'EL': (19.3, 34.7, 28.3, 41.8), 'HU': (16, 45.7, 23, 48.7), 'NL': (3.3, 50.7, 7.3, 53.6), 'RO': (20.2, 43.6, 29.8, 48.3), 'SK': (16.8, 47.7, 22.6, 49.7), 'SI': (13.3, 45.4, 16.7, 46.9), 'CY': (32.2, 34.5, 34.7, 35.8), 'MT': (14.1, 35.78, 14.6, 36.1), 'DK': (8, 54.5, 13, 57.8), 'LU': (5.7, 49.4, 6.6, 50.2), 'PL': (14.1, 49, 24.2, 54.9), 'IE': (-10.7, 51.3, -5.9, 55.5), 'LT': (20.9, 53.8, 26.9, 56.5), 'SE': (10.9, 55.3, 24.2, 69.1)}
+ISO = {'ES': 'ESP', 'PT': 'PRT', 'UK': 'GBR', 'CZ': 'CZE', 'AT': 'AUT', 'BE': 'BEL', 'BG': 'BGR', 'HR': 'HRV', 'DE': 'DEU', 'EL': 'GRC', 'HU': 'HUN', 'NL': 'NLD', 'RO': 'ROU', 'SK': 'SVK', 'SI': 'SVN', 'CY': 'CYP', 'MT': 'MLT', 'DK': 'DNK', 'LU': 'LUX', 'PL': 'POL', 'IE': 'IRL', 'LT': 'LTU', 'SE': 'SWE'}
 TOL = 0.01
 def path(g, X, Y):
     polys = list(g.geoms) if isinstance(g, MultiPolygon) else [g]
@@ -38,6 +38,8 @@ def main(src):
         from shapely.ops import unary_union
         nb = unary_union(ne) if ne else None
         fn = 'data/gi/%s-geo.json' % cc
+        import os
+        if not os.path.exists(fn): continue
         d = json.load(open(fn))
         d['o'] = path(me, X, Y)
         d['n'] = path(nb, X, Y) if nb is not None and not nb.is_empty else ''

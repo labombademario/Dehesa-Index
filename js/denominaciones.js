@@ -21,10 +21,11 @@
     Promise.all([IDX.then(function (ix) { if (ix && ix.countries && !ix.countries[cc]) return null; return fetch('data/gi/' + cc + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }), pre]).then(function (rr) {
       var d = rr[0], inao = rr[1], zset = {}; if (inao && inao.z) inao.z.forEach(function (f) { zset[f] = 1; });
       if (!d || (!d.wine.length && !d.cheese.length)) { el.innerHTML = ''; return; }
-      var st = { k: d.wine.length ? 'wine' : 'cheese', ty: 'all', q: '', open: false, r: '', det: false, zf: '' }, gnames = {}; d.wine.forEach(function (e) { gnames[e.f] = e.n.join(' / '); });
+      var st = { k: d.wine.length ? 'wine' : 'cheese', ty: 'all', q: '', open: false, r: '', det: false, zf: '' }, gnames = {}; d.wine.concat(d.cheese).forEach(function (e) { gnames[e.f] = e.n.join(' / '); });
       var N3 = !!(d.regionSource && d.regionSource.map === 'nuts3'), MAPK = N3 ? 'DEHESA_NUTS3_' + cc : 'DEHESA_' + cc + '_REGIONS';
       var hasR = d.wine.concat(d.cheese).some(function (e) { return e.r && e.r.length; });
       var RN = function (r) { if (N3) { var M3 = window[MAPK], x3 = M3 && M3.states.filter(function (z) { return z.id === r; })[0]; return x3 ? x3.name : r; } var N = window.DehesaRegionNames && window.DehesaRegionNames[cc], v = N && N[r]; return v ? v.split('|')[{ en: 0, es: 1, fr: 2, it: 3 }[lg] || 0] : r; };
+      function tabKeys() { var o = {}; d[st.k].forEach(function (e) { o[e.f] = 1; }); return o; }
       function list() {
         var L = d[st.k].filter(function (e) { return (st.ty === 'all' || e.t === st.ty) && (!st.zf || e.f === st.zf) && (!st.r || (e.r && e.r.indexOf(st.r) > -1)) && (!st.q || norm(e.n.join(' ') + ' ' + (e.tr || []).join(' ')).indexOf(norm(st.q)) > -1); });
         var shown = st.open ? L : L.slice(0, SHOW);
@@ -58,7 +59,7 @@
           '<div class="di-gi-filters">' + types.map(function (x) { var n = x === 'all' ? d[st.k].length : d[st.k].filter(function (e) { return e.t === x; }).length; return '<button type="button" class="di-gi-chip' + (st.ty === x ? ' active' : '') + '" data-gi-t="' + x + '">' + esc(x === 'all' ? t.all : t[x]) + ' · ' + n + '</button>'; }).join('') +
           (hasR ? '<select class="di-gi-r di-compare-select" aria-label="' + esc(t.reg) + '" style="max-width:220px"><option value="">' + esc(t.allr) + '</option>' + regs().map(function (r) { return '<option value="' + esc(r) + '"' + (st.r === r ? ' selected' : '') + '>' + esc(RN(r)) + '</option>'; }).join('') + '</select>' : '') +
           '<input type="search" class="di-gi-q" placeholder="' + esc(t.search) + '" value="' + esc(st.q) + '" aria-label="' + esc(t.search) + '"></div>' +
-          '<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">' + (mapHtml() || (inao && inao.geo && st.k === 'wine' && window.GIZ ? window.GIZ.zoneMap(inao.geo, gnames, st.zf, lg) : '')) + '<div class="di-gi-body" style="flex:1;min-width:260px">' + list() + '</div></div>' + (!window[MAPK] && !(hasR) && !(inao && inao.geo) ? '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.noMap) + '</p>' : '') + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.src) + (hasR && d.regionSource ? ' ' + esc(t.regNote) + esc(d.regionSource.name) + ' (' + esc(d.regionSource.license) + ').' + (d.regionSource.partial ? ' ' + esc(t.partial) : '') : '') + '</p></details>';
+          '<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">' + (mapHtml() || (inao && inao.geo && window.GIZ ? window.GIZ.zoneMap(inao.geo, gnames, st.zf, lg, tabKeys(), st.k) : '')) + '<div class="di-gi-body" style="flex:1;min-width:260px">' + list() + '</div></div>' + (!window[MAPK] && !(hasR) && !(inao && inao.geo) ? '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.noMap) + '</p>' : '') + '<p class="di-movers-hint" style="margin:10px 0 0">' + esc(t.src) + (hasR && d.regionSource ? ' ' + esc(t.regNote) + esc(d.regionSource.name) + ' (' + esc(d.regionSource.license) + ').' + (d.regionSource.partial ? ' ' + esc(t.partial) : '') : '') + '</p></details>';
       }
       draw();
       el.addEventListener('toggle', function (ev) { if (ev.target && ev.target.id === 'ps-gi') st.det = ev.target.open; }, true);
@@ -68,7 +69,7 @@
         var rg = ev.target.closest ? ev.target.closest('[data-gi-reg]') : null;
         if (rg && el.contains(rg)) { var id = rg.getAttribute('data-gi-reg'); st.r = st.r === id ? '' : id; st.open = false; draw(); return; }
         var b = ev.target.closest ? ev.target.closest('button') : null; if (!b || !el.contains(b)) return;
-        if (b.getAttribute('data-gi-k')) { st.k = b.getAttribute('data-gi-k'); st.ty = 'all'; st.open = false; draw(); }
+        if (b.getAttribute('data-gi-k')) { st.k = b.getAttribute('data-gi-k'); st.ty = 'all'; st.zf = ''; st.open = false; draw(); }
         else if (b.getAttribute('data-gi-t')) { st.ty = b.getAttribute('data-gi-t'); st.open = false; draw(); }
         else if (b.getAttribute('data-gi') === 'more') { st.open = !st.open; el.querySelector('.di-gi-body').innerHTML = list(); }
       });

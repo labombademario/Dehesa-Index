@@ -4,7 +4,8 @@
 Cada entrada de ese fichero dice, para una denominacion (clave f de eAmbrosia), que unidades NUTS (GISCO 2021) cubre su zona segun el pliego de condiciones,
 la fuente consultada y si la zona es solo parcial dentro de esas unidades. Aqui se une la geometria de esas unidades y se proyecta igual que build-gi-geo.py;
 el area queda marcada con 'p':1 (zona a nivel de unidad NUTS, mas amplia que la real) y 'u' (unidades). No se asigna nada que no este en el fichero de entradas.
-Uso: python3 scripts/build-gi-igp-zones.py   (ejecutar despues de build-gi-geo.py y build-gi-outline.py)"""
+Uso: python3 scripts/build-gi-igp-zones.py   (orden: build-gi-geo.py, build-gi-igp-zones.py, build-gi-outline.py)
+Tambien recoge las zonas de los quesos (mismo formato)."""
 import json, math, importlib.util, sys
 from pathlib import Path
 from shapely.geometry import shape, MultiPolygon, Polygon
@@ -29,8 +30,11 @@ def main():
         by.setdefault(e['cc'], []).append((f, e, us))
     for cc, items in by.items():
         ds = SITE2DS.get(cc, cc); lon0, lat0, lon1, lat1 = G.MAIN[ds]; tol = G.TOL[ds]
-        fn = ROOT / ('data/gi/%s-geo.json' % cc); d = json.load(open(fn))
+        fn = ROOT / ('data/gi/%s-geo.json' % cc)
         lat_c = (lat0 + lat1) / 2; kx = math.cos(math.radians(lat_c)); S = 900.0 / max((lon1 - lon0) * kx, lat1 - lat0)
+        if fn.exists(): d = json.load(open(fn))
+        else:   # pais sin DOP de vino en EU-PDO: fichero nuevo con la misma proyeccion (luego build-gi-outline.py le pone el contorno)
+            d = {'schemaVersion': 1, 'country': cc, 'viewBox': '0 0 %s %s' % (round((lon1 - lon0) * kx * S, 1), round((lat1 - lat0) * S, 1)), 'areas': {}}
         X = lambda lon: (lon - lon0) * kx * S
         Y = lambda lat: (lat1 - lat) * S
         cache = {}
