@@ -24,6 +24,28 @@ def file_sources(spec):
     return s
 
 
+def files_of(sid, files):
+    out = []
+    for k, v in files.items():
+        if sid not in file_sources(v): continue
+        if not k.endswith('/'): out.append(k); continue
+        d = ROOT / k
+        if d.is_dir(): out += [str(q.relative_to(ROOT)) for q in sorted(d.glob('*.json'))[:40]]   # carpeta con pocos ficheros: se usa la fecha mas reciente
+    return out
+
+
+def file_date(rel):
+    p = ROOT / rel
+    if not p.is_file() or p.suffix != '.json': return None
+    try: d = json.loads(p.read_text(encoding='utf-8'))
+    except Exception: return None
+    if isinstance(d, dict):
+        for k in ('generatedAt', 'updatedAt', 'lastUpdated', 'fetchedAt', 'reviewedAt', 'asOf'):
+            v = d.get(k)
+            if isinstance(v, str) and v[:4].isdigit(): return v[:10]
+    return None
+
+
 def build():
     reg = load('data/license-registry.json'); com = load('data/commercial-summary.json')['sources']; ps = load('data/pipeline-status.json')
     health = {x['id']: x for x in load('data/views/source-health.json')['sources']}
@@ -48,11 +70,15 @@ def build():
         ok = [p['last']['startedAt'] for p in ps_ if p.get('last') and p['last'].get('conclusion') == 'success']
         st = max((p.get('status', 'unknown') for p in ps_), key=lambda x: RANK.get(x, 2)) if ps_ else None
         h = health.get(sid, {})
+        lu = max(ok)[:10] if ok else None; lufrom = 'pipeline' if lu else None
+        if not lu:   # fuente sin pipeline medido: fecha de generacion de los ficheros de datos que la usan (campo generatedAt del propio fichero)
+            ds = [d for d in (file_date(f) for f in files_of(sid, files)) if d]
+            if ds: lu = max(ds); lufrom = 'file'
         rows.append({'id': sid, 'name': s.get('short') or s['name'], 'fullName': s['name'], 'url': s.get('url'), 'country': s.get('country'),
                      'license': {'id': s.get('licenseId'), 'name': s.get('licenseName'), 'url': s.get('licenseUrl')},
                      'commercial': (com.get(sid) or {}).get('verdict'), 'commercialUse': s.get('commercialUse'), 'redistribution': s.get('redistribution'),
                      'attributionRequired': bool(s.get('attributionRequired')), 'attribution': s.get('attributionText'),
-                     'cadenceHours': min(hrs) if hrs else None, 'lastUpdate': max(ok)[:10] if ok else None, 'lastPeriod': h.get('lastPeriod'), 'status': st,
+                     'cadenceHours': min(hrs) if hrs else None, 'lastUpdate': lu, 'lastUpdateFrom': lufrom, 'lastPeriod': h.get('lastPeriod'), 'status': st,
                      'pipelines': len(ps_)})
     return {'schemaVersion': 1, 'generatedAt': ps['generatedAt'], 'summary': {'sources': len(rows), 'withPipeline': sum(1 for r in rows if r['pipelines']),
             'apto': sum(1 for r in rows if r['commercial'] == 'apto'), 'condiciones': sum(1 for r in rows if r['commercial'] == 'condiciones')}, 'sources': rows}
