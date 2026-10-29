@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T19:13:00Z",
+ "generatedAt": "2026-10-29T19:41:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 311,
@@ -17,7 +17,7 @@
   "lagHours": 8.6,
   "prodGeneratedAt": "2026-10-29T09:59:15.795493+00:00",
   "repoGeneratedAt": "2026-10-29T18:33:06.041774+00:00",
-  "checkedAt": "2026-10-29T19:13:00Z"
+  "checkedAt": "2026-10-29T19:41:00Z"
  },
  "pipelines": [
   {
@@ -5068,7 +5068,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T19:00:35Z"
+     "lastChange": "2026-10-29T19:16:28Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5238,7 +5238,7 @@
    "crons": [
     "15 7,10,13,16,19 * * 4,5"
    ],
-   "nextRun": "2026-10-29T19:15:00Z",
+   "nextRun": "2026-10-30T07:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5253,7 +5253,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 12.0
+   "expectedEveryHours": 3.0
   },
   {
    "workflow": "update-poland-eurostat.yml",
@@ -5543,13 +5543,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-29T11:44:44Z",
-    "durationSec": 1588,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40867742054"
+    "startedAt": "2026-10-29T19:13:00Z",
+    "durationSec": 1076,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40938042918"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -6446,8 +6446,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39838392408"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -6499,9 +6499,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-29T02:37:23Z",
-    "durationSec": 45,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40807447093"
+    "startedAt": "2026-10-29T19:37:24Z",
+    "durationSec": 152,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40941756724"
    },
    "recent": {
     "runs": 10,
