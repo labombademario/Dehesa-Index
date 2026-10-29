@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T19:41:00Z",
+ "generatedAt": "2026-10-29T19:57:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 311,
@@ -11,13 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 8.6,
-  "prodGeneratedAt": "2026-10-29T09:59:15.795493+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-29T18:33:06.041774+00:00",
   "repoGeneratedAt": "2026-10-29T18:33:06.041774+00:00",
-  "checkedAt": "2026-10-29T19:41:00Z"
+  "checkedAt": "2026-10-29T19:57:00Z"
  },
  "pipelines": [
   {
@@ -142,18 +142,19 @@
    "nextRun": "2026-11-05T18:10:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-22T18:40:33Z",
-    "durationSec": 699,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39833443839"
+    "startedAt": "2026-10-29T19:34:15Z",
+    "durationSec": 1247,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40934943728",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-argentina.py' has timed out after 20 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 6,
-    "failed": 3
+    "failed": 4
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -1646,19 +1647,18 @@
    "nextRun": "2026-11-05T07:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-29T13:40:14Z",
-    "durationSec": 83,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40840170334",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · tabla HST77 34200 celdas actualizada 2025-09-08T08:00:00 · cosecha 12289 valores | tabla ANI41 24700 celdas actualizada 2026-10-23T08:00:00 | tabla ANI51 17100 celdas actualizada 2026-10-23T08:00:00 | tabla ANI71 5700 celdas actualizad"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-29T19:53:44Z",
+    "durationSec": 93,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40944159322"
    },
    "recent": {
-    "runs": 5,
-    "success": 4,
+    "runs": 6,
+    "success": 5,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -5068,7 +5068,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T19:16:28Z"
+     "lastChange": "2026-10-29T19:43:44Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7123,13 +7123,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-28T15:10:58Z",
-    "durationSec": 39,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40713339274"
+    "startedAt": "2026-10-29T19:43:24Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40942630601"
    },
    "recent": {
-    "runs": 4,
-    "success": 4,
+    "runs": 5,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
