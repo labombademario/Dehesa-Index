@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T10:04:00Z",
+ "generatedAt": "2026-10-29T10:20:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 309,
@@ -17,7 +17,7 @@
   "lagHours": 9.0,
   "prodGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
   "repoGeneratedAt": "2026-10-29T09:59:15.795493+00:00",
-  "checkedAt": "2026-10-29T10:04:00Z"
+  "checkedAt": "2026-10-29T10:20:00Z"
  },
  "pipelines": [
   {
@@ -511,14 +511,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-23T16:38:14Z",
-    "durationSec": 67,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39988425712"
+    "event": "schedule",
+    "startedAt": "2026-10-29T10:08:40Z",
+    "durationSec": 114,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40855189334"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -2735,13 +2735,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T09:56:39Z",
-    "durationSec": 35,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39759308863"
+    "startedAt": "2026-10-29T10:09:24Z",
+    "durationSec": 58,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40855288858"
    },
    "recent": {
     "runs": 10,
-    "success": 8,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4489,13 +4489,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-26T10:06:51Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40304834325"
+    "startedAt": "2026-10-29T10:11:58Z",
+    "durationSec": 27,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40855636877"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -5058,7 +5058,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T09:56:44Z"
+     "lastChange": "2026-10-29T10:08:09Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5228,7 +5228,7 @@
    "crons": [
     "15 7,10,13,16,19 * * 4,5"
    ],
-   "nextRun": "2026-10-29T10:15:00Z",
+   "nextRun": "2026-10-29T13:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5243,7 +5243,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 3.0
+   "expectedEveryHours": 12.0
   },
   {
    "workflow": "update-poland-eurostat.yml",
