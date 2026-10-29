@@ -521,6 +521,10 @@
     "file": "js/es-precios-mapa.js",
     "pattern": "data/spain-prices/andalucia.json"
    }
+  },
+  "data/license-registry.json": {
+   "class": "RUNTIME",
+   "note": "Registro de licencias y atribuciones de todas las fuentes (fuente unica de verdad del License Gate). El navegador lo descarga en la pagina legal para listar licencias (js/legal.js)."
   }
  },
  "prefixes": {
