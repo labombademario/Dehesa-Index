@@ -14,7 +14,7 @@
   function mount(el, cc, lg) {
     if (!el) return;
     var t = T[lg] || T.es;
-    var GEOCC = { ES: 1, PT: 1, UK: 1, CZ: 1, AT: 1, BE: 1, BG: 1, HR: 1, DE: 1, EL: 1, HU: 1, NL: 1, RO: 1, SK: 1, SI: 1 };
+    var GEOCC = { ES: 1, PT: 1, UK: 1, CZ: 1, AT: 1, BE: 1, BG: 1, HR: 1, DE: 1, EL: 1, HU: 1, NL: 1, RO: 1, SK: 1, SI: 1, CY: 1, MT: 1, DK: 1, LU: 1, PL: 1, IE: 1, LT: 1, SE: 1 };
     var pre = cc === 'FR' || GEOCC[cc] ? new Promise(function (ok) { var sc = document.createElement('script'); sc.src = 'js/gi-zone.js?v=20261015'; sc.onload = function () { (cc === 'FR' ? window.GIZ.info() : window.GIZ.geoInfo(cc)).then(ok); }; sc.onerror = function () { ok(null); }; document.head.appendChild(sc); }) : Promise.resolve(null);
     // primero el indice: solo se pide el fichero del pais si existe (sin 404 para AR, AU, CA, CH, CL, EU, FI...)
     var IDX = window.__giIdx || (window.__giIdx = fetch('data/gi/index.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }));
