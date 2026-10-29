@@ -3221,3 +3221,11 @@ a.di-nav-chip { min-width: 0; gap: 7px; padding-left: 10px; padding-right: 10px;
 /* bloque de lluvia y temperatura plegable (js/fr-climate.js) */
 .frc-body[hidden]{display:none}
 .frc-fold{white-space:nowrap}
+/* Empresas: indice de la pagina, formulario unico y casilla de lista de espera (28-oct-2026) */
+.di-emp-toc { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0 0 18px; }
+#que-hay, #herramientas, #para-que, #empezar, #muestra, #ficha-fuentes, #contacto { scroll-margin-top: 80px; }
+.di-emp-toc a { font-size: 13px; padding: 5px 12px; border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text); background: var(--surface, var(--bg)); }
+.di-emp-toc a:hover, .di-emp-toc a:focus-visible { border-color: var(--text); }
+.di-emp-forms.di-emp-forms-one { grid-template-columns: minmax(0, 720px); }
+.di-emp-wait { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; margin: 10px 0 4px; cursor: pointer; }
+.di-emp-wait input { margin-top: 3px; }
