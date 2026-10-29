@@ -130,7 +130,14 @@ def herd():
     for d in r1:
         k = {"D29": "total", "D181": "sows", "D223": "piglets", "D28": "fatteners", "D226": "weaners"}.get(d["TYPE"])
         if k and d["v"] is not None: pigs.setdefault(k, {})[per(d["Tid"])] = d["v"]
-    i2, r2 = table("KVAEG5"); cattle = {}
+    try: i2, r2 = table("KVAEG5")
+    except Exception as e:   # Statistics Denmark retiro la tabla (o no responde): se conserva el censo de vacuno ya publicado y el resto se sigue actualizando; nunca se inventa un dato
+        log("AVISO KVAEG5 no disponible:", type(e).__name__, str(e)[:160], "- se conserva el censo de vacuno publicado")
+        prev = ROOT / "data" / "denmark-depth.json"
+        try: pv = json.loads(prev.read_text(encoding="utf-8"))
+        except Exception: raise e
+        return {"pigs": {k: ser(s) for k, s in pigs.items()}, "cattle": pv["herd"]["cattle"]}, {"SVIN": i1.get("updated"), "KVAEG5": (pv.get("updated") or {}).get("KVAEG5")}
+    cattle = {}
     for d in r2:
         k = {"D17": "total", "D14": "dairy_cows", "D15": "suckler_cows", "D136": "heifers", "D53": "male"}.get(d["DYR"])
         if k and d["v"] is not None and d["OMRÅDE"] in REG_KIND: cattle.setdefault(k, {}).setdefault(d["OMRÅDE"], {})[per(d["Tid"])] = d["v"]
