@@ -1,0 +1,57 @@
+{
+ "schemaVersion": 1,
+ "country": "FI",
+ "source": "finlex_fi",
+ "status": "OK",
+ "checkedAt": "2026-10-28",
+ "baseline": {
+  "fingerprints": {
+   "l1332": {
+    "sha256": "592ee2834321dd9ee150f08c79f73c3dafde5bc212d780fa090e1afe6087c0a1",
+    "chars": 18962,
+    "label": "Finlex 1332/2022 (ayudas a la superficie, PEPAC)",
+    "url": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute-consolidated/2022/1332/fin@"
+   },
+   "l1334": {
+    "sha256": "12455289c8a6dc904543be0769bc9a35ec97322059d87e5cb912d6faafe392b3",
+    "chars": 55556,
+    "label": "Finlex 1334/2022",
+    "url": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute-consolidated/2022/1334/fin@"
+   },
+   "l1384": {
+    "sha256": "4c881eeb795e96ab8198ad7b759cbd3d13ef8d52d7433fab76b73c4492a7c3dc",
+    "chars": 19758,
+    "label": "Finlex 1384/2022",
+    "url": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute-consolidated/2022/1384/fin@"
+   }
+  },
+  "acknowledged": []
+ },
+ "current": {
+  "fingerprints": {
+   "l1332": {
+    "sha256": "592ee2834321dd9ee150f08c79f73c3dafde5bc212d780fa090e1afe6087c0a1",
+    "chars": 18962,
+    "label": "Finlex 1332/2022 (ayudas a la superficie, PEPAC)",
+    "url": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute-consolidated/2022/1332/fin@"
+   },
+   "l1334": {
+    "sha256": "12455289c8a6dc904543be0769bc9a35ec97322059d87e5cb912d6faafe392b3",
+    "chars": 55556,
+    "label": "Finlex 1334/2022",
+    "url": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute-consolidated/2022/1334/fin@"
+   },
+   "l1384": {
+    "sha256": "4c881eeb795e96ab8198ad7b759cbd3d13ef8d52d7433fab76b73c4492a7c3dc",
+    "chars": 19758,
+    "label": "Finlex 1384/2022",
+    "url": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute-consolidated/2022/1384/fin@"
+   }
+  },
+  "candidates": [],
+  "lastScanned": "2026-10-28",
+  "searchErrors": []
+ },
+ "reviewNeeded": [],
+ "note": "Huella del texto de páginas oficiales de la PAC (l1332, l1334, l1384) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
+}

@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "country": "LV",
+ "source": "lad_lv",
+ "status": "OK",
+ "checkedAt": "2026-10-28",
+ "baseline": {
+  "fingerprints": {
+   "sia2026": {
+    "sha256": "e666ee71f991a1ecb94992baeb5e838b3c27dba47a8e7957b3521d6048177d71",
+    "chars": 17096,
+    "label": "LAD: ficha de ayudas a la renta ligadas a la superficie 2026",
+    "url": "https://www.lad.gov.lv/lv/katalogs/saistitie-ienakumu-atbalsti-par-platibam-2026-gada"
+   },
+   "mls2026": {
+    "sha256": "8a1d88c6392bf3f4709b35403b57f2bfc685b5e3b9b1078a38c77aa7a20f9bc3",
+    "chars": 5302,
+    "label": "LAD: ficha del pago a pequeños agricultores 2026",
+    "url": "https://www.lad.gov.lv/lv/katalogs/maksajums-mazajiem-lauksaimniekiem-mls-2026-gada"
+   }
+  },
+  "acknowledged": []
+ },
+ "current": {
+  "fingerprints": {
+   "sia2026": {
+    "sha256": "e666ee71f991a1ecb94992baeb5e838b3c27dba47a8e7957b3521d6048177d71",
+    "chars": 17096,
+    "label": "LAD: ficha de ayudas a la renta ligadas a la superficie 2026",
+    "url": "https://www.lad.gov.lv/lv/katalogs/saistitie-ienakumu-atbalsti-par-platibam-2026-gada"
+   },
+   "mls2026": {
+    "sha256": "8a1d88c6392bf3f4709b35403b57f2bfc685b5e3b9b1078a38c77aa7a20f9bc3",
+    "chars": 5302,
+    "label": "LAD: ficha del pago a pequeños agricultores 2026",
+    "url": "https://www.lad.gov.lv/lv/katalogs/maksajums-mazajiem-lauksaimniekiem-mls-2026-gada"
+   }
+  },
+  "candidates": [],
+  "lastScanned": "2026-10-28",
+  "searchErrors": []
+ },
+ "reviewNeeded": [],
+ "note": "Huella del texto de páginas oficiales de la PAC (sia2026, mls2026) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
+}

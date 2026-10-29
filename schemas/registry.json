@@ -1330,6 +1330,42 @@
     "cap_nat_watch"
    ]
   ],
+  "cap/bg/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/lv/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/ee/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/fi/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/sk/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
+  "cap/si/watch.json": [
+   "cap-nat-watch",
+   [
+    "cap_nat_watch"
+   ]
+  ],
   "cap/pl/watch.json": [
    "cap-nat-watch",
    [

@@ -1,0 +1,56 @@
+{
+ "schemaVersion": 1,
+ "country": "BG",
+ "source": "mzh_bg",
+ "status": "OK",
+ "checkedAt": "2026-10-28",
+ "baseline": {
+  "fingerprints": {
+   "naredba3": {
+    "sha256": "49e0fc07bdad17326ac9b09bc7362f016c0f76a76e23be8d020c430c3d843e11",
+    "chars": 228435,
+    "label": "Наредба № 3/2023 (pagos directos), PDF del MZH",
+    "url": "https://www.mzh.government.bg/media/filer_public/2026/01/21/naredba_3_ot_10032023_g_za_usloviqta_i_reda_za_prilagane_na_intervenciite_pod_formata_na_direktni_pl.pdf"
+   }
+  },
+  "acknowledged": [
+   "https://www.mzh.government.bg/bg/press-center/novini/ministr-abrovski-zapochvame-proverki-po-cyalata-ve/",
+   "https://www.mzh.government.bg/bg/press-center/novini/opredeleni-sa-stavkite-za-prehodnata-nacionalna111/",
+   "https://www.mzh.government.bg/bg/press-center/novini/za-prvi-pt-v-kampaniya-2026-50-avansovi-plashaniya/"
+  ]
+ },
+ "current": {
+  "fingerprints": {
+   "naredba3": {
+    "sha256": "49e0fc07bdad17326ac9b09bc7362f016c0f76a76e23be8d020c430c3d843e11",
+    "chars": 228435,
+    "label": "Наредба № 3/2023 (pagos directos), PDF del MZH",
+    "url": "https://www.mzh.government.bg/media/filer_public/2026/01/21/naredba_3_ot_10032023_g_za_usloviqta_i_reda_za_prilagane_na_intervenciite_pod_formata_na_direktni_pl.pdf"
+   }
+  },
+  "candidates": [
+   {
+    "id": "https://www.mzh.government.bg/bg/press-center/novini/opredeleni-sa-stavkite-za-prehodnata-nacionalna111/",
+    "title": "Определени са ставките за Преходната национална помощ за говеда и биволи за Кампания 2026 г.",
+    "date": "2026-10-28",
+    "url": "https://www.mzh.government.bg/bg/press-center/novini/opredeleni-sa-stavkite-za-prehodnata-nacionalna111/"
+   },
+   {
+    "id": "https://www.mzh.government.bg/bg/press-center/novini/za-prvi-pt-v-kampaniya-2026-50-avansovi-plashaniya/",
+    "title": "За първи път в Кампания 2026 - 50% авансови плащания в сектор „Плодове и зеленчуци“",
+    "date": "2026-10-28",
+    "url": "https://www.mzh.government.bg/bg/press-center/novini/za-prvi-pt-v-kampaniya-2026-50-avansovi-plashaniya/"
+   },
+   {
+    "id": "https://www.mzh.government.bg/bg/press-center/novini/ministr-abrovski-zapochvame-proverki-po-cyalata-ve/",
+    "title": "Министър Абровски: Започваме проверки по цялата верига на доставки на хранителните продукти",
+    "date": "2026-10-28",
+    "url": "https://www.mzh.government.bg/bg/press-center/novini/ministr-abrovski-zapochvame-proverki-po-cyalata-ve/"
+   }
+  ],
+  "lastScanned": "2026-10-28",
+  "searchErrors": []
+ },
+ "reviewNeeded": [],
+ "note": "Huella del texto de páginas oficiales de la PAC (naredba3) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
+}

@@ -120,7 +120,7 @@
     if (D[cc]) { host.innerHTML = html(cc); return; }
     if (loaded[cc]) return; loaded[cc] = true;
     var lc = cc.toLowerCase();
-    Promise.all([get('data/cap/' + lc + '/rules.json'), (/^(FR|IT|PL|NL|PT|EL)$/.test(cc) ? get('data/cap/' + lc + '/watch.json') : null), cc === 'PL' ? get('data/cap/pl/amounts.json') : null]).then(function (r) {
+    Promise.all([get('data/cap/' + lc + '/rules.json'), (/^(FR|IT|PL|NL|PT|EL|BG|LV|EE|FI|SK|SI)$/.test(cc) ? get('data/cap/' + lc + '/watch.json') : null), cc === 'PL' ? get('data/cap/pl/amounts.json') : null]).then(function (r) {
       D[cc] = { rules: r[0], watch: r[1], amounts: r[2] }; host.innerHTML = html(cc);
     });
   }

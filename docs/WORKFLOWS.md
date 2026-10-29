@@ -2,12 +2,12 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-328 workflows (278 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+334 workflows (284 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
 - script scripts/update-ams.mjs usado por varios workflows: update-ams-auctions.yml, update-ams.yml (duplicado o fan-out intencionado: revisar)
-- script scripts/update-cap-nat.py usado por varios workflows: update-cap-de.yml, update-cap-el.yml, update-cap-fr.yml, update-cap-it.yml, update-cap-nl.yml, update-cap-pl.yml, update-cap-pt.yml (duplicado o fan-out intencionado: revisar)
+- script scripts/update-cap-nat.py usado por varios workflows: update-cap-bg.yml, update-cap-de.yml, update-cap-ee.yml, update-cap-el.yml, update-cap-fi.yml, update-cap-fr.yml, update-cap-it.yml, update-cap-lv.yml, update-cap-nl.yml, update-cap-pl.yml, update-cap-pt.yml, update-cap-si.yml, update-cap-sk.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-eu-ghg-agri.py usado por varios workflows: update-at-ghg-agri.yml, update-be-ghg-agri.yml, update-de-ghg-agri.yml, update-el-ghg-agri.yml, update-eu-more-ghg-agri.yml, update-fr-ghg-agri.yml, update-hr-ghg-agri.yml, update-ie-ghg-agri.yml, update-it-ghg-agri.yml, update-nl-ghg-agri.yml, update-pl-ghg-agri.yml, update-pt-ghg-agri.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-eurostat-structure.py usado por varios workflows: update-eurostat-structure.yml, update-eurostat-structure2.yml (duplicado o fan-out intencionado: revisar)
 - script scripts/update-nass-us.mjs usado por varios workflows: quality.yml, update-nass-data.yml (duplicado o fan-out intencionado: revisar)
@@ -72,15 +72,21 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-canada-stats.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-canada-stats.py | canada-stats.json, supply-balances/ca.json | finish, validate-files |
 | update-canada-wholesale.yml | a mano | semanal (1-5) | update-canada-wholesale.py | - | publish |
 | update-canada.yml | a mano | semanal (1,4) | update-statcan-canada.py | - | price-engine, publish |
+| update-cap-bg.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/bg/watch.json | finish, validate-files |
 | update-cap-de.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/de/watch.json | finish, validate-files |
 | update-cap-dk.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-dk.py | cap/dk/amounts.json, cap/dk/watch.json | finish, validate-files |
+| update-cap-ee.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/ee/watch.json | finish, validate-files |
 | update-cap-el.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/el/watch.json | finish, validate-files |
 | update-cap-es.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-es.py | cap/es/amounts.json, cap/es/watch.json | finish, validate-files |
+| update-cap-fi.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/fi/watch.json | finish, validate-files |
 | update-cap-fr.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/fr/watch.json | finish, validate-files |
 | update-cap-it.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/it/watch.json | finish, validate-files |
+| update-cap-lv.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/lv/watch.json | finish, validate-files |
 | update-cap-nl.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/nl/watch.json | finish, validate-files |
 | update-cap-pl.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/pl/watch.json | finish, validate-files |
 | update-cap-pt.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/pt/watch.json | finish, validate-files |
+| update-cap-si.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/si/watch.json | finish, validate-files |
+| update-cap-sk.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-nat.py | cap/sk/watch.json | finish, validate-files |
 | update-cattle-on-feed.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-cattle-on-feed.py | cattle-on-feed.json | finish, validate-files |
 
 ## CL

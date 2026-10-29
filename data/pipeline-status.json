@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T02:48:00Z",
+ "generatedAt": "2026-10-29T02:59:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 313,
   "late": 2,
   "error": 1,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 6
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
   "repoGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
-  "checkedAt": "2026-10-29T02:48:00Z"
+  "checkedAt": "2026-10-29T02:59:00Z"
  },
  "pipelines": [
   {
@@ -103,9 +103,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40690820373"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 7,
-    "failed": 2
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -859,11 +859,11 @@
     }
    ],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-28T01:39:13Z",
-    "durationSec": 46,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40616317992"
+    "conclusion": "cancelled",
+    "event": "schedule",
+    "startedAt": "2026-10-29T02:51:44Z",
+    "durationSec": 234,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40808841908"
    },
    "recent": {
     "runs": 10,
@@ -895,6 +895,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-cap-bg.yml",
+   "name": "Watch Bulgaria CAP changes (mzh.government.bg)",
+   "crons": [
+    "25 8 * * 1"
+   ],
+   "nextRun": "2026-11-02T08:25:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-cap-de.yml",
@@ -940,6 +953,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-ee.yml",
+   "name": "Watch Estonia CAP changes (PRIA PDFs)",
+   "crons": [
+    "35 8 * * 1"
+   ],
+   "nextRun": "2026-11-02T08:35:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {
@@ -989,6 +1015,19 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-cap-fi.yml",
+   "name": "Watch Finland CAP changes (Finlex open data)",
+   "crons": [
+    "40 8 * * 1"
+   ],
+   "nextRun": "2026-11-02T08:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-cap-fr.yml",
    "name": "Watch France CAP changes (DILA JORF daily open-data dumps)",
    "crons": [
@@ -1032,6 +1071,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-lv.yml",
+   "name": "Watch Latvia CAP changes (lad.gov.lv)",
+   "crons": [
+    "30 8 * * 1"
+   ],
+   "nextRun": "2026-11-02T08:30:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {
@@ -1101,6 +1153,32 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-si.yml",
+   "name": "Watch Slovenia CAP changes (gov.si)",
+   "crons": [
+    "50 8 * * 1"
+   ],
+   "nextRun": "2026-11-02T08:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cap-sk.yml",
+   "name": "Watch Slovakia CAP changes (apa.sk and Slov-Lex)",
+   "crons": [
+    "45 8 * * 1"
+   ],
+   "nextRun": "2026-11-02T08:45:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {
@@ -4966,7 +5044,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T02:04:02Z"
+     "lastChange": "2026-10-29T02:52:38Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7326,14 +7404,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-28T00:14:42Z",
-    "durationSec": 2084,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40607507056"
+    "startedAt": "2026-10-29T02:55:37Z",
+    "durationSec": 413,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40809210022"
    },
    "recent": {
     "runs": 10,
-    "success": 5,
-    "failed": 1
+    "success": 6,
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 168.0

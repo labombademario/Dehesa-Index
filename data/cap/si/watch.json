@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "country": "SI",
+ "source": "gov_si",
+ "status": "OK",
+ "checkedAt": "2026-10-28",
+ "baseline": {
+  "fingerprints": {
+   "neposredna": {
+    "sha256": "bee4c6b27ce7ecb8b14a2a3fce302eddd3e440b9130407c703b42d5bbc861795",
+    "chars": 5176,
+    "label": "gov.si: pagos directos a explotaciones",
+    "url": "https://www.gov.si/podrocja/kmetijstvo-gozdarstvo-in-prehrana/kmetijstvo-in-razvoj-podezelja/neposredna-placila-za-kmetije/"
+   },
+   "np2026": {
+    "sha256": "4088fa644b24de7287b4bfcd3f5b14573ec68b8efe2baa10c92c4e9b6eaf411c",
+    "chars": 131667,
+    "label": "ARSKTRP: pagos directos 2026 (PDF)",
+    "url": "https://www.gov.si/assets/organi-v-sestavi/ARSKTRP/SNP/ZV-2026/NEPOSREDNA-PLACILA.pdf"
+   }
+  },
+  "acknowledged": []
+ },
+ "current": {
+  "fingerprints": {
+   "neposredna": {
+    "sha256": "bee4c6b27ce7ecb8b14a2a3fce302eddd3e440b9130407c703b42d5bbc861795",
+    "chars": 5176,
+    "label": "gov.si: pagos directos a explotaciones",
+    "url": "https://www.gov.si/podrocja/kmetijstvo-gozdarstvo-in-prehrana/kmetijstvo-in-razvoj-podezelja/neposredna-placila-za-kmetije/"
+   },
+   "np2026": {
+    "sha256": "4088fa644b24de7287b4bfcd3f5b14573ec68b8efe2baa10c92c4e9b6eaf411c",
+    "chars": 131667,
+    "label": "ARSKTRP: pagos directos 2026 (PDF)",
+    "url": "https://www.gov.si/assets/organi-v-sestavi/ARSKTRP/SNP/ZV-2026/NEPOSREDNA-PLACILA.pdf"
+   }
+  },
+  "candidates": [],
+  "lastScanned": "2026-10-28",
+  "searchErrors": []
+ },
+ "reviewNeeded": [],
+ "note": "Huella del texto de páginas oficiales de la PAC (neposredna, np2026) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
+}

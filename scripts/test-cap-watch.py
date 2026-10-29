@@ -63,4 +63,34 @@ tmp = Path(tempfile.mkdtemp()); (tmp / 'https_pepacc.pt_feed_').write_text('<htm
 try: M.pt_scan(M.init_doc('PT'), str(tmp)); check(False, 'PT: un RSS roto debe dar error')
 except Exception: pass
 shutil.rmtree(tmp)
-print('vigilancia PAC DE/NL/PT/EL: %d fallos' % len(fails)); sys.exit(1 if fails else 0)
+
+# BG/LV/EE/FI/SK/SI: paginas oficiales (fixtures sinteticos, escritos aqui)
+import re as _re
+def fx(url): return _re.sub(r'[^A-Za-z0-9._-]+', '_', url)
+tmp = Path(tempfile.mkdtemp())
+def put(url, body): (tmp / fx(url)).write_text(body, encoding='utf-8')
+LONG = ' '.join('Pagos directos campaña %d tasa por hectárea.' % i for i in range(30))
+U1, U2, UL = 'https://ej.test/a', 'https://ej.test/b.xml', 'https://ej.test/novedades/'
+M.SIX['ZZ'] = {'source': 'ej', 'since': '2026-10-28', 'pages': [('a', 'Pagina A', U1, 'html'), ('b', 'Norma B', U2, 'xml')],
+               'lists': [(UL, r'директни плащания|pagos directos', 'https://ej.test/novedades/')]}
+put(U1, '<html><body><nav>menu 10:31</nav><main>' + LONG + '</main></body></html>'); put(U2, '<act><p>' + LONG + '</p></act>')
+put(UL, '<a href="/novedades/uno">Pagos directos 2026: nuevas tasas</a><a href="/novedades/dos">Noticia sin relación alguna</a><a href="https://otro.test/x">Pagos directos en otro sitio</a>')
+z = M.init_doc('ZZ'); M.six_scan(z, str(tmp), 'ZZ'); z2 = M.init_doc('ZZ'); put(U1, '<html><body><nav>menu 11:45</nav><main>' + LONG + '</main></body></html>'); M.six_scan(z2, str(tmp), 'ZZ')
+check(set(z['current']['fingerprints']) == {'a', 'b'}, 'SIX: deben leerse las dos paginas')
+check(z['current']['fingerprints']['a']['sha256'] == z2['current']['fingerprints']['a']['sha256'], 'SIX: el menu (nav) no debe cambiar la huella')
+check([x['id'] for x in z['current']['candidates']] == ['https://ej.test/novedades/uno'], 'SIX: candidatos %s' % z['current']['candidates'])
+z['baseline']['fingerprints'] = copy.deepcopy(z['current']['fingerprints']); z['baseline']['acknowledged'] = ['https://ej.test/novedades/uno']
+check(M.diff(z) == [], 'SIX: sin cambios no debe haber nada que revisar')
+put(U1, '<html><body><main>' + LONG + ' Tasa nueva 123.</main></body></html>'); M.six_scan(z, str(tmp), 'ZZ')
+check(len(M.diff(z)) == 1 and 'cambia: Pagina A' in M.diff(z)[0], 'SIX: un cambio del texto debe aparecer %s' % M.diff(z))
+put(UL, '<a href="/novedades/uno">Pagos directos 2026: nuevas tasas</a><a href="/novedades/tres">Pagos directos: ayuda redistributiva nueva</a>'); M.six_scan(z, str(tmp), 'ZZ')
+check(len(z['current']['candidates']) == 2 and len([x for x in M.diff(z) if x.startswith('texto nuevo')]) == 1, 'SIX: un enlace nuevo debe pedir revision')
+put(U1, '<main>corto</main>'); q = M.init_doc('ZZ'); M.six_scan(q, str(tmp), 'ZZ')
+check(len(q['current']['fingerprints']) == 1 and any('demasiado corto' in e for e in q['current']['searchErrors']), 'SIX: pagina corta queda anotada, no huella')
+shutil.rmtree(tmp); tmp = Path(tempfile.mkdtemp())
+try: M.six_scan(M.init_doc('ZZ'), str(tmp), 'ZZ'); check(False, 'SIX: sin ninguna pagina debe dar error')
+except IOError: pass
+shutil.rmtree(tmp); del M.SIX['ZZ']
+check(set(M.SIX) == {'BG', 'LV', 'EE', 'FI', 'SK', 'SI'}, 'SIX: seis paises')
+check(all(M.init_doc(c)['country'] == c for c in M.SIX), 'SIX: init_doc')
+print('vigilancia PAC DE/NL/PT/EL/BG/LV/EE/FI/SK/SI: %d fallos' % len(fails)); sys.exit(1 if fails else 0)

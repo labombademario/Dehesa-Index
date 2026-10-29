@@ -1,0 +1,69 @@
+{
+ "schemaVersion": 1,
+ "country": "SK",
+ "source": "apa_sk",
+ "status": "OK",
+ "checkedAt": "2026-10-28",
+ "baseline": {
+  "fingerprints": {
+   "sadzby": {
+    "sha256": "1f94a71f27cd2552d8f16e7d6eb3d8e3fe67f2ad21e50a04dff1c3f65c423524",
+    "chars": 735,
+    "label": "APA: tasas de ayudas directas",
+    "url": "https://apa.sk/priame-podpory/sadzby"
+   },
+   "z435": {
+    "sha256": "3d4a70605c730f9f76b206c6d415f220d6b3e059cd7610e2ef00ae3c24b37d92",
+    "chars": 1049,
+    "label": "Slov-Lex: lista de versiones de la ley 435/2022 (ayudas directas)",
+    "url": "https://static.slov-lex.sk/static/SK/ZZ/2022/435/"
+   },
+   "z436": {
+    "sha256": "c554b78c14cf9ce70541f821feeae1b6e66b3a5ebc8b0411ed99904d24fdb986",
+    "chars": 1132,
+    "label": "Slov-Lex: lista de versiones de la ley 436/2022",
+    "url": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/"
+   },
+   "z120": {
+    "sha256": "1f104567816ea89cd19f5279ddf43fdeb136ee3fb56fabab29b6f6c3dc689772",
+    "chars": 1024,
+    "label": "Slov-Lex: lista de versiones de 120/2023",
+    "url": "https://static.slov-lex.sk/static/SK/ZZ/2023/120/"
+   }
+  },
+  "acknowledged": []
+ },
+ "current": {
+  "fingerprints": {
+   "sadzby": {
+    "sha256": "1f94a71f27cd2552d8f16e7d6eb3d8e3fe67f2ad21e50a04dff1c3f65c423524",
+    "chars": 735,
+    "label": "APA: tasas de ayudas directas",
+    "url": "https://apa.sk/priame-podpory/sadzby"
+   },
+   "z435": {
+    "sha256": "3d4a70605c730f9f76b206c6d415f220d6b3e059cd7610e2ef00ae3c24b37d92",
+    "chars": 1049,
+    "label": "Slov-Lex: lista de versiones de la ley 435/2022 (ayudas directas)",
+    "url": "https://static.slov-lex.sk/static/SK/ZZ/2022/435/"
+   },
+   "z436": {
+    "sha256": "c554b78c14cf9ce70541f821feeae1b6e66b3a5ebc8b0411ed99904d24fdb986",
+    "chars": 1132,
+    "label": "Slov-Lex: lista de versiones de la ley 436/2022",
+    "url": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/"
+   },
+   "z120": {
+    "sha256": "1f104567816ea89cd19f5279ddf43fdeb136ee3fb56fabab29b6f6c3dc689772",
+    "chars": 1024,
+    "label": "Slov-Lex: lista de versiones de 120/2023",
+    "url": "https://static.slov-lex.sk/static/SK/ZZ/2023/120/"
+   }
+  },
+  "candidates": [],
+  "lastScanned": "2026-10-28",
+  "searchErrors": []
+ },
+ "reviewNeeded": [],
+ "note": "Huella del texto de páginas oficiales de la PAC (sadzby, z435, z436, z120) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
+}

@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "country": "EE",
+ "source": "pria_ee",
+ "status": "OK",
+ "checkedAt": "2026-10-28",
+ "baseline": {
+  "fingerprints": {
+   "otsetoetused": {
+    "sha256": "a416e333283877ff09b1ce3077a0f8f475d7cbb7ad456d7b4cbb2c72af7487c7",
+    "chars": 163373,
+    "label": "PRIA: tasas de pagos directos 2026 (PDF)",
+    "url": "https://pria.ee/sites/default/files/2026-06/otsetoetuste-at-2026.pdf"
+   },
+   "okokavad": {
+    "sha256": "5d4f70ceab71c8d7067568722e259a0ccc6c3bb99782510e4cfe4b4c5c4781cf",
+    "chars": 223095,
+    "label": "PRIA: ecoesquemas 2026 (PDF)",
+    "url": "https://www.pria.ee/sites/default/files/2026-06/okokavade-at-2026.pdf"
+   }
+  },
+  "acknowledged": []
+ },
+ "current": {
+  "fingerprints": {
+   "otsetoetused": {
+    "sha256": "a416e333283877ff09b1ce3077a0f8f475d7cbb7ad456d7b4cbb2c72af7487c7",
+    "chars": 163373,
+    "label": "PRIA: tasas de pagos directos 2026 (PDF)",
+    "url": "https://pria.ee/sites/default/files/2026-06/otsetoetuste-at-2026.pdf"
+   },
+   "okokavad": {
+    "sha256": "5d4f70ceab71c8d7067568722e259a0ccc6c3bb99782510e4cfe4b4c5c4781cf",
+    "chars": 223095,
+    "label": "PRIA: ecoesquemas 2026 (PDF)",
+    "url": "https://www.pria.ee/sites/default/files/2026-06/okokavade-at-2026.pdf"
+   }
+  },
+  "candidates": [],
+  "lastScanned": "2026-10-28",
+  "searchErrors": []
+ },
+ "reviewNeeded": [],
+ "note": "Huella del texto de páginas oficiales de la PAC (otsetoetused, okokavad) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
+}

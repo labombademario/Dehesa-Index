@@ -2197,6 +2197,66 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
     data: [cap/el/watch.json]
     message: Seguimiento de la PAC de Grecia (web oficial del Plan Estratégico)
+  - id: cap-bg
+    name: Watch Bulgaria CAP changes (mzh.government.bg)
+    cron: ['25 8 * * 1']
+    script: scripts/update-cap-nat.py BG
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/bg/watch.json]
+    message: Seguimiento de la PAC de Bulgaria (Ministerio de Agricultura)
+  - id: cap-lv
+    name: Watch Latvia CAP changes (lad.gov.lv)
+    cron: ['30 8 * * 1']
+    script: scripts/update-cap-nat.py LV
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/lv/watch.json]
+    message: Seguimiento de la PAC de Letonia (LAD)
+  - id: cap-ee
+    name: Watch Estonia CAP changes (PRIA PDFs)
+    cron: ['35 8 * * 1']
+    script: scripts/update-cap-nat.py EE
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/ee/watch.json]
+    message: Seguimiento de la PAC de Estonia (PRIA)
+  - id: cap-fi
+    name: Watch Finland CAP changes (Finlex open data)
+    cron: ['40 8 * * 1']
+    script: scripts/update-cap-nat.py FI
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/fi/watch.json]
+    message: Seguimiento de la PAC de Finlandia (Finlex)
+  - id: cap-sk
+    name: Watch Slovakia CAP changes (apa.sk and Slov-Lex)
+    cron: ['45 8 * * 1']
+    script: scripts/update-cap-nat.py SK
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/sk/watch.json]
+    message: Seguimiento de la PAC de Eslovaquia (APA y Slov-Lex)
+  - id: cap-si
+    name: Watch Slovenia CAP changes (gov.si)
+    cron: ['50 8 * * 1']
+    script: scripts/update-cap-nat.py SI
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/si/watch.json]
+    message: Seguimiento de la PAC de Eslovenia (gov.si)
   - id: us-states
     name: Update US data by state (USDA NASS Quick Stats and USDA ERS farm income)
     cron: ['40 21 * * 5']
