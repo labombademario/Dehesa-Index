@@ -42,6 +42,43 @@
       tp_farmer: 'Agricoltore attivo', tp_young: 'Giovani agricoltori', tp_calendar: 'Calendario', tp_penalties: 'Sanzioni', tp_eco: 'Ecoschemi', tp_payments: 'Pagamenti', tp_controls: 'Controlli', tp_amounts: 'Importi', tp_abrs: 'Titoli di pagamento', tp_redistributive: 'Pagamento redistributivo', tp_associated: 'Sostegno accoppiato', tp_basic: 'Sostegno di base' }
   };
   var D = { FR: null, IT: null, PL: null }, loaded = {};
+  /* Las citas legales (legalBasis) llevan el título de la norma en su idioma original y palabras de enlace en español: se traducen solo esas palabras (las normas no se tocan). */
+  var MONTHS = { es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'], en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'], it: ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'] };
+  var LBR = [  // [expresión española, en, fr, it]
+    [/\bcopia consolidada de (\d)/g, 'consolidated copy of $1', 'copie consolidée du $1', 'copia consolidata del $1'],
+    [/\bcon reformas hasta\b/g, 'with amendments up to', 'avec modifications jusqu’au', 'con modifiche fino a'],
+    [/\(hasta /g, '(up to ', '(jusqu’au ', '(fino a '],
+    [/\btexto unificado\b/g, 'consolidated text', 'texte consolidé', 'testo unificato'],
+    [/\btexto consolidado\b/g, 'consolidated text', 'texte consolidé', 'testo consolidato'],
+    [/\bleído en copia de\b/g, 'read in a copy from', 'lu dans une copie de', 'letto in una copia di'],
+    [/\bdel ministro de Agricultura\b/g, 'of the Minister of Agriculture', 'du ministre de l’Agriculture', 'del ministro dell’Agricoltura'],
+    [/\bnotas de prensa sobre campañas e importes\b/g, 'press releases on campaigns and amounts', 'communiqués de presse sur les campagnes et les montants', 'comunicati stampa su campagne e importi'],
+    [/\bnotas? de prensa\b/g, 'press release', 'communiqué de presse', 'comunicato stampa'],
+    [/\bque modifica el\b/g, 'amending', 'modifiant l’', 'che modifica l’'],
+    [/\(versión de (\d)/g, '(version of $1', '(version du $1', '(versione del $1'],
+    [/\bversión oficial\b/g, 'official version', 'version officielle', 'versione ufficiale'],
+    [/\btraducción inglesa oficial desactualizada\b/g, 'official English translation, out of date', 'traduction anglaise officielle obsolète', 'traduzione inglese ufficiale non aggiornata'],
+    [/\bsistemas de sanciones\b/g, 'penalty systems', 'régimes de sanctions', 'sistemi di sanzioni'],
+    [/\bfichas y guías de\b/g, 'fact sheets and guides of', 'fiches et guides de', 'schede e guide del'],
+    [/\bla norma que fija el plazo no se pudo leer\b/g, 'the rule setting the deadline could not be read', 'le texte fixant le délai n’a pas pu être lu', 'la norma che fissa il termine non è stata letta'],
+    [/\bdisposición transitoria primera\b/g, 'first transitional provision', 'première disposition transitoire', 'prima disposizione transitoria'],
+    [/\bdisposición transitoria\b/g, 'transitional provision', 'disposition transitoire', 'disposizione transitoria'],
+    [/\bReglamento \(UE\)/g, 'Regulation (EU)', 'Règlement (UE)', 'Regolamento (UE)'],
+    [/\bReglamento Delegado\b/g, 'Delegated Regulation', 'Règlement délégué', 'Regolamento delegato'],
+    [/\bReglamento de Ejecución\b/g, 'Implementing Regulation', 'Règlement d’exécution', 'Regolamento di esecuzione'],
+    [/\bReal Decreto\b/g, 'Royal Decree', 'Décret royal', 'Regio decreto'],
+    [/\bapdo\. /g, 'para. ', 'al. ', 'par. '],
+    [/\bpuntos (\d)/g, 'points $1', 'points $1', 'punti $1'], [/\bpunto (\d)/g, 'point $1', 'point $1', 'punto $1'],
+    [/\banexas? (\d)/g, 'annexes $1', 'annexes $1', 'allegati $1'], [/\banexo (\d)/g, 'annex $1', 'annexe $1', 'allegato $1'],
+    [/\b(arts?\.? [\d.]+(?:-\d+)?) a (\d)/g, '$1 to $2', '$1 à $2', '$1 a $2'],
+    [/ y (?=[\dA-Za-zÀ-ÿΑ-Ωа-яА-Я§])/g, ' and ', ' et ', ' e ']
+  ];
+  function lb(s) {
+    var lg = lang(); if (lg === 'es' || !s) return s; var i = { en: 1, fr: 2, it: 3 }[lg]; if (!i) return s;
+    LBR.forEach(function (r) { s = s.replace(r[0], r[i]); });
+    s = s.replace(/\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre) de (\d{4})/g, function (m, mo, y) { return MONTHS[lg][MONTHS.es.indexOf(mo)] + ' ' + y; });
+    return s;
+  }
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function t() { return T[lang()] || T.es; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -59,11 +96,11 @@
   function datesHtml(r) {
     var x = t(), now = today(), rows = r.calendar.map(function (c) { return { c: c, d: next(c, now) }; }).filter(function (o) { return o.d; }).sort(function (a, b) { return a.d - b.d; });
     var h = !rows.length ? '' : '<h3 class="pac-eu-h2">' + esc(x.datesH) + '</h3><div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(x.next) + '</th><th scope="col">' + esc(x.legal) + '</th></tr></thead><tbody>' + rows.map(function (o) {
-      return '<tr><td><b>' + esc(dt(o.d.toISOString())) + '</b><br>' + esc(tr(r, 'calendar', o.c.id, o.c.text)) + '</td><td class="di-movers-hint">' + esc(o.c.legalBasis) + '</td></tr>';
+      return '<tr><td><b>' + esc(dt(o.d.toISOString())) + '</b><br>' + esc(tr(r, 'calendar', o.c.id, o.c.text)) + '</td><td class="di-movers-hint">' + esc(lb(o.c.legalBasis)) + '</td></tr>';
     }).join('') + '</tbody></table></div>';
     if (r.campaignOverrides.length) {
       h += '<details class="pac-eu-all"><summary>' + esc(x.ovrH) + ' (' + r.campaignOverrides.length + ')</summary><ul>' + r.campaignOverrides.slice().sort(function (a, b) { return b.campaign - a.campaign; }).map(function (o) {
-        return '<li><b>' + esc(fill(x.ovrC, { c: o.campaign })) + '</b> · ' + esc(dt(o.date)) + ': ' + esc(tr(r, 'overrides', o.campaign + ':' + o.calendarId, o.text)) + ' <span class="di-movers-hint">(' + esc(o.legalBasis) + ')</span></li>';
+        return '<li><b>' + esc(fill(x.ovrC, { c: o.campaign })) + '</b> · ' + esc(dt(o.date)) + ': ' + esc(tr(r, 'overrides', o.campaign + ':' + o.calendarId, o.text)) + ' <span class="di-movers-hint">(' + esc(lb(o.legalBasis)) + ')</span></li>';
       }).join('') + '</ul></details>';
     }
     return h;
@@ -73,12 +110,12 @@
     return '<h3 class="pac-eu-h2">' + esc(x.rulesH) + '</h3>' + r.rules.map(function (u) {
       var tx = tr(r, 'rules', u.id, u.text), fs = (tx.match(/^.*?[.;](?=\s|$)/) || [tx])[0]; if (fs.length > 110) fs = fs.slice(0, 107).replace(/\s+\S*$/, '') + '…';
       var lab = x['tp_' + u.topic] || u.topic; if (fs.toLowerCase().indexOf(lab.toLowerCase()) === 0 && /^\s?:/.test(fs.slice(lab.length))) fs = fs.slice(lab.length).replace(/^\s?:\s*/, '');
-      return '<details class="pac-eu-all"><summary>' + esc(lab) + ': ' + esc(fs) + '</summary><p>' + esc(tx) + ' <span class="di-movers-hint">(' + esc(u.legalBasis) + ')</span></p><p><a class="di-link-btn" href="' + esc(u.officialUrl) + '" rel="noopener" target="_blank">' + esc(x.official) + '</a></p></details>';
+      return '<details class="pac-eu-all"><summary>' + esc(lab) + ': ' + esc(fs) + '</summary><p>' + esc(tx) + ' <span class="di-movers-hint">(' + esc(lb(u.legalBasis)) + ')</span></p><p><a class="di-link-btn" href="' + esc(u.officialUrl) + '" rel="noopener" target="_blank">' + esc(x.official) + '</a></p></details>';
     }).join('');
   }
   function intHtml(r) {
     var x = t();
-    return '<h3 class="pac-eu-h2">' + esc(x.intH) + '</h3><ul>' + r.interventions.map(function (i) { return '<li><span lang="' + esc(i.nameLang) + '">' + esc(i.name) + '</span> · <span class="di-movers-hint">' + esc(i.legalBasis) + '</span></li>'; }).join('') + '</ul>';
+    return '<h3 class="pac-eu-h2">' + esc(x.intH) + '</h3><ul>' + r.interventions.map(function (i) { return '<li><span lang="' + esc(i.nameLang) + '">' + esc(i.name) + '</span> · <span class="di-movers-hint">' + esc(lb(i.legalBasis)) + '</span></li>'; }).join('') + '</ul>';
   }
   function watchHtml(w) {
     var x = t(), h = '<h3 class="pac-eu-h2">' + esc(x.watchH) + '</h3>';

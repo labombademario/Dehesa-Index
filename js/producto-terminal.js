@@ -151,6 +151,10 @@
     unknown: ['Producto desconocido', 'Unknown product', 'Produit inconnu', 'Prodotto sconosciuto'],
     group: [{ cereales: 'Cereales', oleaginosas: 'Oleaginosas', lacteos: 'Lácteos', ganaderia: 'Ganadería', insumos: 'Insumos', energia: 'Energía', aceites: 'Aceites', azucar: 'Azúcar', otros: 'Otros' }, { cereales: 'Cereals', oleaginosas: 'Oilseeds', lacteos: 'Dairy', ganaderia: 'Livestock', insumos: 'Inputs', energia: 'Energy', aceites: 'Oils', azucar: 'Sugar', otros: 'Other' }, { cereales: 'Céréales', oleaginosas: 'Oléagineux', lacteos: 'Produits laitiers', ganaderia: 'Élevage', insumos: 'Intrants', energia: 'Énergie', aceites: 'Huiles', azucar: 'Sucre', otros: 'Autres' }, { cereales: 'Cereali', oleaginosas: 'Oleaginose', lacteos: 'Latticini', ganaderia: 'Allevamento', insumos: 'Input', energia: 'Energia', aceites: 'Oli', azucar: 'Zucchero', otros: 'Altro' }]
   };
+  var NT = [['Cifras publicadas por USDA PSD', ['Cifras publicadas por USDA PSD; la campana mas reciente es una prevision. stockToUse = existencias finales / consumo (calculado por Dehesa). El mundo es la suma de los paises de la base de PSD.', 'Figures published by USDA PSD; the most recent marketing year is a forecast. stockToUse = ending stocks / consumption (calculated by Dehesa). The world is the sum of the countries in the PSD database.', 'Chiffres publiés par l’USDA (PSD) ; la campagne la plus récente est une prévision. stockToUse = stocks finaux / consommation (calculé par Dehesa). Le monde est la somme des pays de la base PSD.', 'Cifre pubblicate dall’USDA (PSD); la campagna più recente è una previsione. stockToUse = scorte finali / consumo (calcolato da Dehesa). Il mondo è la somma dei paesi della base PSD.']],
+    ['Cuotas sobre el total mundial de PSD', ['Cuotas sobre el total mundial de PSD (suma de los paises de la base, UE una sola vez; no es una cifra publicada por USDA). La campana mas reciente es una prevision.', 'Shares of the PSD world total (sum of the countries in the database, the EU counted once; not a figure published by USDA). The most recent marketing year is a forecast.', 'Parts du total mondial PSD (somme des pays de la base, UE comptée une seule fois ; ce n’est pas un chiffre publié par l’USDA). La campagne la plus récente est une prévision.', 'Quote sul totale mondiale PSD (somma dei paesi della base, UE contata una sola volta; non è una cifra pubblicata dall’USDA). La campagna più recente è una previsione.']],
+    ['Arancel NMF/general publicado', ['Arancel NMF/general publicado por cada administracion; no incluye contingentes, medidas antidumping ni preferencias bilaterales salvo lo que figure en la linea.', 'MFN/general tariff published by each administration; it does not include quotas, anti-dumping measures or bilateral preferences unless stated on the line.', 'Droit NPF/général publié par chaque administration ; il n’inclut ni contingents, ni mesures antidumping, ni préférences bilatérales, sauf mention sur la ligne.', 'Dazio NPF/generale pubblicato da ciascuna amministrazione; non include contingenti, misure antidumping né preferenze bilaterali, salvo quanto indicato nella riga.']]];
+  function nt(s) { s = s || ''; for (var i = 0; i < NT.length; i++) if (s.indexOf(NT[i][0]) === 0) return NT[i][1][li()] || s; return s; }
   function t(k) { var a = TX[k]; if (!a) return k; var v = a[li()]; return v === undefined ? a[0] : v; }
   function tf(k) { var s = t(k), a = arguments; return s.replace(/\{(\d)\}/g, function (m, i) { return a[+i + 1] === undefined ? m : a[+i + 1]; }); }
   var REG = { eu: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea'], us: ['EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'], ca: ['Canadá', 'Canada', 'Canada', 'Canada'], uk: ['Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito'] };
@@ -492,7 +496,7 @@
       if (typeof last === 'number' && typeof prev === 'number') d = a === 'stockToUse' ? '<span class="' + (last > prev ? 'pt-up' : last < prev ? 'pt-down' : 'pt-flat') + '">' + sg(last - prev, 1) + ' pp</span>' : (prev ? chg((last - prev) / Math.abs(prev) * 100) : '—');
       return '<tr><td data-l="' + esc(t('attr')) + '">' + esc(t(a)) + '</td>' + vals.map(function (v, i) { return '<td class="r" data-l="' + esc(my2(yrs[i])) + '">' + (typeof v === 'number' ? esc(a === 'stockToUse' ? nf(v, 1) + ' %' : mt(v, sd.unit)) : '—') + '</td>'; }).join('') + '<td class="r" data-l="' + esc(t('vsPY')) + '">' + d + '</td></tr>';
     }).join('');
-    return chips + '<div class="pt-tblwrap"><table class="pt-table rs"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div><p class="pt-src">' + esc(sd.note) + ' ' + esc(t('source')) + ': ' + esc(srcName(sd.sourceId)) + ' · ' + esc(sd.publishedMonth || '') + ' · <a href="oferta-demanda.html">' + esc(t('sd')) + ' →</a></p>' + ci(sd.sourceId, { period: sd.publishedMonth });
+    return chips + '<div class="pt-tblwrap"><table class="pt-table rs"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div><p class="pt-src">' + esc(nt(sd.note)) + ' ' + esc(t('source')) + ': ' + esc(srcName(sd.sourceId)) + ' · ' + esc(sd.publishedMonth || '') + ' · <a href="oferta-demanda.html">' + esc(t('sd')) + ' →</a></p>' + ci(sd.sourceId, { period: sd.publishedMonth });
   }
 
   function bars(list, cls) {
@@ -511,7 +515,7 @@
       var f = tr[p[0]]; if (!f) return;
       h += '<div class="di-card pt-card"><div class="pt-k">' + esc(t(p[1])) + ' · ' + esc(mt(f.world, tr.unit)) + '</div>' + bars(f.top) + concHtml(f) + '</div>';
     });
-    return h + '</div><p class="pt-src">' + esc(tr.note) + ' ' + esc(t('source')) + ': ' + esc(srcName(tr.sourceId)) + ' · ' + esc(tr.publishedMonth || '') + '</p>' + ci(tr.sourceId, { period: tr.publishedMonth });
+    return h + '</div><p class="pt-src">' + esc(nt(tr.note)) + ' ' + esc(t('source')) + ': ' + esc(srcName(tr.sourceId)) + ' · ' + esc(tr.publishedMonth || '') + '</p>' + ci(tr.sourceId, { period: tr.publishedMonth });
   }
 
   function htmlTariffs() {
@@ -528,7 +532,7 @@
       h += '</tbody></table></div>';
     });
     var srcs = tf0.sources || {}, rel = Object.keys(srcs).map(function (k) { return k + ': ' + srcName(srcs[k].sourceId) + (srcs[k].release ? ' (' + srcs[k].release + ')' : ''); });
-    return h + '<p class="pt-src">' + esc(tf0.note) + '</p><p class="pt-src">' + esc(t('source')) + ': ' + esc(rel.join(' · ')) + ' · <a href="aranceles.html">' + esc(t('allTariffs')) + ' →</a></p>';
+    return h + '<p class="pt-src">' + esc(nt(tf0.note)) + '</p><p class="pt-src">' + esc(t('source')) + ': ' + esc(rel.join(' · ')) + ' · <a href="aranceles.html">' + esc(t('allTariffs')) + ' →</a></p>';
   }
 
   function relObs(pid) { // ultimos precios del producto relacionado en las regiones cargadas
