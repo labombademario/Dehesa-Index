@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T09:53:08Z",
+ "generatedAt": "2026-10-29T14:13:52Z",
  "summary": {
   "files": 103,
   "errors": 0,
@@ -82,7 +82,7 @@
     "points": 1593,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T22:15:38Z",
+   "generatedAt": "2026-10-29T10:26:52Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1048,7 +1048,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-10-28T07:29:25Z",
+   "generatedAt": "2026-10-29T13:26:00Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1744,11 +1744,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 10,
-    "points": 312,
+    "series": 8,
+    "points": 183,
     "lines": 0
    },
-   "generatedAt": "2026-10-24T17:11:42Z",
+   "generatedAt": "2026-10-29T10:10:16Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2118,7 +2118,7 @@
     "points": 1639,
     "lines": 0
    },
-   "generatedAt": "2026-10-28T07:40:18Z",
+   "generatedAt": "2026-10-29T13:44:08Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
