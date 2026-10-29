@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T08:08:00Z",
+ "generatedAt": "2026-10-29T08:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 313,
+  "ok": 312,
   "late": 2,
-  "error": 1,
+  "error": 2,
   "not_run": 7,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
   "repoGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
-  "checkedAt": "2026-10-29T08:08:00Z"
+  "checkedAt": "2026-10-29T08:25:00Z"
  },
  "pipelines": [
   {
@@ -737,7 +737,7 @@
    "crons": [
     "20 8 * * 2,4"
    ],
-   "nextRun": "2026-10-29T08:20:00Z",
+   "nextRun": "2026-11-03T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1646,18 +1646,19 @@
    "nextRun": "2026-11-05T07:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-22T07:53:29Z",
-    "durationSec": 66,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39743701807"
+    "startedAt": "2026-10-29T08:09:48Z",
+    "durationSec": 86,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40840170334",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · tabla HST77 34200 celdas actualizada 2025-09-08T08:00:00 · cosecha 12289 valores | tabla ANI41 24700 celdas actualizada 2026-10-23T08:00:00 | tabla ANI51 17100 celdas actualizada 2026-10-23T08:00:00 | tabla ANI71 5700 celdas actualizad"
    },
    "recent": {
-    "runs": 4,
+    "runs": 5,
     "success": 4,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -2522,7 +2523,7 @@
    "crons": [
     "25 8 * * *"
    ],
-   "nextRun": "2026-10-29T08:25:00Z",
+   "nextRun": "2026-10-30T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2941,13 +2942,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:02:06Z",
-    "durationSec": 54,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39744749989"
+    "startedAt": "2026-10-29T08:16:07Z",
+    "durationSec": 60,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40840920584"
    },
    "recent": {
     "runs": 10,
-    "success": 8,
+    "success": 9,
     "failed": 1
    },
    "status": "ok",
@@ -4843,7 +4844,7 @@
    "crons": [
     "10 8 * * *"
    ],
-   "nextRun": "2026-10-29T08:10:00Z",
+   "nextRun": "2026-10-30T08:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5057,7 +5058,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T07:55:38Z"
+     "lastChange": "2026-10-29T08:11:20Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5365,7 +5366,7 @@
    "crons": [
     "20 8 * * *"
    ],
-   "nextRun": "2026-10-29T08:20:00Z",
+   "nextRun": "2026-10-30T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5600,13 +5601,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:12:29Z",
-    "durationSec": 54,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39746028375"
+    "startedAt": "2026-10-29T08:22:28Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40841663399"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -5715,13 +5716,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T07:59:21Z",
-    "durationSec": 33,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39744403973"
+    "startedAt": "2026-10-29T08:14:18Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40840702374"
    },
    "recent": {
-    "runs": 7,
-    "success": 6,
+    "runs": 8,
+    "success": 7,
     "failed": 1
    },
    "status": "ok",
@@ -5761,13 +5762,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:15:48Z",
-    "durationSec": 61,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39746442650"
+    "startedAt": "2026-10-29T08:24:18Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40841880722"
    },
    "recent": {
-    "runs": 4,
-    "success": 3,
+    "runs": 5,
+    "success": 4,
     "failed": 1
    },
    "status": "ok",
@@ -5848,7 +5849,7 @@
    "crons": [
     "25 8 * * 4"
    ],
-   "nextRun": "2026-10-29T08:25:00Z",
+   "nextRun": "2026-11-05T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5991,13 +5992,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-26T08:08:31Z",
-    "durationSec": 53,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40290219094"
+    "startedAt": "2026-10-29T08:15:45Z",
+    "durationSec": 61,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40840878222"
    },
    "recent": {
-    "runs": 4,
-    "success": 4,
+    "runs": 5,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
@@ -6285,7 +6286,7 @@
    "crons": [
     "25 8 * * 4"
    ],
-   "nextRun": "2026-10-29T08:25:00Z",
+   "nextRun": "2026-11-05T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7202,13 +7203,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:17:53Z",
-    "durationSec": 33,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39746689428"
+    "startedAt": "2026-10-29T08:25:54Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40842074714"
    },
    "recent": {
     "runs": 10,
-    "success": 5,
+    "success": 6,
     "failed": 4
    },
    "status": "ok",
