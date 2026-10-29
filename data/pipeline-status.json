@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T08:41:00Z",
+ "generatedAt": "2026-10-29T08:58:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 311,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
   "repoGeneratedAt": "2026-10-29T00:58:02.318885+00:00",
-  "checkedAt": "2026-10-29T08:41:00Z"
+  "checkedAt": "2026-10-29T08:58:00Z"
  },
  "pipelines": [
   {
@@ -5058,7 +5058,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T08:28:04Z"
+     "lastChange": "2026-10-29T08:45:20Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5739,13 +5739,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-22T08:38:48Z",
-    "durationSec": 49,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39749291860"
+    "startedAt": "2026-10-29T08:53:02Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40845364351"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -5896,7 +5896,7 @@
    "crons": [
     "55 8 * * 4"
    ],
-   "nextRun": "2026-10-29T08:55:00Z",
+   "nextRun": "2026-11-05T08:55:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5919,7 +5919,7 @@
    "crons": [
     "45 8 * * 4"
    ],
-   "nextRun": "2026-10-29T08:45:00Z",
+   "nextRun": "2026-11-05T08:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7250,14 +7250,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-28T03:14:25Z",
-    "durationSec": 28,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40625538531"
+    "startedAt": "2026-10-29T08:48:31Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40844818358"
    },
    "recent": {
     "runs": 10,
-    "success": 8,
-    "failed": 2
+    "success": 9,
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 24.0
