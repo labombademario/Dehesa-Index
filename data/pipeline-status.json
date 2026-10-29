@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-29T19:57:00Z",
+ "generatedAt": "2026-10-29T20:13:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 311,
+  "ok": 310,
   "late": 2,
-  "error": 4,
+  "error": 5,
   "not_run": 6,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-29T18:33:06.041774+00:00",
   "repoGeneratedAt": "2026-10-29T18:33:06.041774+00:00",
-  "checkedAt": "2026-10-29T19:57:00Z"
+  "checkedAt": "2026-10-29T20:13:00Z"
  },
  "pipelines": [
   {
@@ -5068,7 +5068,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-29T19:43:44Z"
+     "lastChange": "2026-10-29T19:59:54Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6439,18 +6439,19 @@
    "nextRun": "2026-11-05T18:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-22T19:14:49Z",
-    "durationSec": 2177,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39838392408"
+    "startedAt": "2026-10-29T19:28:19Z",
+    "durationSec": 2748,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40940377169",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-uruguay.py' has timed out after 45 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
