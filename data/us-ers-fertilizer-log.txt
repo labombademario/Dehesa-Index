@@ -1,4 +1,4 @@
-XLS: https://www.ers.usda.gov/media/5291/all-fertilizer-use-and-price-tables-in-a-single-workbook.xls?v=44188
+XLS: https://www.ers.usda.gov/media/5291/all-fertilizer-use-and-price-tables-in-a-single-workbook.xls?v=43561
 descartada us-ersfert-price-super-phosphate-20-phosphate-m: 52 puntos, ultimo 1981-05
 descartada us-ersfert-index-producer-price-index-potash-a: 24 puntos, ultimo 1983
 descartada us-ersfert-corn-n-pct-alabama-a: 7 puntos, ultimo 1970
