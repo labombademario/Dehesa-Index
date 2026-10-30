@@ -122,6 +122,14 @@
    "class": "RUNTIME",
    "note": "Zonas de produccion de las denominaciones francesas (INAO), poligonos simplificados. El navegador lo descarga solo al pulsar «Ver zona» (270 KB gz)."
   },
+  "data/gi/IT-geo.json": {
+   "class": "RUNTIME",
+   "note": "Zonas de produccion de las denominaciones italianas (por provincia NUTS3), poligonos simplificados. El navegador lo descarga solo al pulsar «Ver zona».",
+   "via": {
+    "file": "js/gi-zone.js",
+    "pattern": "'data/gi/' + cc + '-geo.json'"
+   }
+  },
   "data/normalized.json": {
    "class": "BUILD_ONLY",
    "note": "Serie normalizada de precios (JSON con sangria). Solo la leen constructores, pruebas y las acciones price-engine/publish; el navegador usa data/prices/*. Candidato a compactar (docs/REPO_GROWTH.md)."
