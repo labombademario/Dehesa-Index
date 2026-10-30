@@ -1,9 +1,9 @@
 rendimiento omitido (no cuadra con produccion/superficie) C2000 ['2010', '2011', '2012']
-rendimiento omitido (no cuadra con produccion/superficie) R1000 ['2011', '2012', '2014']
-rendimiento omitido (no cuadra con produccion/superficie) C2100 ['2010', '2012']
 rendimiento omitido (no cuadra con produccion/superficie) G3000 ['2011', '2012', '2013', '2014']
+rendimiento omitido (no cuadra con produccion/superficie) R1000 ['2011', '2012', '2014']
 rendimiento omitido (no cuadra con produccion/superficie) C2200 ['2010', '2011', '2012']
-cultivos 345 series
+rendimiento omitido (no cuadra con produccion/superficie) C2100 ['2010', '2012']
+cultivos 343 series
 censos 84 series
 carne 48 series
 sacrificio mensual 46 series
