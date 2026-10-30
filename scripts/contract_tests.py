@@ -2255,6 +2255,63 @@ def mb_hogs(doc, errs, warns, stats):
     stats["mb-hogs semanas"] = len(ks)
 
 
+def mb_grains(doc, errs, warns, stats):
+    """Manitoba, granos y oleaginosas (precio neto al agricultor en el elevador de Winnipeg, C$/t): 12 cultivos fijos; semanas en orden y de lunes a viernes, [tonelada, bushel|null] por cultivo con tonelada en 50-2500,
+    bushel x factor del cultivo = tonelada (0,6 %), celdas en disputa siempre vacias y de una semana publicada, sin saltos semanales superiores al 35 % y sin huecos de mas de 15 dias
+    (avisa); historia mensual por cultivo en meses AAAA-MM validos, ordenados, en rango y sin saltos mensuales superiores al 60 %."""
+    import datetime as _d, re as _re
+    KS = ["wheat_wrs", "wheat_nhr", "wheat_rw", "wheat_sp", "barley", "flax", "canola", "peas", "corn", "oats", "soybeans", "canola_meal"]
+    BU = {"wheat_wrs": 36.7437, "wheat_nhr": 36.7437, "wheat_rw": 36.7437, "wheat_sp": 36.7437, "barley": 45.9296, "flax": 39.368, "canola": 44.092, "peas": 36.7437, "corn": 39.368, "oats": 64.8421, "soybeans": 36.7437, "canola_meal": None}
+    if doc["crops"] != KS: errs.append("mb-grains: cultivos distintos de los esperados"); return
+    if doc["source"]["id"] != "mb_agri": errs.append("mb-grains: fuente distinta de mb_agri"); return
+    ks = list(doc["weeks"])
+    if ks != sorted(ks) or len(set(ks)) != len(ks): errs.append("mb-grains: semanas desordenadas o repetidas"); return
+    dis = set()
+    for x in doc["disputed"]:
+        m = _re.match(r"^(\d{4}-\d{2}-\d{2})\|(\w+)$", str(x))
+        if not m or m.group(1) not in doc["weeks"] or m.group(2) not in KS: errs.append("mb-grains: celda en disputa mal formada o de una semana no publicada (%r)" % (x,)); return
+        dis.add((m.group(1), KS.index(m.group(2))))
+    prev = None
+    for k in ks:
+        try: d = _d.date.fromisoformat(k)
+        except ValueError: errs.append("mb-grains: fecha invalida %r" % k); return
+        if d.weekday() > 4: errs.append("mb-grains %s: informe de fin de semana" % k); return
+        if d > _d.date.today() + _d.timedelta(days=2): errs.append("mb-grains %s: informe en el futuro" % k); return
+        w = doc["weeks"][k]
+        for i, (t, bu) in enumerate(w):
+            if (k, i) in dis:
+                if t is not None or bu is not None: errs.append("mb-grains %s %s: celda en disputa con valor" % (k, KS[i])); return
+                continue
+            if t is None:
+                if bu is not None: errs.append("mb-grains %s %s: bushel sin tonelada" % (k, KS[i])); return
+                continue
+            if isinstance(t, bool) or not isinstance(t, (int, float)) or not (50 <= t <= 2500): errs.append("mb-grains %s %s: tonelada fuera de rango (%r)" % (k, KS[i], t)); return
+            if BU[KS[i]] is None:
+                if bu is not None: errs.append("mb-grains %s %s: la harina de colza no lleva bushel" % (k, KS[i])); return
+            elif bu is not None:
+                if isinstance(bu, bool) or not isinstance(bu, (int, float)) or abs(bu * BU[KS[i]] - t) > max(1.0, t * 0.006): errs.append("mb-grains %s %s: %s C$/bu no cuadra con %s C$/t" % (k, KS[i], bu, t)); return
+        if prev is not None:
+            if (d - prev[0]).days > 15: warns.append("mb-grains: hueco entre %s y %s" % (prev[0], k))
+            for i, (t, _b) in enumerate(w):
+                p = prev[1][i]
+                if t is not None and p is not None and abs(t / p - 1) > 0.35: errs.append("mb-grains %s %s: salto semanal superior al 35 %% (%s -> %s)" % (k, KS[i], p, t)); return
+        prev = (d, [t if t is not None else (prev[1][i] if prev else None) for i, (t, _b) in enumerate(w)])
+    if (_d.date.today() - _d.date.fromisoformat(ks[-1])).days > 21: warns.append("mb-grains: el ultimo informe es del %s" % ks[-1])
+    n = 0
+    for c in KS:
+        mm = doc["monthly"].get(c)
+        if not isinstance(mm, dict) or not mm: errs.append("mb-grains: sin historia mensual de %s" % c); return
+        mk = list(mm)
+        if mk != sorted(mk): errs.append("mb-grains mensual %s: meses desordenados" % c); return
+        last = None
+        for m_, v in mm.items():
+            if not _re.match(r"^\d{4}-(0[1-9]|1[0-2])$", m_) or m_ > _d.date.today().isoformat()[:7]: errs.append("mb-grains mensual %s: mes invalido %r" % (c, m_)); return
+            if isinstance(v, bool) or not isinstance(v, (int, float)) or not (30 <= v <= 2500): errs.append("mb-grains mensual %s %s: valor fuera de rango (%r)" % (c, m_, v)); return
+            if last is not None and abs(v / last - 1) > 0.6: errs.append("mb-grains mensual %s %s: salto mensual superior al 60 %% (%s -> %s)" % (c, m_, last, v)); return
+            last = v; n += 1
+    stats["mb-grains semanas"] = len(ks); stats["mb-grains valores mensuales"] = n
+
+
 def spain_crops(doc, errs, warns, stats):
     """MAPA superficies y producciones por provincia. Por cultivo y campana: 5 medidas [total, secano, regadio, cosechada, produccion], todas >= 0 o null; provincias que existen en el diccionario;
     el total nacional del cultivo es la suma de sus provincias (nulo solo si ninguna lo trae); secano + regadio = total; cosechada <= total a nivel nacional (por provincia el MAPA a veces la da mayor: aviso); campana con estado y no futura; codigos de cultivo sin repetir."""

@@ -6,7 +6,7 @@
   "ok": 312,
   "late": 2,
   "error": 3,
-  "not_run": 6,
+  "not_run": 7,
   "unknown": 0
  },
  "global": "error",
@@ -4640,6 +4640,21 @@
    },
    "status": "ok",
    "expectedEveryHours": 104.3
+  },
+  {
+   "workflow": "update-mb-grains.yml",
+   "name": "Update Manitoba weekly grain and oilseed prices (Manitoba Agriculture)",
+   "crons": [
+    "20 22 * * 5",
+    "30 14 * * 1",
+    "40 14 * * 3"
+   ],
+   "nextRun": "2026-10-30T22:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 64.2
   },
   {
    "workflow": "update-mb-smallstock.yml",

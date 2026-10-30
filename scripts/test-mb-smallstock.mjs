@@ -24,7 +24,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const page = await ctx.newPage(), errs = [], tag = lang + '@' + w;
   page.on('pageerror', e => errs.push(e.message)); page.on('console', m => { if (m.type() === 'error' && !/ERR_|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 120)); });
   await page.goto(BASE + '/paises.html?c=CA', { waitUntil: 'networkidle' }); await page.waitForSelector('#mb-sheep-goat', { timeout: 8000 });
-  ok(tag + ': tres secciones de Manitoba', (await page.$$('#ps-mb > details')).length === 3);
+  ok(tag + ': cuatro secciones de Manitoba (vacuno, ovino y caprino, porcino, granos)', (await page.$$('#ps-mb > details')).length === 4);
   ok(tag + ': cerrado no carga el modulo', !(await page.evaluate(() => !!window.MBSmall)));
   await page.click('#mb-sheep-goat > summary'); await page.waitForSelector('#mb-sheep-goat [data-mbs="cls"]', { state: 'attached', timeout: 8000 });
   const txt = async id => await page.evaluate(i => document.querySelector(i + ' .es-body').innerText, id);

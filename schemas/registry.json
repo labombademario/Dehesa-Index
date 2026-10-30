@@ -662,6 +662,12 @@
     "mb_hogs"
    ]
   ],
+  "mb-markets/grains.json": [
+   "mb-grains",
+   [
+    "mb_grains"
+   ]
+  ],
   "spain-crops/index.json": [
    "spain-crops-index",
    [

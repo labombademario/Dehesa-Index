@@ -2115,6 +2115,18 @@ sources:
     data: [mb-markets/sheep-goat.json, mb-markets/hogs.json, mb-smallstock-log.txt]
     extra: ['!data/mb-markets']
     message: Datos precios de ovino, caprino y porcino de Manitoba
+  - id: mb-grains
+    name: Update Manitoba weekly grain and oilseed prices (Manitoba Agriculture)
+    cron: ['20 22 * * 5', '30 14 * * 1', '40 14 * * 3']
+    script: scripts/update-mb-grains.py
+    pre: ['sudo apt-get update -q >/dev/null', 'sudo apt-get install -y -q poppler-utils >/dev/null', 'pip install --quiet openpyxl']
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/mb-markets)
+    data: [mb-markets/grains.json, mb-grains-log.txt]
+    extra: ['!data/mb-markets']
+    message: Datos precios semanales de granos y oleaginosas de Manitoba
   - id: cap-es
     name: Check Spain CAP rules and amounts (BOE consolidated RD 1048/2022)
     cron: ['10 7 * * 1']

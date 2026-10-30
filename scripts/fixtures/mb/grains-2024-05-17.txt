@@ -1,0 +1,92 @@
+MANITOBA MARKETS
+
+Grain and Oilseed Prices
+May 17, 2024
+
+
+OPEN MARKET                                                   Current Wk           Current Wk        Weekly Change         Year Ago
+(Farmer's net cash return at Wpg elevator)                    (C$/bushel)          (C$/tonne)         (C$/tonne)          (C$/tonne)
+Wheat                Western Red Spring                           9.19               337.68              -0.73              389.85
+Wheat                Northern Hard Red                            8.92               327.76              -4.04              382.87
+Wheat                Red Winter                                   8.02               294.69              -9.19              374.42
+Wheat                Special Purpose (Low Vomi)                   7.95               292.08               8.45              356.75
+Barley               #1CW                                         4.99               229.19               2.76              316.00
+Flaxseed             #1CW                                        16.30               641.70               0.00              520.84
+Canola               #1CR                                        14.39               634.48               0.44              705.03
+Peas                 #2 Yellow                                   11.66               428.44               1.47              374.42
+Corn                 #2                                           6.00               236.21              -1.97              309.04
+Oats                 #2CW                                         4.52               293.09             -12.97              254.18
+Soybeans                                                         13.85               508.90              -1.47              613.99
+Canola Meal          34%, Altona                                    `                395.73               4.41              434.00
+
+
+
+
+  C$/tonne                                        Manitoba Open Market Prices
+  800
+                                                                                                       Current Wk     Year Ago
+  700
+
+  600
+
+  500
+
+  400
+
+  300
+
+  200
+
+  100
+
+     0
+           Wheat,     Wheat,    Wheat, Red     Wheat,     Barley,   Flaxseed,   Canola,   Peas, #2   Corn, #2   Oats, #2CW Soybeans
+         Western Red Northern    Winter        Special    #1CW        #1CW       #1CR      Yellow
+           Spring    Hard Red                  Purpose
+                                             (Low Vomi)
+CLOSING FUTURES PRICES                                 Current Wk          Current Wk    Weekly Change    Year Ago
+ICE                                                    (C$/bushel)         (C$/tonne)     (C$/tonne)     (C$/tonne)
+Canola          1 Canada NCC Par Region                   14.21              626.50          0.30          722.90
+Canola          1 Canada NCC track Thunder Bay            15.45              681.10          -2.50         737.40
+Canola          1 Canada NCC track Vancouver              15.86              699.10          -2.50         752.40
+
+
+
+
+US CLOSING FUTURES PRICES (US$)                         Current Wk         Current Wk    Weekly Change    Year Ago
+Chicago                                                (US$/bushel)        (US$/tonne)    (US$/tonne)    (US$/tonne)
+July 2024       Wheat SRW                                  6.51              239.02           -4.13        222.30
+July 2024       Corn                                       4.53              178.24           -6.20        218.30
+July 2024       Oats                                       3.66              237.16          -28.69        208.95
+July 2024       Soybeans                                  12.27              450.94            3.12        480.34
+July 2024       Soyoil (cents/lb)                          45.26             997.98           20.95        1042.30
+July 2024       Soymeal ($/ton)                           410.50             410.50            0.00         450.83
+July 2024       Wheat HRW                                   6.61             242.79           -4.50         302.86
+July 2024       Wheat HRS                                   7.12             261.43           -3.12         295.42
+
+
+
+
+Canadian dollar vis-a-vis selected currencies
+U.S. Dollar                                                                                  =C$            1.362
+Australian dollar                                                                            =C$            0.910
+Chinese renminbi                                                                             =C$            0.189
+European Euro                                                                                =C$            1.479
+Hong Kong dollar                                                                             =C$            0.175
+Japanese yen                                                                                 =C$            0.009
+Mexican peso                                                                                 =C$            0.082
+Russian ruble                                                                                =C$            0.015
+U.K. pound sterling                                                                          =C$            1.728
+
+
+
+Click to view the Interactive Dashboards for current and historical charts and graphs.
+
+
+
+
+           Contact us
+           •      Go to manitoba.ca/agriculture and click on Markets and Statistics
+           •      Email us at industryintelligence@gov.mb.ca
+           •      Follow us on X @MBGovAg
+

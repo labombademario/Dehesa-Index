@@ -17,6 +17,7 @@ def first(doc, key="observations"): return doc[key][0]
 def _lw(d): return d["weeks"][sorted(d["weeks"])[-1]]
 def _ls(d, m="Winnipeg"): return d["sales"][m][sorted(d["sales"][m])[-1]]
 def _lh(d): return d["weeks"][sorted(d["weeks"])[-1]]
+def _lg(d): return d["weeks"][sorted(d["weeks"])[-1]]
 def _sc(d): return d["campaigns"]["2024"]["crops"]
 def _scp(d):
     x = _sc(d)[0]; return x, next(iter(x["v"]))
@@ -246,6 +247,18 @@ CASES = [
  ("mb-markets/hogs.json", "peso de canal de 12 kg", lambda d: _lh(d).__setitem__(3, 12.0)),
  ("mb-markets/hogs.json", "salto semanal del 60 %", lambda d: _lh(d).__setitem__(0, _lh(d)[0] * 1.8) or _lh(d).__setitem__(1, _lh(d)[1] * 1.8)),
  ("mb-markets/hogs.json", "semanas desordenadas", lambda d: d.__setitem__("weeks", dict(reversed(list(d["weeks"].items()))))),
+ ("mb-markets/grains.json", "tonelada absurda", lambda d: _lg(d)[0].__setitem__(0, 3.0)),
+ ("mb-markets/grains.json", "bushel que no cuadra con la tonelada", lambda d: _lg(d)[4].__setitem__(1, _lg(d)[4][1] * 1.5)),
+ ("mb-markets/grains.json", "salto semanal del 60 %", lambda d: _lg(d)[6].__setitem__(0, _lg(d)[6][0] * 1.6)),
+ ("mb-markets/grains.json", "informe en sabado", lambda d: d["weeks"].__setitem__("2026-10-24", d["weeks"].pop(sorted(d["weeks"])[-1]))),
+ ("mb-markets/grains.json", "semanas desordenadas", lambda d: d.__setitem__("weeks", dict(reversed(list(d["weeks"].items()))))),
+ ("mb-markets/grains.json", "celda en disputa con valor", lambda d: d["disputed"].append(sorted(d["weeks"])[-1] + "|wheat_wrs")),
+ ("mb-markets/grains.json", "cultivo menos", lambda d: _lg(d).pop()),
+ ("mb-markets/grains.json", "harina de colza con bushel", lambda d: _lg(d)[11].__setitem__(1, 9.0)),
+ ("mb-markets/grains.json", "mes invalido en la historia", lambda d: d["monthly"]["canola"].__setitem__("2025-13", 500.0)),
+ ("mb-markets/grains.json", "salto mensual del 200 %", lambda d: d["monthly"]["barley"].__setitem__(sorted(d["monthly"]["barley"])[-1], d["monthly"]["barley"][sorted(d["monthly"]["barley"])[-2]] * 3)),
+ ("mb-markets/grains.json", "fuente distinta", lambda d: d["source"].__setitem__("id", "canfax")),
+ ("mb-markets/grains.json", "unidad cambiada", lambda d: d.__setitem__("unit", "US$/t")),
  ("mb-markets/cattle.json", "unidad cambiada", lambda d: d.__setitem__("unit", "US$/cwt")),
  ("mb-markets/cattle.json", "fuente distinta", lambda d: d["source"].__setitem__("id", "canfax")),
  ("germany-agri.json", "licencia cambiada", lambda d: d["source"].__setitem__("license", "CC0")),

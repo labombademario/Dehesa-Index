@@ -123,6 +123,9 @@ jobs:
       - name: Manitoba weekly auction cattle (PDF text parser, NA/no-sale, head totals, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-cattle.py
 
+      - name: Manitoba weekly grain and oilseed prices (PDF text parser, bushel x factor = tonne, repeated values left as disputed cells, monthly Excel reader, failure safety; real extracts as fixtures, no network)
+        run: python3 scripts/test-mb-grains.py
+
       - name: Manitoba sheep, goat and hogs (PDF text parsers, goat unit rule, disputed cells, date and range checks, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-smallstock.py
 
@@ -566,6 +569,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-mb-cattle.mjs
+      - name: Manitoba grains and oilseeds in the country page (figures = JSON, weekly and 52-week change from published weeks, monthly history since 1987, no futures; 4 languages, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-mb-grains.mjs
       - name: Manitoba sheep, goat and hogs in the country page (figures = JSON, goat rule, gaps shown as dash, disputed cells blank; 4 languages, 1280/390)
         env:
           CHROMIUM: ''

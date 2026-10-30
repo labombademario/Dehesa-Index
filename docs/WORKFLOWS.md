@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-335 workflows (285 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+336 workflows (286 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -319,6 +319,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-legal-review.yml | generado | diaria | check-legal.py, detect-revisions.py, gen-workflows.py | legal-review.json | finish, validate-files |
 | update-mars-us.yml | a mano | 2 veces/semana | update-ams-nfdm.mjs, update-mars-us.mjs | - | price-engine, publish |
 | update-mb-cattle.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-mb-cattle.py | mb-markets/cattle.json | finish, validate-files |
+| update-mb-grains.yml | generado | 3 veces/semana | detect-revisions.py, gen-workflows.py, update-mb-grains.py | mb-markets/grains.json | finish, validate-files |
 | update-mb-smallstock.yml | generado | 3 veces/semana | detect-revisions.py, gen-workflows.py, update-mb-smallstock.py | mb-markets/hogs.json, mb-markets/sheep-goat.json | finish, validate-files |
 | update-nordic-weather.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-nordic-weather.py | dk-weather.json, se-weather.json | finish, validate-files |
 | update-partner-tariffs.yml | a mano | mensual | detect-revisions.py, update-partner-tariffs.py | tariffs-ca.json, tariffs-eu.json, tariffs-mx.json | finish, publish, validate-files |
