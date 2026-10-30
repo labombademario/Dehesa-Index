@@ -146,6 +146,7 @@ fs.writeFileSync('sitemap.xml', sm);
 console.log('paginas SEO', n);
 await import('./build-product-pages.mjs');  // paginas de producto (precios/<producto>/) con el ultimo precio real
 await import('./build-region-pages.mjs');  // paginas por region (regiones/<pais>/<region>/) con las cifras reales de data/
+await import('./build-gi-pages.mjs');  // denominaciones de origen por pais (vinos y quesos, registro eAmbrosia) en 4 idiomas
 await import('./build-home-pages.mjs');  // portadas /en/, /fr/, /it/ con hreflang a la portada
 await import('./build-blog-pages.mjs');  // blog semanal: pagina estatica por edicion APROBADA (hoy ninguna)
 await import('./build-crosslinks.mjs');  // enlaces internos entre tipos de pagina (datos, hubs de region, productos, portada)

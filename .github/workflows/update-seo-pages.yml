@@ -25,7 +25,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Páginas SEO por país y categoría" datos precios regiones en fr it blog index.html blog.html sitemap.xml sitemap-lastmod.json
+        run: bash scripts/publish-data.sh "Páginas SEO por país y categoría" datos precios regiones denominaciones en fr it blog index.html blog.html sitemap.xml sitemap-lastmod.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

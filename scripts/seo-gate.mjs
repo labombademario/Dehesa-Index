@@ -10,7 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { GATE, NOINDEX, pageQuality, isThinLeaf } from './lib_seo.mjs';
 const SITE = 'https://dehesaindex.com';
-const MARK = /(  <!-- (seo-pages|product-pages|region-pages):start -->\n)([\s\S]*?)(\n  <!-- \2:end -->)/g;
+const MARK = /(  <!-- (seo-pages|product-pages|region-pages|gi-pages):start -->\n)([\s\S]*?)(\n  <!-- \2:end -->)/g;
 const fileOf = u => { const rel = u.replace(SITE + '/', ''); return rel === '' || rel.endsWith('/') ? rel + 'index.html' : rel; };
 let sm = fs.readFileSync('sitemap.xml', 'utf8');
 const urls = []; sm.replace(MARK, (all, a, name, body) => { body.split('\n').forEach(l => { const m = /<loc>([^<]+)<\/loc>/.exec(l); if (m) urls.push(m[1]); }); return all; });

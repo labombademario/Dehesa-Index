@@ -35,7 +35,7 @@ for (const u of locs) {
   ok(/<title>[^<]{5,}<\/title>/.test(h), u + ': sin <title>'); ok(/<meta name="description" content="[^"]{20,}"/.test(h), u + ': sin meta description');
   for (const m of h.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) { try { const j = JSON.parse(m[1]); ok(!!(j['@context'] || j['@graph']), u + ': JSON-LD sin @context'); } catch (e) { ok(false, u + ': JSON-LD invalido (' + e.message.slice(0, 40) + ')'); } }
   const body = h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-  if (/\/(datos|precios|regiones|regions|regioni|prices|prix|prezzi)\//.test(u)) { const tt = (h.match(/<title>([^<]*)<\/title>/) || [])[1] || ''; ok(tt.replace(/&amp;/g, '&').length <= 65, u + ': titulo de ' + tt.length + ' caracteres (maximo 65: Google recorta)'); }
+  if (/\/(datos|precios|regiones|regions|regioni|prices|prix|prezzi|denominaciones|designations|appellations|denominazioni)\//.test(u)) { const tt = (h.match(/<title>([^<]*)<\/title>/) || [])[1] || ''; ok(tt.replace(/&amp;/g, '&').length <= 65, u + ': titulo de ' + tt.length + ' caracteres (maximo 65: Google recorta)'); }
   if (/\/(datos|precios|regiones|regions|regioni)\//.test(u)) ok(body.trim().length > 200, u + ': landing con contenido vacio');
   const alts = [...h.matchAll(/<link[^>]+rel="alternate"[^>]+hreflang="([^"]+)"[^>]+href="([^"]+)"/g)].map(m => [m[1], m[2]]);
   if (alts.length) {
@@ -49,14 +49,14 @@ for (const dir of ['datos', 'precios']) {
   const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/') || (await readFile(path.join(root, rel), 'utf8')).includes(NOINDEX), rel + ': landing fuera del sitemap y sin noindex'); } };
   await walk(dir);
 }
-for (const dir of ['regiones', 'en/regions', 'fr/regions', 'it/regioni']) {
+for (const dir of ['regiones', 'en/regions', 'fr/regions', 'it/regioni', 'denominaciones', 'en/designations', 'fr/appellations', 'it/denominazioni']) {
   const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/') || (await readFile(path.join(root, rel), 'utf8')).includes(NOINDEX), rel + ': pagina de region fuera del sitemap y sin noindex'); } };
   await walk(dir);
 }
 
 // puerta de calidad (scripts/seo-gate.mjs): toda hoja generada con pocos datos lleva noindex y no esta en el sitemap; toda hoja con datos suficientes, al reves
 let gated = 0;
-for (const dir of ['datos', 'precios', 'regiones', 'en/regions', 'fr/regions', 'it/regioni', 'en/prices', 'fr/prix', 'it/prezzi']) {
+for (const dir of ['datos', 'precios', 'regiones', 'en/regions', 'fr/regions', 'it/regioni', 'en/prices', 'fr/prix', 'it/prezzi', 'denominaciones', 'en/designations', 'fr/appellations', 'it/denominazioni']) {
   const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) { await walk(rel); continue; } if (e.name !== 'index.html') continue;
     const h = await readFile(path.join(root, rel), 'utf8'), u = ORIGIN + '/' + d + '/', q = pageQuality(h); if (q.rows === 0) continue;   // los hubs (sin tabla) se evaluan por sus enlaces
     const thin = isThinLeaf(q, u), no = h.includes(NOINDEX), inSm = locs.includes(u);
