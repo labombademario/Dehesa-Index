@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-30T18:23:42.654Z",
-  "observationCount": 657,
+  "generatedAt": "2026-10-30T18:25:01.891Z",
+  "observationCount": 658,
   "products": [
     "aceite_cacahuete",
     "aceite_coco",
@@ -3159,7 +3159,7 @@
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-10-29T18:46:41Z",
+      "verifiedAt": "2026-10-30T18:25:00Z",
       "comparability": "not_comparable",
       "points": 561,
       "coverageStart": "1980-01-01",
