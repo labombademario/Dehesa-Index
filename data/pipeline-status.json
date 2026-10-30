@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T15:08:00Z",
+ "generatedAt": "2026-10-30T15:24:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 313,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-30T10:04:28.894818+00:00",
   "repoGeneratedAt": "2026-10-30T10:04:28.894818+00:00",
-  "checkedAt": "2026-10-30T15:08:00Z"
+  "checkedAt": "2026-10-30T15:24:00Z"
  },
  "pipelines": [
   {
@@ -646,7 +646,7 @@
    "crons": [
     "20 15 * * 5"
    ],
-   "nextRun": "2026-10-30T15:20:00Z",
+   "nextRun": "2026-11-06T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1672,13 +1672,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-27T15:03:24Z",
-    "durationSec": 38,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40527165828"
+    "startedAt": "2026-10-30T15:08:46Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41077972017"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -1875,7 +1875,7 @@
    "crons": [
     "15 15 * * 3,5"
    ],
-   "nextRun": "2026-10-30T15:15:00Z",
+   "nextRun": "2026-11-04T15:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2225,9 +2225,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-29T15:24:51Z",
-    "durationSec": 35,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40901303358"
+    "startedAt": "2026-10-30T15:11:00Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41078317080"
    },
    "recent": {
     "runs": 10,
@@ -3518,13 +3518,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T15:01:34Z",
-    "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39974679442"
+    "startedAt": "2026-10-30T15:16:23Z",
+    "durationSec": 34,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41079158733"
    },
    "recent": {
-    "runs": 4,
-    "success": 4,
+    "runs": 5,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
@@ -3858,7 +3858,7 @@
    "crons": [
     "10 15 * * 2,5"
    ],
-   "nextRun": "2026-10-30T15:10:00Z",
+   "nextRun": "2026-11-03T15:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4766,7 +4766,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-30T15:17:00Z",
+   "nextRun": "2026-10-30T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5046,7 +5046,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-30T15:10:00Z",
+   "nextRun": "2026-10-30T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5093,7 +5093,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-30T15:08:02Z"
+     "lastChange": "2026-10-30T15:11:17Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5983,9 +5983,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-27T15:16:48Z",
-    "durationSec": 35,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40529390579"
+    "startedAt": "2026-10-30T15:21:10Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41079905040"
    },
    "recent": {
     "runs": 10,
@@ -6659,7 +6659,7 @@
    "crons": [
     "20 15 * * 5"
    ],
-   "nextRun": "2026-10-30T15:20:00Z",
+   "nextRun": "2026-11-06T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6935,7 +6935,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-10-30T15:20:00Z",
+   "nextRun": "2026-11-02T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6950,7 +6950,7 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-markets.yml",
