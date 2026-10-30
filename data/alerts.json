@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-30T13:33:56.268Z",
+  "generatedAt": "2026-10-30T18:23:45.005Z",
   "status": "informational",
   "rules": [
     {
@@ -551,30 +551,30 @@
     },
     {
       "type": "period_move",
+      "product": "amoniaco_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "watch",
+      "changePct": 6.94,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "diesel_agr_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
+      "severity": "watch",
+      "changePct": 8.87,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "gas_natural_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
       "severity": "high",
-      "changePct": 26.36,
-      "observationDate": "2026-08-01"
-    },
-    {
-      "type": "period_move",
-      "product": "heno_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": -9.3,
-      "observationDate": "2026-08-01"
-    },
-    {
-      "type": "period_move",
-      "product": "urea_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": -5.43,
-      "observationDate": "2026-08-01"
+      "changePct": -20.76,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -690,26 +690,35 @@
       "region": "ca",
       "sourceId": "alberta_ag",
       "severity": "watch",
-      "changePct": 8.15,
-      "observationDate": "2026-08-01"
+      "changePct": -5.69,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
-      "product": "map_ab",
+      "product": "leche_ternero_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
       "severity": "watch",
-      "changePct": 5.34,
-      "observationDate": "2026-08-01"
+      "changePct": 6.11,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
       "product": "mineral_vacuno_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "severity": "high",
-      "changePct": -10.09,
-      "observationDate": "2026-08-01"
+      "severity": "watch",
+      "changePct": 5.67,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "suplemento_cebo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "watch",
+      "changePct": -6.31,
+      "observationDate": "2026-09-01"
     }
   ],
   "policy": {
