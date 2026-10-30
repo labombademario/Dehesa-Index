@@ -33,6 +33,13 @@ def _catalog(cc):
         try: _CAT[cc] = [x['id'] for x in json.loads((ROOT / 'data/catalog' / ('%s.json' % cc)).read_text())['series'] if x.get('group') == 'product']
         except Exception: _CAT[cc] = []
     return _CAT[cc]
+_LATEST = None
+def _latest_ids():
+    global _LATEST
+    if _LATEST is None:
+        try: _LATEST = {o['id']: (o['product'], o['region']) for o in json.loads((ROOT / 'data/latest.json').read_text())['observations'] if o.get('id') and o.get('product') and o.get('region')}
+        except Exception: _LATEST = {}
+    return _LATEST
 _PAGES = None
 def href_for(k):
     """Destino REAL de una clave 'P/...' del resumen: ficha de producto si existe (data/product-metadata.json) o la serie en la ficha del pais (catalogo). None si no hay destino: no se enlaza a ciegas."""
@@ -41,14 +48,17 @@ def href_for(k):
     p = str(k).split('/')
     if p[0] != 'P' or len(p) < 2: return None
     if len(p) == 3 and p[1] in _PAGES: return 'producto.html?p=' + p[1]
-    if len(p) == 3: prod, reg = p[1], p[2]
-    elif p[1].startswith('di_') and '_' in p[1][3:]: prod, _, reg = p[1][3:].rpartition('_')
-    else: return None
-    cc = reg.upper(); ids = _catalog(cc)
-    ok = [i for i in ids if i == 'product:%s_%s' % (prod, reg) or i.endswith('_%s_%s' % (prod, reg))]
-    if len(ok) > 1:   # p. ej. cerdo_ab: 'porcino_cerdo_ab' frente a 'pienso_pienso_cerdo_ab' (pienso para cerdos): se queda la de un solo grupo delante
-        ok = [i for i in ok if re.match(r'^product:([a-z]+_)?%s_%s$' % (re.escape(prod), re.escape(reg)), i)]
-    if len(ok) == 1: return 'paises.html?c=%s&s=%s' % (cc, ok[0])
+    cands = []
+    if len(p) == 3: cands.append((p[1], p[2]))
+    elif p[1].startswith('di_') and '_' in p[1][3:]: cands.append(p[1][3:].rpartition('_')[::2])
+    if len(p) == 2 and p[1] in _latest_ids(): cands.append(_latest_ids()[p[1]])   # id de data/latest.json: producto y region tal como los publica (di_defra_energy_input_index -> defra_energy_input_index, uk)
+    for prod, reg in cands:
+        cc = reg.upper(); ids = _catalog(cc)
+        ok = [i for i in ids if i == 'product:%s_%s' % (prod, reg) or i.endswith('_%s_%s' % (prod, reg))]
+        if len(ok) > 1:   # p. ej. cerdo_ab: 'porcino_cerdo_ab' frente a 'pienso_pienso_cerdo_ab' (pienso para cerdos): se queda la de un solo grupo delante
+            ok = [i for i in ok if re.match(r'^product:([a-z]+_)?%s_%s$' % (re.escape(prod), re.escape(reg)), i)]
+        if not ok and 'product:%s' % prod in ids: ok = ['product:%s' % prod]   # id de catalogo sin la region (indices de Defra del Reino Unido)
+        if len(ok) == 1: return 'paises.html?c=%s&s=%s' % (cc, ok[0])
     return None
 
 def main():
