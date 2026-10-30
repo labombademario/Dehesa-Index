@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T17:59:00Z",
+ "generatedAt": "2026-10-30T18:03:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 314,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-30T10:04:28.894818+00:00",
   "repoGeneratedAt": "2026-10-30T10:04:28.894818+00:00",
-  "checkedAt": "2026-10-30T17:59:00Z"
+  "checkedAt": "2026-10-30T18:03:00Z"
  },
  "pipelines": [
   {
@@ -1343,7 +1343,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-30T10:18:35Z"
+     "lastChange": "2026-10-30T18:02:40Z"
     }
    ],
    "last": {
@@ -5045,7 +5045,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-10-30T10:18:35Z"
+     "lastChange": "2026-10-30T18:02:40Z"
     }
    ],
    "last": {
@@ -5081,14 +5081,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5105,22 +5105,22 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-30T13:34:07Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-30T17:46:25Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-30T17:14:41Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -5144,30 +5144,30 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -5175,7 +5175,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T18:03:42Z"
     },
     {
      "path": "data/home-explore.json",
