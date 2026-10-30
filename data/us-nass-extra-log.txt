@@ -1,37 +1,37 @@
-ALMONDS 503 filas 53 utiles
-PECANS 1088 filas 102 utiles
-WALNUTS 461 filas 47 utiles
-PISTACHIOS 458 filas 50 utiles
-ORANGES 5170 filas 1004 utiles
-GRAPEFRUIT 3382 filas 720 utiles
-LEMONS 3303 filas 731 utiles
-STRAWBERRIES 2583 filas 182 utiles
+ALMONDS 504 filas 53 utiles
+PECANS 1089 filas 102 utiles
+WALNUTS 462 filas 47 utiles
+PISTACHIOS 459 filas 50 utiles
+ORANGES 5179 filas 1006 utiles
+GRAPEFRUIT 3391 filas 722 utiles
+LEMONS 3312 filas 733 utiles
+STRAWBERRIES 2586 filas 182 utiles
 BLUEBERRIES 890 filas 178 utiles
-CRANBERRIES 583 filas 99 utiles
-PEACHES 1646 filas 104 utiles
-APPLES 1981 filas 104 utiles
-TOMATOES 1104 filas 367 utiles
+CRANBERRIES 584 filas 99 utiles
+PEACHES 1648 filas 104 utiles
+APPLES 1985 filas 104 utiles
+TOMATOES 1107 filas 367 utiles
   rechazadas por dominio/practica []
-ONIONS 2408 filas 204 utiles
-LETTUCE 1384 filas 383 utiles
-BEANS 5919 filas 136 utiles
-LENTILS 1270 filas 507 utiles
-PEAS 2906 filas 487 utiles
-HONEY 1727 filas 144 utiles
-WOOL 667 filas 137 utiles
-MOHAIR 660 filas 130 utiles
-GOATS 3613 filas 290 utiles
+ONIONS 2410 filas 204 utiles
+LETTUCE 1386 filas 383 utiles
+BEANS 5924 filas 137 utiles
+LENTILS 1273 filas 508 utiles
+PEAS 2908 filas 488 utiles
+HONEY 1729 filas 144 utiles
+WOOL 669 filas 137 utiles
+MOHAIR 662 filas 130 utiles
+GOATS 3614 filas 290 utiles
   rechazadas por dominio/practica []
-TOBACCO 6574 filas 2057 utiles
+TOBACCO 6580 filas 2057 utiles
 MUSHROOMS 1083 filas 201 utiles
 HEMP 633 filas 10 utiles
   rechazadas por dominio/practica []
-TURKEYS 25018 filas 434 utiles
+TURKEYS 25021 filas 435 utiles
 AG LAND 98 filas 81 utiles
-RENT 2690 filas 54 utiles
+RENT 2693 filas 54 utiles
 FARM OPERATIONS 989 filas 78 utiles
-CHICKENS 47598 filas 593 utiles
-EGGS 6282 filas 776 utiles
+CHICKENS 47603 filas 594 utiles
+EGGS 6294 filas 777 utiles
 descartada ('APPLES',) production value sin dato desde 2003
 descartada ('BLUEBERRIES',) price received sin dato desde 2016
 descartada ('BLUEBERRIES',) production value sin dato desde 2003
