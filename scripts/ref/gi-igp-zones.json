@@ -7508,5 +7508,234 @@
   "partial": true,
   "source": "https://www.ivdp.pt/pt/docs/legislacao/236.pdf",
   "note": "Portaria 1203/2006 (DR, texto literal, punto 2): concelhos enteros y parciales de Bragança y Vila Real; es la norma original y no he podido confirmar que siga vigente sin cambios. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-CY-A1620": {
+  "cc": "CY",
+  "kind": "wine",
+  "f": "PGI-CY-A1620",
+  "units": [
+   "CY000"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://ec.europa.eu/geographical-indications-register/eambrosia-public-api/api/v1/attachments/10836",
+  "note": "Pliego (texto literal, pdftotext del expediente técnico): zona delimitada = límites administrativos del distrito de Lárnaca; Chipre tiene una sola NUTS3, por eso parcial."
+ },
+ "PGI-CY-A1619": {
+  "cc": "CY",
+  "kind": "wine",
+  "f": "PGI-CY-A1619",
+  "units": [
+   "CY000"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://ec.europa.eu/geographical-indications-register/eambrosia-public-api/api/v1/attachments/10419",
+  "note": "Pliego (texto literal, pdftotext del expediente técnico): zona delimitada = límites administrativos del distrito de Limassol; una sola NUTS3 en Chipre, por eso parcial."
+ },
+ "PGI-CY-A1621": {
+  "cc": "CY",
+  "kind": "wine",
+  "f": "PGI-CY-A1621",
+  "units": [
+   "CY000"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://ec.europa.eu/geographical-indications-register/eambrosia-public-api/api/v1/attachments/10380",
+  "note": "Pliego (texto literal, pdftotext del expediente técnico): zona delimitada = límites administrativos de Nicosia; una sola NUTS3 en Chipre, por eso parcial."
+ },
+ "PGI-CY-A1618": {
+  "cc": "CY",
+  "kind": "wine",
+  "f": "PGI-CY-A1618",
+  "units": [
+   "CY000"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://ec.europa.eu/geographical-indications-register/eambrosia-public-api/api/v1/attachments/10503",
+  "note": "Pliego (texto literal, pdftotext del expediente técnico): zona delimitada = límites administrativos del distrito de Pafos; una sola NUTS3 en Chipre, por eso parcial."
+ },
+ "PDO-CY-01243": {
+  "cc": "CY",
+  "kind": "cheese",
+  "f": "PDO-CY-01243",
+  "units": [
+   "CY000"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0510%2802%29",
+  "note": "Documento único (texto literal, OJ C 2023): zona = distritos de Nicosia, Limassol, Lárnaca, Famagusta, Pafos y Kyrenia, es decir toda la isla."
+ },
+ "PGI-DK-A1249": {
+  "cc": "DK",
+  "kind": "wine",
+  "f": "PGI-DK-A1249",
+  "units": [
+   "DK014"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://www.fvst.dk/Media/638206917820698080/Produktspecifikation%20Bornholm%20rev.%202013.pdf",
+  "note": "Pliego danés (texto literal, pdftotext): el área es el municipio-región de Bornholm = NUTS3 DK014."
+ },
+ "PGI-DK-A1248": {
+  "cc": "DK",
+  "kind": "wine",
+  "f": "PGI-DK-A1248",
+  "units": [
+   "DK031"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://www.fvst.dk/Media/638206918045501058/Produktspecifikation%20Fyn%20rev.%20okt.%202013.pdf",
+  "note": "Pliego danés (texto literal): Fyn con sus islas naturalmente asociadas, dentro de Region Syddanmark = NUTS3 DK031."
+ },
+ "PGI-DK-A1247": {
+  "cc": "DK",
+  "kind": "wine",
+  "f": "PGI-DK-A1247",
+  "units": [
+   "DK032",
+   "DK041",
+   "DK042",
+   "DK050"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://www.fvst.dk/Media/638206918138783228/Produktspecifikation%20Jylland%20rev.%20%20juni%202013.pdf",
+  "note": "Pliego danés (texto literal): Región Midtjylland, Nordjylland y Syddanmark salvo Fyn y las islas vecinas; DK032 es Syddanmark sin Fyn."
+ },
+ "PGI-DK-A1245": {
+  "cc": "DK",
+  "kind": "wine",
+  "f": "PGI-DK-A1245",
+  "units": [
+   "DK011",
+   "DK012",
+   "DK013",
+   "DK021",
+   "DK022"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://www.foedevarestyrelsen.dk/Media/638206918254554437/Produktspecifikation%20Sj%C3%A6lland%20rev.%20juni%202013.pdf",
+  "note": "Pliego danés (texto literal): Region Sjælland y Region Hovedstaden salvo Bornholm; equivale a DK011-DK013 y DK021-DK022."
+ },
+ "PGI-DK-0328": {
+  "cc": "DK",
+  "kind": "cheese",
+  "f": "PGI-DK-0328",
+  "units": [
+   "DK011",
+   "DK012",
+   "DK013",
+   "DK014",
+   "DK021",
+   "DK022",
+   "DK031",
+   "DK032",
+   "DK041",
+   "DK042",
+   "DK050"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52025XC06673",
+  "note": "Documento único (texto literal, OJ C 2025): definición concisa de la zona geográfica = \"Denmark\", todo el país."
+ },
+ "PGI-DK-00830": {
+  "cc": "DK",
+  "kind": "cheese",
+  "f": "PGI-DK-00830",
+  "units": [
+   "DK011",
+   "DK012",
+   "DK013",
+   "DK014",
+   "DK021",
+   "DK022",
+   "DK031",
+   "DK032",
+   "DK041",
+   "DK042",
+   "DK050"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52025XC06707",
+  "note": "Documento único (texto literal, OJ C 2025): definición concisa de la zona geográfica = \"Denmark\", todo el país."
+ },
+ "PGI-DK-0329": {
+  "cc": "DK",
+  "kind": "cheese",
+  "f": "PGI-DK-0329",
+  "units": [
+   "DK011",
+   "DK012",
+   "DK013",
+   "DK014",
+   "DK021",
+   "DK022",
+   "DK031",
+   "DK032",
+   "DK041",
+   "DK042",
+   "DK050"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52025XC06580",
+  "note": "Documento único (texto literal, OJ C 2025): definición concisa de la zona geográfica = \"Denmark\", todo el país."
+ },
+ "PGI-DK-00831": {
+  "cc": "DK",
+  "kind": "cheese",
+  "f": "PGI-DK-00831",
+  "units": [
+   "DK011",
+   "DK012",
+   "DK013",
+   "DK014",
+   "DK021",
+   "DK022",
+   "DK031",
+   "DK032",
+   "DK041",
+   "DK042",
+   "DK050"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52025XC06706",
+  "note": "Documento único (texto literal, OJ C 2025): definición concisa de la zona geográfica = \"Denmark\", todo el país."
+ },
+ "PGI-MT-A1631": {
+  "cc": "MT",
+  "kind": "wine",
+  "f": "PGI-MT-A1631",
+  "units": [
+   "MT001",
+   "MT002"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://ec.europa.eu/geographical-indications-register/eambrosia-public-api/api/v1/attachments/11088",
+  "note": "Pliego (texto literal): toda la región de las islas maltesas excepto la zona portuaria de la isla de Malta; por eso parcial."
+ },
+ "PDO-MT-02973": {
+  "cc": "MT",
+  "kind": "cheese",
+  "f": "PDO-MT-02973",
+  "units": [
+   "MT001",
+   "MT002"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52024XC05348",
+  "note": "Documento único (texto literal, OJ C 2024/5348): archipiélago maltés, producido en Malta, Gozo y Comino."
  }
 }
