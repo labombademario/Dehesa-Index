@@ -1,0 +1,2 @@
+CSV: /attachments/1990-2024%20Commercial%20Seafisheries%20Landings%20EN.csv modificado: 2026-09-25 00:00:00
+ca-dfo-landings: 1990-2024, Canada 2024: 626 kt, 4009 M CAD, 33 especies, 695 celdas suprimidas
