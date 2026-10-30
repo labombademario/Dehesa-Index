@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 199 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41261 series en el catalogo unificado.
+Resumen: 200 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41261 series en el catalogo unificado.
 
-## VERIFIED (199)
+## VERIFIED (200)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -179,6 +179,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `surs_si` | Slovenia — SURS (Statistical Office of the Republic of Slovenia): SiStat database | SI | SURS-FREE-REUSE | si/si | si | 0 | Changes must be clearly indicated (e.g. 'Source: SURS. Calculated by Dehesa Index'); the permission does not extend to third-party rights, p… |
 | `susr_sk` | Slovakia — Štatistický úrad SR (Statistical Office of the Slovak Republic), STATdata open data | SK | CC-BY-4.0 | si/si | si | 352 |  |
 | `svensk_forfattningssamling` | Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket | SE | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jor… |
+| `syke_hydro` | SYKE — Suomen ympäristökeskus / Finnish Environment Institute (avoin ympäristötieto: hidrología, interfaz OData) | FI | CC-BY-4.0 | si/si | si | 0 | Citar a SYKE como fuente; algunos conjuntos de SYKE tienen restricciones propias indicadas en sus metadatos (la tabla Virtaama no declara ni… |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
 | `ttb` | Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics) | US | US-PD | si/si | no | 7 | La excepcion del aviso son los sellos oficiales, nombres y simbolos de TTB; no se usan. Las estadisticas son agregadas (sin datos de empresa… |
 | `uradni_list_rs` | Uredba o neposrednih plačilih iz strateškega načrta skupne kmetijske politike 2023–2027 (Ur. l. RS 17/23) con sus reformas 63/23, 113/23, 2/24, 30/24, 83/24, 2/25, 36/25 y 107/25; Uredba o izvedbi intervencij kmetijske politike za leto 2026 | SI | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto oficial. Las guías, fichas y tablas de tasas de los ministerios y agencias pag… |
