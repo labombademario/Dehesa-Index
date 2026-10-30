@@ -6346,5 +6346,879 @@
   "partial": true,
   "source": "http://catalogoviti.politicheagricole.it/scheda_denom.php?t=stc&q=3118",
   "note": "Fascicolo tecnico: 'intero territorio viticolo' de las provincias de Bolzano, Trento y Belluno (solo superficie vitícola, por eso partial=true; criterio dudoso)."
+ },
+ "PDO-IT-0001": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0001",
+  "units": [
+   "ITH32",
+   "ITH20",
+   "ITH36",
+   "ITH34"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52020XC0528%2803%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 del documento único (DOUE C 178/2020): provincias de Vicenza y Trento enteras; de Padova solo 13 municipios y de Treviso solo un área delimitada por carreteras y ríos."
+ },
+ "PDO-IT-1502": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-1502",
+  "units": [
+   "ITC44",
+   "ITC46",
+   "ITC43"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52009XC0416%2804%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) (DOUE C 87/2009): toda la provincia de Sondrio más pastos de alta montaña en municipios de Bergamo (Alta Valle Brembana) y de Lecco (Introbio y Premana)."
+ },
+ "PDO-IT-0002": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0002",
+  "units": [
+   "ITC16",
+   "ITC11"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52021XC1216%2803%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 507/2021): toda la provincia de Cuneo y solo el municipio de Villafranca Piemonte en Torino."
+ },
+ "PGI-IT-01393": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PGI-IT-01393",
+  "units": [
+   "ITF48",
+   "ITF47",
+   "ITF43",
+   "ITF44",
+   "ITF45",
+   "ITF46"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52024XC01948",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) (DOUE C/2024/1948): toda la región de Apulia, es decir las seis provincias pugliesas actuales."
+ },
+ "PDO-IT-0003": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0003",
+  "units": [
+   "ITF63",
+   "ITF61",
+   "ITF62",
+   "ITF64",
+   "ITF34",
+   "ITF32",
+   "ITF31",
+   "ITF33",
+   "ITF35",
+   "ITF22",
+   "ITF46",
+   "ITF47",
+   "ITF43",
+   "ITF44",
+   "ITF52",
+   "ITF51",
+   "ITF21"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/71450",
+  "note": "Ficha resumen oficial de eAmbrosia leída con pdftotext (comuni de esas provincias; Isernia entera) más DOUE C 203/2002 que añade Crotone y Vibo Valentia (escindidas de Catanzaro); el pliego de 1993 con la lista de municipios no está en la UE, por lo que alguna provincia limítrofe de la lista podría faltar."
+ },
+ "PGI-IT-02807": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PGI-IT-02807",
+  "units": [
+   "ITI21"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52024XC01985",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) (DOUE C/2024/1985): solo los municipios de Norcia, Cascia, Monteleone di Spoleto, Preci y Poggiodomo, en la Valnerina de la provincia de Perugia."
+ },
+ "PGI-IT-0487": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PGI-IT-0487",
+  "units": [
+   "ITF51",
+   "ITF52"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52024XC03834",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C/2024/3834): lista cerrada de municipios de las provincias de Potenza y Matera."
+ },
+ "PDO-IT-0004": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0004",
+  "units": [
+   "ITF46",
+   "ITF47",
+   "ITF48"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/71562",
+  "note": "Ficha resumen eAmbrosia (literal): toda Foggia y comuni adyacentes de Bari; BAT añadida porque el decreto original (copia en onaf.it, fuente secundaria) cita Andria, Canosa, Corato, Minervino Murge y Spinazzola, hoy en BAT."
+ },
+ "PDO-IT-0348": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0348",
+  "units": [
+   "ITH34"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52020XC0519%2806%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 171/2020): toda la provincia de Treviso."
+ },
+ "PDO-IT-0005": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0005",
+  "units": [
+   "ITI31",
+   "ITH59"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52020XC0707%2804%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) (DOUE C 223/2020): toda Pesaro e Urbino más los municipios de Novafeltria, Talamello, Sant'Agata Feltria, Casteldelci, Maiolo, San Leo y Pennabilli en la provincia de Rimini."
+ },
+ "PDO-IT-0006": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0006",
+  "units": [
+   "ITC16"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52009XC1224%2809%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) (DOUE C 320/2009): solo los municipios de Castelmagno, Pradleves y Monterosso Grana en la provincia de Cuneo."
+ },
+ "PDO-IT-0007": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0007",
+  "units": [
+   "ITG2D",
+   "ITG2E",
+   "ITG2F",
+   "ITG2G",
+   "ITG2H"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/72929",
+  "note": "Ficha resumen eAmbrosia leída con pdftotext (no el pliego completo): todo el territorio de la región autónoma de Cerdeña, es decir sus cinco NUTS3 actuales."
+ },
+ "PDO-IT-0008": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0008",
+  "units": [
+   "ITC20"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52026XC03578",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C/2026/3578): todo el territorio del Valle d'Aosta."
+ },
+ "PDO-IT-0524": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0524",
+  "units": [
+   "ITC41"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52010XC0814%2805%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) (DOUE C 220/2010): lista de municipios de la provincia de Varese (zona de Luino y valles)."
+ },
+ "PDO-IT-0580": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0580",
+  "units": [
+   "ITH58",
+   "ITH59",
+   "ITH57",
+   "ITI31",
+   "ITI32",
+   "ITI33",
+   "ITI34",
+   "ITI35",
+   "ITH55"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52025XC00474",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) (DOUE C/2025/474): provincias enteras de Forlì-Cesena, Rimini, Ravenna, Pesaro-Urbino, Ancona, Macerata y Ascoli Piceno y 11 municipios de Bologna; Fermo añadida por deducción porque su territorio (provincia creada en 2009) era parte de Ascoli Piceno y Macerata."
+ },
+ "PDO-IT-0009": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0009",
+  "units": [
+   "ITC46"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52022XC1026%2807%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 410/2022): 21 municipios de la Alta Valle Brembana, todos de la provincia de Bergamo."
+ },
+ "PDO-IT-0010": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0010",
+  "units": [
+   "ITC46",
+   "ITC13",
+   "ITC47",
+   "ITC42",
+   "ITC4A",
+   "ITC16",
+   "ITC43",
+   "ITC49",
+   "ITC4C",
+   "ITC4D",
+   "ITC15",
+   "ITC48",
+   "ITC41",
+   "ITC14",
+   "ITC12",
+   "ITC18"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52016XC0527%2802%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 188/2016): 15 provincias enteras y solo 31 municipios de Alessandria (Casale Monferrato, Valenza, etc.)."
+ },
+ "PDO-IT-0011": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0011",
+  "units": [
+   "ITC18",
+   "ITC17",
+   "ITC13",
+   "ITC16",
+   "ITC15",
+   "ITC11",
+   "ITC14",
+   "ITC12",
+   "ITC46",
+   "ITC47",
+   "ITC42",
+   "ITC4A",
+   "ITC43",
+   "ITC49",
+   "ITC4B",
+   "ITC4C",
+   "ITC4D",
+   "ITC48",
+   "ITC44",
+   "ITC41",
+   "ITH20",
+   "ITH36",
+   "ITH37",
+   "ITH34",
+   "ITH35",
+   "ITH31",
+   "ITH32",
+   "ITH55",
+   "ITH56",
+   "ITH58",
+   "ITH51",
+   "ITH57",
+   "ITH59",
+   "ITH10"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52026XC05199",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 5 (DOUE C/2026/5199): provincias enteras salvo Mantova (solo orilla izquierda del Po), Bologna (solo a la derecha del Reno) y Bolzano (solo 5 municipios)."
+ },
+ "PDO-IT-0012": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0012",
+  "units": [
+   "ITH41",
+   "ITH42",
+   "ITH43",
+   "ITH44",
+   "ITH33",
+   "ITH34",
+   "ITH36",
+   "ITH35"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52016XC0224%2802%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 70/2016): toda Friuli-Venezia Giulia, Belluno y Treviso enteras, y solo una parte de Padova y Venezia delimitada por la autopista A4 y el río Brenta."
+ },
+ "PDO-IT-0013": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0013",
+  "units": [
+   "ITH31"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/73625",
+  "note": "Ficha resumen eAmbrosia leída con pdftotext (no el pliego completo): comuni de la provincia de Verona (zona del Monte Baldo), sin lista de municipios."
+ },
+ "PDO-IT-0014": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0014",
+  "units": [
+   "ITF32",
+   "ITF31",
+   "ITF33",
+   "ITF35",
+   "ITI45",
+   "ITI44",
+   "ITI43",
+   "ITF46",
+   "ITF21"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52007XC0425%2802%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) (DOUE C 90/2007, puntos 4.3 y ampliación): municipios de esas provincias de Campania, Lazio, Apulia y Molise según el pliego; no hay provincia completa asegurada."
+ },
+ "PDO-IT-02384": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-02384",
+  "units": [
+   "ITF47",
+   "ITF43",
+   "ITF52"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52025XC02612",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C/2025/2612): 16 municipios de Bari, 6 de Taranto y solo una porción del municipio de Matera."
+ },
+ "PDO-IT-0015": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0015",
+  "units": [
+   "ITC16"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52022XC0614%2804%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 229/2022): lista de 50 municipios del Alta Langa sin indicar provincia; la provincia de Cuneo se deduce por su ubicación y por la ficha resumen."
+ },
+ "PDO-IT-0823": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0823",
+  "units": [
+   "ITC47"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52021XC0805%2804%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 313/2021): municipios del Valle Trompia y parte de Gussago, en la provincia de Brescia."
+ },
+ "PDO-IT-02093": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-02093",
+  "units": [
+   "ITC14"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52017XC0610%2803%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 186/2017): 38 municipios de la provincia de Verbano-Cusio-Ossola (valle del Ossola)."
+ },
+ "PDO-IT-0016": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0016",
+  "units": [
+   "ITH54",
+   "ITH52",
+   "ITH53",
+   "ITH55",
+   "ITC4B"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0609%2809%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 202/2023): Modena, Parma y Reggio Emilia enteras, Bologna solo a la izquierda del Reno y Mantova solo a la derecha del Po."
+ },
+ "PDO-IT-1111": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-1111",
+  "units": [
+   "ITF62",
+   "ITF63",
+   "ITF61"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0817%2801%29",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C 288/2023): lista de municipios de Crotone, Catanzaro y Cosenza."
+ },
+ "PDO-IT-02420": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-02420",
+  "units": [
+   "ITF64"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52024XC01059",
+  "note": "Texto literal (pdftotext/XHTML del DOUE) del punto 4 (DOUE C/2024/1059): 27 municipios del Monte Poro en la provincia de Vibo Valentia."
+ },
+ "PDO-IT-1166": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-1166",
+  "units": [
+   "ITI17"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52014XC0926%2806%29",
+  "note": "Documento único (OJ C 336, 26.9.2014, texto literal): solo los municipios de Volterra, Pomarance, Montecatini Val di Cecina, Castelnuovo Val di Cecina y Monteverdi, todos en la provincia de Pisa."
+ },
+ "PDO-IT-0279": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0279",
+  "units": [
+   "ITF51"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52007XC0419%2803%29",
+  "note": "Documento único (OJ C 2007, texto literal): 30 municipios de la provincia de Potenza (Basilicata) entre Monte Vulture y Muro Lucano; solo una parte de la provincia."
+ },
+ "PDO-IT-0859": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0859",
+  "units": [
+   "ITI45"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52013XC0227%2806%29",
+  "note": "Documento único (texto literal): todo el valle del Comino, en la provincia de Frosinone; es solo una parte de la provincia."
+ },
+ "PDO-IT-0017": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0017",
+  "units": [
+   "ITG2D",
+   "ITG2E",
+   "ITG2F",
+   "ITG2G",
+   "ITG2H",
+   "ITI41",
+   "ITI42",
+   "ITI43",
+   "ITI44",
+   "ITI45",
+   "ITI1A"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52026XC04125",
+  "note": "Documento único consolidado (C/2026/4125, texto literal): toda la región de Cerdeña, toda la región del Lazio y la provincia de Grosseto."
+ },
+ "PDO-IT-0018": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0018",
+  "units": [
+   "ITG2D",
+   "ITG2E",
+   "ITG2F",
+   "ITG2G",
+   "ITG2H"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52013XC1101%2803%29",
+  "note": "Documento único (OJ C 2013, texto literal): todo el territorio de la región autónoma de Cerdeña."
+ },
+ "PDO-IT-0019": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0019",
+  "units": [
+   "ITG11",
+   "ITG12",
+   "ITG13",
+   "ITG14",
+   "ITG15",
+   "ITG16",
+   "ITG17",
+   "ITG18",
+   "ITG19"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52020XC0518%2803%29",
+  "note": "Documento único (OJ C 170, 18.5.2020, texto literal): todo el territorio de la región de Sicilia."
+ },
+ "PDO-IT-0020": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0020",
+  "units": [
+   "ITI11",
+   "ITI12",
+   "ITI13",
+   "ITI14",
+   "ITI15",
+   "ITI16",
+   "ITI17",
+   "ITI18",
+   "ITI19",
+   "ITI1A",
+   "ITI21",
+   "ITI22",
+   "ITI41"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52026XC02420",
+  "note": "Documento único (C/2026/2420, texto literal): toda la Toscana más los municipios de Castiglione del Lago (Perugia), Allerona (Terni) y once municipios de Viterbo (Lazio); Perugia, Terni y Viterbo solo parcialmente, ubicación de los municipios deducida."
+ },
+ "PDO-IT-0646": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0646",
+  "units": [
+   "ITG16"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52025XC03227",
+  "note": "Documento único modificado (C/2025/3227, texto literal): toda la provincia de Enna (antes de la modificación solo nueve municipios)."
+ },
+ "PDO-IT-0686": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0686",
+  "units": [
+   "ITH33"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52020XC0407%2804%29",
+  "note": "Documento único (OJ C 115, 7.4.2020, texto literal): territorio de la provincia de Belluno."
+ },
+ "PDO-IT-02394": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-02394",
+  "units": [
+   "ITG17",
+   "ITG16",
+   "ITG13"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52019XC0731%2802%29",
+  "note": "Documento único (OJ C 257, 31.7.2019, texto literal): solo municipios enumerados de las provincias de Catania, Enna y Messina."
+ },
+ "PDO-IT-0466": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0466",
+  "units": [
+   "ITF33"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52009XC0620%2801%29",
+  "note": "Documento único (OJ C 2009, texto literal): 13 municipios de la provincia de Nápoles (península sorrentina y Monti Lattari), solo parte de la provincia."
+ },
+ "PDO-IT-0021": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0021",
+  "units": [
+   "ITC4A",
+   "ITC47",
+   "ITH31",
+   "ITH32",
+   "ITH37",
+   "ITH36",
+   "ITH51",
+   "ITH20",
+   "ITC46",
+   "ITC4B",
+   "ITC49"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52019XC0326%2801%29",
+  "note": "Documento único (OJ C 2019, texto literal): provincias enteras de Cremona, Brescia, Verona, Vicenza, Rovigo, Padova, Piacenza y Trento, más municipios limítrofes de Bergamo, Mantova y Lodi (estas tres parciales)."
+ },
+ "PDO-IT-0950": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0950",
+  "units": [
+   "ITH20",
+   "ITH10"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52026XC05293",
+  "note": "Documento único (C/2026/5293, texto literal): municipios enumerados de la provincia de Trento y los municipios de Anterivo y Trodena en la de Bolzano; ambas parciales."
+ },
+ "PDO-IT-0022": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0022",
+  "units": [
+   "ITC47",
+   "ITC46",
+   "ITC42",
+   "ITC43",
+   "ITC4A",
+   "ITC4C",
+   "ITC49",
+   "ITC4D",
+   "ITC48",
+   "ITC41"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52017XC0629%2804%29",
+  "note": "Documento único (OJ C 2017, texto literal): territorio administrativo de las provincias de Brescia, Bergamo, Como, Lecco, Cremona, Milán, Lodi, Monza y Brianza, Pavía y Varese."
+ },
+ "PDO-IT-1505": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-1505",
+  "units": [
+   "ITG18",
+   "ITG19"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52019XC0627%2802%29",
+  "note": "Documento único (OJ C 2019, texto literal): municipios enumerados de Ragusa (12) y Noto, Palazzolo Acreide y Rosolini en Siracusa; se marca parcial por listar solo municipios."
+ },
+ "PDO-IT-0023": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0023",
+  "units": [
+   "ITC16",
+   "ITC11"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52021XC1029%2803%29",
+  "note": "Documento único (OJ C 439, 29.10.2021, texto literal): toda la provincia de Cuneo más el municipio de Villafranca Piemonte (Turín), por lo que Turín es parcial."
+ },
+ "PDO-IT-0024": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0024",
+  "units": [
+   "ITC17",
+   "ITC18"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52022XC1017%2804%29",
+  "note": "Documento único (OJ C 397, 17.10.2022, texto literal): solo municipios enumerados de las provincias de Asti y Alessandria."
+ },
+ "PDO-IT-0639": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0639",
+  "units": [
+   "ITC46",
+   "ITC47",
+   "ITC4A",
+   "ITC43",
+   "ITC49",
+   "ITC4C"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52011XC0427%2804%29",
+  "note": "Documento único (OJ C 2011, texto literal): provincias enteras de Bergamo, Brescia, Cremona, Lecco, Lodi y Milán (Monza y Brianza no figura en el texto)."
+ },
+ "PDO-IT-1252": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-1252",
+  "units": [
+   "ITC47"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52020XC0514%2802%29",
+  "note": "Documento único (OJ C 166, 14.5.2020, texto literal): Comunità Montana de Valle Camonica y parte de la del Sebino Bresciano (47 municipios), en la provincia de Brescia."
+ },
+ "PDO-IT-0252": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0252",
+  "units": [
+   "ITH20"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52009XC1003%2804%29",
+  "note": "Documento único (OJ C 2009, texto literal): 47 municipios de las valles Giudicarie, Chiese, Rendena y Ledro en la provincia de Trento; solo parte de la provincia."
+ },
+ "PDO-IT-0794": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0794",
+  "units": [
+   "ITH57",
+   "ITH58",
+   "ITH59",
+   "ITH55",
+   "ITH56"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52017XC1028%2803%29",
+  "note": "Documento único (OJ C 2017, texto literal): provincias enteras de Ravenna, Forlì-Cesena, Rímini y Bolonia y solo la parte de Ferrara al sur del Po y al este de la carretera 64 Porrettana (Ferrara parcial)."
+ },
+ "PDO-IT-0255": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0255",
+  "units": [
+   "ITH10"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52020XC0925%2802%29",
+  "note": "Documento único (OJ C 317, 25.9.2020, texto literal): distritos Val Venosta, Burgraviato, Salto-Sciliar, Val Pusteria, Val d'Isarco y municipio de Bolzano (84 municipios) de la provincia de Bolzano; parcial por no cubrir toda la provincia."
+ },
+ "PDO-IT-1047": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-1047",
+  "units": [
+   "ITC46"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0306%2801%29",
+  "note": "Documento único (OJ C 82, 6.3.2023, texto literal): municipios de Taleggio, Vedeseta, Gerosa y Blello en la provincia de Bergamo, a más de 700 m."
+ },
+ "PDO-IT-0025": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0025",
+  "units": [
+   "ITC46",
+   "ITC47",
+   "ITC42",
+   "ITC43",
+   "ITC4A",
+   "ITC4C",
+   "ITC49",
+   "ITC4D",
+   "ITC48",
+   "ITC15",
+   "ITC14",
+   "ITH34"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52022XC0214%2802%29",
+  "note": "Documento único modificado (OJ C 72, 14.2.2022, texto literal): territorio administrativo entero de Bergamo, Brescia, Como, Lecco, Cremona, Milán, Lodi, Monza y Brianza, Pavía, Novara, Verbano-Cusio-Ossola y Treviso."
+ },
+ "PDO-IT-0026": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0026",
+  "units": [
+   "ITC11",
+   "ITC12",
+   "ITC13",
+   "ITC14",
+   "ITC15",
+   "ITC16",
+   "ITC17",
+   "ITC18"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52025XC05773",
+  "note": "Documento único modificado (C/2025/5773, texto literal): provincias enteras de Novara, Vercelli, Biella, Turín, Cuneo y Verbano-Cusio-Ossola más 5 municipios de Asti y 5 de Alessandria (estas dos parciales)."
+ },
+ "PDO-IT-1504": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-1504",
+  "units": [
+   "ITC20"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/72540",
+  "note": "Resumen oficial de la solicitud de registro en inglés de eAmbrosia (texto literal, no el pliego vigente): toda la región autónoma del Valle de Aosta."
+ },
+ "PDO-IT-1503": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-1503",
+  "units": [
+   "ITC44"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/72632",
+  "note": "Resumen oficial de la solicitud de registro en inglés de eAmbrosia (texto literal, no el pliego vigente): toda la provincia de Sondrio."
+ },
+ "PDO-IT-0661": {
+  "cc": "IT",
+  "kind": "cheese",
+  "f": "PDO-IT-0661",
+  "units": [
+   "ITG14",
+   "ITG11",
+   "ITG12"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52010XC0219%2804%29",
+  "note": "Documento único (OJ C 2010, texto literal): municipios enumerados de Agrigento (6), Trapani (10) y Palermo (Contessa Entellina y Bisacquino, zona San Biagio)."
  }
 }
