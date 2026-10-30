@@ -4,8 +4,8 @@ Fuente: Natural Earth 1:10m admin_0 countries (dominio publico). Solo el territo
 Uso: python3 scripts/build-gi-outline.py RUTA/ne_10m_admin_0_countries.geojson"""
 import json, math, sys
 from shapely.geometry import shape, box, MultiPolygon, Polygon
-MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'UK': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5), 'AT': (9.4, 46.3, 17.2, 49.1), 'BE': (2.5, 49.4, 6.5, 51.6), 'BG': (22.3, 41.2, 28.7, 44.3), 'HR': (13.4, 42.3, 19.5, 46.6), 'DE': (5.8, 47.2, 15.1, 55.1), 'EL': (19.3, 34.7, 28.3, 41.8), 'HU': (16, 45.7, 23, 48.7), 'NL': (3.3, 50.7, 7.3, 53.6), 'RO': (20.2, 43.6, 29.8, 48.3), 'SK': (16.8, 47.7, 22.6, 49.7), 'SI': (13.3, 45.4, 16.7, 46.9), 'CY': (32.2, 34.5, 34.7, 35.8), 'MT': (14.1, 35.78, 14.6, 36.1), 'DK': (8, 54.5, 13, 57.8), 'LU': (5.7, 49.4, 6.6, 50.2), 'PL': (14.1, 49, 24.2, 54.9), 'IE': (-10.7, 51.3, -5.9, 55.5), 'LT': (20.9, 53.8, 26.9, 56.5), 'SE': (10.9, 55.3, 24.2, 69.1)}
-ISO = {'ES': 'ESP', 'PT': 'PRT', 'UK': 'GBR', 'CZ': 'CZE', 'AT': 'AUT', 'BE': 'BEL', 'BG': 'BGR', 'HR': 'HRV', 'DE': 'DEU', 'EL': 'GRC', 'HU': 'HUN', 'NL': 'NLD', 'RO': 'ROU', 'SK': 'SVK', 'SI': 'SVN', 'CY': 'CYP', 'MT': 'MLT', 'DK': 'DNK', 'LU': 'LUX', 'PL': 'POL', 'IE': 'IRL', 'LT': 'LTU', 'SE': 'SWE'}
+MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'UK': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5), 'AT': (9.4, 46.3, 17.2, 49.1), 'BE': (2.5, 49.4, 6.5, 51.6), 'BG': (22.3, 41.2, 28.7, 44.3), 'HR': (13.4, 42.3, 19.5, 46.6), 'DE': (5.8, 47.2, 15.1, 55.1), 'EL': (19.3, 34.7, 28.3, 41.8), 'HU': (16, 45.7, 23, 48.7), 'NL': (3.3, 50.7, 7.3, 53.6), 'RO': (20.2, 43.6, 29.8, 48.3), 'SK': (16.8, 47.7, 22.6, 49.7), 'SI': (13.3, 45.4, 16.7, 46.9), 'CY': (32.2, 34.5, 34.7, 35.8), 'MT': (14.1, 35.78, 14.6, 36.1), 'DK': (8, 54.5, 13, 57.8), 'LU': (5.7, 49.4, 6.6, 50.2), 'PL': (14.1, 49, 24.2, 54.9), 'IE': (-10.7, 51.3, -5.9, 55.5), 'LT': (20.9, 53.8, 26.9, 56.5), 'SE': (10.9, 55.3, 24.2, 69.1), 'IT': (6.5, 36.6, 18.6, 47.1)}
+ISO = {'ES': 'ESP', 'PT': 'PRT', 'UK': 'GBR', 'CZ': 'CZE', 'AT': 'AUT', 'BE': 'BEL', 'BG': 'BGR', 'HR': 'HRV', 'DE': 'DEU', 'EL': 'GRC', 'HU': 'HUN', 'NL': 'NLD', 'RO': 'ROU', 'SK': 'SVK', 'SI': 'SVN', 'CY': 'CYP', 'MT': 'MLT', 'DK': 'DNK', 'LU': 'LUX', 'PL': 'POL', 'IE': 'IRL', 'LT': 'LTU', 'SE': 'SWE', 'IT': 'ITA'}
 TOL = 0.01
 def path(g, X, Y):
     polys = list(g.geoms) if isinstance(g, MultiPolygon) else [g]
@@ -17,13 +17,14 @@ def path(g, X, Y):
             if len(pts) < 4: continue
             d += 'M' + 'L'.join('%.1f %.1f' % pt for pt in pts[:-1]) + 'Z'
     return d
-def main(src):
+def main(src, only=None):
     feats = json.load(open(src))['features']
     by = {}
     for f in feats:
         p = f['properties']; iso = p.get('ADM0_A3') or p.get('ISO_A3')
         by[iso] = shape(f['geometry'])
     for cc, (lon0, lat0, lon1, lat1) in MAIN.items():
+        if only and cc not in only: continue
         lat_c = (lat0 + lat1) / 2; kx = math.cos(math.radians(lat_c))
         span = max((lon1 - lon0) * kx, lat1 - lat0); S = 900.0 / span
         X = lambda lon: (lon - lon0) * kx * S
@@ -46,4 +47,4 @@ def main(src):
         d['outline'] = {'name': 'Natural Earth 1:10m admin_0 countries', 'url': 'https://www.naturalearthdata.com/', 'license': 'Public domain'}
         json.dump(d, open(fn, 'w'), separators=(',', ':'))
         print(cc, len(d['o']) // 1024, 'KB contorno', len(d['n']) // 1024, 'KB vecinos')
-main(sys.argv[1])
+main(sys.argv[1], sys.argv[2].split(',') if len(sys.argv) > 2 else None)

@@ -4,7 +4,7 @@
 Fuente: Candiago, S. et al. (2022) «A geospatial inventory of regulatory information for wine protected designations of origin in Europe»,
 Scientific Data 9, 389; datos en figshare (coleccion 10.6084/m9.figshare.c.5877659.v1), licencia CC0. El poligono de cada DOP es la union de los municipios
 (EuroRegionalMap, EuroGeographics) de su zona, segun el registro eAmbrosia a 4-nov-2021: es orientativo, no delimita parcelas, y no incluye IGP.
-Uso: python3 scripts/build-gi-geo.py RUTA/EU_PDO.gpkg  (necesita sqlite3, shapely y pyproj)."""
+Uso: python3 scripts/build-gi-geo.py RUTA/EU_PDO.gpkg [IT,ES,...]  (necesita sqlite3, shapely y pyproj)."""
 import json, math, sqlite3, struct, sys, datetime
 from pyproj import Transformer
 from shapely import wkb
@@ -12,9 +12,9 @@ from shapely.geometry import MultiPolygon, Polygon
 from shapely.geometry.polygon import orient
 from shapely.ops import transform as shp_transform
 
-CC = {'ES': 'ES', 'PT': 'PT', 'GB': 'UK', 'CZ': 'CZ', 'AT': 'AT', 'BE': 'BE', 'BG': 'BG', 'HR': 'HR', 'DE': 'DE', 'GR': 'EL', 'HU': 'HU', 'NL': 'NL', 'RO': 'RO', 'SK': 'SK', 'SI': 'SI', 'CY': 'CY', 'MT': 'MT', 'DK': 'DK', 'LU': 'LU'}    # codigo del dataset -> codigo del sitio
-TOL = {'ES': 0.012, 'PT': 0.012, 'GB': 0.01, 'CZ': 0.006, 'AT': 0.006, 'BE': 0.006, 'BG': 0.008, 'HR': 0.008, 'DE': 0.008, 'GR': 0.01, 'HU': 0.006, 'NL': 0.005, 'RO': 0.008, 'SK': 0.006, 'SI': 0.005, 'CY': 0.004, 'MT': 0.002, 'DK': 0.006, 'LU': 0.003, 'PL': 0.01, 'IE': 0.008, 'LT': 0.008, 'SE': 0.015}  # simplificacion en grados
-MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'GB': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5), 'AT': (9.4, 46.3, 17.2, 49.1), 'BE': (2.5, 49.4, 6.5, 51.6), 'BG': (22.3, 41.2, 28.7, 44.3), 'HR': (13.4, 42.3, 19.5, 46.6), 'DE': (5.8, 47.2, 15.1, 55.1), 'GR': (19.3, 34.7, 28.3, 41.8), 'HU': (16, 45.7, 23, 48.7), 'NL': (3.3, 50.7, 7.3, 53.6), 'RO': (20.2, 43.6, 29.8, 48.3), 'SK': (16.8, 47.7, 22.6, 49.7), 'SI': (13.3, 45.4, 16.7, 46.9), 'CY': (32.2, 34.5, 34.7, 35.8), 'MT': (14.1, 35.78, 14.6, 36.1), 'DK': (8, 54.5, 13, 57.8), 'LU': (5.7, 49.4, 6.6, 50.2), 'PL': (14.1, 49, 24.2, 54.9), 'IE': (-10.7, 51.3, -5.9, 55.5), 'LT': (20.9, 53.8, 26.9, 56.5), 'SE': (10.9, 55.3, 24.2, 69.1)}  # (lon0, lat0, lon1, lat1) del territorio peninsular/principal
+CC = {'ES': 'ES', 'PT': 'PT', 'GB': 'UK', 'CZ': 'CZ', 'AT': 'AT', 'BE': 'BE', 'BG': 'BG', 'HR': 'HR', 'DE': 'DE', 'GR': 'EL', 'HU': 'HU', 'NL': 'NL', 'RO': 'RO', 'SK': 'SK', 'SI': 'SI', 'CY': 'CY', 'MT': 'MT', 'DK': 'DK', 'LU': 'LU', 'IT': 'IT'}    # codigo del dataset -> codigo del sitio
+TOL = {'ES': 0.012, 'PT': 0.012, 'GB': 0.01, 'CZ': 0.006, 'AT': 0.006, 'BE': 0.006, 'BG': 0.008, 'HR': 0.008, 'DE': 0.008, 'GR': 0.01, 'HU': 0.006, 'NL': 0.005, 'RO': 0.008, 'SK': 0.006, 'SI': 0.005, 'CY': 0.004, 'MT': 0.002, 'DK': 0.006, 'LU': 0.003, 'IT': 0.01, 'PL': 0.01, 'IE': 0.008, 'LT': 0.008, 'SE': 0.015}  # simplificacion en grados
+MAIN = {'ES': (-10, 35.5, 5, 44.5), 'PT': (-10, 36, -6, 42.5), 'GB': (-9, 49, 3, 61), 'CZ': (11, 48, 19.5, 51.5), 'AT': (9.4, 46.3, 17.2, 49.1), 'BE': (2.5, 49.4, 6.5, 51.6), 'BG': (22.3, 41.2, 28.7, 44.3), 'HR': (13.4, 42.3, 19.5, 46.6), 'DE': (5.8, 47.2, 15.1, 55.1), 'GR': (19.3, 34.7, 28.3, 41.8), 'HU': (16, 45.7, 23, 48.7), 'NL': (3.3, 50.7, 7.3, 53.6), 'RO': (20.2, 43.6, 29.8, 48.3), 'SK': (16.8, 47.7, 22.6, 49.7), 'SI': (13.3, 45.4, 16.7, 46.9), 'CY': (32.2, 34.5, 34.7, 35.8), 'MT': (14.1, 35.78, 14.6, 36.1), 'DK': (8, 54.5, 13, 57.8), 'LU': (5.7, 49.4, 6.6, 50.2), 'IT': (6.5, 36.6, 18.6, 47.1), 'PL': (14.1, 49, 24.2, 54.9), 'IE': (-10.7, 51.3, -5.9, 55.5), 'LT': (20.9, 53.8, 26.9, 56.5), 'SE': (10.9, 55.3, 24.2, 69.1)}  # (lon0, lat0, lon1, lat1) del territorio peninsular/principal
 SRC = {'name': 'Candiago et al. (2022), EU-PDO: A geospatial inventory of regulatory information for wine PDOs in Europe (Scientific Data; figshare)', 'url': 'https://doi.org/10.6084/m9.figshare.c.5877659.v1', 'license': 'CC0 1.0'}
 
 def geom_from_gpkg(blob):
@@ -25,7 +25,9 @@ def main(path):
     con = sqlite3.connect(path)
     tr = Transformer.from_crs(3035, 4326, always_xy=True)
     rows = con.execute('select PDOid, Shape from EU_PDO').fetchall()
+    only = sys.argv[2].split(',') if len(sys.argv) > 2 else None   # opcional: solo estos paises (codigos del sitio)
     for dc, sc in CC.items():
+        if only and sc not in only: continue
         items = {}
         for pid, blob in rows:
             if not pid.startswith('PDO-%s-' % dc): continue
