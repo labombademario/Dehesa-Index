@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T12:55:28Z",
+ "generatedAt": "2026-10-30T17:59:37Z",
  "summary": {
   "files": 103,
   "errors": 0,
@@ -34,7 +34,7 @@
     "points": 58767,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T15:17:13Z",
+   "generatedAt": "2026-10-30T15:21:45Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -47,10 +47,10 @@
    "warnings": [],
    "stats": {
     "series": 47,
-    "points": 29370,
+    "points": 29384,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T15:48:11Z",
+   "generatedAt": "2026-10-30T15:51:04Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -192,7 +192,7 @@
     "points": 20920,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T16:27:45Z",
+   "generatedAt": "2026-10-30T16:27:47Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -205,10 +205,10 @@
    "warnings": [],
    "stats": {
     "series": 254,
-    "points": 9267,
+    "points": 9270,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T17:08:52Z",
+   "generatedAt": "2026-10-30T17:05:00Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -247,7 +247,7 @@
     "points": 24356,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T17:25:17Z",
+   "generatedAt": "2026-10-30T17:36:14Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -260,10 +260,10 @@
    "warnings": [],
    "stats": {
     "series": 284,
-    "points": 11944,
+    "points": 11947,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T17:35:03Z",
+   "generatedAt": "2026-10-30T17:28:37Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1020,7 +1020,7 @@
     "points": 7719,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T15:58:58Z",
+   "generatedAt": "2026-10-30T16:08:06Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1048,7 +1048,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-10-29T13:26:00Z",
+   "generatedAt": "2026-10-30T13:15:11Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1064,7 +1064,7 @@
     "points": 20254,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T17:06:19Z",
+   "generatedAt": "2026-10-30T17:14:34Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1080,7 +1080,7 @@
     "points": 23034,
     "lines": 0
    },
-   "generatedAt": "2026-10-24T17:11:34Z",
+   "generatedAt": "2026-10-30T16:52:17Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1096,7 +1096,7 @@
     "points": 5755,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T16:11:35Z",
+   "generatedAt": "2026-10-30T16:22:43Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1128,7 +1128,7 @@
     "points": 9683,
     "lines": 0
    },
-   "generatedAt": "2026-10-24T16:55:57Z",
+   "generatedAt": "2026-10-30T16:05:37Z",
    "info": [],
    "nWarnings": 15,
    "nErrors": 0
@@ -1689,10 +1689,10 @@
    "warnings": [],
    "stats": {
     "series": 35,
-    "points": 4521,
+    "points": 4522,
     "lines": 0
    },
-   "generatedAt": "2026-10-29T18:30:00Z",
+   "generatedAt": "2026-10-30T12:57:40Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1947,10 +1947,10 @@
    "warnings": [],
    "stats": {
     "series": 14,
-    "points": 3370,
+    "points": 3384,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T14:43:16Z",
+   "generatedAt": "2026-10-30T14:59:00Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2118,7 +2118,7 @@
     "points": 1639,
     "lines": 0
    },
-   "generatedAt": "2026-10-29T13:44:08Z",
+   "generatedAt": "2026-10-30T13:35:42Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
