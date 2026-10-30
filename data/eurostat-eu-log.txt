@@ -1,6 +1,6 @@
+rendimiento omitido (no cuadra con produccion/superficie) P1200 ['2010', '2011']
 rendimiento omitido (no cuadra con produccion/superficie) C1120 ['2011']
 rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011', '2012', '2013', '2014']
-rendimiento omitido (no cuadra con produccion/superficie) P1200 ['2010', '2011']
 cultivos 112 series
 censos 47 series
 carne 44 series
@@ -14,11 +14,11 @@ indices de precios de insumos 19 series
 fertilizantes 2 series
 empleo agrario 3 series
 BG series 420
-rendimiento omitido (no cuadra con produccion/superficie) I1100 ['2005', '2010', '2011', '2014', '2015', '2016', '2017', '2018']
-rendimiento omitido (no cuadra con produccion/superficie) I1140 ['2013', '2014']
 rendimiento omitido (no cuadra con produccion/superficie) G1000 ['2010', '2013', '2014']
-rendimiento omitido (no cuadra con produccion/superficie) C1900 ['2005', '2010']
+rendimiento omitido (no cuadra con produccion/superficie) I1140 ['2013', '2014']
 rendimiento omitido (no cuadra con produccion/superficie) I1130 ['2003']
+rendimiento omitido (no cuadra con produccion/superficie) C1900 ['2005', '2010']
+rendimiento omitido (no cuadra con produccion/superficie) I1100 ['2005', '2010', '2011', '2014', '2015', '2016', '2017', '2018']
 cultivos 113 series
 censos 70 series
 carne 44 series
@@ -33,10 +33,10 @@ fertilizantes 2 series
 empleo agrario 3 series
 EL series 452
 rendimiento omitido (no cuadra con produccion/superficie) I1140 ['2012', '2013']
-rendimiento omitido (no cuadra con produccion/superficie) I6000 ['2013']
-rendimiento omitido (no cuadra con produccion/superficie) P1100 ['2004']
 rendimiento omitido (no cuadra con produccion/superficie) I5000 ['2009']
+rendimiento omitido (no cuadra con produccion/superficie) I6000 ['2013']
 rendimiento omitido (no cuadra con produccion/superficie) C1420 ['2008', '2009']
+rendimiento omitido (no cuadra con produccion/superficie) P1100 ['2004']
 cultivos 110 series
 censos 60 series
 carne 46 series
@@ -91,10 +91,10 @@ indices de precios de insumos 21 series
 fertilizantes 2 series
 empleo agrario 3 series
 LT series 418
-rendimiento omitido (no cuadra con produccion/superficie) C1120 ['2013']
-rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011', '2012', '2013', '2014']
 rendimiento omitido (no cuadra con produccion/superficie) P1200 ['2012']
+rendimiento omitido (no cuadra con produccion/superficie) C1120 ['2013']
 rendimiento omitido (no cuadra con produccion/superficie) G9900 ['2015']
+rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011', '2012', '2013', '2014']
 cultivos 110 series
 censos 37 series
 carne 28 series
@@ -121,11 +121,11 @@ indices de precios de insumos 22 series
 fertilizantes 2 series
 empleo agrario 3 series
 DE series 444
-rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011', '2012', '2013', '2014']
 rendimiento omitido (no cuadra con produccion/superficie) I1140 ['2019']
-rendimiento omitido (no cuadra con produccion/superficie) I2100 ['2015', '2021']
 rendimiento omitido (no cuadra con produccion/superficie) C1700 ['2012']
 rendimiento omitido (no cuadra con produccion/superficie) I1112 ['2025']
+rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011', '2012', '2013', '2014']
+rendimiento omitido (no cuadra con produccion/superficie) I2100 ['2015', '2021']
 cultivos 118 series
 censos 84 series
 carne 46 series
@@ -139,9 +139,9 @@ indices de precios de insumos 21 series
 fertilizantes 2 series
 empleo agrario 3 series
 ES series 490
+rendimiento omitido (no cuadra con produccion/superficie) C1600 ['2014']
 rendimiento omitido (no cuadra con produccion/superficie) C1200 ['2011', '2013', '2014']
 rendimiento omitido (no cuadra con produccion/superficie) C1410 ['2011']
-rendimiento omitido (no cuadra con produccion/superficie) C1600 ['2014']
 cultivos 109 series
 censos 84 series
 carne 36 series
@@ -194,8 +194,8 @@ indices de precios de insumos 19 series
 fertilizantes 2 series
 empleo agrario 3 series
 CZ series 424
-rendimiento omitido (no cuadra con produccion/superficie) I1140 ['2006', '2007', '2013']
 rendimiento omitido (no cuadra con produccion/superficie) P1200 ['2009', '2011']
+rendimiento omitido (no cuadra con produccion/superficie) I1140 ['2006', '2007', '2013']
 rendimiento omitido (no cuadra con produccion/superficie) G9900 ['2012']
 rendimiento omitido (no cuadra con produccion/superficie) C1900 ['2006', '2009']
 cultivos 108 series
@@ -211,12 +211,12 @@ indices de precios de insumos 19 series
 fertilizantes 2 series
 empleo agrario 3 series
 EE series 357
-rendimiento omitido (no cuadra con produccion/superficie) R2000 ['2013']
-rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011', '2012']
-rendimiento omitido (no cuadra con produccion/superficie) C2000 ['2010']
 rendimiento omitido (no cuadra con produccion/superficie) P1200 ['2011']
+rendimiento omitido (no cuadra con produccion/superficie) C2000 ['2010']
 rendimiento omitido (no cuadra con produccion/superficie) C1700 ['2010', '2012']
+rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011', '2012']
 rendimiento omitido (no cuadra con produccion/superficie) C1900 ['2010']
+rendimiento omitido (no cuadra con produccion/superficie) R2000 ['2013']
 cultivos 112 series
 censos 84 series
 carne 46 series
@@ -243,8 +243,8 @@ indices de precios de insumos 22 series
 fertilizantes 2 series
 empleo agrario 3 series
 RO series 450
-rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011']
 rendimiento omitido (no cuadra con produccion/superficie) C1700 ['2016']
+rendimiento omitido (no cuadra con produccion/superficie) I1110-1130 ['2010', '2011']
 cultivos 111 series
 censos 44 series
 carne 44 series
@@ -271,9 +271,9 @@ indices de precios de insumos 23 series
 fertilizantes 0 series
 empleo agrario 3 series
 CY series 408
-rendimiento omitido (no cuadra con produccion/superficie) P9000 ['2013']
 rendimiento omitido (no cuadra con produccion/superficie) R9000 ['2011']
 rendimiento omitido (no cuadra con produccion/superficie) I5000 ['2023', '2024']
+rendimiento omitido (no cuadra con produccion/superficie) P9000 ['2013']
 cultivos 115 series
 censos 37 series
 carne 48 series
@@ -300,15 +300,15 @@ indices de precios de insumos 15 series
 fertilizantes 2 series
 empleo agrario 3 series
 MT series 350
-rendimiento omitido (no cuadra con produccion/superficie) I1100 ['2013']
-rendimiento omitido (no cuadra con produccion/superficie) I1140 ['2000', '2001', '2008', '2013', '2016']
-rendimiento omitido (no cuadra con produccion/superficie) I2100 ['2003', '2009', '2011', '2012', '2020']
-rendimiento omitido (no cuadra con produccion/superficie) P9000 ['2004', '2008']
-rendimiento omitido (no cuadra con produccion/superficie) P1300 ['2000', '2003', '2004', '2007', '2012', '2015']
-rendimiento omitido (no cuadra con produccion/superficie) P1200 ['2009']
 rendimiento omitido (no cuadra con produccion/superficie) R9000 ['2022', '2023']
+rendimiento omitido (no cuadra con produccion/superficie) P1200 ['2009']
+rendimiento omitido (no cuadra con produccion/superficie) P1300 ['2000', '2003', '2004', '2007', '2012', '2015']
+rendimiento omitido (no cuadra con produccion/superficie) I1140 ['2000', '2001', '2008', '2013', '2016']
 rendimiento omitido (no cuadra con produccion/superficie) I5000 ['2001', '2003', '2006', '2009', '2022']
+rendimiento omitido (no cuadra con produccion/superficie) P9000 ['2004', '2008']
 rendimiento omitido (no cuadra con produccion/superficie) I2200 ['2013', '2015', '2016']
+rendimiento omitido (no cuadra con produccion/superficie) I1100 ['2013']
+rendimiento omitido (no cuadra con produccion/superficie) I2100 ['2003', '2009', '2011', '2012', '2020']
 cultivos 109 series
 censos 45 series
 carne 46 series
