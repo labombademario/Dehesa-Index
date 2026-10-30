@@ -65,8 +65,8 @@ Grilla anr 2017_120: celdas sin dato, mes omitido
 Grilla anr 2018_120: celdas sin dato, mes omitido
 Grilla anr 2019_120: celdas sin dato, mes omitido
 Grilla anr 2020_120: celdas sin dato, mes omitido
-BOSQUE 2018: 169725 poligonos, 875431 ha en total; especies: Eucalyptus grandis (inc. híbridos y clon=235617; Eucalyptus dunnii=191016; Pinus elliotti y Pinus taeda=180016; Eucalyptus globulus, E. maidenii y E. bi=149315; Montes de abrigo y Cortinas=81956; Otros Eucalyptus=18776; Mezcla de especies=11814; Pinus pinaster=3790; Salix sp. y Populus sp.=3130
-BOSQUE 2018 publicado: 19 departamentos, 875433 ha
+BOSQUE 2018: 150378 poligonos, 748710 ha en total; especies: Eucalyptus grandis (inc. híbridos y clon=201736; Eucalyptus dunnii=188109; Eucalyptus globulus, E. maidenii y E. bi=141287; Pinus elliotti y Pinus taeda=110130; Montes de abrigo y Cortinas=72351; Otros Eucalyptus=16398; Mezcla de especies=11814; Pinus pinaster=3790; Salix sp. y Populus sp.=3094
+BOSQUE 2018 publicado: 18 departamentos, 748711 ha
 BOSQUE 2021: 166425 poligonos, 845031 ha en total; especies: Eucalyptus grandis (inc. híbridos y clon=250964; Eucalyptus dunnii=216581; Pinus elliottii y Pinus taeda=150908; Eucalyptus globulus, E. maidenii y E. bi=103639; Montes de abrigo y Cortinas=81956; Otros Eucalyptus=23356; Mezcla de especies=10699; Pinus pinaster=3790; Salix sp. y Populus sp.=3137
 BOSQUE 2021 publicado: 19 departamentos, 845028 ha
 CATALOGO [org:ine] ine-presupuesto_ine | Presupuesto | org=ine | lic=odc-uy | CSV,JSON | mod=2018-07-06
