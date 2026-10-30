@@ -1,4 +1,4 @@
-mensual: https://www.ers.usda.gov/media/5202/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers.csv?v=41709
+mensual: https://www.ers.usda.gov/media/5202/monthly-sales-of-food-with-taxes-and-tips-for-all-purchasers.csv?v=64897
 gasto anual: 64 series
 ventas por estado: 306 series
 descartada us-ersfd-t10-advertising-c-nom-a: 5 puntos, ultimo 2017
