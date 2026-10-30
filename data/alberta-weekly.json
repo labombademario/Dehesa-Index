@@ -1360,6 +1360,21 @@
     "cerdo_ab": 1.959,
     "novillo_ab": 297.97
    }
+  },
+  "2026-10-30": {
+   "crop": {
+    "avena_pienso_ab": 260.0,
+    "canola_elevador": 734.63,
+    "cebada_pienso_ab": 240.4,
+    "guisante_verde_ab": 353.11,
+    "lenteja_laird_ab": 650.36,
+    "trigo_cwrs_ab": 294.66,
+    "trigo_pienso_ab": 234.4
+   },
+   "livestock": {
+    "cerdo_ab": 1.864,
+    "novillo_ab": 296.61
+   }
   }
  },
  "parserVersion": 3
