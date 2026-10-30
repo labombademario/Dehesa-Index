@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76408
+  "rows": 76417
  },
  "files": [
   {
@@ -4444,13 +4444,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 83,
+   "rows": 84,
    "first": "2025-03-14",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/avena_pienso_ab.csv",
    "xlsx": "data/pack/ca/avena_pienso_ab.xlsx",
-   "csvBytes": 21087,
-   "xlsxBytes": 10717
+   "csvBytes": 21338,
+   "xlsxBytes": 10756
   },
   {
    "product": "bacon_ca",
@@ -4506,13 +4506,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 92,
+   "rows": 93,
    "first": "2025-01-10",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/canola_elevador.csv",
    "xlsx": "data/pack/ca/canola_elevador.xlsx",
-   "csvBytes": 22623,
-   "xlsxBytes": 11409
+   "csvBytes": 22868,
+   "xlsxBytes": 11451
   },
   {
    "product": "ternera_picada_ca",
@@ -4599,13 +4599,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 92,
+   "rows": 93,
    "first": "2025-01-10",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/cebada_pienso_ab.csv",
    "xlsx": "data/pack/ca/cebada_pienso_ab.xlsx",
-   "csvBytes": 23630,
-   "xlsxBytes": 11369
+   "csvBytes": 23885,
+   "xlsxBytes": 11409
   },
   {
    "product": "cerdo",
@@ -4661,13 +4661,13 @@
    "unit": "kg",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 86,
+   "rows": 87,
    "first": "2025-01-10",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/cerdo_ab.csv",
    "xlsx": "data/pack/ca/cerdo_ab.xlsx",
-   "csvBytes": 20550,
-   "xlsxBytes": 10966
+   "csvBytes": 20788,
+   "xlsxBytes": 11006
   },
   {
    "product": "potasa_ab",
@@ -5219,13 +5219,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 92,
+   "rows": 93,
    "first": "2025-01-10",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/guisante_verde_ab.csv",
    "xlsx": "data/pack/ca/guisante_verde_ab.xlsx",
-   "csvBytes": 24093,
-   "xlsxBytes": 11289
+   "csvBytes": 24354,
+   "xlsxBytes": 11333
   },
   {
    "product": "guisante_seco",
@@ -5467,13 +5467,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 92,
+   "rows": 93,
    "first": "2025-01-10",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/lenteja_laird_ab.csv",
    "xlsx": "data/pack/ca/lenteja_laird_ab.xlsx",
-   "csvBytes": 23932,
-   "xlsxBytes": 11331
+   "csvBytes": 24191,
+   "xlsxBytes": 11374
   },
   {
    "product": "lenteja",
@@ -5715,13 +5715,13 @@
    "unit": "cwt",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 89,
+   "rows": 90,
    "first": "2025-01-17",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/novillo_ab.csv",
    "xlsx": "data/pack/ca/novillo_ab.xlsx",
-   "csvBytes": 20903,
-   "xlsxBytes": 11164
+   "csvBytes": 21137,
+   "xlsxBytes": 11203
   },
   {
    "product": "cerdo_paleta_ca",
@@ -6242,13 +6242,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 91,
+   "rows": 92,
    "first": "2025-01-10",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/trigo_cwrs_ab.csv",
    "xlsx": "data/pack/ca/trigo_cwrs_ab.xlsx",
-   "csvBytes": 22561,
-   "xlsxBytes": 11326
+   "csvBytes": 22808,
+   "xlsxBytes": 11368
   },
   {
    "product": "trigo_pienso_ab",
@@ -6273,13 +6273,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 92,
+   "rows": 93,
    "first": "2025-01-10",
-   "last": "2026-10-23",
+   "last": "2026-10-30",
    "csv": "data/pack/ca/trigo_pienso_ab.csv",
    "xlsx": "data/pack/ca/trigo_pienso_ab.xlsx",
-   "csvBytes": 23439,
-   "xlsxBytes": 11095
+   "csvBytes": 23692,
+   "xlsxBytes": 11131
   },
   {
    "product": "urea_ab",
