@@ -1,8 +1,8 @@
-cerdos inventario nacional filas 975 usadas 191
+cerdos inventario nacional filas 976 usadas 191
 cerdos camada y lechones filas 98 usadas 87
 cerdos camada litter filas 98 usadas 87
-cerdos inventario estados filas 29272 usadas 3702
-vacuno nacional INVENTORY filas 2622 usadas 168
+cerdos inventario estados filas 29283 usadas 3702
+vacuno nacional INVENTORY filas 2625 usadas 168
 vacuno nacional PLACEMENTS filas 483 usadas 0
 vacuno nacional MARKETINGS filas 0 usadas 0
 vacuno estados CATTLE, INCL CALVES - INVENTORY filas 350 usadas 350
@@ -23,14 +23,14 @@ frigoríficos WHEY filas 748 usadas 0
 leche existencias lácteos secos filas 264 usadas 264
 leche producción estados filas 5483 usadas 4334
 leche producción nacional filas 962 usadas 184
-leche precio recibido filas 198 usadas 188
+leche precio recibido filas 199 usadas 189
 vacas lecheras filas 0 usadas 0
 vacas lecheras nacional filas 0 usadas 0
 ovino SHEEP, INCL LAMBS - INVENTORY filas 96 usadas 7
 ovino SHEEP, EWES, BREEDING, GE 1 YEAR - INVENTORY filas 6 usadas 6
 ovino SHEEP - LAMB CROP, MEASURED IN HEAD filas 5 usadas 0
-cordero y cordero adulto producción filas 459 usadas 69
-huevos producción filas 1067 usadas 69
+cordero y cordero adulto producción filas 460 usadas 69
+huevos producción filas 1072 usadas 69
 BUTTER producción filas 78 usadas 68
 CHEESE producción filas 1862 usadas 68
  • BEEF, BONE-IN, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
@@ -116,7 +116,7 @@ CHEESE producción filas 1862 usadas 68
  • HOGS, OTHER PRACTICES - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
  • LAMB & MUTTON, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • LAMB & MUTTON, SLAUGHTER, COMMERCIAL - PRODUCTION, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
- • MILK - PRICE RECEIVED, MEASURED IN $ / CWT | $ / CWT | nac 68 2026-08 | estados 0
+ • MILK - PRICE RECEIVED, MEASURED IN $ / CWT | $ / CWT | nac 69 2026-09 | estados 0
  • MILK - PRODUCTION, MEASURED IN LB | LB | nac 69 2026-09 | estados 49
  • MILK - PRODUCTION, MEASURED IN LB / HEAD | LB / HEAD | nac 69 2026-09 | estados 24
  • MILK, DRY, NONFAT, HUMAN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
