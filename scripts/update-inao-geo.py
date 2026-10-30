@@ -106,7 +106,14 @@ def main(args):
         areas[e['f']] = {'b': [round(min(xs), 1), round(min(ys), 1), round(max(xs) - min(xs), 1), round(max(ys) - min(ys), 1)], 'd': ''.join(d)}
     print('con zona', len(areas), 'de', len(ents), '| sin zona', len(miss), miss[:30])
     src = {'name': 'INAO, delimitacion de las areas geograficas de los SIQO (data.gouv.fr)', 'url': 'https://www.data.gouv.fr/datasets/' + SLUG_GEO, 'license': LIC}
+    # zonas de IGP/otras DOP dibujadas desde NUTS3 (build-gi-igp-zones.py, p=1): se conservan al regenerar
+    prev = {}
+    try: prev = json.loads((ROOT / 'data' / 'gi' / 'FR-geo.json').read_text(encoding='utf-8'))
+    except Exception: pass
+    for k, v in (prev.get('areas') or {}).items():
+        if v.get('p') and k not in areas: areas[k] = v
     out_g = {'schemaVersion': 1, 'generatedAt': now, 'country': 'FR', 'source': src, 'viewBox': '0 0 %d %s' % (P['W'], P['H']), 'areas': dict(sorted(areas.items()))}
+    if prev.get('areasP'): out_g['areasP'] = prev['areasP']
     refsrc = {'name': 'INAO, referencial de productos SIQO (data.gouv.fr)', 'url': 'https://www.data.gouv.fr/datasets/' + SLUG_REF, 'license': LIC}
     out_i = {'schemaVersion': 1, 'generatedAt': now, 'country': 'FR', 'source': refsrc, 'cats': [x for x, _ in sorted(cats.items(), key=lambda t: t[1])], 'e': dict(sorted(ecat.items())), 'z': sorted(areas)}
     (ROOT / 'data' / 'gi' / 'FR-geo.json').write_text(json.dumps(out_g, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')

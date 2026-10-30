@@ -73,5 +73,7 @@ def main():
             d['areas'][f] = a; n += 1
         d['areasP'] = {'name': 'Zonas de IGP y otras DOP: unidades NUTS (Eurostat/GISCO 2021) que cubre la zona segun el pliego de condiciones de cada denominacion', 'url': 'https://ec.europa.eu/eurostat/web/gisco', 'license': 'Eurostat/GISCO, (c) EuroGeographics, reutilizacion libre citando la fuente'}
         json.dump(d, open(fn, 'w'), separators=(',', ':'))
+        if cc == 'FR':   # la web lista las zonas francesas por FR-inao.json (z): se mantiene igual que FR-geo.json
+            fi = ROOT / 'data/gi/FR-inao.json'; inao = json.load(open(fi)); inao['z'] = sorted(d['areas']); json.dump(inao, open(fi, 'w'), ensure_ascii=False, separators=(',', ':'))
         print(cc, n, 'zonas anadidas', fn.stat().st_size // 1024, 'KB')
 if __name__ == '__main__': main()
