@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T00:57:01Z",
+ "generatedAt": "2026-10-30T12:43:46Z",
  "summary": {
   "files": 103,
   "errors": 0,
@@ -223,10 +223,10 @@
    "warnings": [],
    "stats": {
     "series": 706,
-    "points": 47870,
+    "points": 47919,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T09:55:15Z",
+   "generatedAt": "2026-10-30T10:04:26Z",
    "info": [
     "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86) [KNOWN_VERIFIED_ANOMALY]",
     "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3) [KNOWN_VERIFIED_ANOMALY]",
@@ -1234,7 +1234,7 @@
     "points": 70790,
     "lines": 0
    },
-   "generatedAt": "2026-10-23T08:04:35Z",
+   "generatedAt": "2026-10-30T08:19:57Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1476,10 +1476,10 @@
    ],
    "stats": {
     "series": 232,
-    "points": 47722,
+    "points": 47746,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T08:20:17Z",
+   "generatedAt": "2026-10-30T08:27:27Z",
    "info": [],
    "nWarnings": 5,
    "nErrors": 0
@@ -2134,7 +2134,7 @@
     "points": 0,
     "lines": 2186
    },
-   "generatedAt": "2026-10-27T08:54:57Z",
+   "generatedAt": "2026-10-30T09:03:44Z",
    "nWarnings": 0,
    "nErrors": 0
   },
