@@ -29,7 +29,9 @@ def main():
         if not us: continue
         by.setdefault(e['cc'], []).append((f, e, us))
     for cc, items in by.items():
-        ds = SITE2DS.get(cc, cc); lon0, lat0, lon1, lat1 = G.MAIN[ds]; tol = G.TOL[ds]
+        ds = SITE2DS.get(cc, cc)
+        if ds not in G.MAIN: print(cc, 'sin proyeccion en build-gi-geo (omitido)'); continue
+        lon0, lat0, lon1, lat1 = G.MAIN[ds]; tol = G.TOL[ds]
         fn = ROOT / ('data/gi/%s-geo.json' % cc)
         lat_c = (lat0 + lat1) / 2; kx = math.cos(math.radians(lat_c)); S = 900.0 / max((lon1 - lon0) * kx, lat1 - lat0)
         if fn.exists(): d = json.load(open(fn))
