@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-30T02:53:20.455Z",
+  "generatedAt": "2026-10-30T10:18:24.074Z",
   "status": "informational",
   "rules": [
     {
@@ -371,12 +371,21 @@
     },
     {
       "type": "period_move",
-      "product": "defra_fertiliser_input_index",
+      "product": "defra_barley_output_index",
       "region": "uk",
       "sourceId": "defra",
       "severity": "watch",
-      "changePct": -9.09,
-      "observationDate": "2026-07-01"
+      "changePct": 6.08,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "defra_energy_input_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "changePct": 9.4,
+      "observationDate": "2026-08-01"
     },
     {
       "type": "period_move",
@@ -384,8 +393,17 @@
       "region": "uk",
       "sourceId": "defra",
       "severity": "high",
-      "changePct": -10.99,
-      "observationDate": "2026-07-01"
+      "changePct": -11.6,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "defra_wheat_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "changePct": 6.05,
+      "observationDate": "2026-08-01"
     },
     {
       "type": "period_move",
