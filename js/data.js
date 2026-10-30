@@ -566,8 +566,8 @@
   // --- Gasóleo agrícola / diésel (Energía) ---------------------------------
   var LITRO_KG = 0.835;
   var GAL_KG = LITRO_KG * 3.78541;
-  var DIESEL_US_NATIONAL = { price: 6.276, changePct: 1.5698, history: [5.967, 6.285, 6.529, 6.382, 6.199, 6.179, 6.276], currency: 'USD', kgPerUnit: GAL_KG };
-  var DIESEL_EU_NATIONAL = { price: 2.138675613493391, changePct: 0.1383, history: [2.1588395999247614, 2.2264435149088713, 2.236559817346141, 2.148526960199634, 2.1357209073916077, 2.138675613493391], currency: 'EUR', kgPerUnit: LITRO_KG };
+  var DIESEL_US_NATIONAL = { price: 6.352, changePct: 1.211, history: [6.285, 6.529, 6.382, 6.199, 6.179, 6.276, 6.352], currency: 'USD', kgPerUnit: GAL_KG };
+  var DIESEL_EU_NATIONAL = { price: 2.146185973890054, changePct: 0.3512, history: [2.2264435149088713, 2.236559817346141, 2.148526960199634, 2.1357209073916077, 2.138675613493391, 2.146185973890054], currency: 'EUR', kgPerUnit: LITRO_KG };
   var DIESEL_UK_NATIONAL = { price: 1.9918, changePct: 0.4, history: [1.9300, 1.9450, 1.9580, 1.9690, 1.9760, 1.9840, 1.9918], currency: 'GBP', kgPerUnit: LITRO_KG };
   var DIESEL_US_REGIONS = [
     { key: 'usMidwest', price: 6.680, changePct: 0.9, history: [6.55, 6.58, 6.61, 6.60, 6.64, 6.67, 6.680], currency: 'USD', kgPerUnit: GAL_KG },
@@ -994,13 +994,13 @@
     },
     'energia-diesel-us': {
       sourceId: 'eia', frequency: 'weekly',
-      methodology: 'US national diesel fuel reference; USD/gallon. Observation dated 2026-10-19; EIA release dated 2026-10-19.',
-      comparability: 'directional', observationDate: '2026-10-19', publicationDate: '2026-10-19', status: 'verified', verifiedAt: '2026-10-23T13:14:08.107Z'
+      methodology: 'US national diesel fuel reference; USD/gallon. Observation dated 2026-10-26; EIA release dated 2026-10-26.',
+      comparability: 'directional', observationDate: '2026-10-26', publicationDate: '2026-10-26', status: 'verified', verifiedAt: '2026-10-30T13:33:49.958Z'
     },
     'energia-diesel-eu': {
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
       methodology: 'Media ponderada de la UE de gasóleo de automoción, con impuestos, publicada en EUR/1.000 litros y almacenada sin convertir su precisión de origen. Es un precio semanal al consumidor; no equivale a una cotización agrícola en finca.',
-      comparability: 'directional', observationDate: '2026-10-19', publicationDate: '2026-10-23', status: 'verified', verifiedAt: '2026-10-23T13:14:13.267915Z'
+      comparability: 'directional', observationDate: '2026-10-26', publicationDate: '2026-10-30', status: 'verified', verifiedAt: '2026-10-30T13:33:52.326859Z'
     },
     'porcino-cerdo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
