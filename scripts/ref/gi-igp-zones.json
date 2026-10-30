@@ -7220,5 +7220,293 @@
   "partial": true,
   "source": "https://publications.europa.eu/resource/celex/52010XC0219%2804%29",
   "note": "Documento único (OJ C 2010, texto literal): municipios enumerados de Agrigento (6), Trapani (10) y Palermo (Contessa Entellina y Bisacquino, zona San Biagio)."
+ },
+ "PGI-IT-A0637": {
+  "cc": "IT",
+  "f": "PGI-IT-A0637",
+  "units": [
+   "ITF61",
+   "ITF62",
+   "ITF63",
+   "ITF64",
+   "ITF65"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=3015",
+  "note": "Disciplinare IGT (catálogo MASAF, texto literal): intero territorio amministrativo delle province di Catanzaro, Cosenza, Crotone, Reggio Calabria, Vibo Valentia."
+ },
+ "PGI-IT-A0805": {
+  "cc": "IT",
+  "f": "PGI-IT-A0805",
+  "units": [
+   "ITG11"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=3016",
+  "note": "Disciplinare IGT (catálogo MASAF, texto literal): solo el comune de Partanna, provincia de Trapani."
+ },
+ "PGI-IT-A0854": {
+  "cc": "IT",
+  "f": "PGI-IT-A0854",
+  "units": [
+   "ITI21"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=3018",
+  "note": "Disciplinare IGT (catálogo MASAF, texto literal): comuni de Cannara, Bettona y Bevagna, provincia de Perugia."
+ },
+ "PGI-IT-A1053": {
+  "cc": "IT",
+  "f": "PGI-IT-A1053",
+  "units": [
+   "ITC4C",
+   "ITC49",
+   "ITC48"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=3028",
+  "note": "Disciplinare IGT (catálogo MASAF, texto literal): parte colinar de San Colombano al Lambro (Milano), Graffignana y Sant'Angelo Lodigiano (Lodi), Inverno e Monteleone y Miradolo Terme (Pavia)."
+ },
+ "PGI-IT-A0645": {
+  "cc": "IT",
+  "f": "PGI-IT-A0645",
+  "units": [
+   "ITF65"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/52150",
+  "note": "Documento eAmbrosia de modificación (texto literal, art. 2.6): comuni de Bova, Bova Marina, Brancaleone, Condofuri, Palizzi y Staiti, provincia de Reggio Calabria."
+ },
+ "PDO-IT-02810": {
+  "cc": "IT",
+  "f": "PDO-IT-02810",
+  "units": [
+   "ITC17",
+   "ITC16"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0206%2802%29",
+  "note": "Documento único en DOUE C 43/5 (texto literal): municipios enteros y parciales de las provincias de Asti y Cuneo."
+ },
+ "PDO-IT-02972": {
+  "cc": "IT",
+  "f": "PDO-IT-02972",
+  "units": [
+   "ITF13"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52025XC04081",
+  "note": "Solicitud publicada en DOUE C/2025/4081 (texto literal, registrada por Reg. 2025/2261): municipios enteros y parciales de la provincia de Pescara."
+ },
+ "PDO-IT-03209": {
+  "cc": "IT",
+  "f": "PDO-IT-03209",
+  "units": [
+   "ITF62"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52025XC01933",
+  "note": "Solicitud publicada en DOUE C/2025/1933 (texto literal, registrada por Reg. 2025/1518): territorio de Cirò y Cirò Marina, provincia de Crotone."
+ },
+ "PDO-IT-02770": {
+  "cc": "IT",
+  "f": "PDO-IT-02770",
+  "units": [
+   "ITH55",
+   "ITH54",
+   "ITH57"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0829%2801%29",
+  "note": "Documento único en DOUE C 305/9 (texto literal): lista de municipios de las provincias de Bologna, Modena y Ravenna."
+ },
+ "PGI-PT-A1543": {
+  "cc": "PT",
+  "f": "PGI-PT-A1543",
+  "units": [
+   "PT184",
+   "PT187",
+   "PT186",
+   "PT181"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/40795",
+  "note": "Documento único eAmbrosia AM01 (texto literal): todos los concelhos de los distritos de Beja, Évora y Portalegre; Odemira (distrito de Beja) cae en PT181, que por eso es parcial. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-A1448": {
+  "cc": "PT",
+  "f": "PGI-PT-A1448",
+  "units": [
+   "PT150"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0803%2804%29",
+  "note": "DOUE C 274/27 (texto literal): todo el distrito de Faro, que coincide con el NUTS3 Algarve."
+ },
+ "PGI-PT-A1447": {
+  "cc": "PT",
+  "f": "PGI-PT-A1447",
+  "units": [
+   "PT200"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0608%2803%29",
+  "note": "DOUE C 200/10 (texto literal): todas las islas del archipiélago de las Azores; la lista NUTS3 solo tiene PT200 para la región."
+ },
+ "PGI-PT-02350": {
+  "cc": "PT",
+  "f": "PGI-PT-02350",
+  "units": [
+   "PT16D",
+   "PT11A",
+   "PT16E",
+   "PT16F"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0929%2809%29",
+  "note": "Documento único DOUE C 344/242 (texto literal): distrito de Aveiro salvo Arouca, Castelo de Paiva, Vale de Cambra y la freguesia de Ossela; Coimbra salvo Arganil, Oliveira do Hospital y Tábua; y varios concelhos de Leiria. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-A0124": {
+  "cc": "PT",
+  "f": "PGI-PT-A0124",
+  "units": [
+   "PT11D",
+   "PT11E",
+   "PT16J",
+   "PT11C"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://www.ivdp.pt/media/gail4eig/pgi-pt-a0124-duriense.pdf",
+  "note": "Ficheiro técnico eAmbrosia alojado por el IVDP (texto literal, punto 5): concelhos y freguesias de los distritos de Bragança, Guarda, Vila Real y Viseu; coincide con el Douro (PT11D) más pequeñas porciones en PT11E, PT16J y PT11C. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-A1535": {
+  "cc": "PT",
+  "f": "PGI-PT-A1535",
+  "units": [
+   "PT170",
+   "PT16B",
+   "PT16F",
+   "PT16I"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52024XC01215",
+  "note": "Documento único en DOUE C/2024/1215 (texto literal): distrito de Lisboa salvo Azambuja, varios concelhos de Leiria y Ourém. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-A1536": {
+  "cc": "PT",
+  "f": "PGI-PT-A1536",
+  "units": [
+   "PT111",
+   "PT112",
+   "PT119",
+   "PT11A",
+   "PT11B",
+   "PT11C"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/38307",
+  "note": "Documento único eAmbrosia AM01 (texto literal): distritos de Braga y Viana do Castelo más concelhos de Vila Real, Porto, Viseu y Aveiro. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-A1459": {
+  "cc": "PT",
+  "f": "PGI-PT-A1459",
+  "units": [
+   "PT170",
+   "PT181"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/40528",
+  "note": "Documento único eAmbrosia AM01 (texto literal): todo el distrito de Setúbal, que se reparte entre PT170 y PT181 (ambos parciales). Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-A1547": {
+  "cc": "PT",
+  "f": "PGI-PT-A1547",
+  "units": [
+   "PT16I",
+   "PT185"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52026XC02136",
+  "note": "DOUE C/2026/2136 (texto literal): distrito de Santarém salvo Ourém, más Azambuja; PT16I parcial porque excluye Ourém, Sertã y Vila de Rei. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-02355": {
+  "cc": "PT",
+  "f": "PGI-PT-02355",
+  "units": [
+   "PT16J",
+   "PT16H",
+   "PT16I"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0331%2802%29",
+  "note": "Documento único DOUE C 116/34 (texto literal): distrito de Castelo Branco entero y concelhos del distrito de Guarda. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-02351": {
+  "cc": "PT",
+  "f": "PGI-PT-02351",
+  "units": [
+   "PT11D"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0420%2801%29",
+  "note": "Documento único DOUE C 137/12 (texto literal): concelhos enteros y partes de Armamar, Lamego, Moimenta da Beira, Penedono, São João da Pesqueira, Sernancelhe, Tabuaço y Tarouca. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-02352": {
+  "cc": "PT",
+  "f": "PGI-PT-02352",
+  "units": [
+   "PT16D",
+   "PT16E",
+   "PT16J",
+   "PT16G"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://publications.europa.eu/resource/celex/52023XC0324%2802%29",
+  "note": "Documento único DOUE C 109/73 (texto literal): una freguesia de Sever do Vouga, concelhos de Coimbra, Guarda y Viseu. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
+ },
+ "PGI-PT-A0040": {
+  "cc": "PT",
+  "f": "PGI-PT-A0040",
+  "units": [
+   "PT300"
+  ],
+  "level": "NUTS3",
+  "partial": false,
+  "source": "https://joram.madeira.gov.pt/joram/1serie/Ano%20de%202015/ISerie-028-2015-02-13sup2.pdf",
+  "note": "Portaria 40/2015 (JORAM, texto literal, art. 6): la IG corresponde a la Região Demarcada da Madeira, islas de Madeira y Porto Santo."
+ },
+ "PGI-PT-A1467": {
+  "cc": "PT",
+  "f": "PGI-PT-A1467",
+  "units": [
+   "PT11E",
+   "PT11D",
+   "PT11B"
+  ],
+  "level": "NUTS3",
+  "partial": true,
+  "source": "https://www.ivdp.pt/pt/docs/legislacao/236.pdf",
+  "note": "Portaria 1203/2006 (DR, texto literal, punto 2): concelhos enteros y parciales de Bragança y Vila Real; es la norma original y no he podido confirmar que siga vigente sin cambios. Los concelhos/NUTS3 se asignan cruzando la geometría LAU 2021 de GISCO con NUTS 2021 (deducido por ubicación)."
  }
 }
