@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76357
+  "rows": 76359
  },
  "files": [
   {
@@ -571,13 +571,13 @@
    "unit": "gal",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 1701,
+   "rows": 1702,
    "first": "1994-03-21",
-   "last": "2026-10-19",
+   "last": "2026-10-26",
    "csv": "data/pack/us/diesel.csv",
    "xlsx": "data/pack/us/diesel.xlsx",
-   "csvBytes": 314606,
-   "xlsxBytes": 82239
+   "csvBytes": 314791,
+   "xlsxBytes": 82284
   },
   {
    "product": "ddgs_us",
@@ -2814,13 +2814,13 @@
    "unit": "litro",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1089,
+   "rows": 1090,
    "first": "2005-01-03",
-   "last": "2026-10-19",
+   "last": "2026-10-26",
    "csv": "data/pack/eu/diesel.csv",
    "xlsx": "data/pack/eu/diesel.xlsx",
-   "csvBytes": 232878,
-   "xlsxBytes": 65132
+   "csvBytes": 233091,
+   "xlsxBytes": 65183
   },
   {
    "product": "harina_pescado",
