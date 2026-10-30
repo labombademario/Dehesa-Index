@@ -144,12 +144,16 @@ def build_cattle(rcfg, raw_rows, old, now, ts, stats):
 
 # ---------------- heno ----------------
 HAY_COLS = ["class", "quality", "package", "unit", "sale", "freight", "region", "use", "crop", "desc", "org", "qty", "pMin", "pMax", "avg"]
+HAY_UNIT_RANGE = {"Per Ton": (30, 1500), "Per Bale": (0.5, 400), "Per Bundle": (5, 2000), "Per Point/Ton": (0.01, 50)}
 def hay_rows(raw, stats):
     out = []
     for r in raw:
         d = iso(r.get("report_begin_date")); pmn, pmx = num(r.get("price_Min")), num(r.get("price_Max"))
         cl, un = txt(r.get("class")), txt(r.get("price_Unit"))
         if not d or not cl or not un or pmn is None or pmx is None or pmn <= 0 or pmx < pmn: stats["skipped"] += 1; continue
+        rng = HAY_UNIT_RANGE.get(un)   # mismos limites que el validador (contract_tests.UL_HAY): detectan errores de unidad, no opinan sobre el mercado
+        if rng and not (rng[0] <= pmn and pmx <= rng[1]):
+            log("DESCARTADA fila con unidad incoherente (publicada asi por AMS):", d, cl, txt(r.get("quality")), txt(r.get("package")), pmn, pmx, un); stats["skipped"] += 1; continue
         out.append({"date": d, "class": cl, "quality": txt(r.get("quality")), "package": txt(r.get("package")), "unit": un, "sale": txt(r.get("sale_Type")), "freight": txt(r.get("freight")),
                     "region": txt(r.get("region")), "use": txt(r.get("use")), "crop": txt(r.get("crop_Age")), "desc": txt(r.get("desc")), "org": "Organic" if txt(r.get("conventional")).lower() == "organic" else "",
                     "qty": num(r.get("quantity")), "pMin": pmn, "pMax": pmx, "avg": pos(r.get("wtd_Avg_Price"))})
