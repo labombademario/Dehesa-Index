@@ -18,7 +18,7 @@ BASE = 'https://dehesaindex.com'
 KEEP_DAYS = 30
 COUNTRIES = {  # cc -> (fichero, id de fuente en license-registry)
     'DE': ('data/de-rivers.json', 'pegelonline'), 'NL': ('data/rivers-nl.json', 'rijkswaterstaat'), 'FR': ('data/rivers-fr.json', 'hubeau_hydrometrie'),
-    'BE': ('data/rivers-be.json', 'vmm_waterinfo'), 'PL': ('data/rivers-pl.json', 'imgw_pib'), 'SE': ('data/rivers-se.json', 'smhi'), 'CA': ('data/rivers-ca.json', 'eccc_hydrometric'), 'US': ('data/us-markets/rivers.json', 'usgs_water')}
+    'BE': ('data/rivers-be.json', 'vmm_waterinfo'), 'PL': ('data/rivers-pl.json', 'imgw_pib'), 'SE': ('data/rivers-se.json', 'smhi'), 'FI': ('data/rivers-fi.json', 'syke_hydro'), 'CA': ('data/rivers-ca.json', 'eccc_hydrometric'), 'US': ('data/us-markets/rivers.json', 'usgs_water')}
 STATE = {'low': 'low', 'normal': 'normal', 'high': 'high'}
 
 

@@ -1813,7 +1813,7 @@ sources:
     timeout: 45
     script_timeout: 40
     continue: true
-    data: [rivers-nl.json, rivers-fr.json, rivers-ca.json, rivers-be.json, rivers-pl.json, rivers-se.json, rivers-log.txt]
+    data: [rivers-nl.json, rivers-fr.json, rivers-ca.json, rivers-be.json, rivers-pl.json, rivers-se.json, rivers-fi.json, rivers-log.txt]
     message: Rios - nivel y caudal (Paises Bajos, Francia, Canada, Flandes, Polonia)
   - id: eu-input-prices
     name: Update EU input trade unit values and origins (Eurostat Comext, fertilisers, energy, feed)

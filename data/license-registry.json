@@ -6078,6 +6078,32 @@
    "short": "DFO desembarques",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Licencia OGL-Canada explicita en el catalogo oficial para este conjunto."
+  },
+  "syke_hydro": {
+   "name": "SYKE — Suomen ympäristökeskus / Finnish Environment Institute (avoin ympäristötieto: hidrología, interfaz OData)",
+   "url": "https://www.syke.fi/en/environmental-data/open-web-services",
+   "country": "FI",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+   "licenseUrl": "https://www.syke.fi/en/environmental-data/use-license-and-responsibilities",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Instituto Finlandés de Medio Ambiente (SYKE), datos procesados por Dehesa Index",
+   "additionalRestrictions": "Citar a SYKE como fuente; algunos conjuntos de SYKE tienen restricciones propias indicadas en sus metadatos (la tabla Virtaama no declara ninguna).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-30",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Página «Use license and responsibilities» de SYKE leída el 30 oct 2026: los datos abiertos de SYKE se publican bajo CC BY 4.0 y pueden usarse libremente citando la fuente; algunos conjuntos tienen restricciones indicadas en sus metadatos.",
+   "used": true,
+   "aliases": [],
+   "notes": "Interfaz de hidrología (rajapinnat.ymparisto.fi/api/Hydrologiarajapinta/1.1/odata), tabla Virtaama (caudal medio diario). 17 estaciones; la serie diaria propia, la referencia desde 2010, el percentil y el estado son cálculo de Dehesa Index.",
+   "short": "SYKE",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: página oficial de licencia de SYKE (CC BY 4.0)."
   }
  },
  "files": {
@@ -8850,6 +8876,10 @@
     "dfo_landings"
    ],
    "notes": "Desembarques comerciales de pesca marina de Canada por provincia y especie, 1990-ultimo ano (DFO, OGL-Canada; scripts/update-ca-dfo-landings.py). Las celdas suprimidas por DFO quedan en blanco; las toneladas y la media C$/kg son calculo de Dehesa Index sobre las cifras publicadas."
+  },
+  "data/rivers-fi.json": {
+   "default": "syke_hydro",
+   "notes": "Caudal medio diario de 17 estaciones de ríos de Finlandia (SYKE, tabla Virtaama); la serie diaria propia de 430 días, la referencia (cuartiles de ±7 días desde 2010), el percentil y el estado: cálculo de Dehesa Index (datos procesados)."
   }
  },
  "derived": [

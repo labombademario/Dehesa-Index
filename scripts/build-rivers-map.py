@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Mapas para el bloque de ríos de Países Bajos, Francia, Canadá y Bélgica -> vendor/rivers-map-{nl,fr,ca,be,pl,se}.js
+"""Mapas para el bloque de ríos de Países Bajos, Francia, Canadá y Bélgica -> vendor/rivers-map-{nl,fr,ca,be,pl,se,fi}.js
 - Regiones: Natural Earth 1:10m admin-1 (dominio publico), scripts/ref/ne-admin1-*.json y ne-provinces-ca.json, simplificadas y recortadas a la parte continental.
 - Rios: Natural Earth 1:10m rivers_europe y rivers_north_america (dominio publico), descargados de github.com/nvkelso/natural-earth-vector (carpeta geojson) en --rivers-dir, recortados al pais.
 Punto (lat, lon) -> x = (lon - proj.lon0) * proj.c * proj.k ; y = (proj.lat0 - lat) * proj.k  (el mismo esquema que vendor/de-rivers-map.js).
-Uso: python3 scripts/build-rivers-map.py [--rivers-dir /ruta/con/ne_10m_rivers_*.geojson] [nl fr ca be pl se]"""
+Uso: python3 scripts/build-rivers-map.py [--rivers-dir /ruta/con/ne_10m_rivers_*.geojson] [nl fr ca be pl se fi]"""
 import json, math, sys
 from pathlib import Path
 from shapely.geometry import shape, box, Polygon, LineString
@@ -16,6 +16,7 @@ CFG = {
     'be': {'src': ('ne-admin1-bedkpt.json', 'BEL'), 'bbox': (2.4, 49.4, 6.5, 51.6), 'rivers': 'europe', 'tol': 0.006, 'rtol': 0.004, 'maxrank': 99, 'detail': True},
     'pl': {'src': ('ne-admin1-pl.json', 'POL'), 'bbox': (13.9, 48.9, 24.3, 54.95), 'rivers': 'europe', 'tol': 0.012, 'rtol': 0.008, 'maxrank': 99, 'detail': True},
     'se': {'src': ('nuts3-se.json', None), 'bbox': (10.9, 55.2, 24.3, 69.2), 'rivers': 'europe', 'tol': 0.02, 'rtol': 0.012, 'maxrank': 6, 'detail': True},
+    'fi': {'src': ('nuts3-fi.json', None), 'bbox': (19.0, 59.7, 31.7, 70.2), 'rivers': 'europe', 'tol': 0.02, 'rtol': 0.012, 'maxrank': 6, 'detail': True},
     'fr': {'src': ('ne-admin1-4c.json', 'FRA'), 'bbox': (-5.6, 41.2, 9.8, 51.3), 'rivers': 'europe', 'tol': 0.02, 'rtol': 0.01, 'maxrank': 8, 'detail': False},
     'ca': {'src': ('ne-provinces-ca.json', None), 'bbox': (-141.5, 41.5, -52.0, 62.5), 'rivers': 'north_america', 'tol': 0.05, 'rtol': 0.03, 'maxrank': 7, 'detail': False},
 }

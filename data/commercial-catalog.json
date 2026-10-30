@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T16:52:43Z",
+ "generatedAt": "2026-10-30T18:34:17Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 202,
-  "sourcesApto": 186,
+  "sources": 203,
+  "sourcesApto": 187,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 421,
-  "datasets_apto": 281,
+  "datasets": 422,
+  "datasets_apto": 282,
   "datasets_condiciones": 129,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -2912,6 +2912,23 @@
    "redistribution": "yes",
    "attribution": "Källa: Svensk författningssamling, förordning (2022:1826) om EU:s gemensamma jordbrukspolitik och Statens jordbruksverks föreskrifter (SJVFS 2022:29, 2022:30, 2025:33, 2025:34). Utdrag.",
    "conditions": "Las reglas son un resumen propio hecho a mano; manda la Svensk författningssamling. Las fichas de Jordbruksverket NO son normas («Det är Jordbruksverket som äger texterna»): de ellas solo se usan hechos (importes planificados, fechas) con cita y enlace, sin copiar texto. SFS 2026:288 se leyó en una copia no oficial."
+  },
+  {
+   "id": "syke_hydro",
+   "name": "SYKE — Suomen ympäristökeskus / Finnish Environment Institute (avoin ympäristötieto: hidrología, interfaz OData)",
+   "url": "https://www.syke.fi/en/environmental-data/open-web-services",
+   "country": "FI",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+   "licenseUrl": "https://www.syke.fi/en/environmental-data/use-license-and-responsibilities",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fuente: Instituto Finlandés de Medio Ambiente (SYKE), datos procesados por Dehesa Index",
+   "conditions": "Citar a SYKE como fuente; algunos conjuntos de SYKE tienen restricciones propias indicadas en sus metadatos (la tabla Virtaama no declara ninguna)."
   },
   {
    "id": "tedb",
@@ -7516,6 +7533,14 @@
    "verdict": "apto",
    "sources": [
     "eccc_hydrometric"
+   ]
+  },
+  {
+   "path": "data/rivers-fi.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "syke_hydro"
    ]
   },
   {

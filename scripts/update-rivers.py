@@ -438,12 +438,57 @@ def adapt_se(now, old=None):
     return metas
 
 
+FI_API = "https://rajapinnat.ymparisto.fi/api/Hydrologiarajapinta/1.1/odata"
+FI_STATIONS = [("Tornionjoki", 1397, "Pello"), ("Kemijoki", 1388, "Isohaara"), ("Ounasjoki", 1374, "Köngäs"), ("Iijoki", 1344, "Raasakka"), ("Oulujoki", 1314, "Merikoski"),
+               ("Siikajoki", 1269, "Länkelä"), ("Kalajoki", 1253, "Niskakoski"), ("Ähtävänjoki", 1229, "Herrfors"), ("Lapuanjoki", 1221, "Keppo"), ("Kyrönjoki", 1214, "Skatila"),
+               ("Kokemäenjoki", 1188, "Harjavalta"), ("Aurajoki", 1117, "Halinen"), ("Karjaanjoki", 1109, "Billnäs"), ("Vantaa", 1097, "Oulunkylä"), ("Porvoonjoki", 1079, "Vakkola"),
+               ("Vuoksi", 974, "Tainionkoski"), ("Simojoki", 1349, "Simo")]
+FI_FIRST = "2010-01-01"   # referencia propia (cuartiles por dia del ano) con 16 anos: de sobra para >= 8
+FI_STALE_DAYS = 6
+FI_MIN_YEARS = 8
+
+
+def fi_get(path):
+    return http(FI_API + "/" + path, timeout=120)
+
+
+def fi_dms(s):
+    s = str(s).strip().zfill(6)   # ggmmss -> grados decimales
+    return int(s[:-4]) + int(s[-4:-2]) / 60.0 + int(s[-2:]) / 3600.0
+
+
+def adapt_fi(now, old=None):
+    """Caudal medio diario de 18 estaciones de SYKE (Hydrologiarajapinta, OData, tabla Virtaama). Valores diarios con fecha local; desde 2000."""
+    metas = []
+    for river, pid, name in FI_STATIONS:
+        try:
+            pl = fi_get("Paikka?$filter=" + urllib.parse.quote("Paikka_Id eq %d" % pid) + "&$select=Paikka_Id,Nimi,PaaVesalNimi,KoordLat,KoordLong")["value"]
+            url = "Virtaama?$filter=" + urllib.parse.quote("Paikka_Id eq %d and Aika ge datetime'%sT00:00:00'" % (pid, FI_FIRST)) + "&$orderby=Aika%20asc&$select=Aika,Arvo"
+            qh = {}
+            while url:
+                d = fi_get(url)
+                for r in d.get("value", []):
+                    if r.get("Arvo") in (None, ""): continue
+                    qh[r["Aika"][:10]] = float(r["Arvo"])
+                nxt = d.get("odata.nextLink"); url = nxt.split("/odata/", 1)[1] if nxt else None
+        except Exception as e: log("aviso: fi %s %s: %s" % (river, name, e)); continue
+        if not qh: log("aviso: fi %s %s sin datos" % (river, name)); continue
+        last = max(qh)
+        if (now.date() - datetime.date.fromisoformat(last)).days > FI_STALE_DAYS: log("aviso: fi %s %s: ultima lectura %s, antigua" % (river, name, last)); continue
+        x = pl[0] if pl else {}
+        metas.append({"id": str(pid), "river": river, "name": name, "lon": round(fi_dms(x["KoordLong"]), 4) if x.get("KoordLong") else None, "lat": round(fi_dms(x["KoordLat"]), 4) if x.get("KoordLat") else None,
+                      "w": [], "q": [(last + "T00:00", qh[last])], "qh": qh, "wh": {}})
+    if not metas: raise RuntimeError("fi: la API no devolvio ninguna estacion elegida")
+    return metas
+
+
 ADAPTERS = {
     "nl": (adapt_nl, {"id": "rijkswaterstaat", "name": "Rijkswaterstaat, Waterwebservices (DD-API 2.0), ruwe data", "url": "https://waterwebservices.rijkswaterstaat.nl/", "license": "CC0-1.0"}),
     "fr": (adapt_fr, {"id": "hubeau_hydrometrie", "name": "Hub'Eau, API Hydrométrie (SCHAPI, Eaufrance)", "url": "https://hubeau.eaufrance.fr/page/api-hydrometrie", "license": "Licence Ouverte 2.0"}),
     "ca": (adapt_ca, {"id": "eccc_hydrometric", "name": "Environment and Climate Change Canada, Water Survey of Canada (geomet-OGC)", "url": "https://api.weather.gc.ca/", "license": "ECCC Data Services End-use Licence 2.1.1"}),
     "be": (adapt_be, {"id": "vmm_waterinfo", "name": "Vlaamse Milieumaatschappij, Hydrologisch Informatiecentrum (waterinfo.be KiWIS)", "url": "https://www.waterinfo.be/", "license": "Modellicentie voor gratis hergebruik v1.0"}),
     "se": (adapt_se, {"id": "smhi", "name": "SMHI (Swedish Meteorological and Hydrological Institute), Hydrologiska observationer: Vattenföring (Dygn), arkiv med kontrollerade värden", "url": "https://opendata-download-hydroobs.smhi.se/", "license": "CC BY 4.0 SE (Creative Commons Erkännande 4.0 SE)"}),
+    "fi": (adapt_fi, {"id": "syke_hydro", "name": "Finnish Environment Institute (SYKE), Hydrologiarajapinta (OData): Virtaama, caudal medio diario", "url": "https://www.syke.fi/en/environmental-data/open-web-services", "license": "CC BY 4.0"}),
     "pl": (adapt_pl, {"id": "imgw_pib", "name": "Instytut Meteorologii i Gospodarki Wodnej (IMGW-PIB), dane publiczne: hydro API y archivo de medias diarias", "url": "https://danepubliczne.imgw.pl/", "license": "IMGW-PIB: reutilizacion citando la fuente"}),
 }
 
@@ -454,7 +499,7 @@ def run(cc, now):
     if out_f.exists():
         try: old = {s["id"]: s for s in json.loads(out_f.read_text(encoding="utf-8")).get("stations", [])}
         except Exception: old = {}
-    DEADLINE[0] = time.time() + 5 * 60
+    DEADLINE[0] = time.time() + (14 if cc == "fi" else 5) * 60
     metas = fn(now, old); out = []
     for m in metas:
         s = build_station(m, now, old.get(m["id"]))

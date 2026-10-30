@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T16:52:43Z",
+ "generatedAt": "2026-10-30T18:34:17Z",
  "summary": {
-  "sources": 202,
-  "sourcesApto": 186,
+  "sources": 203,
+  "sourcesApto": 187,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 421,
-  "datasets_apto": 281,
+  "datasets": 422,
+  "datasets_apto": 282,
   "datasets_condiciones": 129,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -693,6 +693,10 @@
   },
   "svensk_forfattningssamling": {
    "name": "Svensk författningssamling / Riksdagen — förordning (2022:1826) y föreskrifter SJVFS de Jordbruksverket",
+   "verdict": "apto"
+  },
+  "syke_hydro": {
+   "name": "SYKE — Suomen ympäristökeskus / Finnish Environment Institute (avoin ympäristötieto: hidrología, interfaz OData)",
    "verdict": "apto"
   },
   "tedb": {
