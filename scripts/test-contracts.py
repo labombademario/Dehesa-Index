@@ -29,6 +29,7 @@ def _swm(d): return d["national"]
 def _swn(d): return d["national"]
 def _ssl(d): return d["national"]["bovino"]
 def SB(d, c, a): return next(s for s in d["series"] if s["commodity"] == c and s["attribute"] == a)
+C = "ca-dfo-landings.json"
 CASES = [
  ("blog/weekly/2026-W40.json", "totales por region que no suman", lambda d: d["totals"]["byRegion"].__setitem__("eu", d["totals"]["byRegion"]["eu"] + 1)),
  ("blog/weekly/2026-W40.json", "titular fuera de la cobertura", lambda d: d["top"][0].__setitem__("date", "2026-09-20")),
@@ -247,6 +248,18 @@ CASES = [
  ("mb-markets/hogs.json", "peso de canal de 12 kg", lambda d: _lh(d).__setitem__(3, 12.0)),
  ("mb-markets/hogs.json", "salto semanal del 60 %", lambda d: _lh(d).__setitem__(0, _lh(d)[0] * 1.8) or _lh(d).__setitem__(1, _lh(d)[1] * 1.8)),
  ("mb-markets/hogs.json", "semanas desordenadas", lambda d: d.__setitem__("weeks", dict(reversed(list(d["weeks"].items()))))),
+ (C, "fuente distinta", lambda d: d["source"].__setitem__("id", "noaa")),
+ (C, "unidad cambiada", lambda d: d["units"].__setitem__("quantity", "lb")),
+ (C, "anos con hueco", lambda d: d["years"].remove(2000)),
+ (C, "zona menos", lambda d: d["provinces"].pop()),
+ (C, "total negativo", lambda d: d["totals"]["Canada"]["grand"].__setitem__("2024", [-1, 5])),
+ (C, "Canada que no es Atlantic + BC", lambda d: d["totals"]["Canada"]["grand"].__setitem__("2024", [d["totals"]["Canada"]["grand"]["2024"][0] * 1.2, d["totals"]["Canada"]["grand"]["2024"][1]])),
+ (C, "suma de especies por encima del total", lambda d: d["landings"]["Canada"]["lobster"].__setitem__("2024", [d["landings"]["Canada"]["lobster"]["2024"][0] * 3, d["landings"]["Canada"]["lobster"]["2024"][1]])),
+ (C, "celda suprimida solo en valor", lambda d: d["landings"]["Nova Scotia"]["lobster"].__setitem__("2024", [5, None])),
+ (C, "especie borrada de una zona", lambda d: d["landings"]["Quebec"].pop("lobster")),
+ (C, "celda suprimida inventada", lambda d: d["landings"]["Canada"]["lobster"].__setitem__("2024", [None, None])),
+ (C, "salto anual del 300 %", lambda d: d["totals"]["Canada"]["grand"].__setitem__("2024", [d["totals"]["Canada"]["grand"]["2023"][0] * 4, d["totals"]["Canada"]["grand"]["2023"][1] * 4])),
+ (C, "precio por kg absurdo", lambda d: d["totals"]["Atlantic"]["grand"].__setitem__("2000", [1000, 10**9])),
  ("mb-markets/grains.json", "tonelada absurda", lambda d: _lg(d)[0].__setitem__(0, 3.0)),
  ("mb-markets/grains.json", "bushel que no cuadra con la tonelada", lambda d: _lg(d)[4].__setitem__(1, _lg(d)[4][1] * 1.5)),
  ("mb-markets/grains.json", "salto semanal del 60 %", lambda d: _lg(d)[6].__setitem__(0, _lg(d)[6][0] * 1.6)),

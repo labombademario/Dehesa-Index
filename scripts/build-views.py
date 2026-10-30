@@ -520,6 +520,18 @@ def fish():
             write('fish/US.json', {'schemaVersion': 1, 'generatedAt': us.get('generatedAt'), 'cc': 'US', 'src': 'noaa_fisheries', 'series': S, 'landings': sp, 'states': st})
             rows.append({'cc': 'US', 'src': 'noaa_fisheries', 'landValueUsd': _last(S.get('ld-total-usd')), 'landLb': _last(S.get('ld-total-lb'))})
     except Exception as e: print('fish US', e)
+    try:
+        dfo = load('ca-dfo-landings.json'); Tt, Ll = dfo['totals'], dfo['landings']; ys = [str(y) for y in dfo['years']]
+        pt = lambda c, i: [[y, c[y][i] / 1000 if i == 0 else c[y][i]] for y in ys if c.get(y) and c[y][i] is not None]   # kg -> t (exacto); C$ tal cual
+        grand = Tt['Canada']['grand']
+        sp = [{'code': x['key'], 'name': x['name'], 'value': pt(Ll['Canada'][x['key']], 1), 'qty': pt(Ll['Canada'][x['key']], 0)} for x in dfo['species'] if not x['key'].startswith('other_') and x['key'] != 'miscellaneous']
+        sp = [o for o in sp if o['value']]; sp.sort(key=lambda o: -(_last(o['value']) or [0, 0])[1]); sp = sp[:10]
+        pv = [{'code': q.lower().replace(' ', '-'), 'name': q, 'value': pt(Tt[q]['grand'], 1), 'qty': pt(Tt[q]['grand'], 0)} for q in dfo['provinces'] if q not in ('Canada', 'Atlantic')]
+        pv.sort(key=lambda o: -(_last(o['value']) or [0, 0])[1])
+        S = {'ld-total-cad': pt(grand, 1), 'ld-total-t': pt(grand, 0)}
+        write('fish/CA.json', {'schemaVersion': 1, 'generatedAt': dfo.get('generatedAt'), 'cc': 'CA', 'src': 'dfo_landings', 'series': S, 'landings': sp, 'states': pv})
+        rows.append({'cc': 'CA', 'src': 'dfo_landings', 'landValueCad': _last(S['ld-total-cad']), 'landT': _last(S['ld-total-t'])})
+    except Exception as e: print('fish CA', e)
     if rows: write('fish/index.json', {'schemaVersion': 1, 'generatedAt': max([eu.get('generatedAt') or '']), 'countries': rows})
 
 def forest():

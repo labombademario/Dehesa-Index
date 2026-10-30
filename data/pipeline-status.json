@@ -6,7 +6,7 @@
   "ok": 313,
   "late": 2,
   "error": 3,
-  "not_run": 6,
+  "not_run": 7,
   "unknown": 0
  },
  "global": "error",
@@ -7672,6 +7672,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-ca-dfo-landings.yml",
+   "name": "Update Canada commercial sea fisheries landings by province and species (Fisheries and Oceans Canada)",
+   "crons": [
+    "15 7 5 * *"
+   ],
+   "nextRun": "2026-11-05T07:15:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 744.0
   }
  ]
 }

@@ -1,0 +1,617 @@
+Year,Province,Species Group,Species,Quantity (kgs),Value (CAD)
+1990,Atlantic,Shellfish,Clams,"22,450,009","18,495,709"
+1990,Atlantic,Shellfish,Lobster,"47,852,924","232,204,241"
+1990,Atlantic,Shellfish,Other crabs,"864,815","321,713"
+1990,Atlantic,Shellfish,Other shellfish,"9,121,513","8,450,173"
+1990,Atlantic,Shellfish,Scallop,"83,329,325","87,035,291"
+1990,Atlantic,Shellfish,Sea cucumber,0,0
+1990,Atlantic,Shellfish,Sea urchin,109156,99932.74
+1990,Atlantic,Shellfish,Shrimp,"37,262,575","75,718,213"
+1990,Atlantic,Shellfish,Snow crab,"26,177,016","49,576,647"
+1990,Atlantic,Shellfish,Total shellfish,"227,167,333","471,901,920"
+1990,Atlantic,Pelagics,Alewife,"7,003,491","1,791,344"
+1990,Atlantic,Pelagics,Capelin,"127,419,404","20,273,128"
+1990,Atlantic,Pelagics,Eel,"877,718","3,641,112"
+1990,Atlantic,Pelagics,Elvers,0,0
+1990,Atlantic,Pelagics,Herring,"260,272,586","37,614,775"
+1990,Atlantic,Pelagics,Mackerel,"21,789,434","6,209,451"
+1990,Atlantic,Pelagics,Other pelagics,"1,622,501","1,780,224"
+1990,Atlantic,Pelagics,Salmon,"687,776","3,177,064"
+1990,Atlantic,Pelagics,Shark,"123,474","174,371"
+1990,Atlantic,Pelagics,Silversides,"81,853","27,068"
+1990,Atlantic,Pelagics,Swordfish,"911,961","5,269,020"
+1990,Atlantic,Pelagics,Total pelagics,"421,260,564","87,106,813"
+1990,Atlantic,Pelagics,Tuna,"470,366","7,149,258"
+1990,Atlantic,Other,Marine plants,"24,794,429","2,038,907"
+1990,Atlantic,Other,Miscellaneous,"53,318","849,272"
+1990,Atlantic,Other,Total other,"24,847,747","2,888,179"
+1990,Atlantic,Groundfish,Cod,"395,299,460","243,936,789"
+1990,Atlantic,Groundfish,Flounders and soles,"63,663,677","36,281,123"
+1990,Atlantic,Groundfish,Greenland halibut/turbot,"19,601,518","16,868,142"
+1990,Atlantic,Groundfish,Haddock,"22,147,588","24,214,508"
+1990,Atlantic,Groundfish,Hake,"15,186,892","7,607,407"
+1990,Atlantic,Groundfish,Halibut,"2,415,495","10,821,620"
+1990,Atlantic,Groundfish,Other groundfish,"10,601,779","6,624,282"
+1990,Atlantic,Groundfish,Pollock,"38,385,273","20,218,482"
+1990,Atlantic,Groundfish,Redfish,"81,425,307","22,694,569"
+1990,Atlantic,Groundfish,Skate,"124,933","7,581"
+1990,Atlantic,Groundfish,Total groundfish,"648,851,922","389,274,503"
+1990,Atlantic,Grand total,Grand total,"1,322,127,566","951,171,415"
+1990,British Columbia,Shellfish,Clams,"6,600,000","15,999,000"
+1990,British Columbia,Shellfish,Lobster,0,0
+1990,British Columbia,Shellfish,Other crabs,2167700,9311000
+1990,British Columbia,Shellfish,Other shellfish,1756300,4081000
+1990,British Columbia,Shellfish,Scallop,"68,700","317,000"
+1990,British Columbia,Shellfish,Sea cucumber,0,0
+1990,British Columbia,Shellfish,Sea urchin,3639300,2901000
+1990,British Columbia,Shellfish,Shrimp,"2,700,300","9,643,000"
+1990,British Columbia,Shellfish,Snow crab,0,0
+1990,British Columbia,Shellfish,Total shellfish,"16,932,300","42,252,000"
+1990,British Columbia,Pelagics,Alewife,0,0
+1990,British Columbia,Pelagics,Capelin,0,0
+1990,British Columbia,Pelagics,Eel,0,0
+1990,British Columbia,Pelagics,Elvers,0,0
+1990,British Columbia,Pelagics,Herring,"41,055,600","73,170,000"
+1990,British Columbia,Pelagics,Mackerel,0,0
+1990,British Columbia,Pelagics,Other pelagics,"244,600","580,487"
+1990,British Columbia,Pelagics,Salmon,"96,396,000","263,400,000"
+1990,British Columbia,Pelagics,Shark,0,0
+1990,British Columbia,Pelagics,Silversides,0,0
+1990,British Columbia,Pelagics,Swordfish,0,0
+1990,British Columbia,Pelagics,Total pelagics,"137,971,000","337,980,487"
+1990,British Columbia,Pelagics,Tuna,"274,800","830,000"
+1990,British Columbia,Other,Marine plants,0,0
+1990,British Columbia,Other,Miscellaneous,"453,700","8,376,000"
+1990,British Columbia,Other,Total other,"453,700","8,376,000"
+1990,British Columbia,Groundfish,Cod,"6,233,100","3,375,000"
+1990,British Columbia,Groundfish,Flounders and soles,"7,183,800","5,551,000"
+1990,British Columbia,Groundfish,Greenland halibut/turbot,"2,602,200","601,000"
+1990,British Columbia,Groundfish,Haddock,0,0
+1990,British Columbia,Groundfish,Hake,"79,453,100","12,833,000"
+1990,British Columbia,Groundfish,Halibut,"5,032,134","21,065,000"
+1990,British Columbia,Groundfish,Other groundfish,"14,501,700","25,482,000"
+1990,British Columbia,Groundfish,Pollock,"676,300","185,000"
+1990,British Columbia,Groundfish,Redfish,"27,738,700","18,443,000"
+1990,British Columbia,Groundfish,Skate,"183,200","37,000"
+1990,British Columbia,Groundfish,Total groundfish,"143,604,234","87,572,000"
+1990,British Columbia,Grand total,Grand total,"298,961,234","476,180,487"
+1990,Canada,Shellfish,Clams,"29,050,009","34,494,709"
+1990,Canada,Shellfish,Lobster,"47,852,924","232,204,241"
+1990,Canada,Shellfish,Other crabs,"3,032,515","9,632,713"
+1990,Canada,Shellfish,Other shellfish,"10,877,813","12,531,173"
+1990,Canada,Shellfish,Scallop,"83,398,025","87,352,291"
+1990,Canada,Shellfish,Sea cucumber,0,0
+1990,Canada,Shellfish,Sea urchin,3748456,3000932.74
+1990,Canada,Shellfish,Shrimp,"39,962,875","85,361,213"
+1990,Canada,Shellfish,Snow crab,"26,177,016","49,576,647"
+1990,Canada,Shellfish,Total shellfish,"244,099,633","514,153,920"
+1990,Canada,Pelagics,Alewife,"7,003,491","1,791,344"
+1990,Canada,Pelagics,Capelin,"127,419,404","20,273,128"
+1990,Canada,Pelagics,Eel,"877,718","3,641,112"
+1990,Canada,Pelagics,Elvers,0,0
+1990,Canada,Pelagics,Herring,"301,328,186","110,784,775"
+1990,Canada,Pelagics,Mackerel,"21,789,434","6,209,451"
+1990,Canada,Pelagics,Other pelagics,"1,867,101","2,360,711"
+1990,Canada,Pelagics,Salmon,"97,083,776","266,577,064"
+1990,Canada,Pelagics,Shark,"123,474","174,371"
+1990,Canada,Pelagics,Silversides,"81,853","27,068"
+1990,Canada,Pelagics,Swordfish,"911,961","5,269,020"
+1990,Canada,Pelagics,Total pelagics,"559,231,564","425,087,300"
+1990,Canada,Pelagics,Tuna,"745,166","7,979,258"
+1990,Canada,Other,Marine plants,"24,794,429","2,038,907"
+1990,Canada,Other,Miscellaneous,"507,018","9,225,272"
+1990,Canada,Other,Total other,"25,301,447","11,264,179"
+1990,Canada,Groundfish,Cod,"401,532,560","247,311,789"
+1990,Canada,Groundfish,Flounders and soles,"70,847,477","41,832,123"
+1990,Canada,Groundfish,Greenland halibut/turbot,"22,203,718","17,469,142"
+1990,Canada,Groundfish,Haddock,"22,147,588","24,214,508"
+1990,Canada,Groundfish,Hake,"94,639,992","20,440,407"
+1990,Canada,Groundfish,Halibut,"7,447,629","31,886,620"
+1990,Canada,Groundfish,Other groundfish,"25,103,479","32,106,282"
+1990,Canada,Groundfish,Pollock,"39,061,573","20,403,482"
+1990,Canada,Groundfish,Redfish,"109,164,007","41,137,569"
+1990,Canada,Groundfish,Skate,"308,133","44,581"
+1990,Canada,Groundfish,Total groundfish,"792,456,156","476,846,503"
+1990,Canada,Grand total,Grand total,"1,621,088,800","1,427,351,902"
+1990,New Brunswick,Shellfish,Clams,"2,131,313","2,638,109"
+1990,New Brunswick,Shellfish,Lobster,"8,907,532","35,217,354"
+1990,New Brunswick,Shellfish,Other crabs,"311,444","100,993"
+1990,New Brunswick,Shellfish,Other shellfish,"977,782","1,591,863"
+1990,New Brunswick,Shellfish,Scallop,"8,325,323","9,615,293"
+1990,New Brunswick,Shellfish,Sea cucumber,0,0
+1990,New Brunswick,Shellfish,Sea urchin,95405,86210.14
+1990,New Brunswick,Shellfish,Shrimp,"3,649,205","4,273,610"
+1990,New Brunswick,Shellfish,Snow crab,"4,328,180","10,538,701"
+1990,New Brunswick,Shellfish,Total shellfish,"28,726,184","64,062,133"
+1990,New Brunswick,Pelagics,Alewife,"4,118,135","623,337"
+1990,New Brunswick,Pelagics,Capelin,0,0
+1990,New Brunswick,Pelagics,Eel,"165,747","554,695"
+1990,New Brunswick,Pelagics,Elvers,0,0
+1990,New Brunswick,Pelagics,Herring,"100,017,845","14,732,853"
+1990,New Brunswick,Pelagics,Mackerel,"3,822,999","1,115,979"
+1990,New Brunswick,Pelagics,Other pelagics,"895,660","756,648"
+1990,New Brunswick,Pelagics,Salmon,0,0
+1990,New Brunswick,Pelagics,Shark,"3,792","6,445"
+1990,New Brunswick,Pelagics,Silversides,0,0
+1990,New Brunswick,Pelagics,Swordfish,0,0
+1990,New Brunswick,Pelagics,Total pelagics,"109,024,178","17,789,957"
+1990,New Brunswick,Pelagics,Tuna,0,0
+1990,New Brunswick,Other,Marine plants,"140,633","203,445"
+1990,New Brunswick,Other,Miscellaneous,0,"58,485"
+1990,New Brunswick,Other,Total other,"140,633","261,930"
+1990,New Brunswick,Groundfish,Cod,"10,371,124","6,596,682"
+1990,New Brunswick,Groundfish,Flounders and soles,"2,413,094","1,753,564"
+1990,New Brunswick,Groundfish,Greenland halibut/turbot,"71,537","42,439"
+1990,New Brunswick,Groundfish,Haddock,"14,875","19,512"
+1990,New Brunswick,Groundfish,Hake,"767,732","344,047"
+1990,New Brunswick,Groundfish,Halibut,"46,992","183,389"
+1990,New Brunswick,Groundfish,Other groundfish,"45,644","15,523"
+1990,New Brunswick,Groundfish,Pollock,"909,682","604,705"
+1990,New Brunswick,Groundfish,Redfish,"2,465,087","615,201"
+1990,New Brunswick,Groundfish,Skate,0,0
+1990,New Brunswick,Groundfish,Total groundfish,"17,105,767","10,175,064"
+1990,New Brunswick,Grand total,Grand total,"154,996,762","92,289,083"
+1990,Newfoundland and Labrador,Shellfish,Clams,"7,716,633","3,345,464"
+1990,Newfoundland and Labrador,Shellfish,Lobster,2921105,12700348.84
+1990,Newfoundland and Labrador,Shellfish,Other crabs,0,0
+1990,Newfoundland and Labrador,Shellfish,Other shellfish,"4,627,461","1,131,970"
+1990,Newfoundland and Labrador,Shellfish,Scallop,"959,027","623,606"
+1990,Newfoundland and Labrador,Shellfish,Sea cucumber,0,0
+1990,Newfoundland and Labrador,Shellfish,Sea urchin,0,0
+1990,Newfoundland and Labrador,Shellfish,Shrimp,19981488,47291797.95
+1990,Newfoundland and Labrador,Shellfish,Snow crab,"11,053,567","13,158,582"
+1990,Newfoundland and Labrador,Shellfish,Total shellfish,"47,259,281","78,251,769"
+1990,Newfoundland and Labrador,Pelagics,Alewife,0,0
+1990,Newfoundland and Labrador,Pelagics,Capelin,"127,102,680","20,059,428"
+1990,Newfoundland and Labrador,Pelagics,Eel,"146,577","560,453"
+1990,Newfoundland and Labrador,Pelagics,Elvers,0,0
+1990,Newfoundland and Labrador,Pelagics,Herring,"27,987,722","3,493,319"
+1990,Newfoundland and Labrador,Pelagics,Mackerel,"4,249,066","855,814"
+1990,Newfoundland and Labrador,Pelagics,Other pelagics,"169,282","220,705"
+1990,Newfoundland and Labrador,Pelagics,Salmon,"613,824","2,714,177"
+1990,Newfoundland and Labrador,Pelagics,Shark,"8,089","13,649"
+1990,Newfoundland and Labrador,Pelagics,Silversides,0,0
+1990,Newfoundland and Labrador,Pelagics,Swordfish,"3,067","15,527"
+1990,Newfoundland and Labrador,Pelagics,Total pelagics,"160,423,783","29,936,793"
+1990,Newfoundland and Labrador,Pelagics,Tuna,"143,476","2,003,723"
+1990,Newfoundland and Labrador,Other,Marine plants,0,0
+1990,Newfoundland and Labrador,Other,Miscellaneous,"52,788","707,694"
+1990,Newfoundland and Labrador,Other,Total other,"52,788","707,694"
+1990,Newfoundland and Labrador,Groundfish,Cod,"245,929,103","134,714,905"
+1990,Newfoundland and Labrador,Groundfish,Flounders and soles,"41,450,491","16,742,104"
+1990,Newfoundland and Labrador,Groundfish,Greenland halibut/turbot,"16,986,216","13,852,862"
+1990,Newfoundland and Labrador,Groundfish,Haddock,"1,938,209","874,850"
+1990,Newfoundland and Labrador,Groundfish,Hake,"600,736","154,598"
+1990,Newfoundland and Labrador,Groundfish,Halibut,"303,236","830,302"
+1990,Newfoundland and Labrador,Groundfish,Other groundfish,"1,999,688","1,492,737"
+1990,Newfoundland and Labrador,Groundfish,Pollock,"1,818,184","606,863"
+1990,Newfoundland and Labrador,Groundfish,Redfish,"26,727,050","7,339,886"
+1990,Newfoundland and Labrador,Groundfish,Skate,"11,728",643.7
+1990,Newfoundland and Labrador,Groundfish,Total groundfish,"337,764,641","176,609,752"
+1990,Newfoundland and Labrador,Grand total,Grand total,"545,500,493","285,506,008"
+1990,Nova Scotia,Shellfish,Clams,"10,627,521","9,924,591"
+1990,Nova Scotia,Shellfish,Lobster,"22,466,650","134,710,910"
+1990,Nova Scotia,Shellfish,Other crabs,"29,950","8,283"
+1990,Nova Scotia,Shellfish,Other shellfish,"1,224,319","1,806,460"
+1990,Nova Scotia,Shellfish,Scallop,"69,622,661","72,034,689"
+1990,Nova Scotia,Shellfish,Sea cucumber,0,0
+1990,Nova Scotia,Shellfish,Sea urchin,13751,13722.6
+1990,Nova Scotia,Shellfish,Shrimp,"3,995,949","12,503,388"
+1990,Nova Scotia,Shellfish,Snow crab,"3,258,997","7,618,922"
+1990,Nova Scotia,Shellfish,Total shellfish,"111,239,798","238,620,966"
+1990,Nova Scotia,Pelagics,Alewife,"2,802,235","1,141,387"
+1990,Nova Scotia,Pelagics,Capelin,0,0
+1990,Nova Scotia,Pelagics,Eel,"25,525","84,506"
+1990,Nova Scotia,Pelagics,Elvers,0,0
+1990,Nova Scotia,Pelagics,Herring,"111,868,396","16,026,078"
+1990,Nova Scotia,Pelagics,Mackerel,"9,195,754","2,933,522"
+1990,Nova Scotia,Pelagics,Other pelagics,"198,661","390,849"
+1990,Nova Scotia,Pelagics,Salmon,0,0
+1990,Nova Scotia,Pelagics,Shark,"110,493","153,060"
+1990,Nova Scotia,Pelagics,Silversides,0,0
+1990,Nova Scotia,Pelagics,Swordfish,"908,894","5,253,493"
+1990,Nova Scotia,Pelagics,Total pelagics,"125,427,917","31,029,964"
+1990,Nova Scotia,Pelagics,Tuna,"317,959","5,047,070"
+1990,Nova Scotia,Other,Marine plants,"24,653,755","1,835,417"
+1990,Nova Scotia,Other,Miscellaneous,0,"82,489"
+1990,Nova Scotia,Other,Total other,"24,653,755","1,917,907"
+1990,Nova Scotia,Groundfish,Cod,"112,612,162","87,127,155"
+1990,Nova Scotia,Groundfish,Flounders and soles,"15,521,570","15,158,555"
+1990,Nova Scotia,Groundfish,Greenland halibut/turbot,"439,621","427,595"
+1990,Nova Scotia,Groundfish,Haddock,"20,192,442","23,318,751"
+1990,Nova Scotia,Groundfish,Hake,"11,436,717","6,333,190"
+1990,Nova Scotia,Groundfish,Halibut,"1,809,412","8,873,773"
+1990,Nova Scotia,Groundfish,Other groundfish,"8,095,356","4,992,616"
+1990,Nova Scotia,Groundfish,Pollock,"35,647,768","19,004,481"
+1990,Nova Scotia,Groundfish,Redfish,"25,959,600","8,072,813"
+1990,Nova Scotia,Groundfish,Skate,"112,647","6,807"
+1990,Nova Scotia,Groundfish,Total groundfish,"231,827,295","173,315,736"
+1990,Nova Scotia,Grand total,Grand total,"493,148,765","444,884,573"
+1990,Prince Edward Island,Shellfish,Clams,"1,269,105","1,707,739"
+1990,Prince Edward Island,Shellfish,Lobster,"10,246,196","36,229,681"
+1990,Prince Edward Island,Shellfish,Other crabs,"406,022","147,148"
+1990,Prince Edward Island,Shellfish,Other shellfish,"1,774,418","3,488,674"
+1990,Prince Edward Island,Shellfish,Scallop,"799,208","925,630"
+1990,Prince Edward Island,Shellfish,Sea cucumber,0,0
+1990,Prince Edward Island,Shellfish,Sea urchin,0,0
+1990,Prince Edward Island,Shellfish,Shrimp,0,0
+1990,Prince Edward Island,Shellfish,Snow crab,559773,1017762.45
+1990,Prince Edward Island,Shellfish,Total shellfish,"15,054,722","43,516,634"
+1990,Prince Edward Island,Pelagics,Alewife,"83,121","26,620"
+1990,Prince Edward Island,Pelagics,Capelin,0,0
+1990,Prince Edward Island,Pelagics,Eel,"123,709","390,258"
+1990,Prince Edward Island,Pelagics,Elvers,0,0
+1990,Prince Edward Island,Pelagics,Herring,"14,131,502","1,947,836"
+1990,Prince Edward Island,Pelagics,Mackerel,"2,550,758","701,775"
+1990,Prince Edward Island,Pelagics,Other pelagics,"86,830","91,238"
+1990,Prince Edward Island,Pelagics,Salmon,26,189
+1990,Prince Edward Island,Pelagics,Shark,977,"1,150"
+1990,Prince Edward Island,Pelagics,Silversides,"81,853","27,068"
+1990,Prince Edward Island,Pelagics,Swordfish,0,0
+1990,Prince Edward Island,Pelagics,Total pelagics,"17,067,707","3,284,598"
+1990,Prince Edward Island,Pelagics,Tuna,"8,931","98,465"
+1990,Prince Edward Island,Other,Marine plants,0,0
+1990,Prince Edward Island,Other,Miscellaneous,0,0
+1990,Prince Edward Island,Other,Total other,0,0
+1990,Prince Edward Island,Groundfish,Cod,"4,102,810","2,282,783"
+1990,Prince Edward Island,Groundfish,Flounders and soles,"1,485,448","829,918"
+1990,Prince Edward Island,Groundfish,Greenland halibut/turbot,236,52
+1990,Prince Edward Island,Groundfish,Haddock,"1,039",501.51
+1990,Prince Edward Island,Groundfish,Hake,"2,066,778","670,035"
+1990,Prince Edward Island,Groundfish,Halibut,"1,443","5,731"
+1990,Prince Edward Island,Groundfish,Other groundfish,"297,890","54,900"
+1990,Prince Edward Island,Groundfish,Pollock,"8,474","2,139"
+1990,Prince Edward Island,Groundfish,Redfish,"14,013,083","3,707,160"
+1990,Prince Edward Island,Groundfish,Skate,0,0
+1990,Prince Edward Island,Groundfish,Total groundfish,"21,977,201","7,553,219"
+1990,Prince Edward Island,Grand total,Grand total,"54,099,630","54,354,451"
+1990,Quebec,Shellfish,Clams,"705,437","879,806"
+1990,Quebec,Shellfish,Lobster,"3,311,441","13,345,947"
+1990,Quebec,Shellfish,Other crabs,"117,399","65,289"
+1990,Quebec,Shellfish,Other shellfish,"517,533","431,207"
+1990,Quebec,Shellfish,Scallop,"3,623,106","3,836,073"
+1990,Quebec,Shellfish,Sea cucumber,0,0
+1990,Quebec,Shellfish,Sea urchin,0,0
+1990,Quebec,Shellfish,Shrimp,9635933,11649417.65
+1990,Quebec,Shellfish,Snow crab,"6,976,499","17,242,680"
+1990,Quebec,Shellfish,Total shellfish,"24,887,348","47,450,419"
+1990,Quebec,Pelagics,Alewife,0,0
+1990,Quebec,Pelagics,Capelin,"316,724","213,700"
+1990,Quebec,Pelagics,Eel,"416,160","2,051,201"
+1990,Quebec,Pelagics,Elvers,0,0
+1990,Quebec,Pelagics,Herring,"6,267,121","1,414,688"
+1990,Quebec,Pelagics,Mackerel,"1,970,857","602,362"
+1990,Quebec,Pelagics,Other pelagics,"272,068","320,784"
+1990,Quebec,Pelagics,Salmon,"73,926","462,698"
+1990,Quebec,Pelagics,Shark,123,68
+1990,Quebec,Pelagics,Silversides,0,0
+1990,Quebec,Pelagics,Swordfish,0,0
+1990,Quebec,Pelagics,Total pelagics,"9,316,979","5,065,501"
+1990,Quebec,Pelagics,Tuna,0,0
+1990,Quebec,Other,Marine plants,41,45
+1990,Quebec,Other,Miscellaneous,530,604
+1990,Quebec,Other,Total other,571,649
+1990,Quebec,Groundfish,Cod,"22,284,261","13,215,263"
+1990,Quebec,Groundfish,Flounders and soles,"2,793,074","1,796,981"
+1990,Quebec,Groundfish,Greenland halibut/turbot,"2,103,908","2,545,194"
+1990,Quebec,Groundfish,Haddock,"1,023",893
+1990,Quebec,Groundfish,Hake,"314,929","105,537"
+1990,Quebec,Groundfish,Halibut,"254,412","928,425"
+1990,Quebec,Groundfish,Other groundfish,"163,201","68,506"
+1990,Quebec,Groundfish,Pollock,"1,165",294
+1990,Quebec,Groundfish,Redfish,"12,260,487","2,959,509"
+1990,Quebec,Groundfish,Skate,558,130
+1990,Quebec,Groundfish,Total groundfish,"40,177,018","21,620,732"
+1990,Quebec,Grand total,Grand total,"74,381,916","74,137,302"
+1991,Atlantic,Shellfish,Clams,"12,732,657","11,851,358"
+1991,Atlantic,Shellfish,Lobster,"48,450,405","279,206,684"
+1991,Atlantic,Shellfish,Other crabs,"1,099,615","427,180"
+1991,Atlantic,Shellfish,Other shellfish,"5,710,341","4,872,634"
+1991,Atlantic,Shellfish,Scallop,"79,597,124","81,689,472"
+1991,Atlantic,Shellfish,Sea cucumber,0,0
+1991,Atlantic,Shellfish,Sea urchin,300726,273506.22
+1991,Atlantic,Shellfish,Shrimp,"40,626,266","86,150,087"
+1991,Atlantic,Shellfish,Snow crab,"35,305,762","69,124,721"
+1991,Atlantic,Shellfish,Total shellfish,"223,822,896","533,595,643"
+1991,Atlantic,Pelagics,Alewife,"6,207,156","1,446,761"
+1991,Atlantic,Pelagics,Capelin,"50,177,285","7,259,436"
+1991,Atlantic,Pelagics,Eel,"907,179","3,988,759"
+1991,Atlantic,Pelagics,Elvers,0,0
+1991,Atlantic,Pelagics,Herring,"216,744,331","29,497,954"
+1991,Atlantic,Pelagics,Mackerel,"25,899,116","7,547,887"
+1991,Atlantic,Pelagics,Other pelagics,"1,798,997","2,136,523"
+1991,Atlantic,Pelagics,Salmon,"490,023","2,330,542"
+1991,Atlantic,Pelagics,Shark,"547,226","1,098,393"
+1991,Atlantic,Pelagics,Silversides,"118,032","51,948"
+1991,Atlantic,Pelagics,Swordfish,"1,028,569","6,824,300"
+1991,Atlantic,Pelagics,Total pelagics,"304,466,873","70,512,440"
+1991,Atlantic,Pelagics,Tuna,"548,959","8,329,937"
+1991,Atlantic,Other,Marine plants,"32,951,547","3,620,365"
+1991,Atlantic,Other,Miscellaneous,"78,870","662,431"
+1991,Atlantic,Other,Total other,"33,030,417","4,282,796"
+1991,Atlantic,Groundfish,Cod,"310,016,286","227,972,651"
+1991,Atlantic,Groundfish,Flounders and soles,"64,300,425","35,306,936"
+1991,Atlantic,Groundfish,Greenland halibut/turbot,"19,900,328","17,014,007"
+1991,Atlantic,Groundfish,Haddock,"21,957,912","30,722,510"
+1991,Atlantic,Groundfish,Hake,"64,357,590","22,292,925"
+1991,Atlantic,Groundfish,Halibut,"2,035,749","9,006,487"
+1991,Atlantic,Groundfish,Other groundfish,"11,449,020","10,498,527"
+1991,Atlantic,Groundfish,Pollock,"40,770,930","24,060,663"
+1991,Atlantic,Groundfish,Redfish,"92,686,781","24,958,486"
+1991,Atlantic,Groundfish,Skate,"1,134,514","244,752"
+1991,Atlantic,Groundfish,Total groundfish,"628,609,535","402,077,943"
+1991,Atlantic,Grand total,Grand total,"1,189,929,721","1,010,468,822"
+1991,British Columbia,Shellfish,Clams,"4,887,274","13,112,597"
+1991,British Columbia,Shellfish,Lobster,0,0
+1991,British Columbia,Shellfish,Other crabs,1887242,8688061
+1991,British Columbia,Shellfish,Other shellfish,1228228,2401369
+1991,British Columbia,Shellfish,Scallop,"82,246","386,596"
+1991,British Columbia,Shellfish,Sea cucumber,0,0
+1991,British Columbia,Shellfish,Sea urchin,7576290,6081375
+1991,British Columbia,Shellfish,Shrimp,"4,225,838","12,145,070"
+1991,British Columbia,Shellfish,Snow crab,0,0
+1991,British Columbia,Shellfish,Total shellfish,"19,887,118","42,815,068"
+1991,British Columbia,Pelagics,Alewife,0,0
+1991,British Columbia,Pelagics,Capelin,0,0
+1991,British Columbia,Pelagics,Eel,0,0
+1991,British Columbia,Pelagics,Elvers,0,0
+1991,British Columbia,Pelagics,Herring,"39,741,109","49,421,151"
+1991,British Columbia,Pelagics,Mackerel,0,0
+1991,British Columbia,Pelagics,Other pelagics,"40,517","68,883"
+1991,British Columbia,Pelagics,Salmon,"85,679,124","172,440,000"
+1991,British Columbia,Pelagics,Shark,0,0
+1991,British Columbia,Pelagics,Silversides,0,0
+1991,British Columbia,Pelagics,Swordfish,0,0
+1991,British Columbia,Pelagics,Total pelagics,"125,604,164","222,272,031"
+1991,British Columbia,Pelagics,Tuna,"143,414","341,997"
+1991,British Columbia,Other,Marine plants,0,0
+1991,British Columbia,Other,Miscellaneous,"699,335","8,888,773"
+1991,British Columbia,Other,Total other,"699,335","8,888,773"
+1991,British Columbia,Groundfish,Cod,"11,910,238","6,064,092"
+1991,British Columbia,Groundfish,Flounders and soles,"7,891,091","5,824,269"
+1991,British Columbia,Groundfish,Greenland halibut/turbot,"2,286,766","600,662"
+1991,British Columbia,Groundfish,Haddock,0,0
+1991,British Columbia,Groundfish,Hake,"99,055,056","15,388,349"
+1991,British Columbia,Groundfish,Halibut,"4,310,180","21,770,656"
+1991,British Columbia,Groundfish,Other groundfish,"14,210,555","35,526,915"
+1991,British Columbia,Groundfish,Pollock,"2,579,806","600,293"
+1991,British Columbia,Groundfish,Redfish,"23,421,924","16,915,870"
+1991,British Columbia,Groundfish,Skate,"248,202","49,902"
+1991,British Columbia,Groundfish,Total groundfish,"165,913,818","102,741,008"
+1991,British Columbia,Grand total,Grand total,"312,104,435","376,716,880"
+1991,Canada,Shellfish,Clams,"17,619,931","24,963,955"
+1991,Canada,Shellfish,Lobster,"48,450,405","279,206,684"
+1991,Canada,Shellfish,Other crabs,"2,986,857","9,115,241"
+1991,Canada,Shellfish,Other shellfish,"6,938,569","7,274,003"
+1991,Canada,Shellfish,Scallop,"79,679,370","82,076,068"
+1991,Canada,Shellfish,Sea cucumber,0,0
+1991,Canada,Shellfish,Sea urchin,7877016,6354881.22
+1991,Canada,Shellfish,Shrimp,"44,852,104","98,295,157"
+1991,Canada,Shellfish,Snow crab,"35,305,762","69,124,721"
+1991,Canada,Shellfish,Total shellfish,"243,710,014","576,410,711"
+1991,Canada,Pelagics,Alewife,"6,207,156","1,446,761"
+1991,Canada,Pelagics,Capelin,"50,177,285","7,259,436"
+1991,Canada,Pelagics,Eel,"907,179","3,988,759"
+1991,Canada,Pelagics,Elvers,0,0
+1991,Canada,Pelagics,Herring,"256,485,440","78,919,105"
+1991,Canada,Pelagics,Mackerel,"25,899,116","7,547,887"
+1991,Canada,Pelagics,Other pelagics,"1,839,514","2,205,406"
+1991,Canada,Pelagics,Salmon,"86,169,147","174,770,542"
+1991,Canada,Pelagics,Shark,"547,226","1,098,393"
+1991,Canada,Pelagics,Silversides,"118,032","51,948"
+1991,Canada,Pelagics,Swordfish,"1,028,569","6,824,300"
+1991,Canada,Pelagics,Total pelagics,"430,071,037","292,784,471"
+1991,Canada,Pelagics,Tuna,"692,373","8,671,934"
+1991,Canada,Other,Marine plants,"32,951,547","3,620,365"
+1991,Canada,Other,Miscellaneous,"778,205","9,551,204"
+1991,Canada,Other,Total other,"33,729,752","13,171,569"
+1991,Canada,Groundfish,Cod,"321,926,524","234,036,743"
+1991,Canada,Groundfish,Flounders and soles,"72,191,516","41,131,205"
+1991,Canada,Groundfish,Greenland halibut/turbot,"22,187,094","17,614,669"
+1991,Canada,Groundfish,Haddock,"21,957,912","30,722,510"
+1991,Canada,Groundfish,Hake,"163,412,646","37,681,274"
+1991,Canada,Groundfish,Halibut,"6,345,929","30,777,143"
+1991,Canada,Groundfish,Other groundfish,"25,659,575","46,025,442"
+1991,Canada,Groundfish,Pollock,"43,350,736","24,660,956"
+1991,Canada,Groundfish,Redfish,"116,108,705","41,874,356"
+1991,Canada,Groundfish,Skate,"1,382,716","294,654"
+1991,Canada,Groundfish,Total groundfish,"794,523,353","504,818,951"
+1991,Canada,Grand total,Grand total,"1,502,034,156","1,387,185,702"
+1991,New Brunswick,Shellfish,Clams,"1,418,797","1,963,381"
+1991,New Brunswick,Shellfish,Lobster,"8,038,551","43,674,562"
+1991,New Brunswick,Shellfish,Other crabs,"467,683","159,589"
+1991,New Brunswick,Shellfish,Other shellfish,"824,240","1,580,195"
+1991,New Brunswick,Shellfish,Scallop,"4,916,382","6,158,241"
+1991,New Brunswick,Shellfish,Sea cucumber,0,0
+1991,New Brunswick,Shellfish,Sea urchin,278479,253238.14
+1991,New Brunswick,Shellfish,Shrimp,"3,354,698","4,589,272"
+1991,New Brunswick,Shellfish,Snow crab,"6,194,345","17,009,926"
+1991,New Brunswick,Shellfish,Total shellfish,"25,493,175","75,388,403"
+1991,New Brunswick,Pelagics,Alewife,"3,969,116","543,640"
+1991,New Brunswick,Pelagics,Capelin,"64,270","7,390"
+1991,New Brunswick,Pelagics,Eel,"147,073","517,305"
+1991,New Brunswick,Pelagics,Elvers,0,0
+1991,New Brunswick,Pelagics,Herring,"67,943,469","9,062,482"
+1991,New Brunswick,Pelagics,Mackerel,"2,225,025","738,333"
+1991,New Brunswick,Pelagics,Other pelagics,"859,178","728,606"
+1991,New Brunswick,Pelagics,Salmon,0,0
+1991,New Brunswick,Pelagics,Shark,"7,413","9,831"
+1991,New Brunswick,Pelagics,Silversides,0,0
+1991,New Brunswick,Pelagics,Swordfish,0,0
+1991,New Brunswick,Pelagics,Total pelagics,"75,215,544","11,607,587"
+1991,New Brunswick,Pelagics,Tuna,0,0
+1991,New Brunswick,Other,Marine plants,"319,438","204,803"
+1991,New Brunswick,Other,Miscellaneous,0,"21,883"
+1991,New Brunswick,Other,Total other,"319,438","226,687"
+1991,New Brunswick,Groundfish,Cod,"6,746,912","5,298,631"
+1991,New Brunswick,Groundfish,Flounders and soles,"1,761,796","1,283,811"
+1991,New Brunswick,Groundfish,Greenland halibut/turbot,"142,290","91,904"
+1991,New Brunswick,Groundfish,Haddock,"9,054","13,945"
+1991,New Brunswick,Groundfish,Hake,"631,020","326,483"
+1991,New Brunswick,Groundfish,Halibut,"29,046","123,269"
+1991,New Brunswick,Groundfish,Other groundfish,"44,947","16,419"
+1991,New Brunswick,Groundfish,Pollock,"1,285,097","1,057,865"
+1991,New Brunswick,Groundfish,Redfish,"3,750,653","988,436"
+1991,New Brunswick,Groundfish,Skate,0,0
+1991,New Brunswick,Groundfish,Total groundfish,"14,400,815","9,200,763"
+1991,New Brunswick,Grand total,Grand total,"115,428,972","96,423,439"
+1991,Newfoundland and Labrador,Shellfish,Clams,"4,522,081","1,968,853"
+1991,Newfoundland and Labrador,Shellfish,Lobster,3075239,15944368.35
+1991,Newfoundland and Labrador,Shellfish,Other crabs,0,0
+1991,Newfoundland and Labrador,Shellfish,Other shellfish,"1,813,654","578,772"
+1991,Newfoundland and Labrador,Shellfish,Scallop,"1,403,298","1,060,402"
+1991,Newfoundland and Labrador,Shellfish,Sea cucumber,0,0
+1991,Newfoundland and Labrador,Shellfish,Sea urchin,0,0
+1991,Newfoundland and Labrador,Shellfish,Shrimp,21857833,49346397.99
+1991,Newfoundland and Labrador,Shellfish,Snow crab,"16,275,660","19,989,377"
+1991,Newfoundland and Labrador,Shellfish,Total shellfish,"48,947,765","88,888,170"
+1991,Newfoundland and Labrador,Pelagics,Alewife,0,0
+1991,Newfoundland and Labrador,Pelagics,Capelin,"49,871,708","7,196,636"
+1991,Newfoundland and Labrador,Pelagics,Eel,"134,132","564,055"
+1991,Newfoundland and Labrador,Pelagics,Elvers,0,0
+1991,Newfoundland and Labrador,Pelagics,Herring,"46,000,684","6,827,232"
+1991,Newfoundland and Labrador,Pelagics,Mackerel,"8,376,964","2,054,971"
+1991,Newfoundland and Labrador,Pelagics,Other pelagics,"174,896","225,069"
+1991,Newfoundland and Labrador,Pelagics,Salmon,"451,625","2,143,047"
+1991,Newfoundland and Labrador,Pelagics,Shark,"5,393","2,678"
+1991,Newfoundland and Labrador,Pelagics,Silversides,0,0
+1991,Newfoundland and Labrador,Pelagics,Swordfish,148,"1,054"
+1991,Newfoundland and Labrador,Pelagics,Total pelagics,"105,129,538","20,517,901"
+1991,Newfoundland and Labrador,Pelagics,Tuna,"113,988","1,503,159"
+1991,Newfoundland and Labrador,Other,Marine plants,0,0
+1991,Newfoundland and Labrador,Other,Miscellaneous,"48,169","530,205"
+1991,Newfoundland and Labrador,Other,Total other,"48,169","530,205"
+1991,Newfoundland and Labrador,Groundfish,Cod,"179,662,737","111,475,326"
+1991,Newfoundland and Labrador,Groundfish,Flounders and soles,"42,642,152","16,389,929"
+1991,Newfoundland and Labrador,Groundfish,Greenland halibut/turbot,"13,586,976","10,546,677"
+1991,Newfoundland and Labrador,Groundfish,Haddock,"1,092,879","492,066"
+1991,Newfoundland and Labrador,Groundfish,Hake,"1,429,158","588,460"
+1991,Newfoundland and Labrador,Groundfish,Halibut,"375,519","1,043,918"
+1991,Newfoundland and Labrador,Groundfish,Other groundfish,"3,486,865","4,967,172"
+1991,Newfoundland and Labrador,Groundfish,Pollock,"1,905,889","656,544"
+1991,Newfoundland and Labrador,Groundfish,Redfish,"28,803,419","7,382,628"
+1991,Newfoundland and Labrador,Groundfish,Skate,"21,548","2,849"
+1991,Newfoundland and Labrador,Groundfish,Total groundfish,"273,007,142","153,545,567"
+1991,Newfoundland and Labrador,Grand total,Grand total,"427,132,614","263,481,844"
+1991,Nova Scotia,Shellfish,Clams,"4,931,417","5,607,876"
+1991,Nova Scotia,Shellfish,Lobster,"23,568,623","154,651,801"
+1991,Nova Scotia,Shellfish,Other crabs,"38,112","12,678"
+1991,Nova Scotia,Shellfish,Other shellfish,"957,267","370,527"
+1991,Nova Scotia,Shellfish,Scallop,"69,929,450","70,657,318"
+1991,Nova Scotia,Shellfish,Sea cucumber,0,0
+1991,Nova Scotia,Shellfish,Sea urchin,15554,20256.08
+1991,Nova Scotia,Shellfish,Shrimp,"5,899,438","18,432,538"
+1991,Nova Scotia,Shellfish,Snow crab,"3,798,275","9,378,127"
+1991,Nova Scotia,Shellfish,Total shellfish,"109,138,136","259,131,120"
+1991,Nova Scotia,Pelagics,Alewife,"2,151,032","874,695"
+1991,Nova Scotia,Pelagics,Capelin,0,0
+1991,Nova Scotia,Pelagics,Eel,"73,863","233,778"
+1991,Nova Scotia,Pelagics,Elvers,0,0
+1991,Nova Scotia,Pelagics,Herring,"91,318,524","11,850,287"
+1991,Nova Scotia,Pelagics,Mackerel,"8,119,049","2,644,459"
+1991,Nova Scotia,Pelagics,Other pelagics,"235,721","485,992"
+1991,Nova Scotia,Pelagics,Salmon,0,0
+1991,Nova Scotia,Pelagics,Shark,"532,035","1,084,372"
+1991,Nova Scotia,Pelagics,Silversides,0,0
+1991,Nova Scotia,Pelagics,Swordfish,"1,028,421","6,823,246"
+1991,Nova Scotia,Pelagics,Total pelagics,"103,885,737","30,702,208"
+1991,Nova Scotia,Pelagics,Tuna,"427,092","6,705,379"
+1991,Nova Scotia,Other,Marine plants,"22,889,072","1,271,455"
+1991,Nova Scotia,Other,Miscellaneous,993,"102,305"
+1991,Nova Scotia,Other,Total other,"22,890,065","1,373,760"
+1991,Nova Scotia,Groundfish,Cod,"101,419,078","93,777,571"
+1991,Nova Scotia,Groundfish,Flounders and soles,"14,910,246","14,554,633"
+1991,Nova Scotia,Groundfish,Greenland halibut/turbot,"4,585,269","4,231,039"
+1991,Nova Scotia,Groundfish,Haddock,"20,853,610","30,214,230"
+1991,Nova Scotia,Groundfish,Hake,"60,331,180","20,602,355"
+1991,Nova Scotia,Groundfish,Halibut,"1,424,860","6,969,010"
+1991,Nova Scotia,Groundfish,Other groundfish,"7,689,463","5,434,906"
+1991,Nova Scotia,Groundfish,Pollock,"37,575,441","22,344,753"
+1991,Nova Scotia,Groundfish,Redfish,"31,499,624","8,943,930"
+1991,Nova Scotia,Groundfish,Skate,"1,111,891","241,372"
+1991,Nova Scotia,Groundfish,Total groundfish,"281,400,662","207,313,799"
+1991,Nova Scotia,Grand total,Grand total,"517,314,600","498,520,887"
+1991,Prince Edward Island,Shellfish,Clams,"1,280,387","1,670,819"
+1991,Prince Edward Island,Shellfish,Lobster,"10,274,680","46,434,108"
+1991,Prince Edward Island,Shellfish,Other crabs,"591,014","247,198"
+1991,Prince Edward Island,Shellfish,Other shellfish,"1,184,126","1,831,794"
+1991,Prince Edward Island,Shellfish,Scallop,"822,888","959,839"
+1991,Prince Edward Island,Shellfish,Sea cucumber,0,0
+1991,Prince Edward Island,Shellfish,Sea urchin,0,0
+1991,Prince Edward Island,Shellfish,Shrimp,0,0
+1991,Prince Edward Island,Shellfish,Snow crab,1055852,2212364.7
+1991,Prince Edward Island,Shellfish,Total shellfish,"15,208,947","53,356,124"
+1991,Prince Edward Island,Pelagics,Alewife,"87,008","28,427"
+1991,Prince Edward Island,Pelagics,Capelin,0,0
+1991,Prince Edward Island,Pelagics,Eel,"126,614","426,178"
+1991,Prince Edward Island,Pelagics,Elvers,0,0
+1991,Prince Edward Island,Pelagics,Herring,"7,542,083","924,913"
+1991,Prince Edward Island,Pelagics,Mackerel,"3,922,445","1,067,517"
+1991,Prince Edward Island,Pelagics,Other pelagics,"198,632","159,675"
+1991,Prince Edward Island,Pelagics,Salmon,19,165.7
+1991,Prince Edward Island,Pelagics,Shark,"1,819","1,200"
+1991,Prince Edward Island,Pelagics,Silversides,"118,004","51,820"
+1991,Prince Edward Island,Pelagics,Swordfish,0,0
+1991,Prince Edward Island,Pelagics,Total pelagics,"12,004,503","2,781,293"
+1991,Prince Edward Island,Pelagics,Tuna,"7,879","121,399"
+1991,Prince Edward Island,Other,Marine plants,"9,741,886","2,143,218"
+1991,Prince Edward Island,Other,Miscellaneous,0,0
+1991,Prince Edward Island,Other,Total other,"9,741,886","2,143,218"
+1991,Prince Edward Island,Groundfish,Cod,"3,093,432","2,413,411"
+1991,Prince Edward Island,Groundfish,Flounders and soles,"2,105,893","1,118,824"
+1991,Prince Edward Island,Groundfish,Greenland halibut/turbot,0,0
+1991,Prince Edward Island,Groundfish,Haddock,2,2.2
+1991,Prince Edward Island,Groundfish,Hake,"1,540,854","609,699"
+1991,Prince Edward Island,Groundfish,Halibut,"1,120","5,253"
+1991,Prince Edward Island,Groundfish,Other groundfish,"12,664","5,238"
+1991,Prince Edward Island,Groundfish,Pollock,696,232.5
+1991,Prince Edward Island,Groundfish,Redfish,"12,466,602","3,567,165"
+1991,Prince Edward Island,Groundfish,Skate,0,0
+1991,Prince Edward Island,Groundfish,Total groundfish,"19,221,263","7,719,824"
+1991,Prince Edward Island,Grand total,Grand total,"56,176,599","66,000,459"
+1991,Quebec,Shellfish,Clams,"579,975","640,430"
+1991,Quebec,Shellfish,Lobster,"3,493,312","18,501,844"
+1991,Quebec,Shellfish,Other crabs,"2,806","7,715"
+1991,Quebec,Shellfish,Other shellfish,"931,054","511,346"
+1991,Quebec,Shellfish,Scallop,"2,525,106","2,853,673"
+1991,Quebec,Shellfish,Sea cucumber,0,0
+1991,Quebec,Shellfish,Sea urchin,6693,12
+1991,Quebec,Shellfish,Shrimp,"9,514,297",13781879.25
+1991,Quebec,Shellfish,Snow crab,"7,981,630","20,534,926"
+1991,Quebec,Shellfish,Total shellfish,"25,034,873","56,831,826"
+1991,Quebec,Pelagics,Alewife,0,0
+1991,Quebec,Pelagics,Capelin,"241,307","55,410"
+1991,Quebec,Pelagics,Eel,"425,497","2,247,443"
+1991,Quebec,Pelagics,Elvers,0,0
+1991,Quebec,Pelagics,Herring,"3,939,571","833,040"
+1991,Quebec,Pelagics,Mackerel,"3,255,633","1,042,607"
+1991,Quebec,Pelagics,Other pelagics,"330,570","537,182"
+1991,Quebec,Pelagics,Salmon,"38,379","187,329"
+1991,Quebec,Pelagics,Shark,566,312
+1991,Quebec,Pelagics,Silversides,28,128
+1991,Quebec,Pelagics,Swordfish,0,0
+1991,Quebec,Pelagics,Total pelagics,"8,231,551","4,903,451"
+1991,Quebec,Pelagics,Tuna,0,0
+1991,Quebec,Other,Marine plants,"1,151",888
+1991,Quebec,Other,Miscellaneous,"29,708","8,038"
+1991,Quebec,Other,Total other,"30,859","8,926"
+1991,Quebec,Groundfish,Cod,"19,094,127","15,007,712"
+1991,Quebec,Groundfish,Flounders and soles,"2,880,338","1,959,739"
+1991,Quebec,Groundfish,Greenland halibut/turbot,"1,585,793","2,144,387"
+1991,Quebec,Groundfish,Haddock,"2,367","2,267"
+1991,Quebec,Groundfish,Hake,"425,378","165,927"
+1991,Quebec,Groundfish,Halibut,"205,204","865,037"
+1991,Quebec,Groundfish,Other groundfish,"215,081","74,793"
+1991,Quebec,Groundfish,Pollock,"3,807","1,269"
+1991,Quebec,Groundfish,Redfish,"16,166,483","4,076,328"
+1991,Quebec,Groundfish,Skate,"1,075",531
+1991,Quebec,Groundfish,Total groundfish,"40,579,653","24,297,990"
+1991,Quebec,Grand total,Grand total,"73,876,936","86,042,193"
+,,,,,
+Quantity in live weight.,,,,,
+"""x"" denotes data that is suppressed to meet confidentiality requirements.",,,,,
+Totals may not add up due to rounding.,,,,,
+"""Miscellaneous"" quantity excludes seal pelts.",,,,,
+"Species not listed are grouped in each species group’s “other” category. For example, squid is included in “Other shellfish”.",,,,,
+Data is subject to revision. ,,,,,
+Source: Department of Fisheries and Oceans (2025). Zonal Interchange File [database]. Ottawa,,,,,

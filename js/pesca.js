@@ -1,5 +1,5 @@
 /* Dehesa Index — Pesca y acuicultura (pesca.html) y bloque de pesca de la ficha de país (DIFish.mountCountry).
-   Datos: data/views/fish/index.json y data/views/fish/<CC>.json (scripts/build-views.py, desde data/eurostat-fish-stats.json y data/us-noaa-fish-stats.json).
+   Datos: data/views/fish/index.json y data/views/fish/<CC>.json (scripts/build-views.py, desde data/eurostat-fish-stats.json, data/us-noaa-fish-stats.json y data/ca-dfo-landings.json).
    Cifras tal cual las publican Eurostat y NOAA Fisheries. Únicos cálculos de esta página, rotulados como tales: el reparto de las capturas por zona (%)
    y la proporción de buques de 25 años o más. Los nombres de especies se traducen con el glosario (js/label-tl.js); si falta alguno, se deja en inglés. ES5. */
 (function (global) {
@@ -13,14 +13,14 @@
     FI: L('Finlandia', 'Finland', 'Finlande', 'Finlandia'), BG: L('Bulgaria', 'Bulgaria', 'Bulgarie', 'Bulgaria'), HR: L('Croacia', 'Croatia', 'Croatie', 'Croazia'), LT: L('Lituania', 'Lithuania', 'Lituanie', 'Lituania'),
     SK: L('Eslovaquia', 'Slovakia', 'Slovaquie', 'Slovacchia'), CZ: L('Chequia', 'Czechia', 'Tchéquie', 'Cechia'), EE: L('Estonia', 'Estonia', 'Estonie', 'Estonia'), HU: L('Hungría', 'Hungary', 'Hongrie', 'Ungheria'),
     LV: L('Letonia', 'Latvia', 'Lettonie', 'Lettonia'), RO: L('Rumanía', 'Romania', 'Roumanie', 'Romania'), SE: L('Suecia', 'Sweden', 'Suède', 'Svezia'), SI: L('Eslovenia', 'Slovenia', 'Slovénie', 'Slovenia'),
-    US: L('Estados Unidos', 'United States', 'États-Unis', 'Stati Uniti')
+    US: L('Estados Unidos', 'United States', 'États-Unis', 'Stati Uniti'), CA: L('Canadá', 'Canada', 'Canada', 'Canada')
   };
   var T = {
     title: L('Pesca y acuicultura por país', 'Fishing and aquaculture by country', 'Pêche et aquaculture par pays', 'Pesca e acquacoltura per paese'),
-    sub: L('Capturas, desembarques y precio en primera venta, acuicultura y flota pesquera por país: 24 países de la UE (Eurostat) y Estados Unidos (NOAA Fisheries). Cifras oficiales anuales.',
-           'Catches, landings and first-sale prices, aquaculture and fishing fleet by country: 24 EU countries (Eurostat) and the United States (NOAA Fisheries). Official annual figures.',
-           'Captures, débarquements et prix de première vente, aquaculture et flotte de pêche par pays : 24 pays de l’UE (Eurostat) et les États-Unis (NOAA Fisheries). Chiffres officiels annuels.',
-           'Catture, sbarchi e prezzo di prima vendita, acquacoltura e flotta peschereccia per paese: 24 paesi dell’UE (Eurostat) e Stati Uniti (NOAA Fisheries). Dati ufficiali annuali.'),
+    sub: L('Capturas, desembarques y precio en primera venta, acuicultura y flota pesquera por país: 24 países de la UE (Eurostat), Estados Unidos (NOAA Fisheries) y Canadá (DFO). Cifras oficiales anuales.',
+           'Catches, landings and first-sale prices, aquaculture and fishing fleet by country: 24 EU countries (Eurostat), the United States (NOAA Fisheries) and Canada (DFO). Official annual figures.',
+           'Captures, débarquements et prix de première vente, aquaculture et flotte de pêche par pays : 24 pays de l’UE (Eurostat), les États-Unis (NOAA Fisheries) et le Canada (DFO). Chiffres officiels annuels.',
+           'Catture, sbarchi e prezzo di prima vendita, acquacoltura e flotta peschereccia per paese: 24 paesi dell’UE (Eurostat), Stati Uniti (NOAA Fisheries) e Canada (DFO). Dati ufficiali annuali.'),
     country: L('País', 'Country', 'Pays', 'Paese'),
     loading: L('Cargando datos de pesca…', 'Loading fisheries data…', 'Chargement des données de pêche…', 'Caricamento dei dati sulla pesca…'),
     fail: L('No se han podido cargar los datos de pesca. Vuelve a intentarlo más tarde.', 'Fisheries data could not be loaded. Please try again later.', 'Les données de pêche n’ont pas pu être chargées. Réessayez plus tard.', 'Non è stato possibile caricare i dati sulla pesca. Riprova più tardi.'),
@@ -29,10 +29,12 @@
       landQty: L('Pescado desembarcado', 'Fish landed', 'Poisson débarqué', 'Pesce sbarcato'), landPrice: L('Precio medio en primera venta', 'Average first-sale price', 'Prix moyen de première vente', 'Prezzo medio di prima vendita'),
       aqQty: L('Acuicultura', 'Aquaculture', 'Aquaculture', 'Acquacoltura'), aqValue: L('Valor de la acuicultura', 'Value of aquaculture', 'Valeur de l’aquaculture', 'Valore dell’acquacoltura'),
       fleet: L('Flota pesquera', 'Fishing fleet', 'Flotte de pêche', 'Flotta peschereccia'), fleetOld: L('Buques de 25 años o más', 'Vessels 25 years or older', 'Navires de 25 ans ou plus', 'Pescherecci di 25 anni o più'),
-      usValue: L('Valor de los desembarques comerciales', 'Value of commercial landings', 'Valeur des débarquements commerciaux', 'Valore degli sbarchi commerciali'), usLb: L('Pescado desembarcado', 'Fish landed', 'Poisson débarqué', 'Pesce sbarcato')
+      usValue: L('Valor de los desembarques comerciales', 'Value of commercial landings', 'Valeur des débarquements commerciaux', 'Valore degli sbarchi commerciali'), usLb: L('Pescado desembarcado', 'Fish landed', 'Poisson débarqué', 'Pesce sbarcato'),
+      caValue: L('Valor de los desembarques comerciales', 'Value of commercial landings', 'Valeur des débarquements commerciaux', 'Valore degli sbarchi commerciali'), caT: L('Pescado desembarcado', 'Fish landed', 'Poisson débarqué', 'Pesce sbarcato'),
+      caAvg: L('Valor medio por kilo desembarcado (cálculo de Dehesa Index)', 'Average value per kilo landed (Dehesa Index calculation)', 'Valeur moyenne par kilo débarqué (calcul de Dehesa Index)', 'Valore medio per chilo sbarcato (calcolo di Dehesa Index)')
     },
     u: { t: L('t peso vivo', 't live weight', 't poids vif', 't peso vivo'), tp: L('t peso producto', 't product weight', 't poids produit', 't peso prodotto'), eurt: L('€/t', '€/t', '€/t', '€/t'), ves: L('buques', 'vessels', 'navires', 'pescherecci'),
-         mlb: L('millones de libras', 'million pounds', 'millions de livres', 'milioni di libbre'), meur: L('M€', '€m', 'M€', 'M€'), musd: L('M$', '$m', 'M$', 'M$'), pctFleet: L('% de la flota (cálculo de Dehesa Index)', '% of the fleet (Dehesa Index calculation)', '% de la flotte (calcul de Dehesa Index)', '% della flotta (calcolo di Dehesa Index)') },
+         mlb: L('millones de libras', 'million pounds', 'millions de livres', 'milioni di libbre'), meur: L('M€', '€m', 'M€', 'M€'), musd: L('M$', '$m', 'M$', 'M$'), mcad: L('M C$', 'C$m', 'M C$', 'M C$'), kt: L('mil t', 'thousand t', 'milliers de t', 'migliaia di t'), cadkg: L('C$/kg', 'C$/kg', 'C$/kg', 'C$/kg'), pctFleet: L('% de la flota (cálculo de Dehesa Index)', '% of the fleet (Dehesa Index calculation)', '% de la flotte (calcul de Dehesa Index)', '% della flotta (calcolo di Dehesa Index)') },
     vs: L('frente a', 'vs', 'contre', 'rispetto a'),
     ch1: L('Capturas y acuicultura (toneladas de peso vivo)', 'Catches and aquaculture (tonnes live weight)', 'Captures et aquaculture (tonnes de poids vif)', 'Catture e acquacoltura (tonnellate di peso vivo)'),
     ch1c: L('Capturas (toneladas de peso vivo)', 'Catches (tonnes live weight)', 'Captures (tonnes de poids vif)', 'Catture (tonnellate di peso vivo)'),
@@ -70,6 +72,16 @@
     src: L('Fuentes:', 'Sources:', 'Sources :', 'Fonti:'),
     srcEu: L('Eurostat, estadísticas de pesca (fish_ca_main, fish_ld_main, fish_aq2a, fish_fleet_alt); reutilización según la Decisión 2011/833/UE', 'Eurostat, fisheries statistics (fish_ca_main, fish_ld_main, fish_aq2a, fish_fleet_alt); reuse under Decision 2011/833/EU', 'Eurostat, statistiques de la pêche (fish_ca_main, fish_ld_main, fish_aq2a, fish_fleet_alt) ; réutilisation selon la décision 2011/833/UE', 'Eurostat, statistiche della pesca (fish_ca_main, fish_ld_main, fish_aq2a, fish_fleet_alt); riutilizzo secondo la decisione 2011/833/UE'),
     srcUs: L('NOAA Fisheries, Fisheries One Stop Shop (FOSS), dominio público', 'NOAA Fisheries, Fisheries One Stop Shop (FOSS), public domain', 'NOAA Fisheries, Fisheries One Stop Shop (FOSS), domaine public', 'NOAA Fisheries, Fisheries One Stop Shop (FOSS), pubblico dominio'),
+    caNote: L('Canadá: desembarques comerciales de pesca marina (Atlántico y Columbia Británica; sin agua dulce ni acuicultura) que publica Pesca y Océanos de Canadá (DFO), en kilos de peso vivo y dólares canadienses corrientes. Lo que DFO suprime por confidencialidad se deja en blanco. Las toneladas y el valor medio por kilo son cálculo de Dehesa Index. DFO revisa los últimos años.',
+      'Canada: commercial marine landings (Atlantic and British Columbia; no freshwater or aquaculture) published by Fisheries and Oceans Canada (DFO), in kilograms live weight and current Canadian dollars. What DFO suppresses for confidentiality is left blank. Tonnes and the average value per kilo are Dehesa Index calculations. DFO revises recent years.',
+      'Canada : débarquements commerciaux de la pêche maritime (Atlantique et Colombie-Britannique ; hors eau douce et aquaculture) publiés par Pêches et Océans Canada (MPO), en kilogrammes de poids vif et en dollars canadiens courants. Ce que le MPO supprime par confidentialité reste vide. Les tonnes et la valeur moyenne par kilo sont un calcul de Dehesa Index. Le MPO révise les dernières années.',
+      'Canada: sbarchi commerciali della pesca marittima (Atlantico e Columbia Britannica; senza acque dolci né acquacoltura) pubblicati da Pesca e Oceani del Canada (DFO), in chilogrammi di peso vivo e dollari canadesi correnti. Ciò che il DFO sopprime per riservatezza resta vuoto. Le tonnellate e il valore medio per chilo sono un calcolo di Dehesa Index. Il DFO rivede gli ultimi anni.'),
+    srcCa: L('Pesca y Océanos de Canadá (DFO), Commercial Seafisheries Landings, licencia de gobierno abierto de Canadá', 'Fisheries and Oceans Canada (DFO), Commercial Seafisheries Landings, Open Government Licence – Canada', 'Pêches et Océans Canada (MPO), Commercial Seafisheries Landings, Licence du gouvernement ouvert – Canada', 'Pesca e Oceani del Canada (DFO), Commercial Seafisheries Landings, Open Government Licence – Canada'),
+    ch1ca: L('Valor de los desembarques comerciales (millones de C$ corrientes)', 'Value of commercial landings (C$ million, current)', 'Valeur des débarquements commerciaux (millions de C$ courants)', 'Valore degli sbarchi commerciali (milioni di C$ correnti)'),
+    ch2ca: L('Pescado desembarcado (miles de toneladas de peso vivo)', 'Fish landed (thousand tonnes live weight)', 'Poisson débarqué (milliers de tonnes de poids vif)', 'Pesce sbarcato (migliaia di tonnellate di peso vivo)'),
+    spCA: L('Especies con más valor desembarcado (todo Canadá)', 'Species with the highest landed value (all Canada)', 'Espèces à plus forte valeur débarquée (tout le Canada)', 'Specie con il maggior valore sbarcato (tutto il Canada)'),
+    stCA: L('Provincias con más valor desembarcado', 'Provinces with the highest landed value', 'Provinces à plus forte valeur débarquée', 'Province con il maggior valore sbarcato'),
+    hProv: L('Provincia', 'Province', 'Province', 'Provincia'),
     cardH: L('Pesca y acuicultura', 'Fishing and aquaculture', 'Pêche et aquaculture', 'Pesca e acquacoltura'),
     more: L('Ver todos los datos de pesca de este país', 'See all fisheries data for this country', 'Voir toutes les données de pêche de ce pays', 'Vedi tutti i dati sulla pesca di questo paese'),
     age: { y_lt5: L('menos de 5 años', 'under 5 years', 'moins de 5 ans', 'meno di 5 anni'), 'y5-9': L('5 a 9 años', '5 to 9 years', '5 à 9 ans', '5-9 anni'), 'y10-14': L('10 a 14 años', '10 to 14 years', '10 à 14 ans', '10-14 anni'),
@@ -126,8 +138,20 @@
   function prevOf(a, p) { if (!a || !p) return null; for (var i = a.length - 1; i >= 0; i--) if (+a[i][0] === +p[0] - 1) return a[i]; return null; }
   function pct(a, b) { return a != null && b ? (a / b - 1) * 100 : null; }
   function chg(v) { if (v == null) return '<span class="fsh-m">—</span>'; var s = (v > 0 ? '+' : '') + nf(v, 1) + ' %'; return '<span class="fsh-chg ' + (v > 0 ? 'up' : v < 0 ? 'dn' : '') + '">' + esc(s) + '</span>'; }
+  /* Especies y provincias de DFO: nombres corrientes en cada idioma; si falta una especie se deja el nombre inglés de DFO */
+  var CAS = { clams: ['almejas', 'clams', 'palourdes', 'vongole'], cod: ['bacalao', 'cod', 'morue', 'merluzzo'], eel: ['anguila', 'eel', 'anguille', 'anguilla'], elvers: ['angulas', 'elvers', 'civelles', 'ceche'],
+    flounders_and_soles: ['platijas y lenguados', 'flounders and soles', 'flets et soles', 'passere e sogliole'], greenland_halibut_turbot: ['fletán negro', 'Greenland halibut / turbot', 'flétan du Groenland', 'halibut nero'],
+    haddock: ['eglefino', 'haddock', 'églefin', 'eglefino'], hake: ['merluza', 'hake', 'merlu', 'nasello'], halibut: ['fletán', 'halibut', 'flétan', 'ippoglosso'], herring: ['arenque', 'herring', 'hareng', 'aringa'],
+    lobster: ['bogavante', 'lobster', 'homard', 'astice'], mackerel: ['caballa', 'mackerel', 'maquereau', 'sgombro'], marine_plants: ['plantas marinas', 'marine plants', 'plantes marines', 'piante marine'],
+    pollock: ['carbonero', 'pollock', 'goberge', 'merluzzo carbonaro'], salmon: ['salmón', 'salmon', 'saumon', 'salmone'], scallop: ['vieira', 'scallop', 'pétoncle', 'capasanta'], sea_cucumber: ['pepino de mar', 'sea cucumber', 'concombre de mer', 'cetriolo di mare'],
+    sea_urchin: ['erizo de mar', 'sea urchin', 'oursin', 'riccio di mare'], shark: ['tiburón', 'shark', 'requin', 'squalo'], shrimp: ['gamba', 'shrimp', 'crevette', 'gambero'], skate: ['raya', 'skate', 'raie', 'razza'],
+    snow_crab: ['cangrejo de las nieves', 'snow crab', 'crabe des neiges', 'granchio delle nevi'], swordfish: ['pez espada', 'swordfish', 'espadon', 'pesce spada'], tuna: ['atún', 'tuna', 'thon', 'tonno'] };
+  var CAP = { 'Newfoundland and Labrador': ['Terranova y Labrador', 'Newfoundland and Labrador', 'Terre-Neuve-et-Labrador', 'Terranova e Labrador'], 'Prince Edward Island': ['Isla del Príncipe Eduardo', 'Prince Edward Island', 'Île-du-Prince-Édouard', 'Isola del Principe Edoardo'],
+    'Nova Scotia': ['Nueva Escocia', 'Nova Scotia', 'Nouvelle-Écosse', 'Nuova Scozia'], 'New Brunswick': ['Nuevo Brunswick', 'New Brunswick', 'Nouveau-Brunswick', 'Nuovo Brunswick'], 'Quebec': ['Quebec', 'Quebec', 'Québec', 'Québec'],
+    'British Columbia': ['Columbia Británica', 'British Columbia', 'Colombie-Britannique', 'Columbia Britannica'] };
+  function caName(o, map) { var m = map[map === CAS ? o.code : o.name]; var i = ['es', 'en', 'fr', 'it'].indexOf(lg()); return m ? m[i < 0 ? 1 : i] : o.name; }
   function spName(n) { var tl = global.DILabelTl; if (!tl) return n; var r = tl.tl(n, lg()); return r || n; }
-  function money(v, cur) { if (v == null) return '—'; var m = v / 1e6; return nf(m, m < 100 ? 1 : 0) + ' ' + tx(cur === 'USD' ? T.u.musd : T.u.meur); }
+  function money(v, cur) { if (v == null) return '—'; var m = v / 1e6; return nf(m, m < 100 ? 1 : 0) + ' ' + tx(cur === 'USD' ? T.u.musd : cur === 'CAD' ? T.u.mcad : T.u.meur); }
   /* ---- gráfica de líneas (mismo patrón que js/farm-headlines.js) ---- */
   function niceStep(max) { var raw = max / 4, p = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10)), n = raw / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * p; }
   var CL = ['t', 'b'];
@@ -172,6 +196,12 @@
       a = pick(s['ld-total-lb']); b = prevOf(s['ld-total-lb'], a); if (a) h += kpi(tx(T.k.usLb), nf(a[1] / 1e6, 0), tx(T.u.mlb), a[0], pct(a[1], b && b[1]));
       return h;
     }
+    if (d.cc === 'CA') {
+      a = pick(s['ld-total-cad']); b = prevOf(s['ld-total-cad'], a); if (a) h += kpi(tx(T.k.caValue), money(a[1], 'CAD'), '', a[0], pct(a[1], b && b[1]));
+      var q = pick(s['ld-total-t']), r = prevOf(s['ld-total-t'], q); if (q) h += kpi(tx(T.k.caT), nf(q[1] / 1e3, 0), tx(T.u.kt), q[0], pct(q[1], r && r[1]));
+      if (a && q && a[0] === q[0] && q[1]) h += kpi(tx(T.k.caAvg), nf(a[1] / (q[1] * 1000), 2), tx(T.u.cadkg), a[0], null);
+      return h;
+    }
     var row = function (key, lab, fmt, unit) { var x = pick(s[key]), y = prevOf(s[key], x); if (x) h += kpi(lab, fmt(x[1]), unit, x[0], pct(x[1], y && y[1])); };
     row('ca-total', tx(T.k.catches), function (v) { return nf(v, 0); }, tx(T.u.t));
     row('ld-total-eur', tx(T.k.landValue), function (v) { return money(v, 'EUR'); }, '');
@@ -189,16 +219,17 @@
   function td(v, num) { return '<td' + (num ? ' class="num"' : '') + '>' + v + '</td>'; }
   function speciesBlock(d) {
     if (!d.landings || !d.landings.length) return '';
-    var us = d.cc === 'US';
+    var us = d.cc === 'US', ca = d.cc === 'CA';
     var lst = d.landings.slice(); if (YEAR != null) lst.sort(function (a, b) { var x = pick(a.value), y = pick(b.value); return (y ? y[1] : -1) - (x ? x[1] : -1); });
     var rows = lst.map(function (o) {
       var v = pick(o.value), q = pick(o.qty);
+      if (ca) return '<tr>' + td(esc(caName(o, CAS))) + td(money(v && v[1], 'CAD'), 1) + td(q ? nf(q[1] / 1e3, 1) + ' ' + esc(tx(T.u.kt)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>';
       if (us) return '<tr>' + td(esc(spName(o.name))) + td(money(v && v[1], 'USD'), 1) + td(q ? nf(q[1] / 1e6, 1) + ' ' + esc(tx(T.u.mlb)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>';
       var p = pick(o.price), pp = prevOf(o.price, p);
       return '<tr>' + td(esc(spName(o.name))) + td(money(v && v[1], 'EUR'), 1) + td(q ? nf(q[1], 0) + ' t' : '—', 1) + td(p ? nf(p[1], 0) : '—', 1) + td(chg(p && pp ? pct(p[1], pp[1]) : null), 1) + td(esc(v ? v[0] : ''), 1) + '</tr>';
     });
-    var head = us ? [tx(T.hSp), tx(T.hVal), tx(T.hQty), tx(T.hYear)] : [tx(T.hSp), tx(T.hVal), tx(T.hQty), tx(T.hPrice), tx(T.hChg), tx(T.hYear)];
-    return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(us ? T.spUS : T.spT)) + '</h2><p class="di-movers-hint">' + esc(tx(T.spS)) + '</p>' + table(head, rows) + '</section>';
+    var head = us || ca ? [tx(T.hSp), tx(T.hVal), tx(T.hQty), tx(T.hYear)] : [tx(T.hSp), tx(T.hVal), tx(T.hQty), tx(T.hPrice), tx(T.hChg), tx(T.hYear)];
+    return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(ca ? T.spCA : us ? T.spUS : T.spT)) + '</h2><p class="di-movers-hint">' + esc(tx(T.spS)) + '</p>' + table(head, rows) + '</section>';
   }
   /* Precio semanal en primera venta por especie (EUMOFA, data/views/fish/<CC>.json > firstSales). Precio = valor / volumen de la semana (calculo del cargador). */
   var WK = {
@@ -386,6 +417,9 @@
   }
   function statesBlock(d) {
     if (!d.states || !d.states.length) return '';
+    var ca = d.cc === 'CA';
+    if (ca) { var rc = d.states.map(function (o) { var v = pick(o.value), q = pick(o.qty); return '<tr>' + td(esc(caName(o, CAP))) + td(money(v && v[1], 'CAD'), 1) + td(q ? nf(q[1] / 1e3, 1) + ' ' + esc(tx(T.u.kt)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>'; });
+      return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.stCA)) + '</h2>' + table([tx(T.hProv), tx(T.hVal), tx(T.hQty), tx(T.hYear)], rc) + '</section>'; }
     var rows = d.states.map(function (o) { var v = pick(o.value), q = pick(o.qty); return '<tr>' + td(esc(o.name)) + td(money(v && v[1], 'USD'), 1) + td(q ? nf(q[1] / 1e6, 1) + ' ' + esc(tx(T.u.mlb)) : '—', 1) + td(esc(v ? v[0] : ''), 1) + '</tr>'; });
     return '<section class="di-card fsh-sec"><h2 class="fsh-h2">' + esc(tx(T.stUS)) + '</h2>' + table([tx(T.hSt), tx(T.hVal), tx(T.hQty), tx(T.hYear)], rows) + '</section>';
   }
@@ -428,7 +462,7 @@
       return '<div class="fsh-age-r"><span>' + esc(tx(T.age[k])) + '</span><span class="fsh-bar wide"><i style="width:' + ((vals[i] || 0) / mx * 100).toFixed(1) + '%"></i></span><b>' + nf(vals[i], 0) + '</b></div>'; }).join('') + '</div></section>';
   }
   function compareBlock(idx, cur) {
-    var rows = idx.countries.filter(function (r) { return r.cc !== 'US'; }).sort(function (a, b) { return ((b.landValue || [0, 0])[1] - (a.landValue || [0, 0])[1]) || ((b.aqQty || [0, 0])[1] - (a.aqQty || [0, 0])[1]); });
+    var rows = idx.countries.filter(function (r) { return r.cc !== 'US' && r.cc !== 'CA'; }).sort(function (a, b) { return ((b.landValue || [0, 0])[1] - (a.landValue || [0, 0])[1]) || ((b.aqQty || [0, 0])[1] - (a.aqQty || [0, 0])[1]); });
     var v = function (p, f) { return p ? f(p[1]) + ' <span class="fsh-m">' + esc(p[0]) + '</span>' : '—'; };
     var tr = rows.map(function (r) {
       return '<tr class="fsh-row' + (r.cc === cur ? ' on' : '') + '" data-cc="' + esc(r.cc) + '" tabindex="0">' + td(flag(r.cc) + '<a href="' + esc(sp('pesca.html') + '?c=' + r.cc) + '">' + esc(tx(N[r.cc] || [r.cc, r.cc, r.cc, r.cc])) + '</a>') +
@@ -439,13 +473,17 @@
       table([tx(T.country), tx(T.k.catches) + ' (t)', tx(T.k.landValue), tx(T.k.landPrice) + ' (€/t)', tx(T.k.aqQty) + ' (t)', tx(T.k.fleet), tx(T.k.fleetOld)], tr) + '</section>';
   }
   function sources(d) {
-    var eu = d.cc !== 'US';
+    var eu = d.cc !== 'US' && d.cc !== 'CA';
+    if (d.cc === 'CA') return '<p class="di-field-hint" style="margin:12px 0 0">' + esc(tx(T.src)) + ' <a href="https://open.canada.ca/data/en/dataset/6e16f703-9c57-46c9-9194-6573398c17e6" target="_blank" rel="noopener noreferrer">' + esc(tx(T.srcCa)) + '</a></p>';
     return '<p class="di-field-hint" style="margin:12px 0 0">' + esc(tx(T.src)) + ' ' + (eu ? '<a href="https://ec.europa.eu/eurostat/web/fisheries/database" target="_blank" rel="noopener noreferrer">' + esc(tx(T.srcEu)) + '</a>' :
       '<a href="https://www.fisheries.noaa.gov/foss" target="_blank" rel="noopener noreferrer">' + esc(tx(T.srcUs)) + '</a>') + '</p>';
   }
   function charts(d) {
     var s = d.series, out = [];
-    if (d.cc === 'US') {
+    if (d.cc === 'CA') {
+      out.push(chart([{ name: tx(T.lv), pts: scale(s['ld-total-cad'], 1e6), d: 0 }].filter(function (o) { return o.pts.length > 2; }), tx(T.ch1ca), 'fsh-c1'));
+      out.push(chart([{ name: tx(T.lq), pts: scale(s['ld-total-t'], 1e3), d: 0 }].filter(function (o) { return o.pts.length > 2; }), tx(T.ch2ca), 'fsh-c2'));
+    } else if (d.cc === 'US') {
       out.push(chart([{ name: tx(T.lv), pts: scale(s['ld-total-usd'], 1e6), d: 0 }].filter(function (o) { return o.pts.length > 2; }), tx(T.ch1us), 'fsh-c1'));
       out.push(chart([{ name: tx(T.lq), pts: scale(s['ld-total-lb'], 1e6), d: 0 }].filter(function (o) { return o.pts.length > 2; }), tx(T.ch2us), 'fsh-c2'));
     } else {
@@ -469,14 +507,14 @@
       return Promise.all([getJSON(CUR), glossary()]).then(function (r) {
         var d = r[0]; if (!d) { root.innerHTML = '<p>' + esc(tx(T.fail)) + '</p>'; return; }
         var opts = ccs.slice().sort(function (a, b) { return tx(N[a] || [a, a, a, a]).localeCompare(tx(N[b] || [b, b, b, b]), LOC[lg()]); }).map(function (c) { return '<option value="' + c + '"' + (c === CUR ? ' selected' : '') + '>' + esc(tx(N[c] || [c, c, c, c])) + '</option>'; }).join('');
-        var ch = charts(d), noSea = d.cc !== 'US' && !d.series['ca-total'] && !d.series['ld-total-eur'];
+        var ch = charts(d), noSea = d.cc !== 'US' && d.cc !== 'CA' && !d.series['ca-total'] && !d.series['ld-total-eur'];
         var h = '<div class="fsh-pick"><label for="fsh-cc">' + esc(tx(T.country)) + '</label> <select data-cpick="1" id="fsh-cc" class="di-compare-select">' + opts + '</select> ' + yearSel(d, 'fsh-yr') + (YEAR != null ? ' <span class="di-movers-hint">' + esc(tx(T.yrNote)) + '</span>' : '') + (noSea ? ' <span class="di-movers-hint">' + esc(tx(T.land)) + '</span>' : '') + '</div>' +
           '<div class="fsh-kpis">' + kpis(d) + '</div>' +
           (ch.length ? '<section class="di-card fsh-sec wp-card">' + ch.map(function (c) { return c.html; }).join('') + '</section>' : '') +
           weeklyBlock(d) + crossBlock(d, tx(N[d.cc] || [d.cc, d.cc, d.cc, d.cc])) + retailBlock(d) + speciesBlock(d) + statesBlock(d) + zonesBlock(d) + listBlock(tx(T.cT), d.catches, false) + listBlock(tx(T.aT), d.aquaculture, true) + fleetBlock(d) +
           compareBlock(idx, CUR) +
-          T.notes.map(function (n) { return '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(n)) + '</p>'; }).join('') + sources(d) +
-          (d.cc === 'US' ? '' : '<p class="di-field-hint" style="margin:4px 0 0"><a href="https://www.fisheries.noaa.gov/foss" target="_blank" rel="noopener noreferrer">' + esc(tx(T.srcUs)) + '</a></p>');
+          (d.cc === 'CA' ? [T.caNote] : T.notes).map(function (n) { return '<p class="di-movers-hint" style="max-width:860px">' + esc(tx(n)) + '</p>'; }).join('') + sources(d) +
+          (d.cc === 'US' || d.cc === 'CA' ? '' : '<p class="di-field-hint" style="margin:4px 0 0"><a href="https://www.fisheries.noaa.gov/foss" target="_blank" rel="noopener noreferrer">' + esc(tx(T.srcUs)) + '</a></p>');
         root.innerHTML = h;
         ch.forEach(function (c) { bindChart(root, c); }); mountFaoMaps(root); bindWeekly(root, d); bindCross(root, d); bindRetail(root, d);
         var sel = document.getElementById('fsh-cc'); if (sel) sel.onchange = function () { WSP = 0; RSP = 0; CSP = 0; go(sel.value); };
@@ -500,9 +538,9 @@
       return Promise.all([getJSON(cc), glossary()]).then(function (r) {
         var d = r[0]; if (!d) return false;
         var ch = charts(d).slice(0, 1);
-        var top = (d.landings || []).slice(0, 3).map(function (o) { return esc(spName(o.name)); }).join(', ');
+        var top = (d.landings || []).slice(0, 3).map(function (o) { return esc(d.cc === 'CA' ? caName(o, CAS) : spName(o.name)); }).join(', ');
         var inner = '<section class="di-card ps-rm wp-card gb-card" id="ps-fish" style="max-width:none"><h2 class="ps-rm-h">' + esc(tx(T.cardH)) + '</h2><div class="fsh-pick" style="margin:0 0 8px">' + yearSel(d, 'fsh-yr-' + cc) + '</div><div class="fsh-kpis" id="fsh-k-' + cc + '">' + kpis(d) + '</div>' +
-          (top ? '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(tx(d.cc === 'US' ? T.spUS : T.spT)) + ': ' + top + '</p>' : '') +
+          (top ? '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(tx(d.cc === 'CA' ? T.spCA : d.cc === 'US' ? T.spUS : T.spT)) + ': ' + top + '</p>' : '') +
           ch.map(function (c) { return c.html; }).join('') +
           '<p style="margin:10px 0 0"><a href="' + esc(sp('pesca.html') + '?c=' + cc) + '">' + esc(tx(T.more)) + '</a></p>' + sources(d) + '</section>';
         var SEC = global.DehesaSector;

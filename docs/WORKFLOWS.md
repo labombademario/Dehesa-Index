@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-336 workflows (286 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+337 workflows (287 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -62,6 +62,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-ca-aafc-slaughter.yml | generado | semanal (3,4,5) | detect-revisions.py, gen-workflows.py, update-ca-aafc-slaughter.py | ca-aafc-slaughter-stats.json | finish, validate-files |
 | update-ca-alberta-inputs.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-ca-alberta-inputs.py | ca-alberta-inputs-stats.json | finish, validate-files |
 | update-ca-boc-bcpi.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-ca-boc-bcpi.py | ca-boc-bcpi-stats.json | finish, validate-files |
+| update-ca-dfo-landings.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ca-dfo-landings.py | ca-dfo-landings.json | finish, validate-files |
 | update-ca-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ca-ghg-agri.py | ca-ghg-agri.json | finish, validate-files |
 | update-ca-panel-prices.yml | a mano | semanal (2,5) | build-ca-panel-obs.py | - | price-engine, publish |
 | update-ca-statcan-more.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-ca-statcan-more.py | ca-statcan-more-stats.json | finish, validate-files |

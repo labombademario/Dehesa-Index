@@ -6052,6 +6052,32 @@
    "short": "likumi_lv (LV)",
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+  },
+  "dfo_landings": {
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licensed under the Open Government Licence – Canada.",
+   "additionalRestrictions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Rights the provider is not authorised to license are excluded.",
+   "verifiedAt": "2026-10-30",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "used": true,
+   "aliases": [],
+   "notes": "Desembarques comerciales de pesca marina de Canada por provincia (Atlantico y Columbia Britanica; no incluye agua dulce ni acuicultura) y especie, 1990-ultimo ano, en kg de peso vivo y C$ corrientes; lo suprimido por confidencialidad («x») queda como hueco. Totales: los que publica DFO.",
+   "name": "Fisheries and Oceans Canada (DFO) — Commercial Seafisheries Landings",
+   "url": "https://open.canada.ca/data/en/dataset/6e16f703-9c57-46c9-9194-6573398c17e6",
+   "evidence": "El catalogo de datos abiertos de Canada (open.canada.ca, API package_show, leida el 30-oct-2026) publica el conjunto «Commercial Seafisheries Landings» (DFO, id 6e16f703-9c57-46c9-9194-6573398c17e6, actualizado el 25-sep-2026) con license_id ca-ogl-lgo, «Open Government Licence - Canada». El CSV en ingles se descargo del catalogo de DFO (api-proxy.edh-cde.dfo-mpo.gc.ca) desde el sandbox y el script comprueba la licencia del catalogo en cada carga.",
+   "short": "DFO desembarques",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia OGL-Canada explicita en el catalogo oficial para este conjunto."
   }
  },
  "files": {
@@ -8818,6 +8844,12 @@
     "effis_gwis"
    ],
    "notes": "Acumulado semanal de superficie quemada e incendios del año en curso por pais, con el minimo, la media y el maximo de los años anteriores (EFFIS desde 2006, GWIS desde 2012) que calcula EFFIS/GWIS. Estimaciones por satelite. scripts/update-forest-fires.py."
+  },
+  "data/ca-dfo-landings.json": {
+   "sources": [
+    "dfo_landings"
+   ],
+   "notes": "Desembarques comerciales de pesca marina de Canada por provincia y especie, 1990-ultimo ano (DFO, OGL-Canada; scripts/update-ca-dfo-landings.py). Las celdas suprimidas por DFO quedan en blanco; las toneladas y la media C$/kg son calculo de Dehesa Index sobre las cifras publicadas."
   }
  },
  "derived": [

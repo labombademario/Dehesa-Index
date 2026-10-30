@@ -1,0 +1,313 @@
+Year,Province,Species Group,Species,Quantity (kgs),Value (CAD)
+2024,Atlantic,Shellfish,Clams,"48,815,442","94,878,863"
+2024,Atlantic,Shellfish,Lobster,"105,249,198","1,971,588,760"
+2024,Atlantic,Shellfish,Other crabs,"2,156,276","6,504,238"
+2024,Atlantic,Shellfish,Other shellfish,"7,286,245","16,269,881"
+2024,Atlantic,Shellfish,Scallop,"55,618,804","179,092,394"
+2024,Atlantic,Shellfish,Sea cucumber,"9,755,463","16,750,404"
+2024,Atlantic,Shellfish,Sea urchin,"1,110,944","5,411,327"
+2024,Atlantic,Shellfish,Shrimp,"50,401,061","230,911,614"
+2024,Atlantic,Shellfish,Snow crab,"96,428,054","761,285,647"
+2024,Atlantic,Shellfish,Total shellfish,"376,821,487","3,282,693,128"
+2024,Atlantic,Pelagics,Alewife,"4,113,696","5,700,165"
+2024,Atlantic,Pelagics,Capelin,"16,508,716","8,264,408"
+2024,Atlantic,Pelagics,Eel,"101,735","615,368"
+2024,Atlantic,Pelagics,Elvers,0,0
+2024,Atlantic,Pelagics,Herring,"57,927,867","39,999,012"
+2024,Atlantic,Pelagics,Mackerel,"400,617","474,601"
+2024,Atlantic,Pelagics,Other pelagics,"92,124","269,509"
+2024,Atlantic,Pelagics,Salmon,0,0
+2024,Atlantic,Pelagics,Shark,"3,014",224.67
+2024,Atlantic,Pelagics,Silversides,"236,666","1,111,763"
+2024,Atlantic,Pelagics,Swordfish,"1,700,178","17,066,855"
+2024,Atlantic,Pelagics,Total pelagics,"82,111,148","87,911,815"
+2024,Atlantic,Pelagics,Tuna,"1,026,535","14,409,910"
+2024,Atlantic,Other,Marine plants,"12,701,054","635,156"
+2024,Atlantic,Other,Miscellaneous,"301,779","884,253"
+2024,Atlantic,Other,Total other,"13,002,833","1,519,409"
+2024,Atlantic,Groundfish,Cod,"17,312,991","33,180,392"
+2024,Atlantic,Groundfish,Flounders and soles,"4,215,069","8,443,008"
+2024,Atlantic,Groundfish,Greenland halibut/turbot,"10,064,682","57,971,598"
+2024,Atlantic,Groundfish,Haddock,"9,782,450","18,069,282"
+2024,Atlantic,Groundfish,Hake,"5,413,654","7,690,634"
+2024,Atlantic,Groundfish,Halibut,"7,025,489","104,762,061"
+2024,Atlantic,Groundfish,Other groundfish,"2,472,357","5,337,086"
+2024,Atlantic,Groundfish,Pollock,"2,848,028","3,772,923"
+2024,Atlantic,Groundfish,Redfish,"12,693,096","12,134,082"
+2024,Atlantic,Groundfish,Skate,"607,890","434,750"
+2024,Atlantic,Groundfish,Total groundfish,"72,435,706","251,795,815"
+2024,Atlantic,Grand total,Grand total,"544,371,174","3,623,920,167"
+2024,British Columbia,Shellfish,Clams,"1,447,389","49,021,365"
+2024,British Columbia,Shellfish,Lobster,0,0
+2024,British Columbia,Shellfish,Other crabs,4459041,84576332.3
+2024,British Columbia,Shellfish,Other shellfish,119227,548246.26
+2024,British Columbia,Shellfish,Scallop,"9,266","105,204"
+2024,British Columbia,Shellfish,Sea cucumber,"1,651,584","13,217,266"
+2024,British Columbia,Shellfish,Sea urchin,"2,191,510","9,961,645"
+2024,British Columbia,Shellfish,Shrimp,"1,797,857","70,459,237"
+2024,British Columbia,Shellfish,Snow crab,0,0
+2024,British Columbia,Shellfish,Total shellfish,"11,675,875","227,889,296"
+2024,British Columbia,Pelagics,Alewife,0,0
+2024,British Columbia,Pelagics,Capelin,0,0
+2024,British Columbia,Pelagics,Eel,0,0
+2024,British Columbia,Pelagics,Elvers,0,0
+2024,British Columbia,Pelagics,Herring,"6,952,003","7,661,664"
+2024,British Columbia,Pelagics,Mackerel,"9,976","21,900"
+2024,British Columbia,Pelagics,Other pelagics,"6,266","8,243"
+2024,British Columbia,Pelagics,Salmon,"8,756,755","31,556,068"
+2024,British Columbia,Pelagics,Shark,0,0
+2024,British Columbia,Pelagics,Silversides,0,0
+2024,British Columbia,Pelagics,Swordfish,0,0
+2024,British Columbia,Pelagics,Total pelagics,"18,609,428","56,735,337"
+2024,British Columbia,Pelagics,Tuna,"2,884,429","17,487,462"
+2024,British Columbia,Other,Marine plants,0,0
+2024,British Columbia,Other,Miscellaneous,0,0
+2024,British Columbia,Other,Total other,0,0
+2024,British Columbia,Groundfish,Cod,"495,139","818,334"
+2024,British Columbia,Groundfish,Flounders and soles,"6,584,006","3,883,850"
+2024,British Columbia,Groundfish,Greenland halibut/turbot,0,0
+2024,British Columbia,Groundfish,Haddock,0,0
+2024,British Columbia,Groundfish,Hake,"12,363,950","4,592,451"
+2024,British Columbia,Groundfish,Halibut,"2,808,880","45,779,717"
+2024,British Columbia,Groundfish,Other groundfish,"4,136,142","26,861,232"
+2024,British Columbia,Groundfish,Pollock,"9,084,991","2,002,895"
+2024,British Columbia,Groundfish,Redfish,"15,842,012","16,353,662"
+2024,British Columbia,Groundfish,Skate,"253,249","313,343"
+2024,British Columbia,Groundfish,Total groundfish,"51,568,369","100,605,485"
+2024,British Columbia,Grand total,Grand total,"81,853,672","385,230,119"
+2024,Canada,Shellfish,Clams,"50,262,831","143,900,228"
+2024,Canada,Shellfish,Lobster,"105,249,198","1,971,588,760"
+2024,Canada,Shellfish,Other crabs,"6,615,317","91,080,571"
+2024,Canada,Shellfish,Other shellfish,"7,405,472","16,818,127"
+2024,Canada,Shellfish,Scallop,"55,628,070","179,197,598"
+2024,Canada,Shellfish,Sea cucumber,"11,407,047","29,967,670"
+2024,Canada,Shellfish,Sea urchin,"3,302,454","15,372,972"
+2024,Canada,Shellfish,Shrimp,"52,198,918","301,370,850"
+2024,Canada,Shellfish,Snow crab,"96,428,054","761,285,647"
+2024,Canada,Shellfish,Total shellfish,"388,497,362","3,510,582,424"
+2024,Canada,Pelagics,Alewife,"4,113,696","5,700,165"
+2024,Canada,Pelagics,Capelin,"16,508,716","8,264,408"
+2024,Canada,Pelagics,Eel,"101,735","615,368"
+2024,Canada,Pelagics,Elvers,0,0
+2024,Canada,Pelagics,Herring,"64,879,870","47,660,677"
+2024,Canada,Pelagics,Mackerel,"410,593","496,502"
+2024,Canada,Pelagics,Other pelagics,"98,390","277,752"
+2024,Canada,Pelagics,Salmon,"8,756,755","31,556,068"
+2024,Canada,Pelagics,Shark,"3,014",224.67
+2024,Canada,Pelagics,Silversides,"236,666","1,111,763"
+2024,Canada,Pelagics,Swordfish,"1,700,178","17,066,855"
+2024,Canada,Pelagics,Total pelagics,"100,720,576","144,647,153"
+2024,Canada,Pelagics,Tuna,"3,910,964","31,897,371"
+2024,Canada,Other,Marine plants,"12,701,054","635,156"
+2024,Canada,Other,Miscellaneous,"301,779","884,253"
+2024,Canada,Other,Total other,"13,002,833","1,519,409"
+2024,Canada,Groundfish,Cod,"17,808,130","33,998,726"
+2024,Canada,Groundfish,Flounders and soles,"10,799,075","12,326,858"
+2024,Canada,Groundfish,Greenland halibut/turbot,"10,064,682","57,971,598"
+2024,Canada,Groundfish,Haddock,"9,782,450","18,069,282"
+2024,Canada,Groundfish,Hake,"17,777,604","12,283,085"
+2024,Canada,Groundfish,Halibut,"9,834,369","150,541,778"
+2024,Canada,Groundfish,Other groundfish,"6,608,499","32,198,317"
+2024,Canada,Groundfish,Pollock,"11,933,019","5,775,818"
+2024,Canada,Groundfish,Redfish,"28,535,108","28,487,744"
+2024,Canada,Groundfish,Skate,"861,139","748,094"
+2024,Canada,Groundfish,Total groundfish,"124,004,075","352,401,301"
+2024,Canada,Grand total,Grand total,"626,224,846","4,009,150,286"
+2024,New Brunswick,Shellfish,Clams,x,x
+2024,New Brunswick,Shellfish,Lobster,"16,905,134","322,575,457"
+2024,New Brunswick,Shellfish,Other crabs,"579,861","1,882,965"
+2024,New Brunswick,Shellfish,Other shellfish,"23,388","156,202"
+2024,New Brunswick,Shellfish,Scallop,"7,328,974","23,026,090"
+2024,New Brunswick,Shellfish,Sea cucumber,x,x
+2024,New Brunswick,Shellfish,Sea urchin,225739,896178.06
+2024,New Brunswick,Shellfish,Shrimp,x,x
+2024,New Brunswick,Shellfish,Snow crab,10086787,85064343.65
+2024,New Brunswick,Shellfish,Total shellfish,"35,787,713","435,696,447"
+2024,New Brunswick,Pelagics,Alewife,"2,594,001","3,948,520"
+2024,New Brunswick,Pelagics,Capelin,0,0
+2024,New Brunswick,Pelagics,Eel,"24,117","134,138"
+2024,New Brunswick,Pelagics,Elvers,0,0
+2024,New Brunswick,Pelagics,Herring,"9,920,799","8,986,162"
+2024,New Brunswick,Pelagics,Mackerel,"43,109","5,641"
+2024,New Brunswick,Pelagics,Other pelagics,"31,094","61,772"
+2024,New Brunswick,Pelagics,Salmon,0,0
+2024,New Brunswick,Pelagics,Shark,x,x
+2024,New Brunswick,Pelagics,Silversides,0,0
+2024,New Brunswick,Pelagics,Swordfish,0,0
+2024,New Brunswick,Pelagics,Total pelagics,"12,620,116","13,229,740"
+2024,New Brunswick,Pelagics,Tuna,x,x
+2024,New Brunswick,Other,Marine plants,x,x
+2024,New Brunswick,Other,Miscellaneous,0,0
+2024,New Brunswick,Other,Total other,"12,620,334","631,120"
+2024,New Brunswick,Groundfish,Cod,x,x
+2024,New Brunswick,Groundfish,Flounders and soles,x,x
+2024,New Brunswick,Groundfish,Greenland halibut/turbot,x,x
+2024,New Brunswick,Groundfish,Haddock,x,x
+2024,New Brunswick,Groundfish,Hake,x,x
+2024,New Brunswick,Groundfish,Halibut,"204,573","2,399,053"
+2024,New Brunswick,Groundfish,Other groundfish,x,x
+2024,New Brunswick,Groundfish,Pollock,0,0
+2024,New Brunswick,Groundfish,Redfish,x,x
+2024,New Brunswick,Groundfish,Skate,0,0
+2024,New Brunswick,Groundfish,Total groundfish,"254,420","2,466,892"
+2024,New Brunswick,Grand total,Grand total,"61,282,583","452,024,199"
+2024,Newfoundland and Labrador,Shellfish,Clams,x,x
+2024,Newfoundland and Labrador,Shellfish,Lobster,9435217,137466007.8
+2024,Newfoundland and Labrador,Shellfish,Other crabs,x,x
+2024,Newfoundland and Labrador,Shellfish,Other shellfish,"5,575,235","12,198,917"
+2024,Newfoundland and Labrador,Shellfish,Scallop,"1,327,088","4,349,317"
+2024,Newfoundland and Labrador,Shellfish,Sea cucumber,"6,172,848","9,104,289"
+2024,Newfoundland and Labrador,Shellfish,Sea urchin,"258,381","594,513"
+2024,Newfoundland and Labrador,Shellfish,Shrimp,"33,477,146","169,058,191"
+2024,Newfoundland and Labrador,Shellfish,Snow crab,"56,137,935","436,313,886"
+2024,Newfoundland and Labrador,Shellfish,Total shellfish,"138,328,164","828,894,118"
+2024,Newfoundland and Labrador,Pelagics,Alewife,0,0
+2024,Newfoundland and Labrador,Pelagics,Capelin,"16,126,077","8,077,409"
+2024,Newfoundland and Labrador,Pelagics,Eel,"20,008","109,476"
+2024,Newfoundland and Labrador,Pelagics,Elvers,0,0
+2024,Newfoundland and Labrador,Pelagics,Herring,"23,113,550","10,038,465"
+2024,Newfoundland and Labrador,Pelagics,Mackerel,x,x
+2024,Newfoundland and Labrador,Pelagics,Other pelagics,"31,507","102,899"
+2024,Newfoundland and Labrador,Pelagics,Salmon,0,0
+2024,Newfoundland and Labrador,Pelagics,Shark,x,x
+2024,Newfoundland and Labrador,Pelagics,Silversides,0,0
+2024,Newfoundland and Labrador,Pelagics,Swordfish,"177,373","2,039,444"
+2024,Newfoundland and Labrador,Pelagics,Total pelagics,"39,524,792","20,897,777"
+2024,Newfoundland and Labrador,Pelagics,Tuna,"56,035","529,973"
+2024,Newfoundland and Labrador,Other,Marine plants,0,0
+2024,Newfoundland and Labrador,Other,Miscellaneous,"299,679","884,232"
+2024,Newfoundland and Labrador,Other,Total other,"299,679","884,232"
+2024,Newfoundland and Labrador,Groundfish,Cod,"16,164,498","30,495,514"
+2024,Newfoundland and Labrador,Groundfish,Flounders and soles,"3,007,730","5,434,769"
+2024,Newfoundland and Labrador,Groundfish,Greenland halibut/turbot,"9,922,363","57,357,904"
+2024,Newfoundland and Labrador,Groundfish,Haddock,"132,872","209,210"
+2024,Newfoundland and Labrador,Groundfish,Hake,"1,493,825","2,211,061"
+2024,Newfoundland and Labrador,Groundfish,Halibut,"1,040,714","10,395,665"
+2024,Newfoundland and Labrador,Groundfish,Other groundfish,x,x
+2024,Newfoundland and Labrador,Groundfish,Pollock,x,x
+2024,Newfoundland and Labrador,Groundfish,Redfish,"4,638,876","3,385,446"
+2024,Newfoundland and Labrador,Groundfish,Skate,"457,306","336,009"
+2024,Newfoundland and Labrador,Groundfish,Total groundfish,"38,710,065","113,810,932"
+2024,Newfoundland and Labrador,Grand total,Grand total,"216,862,700","964,487,058"
+2024,Nova Scotia,Shellfish,Clams,"21,304,709","31,710,421"
+2024,Nova Scotia,Shellfish,Lobster,"44,521,929","961,890,880"
+2024,Nova Scotia,Shellfish,Other crabs,"474,315","885,939"
+2024,Nova Scotia,Shellfish,Other shellfish,"904,234","1,652,793"
+2024,Nova Scotia,Shellfish,Scallop,"45,901,727","147,873,418"
+2024,Nova Scotia,Shellfish,Sea cucumber,"2,177,446","4,746,874"
+2024,Nova Scotia,Shellfish,Sea urchin,0,0
+2024,Nova Scotia,Shellfish,Shrimp,15924805,58141092.29
+2024,Nova Scotia,Shellfish,Snow crab,"13,616,304","114,413,749"
+2024,Nova Scotia,Shellfish,Total shellfish,"144,825,469","1,321,315,167"
+2024,Nova Scotia,Pelagics,Alewife,"1,452,021","1,550,507"
+2024,Nova Scotia,Pelagics,Capelin,0,0
+2024,Nova Scotia,Pelagics,Eel,"5,944","14,070"
+2024,Nova Scotia,Pelagics,Elvers,0,0
+2024,Nova Scotia,Pelagics,Herring,"20,515,912","18,164,389"
+2024,Nova Scotia,Pelagics,Mackerel,"136,836","289,008"
+2024,Nova Scotia,Pelagics,Other pelagics,"20,943","73,674"
+2024,Nova Scotia,Pelagics,Salmon,0,0
+2024,Nova Scotia,Pelagics,Shark,x,x
+2024,Nova Scotia,Pelagics,Silversides,x,x
+2024,Nova Scotia,Pelagics,Swordfish,"1,522,805","15,027,410"
+2024,Nova Scotia,Pelagics,Total pelagics,"24,466,630","44,465,203"
+2024,Nova Scotia,Pelagics,Tuna,"699,735","8,809,003"
+2024,Nova Scotia,Other,Marine plants,x,x
+2024,Nova Scotia,Other,Miscellaneous,0,0
+2024,Nova Scotia,Other,Total other,"80,720","4,036"
+2024,Nova Scotia,Groundfish,Cod,"871,192","2,001,497"
+2024,Nova Scotia,Groundfish,Flounders and soles,"1,180,363","2,975,942"
+2024,Nova Scotia,Groundfish,Greenland halibut/turbot,x,x
+2024,Nova Scotia,Groundfish,Haddock,"9,649,515","17,860,000"
+2024,Nova Scotia,Groundfish,Hake,"3,915,547","5,476,158"
+2024,Nova Scotia,Groundfish,Halibut,"4,709,824","79,321,169"
+2024,Nova Scotia,Groundfish,Other groundfish,"736,129","1,471,247"
+2024,Nova Scotia,Groundfish,Pollock,"2,723,004","3,650,313"
+2024,Nova Scotia,Groundfish,Redfish,"7,107,933","8,047,930"
+2024,Nova Scotia,Groundfish,Skate,x,x
+2024,Nova Scotia,Groundfish,Total groundfish,"31,053,974","120,932,969"
+2024,Nova Scotia,Grand total,Grand total,"200,426,793","1,486,717,374"
+2024,Prince Edward Island,Shellfish,Clams,"168,083","404,447"
+2024,Prince Edward Island,Shellfish,Lobster,"19,481,642","317,566,689"
+2024,Prince Edward Island,Shellfish,Other crabs,"611,617","2,263,919"
+2024,Prince Edward Island,Shellfish,Other shellfish,"378,351","1,046,787"
+2024,Prince Edward Island,Shellfish,Scallop,"370,057","501,405"
+2024,Prince Edward Island,Shellfish,Sea cucumber,0,0
+2024,Prince Edward Island,Shellfish,Sea urchin,0,0
+2024,Prince Edward Island,Shellfish,Shrimp,0,0
+2024,Prince Edward Island,Shellfish,Snow crab,3203705,26811148.49
+2024,Prince Edward Island,Shellfish,Total shellfish,"24,213,455","348,594,396"
+2024,Prince Edward Island,Pelagics,Alewife,"67,674","201,138"
+2024,Prince Edward Island,Pelagics,Capelin,0,0
+2024,Prince Edward Island,Pelagics,Eel,"51,666","357,684"
+2024,Prince Edward Island,Pelagics,Elvers,0,0
+2024,Prince Edward Island,Pelagics,Herring,"1,389,839","1,489,723"
+2024,Prince Edward Island,Pelagics,Mackerel,"139,274",877.8
+2024,Prince Edward Island,Pelagics,Other pelagics,x,x
+2024,Prince Edward Island,Pelagics,Salmon,0,0
+2024,Prince Edward Island,Pelagics,Shark,0,0
+2024,Prince Edward Island,Pelagics,Silversides,x,x
+2024,Prince Edward Island,Pelagics,Swordfish,0,0
+2024,Prince Edward Island,Pelagics,Total pelagics,"2,009,686","6,954,677"
+2024,Prince Edward Island,Pelagics,Tuna,"228,517","4,299,388"
+2024,Prince Edward Island,Other,Marine plants,0,0
+2024,Prince Edward Island,Other,Miscellaneous,0,0
+2024,Prince Edward Island,Other,Total other,0,0
+2024,Prince Edward Island,Groundfish,Cod,x,x
+2024,Prince Edward Island,Groundfish,Flounders and soles,0,0
+2024,Prince Edward Island,Groundfish,Greenland halibut/turbot,0,0
+2024,Prince Edward Island,Groundfish,Haddock,0,0
+2024,Prince Edward Island,Groundfish,Hake,x,x
+2024,Prince Edward Island,Groundfish,Halibut,"90,684","1,140,936"
+2024,Prince Edward Island,Groundfish,Other groundfish,0,0
+2024,Prince Edward Island,Groundfish,Pollock,0,0
+2024,Prince Edward Island,Groundfish,Redfish,0,0
+2024,Prince Edward Island,Groundfish,Skate,0,0
+2024,Prince Edward Island,Groundfish,Total groundfish,"93,593","1,146,340"
+2024,Prince Edward Island,Grand total,Grand total,"26,316,734","356,695,414"
+2024,Quebec,Shellfish,Clams,"1,120,157","1,652,279"
+2024,Quebec,Shellfish,Lobster,14905276,232089726.1
+2024,Quebec,Shellfish,Other crabs,x,x
+2024,Quebec,Shellfish,Other shellfish,"405,037","1,215,182"
+2024,Quebec,Shellfish,Scallop,"690,958","3,342,162"
+2024,Quebec,Shellfish,Sea cucumber,x,x
+2024,Quebec,Shellfish,Sea urchin,626824,3920636.51
+2024,Quebec,Shellfish,Shrimp,x,x
+2024,Quebec,Shellfish,Snow crab,13383323,98682519.69
+2024,Quebec,Shellfish,Total shellfish,"33,666,686","348,193,000"
+2024,Quebec,Pelagics,Alewife,0,0
+2024,Quebec,Pelagics,Capelin,"382,639","187,000"
+2024,Quebec,Pelagics,Eel,0,0
+2024,Quebec,Pelagics,Elvers,0,0
+2024,Quebec,Pelagics,Herring,"2,987,767","1,320,273"
+2024,Quebec,Pelagics,Mackerel,x,x
+2024,Quebec,Pelagics,Other pelagics,x,x
+2024,Quebec,Pelagics,Salmon,0,0
+2024,Quebec,Pelagics,Shark,x,x
+2024,Quebec,Pelagics,Silversides,0,0
+2024,Quebec,Pelagics,Swordfish,0,0
+2024,Quebec,Pelagics,Total pelagics,"3,489,924","2,364,419"
+2024,Quebec,Pelagics,Tuna,x,x
+2024,Quebec,Other,Marine plants,0,0
+2024,Quebec,Other,Miscellaneous,x,x
+2024,Quebec,Other,Total other,"2,100",21
+2024,Quebec,Groundfish,Cod,"274,336","677,883"
+2024,Quebec,Groundfish,Flounders and soles,x,x
+2024,Quebec,Groundfish,Greenland halibut/turbot,"129,777","583,601"
+2024,Quebec,Groundfish,Haddock,x,x
+2024,Quebec,Groundfish,Hake,"4,236","3,373"
+2024,Quebec,Groundfish,Halibut,"979,694","11,505,238"
+2024,Quebec,Groundfish,Other groundfish,"8,807","2,618"
+2024,Quebec,Groundfish,Pollock,x,x
+2024,Quebec,Groundfish,Redfish,x,x
+2024,Quebec,Groundfish,Skate,x,x
+2024,Quebec,Groundfish,Total groundfish,"2,323,654","13,438,682"
+2024,Quebec,Grand total,Grand total,"39,482,364","363,996,122"
+,,,,,
+Quantity in live weight.,,,,,
+"""x"" denotes data that is suppressed to meet confidentiality requirements.",,,,,
+Totals may not add up due to rounding.,,,,,
+"""Miscellaneous"" quantity excludes seal pelts.",,,,,
+"Species not listed are grouped in each species group’s “other” category. For example, squid is included in “Other shellfish”.",,,,,
+Data is subject to revision. ,,,,,
+Source: Department of Fisheries and Oceans (2025). Zonal Interchange File [database]. Ottawa,,,,,

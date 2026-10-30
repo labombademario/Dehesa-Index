@@ -506,6 +506,15 @@ sources:
     data: [eu-crops-map.json]
     log: eu-crops-map-log.txt
     message: Produccion de cultivos por pais de la UE (Eurostat) para el mapa de productores
+  - id: ca-dfo-landings
+    name: Update Canada commercial sea fisheries landings by province and species (Fisheries and Oceans Canada)
+    cron: ['15 7 5 * *']
+    script: scripts/update-ca-dfo-landings.py
+    timeout: 20
+    script_timeout: 10
+    data: [ca-dfo-landings.json]
+    log: ca-dfo-landings-log.txt
+    message: Canada - desembarques comerciales de pesca marina por provincia y especie (DFO)
   - id: us-noaa-fish
     name: Update U.S. commercial fish landings (NOAA Fisheries FOSS)
     cron: ['35 6 11 * *']

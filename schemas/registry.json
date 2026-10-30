@@ -662,6 +662,12 @@
     "mb_hogs"
    ]
   ],
+  "ca-dfo-landings.json": [
+   "ca-dfo-landings",
+   [
+    "ca_dfo_landings"
+   ]
+  ],
   "mb-markets/grains.json": [
    "mb-grains",
    [

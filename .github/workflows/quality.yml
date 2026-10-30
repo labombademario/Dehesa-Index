@@ -126,6 +126,9 @@ jobs:
       - name: Manitoba weekly grain and oilseed prices (PDF text parser, bushel x factor = tonne, repeated values left as disputed cells, monthly Excel reader, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-grains.py
 
+      - name: Canada commercial sea fisheries landings of DFO (CSV reader, suppressed cells as gaps, Atlantic/Canada sums, species sum against totals, failure safety; real extracts as fixtures, no network)
+        run: python3 scripts/test-ca-dfo-landings.py
+
       - name: Manitoba sheep, goat and hogs (PDF text parsers, goat unit rule, disputed cells, date and range checks, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-smallstock.py
 
@@ -609,6 +612,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-pesca.mjs
+      - name: Canada in the fisheries page and country block (figures = data/views/fish/CA.json, species and provinces translated, DFO source, not in the EU comparison; 4 languages, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-ca-dfo-fish.mjs
       - name: Edad de los jefes de explotacion en la ficha de pais (% calculado = data/views/farm-managers.json, barras, comparativa, fuente; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

@@ -2312,6 +2312,57 @@ def mb_grains(doc, errs, warns, stats):
     stats["mb-grains semanas"] = len(ks); stats["mb-grains valores mensuales"] = n
 
 
+def ca_dfo_landings(doc, errs, warns, stats):
+    """Canada, desembarques comerciales de pesca marina (DFO): fuente dfo_landings; anos seguidos desde 1990; 8 zonas fijas; cada zona con total (grand) y los de cada grupo en todos los anos y todas las especies
+    con una celda [kg, C$] por ano (null en ambos si DFO la suprimio, nunca solo en uno); sin negativos; Atlantic = suma de las 5 provincias atlanticas y Canada = Atlantic + British Columbia en cantidad y
+    valor (0,01 %); suma de especies <= total (+0,1 %) y igual (0,2 %) cuando la zona-ano no tiene celdas suprimidas; C$/kg del total entre 0,05 y 60; salto anual del total nacional <= 100 % (el valor subio 63 % en 2021, dato real de DFO);
+    la lista de celdas suprimidas = las celdas null de las especies."""
+    import datetime as _d
+    P = ["Canada", "Atlantic", "Newfoundland and Labrador", "Prince Edward Island", "Nova Scotia", "New Brunswick", "Quebec", "British Columbia"]
+    ATL = P[2:7]
+    if doc["source"]["id"] != "dfo_landings": errs.append("ca-dfo: fuente distinta de dfo_landings"); return
+    if doc["units"] != {"quantity": "kg", "value": "CAD"}: errs.append("ca-dfo: unidades distintas de kg y CAD"); return
+    if doc["provinces"] != P: errs.append("ca-dfo: zonas distintas de las esperadas"); return
+    ys = doc["years"]
+    if not ys or ys[0] != 1990 or ys != list(range(ys[0], ys[-1] + 1)) or ys[-1] > _d.date.today().year: errs.append("ca-dfo: anos no seguidos desde 1990 o en el futuro"); return
+    if ys[-1] < _d.date.today().year - 3: warns.append("ca-dfo: el ultimo ano publicado es %d" % ys[-1])
+    keys = [x["key"] for x in doc["species"]]
+    if keys != sorted(keys) or len(set(keys)) != len(keys) or any(x["group"] not in ("groundfish", "pelagics", "shellfish", "other") for x in doc["species"]): errs.append("ca-dfo: lista de especies desordenada, repetida o con grupo raro"); return
+    T, L = doc["totals"], doc["landings"]; nsup = 0; sup = set()
+    for p in P:
+        if sorted(T.get(p, {})) != sorted(["grand", "t_groundfish", "t_pelagics", "t_shellfish", "t_other"]): errs.append("ca-dfo %s: totales distintos de los esperados" % p); return
+        if sorted(L.get(p, {})) != keys: errs.append("ca-dfo %s: especies distintas de la lista" % p); return
+    for y in map(str, ys):
+        for p in P:
+            for t in T[p]:
+                c = T[p][t].get(y)
+                if not c or len(c) != 2 or any(isinstance(v, bool) or not isinstance(v, (int, float)) or v < 0 for v in c): errs.append("ca-dfo %s %s %s: total ausente, suprimido o negativo" % (p, t, y)); return
+            kg, cad = T[p]["grand"][y]
+            if kg > 0 and not (0.05 <= cad / kg <= 60): errs.append("ca-dfo %s %s: %.2f C$/kg fuera de rango" % (p, y, cad / kg)); return
+            hs = False; s = [0, 0]
+            for k in keys:
+                c = L[p][k].get(y)
+                if not c or len(c) != 2: errs.append("ca-dfo %s %s %s: celda ausente" % (p, k, y)); return
+                if (c[0] is None) != (c[1] is None): errs.append("ca-dfo %s %s %s: suprimida solo en cantidad o en valor" % (p, k, y)); return
+                if c[0] is None: hs = True; nsup += 1; sup.add("%s|%s|%s" % (y, p, k)); continue
+                if isinstance(c[0], bool) or not isinstance(c[0], (int, float)) or c[0] < 0 or c[1] < 0: errs.append("ca-dfo %s %s %s: valor negativo o no numerico" % (p, k, y)); return
+                s[0] += c[0]; s[1] += c[1]
+            for i in (0, 1):
+                t = T[p]["grand"][y][i]
+                if s[i] > t * 1.001 + 3: errs.append("ca-dfo %s %s: la suma de especies (%s) supera el total (%s)" % (p, y, s[i], t)); return
+                if not hs and abs(s[i] - t) > t * 0.002 + 3: errs.append("ca-dfo %s %s: la suma de especies (%s) no cuadra con el total (%s)" % (p, y, s[i], t)); return
+        for i in (0, 1):
+            g = lambda p: T[p]["grand"][y][i]
+            if abs(sum(g(p) for p in ATL) - g("Atlantic")) > g("Atlantic") * 1e-4 + 3: errs.append("ca-dfo %s: Atlantic no es la suma de sus provincias" % y); return
+            if abs(g("Atlantic") + g("British Columbia") - g("Canada")) > g("Canada") * 1e-4 + 3: errs.append("ca-dfo %s: Canada no es Atlantic + British Columbia" % y); return
+    for a, b in zip(ys, ys[1:]):
+        for i in (0, 1):
+            u, v = T["Canada"]["grand"][str(a)][i], T["Canada"]["grand"][str(b)][i]
+            if u and abs(v / u - 1) > 1.0: errs.append("ca-dfo %s: salto anual superior al 100 %% en el total nacional (%s -> %s)" % (b, u, v)); return
+    if sorted(doc["suppressed"]) != sorted([[int(a), b, c] for a, b, c in (x.split("|") for x in sup)]): errs.append("ca-dfo: la lista de celdas suprimidas no coincide con las celdas null"); return
+    stats["ca-dfo anos"] = len(ys); stats["ca-dfo celdas suprimidas"] = nsup
+
+
 def spain_crops(doc, errs, warns, stats):
     """MAPA superficies y producciones por provincia. Por cultivo y campana: 5 medidas [total, secano, regadio, cosechada, produccion], todas >= 0 o null; provincias que existen en el diccionario;
     el total nacional del cultivo es la suma de sus provincias (nulo solo si ninguna lo trae); secano + regadio = total; cosechada <= total a nivel nacional (por provincia el MAPA a veces la da mayor: aviso); campana con estado y no futura; codigos de cultivo sin repetir."""
