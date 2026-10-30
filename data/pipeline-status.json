@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T17:08:00Z",
+ "generatedAt": "2026-10-30T17:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 313,
+  "ok": 314,
   "late": 2,
   "error": 3,
-  "not_run": 7,
+  "not_run": 6,
   "unknown": 0
  },
  "global": "error",
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-30T10:04:28.894818+00:00",
   "repoGeneratedAt": "2026-10-30T10:04:28.894818+00:00",
-  "checkedAt": "2026-10-30T17:08:00Z"
+  "checkedAt": "2026-10-30T17:25:00Z"
  },
  "pipelines": [
   {
@@ -662,6 +662,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-ca-dfo-landings.yml",
+   "name": "Update Canada commercial sea fisheries landings by province and species (Fisheries and Oceans Canada)",
+   "crons": [
+    "15 7 5 * *"
+   ],
+   "nextRun": "2026-11-05T07:15:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-30T17:14:48Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41097115133"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
   },
   {
    "workflow": "update-ca-ghg-agri.yml",
@@ -4507,7 +4530,7 @@
    "crons": [
     "25 17 * * 2,5"
    ],
-   "nextRun": "2026-10-30T17:25:00Z",
+   "nextRun": "2026-11-03T17:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5093,19 +5116,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-30T16:54:54Z"
+     "lastChange": "2026-10-30T17:14:41Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-30T12:59:08Z"
+     "lastChange": "2026-10-30T17:14:41Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-10-29T03:44:47Z"
+     "lastChange": "2026-10-30T17:14:41Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-10-29T03:44:47Z"
+     "lastChange": "2026-10-30T17:14:41Z"
     },
     {
      "path": "data/pack"
@@ -5365,9 +5388,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40549936999"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 8,
-    "failed": 2
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 96.0
@@ -6756,13 +6779,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-23T17:05:50Z",
-    "durationSec": 38,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39992259349"
+    "startedAt": "2026-10-30T17:14:08Z",
+    "durationSec": 66,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41097021384"
    },
    "recent": {
-    "runs": 2,
-    "success": 2,
+    "runs": 3,
+    "success": 3,
     "failed": 0
    },
    "status": "ok",
@@ -7672,19 +7695,6 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
-  },
-  {
-   "workflow": "update-ca-dfo-landings.yml",
-   "name": "Update Canada commercial sea fisheries landings by province and species (Fisheries and Oceans Canada)",
-   "crons": [
-    "15 7 5 * *"
-   ],
-   "nextRun": "2026-11-05T07:15:00Z",
-   "files": [],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 744.0
   }
  ]
 }
