@@ -1,35 +1,35 @@
 cereales ficheros ['SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xls', 'SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xlsx', 'SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A24.xls', 'SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A25.xls']
 usando SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xls
-cereal Soft wheat: delivered Rouen Superior (A2) July basis 1252 2001-09-11 ['2026-10-15', 243.56]
+cereal Soft wheat: delivered Rouen Superior (A2) July basis 1253 2001-09-11 ['2026-10-27', 226.5]
 descartada (discontinuada) Soft wheat: delivered Rouen Medium (A3) July basis 2016-07-27
 cereal Soft wheat: delivered Rouen Medium (A3) July basis 608 2002-01-04 ['2016-07-27', 162.5]
 descartada (discontinuada) Soft wheat: delivered Rouen Access (A4) July basis 2015-06-19
 cereal Soft wheat: delivered Rouen Access (A4) July basis 38 2014-09-05 ['2015-06-19', 150.0]
-cereal Soft wheat: delivered Pallice Superior (A2) July basis 1187 2003-02-11 ['2026-10-15', 251.0]
+cereal Soft wheat: delivered Pallice Superior (A2) July basis 1188 2003-02-11 ['2026-10-27', 230.8]
 descartada (discontinuada) Soft wheat: delivered Pallice Medium (A3) July basis 2008-07-01
 cereal Soft wheat: delivered Pallice Medium (A3) July basis 81 2002-01-04 ['2008-07-01', 199.0]
-cereal Soft wheat: Rouen FCW 1 FOB 1252 2001-09-11 ['2026-10-15', 251.35]
+cereal Soft wheat: Rouen FCW 1 FOB 1253 2001-09-11 ['2026-10-27', 234.29]
 descartada (discontinuada) Soft wheat: Rouen FCW 2 FOB 2016-07-27
 cereal Soft wheat: Rouen FCW 2 FOB 630 2001-07-03 ['2016-07-27', 166.3]
 descartada (discontinuada) Soft wheat: Rouen FCW 3 FOB 2015-06-19
 cereal Soft wheat: Rouen FCW 3 FOB 38 2014-09-05 ['2015-06-19', 164.03]
-cereal Soft wheat: La Pallice FAW 1 FOB 1180 2003-07-18 ['2026-10-13', 258.79]
+cereal Soft wheat: La Pallice FAW 1 FOB 1181 2003-07-18 ['2026-10-27', 238.59]
 descartada (discontinuada) Soft wheat: La Pallice FAW 2 FOB 2003-07-15
 cereal Soft wheat: La Pallice FAW 2 FOB 104 2001-07-03 ['2003-07-15', 121.0]
-cereal Feed barley: delivered Rouen July basis 979 2007-06-01 ['2026-10-15', 222.36]
-cereal Feed barley: Rouen Fob 979 2007-06-01 ['2026-10-15', 230.15]
+cereal Feed barley: delivered Rouen July basis 981 2007-06-01 ['2026-10-27', 205.5]
+cereal Feed barley: Rouen Fob 981 2007-06-01 ['2026-10-27', 213.29]
 cereal Durum wheat: FOB Port-la-Nouvelle July basis 773 2007-07-05 ['2026-05-12', 251.7]
-cereal Durum wheat: FOB La Pallice July basis 782 2007-07-05 ['2026-10-20', 310.0]
-cereal Durum wheat: Atlantic FOB 780 2007-07-05 ['2026-10-20', 313.365]
+cereal Durum wheat: FOB La Pallice July basis 783 2007-07-05 ['2026-10-27', 305.3]
+cereal Durum wheat: Atlantic FOB 781 2007-07-05 ['2026-10-27', 308.645]
 cereal Durum wheat: Mediterranean FOB 767 2007-07-05 ['2026-03-23', 264.94]
-descartada ('BD', 'Blé dur FOB Rouen') 11
-descartada ('BD', 'Blé dur FOB Marseille') 2
-descartada ('BD', 'Blé dur FOB Rouen #2') 12
-descartada ('BD', 'Blé dur FOB Marseille #2') 2
-cereal Maize: Fob Atlantic July basis 935 2007-11-30 ['2026-10-20', 295.5]
-cereal Maize: Fob Rhine July basis 921 2008-06-06 ['2026-10-20', 276.8]
-cereal Maize: Fob Atlantic 934 2007-11-30 ['2026-10-20', 298.29]
-cereal Maize: FOB Rhine 917 2008-06-06 ['2026-10-20', 279.59]
+descartada ('BD', 'Blé dur FOB Rouen') 13
+descartada ('BD', 'Blé dur FOB Marseille') 3
+descartada ('BD', 'Blé dur FOB Rouen #2') 14
+descartada ('BD', 'Blé dur FOB Marseille #2') 3
+cereal Maize: Fob Atlantic July basis 936 2007-11-30 ['2026-10-27', 285.5]
+cereal Maize: Fob Rhine July basis 922 2008-06-06 ['2026-10-27', 272.0]
+cereal Maize: Fob Atlantic 935 2007-11-30 ['2026-10-27', 288.29]
+cereal Maize: FOB Rhine 918 2008-06-06 ['2026-10-27', 274.79]
 pagados ficheros ['SeriesChronologiques/productions vegetales/grandes cultures/prix payés aux producteurs/SCR-CER-HISTOPRIXTRIMESTRIELS-C24-25.xlsx', 'SeriesChronologiques/productions vegetales/grandes cultures/prix payés aux producteurs/SCR-CER-HISTOPRIXTRIMESTRIELS-C25-26.xlsx']
 pagado Soft wheat 85 2005-Q2 ['2026-Q2', 169.79]
 pagado Durum wheat 85 2005-Q2 ['2026-Q2', 228.95]
