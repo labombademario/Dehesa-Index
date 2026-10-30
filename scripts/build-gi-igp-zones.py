@@ -30,15 +30,23 @@ def main():
         by.setdefault(e['cc'], []).append((f, e, us))
     for cc, items in by.items():
         ds = SITE2DS.get(cc, cc)
-        if ds not in G.MAIN: print(cc, 'sin proyeccion en build-gi-geo (omitido)'); continue
-        lon0, lat0, lon1, lat1 = G.MAIN[ds]; tol = G.TOL[ds]
+        FRP = None
+        if cc == 'FR':   # Francia: proyeccion propia del mapa de regiones (scripts/ref/fr-map-proj.json), la misma que usa update-inao-geo.py
+            FRP = json.load(open(ROOT / 'scripts/ref/fr-map-proj.json')); tol = 0.008
+            lon0 = (0 * 0 + FRP['mnx']) / FRP['c']; lat1 = FRP['mxy']; lon1 = (FRP['W'] / FRP['k'] + FRP['mnx']) / FRP['c']; lat0 = FRP['mxy'] - FRP['H'] / FRP['k']
+        elif ds not in G.MAIN: print(cc, 'sin proyeccion (omitido)'); continue
+        else: lon0, lat0, lon1, lat1 = G.MAIN[ds]; tol = G.TOL[ds]
         fn = ROOT / ('data/gi/%s-geo.json' % cc)
         lat_c = (lat0 + lat1) / 2; kx = math.cos(math.radians(lat_c)); S = 900.0 / max((lon1 - lon0) * kx, lat1 - lat0)
         if fn.exists(): d = json.load(open(fn))
         else:   # pais sin DOP de vino en EU-PDO: fichero nuevo con la misma proyeccion (luego build-gi-outline.py le pone el contorno)
             d = {'schemaVersion': 1, 'country': cc, 'viewBox': '0 0 %s %s' % (round((lon1 - lon0) * kx * S, 1), round((lat1 - lat0) * S, 1)), 'areas': {}}
-        X = lambda lon: (lon - lon0) * kx * S
-        Y = lambda lat: (lat1 - lat) * S
+        if FRP:
+            X = lambda lon: (lon * FRP['c'] - FRP['mnx']) * FRP['k']
+            Y = lambda lat: (FRP['mxy'] - lat) * FRP['k']
+        else:
+            X = lambda lon: (lon - lon0) * kx * S
+            Y = lambda lat: (lat1 - lat) * S
         cache = {}
         n = 0
         for f, e, us in items:
