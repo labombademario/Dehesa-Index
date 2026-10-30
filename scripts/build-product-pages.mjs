@@ -218,7 +218,7 @@ for (const lg of Object.keys(L)) {
     const alts = Object.keys(L).map(l2 => '<link rel="alternate" hreflang="' + l2 + '" href="' + urlOf(l2, p) + '">').join('\n') + '\n<link rel="alternate" hreflang="x-default" href="' + urlOf('en', p) + '">';
     const topic = TOPIC[p] || p;
     const ld = { '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Dataset', name: T.dsName(de, obs.map(rg).join(', ')), description: desc, url, inLanguage: lg, isAccessibleForFree: true, dateModified: lastDay, temporalCoverage: latest, creator: { '@type': 'Organization', name: 'Dehesa Index', url: SITE }, isBasedOn: obs.map(o => (cite[o.sourceId] || {}).url).filter(Boolean) },
+      { '@type': 'Dataset', name: T.dsName(de, obs.map(rg).join(', ')), description: desc, url, inLanguage: lg, isAccessibleForFree: true, dateModified: lastDay, temporalCoverage: latest, creator: { '@type': 'Organization', name: 'Dehesa Index', url: SITE }, isBasedOn: obs.map(o => (cite[o.sourceId] || {}).url).filter(Boolean), license: (function () { const u = [...new Set(obs.map(o => cite[o.sourceId]).filter(c => c && c.status === 'VERIFIED' && c.licenseUrl).map(c => c.licenseUrl))]; return u.length ? (u.length === 1 ? u[0] : u) : undefined; })() },
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Dehesa Index', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: T.prices, item: SITE + '/precios.html' }, { '@type': 'ListItem', position: 3, name, item: url }] }
     ] };
     const html = `<!doctype html>
