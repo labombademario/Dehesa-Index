@@ -331,7 +331,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-recan.yml | a mano | semanal (4) | update-recan.py | recan.json | finish, validate-files |
 | update-region-grid-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-region-grid-climate.py | region-grid-climate/AT.json, region-grid-climate/BE.json, region-grid-climate/DK.json … | finish, validate-files |
 | update-regions-pl.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-poland-regions.py | poland-regions/regions.json | finish, validate-files |
-| update-rivers.yml | generado | varias veces al dia | detect-revisions.py, gen-workflows.py, update-rivers.py | rivers-be.json, rivers-ca.json, rivers-fr.json … | finish, validate-files |
+| update-rivers.yml | generado | varias veces al dia | detect-revisions.py, gen-workflows.py, update-rivers.py | rivers-be.json, rivers-ca.json, rivers-fi.json … | finish, validate-files |
 | update-sk-statdata.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-sk-statdata.py | sk-statdata-stats.json | finish, validate-files |
 | update-spain-balances.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-balances.py | spain-balances/cereals.json | finish, validate-files |
 | update-spain-crops.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-crops.py | spain-crops/index.json | finish, validate-files |
