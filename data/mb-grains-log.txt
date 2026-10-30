@@ -1,4 +1,2 @@
-celda en disputa (cambio semanal incoherente con la semana anterior): 2024-05-24 canola_meal
-celda en disputa (cambio semanal incoherente con la semana anterior): 2024-05-31 canola_meal
 mensual: 4110 valores; filas de otros cultivos ignoradas: Rye, #2, Soymeal, 46%, Wpg
-escrito grains.json 144 semanas; 144 leidas
+sin cambios; 8 informes leidos
