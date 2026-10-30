@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-10-30T19:56:53.211Z",
+  "generatedAt": "2026-10-30T20:33:41.460Z",
   "methodology": {
     "method": "Pearson correlation of period returns on common dates after tested lag offsets.",
     "minimumPeriods": 6,
@@ -24,9 +24,9 @@
       },
       "frequency": "monthly",
       "lagPeriods": 2,
-      "commonPeriods": 557,
+      "commonPeriods": 558,
       "window": "24+ periods",
-      "correlationReturns": 0.0949,
+      "correlationReturns": 0.0919,
       "direction": "positive",
       "strength": "weak",
       "confidence": "low",
@@ -34,7 +34,7 @@
       "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
       "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
       "coverageStart": "1980-04-01",
-      "coverageEnd": "2026-08-01"
+      "coverageEnd": "2026-09-01"
     },
     {
       "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__trigo|us|usda_nass|monthly",
@@ -51,9 +51,9 @@
       },
       "frequency": "monthly",
       "lagPeriods": 3,
-      "commonPeriods": 556,
+      "commonPeriods": 557,
       "window": "24+ periods",
-      "correlationReturns": 0.0522,
+      "correlationReturns": 0.0506,
       "direction": "positive",
       "strength": "weak",
       "confidence": "low",
@@ -61,7 +61,7 @@
       "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
       "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
       "coverageStart": "1980-05-01",
-      "coverageEnd": "2026-08-01"
+      "coverageEnd": "2026-09-01"
     },
     {
       "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__maiz|ca|statcan|monthly",
