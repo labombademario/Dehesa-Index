@@ -12,12 +12,16 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const HUBDIR = { es: 'regiones', en: 'en/regions', fr: 'fr/regions', it: 'it/regioni' }, PRDIR = { es: 'precios', en: 'en/prices', fr: 'fr/prix', it: 'it/prezzi' };
 const HUB_ES = { au: 'australia', at: 'austria', be: 'belgica', ca: 'canada', dk: 'dinamarca', es: 'espana', us: 'estados-unidos', fr: 'francia', it: 'italia', nl: 'paises-bajos', pl: 'polonia', de: 'alemania' };
 const TOP_PRICES_ES = ['trigo', 'maiz', 'leche', 'cerdo', 'vaca', 'cebada', 'urea', 'colza'];
+const GIROOT = { es: 'denominaciones', en: 'en/designations', fr: 'fr/appellations', it: 'it/denominazioni' };
+const slugify = x => String(x).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+const CNAMES = Object.fromEntries(JSON.parse(read('data/app/v1/countries.json')).countries.map(c => [c.code, c.name]));
+const giOf = (l, cc) => { const n = CNAMES[cc.toUpperCase()]; if (!n) return null; const d = GIROOT[l] + '/' + slugify(n[l]) + '/'; return fs.existsSync(d + 'index.html') ? d : null; };   // pagina de denominaciones de origen del pais, si existe
 const TOPHUB = ['us', 'es', 'fr', 'de', 'ca', 'nl', 'it', 'pl'];
 const TX = {
-  es: { pr: 'Precios de referencia', hubOf: c => 'Datos agrarios por región: ' + c, stat: c => 'Estadísticas oficiales de ' + c, cty: 'Datos agrarios por país' },
-  en: { pr: 'Reference prices', hubOf: c => 'Farm data by region: ' + c, stat: c => 'Official statistics for ' + c, cty: 'Farm data by country' },
-  fr: { pr: 'Prix de référence', hubOf: c => 'Données agricoles par région : ' + c, stat: c => 'Statistiques officielles : ' + c, cty: 'Données agricoles par pays' },
-  it: { pr: 'Prezzi di riferimento', hubOf: c => 'Dati agricoli per regione: ' + c, stat: c => 'Statistiche ufficiali: ' + c, cty: 'Dati agricoli per paese' },
+  es: { pr: 'Precios de referencia', hubOf: c => 'Datos agrarios por región: ' + c, stat: c => 'Estadísticas oficiales de ' + c, cty: 'Datos agrarios por país', gi: c => 'Denominaciones de origen: ' + c },
+  en: { pr: 'Reference prices', hubOf: c => 'Farm data by region: ' + c, stat: c => 'Official statistics for ' + c, cty: 'Farm data by country', gi: c => 'Designations of origin: ' + c },
+  fr: { pr: 'Prix de référence', hubOf: c => 'Données agricoles par région : ' + c, stat: c => 'Statistiques officielles : ' + c, cty: 'Données agricoles par pays', gi: c => 'Appellations d’origine : ' + c },
+  it: { pr: 'Prezzi di riferimento', hubOf: c => 'Dati agricoli per regione: ' + c, stat: c => 'Statistiche ufficiali: ' + c, cty: 'Dati agricoli per paese', gi: c => 'Denominazioni di origine: ' + c },
 };
 const alts = h => Object.fromEntries([...h.matchAll(/<link[^>]+hreflang="(es|en|fr|it)"[^>]+href="([^"]+)"/g)].map(m => [m[1], m[2].replace(SITE + '/', '')]));
 const h1 = f => { const m = /<h1[^>]*>([^<]+)<\/h1>/.exec(read(f)); return m ? m[1].trim() : ''; };
@@ -41,7 +45,8 @@ for (const l of ['es', 'en']) {            // datos
 }
 for (const l of ['es', 'en', 'fr', 'it']) {   // hubs
   for (const [cc, hub] of Object.entries(hubs[l])) { const f = hub.dir + 'index.html', t = TX[l], ds = (datosOf[l] || {})[cc] || [];
-    put(f, '\n    ' + block(t.stat(hub.name), hub.dir, ds.map(x => ({ dir: x.dir, name: x.full }))) + block(t.pr, hub.dir, prices[l])); n++; }
+    const gd = giOf(l, cc);
+    put(f, '\n    ' + block(t.stat(hub.name), hub.dir, ds.map(x => ({ dir: x.dir, name: x.full }))) + block(t.gi(hub.name), hub.dir, gd ? [{ dir: gd, name: t.gi(hub.name) }] : []) + block(t.pr, hub.dir, prices[l])); n++; }
 }
 for (const l of ['es', 'en', 'fr', 'it']) {   // productos
   const t = TX[l]; for (const e of fs.readdirSync(PRDIR[l], { withFileTypes: true })) { if (!e.isDirectory()) continue; const f = PRDIR[l] + '/' + e.name + '/index.html'; if (!fs.existsSync(f)) continue; const from = PRDIR[l] + '/' + e.name + '/';
