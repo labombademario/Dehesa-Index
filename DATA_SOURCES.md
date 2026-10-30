@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 198 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41263 series en el catalogo unificado.
+Resumen: 199 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41263 series en el catalogo unificado.
 
-## VERIFIED (198)
+## VERIFIED (199)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -56,6 +56,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 793 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
 | `desnz_fuel_prices` | UK Department for Energy Security and Net Zero (DESNZ) — Weekly road fuel prices | UK | OGL-UK-3.0 | si/si | si | 6 | Sin respaldo oficial implícito. |
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 340 | Modifications must be marked as such. |
+| `dfo_landings` | Fisheries and Oceans Canada (DFO) — Commercial Seafisheries Landings | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `dgec_prix_petroliers` | Ministère de la Transition écologique (DGEC) — Prix des produits pétroliers | FR | LO-2.0 | si/si | si | 0 | Mencionar la fuente y la fecha de la última actualización. |
 | `dila_jorf` | DILA — Journal officiel de la République française (données ouvertes JORF) | FR | CUSTOM | si/si | si | 0 | The Légifrance page «Open data et API» (read 2026-10-08, text supplied by the owner) states that the data are made available for free reuse … |
 | `dmi` | DMI — Danmarks Meteorologiske Institut (datos abiertos, friedata) | DK | CC-BY-4.0 | si/si | si | 0 | Citar al DMI como fuente; no sugerir que el DMI respalda el uso. |
