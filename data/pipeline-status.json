@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T12:55:00Z",
+ "generatedAt": "2026-10-30T12:57:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 311,
+  "ok": 312,
   "late": 2,
-  "error": 4,
+  "error": 3,
   "not_run": 6,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-30T10:04:28.894818+00:00",
   "repoGeneratedAt": "2026-10-30T10:04:28.894818+00:00",
-  "checkedAt": "2026-10-30T12:55:00Z"
+  "checkedAt": "2026-10-30T12:57:00Z"
  },
  "pipelines": [
   {
@@ -3942,8 +3942,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40878254784"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5029,18 +5029,18 @@
      "series": 35,
      "points": 4521,
      "lines": 0,
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5057,22 +5057,22 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-30T10:18:35Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-30T12:45:59Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -5096,30 +5096,30 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -5127,7 +5127,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-29T18:30:55Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5135,7 +5135,7 @@
     },
     {
      "path": "data/cap/index.json",
-     "lastChange": "2026-10-29T14:18:04Z"
+     "lastChange": "2026-10-30T12:59:08Z"
     },
     {
      "path": "data/blog/posts.json",
@@ -5149,18 +5149,18 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-30T12:42:18Z",
-    "durationSec": 318,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41057345501"
+    "startedAt": "2026-10-30T12:54:00Z",
+    "durationSec": 314,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41058850230"
    },
    "recent": {
-    "runs": 9,
-    "success": 5,
+    "runs": 10,
+    "success": 6,
     "failed": 3
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 3.0
   },
   {
