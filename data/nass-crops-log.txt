@@ -64,11 +64,16 @@ RICE PRODUCTION NATIONAL filas 219 usadas 54
 RICE PRODUCTION STATE filas 541 usadas 289
 PEANUTS YIELD NATIONAL filas 53 usadas 11
 PEANUTS YIELD STATE filas 588 usadas 128
-PEANUTS AREA HARVESTED NATIONAL filas 64 usadas 11
-PEANUTS AREA HARVESTED STATE filas 715 usadas 128
-PEANUTS AREA PLANTED NATIONAL filas 43 usadas 11
-PEANUTS AREA PLANTED STATE filas 491 usadas 128
-PEANUTS PRODUCTION NATIONAL filas 2286 usadas 21
+ERROR {"commodity_desc":"PEANUTS","statisticcat_desc":"AREA HARVESTED","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+PEANUTS AREA HARVESTED NATIONAL filas 0 usadas 0
+ERROR {"commodity_desc":"PEANUTS","statisticcat_desc":"AREA HARVESTED","agg_level_desc":"STATE","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+PEANUTS AREA HARVESTED STATE filas 0 usadas 0
+ERROR {"commodity_desc":"PEANUTS","statisticcat_desc":"AREA PLANTED","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+PEANUTS AREA PLANTED NATIONAL filas 0 usadas 0
+ERROR {"commodity_desc":"PEANUTS","statisticcat_desc":"AREA PLANTED","agg_level_desc":"STATE","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+PEANUTS AREA PLANTED STATE filas 0 usadas 0
+ERROR {"commodity_desc":"PEANUTS","statisticcat_desc":"PRODUCTION","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+PEANUTS PRODUCTION NATIONAL filas 0 usadas 0
 PEANUTS PRODUCTION STATE filas 701 usadas 239
 HAY YIELD NATIONAL filas 96 usadas 33
 HAY YIELD STATE filas 2831 usadas 1482
@@ -157,10 +162,8 @@ RYE STOCKS NATIONAL filas 11 usadas 11
  • OATS, ON FARM - STOCKS, MEASURED IN BU | BU | nac 43 2026-09 | estados 0
  • OLIVES - PRODUCTION, MEASURED IN TONS | TONS | nac 10 2025 | estados 0
  • OLIVES - YIELD, MEASURED IN TONS / ACRE | TONS / ACRE | nac 10 2025 | estados 0
- • PEANUTS - ACRES HARVESTED | ACRES | nac 11 2026 | estados 13
- • PEANUTS - ACRES PLANTED | ACRES | nac 11 2026 | estados 13
- • PEANUTS - PRODUCTION, MEASURED IN $ | $ | nac 10 2025 | estados 13
- • PEANUTS - PRODUCTION, MEASURED IN LB | LB | nac 11 2026 | estados 13
+ • PEANUTS - PRODUCTION, MEASURED IN $ | $ | nac 0  | estados 13
+ • PEANUTS - PRODUCTION, MEASURED IN LB | LB | nac 0  | estados 13
  • PEANUTS - YIELD, MEASURED IN LB / ACRE | LB / ACRE | nac 11 2026 | estados 13
  • POTATOES - ACRES HARVESTED | ACRES | nac 11 2026 | estados 0
  • POTATOES - PRODUCTION, MEASURED IN CWT | CWT | nac 10 2025 | estados 0
@@ -240,4 +243,4 @@ RYE STOCKS NATIONAL filas 11 usadas 11
  • WHEAT, WINTER, WHITE, HARD - PRODUCTION, MEASURED IN PCT BY TYPE | PCT BY TYPE | nac 0  | estados 21
  • WHEAT, WINTER, WHITE, SOFT - PRODUCTION, MEASURED IN BU | BU | nac 11 2026 | estados 0
  • WHEAT, WINTER, WHITE, SOFT - PRODUCTION, MEASURED IN PCT BY TYPE | PCT BY TYPE | nac 0  | estados 21
-series: 142
+series: 140
