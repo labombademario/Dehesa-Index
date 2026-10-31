@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-31T08:55:00Z",
+ "generatedAt": "2026-10-31T10:29:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 315,
+  "ok": 316,
   "late": 2,
-  "error": 2,
+  "error": 1,
   "not_run": 6,
   "unknown": 0
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 7.3,
-  "prodGeneratedAt": "2026-10-30T22:23:13.231042+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-31T05:43:06.364412+00:00",
   "repoGeneratedAt": "2026-10-31T05:43:06.364412+00:00",
-  "checkedAt": "2026-10-31T08:55:00Z"
+  "checkedAt": "2026-10-31T10:29:00Z"
  },
  "pipelines": [
   {
@@ -1243,9 +1243,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-30T10:55:20Z",
-    "durationSec": 61,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41044277833"
+    "startedAt": "2026-10-31T10:27:53Z",
+    "durationSec": 54,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41192850888"
    },
    "recent": {
     "runs": 10,
@@ -4765,7 +4765,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-31T09:47:00Z",
+   "nextRun": "2026-10-31T12:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4788,7 +4788,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-31T09:17:00Z",
+   "nextRun": "2026-10-31T12:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5068,7 +5068,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-31T09:10:00Z",
+   "nextRun": "2026-10-31T12:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5115,7 +5115,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-31T07:10:10Z"
+     "lastChange": "2026-10-31T08:58:52Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5840,19 +5840,18 @@
    "nextRun": "2026-11-05T07:50:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-31T04:35:13Z",
-    "durationSec": 42,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41169178255",
-    "reason": "hubo datos invalidos descartados · datos invalidos: se descarta el cambio de data/spain-balances/olive.json · ERROR    spain-balances/olive.json          spain-olive aforo: la campaña del aforo no es posterior a la del balance; spain-olive tableOlive: existencias iniciales 2024/25 (270.12) != finale"
+    "startedAt": "2026-10-31T10:18:01Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41192178374"
    },
    "recent": {
-    "runs": 7,
-    "success": 5,
+    "runs": 8,
+    "success": 6,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
