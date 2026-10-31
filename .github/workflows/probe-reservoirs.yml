@@ -7,26 +7,24 @@ permissions:
   contents: read
 jobs:
   probe:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
-      - name: Probe
+      - uses: actions/checkout@v6
+      - run: bash scripts/trust-fnmt.sh
+      - run: sudo apt-get update -q >/dev/null
+      - run: sudo apt-get install -y -q poppler-utils >/dev/null
+      - name: Leer el balance del olivar sin publicar
         run: |
-          UA="Mozilla/5.0 (compatible; DehesaIndexBot/1.0; +https://dehesaindex.com)"
-          probe() {
-            n="$1"; u="$2"
-            echo "=================== $n  $u"
-            : > /tmp/o.bin
-            if ! code=$(curl -sS -L -m 40 -A "$UA" -o /tmp/o.bin -w '%{http_code} %{content_type} %{size_download}B' "$u" 2>&1); then code="curl error: $code"; fi
-            echo "status: $code"
-            head -c 1500 /tmp/o.bin | tr -s '\r\n\t ' ' ' | head -c 1500; echo
-            grep -aoiE "(licen[cs]e|licencia|licenza|creative commons|copyright|termos|terms of use)[^<]{0,160}" /tmp/o.bin | head -6
-          }
-          probe MDBA-hume "https://livedata.mdba.gov.au/hume-dam"
-          probe MDBA-river "https://riverdata.mdba.gov.au/"
-          probe MDBA-api "https://riverdata.mdba.gov.au/system-view"
-          probe AU-datagov "https://data.gov.au/data/api/3/action/package_search?q=reservoir+storage+volume&rows=5"
-          probe CL-datosgob "https://datos.gob.cl/api/3/action/package_search?q=embalses&rows=5"
-          probe CL-dga-datos "https://dga.mop.gob.cl/datos-abiertos/"
-          probe IT-ispra "https://www.isprambiente.gov.it/en"
-          probe IT-anbi-home "https://www.anbi.it/"
+          if ! python3 scripts/update-spain-olive.py --out /tmp/olive-out; then echo "script exit != 0"; fi
+          cat data/spain-olive-log.txt
+          python3 - <<'PY'
+          import json
+          d = json.load(open('/tmp/olive-out/olive.json'))
+          for y, c in d['campaigns'].items():
+              print(y, c['label'], c['status'], c['update'], c.get('pdf'))
+              for p in d['products']:
+                  v = c['v'][p]
+                  print('   ', p, 'ini', v['beginningStocks'], 'prod', v['production'], 'fin', v['endingStocks'])
+          print('aforo', d['aforo']['campaign'], d['aforo']['label'], d['aforo']['published'])
+          PY
