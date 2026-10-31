@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 200 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41261 series en el catalogo unificado.
+Resumen: 201 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41261 series en el catalogo unificado.
 
-## VERIFIED (200)
+## VERIFIED (201)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -148,6 +148,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `noaa_ncei` | NOAA National Centers for Environmental Information (Climate at a Glance, nClimDiv) | US | US-PD | si/si | si | 149 | No implied NOAA endorsement. |
 | `odepa_chile` | ODEPA (Chile) - Portal de datos abiertos | CL | CC-BY | si/si | si | 130 | Atribucion a ODEPA; los datos de comercio exterior proceden del Servicio Nacional de Aduanas. |
 | `ons` | UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS) | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de … |
+| `opw_waterlevel` | OPW — Office of Public Works, Ireland (waterlevel.ie: lecturas hidrométricas en tiempo real) | IE | CC-BY-4.0 | si/si | si | 0 | Los datos son provisionales y sin validar; las obras derivadas deben citar waterlevel.ie y a la OPW. Para registros de más de 5 semanas, el … |
 | `pdok_natura2000` | PDOK / RVO — Natura 2000 (contornos de las zonas protegidas de los Países Bajos) | NL | CC0-1.0 | si/si | no | 0 | Solo se usan los contornos para dibujar el mapa de la pestaña Naturaleza de la ficha de Países Bajos; se simplifican y se dejan fuera las zo… |
 | `pegelonline` | Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV) — PEGELONLINE | DE | DL-DE-Zero-2.0 | si/si | no | 0 | La WSV publica datos brutos sin revisar y no responde de su exactitud ni de su actualidad. |
 | `pl_akcyza_rm` | Rada Ministrów — stawka zwrotu podatku akcyzowego (olej napędowy do produkcji rolnej) | PL | PUBLIC-LAW | si/si | si | 0 |  |
