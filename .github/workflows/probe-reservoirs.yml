@@ -1,6 +1,8 @@
 name: Probe reservoir sources
 on:
   workflow_dispatch:
+  push:
+    branches: [research/probe-reservoirs]
 permissions:
   contents: read
 jobs:
