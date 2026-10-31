@@ -23,13 +23,13 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json data/rivers-se.json data/rivers-fi.json
+          files: data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json data/rivers-se.json data/rivers-fi.json data/rivers-ie.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json data/rivers-se.json data/rivers-fi.json
+        run: python3 scripts/detect-revisions.py data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json data/rivers-se.json data/rivers-fi.json data/rivers-ie.json
       - name: Publicar
         if: always()
-        run: bash scripts/publish-data.sh "Rios - nivel y caudal (Paises Bajos, Francia, Canada, Flandes, Polonia)" data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json data/rivers-se.json data/rivers-fi.json data/rivers-log.txt data/revisions.json
+        run: bash scripts/publish-data.sh "Rios - nivel y caudal (Paises Bajos, Francia, Canada, Flandes, Polonia)" data/rivers-nl.json data/rivers-fr.json data/rivers-ca.json data/rivers-be.json data/rivers-pl.json data/rivers-se.json data/rivers-fi.json data/rivers-ie.json data/rivers-log.txt data/revisions.json
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

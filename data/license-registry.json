@@ -6104,6 +6104,32 @@
    "short": "SYKE",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: página oficial de licencia de SYKE (CC BY 4.0)."
+  },
+  "opw_waterlevel": {
+   "name": "OPW — Office of Public Works, Ireland (waterlevel.ie: lecturas hidrométricas en tiempo real)",
+   "url": "https://waterlevel.ie/",
+   "country": "IE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains Irish Public Sector Information licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence (source: waterlevel.ie, provided by the Office of Public Works). Datos procesados por Dehesa Index.",
+   "additionalRestrictions": "Los datos son provisionales y sin validar; las obras derivadas deben citar waterlevel.ie y a la OPW. Para registros de más de 5 semanas, el OPW remite a su sitio Hydro-Data (no usado).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-30",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Pie de waterlevel.ie leído el 30 oct 2026: «Data may be reused under the CC-BY license» con la atribución sugerida «Contains Irish Public Sector Information licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence (source http://waterlevel.ie - provided by the Office of Public Works.)»; aviso de datos provisionales.",
+   "used": true,
+   "aliases": [],
+   "notes": "Nivel (sensor 0001) de 17 estaciones vía los CSV mensuales de waterlevel.ie (~5 semanas, cada 15 min, hora UTC). La web no publica caudal en tiempo real. Sin historia larga: no hay referencia ni estado; la serie diaria propia se acumula con cada ejecución.",
+   "short": "OPW Irlanda",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "VERIFIED: aviso de licencia CC BY 4.0 de waterlevel.ie."
   }
  },
  "files": {
@@ -8880,6 +8906,10 @@
   "data/rivers-fi.json": {
    "default": "syke_hydro",
    "notes": "Caudal medio diario de 17 estaciones de ríos de Finlandia (SYKE, tabla Virtaama); la serie diaria propia de 430 días, la referencia (cuartiles de ±7 días desde 2010), el percentil y el estado: cálculo de Dehesa Index (datos procesados)."
+  },
+  "data/rivers-ie.json": {
+   "default": "opw_waterlevel",
+   "notes": "Nivel de 17 estaciones de ríos de Irlanda (OPW, waterlevel.ie); la serie diaria propia (media de días con >=20 horas de lectura) es cálculo de Dehesa Index (datos procesados)."
   }
  },
  "derived": [

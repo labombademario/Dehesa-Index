@@ -482,6 +482,50 @@ def adapt_fi(now, old=None):
     return metas
 
 
+IE_GEO = "https://waterlevel.ie/geojson/latest/"
+IE_CSV = "https://waterlevel.ie/data/month/%s_0001.csv"   # nivel (sensor 0001, m en la escala de la estacion), ~5 semanas, cada 15 min, hora UTC
+IE_STATIONS = [("Shannon", "25343", "Castleconnell"), ("Shannon", "26027", "Athlone"), ("Suir", "16011", "Clonmel"), ("Barrow", "14018", "Royal Oak"), ("Nore", "15006", "Brownsbarn"),
+               ("Boyne", "07012", "Slane Castle"), ("Blackwater", "18002", "Ballyduff"), ("Moy", "34001", "Rahans"), ("Erne", "36171", "Foalies Bridge"), ("Slaney", "12008", "Rafter Bridge"),
+               ("Lee", "19102", "Waterworks Weir"), ("Feale", "23061", "Ferry Bridge"), ("Fergus", "27066", "Ennis Bridge"), ("Bandon", "20002", "Curranure"), ("Liffey", "09001", "Leixlip"),
+               ("Finn", "01043", "Ballybofey"), ("Suck", "26006", "Willsbrook")]
+IE_STALE_DAYS = 2
+
+
+def http_text(url, tries=4, timeout=120):
+    last = None
+    for i in range(tries):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA["User-Agent"]}), timeout=timeout) as r: return r.read().decode("utf-8", "replace")
+        except Exception as e: last = e; time.sleep(2 * (i + 1))
+    raise RuntimeError("%s -> %s" % (url[:100], last))
+
+
+def adapt_ie(now, old=None):
+    """Nivel de 17 estaciones del OPW (waterlevel.ie): lecturas de ~5 semanas cada 15 min. La web publica nivel y temperatura, no caudal, y sin historia larga: sin referencia ni estado."""
+    pos = {}
+    for f in http(IE_GEO, timeout=180).get("features", []):
+        pr = f["properties"]
+        if pr.get("sensor_ref") == "0001": pos[pr["station_ref"][-5:]] = f["geometry"]["coordinates"]
+    metas = []
+    for river, no, name in IE_STATIONS:
+        try: txt = http_text(IE_CSV % no)
+        except Exception as e: log("aviso: ie %s %s: %s" % (river, name, e)); continue
+        w = []
+        for ln in txt.splitlines()[1:]:
+            a = ln.split(",")
+            if len(a) < 2 or not a[1].strip(): continue
+            try: v = float(a[1])
+            except ValueError: continue
+            if v < -50 or v > 50: continue
+            w.append((a[0].strip().replace(" ", "T")[:16], round(v * 100, 1)))
+        if not w: log("aviso: ie %s %s sin datos" % (river, name)); continue
+        if (now.date() - datetime.date.fromisoformat(w[-1][0][:10])).days > IE_STALE_DAYS: log("aviso: ie %s %s: ultima lectura %s, antigua" % (river, name, w[-1][0])); continue
+        c = pos.get(no)
+        metas.append({"id": no, "river": river, "name": name, "lon": round(c[0], 4) if c else None, "lat": round(c[1], 4) if c else None, "w": w, "q": [], "wh": {}, "qh": {}, "prefill": False})
+    if not metas: raise RuntimeError("ie: la web no devolvio ninguna estacion elegida")
+    return metas
+
+
 ADAPTERS = {
     "nl": (adapt_nl, {"id": "rijkswaterstaat", "name": "Rijkswaterstaat, Waterwebservices (DD-API 2.0), ruwe data", "url": "https://waterwebservices.rijkswaterstaat.nl/", "license": "CC0-1.0"}),
     "fr": (adapt_fr, {"id": "hubeau_hydrometrie", "name": "Hub'Eau, API Hydrométrie (SCHAPI, Eaufrance)", "url": "https://hubeau.eaufrance.fr/page/api-hydrometrie", "license": "Licence Ouverte 2.0"}),
@@ -489,6 +533,7 @@ ADAPTERS = {
     "be": (adapt_be, {"id": "vmm_waterinfo", "name": "Vlaamse Milieumaatschappij, Hydrologisch Informatiecentrum (waterinfo.be KiWIS)", "url": "https://www.waterinfo.be/", "license": "Modellicentie voor gratis hergebruik v1.0"}),
     "se": (adapt_se, {"id": "smhi", "name": "SMHI (Swedish Meteorological and Hydrological Institute), Hydrologiska observationer: Vattenföring (Dygn), arkiv med kontrollerade värden", "url": "https://opendata-download-hydroobs.smhi.se/", "license": "CC BY 4.0 SE (Creative Commons Erkännande 4.0 SE)"}),
     "fi": (adapt_fi, {"id": "syke_hydro", "name": "Finnish Environment Institute (SYKE), Hydrologiarajapinta (OData): Virtaama, caudal medio diario", "url": "https://www.syke.fi/en/environmental-data/open-web-services", "license": "CC BY 4.0"}),
+    "ie": (adapt_ie, {"id": "opw_waterlevel", "name": "Office of Public Works (OPW), waterlevel.ie: lecturas de nivel de los ultimos 35 dias (datos provisionales sin validar)", "url": "https://waterlevel.ie/", "license": "CC BY 4.0"}),
     "pl": (adapt_pl, {"id": "imgw_pib", "name": "Instytut Meteorologii i Gospodarki Wodnej (IMGW-PIB), dane publiczne: hydro API y archivo de medias diarias", "url": "https://danepubliczne.imgw.pl/", "license": "IMGW-PIB: reutilizacion citando la fuente"}),
 }
 

@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T18:34:17Z",
+ "generatedAt": "2026-10-31T01:46:54Z",
  "summary": {
-  "sources": 203,
-  "sourcesApto": 187,
+  "sources": 204,
+  "sourcesApto": 188,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 422,
-  "datasets_apto": 282,
+  "datasets": 423,
+  "datasets_apto": 283,
   "datasets_condiciones": 129,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -565,6 +565,10 @@
   },
   "ons": {
    "name": "UK Office for National Statistics (consumer price index; regional population, labour market and GVA via NOMIS)",
+   "verdict": "apto"
+  },
+  "opw_waterlevel": {
+   "name": "OPW — Office of Public Works, Ireland (waterlevel.ie: lecturas hidrométricas en tiempo real)",
    "verdict": "apto"
   },
   "pdok_natura2000": {

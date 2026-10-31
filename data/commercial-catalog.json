@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-30T18:34:17Z",
+ "generatedAt": "2026-10-31T01:46:54Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 203,
-  "sourcesApto": 187,
+  "sources": 204,
+  "sourcesApto": 188,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 422,
-  "datasets_apto": 282,
+  "datasets": 423,
+  "datasets_apto": 283,
   "datasets_condiciones": 129,
   "datasets_parcial": 4,
   "datasets_no-apto": 3,
@@ -2370,6 +2370,23 @@
    "redistribution": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
    "conditions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Se usan la serie del índice de precios de consumo (CPI, D7BT) y, vía NOMIS (servicio del ONS), la población, la tasa de paro y el valor añadido bruto por región (mismo régimen OGL v3.0)."
+  },
+  {
+   "id": "opw_waterlevel",
+   "name": "OPW — Office of Public Works, Ireland (waterlevel.ie: lecturas hidrométricas en tiempo real)",
+   "url": "https://waterlevel.ie/",
+   "country": "IE",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains Irish Public Sector Information licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence (source: waterlevel.ie, provided by the Office of Public Works). Datos procesados por Dehesa Index.",
+   "conditions": "Los datos son provisionales y sin validar; las obras derivadas deben citar waterlevel.ie y a la OPW. Para registros de más de 5 semanas, el OPW remite a su sitio Hydro-Data (no usado)."
   },
   {
    "id": "pdok_natura2000",
@@ -7549,6 +7566,14 @@
    "verdict": "apto",
    "sources": [
     "hubeau_hydrometrie"
+   ]
+  },
+  {
+   "path": "data/rivers-ie.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "opw_waterlevel"
    ]
   },
   {
