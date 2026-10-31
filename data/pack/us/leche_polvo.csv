@@ -1,5 +1,4 @@
 ﻿product_key,product,market,date,value,unit,currency,frequency,source,license,attribution
-leche_polvo,Leche desnatada en polvo,US,2024-11-01,1.355,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 leche_polvo,Leche desnatada en polvo,US,2024-11-08,1.365,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 leche_polvo,Leche desnatada en polvo,US,2024-11-15,1.375,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 leche_polvo,Leche desnatada en polvo,US,2024-11-22,1.3875,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
@@ -103,3 +102,4 @@ leche_polvo,Leche desnatada en polvo,US,2026-10-02,2.12,lb,USD,weekly,USDA AMS M
 leche_polvo,Leche desnatada en polvo,US,2026-10-09,2.17,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 leche_polvo,Leche desnatada en polvo,US,2026-10-16,2.185,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 leche_polvo,Leche desnatada en polvo,US,2026-10-23,2.165,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
+leche_polvo,Leche desnatada en polvo,US,2026-10-30,2.105,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
