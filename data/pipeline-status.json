@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-31T02:48:00Z",
+ "generatedAt": "2026-10-31T03:05:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 314,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-30T22:23:13.231042+00:00",
   "repoGeneratedAt": "2026-10-30T22:23:13.231042+00:00",
-  "checkedAt": "2026-10-31T02:48:00Z"
+  "checkedAt": "2026-10-31T03:05:00Z"
  },
  "pipelines": [
   {
@@ -84,27 +84,27 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-31T01:55:25Z"
+     "lastChange": "2026-10-31T02:52:38Z"
     },
     {
      "path": "data/ams-grain-daily.json",
-     "lastChange": "2026-10-30T10:02:23Z"
+     "lastChange": "2026-10-31T02:52:38Z"
     },
     {
      "path": "data/us-fertilizers.json",
-     "lastChange": "2026-10-30T10:02:23Z"
+     "lastChange": "2026-10-31T02:52:38Z"
     }
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-30T09:55:04Z",
-    "durationSec": 446,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41036896974"
+    "event": "schedule",
+    "startedAt": "2026-10-31T02:42:19Z",
+    "durationSec": 624,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41161190371"
    },
    "recent": {
-    "runs": 9,
-    "success": 6,
+    "runs": 10,
+    "success": 7,
     "failed": 1
    },
    "status": "ok",
@@ -5115,7 +5115,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-31T02:27:35Z"
+     "lastChange": "2026-10-31T02:51:40Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7476,13 +7476,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-30T03:00:24Z",
-    "durationSec": 410,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40994897498"
+    "startedAt": "2026-10-31T02:46:31Z",
+    "durationSec": 402,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41161486474"
    },
    "recent": {
-    "runs": 9,
-    "success": 5,
+    "runs": 10,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
