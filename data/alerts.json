@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-31T00:00:49.026Z",
+  "generatedAt": "2026-10-31T02:41:44.615Z",
   "status": "informational",
   "rules": [
     {
@@ -563,9 +563,9 @@
       "product": "us_energy_input_index",
       "region": "us",
       "sourceId": "usda_nass",
-      "severity": "watch",
-      "changePct": 7.16,
-      "observationDate": "2026-08-01"
+      "severity": "high",
+      "changePct": 14.48,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
