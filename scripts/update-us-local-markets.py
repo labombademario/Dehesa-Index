@@ -100,6 +100,9 @@ def cattle_rows(raw, stats):
         un = txt(r.get("price_unit")); rng = {"Per Cwt": (20, 1500), "Per Unit": (100, 20000)}.get(un)
         if rng and not (rng[0] <= p <= rng[1]) and not (com == "Slaughter Cattle" and p >= 20):
             log("DESCARTADA fila con unidad incoherente (publicada asi por AMS):", d, com, cl, p, un); stats["skipped"] += 1; continue
+        wt = num(r.get("avg_weight"))   # mismos limites que el validador (contract_tests.py, us-local cattle): un peso imposible es un error de la fuente; no se corrige, se descarta la fila
+        if wt is not None and not ((10 if ("Goat" in com or "Sheep" in com or "Lamb" in com) else 30) <= wt <= 3200):
+            log("DESCARTADA fila con peso medio imposible (publicada asi por AMS):", d, com, cl, wt, "lb"); stats["skipped"] += 1; continue
         extra = " · ".join(x for x in (txt(r.get("age")), txt(r.get("pregnancy_stage")), ("dressing " + txt(r.get("dressing"))) if txt(r.get("dressing")) else "") if x)
         out.append({"date": d, "commodity": com, "class": cl, "frame": txt(r.get("frame")), "grade": txt(r.get("muscle_grade")), "lot": txt(r.get("lot_desc")), "unit": txt(r.get("price_unit")),
                     "wbLow": num(r.get("weight_break_low")), "wbHigh": num(r.get("weight_break_high")), "head": head, "wt": num(r.get("avg_weight")), "pMin": pmn, "pMax": pmx, "p": p, "x": extra,

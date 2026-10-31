@@ -29,7 +29,8 @@ S = lambda results: [{"results": results}]
 rows1 = [cat("09/21/2026", "Steers", 500, 550, 100, 520, 400.0, 380, 420), cat("09/21/2026", "Steers", 500, 550, 300, 525, 380.0, 360, 400),
          cat("09/21/2026", "Steers", 500, 550, 50, 520, 300.0, 290, 310, lot="Unweaned"), cat("09/21/2026", "Heifers", 600, 650, 10, 610, 350.0, 340, 360),
          cat("09/21/2026", "Slaughter Cows", 0, 0, 20, 1300, 120.0, 110, 125, com="Slaughter Cattle", frame="N/A", grade="N/A"),
-         cat("09/21/2026", "Steers", 700, 750, 0, 700, 300.0, 290, 310), cat("09/21/2026", "Steers", 700, 750, 20, 700, 300.0, 320, 310)]
+         cat("09/21/2026", "Steers", 700, 750, 0, 700, 300.0, 290, 310), cat("09/21/2026", "Steers", 700, 750, 20, 700, 300.0, 320, 310),
+         cat("09/21/2026", "Heifers", 300, 350, 5, 3465, 350.0, 340, 360)]
 (fx / "1895.json").write_text(json.dumps(S(rows1)))
 now = "2026-09-30"
 for rid in (1860, 1831, 1821, 1784): (fx / ("%d.json" % rid)).write_text(json.dumps({"_fixtureError": "UNAVAILABLE"}))
@@ -40,7 +41,7 @@ r = run("--fixture-dir", str(fx), "--now", now, "--only", "1895,1860,2885")
 eq(r.returncode, 0, "con fixtures sale con 0 (fallos parciales no son error global)")
 d = json.loads((out / "cattle-KS.json").read_text())
 eq(d["latest"]["date"], "2026-09-21", "fecha del ultimo informe"); eq(d["latest"]["receipts"], {"week": 5000, "weekAgo": 4900, "yearAgo": 4000}, "recibos")
-n_rows = len(d["latest"]["rows"]); eq(n_rows, 5, "filas validas (2 invalidas descartadas: 0 cabezas y precio fuera de rango)")
+n_rows = len(d["latest"]["rows"]); eq(n_rows, 5, "filas validas (3 invalidas descartadas: 0 cabezas, precio fuera de rango y peso medio imposible)")
 eq(sorted(d["history"]), ["Heifers|600", "Steers|500"], "solo la especificacion de referencia entra en el historial")
 eq(d["history"]["Steers|500"], [["2026-09-21", 385.0, 400, 523.8]], "media ponderada por cabezas (100x400+300x380)/400, peso medio ponderado")
 eq(not (out / "cattle-NE.json").exists(), True, "informe que falla sin fichero previo no crea nada")
