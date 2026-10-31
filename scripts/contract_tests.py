@@ -2508,7 +2508,7 @@ def _so_mod():
 
 def spain_olive(doc, errs, warns, stats):
     """Balance del olivar del MAPA: por campaña y producto sin negativos; origen = existencias iniciales + produccion + importaciones; destino (mercado interior + exportaciones + ajustes + existencias finales) = total = origen;
-    UE-27 + extra UE-27 = total cuando hay desglose. Estado y mes de actualizacion validos. Aforo: las comunidades suman el total nacional y la campaña del aforo es posterior a la ultima del balance."""
+    UE-27 + extra UE-27 = total cuando hay desglose. Estado y mes de actualizacion validos. Aforo: las comunidades suman el total nacional y la campaña del aforo es la de la ultima estimacion del balance o posterior (nunca anterior ni igual a un balance definitivo)."""
     m = _so_mod()
     if doc["products"] != m.PRODUCTS or doc["items"] != m.ITEMS: errs.append("spain-olive: productos o partidas distintos de los esperados"); return
     camps = {}
@@ -2528,7 +2528,8 @@ def spain_olive(doc, errs, warns, stats):
         for k in ("mean6", "previous", "estimate"):
             if abs(sum(r[k] for r in rows) - af["total"][k]) > 3: errs.append("spain-olive aforo: las comunidades no suman el total nacional (%s)" % k)
         if any(r[k] < 0 for r in rows for k in ("mean6", "previous", "estimate")): errs.append("spain-olive aforo: valor negativo")
-        if af["campaign"] <= max(camps): errs.append("spain-olive aforo: la campaña del aforo no es posterior a la del balance")
+        # el MAPA publica en octubre la estimacion de la campaña nueva junto al aforo: la misma campaña vale si el balance de esa campaña no es definitivo
+        if af["campaign"] < max(camps) or (af["campaign"] == max(camps) and camps[max(camps)]["status"] == "definitivo"): errs.append("spain-olive aforo: la campaña del aforo no es posterior a la del ultimo balance definitivo")
     stats["spain-olive campañas"] = len(camps)
 
 def _sm_mod():
