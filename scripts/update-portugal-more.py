@@ -44,11 +44,17 @@ def log(*a):
     print(s, flush=True)
 
 
+T0 = time.time()
+DEADLINE_S = 19 * 60  # el paso de CI se corta a los 25 min: acabamos limpios antes y se conserva lo ya publicado
+
+
 def fetch(url, tries=4, binary=False):
     last = None
     for i in range(tries):
+        if time.time() - T0 > DEADLINE_S:
+            raise RuntimeError("presupuesto de tiempo agotado")
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 DehesaIndex"}), timeout=200) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 DehesaIndex"}), timeout=90) as r:
                 b = r.read()
                 return b if binary else b.decode("utf-8", "replace")
         except Exception as e:
