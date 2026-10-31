@@ -1,46 +1,46 @@
 1234 SIN SERIES (filas 0, secciones sin precio {})
 1235 SIN SERIES (filas 0, secciones sin precio {})
 1236 SIN SERIES (filas 0, secciones sin precio {})
-1237 OK 10 series, 344 filas, ultimo 2026-10-13, 3 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=53
-1245 OK 8 series, 1868 filas, ultimo 2026-10-19, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=184
-1248 OK 8 series, 320 filas, ultimo 2026-10-01, 3 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=41
-1249 OK 16 series, 1688 filas, ultimo 2026-10-20, 4 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=249
+1237 OK 11 series, 335 filas, ultimo 2026-10-27, 4 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=52
+1245 OK 8 series, 1874 filas, ultimo 2026-10-26, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=186
+1248 OK 8 series, 352 filas, ultimo 2026-10-29, 3 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=47
+1249 OK 15 series, 1702 filas, ultimo 2026-10-27, 4 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=254
 1254 OK 4 series, 239 filas, ultimo 2026-10-07, 1 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=36
-1255 OK 15 series, 2096 filas, ultimo 2026-10-21, 3 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=313
-1280 OK 15 series, 2606 filas, ultimo 2026-10-19, 3 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=312
-1281 OK 16 series, 3245 filas, ultimo 2026-10-20, 4 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=363
-1290 SIN SERIES (filas 22, secciones sin precio {})
-1418 OK 14 series, 867 filas, ultimo 2026-10-19, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=71
-1419 OK 7 series, 1326 filas, ultimo 2026-10-20, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=71
-1420 OK 9 series, 958 filas, ultimo 2026-10-20, 5 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=77
+1255 OK 16 series, 2098 filas, ultimo 2026-10-28, 4 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=311
+1280 OK 16 series, 2625 filas, ultimo 2026-10-26, 3 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=311
+1281 OK 15 series, 3221 filas, ultimo 2026-10-27, 4 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=358
+1290 SIN SERIES (filas 28, secciones sin precio {})
+1418 OK 14 series, 879 filas, ultimo 2026-10-26, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=71
+1419 OK 7 series, 1306 filas, ultimo 2026-10-27, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=70
+1420 OK 8 series, 958 filas, ultimo 2026-10-27, 4 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=77
 1421 SIN SERIES (filas 0, secciones sin precio {})
-1422 OK 7 series, 1000 filas, ultimo 2026-10-21, 5 KB, dims=commodity,class,dressing,frame,quality_grade_name descartados_por_ambiguedad=54
+1422 OK 7 series, 1002 filas, ultimo 2026-10-28, 5 KB, dims=commodity,class,dressing,frame,quality_grade_name descartados_por_ambiguedad=54
 1423 SIN SERIES (filas 0, secciones sin precio {})
 1424 SIN SERIES (filas 0, secciones sin precio {})
 1510 SIN SERIES (filas 0, secciones sin precio {})
 1512 SIN SERIES (filas 0, secciones sin precio {})
-1607 OK 18 series, 1294 filas, ultimo 2026-10-20, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=75
-1608 OK 14 series, 1579 filas, ultimo 2026-10-19, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=82
-1609 OK 7 series, 878 filas, ultimo 2026-10-19, 4 KB, dims=commodity,class,dressing,frame,quality_grade_name descartados_por_ambiguedad=52
-1622 OK 27 series, 1140 filas, ultimo 2026-10-21, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=129
-1651 OK 47 series, 937 filas, ultimo 2026-10-21, 32 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=3
-1683 SIN SERIES (filas 22, secciones sin precio {})
+1607 OK 18 series, 1333 filas, ultimo 2026-10-27, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=78
+1608 OK 13 series, 1609 filas, ultimo 2026-10-26, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=84
+1609 OK 7 series, 880 filas, ultimo 2026-10-26, 4 KB, dims=commodity,class,dressing,frame,quality_grade_name descartados_por_ambiguedad=52
+1622 OK 27 series, 1135 filas, ultimo 2026-10-28, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=129
+1651 OK 47 series, 938 filas, ultimo 2026-10-28, 32 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=3
+1683 SIN SERIES (filas 28, secciones sin precio {})
 1684 SIN SERIES (filas 0, secciones sin precio {})
-1703 OK 27 series, 5004 filas, ultimo 2026-10-21, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=250
-1704 OK 26 series, 2399 filas, ultimo 2026-10-24, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=106
-1772 OK 25 series, 971 filas, ultimo 2026-10-05, 6 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=246
-1773 OK 46 series, 1052 filas, ultimo 2026-10-20, 22 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=95
-1774 OK 72 series, 1788 filas, ultimo 2026-10-21, 32 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=176
-1775 SIN SERIES (filas 167, secciones sin precio {})
-1776 OK 9 series, 306 filas, ultimo 2026-10-23, 2 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=40
-1777 OK 60 series, 1858 filas, ultimo 2026-10-22, 24 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=225
+1703 OK 26 series, 5052 filas, ultimo 2026-10-28, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=254
+1704 OK 25 series, 2429 filas, ultimo 2026-10-31, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=108
+1772 OK 19 series, 832 filas, ultimo 2026-10-05, 5 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=209
+1773 OK 48 series, 1084 filas, ultimo 2026-10-27, 22 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=97
+1774 OK 76 series, 1758 filas, ultimo 2026-10-28, 33 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=170
+1775 OK 26 series, 270 filas, ultimo 2026-10-26, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=31
+1776 OK 15 series, 380 filas, ultimo 2026-10-30, 3 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=52
+1777 OK 61 series, 1942 filas, ultimo 2026-10-29, 25 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=241
 1779 SIN SERIES (filas 0, secciones sin precio {})
 1780 SIN SERIES (filas 0, secciones sin precio {})
-1781 OK 211 series, 5276 filas, ultimo 2026-10-21, 85 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=644
-1782 OK 151 series, 4379 filas, ultimo 2026-10-19, 57 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=578
-1783 OK 96 series, 3499 filas, ultimo 2026-10-23, 45 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=384
-1788 OK 38 series, 710 filas, ultimo 2026-10-19, 24 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=25
-1789 OK 19 series, 216 filas, ultimo 2026-10-13, 8 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
+1781 OK 214 series, 5329 filas, ultimo 2026-10-28, 86 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=655
+1782 OK 154 series, 4438 filas, ultimo 2026-10-26, 57 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=587
+1783 OK 91 series, 3509 filas, ultimo 2026-10-30, 44 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=385
+1788 OK 36 series, 702 filas, ultimo 2026-10-26, 23 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=25
+1789 OK 20 series, 233 filas, ultimo 2026-10-27, 8 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
 1790 SIN SERIES (filas 4, secciones sin precio {})
 1791 SIN SERIES (filas 7, secciones sin precio {})
 1792 SIN SERIES (filas 3, secciones sin precio {})
@@ -48,141 +48,141 @@
 1794 SIN SERIES (filas 0, secciones sin precio {})
 1795 SIN SERIES (filas 0, secciones sin precio {})
 1796 SIN SERIES (filas 0, secciones sin precio {})
-1797 OK 64 series, 951 filas, ultimo 2026-10-21, 32 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=28
+1797 OK 65 series, 952 filas, ultimo 2026-10-28, 33 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=29
 1798 OK 16 series, 154 filas, ultimo 2026-10-08, 4 KB, dims=class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=14
-1799 OK 29 series, 255 filas, ultimo 2026-10-17, 7 KB, dims=class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=18
+1799 OK 24 series, 200 filas, ultimo 2026-10-17, 6 KB, dims=class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=10
 1800 OK 9 series, 104 filas, ultimo 2026-10-01, 3 KB, dims=class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=3
 1801 SIN SERIES (filas 0, secciones sin precio {})
 1802 SIN SERIES (filas 0, secciones sin precio {})
-1803 OK 3 series, 220 filas, ultimo 2026-10-16, 1 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=56
-1804 OK 4 series, 363 filas, ultimo 2026-09-22, 1 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=94
-1805 OK 26 series, 1257 filas, ultimo 2026-10-15, 7 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=332
-1806 OK 13 series, 864 filas, ultimo 2026-09-26, 4 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=217
+1803 OK 2 series, 178 filas, ultimo 2026-10-16, 1 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=47
+1804 OK 10 series, 427 filas, ultimo 2026-10-27, 3 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=108
+1805 OK 33 series, 1346 filas, ultimo 2026-10-29, 9 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=353
+1806 OK 25 series, 971 filas, ultimo 2026-10-24, 7 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=243
 1807 OK 2 series, 201 filas, ultimo 2026-10-08, 1 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=56
 1808 SIN SERIES (filas 0, secciones sin precio {})
 1809 SIN SERIES (filas 0, secciones sin precio {})
-1810 OK 42 series, 1401 filas, ultimo 2026-10-23, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=147
-1811 OK 23 series, 847 filas, ultimo 2026-10-22, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=104
-1812 OK 23 series, 1052 filas, ultimo 2026-10-21, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=130
-1813 OK 19 series, 601 filas, ultimo 2026-10-13, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=60
-1814 OK 28 series, 920 filas, ultimo 2026-10-20, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=116
-1815 OK 32 series, 1570 filas, ultimo 2026-10-20, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=190
-1816 OK 5 series, 493 filas, ultimo 2026-10-13, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=88
-1817 OK 21 series, 822 filas, ultimo 2026-10-14, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=116
+1810 OK 38 series, 1391 filas, ultimo 2026-10-30, 19 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=148
+1811 OK 24 series, 847 filas, ultimo 2026-10-29, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=102
+1812 OK 24 series, 1048 filas, ultimo 2026-10-28, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=129
+1813 OK 17 series, 612 filas, ultimo 2026-10-27, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=63
+1814 OK 27 series, 900 filas, ultimo 2026-10-27, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=116
+1815 OK 33 series, 1532 filas, ultimo 2026-10-27, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=180
+1816 OK 6 series, 537 filas, ultimo 2026-10-27, 2 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=97
+1817 OK 23 series, 830 filas, ultimo 2026-10-28, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=118
 1818 SIN SERIES (filas 0, secciones sin precio {})
-1819 OK 32 series, 1404 filas, ultimo 2026-10-19, 14 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=159
+1819 OK 34 series, 1405 filas, ultimo 2026-10-26, 15 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=161
 1820 SIN SERIES (filas 0, secciones sin precio {})
 1822 SIN SERIES (filas 51, secciones sin precio {})
-1823 OK 53 series, 826 filas, ultimo 2026-10-20, 25 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=55
-1824 OK 41 series, 783 filas, ultimo 2026-10-20, 25 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=18
-1825 OK 74 series, 1165 filas, ultimo 2026-10-19, 34 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=122
+1823 OK 53 series, 831 filas, ultimo 2026-10-27, 24 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=59
+1824 OK 41 series, 772 filas, ultimo 2026-10-27, 25 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=18
+1825 OK 76 series, 1180 filas, ultimo 2026-10-26, 35 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=128
 1826 OK 6 series, 327 filas, ultimo 2026-10-15, 1 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=88
-1827 OK 29 series, 2107 filas, ultimo 2026-10-20, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=142
-1828 OK 7 series, 1673 filas, ultimo 2026-10-22, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=229
-1829 OK 41 series, 2214 filas, ultimo 2026-10-22, 23 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=248
-1830 OK 4 series, 3620 filas, ultimo 2026-10-14, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=450
-1832 OK 59 series, 3693 filas, ultimo 2026-10-19, 27 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=437
+1827 OK 29 series, 2106 filas, ultimo 2026-10-27, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=142
+1828 OK 6 series, 1666 filas, ultimo 2026-10-22, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=230
+1829 OK 41 series, 2209 filas, ultimo 2026-10-29, 24 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=249
+1830 OK 3 series, 3630 filas, ultimo 2026-10-28, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=452
+1832 OK 60 series, 3673 filas, ultimo 2026-10-26, 27 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=430
 1834 SIN SERIES (filas 19, secciones sin precio {})
 1835 SIN SERIES (filas 0, secciones sin precio {})
 1836 SIN SERIES (filas 0, secciones sin precio {})
 1839 SIN SERIES (filas 36, secciones sin precio {})
 1840 SIN SERIES (filas 0, secciones sin precio {})
-1843 OK 66 series, 1165 filas, ultimo 2026-10-22, 42 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade
+1843 OK 66 series, 1165 filas, ultimo 2026-10-29, 42 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade
 1844 SIN SERIES (filas 0, secciones sin precio {})
-1848 OK 8 series, 547 filas, ultimo 2026-10-21, 2 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=89
-1849 OK 7 series, 354 filas, ultimo 2026-10-23, 2 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=74
-1850 SIN SERIES (filas 464, secciones sin precio {})
-1851 OK 4 series, 334 filas, ultimo 2026-10-23, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=49
-1852 OK 3 series, 401 filas, ultimo 2026-10-14, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=70
-1853 OK 4 series, 341 filas, ultimo 2026-10-17, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=62
-1854 OK 1 series, 123 filas, ultimo 2026-10-09, 0 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=22
+1848 OK 8 series, 549 filas, ultimo 2026-10-28, 2 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=94
+1849 OK 7 series, 355 filas, ultimo 2026-10-30, 2 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=77
+1850 OK 1 series, 468 filas, ultimo 2026-10-29, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=70
+1851 OK 4 series, 350 filas, ultimo 2026-10-30, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=53
+1852 OK 2 series, 388 filas, ultimo 2026-10-14, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=69
+1853 OK 5 series, 393 filas, ultimo 2026-10-24, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=70
+1854 OK 1 series, 116 filas, ultimo 2026-10-09, 0 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=20
 1855 SIN SERIES (filas 0, secciones sin precio {})
-1856 OK 2 series, 404 filas, ultimo 2026-10-22, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=65
-1857 OK 4 series, 469 filas, ultimo 2026-10-23, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=62
-1858 SIN SERIES (filas 16, secciones sin precio {})
+1856 OK 2 series, 438 filas, ultimo 2026-10-22, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=72
+1857 OK 3 series, 452 filas, ultimo 2026-10-30, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=61
+1858 SIN SERIES (filas 30, secciones sin precio {})
 1859 SIN SERIES (filas 0, secciones sin precio {})
 1861 SIN SERIES (filas 47, secciones sin precio {})
 1863 SIN SERIES (filas 0, secciones sin precio {})
 1864 SIN SERIES (filas 0, secciones sin precio {})
-1865 OK 5 series, 221 filas, ultimo 2026-10-14, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,pregnancy_stage descartados_por_ambiguedad=54
-1866 SIN SERIES (filas 4, secciones sin precio {})
+1865 OK 4 series, 213 filas, ultimo 2026-10-28, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,pregnancy_stage descartados_por_ambiguedad=52
+1866 SIN SERIES (filas 2, secciones sin precio {})
 1867 SIN SERIES (filas 0, secciones sin precio {})
 1868 SIN SERIES (filas 0, secciones sin precio {})
 1869 SIN SERIES (filas 8, secciones sin precio {})
 1870 SIN SERIES (filas 0, secciones sin precio {})
 1871 SIN SERIES (filas 0, secciones sin precio {})
-1872 OK 21 series, 483 filas, ultimo 2026-10-21, 7 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=68
-1874 SIN SERIES (filas 120, secciones sin precio {})
-1876 OK 19 series, 660 filas, ultimo 2026-10-23, 6 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=85
-1878 OK 19 series, 769 filas, ultimo 2026-09-26, 6 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=107
+1872 OK 23 series, 536 filas, ultimo 2026-10-28, 8 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=73
+1874 SIN SERIES (filas 59, secciones sin precio {})
+1876 OK 17 series, 660 filas, ultimo 2026-10-23, 6 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=85
+1878 OK 19 series, 762 filas, ultimo 2026-09-26, 6 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=107
 1879 OK 9 series, 467 filas, ultimo 2026-10-17, 4 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=50
-1880 OK 35 series, 2300 filas, ultimo 2026-10-17, 16 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=213
+1880 OK 34 series, 2201 filas, ultimo 2026-10-17, 16 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=204
 1882 SIN SERIES (filas 0, secciones sin precio {})
 1883 SIN SERIES (filas 0, secciones sin precio {})
 1884 SIN SERIES (filas 200, secciones sin precio {})
-1886 SIN SERIES (filas 476, secciones sin precio {})
+1886 SIN SERIES (filas 494, secciones sin precio {})
 1887 SIN SERIES (filas 0, secciones sin precio {})
 1888 SIN SERIES (filas 0, secciones sin precio {})
-1889 OK 56 series, 1707 filas, ultimo 2026-10-21, 25 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=162
-1891 OK 37 series, 1549 filas, ultimo 2026-10-22, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=171
-1892 OK 8 series, 906 filas, ultimo 2026-10-15, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=140
-1893 OK 16 series, 159 filas, ultimo 2026-10-20, 4 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=1
-1894 SIN SERIES (filas 40, secciones sin precio {})
+1889 OK 57 series, 1706 filas, ultimo 2026-10-28, 25 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=166
+1891 OK 40 series, 1556 filas, ultimo 2026-10-29, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=171
+1892 OK 8 series, 879 filas, ultimo 2026-10-29, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=138
+1893 OK 15 series, 107 filas, ultimo 2026-10-20, 3 KB, dims=class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect
+1894 SIN SERIES (filas 84, secciones sin precio {})
 1896 SIN SERIES (filas 0, secciones sin precio {})
-1897 SIN SERIES (filas 96, secciones sin precio {})
+1897 OK 14 series, 117 filas, ultimo 2026-10-29, 3 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=6
 1898 SIN SERIES (filas 326, secciones sin precio {})
-1899 OK 14 series, 2073 filas, ultimo 2026-10-21, 5 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=438
-1900 SIN SERIES (filas 178, secciones sin precio {})
-1901 OK 28 series, 452 filas, ultimo 2026-10-20, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=54
-1902 SIN SERIES (filas 92, secciones sin precio {})
-1903 OK 1 series, 400 filas, ultimo 2026-10-21, 1 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=56
+1899 OK 14 series, 2080 filas, ultimo 2026-10-28, 5 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=441
+1900 SIN SERIES (filas 243, secciones sin precio {})
+1901 OK 36 series, 522 filas, ultimo 2026-10-27, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=57
+1902 SIN SERIES (filas 198, secciones sin precio {})
+1903 OK 1 series, 519 filas, ultimo 2026-10-28, 1 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=74
 1906 SIN SERIES (filas 109, secciones sin precio {})
-1908 OK 66 series, 1995 filas, ultimo 2026-10-22, 33 KB, dims=commodity,class,dressing,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=246
-1909 OK 46 series, 1433 filas, ultimo 2026-10-15, 20 KB, dims=commodity,class,dressing,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=195
+1908 OK 66 series, 2014 filas, ultimo 2026-10-26, 33 KB, dims=commodity,class,dressing,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=249
+1909 OK 46 series, 1460 filas, ultimo 2026-10-29, 20 KB, dims=commodity,class,dressing,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=201
 1910 SIN SERIES (filas 0, secciones sin precio {})
 1911 SIN SERIES (filas 0, secciones sin precio {})
 1912 SIN SERIES (filas 0, secciones sin precio {})
-1913 OK 20 series, 2661 filas, ultimo 2026-10-19, 6 KB, dims=commodity,class,category,dressing,lot_desc,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=573
+1913 OK 20 series, 2628 filas, ultimo 2026-10-26, 6 KB, dims=commodity,class,category,dressing,lot_desc,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=564
 1916 SIN SERIES (filas 0, secciones sin precio {})
-1917 OK 41 series, 1503 filas, ultimo 2026-10-19, 25 KB, dims=commodity,class,dressing,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=223
-1918 OK 35 series, 1205 filas, ultimo 2026-10-20, 18 KB, dims=commodity,class,dressing,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=181
+1917 OK 41 series, 1562 filas, ultimo 2026-10-26, 25 KB, dims=commodity,class,dressing,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=232
+1918 OK 35 series, 1209 filas, ultimo 2026-10-27, 18 KB, dims=commodity,class,dressing,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=183
 1920 SIN SERIES (filas 0, secciones sin precio {})
 1922 SIN SERIES (filas 55, secciones sin precio {})
 1923 SIN SERIES (filas 0, secciones sin precio {})
 1924 SIN SERIES (filas 0, secciones sin precio {})
 1925 SIN SERIES (filas 0, secciones sin precio {})
-1927 OK 5 series, 300 filas, ultimo 2026-10-17, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,pregnancy_stage descartados_por_ambiguedad=66
-1928 OK 56 series, 9840 filas, ultimo 2026-10-21, 43 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=261
+1927 OK 4 series, 291 filas, ultimo 2026-10-31, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,pregnancy_stage descartados_por_ambiguedad=64
+1928 OK 54 series, 9839 filas, ultimo 2026-10-28, 43 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=263
 1929 SIN SERIES (filas 0, secciones sin precio {})
-1930 OK 28 series, 1816 filas, ultimo 2026-10-19, 14 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=75
+1930 OK 30 series, 1823 filas, ultimo 2026-10-26, 14 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=75
 1931 SIN SERIES (filas 0, secciones sin precio {})
-1932 OK 8 series, 427 filas, ultimo 2026-10-12, 2 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=27
-1933 OK 54 series, 3977 filas, ultimo 2026-10-24, 40 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=103
-1934 OK 30 series, 1946 filas, ultimo 2026-10-20, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=78
-1935 OK 34 series, 2682 filas, ultimo 2026-10-20, 23 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=83
-1937 OK 23 series, 1940 filas, ultimo 2026-10-20, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=81
-1938 OK 22 series, 1439 filas, ultimo 2026-10-20, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=78
-1939 OK 26 series, 2325 filas, ultimo 2026-10-21, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=82
-1940 OK 27 series, 2140 filas, ultimo 2026-10-21, 18 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=103
-1941 OK 22 series, 1802 filas, ultimo 2026-10-19, 15 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=78
-1942 OK 19 series, 1350 filas, ultimo 2026-10-21, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=69
+1932 OK 12 series, 478 filas, ultimo 2026-10-26, 3 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=30
+1933 OK 53 series, 3985 filas, ultimo 2026-10-31, 40 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=105
+1934 OK 30 series, 1934 filas, ultimo 2026-10-27, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=78
+1935 OK 34 series, 2682 filas, ultimo 2026-10-27, 23 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=83
+1937 OK 23 series, 1925 filas, ultimo 2026-10-27, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=81
+1938 OK 21 series, 1462 filas, ultimo 2026-10-27, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=78
+1939 OK 26 series, 2324 filas, ultimo 2026-10-28, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=82
+1940 OK 28 series, 2156 filas, ultimo 2026-10-28, 18 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=103
+1941 OK 22 series, 1785 filas, ultimo 2026-10-26, 15 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=78
+1942 OK 19 series, 1352 filas, ultimo 2026-10-28, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=69
 1943 SIN SERIES (filas 0, secciones sin precio {})
-1944 OK 22 series, 1510 filas, ultimo 2026-10-20, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=74
-1946 OK 37 series, 2131 filas, ultimo 2026-10-20, 20 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=169
+1944 OK 22 series, 1495 filas, ultimo 2026-10-27, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=74
+1946 OK 35 series, 2103 filas, ultimo 2026-10-27, 19 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=161
 1947 SIN SERIES (filas 155, secciones sin precio {})
-1948 OK 28 series, 2106 filas, ultimo 2026-10-19, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=79
-1949 OK 27 series, 2051 filas, ultimo 2026-10-19, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=80
-1950 OK 2 series, 114 filas, ultimo 2026-09-29, 1 KB, dims=class,lot_desc descartados_por_ambiguedad=35
-1953 OK 36 series, 1344 filas, ultimo 2026-10-22, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=180
-1954 OK 23 series, 957 filas, ultimo 2026-10-22, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=154
-1955 OK 119 series, 5531 filas, ultimo 2026-10-24, 59 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=412
-1956 OK 85 series, 3331 filas, ultimo 2026-10-20, 31 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=533
-1958 OK 44 series, 2602 filas, ultimo 2026-10-19, 17 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=312
-1959 OK 69 series, 2483 filas, ultimo 2026-10-21, 26 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=387
-1961 OK 42 series, 1810 filas, ultimo 2026-10-19, 15 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=199
+1948 OK 27 series, 2105 filas, ultimo 2026-10-26, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=81
+1949 OK 26 series, 2051 filas, ultimo 2026-10-26, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=80
+1950 OK 2 series, 111 filas, ultimo 2026-09-29, 1 KB, dims=class,lot_desc descartados_por_ambiguedad=34
+1953 OK 38 series, 1351 filas, ultimo 2026-10-29, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=179
+1954 OK 23 series, 968 filas, ultimo 2026-10-29, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=156
+1955 OK 119 series, 5538 filas, ultimo 2026-10-31, 59 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=416
+1956 OK 83 series, 3319 filas, ultimo 2026-10-27, 30 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=533
+1958 OK 48 series, 2586 filas, ultimo 2026-10-26, 18 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=302
+1959 OK 68 series, 2504 filas, ultimo 2026-10-28, 25 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=389
+1961 OK 41 series, 1773 filas, ultimo 2026-10-26, 14 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=191
 1962 SIN SERIES (filas 0, secciones sin precio {})
-1963 OK 129 series, 8099 filas, ultimo 2026-10-24, 50 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=1335
-1964 OK 62 series, 1805 filas, ultimo 2026-10-21, 24 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=274
+1963 OK 130 series, 8096 filas, ultimo 2026-10-31, 50 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=1336
+1964 OK 64 series, 1793 filas, ultimo 2026-10-28, 24 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=268
 1965 SIN SERIES (filas 0, secciones sin precio {})
 1966 SIN SERIES (filas 0, secciones sin precio {})
 1967 SIN SERIES (filas 0, secciones sin precio {})
@@ -191,236 +191,236 @@
 1970 OK 50 series, 1971 filas, ultimo 2026-10-21, 27 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=301
 1971 SIN SERIES (filas 0, secciones sin precio {})
 1973 OK 3 series, 238 filas, ultimo 2026-10-10, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=14
-1974 OK 52 series, 1554 filas, ultimo 2026-10-14, 29 KB, dims=commodity,class,dressing,frame,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=197
+1974 OK 53 series, 1616 filas, ultimo 2026-10-28, 30 KB, dims=commodity,class,dressing,frame,lot_desc,quality_grade_name,yield_grade descartados_por_ambiguedad=205
 1975 SIN SERIES (filas 0, secciones sin precio {})
-1976 OK 58 series, 2653 filas, ultimo 2026-10-24, 32 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=415
+1976 OK 56 series, 2583 filas, ultimo 2026-10-24, 31 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=405
 1977 SIN SERIES (filas 0, secciones sin precio {})
 1978 SIN SERIES (filas 0, secciones sin precio {})
-1979 OK 2 series, 70 filas, ultimo 2026-10-20, 1 KB, dims=class,muscle_grade descartados_por_ambiguedad=16
-1980 OK 9 series, 772 filas, ultimo 2026-10-17, 3 KB, dims=commodity,class,age,frame,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=50
+1979 OK 2 series, 72 filas, ultimo 2026-10-27, 1 KB, dims=class,muscle_grade descartados_por_ambiguedad=16
+1980 OK 9 series, 689 filas, ultimo 2026-10-17, 3 KB, dims=commodity,class,age,frame,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect descartados_por_ambiguedad=44
 1981 SIN SERIES (filas 0, secciones sin precio {})
 1982 SIN SERIES (filas 0, secciones sin precio {})
 1983 SIN SERIES (filas 1, secciones sin precio {})
-1984 OK 13 series, 746 filas, ultimo 2026-10-21, 5 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=67
-1985 OK 23 series, 1408 filas, ultimo 2026-10-20, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=72
-1986 OK 19 series, 1189 filas, ultimo 2026-10-19, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=69
-1987 OK 24 series, 1796 filas, ultimo 2026-10-21, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=76
-1988 OK 18 series, 1997 filas, ultimo 2026-10-20, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=80
-1989 OK 18 series, 1179 filas, ultimo 2026-10-20, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=71
+1984 OK 12 series, 736 filas, ultimo 2026-10-28, 4 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=67
+1985 OK 22 series, 1465 filas, ultimo 2026-10-27, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=75
+1986 OK 18 series, 1139 filas, ultimo 2026-10-19, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=66
+1987 OK 24 series, 1789 filas, ultimo 2026-10-28, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=76
+1988 OK 18 series, 1917 filas, ultimo 2026-10-20, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=77
+1989 OK 17 series, 1201 filas, ultimo 2026-10-27, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=72
 1990 SIN SERIES (filas 16, secciones sin precio {})
-1991 OK 19 series, 1689 filas, ultimo 2026-10-13, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=75
-1992 OK 64 series, 9651 filas, ultimo 2026-10-21, 44 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=268
-1995 OK 19 series, 1510 filas, ultimo 2026-10-20, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=76
-1996 OK 22 series, 1823 filas, ultimo 2026-10-19, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=68
-1997 OK 24 series, 2045 filas, ultimo 2026-10-19, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=72
-1998 OK 21 series, 1242 filas, ultimo 2026-10-14, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=77
-1999 OK 29 series, 2076 filas, ultimo 2026-10-21, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=74
-2000 OK 27 series, 2041 filas, ultimo 2026-10-21, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=84
-2001 OK 25 series, 1408 filas, ultimo 2026-10-20, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=84
-2003 OK 21 series, 1250 filas, ultimo 2026-10-19, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=70
+1991 OK 19 series, 1729 filas, ultimo 2026-10-27, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=76
+1992 OK 67 series, 9679 filas, ultimo 2026-10-28, 45 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=266
+1995 OK 20 series, 1515 filas, ultimo 2026-10-27, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=76
+1996 OK 22 series, 1897 filas, ultimo 2026-10-26, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=71
+1997 OK 24 series, 2050 filas, ultimo 2026-10-26, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=72
+1998 OK 21 series, 1227 filas, ultimo 2026-10-28, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=76
+1999 OK 28 series, 2166 filas, ultimo 2026-10-28, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=77
+2000 OK 28 series, 2070 filas, ultimo 2026-10-28, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=83
+2001 OK 25 series, 1407 filas, ultimo 2026-10-27, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=85
+2003 OK 22 series, 1199 filas, ultimo 2026-10-26, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=67
 2005 SIN SERIES (filas 74, secciones sin precio {})
-2006 OK 63 series, 4085 filas, ultimo 2026-10-24, 40 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=123
-2007 OK 18 series, 1241 filas, ultimo 2026-10-19, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=70
+2006 OK 67 series, 4096 filas, ultimo 2026-10-31, 41 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=121
+2007 OK 18 series, 1247 filas, ultimo 2026-10-26, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=70
 2008 SIN SERIES (filas 74, secciones sin precio {})
-2009 SIN SERIES (filas 52, secciones sin precio {})
-2010 SIN SERIES (filas 0, secciones sin precio {})
-2012 SIN SERIES (filas 37, secciones sin precio {})
+2009 SIN SERIES (filas 69, secciones sin precio {})
+2010 SIN SERIES (filas 22, secciones sin precio {})
+2012 SIN SERIES (filas 63, secciones sin precio {})
 2013 SIN SERIES (filas 0, secciones sin precio {})
-2014 OK 10 series, 1988 filas, ultimo 2026-10-20, 3 KB, dims=commodity,class,category,dressing,quality_grade_name,yield_grade descartados_por_ambiguedad=455
-2015 OK 30 series, 2063 filas, ultimo 2026-10-22, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=155
-2016 OK 49 series, 2149 filas, ultimo 2026-10-21, 20 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=466
-2017 OK 16 series, 484 filas, ultimo 2026-10-22, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=82
+2014 OK 12 series, 1992 filas, ultimo 2026-10-27, 4 KB, dims=commodity,class,category,dressing,quality_grade_name,yield_grade descartados_por_ambiguedad=456
+2015 OK 32 series, 2100 filas, ultimo 2026-10-29, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=156
+2016 OK 47 series, 2143 filas, ultimo 2026-10-28, 20 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=460
+2017 OK 17 series, 511 filas, ultimo 2026-10-29, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=88
 2018 SIN SERIES (filas 58, secciones sin precio {})
-2019 OK 1 series, 319 filas, ultimo 2026-10-16, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=50
-2020 OK 5 series, 576 filas, ultimo 2026-10-21, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=100
-2021 OK 6 series, 515 filas, ultimo 2026-10-23, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=83
-2022 OK 5 series, 488 filas, ultimo 2026-10-22, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=87
-2023 OK 1 series, 188 filas, ultimo 2026-10-20, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=38
-2024 OK 2 series, 279 filas, ultimo 2026-10-23, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=58
-2025 SIN SERIES (filas 112, secciones sin precio {})
-2026 OK 9 series, 760 filas, ultimo 2026-10-19, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=137
-2027 OK 27 series, 1914 filas, ultimo 2026-10-17, 12 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=262
-2029 OK 1 series, 3 filas, ultimo 2026-09-29, 0 KB, dims=
+2019 OK 4 series, 401 filas, ultimo 2026-10-30, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=60
+2020 OK 6 series, 582 filas, ultimo 2026-10-28, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=100
+2021 OK 6 series, 554 filas, ultimo 2026-10-30, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=89
+2022 OK 5 series, 444 filas, ultimo 2026-10-22, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=80
+2023 OK 1 series, 215 filas, ultimo 2026-10-28, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=43
+2024 OK 3 series, 284 filas, ultimo 2026-10-30, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=59
+2025 SIN SERIES (filas 127, secciones sin precio {})
+2026 OK 9 series, 776 filas, ultimo 2026-10-26, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=137
+2027 OK 27 series, 1934 filas, ultimo 2026-10-24, 12 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=261
+2029 SIN SERIES (filas 2, secciones sin precio {})
 2031 SIN SERIES (filas 0, secciones sin precio {})
-2032 SIN SERIES (filas 0, secciones sin precio {})
+2032 SIN SERIES (filas 1, secciones sin precio {})
 2033 SIN SERIES (filas 0, secciones sin precio {})
 2034 OK 1 series, 13 filas, ultimo 2026-10-21, 0 KB, dims=class descartados_por_ambiguedad=1
-2036 OK 52 series, 2171 filas, ultimo 2026-10-22, 20 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=334
-2037 OK 43 series, 2023 filas, ultimo 2026-10-20, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=181
+2036 OK 54 series, 2174 filas, ultimo 2026-10-29, 20 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=336
+2037 OK 43 series, 2040 filas, ultimo 2026-10-27, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=181
 2038 SIN SERIES (filas 0, secciones sin precio {})
 2040 SIN SERIES (filas 0, secciones sin precio {})
 2042 SIN SERIES (filas 0, secciones sin precio {})
 2043 SIN SERIES (filas 153, secciones sin precio {})
 2044 SIN SERIES (filas 29, secciones sin precio {})
 2045 SIN SERIES (filas 0, secciones sin precio {})
-2046 OK 24 series, 341 filas, ultimo 2026-10-21, 10 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
-2047 OK 17 series, 253 filas, ultimo 2026-10-21, 7 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
-2048 SIN SERIES (filas 524, secciones sin precio {})
-2049 OK 37 series, 649 filas, ultimo 2026-10-20, 21 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
-2050 OK 38 series, 1770 filas, ultimo 2026-10-21, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=135
-2051 OK 37 series, 1747 filas, ultimo 2026-10-22, 19 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=140
-2052 OK 52 series, 2507 filas, ultimo 2026-10-13, 22 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=221
-2053 OK 52 series, 2036 filas, ultimo 2026-10-15, 23 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=161
+2046 OK 25 series, 347 filas, ultimo 2026-10-28, 11 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
+2047 OK 18 series, 258 filas, ultimo 2026-10-28, 7 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
+2048 OK 2 series, 592 filas, ultimo 2026-10-29, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=52
+2049 OK 37 series, 649 filas, ultimo 2026-10-27, 21 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
+2050 OK 37 series, 1777 filas, ultimo 2026-10-28, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=135
+2051 OK 38 series, 1754 filas, ultimo 2026-10-29, 19 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=143
+2052 OK 48 series, 2493 filas, ultimo 2026-10-27, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=220
+2053 OK 52 series, 2031 filas, ultimo 2026-10-29, 22 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=159
 2054 SIN SERIES (filas 0, secciones sin precio {})
-2055 OK 43 series, 2180 filas, ultimo 2026-10-12, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=192
-2057 OK 41 series, 1296 filas, ultimo 2026-10-21, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=109
-2058 OK 33 series, 1573 filas, ultimo 2026-10-22, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=98
-2059 OK 42 series, 1915 filas, ultimo 2026-10-16, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=165
-2060 OK 43 series, 2977 filas, ultimo 2026-10-20, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=413
-2061 OK 38 series, 1933 filas, ultimo 2026-10-17, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=166
-2062 OK 16 series, 1479 filas, ultimo 2026-10-17, 11 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name descartados_por_ambiguedad=182
-2063 OK 161 series, 8815 filas, ultimo 2026-10-17, 71 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=867
-2064 OK 49 series, 2756 filas, ultimo 2026-10-19, 22 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=185
-2065 OK 23 series, 1281 filas, ultimo 2026-10-20, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=103
-2066 OK 62 series, 2280 filas, ultimo 2026-10-20, 26 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=214
-2067 OK 31 series, 979 filas, ultimo 2026-10-21, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=116
-2068 OK 37 series, 2312 filas, ultimo 2026-10-21, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=154
-2069 OK 25 series, 1877 filas, ultimo 2026-10-19, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=89
-2070 OK 43 series, 1525 filas, ultimo 2026-10-17, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=156
+2055 OK 44 series, 2157 filas, ultimo 2026-10-26, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=189
+2057 OK 39 series, 1301 filas, ultimo 2026-10-28, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=113
+2058 OK 33 series, 1589 filas, ultimo 2026-10-29, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=97
+2059 OK 38 series, 1913 filas, ultimo 2026-10-30, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=166
+2060 OK 44 series, 2977 filas, ultimo 2026-10-27, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=415
+2061 OK 43 series, 1931 filas, ultimo 2026-10-24, 19 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=162
+2062 OK 15 series, 1489 filas, ultimo 2026-10-24, 11 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name descartados_por_ambiguedad=184
+2063 OK 164 series, 8830 filas, ultimo 2026-10-24, 72 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=869
+2064 OK 51 series, 2760 filas, ultimo 2026-10-26, 22 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=187
+2065 OK 24 series, 1289 filas, ultimo 2026-10-27, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=103
+2066 OK 66 series, 2273 filas, ultimo 2026-10-27, 27 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=207
+2067 OK 33 series, 968 filas, ultimo 2026-10-28, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=115
+2068 OK 37 series, 2278 filas, ultimo 2026-10-28, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=154
+2069 OK 23 series, 1854 filas, ultimo 2026-10-26, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=88
+2070 OK 42 series, 1495 filas, ultimo 2026-10-24, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=155
 2071 OK 19 series, 917 filas, ultimo 2026-10-21, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=104
 2072 OK 1 series, 133 filas, ultimo 2026-10-09, 0 KB, dims=class,frame,muscle_grade descartados_por_ambiguedad=13
 2073 SIN SERIES (filas 289, secciones sin precio {})
 2075 SIN SERIES (filas 52, secciones sin precio {})
 2077 SIN SERIES (filas 25, secciones sin precio {})
 2078 SIN SERIES (filas 40, secciones sin precio {})
-2079 OK 1 series, 373 filas, ultimo 2026-10-07, 0 KB, dims=class,lot_desc descartados_por_ambiguedad=27
-2080 OK 41 series, 1769 filas, ultimo 2026-10-20, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=107
-2081 OK 25 series, 1114 filas, ultimo 2026-10-12, 7 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=277
+2079 OK 1 series, 432 filas, ultimo 2026-10-28, 0 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=32
+2080 OK 41 series, 1799 filas, ultimo 2026-10-27, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=112
+2081 OK 25 series, 1221 filas, ultimo 2026-10-26, 8 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=307
 2083 SIN SERIES (filas 142, secciones sin precio {})
 2084 OK 12 series, 336 filas, ultimo 2026-10-21, 3 KB, dims=commodity,class,category,quality_grade_name,yield_grade descartados_por_ambiguedad=71
-2086 SIN SERIES (filas 79, secciones sin precio {})
-2087 OK 28 series, 2785 filas, ultimo 2026-10-23, 14 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=295
-2088 OK 21 series, 2848 filas, ultimo 2026-10-19, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=129
-2089 OK 27 series, 1557 filas, ultimo 2026-10-19, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=114
-2090 OK 33 series, 1862 filas, ultimo 2026-10-19, 16 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=145
-2092 OK 23 series, 2141 filas, ultimo 2026-10-20, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=99
-2093 OK 18 series, 2653 filas, ultimo 2026-10-21, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=113
-2094 OK 23 series, 1749 filas, ultimo 2026-10-22, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=169
-2095 OK 17 series, 1187 filas, ultimo 2026-10-19, 8 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=139
+2086 SIN SERIES (filas 108, secciones sin precio {})
+2087 OK 28 series, 2758 filas, ultimo 2026-10-30, 14 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=292
+2088 OK 21 series, 2820 filas, ultimo 2026-10-26, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=127
+2089 OK 24 series, 1635 filas, ultimo 2026-10-28, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=122
+2090 OK 32 series, 1873 filas, ultimo 2026-10-26, 15 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=145
+2092 OK 23 series, 2123 filas, ultimo 2026-10-27, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=99
+2093 OK 18 series, 2655 filas, ultimo 2026-10-28, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=114
+2094 OK 22 series, 1768 filas, ultimo 2026-10-29, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=167
+2095 OK 18 series, 1187 filas, ultimo 2026-10-26, 9 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=138
 2096 SIN SERIES (filas 0, secciones sin precio {})
-2097 OK 1 series, 101 filas, ultimo 2026-10-21, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=17
-2098 OK 2 series, 165 filas, ultimo 2026-10-22, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=25
-2099 OK 2 series, 324 filas, ultimo 2026-10-22, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=50
-2100 SIN SERIES (filas 249, secciones sin precio {})
-2101 OK 11 series, 236 filas, ultimo 2026-10-23, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=7
-2103 OK 2 series, 394 filas, ultimo 2026-10-21, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=40
-2104 OK 18 series, 466 filas, ultimo 2026-10-20, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=47
-2105 SIN SERIES (filas 56, secciones sin precio {})
-2110 OK 1 series, 367 filas, ultimo 2026-10-17, 0 KB, dims=commodity,class,age,dressing,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=84
-2111 OK 157 series, 11825 filas, ultimo 2026-10-21, 86 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=722
-2112 OK 23 series, 1648 filas, ultimo 2026-10-19, 10 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=131
-2113 OK 40 series, 2276 filas, ultimo 2026-10-19, 18 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=161
-2114 OK 14 series, 1181 filas, ultimo 2026-10-19, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=121
-2115 OK 155 series, 6676 filas, ultimo 2026-10-24, 75 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=418
-2116 OK 26 series, 1415 filas, ultimo 2026-10-20, 10 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=106
-2117 OK 31 series, 2033 filas, ultimo 2026-10-20, 15 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=139
-2118 OK 31 series, 2008 filas, ultimo 2026-10-20, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=115
-2119 OK 18 series, 790 filas, ultimo 2026-10-20, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=98
-2120 OK 23 series, 1820 filas, ultimo 2026-10-21, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=144
-2122 OK 28 series, 1543 filas, ultimo 2026-10-19, 12 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=100
-2123 OK 15 series, 636 filas, ultimo 2026-10-19, 5 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=105
-2124 OK 16 series, 976 filas, ultimo 2026-10-19, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=108
-2125 OK 65 series, 2831 filas, ultimo 2026-10-19, 31 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=146
-2126 OK 21 series, 1579 filas, ultimo 2026-10-21, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=119
-2127 OK 44 series, 2474 filas, ultimo 2026-10-19, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=299
-2128 OK 30 series, 2013 filas, ultimo 2026-10-20, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=284
-2129 OK 17 series, 128 filas, ultimo 2026-09-23, 4 KB, dims=class,age,frame,muscle_grade,offspring_weight_est,pregnancy_stage
+2097 OK 1 series, 143 filas, ultimo 2026-10-28, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=24
+2098 OK 2 series, 167 filas, ultimo 2026-10-29, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=24
+2099 OK 2 series, 323 filas, ultimo 2026-10-29, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=49
+2100 SIN SERIES (filas 265, secciones sin precio {})
+2101 OK 12 series, 237 filas, ultimo 2026-10-30, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=7
+2103 OK 2 series, 423 filas, ultimo 2026-10-28, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage descartados_por_ambiguedad=43
+2104 OK 18 series, 461 filas, ultimo 2026-10-27, 6 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=48
+2105 SIN SERIES (filas 61, secciones sin precio {})
+2110 OK 1 series, 328 filas, ultimo 2026-10-17, 0 KB, dims=commodity,class,age,dressing,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect descartados_por_ambiguedad=76
+2111 OK 159 series, 11823 filas, ultimo 2026-10-28, 86 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=729
+2112 OK 23 series, 1637 filas, ultimo 2026-10-26, 10 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=129
+2113 OK 42 series, 2272 filas, ultimo 2026-10-26, 18 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=160
+2114 OK 16 series, 1178 filas, ultimo 2026-10-26, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=121
+2115 OK 154 series, 6681 filas, ultimo 2026-10-31, 75 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=427
+2116 OK 26 series, 1427 filas, ultimo 2026-10-27, 11 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=106
+2117 OK 30 series, 2022 filas, ultimo 2026-10-28, 14 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=138
+2118 OK 33 series, 1993 filas, ultimo 2026-10-27, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=115
+2119 OK 17 series, 776 filas, ultimo 2026-10-27, 5 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=98
+2120 OK 24 series, 1794 filas, ultimo 2026-10-28, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=142
+2122 OK 26 series, 1535 filas, ultimo 2026-10-26, 12 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=100
+2123 OK 15 series, 650 filas, ultimo 2026-10-26, 5 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=108
+2124 OK 18 series, 966 filas, ultimo 2026-10-26, 7 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=109
+2125 OK 69 series, 2846 filas, ultimo 2026-10-26, 33 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=142
+2126 OK 21 series, 1605 filas, ultimo 2026-10-28, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=119
+2127 OK 44 series, 2454 filas, ultimo 2026-10-26, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=295
+2128 OK 31 series, 1985 filas, ultimo 2026-10-27, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=281
+2129 OK 17 series, 123 filas, ultimo 2026-10-28, 4 KB, dims=class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage
 2130 SIN SERIES (filas 94, secciones sin precio {})
 2131 SIN SERIES (filas 0, secciones sin precio {})
-2132 OK 44 series, 978 filas, ultimo 2026-10-22, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=131
+2132 OK 41 series, 925 filas, ultimo 2026-10-22, 17 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=123
 2133 SIN SERIES (filas 0, secciones sin precio {})
 2134 SIN SERIES (filas 0, secciones sin precio {})
 2135 SIN SERIES (filas 0, secciones sin precio {})
 2136 SIN SERIES (filas 4, secciones sin precio {})
-2137 SIN SERIES (filas 3, secciones sin precio {})
+2137 SIN SERIES (filas 2, secciones sin precio {})
 2139 SIN SERIES (filas 0, secciones sin precio {})
 2140 SIN SERIES (filas 21, secciones sin precio {})
 2142 OK 2 series, 54 filas, ultimo 2026-10-22, 1 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=12
 2144 SIN SERIES (filas 0, secciones sin precio {})
 2145 SIN SERIES (filas 32, secciones sin precio {})
-2146 OK 4 series, 50 filas, ultimo 2026-10-20, 1 KB, dims=class,muscle_grade descartados_por_ambiguedad=4
+2146 OK 3 series, 50 filas, ultimo 2026-10-27, 1 KB, dims=class,muscle_grade descartados_por_ambiguedad=4
 2147 SIN SERIES (filas 0, secciones sin precio {})
-2148 OK 4 series, 165 filas, ultimo 2026-10-10, 1 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=30
+2148 OK 5 series, 173 filas, ultimo 2026-10-24, 1 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=32
 2149 SIN SERIES (filas 31, secciones sin precio {})
-2150 OK 1 series, 234 filas, ultimo 2026-09-24, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=37
+2150 OK 3 series, 240 filas, ultimo 2026-10-29, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=39
 2151 SIN SERIES (filas 37, secciones sin precio {})
 2152 SIN SERIES (filas 70, secciones sin precio {})
-2153 OK 45 series, 3165 filas, ultimo 2026-10-21, 13 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=775
+2153 OK 46 series, 3245 filas, ultimo 2026-10-28, 14 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=791
 2154 OK 29 series, 310 filas, ultimo 2026-10-22, 11 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
-2155 OK 5 series, 353 filas, ultimo 2026-10-23, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,pregnancy_stage descartados_por_ambiguedad=56
+2155 OK 5 series, 345 filas, ultimo 2026-10-30, 1 KB, dims=commodity,class,age,frame,lot_desc,muscle_grade,pregnancy_stage descartados_por_ambiguedad=56
 2156 SIN SERIES (filas 59, secciones sin precio {})
 2157 OK 2 series, 182 filas, ultimo 2026-09-17, 0 KB, dims=class,frame,muscle_grade descartados_por_ambiguedad=41
-2158 OK 3 series, 352 filas, ultimo 2026-10-15, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=60
-2159 OK 1 series, 497 filas, ultimo 2026-10-12, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=72
+2158 OK 1 series, 321 filas, ultimo 2026-10-29, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=57
+2159 OK 3 series, 542 filas, ultimo 2026-10-26, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=80
 2160 SIN SERIES (filas 153, secciones sin precio {})
 2161 SIN SERIES (filas 0, secciones sin precio {})
-2162 OK 5 series, 363 filas, ultimo 2026-10-21, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=55
+2162 OK 3 series, 314 filas, ultimo 2026-10-21, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=49
 2163 SIN SERIES (filas 0, secciones sin precio {})
-2164 OK 15 series, 175 filas, ultimo 2026-10-20, 6 KB, dims=class,lot_desc,quality_grade_name,yield_grade
-2165 OK 25 series, 435 filas, ultimo 2026-10-21, 15 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
-2166 OK 1 series, 374 filas, ultimo 2026-10-22, 0 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=61
-2168 SIN SERIES (filas 278, secciones sin precio {})
-2169 OK 2 series, 831 filas, ultimo 2026-10-17, 1 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=77
-2170 OK 1 series, 66 filas, ultimo 2026-09-14, 0 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=18
-2171 OK 9 series, 55 filas, ultimo 2026-10-22, 2 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
-2172 OK 4 series, 25 filas, ultimo 2026-10-20, 1 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
-2173 OK 4 series, 409 filas, ultimo 2026-10-09, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=62
+2164 OK 17 series, 179 filas, ultimo 2026-10-27, 6 KB, dims=class,lot_desc,quality_grade_name,yield_grade
+2165 OK 25 series, 433 filas, ultimo 2026-10-28, 15 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
+2166 OK 1 series, 323 filas, ultimo 2026-10-22, 0 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=53
+2168 SIN SERIES (filas 271, secciones sin precio {})
+2169 OK 2 series, 820 filas, ultimo 2026-10-17, 1 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=76
+2170 OK 1 series, 69 filas, ultimo 2026-09-14, 0 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=19
+2171 OK 9 series, 51 filas, ultimo 2026-10-22, 2 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
+2172 OK 4 series, 19 filas, ultimo 2026-10-20, 1 KB, dims=class,quality_grade_name
+2173 OK 4 series, 390 filas, ultimo 2026-10-23, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=57
 2174 OK 5 series, 284 filas, ultimo 2026-10-02, 1 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=40
-2175 OK 9 series, 2192 filas, ultimo 2026-10-19, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=115
+2175 OK 9 series, 2182 filas, ultimo 2026-10-26, 2 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=115
 2176 OK 1 series, 477 filas, ultimo 2026-10-15, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=58
 2177 OK 1 series, 414 filas, ultimo 2026-10-08, 0 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=77
 2178 SIN SERIES (filas 0, secciones sin precio {})
 2180 SIN SERIES (filas 23, secciones sin precio {})
 2181 SIN SERIES (filas 63, secciones sin precio {})
-2182 OK 14 series, 1118 filas, ultimo 2026-10-20, 4 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=176
-2183 OK 3 series, 1039 filas, ultimo 2026-10-14, 1 KB, dims=class,frame descartados_por_ambiguedad=112
-2184 SIN SERIES (filas 1467, secciones sin precio {})
+2182 OK 14 series, 1133 filas, ultimo 2026-10-27, 4 KB, dims=class,frame,lot_desc,muscle_grade descartados_por_ambiguedad=176
+2183 OK 3 series, 1052 filas, ultimo 2026-10-14, 1 KB, dims=class,frame descartados_por_ambiguedad=113
+2184 SIN SERIES (filas 1465, secciones sin precio {})
 2185 SIN SERIES (filas 0, secciones sin precio {})
-2186 SIN SERIES (filas 929, secciones sin precio {})
-2188 OK 23 series, 736 filas, ultimo 2026-10-20, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=119
-2189 OK 37 series, 2326 filas, ultimo 2026-10-21, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=317
-2190 OK 25 series, 1129 filas, ultimo 2026-10-19, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=167
-2191 OK 30 series, 2432 filas, ultimo 2026-10-22, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=280
-2192 OK 36 series, 1632 filas, ultimo 2026-10-17, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=197
-2194 OK 61 series, 2772 filas, ultimo 2026-10-17, 25 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=312
-2195 OK 22 series, 1786 filas, ultimo 2026-10-20, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=269
-2196 OK 44 series, 1992 filas, ultimo 2026-10-20, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=237
+2186 SIN SERIES (filas 939, secciones sin precio {})
+2188 OK 25 series, 755 filas, ultimo 2026-10-27, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=123
+2189 OK 34 series, 2342 filas, ultimo 2026-10-28, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=319
+2190 OK 26 series, 1128 filas, ultimo 2026-10-26, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=167
+2191 OK 31 series, 2433 filas, ultimo 2026-10-29, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=280
+2192 OK 35 series, 1616 filas, ultimo 2026-10-24, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=194
+2194 OK 63 series, 2775 filas, ultimo 2026-10-24, 26 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=312
+2195 OK 23 series, 1767 filas, ultimo 2026-10-27, 10 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=266
+2196 OK 48 series, 1991 filas, ultimo 2026-10-27, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=234
 2197 SIN SERIES (filas 0, secciones sin precio {})
-2198 OK 92 series, 2578 filas, ultimo 2026-10-19, 48 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=232
-2199 OK 93 series, 1724 filas, ultimo 2026-10-20, 45 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=121
-2200 OK 13 series, 359 filas, ultimo 2026-10-21, 4 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=65
-2201 OK 27 series, 1081 filas, ultimo 2026-10-19, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=154
-2202 OK 56 series, 1956 filas, ultimo 2026-10-21, 23 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=263
-2203 OK 29 series, 1734 filas, ultimo 2026-10-21, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=245
-2204 OK 36 series, 3315 filas, ultimo 2026-10-22, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=336
-2206 OK 71 series, 2262 filas, ultimo 2026-10-22, 31 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=211
-2207 OK 25 series, 2058 filas, ultimo 2026-10-19, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=225
-2208 OK 54 series, 2292 filas, ultimo 2026-10-21, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=276
-2209 OK 25 series, 2509 filas, ultimo 2026-10-20, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=290
-2210 OK 47 series, 1892 filas, ultimo 2026-10-23, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=278
-2211 OK 56 series, 1885 filas, ultimo 2026-10-20, 25 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=207
-2212 OK 35 series, 2184 filas, ultimo 2026-10-21, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=287
-2213 OK 33 series, 1201 filas, ultimo 2026-10-19, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=149
+2198 OK 90 series, 2578 filas, ultimo 2026-10-26, 47 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=231
+2199 OK 90 series, 1726 filas, ultimo 2026-10-27, 44 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=122
+2200 OK 16 series, 369 filas, ultimo 2026-10-28, 4 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=64
+2201 OK 28 series, 1086 filas, ultimo 2026-10-26, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=152
+2202 OK 55 series, 1975 filas, ultimo 2026-10-28, 22 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=268
+2203 OK 28 series, 1751 filas, ultimo 2026-10-28, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=244
+2204 OK 38 series, 3305 filas, ultimo 2026-10-29, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=334
+2206 OK 67 series, 2269 filas, ultimo 2026-10-29, 30 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=213
+2207 OK 25 series, 2056 filas, ultimo 2026-10-26, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=227
+2208 OK 58 series, 2310 filas, ultimo 2026-10-28, 22 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=278
+2209 OK 26 series, 2490 filas, ultimo 2026-10-27, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=288
+2210 OK 47 series, 1910 filas, ultimo 2026-10-30, 18 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=282
+2211 OK 58 series, 1903 filas, ultimo 2026-10-27, 26 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=210
+2212 OK 37 series, 2163 filas, ultimo 2026-10-28, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=287
+2213 OK 33 series, 1211 filas, ultimo 2026-10-26, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=150
 2214 SIN SERIES (filas 0, secciones sin precio {})
-2215 OK 19 series, 715 filas, ultimo 2026-10-08, 5 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=169
-2216 OK 4 series, 182 filas, ultimo 2026-09-21, 1 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=40
-2217 OK 18 series, 562 filas, ultimo 2026-10-12, 5 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=143
-2218 OK 20 series, 623 filas, ultimo 2026-10-20, 5 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=147
-2219 OK 5 series, 201 filas, ultimo 2026-09-19, 1 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=53
+2215 OK 20 series, 710 filas, ultimo 2026-10-22, 6 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=168
+2216 OK 9 series, 181 filas, ultimo 2026-10-19, 2 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=43
+2217 OK 22 series, 605 filas, ultimo 2026-10-26, 6 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=155
+2218 OK 20 series, 588 filas, ultimo 2026-10-20, 5 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=137
+2219 OK 5 series, 172 filas, ultimo 2026-09-19, 1 KB, dims=commodity,class,category,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=45
 2220 SIN SERIES (filas 32, secciones sin precio {})
-2221 SIN SERIES (filas 157, secciones sin precio {})
+2221 SIN SERIES (filas 108, secciones sin precio {})
 2222 SIN SERIES (filas 20, secciones sin precio {})
 2223 SIN SERIES (filas 0, secciones sin precio {})
 2224 SIN SERIES (filas 38, secciones sin precio {})
 2225 SIN SERIES (filas 0, secciones sin precio {})
 2227 SIN SERIES (filas 0, secciones sin precio {})
-2228 OK 1 series, 8 filas, ultimo 2026-09-30, 0 KB, dims=
-2229 OK 7 series, 576 filas, ultimo 2026-10-22, 2 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=99
-2230 SIN SERIES (filas 196, secciones sin precio {})
+2228 OK 1 series, 8 filas, ultimo 2026-10-28, 0 KB, dims=
+2229 OK 6 series, 535 filas, ultimo 2026-10-22, 1 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=90
+2230 SIN SERIES (filas 214, secciones sin precio {})
 2234 SIN SERIES (filas 0, secciones sin precio {})
 2236 SIN SERIES (filas 0, secciones sin precio {})
 2238 SIN SERIES (filas 0, secciones sin precio {})
-2247 SIN SERIES (filas 47, secciones sin precio {})
+2247 SIN SERIES (filas 59, secciones sin precio {})
 2248 SIN SERIES (filas 266, secciones sin precio {})
 2252 SIN SERIES (filas 126, secciones sin precio {})
 2253 SIN SERIES (filas 0, secciones sin precio {})
@@ -431,31 +431,31 @@
 2262 SIN SERIES (filas 0, secciones sin precio {})
 2378 SIN SERIES (filas 0, secciones sin precio {})
 2379 SIN SERIES (filas 0, secciones sin precio {})
-2383 OK 37 series, 1148 filas, ultimo 2026-10-21, 14 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=115
+2383 OK 40 series, 1163 filas, ultimo 2026-10-28, 15 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=118
 2415 SIN SERIES (filas 0, secciones sin precio {})
-2528 OK 32 series, 577 filas, ultimo 2026-10-22, 20 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
+2528 OK 31 series, 572 filas, ultimo 2026-10-29, 19 KB, dims=class,dressing,lot_desc,quality_grade_name,yield_grade
 2713 OK 25 series, 3741 filas, ultimo 2026-10-15, 6 KB, dims=commodity,class,age,frame,lot_desc,muscle_Grade,offspring_weight_est,pregnancy,region_name,state_code descartados_por_ambiguedad=409 sin_precio={"Report Receipts":24}
 2772 SIN SERIES (filas 859, secciones sin precio {"Report Details":2,"Report Receipts":10})
-2894 OK 1 series, 153 filas, ultimo 2026-10-21, 0 KB, dims=class descartados_por_ambiguedad=42 sin_precio={"Report Receipts":24}
+2894 OK 1 series, 153 filas, ultimo 2026-10-28, 0 KB, dims=class descartados_por_ambiguedad=42 sin_precio={"Report Receipts":24}
 2895 OK 1 series, 8 filas, ultimo 2026-10-19, 0 KB, dims= sin_precio={"Report Receipts":4}
-2896 SIN SERIES (filas 12, secciones sin precio {"Report Receipts":5})
+2896 SIN SERIES (filas 9, secciones sin precio {"Report Receipts":4})
 2897 OK 1 series, 80 filas, ultimo 2026-10-20, 1 KB, dims=commodity,class,age,frame,muscle_Grade,pregnancy,region_name,state_code descartados_por_ambiguedad=15 sin_precio={"Report Details":4,"Report Receipts":14}
 2922 OK 2 series, 51 filas, ultimo 2026-10-22, 1 KB, dims=commodity,class,age,dressing,frame,muscle_Grade,pregnancy,quality_grade_name,yield_grade,region_name,state_code descartados_por_ambiguedad=1 sin_precio={"Report Details":14,"Report Receipts":21}
 2934 SIN SERIES (filas 106, secciones sin precio {"Report Receipts":4})
-2937 SIN SERIES (filas 7, secciones sin precio {"Report Receipts":3})
+2937 SIN SERIES (filas 4, secciones sin precio {"Report Receipts":2})
 2938 SIN SERIES (filas 34, secciones sin precio {"Report Receipts":3})
-3087 OK 2 series, 18 filas, ultimo 2026-09-24, 1 KB, dims=class,frame,muscle_Grade sin_precio={"Report Receipts":7}
-3090 OK 23 series, 311 filas, ultimo 2026-10-22, 6 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=29
-3102 OK 4 series, 141 filas, ultimo 2026-10-21, 1 KB, dims=class,frame,lot_desc,muscle_Grade descartados_por_ambiguedad=28 sin_precio={"Report Receipts":26}
+3087 OK 2 series, 16 filas, ultimo 2026-09-24, 1 KB, dims=class,frame,muscle_Grade sin_precio={"Report Receipts":6}
+3090 OK 23 series, 371 filas, ultimo 2026-10-29, 6 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=35
+3102 OK 4 series, 136 filas, ultimo 2026-10-28, 1 KB, dims=class,frame,lot_desc,muscle_Grade descartados_por_ambiguedad=27 sin_precio={"Report Receipts":26}
 3103 SIN SERIES (filas 0, secciones sin precio {})
 3104 SIN SERIES (filas 0, secciones sin precio {})
-3161 OK 2 series, 249 filas, ultimo 2026-10-20, 1 KB, dims=class,frame,lot_desc,muscle_Grade,region_name,state_code descartados_por_ambiguedad=61 sin_precio={"Report Receipts":13}
+3161 OK 2 series, 233 filas, ultimo 2026-10-20, 1 KB, dims=class,frame,lot_desc,muscle_Grade,region_name,state_code descartados_por_ambiguedad=58 sin_precio={"Report Receipts":12}
 3241 OK 3 series, 386 filas, ultimo 2026-10-21, 1 KB, dims=commodity,class,age,lot_desc,muscle_Grade,offspring_weight_est,pregnancy,region_name,state_code descartados_por_ambiguedad=37 sin_precio={"Report Details":30,"Report Receipts":33}
 3242 OK 1 series, 1005 filas, ultimo 2026-10-16, 1 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_Grade,offspring_weight_est,pregnancy,quality_grade_name,yield_grade,region_name,state_code descartados_por_ambiguedad=113 sin_precio={"Report Details":6,"Report Receipts":19}
-3338 OK 2 series, 42 filas, ultimo 2026-10-22, 1 KB, dims=class,frame,region_name,state_code descartados_por_ambiguedad=3 sin_precio={"Report Receipts":18}
+3338 OK 2 series, 40 filas, ultimo 2026-10-22, 1 KB, dims=class,frame,region_name,state_code descartados_por_ambiguedad=3 sin_precio={"Report Receipts":17}
 3339 SIN SERIES (filas 4, secciones sin precio {"Report Receipts":2})
-3340 SIN SERIES (filas 46, secciones sin precio {"Report Receipts":6})
-3365 OK 50 series, 1596 filas, ultimo 2026-10-20, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=211
+3340 SIN SERIES (filas 49, secciones sin precio {"Report Receipts":7})
+3365 OK 51 series, 1578 filas, ultimo 2026-10-27, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=209
 3368 SIN SERIES (filas 51, secciones sin precio {"Report Receipts":2})
 3369 SIN SERIES (filas 3, secciones sin precio {})
 3370 SIN SERIES (filas 0, secciones sin precio {})
@@ -463,16 +463,16 @@
 3407 SIN SERIES (filas 0, secciones sin precio {})
 3410 SIN SERIES (filas 8, secciones sin precio {})
 3411 SIN SERIES (filas 0, secciones sin precio {})
-3412 SIN SERIES (filas 13, secciones sin precio {"Report Receipts":5})
+3412 SIN SERIES (filas 15, secciones sin precio {"Report Receipts":6})
 3414 SIN SERIES (filas 0, secciones sin precio {})
-3415 OK 31 series, 941 filas, ultimo 2026-10-20, 15 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=142
-3416 OK 6 series, 213 filas, ultimo 2026-10-20, 2 KB, dims=commodity,class,age,lot_desc,muscle_Grade,offspring_weight_est,pregnancy,region_name,state_code descartados_por_ambiguedad=32 sin_precio={"Report Details":32,"Report Receipts":47}
+3415 OK 29 series, 871 filas, ultimo 2026-10-20, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=132
+3416 OK 6 series, 215 filas, ultimo 2026-10-28, 2 KB, dims=commodity,class,age,lot_desc,muscle_Grade,offspring_weight_est,pregnancy,region_name,state_code descartados_por_ambiguedad=31 sin_precio={"Report Details":32,"Report Receipts":48}
 3417 SIN SERIES (filas 0, secciones sin precio {})
 3418 SIN SERIES (filas 0, secciones sin precio {})
 3429 OK 1 series, 9 filas, ultimo 2026-10-19, 0 KB, dims=class descartados_por_ambiguedad=3
 3453 SIN SERIES (filas 16, secciones sin precio {"Report Details":2,"Report Receipts":3})
 3454 OK 1 series, 54 filas, ultimo 2026-10-16, 1 KB, dims=commodity,class,age,dressing,frame,muscle_Grade,pregnancy,quality_grade_name,yield_grade,region_name,state_code descartados_por_ambiguedad=6 sin_precio={"Report Details":10,"Report Receipts":15}
-3456 OK 2 series, 30 filas, ultimo 2026-10-20, 1 KB, dims=class,region_name,state_code descartados_por_ambiguedad=3 sin_precio={"Report Receipts":12}
+3456 OK 2 series, 33 filas, ultimo 2026-10-27, 1 KB, dims=class,region_name,state_code descartados_por_ambiguedad=3 sin_precio={"Report Receipts":13}
 3459 SIN SERIES (filas 0, secciones sin precio {})
 3460 SIN SERIES (filas 0, secciones sin precio {})
 3467 SIN SERIES (filas 108, secciones sin precio {"Report Receipts":14})
@@ -480,12 +480,12 @@
 3470 SIN SERIES (filas 0, secciones sin precio {})
 3473 SIN SERIES (filas 0, secciones sin precio {})
 3474 SIN SERIES (filas 0, secciones sin precio {})
-3475 SIN SERIES (filas 444, secciones sin precio {})
+3475 SIN SERIES (filas 354, secciones sin precio {})
 3476 SIN SERIES (filas 72, secciones sin precio {})
 3477 SIN SERIES (filas 0, secciones sin precio {})
 3479 SIN SERIES (filas 17, secciones sin precio {"Report Receipts":5})
 3483 SIN SERIES (filas 0, secciones sin precio {})
-3484 OK 22 series, 1035 filas, ultimo 2026-10-20, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=123
+3484 OK 23 series, 1028 filas, ultimo 2026-10-27, 11 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=123
 3485 SIN SERIES (filas 0, secciones sin precio {})
 3488 SIN SERIES (filas 0, secciones sin precio {})
 3490 SIN SERIES (filas 3, secciones sin precio {})
@@ -498,13 +498,13 @@
 3626 SIN SERIES (filas 0, secciones sin precio {})
 3628 OK 1 series, 22 filas, ultimo 2026-10-22, 1 KB, dims=class,region_name,state_code descartados_por_ambiguedad=1 sin_precio={"Report Receipts":9}
 3631 SIN SERIES (filas 0, secciones sin precio {})
-3632 OK 10 series, 839 filas, ultimo 2026-10-20, 3 KB, dims=commodity,class,category,lot_desc,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=206
-3633 OK 2 series, 182 filas, ultimo 2026-10-20, 1 KB, dims=class,dressing,lot_desc,weight_collect,yield_grade descartados_por_ambiguedad=68
-3634 OK 3 series, 1387 filas, ultimo 2026-10-19, 1 KB, dims=commodity,class,category,dressing,lot_desc,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=284
-3635 OK 25 series, 1021 filas, ultimo 2026-10-19, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=153
-3648 OK 3 series, 56 filas, ultimo 2026-10-23, 1 KB, dims=class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect
+3632 OK 11 series, 833 filas, ultimo 2026-10-27, 3 KB, dims=commodity,class,category,lot_desc,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=207
+3633 OK 2 series, 172 filas, ultimo 2026-10-20, 1 KB, dims=class,dressing,lot_desc,weight_collect,yield_grade descartados_por_ambiguedad=64
+3634 OK 4 series, 1437 filas, ultimo 2026-10-26, 2 KB, dims=commodity,class,category,dressing,lot_desc,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=297
+3635 OK 27 series, 997 filas, ultimo 2026-10-26, 12 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=150
+3648 OK 3 series, 55 filas, ultimo 2026-10-23, 1 KB, dims=class,age,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,weight_collect
 3653 SIN SERIES (filas 160, secciones sin precio {})
-3654 OK 44 series, 1956 filas, ultimo 2026-10-22, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=193
+3654 OK 44 series, 1981 filas, ultimo 2026-10-29, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=197
 3659 SIN SERIES (filas 510, secciones sin precio {})
 3662 SIN SERIES (filas 69, secciones sin precio {})
 3665 SIN SERIES (filas 9, secciones sin precio {"Report Receipts":3})
@@ -513,21 +513,21 @@
 3671 SIN SERIES (filas 0, secciones sin precio {})
 3672 OK 12 series, 131 filas, ultimo 2026-10-10, 3 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=13
 3673 SIN SERIES (filas 0, secciones sin precio {})
-3675 OK 2 series, 232 filas, ultimo 2026-10-19, 1 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=39
+3675 OK 3 series, 236 filas, ultimo 2026-10-26, 1 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=40
 3676 SIN SERIES (filas 0, secciones sin precio {})
-3677 OK 25 series, 1564 filas, ultimo 2026-10-20, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=87
+3677 OK 24 series, 1572 filas, ultimo 2026-10-27, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=87
 3678 SIN SERIES (filas 7, secciones sin precio {})
 3686 SIN SERIES (filas 2, secciones sin precio {"Report Receipts":1})
-3692 OK 43 series, 1348 filas, ultimo 2026-10-15, 19 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=206
-3724 OK 60 series, 2912 filas, ultimo 2026-10-19, 35 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=155
-3775 OK 52 series, 1807 filas, ultimo 2026-10-19, 16 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=346
-3777 OK 8 series, 609 filas, ultimo 2026-10-17, 2 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=148
-3785 OK 20 series, 1027 filas, ultimo 2026-10-21, 8 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=108
-3790 OK 78 series, 3448 filas, ultimo 2026-10-19, 30 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=379
-3791 OK 11 series, 532 filas, ultimo 2026-10-20, 4 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_Grade,pregnancy,quality_grade_name,yield_grade,region_name,state_code descartados_por_ambiguedad=44 sin_precio={"Report Details":48,"Report Receipts":73}
+3692 OK 48 series, 1393 filas, ultimo 2026-10-29, 21 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_grade,quality_grade_name,yield_grade descartados_por_ambiguedad=214
+3724 OK 59 series, 2901 filas, ultimo 2026-10-26, 34 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=158
+3775 OK 52 series, 1822 filas, ultimo 2026-10-26, 16 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=348
+3777 OK 6 series, 533 filas, ultimo 2026-10-17, 2 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=129
+3785 OK 22 series, 1051 filas, ultimo 2026-10-28, 9 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=111
+3790 OK 79 series, 3473 filas, ultimo 2026-10-26, 31 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=388
+3791 OK 11 series, 519 filas, ultimo 2026-10-27, 4 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_Grade,pregnancy,quality_grade_name,yield_grade,region_name,state_code descartados_por_ambiguedad=40 sin_precio={"Report Details":48,"Report Receipts":73}
 3792 SIN SERIES (filas 182, secciones sin precio {})
-3794 OK 8 series, 2823 filas, ultimo 2026-10-20, 2 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=325
-3795 OK 79 series, 1371 filas, ultimo 2026-10-19, 40 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=124
+3794 OK 6 series, 2811 filas, ultimo 2026-10-27, 1 KB, dims=class,lot_desc,muscle_grade descartados_por_ambiguedad=322
+3795 OK 80 series, 1358 filas, ultimo 2026-10-26, 40 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=121
 3801 SIN SERIES (filas 0, secciones sin precio {})
 3873 SIN SERIES (filas 0, secciones sin precio {})
 3874 SIN SERIES (filas 0, secciones sin precio {})
@@ -535,21 +535,21 @@
 3880 SIN SERIES (filas 0, secciones sin precio {})
 3882 SIN SERIES (filas 0, secciones sin precio {})
 3891 OK 1 series, 6 filas, ultimo 2026-10-19, 0 KB, dims= sin_precio={"Report Receipts":3}
-3892 OK 6 series, 730 filas, ultimo 2026-10-08, 2 KB, dims=commodity,class,age,category,frame,lot_desc,muscle_Grade,offspring_weight_est,pregnancy,region_name,state_code descartados_por_ambiguedad=118 sin_precio={"Report Details":8,"Report Receipts":17}
+3892 OK 4 series, 642 filas, ultimo 2026-10-08, 1 KB, dims=commodity,class,age,category,frame,lot_desc,muscle_Grade,offspring_weight_est,pregnancy,region_name,state_code descartados_por_ambiguedad=108 sin_precio={"Report Details":6,"Report Receipts":15}
 3893 SIN SERIES (filas 32, secciones sin precio {})
 3894 SIN SERIES (filas 47, secciones sin precio {"Report Receipts":6})
-3900 OK 24 series, 1000 filas, ultimo 2026-10-21, 9 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=103
+3900 OK 25 series, 1030 filas, ultimo 2026-10-28, 9 KB, dims=commodity,class,age,dressing,frame,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=105
 3902 SIN SERIES (filas 0, secciones sin precio {})
-3903 OK 40 series, 1106 filas, ultimo 2026-10-21, 14 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=95
+3903 OK 37 series, 1058 filas, ultimo 2026-10-21, 13 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name descartados_por_ambiguedad=90
 3904 SIN SERIES (filas 67, secciones sin precio {})
 3906 SIN SERIES (filas 18, secciones sin precio {})
 3907 OK 2 series, 323 filas, ultimo 2026-10-08, 1 KB, dims=class,frame,lot_desc,muscle_Grade,region_name,state_code descartados_por_ambiguedad=62 sin_precio={"Report Receipts":6}
-3909 OK 1 series, 55 filas, ultimo 2026-10-05, 1 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_Grade,quality_grade_name,yield_grade,region_name,state_code descartados_por_ambiguedad=6 sin_precio={"Report Details":4,"Report Receipts":14}
-3916 OK 54 series, 2394 filas, ultimo 2026-10-20, 23 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=233
-3917 OK 46 series, 1993 filas, ultimo 2026-10-22, 21 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=212
-3919 OK 32 series, 2061 filas, ultimo 2026-10-19, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=228
+3909 OK 1 series, 50 filas, ultimo 2026-10-05, 1 KB, dims=commodity,class,dressing,frame,lot_desc,muscle_Grade,quality_grade_name,yield_grade,region_name,state_code descartados_por_ambiguedad=6 sin_precio={"Report Details":2,"Report Receipts":12}
+3916 OK 58 series, 2332 filas, ultimo 2026-10-27, 24 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=226
+3917 OK 45 series, 1960 filas, ultimo 2026-10-29, 20 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,weight_collect,yield_grade descartados_por_ambiguedad=208
+3919 OK 30 series, 2047 filas, ultimo 2026-10-26, 16 KB, dims=commodity,class,age,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=223
 3920 SIN SERIES (filas 0, secciones sin precio {})
-3921 OK 9 series, 480 filas, ultimo 2026-10-19, 2 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=111
-3922 OK 20 series, 784 filas, ultimo 2026-10-14, 5 KB, dims=class,frame,lot_desc,muscle_Grade,region_name,state_code descartados_por_ambiguedad=171 sin_precio={"Report Receipts":12}
+3921 OK 7 series, 440 filas, ultimo 2026-10-19, 2 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=102
+3922 OK 23 series, 860 filas, ultimo 2026-10-28, 6 KB, dims=class,frame,lot_desc,muscle_Grade,region_name,state_code descartados_por_ambiguedad=186 sin_precio={"Report Receipts":13}
 3923 SIN SERIES (filas 8, secciones sin precio {"Report Receipts":3})
-OK 320 / fallos 234
+OK 323 / fallos 231
