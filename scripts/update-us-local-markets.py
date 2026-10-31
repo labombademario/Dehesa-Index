@@ -97,7 +97,7 @@ def cattle_rows(raw, stats):
         if pmn is None: pmn = p
         if pmx is None: pmx = p
         if not (pmn - 0.01 <= p <= pmx + 0.01 and pmn <= pmx): stats["skipped"] += 1; continue
-        un = txt(r.get("price_unit")); rng = {"Per Cwt": (20, 1500), "Per Unit": (100, 20000)}.get(un)
+        un = txt(r.get("price_unit")); rng = {"Per Cwt": (20, 1500), "Per Unit": (10 if ("Goat" in com or "Sheep" in com or "Lamb" in com) else 100, 20000)}.get(un)   # animales pequeños: por cabeza desde ~20 USD (mismo limite que el validador)
         if rng and not (rng[0] <= p <= rng[1]) and not (com == "Slaughter Cattle" and p >= 20):
             log("DESCARTADA fila con unidad incoherente (publicada asi por AMS):", d, com, cl, p, un); stats["skipped"] += 1; continue
         wt = num(r.get("avg_weight"))   # mismos limites que el validador (contract_tests.py, us-local cattle): un peso imposible es un error de la fuente; no se corrige, se descarta la fila

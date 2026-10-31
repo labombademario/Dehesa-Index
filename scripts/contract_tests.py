@@ -2096,6 +2096,7 @@ def us_local_cattle(doc, errs, warns, stats):
         if not isinstance(head, (int, float)) or head <= 0: errs.append("us-local cattle/%s %s %s: cabezas invalidas %r" % (st, com, cl, head)); return
         if not all(isinstance(v, (int, float)) for v in (pmn, pmx, p)) or not (pmn - 0.01 <= p <= pmx + 0.01): errs.append("us-local cattle/%s %s %s: precio minimo/medio/maximo incoherente (%r %r %r)" % (st, com, cl, pmn, p, pmx)); return
         a, b = UL_UNITS[unit]
+        if unit == "Per Unit" and ("Goat" in com or "Sheep" in com or "Lamb" in com): a = 10   # cabritos y corderos pequeños se venden por cabeza desde ~20 USD (AMS 2091: 10-25 lb a 45-90 USD)
         if not (a <= p <= b) and not (com == "Slaughter Cattle" and p >= 20): errs.append("us-local cattle/%s %s %s: precio fuera de rango (%s %s)" % (st, com, cl, p, unit)); return
         if lo is not None and hi is not None and not (lo < hi): errs.append("us-local cattle/%s %s: tramo de peso invertido (%s-%s)" % (st, cl, lo, hi)); return
         if wt is not None and not ((10 if ("Goat" in com or "Sheep" in com or "Lamb" in com) else 30) <= wt <= 3200): errs.append("us-local cattle/%s %s: peso medio fuera de rango (%s)" % (st, cl, wt)); return
