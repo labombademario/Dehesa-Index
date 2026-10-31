@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-31T03:20:00Z",
+ "generatedAt": "2026-10-31T04:44:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 314,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-10-30T22:23:13.231042+00:00",
   "repoGeneratedAt": "2026-10-30T22:23:13.231042+00:00",
-  "checkedAt": "2026-10-31T03:20:00Z"
+  "checkedAt": "2026-10-31T04:44:00Z"
  },
  "pipelines": [
   {
@@ -1234,7 +1234,7 @@
    "crons": [
     "20 4 * * 2-6"
    ],
-   "nextRun": "2026-10-31T04:20:00Z",
+   "nextRun": "2026-11-03T04:20:00Z",
    "files": [
     {
      "path": "data/cl"
@@ -1253,7 +1253,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-chile.yml",
@@ -4765,7 +4765,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-10-31T03:47:00Z",
+   "nextRun": "2026-10-31T06:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5115,7 +5115,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-31T03:07:47Z"
+     "lastChange": "2026-10-31T03:23:13Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5842,16 +5842,16 @@
    "files": [],
    "last": {
     "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-29T13:40:15Z",
-    "durationSec": 47,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40842839050",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-31T04:35:13Z",
+    "durationSec": 42,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41169178255",
     "reason": "hubo datos invalidos descartados · datos invalidos: se descarta el cambio de data/spain-balances/olive.json · ERROR    spain-balances/olive.json          spain-olive aforo: la campaña del aforo no es posterior a la del balance; spain-olive tableOlive: existencias iniciales 2024/25 (270.12) != finale"
    },
    "recent": {
-    "runs": 6,
+    "runs": 7,
     "success": 5,
-    "failed": 1
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 168.0
@@ -7307,9 +7307,9 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-31T00:00:12Z",
-    "durationSec": 42,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41147711245"
+    "startedAt": "2026-10-31T04:33:41Z",
+    "durationSec": 28,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41169069980"
    },
    "recent": {
     "runs": 10,
