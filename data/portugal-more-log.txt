@@ -4,6 +4,6 @@ leche: leido (edicion actualizado 2026-09-29, 2 tablas, 10 series)
 carne: leido (edicion actualizado 2026-02-21, 3 tablas, 9 series)
 ipc: leido (edicion September 2026 (actualizado 2026-10-13), 1 tablas, 30 series)
 incendios: leido (edicion 2025 (actualizado 2026-05-30), 6 tablas, 682 series)
-cultivos: leido (edicion 2025 (actualizado 2026-08-01), 11 tablas, 795 series)
-insumos: leido (edicion actualizado 2026-07-10, 2 tablas, 2 series)
+cultivos: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
+insumos: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
 escrito: 8 ficheros, 51 series en las estadisticas
