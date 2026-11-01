@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "asOf": "2026-10-31",
+ "asOf": "2026-11-01",
  "contract": {
   "doc": "Contrato comun de la PAC por pais en data/cap/<CC>/. Cada componente declara INGESTED, PARTIAL o NOT_INGESTED (con razon). Un pais solo pasa a INGESTED con una fuente institucional oficial y licencia aprobada en el License Gate. Sin consejo juridico ni calculo de ayudas individuales.",
   "components": [
@@ -1257,24 +1257,6 @@
   ],
   "deadlines": [
    {
-    "cc": "SE",
-    "id": "changes-crops",
-    "kind": "deadline",
-    "date": "2026-10-31",
-    "text": "Último día para cambiar límites de parcela o cultivos dentro del recinto (31 de octubre), sin aumentar la superficie pedida.",
-    "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 14 §",
-    "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
-   },
-   {
-    "cc": "SE",
-    "id": "withdraw",
-    "kind": "deadline",
-    "date": "2026-10-31",
-    "text": "Último día para retirar toda la solicitud o una parte (31 de octubre); en la ayuda a bovinos, toda la solicitud hasta el 30 de julio.",
-    "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 15 §",
-    "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
-   },
-   {
     "cc": "ES",
     "id": "fega-revised",
     "kind": "publication",
@@ -1702,6 +1684,24 @@
     "text": "Desde el 16 de octubre puede pagarse el anticipo de los pagos directos, de hasta el 70 % (en 2023 solo hasta el 30 de noviembre).",
     "legalBasis": "Reglamento (UE) 2021/2116, art. 44, apdo. 2, letra a); Ordinul MADR nr. 447/2023 (MO nr. 956/23-10-2023), art. 4",
     "officialUrl": "https://legeaz.net/monitorul-oficial-224-2024/hg-208-2024"
+   },
+   {
+    "cc": "SE",
+    "id": "changes-crops",
+    "kind": "deadline",
+    "date": "2027-10-31",
+    "text": "Último día para cambiar límites de parcela o cultivos dentro del recinto (31 de octubre), sin aumentar la superficie pedida.",
+    "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 14 §",
+    "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
+   },
+   {
+    "cc": "SE",
+    "id": "withdraw",
+    "kind": "deadline",
+    "date": "2027-10-31",
+    "text": "Último día para retirar toda la solicitud o una parte (31 de octubre); en la ayuda a bovinos, toda la solicitud hasta el 30 de julio.",
+    "legalBasis": "Statens jordbruksverks föreskrifter (SJVFS 2022:30) om ansökan om jordbrukarstöd, ändrade genom SJVFS 2025:33, 15 §",
+    "officialUrl": "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-20221826-om-eus-gemensamma_sfs-2022-1826"
    }
   ]
  }
