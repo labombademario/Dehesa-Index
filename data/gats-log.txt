@@ -1,13 +1,7 @@
 unidades KG: 47
 socios: 67
 último mes con datos: 202608
-meses pendientes: 202503,202502,202501,202412,202411,202410,202409,202408
-mes 202503 listo; filas de interés 4486 ; peticiones usadas 134 ; exportaciones totales 9510 M USD
-mes 202502 listo; filas de interés 4302 ; peticiones usadas 268 ; exportaciones totales 7980 M USD
-mes 202501 listo; filas de interés 4299 ; peticiones usadas 402 ; exportaciones totales 8656 M USD
-mes 202412 listo; filas de interés 4381 ; peticiones usadas 536 ; exportaciones totales 9976 M USD
-mes 202411 listo; filas de interés 4427 ; peticiones usadas 670 ; exportaciones totales 10793 M USD
-mes 202410 listo; filas de interés 4346 ; peticiones usadas 804 ; exportaciones totales 10091 M USD
-mes 202409 listo; filas de interés 4343 ; peticiones usadas 938 ; exportaciones totales 7450 M USD
-mes 202408 listo; filas de interés 4378 ; peticiones usadas 1072 ; exportaciones totales 7317 M USD
+meses pendientes: 202607,202608
+mes 202607 listo; filas de interés 4333 ; peticiones usadas 134 ; exportaciones totales 8314 M USD
+mes 202608 listo; filas de interés 4384 ; peticiones usadas 268 ; exportaciones totales 8026 M USD
 meses en el fichero: 26 ; parada: completo
