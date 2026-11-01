@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-01T00:57:00Z",
+ "generatedAt": "2026-11-01T01:43:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 315,
@@ -17,7 +17,7 @@
   "lagHours": 4.8,
   "prodGeneratedAt": "2026-10-31T19:23:16.967095+00:00",
   "repoGeneratedAt": "2026-11-01T00:11:02.717111+00:00",
-  "checkedAt": "2026-11-01T00:57:00Z"
+  "checkedAt": "2026-11-01T01:43:00Z"
  },
  "pipelines": [
   {
@@ -5115,7 +5115,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-01T00:41:51Z"
+     "lastChange": "2026-11-01T01:00:27Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5204,7 +5204,7 @@
     "reason": "no se pudo publicar el estado · no se pudo publicar tras 10 intentos"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 7,
     "failed": 2
    },
