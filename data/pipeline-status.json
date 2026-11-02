@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T13:55:00Z",
+ "generatedAt": "2026-11-02T14:03:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 328,
   "late": 2,
   "error": 2,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 3
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
-  "checkedAt": "2026-11-02T13:55:00Z"
+  "checkedAt": "2026-11-02T14:03:00Z"
  },
  "pipelines": [
   {
@@ -250,6 +250,32 @@
    "expectedEveryHours": 744.0
   },
   {
+   "workflow": "update-au-labour.yml",
+   "name": "Update Australia agriculture labour account (ABS)",
+   "crons": [
+    "25 12 15 * *"
+   ],
+   "nextRun": "2026-11-15T12:25:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-au-livestock.yml",
+   "name": "Update Australia livestock slaughter and meat production by state (ABS)",
+   "crons": [
+    "50 11 12 1,4,7,10 *"
+   ],
+   "nextRun": "2027-01-12T11:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 2208.0
+  },
+  {
    "workflow": "update-au-prices.yml",
    "name": "Update Australia prices (ABS CPI, PPI, trade price indices, harvest value; RBA commodity prices)",
    "crons": [
@@ -270,6 +296,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-au-regional.yml",
+   "name": "Update Australia agriculture by local government area and SA4 (ABS data by region)",
+   "crons": [
+    "15 12 14 * *"
+   ],
+   "nextRun": "2026-11-14T12:15:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 744.0
   },
   {
@@ -5291,7 +5330,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T13:42:01Z"
+     "lastChange": "2026-11-02T13:58:59Z"
     },
     {
      "path": "data/source-candidates.json",
