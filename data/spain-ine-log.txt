@@ -1,4 +1,4 @@
-tabla t=79184: 234036 filas, último periodo 2026-09
+tabla t=79184: 234824 filas, último periodo 2026-09
 IPC: tabla 79184, 59 series, último 2026-09
 tabla t=61525: 548964 filas, último periodo 2026-09
 IPRI: tabla 61525, 36 series, último 2026-09
