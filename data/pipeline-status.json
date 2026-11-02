@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T20:04:00Z",
+ "generatedAt": "2026-11-02T20:33:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 333,
   "late": 2,
   "error": 2,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
-  "checkedAt": "2026-11-02T20:04:00Z"
+  "checkedAt": "2026-11-02T20:33:00Z"
  },
  "pipelines": [
   {
@@ -5033,7 +5033,7 @@
    "crons": [
     "20 20 * * 1"
    ],
-   "nextRun": "2026-11-02T20:20:00Z",
+   "nextRun": "2026-11-09T20:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T19:50:33Z"
+     "lastChange": "2026-11-02T20:07:06Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5569,6 +5569,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-pl-powiaty.yml",
+   "name": "Update Poland farm census 2020 by district - powiaty (GUS, BDL)",
+   "crons": [
+    "40 9 14 * *"
+   ],
+   "nextRun": "2026-11-14T09:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
   },
   {
    "workflow": "update-pl-zsrir.yml",
@@ -6017,14 +6030,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-27T21:16:18Z",
-    "durationSec": 110,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40585346422"
+    "event": "schedule",
+    "startedAt": "2026-11-02T20:25:48Z",
+    "durationSec": 125,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41519108945"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -7269,7 +7282,7 @@
    "crons": [
     "30 20 * * 1-5"
    ],
-   "nextRun": "2026-11-02T20:30:00Z",
+   "nextRun": "2026-11-03T20:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
