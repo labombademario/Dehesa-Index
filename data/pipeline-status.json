@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T02:06:00Z",
+ "generatedAt": "2026-11-02T02:31:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 318,
   "late": 2,
   "error": 1,
   "not_run": 6,
-  "unknown": 0
+  "unknown": 3
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
   "repoGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
-  "checkedAt": "2026-11-02T02:06:00Z"
+  "checkedAt": "2026-11-02T02:31:00Z"
  },
  "pipelines": [
   {
@@ -754,6 +754,45 @@
    },
    "status": "ok",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-ca-subprov-census.yml",
+   "name": "Update Canada sub-provincial census of agriculture (Statistics Canada)",
+   "crons": [
+    "15 9 5 1,7 *"
+   ],
+   "nextRun": "2027-01-05T09:15:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 4416.0
+  },
+  {
+   "workflow": "update-ca-subprov-ndvi.yml",
+   "name": "Update Canada NDVI by census agricultural region and division (Statistics Canada)",
+   "crons": [
+    "20 10 7 * *"
+   ],
+   "nextRun": "2026-11-07T10:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-ca-subprov-yields.yml",
+   "name": "Update Canada yields by small area data region (Statistics Canada)",
+   "crons": [
+    "45 9 6 * *"
+   ],
+   "nextRun": "2026-11-06T09:45:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
   },
   {
    "workflow": "update-canada-drought.yml",
@@ -5115,7 +5154,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T01:52:58Z"
+     "lastChange": "2026-11-02T02:08:45Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7346,7 +7385,7 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-11-02T02:30:00Z",
+   "nextRun": "2026-11-03T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
