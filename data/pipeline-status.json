@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T15:09:00Z",
+ "generatedAt": "2026-11-02T15:42:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
   "late": 2,
   "error": 2,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
-  "checkedAt": "2026-11-02T15:09:00Z"
+  "checkedAt": "2026-11-02T15:42:00Z"
  },
  "pipelines": [
   {
@@ -1014,7 +1014,7 @@
    "crons": [
     "35 15 * * 1,4"
    ],
-   "nextRun": "2026-11-02T15:35:00Z",
+   "nextRun": "2026-11-05T15:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1764,6 +1764,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-de-kreise.yml",
+   "name": "Update Germany farm structure census by district (Regionaldatenbank Deutschland)",
+   "crons": [
+    "40 16 13 * *"
+   ],
+   "nextRun": "2026-11-13T16:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 744.0
   },
   {
@@ -4037,14 +4050,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-30T12:48:45Z",
-    "durationSec": 31,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41058178810"
+    "startedAt": "2026-11-02T15:42:24Z",
+    "durationSec": 54,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41474215441"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 72.0
@@ -4267,7 +4280,7 @@
    "crons": [
     "30 15 * * 1,4"
    ],
-   "nextRun": "2026-11-02T15:30:00Z",
+   "nextRun": "2026-11-05T15:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4548,15 +4561,15 @@
    "last": {
     "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-11-02T14:19:00Z",
-    "durationSec": 2456,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41460772007",
+    "startedAt": "2026-11-02T15:01:23Z",
+    "durationSec": 1247,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41467496518",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-inao-geo.py' has timed out after 20 minutes."
    },
    "recent": {
-    "runs": 5,
+    "runs": 6,
     "success": 1,
-    "failed": 4
+    "failed": 5
    },
    "status": "error",
    "expectedEveryHours": 744.0
@@ -4848,13 +4861,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-01T13:13:31Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41310220600"
+    "startedAt": "2026-11-02T15:39:17Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41473710784"
    },
    "recent": {
-    "runs": 4,
-    "success": 4,
+    "runs": 5,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
@@ -5033,7 +5046,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-02T15:17:00Z",
+   "nextRun": "2026-11-02T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5313,7 +5326,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-02T15:10:00Z",
+   "nextRun": "2026-11-02T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5360,7 +5373,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T14:30:13Z"
+     "lastChange": "2026-11-02T15:12:35Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7246,7 +7259,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-11-02T15:20:00Z",
+   "nextRun": "2026-11-03T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
