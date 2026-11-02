@@ -1,0 +1,14 @@
+41241-01-03-4 88160 filas, 487 distritos, años 2010 - 2025 | control 1949 de 1954, 0 desbordes
+41312-01-01-4 96976 filas, 487 distritos, años 2010 - 2025 | control 571 de 571, 0 desbordes
+13312-01-05-4 110200 filas, 487 distritos, años 2000 - 2024 | control 325 de 325, 0 desbordes
+incoherencias de la fuente descartadas (Land, año) en 41120-01-02-4 : [('ST', 1999), ('ST', 2001), ('ST', 2003), ('ST', 2005)]
+41120-01-02-4 22040 filas, 487 distritos, años 1999 - 2007 | control 233 de 233, 0 desbordes
+incoherencias de la fuente descartadas (Land, año) en 41120-12-01-4 : [('ST', 1999), ('ST', 2001), ('ST', 2003)]
+41120-12-01-4 35264 filas, 487 distritos, años 1999 - 2007 | control 207 de 207, 0 desbordes
+yields RP Kartoffeln 2019 354.3 258.5 337.4
+yields RP Hafer 2020 42.8 45.3 54.6
+yields RP Roggen und Wintermenggetreide 2014 65.2 68.5 77.0
+yields BW Roggen und Wintermenggetreide 2011 48.0 38.1 45.2
+yields HE Kartoffeln 2025 331.1 251.6 318.1
+control total: 3285 de 3290 cuadran, 0 desbordes
+OK: 487 distritos en 16 Länder, 1679 KB
