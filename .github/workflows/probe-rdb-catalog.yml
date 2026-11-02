@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [research/probe-kreise-data]
-    paths: [.github/workflows/probe-rdb-catalog.yml]
+    paths: [scripts/probe-rdb-catalog.py]
 permissions:
   contents: read
 jobs:
