@@ -1,0 +1,26 @@
+name: Probe Poland powiaty
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/probe-kreise-data]
+    paths: [scripts/update-pl-powiaty.py]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+      - name: Ejecutar el script de powiaty
+        env:
+          BDL_CLIENT_ID: ${{ secrets.BDL_CLIENT_ID }}
+        run: python3 scripts/update-pl-powiaty.py
+      - name: Guardar el resultado en esta rama (solo pruebas)
+        if: always()
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add data/pl-powiaty data/pl-powiaty-log.txt
+          git commit -m "Datos de prueba: powiaty de Polonia" || echo "sin cambios"
+          git pull --rebase -q origin research/probe-kreise-data || true
+          git push origin HEAD:research/probe-kreise-data
