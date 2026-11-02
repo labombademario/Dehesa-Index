@@ -10,7 +10,7 @@ seen = {}
 for sel in ["11*", "12*", "13*", "14*", "21*", "22*", "23*", "24*", "25*", "32*", "33*", "41*", "42*", "43*", "44*", "45*", "46*", "51*", "52*", "53*", "61*", "62*", "63*", "71*", "72*", "73*", "81*", "82*", "85*", "86*", "91*"]:
     try: d = post("/catalogue/tables", {"selection": sel, "area": "all", "pagelength": "2500", "language": "de"})
     except Exception as e: print(sel, "ERROR", str(e)[:100]); continue
-    for t in d.get("List", []): seen[t["Code"]] = t.get("Content") or t.get("Name") or ""
+    for t in (d.get("List") or []): seen[t["Code"]] = t.get("Content") or t.get("Name") or ""
 print("tablas totales", len(seen))
 g = collections.OrderedDict()
 for c, n in sorted(seen.items()):
