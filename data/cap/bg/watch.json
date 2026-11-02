@@ -3,7 +3,7 @@
  "country": "BG",
  "source": "mzh_bg",
  "status": "OK",
- "checkedAt": "2026-10-28",
+ "checkedAt": "2026-11-02",
  "baseline": {
   "fingerprints": {
    "naredba3": {
@@ -46,11 +46,28 @@
     "title": "Министър Абровски: Започваме проверки по цялата верига на доставки на хранителните продукти",
     "date": "2026-10-28",
     "url": "https://www.mzh.government.bg/bg/press-center/novini/ministr-abrovski-zapochvame-proverki-po-cyalata-ve/"
+   },
+   {
+    "id": "https://www.mzh.government.bg/bg/press-center/novini/zemedelskite-stopani-she-poluchat-otstpka-ot-akciz/",
+    "title": "Земеделските стопани ще получат отстъпка от акциза за литър закупен газьол в размер на 0,21 евро за Кампания 2026",
+    "date": "2026-11-02",
+    "url": "https://www.mzh.government.bg/bg/press-center/novini/zemedelskite-stopani-she-poluchat-otstpka-ot-akciz/"
+   },
+   {
+    "id": "https://www.mzh.government.bg/bg/press-center/novini/mzh-publikuva-za-obshestveno-obszhdane-n/",
+    "title": "МЗХ публикува за обществено обсъждане Наредбата за извънредна финансова подкрепа на земеделските стопани, чиито разходи за торове са значително завишени от кризата в Близкия изток",
+    "date": "2026-11-02",
+    "url": "https://www.mzh.government.bg/bg/press-center/novini/mzh-publikuva-za-obshestveno-obszhdane-n/"
    }
   ],
   "lastScanned": "2026-10-28",
-  "searchErrors": []
+  "searchErrors": [
+   "naredba3: FileNotFoundError: [Errno 2] No such file or directory: 'pdftotext'"
+  ]
  },
- "reviewNeeded": [],
+ "reviewNeeded": [
+  "texto nuevo: Земеделските стопани ще получат отстъпка от акциза за литър закупен газьол в размер на 0,21 евро за Кампания 2026 (2026-11-02)",
+  "texto nuevo: МЗХ публикува за обществено обсъждане Наредбата за извънредна финансова подкрепа на земеделските стопани, чиито разходи за торове са значите (2026-11-02)"
+ ],
  "note": "Huella del texto de páginas oficiales de la PAC (naredba3) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
 }
