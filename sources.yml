@@ -1700,6 +1700,38 @@ sources:
     data: [australia-prices-stats.json]
     log: australia-prices-log.txt
     message: Datos precios Australia (ABS y RBA)
+  - id: au-livestock
+    name: Update Australia livestock slaughter and meat production by state (ABS)
+    cron: ['50 11 12 1,4,7,10 *']
+    script: scripts/update-au-livestock.py
+    timeout: 20
+    script_timeout: 14
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/au-livestock)
+    data: [au-livestock-log.txt]
+    extra: ['!data/au-livestock']
+    message: Sacrificio de ganado y carne producida de Australia por estado (ABS)
+  - id: au-regional
+    name: Update Australia agriculture by local government area and SA4 (ABS data by region)
+    cron: ['15 12 14 * *']
+    script: scripts/update-au-regional-agriculture.py
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/au-regional)
+    data: [au-regional-log.txt]
+    extra: ['!data/au-regional']
+    message: Ganado, cultivos, valor, agua, empresas y empleo agrarios de Australia por municipio y region SA4 (ABS)
+  - id: au-labour
+    name: Update Australia agriculture labour account (ABS)
+    cron: ['25 12 15 * *']
+    script: scripts/update-au-labour.py
+    timeout: 20
+    script_timeout: 14
+    continue: true
+    data: [australia-labour-stats.json]
+    log: australia-labour-log.txt
+    message: Empleo, horas y costes laborales de la agricultura de Australia (ABS)
   - id: au-trade
     name: Update Australia trade (ABS)
     cron: ['25 11 5 * *']

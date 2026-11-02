@@ -127,6 +127,8 @@ jobs:
         run: python3 scripts/test-de-lz.py
       - name: Australia cultivos por SA2 (contrato, sin red)
         run: python3 scripts/test-au-sa2.py
+      - name: Australia ganado y datos por municipio (contratos, sin red)
+        run: python3 scripts/test-au-more.py
 
       - name: Manitoba weekly auction cattle (PDF text parser, NA/no-sale, head totals, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-cattle.py

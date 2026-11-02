@@ -8930,6 +8930,24 @@
     "abs"
    ],
    "notes": "ABS Data API (CC BY 4.0), dataflows AG_BROADACRE y AG_HORTICULTURE (scripts/update-au-sa2-agriculture.py): cultivos de secano y horticultura por area estadistica SA2, años fiscales 2021-22 a 2023-24. Superficie total, produccion sujeta a la tasa agraria (levied production), valor local y numero de pagadores o negocios, copiados tal cual; lo no publicado por confidencialidad queda como hueco. Control: la suma de los SA2 no supera el total de Australia. Se cita al ABS junto a las cifras."
+  },
+  "data/au-livestock/": {
+   "sources": [
+    "abs"
+   ],
+   "notes": "ABS Data API (CC BY 4.0), Livestock Products (dataflows LSTOCK_SLAUGHT y LSTOCK_MEAT; scripts/update-au-livestock.py): sacrificio de ganado (miles de cabezas) y carne producida (toneladas) por estado y trimestre desde 1965, serie original. Copiado tal cual; lo no disponible queda como hueco. Control: la suma de estados reproduce el total de Australia. Se cita al ABS junto a las cifras."
+  },
+  "data/au-regional/": {
+   "sources": [
+    "abs"
+   ],
+   "notes": "ABS Data API (CC BY 4.0), Data by region (dataflows ABS_REGIONAL_LGA2021 y ABS_REGIONAL_ASGS2021; scripts/update-au-regional-agriculture.py): ganado, superficie de cultivos, valor bruto de la produccion agraria, uso de agua de riego, empresas y empleos asalariados agrarios por municipio (LGA) y region SA4. Copiado tal cual; lo no publicado queda como hueco. Control: la suma de SA4 reproduce el total estatal del ABS. Se cita al ABS junto a las cifras."
+  },
+  "data/australia-labour-stats.json": {
+   "bySourceGroupPrefix": {
+    "ABS": "abs"
+   },
+   "notes": "scripts/update-au-labour.py: ABS Labour Account Australia (dataflow LABOUR_ACCT_Q, industria 01XX, CC BY 4.0): empleos, personas, horas y costes laborales de la agricultura, trimestral desde 1994."
   }
  },
  "derived": [

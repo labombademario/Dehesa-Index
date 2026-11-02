@@ -3748,6 +3748,33 @@ def au_sa2_state(doc, errs, warns, stats):
         n += 1
     stats["au-sa2 areas"] = stats.get("au-sa2 areas", 0) + n
 
+def au_livestock_state(doc, errs, warns, stats):
+    """Sacrificio y carne por estado (ABS): una posicion por trimestre en cada serie; sin negativos; trimestres ordenados y unicos; la carne de vacuno no supera a la carne roja total."""
+    P = doc["periods"]
+    if P != sorted(set(P)): errs.append("au-livestock %s: trimestres desordenados o repetidos" % doc["state"]); return
+    for blk in ("slaughter", "meat"):
+        for k, arr in doc[blk].items():
+            if len(arr) != len(P): errs.append("au-livestock %s %s/%s: %d valores para %d trimestres" % (doc["state"], blk, k, len(arr), len(P))); return
+            if any(x is not None and x < 0 for x in arr): errs.append("au-livestock %s %s/%s: valor negativo" % (doc["state"], blk, k)); return
+    b, t = doc["meat"].get("beef"), doc["meat"].get("redmeat")
+    if b and t:
+        for x, y in zip(b, t):
+            if x is not None and y is not None and x > y * 1.001 + 1: errs.append("au-livestock %s: carne de vacuno (%s t) mayor que la carne roja total (%s t)" % (doc["state"], x, y)); break
+    stats["au-livestock series"] = stats.get("au-livestock series", 0) + len(doc["slaughter"]) + len(doc["meat"])
+
+def au_regional_state(doc, errs, warns, stats):
+    """Agricultura por municipio y SA4 (ABS): cada medida esta declarada en items; años de 4 cifras; sin negativos; el codigo de area empieza por el digito del estado."""
+    D = {"NSW": "1", "VIC": "2", "QLD": "3", "SA": "4", "WA": "5", "TAS": "6", "NT": "7", "ACT": "8"}; n = 0
+    for blk in ("lga", "sa4"):
+        for c, a in doc[blk].items():
+            if c[0] != D.get(doc["state"]): errs.append("au-regional %s %s: codigo %r no es de este estado" % (doc["state"], blk, c)); return
+            for m, ys in a["v"].items():
+                if m not in doc["items"]: errs.append("au-regional %s %s/%s: medida no declarada" % (doc["state"], c, m)); return
+                for y, v in ys.items():
+                    if not re.match(r"^\d{4}$", y) or v < 0: errs.append("au-regional %s %s/%s: año o valor invalido (%s=%s)" % (doc["state"], c, m, y, v)); return
+            n += 1
+    stats["au-regional areas"] = stats.get("au-regional areas", 0) + n
+
 def us_county_status(doc, errs, warns, stats):
     """Estado de ingesta de rendimientos por condado: un cultivo del script por entrada, sin repetidos, y 'latest' coherente con el rango de anos."""
     m = _ucy_mod(); known = {c["slug"]: c["key"] for c in m.CROPS}; seen = set()

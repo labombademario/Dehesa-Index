@@ -1,0 +1,3 @@
+medidas {'M10': 123, 'M12': 128, 'M19': 128, 'M28': 128, 'M3': 128, 'M38': 128, 'M39': 128, 'M4': 128, 'M41': 128, 'M42': 128}
+control remuneracion + autonomos = renta laboral total: 128 trimestres, 0 fuera
+OK: 9 series, hasta 2026-Q2

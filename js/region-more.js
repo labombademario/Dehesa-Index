@@ -828,6 +828,46 @@
     }
     function auSa2Crops(x) { return auSa2Card(x, 'crops'); }
     function auSa2Hort(x) { return auSa2Card(x, 'hort'); }
+    /* ---- Australia: sacrificio (ABS), municipios (LGA) y regiones SA4 ---- */
+    function auLivestock(x) {
+      return get('data/au-livestock/' + x.r + '.json').then(function (d) {
+        if (!d || !d.periods) return null; var P = d.periods, rows = [];
+        var SP = [['slaughter', 'cattle', 'Bovinos sacrificados (miles)|Cattle slaughtered (k)|Bovins abattus (milliers)|Bovini macellati (migliaia)'], ['slaughter', 'sheep', 'Ovejas sacrificadas (miles)|Sheep slaughtered (k)|Ovins abattus (milliers)|Ovini macellati (migliaia)'], ['slaughter', 'lambs', 'Corderos sacrificados (miles)|Lambs slaughtered (k)|Agneaux abattus (milliers)|Agnelli macellati (migliaia)'],
+          ['slaughter', 'pigs', 'Cerdos sacrificados (miles)|Pigs slaughtered (k)|Porcs abattus (milliers)|Suini macellati (migliaia)'], ['slaughter', 'chickens', 'Pollos sacrificados (miles)|Chickens slaughtered (k)|Poulets abattus (milliers)|Polli macellati (migliaia)'],
+          ['meat', 'beef', 'Carne de vacuno (t)|Beef (t)|Viande bovine (t)|Carne bovina (t)'], ['meat', 'lamb', 'Carne de cordero (t)|Lamb meat (t)|Viande d’agneau (t)|Carne di agnello (t)'], ['meat', 'mutton', 'Carne de oveja (t)|Mutton (t)|Viande de mouton (t)|Carne di montone (t)'], ['meat', 'pork', 'Carne de cerdo (t)|Pork (t)|Viande de porc (t)|Carne suina (t)'], ['meat', 'chicken', 'Carne de pollo (t)|Chicken meat (t)|Viande de poulet (t)|Carne di pollo (t)']];
+        SP.forEach(function (sp) {
+          var a = d[sp[0]] && d[sp[0]][sp[1]]; if (!a) return; var n = a.length - 1; while (n >= 0 && a[n] == null) n--; if (n < 4) return;
+          var ya = a[n - 4], l4 = a.slice(n - 3, n + 1), p4 = a.slice(n - 7, n - 3), sm = function (z) { return z.some(function (v) { return v == null; }) ? null : z.reduce(function (p, q) { return p + q; }, 0); };
+          var t4 = sm(l4), q4 = sm(p4), c1 = ya ? (a[n] / ya - 1) * 100 : null, c4 = t4 != null && q4 ? (t4 / q4 - 1) * 100 : null, pc = function (c) { return c == null ? '—' : (Math.round(Math.abs(c)) === 0 ? '0' : (c > 0 ? '+' : '−') + nf(Math.abs(c), 0)) + ' %'; };
+          rows.push([esc(L(sp[2])), nf(a[n], a[n] < 100 ? 1 : 0), pc(c1), t4 != null ? nf(t4, t4 < 100 ? 1 : 0) : '—', pc(c4)]);
+        });
+        if (!rows.length) return null;
+        var head = [L('Indicador|Indicator|Indicateur|Indicatore'), L('Último trim.|Latest qtr|Dernier trim.|Ultimo trim.'), L('vs hace 1 año|vs 1 yr ago|vs 1 an|vs 1 anno'), L('Últimos 4 trim.|Last 4 qtrs|4 derniers trim.|Ultimi 4 trim.'), L('vs 4 previos|vs prev. 4|vs 4 préc.|vs 4 prec.')];
+        return card(L('Sacrificio y carne por estado|Slaughter and meat by state|Abattages et viande par État|Macellazione e carne per stato'), L('Sacrificio de ganado y carne producida por trimestre (ABS), serie original sin ajuste estacional.|Livestock slaughtered and meat produced by quarter (ABS), original series without seasonal adjustment.|Abattages et production de viande par trimestre (ABS), série brute.|Macellazioni e carne prodotta per trimestre (ABS), serie originale.'), table(head, rows, 520), cite('abs', d.periods[d.periods.length - 1]));
+      });
+    }
+    function auLga(x) {
+      return get('data/au-regional/' + x.r + '.json').then(function (d) {
+        if (!d || !d.lga) return null; var Y = '2021', g = function (a, m) { var v = a.v[m]; return v && v[Y] != null ? v[Y] : null; };
+        var list = Object.keys(d.lga).map(function (c) { var a = d.lga[c]; return { n: a.n, val: g(a, 'AGRIC_15'), ha: g(a, 'AGRIC_20'), cat: g(a, 'AGRIC_11'), shp: g(a, 'AGRIC_12'), irr: g(a, 'WATER_3') }; }).filter(function (o) { return o.val != null && o.val > 0; });
+        if (!list.length) return null; list.sort(function (a, b) { return b.val - a.val; });
+        var f = function (v, k) { return v == null ? '—' : nf(v, k || 0); };
+        var rows = list.map(function (o) { return [esc(o.n), f(o.val, 0), f(o.ha), f(o.cat), f(o.shp)]; });
+        var head = [L('Municipio|Local government area|Zone de gouvernement local|Comune'), L('Valor bruto (M A$)|Gross value (A$ m)|Valeur brute (M A$)|Valore lordo (M A$)'), L('Cultivos de secano (ha)|Broadacre crops (ha)|Grandes cultures (ha)|Seminativi (ha)'), L('Vacuno de carne|Meat cattle|Bovins viande|Bovini da carne'), L('Ovino|Sheep and lambs|Ovins|Ovini')];
+        return card(L('Agricultura por municipio (2020-21)|Agriculture by local government area (2020-21)|Agriculture par zone de gouvernement local (2020-21)|Agricoltura per comune (2020-21)'), L('Valor bruto de la producción agraria, superficie, ganado y regadío por municipio (LGA, año a 30 de junio de 2021). Lo que el ABS no publica queda en blanco.|Gross value of agricultural production, area, livestock and irrigation by local government area (year ended 30 June 2021). Values the ABS does not publish are left blank.|Valeur brute de la production agricole, superficie, élevage et irrigation par zone (année au 30 juin 2021). Les valeurs non publiées restent vides.|Valore lordo della produzione agricola, superficie, allevamento e irrigazione per comune (anno al 30 giugno 2021). I valori non pubblicati restano vuoti.'), usCountyList(rows, head, 520, 10, L('Todos los municipios|All areas|Toutes les zones|Tutti i comuni')), cite('abs', '2021'));
+      });
+    }
+    function auSa4(x) {
+      return get('data/au-regional/' + x.r + '.json').then(function (d) {
+        if (!d || !d.sa4) return null;
+        var list = Object.keys(d.sa4).map(function (c) { var a = d.sa4[c].v, v = a.AGRIC_15 || {}, k = a.AGRIC_11 || {}, w = a.WATER_4 || {}; return { n: d.sa4[c].n, v16: v['2016'], v21: v['2021'], k11: k['2011'], k21: k['2021'], w17: w['2017'], w21: w['2021'] }; }).filter(function (o) { return o.v21 != null; });
+        if (!list.length) return null; list.sort(function (a, b) { return b.v21 - a.v21; });
+        var f = function (v) { return v == null ? '—' : nf(v, 0); }, ch = function (a, b) { return a && b != null ? ((b / a - 1) * 100 >= 0 ? '+' : '−') + nf(Math.abs((b / a - 1) * 100), 0) + ' %' : '—'; };
+        var rows = list.map(function (o) { return [esc(o.n), f(o.v21), ch(o.v16, o.v21), f(o.k21), ch(o.k11, o.k21)]; });
+        var head = [L('Región SA4|SA4 region|Région SA4|Regione SA4'), L('Valor bruto 2021 (M A$)|Gross value 2021 (A$ m)|Valeur brute 2021 (M A$)|Valore lordo 2021 (M A$)'), L('vs 2016|vs 2016|vs 2016|vs 2016'), L('Vacuno de carne 2021|Meat cattle 2021|Bovins viande 2021|Bovini da carne 2021'), L('vs 2011|vs 2011|vs 2011|vs 2011')];
+        return card(L('Evolución por región (SA4)|Change by region (SA4)|Évolution par région (SA4)|Evoluzione per regione (SA4)'), L('Valor bruto de la producción agraria (2016 y 2021, millones de A$ corrientes) y vacuno de carne (2011 y 2021) por región estadística SA4 (ABS).|Gross value of agricultural production (2016 and 2021, current A$ million) and meat cattle (2011 and 2021) by statistical area SA4 (ABS).|Valeur brute de la production agricole (2016 et 2021, millions de A$ courants) et bovins viande (2011 et 2021) par région SA4 (ABS).|Valore lordo della produzione agricola (2016 e 2021, milioni di A$ correnti) e bovini da carne (2011 e 2021) per regione SA4 (ABS).'), usCountyList(rows, head, 520, 8, L('Todas las regiones|All regions|Toutes les régions|Tutte le regioni')), cite('abs', '2021'));
+      });
+    }
     var C = function (k, fn) { return [k, fn]; };
     return {
       T: T, us: { uscdrought: usCountyDrought, uscins: usCountyIns, usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, usrecv: usReceipts, uscensus: usCensus, usarc: usArc, usfuel: usFuel },
@@ -838,7 +878,7 @@
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('eudr', eudr), C('clim', deClim)],
         NL: [C('nlcrops', nlCbs), C('clim', gridClim)],
-        AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim)], AU: [C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
+        AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim)], AU: [C('aulv', auLivestock), C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('aulga', auLga), C('ausa4', auSa4), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
       optional: { eslonjas: 1, eudr: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1, uscprog: 1 }

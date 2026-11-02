@@ -2411,6 +2411,26 @@
   "au-sa2/inde[x].json": [
    "au-sa2-index",
    []
+  ],
+  "au-livestock/[A-Z][A-Z]*.json": [
+   "au-livestock-state",
+   [
+    "au_livestock_state"
+   ]
+  ],
+  "au-livestock/inde[x].json": [
+   "au-livestock-index",
+   []
+  ],
+  "au-regional/[A-Z][A-Z]*.json": [
+   "au-regional-state",
+   [
+    "au_regional_state"
+   ]
+  ],
+  "au-regional/inde[x].json": [
+   "au-regional-index",
+   []
   ]
  },
  "derived": [

@@ -1,0 +1,65 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Australia: sacrificio y carne por estado (ABS)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "state",
+  "periods",
+  "units",
+  "slaughter",
+  "meat"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "abs"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "state": {
+   "type": "string",
+   "pattern": "^[A-Z]{2,3}$"
+  },
+  "periods": {
+   "type": "array",
+   "minItems": 100
+  },
+  "units": {
+   "type": "object",
+   "minProperties": 2
+  },
+  "slaughter": {
+   "type": "object",
+   "minProperties": 1
+  },
+  "meat": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}

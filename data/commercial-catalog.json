@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T04:50:35Z",
+ "generatedAt": "2026-11-02T13:54:51Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -10,8 +10,8 @@
   "sourcesApto": 188,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 426,
-  "datasets_apto": 285,
+  "datasets": 429,
+  "datasets_apto": 288,
   "datasets_condiciones": 129,
   "datasets_parcial": 5,
   "datasets_no-apto": 3,
@@ -3696,6 +3696,22 @@
    ]
   },
   {
+   "path": "data/au-livestock/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "abs"
+   ]
+  },
+  {
+   "path": "data/au-regional/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "abs"
+   ]
+  },
+  {
    "path": "data/au-sa2/",
    "scope": "carpeta",
    "verdict": "apto",
@@ -3717,6 +3733,21 @@
    "verdict": "apto",
    "sources": [
     "abs"
+   ]
+  },
+  {
+   "path": "data/australia-labour-stats.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "abs"
+   ],
+   "parts": [
+    {
+     "scope": "grupo:ABS",
+     "sourceId": "abs",
+     "verdict": "apto"
+    }
    ]
   },
   {
