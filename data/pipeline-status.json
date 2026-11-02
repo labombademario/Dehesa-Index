@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T01:51:00Z",
+ "generatedAt": "2026-11-02T02:06:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 318,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
   "repoGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
-  "checkedAt": "2026-11-02T01:51:00Z"
+  "checkedAt": "2026-11-02T02:06:00Z"
  },
  "pipelines": [
   {
@@ -5115,7 +5115,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T01:38:37Z"
+     "lastChange": "2026-11-02T01:52:58Z"
     },
     {
      "path": "data/source-candidates.json",
