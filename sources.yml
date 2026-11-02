@@ -680,6 +680,18 @@ sources:
     data: [de-kreise-log.txt]
     extra: ['!data/de-kreise']
     message: Censo agrario de Alemania por distrito - uso del suelo, cultivos, ganado, ecologico, tamaño, propiedad y sucesion (Regionaldatenbank)
+  - id: de-kreise-more
+    name: Update Germany by district - yields, cattle, farm employment and 1999-2007 history (Regionaldatenbank Deutschland)
+    cron: ['40 17 13 * *']
+    script: scripts/update-de-kreise-more.py
+    env: {RDB_USER: '${{ secrets.RDB_USER }}', RDB_PASSWORD: '${{ secrets.RDB_PASSWORD }}'}
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/de-kreise-more)
+    data: [de-kreise-more-log.txt]
+    extra: ['!data/de-kreise-more']
+    message: Alemania por distrito - rendimientos de 10 cultivos, bovinos por categoria, empleo agrario e historico 1999-2007 (Regionaldatenbank)
   - id: au-sa2-agriculture
     name: Update Australia crops by statistical area SA2 (ABS Australian Agriculture)
     cron: ['35 11 10 * *']

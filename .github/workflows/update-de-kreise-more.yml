@@ -1,0 +1,37 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Germany by district - yields, cattle, farm employment and 1999-2007 history (Regionaldatenbank Deutschland)
+on:
+  schedule:
+    - cron: '40 17 13 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-de-kreise-more
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-de-kreise-more.py
+        env:
+          RDB_USER: ${{ secrets.RDB_USER }}
+          RDB_PASSWORD: ${{ secrets.RDB_PASSWORD }}
+        timeout-minutes: 18
+        continue-on-error: true
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/de-kreise-more)
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Alemania por distrito - rendimientos de 10 cultivos, bovinos por categoria, empleo agrario e historico 1999-2007 (Regionaldatenbank)" data/de-kreise-more-log.txt data/de-kreise-more
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

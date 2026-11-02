@@ -3755,6 +3755,27 @@ def de_kreise_land(doc, errs, warns, stats):
                 if x is not None and y is not None and x > y * 1.02 + 5: errs.append("de-kreise %s %s: tierra de cultivo (%s ha) mayor que la superficie agraria (%s ha)" % (doc["land"], ags, x, y)); break
     stats["de-kreise series"] = stats.get("de-kreise series", 0) + n
 
+def de_kreise_more_land(doc, errs, warns, stats):
+    """Series por distrito (Regionaldatenbank): rendimientos, bovinos, empleo agrario e historico. 'years' es un dict por tabla; cada serie tiene una posicion por año de su tabla; codigo de 5 cifras (8 en subdivisiones) que empieza por el Land; sin negativos; un rendimiento es plausible (<= 1500 dt/ha); las vacas de leche no superan al total de bovinos del distrito."""
+    yrs = doc["years"]; n = 0; pre = {"SH": "01", "HH": "02", "NI": "03", "HB": "04", "NW": "05", "HE": "06", "RP": "07", "BW": "08", "BY": "09", "SL": "10", "BE": "11", "BB": "12", "MV": "13", "SN": "14", "ST": "15", "TH": "16"}.get(doc["land"])
+    if not pre: errs.append("de-kreise-more: Land desconocido %s" % doc["land"]); return
+    for ags, d in doc["kreise"].items():
+        if not re.match(r"^\d{5}(\d{3})?$", ags) or not ags.startswith(pre): errs.append("de-kreise-more %s: el codigo %s no es de ese Land" % (doc["land"], ags)); return
+        for t, cls in d["t"].items():
+            if t not in yrs: errs.append("de-kreise-more %s %s: tabla %s sin años" % (doc["land"], ags, t)); return
+            for c, ms in cls.items():
+                for m, arr in ms.items():
+                    if len(arr) != len(yrs[t]): errs.append("de-kreise-more %s %s %s/%s/%s: %d valores para %d años" % (doc["land"], ags, t, c, m, len(arr), len(yrs[t]))); return
+                    if any(x is not None and x < 0 for x in arr): errs.append("de-kreise-more %s %s %s/%s/%s: valor negativo" % (doc["land"], ags, t, c, m)); return
+                    if t == "yields" and any(x is not None and x > 1500 for x in arr): errs.append("de-kreise-more %s %s %s: rendimiento implausible" % (doc["land"], ags, c)); return
+                    n += 1
+        ca = d["t"].get("cattle", {})
+        a = ca.get("Milchkühe", {}).get("TIE003")
+        tot = ca.get("Rinder insgesamt", {}).get("TIE003") or ca.get("Insgesamt", {}).get("TIE003")
+        if a and tot:
+            for x, y in zip(a, tot):
+                if x is not None and y is not None and x > y * 1.02 + 5: errs.append("de-kreise-more %s %s: vacas de leche (%s) mayores que los bovinos (%s)" % (doc["land"], ags, x, y)); break
+    stats["de-kreise-more series"] = stats.get("de-kreise-more series", 0) + n
 def au_sa2_state(doc, errs, warns, stats):
     """Cultivos por SA2 (ABS): una posicion por año; sin negativos; el codigo SA2 de 9 cifras empieza por el digito del estado; los indicadores usados estan declarados en 'items'."""
     D = {"NSW": "1", "VIC": "2", "QLD": "3", "SA": "4", "WA": "5", "TAS": "6", "NT": "7", "ACT": "8"}

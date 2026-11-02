@@ -2412,6 +2412,16 @@
    "de-kreise-index",
    []
   ],
+  "de-kreise-more/[A-Z][A-Z].json": [
+   "de-kreise-more-land",
+   [
+    "de_kreise_more_land"
+   ]
+  ],
+  "de-kreise-more/inde[x].json": [
+   "de-kreise-more-index",
+   []
+  ],
   "au-sa2/[A-Z][A-Z]*.json": [
    "au-sa2-state",
    [
