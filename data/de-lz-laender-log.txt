@@ -1,0 +1,18 @@
+41141-0101 18720 filas
+41141-0103 11200 filas
+41141-0104 5760 filas
+41141-0105 4000 filas
+41141-0115 1600 filas
+41141-0116 3456 filas
+41141-0117 2560 filas
+41141-0001 1170 filas
+41141-0004 360 filas
+landuse 16 Länder, 117 clases
+arable 16 Länder, 7 clases
+livestock 16 Länder, 36 clases
+organic 16 Länder, 4 clases
+irrigation 16 Länder, 1 clases
+permanent 16 Länder, 6 clases
+grassland 16 Länder, 4 clases
+control Länder frente a Alemania: 102 de 104 clases cuadran
+OK: 16 Länder en de-lz, 288 KB
