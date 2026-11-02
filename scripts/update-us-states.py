@@ -66,6 +66,8 @@ CENSUS = [  # Censo Agrario 2022 (dominio TOTAL), por estado y condado
     ("ce_crops", "CROP TOTALS - SALES, MEASURED IN $", "USD"), ("ce_animals", "ANIMAL TOTALS, INCL PRODUCTS - SALES, MEASURED IN $", "USD"),
     ("ce_govt", "GOVT PROGRAMS, FEDERAL - RECEIPTS, MEASURED IN $", "USD"), ("ce_cropland", "AG LAND, CROPLAND - ACRES", "acres"),
     ("ce_irrigated", "AG LAND, IRRIGATED - ACRES", "acres"), ("ce_age", "PRODUCERS - AGE, AVG, MEASURED IN YEARS", "years"), ("ce_age", "PRODUCERS, (ALL) - AGE, AVG, MEASURED IN YEARS", "years"), ("ce_age", "OPERATORS - AGE, AVG, MEASURED IN YEARS", "years"),
+    ("ce_cattle", "CATTLE, INCL CALVES - INVENTORY", "head"), ("ce_cows_beef", "CATTLE, COWS, BEEF - INVENTORY", "head"), ("ce_cows_milk", "CATTLE, COWS, MILK - INVENTORY", "head"),
+    ("ce_hogs", "HOGS - INVENTORY", "head"), ("ce_sheep", "SHEEP, INCL LAMBS - INVENTORY", "head"), ("ce_goats", "GOATS - INVENTORY", "head"), ("ce_layers", "CHICKENS, LAYERS - INVENTORY", "head"),
 ]
 COUNTY_RENTS = [("rt_crop_dry", "RENT, CASH, CROPLAND, NON-IRRIGATED - EXPENSE, MEASURED IN $ / ACRE"), ("rt_crop_irr", "RENT, CASH, CROPLAND, IRRIGATED - EXPENSE, MEASURED IN $ / ACRE"), ("rt_pasture", "RENT, CASH, PASTURELAND - EXPENSE, MEASURED IN $ / ACRE")]
 
