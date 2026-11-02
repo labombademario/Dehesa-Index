@@ -3,7 +3,7 @@
  "country": "PL",
  "source": "sejm_eli",
  "status": "OK",
- "checkedAt": "2026-10-26",
+ "checkedAt": "2026-11-02",
  "baseline": {
   "fingerprints": {
    "DU/2023/412": {
@@ -31,7 +31,7 @@
  "current": {
   "fingerprints": {
    "DU/2023/412": {
-    "sha256": "2a97f7b12e1cd2d06c0f1d5c5c2c1f65b1c6e5f1c45d2a40b22a56b118035fbe",
+    "sha256": "08b43526c0ab169c9d538b2dad229611bf7284359d720b18aa77d65afb94bd46",
     "label": "ley del Plan Estratégico, metadatos y referencias (DU/2023/412)"
    },
    "DU/2024/1741": {
@@ -45,13 +45,27 @@
     "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 3 września 2026 r. w sprawie wypłaty zaliczek za 2026 r. z tytułu niektórych rodzajów pomocy w ramach Planu Strategicznego dla Wspólnej Polityki Rolnej na lata 2023-2027",
     "date": "2026-09-03",
     "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1173"
+   },
+   {
+    "id": "DU/2026/1415",
+    "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 23 października 2026 r. w sprawie procentowej stawki stosowanej do ustalenia wysokości rekompensaty w odniesieniu do wniosków o przyznanie rekompensaty złożonych w terminie od dnia 1 lipca 2026 r. do dnia 31 sierpnia 2026 r.",
+    "date": "2026-10-23",
+    "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1415"
+   },
+   {
+    "id": "DU/2026/1402",
+    "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 października 2026 r. zmieniające rozporządzenie w sprawie szczegółowych warunków przyznawania i wypłaty pomocy finansowej na realizację operacji w ramach Priorytetu 2. Wspieranie zrównoważonej działalności w zakresie akwakultury oraz przetwarzania i wprowadzania do obrotu produktów rybołówstwa i akwakultury, przyczyniając się w ten sposób do bezpieczeństwa żywnościowego w Unii objętego programem Fundusze Europejskie dla Rybactwa na lata 2021-2027 oraz wysokości tej pomocy",
+    "date": "2026-10-22",
+    "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1402"
    }
   ],
   "lastScanned": null,
   "search": "OK"
  },
  "reviewNeeded": [
-  "cambia: ley del Plan Estratégico, metadatos y referencias (DU/2023/412)"
+  "cambia: ley del Plan Estratégico, metadatos y referencias (DU/2023/412)",
+  "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 23 października 2026 r. w sprawie procentowej stawki stosowanej do ustalenia wysokośc (2026-10-23)",
+  "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 października 2026 r. zmieniające rozporządzenie w sprawie szczegółowych warunków p (2026-10-22)"
  ],
  "note": "Vigilancia de la ley del Plan Estratégico y búsqueda de reglamentos nuevos en el Dziennik Ustaw desde el 1 de septiembre de 2026. Los textos que aparecen son candidatos: no se interpretan."
 }
