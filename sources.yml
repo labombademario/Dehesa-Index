@@ -668,6 +668,18 @@ sources:
     data: [de-lz-laender-log.txt]
     extra: ['!data/de-lz']
     message: Censo agrario de Alemania por Land - uso del suelo, cultivos, ganado y ecologico (Destatis)
+  - id: de-kreise
+    name: Update Germany farm structure census by district (Regionaldatenbank Deutschland)
+    cron: ['40 16 13 * *']
+    script: scripts/update-de-kreise.py
+    env: {RDB_USER: '${{ secrets.RDB_USER }}', RDB_PASSWORD: '${{ secrets.RDB_PASSWORD }}'}
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/de-kreise)
+    data: [de-kreise-log.txt]
+    extra: ['!data/de-kreise']
+    message: Censo agrario de Alemania por distrito - uso del suelo, cultivos, ganado, ecologico, tamaño, propiedad y sucesion (Regionaldatenbank)
   - id: au-sa2-agriculture
     name: Update Australia crops by statistical area SA2 (ABS Australian Agriculture)
     cron: ['35 11 10 * *']

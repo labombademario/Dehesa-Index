@@ -3736,6 +3736,25 @@ def de_lz_land(doc, errs, warns, stats):
             if x is not None and y is not None and y > x * 1.001: errs.append("de-lz %s: tierra de cultivo (%s ha) mayor que la superficie agraria (%s ha)" % (doc["land"], y, x)); break
     stats["de-lz series"] = stats.get("de-lz series", 0) + n
 
+def de_kreise_land(doc, errs, warns, stats):
+    """Censo agrario por distrito (Regionaldatenbank): codigo de 5 cifras (8 en las subdivisiones que publica la fuente, p. ej. los barrios de Berlin) que empieza por el Land; una posicion por año publicado; sin negativos; la superficie de una clase no supera a la superficie agraria util del distrito (SAU >= tierra de cultivo)."""
+    ny = len(doc["years"]); n = 0; pre = {"SH": "01", "HH": "02", "NI": "03", "HB": "04", "NW": "05", "HE": "06", "RP": "07", "BW": "08", "BY": "09", "SL": "10", "BE": "11", "BB": "12", "MV": "13", "SN": "14", "ST": "15", "TH": "16"}.get(doc["land"])
+    if not pre: errs.append("de-kreise: Land desconocido %s" % doc["land"]); return
+    for ags, d in doc["kreise"].items():
+        if not re.match(r"^\d{5}(\d{3})?$", ags) or not ags.startswith(pre): errs.append("de-kreise %s: el codigo %s no es de ese Land" % (doc["land"], ags)); return
+        for t, cls in d["t"].items():
+            for c, ms in cls.items():
+                for m, arr in ms.items():
+                    if len(arr) != ny: errs.append("de-kreise %s %s %s/%s/%s: %d valores para %d años" % (doc["land"], ags, t, c, m, len(arr), ny)); return
+                    if any(x is not None and x < 0 for x in arr): errs.append("de-kreise %s %s %s/%s/%s: valor negativo" % (doc["land"], ags, t, c, m)); return
+                    n += 1
+        lu = d["t"].get("landuse", {})
+        a, tot = lu.get("Ackerland insgesamt", {}).get("FLC004"), lu.get("-", {}).get("FLC017")
+        if a and tot:
+            for x, y in zip(a, tot):
+                if x is not None and y is not None and x > y * 1.02 + 5: errs.append("de-kreise %s %s: tierra de cultivo (%s ha) mayor que la superficie agraria (%s ha)" % (doc["land"], ags, x, y)); break
+    stats["de-kreise series"] = stats.get("de-kreise series", 0) + n
+
 def au_sa2_state(doc, errs, warns, stats):
     """Cultivos por SA2 (ABS): una posicion por año; sin negativos; el codigo SA2 de 9 cifras empieza por el digito del estado; los indicadores usados estan declarados en 'items'."""
     D = {"NSW": "1", "VIC": "2", "QLD": "3", "SA": "4", "WA": "5", "TAS": "6", "NT": "7", "ACT": "8"}

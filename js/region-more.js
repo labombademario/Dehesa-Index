@@ -806,6 +806,42 @@
     function deLzStruct(x) { return deLzCard(x, 'struct'); }
     function deLzCrops(x) { return deLzCard(x, 'crops'); }
     function deLzLive(x) { return deLzCard(x, 'live'); }
+    /* ---- Alemania: censo agrario por distrito (Kreise), Regionaldatenbank ---- */
+    function deKrLoad(x, fn) { return get('data/de-kreise/' + x.r + '.json').then(function (d) { return d && d.kreise ? fn(d) : null; }); }
+    function deKrV(k, t, c, m, i) { var a = k.t[t] && k.t[t][c] && k.t[t][c][m]; return a && a[i] != null ? a[i] : null; }
+    function deKrPct(v) { return v == null ? '—' : nf(v, 1) + ' %'; }
+    function deKrList(rows, head, w) { return usCountyList(rows, head, w, 10, L('Todos los distritos|All districts|Tous les districts|Tutti i distretti')); }
+    function deKrStruct(x) {
+      return deKrLoad(x, function (d) {
+        var ks = Object.keys(d.kreise).map(function (a) { var k = d.kreise[a], sau = deKrV(k, 'landuse', '-', 'FLC017', 2), sau0 = deKrV(k, 'landuse', '-', 'FLC017', 0), org = deKrV(k, 'organic', '-', 'FLC047', 2), ar = deKrV(k, 'landuse', 'Ackerland insgesamt', 'FLC004', 2);
+          return { n: k.n, f: deKrV(k, 'landuse', '-', 'BTR010', 2), sau: sau, ch: sau && sau0 ? (sau / sau0 - 1) * 100 : null, ar: sau && ar != null ? ar / sau * 100 : null, org: sau && org != null ? org / sau * 100 : null }; }).filter(function (o) { return o.sau != null; });
+        if (!ks.length) return null; ks.sort(function (a, b) { return b.sau - a.sau; });
+        var pc = function (v) { return v == null ? '—' : (v >= 0 ? '+' : '−') + nf(Math.abs(v), 1) + '\u00a0%'; };
+        var rows = ks.map(function (o) { return [esc(o.n), o.f != null ? nf(o.f, 0) : '—', nf(o.sau, 0), pc(o.ch), deKrPct(o.ar), deKrPct(o.org)]; });
+        var head = [L('Distrito|District|District|Distretto'), L('Explotaciones|Farms|Exploitations|Aziende'), L('Superficie agraria (ha)|Farmland (ha)|SAU (ha)|SAU (ha)'), L('vs 2010|vs 2010|vs 2010|vs 2010'), L('Tierra de cultivo|Cropland share|Terres arables|Seminativi'), L('Ecológico|Organic|Bio|Biologico')];
+        return card(L('Distritos: explotaciones y superficie (2020)|Districts: farms and farmland (2020)|Districts : exploitations et surface (2020)|Distretti: aziende e superficie (2020)'), L('Explotaciones y superficie agraria utilizada de cada distrito (Landkreis y ciudad independiente) en el Censo Agrario 2020. La tierra de cultivo y la superficie ecológica son porcentajes de la superficie agraria. Los datos que la estadística oculta quedan en blanco.|Farms and utilised farmland of each district (Landkreis and independent city) in the 2020 Census of Agriculture. Cropland and organic area are shares of farmland. Values the statistics suppress are left blank.|Exploitations et surface agricole utilisée de chaque district (Landkreis et ville indépendante) au recensement agricole 2020. Terres arables et surface bio en % de la SAU. Les valeurs masquées restent vides.|Aziende e superficie agricola utilizzata di ogni distretto (Landkreis e città indipendente) nel censimento agricolo 2020. Seminativi e biologico in % della SAU. I valori nascosti restano vuoti.'), deKrList(rows, head, 560), cite('destatis', '2020'));
+      });
+    }
+    function deKrLive(x) {
+      return deKrLoad(x, function (d) {
+        var SP = ['Rinder', 'Milchkühe', 'Schweine', 'Schafe', 'Geflügel'];
+        var ks = Object.keys(d.kreise).map(function (a) { var k = d.kreise[a], o = { n: k.n, v: SP.map(function (sp) { return deKrV(k, 'livestock', sp, 'TIE003', 2); }) }; o.gv = deKrV(k, 'livestock', '-', 'VIE003', 2); o.any = o.v.some(function (v) { return v != null; }); return o; }).filter(function (o) { return o.any; });
+        if (!ks.length) return null; ks.sort(function (a, b) { return (b.gv != null ? b.gv : (b.v[0] || 0) / 1.2) - (a.gv != null ? a.gv : (a.v[0] || 0) / 1.2); });
+        var rows = ks.map(function (o) { return [esc(o.n)].concat(o.v.map(function (v) { return v != null ? nf(v, 0) : '—'; })); });
+        var head = [L('Distrito|District|District|Distretto'), L('Bovinos|Cattle|Bovins|Bovini'), L('Vacas de leche|Dairy cows|Vaches laitières|Vacche da latte'), L('Cerdos|Pigs|Porcins|Suini'), L('Ovejas|Sheep|Ovins|Ovini'), L('Aves|Poultry|Volailles|Pollame')];
+        return card(L('Distritos: ganado (1 de marzo de 2020)|Districts: livestock (1 March 2020)|Districts : élevage (1er mars 2020)|Distretti: allevamento (1° marzo 2020)'), L('Cabezas por distrito, ordenadas por unidades de ganado mayor. Las cifras que la estadística oculta por confidencialidad quedan en blanco.|Head per district, sorted by livestock units. Figures the statistics suppress for confidentiality are left blank.|Têtes par district, classées par unités de gros bétail. Les chiffres masqués par confidentialité restent vides.|Capi per distretto, ordinati per unità di bestiame adulto. Le cifre nascoste per riservatezza restano vuote.'), deKrList(rows, head, 560), cite('destatis', '2020'));
+      });
+    }
+    function deKrSize(x) {
+      return deKrLoad(x, function (d) {
+        var ks = Object.keys(d.kreise).map(function (a) { var k = d.kreise[a], sau = deKrV(k, 'landuse', '-', 'FLC017', 2), b1 = deKrV(k, 'size', '100 bis unter 200 ha', 'FLC017', 2), b2 = deKrV(k, 'size', '200 und mehr ha', 'FLC017', 2), tot = deKrV(k, 'succession', 'Insgesamt', 'BTR011', 2), no = deKrV(k, 'succession', 'mit keiner oder ungewisser Hofnachfolge', 'BTR011', 2);
+          return { n: k.n, sau: sau, big: sau && b1 != null && b2 != null ? (b1 + b2) / sau * 100 : null, old: tot, no: tot && no != null ? no / tot * 100 : null }; }).filter(function (o) { return o.sau != null && (o.big != null || o.old != null); });
+        if (!ks.length) return null; ks.sort(function (a, b) { return b.sau - a.sau; });
+        var rows = ks.map(function (o) { return [esc(o.n), nf(o.sau, 0), deKrPct(o.big), o.old != null ? nf(o.old, 0) : '—', deKrPct(o.no)]; });
+        var head = [L('Distrito|District|District|Distretto'), L('Superficie agraria (ha)|Farmland (ha)|SAU (ha)|SAU (ha)'), L('En explotaciones de 100 ha o más|On farms of 100 ha or more|Dans des exploitations de 100 ha ou plus|In aziende da 100 ha o più'), L('Titulares de 55 años o más|Owners aged 55+|Exploitants de 55 ans et plus|Titolari di 55 anni e più'), L('Sin relevo asegurado|No secured successor|Sans successeur assuré|Senza successione')];
+        return card(L('Distritos: tamaño y relevo generacional (2020)|Districts: farm size and succession (2020)|Districts : taille et relève (2020)|Distretti: dimensione e ricambio (2020)'), L('Porcentaje de la superficie agraria en explotaciones de 100 ha o más, y explotaciones individuales con titular de 55 años o más (cifra) con el porcentaje que no tiene sucesor asegurado o lo tiene incierto.|Share of farmland on farms of 100 ha or more, and sole-proprietor farms whose owner is 55 or older (count) with the share that has no secured successor or an uncertain one.|Part de la SAU dans des exploitations de 100 ha ou plus, et exploitations individuelles dont le chef a 55 ans ou plus (nombre) avec la part sans successeur assuré ou incertain.|Quota della SAU in aziende da 100 ha o più, e aziende individuali con titolare di 55 anni o più (numero) con la quota senza successore sicuro o incerto.'), deKrList(rows, head, 560), cite('destatis', '2020'));
+      });
+    }
     /* ---- Australia: cultivos por zona estadistica SA2 (ABS) ---- */
     var AU_B = [['Wheat', 'Trigo|Wheat|Blé|Grano'], ['Barley', 'Cebada|Barley|Orge|Orzo'], ['Canola', 'Colza (canola)|Canola|Canola|Colza (canola)'], ['Oats', 'Avena|Oats|Avoine|Avena'], ['Sorghum', 'Sorgo|Sorghum|Sorgho|Sorgo'], ['Cotton', 'Algodón|Cotton|Coton|Cotone'], ['Rice', 'Arroz|Rice|Riz|Riso'], ['Sugarcane', 'Caña de azúcar|Sugarcane|Canne à sucre|Canna da zucchero'], ['Maize', 'Maíz|Maize|Maïs|Mais'], ['Chickpeas', 'Garbanzo|Chickpeas|Pois chiches|Ceci'], ['Lupins', 'Altramuz|Lupins|Lupins|Lupini'], ['Fieldpeas', 'Guisante|Field peas|Pois protéagineux|Pisello proteico'], ['Lentils', 'Lenteja|Lentils|Lentilles|Lenticchie'], ['Fababeans', 'Haba|Faba beans|Féveroles|Fava']];
     var AU_H = [['Winegrape', 'Uva de vino (t)|Winegrapes (t)|Raisin de cuve (t)|Uva da vino (t)', 'HortWinegrape_Crush'], ['Avocados', 'Aguacate (t)|Avocados (t)|Avocats (t)|Avocado (t)', 'HortAvocados_Prod'], ['Bananas', 'Plátano (t)|Bananas (t)|Bananes (t)|Banane (t)', 'HortBananas_Prod'], ['Macadamias', 'Macadamia (t)|Macadamias (t)|Noix de macadamia (t)|Macadamia (t)', 'HortMacadamias_Prod_Inshell']];
@@ -876,7 +912,7 @@
         CA: [C('mb', caMb), C('insca', caIns), C('cacensus', caCensus), C('cayields', caYields), C('candvi', caNdvi), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', gridClim)],
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
-        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('eudr', eudr), C('clim', deClim)],
+        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('dekrs', deKrStruct), C('dekrl', deKrLive), C('dekrz', deKrSize), C('eudr', eudr), C('clim', deClim)],
         NL: [C('nlcrops', nlCbs), C('clim', gridClim)],
         AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim)], AU: [C('aulv', auLivestock), C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('aulga', auLga), C('ausa4', auSa4), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },

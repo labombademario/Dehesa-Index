@@ -910,7 +910,7 @@
     "url": "https://www.finlex.fi/fi/lainsaadanto/2022/1332",
     "sourceId": "finlex_fi"
    },
-   "updatedAt": "2026-10-28",
+   "updatedAt": "2026-11-02",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -943,7 +943,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "fi/watch.json",
-     "checkedAt": "2026-10-28",
+     "checkedAt": "2026-11-02",
      "reviewNeeded": 0
     }
    }
@@ -958,7 +958,7 @@
     "url": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
     "sourceId": "slov_lex"
    },
-   "updatedAt": "2026-10-28",
+   "updatedAt": "2026-11-02",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -991,7 +991,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "sk/watch.json",
-     "checkedAt": "2026-10-28",
+     "checkedAt": "2026-11-02",
      "reviewNeeded": 0
     }
    }
@@ -1006,7 +1006,7 @@
     "url": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
     "sourceId": "uradni_list_rs"
    },
-   "updatedAt": "2026-10-28",
+   "updatedAt": "2026-11-02",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -1039,7 +1039,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "si/watch.json",
-     "checkedAt": "2026-10-28",
+     "checkedAt": "2026-11-02",
      "reviewNeeded": 0
     }
    }
@@ -1054,7 +1054,7 @@
     "url": "https://www.riigiteataja.ee/akt/102082025007",
     "sourceId": "riigi_teataja_ee"
    },
-   "updatedAt": "2026-10-28",
+   "updatedAt": "2026-11-02",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -1087,7 +1087,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "ee/watch.json",
-     "checkedAt": "2026-10-28",
+     "checkedAt": "2026-11-02",
      "reviewNeeded": 0
     }
    }
@@ -1102,7 +1102,7 @@
     "url": "https://www.mzh.government.bg/media/filer_public/2026/01/21/naredba_3_ot_10032023_g_za_usloviqta_i_reda_za_prilagane_na_intervenciite_pod_formata_na_direktni_pl.pdf",
     "sourceId": "mzh_naredba_3_4_2023"
    },
-   "updatedAt": "2026-10-28",
+   "updatedAt": "2026-11-02",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -1135,8 +1135,8 @@
     "watch": {
      "state": "INGESTED",
      "file": "bg/watch.json",
-     "checkedAt": "2026-10-28",
-     "reviewNeeded": 0
+     "checkedAt": "2026-11-02",
+     "reviewNeeded": 2
     }
    }
   },
@@ -1150,7 +1150,7 @@
     "url": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
     "sourceId": "likumi_lv"
    },
-   "updatedAt": "2026-10-28",
+   "updatedAt": "2026-11-02",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -1183,8 +1183,8 @@
     "watch": {
      "state": "INGESTED",
      "file": "lv/watch.json",
-     "checkedAt": "2026-10-28",
-     "reviewNeeded": 0
+     "checkedAt": "2026-11-02",
+     "reviewNeeded": 2
     }
    }
   }

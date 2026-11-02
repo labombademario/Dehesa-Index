@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-347 workflows (297 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+348 workflows (298 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -120,6 +120,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-de-climate-laender.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-climate-laender.py | de-climate-laender.json | finish, validate-files |
 | update-de-diesel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-de-diesel.py | de-diesel.json | finish, validate-files |
 | update-de-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | de-ghg-agri.json | finish, validate-files |
+| update-de-kreise.yml | generado | mensual | gen-workflows.py, update-de-kreise.py, validate-data.py | - | finish |
 | update-de-land-prices.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-land-prices.py | de-land-prices.json | finish, validate-files |
 | update-de-lz-laender.yml | generado | mensual | gen-workflows.py, update-de-lz-laender.py, validate-data.py | - | finish |
 | update-de-more.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-de-more.py | germany-more-stats.json | finish, validate-files |

@@ -2402,6 +2402,16 @@
    "de-lz-index",
    []
   ],
+  "de-kreise/[A-Z][A-Z].json": [
+   "de-kreise-land",
+   [
+    "de_kreise_land"
+   ]
+  ],
+  "de-kreise/inde[x].json": [
+   "de-kreise-index",
+   []
+  ],
   "au-sa2/[A-Z][A-Z]*.json": [
    "au-sa2-state",
    [

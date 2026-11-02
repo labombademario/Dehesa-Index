@@ -8948,6 +8948,12 @@
     "ABS": "abs"
    },
    "notes": "scripts/update-au-labour.py: ABS Labour Account Australia (dataflow LABOUR_ACCT_Q, industria 01XX, CC BY 4.0): empleos, personas, horas y costes laborales de la agricultura, trimestral desde 1994."
+  },
+  "data/de-kreise/": {
+   "sources": [
+    "destatis"
+   ],
+   "notes": "Regionaldatenbank Deutschland (Statistische Ämter des Bundes und der Länder; el propio portal declara Datenlizenz Deutschland – Namensnennung – Version 2.0), Agrarstrukturerhebung/Landwirtschaftszählung por Kreis (tablas 41141-01-01-4, -02-02-4, -03-02-4, -04-02-4, -05-01-4, -06-01-4, -07-01-4 y -09-01-4; scripts/update-de-kreise.py), años 2010, 2016 y 2020. Copiado tal cual lo publica la fuente; los valores suprimidos quedan como hueco. Control: la suma de distritos cuadra con el Land. Texto de licencia leido en regionalstatistik.de (Nutzungsbedingungen) el 2-nov-2026."
   }
  },
  "derived": [
