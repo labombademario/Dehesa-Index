@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T03:44:00Z",
+ "generatedAt": "2026-11-02T03:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 322,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
   "repoGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
-  "checkedAt": "2026-11-02T03:44:00Z"
+  "checkedAt": "2026-11-02T03:48:00Z"
  },
  "pipelines": [
   {
@@ -4857,7 +4857,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-02T03:47:00Z",
+   "nextRun": "2026-11-02T06:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5179,7 +5179,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-11-02T02:35:59Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5196,7 +5196,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-02T02:31:50Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/products"
@@ -5207,19 +5207,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T03:33:07Z"
+     "lastChange": "2026-11-02T03:47:56Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-11-02T02:35:59Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-11-02T02:31:50Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-11-02T02:31:50Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/pack"
@@ -5235,7 +5235,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-11-02T02:35:59Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/country-pending.json",
@@ -5243,7 +5243,7 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-11-02T02:31:50Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/ers-cost-reference.json",
@@ -5254,7 +5254,7 @@
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-11-02T02:31:50Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/fv-products.json",
@@ -5266,7 +5266,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-11-02T02:31:50Z"
+     "lastChange": "2026-11-02T03:44:12Z"
     },
     {
      "path": "data/home-explore.json",
