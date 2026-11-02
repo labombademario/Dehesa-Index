@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "country": "NL",
  "source": "wetten_nl",
- "status": "OK",
+ "status": "UNREACHABLE",
  "checkedAt": "2026-10-26",
  "baseline": {
   "fingerprints": {
@@ -27,5 +27,6 @@
   "searchErrors": []
  },
  "reviewNeeded": [],
- "note": "Huella del texto consolidado de la Uitvoeringsregeling GLB 2023 (wetten.overheid.nl) y, cuando responde, búsqueda de Staatscourant/Staatsblad con GLB en el título desde el 25 de octubre de 2026. Lo que aparece son candidatos: no se interpretan."
+ "note": "Huella del texto consolidado de la Uitvoeringsregeling GLB 2023 (wetten.overheid.nl) y, cuando responde, búsqueda de Staatscourant/Staatsblad con GLB en el título desde el 25 de octubre de 2026. Lo que aparece son candidatos: no se interpretan.",
+ "lastError": "HTTPError: HTTP Error 403: Forbidden"
 }
