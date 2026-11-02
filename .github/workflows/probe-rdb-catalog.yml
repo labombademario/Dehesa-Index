@@ -1,0 +1,19 @@
+name: Probe Regionaldatenbank catalogue
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/probe-kreise-data]
+    paths: [.github/workflows/probe-rdb-catalog.yml]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Listar tablas con nivel Kreise
+        env:
+          RDB_USER: ${{ secrets.RDB_USER }}
+          RDB_PASSWORD: ${{ secrets.RDB_PASSWORD }}
+        run: python3 scripts/probe-rdb-catalog.py
