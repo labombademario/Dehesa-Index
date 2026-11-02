@@ -668,6 +668,17 @@ sources:
     data: [de-lz-laender-log.txt]
     extra: ['!data/de-lz']
     message: Censo agrario de Alemania por Land - uso del suelo, cultivos, ganado y ecologico (Destatis)
+  - id: au-sa2-agriculture
+    name: Update Australia crops by statistical area SA2 (ABS Australian Agriculture)
+    cron: ['35 11 10 * *']
+    script: scripts/update-au-sa2-agriculture.py
+    timeout: 20
+    script_timeout: 14
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/au-sa2)
+    data: [au-sa2-log.txt]
+    extra: ['!data/au-sa2']
+    message: Cultivos de Australia por zona estadistica SA2 (ABS)
   - id: argentina-provinces
     name: Update Argentina crops by province (MAGyP crop estimates)
     cron: ['10 11 8 * *']

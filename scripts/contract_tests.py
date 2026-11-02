@@ -3736,6 +3736,18 @@ def de_lz_land(doc, errs, warns, stats):
             if x is not None and y is not None and y > x * 1.001: errs.append("de-lz %s: tierra de cultivo (%s ha) mayor que la superficie agraria (%s ha)" % (doc["land"], y, x)); break
     stats["de-lz series"] = stats.get("de-lz series", 0) + n
 
+def au_sa2_state(doc, errs, warns, stats):
+    """Cultivos por SA2 (ABS): una posicion por año; sin negativos; el codigo SA2 de 9 cifras empieza por el digito del estado; los indicadores usados estan declarados en 'items'."""
+    D = {"NSW": "1", "VIC": "2", "QLD": "3", "SA": "4", "WA": "5", "TAS": "6", "NT": "7", "ACT": "8"}
+    ny = len(doc["years"]); n = 0
+    for g, a in doc["areas"].items():
+        if not re.match(r"^\d{9}$", g) or g[0] != D.get(doc["state"]): errs.append("au-sa2 %s: codigo %r no es de este estado" % (doc["state"], g)); return
+        for i, arr in a["v"].items():
+            if i not in doc["items"] or len(arr) != ny: errs.append("au-sa2 %s %s/%s: indicador no declarado o serie de longitud %d" % (doc["state"], g, i, len(arr))); return
+            if any(x is not None and x < 0 for x in arr): errs.append("au-sa2 %s %s/%s: valor negativo" % (doc["state"], g, i)); return
+        n += 1
+    stats["au-sa2 areas"] = stats.get("au-sa2 areas", 0) + n
+
 def us_county_status(doc, errs, warns, stats):
     """Estado de ingesta de rendimientos por condado: un cultivo del script por entrada, sin repetidos, y 'latest' coherente con el rango de anos."""
     m = _ucy_mod(); known = {c["slug"]: c["key"] for c in m.CROPS}; seen = set()

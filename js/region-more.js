@@ -806,6 +806,28 @@
     function deLzStruct(x) { return deLzCard(x, 'struct'); }
     function deLzCrops(x) { return deLzCard(x, 'crops'); }
     function deLzLive(x) { return deLzCard(x, 'live'); }
+    /* ---- Australia: cultivos por zona estadistica SA2 (ABS) ---- */
+    var AU_B = [['Wheat', 'Trigo|Wheat|Blé|Grano'], ['Barley', 'Cebada|Barley|Orge|Orzo'], ['Canola', 'Colza (canola)|Canola|Canola|Colza (canola)'], ['Oats', 'Avena|Oats|Avoine|Avena'], ['Sorghum', 'Sorgo|Sorghum|Sorgho|Sorgo'], ['Cotton', 'Algodón|Cotton|Coton|Cotone'], ['Rice', 'Arroz|Rice|Riz|Riso'], ['Sugarcane', 'Caña de azúcar|Sugarcane|Canne à sucre|Canna da zucchero'], ['Maize', 'Maíz|Maize|Maïs|Mais'], ['Chickpeas', 'Garbanzo|Chickpeas|Pois chiches|Ceci'], ['Lupins', 'Altramuz|Lupins|Lupins|Lupini'], ['Fieldpeas', 'Guisante|Field peas|Pois protéagineux|Pisello proteico'], ['Lentils', 'Lenteja|Lentils|Lentilles|Lenticchie'], ['Fababeans', 'Haba|Faba beans|Féveroles|Fava']];
+    var AU_H = [['Winegrape', 'Uva de vino (t)|Winegrapes (t)|Raisin de cuve (t)|Uva da vino (t)', 'HortWinegrape_Crush'], ['Avocados', 'Aguacate (t)|Avocados (t)|Avocats (t)|Avocado (t)', 'HortAvocados_Prod'], ['Bananas', 'Plátano (t)|Bananas (t)|Bananes (t)|Banane (t)', 'HortBananas_Prod'], ['Macadamias', 'Macadamia (t)|Macadamias (t)|Noix de macadamia (t)|Macadamia (t)', 'HortMacadamias_Prod_Inshell']];
+    function auSa2Card(x, kind) {
+      return get('data/au-sa2/' + x.r + '.json').then(function (d) {
+        if (!d || !d.areas) return null; var Y = d.years, rows = [], yl = null;
+        var yrs = function (i) { return Y[i] + '–' + String(Y[i] + 1).slice(2); };
+        var specs = kind === 'crops' ? AU_B.map(function (b) { return [L(b[1]), 'Broad' + b[0] + '_Area_Total', 'ha']; }) : AU_H.map(function (h) { return [L(h[1]), h[2], 't']; });
+        specs.forEach(function (sp) {
+          var li = -1, list = [];
+          for (var i = Y.length - 1; i >= 0 && li < 0; i--) { list = []; Object.keys(d.areas).forEach(function (g) { var v = d.areas[g].v[sp[1]]; if (v && v[i] != null && v[i] > 0) list.push({ n: d.areas[g].n, v: v[i] }); }); if (list.length) li = i; }
+          if (li < 0) return; list.sort(function (a, b) { return b.v - a.v; }); var tot = list.reduce(function (a, b) { return a + b.v; }, 0); if (yl == null || li > yl) yl = li;
+          rows.push({ t: tot, r: [esc(sp[0]), esc(yrs(li)), nf(tot, 0), list.slice(0, 2).map(function (o) { return esc(o.n) + ' ' + faint(nf(o.v, 0)); }).join('<br>')] });
+        });
+        if (!rows.length) return null; rows.sort(function (a, b) { return b.t - a.t; });
+        var head = [kind === 'crops' ? L('Cultivo (ha)|Crop (ha)|Culture (ha)|Coltura (ha)') : L('Producto|Product|Produit|Prodotto'), L('Año fiscal|Financial year|Exercice|Anno fiscale'), L('Total publicado|Published total|Total publié|Totale pubblicato'), L('Zonas principales|Top areas|Principales zones|Zone principali')];
+        var T = kind === 'crops' ? [L('Cultivos de secano por zona (SA2)|Broadacre crops by area (SA2)|Grandes cultures par zone (SA2)|Seminativi per zona (SA2)'), L('Superficie total de cultivo por zona estadística SA2 (ABS). Las zonas con datos confidenciales no se publican, así que el total puede quedar por debajo del estatal.|Total crop area by statistical area SA2 (ABS). Areas with confidential data are not published, so the total can fall short of the state figure.|Superficie cultivée par zone statistique SA2 (ABS). Les zones aux données confidentielles ne sont pas publiées : le total peut être inférieur à celui de l’État.|Superficie coltivata per area statistica SA2 (ABS). Le aree con dati riservati non sono pubblicate, quindi il totale può restare sotto quello statale.')] : [L('Horticultura por zona (SA2)|Horticulture by area (SA2)|Horticulture par zone (SA2)|Orticoltura per zona (SA2)'), L('Producción de uva de vino, aguacate, plátano y macadamia por zona estadística SA2 (ABS), en toneladas.|Winegrape, avocado, banana and macadamia output by statistical area SA2 (ABS), in tonnes.|Production de raisin de cuve, avocat, banane et macadamia par zone SA2 (ABS), en tonnes.|Produzione di uva da vino, avocado, banane e macadamia per area SA2 (ABS), in tonnellate.')];
+        return card(T[0], T[1], table(head, rows.map(function (o) { return o.r; }), 520), cite('abs', yrs(yl)));
+      });
+    }
+    function auSa2Crops(x) { return auSa2Card(x, 'crops'); }
+    function auSa2Hort(x) { return auSa2Card(x, 'hort'); }
     var C = function (k, fn) { return [k, fn]; };
     return {
       T: T, us: { uscdrought: usCountyDrought, uscins: usCountyIns, usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, usrecv: usReceipts, uscensus: usCensus, usarc: usArc, usfuel: usFuel },
@@ -816,7 +838,7 @@
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('eudr', eudr), C('clim', deClim)],
         NL: [C('nlcrops', nlCbs), C('clim', gridClim)],
-        AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim)], AU: [C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
+        AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim)], AU: [C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
       optional: { eslonjas: 1, eudr: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1, uscprog: 1 }

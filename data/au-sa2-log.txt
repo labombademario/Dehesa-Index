@@ -1,0 +1,4 @@
+AG_BROADACRE 19450 observaciones SA2
+AG_HORTICULTURE 5255 observaciones SA2
+control superficie frente a Australia: 46 de 46 cuadran
+OK: 8 estados, 723 SA2 con datos, años [2022, 2023, 2024], 458 KB

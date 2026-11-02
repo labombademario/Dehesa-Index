@@ -8924,6 +8924,12 @@
     "DE": "destatis"
    },
    "notes": "Destatis GENESIS-Online (dl-de/by-2.0), Landwirtschaftszählung y Agrarstrukturerhebung por Bundesland (tablas 41141-0101, -0103, -0104, -0105, -0115, -0116 y -0117; scripts/update-de-lz-laender.py): uso del suelo, cultivos de labor, ganado, agricultura ecologica, regadio, cultivos permanentes y prados, 2010-2023. Copiado tal cual lo publica Destatis; los valores suprimidos quedan como hueco. Control contra las tablas nacionales 41141-0001 y -0004."
+  },
+  "data/au-sa2/": {
+   "sources": [
+    "abs"
+   ],
+   "notes": "ABS Data API (CC BY 4.0), dataflows AG_BROADACRE y AG_HORTICULTURE (scripts/update-au-sa2-agriculture.py): cultivos de secano y horticultura por area estadistica SA2, años fiscales 2021-22 a 2023-24. Superficie total, produccion sujeta a la tasa agraria (levied production), valor local y numero de pagadores o negocios, copiados tal cual; lo no publicado por confidencialidad queda como hueco. Control: la suma de los SA2 no supera el total de Australia. Se cita al ABS junto a las cifras."
   }
  },
  "derived": [
