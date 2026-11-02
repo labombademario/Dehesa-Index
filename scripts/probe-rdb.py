@@ -13,14 +13,14 @@ def post(url, data, hdr):
     except Exception as e: return 0, san(str(e)).encode()
 import collections
 base = "https://www.regionalstatistik.de/genesisws/rest/2020"
-for tab in ("41141-01-01-4", "41141-02-02-4", "41141-03-02-4", "41141-04-02-4", "41141-05-01-4", "41141-06-01-4", "41141-07-01-4", "41141-09-01-4"):
+for tab in ("41141-04-02-4", "41141-05-01-4", "41141-06-01-4", "41141-07-01-4", "41141-09-01-4"):
     s2, b2 = post(base + "/data/tablefile", {"name": tab, "area": "all", "startyear": "2010", "format": "ffcsv", "compress": "false", "transpose": "false", "job": "false", "language": "de"}, {})
     if b2[:2] != b"PK": print(tab, s2, san(b2[:300].decode("utf-8", "replace"))); continue
     z = zipfile.ZipFile(io.BytesIO(b2)); rows = list(csv.DictReader(io.StringIO(z.read(z.namelist()[0]).decode("utf-8-sig")), delimiter=";"))
     lv = collections.defaultdict(set); yrs = set(); vv = collections.Counter(); cls = collections.defaultdict(set)
     for r in rows:
         lv[r["1_variable_code"]].add(r["1_variable_attribute_code"]); yrs.add(r["time"]); vv[r["value_variable_label"]] += 1
-        cls[r["2_variable_code"] + ":" + r["2_variable_label"]].add(r["2_variable_attribute_label"])
+        cls[r.get("2_variable_code", "") + ":" + r.get("2_variable_label", "")].add(r.get("2_variable_attribute_label", ""))
     print("==", tab, len(rows), "filas; anios", sorted(yrs)); print("  niveles", {k: len(v) for k, v in lv.items()}); print("  medidas", dict(vv))
     print("  clases", {k: sorted(v)[:14] for k, v in cls.items()})
     k = [r for r in rows if r["1_variable_code"].startswith("KREIS")][:1]
