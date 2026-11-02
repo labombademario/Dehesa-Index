@@ -2460,8 +2460,30 @@ sources:
     continue: true
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-county)
     data: [us-county/status.json, us-county-yields-log.txt]
-    extra: ['!data/us-county']
+    extra: ['!data/us-county/yields']
     message: Datos rendimiento, superficie cosechada y produccion por condado de EE. UU. (USDA NASS)
+  - id: us-county-drought
+    name: Update US county drought (U.S. Drought Monitor, NDMC/USDA/NOAA)
+    cron: ['40 14 * * 4']
+    script: scripts/update-us-county-drought.py
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-county/drought)
+    data: [us-county-drought-log.txt]
+    extra: ['!data/us-county/drought']
+    message: Sequia semanal por condado de EE. UU. (U.S. Drought Monitor)
+  - id: us-county-insurance
+    name: Update US county crop insurance (USDA RMA Summary of Business)
+    cron: ['30 8 4,19 * *']
+    script: scripts/update-us-county-insurance.py
+    timeout: 30
+    script_timeout: 22
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-county/insurance)
+    data: [us-county-insurance-log.txt]
+    extra: ['!data/us-county/insurance']
+    message: Seguro de cosechas por condado de EE. UU. (USDA RMA)
   - id: us-local-markets
     name: Update US local cattle and hay prices (USDA AMS MARS)
     cron: ['20 15 * * 1-5']

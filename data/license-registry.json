@@ -6561,9 +6561,11 @@
   },
   "data/us-county/": {
    "sources": [
-    "usda_nass"
+    "usda_nass",
+    "us_drought_monitor",
+    "usda_rma"
    ],
-   "notes": "Rendimiento, superficie cosechada y produccion por condado de EE. UU. (scripts/update-us-county-yields.py): estimaciones por condado de USDA NASS Quick Stats (encuestas, nivel COUNTY, periodo anual, todas las practicas), de maiz, soja, trigo, algodon upland, sorgo, arroz, cacahuete, heno de alfalfa, cebada y avena donde NASS las publica. Mismo origen, API y clase de datos que data/nass-crops.json (por estado). Los valores suprimidos por NASS ((D)) quedan como hueco, nunca como cero; 'OTHER COUNTIES' es la suma que NASS publica para los condados que no publica por separado. Los contornos de los condados (vendor/us-counties/, Censo de EE. UU. via us-atlas, ISC) no son datos agrarios y llevan su propia licencia en vendor/us-counties/LICENSE. Se cita a NASS junto a las cifras."
+   "notes": "Rendimiento, superficie cosechada y produccion por condado de EE. UU. (scripts/update-us-county-yields.py): estimaciones por condado de USDA NASS Quick Stats (encuestas, nivel COUNTY, periodo anual, todas las practicas), de maiz, soja, trigo, algodon upland, sorgo, arroz, cacahuete, heno de alfalfa, cebada y avena donde NASS las publica. Mismo origen, API y clase de datos que data/nass-crops.json (por estado). Los valores suprimidos por NASS ((D)) quedan como hueco, nunca como cero; 'OTHER COUNTIES' es la suma que NASS publica para los condados que no publica por separado. Los contornos de los condados (vendor/us-counties/, Censo de EE. UU. via us-atlas, ISC) no son datos agrarios y llevan su propia licencia en vendor/us-counties/LICENSE. Se cita a NASS junto a las cifras. Ademas, por condado: sequia semanal (scripts/update-us-county-drought.py, estadistica CountyStatistics del U.S. Drought Monitor de NDMC/USDA/NOAA: % de superficie del condado en D0-D4, 52 semanas, copiado tal cual lo publica el servicio) y seguro de cosechas (scripts/update-us-county-insurance.py, USDA RMA Summary of Business, state_county_crop: capital asegurado, prima, subvencion, indemnizacion, polizas y acres por condado y año, sumados por Dehesa Index; el total nacional reproduce el de data/crop-insurance.json). Los registros de la RMA sin condado asignado (codigo 999) cuentan en el control pero no se publican como condado. Se cita a cada organismo junto a las cifras."
   },
   "data/us-local/": {
    "sources": [

@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-337 workflows (287 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+339 workflows (289 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -422,6 +422,8 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-cash-bids.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-cash-bids.py | us-cash-bids/ingestion-status.json, us-cash-bids/manifest.json, us-cash-bids/reports.json … | finish, validate-files |
 | update-us-cash-receipts.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-cash-receipts.py | us-cash-receipts.json | finish, validate-files |
 | update-us-climate.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-climate.py | us-climate-states.json, us-climate-stats.json | finish, validate-files |
+| update-us-county-drought.yml | generado | semanal (4) | gen-workflows.py, update-us-county-drought.py, validate-data.py | - | finish |
+| update-us-county-insurance.yml | generado | mensual | gen-workflows.py, update-us-county-insurance.py, validate-data.py | - | finish |
 | update-us-county-yields.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-us-county-yields.py | us-county/status.json | finish, validate-files |
 | update-us-crop-progress-states.yml | a mano | 2 veces/semana | update-us-crop-progress-states.mjs | us-crop-progress/*.json | finish, validate-files |
 | update-us-dairy.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-us-dairy.py | us-dairy.json | finish, validate-files |

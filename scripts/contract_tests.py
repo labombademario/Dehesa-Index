@@ -3650,6 +3650,34 @@ def us_county_yields(doc, errs, warns, stats):
     if n_latest < 5: warns.append("us-county/%s: solo %d condados con rendimiento en %d" % (c["slug"], n_latest, ys[-1]))
 
 
+def us_county_drought(doc, errs, warns, stats):
+    """Sequia por condado (U.S. Drought Monitor): semanas ordenadas y distintas; cada condado tiene un valor (o null) por semana; D0>=D1>=D2>=D3>=D4 (acumulado) y 0-100; el FIPS empieza por un estado coherente."""
+    ws = doc["weeks"]
+    if ws != sorted(set(ws)): errs.append("us-county drought %s: semanas desordenadas o repetidas" % doc["state"]); return
+    n = 0
+    for f, c in doc["counties"].items():
+        if not re.match(r"^\d{5}$", f): errs.append("us-county drought: FIPS %r invalido" % f); return
+        if len(c["v"]) != len(ws): errs.append("us-county drought %s: %d valores para %d semanas" % (f, len(c["v"]), len(ws))); return
+        for v in c["v"]:
+            if v is None: continue
+            if len(v) != 5 or any(x < 0 or x > 100.0001 for x in v) or any(v[i] + 0.011 < v[i + 1] for i in range(4)): errs.append("us-county drought %s: categorias incoherentes %r" % (f, v)); return
+        n += 1
+    if len({f[:2] for f in doc["counties"]}) > 2: errs.append("us-county drought %s: condados de demasiados estados" % doc["state"])
+    stats["us-county drought condados"] = stats.get("us-county drought condados", 0) + n
+
+def us_county_insurance(doc, errs, warns, stats):
+    """Seguro por condado (RMA): sin negativos; la subvencion no supera la prima; la prima no supera el capital asegurado; cultivos principales ordenados por capital asegurado."""
+    n = 0
+    for f, c in doc["counties"].items():
+        if not re.match(r"^\d{5}$", f): errs.append("us-county insurance: FIPS %r invalido" % f); return
+        for y, v in c["y"].items():
+            if not re.match(r"^\d{4}$", y) or y not in doc["years"]: errs.append("us-county insurance %s: año %r fuera de la lista" % (f, y)); return
+            if v[2] > v[1] + 1 or v[1] > v[0] + 1: errs.append("us-county insurance %s %s: subvencion/prima/capital incoherentes %r" % (f, y, v)); return
+        t = c.get("top", [])
+        if [x[1] for x in t] != sorted((x[1] for x in t), reverse=True): errs.append("us-county insurance %s: cultivos no ordenados por capital" % f); return
+        n += 1
+    stats["us-county insurance condados"] = stats.get("us-county insurance condados", 0) + n
+
 def us_county_status(doc, errs, warns, stats):
     """Estado de ingesta de rendimientos por condado: un cultivo del script por entrada, sin repetidos, y 'latest' coherente con el rango de anos."""
     m = _ucy_mod(); known = {c["slug"]: c["key"] for c in m.CROPS}; seen = set()

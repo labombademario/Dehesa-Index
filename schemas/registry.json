@@ -2341,6 +2341,26 @@
    [
     "poland_zsrir"
    ]
+  ],
+  "us-county/drought/[A-Z][A-Z].json": [
+   "us-county-drought",
+   [
+    "us_county_drought"
+   ]
+  ],
+  "us-county/drought/inde[x].json": [
+   "us-county-drought-index",
+   []
+  ],
+  "us-county/insurance/[A-Z][A-Z].json": [
+   "us-county-insurance",
+   [
+    "us_county_insurance"
+   ]
+  ],
+  "us-county/insurance/inde[x].json": [
+   "us-county-insurance-index",
+   []
   ]
  },
  "derived": [

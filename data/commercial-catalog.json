@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-31T01:46:54Z",
+ "generatedAt": "2026-11-02T01:19:25Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
@@ -11,9 +11,9 @@
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
   "datasets": 423,
-  "datasets_apto": 283,
+  "datasets_apto": 282,
   "datasets_condiciones": 129,
-  "datasets_parcial": 4,
+  "datasets_parcial": 5,
   "datasets_no-apto": 3,
   "datasets_reviewBeforeSelling": 0,
   "derived": 48
@@ -8305,9 +8305,18 @@
   {
    "path": "data/us-county/",
    "scope": "carpeta",
-   "verdict": "apto",
+   "verdict": "parcial",
    "sources": [
-    "usda_nass"
+    "us_drought_monitor",
+    "usda_nass",
+    "usda_rma"
+   ],
+   "commercialSources": [
+    "usda_nass",
+    "usda_rma"
+   ],
+   "excludedSources": [
+    "us_drought_monitor"
    ]
   },
   {
