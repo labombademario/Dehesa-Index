@@ -15,7 +15,7 @@ LAND = ge.LAND
 YEARS = [2010, 2013, 2016, 2020, 2023]
 VAL = {"Landwirtschaftliche Betriebe": "farms", "Landwirtschaftliche Betriebe mit Viehhaltung": "farms", "Landwirtschaftliche Betriebe mit Dauerkulturen": "farms", "Landwirtschaftliche Betriebe mit Dauergrünland": "farms",
        "Landwirtsch. Betriebe mit ökologischem Landbau": "farms", "Landwirtschaftl. Betr. mit Bewässerung im Vorjahr": "farms", "Fläche": "area", "Dauerkulturfläche": "area", "Dauergrünlandfläche": "area",
-       "LF in Betrieben mit ökologischem Landbau": "area", "Bewässerte Fläche im Vorjahr": "area", "Viehbestand": "head", "Tiere": "animals"}
+       "LF in Betrieben mit ökologischem Landbau": "area", "Bewässerte Fläche im Vorjahr": "area", "Viehbestand": "lu", "Tiere": "head"}
 TABLES = [("landuse", "41141-0101", 2), ("arable", "41141-0103", 2), ("livestock", "41141-0104", 2), ("organic", "41141-0105", 2), ("irrigation", "41141-0115", None), ("permanent", "41141-0116", 2), ("grassland", "41141-0117", 2)]
 LOG = []
 def log(*a): s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
@@ -59,8 +59,8 @@ def main():
         for r in rows:
             L = ge.labels(r); vk = VAL.get(r["value_variable_label"].strip())
             if not vk or year(r["time"]) != 2020: continue
-            cls = (L.get(1) or "Insgesamt") if clsn else "Insgesamt"
-            if any(v not in ("Insgesamt", "") for n, v in L.items() if n != 1): continue
+            cls = L.get(2) or "Insgesamt"
+            if any(v not in ("Insgesamt", "") for n, v in L.items() if n not in (1, 2)): continue
             v = ge.num(r["value"])
             if v is not None: o[(cls, vk)] = v
         return o
@@ -81,7 +81,7 @@ def main():
                 if all(all(x is None for x in arr) for arr in d[l][c].values()): del d[l][c]
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "source": {"id": "destatis", "name": "Statistisches Bundesamt (Destatis), GENESIS-Online, Landwirtschaftszählung/Agrarstrukturerhebung", "url": "https://www-genesis.destatis.de/", "license": "Datenlizenz Deutschland – Namensnennung – Version 2.0"},
-           "years": YEARS, "units": {"farms": "farms", "area": "ha", "head": "head", "animals": "animals"}, "tables": {k: {"code": n} for k, n, c in TABLES if k in data}, "data": data}
+           "years": YEARS, "units": {"farms": "farms", "area": "ha", "head": "head", "lu": "livestock units (GV)"}, "tables": {k: {"code": n} for k, n, c in TABLES if k in data}, "data": data}
     for k in doc["tables"]: doc["tables"][k]["lands"] = data[k]
     doc["tables"] = {k: v["lands"] for k, v in doc["tables"].items()}; del doc["data"]
     out.parent.mkdir(parents=True, exist_ok=True); out.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", "utf-8")
