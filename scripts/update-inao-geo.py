@@ -71,18 +71,30 @@ def main(args):
                 if a.startswith(k + ' ou ') or a.startswith(k + ' et '): out |= byname[a]
         return out
     def geom(j):
-        # pyshp 3 se niega a ordenar anillos degenerados (area nula: tres puntos en linea). En ese caso se quitan esos anillos, que no
-        # anaden ni quitan superficie, y pyshp ordena el resto como siempre (exteriores en sentido horario, huecos al contrario).
+        # pyshp 3 se niega a ordenar anillos degenerados (area nula: tres puntos en linea), y su ordenador en Python puro tarda
+        # minutos con formas de miles de anillos. En ese caso se quitan los anillos sin area (no anaden ni quitan superficie) y se
+        # ordena el resto con la misma regla del shapefile, pero con GEOS: exteriores en sentido horario, y cada hueco va al
+        # exterior mas pequeno que contiene su punto interior (un hueco sin exterior se toma como exterior, igual que pyshp).
         s = r.shape(j)
         try: return shp_shape(s.__geo_interface__)
         except Exception as ex:
             if 'RingSampling' not in type(ex).__name__: raise
+            from shapely import STRtree
             ps = list(s.parts) + [len(s.points)]
-            rings = [s.points[a:b] for a, b in zip(ps[:-1], ps[1:])]
+            rings = [[tuple(p[:2]) for p in s.points[a:b]] for a, b in zip(ps[:-1], ps[1:])]
             rings = [q for q in rings if len(q) >= 4 and abs(shapefile.signed_area(q)) >= 1e-3]  # m2 en Lambert 93
             print('aviso: forma %d con anillo degenerado; se quitan los anillos sin area' % j, flush=True)
-            if not rings: return Polygon()
-            return shp_shape({'type': 'MultiPolygon', 'coordinates': shapefile.organize_polygon_rings(rings)})
+            ext = [q for q in rings if shapefile.signed_area(q) < 0]; hol = [q for q in rings if shapefile.signed_area(q) >= 0]
+            ep = [Polygon(q) for q in ext]; ev = [x if x.is_valid else make_valid(x) for x in ep]; kids = [[] for _ in ext]
+            tree = STRtree(ev) if ev else None
+            for h in hol:
+                hp = Polygon(h); pt = (hp if hp.is_valid else make_valid(hp)).representative_point()
+                c = [i for i in (tree.query(pt) if tree is not None else []) if ev[i].contains(pt)]
+                if c: kids[min(c, key=lambda i: ev[i].area)].append(h)
+                else: ext.append(h); kids.append([]); ep.append(Polygon(h))
+            polys = [Polygon(e, ks) for e, ks in zip(ext, kids)]
+            polys = [x if x.is_valid else make_valid(x) for x in polys]
+            return unary_union(polys) if polys else Polygon()
     tr = Transformer.from_crs(2154, 4326, always_xy=True)
     c, mnx, mxy, k = P['c'], P['mnx'], P['mxy'], P['k']
     def to_map(x, y, z=None):
