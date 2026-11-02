@@ -6,11 +6,11 @@ BASE = "https://www.regionalstatistik.de/genesisws/rest/2020"
 def post(path, data):
     h = {"Content-Type": "application/x-www-form-urlencoded", "username": U, "password": P, "User-Agent": "DehesaIndex/1.0 (+https://dehesaindex.com)"}
     with urllib.request.urlopen(urllib.request.Request(BASE + path, data=urllib.parse.urlencode(data).encode(), headers=h, method="POST"), timeout=240) as r: return r.read()
-for sel in ("41120*", "41241*", "41312*", "61511*", "13312*"):
+for sel in ():
     d = json.loads(post("/catalogue/tables", {"selection": sel, "area": "all", "pagelength": "100", "language": "de"}).decode("utf-8", "replace"))
     for t in (d.get("List") or []): print("CAT", t["Code"], (t.get("Content") or "")[:170])
-for tab in ("41241-01-03-4", "61511-01-03-4", "41312-01-01-4", "41120-01-02-4", "13312-01-05-4"):
-    try: raw = post("/data/tablefile", {"name": tab, "area": "all", "startyear": "1990", "format": "ffcsv", "compress": "false", "transpose": "false", "job": "false", "language": "de"})
+for tab in ("41241-01-03-4", "61511-01-03-4", "41312-01-01-4", "13312-01-05-4"):
+    try: raw = post("/data/tablefile", {"name": tab, "regionalvariable": "KREISE", "regionalkey": "*", "area": "all", "startyear": "2019", "format": "ffcsv", "compress": "false", "transpose": "false", "job": "false", "language": "de"})
     except Exception as e: print("==", tab, "ERROR", str(e)[:120]); continue
     if raw[:2] != b"PK": print("==", tab, raw[:200]); continue
     z = zipfile.ZipFile(io.BytesIO(raw)); rows = list(csv.DictReader(io.StringIO(z.read(z.namelist()[0]).decode("utf-8-sig")), delimiter=";"))
