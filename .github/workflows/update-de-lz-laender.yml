@@ -1,0 +1,36 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Germany farm structure census by Land (Destatis)
+on:
+  schedule:
+    - cron: '25 16 12 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-de-lz-laender
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-de-lz-laender.py
+        env:
+          GENESIS_TOKEN: ${{ secrets.GENESIS_TOKEN }}
+        timeout-minutes: 18
+        continue-on-error: true
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/de-lz)
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Censo agrario de Alemania por Land - uso del suelo, cultivos, ganado y ecologico (Destatis)" data/de-lz-laender-log.txt data/de-lz
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

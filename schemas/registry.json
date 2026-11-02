@@ -2391,6 +2391,16 @@
   "ca-sub/ndvi/inde[x].json": [
    "ca-sub-ndvi-index",
    []
+  ],
+  "de-lz/[A-Z][A-Z].json": [
+   "de-lz-land",
+   [
+    "de_lz_land"
+   ]
+  ],
+  "de-lz/inde[x].json": [
+   "de-lz-index",
+   []
   ]
  },
  "derived": [

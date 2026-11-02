@@ -656,6 +656,18 @@ sources:
     data: [germany-extra-stats.json]
     log: germany-extra-log.txt
     message: Datos Alemania vino, madera, estructura, incubadoras y acuicultura (Destatis)
+  - id: de-lz-laender
+    name: Update Germany farm structure census by Land (Destatis)
+    cron: ['25 16 12 * *']
+    script: scripts/update-de-lz-laender.py
+    env: {GENESIS_TOKEN: '${{ secrets.GENESIS_TOKEN }}'}
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/de-lz)
+    data: [de-lz-laender-log.txt]
+    extra: ['!data/de-lz']
+    message: Censo agrario de Alemania por Land - uso del suelo, cultivos, ganado y ecologico (Destatis)
   - id: argentina-provinces
     name: Update Argentina crops by province (MAGyP crop estimates)
     cron: ['10 11 8 * *']

@@ -3720,6 +3720,22 @@ def ca_sub_ndvi(doc, errs, warns, stats):
         n += 1
     stats["ca-sub ndvi areas"] = stats.get("ca-sub ndvi areas", 0) + n
 
+def de_lz_land(doc, errs, warns, stats):
+    """Censo agrario por Land (Destatis): cada serie tiene un valor (o null) por año publicado; sin negativos; las explotaciones y la superficie de una clase no superan a las de su clase madre (SAU >= tierra de cultivo)."""
+    ny = len(doc["years"]); n = 0
+    for t, cls in doc["tables"].items():
+        for c, vs in cls.items():
+            for k, arr in vs.items():
+                if k not in doc["units"] or len(arr) != ny: errs.append("de-lz %s %s/%s: serie con %d valores para %d años" % (doc["land"], t, c, len(arr), ny)); return
+                if any(x is not None and x < 0 for x in arr): errs.append("de-lz %s %s/%s: valor negativo" % (doc["land"], t, c)); return
+            n += 1
+    lu = doc["tables"].get("landuse", {})
+    a, b = lu.get("Landwirtschaftlich genutzte Fläche", {}).get("area"), lu.get("Ackerland", {}).get("area")
+    if a and b:
+        for x, y in zip(a, b):
+            if x is not None and y is not None and y > x * 1.001: errs.append("de-lz %s: tierra de cultivo (%s ha) mayor que la superficie agraria (%s ha)" % (doc["land"], y, x)); break
+    stats["de-lz series"] = stats.get("de-lz series", 0) + n
+
 def us_county_status(doc, errs, warns, stats):
     """Estado de ingesta de rendimientos por condado: un cultivo del script por entrada, sin repetidos, y 'latest' coherente con el rango de anos."""
     m = _ucy_mod(); known = {c["slug"]: c["key"] for c in m.CROPS}; seen = set()
