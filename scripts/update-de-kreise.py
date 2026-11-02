@@ -7,7 +7,7 @@ Tablas 41141-xx-4 (nivel Kreise, años 2010, 2016 y 2020; ganado a 1 de marzo):
   06-01 propiedad y arrendamiento   07-01 forma juridica y tipo   09-01 sucesion (titulares de 55 años o mas)
 Todo tal cual lo publica la fuente; los valores suprimidos ('-', '.', 'x', '/') quedan como hueco, nunca como cero.
 Control: cada tabla trae tambien el nivel Land. Para cada clase y medida donde TODOS los distritos del Land tienen dato, la suma de distritos debe cuadrar con el Land (2 % + 5);
-y la suma de distritos nunca puede superar al Land. Si cuadran menos del 85 % o hay desbordes, no se escribe nada.
+y la suma de distritos no puede superar al Land en mas de un 5 % (la fuente tiene pequeñas incoherencias, p. ej. Saarland 2010 +2-3 %). Los ceros de todos los distritos frente a un Land con dato se publican como hueco. Si cuadran menos del 85 % o hay desbordes, no se escribe nada.
 Uso: RDB_USER=... RDB_PASSWORD=... python3 scripts/update-de-kreise.py [--out DIRECTORIO]"""
 import argparse, csv, datetime, io, json, os, re, sys, time, urllib.parse, urllib.request, zipfile
 from pathlib import Path
@@ -67,6 +67,22 @@ def main():
         except Exception as e: log("ERROR", name, str(e)[:200]); logf.write_text("\n".join(LOG) + "\n"); return 1
         k, l, m = parse(rows); D[key], LD[key] = k, l; M[key] = {c: {"label": v[0], "unit": v[1]} for c, v in m.items()}
         log(name, len(rows), "filas,", len(k), "distritos,", len(l), "Länder")
+    # ceros que contradicen al Land (secreto estadistico mostrado como 0, p. ej. Bremen 2016): se publican como hueco
+    blanked = 0
+    for key in D:
+        by = {}
+        for ags, d in D[key].items(): by.setdefault(LAND.get(ags[:2]), []).append(d["t"])
+        for land, lst in by.items():
+            if not land or land not in LD[key]: continue
+            for cls, meas in LD[key][land].items():
+                for code, arr in meas.items():
+                    for i in range(len(YEARS)):
+                        if arr[i] is None or arr[i] < 100: continue
+                        vs = [t.get(cls, {}).get(code, [None] * 3)[i] for t in lst]
+                        if vs and all(v == 0.0 for v in vs):
+                            for t in lst: t[cls][code][i] = None
+                            blanked += 1
+    if blanked: log("ceros contradictorios con el Land marcados como hueco:", blanked)
     # control: suma de distritos frente al Land
     ok = tot = over = 0; bad = []
     for key in D:
@@ -81,7 +97,7 @@ def main():
                         if lv is None or lv < 100: continue
                         vs = [t.get(cls, {}).get(code, [None] * 3)[i] for t in lst]
                         have = [v for v in vs if v is not None]
-                        if have and sum(have) > lv * 1.02 + 5: over += 1; bad.append(('DESBORDE', key, land, cls, code, YEARS[i], round(sum(have), 1), lv, len(have), len(lst)))
+                        if have and sum(have) > lv * 1.05 + 5: over += 1; bad.append(('DESBORDE', key, land, cls, code, YEARS[i], round(sum(have), 1), lv, len(have), len(lst)))
                         if None in vs: continue
                         tot += 1; good = abs(sum(vs) - lv) <= 0.02 * lv + 5; ok += good
                         if not good: bad.append(('DESCUADRE', key, land, cls, code, YEARS[i], round(sum(vs), 1), lv, len(vs), len(lst)))
