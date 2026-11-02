@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T10:57:06Z",
+ "generatedAt": "2026-11-02T21:42:34Z",
  "summary": {
-  "files": 103,
+  "files": 104,
   "errors": 0,
   "warnings": 32
  },
@@ -1050,7 +1050,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-11-01T13:40:12Z",
+   "generatedAt": "2026-11-02T16:22:26Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1300,7 +1300,7 @@
     "points": 23063,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T21:18:02Z",
+   "generatedAt": "2026-11-02T20:27:46Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1551,6 +1551,22 @@
    "nErrors": 0
   },
   {
+   "file": "australia-labour-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 9,
+    "points": 1147,
+    "lines": 0
+   },
+   "generatedAt": "2026-11-02T14:09:29Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
    "file": "baltics-national-stats.json",
    "schema": "country-stats",
    "status": "warning",
@@ -1630,7 +1646,7 @@
     "points": 18964,
     "lines": 0
    },
-   "generatedAt": "2026-10-29T16:18:38Z",
+   "generatedAt": "2026-11-02T19:39:37Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
@@ -2117,10 +2133,10 @@
    "warnings": [],
    "stats": {
     "series": 6,
-    "points": 1639,
+    "points": 1640,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T13:35:42Z",
+   "generatedAt": "2026-11-02T16:34:26Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
