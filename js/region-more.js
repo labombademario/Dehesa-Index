@@ -774,6 +774,38 @@
         return card(L('Vigor de la vegetación (NDVI) por zona|Vegetation vigour (NDVI) by area|Vigueur de la végétation (NDVI) par zone|Vigore della vegetazione (NDVI) per zona'), L('Máximo de la temporada abril–octubre en tierra de cultivo, satélite a 1 km, año |April–October season peak over cropland, 1 km satellite, year |Maximum de la saison avril–octobre sur les terres cultivées, satellite 1 km, année |Massimo stagionale aprile–ottobre su terre coltivate, satellite 1 km, anno ') + d.years[n] + L('. La fuente se detiene en mayo de 2024.|. The source stops in May 2024.|. La source s’arrête en mai 2024.|. La fonte si ferma a maggio 2024.'), body, cite('statcan', String(d.years[n])));
       });
     }
+    /* ---- Alemania: censo agrario por Land ---- */
+    function deLzRows(d, specs) {
+      var Y = d.years, ix = [0, 2, 3, 4], rows = [];
+      specs.forEach(function (sp) {
+        var c = d.tables[sp[0]] && d.tables[sp[0]][sp[1]], a = c && c[sp[2]]; if (!a || a.every(function (v) { return v == null; })) return;
+        var f = null, l = null; a.forEach(function (v, i) { if (v != null) { if (f == null) f = i; l = i; } });
+        var ch = f != null && l > f && a[f] ? (a[l] / a[f] - 1) * 100 : null, fm = function (v) { return v == null ? '—' : nf(v, 0); };
+        rows.push([esc(L(sp[3])), ix.map(function (i) { return fm(a[i]); }), ch == null ? '—' : (Math.round(Math.abs(ch)) === 0 ? '0' : (ch > 0 ? '+' : '−') + nf(Math.abs(ch), 0)) + ' %']);
+      });
+      return rows.map(function (r) { return [r[0]].concat(r[1], [r[2]]); });
+    }
+    function deLzCard(x, kind) {
+      return get('data/de-lz/' + x.r + '.json').then(function (d) {
+        if (!d || !d.tables) return null; var Y = d.years, S = {
+          struct: [['landuse', 'Landwirtschaftlich genutzte Fläche', 'farms', 'Explotaciones|Farms|Exploitations|Aziende'], ['landuse', 'Landwirtschaftlich genutzte Fläche', 'area', 'Superficie agraria (ha)|Farmland (ha)|Surface agricole (ha)|Superficie agricola (ha)'], ['landuse', 'Ackerland', 'area', 'Tierra de cultivo (ha)|Arable land (ha)|Terres arables (ha)|Seminativi (ha)'],
+            ['landuse', 'Dauergrünland', 'area', 'Pastos permanentes (ha)|Permanent grassland (ha)|Prairies permanentes (ha)|Prati permanenti (ha)'], ['landuse', 'Dauerkulturen', 'area', 'Cultivos permanentes (ha)|Permanent crops (ha)|Cultures permanentes (ha)|Colture permanenti (ha)'],
+            ['organic', 'Insgesamt', 'farms', 'Explotaciones ecológicas|Organic farms|Exploitations bio|Aziende biologiche'], ['organic', 'Insgesamt', 'area', 'Superficie ecológica (ha)|Organic area (ha)|Surface bio (ha)|Superficie biologica (ha)'], ['irrigation', 'Insgesamt', 'area', 'Superficie regada (ha)|Irrigated area (ha)|Surface irriguée (ha)|Superficie irrigata (ha)']],
+          crops: [['arable', 'Winterweizen (einschließlich Dinkel und Einkorn)', 'area', 'Trigo de invierno (ha)|Winter wheat (ha)|Blé d’hiver (ha)|Frumento invernale (ha)'], ['arable', 'Wintergerste', 'area', 'Cebada de invierno (ha)|Winter barley (ha)|Orge d’hiver (ha)|Orzo invernale (ha)'], ['arable', 'Sommergerste', 'area', 'Cebada de primavera (ha)|Spring barley (ha)|Orge de printemps (ha)|Orzo primaverile (ha)'],
+            ['arable', 'Roggen und Wintermenggetreide', 'area', 'Centeno (ha)|Rye (ha)|Seigle (ha)|Segale (ha)'], ['arable', 'Winterraps', 'area', 'Colza (ha)|Rapeseed (ha)|Colza (ha)|Colza (ha)'], ['arable', 'Silomais/Grünmais einschl. Lieschkolbenschrot', 'area', 'Maíz forrajero (ha)|Silage maize (ha)|Maïs fourrage (ha)|Mais da foraggio (ha)'], ['landuse', 'Kartoffeln', 'area', 'Patata (ha)|Potatoes (ha)|Pommes de terre (ha)|Patate (ha)'], ['landuse', 'Zuckerrüben ohne Saatguterzeugung', 'area', 'Remolacha azucarera (ha)|Sugar beet (ha)|Betterave sucrière (ha)|Barbabietola da zucchero (ha)'], ['permanent', 'Rebflächen', 'area', 'Viñedo (ha)|Vineyards (ha)|Vignes (ha)|Vigneti (ha)']],
+          live: [['livestock', 'Rinder', 'head', 'Bovinos (cabezas)|Cattle (head)|Bovins (têtes)|Bovini (capi)'], ['livestock', 'Milchkühe', 'head', 'Vacas de leche (cabezas)|Dairy cows (head)|Vaches laitières (têtes)|Vacche da latte (capi)'], ['livestock', 'Schweine', 'head', 'Porcino (cabezas)|Pigs (head)|Porcins (têtes)|Suini (capi)'], ['livestock', 'Schafe', 'head', 'Ovino (cabezas)|Sheep (head)|Ovins (têtes)|Ovini (capi)'],
+            ['livestock', 'Ziegen', 'head', 'Caprino (cabezas)|Goats (head)|Caprins (têtes)|Caprini (capi)'], ['livestock', 'Legehennen', 'head', 'Gallinas ponedoras (cabezas)|Laying hens (head)|Poules pondeuses (têtes)|Galline ovaiole (capi)'], ['livestock', 'Insgesamt', 'farms', 'Explotaciones con ganado|Farms with livestock|Exploitations avec élevage|Aziende con allevamento'], ['livestock', 'Rinder', 'farms', 'Explotaciones con bovino|Farms with cattle|Exploitations bovines|Aziende con bovini'], ['livestock', 'Milchkühe', 'farms', 'Explotaciones con vacas de leche|Farms with dairy cows|Exploitations laitières|Aziende con vacche da latte']] };
+        var rows = deLzRows(d, S[kind]); if (!rows.length) return null;
+        var head = [L('Indicador|Indicator|Indicateur|Indicatore')].concat([0, 2, 3, 4].map(function (i) { return String(Y[i]); }), [L('Cambio|Change|Var.|Var.')]);
+        var T3 = { struct: ['Estructura agraria por Land|Farm structure by Land|Structure agricole par Land|Struttura agricola per Land', 'Recuento y superficie de explotaciones del Censo Agrario (Landwirtschaftszählung) y de las encuestas posteriores. Los valores que Destatis oculta quedan en blanco.|Farm and area counts from the Census of Agriculture (Landwirtschaftszählung) and the later surveys. Values Destatis suppresses are left blank.|Nombre d’exploitations et superficies du recensement agricole et des enquêtes suivantes. Les valeurs masquées par Destatis restent vides.|Numero di aziende e superfici dal censimento agricolo e dalle indagini successive. I valori oscurati da Destatis restano vuoti.'],
+          crops: ['Cultivos por Land (superficie)|Crops by Land (area)|Cultures par Land (superficie)|Colture per Land (superficie)', 'Superficie por cultivo según el Censo Agrario y las encuestas de estructura; solo los cultivos que Destatis detalla por Land.|Area by crop from the Census of Agriculture and the structure surveys; only crops Destatis details by Land.|Superficie par culture selon le recensement agricole et les enquêtes de structure ; seules les cultures détaillées par Land.|Superficie per coltura dal censimento agricolo e dalle indagini di struttura; solo le colture dettagliate per Land.'],
+          live: ['Ganadería por Land (1 de marzo)|Livestock by Land (1 March)|Élevage par Land (1er mars)|Allevamento per Land (1° marzo)', 'Cabezas y explotaciones con ganado a 1 de marzo según el Censo Agrario y las encuestas de estructura.|Head and holdings with livestock on 1 March from the Census of Agriculture and the structure surveys.|Têtes et exploitations avec élevage au 1er mars selon le recensement agricole et les enquêtes de structure.|Capi e aziende con allevamento al 1° marzo dal censimento agricolo e dalle indagini di struttura.'] };
+        return card(L(T3[kind][0]), L(T3[kind][1]) + L(' Cambio: del primer al último dato publicado.| Change: first to last published value.| Var. : de la première à la dernière valeur publiée.| Var.: dal primo all\u2019ultimo dato pubblicato.'), table(head, rows, 560), cite('destatis', String(Y[Y.length - 1])));
+      });
+    }
+    function deLzStruct(x) { return deLzCard(x, 'struct'); }
+    function deLzCrops(x) { return deLzCard(x, 'crops'); }
+    function deLzLive(x) { return deLzCard(x, 'live'); }
     var C = function (k, fn) { return [k, fn]; };
     return {
       T: T, us: { uscdrought: usCountyDrought, uscins: usCountyIns, usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, usrecv: usReceipts, uscensus: usCensus, usarc: usArc, usfuel: usFuel },
@@ -782,7 +814,7 @@
         CA: [C('mb', caMb), C('insca', caIns), C('cacensus', caCensus), C('cayields', caYields), C('candvi', caNdvi), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', gridClim)],
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
-        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('eudr', eudr), C('clim', deClim)],
+        DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('eudr', eudr), C('clim', deClim)],
         NL: [C('nlcrops', nlCbs), C('clim', gridClim)],
         AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim)], AU: [C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },

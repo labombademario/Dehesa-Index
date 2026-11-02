@@ -123,6 +123,8 @@ jobs:
         run: python3 scripts/test-us-county-drought-insurance.py
       - name: Canada por debajo de provincia (contratos y pruebas sin red)
         run: python3 scripts/test-ca-subprov.py
+      - name: Alemania censo agrario por Land (contrato, sin red)
+        run: python3 scripts/test-de-lz.py
 
       - name: Manitoba weekly auction cattle (PDF text parser, NA/no-sale, head totals, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-cattle.py
