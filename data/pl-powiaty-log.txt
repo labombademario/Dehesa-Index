@@ -1,4 +1,5 @@
 clave BDL_CLIENT_ID: presente
+peticiones hechas: 128
 tema P4122 listo
 tema P4124 listo
 tema P4125 listo
