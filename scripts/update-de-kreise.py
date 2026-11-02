@@ -68,7 +68,7 @@ def main():
         k, l, m = parse(rows); D[key], LD[key] = k, l; M[key] = {c: {"label": v[0], "unit": v[1]} for c, v in m.items()}
         log(name, len(rows), "filas,", len(k), "distritos,", len(l), "Länder")
     # control: suma de distritos frente al Land
-    ok = tot = over = 0
+    ok = tot = over = 0; bad = []
     for key in D:
         by = {}
         for ags, d in D[key].items(): by.setdefault(LAND.get(ags[:2]), []).append(d["t"])
@@ -81,9 +81,11 @@ def main():
                         if lv is None or lv < 100: continue
                         vs = [t.get(cls, {}).get(code, [None] * 3)[i] for t in lst]
                         have = [v for v in vs if v is not None]
-                        if have and sum(have) > lv * 1.02 + 5: over += 1
+                        if have and sum(have) > lv * 1.02 + 5: over += 1; bad.append(('DESBORDE', key, land, cls, code, YEARS[i], round(sum(have), 1), lv, len(have), len(lst)))
                         if None in vs: continue
-                        tot += 1; ok += abs(sum(vs) - lv) <= 0.02 * lv + 5
+                        tot += 1; good = abs(sum(vs) - lv) <= 0.02 * lv + 5; ok += good
+                        if not good: bad.append(('DESCUADRE', key, land, cls, code, YEARS[i], round(sum(vs), 1), lv, len(vs), len(lst)))
+    for b in bad[:25]: log(*b)
     log("control distritos frente a Land: %d de %d cuadran, %d desbordes" % (ok, tot, over))
     if tot < 200 or ok < 0.85 * tot or over > 0.01 * max(tot, 1): log("FALLO: el control no cuadra, no se escribe nada"); logf.write_text("\n".join(LOG) + "\n"); return 1
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
