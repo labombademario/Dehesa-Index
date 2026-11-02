@@ -96,6 +96,25 @@ def control(kind, key, K, Lnd, years):
                     tot += 1; good = abs(sum(vs) - lv) <= tol; ok += good
                     if not good: bad.append(("DESCUADRE", key, land, cls, code, y, round(sum(vs), 1), lv))
     return ok, tot, over, bad
+def blank_incoherent(key, K, Lnd):
+    """tablas aditivas: si en un Land y año los distritos suman mas que el Land (+5 %), esos valores se descartan (unidades solapadas en la fuente) y se anota"""
+    by = {}
+    for ags, d in K.items(): by.setdefault(LAND.get(ags[:2]), []).append(d["t"])
+    bl = set()
+    for land, lst in by.items():
+        if not land or land not in Lnd: continue
+        for cls, meas in Lnd[land].items():
+            for code, ser in meas.items():
+                for y, lv in ser.items():
+                    if lv is None: continue
+                    have = [v for v in (t.get(cls, {}).get(code, {}).get(y) for t in lst) if v is not None]
+                    if have and sum(have) > lv * 1.05 + (0.3 if key == "jobs" else 5): bl.add((land, y))
+    for land, y in bl:
+        for t in by[land]:
+            for cls in t.values():
+                for ser in cls.values():
+                    if y in ser: ser[y] = None
+    return sorted(bl)
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out"); a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "data" / "de-kreise-more"; logf = ROOT / "data" / "de-kreise-more-log.txt"
@@ -108,6 +127,9 @@ def main():
         k, l, m, ys = parse(rows, keep)
         if not k: log("FALLO: sin distritos en", name); logf.write_text("\n".join(LOG) + "\n"); return 1
         D[key], LD[key], Y[key] = k, l, ys; M[key] = {c: {"label": v[0], "unit": v[1]} for c, v in m.items()}
+        if kind == "add":
+            bl = blank_incoherent(key, k, l)
+            if bl: log("incoherencias de la fuente descartadas (Land, año) en", name, ":", bl)
         o, t, ov, bad = control(kind, key, k, l, ys); tok += o; tot += t; over += ov; allbad += bad
         log(name, len(rows), "filas,", len(k), "distritos, años", ys[0] if ys else "-", "-", ys[-1] if ys else "-", "|", "control %d de %d, %d desbordes" % (o, t, ov))
     for b in allbad[:25]: log(*b)
