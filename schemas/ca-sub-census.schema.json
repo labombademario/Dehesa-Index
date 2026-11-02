@@ -1,0 +1,61 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Canada: Censo agrario 2021 por region, division y subdivision censal",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "province",
+  "year",
+  "units",
+  "areas"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "statcan"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "province": {
+   "type": "string",
+   "pattern": "^[A-Z]{2}$"
+  },
+  "year": {
+   "type": "integer",
+   "minimum": 2021,
+   "maximum": 2021
+  },
+  "units": {
+   "type": "object",
+   "minProperties": 10
+  },
+  "areas": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}

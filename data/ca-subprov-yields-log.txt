@@ -1,0 +1,2 @@
+control produccion = rendimiento x superficie: 25271 combinaciones, 39 fuera de la tolerancia (25 % + 100 t)
+OK: 20 cultivos, 81 areas, 1976-2025

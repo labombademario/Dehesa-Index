@@ -2484,6 +2484,39 @@ sources:
     data: [us-county-insurance-log.txt]
     extra: ['!data/us-county/insurance']
     message: Seguro de cosechas por condado de EE. UU. (USDA RMA)
+  - id: ca-subprov-census
+    name: Update Canada sub-provincial census of agriculture (Statistics Canada)
+    cron: ['15 9 5 1,7 *']
+    script: scripts/update-ca-subprov-census.py
+    timeout: 30
+    script_timeout: 22
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/ca-sub/census)
+    data: [ca-subprov-census-log.txt]
+    extra: ['!data/ca-sub/census']
+    message: Censo agrario 2021 de Canada por region, division y subdivision censal (Statistics Canada)
+  - id: ca-subprov-yields
+    name: Update Canada yields by small area data region (Statistics Canada)
+    cron: ['45 9 6 * *']
+    script: scripts/update-ca-subprov-yields.py
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/ca-sub/yields)
+    data: [ca-subprov-yields-log.txt]
+    extra: ['!data/ca-sub/yields']
+    message: Rendimientos, superficie y produccion por region de Canada (Statistics Canada)
+  - id: ca-subprov-ndvi
+    name: Update Canada NDVI by census agricultural region and division (Statistics Canada)
+    cron: ['20 10 7 * *']
+    script: scripts/update-ca-subprov-ndvi.py
+    timeout: 30
+    script_timeout: 22
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/ca-sub/ndvi)
+    data: [ca-subprov-ndvi-log.txt]
+    extra: ['!data/ca-sub/ndvi']
+    message: NDVI por region agricola y division censal de Canada (Statistics Canada)
   - id: us-local-markets
     name: Update US local cattle and hay prices (USDA AMS MARS)
     cron: ['20 15 * * 1-5']

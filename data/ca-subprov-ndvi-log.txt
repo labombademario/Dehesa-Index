@@ -1,0 +1,2 @@
+filas leidas: 410856
+OK: 10 provincias, 259 areas, años 1987-2023

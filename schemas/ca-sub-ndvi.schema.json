@@ -1,0 +1,66 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Canada: NDVI por region agricola censal y division censal",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "province",
+  "years",
+  "seasonMonths",
+  "minWeeks",
+  "areas"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "statcan"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "province": {
+   "type": "string",
+   "pattern": "^[A-Z]{2}$"
+  },
+  "years": {
+   "type": "array",
+   "minItems": 30
+  },
+  "seasonMonths": {
+   "type": "array",
+   "minItems": 2,
+   "maxItems": 2
+  },
+  "minWeeks": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "areas": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}

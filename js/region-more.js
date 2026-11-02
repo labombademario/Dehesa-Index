@@ -727,12 +727,59 @@
           table([L('Cultivo|Crop|Culture|Coltura'), L('Semana|Week ending|Semaine|Settimana'), L('Bueno o excelente|Good or excellent|Bon ou excellent|Buono o eccellente'), L('Frente a la semana anterior|vs previous week|vs semaine précédente|vs settimana precedente'), L('Año pasado|Last year|Année dernière|Anno scorso'), L('Sembrado|Planted|Semé|Seminato'), L('Cosechado|Harvested|Récolté|Raccolto')], rows.map(function (q) { return q.r; }), 720), cite('usda_nass', latest));
       });
     }
+    function caSubList(rows, head, w, topN, label) { return usCountyList(rows, head, w, topN, label); }
+    function caCensus(x) {
+      return get('data/ca-sub/census/' + x.r + '.json').then(function (d) {
+        if (!d || !d.areas) return null; var A = d.areas, ks = Object.keys(A).filter(function (k) { var l = A[k].l; return (l === 'CAR' || l === 'CD') && A[k].v.farms; });
+        if (!ks.length) return null; var t = tt(), K = function (v) { return v == null ? '—' : nf(v / 1000, 0) + ' k'; };
+        var row = function (k) { var a = A[k], v = a.v; return [esc(a.n), nf(v.farms, 0), K(v.c_total), v.l_cattle != null ? nf(v.l_cattle, 0) : '—']; };
+        var by = function (lv) { return ks.filter(function (k) { return A[k].l === lv; }).sort(function (a, b) { return A[b].v.farms - A[a].v.farms; }); };
+        var car = by('CAR').map(row), cd = by('CD').map(row);
+        var head = [L('Zona|Area|Zone|Zona'), L('Explotaciones|Farms|Exploitations|Aziende'), L('Cultivos (acres)|Cropland (acres)|Cultures (acres)|Colture (acri)'), L('Vacuno (cabezas)|Cattle (head)|Bovins (têtes)|Bovini (capi)')];
+        var body = caSubList(car.length ? car : cd, head, 560, 12, L('Todas las zonas|All areas|Toutes les zones|Tutte le zone'));
+        if (car.length && cd.length) body += '<details style="margin-top:10px"><summary style="cursor:pointer;font-size:13.5px">' + esc(L('Divisiones censales|Census divisions|Divisions de recensement|Divisioni censuarie')) + ' (' + cd.length + ')</summary>' + table(head, cd, 560) + '</details>';
+        return card(L('Censo agrario 2021 por zona|Census of Agriculture 2021 by area|Recensement de l’agriculture 2021 par zone|Censimento agricolo 2021 per zona'), L('Explotaciones, superficie, cultivos y vacuno por región agraria y división censal. Hay más detalle (subdivisiones, cultivos, ingresos) en los ficheros de datos.|Farms, land, cropland and cattle by agricultural region and census division. More detail (subdivisions, crops, revenue) is in the data files.|Exploitations, superficie, cultures et bovins par région agricole et division de recensement. Plus de détail dans les fichiers de données.|Aziende, superficie, colture e bovini per regione agraria e divisione censuaria. Più dettaglio nei file di dati.'), body, cite('statcan', '2021'));
+      });
+    }
+    var CA_YC = [['wheat-all', 'Trigo|Wheat|Blé|Grano'], ['canola', 'Colza (canola)|Canola|Canola|Colza (canola)'], ['barley', 'Cebada|Barley|Orge|Orzo'], ['oats', 'Avena|Oats|Avoine|Avena'], ['corn', 'Maíz grano|Grain corn|Maïs-grain|Mais da granella'], ['soybeans', 'Soja|Soybeans|Soja|Soia']];
+    function caYields(x) {
+      return Promise.all(CA_YC.map(function (c) { return get('data/ca-sub/yields/' + c[0] + '.json'); })).then(function (fs) {
+        var t = tt(), rows = [], more = [], yr = null;
+        fs.forEach(function (d, i) {
+          if (!d || !d.regions) return; var ys = d.years, n = ys.length - 1, nm = L(CA_YC[i][1]);
+          Object.keys(d.regions).forEach(function (k) { var r = d.regions[k]; if (r.p !== x.r) return; var y = r.v.yield, pr = r.v.production; if (!y) return;
+            var j = n; while (j >= 0 && y[j] == null) j--; if (j < 0 || j < n - 2) return; yr = yr == null ? ys[j] : Math.max(yr, ys[j]);
+            var prev = y.slice(Math.max(0, j - 5), j).filter(function (v) { return v != null; }), av = prev.length ? prev.reduce(function (a, b) { return a + b; }, 0) / prev.length : null;
+            var line = [esc(r.l === 'PR' ? nm : esc(r.n) + ' ' + faint(nm)), esc(String(ys[j])), nf(y[j] / 1000, 2), av ? (y[j] >= av ? '+' : '−') + nf(Math.abs(y[j] / av - 1) * 100, 0) + ' %' : '—', pr && pr[j] != null ? (pr[j] >= 1e6 ? nf(pr[j] / 1e6, 1) + ' Mt' : nf(pr[j] / 1e3, 0) + ' kt') : '—'];
+            (r.l === 'PR' ? rows : more).push(line); });
+        });
+        if (!rows.length) return null;
+        var head = [L('Cultivo|Crop|Culture|Coltura'), L('Año|Year|Année|Anno'), L('Rendimiento (t/ha)|Yield (t/ha)|Rendement (t/ha)|Resa (t/ha)'), L('Frente a los 5 años previos|vs previous 5 years|vs 5 années précédentes|vs 5 anni precedenti'), L('Producción|Production|Production|Produzione')];
+        var body = table(head, rows, 620);
+        if (more.length) body += '<details style="margin-top:10px"><summary style="cursor:pointer;font-size:13.5px">' + esc(L('Por región de datos de área pequeña|By small area data region|Par région de données de petites régions|Per regione di dati di piccola area')) + ' (' + more.length + ')</summary>' + table(head, more, 620) + '</details>';
+        return card(L('Rendimientos por región|Yields by region|Rendements par région|Rese per regione'), L('Rendimiento, superficie y producción desde 1976 por región de datos de área pequeña (series completas en los ficheros de datos).|Yield, area and production since 1976 by small area data region (full series in the data files).|Rendement, superficie et production depuis 1976 par région (séries complètes dans les fichiers de données).|Resa, superficie e produzione dal 1976 per regione (serie complete nei file di dati).'), body, cite('statcan', String(yr || '')));
+      });
+    }
+    function caNdvi(x) {
+      return get('data/ca-sub/ndvi/' + x.r + '.json').then(function (d) {
+        if (!d || !d.areas || !d.years || !d.years.length) return null; var t = tt(), n = d.years.length - 1, A = d.areas;
+        var one = function (k) { var a = A[k], pk = a.v.crop_peak || a.v.all_peak; if (!pk || pk[n] == null) return null; var prev = pk.slice(Math.max(0, n - 10), n).filter(function (v) { return v != null; }); if (prev.length < 5) return null;
+          var av = prev.reduce(function (p, q) { return p + q; }, 0) / prev.length; return { k: k, v: pk[n], av: av, a: a }; };
+        var list = Object.keys(A).map(one).filter(Boolean); if (!list.length) return null;
+        var row = function (o) { var dd = o.v - o.av; return [esc(o.a.n) + ' ' + faint(o.a.l), nf(o.v, 2), nf(o.av, 2), (dd >= 0 ? '+' : '−') + nf(Math.abs(dd), 2)]; };
+        var head = [L('Zona|Area|Zone|Zona'), L('Máximo de la temporada|Season peak|Maximum de la saison|Massimo stagionale'), L('Media de los 10 años previos|Previous 10-year mean|Moyenne des 10 années précédentes|Media dei 10 anni precedenti'), L('Diferencia|Difference|Écart|Differenza')];
+        var car = list.filter(function (o) { return o.a.l === 'CAR'; }).sort(function (a, b) { return a.a.n < b.a.n ? -1 : 1; }).map(row), cd = list.filter(function (o) { return o.a.l === 'CD'; }).sort(function (a, b) { return a.a.n < b.a.n ? -1 : 1; }).map(row);
+        var body = caSubList(car.length ? car : cd, head, 560, 12, L('Todas las zonas|All areas|Toutes les zones|Tutte le zone'));
+        if (car.length && cd.length) body += '<details style="margin-top:10px"><summary style="cursor:pointer;font-size:13.5px">' + esc(L('Divisiones censales|Census divisions|Divisions de recensement|Divisioni censuarie')) + ' (' + cd.length + ')</summary>' + table(head, cd, 560) + '</details>';
+        return card(L('Vigor de la vegetación (NDVI) por zona|Vegetation vigour (NDVI) by area|Vigueur de la végétation (NDVI) par zone|Vigore della vegetazione (NDVI) per zona'), L('Máximo de la temporada abril–octubre en tierra de cultivo, satélite a 1 km, año |April–October season peak over cropland, 1 km satellite, year |Maximum de la saison avril–octobre sur les terres cultivées, satellite 1 km, année |Massimo stagionale aprile–ottobre su terre coltivate, satellite 1 km, anno ') + d.years[n] + L('. La fuente se detiene en mayo de 2024.|. The source stops in May 2024.|. La source s’arrête en mai 2024.|. La fonte si ferma a maggio 2024.'), body, cite('statcan', String(d.years[n])));
+      });
+    }
     var C = function (k, fn) { return [k, fn]; };
     return {
       T: T, us: { uscdrought: usCountyDrought, uscins: usCountyIns, usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, usrecv: usReceipts, uscensus: usCensus, usarc: usArc, usfuel: usFuel },
       mods: {
         US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('usrecv', usReceipts), C('uscensus', usCensus), C('ins', usIns), C('uscins', usCountyIns), C('uscdrought', usCountyDrought), C('uscprog', usCropProg), C('clim', usClim)],
-        CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
+        CA: [C('mb', caMb), C('insca', caIns), C('cacensus', caCensus), C('cayields', caYields), C('candvi', caNdvi), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', gridClim)],
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('eudr', eudr), C('clim', deClim)],

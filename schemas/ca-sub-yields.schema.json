@@ -1,0 +1,65 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Canada: rendimientos por region de datos de area pequeña",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "crop",
+  "slug",
+  "units",
+  "years",
+  "regions"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "statcan"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "crop": {
+   "type": "string",
+   "minLength": 2
+  },
+  "slug": {
+   "type": "string",
+   "minLength": 2
+  },
+  "units": {
+   "type": "object",
+   "minProperties": 4
+  },
+  "years": {
+   "type": "array",
+   "minItems": 30
+  },
+  "regions": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}

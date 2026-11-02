@@ -1,0 +1,11 @@
+tabla 32100231 23199 valores
+tabla 32100240 2085 valores
+tabla 32100241 2085 valores
+tabla 32100249 9511 valores
+tabla 32100309 23527 valores
+tabla 32100368 2721 valores
+tabla 32100370 5097 valores
+tabla 32100371 1377 valores
+tabla 32100372 1143 valores
+tabla 32100381 10545 valores
+OK: 10 provincias, 2109 areas

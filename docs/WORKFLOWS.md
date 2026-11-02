@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-339 workflows (289 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+342 workflows (292 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -66,6 +66,9 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-ca-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ca-ghg-agri.py | ca-ghg-agri.json | finish, validate-files |
 | update-ca-panel-prices.yml | a mano | semanal (2,5) | build-ca-panel-obs.py | - | price-engine, publish |
 | update-ca-statcan-more.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-ca-statcan-more.py | ca-statcan-more-stats.json | finish, validate-files |
+| update-ca-subprov-census.yml | generado | mensual | gen-workflows.py, update-ca-subprov-census.py, validate-data.py | - | finish |
+| update-ca-subprov-ndvi.yml | generado | mensual | gen-workflows.py, update-ca-subprov-ndvi.py, validate-data.py | - | finish |
+| update-ca-subprov-yields.yml | generado | mensual | gen-workflows.py, update-ca-subprov-yields.py, validate-data.py | - | finish |
 | update-canada-drought.yml | generado | semanal (2,4) | detect-revisions.py, gen-workflows.py, update-canada-drought.py | canada-drought.json | finish, validate-files |
 | update-canada-grain.yml | generado | semanal (3,4,5) | detect-revisions.py, gen-workflows.py, update-canada-grain.py | canada-grain.json | finish, validate-files |
 | update-canada-provinces-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-canada-provinces-macro.py | canada-provinces-macro.json | finish, validate-files |

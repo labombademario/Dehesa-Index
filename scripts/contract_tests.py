@@ -3678,6 +3678,48 @@ def us_county_insurance(doc, errs, warns, stats):
         n += 1
     stats["us-county insurance condados"] = stats.get("us-county insurance condados", 0) + n
 
+def ca_sub_census(doc, errs, warns, stats):
+    """Censo agrario por area (Canada): cada area lleva su provincia, nivel (PR/CAR/CD/CCS) y valores numericos no negativos; los CD de una provincia suman el total provincial dentro de un 3 % en explotaciones."""
+    p = doc["province"]; n = 0; cd = 0; pr = None
+    for k, a in doc["areas"].items():
+        if not re.match(r"^\d{9}$", k): errs.append("ca-sub census %s: codigo %r invalido" % (p, k)); return
+        if a["l"] not in ("PR", "CAR", "CD", "CCS") or a["p"] != p: errs.append("ca-sub census %s: nivel/provincia incoherente en %s" % (p, k)); return
+        for f, v in a["v"].items():
+            if f not in doc["units"] or not isinstance(v, (int, float)) or v < 0: errs.append("ca-sub census %s %s: valor %r=%r invalido" % (p, k, f, v)); return
+        if a["l"] == "CD": cd += a["v"].get("farms") or 0
+        if a["l"] == "PR": pr = a["v"].get("farms")
+        n += 1
+    if pr and cd and abs(cd - pr) > 0.03 * pr + 20: errs.append("ca-sub census %s: divisiones suman %d y la provincia %d explotaciones" % (p, cd, pr))
+    stats["ca-sub censo areas"] = stats.get("ca-sub censo areas", 0) + n
+
+def ca_sub_yields(doc, errs, warns, stats):
+    """Rendimientos por region (Canada): cuatro series por region con una posicion por año; sin negativos; rendimiento*cosechada ~ produccion."""
+    ny = len(doc["years"]); n = 0
+    for r, a in doc["regions"].items():
+        v = a["v"]
+        for m in ("seeded", "harvested", "yield", "production"):
+            s = v.get(m)
+            if s is None: continue
+            if len(s) != ny: errs.append("ca-sub yields %s %s: %d valores para %d años" % (doc["slug"], r, len(s), ny)); return
+            if any(x is not None and x < 0 for x in s): errs.append("ca-sub yields %s %s: %s negativo" % (doc["slug"], r, m)); return
+        n += 1
+    stats["ca-sub rendimientos regiones"] = stats.get("ca-sub rendimientos regiones", 0) + n
+
+def ca_sub_ndvi(doc, errs, warns, stats):
+    """NDVI por area (Canada): una posicion por año; valores entre -0.3 y 1; la media de temporada no supera el maximo."""
+    ny = len(doc["years"]); n = 0
+    for k, a in doc["areas"].items():
+        v = a["v"]
+        for u in ("crop", "all"):
+            pk, mn = v.get(u + "_peak"), v.get(u + "_mean")
+            if pk is None and mn is None: continue
+            if pk is None or mn is None or len(pk) != ny or len(mn) != ny: errs.append("ca-sub ndvi %s: longitud de %s incoherente" % (k, u)); return
+            for x, m in zip(pk, mn):
+                if x is None and m is None: continue
+                if x is None or m is None or not (-0.3 <= m <= x + 0.0005 <= 1.0006): errs.append("ca-sub ndvi %s: valores incoherentes %r/%r" % (k, x, m)); return
+        n += 1
+    stats["ca-sub ndvi areas"] = stats.get("ca-sub ndvi areas", 0) + n
+
 def us_county_status(doc, errs, warns, stats):
     """Estado de ingesta de rendimientos por condado: un cultivo del script por entrada, sin repetidos, y 'latest' coherente con el rango de anos."""
     m = _ucy_mod(); known = {c["slug"]: c["key"] for c in m.CROPS}; seen = set()

@@ -2361,6 +2361,36 @@
   "us-county/insurance/inde[x].json": [
    "us-county-insurance-index",
    []
+  ],
+  "ca-sub/census/[A-Z][A-Z].json": [
+   "ca-sub-census",
+   [
+    "ca_sub_census"
+   ]
+  ],
+  "ca-sub/census/inde[x].json": [
+   "ca-sub-census-index",
+   []
+  ],
+  "ca-sub/yields/[a-hj-z]*.json": [
+   "ca-sub-yields",
+   [
+    "ca_sub_yields"
+   ]
+  ],
+  "ca-sub/yields/inde[x].json": [
+   "ca-sub-yields-index",
+   []
+  ],
+  "ca-sub/ndvi/[A-Z][A-Z].json": [
+   "ca-sub-ndvi",
+   [
+    "ca_sub_ndvi"
+   ]
+  ],
+  "ca-sub/ndvi/inde[x].json": [
+   "ca-sub-ndvi-index",
+   []
   ]
  },
  "derived": [
