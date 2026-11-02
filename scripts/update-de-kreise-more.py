@@ -68,6 +68,9 @@ def parse(rows, keep):
             if not land: continue
             tgt = l.setdefault(land, {})
         tgt.setdefault(cls, {}).setdefault(code, {})[y] = v
+    # una subdivision de 8 cifras (p. ej. la ciudad de Hannover dentro de la Region de Hannover) se cuenta dos veces si su unidad madre de 5 cifras tambien esta: se queda la madre
+    par = {a for a in k if len(a) == 5}; dup = [a for a in k if len(a) == 8 and a[:5] in par]
+    for a in dup: del k[a]
     return k, l, m, sorted(ys)
 def control(kind, key, K, Lnd, years):
     """(ok, total, desbordes, ejemplos)"""
