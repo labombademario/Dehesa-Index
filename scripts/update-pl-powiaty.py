@@ -9,7 +9,7 @@ Las series de rendimientos, cosechas y leche NO existen por powiat en BDL (solo 
 Controles (si fallan no se escribe nada): 380 powiaty; cada powiat pertenece a su voivodia por codigo; sin negativos; para las variables aditivas la suma de los powiaty de cada voivodia cuadra con el valor que GUS publica para la voivodia (2 % + 5);
 para el tamaño medio, la media de la voivodia queda entre el minimo y el maximo de sus powiaty.
 Uso: update-pl-powiaty.py [--out DIRECTORIO]"""
-import datetime, importlib.util, json, os, sys, time, urllib.error, urllib.request
+import concurrent.futures, datetime, importlib.util, json, os, sys, time, urllib.error, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 B = "https://bdl.stat.gov.pl/api/v1/"
@@ -35,7 +35,7 @@ def get(u, tries=4, timeout=90):
         if not KEY and NREQ[0] >= 70 and time.time() - NREQ[1] < 900:
             w = 905 - (time.time() - NREQ[1]); log("pausa", int(w), "s por el limite anonimo"); time.sleep(max(w, 1)); NREQ[0] = 0; NREQ[1] = time.time()
         try:
-            time.sleep(0.4 if KEY else 1.3); NREQ[0] += 1
+            time.sleep(0.2 if KEY else 1.3); NREQ[0] += 1
             with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=timeout) as r: return json.loads(r.read())
         except urllib.error.HTTPError as e:
             last = e
@@ -66,11 +66,21 @@ def main():
     for subj, ids, add in VARS:
         d = get(B + "variables?subject-id=%s&page-size=100&format=json&lang=en" % subj)
         for r in d.get("results", []): meta[r["id"]] = (subj, [r.get(k) for k in ("n1", "n2", "n3") if r.get(k)], r.get("measureUnitName") or "-")
+    # la API tarda unos segundos por peticion: con clave se piden en paralelo (6 a la vez, dentro del limite de la API)
+    CACHE = {}
+    if KEY:
+        jobs = [(var, lv) for subj, ids, add in VARS for var in ids if var in meta for lv in (5, 2)]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+            futs = {ex.submit(pages, v, lv): (v, lv) for v, lv in jobs}
+            for f in concurrent.futures.as_completed(futs):
+                try: CACHE[futs[f]] = f.result()
+                except Exception as e: log("ERROR", futs[f], str(e)[:200]); logf.write_text("\n".join(LOG) + "\n"); return 1
+        log("peticiones hechas:", len(CACHE))
     P, IND = {}, {}; ok = tot = over = 0; bad = []
     for subj, ids, add in VARS:
         for var in ids:
             if var not in meta: log("FALLO: variable", var, "no figura en el tema", subj); logf.write_text("\n".join(LOG) + "\n"); return 1
-            try: l5, l2 = pages(var, 5), pages(var, 2)
+            try: l5, l2 = CACHE.get((var, 5)) or pages(var, 5), CACHE.get((var, 2)) or pages(var, 2)
             except Exception as e: log("ERROR", var, str(e)[:200]); logf.write_text("\n".join(LOG) + "\n"); return 1
             if len(l5) != 380: log("FALLO: %d powiaty en la variable %d (se esperaban 380)" % (len(l5), var)); logf.write_text("\n".join(LOG) + "\n"); return 1
             by = {}

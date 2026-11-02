@@ -90,8 +90,8 @@ sources:
     cron: ['40 9 14 * *']
     script: scripts/update-pl-powiaty.py
     env: {BDL_CLIENT_ID: '${{ secrets.BDL_CLIENT_ID }}'}
-    timeout: 30
-    script_timeout: 22
+    timeout: 50
+    script_timeout: 42
     continue: true
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/pl-powiaty)
     data: [pl-powiaty-log.txt]

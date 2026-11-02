@@ -12,14 +12,14 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v6
       - id: fetch
         run: bash scripts/annotate-failure.sh python3 scripts/update-pl-powiaty.py
         env:
           BDL_CLIENT_ID: ${{ secrets.BDL_CLIENT_ID }}
-        timeout-minutes: 22
+        timeout-minutes: 42
         continue-on-error: true
       - id: qa
         name: Control de calidad antes de publicar (si falla, no se publica)
