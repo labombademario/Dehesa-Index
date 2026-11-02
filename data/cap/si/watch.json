@@ -3,7 +3,7 @@
  "country": "SI",
  "source": "gov_si",
  "status": "OK",
- "checkedAt": "2026-10-28",
+ "checkedAt": "2026-11-02",
  "baseline": {
   "fingerprints": {
    "neposredna": {
@@ -38,7 +38,9 @@
   },
   "candidates": [],
   "lastScanned": "2026-10-28",
-  "searchErrors": []
+  "searchErrors": [
+   "np2026: FileNotFoundError: [Errno 2] No such file or directory: 'pdftotext'"
+  ]
  },
  "reviewNeeded": [],
  "note": "Huella del texto de páginas oficiales de la PAC (neposredna, np2026) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
