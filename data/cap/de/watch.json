@@ -3,7 +3,7 @@
  "country": "DE",
  "source": "bmleh_de",
  "status": "OK",
- "checkedAt": "2026-10-26",
+ "checkedAt": "2026-11-02",
  "baseline": {
   "fingerprints": {
    "anpassungen": {
@@ -45,18 +45,18 @@
  "current": {
   "fingerprints": {
    "anpassungen": {
-    "sha256": "c2bfc58473361845fafde09b9caab3933925fc20a4f816f66ed6d2a2d6f8a206",
+    "sha256": "2b60a81ea9f39db5c5236dd25aa6dd5e9206497cb8b2da6916c1b406d4547cb0",
     "chars": 2457,
     "label": "BMLEH: Anpassungen der Direktzahlungen"
    },
    "oeko": {
-    "sha256": "e25869e1c7d211b5fcd15d14f219c5d9a91fc986e015eca4c5d32c8d215e3de7",
+    "sha256": "7fae1d81c1fb3e6834c239360adbfeaf0ba310f7879165b86f6baea5fc22640e",
     "chars": 28054,
     "label": "BMLEH: Öko-Regelungen"
    },
    "gap": {
-    "sha256": "07a6705a8807005d52109a251443a3598f520d54dd9055b53d8f26f5dd95af07",
-    "chars": 9864,
+    "sha256": "3dda4f350f4c2308c435cf096ee743b8846c668a4047bbee2a9bd3650b3c179f",
+    "chars": 9540,
     "label": "BMLEH: Gemeinsame Agrarpolitik (GAP)"
    }
   },
@@ -166,6 +166,10 @@
   ],
   "lastScanned": null
  },
- "reviewNeeded": [],
+ "reviewNeeded": [
+  "cambia: BMLEH: Anpassungen der Direktzahlungen",
+  "cambia: BMLEH: Gemeinsame Agrarpolitik (GAP)",
+  "cambia: BMLEH: Öko-Regelungen"
+ ],
  "note": "Huella de tres páginas del Ministerio federal (BMLEH) sobre la GAP y vigilancia de páginas nuevas en su sección de política agraria europea. No vigila el texto de la GAPDZV (gesetze-im-internet.de no responde desde GitHub). Lo que aparece son candidatos: no se interpretan."
 }
