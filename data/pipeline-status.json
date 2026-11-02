@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T21:00:00Z",
+ "generatedAt": "2026-11-02T21:16:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 333,
+  "ok": 334,
   "late": 2,
-  "error": 3,
+  "error": 2,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
-  "checkedAt": "2026-11-02T21:00:00Z"
+  "checkedAt": "2026-11-02T21:16:00Z"
  },
  "pipelines": [
   {
@@ -5037,14 +5037,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-31T00:00:10Z",
-    "durationSec": 425,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41147707143"
+    "event": "schedule",
+    "startedAt": "2026-11-02T20:55:04Z",
+    "durationSec": 656,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41523565275"
    },
    "recent": {
-    "runs": 9,
-    "success": 5,
+    "runs": 10,
+    "success": 6,
     "failed": 2
    },
    "status": "ok",
@@ -5359,7 +5359,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-02T21:10:00Z",
+   "nextRun": "2026-11-03T00:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T20:43:59Z"
+     "lastChange": "2026-11-02T21:02:36Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5579,19 +5579,18 @@
    "nextRun": "2026-11-14T09:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-11-02T20:37:40Z",
-    "durationSec": 1361,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41520943001",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-pl-powiaty.py' has timed out after 22 minutes."
+    "startedAt": "2026-11-02T21:08:47Z",
+    "durationSec": 296,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41525647423"
    },
    "recent": {
-    "runs": 1,
-    "success": 0,
+    "runs": 2,
+    "success": 1,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
