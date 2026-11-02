@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T20:41:00Z",
+ "generatedAt": "2026-11-02T21:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 333,
   "late": 2,
-  "error": 2,
+  "error": 3,
   "not_run": 0,
-  "unknown": 1
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
-  "checkedAt": "2026-11-02T20:41:00Z"
+  "checkedAt": "2026-11-02T21:00:00Z"
  },
  "pipelines": [
   {
@@ -2256,7 +2256,7 @@
    "crons": [
     "50 20 * * 1"
    ],
-   "nextRun": "2026-11-02T20:50:00Z",
+   "nextRun": "2026-11-09T20:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2491,9 +2491,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-01T17:08:53Z",
-    "durationSec": 44,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41329958636"
+    "startedAt": "2026-11-02T20:48:55Z",
+    "durationSec": 48,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41522632394"
    },
    "recent": {
     "runs": 10,
@@ -5043,9 +5043,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41147707143"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 5,
-    "failed": 3
+    "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T20:37:22Z"
+     "lastChange": "2026-11-02T20:43:59Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5578,9 +5578,20 @@
    ],
    "nextRun": "2026-11-14T09:40:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-02T20:37:40Z",
+    "durationSec": 1361,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41520943001",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-pl-powiaty.py' has timed out after 22 minutes."
+   },
+   "recent": {
+    "runs": 1,
+    "success": 0,
+    "failed": 1
+   },
+   "status": "error",
    "expectedEveryHours": 744.0
   },
   {
