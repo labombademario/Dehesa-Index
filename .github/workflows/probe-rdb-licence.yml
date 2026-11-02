@@ -1,0 +1,18 @@
+name: Probe Regionaldatenbank licence text
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/probe-kreise-data]
+    paths: [.github/workflows/probe-rdb-licence.yml]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Leer Impressum y condiciones de la Regionaldatenbank
+        run: |
+          for m in Impressum Hilfe Nutzungsbedingungen; do
+            echo "=== $m"; curl -s -m 60 -A "DehesaIndex/1.0" "https://www.regionalstatistik.de/genesis/online?Menu=$m" | python3 -c "import sys,re,html;t=re.sub(r'<script.*?</script>|<style.*?</style>','',sys.stdin.read(),flags=re.S);t=html.unescape(re.sub(r'<[^>]+>','\n',t));print('\n'.join(l.strip() for l in t.splitlines() if re.search(r'Lizenz|dl-de|Nutzungsbed|Quellen|Namensnennung|Vervielf|Nachdruck|Copyright|©',l,re.I))[:3000])"
+          done
