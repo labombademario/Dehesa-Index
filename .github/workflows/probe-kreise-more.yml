@@ -1,0 +1,27 @@
+name: Probe Germany districts more series
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/probe-kreise-data]
+    paths: [scripts/update-de-kreise-more.py]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - name: Ejecutar el script de las series nuevas por distrito
+        env:
+          RDB_USER: ${{ secrets.RDB_USER }}
+          RDB_PASSWORD: ${{ secrets.RDB_PASSWORD }}
+        run: python3 scripts/update-de-kreise-more.py
+      - name: Guardar el resultado en esta rama (solo pruebas)
+        if: always()
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add data/de-kreise-more data/de-kreise-more-log.txt
+          git commit -m "Datos de prueba: series nuevas por distrito" || echo "sin cambios"
+          git pull --rebase -q origin research/probe-kreise-data || true
+          git push origin HEAD:research/probe-kreise-data
