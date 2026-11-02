@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T03:48:00Z",
+ "generatedAt": "2026-11-02T04:14:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 322,
   "late": 2,
   "error": 1,
   "not_run": 6,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
   "repoGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
-  "checkedAt": "2026-11-02T03:48:00Z"
+  "checkedAt": "2026-11-02T04:14:00Z"
  },
  "pipelines": [
   {
@@ -270,6 +270,19 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-au-sa2-agriculture.yml",
+   "name": "Update Australia crops by statistical area SA2 (ABS Australian Agriculture)",
+   "crons": [
+    "35 11 10 * *"
+   ],
+   "nextRun": "2026-11-10T11:35:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 744.0
   },
   {
@@ -5207,7 +5220,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T03:47:56Z"
+     "lastChange": "2026-11-02T03:50:51Z"
     },
     {
      "path": "data/source-candidates.json",
