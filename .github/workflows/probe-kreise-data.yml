@@ -1,0 +1,25 @@
+name: Probe Germany districts data
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/probe-kreise-data]
+    paths: [scripts/update-de-kreise.py]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Ejecutar el script de distritos con la cuenta de la Regionaldatenbank
+        env:
+          RDB_USER: ${{ secrets.RDB_USER }}
+          RDB_PASSWORD: ${{ secrets.RDB_PASSWORD }}
+        run: python3 scripts/update-de-kreise.py
+      - name: Guardar el resultado en esta rama (solo pruebas)
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add data/de-kreise data/de-kreise-log.txt
+          git commit -m "Datos de prueba de distritos" || echo "sin cambios"
+          git push origin HEAD:research/probe-kreise-data
