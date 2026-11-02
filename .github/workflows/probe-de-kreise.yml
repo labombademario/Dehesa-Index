@@ -1,0 +1,17 @@
+name: Probe Germany district tables
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/probe-de-kreise]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - name: Probar el token en la Regionaldatenbank y listar tablas agrarias por distrito
+        env:
+          GENESIS_TOKEN: ${{ secrets.GENESIS_TOKEN }}
+        run: python3 scripts/probe-de-kreise.py
