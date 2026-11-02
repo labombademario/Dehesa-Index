@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T14:27:00Z",
+ "generatedAt": "2026-11-02T15:09:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
-  "checkedAt": "2026-11-02T14:27:00Z"
+  "checkedAt": "2026-11-02T15:09:00Z"
  },
  "pipelines": [
   {
@@ -4548,15 +4548,15 @@
    "last": {
     "conclusion": "failure",
     "event": "workflow_dispatch",
-    "startedAt": "2026-11-02T13:55:32Z",
-    "durationSec": 1243,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41457192674",
+    "startedAt": "2026-11-02T14:19:00Z",
+    "durationSec": 2456,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41460772007",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-inao-geo.py' has timed out after 20 minutes."
    },
    "recent": {
-    "runs": 3,
+    "runs": 5,
     "success": 1,
-    "failed": 2
+    "failed": 4
    },
    "status": "error",
    "expectedEveryHours": 744.0
@@ -4896,14 +4896,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-30T22:57:26Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41141454137"
+    "startedAt": "2026-11-02T14:57:47Z",
+    "durationSec": 52,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41466921377"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 104.3
@@ -4916,7 +4916,7 @@
     "30 14 * * 1",
     "40 14 * * 3"
    ],
-   "nextRun": "2026-11-02T14:30:00Z",
+   "nextRun": "2026-11-04T14:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5360,7 +5360,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T14:14:02Z"
+     "lastChange": "2026-11-02T14:30:13Z"
     },
     {
      "path": "data/source-candidates.json",
