@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T09:43:00Z",
+ "generatedAt": "2026-11-02T10:01:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 322,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
   "repoGeneratedAt": "2026-11-02T00:47:10.439142+00:00",
-  "checkedAt": "2026-11-02T09:43:00Z"
+  "checkedAt": "2026-11-02T10:01:00Z"
  },
  "pipelines": [
   {
@@ -4419,8 +4419,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-02T06:17:18Z",
-    "durationSec": 46,
+    "startedAt": "2026-11-02T09:55:02Z",
+    "durationSec": 71,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41398963193",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · File \"/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-inao-geo.py\", line 87, in main"
    },
@@ -4881,7 +4881,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-02T09:47:00Z",
+   "nextRun": "2026-11-02T12:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5231,7 +5231,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T09:30:09Z"
+     "lastChange": "2026-11-02T09:46:15Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6482,7 +6482,7 @@
    "crons": [
     "45 9 * * 1"
    ],
-   "nextRun": "2026-11-02T09:45:00Z",
+   "nextRun": "2026-11-09T09:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7467,9 +7467,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-01T09:35:19Z",
-    "durationSec": 28,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41293780017"
+    "startedAt": "2026-11-02T09:50:55Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41423978537"
    },
    "recent": {
     "runs": 10,
