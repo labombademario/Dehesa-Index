@@ -70,6 +70,23 @@ def main(args):
             for a in keys:
                 if a.startswith(k + ' ou ') or a.startswith(k + ' et '): out |= byname[a]
         return out
+    def geom(j):
+        # pyshp 3 se niega a ordenar anillos degenerados (area nula: tres puntos en linea). En ese caso se compone la forma con la
+        # regla par-impar de los anillos con area, que es la semantica del shapefile; un anillo sin area no anade ni quita superficie.
+        s = r.shape(j)
+        try: return shp_shape(s.__geo_interface__)
+        except Exception as ex:
+            if 'RingSampling' not in type(ex).__name__: raise
+            ps = list(s.parts) + [len(s.points)]; g = None
+            for a, b in zip(ps[:-1], ps[1:]):
+                pts = s.points[a:b]
+                if len(pts) < 4: continue
+                q = Polygon(pts)
+                if q.area < 1e-3: continue  # m2 en Lambert 93
+                q = make_valid(q) if not q.is_valid else q
+                g = q if g is None else g.symmetric_difference(q)
+            print('aviso: forma %d con anillo degenerado, compuesta por par-impar' % j)
+            return g if g is not None else Polygon()
     tr = Transformer.from_crs(2154, 4326, always_xy=True)
     c, mnx, mxy, k = P['c'], P['mnx'], P['mxy'], P['k']
     def to_map(x, y, z=None):
@@ -84,7 +101,7 @@ def main(args):
         polys = []
         for i in ids:
             for j in idx_by_id.get(i, ()):
-                g = shp_shape(r.shape(j).__geo_interface__)
+                g = geom(j)
                 if not g.is_valid: g = make_valid(g)
                 polys.append(g)
         g = unary_union(polys).buffer(0)

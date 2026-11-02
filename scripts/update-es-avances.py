@@ -58,7 +58,10 @@ def parse(rows):
             lab = clean(lab)
             a = [num(r[P + k]) for k in (4, 5, 6)]; p = [num(r[P + k]) for k in (10, 11, 12)]
             if lab.startswith("(") and re.match(r"^\(\d+\)", lab): continue   # notas al pie
-            if all(x is None for x in a + p):
+            # rótulo de sección: en mayúsculas y sin cifras. Desde la edición de junio de 2026 el rótulo «CEREALES» lleva un 0 suelto
+            # en la columna de producción; un rótulo en mayúsculas sin superficie y con producción solo vacía o 0 sigue siendo rótulo.
+            head = len(lab) < 60 and lab.upper() == lab and lab.lower() != lab and not lab.startswith("(") and all(x is None for x in a) and all(x in (None, 0) for x in p)
+            if head or all(x is None for x in a + p):
                 if len(lab) < 60 and lab.upper() == lab and not lab.startswith("("): section = re.sub(r"\s*\(\d+\)$", "", lab)   # solo los rótulos en mayúsculas son secciones
                 continue
             at = clean(r[P + 2]) if isinstance(r[P + 2], str) else ""
