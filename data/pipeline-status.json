@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T16:46:00Z",
+ "generatedAt": "2026-11-02T16:52:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 332,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
-  "checkedAt": "2026-11-02T16:46:00Z"
+  "checkedAt": "2026-11-02T16:52:00Z"
  },
  "pipelines": [
   {
@@ -5368,7 +5368,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5385,7 +5385,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/products"
@@ -5396,19 +5396,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-02T16:35:46Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/pack"
@@ -5424,7 +5424,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/country-pending.json",
@@ -5432,7 +5432,7 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/ers-cost-reference.json",
@@ -5443,7 +5443,7 @@
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/fv-products.json",
@@ -5455,7 +5455,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-11-02T15:47:37Z"
+     "lastChange": "2026-11-02T16:50:30Z"
     },
     {
      "path": "data/home-explore.json",
