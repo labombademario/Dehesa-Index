@@ -8920,9 +8920,9 @@
    "notes": "Canada por debajo de provincia (Statistics Canada, licencia abierta de Statistics Canada). Censo agrario 2021 por region agricola censal, division censal y subdivision censal consolidada (scripts/update-ca-subprov-census.py; tablas 32-10-0231, 0249, 0309, 0370, 0371, 0372, 0240, 0241, 0368 y 0381, copiadas tal cual; las celdas suprimidas quedan como hueco). Rendimientos, superficie y produccion por region de datos de area pequeña (scripts/update-ca-subprov-yields.py; tabla 32-10-0002). NDVI de 1 km por region agricola censal y division censal (scripts/update-ca-subprov-ndvi.py; tabla 32-10-0383: maximo y media de la temporada abril-octubre calculados por Dehesa Index a partir de la serie semanal; la serie publicada llega hasta mayo de 2024). Se cita a Statistics Canada junto a las cifras."
   },
   "data/de-lz/": {
-   "byCountry": {
-    "DE": "destatis"
-   },
+   "sources": [
+    "destatis"
+   ],
    "notes": "Destatis GENESIS-Online (dl-de/by-2.0), Landwirtschaftszählung y Agrarstrukturerhebung por Bundesland (tablas 41141-0101, -0103, -0104, -0105, -0115, -0116 y -0117; scripts/update-de-lz-laender.py): uso del suelo, cultivos de labor, ganado, agricultura ecologica, regadio, cultivos permanentes y prados, 2010-2023. Copiado tal cual lo publica Destatis; los valores suprimidos quedan como hueco. Control contra las tablas nacionales 41141-0001 y -0004."
   },
   "data/au-sa2/": {
