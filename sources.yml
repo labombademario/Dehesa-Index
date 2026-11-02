@@ -85,6 +85,18 @@ sources:
     data: [france-land/land.json, italy-land/land.json, land-fr-it-log.txt]
     extra: ['!data/france-land', '!data/italy-land']
     message: Precio de la tierra de Francia por departamento (Agreste) e Italia por región (CREA)
+  - id: pl-powiaty
+    name: Update Poland farm census 2020 by district - powiaty (GUS, BDL)
+    cron: ['40 9 14 * *']
+    script: scripts/update-pl-powiaty.py
+    env: {BDL_CLIENT_ID: '${{ secrets.BDL_CLIENT_ID }}'}
+    timeout: 30
+    script_timeout: 22
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/pl-powiaty)
+    data: [pl-powiaty-log.txt]
+    extra: ['!data/pl-powiaty']
+    message: Censo agrario 2020 de Polonia por powiat - explotaciones, superficie, uso del suelo, ganado, cultivos y mano de obra (GUS, BDL)
   - id: land-pl
     name: Update Poland farmland prices (GUS, BDL)
     cron: ['10 8 4 * *']

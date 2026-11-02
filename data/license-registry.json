@@ -8960,6 +8960,12 @@
     "destatis"
    ],
    "notes": "Regionaldatenbank Deutschland (Statistische Ämter des Bundes und der Länder; el propio portal declara Datenlizenz Deutschland – Namensnennung – Version 2.0): rendimientos por hectárea (41241-01-03-4), rinderbestand (41312-01-01-4), erwerbstätige (13312-01-05-4) y agricultura histórica 1999-2007 (41120-01-02-4, 41120-12-01-4); scripts/update-de-kreise-more.py. Copiado tal cual lo publica la fuente; los valores suprimidos quedan como hueco. Control: la suma de distritos cuadra con el Land; los Land-año incoherentes de la fuente se descartan. Texto de licencia leído en regionalstatistik.de (Nutzungsbedingungen) el 2-nov-2026."
+  },
+  "data/pl-powiaty/": {
+   "sources": [
+    "gus_poland"
+   ],
+   "notes": "Censo Agrario 2020 de Polonia (Powszechny Spis Rolny 2020) por powiat, del Banco de Datos Locales de GUS (nivel 5; temas P4122, P4124, P4125, P4127, P4129, P4131, P4134 y P4084; scripts/update-pl-powiaty.py). Valores definitivos tal cual; los ausentes quedan como hueco. Control: la suma de los powiaty de cada voivodía cuadra con el valor que GUS publica para la voivodía. Mismo aviso de copyright de GUS que el resto de la fuente gus_poland."
   }
  },
  "derived": [

@@ -2422,6 +2422,16 @@
    "de-kreise-more-index",
    []
   ],
+  "pl-powiaty/[A-Z][A-Z].json": [
+   "pl-powiaty-voivodeship",
+   [
+    "pl_powiaty_voivodeship"
+   ]
+  ],
+  "pl-powiaty/inde[x].json": [
+   "pl-powiaty-index",
+   []
+  ],
   "au-sa2/[A-Z][A-Z]*.json": [
    "au-sa2-state",
    [

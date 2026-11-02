@@ -3776,6 +3776,22 @@ def de_kreise_more_land(doc, errs, warns, stats):
             for x, y in zip(a, tot):
                 if x is not None and y is not None and x > y * 1.02 + 5: errs.append("de-kreise-more %s %s: vacas de leche (%s) mayores que los bovinos (%s)" % (doc["land"], ags, x, y)); break
     stats["de-kreise-more series"] = stats.get("de-kreise-more series", 0) + n
+def pl_powiaty_voivodeship(doc, errs, warns, stats):
+    """Censo agrario 2020 de Polonia por powiat (GUS BDL): el id de 12 cifras del powiat pertenece a la voivodia del fichero (sus 4 primeras cifras + ocho ceros); valores no negativos y numericos; cada powiat trae al menos un dato; el total de explotaciones (1633320) no es menor que la suma de sus clases de tamaño (con 1 de tolerancia) y la superficie agraria no supera a las tierras totales."""
+    n = 0; seen = set()
+    for pid, d in doc["powiaty"].items():
+        if not re.match(r"^\d{12}$", pid): errs.append("pl-powiaty %s: id de powiat no valido %s" % (doc["voivodeship"], pid)); return
+        seen.add(pid[:4])
+        if not d.get("v"): errs.append("pl-powiaty %s %s: powiat sin ningun dato" % (doc["voivodeship"], pid)); return
+        for k, x in d["v"].items():
+            if not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0: errs.append("pl-powiaty %s %s %s: valor no valido %r" % (doc["voivodeship"], pid, k, x)); return
+            n += 1
+        v = d["v"]
+        sz = [v.get(str(i)) for i in range(1633321, 1633326)]
+        if v.get("1633320") is not None and None not in sz and sum(sz) > v["1633320"] + 1: errs.append("pl-powiaty %s %s: las clases de tamaño (%s) suman mas que el total de explotaciones (%s)" % (doc["voivodeship"], pid, sum(sz), v["1633320"])); return
+        if v.get("1633271") is not None and v.get("1633270") is not None and v["1633271"] > v["1633270"] * 1.02 + 1: errs.append("pl-powiaty %s %s: superficie agraria mayor que las tierras totales" % (doc["voivodeship"], pid)); return
+    if len(seen) != 1: errs.append("pl-powiaty %s: los powiaty vienen de %d voivodias distintas" % (doc["voivodeship"], len(seen)))
+    stats["pl-powiaty valores"] = stats.get("pl-powiaty valores", 0) + n
 def au_sa2_state(doc, errs, warns, stats):
     """Cultivos por SA2 (ABS): una posicion por año; sin negativos; el codigo SA2 de 9 cifras empieza por el digito del estado; los indicadores usados estan declarados en 'items'."""
     D = {"NSW": "1", "VIC": "2", "QLD": "3", "SA": "4", "WA": "5", "TAS": "6", "NT": "7", "ACT": "8"}

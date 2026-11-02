@@ -1,0 +1,36 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Poland farm census 2020 by district - powiaty (GUS, BDL)
+on:
+  schedule:
+    - cron: '40 9 14 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-pl-powiaty
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-pl-powiaty.py
+        env:
+          BDL_CLIENT_ID: ${{ secrets.BDL_CLIENT_ID }}
+        timeout-minutes: 22
+        continue-on-error: true
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/pl-powiaty)
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Censo agrario 2020 de Polonia por powiat - explotaciones, superficie, uso del suelo, ganado, cultivos y mano de obra (GUS, BDL)" data/pl-powiaty-log.txt data/pl-powiaty
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}
