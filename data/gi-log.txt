@@ -8,4 +8,4 @@ Italia TAA 50 nombres de Provincia autonoma di Bolzano (CC0)
 Italia LOM 45 nombres de Regione Lombardia (CC0)
 Italia TOS 78 nombres de Regione Toscana (CC BY 4.0)
 Italia: region asignada a 167 de 578 denominaciones
-paises 30 vinos 1651 quesos 271
+paises 30 vinos 1652 quesos 271
