@@ -71,22 +71,18 @@ def main(args):
                 if a.startswith(k + ' ou ') or a.startswith(k + ' et '): out |= byname[a]
         return out
     def geom(j):
-        # pyshp 3 se niega a ordenar anillos degenerados (area nula: tres puntos en linea). En ese caso se compone la forma con la
-        # regla par-impar de los anillos con area, que es la semantica del shapefile; un anillo sin area no anade ni quita superficie.
+        # pyshp 3 se niega a ordenar anillos degenerados (area nula: tres puntos en linea). En ese caso se quitan esos anillos, que no
+        # anaden ni quitan superficie, y pyshp ordena el resto como siempre (exteriores en sentido horario, huecos al contrario).
         s = r.shape(j)
         try: return shp_shape(s.__geo_interface__)
         except Exception as ex:
             if 'RingSampling' not in type(ex).__name__: raise
-            ps = list(s.parts) + [len(s.points)]; g = None
-            for a, b in zip(ps[:-1], ps[1:]):
-                pts = s.points[a:b]
-                if len(pts) < 4: continue
-                q = Polygon(pts)
-                if q.area < 1e-3: continue  # m2 en Lambert 93
-                q = make_valid(q) if not q.is_valid else q
-                g = q if g is None else g.symmetric_difference(q)
-            print('aviso: forma %d con anillo degenerado, compuesta por par-impar' % j)
-            return g if g is not None else Polygon()
+            ps = list(s.parts) + [len(s.points)]
+            rings = [s.points[a:b] for a, b in zip(ps[:-1], ps[1:])]
+            rings = [q for q in rings if len(q) >= 4 and abs(shapefile.signed_area(q)) >= 1e-3]  # m2 en Lambert 93
+            print('aviso: forma %d con anillo degenerado; se quitan los anillos sin area' % j, flush=True)
+            if not rings: return Polygon()
+            return shp_shape({'type': 'MultiPolygon', 'coordinates': shapefile.organize_polygon_rings(rings)})
     tr = Transformer.from_crs(2154, 4326, always_xy=True)
     c, mnx, mxy, k = P['c'], P['mnx'], P['mxy'], P['k']
     def to_map(x, y, z=None):
