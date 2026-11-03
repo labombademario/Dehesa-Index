@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T23:30:00Z",
+ "generatedAt": "2026-11-03T23:47:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 334,
+  "ok": 335,
   "late": 2,
-  "error": 3,
+  "error": 2,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-03T23:23:22.968721+00:00",
   "repoGeneratedAt": "2026-11-03T23:23:22.968721+00:00",
-  "checkedAt": "2026-11-03T23:30:00Z"
+  "checkedAt": "2026-11-03T23:47:00Z"
  },
  "pipelines": [
   {
@@ -77,7 +77,7 @@
     "45 23 * * 1-5",
     "30 13 * * 6"
    ],
-   "nextRun": "2026-11-03T23:45:00Z",
+   "nextRun": "2026-11-04T23:45:00Z",
    "files": [
     {
      "path": "data/ams"
@@ -1037,7 +1037,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-11-03T23:40:00Z",
+   "nextRun": "2026-11-04T23:40:00Z",
    "files": [
     {
      "path": "data/ca"
@@ -1056,7 +1056,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-canada.yml",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T23:21:13Z"
+     "lastChange": "2026-11-03T23:33:28Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5717,19 +5717,18 @@
    "nextRun": "2026-11-06T16:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-03T21:56:49Z",
-    "durationSec": 1574,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41726358414",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-portugal.py ' has timed out after 25 minutes."
+    "startedAt": "2026-10-30T17:20:37Z",
+    "durationSec": 1425,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41097983410"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 8,
-    "failed": 2
+    "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 96.0
   },
   {
@@ -7477,7 +7476,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-11-03T23:40:00Z",
+   "nextRun": "2026-11-04T23:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7492,7 +7491,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-ppi.yml",
