@@ -30,7 +30,7 @@ VARS = [("P4137", pair(1633195, 1633320, 6)), ("P4141", pair(1645055, 1633298, 6
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
-def get(u, tries=4, timeout=90):
+def get(u, tries=8, timeout=90):
     last = None
     for i in range(tries):
         try:
@@ -39,10 +39,16 @@ def get(u, tries=4, timeout=90):
         except urllib.error.HTTPError as e:
             last = e
             if e.code == 429: time.sleep(60 * (i + 1))
-            else: time.sleep(8 * (i + 1))
-        except Exception as e: last = e; time.sleep(8 * (i + 1))
+            else: time.sleep(min(8 * (i + 1), 40))
+        except Exception as e: last = e; time.sleep(min(8 * (i + 1), 40))
     raise RuntimeError("%s -> %s" % (u[:140], last))
 def pages(var):
+    for i in range(3):
+        try: return pages1(var)
+        except Exception as e:
+            if i == 2: raise
+            time.sleep(20)
+def pages1(var):
     out, p = [], 0
     while True:
         d = get(B + "data/by-variable/%d?unit-level=6&year=%d&format=json&lang=en&page-size=100&page=%d" % (var, YEAR, p))
@@ -74,7 +80,7 @@ def main():
     for v, pv, add in allv:
         if v not in meta: return fail("variable", v, "no figura en su tema")
     CACHE = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10 if KEY else 1) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6 if KEY else 1) as ex:
         futs = {ex.submit(pages, v): v for v, pv, add in allv}
         for f in concurrent.futures.as_completed(futs):
             try: CACHE[futs[f]] = f.result()
