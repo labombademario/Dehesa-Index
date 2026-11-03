@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T18:40:00Z",
+ "generatedAt": "2026-11-03T18:45:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
   "late": 2,
   "error": 2,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 10.3,
   "prodGeneratedAt": "2026-11-03T06:49:13.890076+00:00",
   "repoGeneratedAt": "2026-11-03T17:08:11.022399+00:00",
-  "checkedAt": "2026-11-03T18:40:00Z"
+  "checkedAt": "2026-11-03T18:45:00Z"
  },
  "pipelines": [
   {
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T18:05:15Z"
+     "lastChange": "2026-11-03T18:44:14Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5546,6 +5546,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-pl-gminy.yml",
+   "name": "Update Poland farm census 2020 by municipality - gminy (GUS, BDL)",
+   "crons": [
+    "40 10 14 1,7 *"
+   ],
+   "nextRun": "2027-01-14T10:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 4416.0
   },
   {
    "workflow": "update-pl-hydro-drought.yml",
