@@ -8,7 +8,7 @@ los tipos 4 y 5 son partes de una gmina urbano-rural y contarian dos veces. Un v
 Controles (si fallan no se escribe nada): entre 2.400 y 2.550 gminas; cada gmina cuelga de un powiat conocido (data/pl-powiaty); sin negativos; para las variables aditivas que tienen su equivalente por powiat,
 la suma de las gminas de cada powiat cuadra con el valor que GUS publica para el powiat (2 % + 5; solo donde ninguna gmina del powiat esta oculta) y nunca lo supera en mas de un 5 %; para el tamaño medio, el valor del powiat queda entre el minimo y el maximo de sus gminas.
 Uso: update-pl-gminy.py [--out DIRECTORIO]"""
-import concurrent.futures, datetime, importlib.util, json, os, sys, time, urllib.error, urllib.request
+import concurrent.futures, datetime, gzip, importlib.util, json, os, sys, time, urllib.error, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 B = "https://bdl.stat.gov.pl/api/v1/"
@@ -44,16 +44,16 @@ def get(u, tries=8, timeout=90):
             else: time.sleep(min(8 * (i + 1), 40))
         except Exception as e: last = e; time.sleep(min(8 * (i + 1), 40))
     raise RuntimeError("%s -> %s" % (u[:140], last))
-def pages(var):
+def pages(var, lv=6):
     for i in range(3):
-        try: return pages1(var)
+        try: return pages1(var, lv)
         except Exception as e:
             if i == 2: raise
             time.sleep(20)
-def pages1(var):
+def pages1(var, lv=6):
     out, p = [], 0
     while True:
-        try: d = get(B + "data/by-variable/%d?unit-level=6&year=%d&format=json&lang=en&page-size=%d&page=%d" % (var, YEAR, PS[0], p))
+        try: d = get(B + "data/by-variable/%d?unit-level=%d&year=%d&format=json&lang=en&page-size=%d&page=%d" % (var, lv, YEAR, PS[0], p))
         except RuntimeError as e:
             if "412" in str(e) and PS[0] != 100: PS[0] = 100; out, p = [], 0; continue
             raise
@@ -84,16 +84,20 @@ def main():
     allv = [v for subj, vs in VARS for v in vs]
     for v, pv, add in allv:
         if v not in meta: return fail("variable", v, "no figura en su tema")
-    CACHE = {}; T0 = time.time()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=6 if KEY else 1) as ex:
-        futs = {ex.submit(pages, v): v for v, pv, add in allv}
-        for f in concurrent.futures.as_completed(futs):
-            try: CACHE[futs[f]] = f.result(); log('  variable', futs[f], 'lista (%d filas, pagina %d, %d de %d, %d s)' % (len(CACHE[futs[f]]), PS[0], len(CACHE), len(allv), time.time() - T0))
-            except Exception as e: return fail("variable", futs[f], str(e)[:200])
+    CACHE = {}; T0 = time.time(); RAW = ROOT / "data" / "pl-gminy-raw.json.gz"
+    if "--raw" in args and RAW.exists():
+        CACHE = {tuple(map(int, k.split(":"))): v for k, v in json.loads(gzip.decompress(RAW.read_bytes())).items()}; log("datos en bruto leidos:", len(CACHE))
+    else:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=8 if KEY else 1) as ex:
+            futs = {ex.submit(pages, v, lv): (v, lv) for v, pv, add in allv for lv in (6, 5)}
+            for f in concurrent.futures.as_completed(futs):
+                try: CACHE[futs[f]] = f.result(); log('  variable', futs[f], 'lista (%d filas, %d de %d, %d s)' % (len(CACHE[futs[f]]), len(CACHE), len(futs), time.time() - T0))
+                except Exception as e: return fail("variable", futs[f], str(e)[:200])
+        if "--save-raw" in args: RAW.write_bytes(gzip.compress(json.dumps({"%d:%d" % k: v for k, v in CACHE.items()}, separators=(",", ":")).encode()))
     log("variables descargadas:", len(CACHE))
     G, IND = {}, {}; ok = tot = over = 0; bad = []
     for v, pv, add in allv:
-        rows = CACHE[v]
+        rows = CACHE[(v, 6)]; PT = {u['id']: val(u) for u in CACHE[(v, 5)]}
         for u in rows:
             uid = u["id"]
             if not (len(uid) == 12 and uid.isdigit()): return fail("id de gmina no valido", uid)
@@ -104,12 +108,12 @@ def main():
             x = val(u)
             if x is not None and x < 0: return fail("valor negativo", v, uid)
             G.setdefault(uid, {"n": u["name"], "p": pid, "v": {}})["v"][str(v)] = x
-        if pv is not None:
+        if True:
             by = {}
             for uid, g in G.items():
                 if str(v) in g["v"]: by.setdefault(g["p"], []).append(g["v"][str(v)])
             for pid, xs in by.items():
-                t = PWV[pid].get(str(pv)); have = [x for x in xs if x is not None]
+                t = PT.get(pid); have = [x for x in xs if x is not None]
                 if t is None or not have: continue
                 if add:
                     tol = 0.02 * abs(t) + 5
