@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76412
+  "rows": 76413
  },
  "files": [
   {
@@ -3434,13 +3434,13 @@
    "unit": "tonelada",
    "currency": "USD",
    "frequency": "monthly",
-   "rows": 561,
+   "rows": 562,
    "first": "1980-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/eu/urea.csv",
    "xlsx": "data/pack/eu/urea.xlsx",
-   "csvBytes": 89940,
-   "xlsxBytes": 30866
+   "csvBytes": 90099,
+   "xlsxBytes": 30836
   },
   {
    "product": "vaca",
