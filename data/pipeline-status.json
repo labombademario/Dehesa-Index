@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T03:42:00Z",
+ "generatedAt": "2026-11-03T04:09:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
@@ -17,7 +17,7 @@
   "lagHours": 10.8,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T21:49:10.639224+00:00",
-  "checkedAt": "2026-11-03T03:42:00Z"
+  "checkedAt": "2026-11-03T04:09:00Z"
  },
  "pipelines": [
   {
@@ -103,8 +103,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41208224937"
    },
    "recent": {
-    "runs": 10,
-    "success": 7,
+    "runs": 9,
+    "success": 6,
     "failed": 1
    },
    "status": "ok",
@@ -1044,15 +1044,15 @@
     }
    ],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-31T06:56:31Z",
-    "durationSec": 34,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41178594140"
+    "conclusion": "cancelled",
+    "event": "schedule",
+    "startedAt": "2026-11-03T04:01:53Z",
+    "durationSec": 148,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41575671731"
    },
    "recent": {
     "runs": 10,
-    "success": 5,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -1563,7 +1563,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-02T23:41:16Z"
+     "lastChange": "2026-11-03T04:01:04Z"
     }
    ],
    "last": {
@@ -1661,10 +1661,10 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-11-02T22:08:45Z",
-    "durationSec": 103,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41534688695"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-03T03:59:41Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41575440718"
    },
    "recent": {
     "runs": 10,
@@ -5056,7 +5056,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-03T03:47:00Z",
+   "nextRun": "2026-11-03T06:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5335,7 +5335,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-02T23:41:16Z"
+     "lastChange": "2026-11-03T04:01:04Z"
     }
    ],
    "last": {
@@ -5395,7 +5395,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-02T22:28:00Z"
+     "lastChange": "2026-11-03T04:01:04Z"
     },
     {
      "path": "data/products"
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T03:29:49Z"
+     "lastChange": "2026-11-03T03:46:04Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6858,14 +6858,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-02T22:45:58Z",
-    "durationSec": 47,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41539994523"
+    "startedAt": "2026-11-03T03:58:19Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41575320736"
    },
    "recent": {
     "runs": 10,
-    "success": 8,
-    "failed": 2
+    "success": 9,
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 14.8
@@ -7458,13 +7458,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-31T02:41:10Z",
-    "durationSec": 54,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41161106863"
+    "startedAt": "2026-11-03T03:59:55Z",
+    "durationSec": 79,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41575462033"
    },
    "recent": {
-    "runs": 7,
-    "success": 7,
+    "runs": 8,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -7839,7 +7839,7 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41409895844"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 7,
     "failed": 0
    },
