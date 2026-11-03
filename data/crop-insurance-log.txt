@@ -12,11 +12,11 @@ sob 2021 capital 136685205293 prima 13719114375 subvencion 8609618263 indemnizac
 col 2021 indemnizacion por causa 9610434269 frente a SOB 9610434268 (100.00%)
 sob 2022 capital 173585645621 prima 18392853033 subvencion 11633273076 indemnizacion 19428774741 polizas 1193414
 col 2022 indemnizacion por causa 19428774741 frente a SOB 19428774741 (100.00%)
-sob 2023 capital 181618970614 prima 18105456966 subvencion 11328399244 indemnizacion 17795106630 polizas 1230397
-col 2023 indemnizacion por causa 17795106630 frente a SOB 17795106630 (100.00%)
-sob 2024 capital 158675945863 prima 15882545590 subvencion 9881505383 indemnizacion 15174686916 polizas 1218348
-col 2024 indemnizacion por causa 15174686916 frente a SOB 15174686916 (100.00%)
-sob 2025 capital 159368255608 prima 16834548159 subvencion 10589736765 indemnizacion 11588100419 polizas 1326536
-col 2025 indemnizacion por causa 11588100420 frente a SOB 11588100419 (100.00%)
-sob 2026 capital 168048213154 prima 18917052593 subvencion 13146607274 indemnizacion 5810915964 polizas 1692838
-col 2026 indemnizacion por causa 0 frente a SOB 5810915964 (0.00%)
+sob 2023 capital 181618544895 prima 18105422241 subvencion 11328377498 indemnizacion 17795085969 polizas 1230392
+col 2023 indemnizacion por causa 17795085969 frente a SOB 17795085969 (100.00%)
+sob 2024 capital 158674538522 prima 15882497169 subvencion 9881485833 indemnizacion 15175339990 polizas 1218348
+col 2024 indemnizacion por causa 15175339990 frente a SOB 15175339990 (100.00%)
+sob 2025 capital 159368005997 prima 16834624941 subvencion 10589749052 indemnizacion 11598746533 polizas 1326539
+col 2025 indemnizacion por causa 11598746534 frente a SOB 11598746533 (100.00%)
+sob 2026 capital 168095407214 prima 18920363989 subvencion 13151660989 indemnizacion 6110038055 polizas 1693077
+col 2026 indemnizacion por causa 6110038055 frente a SOB 6110038055 (100.00%)
