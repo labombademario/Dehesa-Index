@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T17:02:04Z",
+ "generatedAt": "2026-11-03T23:17:10Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -34,7 +34,7 @@
     "points": 58767,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T15:21:45Z",
+   "generatedAt": "2026-11-03T20:37:00Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -47,10 +47,10 @@
    "warnings": [],
    "stats": {
     "series": 47,
-    "points": 29384,
+    "points": 29405,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T15:51:04Z",
+   "generatedAt": "2026-11-03T20:56:05Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -192,7 +192,7 @@
     "points": 20920,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T16:27:47Z",
+   "generatedAt": "2026-11-03T21:17:34Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -208,7 +208,7 @@
     "points": 9270,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T17:05:00Z",
+   "generatedAt": "2026-11-03T21:51:37Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -226,7 +226,7 @@
     "points": 47919,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T10:04:26Z",
+   "generatedAt": "2026-11-03T17:07:30Z",
    "info": [
     "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86) [KNOWN_VERIFIED_ANOMALY]",
     "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3) [KNOWN_VERIFIED_ANOMALY]",
@@ -263,7 +263,7 @@
     "points": 11947,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T17:28:37Z",
+   "generatedAt": "2026-11-03T22:05:53Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -305,7 +305,7 @@
     "points": 56148,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T18:02:37Z",
+   "generatedAt": "2026-11-03T22:27:07Z",
    "info": [
     "IT/it-es-eaa-am021100: salto 6.44 -> 21.84 en 1986 (mediana previa 0.27) [KNOWN_VERIFIED_ANOMALY]",
     "IT/it-es-eaa-am021100: salto 21.84 -> 23.12 en 1987 (mediana previa 0.27) [KNOWN_VERIFIED_ANOMALY]"
@@ -547,7 +547,7 @@
     "points": 39585,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T18:17:11Z",
+   "generatedAt": "2026-11-03T22:30:27Z",
    "info": [
     "BE/be-eus-poultry-exp_xeu-a5130pn: salto 53300.0 -> 1245700.0 en 2007 (mediana previa 2.9e+04) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -696,7 +696,7 @@
     "points": 33522,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T18:19:31Z",
+   "generatedAt": "2026-11-03T22:31:46Z",
    "info": [
     "PL/pl-es-crop-i1130-area: salto 6200.0 -> 7600.0 en 2016 (mediana previa 300) [KNOWN_VERIFIED_ANOMALY]",
     "PL/pl-es-crop-i1130-area: salto 7600.0 -> 9330.0 en 2017 (mediana previa 300) [KNOWN_VERIFIED_ANOMALY]"
@@ -937,10 +937,10 @@
    "warnings": [],
    "stats": {
     "series": 48,
-    "points": 11201,
+    "points": 11206,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T17:47:26Z",
+   "generatedAt": "2026-11-03T17:49:43Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -990,7 +990,7 @@
     "points": 1805,
     "lines": 0
    },
-   "generatedAt": "2026-11-02T23:28:24Z",
+   "generatedAt": "2026-11-03T21:44:15Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1146,7 +1146,7 @@
     "points": 2501,
     "lines": 0
    },
-   "generatedAt": "2026-11-02T23:41:16Z",
+   "generatedAt": "2026-11-03T21:59:54Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1750,7 +1750,7 @@
     "points": 10094,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T19:24:00Z",
+   "generatedAt": "2026-11-03T19:28:48Z",
    "info": [],
    "nWarnings": 7,
    "nErrors": 0
