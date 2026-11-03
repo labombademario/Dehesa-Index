@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T04:25:00Z",
+ "generatedAt": "2026-11-03T06:42:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
@@ -17,7 +17,7 @@
   "lagHours": 10.8,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T21:49:10.639224+00:00",
-  "checkedAt": "2026-11-03T04:25:00Z"
+  "checkedAt": "2026-11-03T06:42:00Z"
  },
  "pipelines": [
   {
@@ -646,7 +646,7 @@
    "crons": [
     "40 6 * * *"
    ],
-   "nextRun": "2026-11-03T06:40:00Z",
+   "nextRun": "2026-11-04T06:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1633,7 +1633,7 @@
    "crons": [
     "25 6 * * 2"
    ],
-   "nextRun": "2026-11-03T06:25:00Z",
+   "nextRun": "2026-11-10T06:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1887,7 +1887,7 @@
    "crons": [
     "25 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-03T05:25:00Z",
+   "nextRun": "2026-11-03T13:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3848,7 +3848,7 @@
    "crons": [
     "20 6 3,12 * *"
    ],
-   "nextRun": "2026-11-03T06:20:00Z",
+   "nextRun": "2026-11-12T06:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3863,7 +3863,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 504.0
+   "expectedEveryHours": 528.0
   },
   {
    "workflow": "update-fr-comex.yml",
@@ -4239,7 +4239,7 @@
    "crons": [
     "17 6 * * *"
    ],
-   "nextRun": "2026-11-03T06:17:00Z",
+   "nextRun": "2026-11-04T06:17:00Z",
    "files": [
     {
      "path": "data/gats.json",
@@ -4889,7 +4889,7 @@
    "crons": [
     "10 6 * * *"
    ],
-   "nextRun": "2026-11-03T06:10:00Z",
+   "nextRun": "2026-11-04T06:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5079,7 +5079,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-03T06:17:00Z",
+   "nextRun": "2026-11-03T09:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5110,8 +5110,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41530599529"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5359,7 +5359,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-03T06:10:00Z",
+   "nextRun": "2026-11-03T09:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T04:11:59Z"
+     "lastChange": "2026-11-03T04:27:41Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5494,8 +5494,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41530571269"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 1
    },
    "status": "ok",
@@ -5898,7 +5898,7 @@
    "crons": [
     "40 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-03T05:40:00Z",
+   "nextRun": "2026-11-03T13:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5921,7 +5921,7 @@
    "crons": [
     "10 5 * * *"
    ],
-   "nextRun": "2026-11-03T05:10:00Z",
+   "nextRun": "2026-11-04T05:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6818,7 +6818,7 @@
    "crons": [
     "35 6 3,17 * *"
    ],
-   "nextRun": "2026-11-03T06:35:00Z",
+   "nextRun": "2026-11-17T06:35:00Z",
    "files": [
     {
      "path": "data/source-status.json",
@@ -6838,7 +6838,7 @@
     "failed": 2
    },
    "status": "late",
-   "expectedEveryHours": 384.0,
+   "expectedEveryHours": 408.0,
    "sourceUnavailable": {
     "since": "2026-10-06T05:09:50Z",
     "lastAttempt": "2026-10-18T13:14:08Z",
@@ -7361,7 +7361,7 @@
    "crons": [
     "30 6 * * *"
    ],
-   "nextRun": "2026-11-03T06:30:00Z",
+   "nextRun": "2026-11-04T06:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7752,7 +7752,7 @@
    "crons": [
     "40 6 * * 1-5"
    ],
-   "nextRun": "2026-11-03T06:40:00Z",
+   "nextRun": "2026-11-04T06:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7767,7 +7767,7 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-usda-psd.yml",
