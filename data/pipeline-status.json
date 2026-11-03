@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T17:06:00Z",
+ "generatedAt": "2026-11-03T17:24:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
@@ -11,13 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "error",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 0.0,
+  "lagHours": 10.3,
   "prodGeneratedAt": "2026-11-03T06:49:13.890076+00:00",
-  "repoGeneratedAt": "2026-11-03T06:49:13.890076+00:00",
-  "checkedAt": "2026-11-03T17:06:00Z"
+  "repoGeneratedAt": "2026-11-03T17:08:11.022399+00:00",
+  "checkedAt": "2026-11-03T17:24:00Z"
  },
  "pipelines": [
   {
@@ -513,9 +513,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-02T19:36:16Z",
-    "durationSec": 66,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41511475804"
+    "startedAt": "2026-11-03T17:09:38Z",
+    "durationSec": 50,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41681473610"
    },
    "recent": {
     "runs": 10,
@@ -2675,13 +2675,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-30T10:04:45Z",
-    "durationSec": 32,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41038070905"
+    "startedAt": "2026-11-03T17:06:49Z",
+    "durationSec": 80,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41681002037"
    },
    "recent": {
-    "runs": 7,
-    "success": 7,
+    "runs": 8,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T17:05:46Z"
+     "lastChange": "2026-11-03T17:10:02Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7223,7 +7223,7 @@
    "crons": [
     "10 17 * * 2"
    ],
-   "nextRun": "2026-11-03T17:10:00Z",
+   "nextRun": "2026-11-10T17:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
