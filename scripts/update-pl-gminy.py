@@ -16,6 +16,7 @@ UA = {"User-Agent": "DehesaIndex/1.0 (+https://dehesaindex.com)", "Accept": "app
 KEY = bool(os.environ.get("BDL_CLIENT_ID"))
 if KEY: UA["X-ClientId"] = os.environ["BDL_CLIENT_ID"]
 YEAR = 2020
+PS = [500 if KEY else 100]   # los usuarios registrados pueden pedir paginas de 500; si la API responde 412 se vuelve a 100
 _sp = importlib.util.spec_from_file_location("ulp", str(ROOT / "scripts" / "update-land-pl.py")); _m = importlib.util.module_from_spec(_sp); _sp.loader.exec_module(_m)
 UNITS = _m.UNITS
 # (tema, [(variable de gmina, variable equivalente por powiat o None, aditiva)])
@@ -38,6 +39,7 @@ def get(u, tries=8, timeout=90):
             with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=timeout) as r: return json.loads(r.read())
         except urllib.error.HTTPError as e:
             last = e
+            if e.code == 412: raise RuntimeError('HTTP 412 ' + u[:100])
             if e.code == 429: time.sleep(60 * (i + 1))
             else: time.sleep(min(8 * (i + 1), 40))
         except Exception as e: last = e; time.sleep(min(8 * (i + 1), 40))
@@ -51,7 +53,10 @@ def pages(var):
 def pages1(var):
     out, p = [], 0
     while True:
-        d = get(B + "data/by-variable/%d?unit-level=6&year=%d&format=json&lang=en&page-size=100&page=%d" % (var, YEAR, p))
+        try: d = get(B + "data/by-variable/%d?unit-level=6&year=%d&format=json&lang=en&page-size=%d&page=%d" % (var, YEAR, PS[0], p))
+        except RuntimeError as e:
+            if "412" in str(e) and PS[0] != 100: PS[0] = 100; out, p = [], 0; continue
+            raise
         if d.get("variableId", var) != var: raise RuntimeError("%d: la API devolvio otra variable" % var)
         out += d.get("results", [])
         if len(out) >= d.get("totalRecords", 0) or not d.get("results"): return out
@@ -79,11 +84,11 @@ def main():
     allv = [v for subj, vs in VARS for v in vs]
     for v, pv, add in allv:
         if v not in meta: return fail("variable", v, "no figura en su tema")
-    CACHE = {}
+    CACHE = {}; T0 = time.time()
     with concurrent.futures.ThreadPoolExecutor(max_workers=6 if KEY else 1) as ex:
         futs = {ex.submit(pages, v): v for v, pv, add in allv}
         for f in concurrent.futures.as_completed(futs):
-            try: CACHE[futs[f]] = f.result()
+            try: CACHE[futs[f]] = f.result(); log('  variable', futs[f], 'lista (%d filas, pagina %d, %d de %d, %d s)' % (len(CACHE[futs[f]]), PS[0], len(CACHE), len(allv), time.time() - T0))
             except Exception as e: return fail("variable", futs[f], str(e)[:200])
     log("variables descargadas:", len(CACHE))
     G, IND = {}, {}; ok = tot = over = 0; bad = []
