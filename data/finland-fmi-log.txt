@@ -1,8 +1,8 @@
-Jokioinen 319 meses temp, 321 meses lluvia
-omitida (pocos puntos): fi-fmi-temp-seinajoki 60
+Jokioinen 320 meses temp, 322 meses lluvia
+omitida (pocos puntos): fi-fmi-temp-seinajoki 61
 omitida (pocos puntos): fi-fmi-rain-seinajoki 105
-Seinäjoki 60 meses temp, 105 meses lluvia
-Kuopio 245 meses temp, 201 meses lluvia
-omitida (pocos puntos): fi-fmi-rain-oulu 34
-Oulu 272 meses temp, 34 meses lluvia
-Sodankylä 321 meses temp, 321 meses lluvia
+Seinäjoki 61 meses temp, 105 meses lluvia
+Kuopio 246 meses temp, 202 meses lluvia
+omitida (pocos puntos): fi-fmi-rain-oulu 35
+Oulu 273 meses temp, 35 meses lluvia
+Sodankylä 322 meses temp, 322 meses lluvia
