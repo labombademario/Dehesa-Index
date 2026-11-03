@@ -2,29 +2,45 @@ OK Italia: 1960-2023, 20 regiones, total 22809.4 €/ha (2023)
 data.gouv recurso: Prix des terres et/ou Valeur Vénale des terres (VVT) https://agreste.agriculture.gouv.fr/agreste-web/methodon/S-Prix%20des%20terres/methodon/
 data.gouv recurso: Valeur vénale des terres https://agreste.agriculture.gouv.fr/agreste-web/disaron/venale/745fcc0d-4e89-4a99-b151-835d2a9be2df/search/
 Francia 2025: ficha de Agreste con 1 PDF
-Francia 2025: 2 xlsx de datos asociados en la ficha (89899 bytes)
+Francia 2025: 2 xlsx de datos asociados en la ficha (89903 bytes)
 Francia 2025: leida desde https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2609/DonneesAssociees-cd2026-9_VVT-2025_Publication-LIBRE.xlsx
 Francia 2024: ficha de Agreste con 1 PDF
-Francia 2024: 0 xlsx de datos asociados en la ficha (81465 bytes)
+Francia 2024: 0 xlsx de datos asociados en la ficha (81462 bytes)
 Francia 2024: cd2025-13_Valeur-venale-des-terres-en-2024.pdf sin tablas utilizables (no se encontro la cabecera de anos de las tablas)
 Francia 2024: cd2025-13_Valeur-venale-des-terres-en-2024.pdf sin tablas utilizables (no se encontro la cabecera de anos de las tablas)
-sondeo ficha Chd2513: 6466 bytes, 0 enlaces de datos
-  titulo: Erreur|Agreste, la statistique agricole 
+sondeo ficha Chd2513: 81461 bytes, 2 enlaces de datos
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2513/cd2025-13_Valeur-venale-des-terres-en-2024.pdf
+  https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2513/Données-associées-cd2025-13_Valeur-vénale-des-terres-en-2024.ods
+  titulo: Valeur vénale des terres en 2024|Agreste, la statistique agricole 
 Francia 2023: ficha de Agreste con 1 PDF
-Francia 2023: 0 xlsx de datos asociados en la ficha (81905 bytes)
+Francia 2023: 0 xlsx de datos asociados en la ficha (81892 bytes)
 Francia 2023: leida desde https://www.agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Chd2412/cd2024-12_VVT-2023.pdf
+revision free 69 2023: 4620 -> 4610
+revision free 73 2023: 5530 -> 5540
+revision free 64 2023: 7750 -> 7760
+revision free 33 2023: 7600 -> 7590
+revision free 61 2023: 7220 -> 7230
+revision free 13 2023: 15370 -> 15360
+revision free 48 2023: 5080 -> 5070
+revision free 60 2023: 9060 -> 9070
+revision free 07 2023: 4550 -> 4560
+revision free 08 2023: 6130 -> 6140
+revision free 41 2023: 4720 -> 4730
+revision free 51 2023: 11490 -> 11690
+revision rent 90 2023: 3540 -> 3550
+revision rent 51 2023: 10760 -> 10750
+revision free 69 2023: 4610 -> 4620
+revision free 73 2023: 5540 -> 5530
+revision free 64 2023: 7760 -> 7750
+revision free 33 2023: 7590 -> 7600
+revision free 61 2023: 7230 -> 7220
 revision free 13 2023: 15360 -> 15370
 revision free 48 2023: 5070 -> 5080
-revision free 41 2023: 4730 -> 4720
-revision free 51 2023: 11690 -> 11490
-revision free 08 2023: 6140 -> 6130
-revision free 61 2023: 7230 -> 7220
-revision free 33 2023: 7590 -> 7600
-revision free 69 2023: 4610 -> 4620
-revision free 64 2023: 7760 -> 7750
-revision free 73 2023: 5540 -> 5530
 revision free 60 2023: 9070 -> 9060
 revision free 07 2023: 4560 -> 4550
-revision rent 51 2023: 10750 -> 10760
+revision free 08 2023: 6140 -> 6130
+revision free 51 2023: 11690 -> 11490
+revision free 41 2023: 4730 -> 4720
 revision rent 90 2023: 3550 -> 3540
+revision rent 51 2023: 10750 -> 10760
 OK Francia: edicion 2025 (xlsx), años [2021, 2022, 2023, 2024, 2025], 91 departamentos libres, 58 alquilados
