@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-03T22:35:42.255Z",
+  "generatedAt": "2026-11-03T23:24:55.357Z",
   "status": "informational",
   "rules": [
     {
@@ -457,24 +457,6 @@
       "sourceId": "usda_ams_mars",
       "severity": "watch",
       "changePct": -9.57,
-      "observationDate": "2026-10-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel_uk",
-      "region": "uk",
-      "sourceId": "desnz_fuel_prices",
-      "severity": "watch",
-      "changePct": 7.06,
-      "observationDate": "2026-10-01"
-    },
-    {
-      "type": "period_move",
-      "product": "gasolina_uk",
-      "region": "uk",
-      "sourceId": "desnz_fuel_prices",
-      "severity": "watch",
-      "changePct": 6.37,
       "observationDate": "2026-10-01"
     },
     {
