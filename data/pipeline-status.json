@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T03:09:00Z",
+ "generatedAt": "2026-11-03T03:26:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
@@ -17,7 +17,7 @@
   "lagHours": 10.8,
   "prodGeneratedAt": "2026-11-02T11:03:36.310441+00:00",
   "repoGeneratedAt": "2026-11-02T21:49:10.639224+00:00",
-  "checkedAt": "2026-11-03T03:09:00Z"
+  "checkedAt": "2026-11-03T03:26:00Z"
  },
  "pipelines": [
   {
@@ -5079,7 +5079,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-03T03:17:00Z",
+   "nextRun": "2026-11-03T06:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5359,7 +5359,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-03T03:10:00Z",
+   "nextRun": "2026-11-03T06:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T02:47:26Z"
+     "lastChange": "2026-11-03T03:12:01Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5903,13 +5903,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-02T13:50:23Z",
-    "durationSec": 1244,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41456446703"
+    "startedAt": "2026-11-03T03:04:14Z",
+    "durationSec": 1248,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41569944897"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 1
    },
    "status": "ok",
@@ -7343,9 +7343,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-31T01:33:31Z",
-    "durationSec": 79,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41155920234"
+    "startedAt": "2026-11-03T03:26:31Z",
+    "durationSec": 80,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41572219250"
    },
    "recent": {
     "runs": 10,
