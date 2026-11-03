@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T07:48:00Z",
+ "generatedAt": "2026-11-03T08:03:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
@@ -17,7 +17,7 @@
   "lagHours": 9.0,
   "prodGeneratedAt": "2026-11-02T21:49:10.639224+00:00",
   "repoGeneratedAt": "2026-11-03T06:49:13.890076+00:00",
-  "checkedAt": "2026-11-03T07:48:00Z"
+  "checkedAt": "2026-11-03T08:03:00Z"
  },
  "pipelines": [
   {
@@ -209,7 +209,7 @@
    "crons": [
     "50 7 * * *"
    ],
-   "nextRun": "2026-11-03T07:50:00Z",
+   "nextRun": "2026-11-04T07:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2049,7 +2049,7 @@
    "crons": [
     "2 8 * * *"
    ],
-   "nextRun": "2026-11-03T08:02:00Z",
+   "nextRun": "2026-11-04T08:02:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2789,7 +2789,7 @@
    "crons": [
     "50 7 * * 2,5"
    ],
-   "nextRun": "2026-11-03T07:50:00Z",
+   "nextRun": "2026-11-06T07:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4382,7 +4382,7 @@
    "crons": [
     "55 7 * * *"
    ],
-   "nextRun": "2026-11-03T07:55:00Z",
+   "nextRun": "2026-11-04T07:55:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4636,7 +4636,7 @@
    "crons": [
     "58 7 * * *"
    ],
-   "nextRun": "2026-11-03T07:58:00Z",
+   "nextRun": "2026-11-04T07:58:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T06:46:57Z"
+     "lastChange": "2026-11-03T07:52:25Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6822,28 +6822,28 @@
    "files": [
     {
      "path": "data/source-status.json",
-     "lastChange": "2026-10-18T13:14:08Z"
+     "lastChange": "2026-11-03T07:52:38Z"
     }
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-18T13:09:47Z",
-    "durationSec": 265,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39130329781"
+    "event": "schedule",
+    "startedAt": "2026-11-03T07:48:11Z",
+    "durationSec": 273,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41598732770"
    },
    "recent": {
-    "runs": 7,
-    "success": 4,
+    "runs": 8,
+    "success": 5,
     "failed": 2
    },
    "status": "late",
    "expectedEveryHours": 408.0,
    "sourceUnavailable": {
     "since": "2026-10-06T05:09:50Z",
-    "lastAttempt": "2026-10-18T13:14:08Z",
+    "lastAttempt": "2026-11-03T07:52:38Z",
     "reason": "la pagina de la FSA no tiene enlaces reconocibles",
-    "consecutive": 4
+    "consecutive": 5
    }
   },
   {
