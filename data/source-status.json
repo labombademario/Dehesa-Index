@@ -2,8 +2,8 @@
  "schemaVersion": 1,
  "workflows": {
   "update-us-arcplc.yml": {
-   "consecutive": 4,
-   "lastAttempt": "2026-10-18T13:14:08Z",
+   "consecutive": 5,
+   "lastAttempt": "2026-11-03T07:52:38Z",
    "reason": "la pagina de la FSA no tiene enlaces reconocibles",
    "since": "2026-10-06T05:09:50Z",
    "state": "sourceUnavailable"
