@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T22:12:00Z",
+ "generatedAt": "2026-11-03T22:28:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 335,
+  "ok": 334,
   "late": 2,
-  "error": 2,
+  "error": 3,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-03T17:08:11.022399+00:00",
   "repoGeneratedAt": "2026-11-03T17:08:11.022399+00:00",
-  "checkedAt": "2026-11-03T22:12:00Z"
+  "checkedAt": "2026-11-03T22:28:00Z"
  },
  "pipelines": [
   {
@@ -3466,8 +3466,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41105445544"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4825,13 +4825,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-30T18:01:59Z",
-    "durationSec": 356,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41103333480"
+    "startedAt": "2026-11-03T22:25:50Z",
+    "durationSec": 84,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41730723881"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T21:57:56Z"
+     "lastChange": "2026-11-03T22:15:11Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5717,18 +5717,19 @@
    "nextRun": "2026-11-06T16:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-30T17:20:37Z",
-    "durationSec": 1425,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41097983410"
+    "startedAt": "2026-11-03T21:56:49Z",
+    "durationSec": 1574,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41726358414",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-portugal.py ' has timed out after 25 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 8,
-    "failed": 1
+    "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 96.0
   },
   {
