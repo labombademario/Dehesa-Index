@@ -2432,6 +2432,16 @@
    "pl-powiaty-index",
    []
   ],
+  "pl-gminy/[A-Z][A-Z].json": [
+   "pl-gminy-voivodeship",
+   [
+    "pl_gminy_voivodeship"
+   ]
+  ],
+  "pl-gminy/inde[x].json": [
+   "pl-gminy-index",
+   []
+  ],
   "au-sa2/[A-Z][A-Z]*.json": [
    "au-sa2-state",
    [

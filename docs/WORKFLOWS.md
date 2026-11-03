@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-350 workflows (300 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+351 workflows (301 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -386,6 +386,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 |---|---|---|---|---|---|
 | update-pl-diesel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-pl-diesel.py | pl-diesel.json | finish, validate-files |
 | update-pl-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | pl-ghg-agri.json | finish, validate-files |
+| update-pl-gminy.yml | generado | mensual | gen-workflows.py, update-pl-gminy.py, validate-data.py | - | finish |
 | update-pl-hydro-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-pl-hydro-drought.py | pl-hydro-drought.json | finish, validate-files |
 | update-pl-powiaty.yml | generado | mensual | gen-workflows.py, update-pl-powiaty.py, validate-data.py | - | finish |
 | update-pl-zsrir.yml | generado | semanal (4,5) | detect-revisions.py, gen-workflows.py, update-pl-zsrir.py | poland-zsrir-stats.json, poland-zsrir/index.json | finish, validate-files |

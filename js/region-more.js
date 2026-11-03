@@ -929,6 +929,44 @@
         head: ['Total (AWU)|Total (AWU)|Total (UTA)|Totale (ULA)', 'Familiar (AWU)|Family (AWU)|Familiale (UTA)|Familiare (ULA)', 'Asalariados fijos (AWU)|Hired, permanent (AWU)|Salariés permanents (UTA)|Salariati fissi (ULA)', 'AWU por 100 ha|AWU per 100 ha|UTA pour 100 ha|ULA ogni 100 ha'],
         row: function (p) { var t = plPwV(p, '1623469'), s = plPwV(p, '1633345'); return { n: p.n, s: t, c: [plPwF(t), plPwF(plPwV(p, '1623475')), plPwF(plPwV(p, '1623478')), t != null && s ? nf(t / s * 100, 1) : '—'] }; } });
     }
+    /* ---- Polonia por municipio (gmina): Censo Agrario 2020 de GUS (BDL) ---- */
+    function plGmType(id) { var t = id.charAt(11); return t === '1' ? L('ciudad|city|ville|città') : t === '2' ? L('rural|rural|rurale|rurale') : L('mixta|mixed|mixte|mista'); }
+    function plGmCard(x, o) {
+      return get('data/pl-gminy/' + x.r + '.json').then(function (d) {
+        if (!d || !d.gminy) return null;
+        var ks = Object.keys(d.gminy).map(function (id) { var g = d.gminy[id], r = o.row(g); if (r) r.n = g.n + ' (' + plGmType(id) + ')' + (g.p.indexOf(g.n) >= 0 ? '' : ', ' + g.p); return r; }).filter(function (r) { return r && r.s != null; });
+        if (!ks.length) return null; ks.sort(function (a, b) { return b.s - a.s; });
+        return card(L(o.title), L(o.intro), usCountyList(ks.map(function (r) { return [esc(r.n)].concat(r.c); }), [L('Municipio (gmina)|Municipality (gmina)|Commune (gmina)|Comune (gmina)')].concat(o.head.map(function (h) { return L(h); })), 440, 10, L('Todos los municipios|All municipalities|Toutes les communes|Tutti i comuni')), cite('gus_poland', '2020'));
+      });
+    }
+    var PLGM_NOTE = 'Los municipios con pocas explotaciones tienen cifras ocultas por secreto estadístico y salen en blanco.|Municipalities with few holdings have figures suppressed for statistical confidentiality and are left blank.|Les communes comptant peu d’exploitations ont des chiffres masqués par secret statistique et restent vides.|I comuni con poche aziende hanno cifre nascoste per segreto statistico e restano vuoti.';
+    function plGmNote(a) { var p = a.split('|'), q = PLGM_NOTE.split('|'); return p.map(function (t, i) { return t + ' ' + q[i]; }).join('|'); }
+    function plGmStruct(x) {
+      return plGmCard(x, { title: 'Municipios (gmina): explotaciones y superficie (2020)|Municipalities (gmina): farms and farmland (2020)|Communes (gmina) : exploitations et surface (2020)|Comuni (gmina): aziende e superficie (2020)',
+        intro: plGmNote('Censo Agrario 2020 de GUS por municipio. Ordenado por superficie agraria; el tamaño medio es la superficie agraria entre las explotaciones (cálculo de Dehesa Index).|GUS Agricultural Census 2020 by municipality. Sorted by farmland; average size is farmland divided by holdings (Dehesa Index calculation).|Recensement agricole 2020 du GUS par commune. Classées par surface agricole ; la taille moyenne est la surface agricole divisée par les exploitations (calcul de Dehesa Index).|Censimento agricolo 2020 del GUS per comune. Ordinati per superficie agricola; la dimensione media è la superficie agricola divisa per le aziende (calcolo di Dehesa Index).'),
+        head: ['Explotaciones|Farms|Exploitations|Aziende', 'Superficie agraria (ha)|Farmland (ha)|SAU (ha)|SAU (ha)', 'Tamaño medio (ha)|Average size (ha)|Taille moyenne (ha)|Dimensione media (ha)', 'De 15 ha o más|15 ha or more|15 ha ou plus|15 ha o più'],
+        row: function (g) { var f = plPwV(g, '1633195'), s = plPwV(g, '1645080'), big = plPwV(g, '1633200');
+          return { s: s, c: [plPwF(f), plPwF(s), f && s != null ? nf(s / f, 1) : '—', f && big != null ? nf(big / f * 100, 1) + ' %' : '—'] }; } });
+    }
+    function plGmLive(x) {
+      return plGmCard(x, { title: 'Municipios (gmina): ganado (2020)|Municipalities (gmina): livestock (2020)|Communes (gmina) : élevage (2020)|Comuni (gmina): allevamento (2020)',
+        intro: plGmNote('Cabezas de ganado de las explotaciones de cada municipio en el Censo Agrario 2020 de GUS, ordenadas por bovinos.|Head of livestock on the holdings of each municipality in the GUS Agricultural Census 2020, sorted by cattle.|Têtes de bétail des exploitations de chaque commune au recensement agricole 2020 du GUS, classées par bovins.|Capi di bestiame delle aziende di ogni comune nel censimento agricolo 2020 del GUS, ordinati per bovini.'),
+        head: ['Bovinos|Cattle|Bovins|Bovini', 'Vacas|Cows|Vaches|Vacche', 'Cerdos|Pigs|Porcins|Suini', 'Aves|Poultry|Volailles|Pollame'],
+        row: function (g) { var c = plPwV(g, '1645219'); return { s: c, c: [plPwF(c), plPwF(plPwV(g, '1645220')), plPwF(plPwV(g, '1645221')), plPwF(plPwV(g, '1645223'))] }; } });
+    }
+    function plGmCrops(x) {
+      return plGmCard(x, { title: 'Municipios (gmina): superficie sembrada (2020)|Municipalities (gmina): sown area (2020)|Communes (gmina) : surface semée (2020)|Comuni (gmina): superficie seminata (2020)',
+        intro: plGmNote('Superficie sembrada de cada municipio en el Censo Agrario 2020 de GUS, con los cultivos principales. GUS no publica rendimientos por municipio.|Sown area of each municipality in the GUS Agricultural Census 2020, with the main crops. GUS does not publish yields by municipality.|Surface semée de chaque commune au recensement agricole 2020 du GUS, avec les cultures principales. Le GUS ne publie pas de rendements par commune.|Superficie seminata di ogni comune nel censimento agricolo 2020 del GUS, con le colture principali. Il GUS non pubblica rese per comune.'),
+        head: ['Sembrada (ha)|Sown (ha)|Semée (ha)|Seminata (ha)', 'Cereales (ha)|Cereals (ha)|Céréales (ha)|Cereali (ha)', 'Colza (ha)|Rapeseed (ha)|Colza (ha)|Colza (ha)', 'Patata (ha)|Potatoes (ha)|Pommes de terre (ha)|Patate (ha)', 'Remolacha (ha)|Sugar beet (ha)|Betterave (ha)|Barbabietola (ha)'],
+        row: function (g) { var s = plPwV(g, '1645123'); return { s: s, c: [plPwF(s), plPwF(plPwV(g, '1645124')), plPwF(plPwV(g, '1645139')), plPwF(plPwV(g, '1645137')), plPwF(plPwV(g, '1645138'))] }; } });
+    }
+    function plGmLabour(x) {
+      return plGmCard(x, { title: 'Municipios (gmina): mano de obra y venta (2020)|Municipalities (gmina): farm labour and sales (2020)|Communes (gmina) : main-d’œuvre et vente (2020)|Comuni (gmina): manodopera e vendita (2020)',
+        intro: plGmNote('Unidades de trabajo anual (AWU) de las explotaciones de cada municipio, AWU por cada 100 ha de superficie agraria (cálculo de Dehesa Index) y porcentaje de explotaciones que venden parte de su producción.|Annual work units (AWU) on the holdings of each municipality, AWU per 100 ha of farmland (Dehesa Index calculation) and the share of holdings selling part of their output.|Unités de travail annuel (UTA) des exploitations de chaque commune, UTA pour 100 ha de surface agricole (calcul de Dehesa Index) et part des exploitations vendant une partie de leur production.|Unità di lavoro annuo (ULA) delle aziende di ogni comune, ULA ogni 100 ha di superficie agricola (calcolo di Dehesa Index) e quota di aziende che vendono parte della produzione.'),
+        head: ['Total (AWU)|Total (AWU)|Total (UTA)|Totale (ULA)', 'AWU por 100 ha|AWU per 100 ha|UTA pour 100 ha|ULA ogni 100 ha', 'Explotaciones que venden|Holdings selling|Exploitations vendant|Aziende che vendono'],
+        row: function (g) { var t = plPwV(g, '1623463'), s = plPwV(g, '1645080'), f = plPwV(g, '1633195'), sell = plPwV(g, '1633419');
+          return { s: t, c: [plPwF(t), t != null && s ? nf(t / s * 100, 1) : '—', f && sell != null ? nf(sell / f * 100, 1) + ' %' : '—'] }; } });
+    }
     /* ---- Australia: cultivos por zona estadistica SA2 (ABS) ---- */
     var AU_B = [['Wheat', 'Trigo|Wheat|Blé|Grano'], ['Barley', 'Cebada|Barley|Orge|Orzo'], ['Canola', 'Colza (canola)|Canola|Canola|Colza (canola)'], ['Oats', 'Avena|Oats|Avoine|Avena'], ['Sorghum', 'Sorgo|Sorghum|Sorgho|Sorgo'], ['Cotton', 'Algodón|Cotton|Coton|Cotone'], ['Rice', 'Arroz|Rice|Riz|Riso'], ['Sugarcane', 'Caña de azúcar|Sugarcane|Canne à sucre|Canna da zucchero'], ['Maize', 'Maíz|Maize|Maïs|Mais'], ['Chickpeas', 'Garbanzo|Chickpeas|Pois chiches|Ceci'], ['Lupins', 'Altramuz|Lupins|Lupins|Lupini'], ['Fieldpeas', 'Guisante|Field peas|Pois protéagineux|Pisello proteico'], ['Lentils', 'Lenteja|Lentils|Lentilles|Lenticchie'], ['Fababeans', 'Haba|Faba beans|Féveroles|Fava']];
     var AU_H = [['Winegrape', 'Uva de vino (t)|Winegrapes (t)|Raisin de cuve (t)|Uva da vino (t)', 'HortWinegrape_Crush'], ['Avocados', 'Aguacate (t)|Avocados (t)|Avocats (t)|Avocado (t)', 'HortAvocados_Prod'], ['Bananas', 'Plátano (t)|Bananas (t)|Bananes (t)|Banane (t)', 'HortBananas_Prod'], ['Macadamias', 'Macadamia (t)|Macadamias (t)|Noix de macadamia (t)|Macadamia (t)', 'HortMacadamias_Prod_Inshell']];
@@ -1000,7 +1038,7 @@
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', gridClim)],
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('dekrs', deKrStruct), C('dekrl', deKrLive), C('dekrz', deKrSize), C('dekmy', deKmYield), C('dekmc', deKmCattle), C('dekmj', deKmJobs), C('dekmh', deKmHist), C('eudr', eudr), C('clim', deClim)],
-        PL: [C('plpws', plPwStruct), C('plpwl', plPwLive), C('plpwc', plPwCrops), C('plpwa', plPwLabour)],
+        PL: [C('plpws', plPwStruct), C('plpwl', plPwLive), C('plpwc', plPwCrops), C('plpwa', plPwLabour), C('plgms', plGmStruct), C('plgml', plGmLive), C('plgmc', plGmCrops), C('plgma', plGmLabour)],
         NL: [C('nlcrops', nlCbs), C('clim', gridClim)],
         AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim)], AU: [C('aulv', auLivestock), C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('aulga', auLga), C('ausa4', auSa4), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },
