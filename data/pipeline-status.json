@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T21:38:00Z",
+ "generatedAt": "2026-11-03T21:55:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 335,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-03T17:08:11.022399+00:00",
   "repoGeneratedAt": "2026-11-03T17:08:11.022399+00:00",
-  "checkedAt": "2026-11-03T21:38:00Z"
+  "checkedAt": "2026-11-03T21:55:00Z"
  },
  "pipelines": [
   {
@@ -467,9 +467,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-30T17:04:20Z",
-    "durationSec": 49,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41095567127"
+    "startedAt": "2026-11-03T21:51:02Z",
+    "durationSec": 42,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41725490483"
    },
    "recent": {
     "runs": 10,
@@ -720,9 +720,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-02T23:27:21Z",
-    "durationSec": 70,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41545557426"
+    "startedAt": "2026-11-03T21:42:52Z",
+    "durationSec": 101,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41724273829"
    },
    "recent": {
     "runs": 10,
@@ -5056,7 +5056,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-03T21:47:00Z",
+   "nextRun": "2026-11-04T00:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T21:24:39Z"
+     "lastChange": "2026-11-03T21:40:31Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5724,8 +5724,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41097983410"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 1
    },
    "status": "ok",
@@ -5921,7 +5921,7 @@
    "crons": [
     "40 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-03T21:40:00Z",
+   "nextRun": "2026-11-04T05:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7591,7 +7591,7 @@
    "crons": [
     "45 21 * * 1-5"
    ],
-   "nextRun": "2026-11-03T21:45:00Z",
+   "nextRun": "2026-11-04T21:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7606,7 +7606,7 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-snotel.yml",
