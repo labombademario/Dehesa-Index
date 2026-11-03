@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-02T22:27:54.089Z",
+  "generatedAt": "2026-11-03T04:00:52.548Z",
   "status": "informational",
   "rules": [
     {
@@ -626,27 +626,27 @@
       "product": "cerdo_base_us",
       "region": "us",
       "sourceId": "usda_ams_lmr",
-      "severity": "watch",
-      "changePct": -9.01,
-      "observationDate": "2026-10-01"
+      "severity": "high",
+      "changePct": -16.99,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
       "product": "cerdo_neto_us",
       "region": "us",
       "sourceId": "usda_ams_lmr",
-      "severity": "watch",
-      "changePct": -9.18,
-      "observationDate": "2026-10-01"
+      "severity": "high",
+      "changePct": -17.04,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
       "product": "costilla_cerdo",
       "region": "us",
       "sourceId": "usda_ams_lmr",
-      "severity": "watch",
-      "changePct": -9.08,
-      "observationDate": "2026-10-01"
+      "severity": "high",
+      "changePct": -10.87,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
@@ -654,17 +654,17 @@
       "region": "us",
       "sourceId": "usda_ams_lmr",
       "severity": "high",
-      "changePct": -12.88,
-      "observationDate": "2026-10-01"
+      "changePct": -15.25,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
       "product": "jamon_cerdo",
       "region": "us",
       "sourceId": "usda_ams_lmr",
-      "severity": "watch",
-      "changePct": 9.95,
-      "observationDate": "2026-10-01"
+      "severity": "high",
+      "changePct": -20.67,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
@@ -681,8 +681,17 @@
       "region": "us",
       "sourceId": "usda_ams_lmr",
       "severity": "watch",
-      "changePct": -6.9,
-      "observationDate": "2026-10-01"
+      "changePct": -8.72,
+      "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "paleta_cerdo",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "high",
+      "changePct": -14.99,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
@@ -690,17 +699,17 @@
       "region": "us",
       "sourceId": "usda_ams_lmr",
       "severity": "high",
-      "changePct": -42.17,
-      "observationDate": "2026-10-01"
+      "changePct": -20.67,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
       "product": "picnic_cerdo",
       "region": "us",
       "sourceId": "usda_ams_lmr",
-      "severity": "watch",
-      "changePct": -5.21,
-      "observationDate": "2026-10-01"
+      "severity": "high",
+      "changePct": -17.72,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
