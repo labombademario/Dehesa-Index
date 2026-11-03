@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T10:33:00Z",
+ "generatedAt": "2026-11-03T10:49:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
@@ -17,7 +17,7 @@
   "lagHours": 9.0,
   "prodGeneratedAt": "2026-11-02T21:49:10.639224+00:00",
   "repoGeneratedAt": "2026-11-03T06:49:13.890076+00:00",
-  "checkedAt": "2026-11-03T10:33:00Z"
+  "checkedAt": "2026-11-03T10:49:00Z"
  },
  "pipelines": [
   {
@@ -1044,15 +1044,15 @@
     }
    ],
    "last": {
-    "conclusion": "cancelled",
-    "event": "schedule",
-    "startedAt": "2026-11-03T04:01:53Z",
-    "durationSec": 148,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41575671731"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-03T10:44:39Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41621788971"
    },
    "recent": {
     "runs": 10,
-    "success": 4,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
@@ -2348,7 +2348,7 @@
    "crons": [
     "40 10 * * 2"
    ],
-   "nextRun": "2026-11-03T10:40:00Z",
+   "nextRun": "2026-11-10T10:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3784,13 +3784,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-27T10:23:27Z",
-    "durationSec": 157,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40488071453"
+    "startedAt": "2026-11-03T10:40:35Z",
+    "durationSec": 135,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41621236736"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -5406,7 +5406,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-03T10:20:47Z"
+     "lastChange": "2026-11-03T10:36:17Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6477,14 +6477,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-22T05:18:06Z",
-    "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39727230992"
+    "event": "schedule",
+    "startedAt": "2026-11-03T10:38:47Z",
+    "durationSec": 45,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41620994293"
    },
    "recent": {
-    "runs": 2,
-    "success": 2,
+    "runs": 3,
+    "success": 3,
     "failed": 0
    },
    "status": "ok",
