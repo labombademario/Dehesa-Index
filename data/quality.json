@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-03T04:00:51.593Z",
+  "generatedAt": "2026-11-03T19:57:41.182Z",
   "scope": {
     "latestObservations": 209,
-    "historyObservations": 49263,
+    "historyObservations": 49264,
     "verified": 209,
     "pending": 0,
     "stale": 3,
     "freshness": {
-      "FRESH": 74,
-      "LIVE": 131,
+      "FRESH": 73,
+      "LIVE": 132,
       "DELAYED": 2,
       "HISTORICAL": 1,
       "STALE": 1
@@ -3342,13 +3342,13 @@
       "sourceId": "world_bank",
       "status": "verified",
       "comparability": "not_comparable",
-      "observationDate": "2026-09-01",
-      "publicationDate": "2026-10-02",
-      "verifiedAt": "2026-11-02T22:06:48Z",
+      "observationDate": "2026-10-01",
+      "publicationDate": "2026-11-03",
+      "verifiedAt": "2026-11-03T19:57:38Z",
       "frequency": "monthly",
-      "historyPoints": 561,
-      "ageDays": 34,
-      "freshness": "FRESH",
+      "historyPoints": 562,
+      "ageDays": 3,
+      "freshness": "LIVE",
       "stale": false
     },
     {
