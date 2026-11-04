@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T15:07:00Z",
+ "generatedAt": "2026-11-04T15:24:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 335,
+  "ok": 336,
   "late": 2,
   "error": 3,
   "not_run": 0,
-  "unknown": 1
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 8.2,
   "prodGeneratedAt": "2026-11-04T06:16:19.933853+00:00",
   "repoGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
-  "checkedAt": "2026-11-04T15:07:00Z"
+  "checkedAt": "2026-11-04T15:24:00Z"
  },
  "pipelines": [
   {
@@ -2187,7 +2187,7 @@
    "crons": [
     "15 15 * * 3,5"
    ],
-   "nextRun": "2026-11-04T15:15:00Z",
+   "nextRun": "2026-11-06T15:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3044,9 +3044,19 @@
    ],
    "nextRun": "2026-11-05T09:25:00Z",
    "files": [],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-10-29T10:09:24Z",
+    "durationSec": 58,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40855288858"
+   },
+   "recent": {
+    "runs": 10,
+    "success": 9,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -5115,7 +5125,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-04T15:17:00Z",
+   "nextRun": "2026-11-04T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5395,7 +5405,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-04T15:10:00Z",
+   "nextRun": "2026-11-04T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5442,7 +5452,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-04T14:53:52Z"
+     "lastChange": "2026-11-04T15:11:19Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7374,7 +7384,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-11-04T15:20:00Z",
+   "nextRun": "2026-11-05T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
