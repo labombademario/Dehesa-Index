@@ -1,23 +1,12 @@
 #!/usr/bin/env python3
-"""Sonda 30: tablas del Censo Agrario 2020 en la API del INE."""
-import json, urllib.request
+"""Sonda 31: Censo Agrario 2020 en INEbase (menus PC-Axis)."""
+import re, urllib.request
 H = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)"}
 def get(u, t=120):
     try: return urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=t).read().decode("utf8", "replace")
     except Exception as e: return "ERR " + str(e)
-B = "https://www.ine.es/wstempus/js/ES/"
-raw = get(B + "OPERACIONES_DISPONIBLES")
-
-if raw.startswith("ERR") or not raw.lstrip().startswith("["):
-    raise SystemExit(0)
-ops = json.loads(raw)
-for o in ops:
-    if "agr" in o.get("Nombre", "").lower(): print("OP", o.get("Id"), o.get("Codigo"), o.get("Nombre"))
-for o in ops:
-    if "agrari" in o.get("Nombre", "").lower() or "explotaci" in o.get("Nombre", "").lower():
-        oid = o["Id"]; print("== operacion", oid, o.get("Codigo"), o["Nombre"])
-        t = get(B + "TABLAS_OPERACION/%s" % oid)
-        try: tabs = json.loads(t)
-        except Exception: print(t[:300]); continue
-        print(len(tabs), "tablas")
-        for x in tabs: print(" ", x.get("Id"), "|", x.get("Nombre"), "|", x.get("Anyo_Periodo_ini"), x.get("Ultima_Modificacion"))
+for u in ["https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736176851&menu=resultados&idp=1254735727106",
+          "https://www.ine.es/jaxi/menu.do?type=pcaxis&path=%2Ft01%2Fp042&file=inebase",
+          "https://www.ine.es/jaxi/menu.do?type=pcaxis&path=%2Ft01%2Fp042%2F2020&file=inebase"]:
+    t = get(u); print("URL", u, len(t)); print(t[:200].replace("\n", " "))
+    for m in re.findall(r'href="([^"]*(?:menu\.do|Tabla\.htm|tpx)[^"]*)"[^>]*>([^<]{3,120})<', t)[:80]: print("  ", m[0][:150], "|", m[1].strip())
