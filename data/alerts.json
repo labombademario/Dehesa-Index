@@ -1,16 +1,8 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-04T21:23:57.548Z",
+  "generatedAt": "2026-11-04T23:55:25.283Z",
   "status": "informational",
   "rules": [
-    {
-      "type": "stale_data",
-      "product": "colza_fr",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "message": "Latest observation is older than the configured freshness threshold."
-    },
     {
       "type": "stale_data",
       "product": "coste_maiz_etanol_us",
