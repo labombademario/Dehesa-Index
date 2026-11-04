@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Francia por comuna (~35.000): Recensement agricole 2020 (Agreste, ministère de l'Agriculture) -> data/fr-communes/<DEP>.json + index.json
+"""Francia por comuna (~35.000): Recensement agricole 2020 (Agreste, ministère de l'Agriculture) -> data/fr-communes/<REGION>.json (13 regiones metropolitanas) + index.json
 Fuente: GeoClip «Cartostat» de Agreste (https://stats.agriculture.gouv.fr/cartostat/), la cartografia oficial del censo agrario por comuna (mismos datos que el conjunto
 «Agreste - Données COMMUNALES du recensement agricole» de data.gouv.fr, Licence Ouverte). Se pide cada indicador a GC_indic.php (vista map11 = Francia por comuna 2020); la lista
 de comunas viene de GC_refdata.php y los valores de 'distribution.values' en el mismo orden. El secreto estadistico queda como hueco (null): nunca se rellena.
 El servidor no manda la cadena de certificados completa: se anade el emisor indicado en el propio certificado (AIA) a un paquete local; la verificacion TLS nunca se desactiva.
-Controles (si fallan no se escribe nada): entre 34.000 y 36.000 comunas; para cada indicador la suma de los valores iguala el total que publica GeoClip (distribution.sumth, tolerancia 0,5 + 0,01 %)
+Se guardan las comunas con explotaciones (las demas, y las de ultramar, no). Controles (si fallan no se escribe nada): entre 34.000 y 36.000 comunas; para cada indicador la suma de los valores iguala el total que publica GeoClip (distribution.sumth, tolerancia 0,5 + 0,01 %)
 cuando es aditivo; explotaciones 2020 entre 380.000 y 430.000; SAU 2020 entre 25 y 30 millones de ha; sin negativos; los porcentajes entre 0 y 100.
 Uso: update-fr-communes.py [--out DIRECTORIO]"""
 import datetime, json, re, subprocess, sys, tempfile, time
@@ -20,6 +20,12 @@ INDS = [("nbexpl20", "nbexpl20", "n", 0), ("sau20", "sau20", "n", 0), ("pbs20", 
         ("explirrigab20", "explirrigab20", "n", 0), ("nbexplev", "nbexplev", "e", 1), ("sauev20", "sauev20", "e", 1),
         ("partprairie20", "partprairie20_", "p", 1), ("partcereoleopro20", "partcereoleopro20_", "p", 1), ("partvigne20", "partvigne20_", "p", 1),
         ("partcultperm20", "partcultperm20_", "p", 1), ("partirrig20", "partirrig20_", "p", 1), ("cexm40an20", "cexcoexm40an20_", "p", 1), ("cexp55an20", "cexcoexp55an20_", "p", 1)]
+# departamento (INSEE) -> region de Dehesa Index (13 regiones metropolitanas; ultramar 971-976 no se incluye)
+DEP_REG = {}
+for _r, _d in {"ARA": "01 03 07 15 26 38 42 43 63 69 73 74", "BFC": "21 25 39 58 70 71 89 90", "BRE": "22 29 35 56", "CVL": "18 28 36 37 41 45", "COR": "2A 2B",
+               "GES": "08 10 51 52 54 55 57 67 68 88", "HDF": "02 59 60 62 80", "IDF": "75 77 78 91 92 93 94 95", "NOR": "14 27 50 61 76",
+               "NAQ": "16 17 19 23 24 33 40 47 64 79 86 87", "OCC": "09 11 12 30 31 32 34 46 48 65 66 81 82", "PDL": "44 49 53 72 85", "PAC": "04 05 06 13 83 84"}.items():
+    for _x in _d.split(): DEP_REG[_x] = _r
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
@@ -74,10 +80,17 @@ def main():
     n = len(codes)
     log("comunas", n)
     if not (34000 <= n <= 36000) or len(names) != n: return fail("numero de comunas fuera de rango:", n)
-    cols = {}; sums = {}
+    cols = {}; sums = {}; used = []
     for k, gid, typ, dec in INDS:
         m = meta[k]
-        j = get("GC_indic.php?indic=%s&dataset=%s&view=map11&lang=fr%s" % (gid, m["c_id_dataset"], HASH))["content"]
+        if "map11" not in (m.get("c_id_view") or []):
+            log("  %-16s %-18s sin vista por comuna en GeoClip: se omite" % (k, gid))
+            if typ == "n": return fail("%s: indicador aditivo sin vista por comuna" % k)
+            continue
+        try: j = get("GC_indic.php?indic=%s&dataset=%s&view=map11&lang=fr%s" % (gid, m["c_id_dataset"], HASH))["content"]
+        except RuntimeError as e:
+            if typ == "n": return fail(str(e))
+            log("  %-16s %-18s GeoClip no lo sirve por comuna: se omite" % (k, gid)); continue
         vals = j["distribution"]["values"]
         if len(vals) != n: return fail("%s: %d valores para %d comunas" % (k, len(vals), n))
         col = []
@@ -92,27 +105,29 @@ def main():
             if isinstance(ref_sum, (int, float)) and abs(got - ref_sum) > 0.5 + 1e-4 * abs(ref_sum): return fail("%s: la suma %s no iguala el total de GeoClip %s" % (k, got, ref_sum))
             sums[k] = got
         log("  %-16s %-18s %-14s comunas con dato %6d  suma %s" % (k, gid, m["c_id_dataset"], ok, round(got, 1) if typ == "n" else "-"))
-        cols[k] = col
+        cols[k] = col; used.append(k)
     if not 380000 <= sums["nbexpl20"] <= 430000: return fail("explotaciones 2020 fuera de rango:", sums["nbexpl20"])
     if not 25e6 <= sums["sau20"] <= 30e6: return fail("SAU 2020 fuera de rango:", sums["sau20"])
-    keys = [k for k, *_ in INDS]
-    deps = {}; kept = 0
+    keys = used; ix = keys.index("nbexpl20")
+    regs = {}; kept = 0; nofarm = 0; dom = 0
     for i, c in enumerate(codes):
+        d = dep_of(c)
+        if d not in DEP_REG: dom += 1; continue
         row = [cols[k][i] for k in keys]
-        if all(x is None for x in row): continue
-        deps.setdefault(dep_of(c), {})[c] = [names[i]] + row; kept += 1
-    log("comunas con algun dato", kept, "departamentos", len(deps))
-    if not 90 <= len(deps) <= 110: return fail("departamentos fuera de rango:", len(deps))
+        if not row[ix]: nofarm += 1; continue  # sin explotaciones (0) o con el dato oculto: no aporta nada a una tabla
+        regs.setdefault(DEP_REG[d], {})[c] = [names[i]] + row; kept += 1
+    log("comunas con explotaciones", kept, "sin explotaciones u ocultas", nofarm, "ultramar (no incluidas)", dom, "regiones", len(regs))
+    if len(regs) != 13 or not 25000 <= kept <= 35000: return fail("regiones o comunas fuera de rango:", len(regs), kept)
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     out.mkdir(parents=True, exist_ok=True)
     for old in out.glob("*.json"): old.unlink()
     src = {"id": "agreste_ra", "url": "https://stats.agriculture.gouv.fr/cartostat/"}
-    for d, cm in sorted(deps.items()):
-        (out / (d + ".json")).write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "dep": d, "year": 2020, "ind": keys, "communes": cm}, ensure_ascii=False, separators=(",", ":")) + "\n")
-    idx = {"schemaVersion": 1, "generatedAt": now, "source": src, "year": 2020, "communes": kept, "ind": {k: {"id": g, "dataset": meta[k]["c_id_dataset"], "unit": meta[k].get("c_unite"), "label": meta[k].get("c_lib_indicateur_court"), "type": t} for k, g, t, _ in INDS},
-           "departments": {d: len(cm) for d, cm in sorted(deps.items())}, "totals": {k: round(v, 1) for k, v in sums.items()}}
+    for r, cm in sorted(regs.items()):
+        (out / (r + ".json")).write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "region": r, "year": 2020, "ind": keys, "communes": cm}, ensure_ascii=False, separators=(",", ":")) + "\n")
+    idx = {"schemaVersion": 1, "generatedAt": now, "source": src, "year": 2020, "communes": kept, "ind": {k: {"id": g, "dataset": meta[k]["c_id_dataset"], "unit": meta[k].get("c_unite"), "label": meta[k].get("c_lib_indicateur_court"), "type": t} for k, g, t, _ in INDS if k in cols},
+           "regions": {r: len(cm) for r, cm in sorted(regs.items())}, "totals": {k: round(v, 1) for k, v in sums.items()}}
     (out / "index.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + "\n")
-    log("escrito", len(deps), "departamentos")
+    log("escrito", len(regs), "regiones")
     logf.write_text("\n".join(LOG) + "\n"); return 0
 if __name__ == "__main__":
     sys.exit(main())
