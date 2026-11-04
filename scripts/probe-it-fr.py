@@ -7,8 +7,9 @@ def get(u):
     time.sleep(12)
     try: return urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=280).read().decode("utf8", "replace")
     except Exception as e: return "ERR " + str(e)
-for f in ["SAU_AZONE_ALL", "AGE", "LEGOWN_ALL", "IRRSIS", "SURF_IRR_CONS", "IRRSOU"]:
-    t = get(B + "data/IT1,DF_DCAT_CENSAGRIC2020_%s,1.0/A.IT?startPeriod=2020&endPeriod=2020&detail=dataonly" % f)
+for f, nd in [("SAU_AZONE_ALL", 3), ("AGE", 2), ("LEGOWN_ALL", 2), ("IRRSIS", 2), ("SURF_IRR_CONS", 1), ("IRRSOU", 2)]:
+    t = get(B + "data/IT1,DF_DCAT_CENSAGRIC2020_%s,1.0/A.IT%s?startPeriod=2020&endPeriod=2020&detail=dataonly" % (f, "." * nd))
+    if t.startswith("ERR") and "422" in t: t = get(B + "data/IT1,DF_DCAT_CENSAGRIC2020_%s,1.0/A.IT%s?startPeriod=2020&endPeriod=2020&detail=dataonly" % (f, "." * (nd + 1)))
     print("==", f, len(t), t[:100].replace("\n", " ") if t.startswith("ERR") else "")
     if t.startswith("ERR"): continue
     rd = list(csv.DictReader(io.StringIO(t))); print("   filas", len(rd), "cols", list(rd[0].keys()) if rd else "")
