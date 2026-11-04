@@ -1,0 +1,24 @@
+name: Probe IT province
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/probe-kreise-data]
+    paths: [scripts/update-it-province.py]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v6
+      - name: Ejecutar el script de provincias
+        run: python3 scripts/update-it-province.py --save-raw
+      - name: Guardar el resultado en esta rama (solo pruebas)
+        if: always()
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add -A data
+          git commit -m "Datos de prueba: provincias de Italia" || echo "sin cambios"
+          git pull --rebase -q origin research/probe-kreise-data || true
+          git push origin HEAD:research/probe-kreise-data
