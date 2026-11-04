@@ -13,11 +13,11 @@ ROOT = Path(__file__).resolve().parents[1]
 HOST = "stats.agriculture.gouv.fr"
 BASE = "https://%s/cartostat/" % HOST
 HASH = "&prodhash=285aa024"
-# (clave corta, id de GeoClip, tipo: 'n' aditivo con suma de control o 'p' porcentaje/media, decimales)
+# (clave corta, id de GeoClip, tipo: 'n' aditivo con suma de control, 'p' porcentaje/media o 'e' evolucion 2020/2010 en % (puede ser negativa), decimales)
 INDS = [("nbexpl20", "nbexpl20", "n", 0), ("sau20", "sau20", "n", 0), ("pbs20", "pbs20", "n", 0), ("ugbtot20", "ugbtot20", "n", 0), ("ugbher20", "ugbher20", "n", 0),
         ("vaclait20", "vaclait20", "n", 0), ("vacnourrices20", "vacnourrices20", "n", 0), ("brebis20", "brebis20", "n", 0), ("chevres20", "chevres20", "n", 0),
         ("porcsengr20", "nbporcsengr20", "n", 0), ("truies20", "nbtruiesreprod20", "n", 0), ("etp20", "etp20", "n", 1), ("cexcoex20", "cexcoex20", "n", 0),
-        ("explirrigab20", "explirrigab20", "n", 0), ("nbexpl10", "nbexpl10", "n", 0), ("sau10", "sau10", "n", 0),
+        ("explirrigab20", "explirrigab20", "n", 0), ("nbexplev", "nbexplev", "e", 1), ("sauev20", "sauev20", "e", 1),
         ("partprairie20", "partprairie20_", "p", 1), ("partcereoleopro20", "partcereoleopro20_", "p", 1), ("partvigne20", "partvigne20_", "p", 1),
         ("partcultperm20", "partcultperm20_", "p", 1), ("partirrig20", "partirrig20_", "p", 1), ("cexm40an20", "cexcoexm40an20_", "p", 1), ("cexp55an20", "cexcoexp55an20_", "p", 1)]
 LOG = []
@@ -82,11 +82,10 @@ def main():
         if len(vals) != n: return fail("%s: %d valores para %d comunas" % (k, len(vals), n))
         col = []
         for v in vals:
-            if isinstance(v, (int, float)) and not isinstance(v, bool) and v >= 0: col.append(round(float(v), dec) if dec else (int(round(v))))
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and v > -99998 and (typ == 'e' or v >= 0): col.append(round(float(v), dec) if dec else (int(round(v))))
             else: col.append(None)  # secreto estadistico (GeoClip lo marca con un valor negativo) o sin dato
         got = sum(x for x in col if x is not None); ok = sum(1 for x in col if x is not None)
-        neg = sorted(set(v for v in vals if isinstance(v, (int, float)) and not isinstance(v, bool) and v < 0))
-        if neg: log("  %s: valores negativos tratados como secreto: %s" % (k, neg[:5]))
+        if any(isinstance(v, (int, float)) and v <= -99998 for v in vals): log("  %s: -99999 (secreto) tratado como hueco" % k)
         if typ == "p" and any(x > 100.0001 for x in col if x is not None): return fail("%s: porcentaje mayor que 100" % k)
         if typ == "n":
             ref_sum = j["distribution"].get("sumth")
