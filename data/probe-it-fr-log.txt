@@ -1,181 +1,125 @@
-== ISTAT dataflows
-  error 0 application/xml https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1?detail=allstubs The read operation timed out
-  error 1 application/xml https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1?detail=allstubs The read operation timed out
-ok: dataflow/all/all/latest?detail=allstubs 2287513
-dataflows: 4975
-   101_1015 Crops | Coltivazioni
-   101_12 Agricoltural prices | Prezzi dei prodotti agricoli
-   101_12_DF_DCSP_PREZZIAGR_1 Agricultural purchase price index, monthly data (base 2015) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2015)
-   101_12_DF_DCSP_PREZZIAGR_10 Agricultural producer price index, monthly data (base 2020) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2020)
-   101_12_DF_DCSP_PREZZIAGR_11 Agricultural purchase price index, annual average (base 2020) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2020)
-   101_12_DF_DCSP_PREZZIAGR_12 Agricultural producer price index, annual average (base 2020) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2020
-   101_12_DF_DCSP_PREZZIAGR_2 Agricultural producer price index, monthly data (base 2015) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2015)
-   101_12_DF_DCSP_PREZZIAGR_3 Agricultural purchase price index, annual average (base 2015) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2015)
-   101_12_DF_DCSP_PREZZIAGR_4 Agricultural producer price index, annual average (base 2015) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2015
-   101_12_DF_DCSP_PREZZIAGR_5 Agricultural purchase price index, monthly data (base 2010) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2010)
-   101_12_DF_DCSP_PREZZIAGR_6 Agricultural producer price index, monthly data (base 2010) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2010)
-   101_12_DF_DCSP_PREZZIAGR_7 Agricultural purchase price index, annual average (base 2010) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2010)
-   101_12_DF_DCSP_PREZZIAGR_8 Agricultural producer price index, annual average (base 2010) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2010
-   101_12_DF_DCSP_PREZZIAGR_9 Agricultural purchase price index, monthly data (base 2020) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2020)
-   101_148 Economic results of farms | Risultati economici delle aziende agricole
-   101_148_DF_DCSP_RICAREA_1 Economic results of farms - Key data | Risultati economici delle aziende agricole - Principali dati
-   101_148_DF_DCSP_RICAREA_2 Farm average economic values by AWU class | Valori economici medi per azienda per classe di ULA
-   101_148_DF_DCSP_RICAREA_3 Farm average economic values by turnover class | Valori economici medi per azienda per classe di fatturato
-   101_148_DF_DCSP_RICAREA_4 Farm average economic values by legal form | Valori economici medi per azienda per forma giuridica
-   101_22_DF_DCSP_FITOSANITARI_3 Use by type of crop - Key data | Utilizzo per tipo di coltura - Principali dati
-   101_961 Livestock | Consistenze degli allevamenti
-   101_962 Livestock import export | Import export di bestiame
-   101_965_DF_DCSP_AGRITURISMO_1 Authorized farms | Aziende autorizzate - prov
-   102_974 Farm structure | Struttura delle aziende agricole
-   102_974_DF_DCSP_SPA_1 Farm and area by land ownership | Aziende e superfici per titolo di possesso
-   102_974_DF_DCSP_SPA_10 Farms with renevable energy | Aziende con energia rinnovabile
-   102_974_DF_DCSP_SPA_11 Farms and mechanical means | Aziende e mezzi meccanici
-   102_974_DF_DCSP_SPA_12 Farms by legal form | Aziende per forma giuridica
-   102_974_DF_DCSP_SPA_13 Farms by farm manager educational level | Aziende per titolo di studio del conduttore
-   102_974_DF_DCSP_SPA_2 Farm and area by class of agricoltural area | Aziende e superfici per classe di superficie
-   102_974_DF_DCSP_SPA_3 Farm and area by management system | Aziende e superfici per forma di conduzione
-   102_974_DF_DCSP_SPA_4 Farm with irrigable and irrigated area | Aziende a superficie irrigabile ed irrigata
-   102_974_DF_DCSP_SPA_5 Farms and agricoltural area with organic farming | Aziende e superfici per coltivazione biologiche
-   102_974_DF_DCSP_SPA_6 Farms and agricoltural area | Aziende e superfici
-   102_974_DF_DCSP_SPA_7 Farms and agricoltural area by crops | Aziende e superfici per coltivazione
-   102_974_DF_DCSP_SPA_8 Farms and livestock | Aziende e consistenze degli allevamenti
-   102_974_DF_DCSP_SPA_9 Farms with gainful activities | Aziende con attività connesse
-   104_466_DF_DCSP_FERTILIZZANTI_2 Fertilizers distribuited for use in organic farming - reg. | Fertilizzanti distribuiti per uso in agricoltura biologica - reg.
-   124_722 Local health units, hospital companies, university hospitals, general hospitals and hospitals with a scientific character profit and loss account ( thousands of
-   124_722_DF_DCAR_CONTECON_ASLAO_1 Local health units, hospital companies, university hospitals, general hospitals and hospitals with a scientific character profit and loss account (thousands of 
-   34_219 Households who  do not have enough money for selected items | Famiglie che hanno  difficoltà nel pagamento di alcune spese
-   34_220 Households for minimum income needed to make ends meet | Famiglie per reddito minimo per arrivare a fine mese senza difficoltà
-   609_1_DF_DCCV_URBANENV_15 Separate waste collection - product fractions | Raccolta differenziata - frazioni merceologiche
-   609_1_DF_DCCV_URBANENV_22 Municipal waste - collection service | Rifiuti urbani - servizio di raccolta
-   6_471_DF_DCSP_LACIS_32 Enterprise strategies and employees class | Strategie aziendali e classe di addetti
-   6_471_DF_DCSP_LACIS_33 Enterprise strategies and economic sector (Nace 2 digit) | Strategie aziendali e settori economici (Ateco 2 cifre)
-   6_471_TS_DF_DCSP_LACIS_32 Enterprise strategies and employees class | Strategie aziendali e classe di addetti
-   6_471_TS_DF_DCSP_LACIS_33 Enterprise strategies and economic sector (Nace 2 digit) | Strategie aziendali e settori economici (Ateco 2 cifre)
-   742_1106_DF_DCSI_CPI_RELAZIONI_15 Difficulties in starting relationships - Nace 2 digit, class of persons employed (2018 2022) | Difficoltà nell'attivare relazioni - Divisione Ateco (2 digit), c
-   742_1106_DF_DCSI_CPI_RELAZIONI_20 Difficulties in starting relationships - Nace 4 digit (2018 2022) | Difficoltà nell'attivare relazioni - Classe di Ateco (4 digit) (2018 2022)
-   742_1106_DF_DCSI_CPI_RELAZIONI_5 Difficulties in starting relationships - Economic sectors - prov. (2018 2022) | Difficoltà nell'attivare relazioni - Macrosettori economici - prov. (2018 2022)
-   742_1106_DF_DCSI_CPI_RELAZIONI_8 Difficulties in starting relationships - Nace sectors, class of persons employed - reg. (2018 2022) | Difficoltà nell'attivare relazioni - Sezione Ateco, classe
-   742_1145_DF_CPI_CLOUDINV_5 Business management software - Economic sectors - prov. (2018 - 2022) | Software per la gestione aziendale - Macrosettori economici - prov. (2018 - 2022)
-   742_1145_DF_CPI_CLOUDINV_6 Business management software - Nace sectors, class of persons employed - reg. (2018 - 2022) | Software per la gestione aziendale - Sezioni Ateco, classe di adde
-   742_1145_DF_CPI_CLOUDINV_7 Business management software - Nace 2 digit, class of persons employed (2018 - 2022) | Software per la gestione aziendale - Divisione di Ateco (2 digit), classe
-   742_1145_DF_CPI_CLOUDINV_8 Business management software - Nace 4 digit (2018 - 2022) | Software per la gestione aziendale - Classe di Ateco (4 digit) (2018 - 2022)
-   750_1117 Agriculture, forestry and fishing accounts in the 2014 version | Conti della branca agricoltura, silvicoltura e pesca - versione 2014
-   750_1118 Agriculture, forestry and fishing accounts in the 2011 version | Conti della branca agricoltura, silvicoltura e pesca - versione 2011
-   82_87_DF_DCCV_AVQ_FAMIGLIE_100 Difficulty in reaching some services | Difficoltà a raggiungere alcuni servizi
-   83_277 Agricoltural enterprises and persons employed | Imprese agricole e addetti
-   93_48 Agriculture, forestry and fishing accounts | Conti della branca agricoltura, silvicoltura e pesca
-   DCAT_CENSAGRIC2020_AGE_INF Farms by type of computerization and age of the manager | Aziende per tipo di informatizzazione ed età del capo azienda
-   DCAT_CENSAGRIC2020_GAIN Farms with gainful activities | Aziende con attività connesse
-   DF_BULK_CAG2000_1 Agricultural Census 2000 | Censimento agricoltura 2000
-   DF_BULK_CAG2010_DICA_ALLEVAMENTI Livestock | Consistenza degli allevamenti
-   DF_BULK_CAG2010_DICA_ALLEVAMENTIBIO Certified organic livestock | Consistenza degli allevamenti biologici certificati
-   DF_BULK_CAG2010_DICA_ALLEVAMENTIDOP PDO and/or PGI livestock | Consistenza degli allevamenti DOP e/o IGP
-   DF_BULK_CAG2010_DICA_ALLEVAMENTIUBI Livestock by agricultural unit location | Consistenza degli allevamenti per ubicazione delle unità agricole
-   DF_BULK_CAG2010_DICA_ATTIVCON Other gainful activities related to the farms | Attività remunerative connesse alle aziende
-   DF_BULK_CAG2010_DICA_ATTIVCONBIO Other gainful activities related to the organic farms | Attività remunerative connesse alle aziende biologiche
-   DF_BULK_CAG2010_DICA_CAPOAZ Farm manager | Capo azienda
-   DF_BULK_CAG2010_DICA_CAPOAZBIO Farm manager of organic farms | Capo azienda delle aziende biologiche
-   DF_BULK_CAG2010_DICA_COMMERCIALIZ Marketing of the farms | Commercializzazione delle aziende
-   DF_BULK_CAG2010_DICA_COMMERCIALIZBIO Marketing of the organic farms | Commercializzazione delle aziende biologiche
-   DF_BULK_CAG2010_DICA_CONTOTERZ Third parties work of the farms | Contoterzismo delle aziende
-   DF_BULK_CAG2010_DICA_CONTOTERZBIO Third parties work of the organic farms | Contoterzismo delle aziende biologiche
-   DF_BULK_CAG2010_DICA_CONTRICAUT Other economic items of the farms | Altre informazioni economiche delle aziende agricole
-   DF_BULK_CAG2010_DICA_CONTRICAUTBIO Other economic items of the organic farms | Altre informazioni economiche delle aziende agricole biologiche
-   DF_BULK_CAG2010_DICA_GAEZALL Animal housing | Stabulazione del bestiame
-   DF_BULK_CAG2010_DICA_GAEZALLBIO Animal housing of organic farms | Stabulazione del bestiame delle aziende biologiche
-   DF_BULK_CAG2010_DICA_GAEZEXP Solid dung and slurry esported from the farm | Letame e liquame portati fuori dall'azienda
-   DF_BULK_CAG2010_DICA_GAEZEXPBIO Solid dung and slurry esported from the organic farm | Letame e liquame portati fuori dall'azienda biologica
-   DF_BULK_CAG2010_DICA_GAEZIMPBIO Manure storage and treatment facilities of organic farms | Impianti di stoccaggio e trattamento degli effluenti zootecnici delle aziende biologiche
-   DF_BULK_CAG2010_DICA_GAEZPAS Animal grazing | Pascolo del bestiame
-   DF_BULK_CAG2010_DICA_GAEZPASBIO Animal grazing of organic farms | Pascolo del bestiame delle aziende biologiche
-   DF_BULK_CAG2010_DICA_GCSCONBIO Production methods for arable land of organic farms | Metodi di produzione dei seminativi delle aziende biologiche
-   DF_BULK_CAG2010_DICA_GCSGESBIO Production methods for permanent crops of organic farms | Metodi di produzione delle legnose agrarie delle aziende biologiche
-   DF_BULK_CAG2010_DICA_GCSZOOBIO Manure application of organic farms | Applicazione degli effluenti zootecnici delle aziende biologiche
-   DF_BULK_CAG2010_DICA_IMPENRIN Renewable energy production equipments of the farms | Impianti di produzione di energia rinnovabile delle aziende
-   DF_BULK_CAG2010_DICA_IMPENRINBIO Renewable energy production equipments of the organic farms | Impianti di produzione di energia rinnovabile delle aziende agricole biologiche
-   DF_BULK_CAG2010_DICA_IRRIGAB Farms and irrigable area | Aziende e superficie irrigabile
-   DF_BULK_CAG2010_DICA_IRRIGAB_BIO Organic farms and irrigable area | Aziende biologiche e superficie irrigabile
-   DF_BULK_CAG2010_DICA_IRRIGATFG Farms, irrigated area and volume of water used for irrigation | Aziende, superficie irrigata e volumi irrigui
-   DF_BULK_CAG2010_DICA_IRRIGATFG_BIO Organic farms, irrigated area and volume of water used for irrigation | Aziende biologiche, superficie irrigata e volumi irrigui
-   DF_BULK_CAG2010_DICA_MANODOPALTR1 Other labour force of farms | Altra manodopera aziendale
-   DF_BULK_CAG2010_DICA_MANODOPALTRBIO Other labour force of organic farms | Altra manodopera delle aziende biologiche
-   DF_BULK_CAG2010_DICA_MANODOPFAMBIO Family labour force of organic farms | Manodopera familiare delle aziende biologiche
-   DF_BULK_CAG2010_DICA_NOTAUSBIO Additional characteristics of organic farms | Altre caratteristiche delle aziende biologiche
-   DF_BULK_CAG2010_DICA_NOTAUSDOP Additional characteristics of PDO and/or PGI farms | Altre caratteristiche delle aziende DOP e/o IGP
-   DF_BULK_CAG2010_DICA_NOTGEN Farm characteristics | Caratteristiche delle aziende
-   DF_BULK_CAG2010_DICA_NOTGENBIO Characteristics of organic farms | Caratteristiche delle aziende biologiche
-   DF_BULK_CAG2010_DICA_NOTGENDOP Characteristics of PDO and/or PGI farms | Caratteristiche delle aziende DOP e/o IGP
-   DF_BULK_CAG2010_DICA_UTILTERR Land use | Utilizzazione del terreno delle aziende
-   DF_BULK_CAG2010_DICA_UTILTERRDOP Use of land for PDO and/or PGI crops | Utilizzazione del terreno per coltivazioni DOP e/o IGP
-   DF_BULK_CAG2010_DICA_UTILTERRUBI Land use by agricultural unit location | Utilizzazione del terreno per ubicazione delle unità agricole
-   DF_BULK_CEN2011_DICA_N08C Type of direct appeals for fundraising | Tipologia di contatti diretti per raccolta fondi
-   DF_BULK_CEN2011_DICA_N08CCOM Type of direct appeals for fundraising - municipal level | Tipologia di contatti diretti per raccolta fondi - dati comunali
-   DF_BULK_CEN2011_DICA_N08M Type of fundraising | Modalità raccolta fondi
-   DF_BULK_CEN2011_DICA_N08MCOM Type of fundraising - municipal level | Modalità raccolta fondi - dati comunali
-   DF_BULK_FARMSTRUCT Farm structure broken time series 2003-2007 | Struttura delle aziende agricole serie interrotte 2003-2007
-   DF_BULK_FORESTRYBR Forestry broken time series 2001-2015 | Foreste o silvicoltura serie interrotte 2001-2015
-   DF_BULK_PERMANENTC Permanent crops broken time series 2002-2017 | Coltivazioni legnose agrarie serie interrotte 2002-2017
-   DF_BULK_SUBCOM1991 Census of population and housing 1991 | Censimento della popolazione e delle abitazioni 1991
-   DF_BULK_SUBCOM2001 Census of population and housing 2001 | Censimento della popolazione e delle abitazioni 2001
-   DF_BULK_SUBCOM2011 Census of population and housing 2011 | Censimento della popolazione e delle abitazioni 2011
-   DF_CENSAGRIC2020_AGE_TRA Farms with agricultural training by age of the manager | Aziende con corsi di formazione per età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE Farms and utilized agricultural area and organic farms, by age of the manager | Aziende e superficie utilizzata e aziende biologiche, per età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE_ASS Farms by type of association and age of the manager | Aziende per tipo di associazionismo ed età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE_EDU Farms by educational level and age of the manager | Aziende per titolo di studio ed età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE_GAIN Farms with gainful activities by age of the manager | Aziende con attività connesse per età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE_GAIN_SPA2023_1 Farms with gainful activities | Aziende con attività connesse
-   DF_DCAT_CENSAGRIC2020_AGE_INV Farms by type of investment and age of the manager | Aziende per tipo di investimento ed età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE_INV_SPA2023_1 Farms with investments | Aziende con investimenti
-   DF_DCAT_CENSAGRIC2020_AGE_MANDUR Farms by management duration and age of the manager | Aziende per durata della conduzione ed età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE_MANTOV Farms by entity from which the management of the farm is taken over by age of the manager | Aziende per soggetto da cui è stata rilevata la conduzione, per età 
-   DF_DCAT_CENSAGRIC2020_AGE_MAR Farms by type of marketing channel and age of the manager | Aziende per tipo di commercializzazione ed età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE_OWN Farms and areas by ownership and age of the manager | Aziende e superifici per titolo di possesso ed età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AGE_SELF Farms by self-consumption of final production and age of the manager | Aziende per autoconsumo della produzione finale ed età del capo azienda
-   DF_DCAT_CENSAGRIC2020_AU_CATTLE_1 Agricultural units and number of heads by type of livestock and altimetric zone | Unità agricole e numero di capi per tipo di allevamento e zona altimetrica
-   DF_DCAT_CENSAGRIC2020_CATTLE_ALL Farms and herd by type of livestock | Aziende e capi per tipo di allevamento
-   DF_DCAT_CENSAGRIC2020_CATTLE_SPA2023_1 Farms and herd by type of livestock | Aziende e capi per tipo di allevamento
-   DF_DCAT_CENSAGRIC2020_CROPS_ALL Farms with utilised agricultural area by type of crops | Aziende con superficie agricola utilizzata per tipo di coltivazione
-   DF_DCAT_CENSAGRIC2020_CROPS_SPA2023_1 Farms and agricoltural area by crops | Aziende con superficie agricola utilizzata per tipo di coltivazione
-   DF_DCAT_CENSAGRIC2020_INV_ALL Farms with investments | Aziende con investimenti
-   DF_DCAT_CENSAGRIC2020_IRRCROPS_SPA2023_1 Farms and irrigated areas by crops | Aziende e superfici irrigate per tipo di coltivazione
-   DF_DCAT_CENSAGRIC2020_IRRSIS Farms and irrigated areas by irrigation system | Aziende e superfici irrigate per sistema di irrigazione
-   DF_DCAT_CENSAGRIC2020_IRRSIS_SPA2023 Farms and irrigated areas by irrigation system | Aziende e superfici irrigate per sistema di irrigazione
-   DF_DCAT_CENSAGRIC2020_IRRSOU Farms and irrigated areas by source of supply | Aziende e superfici irrigate per fonte di approvvigionamento
-   DF_DCAT_CENSAGRIC2020_IRRSOU_SPA2023_1 Farms and irrigated areas by source of supply | Aziende e superfici irrigate per fonte di approvvigionamento
-   DF_DCAT_CENSAGRIC2020_LABCAT_ALL Farms and labour days by gender and labor category | Aziende e giornate di lavoro per sesso e categoria di manodopera
-   DF_DCAT_CENSAGRIC2020_LABCAT_SPA2023_1 Farms and labour days by gender and labor category | Aziende e giornate di lavoro per sesso e categoria di manodopera
-   DF_DCAT_CENSAGRIC2020_LEGOWN_ALL Farms and areas by legal form and ownership | Aziende e superfici per forma giuridica e titolo di possesso
-   DF_DCAT_CENSAGRIC2020_LEGOWN_SPA2023_1 Farms and areas by legal form and ownership | Aziende e superfici per forma giuridica e titolo di possesso
-   DF_DCAT_CENSAGRIC2020_ORG_CATTLE_ALL Farms and herd by type of organic livestock | Aziende e capi per tipo di allevamento biologico
-   DF_DCAT_CENSAGRIC2020_ORG_CROPS Organic farms and area by organic crops | Aziende con superfice biologica per tipo di coltivazione
-   DF_DCAT_CENSAGRIC2020_QUAL_ALL Number of farm managers and working days by qualification, workforce category, gender, age of the manager | Numero e giornate di lavoro del capo azienda per tit
-   DF_DCAT_CENSAGRIC2020_QUAL_SPA2023_1 Number of farm managers and working days by qualification, workforce category, gender, age of the manager | Numero e giornate di lavoro del capo azienda per tit
-   DF_DCAT_CENSAGRIC2020_SAUAZONE_SPA2023_1 Farms by class of agricoltural area (UAA) | Aziende per classi di superfici (SAU)
-   DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL Farms by class of agricoltural area (UAA) and altimetric zone | Aziende per classi di superfici (SAU) e zona altimetrica
-   DF_DCAT_CENSAGRIC2020_SAU_SELF Farms by level of self-consumption | Aziende per quota di autoconsumo
-   DF_DCAT_CENSAGRIC2020_SAU_SELF_SPA2023_1 Farms by level of self-consumption and agricoltural areas | Aziende per quota di autoconsumo e classe di superficie
-   DF_DCAT_CENSAGRIC2020_SAU_SUBC Farms by type of subcontracting and areas class | Aziende per tipo di contoterzismo e classe di superfice
-   DF_DCAT_CENSAGRIC2020_SAU_SUBC_SPA2023_1 Farms with subcontracting and areas class | Aziende con contoterzismo e classe di superfice
-   DF_DCAT_CENSAGRIC2020_SAU_TURN Farms by source of revenue and areas class | Aziende per fonte di ricavo e classe di superfice
-   DF_DCAT_CENSAGRIC2020_SAU_TURN_1 Farms by source of revenue and areas class | Aziende per fonte di ricavo e classe di superficie
-   DF_DCAT_CENSAGRIC2020_SURF_ALL Farms and areas | Aziende agricole e superfici
-   DF_DCAT_CENSAGRIC2020_SURF_IRRCROPS Farms and irrigated areas by crops | Aziende e superfici irrigate per tipo di coltivazione
-   DF_DCAT_CENSAGRIC2020_SURF_IRR_CONS Farms and areas irrigable, irrigated, irrigation consultancy | Aziende e superfici irrigabili, irrigate, consulenza irrigua
-   DF_DCAT_CENSAGRIC2020_SURF_SPA2023_1 Farms and areas | Aziende agricole e superfici
-   DF_DCAT_CENSAGRIC2020_SURF_SPA2023_2 Farms and areas irrigable, irrigated, irrigation consultancy | Aziende e superfici irrigabili, irrigate, consulenza irrigua
-   DF_DCAT_CENSAGRIC2020_TRAI_ALL Company managers with training courses, by gender and age | Capi azienda con corsi di formazione, per sesso ed età
-   DF_DCAT_CENSAGRIC2020_TRAI_SPA2023 Company managers with training courses, by gender and age | Capi azienda con corsi di formazione, per sesso ed età
-   DF_DCAT_CENSAGRIC2020_UA_CROPS_1 Agricultural units and areas by altimetric zone | Unità agricole e superfici per zona altimentrica
-   DF_DCAT_CENSAGRIC2020_UA_CROPS_2 Agricultural units and agricoltural area by crops and altimetric zone | Unità agricole con superficie agricola utilizzata per tipo di coltivazione e zona altime
+== ISTAT estructuras
+- DF_DCAT_CENSAGRIC2020_SURF_ALL 10743216
+   dimensiones: [('FREQ', 'CL_FREQ'), ('REF_AREA', 'CL_ITTER107'), ('DATA_TYPE', 'CL_TIPO_DATO5'), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False)] tiempo: ['TIME_PERIOD']
+    FREQ CL_FREQ 8 [('A', 'annual'), ('B', 'business (not supported)'), ('D', 'daily'), ('E', 'event (not supported)'), ('H', 'half-yearly'), ('M', 'monthly'), ('Q', 'quarterly'), ('W', 'weekly')]
+    REF_AREA CL_ITTER107 12471 [('00', 'Raggruppamento a 107 province'), ('IT', 'Italy'), ('ITCDE', 'Centro-nord'), ('ITCD', 'Nord'), ('ITC', 'Nord-ovest'), ('ITC1', 'Piemonte'), ('ITC11', 'Torino'), ('ITC2', "Valle d'Aosta / Vallée d'Aoste"), ('ITC12', 'Vercelli'), ('ITC3', 'Liguria'), ('ITC15', 'Novara'), ('ITC4', 'Lombardia')]
+    DATA_TYPE CL_TIPO_DATO5 234 [('HO', 'number of farms'), ('FAL', 'farm with arable land'), ('NUMAGRIAUTH', 'number of agritouristic farms authorized'), ('HO_NO_EXZOO', 'number of farms excluding those exclusively zootechnical'), ('HO_GAIN', 'number of farms with gainful activities'), ('HO_RENENERG', 'number of farms with renevable energy'), ('HO_MECH', 'number of farms with mechanical means'), ('FARMS_THO', 'farms (thousands)'), ('HOPV', 'number of farms (percentage values)'), ('WL', 'farm with livestock'), ('WC', 'farm with crops'), ('FARMS_ORGANIC', 'farms with organic farming')]
+- DF_DCAT_CENSAGRIC2020_CROPS_ALL 10821881
+   dimensiones: [('FREQ', 'CL_FREQ'), ('REF_AREA', 'CL_ITTER107'), ('DATA_TYPE', 'CL_TIPO_DATO5'), ('TYPE_OF_CROP', 'CL_AGRI_MADRE_CENS'), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False)] tiempo: ['TIME_PERIOD']
+    FREQ CL_FREQ 8 [('A', 'annual'), ('B', 'business (not supported)'), ('D', 'daily'), ('E', 'event (not supported)'), ('H', 'half-yearly'), ('M', 'monthly'), ('Q', 'quarterly'), ('W', 'weekly')]
+    REF_AREA CL_ITTER107 12471 [('00', 'Raggruppamento a 107 province'), ('IT', 'Italy'), ('ITCDE', 'Centro-nord'), ('ITCD', 'Nord'), ('ITC', 'Nord-ovest'), ('ITC1', 'Piemonte'), ('ITC11', 'Torino'), ('ITC2', "Valle d'Aosta / Vallée d'Aoste"), ('ITC12', 'Vercelli'), ('ITC3', 'Liguria'), ('ITC15', 'Novara'), ('ITC4', 'Lombardia')]
+    DATA_TYPE CL_TIPO_DATO5 234 [('HO', 'number of farms'), ('FAL', 'farm with arable land'), ('NUMAGRIAUTH', 'number of agritouristic farms authorized'), ('HO_NO_EXZOO', 'number of farms excluding those exclusively zootechnical'), ('HO_GAIN', 'number of farms with gainful activities'), ('HO_RENENERG', 'number of farms with renevable energy'), ('HO_MECH', 'number of farms with mechanical means'), ('FARMS_THO', 'farms (thousands)'), ('HOPV', 'number of farms (percentage values)'), ('WL', 'farm with livestock'), ('WC', 'farm with crops'), ('FARMS_ORGANIC', 'farms with organic farming')]
+    TYPE_OF_CROP CL_AGRI_MADRE_CENS 113 [('ALL', 'all items'), ('ARLAND', 'arable land'), ('CEREALS', 'cereals'), ('DRPUL', 'dried pulses'), ('POTAT', 'potato'), ('BEETS', 'sugar beet'), ('FODR', 'fodder roots'), ('CROPIN', 'industrial crops'), ('VEGFR', 'fresh vegetables (including melons)'), ('FLOW', 'flowers and ornamental plants'), ('TGRA', 'temporary grass (forage land)'), ('SEEDL_SEEDS', 'seeds and seedlings')]
+- DF_DCAT_CENSAGRIC2020_CATTLE_ALL 11003958
+   dimensiones: [('FREQ', 'CL_FREQ'), ('REF_AREA', 'CL_ITTER107'), ('DATA_TYPE', 'CL_TIPO_DATO5'), ('TYPE_OF_HERD', 'CL_TIPO_ALLEVAMENTO'), ('HEADS_NUMBER', 'CL_NUMEROSITA'), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False)] tiempo: ['TIME_PERIOD']
+    FREQ CL_FREQ 8 [('A', 'annual'), ('B', 'business (not supported)'), ('D', 'daily'), ('E', 'event (not supported)'), ('H', 'half-yearly'), ('M', 'monthly'), ('Q', 'quarterly'), ('W', 'weekly')]
+    REF_AREA CL_ITTER107 12471 [('00', 'Raggruppamento a 107 province'), ('IT', 'Italy'), ('ITCDE', 'Centro-nord'), ('ITCD', 'Nord'), ('ITC', 'Nord-ovest'), ('ITC1', 'Piemonte'), ('ITC11', 'Torino'), ('ITC2', "Valle d'Aosta / Vallée d'Aoste"), ('ITC12', 'Vercelli'), ('ITC3', 'Liguria'), ('ITC15', 'Novara'), ('ITC4', 'Lombardia')]
+    DATA_TYPE CL_TIPO_DATO5 234 [('HO', 'number of farms'), ('FAL', 'farm with arable land'), ('NUMAGRIAUTH', 'number of agritouristic farms authorized'), ('HO_NO_EXZOO', 'number of farms excluding those exclusively zootechnical'), ('HO_GAIN', 'number of farms with gainful activities'), ('HO_RENENERG', 'number of farms with renevable energy'), ('HO_MECH', 'number of farms with mechanical means'), ('FARMS_THO', 'farms (thousands)'), ('HOPV', 'number of farms (percentage values)'), ('WL', 'farm with livestock'), ('WC', 'farm with crops'), ('FARMS_ORGANIC', 'farms with organic farming')]
+    TYPE_OF_HERD CL_TIPO_ALLEVAMENTO 188 [('14', 'total cattle'), ('01', 'under one year old as calves slaughtered'), ('02', 'under one year old: other males'), ('15', 'cattle imported from other countries'), ('03', 'under one year old: other females'), ('19', 'total buffaloes'), ('16', 'buffalo calves'), ('17', 'female buffaloes'), ('18', 'other buffaloes'), ('04', 'One but less than two years old: male for breeding'), ('23', 'total sheep'), ('20', 'breeding females: dairy sheep')]
+    HEADS_NUMBER CL_NUMEROSITA 193 [('N0', '0'), ('N0-0_99', '0-0.99'), ('N1', '1'), ('N0-1', '0-1'), ('N_UN1', 'until 1'), ('N1-1_99', '1-1.99'), ('N_UN1_99', 'until 1.99'), ('N2', '2'), ('N1-2', '1-2'), ('N3', '3'), ('N1-3', '1-3'), ('N2-3_99', '2-3.99')]
+- DF_DCAT_CENSAGRIC2020_LABCAT_ALL 10765759
+   dimensiones: [('FREQ', 'CL_FREQ'), ('REF_AREA', 'CL_ITTER107'), ('DATA_TYPE', 'CL_TIPO_DATO5'), ('LABOUR_FORCE_CATEG', 'CL_MANODOPERA'), ('SEX', 'CL_SEXISTAT1'), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False)] tiempo: ['TIME_PERIOD']
+    FREQ CL_FREQ 8 [('A', 'annual'), ('B', 'business (not supported)'), ('D', 'daily'), ('E', 'event (not supported)'), ('H', 'half-yearly'), ('M', 'monthly'), ('Q', 'quarterly'), ('W', 'weekly')]
+    REF_AREA CL_ITTER107 12471 [('00', 'Raggruppamento a 107 province'), ('IT', 'Italy'), ('ITCDE', 'Centro-nord'), ('ITCD', 'Nord'), ('ITC', 'Nord-ovest'), ('ITC1', 'Piemonte'), ('ITC11', 'Torino'), ('ITC2', "Valle d'Aosta / Vallée d'Aoste"), ('ITC12', 'Vercelli'), ('ITC3', 'Liguria'), ('ITC15', 'Novara'), ('ITC4', 'Lombardia')]
+    DATA_TYPE CL_TIPO_DATO5 234 [('HO', 'number of farms'), ('FAL', 'farm with arable land'), ('NUMAGRIAUTH', 'number of agritouristic farms authorized'), ('HO_NO_EXZOO', 'number of farms excluding those exclusively zootechnical'), ('HO_GAIN', 'number of farms with gainful activities'), ('HO_RENENERG', 'number of farms with renevable energy'), ('HO_MECH', 'number of farms with mechanical means'), ('FARMS_THO', 'farms (thousands)'), ('HOPV', 'number of farms (percentage values)'), ('WL', 'farm with livestock'), ('WC', 'farm with crops'), ('FARMS_ORGANIC', 'farms with organic farming')]
+    LABOUR_FORCE_CATEG CL_MANODOPERA 23 [('THLF', 'all items related to holding labour force'), ('TFLF', 'all items related to family labour force'), ('HOL', 'holder'), ('SPOWF', 'spouse of the holder working in the farm'), ('OFMWF', 'other family members  of the holder working  in the farm'), ('RH', 'relatives of the holder working in the farm'), ('OFRH', 'other family members and relatives of the holder working in the farm'), ('TFLF_NFLRE', 'all items related to family labour force and non-family labour regularly employed'), ('TFLF_RE_NRE', 'all items related to family labour force and non-family labour regularly employed or other labour employed on a non-regular basis'), ('TNFLF', 'all items related to non-family labour force'), ('NFLRE', 'non-family labour regularly employed'), ('OLERB', 'other labour employed on a non-regular basis')]
+    SEX CL_SEXISTAT1 8 [('1', 'males'), ('2', 'females'), ('3', 'n.a.'), ('9', 'total'), ('M', 'males'), ('F', 'females'), ('NRP', 'no responce'), ('T', 'total')]
+== ISTAT muestra de datos (SURF_ALL 2020)
+  error 0 CAT_CENSAGRIC2020_SURF_ALL,1.0/?startPeriod=2020&endPeriod=2020&detail=dataonly&firstNObservations=1 HTTP Error 500: Internal Server Error
+bytes 8722345
+DATAFLOW,FREQ,REF_AREA,DATA_TYPE,TIME_PERIOD,OBS_VALUE,OBS_STATUS,NOTE_DS,NOTE_ISTAT_TERR_OFFICIAL_CODE,NOTE_REF_AREA,NOTE_DATA_TYPE,NOTE_TIME_PERIOD,BASE_PER,UNIT_MEAS,UNIT_MULT
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,AA_UNUT,2020,8.67,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,AA_UNUT_FARM,2020,23,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,ART,2020,713.35,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,ARU,2020,636.07,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,FUAA,2020,61,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,HO,2020,63,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,MUSHRO_AREA,2020,0,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,MUSHRO_FARM,2020,0,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,OHT_AREA_WUN,2020,10.7,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,OHT_FARM_WUN,2020,17,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,WOODLA_AREA,2020,57.47,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,WOODLA_FARM,2020,45,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,WOODTR_AREA,2020,0.44,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,WOODTR_FARM,2020,1,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001002,AA_UNUT,2020,2.84,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001002,AA_UNUT_FARM,2020,3,,,,,,,,,
+IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001002,ART,2020,798.04,,,,,,,,,
+IT
 == GeoClip
 xlsx bytes 17960
-fallo xlsx No module named 'openpyxl'
-curl cartostat 000 curl: (60) SSL certificate problem: unable to get local issuer certificate
-More details here: https://curl.se/docs/sslcerts.html
+hoja xl/worksheets/sheet1.xml
+   RA2020, communal | Thèmes | Indicateurs et indicatrices | Libellé de l'indicateur | Lien direct vers la carte communale
+   Cadrage | #REF! | nbexpl20 | Nombre total d'exploitations agricoles en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.nbexpl20&
+   Cadrage | #REF! | pbs20 | Production brute standard (PBS) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.pbs20&t=A
+   Cadrage | #REF! | sau20 | Superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.sau20&t=A
+   pbsmoy20 | Production brute standard (PBS) moyenne en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.pbsmoy20&
+   pbsmoyev20 | Évolution de la production brute standard (PBS) moyenne entre 2020 et 2010 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.pbsmoyev2
+   sauevabs20 | Variation absolue de la SAU entre 2010 et 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.sauevabs2
+   saumoy20 | Superficie agricole utilisée (SAU) moyenne en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.saumoy20&
+   saumoydiff20 | Variation absolue de la surface agricole utile (SAU) moyenne entre 2010 et 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.saumoydif
+   Typologie Otex par commune | #REF! | otefda20 | Spécialisation territoriale de la production agricole en 2020 (OTEX en 12 postes | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=otex_2020_1.otefda20&
+   Typologie Otex par commune | #REF! | otefdd20 | Spécialisation territoriale de la production agricole en 2020 (OTEX en 17 postes | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=otex_2020_1.otefdd20&
+   Emploi - Nombre de personnes | #REF! | etp20 | ETP hors prestataires en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=empl_2020_1.etp20&t=A
+   Emploi (avec secret) | #REF! | cexcoex20 | Nombre de chefs d'exploitation et coexploitants en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=empl_2020_2.cexcoex20
+   Emploi (avec secret) | #REF! | cexcoexm40an20 | Part des chefs d'exploitation et coexploitants de moins de 40 ans en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=empl_2020_2.cexcoexm4
+   Emploi (avec secret) | #REF! | cexcoexp55an20 | Part des chefs d'exploitation et coexploitants de 55 ans ou plus en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=empl_2020_2.cexcoexp5
+   Cultures (avec secret) | #REF! | explirrigab20 | Nombre d'exploitations avec une superficie irrigable en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.explirrig
+   Cultures (avec secret) | #REF! | partirrig20 | Part de la superficie irriguée dans la superficie agricole utilisée (SAU) en 202 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.partirrig
+   Cultures (avec secret) | #REF! | partirrigab20 | Part de la superficie totale irrigable dans la surface agricole utilisée (SAU) e | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.partirrig
+   Cultures (avec secret) | #REF! | partprairieperm20 | Part des prairies permanentes dans la superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.partprair
+   Cultures (avec secret) | #REF! | partvigne20 | Part des vignes dans la superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.partvigne
+   Cultures (céréales&oléoprot + cult perm + prairies) | #REF! | partcereoleopro20 | Part des céréales et oléo-protéagineux dans la superficie agricole utilisée (SAU | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_1.partcereo
+   Cultures (céréales&oléoprot + cult perm + prairies) | #REF! | partcultperm20 | Part des cultures permanentes dans la superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_1.partcultp
+   Cultures (céréales&oléoprot + cult perm + prairies) | #REF! | partprairie20 | Part des prairies dans la superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_1.partprair
+   Elevage - UGB | #REF! | ugbher20 | Nombre d'unités gros bétail des herbivores en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_1.ugbher20&
+   Elevage - UGB | #REF! | ugbherexpl20 | Nombre moyen d'unités gros bétail des herbivores par exploitation en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_1.ugbherexp
+   Elevage - UGB | #REF! | ugbtot20 | Nombre d'unités gros bétail en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_1.ugbtot20&
+   Elevage - UGB | #REF! | ugbtotexpl20 | Nombre moyen d'unités gros bétail par exploitation en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_1.ugbtotexp
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explvaclait20 | Nombre d’exploitations avec des vaches laitières en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explvacla
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explvacnourrices20 | Nombre d’exploitations avec des vaches nourrices en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explvacno
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explbrebis20 | Nombre d’exploitations avec des brebis en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explbrebi
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explchevres20 | Nombre d’exploitations avec des chèvres en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explchevr
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explequins20 | Nombre d’exploitations avec des équins en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explequin
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explporcsengr20 | Nombre d’exploitations avec des porcs à l'engraissement en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explporcs
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | expltruiesreprod20 | Nombre d’exploitations avec des truies reproductrices en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.expltruie
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | vaclait20 | Nombre de vaches laitières en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.vaclait20
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | vacnourrices20 | Nombre de vaches nourrices en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.vacnourri
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | brebis20 | Nombre de brebis en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.brebis20&
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | chevres20 | Nombre de chèvres en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.chevres20
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbporcsengr20 | Nombre de porcs à l'engraissement en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbporcsen
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbtruiesreprod20 | Nombre de truies reproductrices en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbtruiesr
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbequins20 | Nombre d'équins en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbequins2
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbmoyvaclait20 | Nombre moyen de vaches laitières par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbmoyvacl
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbmoyvacnourrices20 | Nombre moyen de vaches nourrices par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbmoyvacn
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbmoybrebis20 | Nombre moyen de brebis par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbmoybreb
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbmoychevres20 | Nombre moyen de chèvres par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbmoychev
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | porcsengrmoy20 | Nombre moyen de porcs à l'engraissement par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.porcsengr
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | truiesreprodmoy20 | Nombre moyen de truies reproductrices par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.truiesrep
+   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | equinsmoy20 | Nombre moyen d'équins par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.equinsmoy
+   Elevage - Volaille (avec secret) | #REF! | nbcanards20 | Nombre de canards en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.nbcanards
+   Elevage - Volaille (avec secret) | #REF! | nbpoulespond20 | Nombre de poules pondeuses en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.nbpoulesp
+   Elevage - Volaille (avec secret) | #REF! | nbpouletschair20 | Nombre de poulets de chair en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.nbpoulets
+   Elevage - Volaille (avec secret) | #REF! | canardsmoy20 | Nombre moyen de canards par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.canardsmo
+   Elevage - Volaille (avec secret) | #REF! | poulespondmoy20 | Nombre moyen de poules pondeuses par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.poulespon
+   Elevage - Volaille (avec secret) | #REF! | pouletschairmoy20 | Nombre moyen de poulets de chair par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.pouletsch
+   Elevage - Volaille (avec secret) | #REF! | explcanards20 | Nombre d’exploitations avec des canards en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.explcanar
+   Elevage - Volaille (avec secret) | #REF! | explpoulespond20 | Nombre d’exploitations avec plus de 20 poules pondeuses en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.explpoule
+   Elevage - Volaille (avec secret) | #REF! | explpouletschair20 | Nombre d’exploitations avec plus de 20 poulets de chair en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.explpoule
+   Note : pour certains indicateurs libellés "(avec secret)", des communes ne prése
+   Pour en savoir plus sur le secret statistique : https://www.insee.fr/fr/informat
+   Trois indicateurs du RA2020 ne disposent pas de cartographies communales : nbexp
+   nbexplev | Évolution du nombre d'exploitations entre 2010 et 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.nbexplev&
+   pbsev20 | Évolution de la production brute standard (PBS) entre 2020 et 2010 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.pbsev20&t
+   sauev20 | Évolution de la superficie agricole utilisée (SAU) entre 2010 et 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.sauev20&t
+== GeoClip TLS
+certs recibidos 1
+        Issuer: C = GR, O = Hellenic Academic and Research Institutions CA, CN = GEANT TLS RSA 1
+        Subject: CN = stats.agriculture.gouv.fr
+                CA Issuers - URI:http://crt.harica.gr/HARICA-GEANT-TLS-R1.cer
 
-curl failed to verify the legitimacy of the server and therefore could not
-establish a secure connection to it. To learn more about this situation and
-how to fix it, plea
-cartostat html bytes 0
-
+issuer bytes 1545
+curl con cadena completada: 200 
+html bytes 4418
+�      �[k��6��� F9�ΐ�v�:�O2�8����z}|�$ёD���ng���V�z�;�ٳ�X	�PU�u� w.?�����ʙ4��սK�r��|<茪�3+���YV���uycjz1,�l:-��fj�(狪�74�dë{~.���8�ʌ�~�n����qU��i���?.�+T��jJ��w��ٙ3�dP�Yx��e�t�������-����������̛A盯f86n>�ʙ��R�U�hZ��3Z�YWg��yX�k�0�n��m3�~*�Λb>,�����\����`�,�C3*�f�ܿ�l��� ;��'㊺)��b�λ�j=]@����H�b�t��5e��\��aX��鐳V>L27OG�3�� �8+���z���	~W�'�T�]rl���,{�幡	�?�������h�+��n�!����PS�yn~6�����Nc�Vへ �'�~g�*����g�Ţ�L�s���a����N��X���{���{ )M1��A�cPœz�ߗ�γ�9���*�.əgΙ�C��� �����z1-�n;������w2dx�?5�q3!�J��#�mY��(��f�34'�pz�����U�u�͢�ne��SgY1w�)Ϙ�a֐k�����Yv�����}��=���]���?G���h��_�c�S|Z#�Ɯ�*��1�M�����q�wb G��R��;럝� <+3 aysvj�ɑv�v߽<���������ӂ}��'�3;l`��3����wX���,挗��d�4ۘ=��C��8EZ1u� �lP����C���_��w?h�B��݂kW�����f�v��i�;)�U�u��k��o��rNl٪�ϲ&�t�����=�̋��6�O˱֭� ʻ�l-mޔ��33\�*�5�����1��>7�����J�h�4l3��Ik�s���y���� �(hZ�+z-���a�v��G�;z��T�Ge�U��ZClpu����h�x۵��%���kFaB9wΐ��7s��}���V��pv�f�瓥���6�{"M'��?�<~�����zw��m]����g���n�'Y�t�����5��l~SᇡYaC=~p�Y1/f˙W��� ^d7�/0�)���Ų6?d(�󲳣2�̠�*��;:W;ZخY�- �<#��l�M��d���N}��vnS4Ss�#������D95�dpٷ�zd���̎`T�Ӳ2o�Ȫ��ٴ��T���$�!b�� 	��l1)~]"L1�!s���ј*E�j�82Uc��7Y�l�� �d
 scripts []
