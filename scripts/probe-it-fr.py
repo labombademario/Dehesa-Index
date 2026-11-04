@@ -17,7 +17,7 @@ def get(u, accept="*/*", t=290, tries=3, pause=0):
     return b""
 B = "https://esploradati.istat.it/SDMXWS/rest/"
 NS = {"s": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure", "c": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"}
-FLOWS = ["SURF_ALL", "CROPS_ALL", "CATTLE_ALL", "LABCAT_ALL", "SAU_AZONE_ALL", "LEGOWN_ALL", "AGE", "SURF_IRR_CONS", "QUAL_ALL"]
+FLOWS = {"CROPS_ALL": (2, ""), "CATTLE_ALL": (3, ".14%2B19%2B23%2B28%2B32%2B44%2B53%2B57.TOT"), "LABCAT_ALL": (3, ".THLF%2BTFLF%2BHOL%2BTNFLF.9%2BT")}
 prov = list(json.loads(Path("data/probe-it/provincias.json").read_text()))
 if not prov:
     raise SystemExit("faltan provincias")
@@ -27,17 +27,24 @@ root = ET.fromstring(b)
 for c in root.iter("{%s}Codelist" % NS["s"]):
     labels[c.get("id")] = {k.get("id"): (k.find("c:Name", NS).text if k.find("c:Name", NS) is not None else "") for k in c.findall("s:Code", NS)}
 for k in ("CL_TIPO_ALLEVAMENTO", "CL_NUMEROSITA", "CL_MANODOPERA"): (D / (k + ".json")).write_text(json.dumps(labels.get(k, {}), ensure_ascii=False))
+bb = get(B + "dataflow/IT1/DF_DCAT_CENSAGRIC2020_SURF_ALL/latest?references=all&detail=full", "application/xml", pause=12)
+rt = ET.fromstring(bb)
+for c in rt.iter("{%s}Codelist" % NS["s"]):
+    if c.get("id") == "CL_ITTER107":
+        for k in c.findall("s:Code", NS):
+            nm = k.find("c:Name", NS).text or ""
+            if re.search(r"sardegna|cagliari|sassari|nuoro|oristano|olbia|ogliastra|medio campidano|carbonia|sulcis", nm, re.I): p("  sardegna:", k.get("id"), nm)
 p("== ISTAT descarga por provincia")
-for fl in FLOWS:
+for fl, (n0, tail) in FLOWS.items():
     fid = "DF_DCAT_CENSAGRIC2020_" + fl; rows_all = []; ndim = None; t0 = time.time()
     chunks = [prov[i:i + 10] for i in range(0, len(prov) + 1, 10)] + [["IT"]]
     for ch in chunks:
         if not ch: continue
         got = None
-        for n in ([ndim] if ndim else [1, 2, 3, 4, 5, 6]):
-            u = B + "data/IT1,%s,1.0/A.%s%s?startPeriod=2020&endPeriod=2020&detail=dataonly" % (fid, "%2B".join(ch), "." * n)
+        for n in [n0]:
+            u = B + "data/IT1,%s,1.0/A.%s%s?startPeriod=2020&endPeriod=2020&detail=dataonly" % (fid, "%2B".join(ch), tail if tail else "." * n)
             try:
-                time.sleep(13)
+                time.sleep(12)
                 with urllib.request.urlopen(urllib.request.Request(u, headers=dict(UA, Accept="application/vnd.sdmx.data+csv;version=1.0.0")), timeout=290) as r: got = r.read()
                 ndim = n; break
             except Exception as e:
