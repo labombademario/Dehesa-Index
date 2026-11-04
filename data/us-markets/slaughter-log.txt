@@ -1,2 +1,2 @@
 secciones: [('Report Header', 10), ('Report Livestock Commodity', 96), ('Report Livestock Class', 24), ('Report Poultry Commodity', 24)]
-escrito slaughter.json {'cattle': 360, 'calves': 360, 'hogs': 360, 'sheep': 360, 'chicken': 360} ultimo dia 2026-11-02
+escrito slaughter.json {'cattle': 361, 'calves': 361, 'hogs': 361, 'sheep': 361, 'chicken': 361} ultimo dia 2026-11-03
