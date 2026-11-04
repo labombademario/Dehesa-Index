@@ -3792,6 +3792,24 @@ def pl_powiaty_voivodeship(doc, errs, warns, stats):
         if v.get("1633271") is not None and v.get("1633270") is not None and v["1633271"] > v["1633270"] * 1.02 + 1: errs.append("pl-powiaty %s %s: superficie agraria mayor que las tierras totales" % (doc["voivodeship"], pid)); return
     if len(seen) != 1: errs.append("pl-powiaty %s: los powiaty vienen de %d voivodias distintas" % (doc["voivodeship"], len(seen)))
     stats["pl-powiaty valores"] = stats.get("pl-powiaty valores", 0) + n
+def fr_communes_region(doc, errs, warns, stats):
+    """Censo agrario 2020 de Francia por comuna (Agreste): codigo INSEE de 5 caracteres (cifras, o 2A/2B de Corcega); cada comuna es [nombre, un valor por cada indicador de 'ind'] con la misma longitud; valores numericos no negativos o null; los porcentajes (part*) no pasan de 100; las explotaciones (nbexpl20) son al menos 1 y no pasan de 1.500 por comuna; la SAU (sau20) no pasa de 80.000 ha por comuna."""
+    ind = doc["ind"]; n = 0
+    if "nbexpl20" not in ind or "sau20" not in ind: errs.append("fr-communes %s: faltan nbexpl20 o sau20 en 'ind'" % doc["region"]); return
+    ie, isau = ind.index("nbexpl20"), ind.index("sau20")
+    for code, row in doc["communes"].items():
+        if not re.match(r"^(\d{5}|2[AB]\d{3})$", code): errs.append("fr-communes %s: codigo INSEE no valido %s" % (doc["region"], code)); return
+        if not isinstance(row, list) or len(row) != len(ind) + 1 or not isinstance(row[0], str) or not row[0]: errs.append("fr-communes %s %s: fila mal formada" % (doc["region"], code)); return
+        for k, x in zip(ind, row[1:]):
+            if x is None: continue
+            if not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0: errs.append("fr-communes %s %s %s: valor no valido %r" % (doc["region"], code, k, x)); return
+            if k.startswith("part") and x > 100.0001: errs.append("fr-communes %s %s %s: porcentaje mayor que 100" % (doc["region"], code, k)); return
+            n += 1
+        if not row[1 + ie]: errs.append("fr-communes %s %s: comuna sin explotaciones" % (doc["region"], code)); return
+        if row[1 + ie] > 1500: errs.append("fr-communes %s %s: mas de 1.500 explotaciones en una comuna" % (doc["region"], code)); return
+        if row[1 + isau] is not None and row[1 + isau] > 80000: errs.append("fr-communes %s %s: SAU mayor que 80.000 ha" % (doc["region"], code)); return
+    stats["fr-communes valores"] = stats.get("fr-communes valores", 0) + n
+
 def it_province_region(doc, errs, warns, stats):
     """Censo agrario 2020 de Italia por provincia (ISTAT): codigo de provincia de ISTAT (IT + letra + dos caracteres, o IT108-IT111); valores numericos no negativos; la superficie agraria utilizada (S.ARU) no supera la superficie total (S.ART); los cereales (C.ARU.CEREALS) no superan la superficie agraria utilizada; el ganado bovino de las vacas lecheras (H.<..>.DAYRICOWS) no supera el total bovino."""
     n = 0

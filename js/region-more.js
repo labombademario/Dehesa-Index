@@ -1004,6 +1004,47 @@
         row: function (g) { var t = itPrV(g, 'L.NUMB_LAB.THLF'), f = itPrV(g, 'L.NUMB_LAB.TFLF'), s = itPrV(g, 'S.ARU');
           return { s: t, c: [plPwF(t), t != null && s ? nf(t / s * 100, 1) : '—', plPwF(itPrV(g, 'L.NUMB_LA_SWD.THLF')), t && f != null ? nf(f / t * 100, 0) + ' %' : '—'] }; } });
     }
+    /* ---- Francia: censo agrario 2020 por comuna (Agreste, GeoClip) ---- */
+    var FRCM_NOTE = 'Solo comunas con explotaciones; las cifras ocultas por secreto estadístico salen en blanco. Los datos se asignan a la comuna donde está la sede de la explotación.|Only communes with farms; figures hidden for statistical confidentiality are left blank. Data are assigned to the commune where the farm is based.|Seules les communes ayant des exploitations ; les chiffres masqués par le secret statistique restent vides. Les données sont rattachées à la commune du siège de l’exploitation.|Solo comuni con aziende; le cifre nascoste per segreto statistico restano vuote. I dati sono assegnati al comune in cui ha sede l’azienda.';
+    function frCmNote(a) { var p = a.split('|'), q = FRCM_NOTE.split('|'); return p.map(function (t, i) { return t + ' ' + q[i]; }).join('|'); }
+    function frCmCard(x, o) {
+      return get('data/fr-communes/' + x.r + '.json').then(function (d) {
+        if (!d || !d.communes || !d.ind) return null;
+        var ix = {}; d.ind.forEach(function (k, i) { ix[k] = i + 1; });
+        var ks = Object.keys(d.communes).map(function (id) {
+          var row = d.communes[id], g = function (k) { var v = ix[k] ? row[ix[k]] : null; return v == null ? null : v; }, r = o.row(g); if (r) r.n = esc(row[0]) + ' ' + faint(id.slice(0, 2)); return r;
+        }).filter(function (r) { return r && r.s != null; });
+        if (!ks.length) return null; ks.sort(function (a, b) { return b.s - a.s; });
+        ks = ks.slice(0, 100);
+        return card(L(o.title), L(o.intro), usCountyList(ks.map(function (r) { return [r.n].concat(r.c); }), [L('Comuna|Commune|Commune|Comune')].concat(o.head.map(function (h) { return L(h); })), 440, 10, L('Las 100 primeras|Top 100|Les 100 premières|Le prime 100')), cite('agreste_ra', '2020'));
+      });
+    }
+    function frCmPct(v) { return v == null ? '—' : nf(v, 1) + ' %'; }
+    function frCmStruct(x) {
+      return frCmCard(x, { title: 'Comunas: explotaciones y superficie (2020)|Communes: farms and farmland (2020)|Communes : exploitations et surface (2020)|Comuni: aziende e superficie (2020)',
+        intro: frCmNote('Recensement agricole 2020 de Agreste por comuna. Las 100 comunas de la región con más superficie agraria utilizada (SAU); el tamaño medio es la SAU entre las explotaciones (cálculo de Dehesa Index) y la PBS es la producción bruta estándar.|Agreste Recensement agricole 2020 by commune. The 100 communes in the region with the most utilised agricultural area (UAA); average size is UAA divided by farms (Dehesa Index calculation).|Recensement agricole 2020 d’Agreste par commune. Les 100 communes de la région à plus grande surface agricole utilisée (SAU) ; la taille moyenne est la SAU divisée par les exploitations (calcul de Dehesa Index).|Recensement agricole 2020 di Agreste per comune. I 100 comuni della regione con più superficie agricola utilizzata (SAU); la dimensione media è la SAU divisa per le aziende (calcolo di Dehesa Index).'),
+        head: ['Explotaciones|Farms|Exploitations|Aziende', 'SAU (ha)|UAA (ha)|SAU (ha)|SAU (ha)', 'Tamaño medio (ha)|Average size (ha)|Taille moyenne (ha)|Dimensione media (ha)', 'PBS (miles de € estándar)|SO (thousand standard €)|PBS (milliers d’€ standard)|PS (migliaia di € standard)'],
+        row: function (g) { var f = g('nbexpl20'), s = g('sau20');
+          return { s: s, c: [plPwF(f), plPwF(s), f && s != null ? nf(s / f, 1) : '—', plPwF(g('pbs20'))] }; } });
+    }
+    function frCmLive(x) {
+      return frCmCard(x, { title: 'Comunas: ganado (2020)|Communes: livestock (2020)|Communes : élevage (2020)|Comuni: allevamento (2020)',
+        intro: frCmNote('Ganado de las explotaciones de cada comuna en el Recensement agricole 2020, en unidades de ganado mayor (UGB) y cabezas; las 100 comunas con más UGB.|Livestock on each commune’s farms in the 2020 agricultural census, in livestock units (LU) and head; the 100 communes with the most LU.|Cheptel des exploitations de chaque commune au recensement agricole 2020, en unités de gros bétail (UGB) et têtes ; les 100 communes avec le plus d’UGB.|Bestiame delle aziende di ogni comune nel censimento agricolo 2020, in unità di bovino adulto (UBA) e capi; i 100 comuni con più UBA.'),
+        head: ['UGB|LU|UGB|UBA', 'Vacas lecheras|Dairy cows|Vaches laitières|Vacche da latte', 'Vacas nodrizas|Suckler cows|Vaches nourrices|Vacche nutrici', 'Ovejas|Ewes|Brebis|Pecore', 'Cerdos de engorde|Fattening pigs|Porcs à l’engrais|Suini da ingrasso'],
+        row: function (g) { var u = g('ugbtot20'); return { s: u, c: [plPwF(u), plPwF(g('vaclait20')), plPwF(g('vacnourrices20')), plPwF(g('brebis20')), plPwF(g('porcsengr20'))] }; } });
+    }
+    function frCmCrops(x) {
+      return frCmCard(x, { title: 'Comunas: uso del suelo (2020)|Communes: land use (2020)|Communes : occupation du sol (2020)|Comuni: uso del suolo (2020)',
+        intro: frCmNote('Parte de la SAU de cada comuna dedicada a cada uso en el Recensement agricole 2020; las 100 comunas con más SAU. Agreste no publica rendimientos por comuna.|Share of each commune’s UAA in each use in the 2020 agricultural census; the 100 communes with the most UAA. Agreste does not publish yields by commune.|Part de la SAU de chaque commune par usage au recensement agricole 2020 ; les 100 communes à plus grande SAU. Agreste ne publie pas de rendements par commune.|Quota della SAU di ogni comune per uso nel censimento agricolo 2020; i 100 comuni con più SAU. Agreste non pubblica rese per comune.'),
+        head: ['SAU (ha)|UAA (ha)|SAU (ha)|SAU (ha)', 'Cereales y oleoproteaginosas|Cereals and oilseeds/protein crops|Céréales et oléoprotéagineux|Cereali e oleoproteaginose', 'Prados|Grassland|Prairies|Prati', 'Viñedo|Vineyards|Vignes|Vigneti', 'Cultivos permanentes|Permanent crops|Cultures permanentes|Colture permanenti', 'Regada|Irrigated|Irriguée|Irrigata'],
+        row: function (g) { var s = g('sau20'); return { s: s, c: [plPwF(s), frCmPct(g('partcereoleopro20')), frCmPct(g('partprairie20')), frCmPct(g('partvigne20')), frCmPct(g('partcultperm20')), frCmPct(g('partirrig20'))] }; } });
+    }
+    function frCmLabour(x) {
+      return frCmCard(x, { title: 'Comunas: mano de obra (2020)|Communes: farm labour (2020)|Communes : main-d’œuvre (2020)|Comuni: manodopera (2020)',
+        intro: frCmNote('Empleo agrario de cada comuna en el Recensement agricole 2020: equivalentes a tiempo completo (ETP), ETP por cada 100 ha de SAU (cálculo de Dehesa Index) y jefes de explotación y coexplotantes con su porcentaje menor de 40 y mayor de 55 años; las 100 comunas con más ETP.|Farm employment of each commune in the 2020 agricultural census: full-time equivalents (FTE), FTE per 100 ha of UAA (Dehesa Index calculation) and farm managers and co-managers with their under-40 and 55-and-over shares; the 100 communes with the most FTE.|Emploi agricole de chaque commune au recensement agricole 2020 : équivalents temps plein (ETP), ETP pour 100 ha de SAU (calcul de Dehesa Index) et chefs d’exploitation et coexploitants avec leurs parts de moins de 40 ans et de 55 ans ou plus ; les 100 communes avec le plus d’ETP.|Occupazione agricola di ogni comune nel censimento agricolo 2020: equivalenti a tempo pieno (ETP), ETP ogni 100 ha di SAU (calcolo di Dehesa Index) e capi azienda e coconduttori con le quote sotto i 40 e da 55 anni in su; i 100 comuni con più ETP.'),
+        head: ['ETP|FTE|ETP|ETP', 'ETP por 100 ha|FTE per 100 ha|ETP pour 100 ha|ETP ogni 100 ha', 'Jefes y coexplotantes|Managers and co-managers|Chefs et coexploitants|Capi e coconduttori', '< 40 años|Under 40|Moins de 40 ans|Sotto i 40', '≥ 55 años|55 or over|55 ans ou plus|55 e oltre'],
+        row: function (g) { var e = g('etp20'), s = g('sau20'); return { s: e, c: [plPwF(e), e != null && s ? nf(e / s * 100, 1) : '—', plPwF(g('cexcoex20')), frCmPct(g('cexm40an20')), frCmPct(g('cexp55an20'))] }; } });
+    }
     /* ---- Australia: cultivos por zona estadistica SA2 (ABS) ---- */
     var AU_B = [['Wheat', 'Trigo|Wheat|Blé|Grano'], ['Barley', 'Cebada|Barley|Orge|Orzo'], ['Canola', 'Colza (canola)|Canola|Canola|Colza (canola)'], ['Oats', 'Avena|Oats|Avoine|Avena'], ['Sorghum', 'Sorgo|Sorghum|Sorgho|Sorgo'], ['Cotton', 'Algodón|Cotton|Coton|Cotone'], ['Rice', 'Arroz|Rice|Riz|Riso'], ['Sugarcane', 'Caña de azúcar|Sugarcane|Canne à sucre|Canna da zucchero'], ['Maize', 'Maíz|Maize|Maïs|Mais'], ['Chickpeas', 'Garbanzo|Chickpeas|Pois chiches|Ceci'], ['Lupins', 'Altramuz|Lupins|Lupins|Lupini'], ['Fieldpeas', 'Guisante|Field peas|Pois protéagineux|Pisello proteico'], ['Lentils', 'Lenteja|Lentils|Lentilles|Lenticchie'], ['Fababeans', 'Haba|Faba beans|Féveroles|Fava']];
     var AU_H = [['Winegrape', 'Uva de vino (t)|Winegrapes (t)|Raisin de cuve (t)|Uva da vino (t)', 'HortWinegrape_Crush'], ['Avocados', 'Aguacate (t)|Avocados (t)|Avocats (t)|Avocado (t)', 'HortAvocados_Prod'], ['Bananas', 'Plátano (t)|Bananas (t)|Bananes (t)|Banane (t)', 'HortBananas_Prod'], ['Macadamias', 'Macadamia (t)|Macadamias (t)|Noix de macadamia (t)|Macadamia (t)', 'HortMacadamias_Prod_Inshell']];
@@ -1073,7 +1114,7 @@
         US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('usrecv', usReceipts), C('uscensus', usCensus), C('ins', usIns), C('uscins', usCountyIns), C('uscdrought', usCountyDrought), C('uscprog', usCropProg), C('clim', usClim)],
         CA: [C('mb', caMb), C('insca', caIns), C('cacensus', caCensus), C('cayields', caYields), C('candvi', caNdvi), C('clim', clim)],
         ES: [C('eslonjas', esLonjas), C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', gridClim)],
-        FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim)],
+        FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim), C('frcms', frCmStruct), C('frcml', frCmLive), C('frcmc', frCmCrops), C('frcma', frCmLabour)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('dekrs', deKrStruct), C('dekrl', deKrLive), C('dekrz', deKrSize), C('dekmy', deKmYield), C('dekmc', deKmCattle), C('dekmj', deKmJobs), C('dekmh', deKmHist), C('eudr', eudr), C('clim', deClim)],
         PL: [C('plpws', plPwStruct), C('plpwl', plPwLive), C('plpwc', plPwCrops), C('plpwa', plPwLabour), C('plgms', plGmStruct), C('plgml', plGmLive), C('plgmc', plGmCrops), C('plgma', plGmLabour)],
         NL: [C('nlcrops', nlCbs), C('clim', gridClim)],

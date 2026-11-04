@@ -2432,6 +2432,16 @@
    "pl-powiaty-index",
    []
   ],
+  "fr-communes/[A-Z][A-Z][A-Z].json": [
+   "fr-communes-region",
+   [
+    "fr_communes_region"
+   ]
+  ],
+  "fr-communes/inde[x].json": [
+   "fr-communes-index",
+   []
+  ],
   "it-province/[A-Z][A-Z][A-Z].json": [
    "it-province-region",
    [

@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T09:22:05Z",
+ "generatedAt": "2026-11-04T11:27:56Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 204,
-  "sourcesApto": 188,
+  "sources": 205,
+  "sourcesApto": 189,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 434,
-  "datasets_apto": 293,
+  "datasets": 435,
+  "datasets_apto": 294,
   "datasets_condiciones": 129,
   "datasets_parcial": 5,
   "datasets_no-apto": 3,
@@ -188,6 +188,23 @@
    "redistribution": "yes",
    "attribution": "Source : Agreste (SSP), estimations d'emploi agricole, TERUTI, IPAMPA et conjoncture viticole, sous Licence Ouverte",
    "conditions": "Citar Agreste/SSP."
+  },
+  {
+   "id": "agreste_ra",
+   "name": "France — Agreste (SSP, ministère de l'Agriculture), Recensement agricole 2020 por comuna (GeoClip Cartostat)",
+   "url": "https://stats.agriculture.gouv.fr/cartostat/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : Agreste (SSP), Recensement agricole 2020, sous Licence Ouverte",
+   "conditions": "Citar Agreste/SSP y el Recensement agricole 2020. Las cifras de una comuna se refieren a los lugares principales de producción de las explotaciones con sede en ella (aviso del propio Agreste); el secreto estadístico queda como hueco."
   },
   {
    "id": "agreste_rica",
@@ -6275,6 +6292,14 @@
    "verdict": "apto",
    "sources": [
     "meteo_france"
+   ]
+  },
+  {
+   "path": "data/fr-communes/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "agreste_ra"
    ]
   },
   {

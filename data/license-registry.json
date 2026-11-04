@@ -4869,6 +4869,32 @@
    "legalConfidenceReason": "Licencia abierta declarada por el editor en data.gouv.fr; mentions légales no leídas por completo; el boletín incluye cotizaciones de terceros.",
    "aliases": []
   },
+  "agreste_ra": {
+   "name": "France — Agreste (SSP, ministère de l'Agriculture), Recensement agricole 2020 por comuna (GeoClip Cartostat)",
+   "url": "https://stats.agriculture.gouv.fr/cartostat/",
+   "country": "FR",
+   "licenseId": "etalab-1.0",
+   "licenseName": "Licence Ouverte / Open Licence (data.gouv.fr: fr-lo)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : Agreste (SSP), Recensement agricole 2020, sous Licence Ouverte",
+   "short": "Agreste · RA 2020",
+   "additionalRestrictions": "Citar Agreste/SSP y el Recensement agricole 2020. Las cifras de una comuna se refieren a los lugares principales de producción de las explotaciones con sede en ella (aviso del propio Agreste); el secreto estadístico queda como hueco.",
+   "notes": "Los valores se leen de GeoClip, la cartografía interactiva de Agreste, que es la misma que alimenta el conjunto «Agreste - Données COMMUNALES du recensement agricole - Cartographie 2020 et Tableaux interactifs historiques» de data.gouv.fr. GeoClip no tiene API documentada: se piden los mismos indicadores que muestra el visor (GC_indic.php) con una petición por indicador y se comprueba que cada suma coincide con el total que publica el propio visor. Revisión humana pendiente: confirmar que el uso automatizado de GeoClip está dentro de las mentions légales de Agreste.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-11-04",
+   "status": "VERIFIED",
+   "confidence": "low",
+   "evidence": "La ficha de data.gouv.fr «Agreste - Données COMMUNALES du recensement agricole» (productor: ministère de l'Agriculture) declara «Licence Ouverte / Open Licence» (leída el 04-11-2026). El visor GeoClip (stats.agriculture.gouv.fr/cartostat) muestra © MAA – IGN Admin Express – Source: Agreste. No se han leído completas las mentions légales de GeoClip ni se ha comprobado que la ficha de data.gouv.fr cubra todos los indicadores que se descargan; por eso la confianza es baja.",
+   "used": true,
+   "aliases": [],
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Licencia abierta declarada por el editor en la ficha de data.gouv.fr del conjunto equivalente; el acceso técnico es por el visor GeoClip, sin API documentada ni condiciones de uso leídas."
+  },
   "agreste_more": {
    "name": "France — Agreste / SSP, empleo agrícola, TERUTI, IPAMPA y coyuntura vitivinícola",
    "url": "https://agreste.agriculture.gouv.fr/agreste-web/",
@@ -8966,6 +8992,12 @@
     "gus_poland"
    ],
    "notes": "Censo Agrario 2020 de Polonia (Powszechny Spis Rolny 2020) por powiat, del Banco de Datos Locales de GUS (nivel 5; temas P4122, P4124, P4125, P4127, P4129, P4131, P4134 y P4084; scripts/update-pl-powiaty.py). Valores definitivos tal cual; los ausentes quedan como hueco. Control: la suma de los powiaty de cada voivodía cuadra con el valor que GUS publica para la voivodía. Mismo aviso de copyright de GUS que el resto de la fuente gus_poland."
+  },
+  "data/fr-communes/": {
+   "sources": [
+    "agreste_ra"
+   ],
+   "notes": "Recensement agricole 2020 de Francia por comuna (Agreste, ministère de l'Agriculture), leído del visor GeoClip (scripts/update-fr-communes.py): explotaciones, SAU, PBS, UGB, vacas lecheras y nodrizas, ovejas, cabras, cerdos, ETP, jefes de explotación, regadío y porcentajes de uso del suelo. 13 regiones metropolitanas y solo las comunas con explotaciones; ultramar no se incluye. El secreto estadístico (valor -99999 en GeoClip) queda como hueco. Control: la suma de cada indicador aditivo iguala el total que publica el visor."
   },
   "data/it-province/": {
    "sources": [

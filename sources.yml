@@ -120,6 +120,17 @@ sources:
     data: [it-province-log.txt]
     extra: ['!data/it-province']
     message: Censo agrario 2020 de Italia por provincia - explotaciones, superficie, cultivos, ganado y mano de obra (ISTAT)
+  - id: fr-communes
+    name: Update France farm census 2020 by commune (Agreste)
+    cron: ['50 11 16 1,7 *']
+    script: scripts/update-fr-communes.py
+    timeout: 30
+    script_timeout: 25
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/fr-communes)
+    data: [fr-communes-log.txt]
+    extra: ['!data/fr-communes']
+    message: Censo agrario 2020 de Francia por comuna - explotaciones, SAU, ganado, mano de obra y cultivos (Agreste, GeoClip)
   - id: land-pl
     name: Update Poland farmland prices (GUS, BDL)
     cron: ['10 8 4 * *']

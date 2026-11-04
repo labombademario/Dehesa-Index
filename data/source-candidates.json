@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T09:37:40Z",
+ "generatedAt": "2026-11-04T11:27:55Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 234,
+  "total": 235,
   "byStatus": {
-   "ACTIVE": 204,
+   "ACTIVE": 205,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -1814,6 +1814,45 @@
    "derivatives": "yes",
    "attribution": "Source : Agreste (SSP), estimations d'emploi agricole, TERUTI, IPAMPA et conjoncture viticole, sous Licence Ouverte",
    "lastChecked": "2026-10-22",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "agreste_ra",
+   "registryId": "agreste_ra",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "France — Agreste (SSP, ministère de l'Agriculture), Recensement agricole 2020 por comuna (GeoClip Cartostat)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "etalab-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source : Agreste (SSP), Recensement agricole 2020, sous Licence Ouverte",
+   "lastChecked": "2026-11-04",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

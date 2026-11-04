@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-352 workflows (302 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+353 workflows (303 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -212,6 +212,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-fr-cereobs.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-fr-cereobs.py | france-cereobs.json | finish, validate-files |
 | update-fr-climate-departements.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fr-climate-departements.py | fr-climate-departements.json | finish, validate-files |
 | update-fr-comex.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-comex.py | france-comex-stats.json, france-comex/index.json | finish, validate-files |
+| update-fr-communes.yml | generado | mensual | gen-workflows.py, update-fr-communes.py, validate-data.py | - | finish |
 | update-fr-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | fr-ghg-agri.json | finish, validate-files |
 | update-fr-gnr.yml | generado | semanal (1,3,5) | detect-revisions.py, gen-workflows.py, update-fr-gnr.py | fr-gnr.json | finish, validate-files |
 | update-fr-infosrapides.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-fr-infosrapides.py | france-infosrapides-stats.json, france-infosrapides/index.json | finish, validate-files |

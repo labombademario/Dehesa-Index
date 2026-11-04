@@ -1,0 +1,62 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Francia: censo agrario 2020 por comuna (Agreste), un fichero por region",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "year",
+  "region",
+  "ind",
+  "communes"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "agreste_ra"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "year": {
+   "type": "integer"
+  },
+  "region": {
+   "type": "string",
+   "pattern": "^[A-Z]{3}$"
+  },
+  "ind": {
+   "type": "array",
+   "minItems": 14,
+   "items": {
+    "type": "string"
+   }
+  },
+  "communes": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}
