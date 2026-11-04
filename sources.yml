@@ -119,7 +119,7 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/it-province)
     data: [it-province-log.txt]
     extra: ['!data/it-province']
-    message: Censo agrario 2020 de Italia por provincia - explotaciones, superficie, cultivos, ganado y mano de obra (ISTAT)
+    message: Censo agrario 2020 de Italia por provincia - explotaciones, superficie, cultivos, ganado, mano de obra, zona altimétrica, edad del jefe, tenencia y regadío (ISTAT)
   - id: fr-communes
     name: Update France farm census 2020 by commune (Agreste)
     cron: ['50 11 16 1,7 *']

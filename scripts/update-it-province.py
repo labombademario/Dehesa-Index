@@ -3,7 +3,8 @@
 Fuente: ISTAT, servicio SDMX https://esploradati.istat.it/SDMXWS/rest/ (banco de datos «IstatData», censimento agricoltura). Licencia: CC BY 4.0 (ISTAT, fuente istat).
 Tablas (dataflows IT1) con el territorio a nivel de provincia (codigos NUTS 3 de ISTAT, IT + letra + cifra + cifra o letra, mas IT108-IT111 para Monza e della Brianza, Fermo, Barletta-Andria-Trani y Sud Sardegna):
   DF_DCAT_CENSAGRIC2020_SURF_ALL (S: explotaciones y superficies), DF_DCAT_CENSAGRIC2020_CROPS_ALL (C: superficie agraria utilizada y explotaciones por cultivo),
-  DF_DCAT_CENSAGRIC2020_CATTLE_ALL (H cabezas / F explotaciones por especie, solo el total de cada una) y DF_DCAT_CENSAGRIC2020_LABCAT_ALL (L: mano de obra, solo total, jefe y familiar).
+  DF_DCAT_CENSAGRIC2020_CATTLE_ALL (H cabezas / F explotaciones por especie, solo el total de cada una), DF_DCAT_CENSAGRIC2020_LABCAT_ALL (L: mano de obra, solo total, jefe y familiar),
+  SAU_AZONE_ALL (Z: zona altimetrica), AGE (G: edad del jefe), LEGOWN_ALL (T: tenencia de la tierra; F: forma juridica), IRRSIS / IRRSOU / SURF_IRR_CONS (I, W, R: regadio por sistema, origen del agua y superficie regable).
 ISTAT limita las consultas (unas 5 por minuto y IP): el script espera 12 s entre peticiones y tarda ~40 min.
 Controles (si fallan no se escribe nada): entre 100 y 110 provincias con dato; cada provincia cuelga de una region conocida; sin negativos; la suma de las provincias de cada indicador aditivo
 no supera el total nacional (IT) mas un 1 % + 5 y queda dentro de un 2 % + 5 por debajo; la superficie agraria utilizada no supera la superficie total; los cereales no superan la superficie agraria utilizada.
@@ -25,7 +26,19 @@ NEWPROV = {"IT108": "LOM", "IT109": "MAR", "IT110": "PUG", "IT111": "SAR"}
 FLOWS = [("S", "DF_DCAT_CENSAGRIC2020_SURF_ALL", 1, None, ["DATA_TYPE"]),
          ("C", "DF_DCAT_CENSAGRIC2020_CROPS_ALL", 2, None, ["DATA_TYPE", "TYPE_OF_CROP"]),
          ("H", "DF_DCAT_CENSAGRIC2020_CATTLE_ALL", 3, "..TOTCATT%2BTOTBUFF%2BTOTSH%2BTOTG%2BTOTHOR%2BTOTPIG%2BTOTPOU%2BTOTRAB%2BDAYRICOWS%2BLHE%2BBRO.TOT", ["DATA_TYPE", "TYPE_OF_HERD"]),
-         ("L", "DF_DCAT_CENSAGRIC2020_LABCAT_ALL", 3, "..THLF%2BTFLF%2BHOL.9", ["DATA_TYPE", "LABOUR_FORCE_CATEG"])]
+         ("L", "DF_DCAT_CENSAGRIC2020_LABCAT_ALL", 3, "..THLF%2BTFLF%2BHOL.9", ["DATA_TYPE", "LABOUR_FORCE_CATEG"]),
+         # zona altimetrica (montaña interior y litoral, colina interior y litoral, llanura): explotaciones con SAU y SAU, todas las clases de tamaño juntas
+         ("Z", "DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL", 3, ".FUAA%2BARU.TOT.IM%2BLM%2BIH%2BLH%2BPL", ["DATA_TYPE", "AGRI_AREA_CLASS", "ALTIMETRIC_ZONE"]),
+         # edad del jefe de explotación: hasta 40 años y 41 o más (explotaciones sin tierras comunales y SAU)
+         ("G", "DF_DCAT_CENSAGRIC2020_AGE", 2, ".HO_FM%2BARU.TOTAL%2BY_UN40%2BY_GE41", ["DATA_TYPE", "AGE"]),
+         # tenencia de la tierra: superficie total por régimen (propiedad, alquiler, uso gratuito y mezclas) de todas las formas jurídicas
+         ("T", "DF_DCAT_CENSAGRIC2020_LEGOWN_ALL", 3, ".HO%2BART.TOT.ALL%2BOO%2BOR%2BORE%2BOFU%2BOWN%2BRENT%2BFU", ["DATA_TYPE", "LEGAL_FORM", "OWN_USE_MECH_MEANS"]),
+         # forma jurídica: explotaciones y superficie total de empresarios individuales, sociedades de personas, de capitales y cooperativas
+         ("F", "DF_DCAT_CENSAGRIC2020_LEGOWN_ALL", 3, ".HO%2BART.11_X11%2B12%2B13%2B14.ALL", ["DATA_TYPE", "LEGAL_FORM", "OWN_USE_MECH_MEANS"]),
+         # regadío: superficie regada y explotaciones con regadío por sistema y por origen del agua, y superficie regable
+         ("I", "DF_DCAT_CENSAGRIC2020_IRRSIS", 2, ".IA%2BFIATED.ALL%2BASPE%2BMICR%2BSSSI%2BFLOO%2BOTSY", ["DATA_TYPE", "IRRIGATION_SYSTEM"]),
+         ("W", "DF_DCAT_CENSAGRIC2020_IRRSOU", 2, ".IA.AIRC%2BUWNH%2BSWHB%2BSWHL%2BOTWS", ["DATA_TYPE", "WATER_IRRIG_SOURCE"]),
+         ("R", "DF_DCAT_CENSAGRIC2020_SURF_IRR_CONS", 1, None, ["DATA_TYPE"])]
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
@@ -88,7 +101,7 @@ def main():
             if a == "IT": TOT[ind] = v
             elif a in terr: V.setdefault(a, {})[ind] = v
             if ind not in IND:
-                parts = r[1:-1]; names = [lab.get({"DATA_TYPE": "CL_TIPO_DATO5", "TYPE_OF_CROP": "CL_AGRI_MADRE_CENS", "TYPE_OF_HERD": "CL_TIPO_ALLEVAMENTO", "LABOUR_FORCE_CATEG": "CL_MANODOPERA"}[d], {}).get(p_, p_) for d, p_ in zip(dims, parts)]
+                parts = r[1:-1]; names = [lab.get({"DATA_TYPE": "CL_TIPO_DATO5", "TYPE_OF_CROP": "CL_AGRI_MADRE_CENS", "TYPE_OF_HERD": "CL_TIPO_ALLEVAMENTO", "LABOUR_FORCE_CATEG": "CL_MANODOPERA"}.get(d, ""), {}).get(p_, p_) for d, p_ in zip(dims, parts)]
                 IND[ind] = " | ".join(names)
     prov_ok = sorted(V); log("provincias con dato:", len(prov_ok))
     if not 100 <= len(prov_ok) <= 110: return fail("numero de provincias inesperado:", len(prov_ok))

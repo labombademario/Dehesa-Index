@@ -9009,7 +9009,7 @@
    "sources": [
     "istat"
    ],
-   "notes": "Censo General de la Agricultura 2020 de Italia (7° Censimento generale dell'agricoltura) por provincia, del servicio SDMX de ISTAT (IstatData; tablas DF_DCAT_CENSAGRIC2020_SURF_ALL, CROPS_ALL, CATTLE_ALL y LABCAT_ALL; scripts/update-it-province.py). Valores tal cual los publica ISTAT; un valor ausente queda como hueco. Se usan los codigos de provincia de ISTAT, incluidas Monza e della Brianza, Fermo, Barletta-Andria-Trani y Sud Sardegna; las cuatro provincias sardas suprimidas no tienen dato."
+   "notes": "Censo General de la Agricultura 2020 de Italia (7° Censimento generale dell'agricoltura) por provincia, del servicio SDMX de ISTAT (IstatData; tablas DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL (zona altimétrica), AGE (edad del jefe), LEGOWN_ALL (tenencia y forma jurídica), IRRSIS, IRRSOU y SURF_IRR_CONS (regadío), más SURF_ALL, CROPS_ALL, CATTLE_ALL y LABCAT_ALL; scripts/update-it-province.py). Valores tal cual los publica ISTAT; un valor ausente queda como hueco. Se usan los codigos de provincia de ISTAT, incluidas Monza e della Brianza, Fermo, Barletta-Andria-Trani y Sud Sardegna; las cuatro provincias sardas suprimidas no tienen dato."
   },
   "data/pl-gminy/": {
    "sources": [
