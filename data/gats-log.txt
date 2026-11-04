@@ -1,7 +1,6 @@
 unidades KG: 47
 socios: 67
-último mes con datos: 202608
-meses pendientes: 202607,202608
-mes 202607 listo; filas de interés 4333 ; peticiones usadas 134 ; exportaciones totales 8314 M USD
-mes 202608 listo; filas de interés 4384 ; peticiones usadas 268 ; exportaciones totales 8026 M USD
+último mes con datos: 202609
+meses pendientes: 202609
+mes 202609 listo; filas de interés 4308 ; peticiones usadas 134 ; exportaciones totales 8936 M USD
 meses en el fichero: 26 ; parada: completo
