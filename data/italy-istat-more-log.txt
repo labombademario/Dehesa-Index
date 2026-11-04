@@ -4,7 +4,7 @@ se omite it-hicp-cp01166: solo 10 puntos
 se omite it-hicp-cp01182: solo 58 puntos
 se omite it-hicp-cp01184: solo 10 puntos
 se omite it-hicp-cp01290: solo 10 puntos
-IPCA: 62 series, último 2026-09
+IPCA: 62 series, último 2026-10
 ocupados: 21 series, último 2026-Q2
 valor añadido: edición 2025M12
 valor añadido: 42 series, último 2024
