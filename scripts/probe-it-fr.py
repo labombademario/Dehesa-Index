@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sonda 16: como sirve GeoClip (Agreste, RA 2020 por comuna) sus datos."""
+"""Sonda 17: como sirve GeoClip (Agreste, RA 2020 por comuna) sus datos."""
 import re, subprocess as sp, time, urllib.request
 UA = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)"}
 OUT = []
@@ -14,18 +14,16 @@ t = sp.run("openssl x509 -in /tmp/leaf.pem -noout -text | grep -i 'CA Issuers'",
 m = re.search(r"CA Issuers - URI:(\S+)", t); open("/tmp/iss.der", "wb").write(get(m.group(1)))
 sp.run("openssl x509 -inform DER -in /tmp/iss.der -out /tmp/iss.pem; cat /etc/ssl/certs/ca-certificates.crt /tmp/iss.pem > /tmp/bundle.pem", shell=True)
 def cu(u, n=90): return sp.run(["curl", "-sS", "--compressed", "-m", str(n), "--cacert", "/tmp/bundle.pem", "-A", "Mozilla/5.0", u], capture_output=True, text=True).stdout
-import json, re
+import json
 base = "https://stats.agriculture.gouv.fr/cartostat/"
 H = "&prodhash=285aa024"
-li = json.loads(cu(base + "GC_listIndics.php?lang=fr&obs=main" + H))["content"]["indics"]
-seen = set()
-for i in li:
-    k = (i.get("c_url_data"), i.get("c_urllib_data"))
-    if k not in seen: seen.add(k); p("DATA-URL", i["c_id_dataset"], k)
-k = [i for i in li if i["c_id_indicateur"] == "nbexpl20"][0]
-p("nbexpl20", json.dumps({a: b for a, b in k.items() if a not in ("c_desc_indicateur",)}, ensure_ascii=False)[:2500])
-c = cu(base + "js/libs/gco5/gc_core.js")
-for pat in ("getServerRequestVars", "generateUrl:function", "getIndicVars"):
-    for mm in list(re.finditer(pat, c))[:3]:
-        p("--", pat, c[max(0, mm.start() - 100):mm.start() + 900].replace("\n", " "))
+def show(name, u, n=1500):
+    c = cu(base + u, 90); p("==", name, u[:160], len(c)); p(c[:n].replace("\n", " ")); return c
+c = show("indic com", "GC_indic.php?indic=nbexpl20&dataset=stru_2020_1&view=map11&lang=fr" + H, 2500)
+show("indic dep", "GC_indic.php?indic=nbexpl20&dataset=stru_2020_1&view=map13&lang=fr" + H, 1200)
+show("refdata ext", "GC_refdata.php?nivgeo=com2020&extent=extent1&lang=fr" + H, 800)
+show("refdata view", "GC_refdata.php?nivgeo=com2020&view=map11&extent=extent1&lang=fr" + H, 800)
+try:
+    j = json.loads(c); p("top keys", list(j.keys()), list(j.get("content", {}).keys())[:10])
+except Exception as e: p("no json", e)
 open("data/probe-it-fr-log.txt", "w").write("\n".join(OUT) + "\n")
