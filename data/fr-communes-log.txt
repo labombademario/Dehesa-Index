@@ -34,5 +34,8 @@ comunas 34968
   cexm40an20       cexcoexm40an20_    empl_2020_2    comunas con dato  16242  suma -
   cexp55an20: -99999 (secreto) tratado como hueco
   cexp55an20       cexcoexp55an20_    empl_2020_2    comunas con dato  22140  suma -
+  otex             otefda20           otex_2020_1    comunas con OTEX  33679
 comunas con explotaciones 33551 sin explotaciones u ocultas 1288 ultramar (no incluidas) 129 regiones 13
 escrito 13 regiones
+EPCI con explotaciones 1232 explotaciones en comunas sin EPCI 27805
+EPCI no escrito: explotaciones de los EPCI 388631 frente al total 416436
