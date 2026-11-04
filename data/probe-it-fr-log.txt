@@ -1,0 +1,37 @@
+== ISTAT dataflows
+  error 0 https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1 HTTP Error 406: Not Acceptable
+  error 1 https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1 HTTP Error 406: Not Acceptable
+  error 2 https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1 HTTP Error 406: Not Acceptable
+bytes 0
+fallo al leer dataflows Expecting value: line 1 column 1 (char 0) b''
+== data.gouv RGA 2020 commune
+dataset rga-2020-commune RGA 2020 - Commune | licencia: notspecified | org: Plateforme Open Data ZABAL | modificado: 2026-09-21T12:33:12+00:00
+   - rga-2020-commune.csv | csv | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/rga-2020-commune/exports/csv?use_labels=true
+   - rga-2020-commune.json | json | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/rga-2020-commune/exports/json
+   - rga-2020-commune.geojson | json | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/rga-2020-commune/exports/geojson
+   - rga-2020-commune.zip | zip | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/rga-2020-commune/exports/shp
+   - fts_ra2020_amikuze.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_amikuze_xlsx
+   - fts_ra2020_sud_pays_basque.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_sud_pays_basque_xlsx
+   - fts_ra2020_ca_du_pays_basque.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_ca_du_pays_basque_xlsx
+   - fts_ra2020_errobi.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_errobi_xlsx
+   - fts_ra2020_pays_de_bidache.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_pays_de_bidache_xlsx
+   - fts_ra2020_soule_xiberoa.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_soule_xiberoa_xlsx
+   - fts_ra2020_iholdi_oztibarre.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_iholdi_oztibarre_xlsx
+   - fts_ra2020_nive_adour.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_nive_adour_xlsx
+   - fts_ra2020_garazi_baigorri.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_garazi_baigorri_xlsx
+   - fts_ra2020_cote_basque_adour.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_cote_basque_adour_xlsx
+   - fts_ra2020_pays_d_hasparren.xlsx | vnd.openxmlformats-officedocument.spreadsheetml.sheet | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/fts_ra2020_pays_d_hasparren_xlsx
+   - Regle_dataviz_challenge.pdf | pdf | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/regle_dataviz_challenge_pdf
+   - DATAVIZ_Marine_Piana.pdf | pdf | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/dataviz_marine_piana_pdf
+   - L_agriculture_au_Pays_Basque_Estibaliz_Legarreta.pdf | pdf | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/l_agriculture_au_pays_basque_estibaliz_legarreta_pdf
+   - Dataviz_final.pdf | pdf | None | https://zabal-agriculture.opendata-paysbasque.fr/api/v2/catalog/datasets/rga-2020-commune/attachments/dataviz_final_pdf
+dataset 5369931da3a729239d2040d8 Agreste - Données COMMUNALES du recensement agricole - Cartographie 2020 et Tableaux interactifs historiques | licencia: fr-lo | org: Ministère de l'Agriculture, de l'agro-alimentaire et de la souveraineté alimentaire | modificado: 2025-11-06T10:20:26.934000+00:00
+   - Liste des indicateurs du RA 2020, cartographiés au niveau communal | xlsx | None | https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/GeoclipAir2020/Liste-des-indicateurs-cartographiques-du-RA2020.xlsx
+   - Toutes les statistiques par commune sous Agreste | url | None | https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/cda8b080-3e9e-4368-b41d-7a29c1da0be6!a0340cf7-e390-4990-9499-50f92e154864!342eb85c-de0f-4544-8bf5-862129a19ba6!09facbca-808a-4f4a-b5c0-bec9618b88da/search/
+   - Retrouvez les cartes du recensement agricole 2020 par commune sur GéoClip | url | None | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explporcsengr20&selcodgeo=56123&t=A02
+   - Données issues des Recensement agricoles - Tableaux | url | None | https://www.agreste.agriculture.gouv.fr/agreste-web/disaron/Recensements+agricoles/09facbca-808a-4f4a-b5c0-bec9618b88da!cda8b080-3e9e-4368-b41d-7a29c1da0be6/search/
+dataset 53699038a3a729239d20394f Agreste - Cartographie des données du recensement agricole  | licencia: fr-lo | org: Ministère de l'Agriculture, de l'agro-alimentaire et de la souveraineté alimentaire | modificado: 2025-10-03T08:37:54.062000+00:00
+   - Cartographie des données du recensement agricole  | html | None | https://stats.agriculture.gouv.fr/cartostat/
+== data.gouv busqueda RA 2020
+   684004192f9592aab088e152 | Recensement agricole 2020 par commune en Bretagne | Région Bretagne | lov2 | 2
+   5369931da3a729239d2040d8 | Agreste - Données COMMUNALES du recensement agricole - Cartographie 2020 et Tableaux inter | Ministère de l'Agriculture, de l'agro-alimentaire et de la souveraineté alimentaire | fr-lo | 4
