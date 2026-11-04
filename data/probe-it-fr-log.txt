@@ -1,125 +1,159 @@
-== ISTAT estructuras
-- DF_DCAT_CENSAGRIC2020_SURF_ALL 10743216
-   dimensiones: [('FREQ', 'CL_FREQ'), ('REF_AREA', 'CL_ITTER107'), ('DATA_TYPE', 'CL_TIPO_DATO5'), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False)] tiempo: ['TIME_PERIOD']
-    FREQ CL_FREQ 8 [('A', 'annual'), ('B', 'business (not supported)'), ('D', 'daily'), ('E', 'event (not supported)'), ('H', 'half-yearly'), ('M', 'monthly'), ('Q', 'quarterly'), ('W', 'weekly')]
-    REF_AREA CL_ITTER107 12471 [('00', 'Raggruppamento a 107 province'), ('IT', 'Italy'), ('ITCDE', 'Centro-nord'), ('ITCD', 'Nord'), ('ITC', 'Nord-ovest'), ('ITC1', 'Piemonte'), ('ITC11', 'Torino'), ('ITC2', "Valle d'Aosta / Vallée d'Aoste"), ('ITC12', 'Vercelli'), ('ITC3', 'Liguria'), ('ITC15', 'Novara'), ('ITC4', 'Lombardia')]
-    DATA_TYPE CL_TIPO_DATO5 234 [('HO', 'number of farms'), ('FAL', 'farm with arable land'), ('NUMAGRIAUTH', 'number of agritouristic farms authorized'), ('HO_NO_EXZOO', 'number of farms excluding those exclusively zootechnical'), ('HO_GAIN', 'number of farms with gainful activities'), ('HO_RENENERG', 'number of farms with renevable energy'), ('HO_MECH', 'number of farms with mechanical means'), ('FARMS_THO', 'farms (thousands)'), ('HOPV', 'number of farms (percentage values)'), ('WL', 'farm with livestock'), ('WC', 'farm with crops'), ('FARMS_ORGANIC', 'farms with organic farming')]
-- DF_DCAT_CENSAGRIC2020_CROPS_ALL 10821881
-   dimensiones: [('FREQ', 'CL_FREQ'), ('REF_AREA', 'CL_ITTER107'), ('DATA_TYPE', 'CL_TIPO_DATO5'), ('TYPE_OF_CROP', 'CL_AGRI_MADRE_CENS'), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False)] tiempo: ['TIME_PERIOD']
-    FREQ CL_FREQ 8 [('A', 'annual'), ('B', 'business (not supported)'), ('D', 'daily'), ('E', 'event (not supported)'), ('H', 'half-yearly'), ('M', 'monthly'), ('Q', 'quarterly'), ('W', 'weekly')]
-    REF_AREA CL_ITTER107 12471 [('00', 'Raggruppamento a 107 province'), ('IT', 'Italy'), ('ITCDE', 'Centro-nord'), ('ITCD', 'Nord'), ('ITC', 'Nord-ovest'), ('ITC1', 'Piemonte'), ('ITC11', 'Torino'), ('ITC2', "Valle d'Aosta / Vallée d'Aoste"), ('ITC12', 'Vercelli'), ('ITC3', 'Liguria'), ('ITC15', 'Novara'), ('ITC4', 'Lombardia')]
-    DATA_TYPE CL_TIPO_DATO5 234 [('HO', 'number of farms'), ('FAL', 'farm with arable land'), ('NUMAGRIAUTH', 'number of agritouristic farms authorized'), ('HO_NO_EXZOO', 'number of farms excluding those exclusively zootechnical'), ('HO_GAIN', 'number of farms with gainful activities'), ('HO_RENENERG', 'number of farms with renevable energy'), ('HO_MECH', 'number of farms with mechanical means'), ('FARMS_THO', 'farms (thousands)'), ('HOPV', 'number of farms (percentage values)'), ('WL', 'farm with livestock'), ('WC', 'farm with crops'), ('FARMS_ORGANIC', 'farms with organic farming')]
-    TYPE_OF_CROP CL_AGRI_MADRE_CENS 113 [('ALL', 'all items'), ('ARLAND', 'arable land'), ('CEREALS', 'cereals'), ('DRPUL', 'dried pulses'), ('POTAT', 'potato'), ('BEETS', 'sugar beet'), ('FODR', 'fodder roots'), ('CROPIN', 'industrial crops'), ('VEGFR', 'fresh vegetables (including melons)'), ('FLOW', 'flowers and ornamental plants'), ('TGRA', 'temporary grass (forage land)'), ('SEEDL_SEEDS', 'seeds and seedlings')]
-- DF_DCAT_CENSAGRIC2020_CATTLE_ALL 11003958
-   dimensiones: [('FREQ', 'CL_FREQ'), ('REF_AREA', 'CL_ITTER107'), ('DATA_TYPE', 'CL_TIPO_DATO5'), ('TYPE_OF_HERD', 'CL_TIPO_ALLEVAMENTO'), ('HEADS_NUMBER', 'CL_NUMEROSITA'), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False)] tiempo: ['TIME_PERIOD']
-    FREQ CL_FREQ 8 [('A', 'annual'), ('B', 'business (not supported)'), ('D', 'daily'), ('E', 'event (not supported)'), ('H', 'half-yearly'), ('M', 'monthly'), ('Q', 'quarterly'), ('W', 'weekly')]
-    REF_AREA CL_ITTER107 12471 [('00', 'Raggruppamento a 107 province'), ('IT', 'Italy'), ('ITCDE', 'Centro-nord'), ('ITCD', 'Nord'), ('ITC', 'Nord-ovest'), ('ITC1', 'Piemonte'), ('ITC11', 'Torino'), ('ITC2', "Valle d'Aosta / Vallée d'Aoste"), ('ITC12', 'Vercelli'), ('ITC3', 'Liguria'), ('ITC15', 'Novara'), ('ITC4', 'Lombardia')]
-    DATA_TYPE CL_TIPO_DATO5 234 [('HO', 'number of farms'), ('FAL', 'farm with arable land'), ('NUMAGRIAUTH', 'number of agritouristic farms authorized'), ('HO_NO_EXZOO', 'number of farms excluding those exclusively zootechnical'), ('HO_GAIN', 'number of farms with gainful activities'), ('HO_RENENERG', 'number of farms with renevable energy'), ('HO_MECH', 'number of farms with mechanical means'), ('FARMS_THO', 'farms (thousands)'), ('HOPV', 'number of farms (percentage values)'), ('WL', 'farm with livestock'), ('WC', 'farm with crops'), ('FARMS_ORGANIC', 'farms with organic farming')]
-    TYPE_OF_HERD CL_TIPO_ALLEVAMENTO 188 [('14', 'total cattle'), ('01', 'under one year old as calves slaughtered'), ('02', 'under one year old: other males'), ('15', 'cattle imported from other countries'), ('03', 'under one year old: other females'), ('19', 'total buffaloes'), ('16', 'buffalo calves'), ('17', 'female buffaloes'), ('18', 'other buffaloes'), ('04', 'One but less than two years old: male for breeding'), ('23', 'total sheep'), ('20', 'breeding females: dairy sheep')]
-    HEADS_NUMBER CL_NUMEROSITA 193 [('N0', '0'), ('N0-0_99', '0-0.99'), ('N1', '1'), ('N0-1', '0-1'), ('N_UN1', 'until 1'), ('N1-1_99', '1-1.99'), ('N_UN1_99', 'until 1.99'), ('N2', '2'), ('N1-2', '1-2'), ('N3', '3'), ('N1-3', '1-3'), ('N2-3_99', '2-3.99')]
-- DF_DCAT_CENSAGRIC2020_LABCAT_ALL 10765759
-   dimensiones: [('FREQ', 'CL_FREQ'), ('REF_AREA', 'CL_ITTER107'), ('DATA_TYPE', 'CL_TIPO_DATO5'), ('LABOUR_FORCE_CATEG', 'CL_MANODOPERA'), ('SEX', 'CL_SEXISTAT1'), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False), (None, False)] tiempo: ['TIME_PERIOD']
-    FREQ CL_FREQ 8 [('A', 'annual'), ('B', 'business (not supported)'), ('D', 'daily'), ('E', 'event (not supported)'), ('H', 'half-yearly'), ('M', 'monthly'), ('Q', 'quarterly'), ('W', 'weekly')]
-    REF_AREA CL_ITTER107 12471 [('00', 'Raggruppamento a 107 province'), ('IT', 'Italy'), ('ITCDE', 'Centro-nord'), ('ITCD', 'Nord'), ('ITC', 'Nord-ovest'), ('ITC1', 'Piemonte'), ('ITC11', 'Torino'), ('ITC2', "Valle d'Aosta / Vallée d'Aoste"), ('ITC12', 'Vercelli'), ('ITC3', 'Liguria'), ('ITC15', 'Novara'), ('ITC4', 'Lombardia')]
-    DATA_TYPE CL_TIPO_DATO5 234 [('HO', 'number of farms'), ('FAL', 'farm with arable land'), ('NUMAGRIAUTH', 'number of agritouristic farms authorized'), ('HO_NO_EXZOO', 'number of farms excluding those exclusively zootechnical'), ('HO_GAIN', 'number of farms with gainful activities'), ('HO_RENENERG', 'number of farms with renevable energy'), ('HO_MECH', 'number of farms with mechanical means'), ('FARMS_THO', 'farms (thousands)'), ('HOPV', 'number of farms (percentage values)'), ('WL', 'farm with livestock'), ('WC', 'farm with crops'), ('FARMS_ORGANIC', 'farms with organic farming')]
-    LABOUR_FORCE_CATEG CL_MANODOPERA 23 [('THLF', 'all items related to holding labour force'), ('TFLF', 'all items related to family labour force'), ('HOL', 'holder'), ('SPOWF', 'spouse of the holder working in the farm'), ('OFMWF', 'other family members  of the holder working  in the farm'), ('RH', 'relatives of the holder working in the farm'), ('OFRH', 'other family members and relatives of the holder working in the farm'), ('TFLF_NFLRE', 'all items related to family labour force and non-family labour regularly employed'), ('TFLF_RE_NRE', 'all items related to family labour force and non-family labour regularly employed or other labour employed on a non-regular basis'), ('TNFLF', 'all items related to non-family labour force'), ('NFLRE', 'non-family labour regularly employed'), ('OLERB', 'other labour employed on a non-regular basis')]
-    SEX CL_SEXISTAT1 8 [('1', 'males'), ('2', 'females'), ('3', 'n.a.'), ('9', 'total'), ('M', 'males'), ('F', 'females'), ('NRP', 'no responce'), ('T', 'total')]
-== ISTAT muestra de datos (SURF_ALL 2020)
-  error 0 CAT_CENSAGRIC2020_SURF_ALL,1.0/?startPeriod=2020&endPeriod=2020&detail=dataonly&firstNObservations=1 HTTP Error 500: Internal Server Error
-bytes 8722345
-DATAFLOW,FREQ,REF_AREA,DATA_TYPE,TIME_PERIOD,OBS_VALUE,OBS_STATUS,NOTE_DS,NOTE_ISTAT_TERR_OFFICIAL_CODE,NOTE_REF_AREA,NOTE_DATA_TYPE,NOTE_TIME_PERIOD,BASE_PER,UNIT_MEAS,UNIT_MULT
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,AA_UNUT,2020,8.67,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,AA_UNUT_FARM,2020,23,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,ART,2020,713.35,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,ARU,2020,636.07,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,FUAA,2020,61,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,HO,2020,63,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,MUSHRO_AREA,2020,0,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,MUSHRO_FARM,2020,0,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,OHT_AREA_WUN,2020,10.7,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,OHT_FARM_WUN,2020,17,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,WOODLA_AREA,2020,57.47,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,WOODLA_FARM,2020,45,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,WOODTR_AREA,2020,0.44,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001001,WOODTR_FARM,2020,1,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001002,AA_UNUT,2020,2.84,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001002,AA_UNUT_FARM,2020,3,,,,,,,,,
-IT1:DF_DCAT_CENSAGRIC2020_SURF_ALL(1.0),A,001002,ART,2020,798.04,,,,,,,,,
-IT
+== ISTAT codelists y provincias
+provincias: 107 ['ITC11', 'ITC12', 'ITC13', 'ITC14', 'ITC15'] ['ITG28', 'ITG29', 'ITG2A', 'ITG2B', 'ITG2C']
+== DF_DCAT_CENSAGRIC2020_SURF_ALL
+  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+bytes 0
+== DF_DCAT_CENSAGRIC2020_CROPS_ALL
+  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+bytes 0
+== DF_DCAT_CENSAGRIC2020_CATTLE_ALL
+  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+bytes 0
+== DF_DCAT_CENSAGRIC2020_LABCAT_ALL
+  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+bytes 0
+== DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL
+  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+bytes 0
+== DF_DCAT_CENSAGRIC2020_AGE_EDU
+  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+bytes 0
 == GeoClip
-xlsx bytes 17960
-hoja xl/worksheets/sheet1.xml
-   RA2020, communal | Thèmes | Indicateurs et indicatrices | Libellé de l'indicateur | Lien direct vers la carte communale
-   Cadrage | #REF! | nbexpl20 | Nombre total d'exploitations agricoles en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.nbexpl20&
-   Cadrage | #REF! | pbs20 | Production brute standard (PBS) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.pbs20&t=A
-   Cadrage | #REF! | sau20 | Superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.sau20&t=A
-   pbsmoy20 | Production brute standard (PBS) moyenne en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.pbsmoy20&
-   pbsmoyev20 | Évolution de la production brute standard (PBS) moyenne entre 2020 et 2010 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.pbsmoyev2
-   sauevabs20 | Variation absolue de la SAU entre 2010 et 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.sauevabs2
-   saumoy20 | Superficie agricole utilisée (SAU) moyenne en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.saumoy20&
-   saumoydiff20 | Variation absolue de la surface agricole utile (SAU) moyenne entre 2010 et 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.saumoydif
-   Typologie Otex par commune | #REF! | otefda20 | Spécialisation territoriale de la production agricole en 2020 (OTEX en 12 postes | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=otex_2020_1.otefda20&
-   Typologie Otex par commune | #REF! | otefdd20 | Spécialisation territoriale de la production agricole en 2020 (OTEX en 17 postes | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=otex_2020_1.otefdd20&
-   Emploi - Nombre de personnes | #REF! | etp20 | ETP hors prestataires en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=empl_2020_1.etp20&t=A
-   Emploi (avec secret) | #REF! | cexcoex20 | Nombre de chefs d'exploitation et coexploitants en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=empl_2020_2.cexcoex20
-   Emploi (avec secret) | #REF! | cexcoexm40an20 | Part des chefs d'exploitation et coexploitants de moins de 40 ans en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=empl_2020_2.cexcoexm4
-   Emploi (avec secret) | #REF! | cexcoexp55an20 | Part des chefs d'exploitation et coexploitants de 55 ans ou plus en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=empl_2020_2.cexcoexp5
-   Cultures (avec secret) | #REF! | explirrigab20 | Nombre d'exploitations avec une superficie irrigable en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.explirrig
-   Cultures (avec secret) | #REF! | partirrig20 | Part de la superficie irriguée dans la superficie agricole utilisée (SAU) en 202 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.partirrig
-   Cultures (avec secret) | #REF! | partirrigab20 | Part de la superficie totale irrigable dans la surface agricole utilisée (SAU) e | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.partirrig
-   Cultures (avec secret) | #REF! | partprairieperm20 | Part des prairies permanentes dans la superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.partprair
-   Cultures (avec secret) | #REF! | partvigne20 | Part des vignes dans la superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_2.partvigne
-   Cultures (céréales&oléoprot + cult perm + prairies) | #REF! | partcereoleopro20 | Part des céréales et oléo-protéagineux dans la superficie agricole utilisée (SAU | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_1.partcereo
-   Cultures (céréales&oléoprot + cult perm + prairies) | #REF! | partcultperm20 | Part des cultures permanentes dans la superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_1.partcultp
-   Cultures (céréales&oléoprot + cult perm + prairies) | #REF! | partprairie20 | Part des prairies dans la superficie agricole utilisée (SAU) en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=cult_2020_1.partprair
-   Elevage - UGB | #REF! | ugbher20 | Nombre d'unités gros bétail des herbivores en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_1.ugbher20&
-   Elevage - UGB | #REF! | ugbherexpl20 | Nombre moyen d'unités gros bétail des herbivores par exploitation en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_1.ugbherexp
-   Elevage - UGB | #REF! | ugbtot20 | Nombre d'unités gros bétail en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_1.ugbtot20&
-   Elevage - UGB | #REF! | ugbtotexpl20 | Nombre moyen d'unités gros bétail par exploitation en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_1.ugbtotexp
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explvaclait20 | Nombre d’exploitations avec des vaches laitières en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explvacla
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explvacnourrices20 | Nombre d’exploitations avec des vaches nourrices en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explvacno
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explbrebis20 | Nombre d’exploitations avec des brebis en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explbrebi
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explchevres20 | Nombre d’exploitations avec des chèvres en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explchevr
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explequins20 | Nombre d’exploitations avec des équins en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explequin
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | explporcsengr20 | Nombre d’exploitations avec des porcs à l'engraissement en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explporcs
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | expltruiesreprod20 | Nombre d’exploitations avec des truies reproductrices en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.expltruie
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | vaclait20 | Nombre de vaches laitières en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.vaclait20
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | vacnourrices20 | Nombre de vaches nourrices en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.vacnourri
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | brebis20 | Nombre de brebis en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.brebis20&
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | chevres20 | Nombre de chèvres en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.chevres20
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbporcsengr20 | Nombre de porcs à l'engraissement en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbporcsen
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbtruiesreprod20 | Nombre de truies reproductrices en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbtruiesr
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbequins20 | Nombre d'équins en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbequins2
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbmoyvaclait20 | Nombre moyen de vaches laitières par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbmoyvacl
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbmoyvacnourrices20 | Nombre moyen de vaches nourrices par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbmoyvacn
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbmoybrebis20 | Nombre moyen de brebis par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbmoybreb
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | nbmoychevres20 | Nombre moyen de chèvres par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.nbmoychev
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | porcsengrmoy20 | Nombre moyen de porcs à l'engraissement par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.porcsengr
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | truiesreprodmoy20 | Nombre moyen de truies reproductrices par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.truiesrep
-   Elevage - Bovins-caprins-ovins-porcins-équins (avec secret) | #REF! | equinsmoy20 | Nombre moyen d'équins par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.equinsmoy
-   Elevage - Volaille (avec secret) | #REF! | nbcanards20 | Nombre de canards en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.nbcanards
-   Elevage - Volaille (avec secret) | #REF! | nbpoulespond20 | Nombre de poules pondeuses en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.nbpoulesp
-   Elevage - Volaille (avec secret) | #REF! | nbpouletschair20 | Nombre de poulets de chair en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.nbpoulets
-   Elevage - Volaille (avec secret) | #REF! | canardsmoy20 | Nombre moyen de canards par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.canardsmo
-   Elevage - Volaille (avec secret) | #REF! | poulespondmoy20 | Nombre moyen de poules pondeuses par exploitation en ayant en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.poulespon
-   Elevage - Volaille (avec secret) | #REF! | pouletschairmoy20 | Nombre moyen de poulets de chair par exploitation en ayant, en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.pouletsch
-   Elevage - Volaille (avec secret) | #REF! | explcanards20 | Nombre d’exploitations avec des canards en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.explcanar
-   Elevage - Volaille (avec secret) | #REF! | explpoulespond20 | Nombre d’exploitations avec plus de 20 poules pondeuses en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.explpoule
-   Elevage - Volaille (avec secret) | #REF! | explpouletschair20 | Nombre d’exploitations avec plus de 20 poulets de chair en 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_3.explpoule
-   Note : pour certains indicateurs libellés "(avec secret)", des communes ne prése
-   Pour en savoir plus sur le secret statistique : https://www.insee.fr/fr/informat
-   Trois indicateurs du RA2020 ne disposent pas de cartographies communales : nbexp
-   nbexplev | Évolution du nombre d'exploitations entre 2010 et 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.nbexplev&
-   pbsev20 | Évolution de la production brute standard (PBS) entre 2020 et 2010 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.pbsev20&t
-   sauev20 | Évolution de la superficie agricole utilisée (SAU) entre 2010 et 2020 | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=stru_2020_1.sauev20&t
-== GeoClip TLS
-certs recibidos 1
-        Issuer: C = GR, O = Hellenic Academic and Research Institutions CA, CN = GEANT TLS RSA 1
-        Subject: CN = stats.agriculture.gouv.fr
-                CA Issuers - URI:http://crt.harica.gr/HARICA-GEANT-TLS-R1.cer
+html 12582
+<!DOCTYPE html>
+<html lang="fr" moznomarginboxes mozdisallowselectionprint>
+<head>
+    <base href="//stats.agriculture.gouv.fr/cartostat/">
 
-issuer bytes 1545
-curl con cadena completada: 200 
-html bytes 4418
-�      �[k��6��� F9�ΐ�v�:�O2�8����z}|�$ёD���ng���V�z�;�ٳ�X	�PU�u� w.?�����ʙ4��սK�r��|<茪�3+���YV���uycjz1,�l:-��fj�(狪�74�dë{~.���8�ʌ�~�n����qU��i���?.�+T��jJ��w��ٙ3�dP�Yx��e�t�������-����������̛A盯f86n>�ʙ��R�U�hZ��3Z�YWg��yX�k�0�n��m3�~*�Λb>,�����\����`�,�C3*�f�ܿ�l��� ;��'㊺)��b�λ�j=]@����H�b�t��5e��\��aX��鐳V>L27OG�3�� �8+���z���	~W�'�T�]rl���,{�幡	�?�������h�+��n�!����PS�yn~6�����Nc�Vへ �'�~g�*����g�Ţ�L�s���a����N��X���{���{ )M1��A�cPœz�ߗ�γ�9���*�.əgΙ�C��� �����z1-�n;������w2dx�?5�q3!�J��#�mY��(��f�34'�pz�����U�u�͢�ne��SgY1w�)Ϙ�a֐k�����Yv�����}��=���]���?G���h��_�c�S|Z#�Ɯ�*��1�M�����q�wb G��R��;럝� <+3 aysvj�ɑv�v߽<���������ӂ}��'�3;l`��3����wX���,挗��d�4ۘ=��C��8EZ1u� �lP����C���_��w?h�B��݂kW�����f�v��i�;)�U�u��k��o��rNl٪�ϲ&�t�����=�̋��6�O˱֭� ʻ�l-mޔ��33\�*�5�����1��>7�����J�h�4l3��Ik�s���y���� �(hZ�+z-���a�v��G�;z��T�Ge�U��ZClpu����h�x۵��%���kFaB9wΐ��7s��}���V��pv�f�瓥���6�{"M'��?�<~�����zw��m]����g���n�'Y�t�����5��l~SᇡYaC=~p�Y1/f˙W��� ^d7�/0�)���Ų6?d(�󲳣2�̠�*��;:W;ZخY�- �<#��l�M��d���N}��vnS4Ss�#������D95�dpٷ�zd���̎`T�Ӳ2o�Ȫ��ٴ��T���$�!b�� 	��l1)~]"L1�!s���ј*E�j�82Uc��7Y�l�� �d
-scripts []
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	
+    <script>
+
+        function hasCkConsented() {
+            return window.Cookiebot !== undefined && Cookiebot.consent && Cookiebot.consent.statistics;
+        }
+
+        function hasOptedOut() {
+            if (hasCkConsented()) return false;
+            return document.cookie.indexOf('cookie_dismissed') >= 0;
+        }
+
+        function hasMAOptedOut() {
+            return getCookie('ma_accepted') == 0;
+        }
+
+        function hasATOptedOut() {
+            return getCookie('at_accepted') == 0;
+        }
+
+        function hasNotExpressedCookiePreferenceYet() {
+            if (hasCkConsented()) return false;
+            document.cookie = "testCookie=1;path=/";
+            var testCookieSupport = document.cookie.indexOf('testCookie') != -1;
+
+            return testCookieSupport &&
+                (document.cookie.indexOf('cookie_optin') == -1 && document.cookie.indexOf('cookie_dismissed') == -1);
+        }
+
+        function getCookie(name) {
+            var value = '; ' + document.cookie;
+            var parts = value.split('; ' + name + '=');
+            return parts.length != 2 ?
+                undefined : parts.pop().split(';').shift();
+        }
+
+        function setCookie(name, value, expiryDays, domain, path) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + (expiryDays || 365));
+
+            var cookie = [
+                name + '=' + value,
+                'expires=' + exdate.toUTCString(),
+                'path=' + (path || '/'),
+                'SameSite=Strict',
+                'Secure'            ];
+
+            if (domain) {
+                cookie.push('domain=' + domain);
+            }
+            document.cookie = cookie.join(';');
+        }
+
+        function deleteCookie(name, path, domain) {
+            if (getCookie(name)) {
+                let domains = [domain];
+
+                if (domain) {
+                    // GA cookies may have a . preceding the domain
+                    domains.push('.' + domain);
+                    let dotsCount = (domain.match(/\./g) || []).length;
+                    if (dotsCount >= 2) {
+                        // two dots means there is a subdomain
+                        // need to remove cookies on both domain & subdomain
+                        domains.push(domain.split('.').slice(1).join('.'))
+                        domains.push('.' + domain.split('.').slice(1).join('.'))
+                    }
+                }
+
+                domains.forEach((_domain) => {
+                    document.cookie = name + '=' +
+                        ((path) ? ';Path=' + path : '') +
+                        ((domain) ? ';Domain=' + _domain : '') +
+                        ';expires=Thu, 01-Jan-1970 00:00:01 GMT';
+                })
+            }
+        }
+    </script>
+	    	    <meta charset="utf-8">
+
+    <meta content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1,user-scalable=no"
+          name="viewport">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>Recensement agricole 2020</title>
+    <meta name="Description" content="Explorez et visualisez sous forme de cartes, graphiques et tableaux interactifs un large &eacute;ventail de donn&eacute;es statistiques finement localis&eacute;es et mises en perspective sur longue p&eacute;riode.">
+    <meta name="application-name" content="Recensement agricole 2020">
+	        <link rel="canonical" href="//stats.agriculture.gouv.fr/cartostat/" />	
+	
+
+    <link rel="shortcut icon" href="//stats.agriculture.gouv.fr/cartostat/favicon.ico"/>
+
+    <link rel="preconnect" href="//fonts.gstatic.com/" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
+
+    <script>
+        window.GCO5 = {
+            _lang: "fr",
+            _customizedLangFiles: [""],
+            appModel: {}
+        };
+
+        var params_tmp = location.hash.substr(1).split('&'),
+            hash_params = {};
+
+        params_tmp.forEach(function (val) {
+            var splitter = val.split('=');
+            hash_params[splitter[0]] = splitter[1];
+        });
+
+        if (hash_params["lang"]) window.GCO5._lang = hash_params["lang"];
+
+        window.GCO5.initInfo = [];
+        var o = {
+            version: '5',
+            jsversion: "4.24.2",
+            autorisat
+scripts ['js/libs/require/require.js']
+  js https://stats.agriculture.gouv.fr/cartostat/js/libs/require/require.js 17695
