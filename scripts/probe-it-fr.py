@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sonda 20: como sirve GeoClip (Agreste, RA 2020 por comuna) sus datos."""
+"""Sonda 21: como sirve GeoClip (Agreste, RA 2020 por comuna) sus datos."""
 import re, subprocess as sp, time, urllib.request
 UA = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)"}
 OUT = []
@@ -18,10 +18,11 @@ import json
 base = "https://stats.agriculture.gouv.fr/cartostat/"
 H = "&prodhash=285aa024"
 j = json.loads(cu(base + "GC_indic.php?indic=nbexpl20&dataset=stru_2020_1&view=map11&lang=fr" + H, 120))
-ind = j["content"]["indic"]; p("nbVars", ind.get("nbVars"), "formule", ind.get("c_formule"), "output", ind.get("c_output"), "method", ind.get("c_method"))
-p("hdr", json.dumps(j["header"])[:500])
-for v in ("", "nbexpl20", "var1", "v1", "1", "VAR1", "nbexpl20_1", "stru_2020_1.nbexpl20", "A"):
-    c = cu(base + "GC_coldata.php?view=map11&dataset=stru_2020_1&indic=nbexpl20&vars=" + v + "&lang=fr" + H, 90)
-    p("== vars=" + v, len(c), c[:260].replace("\n", " "))
-c = cu(base + "GC_coldata.php?view=map11&dataset=stru_2020_1&indic=nbexpl20&lang=fr" + H, 90); p("== novars", len(c), c[:300].replace("\n", " "))
+cc = j["content"]
+for k, v in cc.items(): p("content", k, type(v).__name__, len(json.dumps(v)), json.dumps(v, ensure_ascii=False)[:300])
+for k, v in cc["distribution"].items():
+    if len(json.dumps(v)) > 120: p("distribution", k, type(v).__name__, len(json.dumps(v)), json.dumps(v)[:300])
+for k, v in cc["indic"].items():
+    if k == "colorPalette": p("palette", json.dumps(v)[:200])
+p("zonrefs", json.dumps(cc["zonrefs"])[:300], "options", json.dumps(cc["options"])[:500])
 open("data/probe-it-fr-log.txt", "w").write("\n".join(OUT) + "\n")
