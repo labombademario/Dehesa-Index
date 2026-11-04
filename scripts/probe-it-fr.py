@@ -17,8 +17,8 @@ def get(u, accept="*/*", t=290, tries=3, pause=0):
     return b""
 B = "https://esploradati.istat.it/SDMXWS/rest/"
 NS = {"s": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure", "c": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"}
-FLOWS = {"CROPS_ALL": (2, ""), "CATTLE_ALL": (3, ".14%2B19%2B23%2B28%2B32%2B44%2B53%2B57.TOT"), "LABCAT_ALL": (3, ".THLF%2BTFLF%2BHOL%2BTNFLF.9%2BT")}
-prov = list(json.loads(Path("data/probe-it/provincias.json").read_text()))
+FLOWS = {"CATTLE_ALL": (3, "..14%2B19%2B23%2B28%2B32%2B44%2B53%2B57.TOT", None), "LABCAT_ALL": (3, "..THLF%2BTFLF%2BHOL%2BTNFLF.9%2BT", None), "SURF_ALL": (1, "", ["IT111"]), "CROPS_ALL": (2, "", ["IT111"])}
+prov = list(json.loads(Path("data/probe-it/provincias.json").read_text())) + ["IT111"]
 if not prov:
     raise SystemExit("faltan provincias")
 labels = {}
@@ -35,9 +35,9 @@ for c in rt.iter("{%s}Codelist" % NS["s"]):
             nm = k.find("c:Name", NS).text or ""
             if re.search(r"sardegna|cagliari|sassari|nuoro|oristano|olbia|ogliastra|medio campidano|carbonia|sulcis", nm, re.I): p("  sardegna:", k.get("id"), nm)
 p("== ISTAT descarga por provincia")
-for fl, (n0, tail) in FLOWS.items():
+for fl, (n0, tail, only) in FLOWS.items():
     fid = "DF_DCAT_CENSAGRIC2020_" + fl; rows_all = []; ndim = None; t0 = time.time()
-    chunks = [prov[i:i + 10] for i in range(0, len(prov) + 1, 10)] + [["IT"]]
+    chunks = [only] if only else [prov[i:i + 10] for i in range(0, len(prov) + 1, 10)] + [["IT"]]
     for ch in chunks:
         if not ch: continue
         got = None
@@ -53,7 +53,7 @@ for fl, (n0, tail) in FLOWS.items():
         if got is None: p("  sin datos", fid, ch[0]); continue
         rows_all.append(got.decode("utf-8", "replace") if not rows_all else got.decode("utf-8", "replace").split("\n", 1)[1])
     txt = "".join(x if x.endswith("\n") else x + "\n" for x in rows_all)
-    (D / (fl + ".csv.gz")).write_bytes(gzip.compress(txt.encode()))
+    (D / (fl + ("_extra" if only else "") + ".csv.gz")).write_bytes(gzip.compress(txt.encode()))
     rows = list(csv.DictReader(io.StringIO(txt))); p("-", fl, "puntos", ndim, "filas", len(rows), "territorios", len(set(r["REF_AREA"] for r in rows)), "%d s" % (time.time() - t0))
     if rows:
         dims = [c for c in rows[0] if c not in ("DATAFLOW", "FREQ", "REF_AREA", "TIME_PERIOD", "OBS_VALUE", "OBS_STATUS", "BASE_PER", "UNIT_MEAS", "UNIT_MULT") and not c.startswith("NOTE")]
