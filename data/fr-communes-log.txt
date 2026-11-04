@@ -37,5 +37,5 @@ comunas 34968
   otex             otefda20           otex_2020_1    comunas con OTEX  33679
 comunas con explotaciones 33551 sin explotaciones u ocultas 1288 ultramar (no incluidas) 129 regiones 13
 escrito 13 regiones
-EPCI con explotaciones 1232 explotaciones en comunas sin EPCI 27805
-EPCI no escrito: explotaciones de los EPCI 388631 frente al total 416436
+EPCI con explotaciones 1232 explotaciones metropolitanas 389779 en comunas sin EPCI 1148
+EPCI escritos 1232 en 13 regiones; explotaciones 388631 de 389779
