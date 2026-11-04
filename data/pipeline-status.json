@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T21:17:00Z",
+ "generatedAt": "2026-11-04T21:23:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 335,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
   "repoGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
-  "checkedAt": "2026-11-04T21:17:00Z"
+  "checkedAt": "2026-11-04T21:23:00Z"
  },
  "pipelines": [
   {
@@ -2197,8 +2197,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41119266244"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5173,14 +5173,14 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "cancelled",
     "event": "schedule",
-    "startedAt": "2026-11-04T14:25:58Z",
-    "durationSec": 118,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41847490146"
+    "startedAt": "2026-11-04T21:16:56Z",
+    "durationSec": 216,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41914608452"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
     "failed": 0
    },
@@ -5441,14 +5441,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-11-04T19:10:09Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-11-04T20:56:00Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5465,7 +5465,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-04T20:56:00Z"
+     "lastChange": "2026-11-04T21:23:59Z"
     },
     {
      "path": "data/products"
@@ -5476,11 +5476,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-04T21:10:10Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-11-04T20:56:00Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -5504,7 +5504,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-11-04T20:56:00Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/country-pending.json",
@@ -5512,22 +5512,22 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-11-04T20:56:00Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-11-04T14:42:18Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-11-04T20:56:00Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-11-04T14:42:18Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -5535,7 +5535,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-11-04T20:56:00Z"
+     "lastChange": "2026-11-04T21:23:05Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5559,13 +5559,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-04T14:32:01Z",
-    "durationSec": 622,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41848504251"
+    "startedAt": "2026-11-04T21:16:18Z",
+    "durationSec": 415,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41914508899"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -7414,13 +7414,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-03T20:59:57Z",
-    "durationSec": 108,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41717693627"
+    "startedAt": "2026-11-04T21:20:27Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41915172754"
    },
    "recent": {
-    "runs": 9,
-    "success": 6,
+    "runs": 10,
+    "success": 7,
     "failed": 3
    },
    "status": "ok",
