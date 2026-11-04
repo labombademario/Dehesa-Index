@@ -17,7 +17,7 @@ def get(u, accept="*/*", t=290, tries=3, pause=0):
     return b""
 B = "https://esploradati.istat.it/SDMXWS/rest/"
 NS = {"s": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure", "c": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"}
-FLOWS = ["DF_DCAT_CENSAGRIC2020_SURF_ALL", "DF_DCAT_CENSAGRIC2020_CROPS_ALL", "DF_DCAT_CENSAGRIC2020_CATTLE_ALL", "DF_DCAT_CENSAGRIC2020_LABCAT_ALL", "DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL", "DF_DCAT_CENSAGRIC2020_AGE_EDU"]
+FLOWS = ["DF_DCAT_CENSAGRIC2020_SURF_ALL", "DF_DCAT_CENSAGRIC2020_CROPS_ALL"]
 p("== ISTAT codelists y provincias")
 b = get(B + "dataflow/IT1/DF_DCAT_CENSAGRIC2020_CROPS_ALL/latest?references=all&detail=full", "application/xml", pause=5)
 root = ET.fromstring(b); labels = {}; terr = {}
@@ -30,13 +30,16 @@ for k in ("CL_TIPO_DATO5", "CL_AGRI_MADRE_CENS"): (D / (k + ".json")).write_text
 for fid in FLOWS:
     p("==", fid)
     b = b""
-    for n in range(2, 8):
-        u = B + "data/IT1,%s,1.0/A.%s%s?startPeriod=2020&endPeriod=2020&detail=dataonly" % (fid, "+".join(prov + ["IT"]), "." * n)
+    ndim = {"DF_DCAT_CENSAGRIC2020_SURF_ALL": 3, "DF_DCAT_CENSAGRIC2020_CROPS_ALL": 4, "DF_DCAT_CENSAGRIC2020_CATTLE_ALL": 5, "DF_DCAT_CENSAGRIC2020_LABCAT_ALL": 5}.get(fid, 4)
+    for areas in ("%2B".join(prov[:10]), "+".join(prov[:10]), prov[0]):
+        u = B + "data/IT1,%s,1.0/A.%s%s?startPeriod=2020&endPeriod=2020&detail=dataonly" % (fid, areas, "." * (ndim - 2))
         try:
             time.sleep(14)
             with urllib.request.urlopen(urllib.request.Request(u, headers=dict(UA, Accept="application/vnd.sdmx.data+csv;version=1.0.0")), timeout=290) as r: b = r.read()
-            p("clave con", n, "puntos"); break
-        except Exception as e: p("  intento", n, str(e)[:80])
+            p("clave valida:", u[-140:], len(b)); break
+        except Exception as e:
+            body = e.read()[:300] if hasattr(e, "read") else b""
+            p("  falla", u[-120:], str(e)[:60], body)
     p("bytes", len(b))
     if not b: continue
     (D / (fid + ".csv.gz")).write_bytes(gzip.compress(b))
@@ -47,18 +50,13 @@ for fid in FLOWS:
         vals = sorted(set(r[d] for r in rows)); p("  ", d, len(vals), vals[:30])
     for r in rows[:8]: p("  ", r["REF_AREA"], [r[d] for d in dims], r["OBS_VALUE"], r["OBS_STATUS"])
     areas = sorted(set(r["REF_AREA"] for r in rows)); p("territorios con dato:", len(areas))
-p("== data.gouv ministerio RA 2020")
-seen = set()
-for q in ("recensement agricole 2020 ra", "RA 2020 exploitations commune", "recensement agricole 2020 communes statistiques"):
-    b = get("https://www.data.gouv.fr/api/1/datasets/?q=%s&page_size=60" % q.replace(" ", "+"), "application/json", t=60)
+p("== data.gouv slugs ra-")
+for slug in ("ra-orientation-technico-economique-des-exploitations-ensemble-des-exploitations", "ra-statut-juridique-des-exploitations-petites-grandes-exploitations", "ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitations"):
+    b = get("https://www.data.gouv.fr/api/1/datasets/%s/" % slug, "application/json", t=60)
     try:
-        for d in json.loads(b).get("data", []):
-            if d["id"] in seen: continue
-            seen.add(d["id"]); org = (d.get("organization") or {}).get("name", "")
-            p("  ", d["slug"][:80], "|", org[:40], "|", d.get("license"), "|", d.get("last_modified", "")[:10], "|", len(d.get("resources", [])))
-            if "griculture" in org or d["slug"].startswith("ra-"):
-                for r in d.get("resources", [])[:8]: p("       -", (r.get("title") or "")[:70], "|", r.get("format"), "|", r.get("filesize"), "|", (r.get("url") or "")[:140])
-    except Exception as e: p("fallo", e)
+        d = json.loads(b); p("dataset", slug[:70], "|", (d.get("organization") or {}).get("name"), "|", d.get("license"), "|", d.get("last_modified", "")[:10], "|", d.get("description", "")[:300].replace("\n", " "))
+        for r in d.get("resources", [])[:12]: p("   -", (r.get("title") or "")[:80], "|", r.get("format"), "|", r.get("filesize"), "|", (r.get("url") or "")[:150])
+    except Exception as e: p("fallo", slug, e)
 p("== GeoClip")
 r = sp.run("echo | openssl s_client -connect stats.agriculture.gouv.fr:443 -servername stats.agriculture.gouv.fr -showcerts 2>/dev/null", shell=True, capture_output=True, text=True)
 certs = re.findall(r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", r.stdout, re.S); open("/tmp/leaf.pem", "w").write(certs[0])
@@ -66,10 +64,6 @@ t = sp.run("openssl x509 -in /tmp/leaf.pem -noout -text | grep -i 'CA Issuers'",
 m = re.search(r"CA Issuers - URI:(\S+)", t); open("/tmp/iss.der", "wb").write(get(m.group(1), t=60))
 sp.run("openssl x509 -inform DER -in /tmp/iss.der -out /tmp/iss.pem; cat /etc/ssl/certs/ca-certificates.crt /tmp/iss.pem > /tmp/bundle.pem", shell=True)
 def cu(u, n=60): return sp.run(["curl", "-sS", "--compressed", "-m", str(n), "--cacert", "/tmp/bundle.pem", "-A", "Mozilla/5.0", u], capture_output=True, text=True).stdout
-h = cu("https://stats.agriculture.gouv.fr/cartostat/"); p("html", len(h)); p(h[4500:12600])
-js = sorted(set(re.findall(r'(?:src|href)=["\']([^"\']+\.(?:js|json)[^"\']*)["\']', h))); p("scripts", js)
-for s in js[:10]:
-    u = s if s.startswith("http") else "https://stats.agriculture.gouv.fr" + (s if s.startswith("/") else "/cartostat/" + s)
-    c = cu(u); p("  js", u, len(c))
-    for mm in sorted(set(re.findall(r'["\'`]([^"\'`\s]{0,80}(?:api|\.json|\.csv|data/|geoclip|indicator|download)[^"\'`\s]{0,80})["\'`]', c)))[:50]: p("      url?", mm)
+mj = cu("https://stats.agriculture.gouv.fr/cartostat/js/main.js", 90); p("main.js", len(mj)); p(mj[:3000])
+for mm in sorted(set(re.findall(r'["\'`]([^"\'`\s]{0,90}(?:\.php|rest|api|\.json|\.csv|data/|download|ajax)[^"\'`\s]{0,90})["\'`]', mj)))[:80]: p("      url?", mm)
 open("data/probe-it-fr-log.txt", "w").write("\n".join(OUT) + "\n")
