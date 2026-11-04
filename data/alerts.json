@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-04T03:11:18.063Z",
+  "generatedAt": "2026-11-04T10:43:28.123Z",
   "status": "informational",
   "rules": [
     {
@@ -128,39 +128,30 @@
     },
     {
       "type": "period_move",
-      "product": "aceite_coco",
+      "product": "aceite_palma",
       "region": "eu",
       "sourceId": "world_bank",
       "severity": "watch",
-      "changePct": 5.15,
-      "observationDate": "2026-09-01"
+      "changePct": -5.08,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
-      "product": "azucar_mundo",
+      "product": "azucar_us",
       "region": "eu",
       "sourceId": "world_bank",
       "severity": "watch",
-      "changePct": 7.89,
-      "observationDate": "2026-09-01"
+      "changePct": 8.24,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
-      "product": "cafe_arabica",
+      "product": "banana_us",
       "region": "eu",
       "sourceId": "world_bank",
       "severity": "watch",
-      "changePct": -8.91,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "cafe_robusta",
-      "region": "eu",
-      "sourceId": "world_bank",
-      "severity": "watch",
-      "changePct": -7.29,
-      "observationDate": "2026-09-01"
+      "changePct": 5.36,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -227,30 +218,12 @@
     },
     {
       "type": "period_move",
-      "product": "harina_pescado",
-      "region": "eu",
-      "sourceId": "world_bank",
-      "severity": "high",
-      "changePct": 11.94,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "pollo_mundo",
+      "product": "naranja",
       "region": "eu",
       "sourceId": "world_bank",
       "severity": "watch",
-      "changePct": 7.1,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "ternera_mundo",
-      "region": "eu",
-      "sourceId": "world_bank",
-      "severity": "watch",
-      "changePct": -5.77,
-      "observationDate": "2026-09-01"
+      "changePct": -5.06,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -258,8 +231,8 @@
       "region": "eu",
       "sourceId": "world_bank",
       "severity": "watch",
-      "changePct": 5.15,
-      "observationDate": "2026-09-01"
+      "changePct": -8.65,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -267,8 +240,8 @@
       "region": "eu",
       "sourceId": "world_bank",
       "severity": "watch",
-      "changePct": 5.85,
-      "observationDate": "2026-09-01"
+      "changePct": -6.57,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -312,8 +285,8 @@
       "region": "eu",
       "sourceId": "world_bank",
       "severity": "watch",
-      "changePct": 7.59,
-      "observationDate": "2026-09-01"
+      "changePct": 5.81,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -331,15 +304,6 @@
       "sourceId": "usda_nass",
       "severity": "high",
       "changePct": -15.58,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "aceite_girasol",
-      "region": "eu",
-      "sourceId": "world_bank",
-      "severity": "watch",
-      "changePct": -6.33,
       "observationDate": "2026-09-01"
     },
     {
