@@ -1,0 +1,15 @@
+tabla 75471 filas 119406 cabecera ['Ámbito territorial', 'Distribución general de la SAU de la explotación', 'Características básicas de la explotación']
+tabla 75476 filas 102348 cabecera ['Ámbito territorial', 'Cría o engorde de ganado', 'Características básicas de la explotación']
+tabla 75481 filas 51174 cabecera ['Ámbito territorial', 'Sexo', 'Características básicas de la explotación']
+tabla 75482 filas 119406 cabecera ['Ámbito territorial', 'Edad', 'Características básicas de la explotación']
+tabla 75483 filas 42645 cabecera ['Total Nacional', 'Comunidades y Ciudades Autónomas', 'Provincias']
+municipios con alguna cifra 8131
+  control expl   municipios       885559 nacional       886555 (99.9 %)
+  control sau    municipios   23786799.6 nacional  23879144.28 (99.6 %)
+  control bovh   municipios      6393154 nacional      6755429 (94.6 %)
+  control ovch   municipios     17218338 nacional     18654159 (92.3 %)
+  control porh   municipios     25980275 nacional     30088969 (86.3 %)
+  control aveh   municipios    151356320 nacional    211551741 (71.5 %)
+  control jef    municipios       893514 nacional       894501 (99.9 %)
+municipios con explotaciones 7783 fuera de las 17 comunidades 2 regiones 17
+escrito 17 regiones
