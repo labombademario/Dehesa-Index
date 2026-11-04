@@ -4,4 +4,35 @@ comunas 34968
   pbs20            pbs20              stru_2020_1    comunas con dato  34968  suma 65224552
   ugbtot20         ugbtot20           elev_2020_1    comunas con dato  34968  suma 24667749
   ugbher20         ugbher20           elev_2020_1    comunas con dato  34968  suma 17370069
-FALLO: vaclait20: valores negativos
+  vaclait20: -99999 (secreto) tratado como hueco
+  vaclait20        vaclait20          elev_2020_2    comunas con dato  24864  suma 2742465
+  vacnourrices20: -99999 (secreto) tratado como hueco
+  vacnourrices20   vacnourrices20     elev_2020_2    comunas con dato  23351  suma 3325051
+  brebis20: -99999 (secreto) tratado como hueco
+  brebis20         brebis20           elev_2020_2    comunas con dato  24329  suma 3178491
+  chevres20: -99999 (secreto) tratado como hueco
+  chevres20        chevres20          elev_2020_2    comunas con dato  28947  suma 356195
+  porcsengr20: -99999 (secreto) tratado como hueco
+  porcsengr20      nbporcsengr20      elev_2020_2    comunas con dato  29597  suma 4817741
+  truies20: -99999 (secreto) tratado como hueco
+  truies20         nbtruiesreprod20   elev_2020_2    comunas con dato  31877  suma 376889
+  etp20            etp20              empl_2020_1    comunas con dato  34968  suma 701312.0
+  cexcoex20: -99999 (secreto) tratado como hueco
+  cexcoex20        cexcoex20          empl_2020_2    comunas con dato  30100  suma 513467
+  explirrigab20: -99999 (secreto) tratado como hueco
+  explirrigab20    explirrigab20      cult_2020_2    comunas con dato  25646  suma 74923
+  nbexplev         nbexplev           sin vista por comuna en GeoClip: se omite
+  sauev20          sauev20            sin vista por comuna en GeoClip: se omite
+  partprairie20    partprairie20_     cult_2020_1    comunas con dato  34968  suma -
+  partcereoleopro20 partcereoleopro20_ cult_2020_1    comunas con dato  34968  suma -
+  partvigne20: -99999 (secreto) tratado como hueco
+  partvigne20      partvigne20_       cult_2020_2    comunas con dato  30996  suma -
+  partcultperm20   partcultperm20_    cult_2020_1    comunas con dato  34968  suma -
+  partirrig20: -99999 (secreto) tratado como hueco
+  partirrig20      partirrig20_       cult_2020_2    comunas con dato  25324  suma -
+  cexm40an20: -99999 (secreto) tratado como hueco
+  cexm40an20       cexcoexm40an20_    empl_2020_2    comunas con dato  16242  suma -
+  cexp55an20: -99999 (secreto) tratado como hueco
+  cexp55an20       cexcoexp55an20_    empl_2020_2    comunas con dato  22140  suma -
+comunas con explotaciones 33551 sin explotaciones u ocultas 1288 ultramar (no incluidas) 129 regiones 13
+escrito 13 regiones
