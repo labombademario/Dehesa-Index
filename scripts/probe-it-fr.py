@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
-"""Sonda 33: Censo Agrario 2020, operacion 90 y tabla 75471."""
-import json, urllib.request
+"""Sonda 34: estructura de tabla 75471 y tablas vecinas del Censo Agrario 2020."""
+import urllib.request, time
 H = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)"}
-def get(u, t=120):
-    try: return urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=t).read().decode("utf8", "replace")
+def get(u, t=180):
+    try: return urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=t).read().decode("utf-8-sig", "replace")
     except Exception as e: return "ERR " + str(e)
-B = "https://www.ine.es/wstempus/js/ES/"
-t = get(B + "TABLAS_OPERACION/90"); print("TABLAS_OPERACION/90", len(t), t[:80].replace("\n", " "))
-try:
-    for x in json.loads(t): print(" ", x.get("Id"), "|", x.get("Nombre"), "|", x.get("Anyo_Periodo_ini"))
-except Exception as e: print("noJSON", e)
-c = get("https://www.ine.es/jaxi/files/tpx/es/csv_bdsc/75471.csv"); print("CSV 75471", len(c)); print(c[:700])
+U = "https://www.ine.es/jaxi/files/tpx/es/csv_bdsc/%d.csv"
+c = get(U % 75471).split("\n"); print("filas", len(c))
+sc = []; seen = set()
+for l in c[1:]:
+    a = l.split(";")[0]
+    if a not in seen: seen.add(a); sc.append(a)
+print("ambitos", len(sc)); print(sc[:12]); print(sc[-6:])
+import random; print([s for s in sc if " (" in s or s[:2].isdigit()][:10])
+print("cats", sorted(set(l.split(";")[1] for l in c[1:] if l))[:40])
+for t in range(75440, 75520):
+    if t == 75471: continue
+    time.sleep(1.5); x = get(U % t)
+    if x.startswith("ERR"): continue
+    L = x.split("\n"); print("TAB", t, len(x), "|", L[0][:200], "|", L[1][:120] if len(L) > 1 else "")
