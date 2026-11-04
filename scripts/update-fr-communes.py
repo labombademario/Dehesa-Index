@@ -9,7 +9,7 @@ cuando es aditivo; explotaciones 2020 entre 380.000 y 430.000; SAU 2020 entre 25
 Ademas: la orientacion tecnico-economica (OTEX en 12 postes, indicador otefda20: la OTEX dominante de la comuna, la que aporta al menos dos tercios de la PBS; si ninguna llega, "policultivo y policria")
 se guarda como columna 'otex' (codigo de Agreste) y se agrupan las comunas en intercomunalidades (EPCI) con la relacion comuna -> EPCI de geo.api.gouv.fr (Licence Ouverte, DGCL/INSEE) -> data/fr-epci/<REGION>.json:
 sumas de los indicadores aditivos, medias ponderadas de los porcentajes (por SAU, o por jefes y coexplotantes en los de edad) y la OTEX con mas SAU y su parte. Las comunas fusionadas desde 2020 (~100, ~0,3 % de las explotaciones) no tienen EPCI y no se suman.
-Una comuna con el dato oculto no se suma: las cifras de un EPCI son la suma de las comunas con dato. Controles del EPCI: entre 1.100 y 1.350 EPCI con explotaciones; sus explotaciones suman entre el 98,5 % y el 100 % del total de Francia.
+Una comuna con el dato oculto no se suma: las cifras de un EPCI son la suma de las comunas con dato. Controles del EPCI: entre 1.100 y 1.350 EPCI con explotaciones; sus explotaciones suman entre el 98,5 % y el 100 % del total de Francia metropolitana.
 Uso: update-fr-communes.py [--out DIRECTORIO]"""
 import datetime, json, re, subprocess, sys, tempfile, time
 from pathlib import Path
@@ -82,14 +82,14 @@ def dep_of(code):
 def epci(codes, names, keys, cols, sums, now, src, out):
     mp = {x["code"]: x.get("codeEpci") for x in get_plain("https://geo.api.gouv.fr/communes?fields=code,codeEpci&format=json")}
     nm = {x["code"]: x["nom"] for x in get_plain("https://geo.api.gouv.fr/epcis?fields=code,nom")}
-    ci = {k: i for i, k in enumerate(keys)}; E = {}; miss = 0
+    E = {}; miss = 0; metro = 0
     for i, c in enumerate(codes):
         f = cols["nbexpl20"][i]
-        if not f: continue
-        e = mp.get(c)
-        if not e or e not in nm or dep_of(c) not in DEP_REG: miss += f; continue
+        if not f or dep_of(c) not in DEP_REG: continue   # sin explotaciones, o ultramar (no se incluye)
+        metro += f; e = mp.get(c)
+        if not e or e not in nm: miss += f; continue
         E.setdefault(e, []).append(i)
-    log("EPCI con explotaciones", len(E), "explotaciones en comunas sin EPCI", miss)
+    log("EPCI con explotaciones", len(E), "explotaciones metropolitanas", metro, "en comunas sin EPCI", miss)
     if not 1100 <= len(E) <= 1350: raise RuntimeError("numero de EPCI fuera de rango: %d" % len(E))
     ek = ["ncom"] + EPCI_ADD + list(EPCI_W) + (["otex", "otexshare"] if "otex" in cols else [])
     rows = {}; reg_of = {}; tot = 0
@@ -111,7 +111,7 @@ def epci(codes, names, keys, cols, sums, now, src, out):
         rr = {}
         for i in ix: rr[DEP_REG[dep_of(codes[i])]] = rr.get(DEP_REG[dep_of(codes[i])], 0) + (cols["nbexpl20"][i] or 0)
         reg_of[e] = max(rr, key=lambda q: rr[q]); tot += row["nbexpl20"] or 0; rows[e] = [nm[e]] + [row[k] for k in ek]
-    if not 0.985 * sums["nbexpl20"] <= tot <= sums["nbexpl20"] + 1: raise RuntimeError("explotaciones de los EPCI %s frente al total %s" % (tot, sums["nbexpl20"]))
+    if not 0.985 * metro <= tot <= metro + 1: raise RuntimeError("explotaciones de los EPCI %s frente al total metropolitano %s" % (tot, metro))
     out.mkdir(parents=True, exist_ok=True)
     for old in out.glob("*.json"): old.unlink()
     regs = {}
@@ -119,7 +119,7 @@ def epci(codes, names, keys, cols, sums, now, src, out):
     geo = {"id": "etalab_geo", "url": "https://geo.api.gouv.fr/"}
     for r, cm in sorted(regs.items()):
         (out / (r + ".json")).write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "geo": geo, "region": r, "year": 2020, "ind": ek, "epci": cm}, ensure_ascii=False, separators=(",", ":")) + "\n")
-    (out / "index.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "geo": geo, "year": 2020, "epci": len(rows), "ind": ek, "regions": {r: len(cm) for r, cm in sorted(regs.items())}, "unmappedFarms": miss, "totalFarms": tot}, ensure_ascii=False, separators=(",", ":")) + "\n")
+    (out / "index.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "geo": geo, "year": 2020, "epci": len(rows), "ind": ek, "regions": {r: len(cm) for r, cm in sorted(regs.items())}, "unmappedFarms": miss, "totalFarms": tot, "metroFarms": metro}, ensure_ascii=False, separators=(",", ":")) + "\n")
     log("EPCI escritos", len(rows), "en", len(regs), "regiones; explotaciones", tot, "de", sums["nbexpl20"])
 def main():
     args = sys.argv[1:]; out = ROOT / "data" / "fr-communes"
