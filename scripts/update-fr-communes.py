@@ -82,10 +82,11 @@ def main():
         if len(vals) != n: return fail("%s: %d valores para %d comunas" % (k, len(vals), n))
         col = []
         for v in vals:
-            if isinstance(v, (int, float)) and not isinstance(v, bool): col.append(round(float(v), dec) if dec else (int(round(v))))
-            else: col.append(None)
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and v >= 0: col.append(round(float(v), dec) if dec else (int(round(v))))
+            else: col.append(None)  # secreto estadistico (GeoClip lo marca con un valor negativo) o sin dato
         got = sum(x for x in col if x is not None); ok = sum(1 for x in col if x is not None)
-        if any(x < 0 for x in col if x is not None): return fail("%s: valores negativos" % k)
+        neg = sorted(set(v for v in vals if isinstance(v, (int, float)) and not isinstance(v, bool) and v < 0))
+        if neg: log("  %s: valores negativos tratados como secreto: %s" % (k, neg[:5]))
         if typ == "p" and any(x > 100.0001 for x in col if x is not None): return fail("%s: porcentaje mayor que 100" % k)
         if typ == "n":
             ref_sum = j["distribution"].get("sumth")
