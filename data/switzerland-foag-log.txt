@@ -3,8 +3,8 @@ OK ch-foag-milk-price-dairy-conv 328 pts 1999-05..2026-08 FOAG: etapa Ex-farm (p
 OK ch-foag-milk-price-organic 328 pts 1999-05..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
 OK ch-foag-milk-price-cheese-conv 328 pts 1999-05..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
 OK ch-foag-milk-price-ipsuisse 54 pts 2022-03..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
-OK ch-foag-milk-prod-total 317 pts 2000-01..2026-05 FOAG: etapa Ex-farm (production stage) / Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
-OK ch-foag-milk-prod-organic 197 pts 2010-01..2026-05 FOAG: etapa Ex-farm (production stage); base de IVA: NA. Convertido de kg a toneladas.
+OK ch-foag-milk-prod-total 320 pts 2000-01..2026-08 FOAG: etapa Ex-farm (production stage) / Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
+OK ch-foag-milk-prod-organic 200 pts 2010-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: NA. Convertido de kg a toneladas.
 OK ch-foag-egg-price-all 128 pts 2016-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
 OK ch-foag-egg-price-barn 128 pts 2016-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
 OK ch-foag-egg-price-freerange 128 pts 2016-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
