@@ -1,26 +1,4 @@
-descartada eu-prod-uk-cereal-barley-area: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-barley-production: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-barley-yield: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-durum-wheat-production: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-maize-area: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-maize-production: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-maize-yield: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-oat-area: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-oat-production: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-oat-yield: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-other-cereals-area: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-other-cereals-production: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-other-cereals-yield: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-rye-area: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-rye-production: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-rye-yield: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-soft-wheat-area: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-soft-wheat-production: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-soft-wheat-yield: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-triticale-area: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-triticale-production: 18 puntos, ultimo 2019
-descartada eu-prod-uk-cereal-triticale-yield: 18 puntos, ultimo 2019
-cereal: 6237 filas, +608 series
+FALLO cereal: https://api.tech.ec.europa.eu/agrifood/api/cereal/production: <HTTPError 404: ''>
 descartada eu-prod-uk-oilseeds-broad-field-beans-area: 20 puntos, ultimo 2019
 descartada eu-prod-uk-oilseeds-broad-field-beans-production: 20 puntos, ultimo 2019
 descartada eu-prod-uk-oilseeds-broad-field-beans-yield: 20 puntos, ultimo 2019
@@ -41,7 +19,7 @@ descartada eu-prod-uk-oilseeds-sunflower-seed-area: 20 puntos, ultimo 2019
 descartada eu-prod-uk-oilseeds-sunflower-seed-production: 20 puntos, ultimo 2019
 descartada eu-prod-uk-oilseeds-sunflower-seed-yield: 20 puntos, ultimo 2019
 oilseeds: 5239 filas, +440 series
-rice: 583 filas, +99 series
+rice: 585 filas, +99 series
 descartada eu-prod-at-sugar-austria-area: 2 puntos, ultimo 2024
 descartada eu-prod-at-sugar-austria-production: 2 puntos, ultimo 2024
 descartada eu-prod-at-sugar-austria-yield: 2 puntos, ultimo 2024
@@ -94,3 +72,4 @@ sugar: 65 filas, +9 series
 descartada eu-prod-cy-olive-oil-monthly: 65 puntos, ultimo 2020-12
 descartada eu-prod-mt-olive-oil-monthly: 18 puntos, ultimo 2015-11
 olive: 667 filas, +7 series
+MANTENIDO cereal: 608 series del fichero anterior (la fuente fallo; se reintenta en la proxima ejecucion)
