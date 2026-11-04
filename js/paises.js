@@ -1041,16 +1041,17 @@
     if (others.length) h += '<p class="di-movers-hint">' + esc(w[1]) + ': ' + others.map(function (id) { var s = lreg(id); return s ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>' : esc(id); }).join(' · ') + '</p>';
     return h;
   }
-  fetch('data/views/license-cite.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.sources) { LREG = d; if (window.DICite) window.DICite.use(d); if (DATA) build(); } }).catch(function () {}); /* vista reducida del registro (solo fuentes en uso y campos de la cita) */
+  var BUILT = false; /* la primera pintura espera a que se resuelva un id renombrado: si no, el aviso sale como «ya no se publica» */
+  fetch('data/views/license-cite.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.sources) { LREG = d; if (window.DICite) window.DICite.use(d); if (DATA && BUILT) build(); } }).catch(function () {}); /* vista reducida del registro (solo fuentes en uso y campos de la cita) */
   DISeries.manifest().then(function (m) {
     DATA = { countries: {}, generatedAt: m.generatedAt };
     CCODES.forEach(function (k) { var e = m.countries[k]; AVAIL[k] = !!(e && e.metrics && Object.keys(e.metrics).some(function (g) { return g !== 'product' && g.indexOf('eu_') !== 0; })); });
     if (!AVAIL[ST.c]) ST.c = 'ES';
     return Promise.all([fetch('data/country-macro.json'), fetch('data/country-wages.json'), fetch('data/series/EU/rates.json')].map(function (f) { return f.then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }));
   }).then(function (m) { MACRO = m[0]; WAGES = m[1]; ECBR = m[2] && m[2].series ? m[2] : null;
-    if (!REQS) return build();
+    if (!REQS) { BUILT = true; return build(); }
     return fetch('data/series-renames.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
-      var to = d && d.renames && d.renames[REQS]; if (to) { ST.s = to; REQS = to; SNOTE = { k: 'ren', id: to, s: to }; } build(); });
+      var to = d && d.renames && d.renames[REQS]; if (to) { ST.s = to; REQS = to; SNOTE = { k: 'ren', id: to, s: to }; } BUILT = true; build(); });
   })
     .catch(function () { var b = document.getElementById('paises-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
 })();
