@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T17:10:00Z",
+ "generatedAt": "2026-11-04T17:27:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
   "repoGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
-  "checkedAt": "2026-11-04T17:10:00Z"
+  "checkedAt": "2026-11-04T17:27:00Z"
  },
  "pipelines": [
   {
@@ -513,9 +513,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-03T17:09:38Z",
-    "durationSec": 50,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41681473610"
+    "startedAt": "2026-11-04T17:21:35Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41876847617"
    },
    "recent": {
     "runs": 10,
@@ -1563,7 +1563,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-04T16:40:04Z"
+     "lastChange": "2026-11-04T17:16:56Z"
     }
    ],
    "last": {
@@ -1597,8 +1597,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40670231847"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
@@ -3186,13 +3186,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-28T09:59:19Z",
-    "durationSec": 34,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40668516621"
+    "startedAt": "2026-11-04T17:16:19Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41875945624"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -5382,7 +5382,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-04T16:40:04Z"
+     "lastChange": "2026-11-04T17:16:56Z"
     }
    ],
    "last": {
@@ -5453,7 +5453,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-04T16:57:21Z"
+     "lastChange": "2026-11-04T17:13:36Z"
     },
     {
      "path": "data/source-candidates.json",
