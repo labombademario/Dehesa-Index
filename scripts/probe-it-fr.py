@@ -5,7 +5,7 @@ H = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaind
 def get(u, t=120):
     try: return urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=t).read().decode("utf8", "replace")
     except Exception as e: return "ERR " + str(e)
-B = "https://servicio.ine.es/wstempus/js/ES/"
+B = "https://www.ine.es/wstempus/js/ES/"
 raw = get(B + "OPERACIONES_DISPONIBLES")
 print("RAW", raw[:300].replace("\n"," "))
 if raw.startswith("ERR") or not raw.lstrip().startswith("["):
