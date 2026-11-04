@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T09:22:00Z",
+ "generatedAt": "2026-11-04T09:27:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 335,
   "late": 2,
   "error": 2,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-04T06:16:19.933853+00:00",
   "repoGeneratedAt": "2026-11-04T06:16:19.933853+00:00",
-  "checkedAt": "2026-11-04T09:22:00Z"
+  "checkedAt": "2026-11-04T09:27:00Z"
  },
  "pipelines": [
   {
@@ -1587,7 +1587,7 @@
    "crons": [
     "25 9 * * 3"
    ],
-   "nextRun": "2026-11-04T09:25:00Z",
+   "nextRun": "2026-11-11T09:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4432,14 +4432,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-12T22:03:27Z",
-    "durationSec": 22,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38314417546"
+    "event": "schedule",
+    "startedAt": "2026-11-04T09:25:28Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41807374178"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -4790,6 +4790,19 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-it-province.yml",
+   "name": "Update Italy farm census 2020 by province (ISTAT)",
+   "crons": [
+    "20 11 15 1,7 *"
+   ],
+   "nextRun": "2027-01-15T11:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 4416.0
   },
   {
    "workflow": "update-it-water-severity.yml",
@@ -5406,7 +5419,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-04T09:08:52Z"
+     "lastChange": "2026-11-04T09:26:28Z"
     },
     {
      "path": "data/source-candidates.json",
