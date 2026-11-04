@@ -7,14 +7,14 @@ def get(u, t=120):
     except Exception as e: return "ERR " + str(e)
 B = "https://www.ine.es/wstempus/js/ES/"
 raw = get(B + "OPERACIONES_DISPONIBLES")
-print("RAW", raw[:300].replace("\n"," "))
+
 if raw.startswith("ERR") or not raw.lstrip().startswith("["):
     raise SystemExit(0)
 ops = json.loads(raw)
 for o in ops:
-    if "gr" in o.get("Nombre", "").lower() and "censo" in o.get("Nombre", "").lower(): print("OP", o.get("Id"), o.get("Codigo"), o.get("Nombre"))
+    if "agr" in o.get("Nombre", "").lower(): print("OP", o.get("Id"), o.get("Codigo"), o.get("Nombre"))
 for o in ops:
-    if "censo agrario" in o.get("Nombre", "").lower():
+    if "agrari" in o.get("Nombre", "").lower() or "explotaci" in o.get("Nombre", "").lower():
         oid = o["Id"]; print("== operacion", oid, o.get("Codigo"), o["Nombre"])
         t = get(B + "TABLAS_OPERACION/%s" % oid)
         try: tabs = json.loads(t)
