@@ -8967,6 +8967,12 @@
    ],
    "notes": "Censo Agrario 2020 de Polonia (Powszechny Spis Rolny 2020) por powiat, del Banco de Datos Locales de GUS (nivel 5; temas P4122, P4124, P4125, P4127, P4129, P4131, P4134 y P4084; scripts/update-pl-powiaty.py). Valores definitivos tal cual; los ausentes quedan como hueco. Control: la suma de los powiaty de cada voivodía cuadra con el valor que GUS publica para la voivodía. Mismo aviso de copyright de GUS que el resto de la fuente gus_poland."
   },
+  "data/it-province/": {
+   "sources": [
+    "istat"
+   ],
+   "notes": "Censo General de la Agricultura 2020 de Italia (7° Censimento generale dell'agricoltura) por provincia, del servicio SDMX de ISTAT (IstatData; tablas DF_DCAT_CENSAGRIC2020_SURF_ALL, CROPS_ALL, CATTLE_ALL y LABCAT_ALL; scripts/update-it-province.py). Valores tal cual los publica ISTAT; un valor ausente queda como hueco. Se usan los codigos de provincia de ISTAT, incluidas Monza e della Brianza, Fermo, Barletta-Andria-Trani y Sud Sardegna; las cuatro provincias sardas suprimidas no tienen dato."
+  },
   "data/pl-gminy/": {
    "sources": [
     "gus_poland"

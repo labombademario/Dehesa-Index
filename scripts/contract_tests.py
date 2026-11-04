@@ -3792,6 +3792,19 @@ def pl_powiaty_voivodeship(doc, errs, warns, stats):
         if v.get("1633271") is not None and v.get("1633270") is not None and v["1633271"] > v["1633270"] * 1.02 + 1: errs.append("pl-powiaty %s %s: superficie agraria mayor que las tierras totales" % (doc["voivodeship"], pid)); return
     if len(seen) != 1: errs.append("pl-powiaty %s: los powiaty vienen de %d voivodias distintas" % (doc["voivodeship"], len(seen)))
     stats["pl-powiaty valores"] = stats.get("pl-powiaty valores", 0) + n
+def it_province_region(doc, errs, warns, stats):
+    """Censo agrario 2020 de Italia por provincia (ISTAT): codigo de provincia de ISTAT (IT + letra + dos caracteres, o IT108-IT111); valores numericos no negativos; la superficie agraria utilizada (S.ARU) no supera la superficie total (S.ART); los cereales (C.ARU.CEREALS) no superan la superficie agraria utilizada; el ganado bovino de las vacas lecheras (H.<..>.DAYRICOWS) no supera el total bovino."""
+    n = 0
+    for code, d in doc["provinces"].items():
+        if not re.match(r"^(IT[CDEFG]\d[0-9A-Z]|IT10[89]|IT11[01])$", code): errs.append("it-province %s: codigo de provincia no valido %s" % (doc["region"], code)); return
+        v = d.get("v") or {}
+        for k, x in v.items():
+            if not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0: errs.append("it-province %s %s %s: valor no valido %r" % (doc["region"], code, k, x)); return
+            n += 1
+        if v.get("S.ARU") is not None and v.get("S.ART") is not None and v["S.ARU"] > v["S.ART"] * 1.001 + 1: errs.append("it-province %s %s: superficie agraria mayor que la total" % (doc["region"], code)); return
+        if v.get("C.ARU.CEREALS") is not None and v.get("S.ARU") is not None and v["C.ARU.CEREALS"] > v["S.ARU"] * 1.001 + 1: errs.append("it-province %s %s: cereales mayores que la superficie agraria" % (doc["region"], code)); return
+    stats["it-province valores"] = stats.get("it-province valores", 0) + n
+
 def pl_gminy_voivodeship(doc, errs, warns, stats):
     """Censo agrario 2020 de Polonia por gmina (GUS BDL): id de 12 cifras cuyo tipo (ultima cifra) es 1, 2 o 3 y cuyas 4 primeras cifras son las de la voivodia del fichero; 'k' (powiat) son sus 9 primeras cifras; valores numericos no negativos; el total de explotaciones (1633195) no es menor que la suma de sus clases de tamaño (tolerancia 1); la superficie agraria no supera a las tierras totales; los cereales no superan a la superficie sembrada total."""
     n = 0; pre = set()

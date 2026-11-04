@@ -109,6 +109,17 @@ sources:
     data: [pl-gminy-log.txt]
     extra: ['!data/pl-gminy']
     message: Censo agrario 2020 de Polonia por gmina - explotaciones, superficie, uso del suelo, ganado, cultivos y mano de obra (GUS, BDL)
+  - id: it-province
+    name: Update Italy farm census 2020 by province (ISTAT)
+    cron: ['20 11 15 1,7 *']
+    script: scripts/update-it-province.py
+    timeout: 120
+    script_timeout: 110
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/it-province)
+    data: [it-province-log.txt]
+    extra: ['!data/it-province']
+    message: Censo agrario 2020 de Italia por provincia - explotaciones, superficie, cultivos, ganado y mano de obra (ISTAT)
   - id: land-pl
     name: Update Poland farmland prices (GUS, BDL)
     cron: ['10 8 4 * *']

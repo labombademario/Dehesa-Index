@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-351 workflows (301 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+352 workflows (302 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -243,6 +243,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-it-istat-2.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat-2.py | italy-istat/agritourism.json, italy-istat/comuni.json, italy-istat/crops-prov.json … | finish, validate-files |
 | update-it-istat-more.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat-more.py | italy-istat-more-stats.json | finish, validate-files |
 | update-it-istat.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-it-istat.py | italy-istat/fertilisers.json, italy-istat/herds.json, italy-istat/pesticides.json … | finish, validate-files |
+| update-it-province.yml | generado | mensual | gen-workflows.py, update-it-province.py, validate-data.py | - | finish |
 | update-it-water-severity.yml | generado | semanal (1,4) | detect-revisions.py, gen-workflows.py, update-it-severity.py | it-water-severity.json | finish, validate-files |
 
 ## NL

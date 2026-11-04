@@ -967,6 +967,43 @@
         row: function (g) { var t = plPwV(g, '1623463'), s = plPwV(g, '1645080'), f = plPwV(g, '1633195'), sell = plPwV(g, '1633419');
           return { s: t, c: [plPwF(t), t != null && s ? nf(t / s * 100, 1) : '—', f && sell != null ? nf(sell / f * 100, 1) + ' %' : '—'] }; } });
     }
+    /* ---- Italia: censo agrario 2020 por provincia (ISTAT) ---- */
+    function itPrV(g, id) { var v = g.v[id]; return v != null ? v : null; }
+    function itPrCard(x, o) {
+      return get('data/it-province/' + x.r + '.json').then(function (d) {
+        if (!d || !d.provinces) return null;
+        var ks = Object.keys(d.provinces).map(function (id) { var g = d.provinces[id], r = o.row(g); if (r) r.n = g.n; return r; }).filter(function (r) { return r && r.s != null; });
+        if (!ks.length) return null; ks.sort(function (a, b) { return b.s - a.s; });
+        return card(L(o.title), L(o.intro), usCountyList(ks.map(function (r) { return [esc(r.n)].concat(r.c); }), [L('Provincia|Province|Province|Provincia')].concat(o.head.map(function (h) { return L(h); })), 440, 10, L('Todas las provincias|All provinces|Toutes les provinces|Tutte le province')), cite('istat', '2020'));
+      });
+    }
+    function itPrStruct(x) {
+      return itPrCard(x, { title: 'Provincias: explotaciones y superficie (2020)|Provinces: farms and farmland (2020)|Provinces : exploitations et surface (2020)|Province: aziende e superficie (2020)',
+        intro: 'Censo Agrario 2020 de ISTAT por provincia. Ordenado por superficie agraria utilizada (SAU); el tamaño medio es la SAU entre las explotaciones con SAU (cálculo de Dehesa Index).|ISTAT Agricultural Census 2020 by province. Sorted by utilised agricultural area (UAA); average size is UAA divided by the farms with UAA (Dehesa Index calculation).|Recensement agricole 2020 de l’ISTAT par province. Classées par surface agricole utilisée (SAU) ; la taille moyenne est la SAU divisée par les exploitations ayant de la SAU (calcul de Dehesa Index).|Censimento agricolo 2020 dell’ISTAT per provincia. Ordinate per superficie agricola utilizzata (SAU); la dimensione media è la SAU divisa per le aziende con SAU (calcolo di Dehesa Index).',
+        head: ['Explotaciones|Farms|Exploitations|Aziende', 'SAU (ha)|UAA (ha)|SAU (ha)|SAU (ha)', 'Tamaño medio (ha)|Average size (ha)|Taille moyenne (ha)|Dimensione media (ha)', 'Bosques (ha)|Woodland (ha)|Bois (ha)|Boschi (ha)'],
+        row: function (g) { var f = itPrV(g, 'S.HO'), s = itPrV(g, 'S.ARU'), fu = itPrV(g, 'S.FUAA');
+          return { s: s, c: [plPwF(f), plPwF(s), fu && s != null ? nf(s / fu, 1) : '—', plPwF(itPrV(g, 'S.WOODLA_AREA'))] }; } });
+    }
+    function itPrCrops(x) {
+      return itPrCard(x, { title: 'Provincias: cultivos (2020)|Provinces: crops (2020)|Provinces : cultures (2020)|Province: colture (2020)',
+        intro: 'Superficie agraria utilizada de cada provincia en el Censo Agrario 2020 de ISTAT, con los usos principales. ISTAT no publica rendimientos por provincia.|Utilised agricultural area of each province in the ISTAT Agricultural Census 2020, with the main land uses. ISTAT does not publish yields by province.|Surface agricole utilisée de chaque province au recensement agricole 2020 de l’ISTAT, avec les principaux usages. L’ISTAT ne publie pas de rendements par province.|Superficie agricola utilizzata di ogni provincia nel censimento agricolo 2020 dell’ISTAT, con gli usi principali. L’ISTAT non pubblica rese per provincia.',
+        head: ['SAU (ha)|UAA (ha)|SAU (ha)|SAU (ha)', 'Cereales (ha)|Cereals (ha)|Céréales (ha)|Cereali (ha)', 'Prados y pastos (ha)|Grassland (ha)|Prairies (ha)|Prati e pascoli (ha)', 'Vid (ha)|Vineyard (ha)|Vigne (ha)|Vite (ha)', 'Olivar (ha)|Olives (ha)|Oliviers (ha)|Olivo (ha)'],
+        row: function (g) { var s = itPrV(g, 'C.ARU.ALL'); return { s: s, c: [plPwF(s), plPwF(itPrV(g, 'C.ARU.CEREALS')), plPwF(itPrV(g, 'C.ARU.PGRAPM')), plPwF(itPrV(g, 'C.ARU.VINEY')), plPwF(itPrV(g, 'C.ARU.OLIV'))] }; } });
+    }
+    function itPrLive(x) {
+      var H = 'H.HEADS_FIDIC2020.';
+      return itPrCard(x, { title: 'Provincias: ganado (2020)|Provinces: livestock (2020)|Provinces : élevage (2020)|Province: allevamento (2020)',
+        intro: 'Cabezas de ganado a 1 de diciembre de 2020 en el Censo Agrario de ISTAT, ordenadas por bovinos. Las vacas son las de leche.|Head of livestock on 1 December 2020 in the ISTAT Agricultural Census, sorted by cattle. Cows are dairy cows.|Têtes de bétail au 1er décembre 2020 au recensement agricole de l’ISTAT, classées par bovins. Les vaches sont des vaches laitières.|Capi di bestiame al 1° dicembre 2020 nel censimento agricolo dell’ISTAT, ordinati per bovini. Le vacche sono vacche da latte.',
+        head: ['Bovinos|Cattle|Bovins|Bovini', 'Vacas lecheras|Dairy cows|Vaches laitières|Vacche da latte', 'Cerdos|Pigs|Porcins|Suini', 'Ovinos|Sheep|Ovins|Ovini', 'Aves|Poultry|Volailles|Pollame'],
+        row: function (g) { var c = itPrV(g, H + 'TOTCATT'); return { s: c, c: [plPwF(c), plPwF(itPrV(g, H + 'DAYRICOWS')), plPwF(itPrV(g, H + 'TOTPIG')), plPwF(itPrV(g, H + 'TOTSH')), plPwF(itPrV(g, H + 'TOTPOU'))] }; } });
+    }
+    function itPrLabour(x) {
+      return itPrCard(x, { title: 'Provincias: mano de obra (2020)|Provinces: farm labour (2020)|Provinces : main-d’œuvre (2020)|Province: manodopera (2020)',
+        intro: 'Personas que trabajan en las explotaciones (jefe, familia y asalariados) en el Censo Agrario 2020 de ISTAT, personas por cada 100 ha de SAU (cálculo de Dehesa Index) y porcentaje de familiares.|People working on the holdings (holder, family and hired) in the ISTAT Agricultural Census 2020, people per 100 ha of UAA (Dehesa Index calculation) and the family share.|Personnes travaillant dans les exploitations (chef, famille et salariés) au recensement agricole 2020 de l’ISTAT, personnes pour 100 ha de SAU (calcul de Dehesa Index) et part familiale.|Persone che lavorano nelle aziende (capo azienda, familiari e dipendenti) nel censimento agricolo 2020 dell’ISTAT, persone ogni 100 ha di SAU (calcolo di Dehesa Index) e quota familiare.',
+        head: ['Personas|People|Personnes|Persone', 'Personas por 100 ha|People per 100 ha|Personnes pour 100 ha|Persone ogni 100 ha', 'Jornadas estándar|Standard work days|Journées standard|Giornate standard', 'Familiares|Family share|Part familiale|Quota familiare'],
+        row: function (g) { var t = itPrV(g, 'L.NUMB_LAB.THLF'), f = itPrV(g, 'L.NUMB_LAB.TFLF'), s = itPrV(g, 'S.ARU');
+          return { s: t, c: [plPwF(t), t != null && s ? nf(t / s * 100, 1) : '—', plPwF(itPrV(g, 'L.NUMB_LA_SWD.THLF')), t && f != null ? nf(f / t * 100, 0) + ' %' : '—'] }; } });
+    }
     /* ---- Australia: cultivos por zona estadistica SA2 (ABS) ---- */
     var AU_B = [['Wheat', 'Trigo|Wheat|Blé|Grano'], ['Barley', 'Cebada|Barley|Orge|Orzo'], ['Canola', 'Colza (canola)|Canola|Canola|Colza (canola)'], ['Oats', 'Avena|Oats|Avoine|Avena'], ['Sorghum', 'Sorgo|Sorghum|Sorgho|Sorgo'], ['Cotton', 'Algodón|Cotton|Coton|Cotone'], ['Rice', 'Arroz|Rice|Riz|Riso'], ['Sugarcane', 'Caña de azúcar|Sugarcane|Canne à sucre|Canna da zucchero'], ['Maize', 'Maíz|Maize|Maïs|Mais'], ['Chickpeas', 'Garbanzo|Chickpeas|Pois chiches|Ceci'], ['Lupins', 'Altramuz|Lupins|Lupins|Lupini'], ['Fieldpeas', 'Guisante|Field peas|Pois protéagineux|Pisello proteico'], ['Lentils', 'Lenteja|Lentils|Lentilles|Lenticchie'], ['Fababeans', 'Haba|Faba beans|Féveroles|Fava']];
     var AU_H = [['Winegrape', 'Uva de vino (t)|Winegrapes (t)|Raisin de cuve (t)|Uva da vino (t)', 'HortWinegrape_Crush'], ['Avocados', 'Aguacate (t)|Avocados (t)|Avocats (t)|Avocado (t)', 'HortAvocados_Prod'], ['Bananas', 'Plátano (t)|Bananas (t)|Bananes (t)|Banane (t)', 'HortBananas_Prod'], ['Macadamias', 'Macadamia (t)|Macadamias (t)|Noix de macadamia (t)|Macadamia (t)', 'HortMacadamias_Prod_Inshell']];
@@ -1040,7 +1077,7 @@
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('dekrs', deKrStruct), C('dekrl', deKrLive), C('dekrz', deKrSize), C('dekmy', deKmYield), C('dekmc', deKmCattle), C('dekmj', deKmJobs), C('dekmh', deKmHist), C('eudr', eudr), C('clim', deClim)],
         PL: [C('plpws', plPwStruct), C('plpwl', plPwLive), C('plpwc', plPwCrops), C('plpwa', plPwLabour), C('plgms', plGmStruct), C('plgml', plGmLive), C('plgmc', plGmCrops), C('plgma', plGmLabour)],
         NL: [C('nlcrops', nlCbs), C('clim', gridClim)],
-        AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim)], AU: [C('aulv', auLivestock), C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('aulga', auLga), C('ausa4', auSa4), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
+        AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim), C('itprs', itPrStruct), C('itprl', itPrLive), C('itprc', itPrCrops), C('itpra', itPrLabour)], AU: [C('aulv', auLivestock), C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('aulga', auLga), C('ausa4', auSa4), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
       optional: { eslonjas: 1, eudr: 1, clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1, uscprog: 1 }
