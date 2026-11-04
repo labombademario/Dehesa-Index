@@ -1,2 +1,2 @@
 mensual: 4110 valores; filas de otros cultivos ignoradas: Rye, #2, Soymeal, 46%, Wpg
-escrito grains.json 145 semanas; 9 leidas
+sin cambios; 8 informes leidos
