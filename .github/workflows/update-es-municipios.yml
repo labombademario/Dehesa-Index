@@ -1,0 +1,34 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Spain farm census 2020 by municipality (INE)
+on:
+  schedule:
+    - cron: '20 12 17 1,7 *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-es-municipios
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-es-municipios.py
+        timeout-minutes: 25
+        continue-on-error: true
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/es-municipios)
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Censo agrario 2020 de España por municipio - explotaciones, superficie por uso, ganado, titulares y formación (INE)" data/es-municipios-log.txt data/es-municipios
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

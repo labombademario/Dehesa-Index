@@ -1,0 +1,62 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - España: censo agrario 2020 por municipio (INE), un fichero por comunidad",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "year",
+  "region",
+  "ind",
+  "municipios"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "ine_es"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "year": {
+   "type": "integer"
+  },
+  "region": {
+   "type": "string",
+   "pattern": "^[A-Z]{2}$"
+  },
+  "ind": {
+   "type": "array",
+   "minItems": 15,
+   "items": {
+    "type": "string"
+   }
+  },
+  "municipios": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}

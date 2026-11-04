@@ -8993,6 +8993,12 @@
    ],
    "notes": "Censo Agrario 2020 de Polonia (Powszechny Spis Rolny 2020) por powiat, del Banco de Datos Locales de GUS (nivel 5; temas P4122, P4124, P4125, P4127, P4129, P4131, P4134 y P4084; scripts/update-pl-powiaty.py). Valores definitivos tal cual; los ausentes quedan como hueco. Control: la suma de los powiaty de cada voivodía cuadra con el valor que GUS publica para la voivodía. Mismo aviso de copyright de GUS que el resto de la fuente gus_poland."
   },
+  "data/es-municipios/": {
+   "sources": [
+    "ine_es"
+   ],
+   "notes": "Censo Agrario 2020 de España por municipio (INE, INEbase; tablas 75471, 75476, 75481, 75482 y 75483; scripts/update-es-municipios.py): explotaciones, SAU y superficie de tierra arable, cultivos leñosos, pastos permanentes e invernadero, cabezas y explotaciones de bovino, ovino y caprino, porcino y aves, titulares por sexo, edad media y tramos de edad y formación universitaria agraria. 17 comunidades y solo los municipios con explotaciones (Ceuta y Melilla no se incluyen). El INE asigna cada explotación al municipio donde está la mayor parte de su tierra o su ganado, y el secreto estadístico (..) queda como hueco. Licencia CC BY 4.0 del INE con atribución."
+  },
   "data/fr-communes/": {
    "sources": [
     "agreste_ra"

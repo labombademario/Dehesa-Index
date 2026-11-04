@@ -3792,6 +3792,29 @@ def pl_powiaty_voivodeship(doc, errs, warns, stats):
         if v.get("1633271") is not None and v.get("1633270") is not None and v["1633271"] > v["1633270"] * 1.02 + 1: errs.append("pl-powiaty %s %s: superficie agraria mayor que las tierras totales" % (doc["voivodeship"], pid)); return
     if len(seen) != 1: errs.append("pl-powiaty %s: los powiaty vienen de %d voivodias distintas" % (doc["voivodeship"], len(seen)))
     stats["pl-powiaty valores"] = stats.get("pl-powiaty valores", 0) + n
+def es_municipios_region(doc, errs, warns, stats):
+    """Censo agrario 2020 de España por municipio (INE): codigo INE de 5 cifras cuyos dos primeros digitos son una provincia de la comunidad; cada municipio es [nombre, un valor por cada indicador de 'ind']; valores numericos no negativos o null; explotaciones (expl) al menos 1 y no mas de 10.000; SAU no mas de 250.000 ha; la SAU no es menor que la suma de tierra arable, cultivos leñosos y pastos (1 %); la edad media entre 15 y 100; las mujeres no superan al total de titulares."""
+    ind = doc["ind"]; n = 0
+    for k in ("expl", "sau", "arable", "woody", "pasture", "jef", "jefm", "edad"):
+        if k not in ind: errs.append("es-municipios %s: falta %s en 'ind'" % (doc["region"], k)); return
+    g = {k: ind.index(k) + 1 for k in ind}
+    for code, row in doc["municipios"].items():
+        if not re.match(r"^\d{5}$", code): errs.append("es-municipios %s: codigo INE no valido %s" % (doc["region"], code)); return
+        if not isinstance(row, list) or len(row) != len(ind) + 1 or not isinstance(row[0], str) or not row[0]: errs.append("es-municipios %s %s: fila mal formada" % (doc["region"], code)); return
+        for k, x in zip(ind, row[1:]):
+            if x is None: continue
+            if not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0: errs.append("es-municipios %s %s %s: valor no valido %r" % (doc["region"], code, k, x)); return
+            n += 1
+        if not row[g["expl"]]: errs.append("es-municipios %s %s: municipio sin explotaciones" % (doc["region"], code)); return
+        if row[g["expl"]] > 10000: errs.append("es-municipios %s %s: mas de 10.000 explotaciones" % (doc["region"], code)); return
+        s = row[g["sau"]]
+        if s is not None and s > 250000: errs.append("es-municipios %s %s: SAU mayor que 250.000 ha" % (doc["region"], code)); return
+        p = [row[g[k]] for k in ("arable", "woody", "pasture")]
+        if s is not None and None not in p and sum(p) > s * 1.01 + 1: errs.append("es-municipios %s %s: los usos del suelo (%s) suman mas que la SAU (%s)" % (doc["region"], code, sum(p), s)); return
+        e = row[g["edad"]]
+        if e is not None and not 15 <= e <= 100: errs.append("es-municipios %s %s: edad media fuera de rango %s" % (doc["region"], code, e)); return
+        if row[g["jefm"]] is not None and row[g["jef"]] is not None and row[g["jefm"]] > row[g["jef"]]: errs.append("es-municipios %s %s: mas mujeres que titulares" % (doc["region"], code)); return
+    stats["es-municipios valores"] = stats.get("es-municipios valores", 0) + n
 def fr_communes_region(doc, errs, warns, stats):
     """Censo agrario 2020 de Francia por comuna (Agreste): codigo INSEE de 5 caracteres (cifras, o 2A/2B de Corcega); cada comuna es [nombre, un valor por cada indicador de 'ind'] con la misma longitud; valores numericos no negativos o null; los porcentajes (part*) no pasan de 100; las explotaciones (nbexpl20) son al menos 1 y no pasan de 1.500 por comuna; la SAU (sau20) no pasa de 80.000 ha por comuna."""
     ind = doc["ind"]; n = 0
