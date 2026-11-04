@@ -1,150 +1,181 @@
-== ISTAT codelists y provincias
-provincias: 107 ['ITC11', 'ITC12', 'ITC13', 'ITC14', 'ITC15'] ['ITG28', 'ITG29', 'ITG2A', 'ITG2B', 'ITG2C']
-== DF_DCAT_CENSAGRIC2020_SURF_ALL
-clave valida: URF_ALL,1.0/A.ITC11%2BITC12%2BITC13%2BITC14%2BITC15%2BITC16%2BITC17%2BITC18%2BITC20%2BITC31.?startPeriod=2020&endPeriod=2020&detail=dataonly 11179
-bytes 11179
-filas 140 columnas ['DATAFLOW', 'FREQ', 'REF_AREA', 'DATA_TYPE', 'TIME_PERIOD', 'OBS_VALUE', 'OBS_STATUS', 'NOTE_DS', 'NOTE_ISTAT_TERR_OFFICIAL_CODE', 'NOTE_REF_AREA', 'NOTE_DATA_TYPE', 'NOTE_TIME_PERIOD', 'BASE_PER', 'UNIT_MEAS', 'UNIT_MULT']
-dimensiones: ['DATA_TYPE']
-   DATA_TYPE 14 ['AA_UNUT', 'AA_UNUT_FARM', 'ART', 'ARU', 'FUAA', 'HO', 'MUSHRO_AREA', 'MUSHRO_FARM', 'OHT_AREA_WUN', 'OHT_FARM_WUN', 'WOODLA_AREA', 'WOODLA_FARM', 'WOODTR_AREA', 'WOODTR_FARM']
-   ITC11 ['AA_UNUT'] 10372.85 
-   ITC11 ['AA_UNUT_FARM'] 2838 
-   ITC11 ['ART'] 263003.11 
-   ITC11 ['ARU'] 213266.09 
-   ITC11 ['FUAA'] 11415 
-   ITC11 ['HO'] 11870 
-   ITC11 ['MUSHRO_AREA'] 0.3797 
-   ITC11 ['MUSHRO_FARM'] 3 
-territorios con dato: 10
-== DF_DCAT_CENSAGRIC2020_CROPS_ALL
-clave valida: PS_ALL,1.0/A.ITC11%2BITC12%2BITC13%2BITC14%2BITC15%2BITC16%2BITC17%2BITC18%2BITC20%2BITC31..?startPeriod=2020&endPeriod=2020&detail=dataonly 40321
-bytes 40321
-filas 492 columnas ['DATAFLOW', 'FREQ', 'REF_AREA', 'DATA_TYPE', 'TYPE_OF_CROP', 'TIME_PERIOD', 'OBS_VALUE', 'OBS_STATUS', 'NOTE_DS', 'NOTE_ISTAT_TERR_OFFICIAL_CODE', 'NOTE_REF_AREA', 'NOTE_DATA_TYPE', 'NOTE_TYPE_OF_CROP', 'NOTE_TIME_PERIOD', 'BASE_PER', 'UNIT_MEAS', 'UNIT_MULT']
-dimensiones: ['DATA_TYPE', 'TYPE_OF_CROP']
-   DATA_TYPE 2 ['ARU', 'FUAA']
-   TYPE_OF_CROP 25 ['AGRCULT', 'ALL', 'ARLAND', 'ARLAND_VEGCO', 'ARLANO', 'BEETS', 'CEREALS', 'CROPIN', 'DRPUL', 'FALLAND', 'FLOW', 'FODR', 'FRUIT', 'KITGAR', 'NURSE', 'OLIV', 'PCROG', 'PCROO', 'PCROPS', 'PGRAPM', 'POTAT', 'SEEDL_SEEDS', 'TGRA', 'VEGFR', 'VINEY']
-   ITC11 ['ARU', 'AGRCULT'] 32.69 
-   ITC11 ['ARU', 'ALL'] 213266.09 
-   ITC11 ['ARU', 'ARLAND'] 125561.3 
-   ITC11 ['ARU', 'ARLAND_VEGCO'] 359.42 
-   ITC11 ['ARU', 'ARLANO'] 753.48 
-   ITC11 ['ARU', 'BEETS'] 5.79 
-   ITC11 ['ARU', 'CEREALS'] 80041.24 
-   ITC11 ['ARU', 'CROPIN'] 4228.14 
-territorios con dato: 10
-== data.gouv slugs ra-
-dataset ra-orientation-technico-economique-des-exploitations-ensemble-des-expl | Plateforme Open Data ZABAL | lov2 | 2020-11-30 | #   **Orientation technico-économique des exploitations par commune**  **Agreste - Recensements agricoles (1988, 2000, 2010)**  ****     Ensemble des exploitations (hors pacages collectifs)  Petites exploitations  Moyennes et grandes exploitations       Années de référence:  1988, 2000, 2010       O
-   - ra-orientation-technico-economique-des-exploitations-ensemble-des-exploitations. | csv | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-orientation-technico-economique-des-exploitations-ensemble-des-e
-   - ra-orientation-technico-economique-des-exploitations-ensemble-des-exploitations. | json | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-orientation-technico-economique-des-exploitations-ensemble-des-e
-   - ra-orientation-technico-economique-des-exploitations-ensemble-des-exploitations. | json | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-orientation-technico-economique-des-exploitations-ensemble-des-e
-   - ra-orientation-technico-economique-des-exploitations-ensemble-des-exploitations. | zip | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-orientation-technico-economique-des-exploitations-ensemble-des-e
-dataset ra-statut-juridique-des-exploitations-petites-grandes-exploitations | Plateforme Open Data ZABAL | lov2 | 2022-02-09 | #   **Statut juridique des exploitations par commune**  **Agreste - Recensements agricoles (1970, 1979, 1988, 2000, 2010)**  ****     Ensemble des exploitations (hors pacages collectifs)  Petites exploitations  Moyennes et grandes exploitations       Années de référence:  1970,1979,1988, 2000, 2010 
-   - ra-statut-juridique-des-exploitations-petites-grandes-exploitations.csv | csv | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-statut-juridique-des-exploitations-petites-grandes-exploitations
-   - ra-statut-juridique-des-exploitations-petites-grandes-exploitations.json | json | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-statut-juridique-des-exploitations-petites-grandes-exploitations
-   - Export au format GeoJSON | json | None | https://zabal-agriculture.opendata-paysbasque.fr/explore/dataset/ra-statut-juridique-des-exploitations-petites-grandes-exploitations/download?format=g
-   - Export au format Shapefile | shp | None | https://zabal-agriculture.opendata-paysbasque.fr/explore/dataset/ra-statut-juridique-des-exploitations-petites-grandes-exploitations/download?format=s
-dataset ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitations | Plateforme Open Data ZABAL | lov2 | 2020-11-30 | #   **Méthodes de culture, éléments de paysage par commune**  **Agreste - Recensements agricoles (2010)**  ****     Ensemble des exploitations (hors pacages collectifs)  Petites exploitations  Moyennes et grandes exploitations       Années de référence:  2010       Méthode de culture:  Couvert végét
-   - ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitations.csv | csv | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitatio
-   - ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitations.json | json | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitatio
-   - ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitations.geojson | json | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitatio
-   - ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitations.zip | zip | None | https://zabal-agriculture.opendata-paysbasque.fr/api/explore/v2.1/catalog/datasets/ra-methode-de-culture-elements-de-paysages-ensemble-des-exploitatio
-== GeoClip
-main.js 3926
-var requireConfig = {
-    baseUrl: 'js/libs',
-
-    paths: {
-        lgmain:'gco5/' + 'lang/' + GCO5._lang + '/lg_main',
-        lgreport:'gco5/' + 'lang/' + GCO5._lang + '/lg_report',
-        lgindicator:'gco5/' + 'lang/' + GCO5._lang + '/lg_indicator',
-        lgzonage:'gco5/' + 'lang/' + GCO5._lang + '/lg_zonage',
-        lgexternaldata:'gco5/' + 'lang/' + GCO5._lang + '/lg_externaldata',
-        jquery: ['jquery/jquery-3.7.1.min'],
-        text: 'require/'+'text',
-        async: 'require/'+'async',
-        gc_core: 'gco5/' + 'gc_core',
-        proj4:'gco5/'+'modules/' + 'proj4',
-        xlsx:'xlsx/' + 'xlsx',
-        mapthmsettings:'gco5/' + 'modules/'+ 'gc_mapthmsettings',
-        mapgeosettings:'gco5/' + 'modules/'+ 'gc_mapgeosettings',
-        tablesettings:'gco5/' + 'modules/'+ 'gc_tablesettings',
-        "datatables.net": ['datatables/' + 'dataTables.min'],
-        select:['datatables/' + 'dataTables.select.min',],
-        dtResponsive:['datatables/' + 'dataTables.responsive.min'],
-        jszip:['zip/' + 'jszip','https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min'],
-        templates: 'gco5/' +'templates'
-    },
-
-    attributes: {
-        "jquery": {
-            crossorigin: "anonymous",
-            integrity: "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        }
-    },
-
-    onNodeCreated: function(node, config, name, url){
-        if(config.attributes && config.attributes[name]){
-            Object.keys(config.attributes[name]).forEach(attribute => {
-                node.setAttribute(attribute, config.attributes[name][attribute]);
-            });
-        }
-    },
-
-    waitSeconds:0,
-
-    shim: {
-        gc_core: {
-            deps: ['jquery'],
-            exports: 'gc_core'
-        },
-        proj4: {
-            deps: ['gc_core'],
-            exports: 'proj4'
-        },
-        xlsx: {
-            deps: ['jszip'],
-            exports: 'xlsx'
-        },
-        jszip: {
-            deps: ['gc_core'],
-            exports: 'jszip'
-        },
-        gc_mobile: {
-            deps: ['gc_core'],
-            exports: 'gc_mobile'
-        },
-        mapsettings: {
-            deps: ['gc_core'],
-            exports: 'proj4'
-        },
-        lgmain: {
-            deps: ['gc_core'],
-            exports: 'lgmain'
-        },
-        select: {
-            deps: ['datatables.net']
-        },
-        dtButtonsHtml5: {
-            deps: ['datatables.net']
-        },
-        dtButtons: {
-            deps: ['datatables.net']
-        }
-    }
-} ;
-
-var initRequire = ['jquery',
-    'gc_core',
-    'text!templates/pageApp_tmpl.html',
-    'lgmain'] ;
-
-for (var i = 0; i < GCO5._customizedLangFiles.length; i++) {
-
-    var section = GCO5._customizedLangFiles[i] ;
-    var lgCustom = 'lg' + section + 'Customized' ;
-    requireConfig.paths[lgCustom] = "../../GC_loadI18nTxt.php?lang=" + GCO5._lang + "&section=" + section ;
-    requireConfig.shim[lgCustom] = {
-        deps: ['gc_core', 'lg' + section]
-    };
-    requireConfig.shim[lgCustom].exports
-      url? ../../GC_loadI18nTxt.php?lang=
-      url? https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min
+== ISTAT descarga por provincia
+- SURF_ALL puntos 1 filas 1456 territorios 104 173 s
+     DATA_TYPE 14 ['AA_UNUT', 'AA_UNUT_FARM', 'ART', 'ARU', 'FUAA', 'HO', 'MUSHRO_AREA', 'MUSHRO_FARM', 'OHT_AREA_WUN', 'OHT_FARM_WUN', 'WOODLA_AREA', 'WOODLA_FARM', 'WOODTR_AREA', 'WOODTR_FARM']
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITC11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITC11
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITC32 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITC32
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITC48 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITC48
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITD35 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITD35
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITD54 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITD54
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITE15 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITE15
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITE33 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITE33
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITF14 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITF14
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITF43 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITF43
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITG11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITG11
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL ITG26 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL ITG26
+  fallo DF_DCAT_CENSAGRIC2020_CROPS_ALL IT HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CROPS_ALL IT
+- CROPS_ALL puntos None filas 0 territorios 0 524 s
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITC11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITC11
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITC32 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITC32
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITC48 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITC48
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITD35 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITD35
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITD54 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITD54
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITE15 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITE15
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITE33 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITE33
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITF14 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITF14
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITF43 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITF43
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITG11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITG11
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITG26 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL ITG26
+  fallo DF_DCAT_CENSAGRIC2020_CATTLE_ALL IT HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_CATTLE_ALL IT
+- CATTLE_ALL puntos None filas 0 territorios 0 531 s
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITC11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITC11
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITC32 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITC32
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITC48 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITC48
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITD35 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITD35
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITD54 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITD54
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITE15 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITE15
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITE33 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITE33
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITF14 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITF14
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITF43 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITF43
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITG11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITG11
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITG26 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL ITG26
+  fallo DF_DCAT_CENSAGRIC2020_LABCAT_ALL IT HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LABCAT_ALL IT
+- LABCAT_ALL puntos None filas 0 territorios 0 524 s
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITC11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITC11
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITC32 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITC32
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITC48 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITC48
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITD35 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITD35
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITD54 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITD54
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITE15 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITE15
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITE33 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITE33
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITF14 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITF14
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITF43 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITF43
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITG11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITG11
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITG26 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL ITG26
+  fallo DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL IT HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL IT
+- SAU_AZONE_ALL puntos None filas 0 territorios 0 525 s
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITC11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITC11
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITC32 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITC32
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITC48 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITC48
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITD35 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITD35
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITD54 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITD54
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITE15 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITE15
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITE33 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITE33
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITF14 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITF14
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITF43 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITF43
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITG11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITG11
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITG26 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL ITG26
+  fallo DF_DCAT_CENSAGRIC2020_LEGOWN_ALL IT HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_LEGOWN_ALL IT
+- LEGOWN_ALL puntos None filas 0 territorios 0 524 s
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITC11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITC11
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITC32 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITC32
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITC48 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITC48
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITD35 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITD35
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITD54 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITD54
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITE15 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITE15
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITE33 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITE33
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITF14 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITF14
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITF43 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITF43
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITG11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITG11
+  fallo DF_DCAT_CENSAGRIC2020_AGE ITG26 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE ITG26
+  fallo DF_DCAT_CENSAGRIC2020_AGE IT HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_AGE IT
+- AGE puntos None filas 0 territorios 0 524 s
+- SURF_IRR_CONS puntos 1 filas 624 territorios 104 180 s
+     DATA_TYPE 6 ['FIABLE', 'FIATED', 'FIATED_CONSIR', 'IA', 'IA_CONSIR', 'IBA']
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITC11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITC11
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITC32 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITC32
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITC48 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITC48
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITD35 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITD35
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITD54 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITD54
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITE15 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITE15
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITE33 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITE33
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITF14 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITF14
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITF43 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITF43
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITG11 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITG11
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL ITG26 HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL ITG26
+  fallo DF_DCAT_CENSAGRIC2020_QUAL_ALL IT HTTP Error 422: Unprocessable Entity
+  sin datos DF_DCAT_CENSAGRIC2020_QUAL_ALL IT
+- QUAL_ALL puntos None filas 0 territorios 0 527 s
+== data.gouv: observatoire des territoires y RA 2020
