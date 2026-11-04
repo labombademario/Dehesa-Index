@@ -1370,6 +1370,32 @@
    "legalConfidence": "MEDIUM",
    "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
+  "etalab_geo": {
+   "country": "FR",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-11-04",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "used": true,
+   "aliases": [],
+   "notes": "API Découpage administratif (geo.api.gouv.fr, Etalab/DINUM): relación comuna -> EPCI y nombres de los EPCI, construida sobre el COG de INSEE y los datos de la DGCL. Solo se usan los códigos y nombres de las intercomunalidades y la pertenencia de cada comuna.",
+   "name": "France — API Découpage administratif (Etalab, DINUM; COG INSEE y DGCL)",
+   "url": "https://geo.api.gouv.fr/",
+   "licenseId": "Etalab-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "attributionText": "Source : API Découpage administratif (Etalab), INSEE et DGCL, sous Licence Ouverte",
+   "additionalRestrictions": "Citar la fuente; no alterar el sentido de la información.",
+   "evidence": "README del paquete @etalab/decoupage-administratif (leído 2026-11-04): datos «Licence Ouverte» (Etalab), construidos sobre el COG de INSEE y la DGCL; código MIT. Revisión humana pendiente de las condiciones del servicio geo.api.gouv.fr.",
+   "short": "Etalab · Découpage administratif",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+  },
   "ine_es": {
    "country": "ES",
    "commercialUse": "yes",
@@ -8998,6 +9024,13 @@
     "ine_es"
    ],
    "notes": "Censo Agrario 2020 de España por municipio (INE, INEbase; tablas 75471, 75476, 75481, 75482 y 75483; scripts/update-es-municipios.py): explotaciones, SAU y superficie de tierra arable, cultivos leñosos, pastos permanentes e invernadero, cabezas y explotaciones de bovino, ovino y caprino, porcino y aves, titulares por sexo, edad media y tramos de edad y formación universitaria agraria. 17 comunidades y solo los municipios con explotaciones (Ceuta y Melilla no se incluyen). El INE asigna cada explotación al municipio donde está la mayor parte de su tierra o su ganado, y el secreto estadístico (..) queda como hueco. Licencia CC BY 4.0 del INE con atribución."
+  },
+  "data/fr-epci/": {
+   "sources": [
+    "agreste_ra",
+    "etalab_geo"
+   ],
+   "notes": "Recensement agricole 2020 de Francia agrupado por intercomunalidad (EPCI): las comunas de data/fr-communes (Agreste, GeoClip) sumadas con la relación comuna -> EPCI de la API Découpage administratif (Etalab; scripts/update-fr-communes.py). Sumas de indicadores aditivos, medias ponderadas de porcentajes y OTEX con más SAU (cálculo de Dehesa Index). Las comunas fusionadas desde 2020 no tienen EPCI y no se suman; una comuna con el dato oculto no se suma."
   },
   "data/fr-communes/": {
    "sources": [

@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T18:58:12Z",
+ "generatedAt": "2026-11-04T20:04:49Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 205,
-  "sourcesApto": 189,
+  "sources": 206,
+  "sourcesApto": 190,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 436,
-  "datasets_apto": 295,
+  "datasets": 437,
+  "datasets_apto": 296,
   "datasets_condiciones": 129,
   "datasets_parcial": 5,
   "datasets_no-apto": 3,
@@ -1143,6 +1143,23 @@
    "redistribution": "yes",
    "attribution": "Zdroj: Sbírka zákonů, nařízení vlády č. 83/2023 Sb. ve znění č. 45/2026 Sb. a 167/2026 Sb.; metodické příručky Ministerstva zemědělství. Výňatky.",
    "conditions": "Las reglas son un resumen propio hecho a mano; manda la Sbírka zákonů. El texto se leyó en una copia editorial (epravo.cz), no en e-Sbírka, y la maquetación de esa copia puede tener derechos propios: no se copia. Las condiciones de jóvenes y asociadas y el plazo de retraso salen de guías del Ministerio de Agricultura, que no son derecho; se muestran como hechos con cita. El § 3 se leyó en paráfrasis de la herramienta."
+  },
+  {
+   "id": "etalab_geo",
+   "name": "France — API Découpage administratif (Etalab, DINUM; COG INSEE y DGCL)",
+   "url": "https://geo.api.gouv.fr/",
+   "country": "FR",
+   "licenseId": "Etalab-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+   "licenseUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "MEDIUM",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Source : API Découpage administratif (Etalab), INSEE et DGCL, sous Licence Ouverte",
+   "conditions": "Citar la fuente; no alterar el sentido de la información."
   },
   {
    "id": "eu_agrifood",
@@ -6308,6 +6325,15 @@
    "verdict": "apto",
    "sources": [
     "agreste_ra"
+   ]
+  },
+  {
+   "path": "data/fr-epci/",
+   "scope": "carpeta",
+   "verdict": "apto",
+   "sources": [
+    "agreste_ra",
+    "etalab_geo"
    ]
   },
   {

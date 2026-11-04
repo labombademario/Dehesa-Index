@@ -6,6 +6,10 @@ de comunas viene de GC_refdata.php y los valores de 'distribution.values' en el 
 El servidor no manda la cadena de certificados completa: se anade el emisor indicado en el propio certificado (AIA) a un paquete local; la verificacion TLS nunca se desactiva.
 Se guardan las comunas con explotaciones (las demas, y las de ultramar, no). Controles (si fallan no se escribe nada): entre 34.000 y 36.000 comunas; para cada indicador la suma de los valores iguala el total que publica GeoClip (distribution.sumth, tolerancia 0,5 + 0,01 %)
 cuando es aditivo; explotaciones 2020 entre 380.000 y 430.000; SAU 2020 entre 25 y 30 millones de ha; sin negativos; los porcentajes entre 0 y 100.
+Ademas: la orientacion tecnico-economica (OTEX en 12 postes, indicador otefda20: la OTEX dominante de la comuna, la que aporta al menos dos tercios de la PBS; si ninguna llega, "policultivo y policria")
+se guarda como columna 'otex' (codigo de Agreste) y se agrupan las comunas en intercomunalidades (EPCI) con la relacion comuna -> EPCI de geo.api.gouv.fr (Licence Ouverte, DGCL/INSEE) -> data/fr-epci/<REGION>.json:
+sumas de los indicadores aditivos, medias ponderadas de los porcentajes (por SAU, o por jefes y coexplotantes en los de edad) y la OTEX con mas SAU y su parte. Las comunas fusionadas desde 2020 (~100, ~0,3 % de las explotaciones) no tienen EPCI y no se suman.
+Una comuna con el dato oculto no se suma: las cifras de un EPCI son la suma de las comunas con dato. Controles del EPCI: entre 1.100 y 1.350 EPCI con explotaciones; sus explotaciones suman entre el 98,5 % y el 100 % del total de Francia.
 Uso: update-fr-communes.py [--out DIRECTORIO]"""
 import datetime, json, re, subprocess, sys, tempfile, time
 from pathlib import Path
@@ -26,6 +30,8 @@ for _r, _d in {"ARA": "01 03 07 15 26 38 42 43 63 69 73 74", "BFC": "21 25 39 58
                "GES": "08 10 51 52 54 55 57 67 68 88", "HDF": "02 59 60 62 80", "IDF": "75 77 78 91 92 93 94 95", "NOR": "14 27 50 61 76",
                "NAQ": "16 17 19 23 24 33 40 47 64 79 86 87", "OCC": "09 11 12 30 31 32 34 46 48 65 66 81 82", "PDL": "44 49 53 72 85", "PAC": "04 05 06 13 83 84"}.items():
     for _x in _d.split(): DEP_REG[_x] = _r
+EPCI_ADD = ["nbexpl20", "sau20", "pbs20", "ugbtot20", "ugbher20", "vaclait20", "vacnourrices20", "brebis20", "chevres20", "porcsengr20", "truies20", "etp20", "cexcoex20", "explirrigab20"]
+EPCI_W = {"partprairie20": "sau20", "partcereoleopro20": "sau20", "partvigne20": "sau20", "partcultperm20": "sau20", "partirrig20": "sau20", "cexm40an20": "cexcoex20", "cexp55an20": "cexcoex20"}
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
@@ -61,8 +67,60 @@ def get(path, tries=4):
         except Exception as e: last = str(e)
         time.sleep(15 * (i + 1))
     raise RuntimeError("%s -> %s" % (path[:90], last))
+def get_plain(url, tries=3):
+    last = None
+    for i in range(tries):
+        try:
+            r = subprocess.run(["curl", "-sS", "--compressed", "-m", "180", "-A", "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)", url], capture_output=True, text=True)
+            if r.returncode == 0 and r.stdout.lstrip()[:1] in "[{": return json.loads(r.stdout)
+            last = (r.stderr or r.stdout[:120]).strip()[:160]
+        except Exception as e: last = str(e)
+        time.sleep(10 * (i + 1))
+    raise RuntimeError("%s -> %s" % (url[:90], last))
 def dep_of(code):
     return code[:3] if code[:2] == "97" else code[:2]
+def epci(codes, names, keys, cols, sums, now, src, out):
+    mp = {x["code"]: x.get("codeEpci") for x in get_plain("https://geo.api.gouv.fr/communes?fields=code,codeEpci&format=json")}
+    nm = {x["code"]: x["nom"] for x in get_plain("https://geo.api.gouv.fr/epcis?fields=code,nom")}
+    ci = {k: i for i, k in enumerate(keys)}; E = {}; miss = 0
+    for i, c in enumerate(codes):
+        f = cols["nbexpl20"][i]
+        if not f: continue
+        e = mp.get(c)
+        if not e or e not in nm or dep_of(c) not in DEP_REG: miss += f; continue
+        E.setdefault(e, []).append(i)
+    log("EPCI con explotaciones", len(E), "explotaciones en comunas sin EPCI", miss)
+    if not 1100 <= len(E) <= 1350: raise RuntimeError("numero de EPCI fuera de rango: %d" % len(E))
+    ek = ["ncom"] + EPCI_ADD + list(EPCI_W) + (["otex", "otexshare"] if "otex" in cols else [])
+    rows = {}; reg_of = {}; tot = 0
+    for e, ix in E.items():
+        row = {"ncom": len(ix)}
+        for k in EPCI_ADD:
+            v = [cols[k][i] for i in ix if cols[k][i] is not None]; row[k] = round(sum(v), 1 if k == "etp20" else 0) if v else None
+            if k != "etp20" and row[k] is not None: row[k] = int(row[k])
+        for k, w in EPCI_W.items():
+            num = sum(cols[k][i] * cols[w][i] for i in ix if cols[k][i] is not None and cols[w][i]); den = sum(cols[w][i] for i in ix if cols[k][i] is not None and cols[w][i])
+            row[k] = round(num / den, 1) if den else None
+        if "otex" in cols:
+            sa = {}
+            for i in ix:
+                if cols["otex"][i] and cols["sau20"][i]: sa[cols["otex"][i]] = sa.get(cols["otex"][i], 0) + cols["sau20"][i]
+            tsa = sum(cols["sau20"][i] for i in ix if cols["sau20"][i])
+            if sa and tsa: top = max(sa, key=lambda q: sa[q]); row["otex"] = top; row["otexshare"] = round(100 * sa[top] / tsa, 1)
+            else: row["otex"] = row["otexshare"] = None
+        rr = {}
+        for i in ix: rr[DEP_REG[dep_of(codes[i])]] = rr.get(DEP_REG[dep_of(codes[i])], 0) + (cols["nbexpl20"][i] or 0)
+        reg_of[e] = max(rr, key=lambda q: rr[q]); tot += row["nbexpl20"] or 0; rows[e] = [nm[e]] + [row[k] for k in ek]
+    if not 0.985 * sums["nbexpl20"] <= tot <= sums["nbexpl20"] + 1: raise RuntimeError("explotaciones de los EPCI %s frente al total %s" % (tot, sums["nbexpl20"]))
+    out.mkdir(parents=True, exist_ok=True)
+    for old in out.glob("*.json"): old.unlink()
+    regs = {}
+    for e, r in rows.items(): regs.setdefault(reg_of[e], {})[e] = r
+    geo = {"id": "etalab_geo", "url": "https://geo.api.gouv.fr/"}
+    for r, cm in sorted(regs.items()):
+        (out / (r + ".json")).write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "geo": geo, "region": r, "year": 2020, "ind": ek, "epci": cm}, ensure_ascii=False, separators=(",", ":")) + "\n")
+    (out / "index.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "geo": geo, "year": 2020, "epci": len(rows), "ind": ek, "regions": {r: len(cm) for r, cm in sorted(regs.items())}, "unmappedFarms": miss, "totalFarms": tot}, ensure_ascii=False, separators=(",", ":")) + "\n")
+    log("EPCI escritos", len(rows), "en", len(regs), "regiones; explotaciones", tot, "de", sums["nbexpl20"])
 def main():
     args = sys.argv[1:]; out = ROOT / "data" / "fr-communes"
     if "--out" in args: out = Path(args[args.index("--out") + 1])
@@ -106,6 +164,19 @@ def main():
             sums[k] = got
         log("  %-16s %-18s %-14s comunas con dato %6d  suma %s" % (k, gid, m["c_id_dataset"], ok, round(got, 1) if typ == "n" else "-"))
         cols[k] = col; used.append(k)
+    # OTEX dominante por comuna (indicador cualitativo: cada valor es la posicion, empezando en 1, en la lista de frecuencias)
+    try:
+        mo = [i for i in li if i["c_id_indicateur"] == "otefda20"][0]
+        jo = get("GC_indic.php?indic=otefda20&dataset=%s&view=map11&lang=fr%s" % (mo["c_id_dataset"], HASH))["content"]["distribution"]
+        fq = [int(f["code"]) for f in jo["frequences"]]; cd = jo["codes"]
+        if len(cd) != n or any(not isinstance(c, int) or not 0 <= c <= len(fq) for c in cd): raise RuntimeError("codigos OTEX mal formados")
+        cnt = {}
+        for c in cd: cnt[c] = cnt.get(c, 0) + 1
+        for i, f in enumerate(jo["frequences"], 1):
+            if cnt.get(i, 0) != f["eft"]: raise RuntimeError("OTEX: %d comunas con el codigo %s y GeoClip cuenta %d" % (cnt.get(i, 0), f["code"], f["eft"]))
+        cols["otex"] = [fq[c - 1] if c and fq[c - 1] > 0 else None for c in cd]; used.append("otex")
+        log("  otex             otefda20           %-14s comunas con OTEX %6d" % (mo["c_id_dataset"], sum(1 for x in cols["otex"] if x)))
+    except Exception as e: log("  OTEX no disponible, se omite:", str(e)[:160])
     if not 380000 <= sums["nbexpl20"] <= 430000: return fail("explotaciones 2020 fuera de rango:", sums["nbexpl20"])
     if not 25e6 <= sums["sau20"] <= 30e6: return fail("SAU 2020 fuera de rango:", sums["sau20"])
     keys = used; ix = keys.index("nbexpl20")
@@ -126,8 +197,11 @@ def main():
         (out / (r + ".json")).write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "region": r, "year": 2020, "ind": keys, "communes": cm}, ensure_ascii=False, separators=(",", ":")) + "\n")
     idx = {"schemaVersion": 1, "generatedAt": now, "source": src, "year": 2020, "communes": kept, "ind": {k: {"id": g, "dataset": meta[k]["c_id_dataset"], "unit": meta[k].get("c_unite"), "label": meta[k].get("c_lib_indicateur_court"), "type": t} for k, g, t, _ in INDS if k in cols},
            "regions": {r: len(cm) for r, cm in sorted(regs.items())}, "totals": {k: round(v, 1) for k, v in sums.items()}}
+    if "otex" in cols: idx["ind"]["otex"] = {"id": "otefda20", "dataset": "otex_2020_1", "unit": None, "label": "OTEX dominante (12 postes)", "type": "c"}
     (out / "index.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + "\n")
     log("escrito", len(regs), "regiones")
+    try: epci(codes, names, keys, cols, sums, now, src, out.parent / "fr-epci" if "--out" not in args else out.parent / "fr-epci")
+    except Exception as e: log("EPCI no escrito:", str(e)[:200])
     logf.write_text("\n".join(LOG) + "\n"); return 0
 if __name__ == "__main__":
     sys.exit(main())

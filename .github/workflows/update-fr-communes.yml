@@ -22,11 +22,11 @@ jobs:
       - id: qa
         name: Control de calidad antes de publicar (si falla, no se publica)
         if: always()
-        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/fr-communes)
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/fr-communes data/fr-epci)
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Censo agrario 2020 de Francia por comuna - explotaciones, SAU, ganado, mano de obra y cultivos (Agreste, GeoClip)" data/fr-communes-log.txt data/fr-communes
+        run: bash scripts/publish-data.sh "Censo agrario 2020 de Francia por comuna e intercomunalidad (EPCI) - explotaciones, SAU, ganado, mano de obra, cultivos y orientación técnico-económica (Agreste, GeoClip)" data/fr-communes-log.txt data/fr-communes data/fr-epci
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

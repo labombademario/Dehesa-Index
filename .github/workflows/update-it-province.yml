@@ -26,7 +26,7 @@ jobs:
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'
-        run: bash scripts/publish-data.sh "Censo agrario 2020 de Italia por provincia - explotaciones, superficie, cultivos, ganado y mano de obra (ISTAT)" data/it-province-log.txt data/it-province
+        run: bash scripts/publish-data.sh "Censo agrario 2020 de Italia por provincia - explotaciones, superficie, cultivos, ganado, mano de obra, zona altimétrica, edad del jefe, tenencia y regadío (ISTAT)" data/it-province-log.txt data/it-province
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish

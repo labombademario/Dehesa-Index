@@ -127,10 +127,10 @@ sources:
     timeout: 30
     script_timeout: 25
     continue: true
-    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/fr-communes)
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/fr-communes data/fr-epci)
     data: [fr-communes-log.txt]
-    extra: ['!data/fr-communes']
-    message: Censo agrario 2020 de Francia por comuna - explotaciones, SAU, ganado, mano de obra y cultivos (Agreste, GeoClip)
+    extra: ['!data/fr-communes', '!data/fr-epci']
+    message: Censo agrario 2020 de Francia por comuna e intercomunalidad (EPCI) - explotaciones, SAU, ganado, mano de obra, cultivos y orientación técnico-económica (Agreste, GeoClip)
   - id: es-municipios
     name: Update Spain farm census 2020 by municipality (INE)
     cron: ['20 12 17 1,7 *']

@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T18:58:12Z",
+ "generatedAt": "2026-11-04T20:04:49Z",
  "summary": {
-  "sources": 205,
-  "sourcesApto": 189,
+  "sources": 206,
+  "sourcesApto": 190,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 436,
-  "datasets_apto": 295,
+  "datasets": 437,
+  "datasets_apto": 296,
   "datasets_condiciones": 129,
   "datasets_parcial": 5,
   "datasets_no-apto": 3,
@@ -277,6 +277,10 @@
   },
   "esbirka_cz": {
    "name": "Sbírka zákonů (e-Sbírka) — nařízení vlády č. 83/2023 Sb. y novelas 45/2026 y 167/2026 Sb.",
+   "verdict": "apto"
+  },
+  "etalab_geo": {
+   "name": "France — API Découpage administratif (Etalab, DINUM; COG INSEE y DGCL)",
    "verdict": "apto"
   },
   "eu_agrifood": {

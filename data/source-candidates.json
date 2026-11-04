@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T19:53:42Z",
+ "generatedAt": "2026-11-04T20:04:48Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 235,
+  "total": 236,
   "byStatus": {
-   "ACTIVE": 205,
+   "ACTIVE": 206,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -4315,6 +4315,45 @@
    "derivatives": "yes",
    "attribution": "Zdroj: Sbírka zákonů, nařízení vlády č. 83/2023 Sb. ve znění č. 45/2026 Sb. a 167/2026 Sb.; metodické příručky Ministerstva zemědělství. Výňatky.",
    "lastChecked": "2026-10-15",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "etalab_geo",
+   "registryId": "etalab_geo",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "France — API Découpage administratif (Etalab, DINUM; COG INSEE y DGCL)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "Etalab-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source : API Découpage administratif (Etalab), INSEE et DGCL, sous Licence Ouverte",
+   "lastChecked": "2026-11-04",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
    "registryAlignment": "ALIGNED",

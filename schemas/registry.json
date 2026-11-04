@@ -2442,6 +2442,16 @@
    "es-municipios-index",
    []
   ],
+  "fr-epci/[A-Z][A-Z][A-Z].json": [
+   "fr-epci-region",
+   [
+    "fr_epci_region"
+   ]
+  ],
+  "fr-epci/inde[x].json": [
+   "fr-epci-index",
+   []
+  ],
   "fr-communes/[A-Z][A-Z][A-Z].json": [
    "fr-communes-region",
    [

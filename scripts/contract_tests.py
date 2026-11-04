@@ -3815,6 +3815,24 @@ def es_municipios_region(doc, errs, warns, stats):
         if e is not None and not 15 <= e <= 100: errs.append("es-municipios %s %s: edad media fuera de rango %s" % (doc["region"], code, e)); return
         if row[g["jefm"]] is not None and row[g["jef"]] is not None and row[g["jefm"]] > row[g["jef"]]: errs.append("es-municipios %s %s: mas mujeres que titulares" % (doc["region"], code)); return
     stats["es-municipios valores"] = stats.get("es-municipios valores", 0) + n
+def fr_epci_region(doc, errs, warns, stats):
+    """Censo agrario 2020 de Francia por intercomunalidad (EPCI, codigo SIREN de 9 cifras): cada EPCI es [nombre, un valor por cada indicador de 'ind']; valores numericos no negativos o null; ncom (comunas con explotaciones) al menos 1; las explotaciones (nbexpl20) al menos 1 y no mas de 12.000; los porcentajes (part*, cex*, otexshare) no pasan de 100; la OTEX es uno de los codigos de Agreste (1516, 2829, 3500, 3900, 4500, 4600, 4700, 4800, 5074, 6184, 9000)."""
+    ind = doc["ind"]; n = 0
+    for k in ("ncom", "nbexpl20", "sau20"):
+        if k not in ind: errs.append("fr-epci %s: falta %s en 'ind'" % (doc["region"], k)); return
+    g = {k: ind.index(k) + 1 for k in ind}
+    for code, row in doc["epci"].items():
+        if not re.match(r"^\d{9}$", code): errs.append("fr-epci %s: codigo de EPCI no valido %s" % (doc["region"], code)); return
+        if not isinstance(row, list) or len(row) != len(ind) + 1 or not isinstance(row[0], str) or not row[0]: errs.append("fr-epci %s %s: fila mal formada" % (doc["region"], code)); return
+        for k, x in zip(ind, row[1:]):
+            if x is None: continue
+            if not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0: errs.append("fr-epci %s %s %s: valor no valido %r" % (doc["region"], code, k, x)); return
+            if (k.startswith("part") or k.startswith("cex") or k == "otexshare") and x > 100.0001: errs.append("fr-epci %s %s %s: porcentaje mayor que 100" % (doc["region"], code, k)); return
+            n += 1
+        if not row[g["ncom"]]: errs.append("fr-epci %s %s: EPCI sin comunas" % (doc["region"], code)); return
+        if not row[g["nbexpl20"]] or row[g["nbexpl20"]] > 12000: errs.append("fr-epci %s %s: explotaciones fuera de rango" % (doc["region"], code)); return
+        if "otex" in g and row[g["otex"]] is not None and row[g["otex"]] not in (1516, 2829, 3500, 3900, 4500, 4600, 4700, 4800, 5074, 6184, 9000): errs.append("fr-epci %s %s: OTEX desconocida %r" % (doc["region"], code, row[g["otex"]])); return
+    stats["fr-epci valores"] = stats.get("fr-epci valores", 0) + n
 def fr_communes_region(doc, errs, warns, stats):
     """Censo agrario 2020 de Francia por comuna (Agreste): codigo INSEE de 5 caracteres (cifras, o 2A/2B de Corcega); cada comuna es [nombre, un valor por cada indicador de 'ind'] con la misma longitud; valores numericos no negativos o null; los porcentajes (part*) no pasan de 100; las explotaciones (nbexpl20) son al menos 1 y no pasan de 1.500 por comuna; la SAU (sau20) no pasa de 80.000 ha por comuna."""
     ind = doc["ind"]; n = 0
