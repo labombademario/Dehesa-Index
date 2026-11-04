@@ -6,7 +6,11 @@ def get(u, t=120):
     try: return urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=t).read().decode("utf8", "replace")
     except Exception as e: return "ERR " + str(e)
 B = "https://servicio.ine.es/wstempus/js/ES/"
-ops = json.loads(get(B + "OPERACIONES_DISPONIBLES"))
+raw = get(B + "OPERACIONES_DISPONIBLES")
+print("RAW", raw[:300].replace("\n"," "))
+if raw.startswith("ERR") or not raw.lstrip().startswith("["):
+    raise SystemExit(0)
+ops = json.loads(raw)
 for o in ops:
     if "gr" in o.get("Nombre", "").lower() and "censo" in o.get("Nombre", "").lower(): print("OP", o.get("Id"), o.get("Codigo"), o.get("Nombre"))
 for o in ops:
