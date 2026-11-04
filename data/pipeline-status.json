@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T20:15:00Z",
+ "generatedAt": "2026-11-04T20:20:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 335,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
   "repoGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
-  "checkedAt": "2026-11-04T20:15:00Z"
+  "checkedAt": "2026-11-04T20:20:00Z"
  },
  "pipelines": [
   {
@@ -5448,7 +5448,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-11-04T19:53:53Z"
+     "lastChange": "2026-11-04T20:20:00Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5476,19 +5476,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-04T20:09:27Z"
+     "lastChange": "2026-11-04T20:19:55Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-11-04T19:53:53Z"
+     "lastChange": "2026-11-04T20:20:00Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-11-04T19:05:47Z"
+     "lastChange": "2026-11-04T20:19:50Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-11-04T19:05:47Z"
+     "lastChange": "2026-11-04T20:19:50Z"
     },
     {
      "path": "data/pack"
@@ -5504,7 +5504,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-11-04T19:53:53Z"
+     "lastChange": "2026-11-04T20:20:00Z"
     },
     {
      "path": "data/country-pending.json",
@@ -5512,7 +5512,7 @@
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-11-04T19:53:53Z"
+     "lastChange": "2026-11-04T20:20:00Z"
     },
     {
      "path": "data/ers-cost-reference.json",
@@ -5523,7 +5523,7 @@
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-11-04T19:53:53Z"
+     "lastChange": "2026-11-04T20:20:00Z"
     },
     {
      "path": "data/fv-products.json",
@@ -5535,7 +5535,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-11-04T19:53:53Z"
+     "lastChange": "2026-11-04T20:20:00Z"
     },
     {
      "path": "data/home-explore.json",
@@ -7110,7 +7110,7 @@
     "20 20 * * 3",
     "20 14 * * 4"
    ],
-   "nextRun": "2026-11-04T20:20:00Z",
+   "nextRun": "2026-11-05T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
