@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sonda 21: como sirve GeoClip (Agreste, RA 2020 por comuna) sus datos."""
+"""Sonda 22: como sirve GeoClip (Agreste, RA 2020 por comuna) sus datos."""
 import re, subprocess as sp, time, urllib.request
 UA = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)"}
 OUT = []
@@ -17,12 +17,11 @@ def cu(u, n=90): return sp.run(["curl", "-sS", "--compressed", "-m", str(n), "--
 import json
 base = "https://stats.agriculture.gouv.fr/cartostat/"
 H = "&prodhash=285aa024"
-j = json.loads(cu(base + "GC_indic.php?indic=nbexpl20&dataset=stru_2020_1&view=map11&lang=fr" + H, 120))
-cc = j["content"]
-for k, v in cc.items(): p("content", k, type(v).__name__, len(json.dumps(v)), json.dumps(v, ensure_ascii=False)[:300])
-for k, v in cc["distribution"].items():
-    if len(json.dumps(v)) > 120: p("distribution", k, type(v).__name__, len(json.dumps(v)), json.dumps(v)[:300])
-for k, v in cc["indic"].items():
-    if k == "colorPalette": p("palette", json.dumps(v)[:200])
-p("zonrefs", json.dumps(cc["zonrefs"])[:300], "options", json.dumps(cc["options"])[:500])
+r = json.loads(cu(base + "GC_refdata.php?nivgeo=com2020&extent=extent1&lang=fr" + H, 120))
+t = r["content"]["territories"]
+for k, v in t.items(): p("territories", k, type(v).__name__, len(v), json.dumps(v, ensure_ascii=False)[:200])
+p("header", json.dumps(r["header"])[:300])
+for ng in ("epci2020", "dep2020"):
+    r2 = json.loads(cu(base + "GC_refdata.php?nivgeo=%s&extent=extent1&lang=fr%s" % (ng, H), 120)); t2 = r2["content"]["territories"]
+    for k, v in t2.items(): p(ng, k, type(v).__name__, len(v), json.dumps(v, ensure_ascii=False)[:160])
 open("data/probe-it-fr-log.txt", "w").write("\n".join(OUT) + "\n")
