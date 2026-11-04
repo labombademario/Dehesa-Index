@@ -139,6 +139,8 @@ jobs:
         run: python3 scripts/test-fr-communes.py
       - name: España censo agrario por municipio (contrato, sin red)
         run: python3 scripts/test-es-municipios.py
+      - name: Francia censo agrario por intercomunalidad (contrato, sin red)
+        run: python3 scripts/test-fr-epci.py
       - name: Australia cultivos por SA2 (contrato, sin red)
         run: python3 scripts/test-au-sa2.py
       - name: Australia ganado y datos por municipio (contratos, sin red)
