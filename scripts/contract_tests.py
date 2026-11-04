@@ -3827,7 +3827,7 @@ def fr_epci_region(doc, errs, warns, stats):
         for k, x in zip(ind, row[1:]):
             if x is None: continue
             if not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0: errs.append("fr-epci %s %s %s: valor no valido %r" % (doc["region"], code, k, x)); return
-            if (k.startswith("part") or k.startswith("cex") or k == "otexshare") and x > 100.0001: errs.append("fr-epci %s %s %s: porcentaje mayor que 100" % (doc["region"], code, k)); return
+            if (k.startswith("part") or k in ("cexm40an20", "cexp55an20", "otexshare")) and x > 100.0001: errs.append("fr-epci %s %s %s: porcentaje mayor que 100" % (doc["region"], code, k)); return
             n += 1
         if not row[g["ncom"]]: errs.append("fr-epci %s %s: EPCI sin comunas" % (doc["region"], code)); return
         if not row[g["nbexpl20"]] or row[g["nbexpl20"]] > 12000: errs.append("fr-epci %s %s: explotaciones fuera de rango" % (doc["region"], code)); return

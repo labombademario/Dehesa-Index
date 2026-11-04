@@ -120,7 +120,7 @@ def epci(codes, names, keys, cols, sums, now, src, out):
     for r, cm in sorted(regs.items()):
         (out / (r + ".json")).write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "geo": geo, "region": r, "year": 2020, "ind": ek, "epci": cm}, ensure_ascii=False, separators=(",", ":")) + "\n")
     (out / "index.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "source": src, "geo": geo, "year": 2020, "epci": len(rows), "ind": ek, "regions": {r: len(cm) for r, cm in sorted(regs.items())}, "unmappedFarms": miss, "totalFarms": tot, "metroFarms": metro}, ensure_ascii=False, separators=(",", ":")) + "\n")
-    log("EPCI escritos", len(rows), "en", len(regs), "regiones; explotaciones", tot, "de", sums["nbexpl20"])
+    log("EPCI escritos", len(rows), "en", len(regs), "regiones; explotaciones", tot, "de", metro)
 def main():
     args = sys.argv[1:]; out = ROOT / "data" / "fr-communes"
     if "--out" in args: out = Path(args[args.index("--out") + 1])
