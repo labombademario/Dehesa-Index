@@ -1,159 +1,183 @@
 == ISTAT codelists y provincias
 provincias: 107 ['ITC11', 'ITC12', 'ITC13', 'ITC14', 'ITC15'] ['ITG28', 'ITG29', 'ITG2A', 'ITG2B', 'ITG2C']
 == DF_DCAT_CENSAGRIC2020_SURF_ALL
-  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  intento 2 HTTP Error 400: Bad Request
+  intento 3 HTTP Error 400: Bad Request
+  intento 4 HTTP Error 400: Bad Request
+  intento 5 HTTP Error 400: Bad Request
+  intento 6 HTTP Error 400: Bad Request
+  intento 7 HTTP Error 400: Bad Request
 bytes 0
 == DF_DCAT_CENSAGRIC2020_CROPS_ALL
-  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  intento 2 HTTP Error 400: Bad Request
+  intento 3 HTTP Error 400: Bad Request
+  intento 4 HTTP Error 400: Bad Request
+  intento 5 HTTP Error 400: Bad Request
+  intento 6 HTTP Error 400: Bad Request
+  intento 7 HTTP Error 400: Bad Request
 bytes 0
 == DF_DCAT_CENSAGRIC2020_CATTLE_ALL
-  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  intento 2 HTTP Error 400: Bad Request
+  intento 3 HTTP Error 400: Bad Request
+  intento 4 HTTP Error 400: Bad Request
+  intento 5 HTTP Error 400: Bad Request
+  intento 6 HTTP Error 400: Bad Request
+  intento 7 HTTP Error 400: Bad Request
 bytes 0
 == DF_DCAT_CENSAGRIC2020_LABCAT_ALL
-  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  intento 2 HTTP Error 400: Bad Request
+  intento 3 HTTP Error 400: Bad Request
+  intento 4 HTTP Error 400: Bad Request
+  intento 5 HTTP Error 400: Bad Request
+  intento 6 HTTP Error 400: Bad Request
+  intento 7 HTTP Error 400: Bad Request
 bytes 0
 == DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL
-  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  intento 2 HTTP Error 400: Bad Request
+  intento 3 HTTP Error 400: Bad Request
+  intento 4 HTTP Error 400: Bad Request
+  intento 5 HTTP Error 400: Bad Request
+  intento 6 HTTP Error 400: Bad Request
+  intento 7 HTTP Error 400: Bad Request
 bytes 0
 == DF_DCAT_CENSAGRIC2020_AGE_EDU
-  error 0 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 1 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
-  error 2 ITG18+ITG19+ITG25+ITG26+ITG27+ITG28+ITG29+ITG2A+ITG2B+ITG2C+IT?startPeriod=2020&endPeriod=2020&detail=dataonly HTTP Error 400: Bad Request
+  intento 2 HTTP Error 400: Bad Request
+  intento 3 HTTP Error 400: Bad Request
+  intento 4 HTTP Error 400: Bad Request
+  intento 5 HTTP Error 400: Bad Request
+  intento 6 HTTP Error 400: Bad Request
+  intento 7 HTTP Error 400: Bad Request
 bytes 0
+== data.gouv ministerio RA 2020
+   agreste-donnees-communales-du-recensement-agricole-cartographie-2020-et-tableaux | Ministère de l'Agriculture, de l'agro-al | fr-lo | 2025-11-06 | 4
+       - Liste des indicateurs du RA 2020, cartographiés au niveau communal | xlsx | None | https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/GeoclipAir2020/Liste-des-indicateurs-cartographiques-du-RA2020.x
+       - Toutes les statistiques par commune sous Agreste | url | None | https://agreste.agriculture.gouv.fr/agreste-web/disaron/!searchurl/cda8b080-3e9e-4368-b41d-7a29c1da0be6!a0340cf7-e390-4990-9499-50f92e154864
+       - Retrouvez les cartes du recensement agricole 2020 par commune sur GéoC | url | None | https://stats.agriculture.gouv.fr/cartostat/#c=indicator&i=elev_2020_2.explporcsengr20&selcodgeo=56123&t=A02
+       - Données issues des Recensement agricoles - Tableaux | url | None | https://www.agreste.agriculture.gouv.fr/agreste-web/disaron/Recensements+agricoles/09facbca-808a-4f4a-b5c0-bec9618b88da!cda8b080-3e9e-4368-b
 == GeoClip
 html 12582
-<!DOCTYPE html>
-<html lang="fr" moznomarginboxes mozdisallowselectionprint>
-<head>
-    <base href="//stats.agriculture.gouv.fr/cartostat/">
+ion: "1",
+            assetsDir: "assets",
+            ip_emc3:'',
+            local_emc3:'',
+            isLocalhost:'',
+            allowIframe:'1',
+            canLoadGzLayers:'',
+            prodHash: '285aa024',
+            obs: 'main',
+            app: '',
+            isMobile: 0,
+            isTablet: 0,
+            idView: '',
+            userIsLogged: "",
+            libUser: "",
+            iframe: "",
+            appTitle: "Recensement agricole 2020",
+            testMode: '',
+            canResetMail: "",
+            printBannerPortrait: "assets/banner500h.png",
+            printBannerLandscape: "assets/banner500h.png",
+            hasCustomPrintBanner: 1        };
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	
-    <script>
-
-        function hasCkConsented() {
-            return window.Cookiebot !== undefined && Cookiebot.consent && Cookiebot.consent.statistics;
-        }
-
-        function hasOptedOut() {
-            if (hasCkConsented()) return false;
-            return document.cookie.indexOf('cookie_dismissed') >= 0;
-        }
-
-        function hasMAOptedOut() {
-            return getCookie('ma_accepted') == 0;
-        }
-
-        function hasATOptedOut() {
-            return getCookie('at_accepted') == 0;
-        }
-
-        function hasNotExpressedCookiePreferenceYet() {
-            if (hasCkConsented()) return false;
-            document.cookie = "testCookie=1;path=/";
-            var testCookieSupport = document.cookie.indexOf('testCookie') != -1;
-
-            return testCookieSupport &&
-                (document.cookie.indexOf('cookie_optin') == -1 && document.cookie.indexOf('cookie_dismissed') == -1);
-        }
-
-        function getCookie(name) {
-            var value = '; ' + document.cookie;
-            var parts = value.split('; ' + name + '=');
-            return parts.length != 2 ?
-                undefined : parts.pop().split(';').shift();
-        }
-
-        function setCookie(name, value, expiryDays, domain, path) {
-            var exdate = new Date();
-            exdate.setDate(exdate.getDate() + (expiryDays || 365));
-
-            var cookie = [
-                name + '=' + value,
-                'expires=' + exdate.toUTCString(),
-                'path=' + (path || '/'),
-                'SameSite=Strict',
-                'Secure'            ];
-
-            if (domain) {
-                cookie.push('domain=' + domain);
-            }
-            document.cookie = cookie.join(';');
-        }
-
-        function deleteCookie(name, path, domain) {
-            if (getCookie(name)) {
-                let domains = [domain];
-
-                if (domain) {
-                    // GA cookies may have a . preceding the domain
-                    domains.push('.' + domain);
-                    let dotsCount = (domain.match(/\./g) || []).length;
-                    if (dotsCount >= 2) {
-                        // two dots means there is a subdomain
-                        // need to remove cookies on both domain & subdomain
-                        domains.push(domain.split('.').slice(1).join('.'))
-                        domains.push('.' + domain.split('.').slice(1).join('.'))
-                    }
-                }
-
-                domains.forEach((_domain) => {
-                    document.cookie = name + '=' +
-                        ((path) ? ';Path=' + path : '') +
-                        ((domain) ? ';Domain=' + _domain : '') +
-                        ';expires=Thu, 01-Jan-1970 00:00:01 GMT';
-                })
-            }
-        }
+		
+																        for (var e in o) window.GCO5.initInfo[e] = o[e];
     </script>
-	    	    <meta charset="utf-8">
 
-    <meta content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1,user-scalable=no"
-          name="viewport">
-    <meta name="msapplication-tap-highlight" content="no"/>
-    <title>Recensement agricole 2020</title>
-    <meta name="Description" content="Explorez et visualisez sous forme de cartes, graphiques et tableaux interactifs un large &eacute;ventail de donn&eacute;es statistiques finement localis&eacute;es et mises en perspective sur longue p&eacute;riode.">
-    <meta name="application-name" content="Recensement agricole 2020">
-	        <link rel="canonical" href="//stats.agriculture.gouv.fr/cartostat/" />	
+
+    <link rel="stylesheet" type="text/css" href="//stats.agriculture.gouv.fr/cartostat/css/gco5full.css?v=4.24.2">
+
+            <script type="text/javascript">
+            var require = {
+                urlArgs: function(id, url) {
+                    return url.indexOf('.php') === -1 ? "?v=4.24.2" : "" ;
+                }
+            };
+
+        </script>
 	
+   <script data-main="js/main"
+           src="js/libs/require/require.js"
+           integrity="sha384-Z9JQUtAaWmYKd6d4DNdwKbqQjtvpcd4f/QmJSoaDxeRg4hWHtyyF6BwCsrnLcG1F"
+           crossorigin="anonymous"></script>
+		
+	</head>
+<body   class="">
 
-    <link rel="shortcut icon" href="//stats.agriculture.gouv.fr/cartostat/favicon.ico"/>
+<style>
+    #spinner {
+        animation: spin 2s cubic-bezier(0.3,0.1,0.25,0.9) infinite ;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
+</style>
 
-    <link rel="preconnect" href="//fonts.gstatic.com/" crossorigin>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
+<div class="splashscreen" aria-label="Chargement en cours...">
+    <svg height="85.769" width="300">
+    <defs>
+        <clipPath clipPathUnits="userSpaceOnUse">
+            <path d="m0,0,841.89,0,0,595.28h-841.89v-595.28z"/>
+        </clipPath>
+        <clipPath clipPathUnits="userSpaceOnUse">
+            <path d="m0,0,841.89,0,0,595.28h-841.89v-595.28z"/>
+        </clipPath>
+    </defs>
 
-    <script>
-        window.GCO5 = {
-            _lang: "fr",
-            _customizedLangFiles: [""],
-            appModel: {}
-        };
+    <g transform="translate(414.41326,-301.71107)">
+        <g transform="matrix(0.91093172,0,0,0.91093172,-36.911075,34.512206)">
+            <g transform="matrix(1.25,0,0,-1.25,-371.06076,339.94847)">
+                <path style="fill-rule:nonzero;fill:#127bca;" d="m0,0,0-17.713c-2.988-3.027-7.499-4.557-12.535-4.557-9.764,0.016-17.568,7.61-17.585,18.377,0.024,10.893,7.746,18.415,17.829,18.437,4.647,0,9.358-1.532,13.178-4.531l1.179-0.923v5.082l-0.283,0.218c-3.858,2.972-8.886,4.532-14.318,4.532-6.209,0.002-11.76-2.373-15.745-6.415-3.988-4.039-6.403-9.742-6.402-16.339-0.001-6.597,2.431-12.301,6.424-16.34,3.992-4.041,9.542-6.416,15.723-6.415h0.01c7.367-0.001,13.112,2.887,16.832,6.928l0.194,0.209v19.45h-4.501z"/>
+            </g>
+            <g transform="matrix(1.25,0,0,-1.25,-319.72751,352.57272)">
+                <path style="fill-rule:nonzero;fill:#127bca;" d="m0,0c-0.004,3.053-0.846,6.872-3.046,10.003-2.191,3.133-5.83,5.524-11.13,5.512-4.479,0.003-8.311-1.743-10.992-4.637-2.685-2.892-4.22-6.911-4.219-11.425-0.002-4.659,1.802-8.672,4.792-11.49,2.989-2.822,7.147-4.451,11.819-4.451,4.335,0.009,8.088,1.167,10.233,2.762l0.292,0.219v4.616l-1.145-0.792c-2.249-1.556-5.261-2.607-8.955-2.608-7.08,0.037-11.96,4.217-12.547,10.589h24.898v1.702zm-24.806,2.311c0.638,4.435,4.297,9.009,10.569,9.008,3.659-0.01,6.035-1.478,7.589-3.428,1.354-1.705,2.032-3.82,2.178-5.58h-20.336zm18.825,26.406-5.887,0-0.218-0.295-6.7-9.072,4.95,0,7.855,9.367z"/>
+            </g>
+            <g transform="matrix(1.25,0,0,-1.25,-278.25738,339.24997)">
+                <path style="fill-rule:nonzero;fill:#127bca;" d="m0,0c-2.831,2.963-6.917,4.859-11.821,4.856-4.874,0.003-8.946-1.894-11.768-4.857-2.826-2.961-4.416-6.975-4.416-11.204,0-4.201,1.591-8.186,4.417-11.123,2.824-2.941,6.895-4.821,11.767-4.818h0.01c4.898,0,8.98,1.879,11.81,4.817,2.834,2.938,4.425,6.923,4.424,11.124,0,4.229-1.589,8.243-4.423,11.205m-0.077-11.205c-0.01-6.61-5.077-11.734-11.744-11.744-6.666,0.01-11.67,5.128-11.683,11.744,0.016,6.744,5.02,11.853,11.683,11.865,6.666-0.012,11.731-5.127,11.744-11.865"/>
+            </g>
+            <g transform="matrix(1.25,0,0,-1.25,-235.07664,364.68184)">
+                <path style="fill-rule:nonzero;fill:#127bca;" d="m0,0c-2.385-1.681-5.064-2.6-8.522-2.604-6.872,0.019-11.972,5.017-11.987,11.744,0.015,6.794,5.121,11.848,11.987,11.866,2.777,0,5.509-0.811,8.03-2.275l1.096-0.636v4.543l-0.36,0.212c-2.487,1.467-5.544,2.353-9.131,2.352-4.719,0.002-8.769-1.798-11.618-4.706-2.852-2.906-4.507-6.914-4.505-11.295-0.002-4.383,1.653-8.389,4.497-11.295,2.842-2.909,6.876-4.709,11.565-4.706h0.007c3.701,0,7.012,0.884,9.761,2.674l0.331,0.215v4.725l-1.151-0.814z"/>
+            </g>
+            <path style="fill-rule:nonzero;fill:#127bca;" d="m-205.04,372.27,5.5488,0,0-38.178-5.5488,0,0,38.178z"/>
+            <g transform="matrix(1.25,0,0,-1.25,-153.06326,339.22659)">
+                <path style="fill-rule:nonzero;fill:#127bca;" d="m0,0c-2.705,2.95-6.615,4.841-11.284,4.837-4.763,0.005-8.583-1.82-11.198-4.511v3.781h-4.44v-42.71h4.44v16.008c2.611-2.703,6.432-4.574,11.198-4.57,4.67-0.003,8.58,1.904,11.284,4.862,2.708,2.956,4.229,6.948,4.229,11.139,0,4.222-1.521,8.215-4.229,11.164m-0.271-11.164c-0.017-6.684-4.96-11.791-11.622-11.805-4.623-0.008-8.792,2.868-10.589,6.614v10.444c1.791,3.793,6.012,6.56,10.589,6.553,6.662-0.013,11.605-5.12,11.622-11.806"/>
+            </g>
+            <g transform="matrix(1.25,0,0,-1.25,-119.96076,332.53772)">
+                <path style="fill-rule:nonzero;fill:#127bca;" d="m0,0-2.287,0,0,1.859-0.058,0c-1.172-1.487-2.744-2.23-4.631-2.23-3.945,0-6.432,3.345-6.432,7.06,0,3.831,2.431,7.118,6.461,7.118,1.83,0,3.488-0.857,4.602-2.286h0.058v1.915h2.287v-13.436zm-11.063,6.861c0-2.63,1.543-5.117,4.401-5.117,2.945,0,4.49,2.372,4.49,5.088,0,2.687-1.688,4.861-4.517,4.861-2.659,0-4.374-2.316-4.374-4.832"/>
+            </g>
+            <path style="fill-rule:nonzero;fill:#127bca;" d="m-111.28,332.54-2.8588,0,0-16.795,2.8588,0,0,16.795z"/>
+            <g transform="matrix(1.25,0,0,-1.25,-770.51551,813.60043)" clip-path="url(#clipPath3200)">
+                <g transform="translate(534.3384,396.8285)">
+                    <path style="fill-rule:nonzero;fill:#127bca;" d="M0,0,0.057,0c0.801,1.058,1.487,1.829,2.973,1.829,0.772,0,1.401-0.257,2.058-0.629l-1.086-2.086c-0.457,0.314-0.771,0.6-1.372,0.6-2.516,0-2.63-3.231-2.63-4.974v-6.718h-2.287v13.436h2.287v-1.458z"/>
+                </g>
+            </g>
+            <path style="fill-rule:nonzero;fill:#127bca;" d="m-218.28,317.21-5.55,0,0,54.899,5.55,0,0-54.899z"/>
+            <g transform="matrix(1.25,0,0,-1.25,-770.51551,813.60043)" clip-path="url(#clipPath3214-4)">
+                <g transform="translate(457.7311,396.312)">
+                    <path style="fill-rule:nonzero;fill:#ffc800;" d="M0,0c-0.003,1.744-1.418,3.16-3.163,3.163-1.745-0.003-3.16-1.419-3.163-3.163,0.003-1.745,1.419-3.16,3.163-3.163,1.745,0.003,3.16,1.418,3.163,3.163"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    </svg>
 
-        var params_tmp = location.hash.substr(1).split('&'),
-            hash_params = {};
+    <div style="position:relative; top:-87px; left:122px">
+        <svg id="spinner" height="56.97" width="55.394">
+            <g transform="matrix(0.91093172,0,0,0.91093172,132.89595,-267.19887)">
+                <path style="fill-rule:nonzero;fill:#127bca;" d="m-123.45,296.89-0.49875-1.6288c-15.15,4.2838-24.978,21.284-21.089,36.534,3.0862,15.454,19.454,26.442,34.91,23.632,13.369-2.1425,23.975-13.929,25.048-26.961-1.7062,13.426-13.349,24.532-26.54,25.465-14.508,1.9425-29.251-8.7-31.912-23.121-3.2725-14.276,5.9875-29.914,20.082-33.92"/>
+                <g transform="matrix(1.25,0,0,-1.25,-115.61976,295.84422)">
+                    <path style="fill-rule:nonzero;fill:#127bca;" d="M0,0c0.13,1.237,1.238,2.133,2.474,2.003,1.238-0.131,2.134-1.238,2.003-2.475-0.13-1.236-1.238-2.133-2.474-2.002-1.236,0.13-2.133,1.237-2.003,2.474"/>
+                </g>
+            </g>
+        </svg>
+    </div>
 
-        params_tmp.forEach(function (val) {
-            var splitter = val.split('=');
-            hash_params[splitter[0]] = splitter[1];
-        });
-
-        if (hash_params["lang"]) window.GCO5._lang = hash_params["lang"];
-
-        window.GCO5.initInfo = [];
-        var o = {
-            version: '5',
-            jsversion: "4.24.2",
-            autorisat
+    <div class="txtcenter">
+        <p><b>Recensement agricole 2020</b><br><br>
+            Veuillez patienter, chargement en cours...        </p>
+    </div>
+</div>
+</body>
+</html>
 scripts ['js/libs/require/require.js']
   js https://stats.agriculture.gouv.fr/cartostat/js/libs/require/require.js 17695
