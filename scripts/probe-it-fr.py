@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sonda 19: como sirve GeoClip (Agreste, RA 2020 por comuna) sus datos."""
+"""Sonda 20: como sirve GeoClip (Agreste, RA 2020 por comuna) sus datos."""
 import re, subprocess as sp, time, urllib.request
 UA = {"User-Agent": "Mozilla/5.0 (compatible; DehesaIndex/1.0; +https://dehesaindex.com)"}
 OUT = []
@@ -14,16 +14,14 @@ t = sp.run("openssl x509 -in /tmp/leaf.pem -noout -text | grep -i 'CA Issuers'",
 m = re.search(r"CA Issuers - URI:(\S+)", t); open("/tmp/iss.der", "wb").write(get(m.group(1)))
 sp.run("openssl x509 -inform DER -in /tmp/iss.der -out /tmp/iss.pem; cat /etc/ssl/certs/ca-certificates.crt /tmp/iss.pem > /tmp/bundle.pem", shell=True)
 def cu(u, n=90): return sp.run(["curl", "-sS", "--compressed", "-m", str(n), "--cacert", "/tmp/bundle.pem", "-A", "Mozilla/5.0", u], capture_output=True, text=True).stdout
-import json, re
+import json
 base = "https://stats.agriculture.gouv.fr/cartostat/"
 H = "&prodhash=285aa024"
-c = cu(base + "js/libs/gco5/gc_core.js")
-for pat in ("GC_coldata.php", "getColdata", "loadColData", "getIndicDataURL", "indicdata"):
-    for mm in list(re.finditer(pat, c))[:2]:
-        p("--", pat, c[max(0, mm.start() - 700):mm.start() + 500].replace("\n", " "))
 j = json.loads(cu(base + "GC_indic.php?indic=nbexpl20&dataset=stru_2020_1&view=map11&lang=fr" + H, 120))
-ind = j["content"]["indic"]
-p("indic non-meta", {k: str(v)[:150] for k, v in ind.items() if k in ("c_formule", "c_output", "c_default_view", "c_id_datatable", "c_nbdec", "c_vars", "vars", "c_classes")})
-p("indic list-like", {k: (type(v).__name__, len(v)) for k, v in ind.items() if isinstance(v, (list, dict))})
-p("all keys", sorted(ind.keys()))
+ind = j["content"]["indic"]; p("nbVars", ind.get("nbVars"), "formule", ind.get("c_formule"), "output", ind.get("c_output"), "method", ind.get("c_method"))
+p("hdr", json.dumps(j["header"])[:500])
+for v in ("", "nbexpl20", "var1", "v1", "1", "VAR1", "nbexpl20_1", "stru_2020_1.nbexpl20", "A"):
+    c = cu(base + "GC_coldata.php?view=map11&dataset=stru_2020_1&indic=nbexpl20&vars=" + v + "&lang=fr" + H, 90)
+    p("== vars=" + v, len(c), c[:260].replace("\n", " "))
+c = cu(base + "GC_coldata.php?view=map11&dataset=stru_2020_1&indic=nbexpl20&lang=fr" + H, 90); p("== novars", len(c), c[:300].replace("\n", " "))
 open("data/probe-it-fr-log.txt", "w").write("\n".join(OUT) + "\n")
