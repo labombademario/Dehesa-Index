@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T18:51:00Z",
+ "generatedAt": "2026-11-04T19:05:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 334,
   "late": 2,
   "error": 5,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
   "repoGeneratedAt": "2026-11-04T14:27:49.958372+00:00",
-  "checkedAt": "2026-11-04T18:51:00Z"
+  "checkedAt": "2026-11-04T19:05:00Z"
  },
  "pipelines": [
   {
@@ -2618,6 +2618,19 @@
    },
    "status": "error",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-es-municipios.yml",
+   "name": "Update Spain farm census 2020 by municipality (INE)",
+   "crons": [
+    "20 12 17 1,7 *"
+   ],
+   "nextRun": "2027-01-17T12:20:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 4416.0
   },
   {
    "workflow": "update-es-prices.yml",
@@ -5453,7 +5466,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-04T18:05:13Z"
+     "lastChange": "2026-11-04T18:54:27Z"
     },
     {
      "path": "data/source-candidates.json",
