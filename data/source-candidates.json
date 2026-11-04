@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-03T23:20:42Z",
+ "generatedAt": "2026-11-04T06:14:01Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -5724,7 +5724,7 @@
    "country": "PT",
    "scope": "integrated",
    "institution": "INE — Statistics Portugal",
-   "dataset": "Ya integrada (598 series en el catalogo unificado)",
+   "dataset": "Ya integrada (597 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
