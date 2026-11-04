@@ -1,4 +1,4 @@
-entrada manual: 25 valores
+entrada manual: 5 valores
 modo --manual-only: sin peticiones a la FSA
 pocos datos us-fsa-rate-operating-microloan 0
-escrito us-fsa-rates-stats.json 5 series [('us-fsa-rate-operating-direct', 5), ('us-fsa-rate-ownership-direct', 5), ('us-fsa-rate-ownership-joint', 5), ('us-fsa-rate-ownership-down-payment', 5), ('us-fsa-rate-emergency', 5)]
+escrito us-fsa-rates-stats.json 5 series [('us-fsa-rate-operating-direct', 6), ('us-fsa-rate-ownership-direct', 6), ('us-fsa-rate-ownership-joint', 6), ('us-fsa-rate-ownership-down-payment', 6), ('us-fsa-rate-emergency', 6)]
