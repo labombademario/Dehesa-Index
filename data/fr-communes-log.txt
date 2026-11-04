@@ -1,0 +1,7 @@
+comunas 34968
+  nbexpl20         nbexpl20           stru_2020_1    comunas con dato  34968  suma 416436
+  sau20            sau20              stru_2020_1    comunas con dato  34968  suma 26880745
+  pbs20            pbs20              stru_2020_1    comunas con dato  34968  suma 65224552
+  ugbtot20         ugbtot20           elev_2020_1    comunas con dato  34968  suma 24667749
+  ugbher20         ugbher20           elev_2020_1    comunas con dato  34968  suma 17370069
+FALLO: vaclait20: valores negativos
