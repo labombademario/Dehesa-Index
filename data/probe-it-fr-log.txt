@@ -1,15 +1,181 @@
 == ISTAT dataflows
-  error 0 application/xml https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1 The read operation timed out
-  error 0 application/vnd.sdmx.structure+xml;versi https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1 The read operation timed out
-  error 0 application/vnd.sdmx.structure+json;vers https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1 HTTP Error 406: Not Acceptable
-  error 0 text/xml https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1 The read operation timed out
-  error 0 */* https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1 The read operation timed out
-dataflows: 0
+  error 0 application/xml https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1?detail=allstubs The read operation timed out
+  error 1 application/xml https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1?detail=allstubs The read operation timed out
+ok: dataflow/all/all/latest?detail=allstubs 2287513
+dataflows: 4975
+   101_1015 Crops | Coltivazioni
+   101_12 Agricoltural prices | Prezzi dei prodotti agricoli
+   101_12_DF_DCSP_PREZZIAGR_1 Agricultural purchase price index, monthly data (base 2015) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2015)
+   101_12_DF_DCSP_PREZZIAGR_10 Agricultural producer price index, monthly data (base 2020) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2020)
+   101_12_DF_DCSP_PREZZIAGR_11 Agricultural purchase price index, annual average (base 2020) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2020)
+   101_12_DF_DCSP_PREZZIAGR_12 Agricultural producer price index, annual average (base 2020) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2020
+   101_12_DF_DCSP_PREZZIAGR_2 Agricultural producer price index, monthly data (base 2015) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2015)
+   101_12_DF_DCSP_PREZZIAGR_3 Agricultural purchase price index, annual average (base 2015) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2015)
+   101_12_DF_DCSP_PREZZIAGR_4 Agricultural producer price index, annual average (base 2015) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2015
+   101_12_DF_DCSP_PREZZIAGR_5 Agricultural purchase price index, monthly data (base 2010) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2010)
+   101_12_DF_DCSP_PREZZIAGR_6 Agricultural producer price index, monthly data (base 2010) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2010)
+   101_12_DF_DCSP_PREZZIAGR_7 Agricultural purchase price index, annual average (base 2010) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2010)
+   101_12_DF_DCSP_PREZZIAGR_8 Agricultural producer price index, annual average (base 2010) | Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2010
+   101_12_DF_DCSP_PREZZIAGR_9 Agricultural purchase price index, monthly data (base 2020) | Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2020)
+   101_148 Economic results of farms | Risultati economici delle aziende agricole
+   101_148_DF_DCSP_RICAREA_1 Economic results of farms - Key data | Risultati economici delle aziende agricole - Principali dati
+   101_148_DF_DCSP_RICAREA_2 Farm average economic values by AWU class | Valori economici medi per azienda per classe di ULA
+   101_148_DF_DCSP_RICAREA_3 Farm average economic values by turnover class | Valori economici medi per azienda per classe di fatturato
+   101_148_DF_DCSP_RICAREA_4 Farm average economic values by legal form | Valori economici medi per azienda per forma giuridica
+   101_22_DF_DCSP_FITOSANITARI_3 Use by type of crop - Key data | Utilizzo per tipo di coltura - Principali dati
+   101_961 Livestock | Consistenze degli allevamenti
+   101_962 Livestock import export | Import export di bestiame
+   101_965_DF_DCSP_AGRITURISMO_1 Authorized farms | Aziende autorizzate - prov
+   102_974 Farm structure | Struttura delle aziende agricole
+   102_974_DF_DCSP_SPA_1 Farm and area by land ownership | Aziende e superfici per titolo di possesso
+   102_974_DF_DCSP_SPA_10 Farms with renevable energy | Aziende con energia rinnovabile
+   102_974_DF_DCSP_SPA_11 Farms and mechanical means | Aziende e mezzi meccanici
+   102_974_DF_DCSP_SPA_12 Farms by legal form | Aziende per forma giuridica
+   102_974_DF_DCSP_SPA_13 Farms by farm manager educational level | Aziende per titolo di studio del conduttore
+   102_974_DF_DCSP_SPA_2 Farm and area by class of agricoltural area | Aziende e superfici per classe di superficie
+   102_974_DF_DCSP_SPA_3 Farm and area by management system | Aziende e superfici per forma di conduzione
+   102_974_DF_DCSP_SPA_4 Farm with irrigable and irrigated area | Aziende a superficie irrigabile ed irrigata
+   102_974_DF_DCSP_SPA_5 Farms and agricoltural area with organic farming | Aziende e superfici per coltivazione biologiche
+   102_974_DF_DCSP_SPA_6 Farms and agricoltural area | Aziende e superfici
+   102_974_DF_DCSP_SPA_7 Farms and agricoltural area by crops | Aziende e superfici per coltivazione
+   102_974_DF_DCSP_SPA_8 Farms and livestock | Aziende e consistenze degli allevamenti
+   102_974_DF_DCSP_SPA_9 Farms with gainful activities | Aziende con attività connesse
+   104_466_DF_DCSP_FERTILIZZANTI_2 Fertilizers distribuited for use in organic farming - reg. | Fertilizzanti distribuiti per uso in agricoltura biologica - reg.
+   124_722 Local health units, hospital companies, university hospitals, general hospitals and hospitals with a scientific character profit and loss account ( thousands of
+   124_722_DF_DCAR_CONTECON_ASLAO_1 Local health units, hospital companies, university hospitals, general hospitals and hospitals with a scientific character profit and loss account (thousands of 
+   34_219 Households who  do not have enough money for selected items | Famiglie che hanno  difficoltà nel pagamento di alcune spese
+   34_220 Households for minimum income needed to make ends meet | Famiglie per reddito minimo per arrivare a fine mese senza difficoltà
+   609_1_DF_DCCV_URBANENV_15 Separate waste collection - product fractions | Raccolta differenziata - frazioni merceologiche
+   609_1_DF_DCCV_URBANENV_22 Municipal waste - collection service | Rifiuti urbani - servizio di raccolta
+   6_471_DF_DCSP_LACIS_32 Enterprise strategies and employees class | Strategie aziendali e classe di addetti
+   6_471_DF_DCSP_LACIS_33 Enterprise strategies and economic sector (Nace 2 digit) | Strategie aziendali e settori economici (Ateco 2 cifre)
+   6_471_TS_DF_DCSP_LACIS_32 Enterprise strategies and employees class | Strategie aziendali e classe di addetti
+   6_471_TS_DF_DCSP_LACIS_33 Enterprise strategies and economic sector (Nace 2 digit) | Strategie aziendali e settori economici (Ateco 2 cifre)
+   742_1106_DF_DCSI_CPI_RELAZIONI_15 Difficulties in starting relationships - Nace 2 digit, class of persons employed (2018 2022) | Difficoltà nell'attivare relazioni - Divisione Ateco (2 digit), c
+   742_1106_DF_DCSI_CPI_RELAZIONI_20 Difficulties in starting relationships - Nace 4 digit (2018 2022) | Difficoltà nell'attivare relazioni - Classe di Ateco (4 digit) (2018 2022)
+   742_1106_DF_DCSI_CPI_RELAZIONI_5 Difficulties in starting relationships - Economic sectors - prov. (2018 2022) | Difficoltà nell'attivare relazioni - Macrosettori economici - prov. (2018 2022)
+   742_1106_DF_DCSI_CPI_RELAZIONI_8 Difficulties in starting relationships - Nace sectors, class of persons employed - reg. (2018 2022) | Difficoltà nell'attivare relazioni - Sezione Ateco, classe
+   742_1145_DF_CPI_CLOUDINV_5 Business management software - Economic sectors - prov. (2018 - 2022) | Software per la gestione aziendale - Macrosettori economici - prov. (2018 - 2022)
+   742_1145_DF_CPI_CLOUDINV_6 Business management software - Nace sectors, class of persons employed - reg. (2018 - 2022) | Software per la gestione aziendale - Sezioni Ateco, classe di adde
+   742_1145_DF_CPI_CLOUDINV_7 Business management software - Nace 2 digit, class of persons employed (2018 - 2022) | Software per la gestione aziendale - Divisione di Ateco (2 digit), classe
+   742_1145_DF_CPI_CLOUDINV_8 Business management software - Nace 4 digit (2018 - 2022) | Software per la gestione aziendale - Classe di Ateco (4 digit) (2018 - 2022)
+   750_1117 Agriculture, forestry and fishing accounts in the 2014 version | Conti della branca agricoltura, silvicoltura e pesca - versione 2014
+   750_1118 Agriculture, forestry and fishing accounts in the 2011 version | Conti della branca agricoltura, silvicoltura e pesca - versione 2011
+   82_87_DF_DCCV_AVQ_FAMIGLIE_100 Difficulty in reaching some services | Difficoltà a raggiungere alcuni servizi
+   83_277 Agricoltural enterprises and persons employed | Imprese agricole e addetti
+   93_48 Agriculture, forestry and fishing accounts | Conti della branca agricoltura, silvicoltura e pesca
+   DCAT_CENSAGRIC2020_AGE_INF Farms by type of computerization and age of the manager | Aziende per tipo di informatizzazione ed età del capo azienda
+   DCAT_CENSAGRIC2020_GAIN Farms with gainful activities | Aziende con attività connesse
+   DF_BULK_CAG2000_1 Agricultural Census 2000 | Censimento agricoltura 2000
+   DF_BULK_CAG2010_DICA_ALLEVAMENTI Livestock | Consistenza degli allevamenti
+   DF_BULK_CAG2010_DICA_ALLEVAMENTIBIO Certified organic livestock | Consistenza degli allevamenti biologici certificati
+   DF_BULK_CAG2010_DICA_ALLEVAMENTIDOP PDO and/or PGI livestock | Consistenza degli allevamenti DOP e/o IGP
+   DF_BULK_CAG2010_DICA_ALLEVAMENTIUBI Livestock by agricultural unit location | Consistenza degli allevamenti per ubicazione delle unità agricole
+   DF_BULK_CAG2010_DICA_ATTIVCON Other gainful activities related to the farms | Attività remunerative connesse alle aziende
+   DF_BULK_CAG2010_DICA_ATTIVCONBIO Other gainful activities related to the organic farms | Attività remunerative connesse alle aziende biologiche
+   DF_BULK_CAG2010_DICA_CAPOAZ Farm manager | Capo azienda
+   DF_BULK_CAG2010_DICA_CAPOAZBIO Farm manager of organic farms | Capo azienda delle aziende biologiche
+   DF_BULK_CAG2010_DICA_COMMERCIALIZ Marketing of the farms | Commercializzazione delle aziende
+   DF_BULK_CAG2010_DICA_COMMERCIALIZBIO Marketing of the organic farms | Commercializzazione delle aziende biologiche
+   DF_BULK_CAG2010_DICA_CONTOTERZ Third parties work of the farms | Contoterzismo delle aziende
+   DF_BULK_CAG2010_DICA_CONTOTERZBIO Third parties work of the organic farms | Contoterzismo delle aziende biologiche
+   DF_BULK_CAG2010_DICA_CONTRICAUT Other economic items of the farms | Altre informazioni economiche delle aziende agricole
+   DF_BULK_CAG2010_DICA_CONTRICAUTBIO Other economic items of the organic farms | Altre informazioni economiche delle aziende agricole biologiche
+   DF_BULK_CAG2010_DICA_GAEZALL Animal housing | Stabulazione del bestiame
+   DF_BULK_CAG2010_DICA_GAEZALLBIO Animal housing of organic farms | Stabulazione del bestiame delle aziende biologiche
+   DF_BULK_CAG2010_DICA_GAEZEXP Solid dung and slurry esported from the farm | Letame e liquame portati fuori dall'azienda
+   DF_BULK_CAG2010_DICA_GAEZEXPBIO Solid dung and slurry esported from the organic farm | Letame e liquame portati fuori dall'azienda biologica
+   DF_BULK_CAG2010_DICA_GAEZIMPBIO Manure storage and treatment facilities of organic farms | Impianti di stoccaggio e trattamento degli effluenti zootecnici delle aziende biologiche
+   DF_BULK_CAG2010_DICA_GAEZPAS Animal grazing | Pascolo del bestiame
+   DF_BULK_CAG2010_DICA_GAEZPASBIO Animal grazing of organic farms | Pascolo del bestiame delle aziende biologiche
+   DF_BULK_CAG2010_DICA_GCSCONBIO Production methods for arable land of organic farms | Metodi di produzione dei seminativi delle aziende biologiche
+   DF_BULK_CAG2010_DICA_GCSGESBIO Production methods for permanent crops of organic farms | Metodi di produzione delle legnose agrarie delle aziende biologiche
+   DF_BULK_CAG2010_DICA_GCSZOOBIO Manure application of organic farms | Applicazione degli effluenti zootecnici delle aziende biologiche
+   DF_BULK_CAG2010_DICA_IMPENRIN Renewable energy production equipments of the farms | Impianti di produzione di energia rinnovabile delle aziende
+   DF_BULK_CAG2010_DICA_IMPENRINBIO Renewable energy production equipments of the organic farms | Impianti di produzione di energia rinnovabile delle aziende agricole biologiche
+   DF_BULK_CAG2010_DICA_IRRIGAB Farms and irrigable area | Aziende e superficie irrigabile
+   DF_BULK_CAG2010_DICA_IRRIGAB_BIO Organic farms and irrigable area | Aziende biologiche e superficie irrigabile
+   DF_BULK_CAG2010_DICA_IRRIGATFG Farms, irrigated area and volume of water used for irrigation | Aziende, superficie irrigata e volumi irrigui
+   DF_BULK_CAG2010_DICA_IRRIGATFG_BIO Organic farms, irrigated area and volume of water used for irrigation | Aziende biologiche, superficie irrigata e volumi irrigui
+   DF_BULK_CAG2010_DICA_MANODOPALTR1 Other labour force of farms | Altra manodopera aziendale
+   DF_BULK_CAG2010_DICA_MANODOPALTRBIO Other labour force of organic farms | Altra manodopera delle aziende biologiche
+   DF_BULK_CAG2010_DICA_MANODOPFAMBIO Family labour force of organic farms | Manodopera familiare delle aziende biologiche
+   DF_BULK_CAG2010_DICA_NOTAUSBIO Additional characteristics of organic farms | Altre caratteristiche delle aziende biologiche
+   DF_BULK_CAG2010_DICA_NOTAUSDOP Additional characteristics of PDO and/or PGI farms | Altre caratteristiche delle aziende DOP e/o IGP
+   DF_BULK_CAG2010_DICA_NOTGEN Farm characteristics | Caratteristiche delle aziende
+   DF_BULK_CAG2010_DICA_NOTGENBIO Characteristics of organic farms | Caratteristiche delle aziende biologiche
+   DF_BULK_CAG2010_DICA_NOTGENDOP Characteristics of PDO and/or PGI farms | Caratteristiche delle aziende DOP e/o IGP
+   DF_BULK_CAG2010_DICA_UTILTERR Land use | Utilizzazione del terreno delle aziende
+   DF_BULK_CAG2010_DICA_UTILTERRDOP Use of land for PDO and/or PGI crops | Utilizzazione del terreno per coltivazioni DOP e/o IGP
+   DF_BULK_CAG2010_DICA_UTILTERRUBI Land use by agricultural unit location | Utilizzazione del terreno per ubicazione delle unità agricole
+   DF_BULK_CEN2011_DICA_N08C Type of direct appeals for fundraising | Tipologia di contatti diretti per raccolta fondi
+   DF_BULK_CEN2011_DICA_N08CCOM Type of direct appeals for fundraising - municipal level | Tipologia di contatti diretti per raccolta fondi - dati comunali
+   DF_BULK_CEN2011_DICA_N08M Type of fundraising | Modalità raccolta fondi
+   DF_BULK_CEN2011_DICA_N08MCOM Type of fundraising - municipal level | Modalità raccolta fondi - dati comunali
+   DF_BULK_FARMSTRUCT Farm structure broken time series 2003-2007 | Struttura delle aziende agricole serie interrotte 2003-2007
+   DF_BULK_FORESTRYBR Forestry broken time series 2001-2015 | Foreste o silvicoltura serie interrotte 2001-2015
+   DF_BULK_PERMANENTC Permanent crops broken time series 2002-2017 | Coltivazioni legnose agrarie serie interrotte 2002-2017
+   DF_BULK_SUBCOM1991 Census of population and housing 1991 | Censimento della popolazione e delle abitazioni 1991
+   DF_BULK_SUBCOM2001 Census of population and housing 2001 | Censimento della popolazione e delle abitazioni 2001
+   DF_BULK_SUBCOM2011 Census of population and housing 2011 | Censimento della popolazione e delle abitazioni 2011
+   DF_CENSAGRIC2020_AGE_TRA Farms with agricultural training by age of the manager | Aziende con corsi di formazione per età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE Farms and utilized agricultural area and organic farms, by age of the manager | Aziende e superficie utilizzata e aziende biologiche, per età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE_ASS Farms by type of association and age of the manager | Aziende per tipo di associazionismo ed età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE_EDU Farms by educational level and age of the manager | Aziende per titolo di studio ed età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE_GAIN Farms with gainful activities by age of the manager | Aziende con attività connesse per età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE_GAIN_SPA2023_1 Farms with gainful activities | Aziende con attività connesse
+   DF_DCAT_CENSAGRIC2020_AGE_INV Farms by type of investment and age of the manager | Aziende per tipo di investimento ed età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE_INV_SPA2023_1 Farms with investments | Aziende con investimenti
+   DF_DCAT_CENSAGRIC2020_AGE_MANDUR Farms by management duration and age of the manager | Aziende per durata della conduzione ed età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE_MANTOV Farms by entity from which the management of the farm is taken over by age of the manager | Aziende per soggetto da cui è stata rilevata la conduzione, per età 
+   DF_DCAT_CENSAGRIC2020_AGE_MAR Farms by type of marketing channel and age of the manager | Aziende per tipo di commercializzazione ed età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE_OWN Farms and areas by ownership and age of the manager | Aziende e superifici per titolo di possesso ed età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AGE_SELF Farms by self-consumption of final production and age of the manager | Aziende per autoconsumo della produzione finale ed età del capo azienda
+   DF_DCAT_CENSAGRIC2020_AU_CATTLE_1 Agricultural units and number of heads by type of livestock and altimetric zone | Unità agricole e numero di capi per tipo di allevamento e zona altimetrica
+   DF_DCAT_CENSAGRIC2020_CATTLE_ALL Farms and herd by type of livestock | Aziende e capi per tipo di allevamento
+   DF_DCAT_CENSAGRIC2020_CATTLE_SPA2023_1 Farms and herd by type of livestock | Aziende e capi per tipo di allevamento
+   DF_DCAT_CENSAGRIC2020_CROPS_ALL Farms with utilised agricultural area by type of crops | Aziende con superficie agricola utilizzata per tipo di coltivazione
+   DF_DCAT_CENSAGRIC2020_CROPS_SPA2023_1 Farms and agricoltural area by crops | Aziende con superficie agricola utilizzata per tipo di coltivazione
+   DF_DCAT_CENSAGRIC2020_INV_ALL Farms with investments | Aziende con investimenti
+   DF_DCAT_CENSAGRIC2020_IRRCROPS_SPA2023_1 Farms and irrigated areas by crops | Aziende e superfici irrigate per tipo di coltivazione
+   DF_DCAT_CENSAGRIC2020_IRRSIS Farms and irrigated areas by irrigation system | Aziende e superfici irrigate per sistema di irrigazione
+   DF_DCAT_CENSAGRIC2020_IRRSIS_SPA2023 Farms and irrigated areas by irrigation system | Aziende e superfici irrigate per sistema di irrigazione
+   DF_DCAT_CENSAGRIC2020_IRRSOU Farms and irrigated areas by source of supply | Aziende e superfici irrigate per fonte di approvvigionamento
+   DF_DCAT_CENSAGRIC2020_IRRSOU_SPA2023_1 Farms and irrigated areas by source of supply | Aziende e superfici irrigate per fonte di approvvigionamento
+   DF_DCAT_CENSAGRIC2020_LABCAT_ALL Farms and labour days by gender and labor category | Aziende e giornate di lavoro per sesso e categoria di manodopera
+   DF_DCAT_CENSAGRIC2020_LABCAT_SPA2023_1 Farms and labour days by gender and labor category | Aziende e giornate di lavoro per sesso e categoria di manodopera
+   DF_DCAT_CENSAGRIC2020_LEGOWN_ALL Farms and areas by legal form and ownership | Aziende e superfici per forma giuridica e titolo di possesso
+   DF_DCAT_CENSAGRIC2020_LEGOWN_SPA2023_1 Farms and areas by legal form and ownership | Aziende e superfici per forma giuridica e titolo di possesso
+   DF_DCAT_CENSAGRIC2020_ORG_CATTLE_ALL Farms and herd by type of organic livestock | Aziende e capi per tipo di allevamento biologico
+   DF_DCAT_CENSAGRIC2020_ORG_CROPS Organic farms and area by organic crops | Aziende con superfice biologica per tipo di coltivazione
+   DF_DCAT_CENSAGRIC2020_QUAL_ALL Number of farm managers and working days by qualification, workforce category, gender, age of the manager | Numero e giornate di lavoro del capo azienda per tit
+   DF_DCAT_CENSAGRIC2020_QUAL_SPA2023_1 Number of farm managers and working days by qualification, workforce category, gender, age of the manager | Numero e giornate di lavoro del capo azienda per tit
+   DF_DCAT_CENSAGRIC2020_SAUAZONE_SPA2023_1 Farms by class of agricoltural area (UAA) | Aziende per classi di superfici (SAU)
+   DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL Farms by class of agricoltural area (UAA) and altimetric zone | Aziende per classi di superfici (SAU) e zona altimetrica
+   DF_DCAT_CENSAGRIC2020_SAU_SELF Farms by level of self-consumption | Aziende per quota di autoconsumo
+   DF_DCAT_CENSAGRIC2020_SAU_SELF_SPA2023_1 Farms by level of self-consumption and agricoltural areas | Aziende per quota di autoconsumo e classe di superficie
+   DF_DCAT_CENSAGRIC2020_SAU_SUBC Farms by type of subcontracting and areas class | Aziende per tipo di contoterzismo e classe di superfice
+   DF_DCAT_CENSAGRIC2020_SAU_SUBC_SPA2023_1 Farms with subcontracting and areas class | Aziende con contoterzismo e classe di superfice
+   DF_DCAT_CENSAGRIC2020_SAU_TURN Farms by source of revenue and areas class | Aziende per fonte di ricavo e classe di superfice
+   DF_DCAT_CENSAGRIC2020_SAU_TURN_1 Farms by source of revenue and areas class | Aziende per fonte di ricavo e classe di superficie
+   DF_DCAT_CENSAGRIC2020_SURF_ALL Farms and areas | Aziende agricole e superfici
+   DF_DCAT_CENSAGRIC2020_SURF_IRRCROPS Farms and irrigated areas by crops | Aziende e superfici irrigate per tipo di coltivazione
+   DF_DCAT_CENSAGRIC2020_SURF_IRR_CONS Farms and areas irrigable, irrigated, irrigation consultancy | Aziende e superfici irrigabili, irrigate, consulenza irrigua
+   DF_DCAT_CENSAGRIC2020_SURF_SPA2023_1 Farms and areas | Aziende agricole e superfici
+   DF_DCAT_CENSAGRIC2020_SURF_SPA2023_2 Farms and areas irrigable, irrigated, irrigation consultancy | Aziende e superfici irrigabili, irrigate, consulenza irrigua
+   DF_DCAT_CENSAGRIC2020_TRAI_ALL Company managers with training courses, by gender and age | Capi azienda con corsi di formazione, per sesso ed età
+   DF_DCAT_CENSAGRIC2020_TRAI_SPA2023 Company managers with training courses, by gender and age | Capi azienda con corsi di formazione, per sesso ed età
+   DF_DCAT_CENSAGRIC2020_UA_CROPS_1 Agricultural units and areas by altimetric zone | Unità agricole e superfici per zona altimentrica
+   DF_DCAT_CENSAGRIC2020_UA_CROPS_2 Agricultural units and agricoltural area by crops and altimetric zone | Unità agricole con superficie agricola utilizzata per tipo di coltivazione e zona altime
 == GeoClip
 xlsx bytes 17960
 fallo xlsx No module named 'openpyxl'
-  error 0 */* https://stats.agriculture.gouv.fr/cartostat/ <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issue
-  error 1 */* https://stats.agriculture.gouv.fr/cartostat/ <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issue
+curl cartostat 000 curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, plea
 cartostat html bytes 0
 
 scripts []
