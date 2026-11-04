@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T11:11:00Z",
+ "generatedAt": "2026-11-04T11:37:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 336,
   "late": 2,
   "error": 2,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-04T06:16:19.933853+00:00",
   "repoGeneratedAt": "2026-11-04T06:16:19.933853+00:00",
-  "checkedAt": "2026-11-04T11:11:00Z"
+  "checkedAt": "2026-11-04T11:37:00Z"
  },
  "pipelines": [
   {
@@ -2486,7 +2486,7 @@
    "crons": [
     "20 11 * * *"
    ],
-   "nextRun": "2026-11-04T11:20:00Z",
+   "nextRun": "2026-11-05T11:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3889,6 +3889,19 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-fr-communes.yml",
+   "name": "Update France farm census 2020 by commune (Agreste)",
+   "crons": [
+    "50 11 16 1,7 *"
+   ],
+   "nextRun": "2027-01-16T11:50:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 4416.0
+  },
+  {
    "workflow": "update-fr-ghg-agri.yml",
    "name": "Update France agricultural greenhouse gas emissions (Eurostat env_air_gge)",
    "crons": [
@@ -4751,7 +4764,7 @@
    "crons": [
     "35 11 4,19 * *"
    ],
-   "nextRun": "2026-11-04T11:35:00Z",
+   "nextRun": "2026-11-19T11:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4766,7 +4779,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 360.0
+   "expectedEveryHours": 384.0
   },
   {
    "workflow": "update-it-istat.yml",
@@ -5084,9 +5097,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-04T01:40:03Z",
-    "durationSec": 131,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41755610645"
+    "startedAt": "2026-11-04T11:35:30Z",
+    "durationSec": 178,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41822153230"
    },
    "recent": {
     "runs": 10,
@@ -5429,7 +5442,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-04T10:57:29Z"
+     "lastChange": "2026-11-04T11:13:36Z"
     },
     {
      "path": "data/source-candidates.json",
