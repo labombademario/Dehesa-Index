@@ -130,6 +130,7 @@ def ports_table(rows):
         if not any(r): continue
         if r[0].startswith("(a) Ports"): note = r[0]; continue
         if r[0].startswith("Source") or r[0].startswith("(a) All"): continue
+        if re.match(r"^\([b-z]\) ", r[0]): break
         txt = [c for c in r[:3] if c and num(c) is None]
         if not txt: continue
         flag = "(a)" in txt
@@ -138,7 +139,7 @@ def ports_table(rows):
         nm = nm[-1] if (len(r) > 2 and r[2]) else nm[0]
         q = [num(r[pos[("qty", y)]]) if pos[("qty", y)] < len(r) else None for y in yrs]
         v = [num(r[pos[("val", y)]]) if pos[("val", y)] < len(r) else None for y in yrs]
-        if nm.startswith("Total"): tot = [q, v]; continue
+        if nm.startswith("Total"): tot = [q, v]; break      # la hoja repite el bloque por grupo (b, c, d): solo se usa (a) todas las especies
         out.append([nm, q, v, flag])
     return yrs, out, tot, note
 def major_ports(rows):
