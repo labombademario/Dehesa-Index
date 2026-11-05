@@ -20,9 +20,11 @@ def sheets(b):
         while rows and not rows[-1]: rows.pop()
         out[tb.get(T + "name")] = rows
     return out
-for name, u in [("S2", "https://assets.publishing.service.gov.uk/media/6a0336a94fb0713aa63ea7e8/Section_2_Landings_2024.ods"), ("S1", "https://assets.publishing.service.gov.uk/media/692db433b3b9afff34e96307/Section_1_Fleet_2024.ods")]:
-    b = urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=200).read(); sh = sheets(b)
-    print("==", name, len(b), "hojas", len(sh))
-    for k, rows in sh.items():
-        print("  HOJA", k, "filas", len(rows))
-        for r in rows[:7]: print("     ", [c[:45] for c in r[:9]])
+u = "https://assets.publishing.service.gov.uk/media/6a0336a94fb0713aa63ea7e8/Section_2_Landings_2024.ods"
+b = urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=200).read(); sh = sheets(b)
+for r in sh["Contents"]: print("C", [c[:150] for c in r if c])
+for k, rows in sh.items():
+    if k == "Contents": continue
+    print("== HOJA", k, "filas", len(rows))
+    for r in rows[:6]: print("    ", [c[:40] for c in r[:12] if c != ""])
+    for r in rows[6:9]: print("    ", [c[:28] for c in r[:12] if c != ""])
