@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T09:11:00Z",
+ "generatedAt": "2026-11-05T09:56:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 338,
+  "ok": 337,
   "late": 2,
-  "error": 4,
+  "error": 5,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
   "repoGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
-  "checkedAt": "2026-11-05T09:11:00Z"
+  "checkedAt": "2026-11-05T09:56:00Z"
  },
  "pipelines": [
   {
@@ -508,7 +508,7 @@
    "crons": [
     "20 9 * * 1-5"
    ],
-   "nextRun": "2026-11-05T09:20:00Z",
+   "nextRun": "2026-11-06T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -600,7 +600,7 @@
    "crons": [
     "20 9 * * 4"
    ],
-   "nextRun": "2026-11-05T09:20:00Z",
+   "nextRun": "2026-11-12T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -784,7 +784,7 @@
    "crons": [
     "15 9 5 * *"
    ],
-   "nextRun": "2026-11-05T09:15:00Z",
+   "nextRun": "2026-12-05T09:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2164,7 +2164,7 @@
    "crons": [
     "30 9 * * 3,4"
    ],
-   "nextRun": "2026-11-05T09:30:00Z",
+   "nextRun": "2026-11-11T09:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3066,7 +3066,7 @@
    "crons": [
     "25 9 * * 4"
    ],
-   "nextRun": "2026-11-05T09:25:00Z",
+   "nextRun": "2026-11-12T09:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4890,7 +4890,7 @@
    "crons": [
     "25 9 * * 1,4"
    ],
-   "nextRun": "2026-11-05T09:25:00Z",
+   "nextRun": "2026-11-09T09:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5149,7 +5149,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-05T09:47:00Z",
+   "nextRun": "2026-11-05T12:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5172,7 +5172,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-05T09:17:00Z",
+   "nextRun": "2026-11-05T12:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5499,7 +5499,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-05T08:55:13Z"
+     "lastChange": "2026-11-05T09:14:51Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5899,7 +5899,7 @@
    "crons": [
     "40 9 * * 4"
    ],
-   "nextRun": "2026-11-05T09:40:00Z",
+   "nextRun": "2026-11-12T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5994,18 +5994,19 @@
    "nextRun": "2026-12-05T08:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-14T19:04:51Z",
-    "durationSec": 220,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38620626887"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-11-05T09:33:37Z",
+    "durationSec": 762,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42003369559",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-poland-regions.py' has timed out after 12 minutes."
    },
    "recent": {
-    "runs": 2,
+    "runs": 3,
     "success": 2,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 744.0
   },
   {
@@ -7804,9 +7805,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-04T09:43:07Z",
-    "durationSec": 78,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41809474739"
+    "startedAt": "2026-11-05T09:45:38Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42005029499"
    },
    "recent": {
     "runs": 10,
@@ -7992,7 +7993,7 @@
    "crons": [
     "40 9 * * 4"
    ],
-   "nextRun": "2026-11-05T09:40:00Z",
+   "nextRun": "2026-11-12T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
