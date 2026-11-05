@@ -30,10 +30,12 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   // pagina, Espana
   let { ctx, page, errs } = await open('/pesca.html?c=ES', lang, w);
   await page.waitForSelector('#fsh-body .fsh-kpis', { timeout: 15000 }).catch(() => {});
-  let r = await page.evaluate(() => { const b = document.getElementById('fsh-body'); return b ? { t: b.innerText, k: b.querySelectorAll('.fsh-kpi').length, tb: b.querySelectorAll('table.fsh-tbl').length, svg: b.querySelectorAll('svg.wp-svg').length, src: !!b.querySelector('a[href*="eurostat"]'), over: document.documentElement.scrollWidth > window.innerWidth + 2, h1: document.getElementById('fsh-h1').textContent } : null; });
+  let r = await page.evaluate(() => { const b = document.getElementById('fsh-body'); return b ? { t: b.innerText, k: b.querySelectorAll('.fsh-kpi').length, tb: b.querySelectorAll('table.fsh-tbl').length, svg: [...b.querySelectorAll('svg.wp-svg')].filter(x => !x.closest('.fsh-g1, .fsh-g2')).length, gsvg: b.querySelectorAll('.fsh-g1 svg.wp-svg, .fsh-g2 svg.wp-svg').length, src: !!b.querySelector('a[href*="eurostat"]'), over: document.documentElement.scrollWidth > window.innerWidth + 2, h1: document.getElementById('fsh-h1').textContent } : null; });
   ok(tag + ' pagina presente', !!r);
   if (r) {
     ok(tag + ' >= 6 cifras, >= 5 tablas, 2 graficas', r.k >= 6 && r.tb >= 5 && r.svg === 2);
+    // lonjas de Galicia (data/views/fish/ES-GA.json): sus 2 graficas van aparte, solo en la ficha de Espana
+    ok(tag + ' lonjas de Galicia: 2 graficas', r.gsvg === (fs.existsSync('data/views/fish/ES-GA.json') ? 2 : 0));
     ok(tag + ' sin undefined/NaN', !/undefined|NaN/.test(r.t));
     ok(tag + ' fuente Eurostat enlazada', r.src);
     ok(tag + ' sin desborde horizontal', !r.over);
