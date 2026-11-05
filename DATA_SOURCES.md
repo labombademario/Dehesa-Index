@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 203 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41269 series en el catalogo unificado.
+Resumen: 205 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41269 series en el catalogo unificado.
 
-## VERIFIED (203)
+## VERIFIED (205)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -140,6 +140,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `miteco_inventario_gei` | MITECO — Inventario Nacional de Emisiones de gases de efecto invernadero | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente y la fecha; no sugerir que el ministerio patrocina la reutilización. |
 | `miteco_rbd` | MITECO — Demarcaciones hidrográficas (límites reportados a la UE; capa WISE WFD 2022 de la Agencia Europea de Medio Ambiente) | ES | CC-BY-4.0 | si/si | si | 0 | Se usa solo como fondo cartográfico (vendor/es-basins.js), simplificado y recortado con la costa. El servidor de descargas del MITECO falla … |
 | `miteco_sequia` | MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez) | ES | ES-LEY-37-2007 | si/si | si | 0 | Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha del informe. |
+| `mmo_fish` | UK Marine Management Organisation (MMO) — UK Sea Fisheries Annual Statistics | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Solo la Sección 2 (desembarques) de las estadíst… |
 | `moniteur_be` | Moniteur belge / Belgisch Staatsblad (decretos de pagos directos de Flandes y Valonia, PAC 2023-2027) | BE | CUSTOM | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el texto publicado en el Moniteur belge. Los textos se leyeron en copias consolidadas n… |
 | `monitorul_ro` | Monitorul Oficial al României — HG 1.571/2022 y ordinele MADR de pagos directos | RO | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda el Monitorul Oficial. Todo se leyó en copias de terceros (legeaz.net, agrointel.ro, sit… |
 | `mrirw_zsrir` | MRiRW / ZSRIR — boletines de precios agrarios en dane.gov.pl | PL | CC-BY-4.0 | si/si | si | 12 |  |
@@ -214,6 +215,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `wikidata` | Wikidata | INT | CC0-1.0 | si/si | no | 0 |  |
 | `world_bank` | World Bank — Commodity Price Data (Pink Sheet) | INT | CC-BY-4.0 | si/si | si | 36 | No endorsement; no World Bank names or logos without written consent. |
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
+| `xunta_pesca` | Xunta de Galicia — Consellería do Mar, Pesca de Galicia (primera venta de pesca fresca en lonja) | ES | CUSTOM | si/si | si | 0 | Citar la fuente; prohibido desnaturalizar el contenido de la información (las sumas por lonja, especie y mes de Dehesa Index se rotulan como… |
 | `zoll_agrardiesel` | Generalzolldirektion (Zoll) — Steuerentlastung für Betriebe der Land- und Forstwirtschaft (Agrardiesel) | DE | PUBLIC-LAW | si/si | si | 0 | Solo se reproduce el importe por litro, citando la página de la aduana. |
 
 ## PENDING (19)
