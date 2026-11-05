@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-05T14:32:40.989Z",
+  "generatedAt": "2026-11-05T20:27:57.725Z",
   "status": "informational",
   "rules": [
     {
@@ -615,15 +615,6 @@
     },
     {
       "type": "period_move",
-      "product": "leche_polvo",
-      "region": "us",
-      "sourceId": "usda_ams_mars",
-      "severity": "high",
-      "changePct": 15.22,
-      "observationDate": "2026-10-01"
-    },
-    {
-      "type": "period_move",
       "product": "lomo_cerdo",
       "region": "us",
       "sourceId": "usda_ams_lmr",
@@ -657,6 +648,15 @@
       "severity": "high",
       "changePct": -17.72,
       "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "severity": "high",
+      "changePct": 15.22,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",

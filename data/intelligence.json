@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-11-05T14:32:40.271Z",
+  "generatedAt": "2026-11-05T20:27:56.965Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -3390,25 +3390,6 @@
       "comparability": "directional"
     },
     {
-      "id": "di_lacteos_leche_polvo_us",
-      "product": "leche_polvo",
-      "region": "us",
-      "sourceId": "usda_ams_mars",
-      "frequency": "weekly",
-      "unit": "lb",
-      "currency": "USD",
-      "latest": 2.12,
-      "observationDate": "2026-10-01",
-      "periodChangePct": 15.217391304347828,
-      "yoyPct": null,
-      "volatility": 0.10307913310386521,
-      "points": 25,
-      "coverageStart": "2024-10-01",
-      "coverageEnd": "2026-10-01",
-      "status": "verified",
-      "comparability": "directional"
-    },
-    {
       "id": "di_porcino_lomo_cerdo_us",
       "product": "lomo_cerdo",
       "region": "us",
@@ -3595,6 +3576,25 @@
       "points": 26,
       "coverageStart": "2024-10-01",
       "coverageEnd": "2026-11-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "frequency": "weekly",
+      "unit": "lb",
+      "currency": "USD",
+      "latest": 2.12,
+      "observationDate": "2026-10-01",
+      "periodChangePct": 15.217391304347828,
+      "yoyPct": null,
+      "volatility": 0.10523692080807873,
+      "points": 24,
+      "coverageStart": "2024-11-01",
+      "coverageEnd": "2026-10-01",
       "status": "verified",
       "comparability": "directional"
     },
