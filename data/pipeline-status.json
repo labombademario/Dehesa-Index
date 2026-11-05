@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T18:28:00Z",
+ "generatedAt": "2026-11-05T18:59:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 336,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-05T10:48:36.674357+00:00",
   "repoGeneratedAt": "2026-11-05T10:48:36.674357+00:00",
-  "checkedAt": "2026-11-05T18:28:00Z"
+  "checkedAt": "2026-11-05T18:59:00Z"
  },
  "pipelines": [
   {
@@ -2491,9 +2491,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-04T18:40:03Z",
-    "durationSec": 46,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41889396778"
+    "startedAt": "2026-11-05T18:47:51Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42087689851"
    },
    "recent": {
     "runs": 10,
@@ -5149,7 +5149,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-05T18:47:00Z",
+   "nextRun": "2026-11-05T21:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5499,7 +5499,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-05T18:10:52Z"
+     "lastChange": "2026-11-05T18:32:11Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6936,7 +6936,7 @@
    "crons": [
     "40 18 * * 4"
    ],
-   "nextRun": "2026-11-05T18:40:00Z",
+   "nextRun": "2026-11-12T18:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
