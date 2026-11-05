@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T14:02:00Z",
+ "generatedAt": "2026-11-05T14:42:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 337,
@@ -11,13 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 9.3,
-  "prodGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-11-05T10:48:36.674357+00:00",
   "repoGeneratedAt": "2026-11-05T10:48:36.674357+00:00",
-  "checkedAt": "2026-11-05T14:02:00Z"
+  "checkedAt": "2026-11-05T14:42:00Z"
  },
  "pipelines": [
   {
@@ -2003,7 +2003,7 @@
     "40 14 * * 4",
     "40 12 * * 5"
    ],
-   "nextRun": "2026-11-05T14:40:00Z",
+   "nextRun": "2026-11-06T12:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2740,7 +2740,7 @@
    "crons": [
     "20 14 * * 4"
    ],
-   "nextRun": "2026-11-05T14:20:00Z",
+   "nextRun": "2026-11-12T14:20:00Z",
    "files": [
     {
      "path": "data/eu"
@@ -3623,14 +3623,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-05T13:50:28Z",
-    "durationSec": 30,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37319915796"
+    "startedAt": "2026-11-05T14:32:00Z",
+    "durationSec": 68,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42045915400"
    },
    "recent": {
     "runs": 10,
-    "success": 4,
-    "failed": 5
+    "success": 5,
+    "failed": 4
    },
    "status": "ok",
    "expectedEveryHours": 744.0
@@ -3642,7 +3642,7 @@
     "30 14 * * 4",
     "30 12 * * 5"
    ],
-   "nextRun": "2026-11-05T14:30:00Z",
+   "nextRun": "2026-11-06T12:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4194,7 +4194,7 @@
    "crons": [
     "20 14 * * 4,5"
    ],
-   "nextRun": "2026-11-05T14:20:00Z",
+   "nextRun": "2026-11-06T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4319,9 +4319,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-04T14:32:26Z",
-    "durationSec": 654,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41848574713"
+    "startedAt": "2026-11-05T14:39:51Z",
+    "durationSec": 19,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42047181095"
    },
    "recent": {
     "runs": 10,
@@ -4987,13 +4987,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-04T14:23:10Z",
-    "durationSec": 23,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41847015010"
+    "startedAt": "2026-11-05T14:31:43Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42045868495"
    },
    "recent": {
-    "runs": 7,
-    "success": 7,
+    "runs": 8,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -5488,7 +5488,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-05T08:10:48Z"
+     "lastChange": "2026-11-05T14:32:58Z"
     },
     {
      "path": "data/products"
@@ -5499,7 +5499,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-05T13:40:31Z"
+     "lastChange": "2026-11-05T14:05:51Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6993,7 +6993,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-05T14:15:00Z",
+   "nextRun": "2026-11-05T23:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7062,7 +7062,7 @@
    "crons": [
     "40 14 * * 4"
    ],
-   "nextRun": "2026-11-05T14:40:00Z",
+   "nextRun": "2026-11-12T14:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7156,7 +7156,7 @@
     "20 20 * * 3",
     "20 14 * * 4"
    ],
-   "nextRun": "2026-11-05T14:20:00Z",
+   "nextRun": "2026-11-11T20:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7616,7 +7616,7 @@
    "crons": [
     "20 14 * * 4"
    ],
-   "nextRun": "2026-11-05T14:20:00Z",
+   "nextRun": "2026-11-12T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7639,7 +7639,7 @@
    "crons": [
     "15 14 * * 1,4"
    ],
-   "nextRun": "2026-11-05T14:15:00Z",
+   "nextRun": "2026-11-09T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7662,7 +7662,7 @@
    "crons": [
     "25 14 * * *"
    ],
-   "nextRun": "2026-11-05T14:25:00Z",
+   "nextRun": "2026-11-06T14:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
