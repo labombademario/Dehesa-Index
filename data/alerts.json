@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-04T23:55:25.283Z",
+  "generatedAt": "2026-11-05T03:41:58.961Z",
   "status": "informational",
   "rules": [
     {
@@ -430,7 +430,7 @@
       "region": "us",
       "sourceId": "usda_ams_mars",
       "severity": "watch",
-      "changePct": -7.36,
+      "changePct": -7.35,
       "observationDate": "2026-10-01"
     },
     {
