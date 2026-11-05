@@ -123,24 +123,43 @@ def check_species(label, rows, tot):
             s = sum(tot[g][k][j] or 0 for g in GROUPS); t = tot["All"][k][j]
             if abs(s - t) > max(0.005 * abs(t), 0.002): raise ValueError("%s: grupos %.3f != total %.3f" % (label, s, t))
 def ports_table(rows):
-    hi, cols = year_cols(rows)
-    yrs = sorted({y for m, y in cols.values()}); pos = {(m, y): i for i, (m, y) in cols.items()}
-    note = ""; out = []; tot = None
+    """2.13: cuatro bloques en horizontal (a todas las especies, b demersales, c pelagicas, d marisco), cada uno con cantidad y valor de 5 anos
+    -> (anos, [[puerto, {bloque: [qty[], val[]]}, marca (a)]], {bloque: [qty[], val[]]}, nota)"""
+    hi = next(i for i, r in enumerate(rows[:12]) if sum(1 for c in r if re.fullmatch(r"(19|20)\d\d", c)) >= 10)
+    blab = {}
+    for r in rows[hi + 1:hi + 3]:
+        for i, c in enumerate(r):
+            m = re.match(r"^\(([a-d])\) (.+)$", c)
+            if m: blab[i] = {"a": "All", "b": "Demersal", "c": "Pelagic", "d": "Shellfish"}[m.group(1)]
+    if sorted(blab.values()) != ["All", "Demersal", "Pelagic", "Shellfish"]: raise ValueError("2.13: bloques %s" % blab)
+    mlab = {i: ("qty" if "quantity" in c.lower() else "val" if "value" in c.lower() else None) for i, c in enumerate(rows[hi - 1]) if c}
+    cols = {}
+    for i, c in enumerate(rows[hi]):
+        if not re.fullmatch(r"(19|20)\d\d", c): continue
+        b = blab[max(j for j in blab if j <= i)] if any(j <= i for j in blab) else None
+        mk = [j for j in mlab if j <= i]; m = mlab[max(mk)] if mk else None
+        if b is None:
+            # el bloque (a) empieza en la columna 0 pero sus anos empiezan en la 3: no hay etiqueta anterior solo si el bloque no existe
+            raise ValueError("2.13: columna %d sin bloque" % i)
+        cols[i] = (b, m, int(c))
+    yrs = sorted({y for b, m, y in cols.values()})
+    pos = {c: i for i, c in cols.items()}
+    note = ""; out = []; tot = {}
     for r in rows[hi + 1:]:
         if not any(r): continue
         if r[0].startswith("(a) Ports"): note = r[0]; continue
-        if r[0].startswith("Source") or r[0].startswith("(a) All"): continue
-        if re.match(r"^\([b-z]\) ", r[0]): break
+        if r[0].startswith("Source") or re.match(r"^\([a-d]\) [A-Z]", r[0]) and not r[0].startswith("(a) Ports"): continue
         txt = [c for c in r[:3] if c and num(c) is None]
         if not txt: continue
         flag = "(a)" in txt
         nm = [c for c in txt if not re.fullmatch(r"\([a-z]\)", c)]
         if not nm: continue
         nm = nm[-1] if (len(r) > 2 and r[2]) else nm[0]
-        q = [num(r[pos[("qty", y)]]) if pos[("qty", y)] < len(r) else None for y in yrs]
-        v = [num(r[pos[("val", y)]]) if pos[("val", y)] < len(r) else None for y in yrs]
-        if nm.startswith("Total"): tot = [q, v]; break      # la hoja repite el bloque por grupo (b, c, d): solo se usa (a) todas las especies
-        out.append([nm, q, v, flag])
+        def cell(b, m, y):
+            i = pos[(b, m, y)]; return num(r[i]) if i < len(r) else None
+        vals = {b: [[cell(b, "qty", y) for y in yrs], [cell(b, "val", y) for y in yrs]] for b in ("All", "Demersal", "Pelagic", "Shellfish")}
+        if nm.startswith("Total"): tot = vals; continue
+        out.append([nm, vals, flag])
     return yrs, out, tot, note
 def major_ports(rows):
     for r in rows[:8]:
@@ -185,10 +204,13 @@ def build(sh, ods_url, page, rep_year):
         for p in major_ports(sh.get("Table_2_13" + suf, [])): nat[p] = nm
     log("2.13: %d puertos, con nacion %d, nota: %s" % (len(ports), sum(1 for p in ports if p[0] in nat), note[:160]))
     if len(ports) < 40 or ptot is None: raise ValueError("puertos insuficientes: %d" % len(ports))
+    for b in ("All", "Demersal", "Pelagic", "Shellfish"):
+        for k in (0, 1):
+            s = sum((p[1][b][k][-1] or 0) for p in ports); t = ptot[b][k][-1]
+            if s > t * 1.001 + 0.01: raise ValueError("puertos %s %s superan el total %.2f > %.2f" % (b, k, s, t))
+            log("  control puertos %s %s %s: suma %.2f total %.2f" % (b, "qty" if k == 0 else "val", yrs[-1], s, t))
     for k in (0, 1):
-        s = sum((p[1 + k][-1] or 0) for p in ports)
-        if s > ptot[k][-1] * 1.001 + 0.01: raise ValueError("puertos %s superan el total %.2f > %.2f" % (k, s, ptot[k][-1]))
-        log("  control puertos %s %s: suma %.2f total %.2f" % ("qty" if k == 0 else "val", yrs[-1], s, ptot[k][-1]))
+        if abs(ptot["All"][k][-1] - tot["All"][k][-1]) > 0.005 * tot["All"][k][-1]: raise ValueError("total de puertos %.2f distinto de 2.2 %.2f" % (ptot["All"][k][-1], tot["All"][k][-1]))
     hy, hq, hv = history(sh["Table_2_7"])
     if hy[-1] != yrs[-1]: raise ValueError("historico termina en %s" % hy[-1])
     log("2.7: %d anos %s-%s, ultimo total %.1f mil t" % (len(hy), hy[0], hy[-1], hq["Total"][-1]))
@@ -199,7 +221,7 @@ def build(sh, ods_url, page, rep_year):
             "source": {"id": "mmo_fish", "url": page, "file": ods_url, "license": "Open Government Licence v3.0"},
             "reportYear": rep_year, "years": yrs, "units": {"qty": "thousand tonnes", "val": "GBP million"},
             "uk": fix(uk), "nations": {n: fix(v) for n, v in nations.items()},
-            "ports": [[p[0], nat.get(p[0]), r5(p[1]), r5(p[2]), p[3]] for p in ports], "portsTotal": [r5(ptot[0]), r5(ptot[1])], "portsNote": note,
+            "ports": [[p[0], nat.get(p[0]), {b: [r5(p[1][b][0]), r5(p[1][b][1])] for b in p[1]}, p[2]] for p in ports], "portsTotal": {b: [r5(ptot[b][0]), r5(ptot[b][1])] for b in ptot}, "portsNote": note,
             "history": {"years": hy, "qty": {g: r5(v) for g, v in hq.items()}, "val": {g: r5(v) for g, v in hv.items()}}}
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out"); ap.add_argument("--ods"); a = ap.parse_args()
