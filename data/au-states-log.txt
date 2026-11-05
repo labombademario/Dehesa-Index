@@ -8,7 +8,7 @@ muestra {"STRUCTURE": "DATAFLOW", "STRUCTURE_ID": "ABS:MERCH_EXP(1.0.0)", "STRUC
 024 cheese celdas 99
 041 wheat celdas 79
 043 barley celdas 66
-044 maize celdas 67
+044 maize celdas 68
 061 sugar celdas 100
 112 wine celdas 106
 222 oilseeds celdas 95
