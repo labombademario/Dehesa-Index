@@ -2,4 +2,6 @@ sob 2021 condados 2822 capital 136685205293 prima 13719114375 indemnizacion 9610
 sob 2022 condados 2826 capital 173585645621 prima 18392853033 indemnizacion 19428774741
 sob 2023 condados 2840 capital 181618544895 prima 18105422241 indemnizacion 17795085969
 sob 2024 condados 2840 capital 158674538522 prima 15882497169 indemnizacion 15175339990
-FALLO: los totales de 2024 no reproducen los de la RMA [158674538522, 15882497169, 9881485833, 15175339990]
+sob 2025 condados 2852 capital 159368005997 prima 16834624941 indemnizacion 11598746533
+sob 2026 condados 2842 capital 168095407214 prima 18920363989 indemnizacion 6110038055
+OK: 50 estados, 2889 condados, años 2021-2026
