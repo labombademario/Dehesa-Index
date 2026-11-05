@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T10:18:00Z",
+ "generatedAt": "2026-11-05T11:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 337,
@@ -11,13 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "error",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 0.0,
+  "lagHours": 9.3,
   "prodGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
-  "repoGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
-  "checkedAt": "2026-11-05T10:18:00Z"
+  "repoGeneratedAt": "2026-11-05T10:48:36.674357+00:00",
+  "checkedAt": "2026-11-05T11:00:00Z"
  },
  "pipelines": [
   {
@@ -2325,7 +2325,7 @@
    "crons": [
     "50 10 5,20 * *"
    ],
-   "nextRun": "2026-11-05T10:50:00Z",
+   "nextRun": "2026-11-20T10:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2340,7 +2340,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 360.0
+   "expectedEveryHours": 384.0
   },
   {
    "workflow": "update-es-climate-provinces.yml",
@@ -2771,14 +2771,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-28T02:44:52Z",
-    "durationSec": 123,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40622737627"
+    "event": "schedule",
+    "startedAt": "2026-11-05T10:47:34Z",
+    "durationSec": 142,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42013637687"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -5176,31 +5176,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-11-05T01:29:37Z"
+     "lastChange": "2026-11-05T10:48:37Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-11-05T01:29:37Z"
+     "lastChange": "2026-11-05T10:48:37Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-11-05T01:29:37Z"
+     "lastChange": "2026-11-05T10:48:37Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-11-05T01:29:37Z"
+     "lastChange": "2026-11-05T10:48:37Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-11-05T01:29:37Z"
+     "lastChange": "2026-11-05T10:48:37Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-05T01:28:39Z",
-    "durationSec": 62,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41948773536"
+    "startedAt": "2026-11-05T10:46:38Z",
+    "durationSec": 124,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42013510140"
    },
    "recent": {
     "runs": 10,
@@ -5499,7 +5499,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-05T09:59:53Z"
+     "lastChange": "2026-11-05T10:20:56Z"
     },
     {
      "path": "data/source-candidates.json",
