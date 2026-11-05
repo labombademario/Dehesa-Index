@@ -1,95 +1,95 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-10-29T15:08:26.681Z",
+ "generatedAt": "2026-11-05T21:06:39.972Z",
  "families": [
   {
    "id": "cereales",
    "endpoint": "cereal",
    "freq": "weekly",
-   "series": 91,
-   "points": 188090,
-   "latest": "2026-10-25"
+   "series": 87,
+   "points": 188332,
+   "latest": "2026-11-01"
   },
   {
    "id": "oleaginosas",
    "endpoint": "oilseeds",
    "freq": "weekly",
    "series": 84,
-   "points": 22452,
-   "latest": "2026-10-25"
+   "points": 22538,
+   "latest": "2026-11-01"
   },
   {
    "id": "lacteos",
    "endpoint": "dairy",
    "freq": "weekly",
    "series": 11,
-   "points": 44722,
-   "latest": "2026-10-25"
+   "points": 44788,
+   "latest": "2026-11-01"
   },
   {
    "id": "vacuno",
    "endpoint": "beef",
    "freq": "weekly",
    "series": 38,
-   "points": 423877,
-   "latest": "2026-10-25"
+   "points": 424548,
+   "latest": "2026-11-01"
   },
   {
    "id": "cerdo",
    "endpoint": "pigmeat",
    "freq": "weekly",
    "series": 5,
-   "points": 49153,
-   "latest": "2026-10-25"
+   "points": 49224,
+   "latest": "2026-11-01"
   },
   {
    "id": "pollo",
    "endpoint": "poultry",
    "freq": "weekly",
    "series": 3,
-   "points": 26212,
-   "latest": "2026-10-25"
+   "points": 26275,
+   "latest": "2026-11-01"
   },
   {
    "id": "huevos",
    "endpoint": "poultry/egg",
    "freq": "weekly",
    "series": 4,
-   "points": 27231,
-   "latest": "2026-10-25"
+   "points": 27306,
+   "latest": "2026-11-01"
   },
   {
    "id": "ovino",
    "endpoint": "sheepAndGoat",
    "freq": "weekly",
    "series": 2,
-   "points": 18882,
-   "latest": "2026-10-25"
+   "points": 18911,
+   "latest": "2026-11-01"
   },
   {
    "id": "arroz",
    "endpoint": "rice",
    "freq": "weekly",
    "series": 112,
-   "points": 42049,
-   "latest": "2026-10-25"
+   "points": 42070,
+   "latest": "2026-11-01"
   },
   {
    "id": "leche",
    "endpoint": "rawMilk",
    "freq": "monthly",
    "series": 2,
-   "points": 9481,
-   "latest": "2026-09-30"
+   "points": 9508,
+   "latest": "2026-10-31"
   },
   {
    "id": "aceite",
    "endpoint": "oliveOil",
    "freq": "weekly",
    "series": 6,
-   "points": 44266,
-   "latest": "2026-10-25"
+   "points": 44339,
+   "latest": "2026-11-01"
   },
   {
    "id": "azucar",
@@ -112,8 +112,8 @@
    "endpoint": "fruitAndVegetable/pricesSupplyChain",
    "freq": "weekly",
    "series": 192,
-   "points": 186242,
-   "latest": "2026-10-25"
+   "points": 186564,
+   "latest": "2026-11-01"
   },
   {
    "id": "fertilizantes",
@@ -128,48 +128,48 @@
    "endpoint": "beef/cuts",
    "freq": "weekly",
    "series": 5,
-   "points": 6584,
-   "latest": "2026-10-25"
+   "points": 6605,
+   "latest": "2026-11-01"
   },
   {
    "id": "despiece-vacuno-mes",
    "endpoint": "beef/cuts/month",
    "freq": "monthly",
    "series": 3,
-   "points": 738,
+   "points": 604,
    "latest": "2026-09-30"
   },
   {
    "id": "despiece-cerdo",
    "endpoint": "pigmeat/cuts",
    "freq": "weekly",
-   "series": 7,
-   "points": 13333,
-   "latest": "2026-10-25"
+   "series": 8,
+   "points": 13565,
+   "latest": "2026-11-01"
   },
   {
    "id": "despiece-cerdo-mes",
    "endpoint": "pigmeat/cuts/month",
    "freq": "monthly",
    "series": 3,
-   "points": 845,
-   "latest": "2026-09-30"
+   "points": 710,
+   "latest": "2026-10-31"
   },
   {
    "id": "vivos",
    "endpoint": "liveAnimal",
    "freq": "weekly",
    "series": 5,
-   "points": 29488,
-   "latest": "2026-10-25"
+   "points": 29540,
+   "latest": "2026-11-01"
   },
   {
    "id": "pollo-mes",
    "endpoint": "poultry/month",
    "freq": "monthly",
    "series": 6,
-   "points": 5891,
-   "latest": "2026-09-30"
+   "points": 5893,
+   "latest": "2026-10-31"
   }
  ]
 }
