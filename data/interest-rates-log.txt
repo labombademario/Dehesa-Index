@@ -1,7 +1,6 @@
-14:52:56 us-policy-rate: 443 puntos, ultimo 2026-11=3.88 (primaria)
-14:53:26   error https://data-api.ecb.europa.eu/service/data/FM/B.U2.EUR.4F.KR.MRR_FR.LEV?format=csvdata&startPeriod=: The read operation timed out
-14:53:29 eu-policy-rate: 46 puntos, ultimo 2026-09=2.65 (primaria)
-14:53:30 eu-deposit-rate: 64 puntos, ultimo 2026-09=2.5 (primaria)
-14:53:31 ca-policy-rate: 212 puntos, ultimo 2026-11=2.5 (primaria)
-14:53:32 au-policy-rate: 435 puntos, ultimo 2026-10=4.6 (primaria)
-14:53:33 uk-policy-rate: 443 puntos, ultimo 2026-11=3.75 (primaria)
+14:57:57 us-policy-rate: 443 puntos, ultimo 2026-11=3.88 (primaria)
+14:57:58 eu-policy-rate: 46 puntos, ultimo 2026-09=2.65 (primaria)
+14:57:59 eu-deposit-rate: 64 puntos, ultimo 2026-09=2.5 (primaria)
+14:58:00 ca-policy-rate: 212 puntos, ultimo 2026-11=2.5 (primaria)
+14:58:01 au-policy-rate: 435 puntos, ultimo 2026-10=4.6 (primaria)
+14:58:03 uk-policy-rate: 443 puntos, ultimo 2026-11=4.0 (primaria)
