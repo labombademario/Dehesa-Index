@@ -18,25 +18,25 @@ frigoríficos TURKEYS filas 621 usadas 621
 frigoríficos CHICKENS filas 828 usadas 828
 frigoríficos LAMB & MUTTON filas 69 usadas 69
 frigoríficos VEAL filas 69 usadas 69
-frigoríficos MILK filas 264 usadas 0
-frigoríficos WHEY filas 748 usadas 0
-leche existencias lácteos secos filas 264 usadas 264
-leche producción estados filas 5483 usadas 4334
-leche producción nacional filas 962 usadas 184
+frigoríficos MILK filas 267 usadas 0
+frigoríficos WHEY filas 759 usadas 0
+leche existencias lácteos secos filas 267 usadas 267
+leche producción estados filas 5486 usadas 4334
+leche producción nacional filas 968 usadas 184
 leche precio recibido filas 199 usadas 189
 vacas lecheras filas 0 usadas 0
 vacas lecheras nacional filas 0 usadas 0
 ovino SHEEP, INCL LAMBS - INVENTORY filas 96 usadas 7
 ovino SHEEP, EWES, BREEDING, GE 1 YEAR - INVENTORY filas 6 usadas 6
 ovino SHEEP - LAMB CROP, MEASURED IN HEAD filas 5 usadas 0
-cordero y cordero adulto producción filas 460 usadas 69
+cordero y cordero adulto producción filas 461 usadas 69
 huevos producción filas 1072 usadas 69
-BUTTER producción filas 78 usadas 68
-CHEESE producción filas 1862 usadas 68
+BUTTER producción filas 79 usadas 69
+CHEESE producción filas 1884 usadas 69
  • BEEF, BONE-IN, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • BEEF, BONELESS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • BEEF, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
- • BUTTER - PRODUCTION, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
+ • BUTTER - PRODUCTION, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • BUTTER, COLD STORAGE - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • CATTLE, (EXCL COWS) - INVENTORY | HEAD | nac 1 2022-12 | estados 0
  • CATTLE, (EXCL COWS) - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
@@ -61,7 +61,7 @@ CHEESE producción filas 1862 usadas 68
  • CATTLE, ON FEED - INVENTORY | HEAD | nac 12 2026-07 | estados 42
  • CATTLE, ON FEED - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
  • CATTLE, STEERS, GE 500 LBS - INVENTORY | HEAD | nac 11 2026-07 | estados 0
- • CHEESE - PRODUCTION, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
+ • CHEESE - PRODUCTION, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • CHEESE, NATURAL, (EXCL AMERICAN & SWISS), COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • CHEESE, NATURAL, AMERICAN, COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • CHEESE, NATURAL, COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
@@ -119,11 +119,11 @@ CHEESE producción filas 1862 usadas 68
  • MILK - PRICE RECEIVED, MEASURED IN $ / CWT | $ / CWT | nac 69 2026-09 | estados 0
  • MILK - PRODUCTION, MEASURED IN LB | LB | nac 69 2026-09 | estados 49
  • MILK - PRODUCTION, MEASURED IN LB / HEAD | LB / HEAD | nac 69 2026-09 | estados 24
- • MILK, DRY, NONFAT, HUMAN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
+ • MILK, DRY, NONFAT, HUMAN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • MILK, DRY, SKIM, ANIMAL - PRICE RECEIVED, MEASURED IN CENTS / LB | CENTS / LB | nac 60 2025-12 | estados 0
- • MILK, DRY, SKIM, ANIMAL - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
+ • MILK, DRY, SKIM, ANIMAL - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • MILK, DRY, WHOLE - PRICE RECEIVED, MEASURED IN CENTS / LB | CENTS / LB | nac 60 2025-12 | estados 0
- • MILK, DRY, WHOLE - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
+ • MILK, DRY, WHOLE - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • MILK, WHOLE, EVAPORATED & CONDENSED - STOCKS, MEASURED IN LB | LB | nac 60 2025-12 | estados 0
  • PORK, BELLIES, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • PORK, BUTTS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
