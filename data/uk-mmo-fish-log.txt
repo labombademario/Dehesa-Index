@@ -1,0 +1,22 @@
+ODS: https://assets.publishing.service.gov.uk/media/6ae1c6a09bca21f1c5036e4f/Section_2_Landings_2025.ods pagina: https://www.gov.uk/government/statistics/uk-sea-fisheries-annual-statistics-report-2025
+bytes 337196
+2.2: 39 especies, anos 2021-2025, total 450.4 mil t, 1000.3 M£
+2.2a England: 39 especies, total 89.3 mil t
+2.2b Wales: 39 especies, total 4.5 mil t
+2.2c Scotland: 39 especies, total 334.4 mil t
+2.2d Northern Ireland: 39 especies, total 17.7 mil t
+  control naciones cantidad 2021: suma 391.31 Reino Unido 395.11 (99.04 %)
+  control naciones cantidad 2022: suma 394.19 Reino Unido 398.19 (99.00 %)
+  control naciones cantidad 2023: suma 436.32 Reino Unido 440.53 (99.04 %)
+  control naciones cantidad 2024: suma 471.62 Reino Unido 476.32 (99.01 %)
+  control naciones cantidad 2025: suma 445.89 Reino Unido 450.43 (98.99 %)
+  control naciones valor 2021: suma 689.60 Reino Unido 695.79 (99.11 %)
+  control naciones valor 2022: suma 783.65 Reino Unido 791.08 (99.06 %)
+  control naciones valor 2023: suma 807.44 Reino Unido 815.44 (99.02 %)
+  control naciones valor 2024: suma 851.96 Reino Unido 859.80 (99.09 %)
+  control naciones valor 2025: suma 992.60 Reino Unido 1000.31 (99.23 %)
+2.13: 51 puertos, con nacion 48, nota: (a) Ports in Isle of Man and therefore not included in Tables 2.13a-d
+  control puertos qty 2025: suma 124.91 total 124.91
+  control puertos val 2025: suma 374.24 total 374.24
+2.7: 10 anos 1938-2025, ultimo total 464.8 mil t
+escrito /home/runner/work/Dehesa-Index/Dehesa-Index/data/uk-mmo-fish.json 30122 bytes
