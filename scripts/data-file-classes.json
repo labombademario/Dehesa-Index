@@ -544,6 +544,14 @@
     "pattern": "data/ams/'"
    }
   },
+  "data/fr-communes/": {
+   "class": "RUNTIME",
+   "note": "Censo agrario 2020 de Francia por comuna, un fichero por region (Agreste): region-more.js descarga solo el de la region que se mira.",
+   "via": {
+    "file": "js/region-more.js",
+    "pattern": "data/fr-communes/"
+   }
+  },
   "data/snapshots/": {
    "class": "ARCHIVE",
    "note": "Instantaneas diarias (retencion 7 dias + una por semana, prune-snapshots.py); no se sirven al navegador."

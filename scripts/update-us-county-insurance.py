@@ -2,7 +2,7 @@
 """Seguro de cosechas de EE. UU. por CONDADO (USDA RMA, Summary of Business, state_county_crop/sobcov_<AÑO>.zip) -> data/us-county/insurance/<ESTADO>.json + index.json
 Mismo fichero publico y mismo metodo que scripts/update-crop-insurance.py (que lo suma por estado): aqui se suma por condado y se guardan, para los ultimos 6 años,
 [capital asegurado $, prima total $, subvencion $, indemnizacion $, polizas con prima, acres asegurados] y, del ultimo año completo, los 5 cultivos con mas capital asegurado.
-Control: los totales nacionales de 2024 que ya publicamos en data/crop-insurance.json (capital 158.675.945.863 $, prima 15.882.545.590 $, subvencion 9.881.505.383 $, indemnizacion 15.174.686.916 $)
+Control: los totales nacionales de 2024 que ya publicamos en data/crop-insurance.json (capital 158.674.538.522 $, prima 15.882.497.169 $, subvencion 9.881.485.833 $, indemnizacion 15.175.339.990 $)
 se reproducen exactamente sumando todos los registros (los de condado sin asignar, codigo 999, cuentan en el control pero no se publican como condado); si no coinciden, no se escribe nada. Nada se estima: un condado sin registros no aparece.
 Uso: update-us-county-insurance.py [--out DIR] [--fixture-dir DIR]   (fixture: sobcov_<AÑO>.zip locales, sin red)"""
 import argparse, datetime, io, json, sys, time, urllib.error, urllib.request, zipfile
@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 URL = "https://pubfs-rma.fpac.usda.gov/pub/Web_Data_Files/Summary_of_Business/state_county_crop/sobcov_%d.zip"
 YEARS = 6
 TOP_CROPS = 5
-CHECK_2024 = [158675945863, 15882545590, 9881505383, 15174686916]   # = national de data/crop-insurance.json (el informe de la RMA de 2024 se ha revisado desde el original)
+CHECK_2024 = [158674538522, 15882497169, 9881485833, 15175339990]   # = national de data/crop-insurance.json (el informe de la RMA de 2024 se ha revisado desde el original)
 LOG = []
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
