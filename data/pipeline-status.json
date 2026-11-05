@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T08:22:00Z",
+ "generatedAt": "2026-11-05T08:38:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 338,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
   "repoGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
-  "checkedAt": "2026-11-05T08:22:00Z"
+  "checkedAt": "2026-11-05T08:38:00Z"
  },
  "pipelines": [
   {
@@ -1044,15 +1044,15 @@
     }
    ],
    "last": {
-    "conclusion": "cancelled",
-    "event": "schedule",
-    "startedAt": "2026-11-05T03:43:07Z",
-    "durationSec": 212,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41963323988"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-05T08:27:53Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41994653323"
    },
    "recent": {
     "runs": 10,
-    "success": 4,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
@@ -2532,7 +2532,7 @@
    "crons": [
     "30 8 * * *"
    ],
-   "nextRun": "2026-11-05T08:30:00Z",
+   "nextRun": "2026-11-06T08:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2859,7 +2859,7 @@
    "crons": [
     "25 8 * * *"
    ],
-   "nextRun": "2026-11-05T08:25:00Z",
+   "nextRun": "2026-11-06T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5499,7 +5499,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-05T08:10:48Z"
+     "lastChange": "2026-11-05T08:24:53Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6336,7 +6336,7 @@
    "crons": [
     "25 8 * * 4"
    ],
-   "nextRun": "2026-11-05T08:25:00Z",
+   "nextRun": "2026-11-12T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6796,7 +6796,7 @@
    "crons": [
     "25 8 * * 4"
    ],
-   "nextRun": "2026-11-05T08:25:00Z",
+   "nextRun": "2026-11-12T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
