@@ -22,9 +22,15 @@ def sheets(b):
     return out
 u = "https://assets.publishing.service.gov.uk/media/6a0336a94fb0713aa63ea7e8/Section_2_Landings_2024.ods"
 b = urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=200).read(); sh = sheets(b)
-for r in sh["Contents"]: print("C", [c[:150] for c in r if c])
-for k, rows in sh.items():
-    if k == "Contents": continue
-    print("== HOJA", k, "filas", len(rows))
-    for r in rows[:6]: print("    ", [c[:40] for c in r[:12] if c != ""])
-    for r in rows[6:9]: print("    ", [c[:28] for c in r[:12] if c != ""])
+open("/tmp/mmo-dump.txt","w")
+def dump(k, a=0, z=999, w=14):
+    rows = sh[k]; print("== ", k, len(rows))
+    for i, r in enumerate(rows[a:z], a): print(i, [c[:22] for c in r[:w]])
+dump("Table_2_2", 0, 70, 12)
+dump("Table_2_13", 0, 70, 12)
+dump("Table_2_13c", 0, 14, 8)
+dump("Table_2_7", 0, 22, 4)
+dump("Table_2_16", 0, 4, 3)
+dump("Table_2_12", 0, 12, 8)
+for k in ("Table_2_2d", "Table_2_14"): dump(k, 0, 12, 8)
+print("2.16 ncols", len(sh["Table_2_16"][2]), sh["Table_2_16"][2][-4:])
