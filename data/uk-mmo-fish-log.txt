@@ -15,8 +15,8 @@ bytes 337196
   control naciones valor 2023: suma 807.44 Reino Unido 815.44 (99.02 %)
   control naciones valor 2024: suma 851.96 Reino Unido 859.80 (99.09 %)
   control naciones valor 2025: suma 992.60 Reino Unido 1000.31 (99.23 %)
-2.13: 51 puertos, con nacion 48, nota: (a) Ports in Isle of Man and therefore not included in Tables 2.13a-d
+2.13: 51 puertos, con nacion 48, nota: 
   control puertos qty 2025: suma 124.91 total 124.91
   control puertos val 2025: suma 374.24 total 374.24
 2.7: 10 anos 1938-2025, ultimo total 464.8 mil t
-escrito /home/runner/work/Dehesa-Index/Dehesa-Index/data/uk-mmo-fish.json 30122 bytes
+escrito /home/runner/work/Dehesa-Index/Dehesa-Index/data/uk-mmo-fish.json 30053 bytes
