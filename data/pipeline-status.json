@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T09:56:00Z",
+ "generatedAt": "2026-11-05T10:18:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 337,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
   "repoGeneratedAt": "2026-11-05T01:29:36.852620+00:00",
-  "checkedAt": "2026-11-05T09:56:00Z"
+  "checkedAt": "2026-11-05T10:18:00Z"
  },
  "pipelines": [
   {
@@ -788,14 +788,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-16T13:27:33Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38907989663"
+    "event": "schedule",
+    "startedAt": "2026-11-05T10:07:22Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42008045408"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -2767,7 +2767,7 @@
    "crons": [
     "0 10 5,20 * *"
    ],
-   "nextRun": "2026-11-05T10:00:00Z",
+   "nextRun": "2026-11-20T10:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2782,7 +2782,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 360.0
+   "expectedEveryHours": 384.0
   },
   {
    "workflow": "update-eu-crops-map.yml",
@@ -5499,7 +5499,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-05T09:14:51Z"
+     "lastChange": "2026-11-05T09:59:53Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5715,7 +5715,7 @@
    "crons": [
     "15 7,10,13,16,19 * * 4,5"
    ],
-   "nextRun": "2026-11-05T10:15:00Z",
+   "nextRun": "2026-11-05T13:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5730,7 +5730,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 3.0
+   "expectedEveryHours": 12.0
   },
   {
    "workflow": "update-poland-eurostat.yml",
