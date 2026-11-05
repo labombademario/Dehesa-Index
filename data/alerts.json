@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-05T20:48:57.378Z",
+  "generatedAt": "2026-11-05T20:58:43.257Z",
   "status": "informational",
   "rules": [
     {
@@ -345,21 +345,21 @@
     },
     {
       "type": "period_move",
-      "product": "arroz",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "high",
-      "changePct": -25.97,
-      "observationDate": "2026-10-01"
-    },
-    {
-      "type": "period_move",
-      "product": "huevos",
+      "product": "leche_polvo",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "severity": "watch",
-      "changePct": 7.94,
-      "observationDate": "2026-10-01"
+      "changePct": 6.74,
+      "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "oliva",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": -7.77,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
@@ -408,12 +408,30 @@
     },
     {
       "type": "period_move",
-      "product": "avena",
+      "product": "cerdo",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "severity": "watch",
-      "changePct": 6.93,
-      "observationDate": "2026-10-01"
+      "changePct": -7.2,
+      "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cordero",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 9.55,
+      "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "trigo_duro",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 6.67,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
@@ -513,24 +531,6 @@
       "severity": "high",
       "changePct": 14.48,
       "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "harina_soja",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "changePct": 5.65,
-      "observationDate": "2026-10-01"
-    },
-    {
-      "type": "period_move",
-      "product": "colza",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "changePct": 9.64,
-      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
