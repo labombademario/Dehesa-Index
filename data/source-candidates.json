@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T17:30:52Z",
+ "generatedAt": "2026-11-05T23:40:38Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -4377,7 +4377,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "European Commission — Agri-food Data Portal (DG AGRI)",
-   "dataset": "Ya integrada (5554 series en el catalogo unificado)",
+   "dataset": "Ya integrada (5560 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
