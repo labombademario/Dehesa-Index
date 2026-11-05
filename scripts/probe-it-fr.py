@@ -3,3 +3,4 @@
 import subprocess, sys
 r = subprocess.run([sys.executable, "scripts/update-uk-mmo-fish.py"])
 print("codigo", r.returncode)
+# 48
