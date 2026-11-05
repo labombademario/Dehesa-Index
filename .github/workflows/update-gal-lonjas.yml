@@ -1,0 +1,33 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Galicia fish first sales by lonja and species (Xunta de Galicia, Pesca de Galicia)
+on:
+  schedule:
+    - cron: '50 6 7 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-gal-lonjas
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-gal-lonjas.py
+        timeout-minutes: 30
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/gal-lonjas.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/gal-lonjas.json
+      - name: Publicar
+        run: bash scripts/publish-data.sh "Galicia - primera venta de pesca fresca por lonja y especie (Pesca de Galicia)" data/gal-lonjas.json data/gal-lonjas-log.txt data/revisions.json
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

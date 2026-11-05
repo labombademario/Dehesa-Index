@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-354 workflows (304 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+356 workflows (306 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -315,6 +315,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-france.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-france.py | france-stats.json | finish, validate-files |
 | update-fx-history.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-fx-history.py | fx-history.json | finish, validate-files |
 | update-fx.yml | a mano | semanal (1-5) | update-fx.mjs | - | - |
+| update-gal-lonjas.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-gal-lonjas.py | gal-lonjas.json | finish, validate-files |
 | update-gats.yml | a mano | diaria | update-gats.mjs | gats-log.txt, gats.json | validate-files |
 | update-germany-extra.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-germany-destatis-extra.py | germany-extra-stats.json | finish, validate-files |
 | update-germany-livestock.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-germany-livestock.py | germany-livestock.json | finish, validate-files |
@@ -414,6 +415,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-uk-farmers-age.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-uk-farmers-age.py | uk-farmers-age.json | finish, validate-files |
 | update-uk-fuel.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-uk-fuel.py | uk-fuel-stats.json | finish, validate-files |
 | update-uk-fv-wholesale.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-uk-fv-wholesale.py | uk-fv-stats.json | finish, validate-files |
+| update-uk-mmo-fish.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-uk-mmo-fish.py | uk-mmo-fish.json | finish, validate-files |
 | update-uk-ni-market.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-uk-ni-market.py | uk-ni-market-stats.json | finish, validate-files |
 | update-uk-panel-prices.yml | a mano | semanal (2,5) | build-uk-panel-obs.py | - | price-engine, publish |
 | update-uk-regions-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-uk-regions-macro.py | uk-regions-macro.json | finish, validate-files |

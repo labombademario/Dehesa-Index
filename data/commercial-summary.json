@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T20:04:49Z",
+ "generatedAt": "2026-11-05T08:02:48Z",
  "summary": {
-  "sources": 206,
-  "sourcesApto": 190,
+  "sources": 208,
+  "sourcesApto": 192,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 437,
-  "datasets_apto": 296,
+  "datasets": 439,
+  "datasets_apto": 298,
   "datasets_condiciones": 129,
   "datasets_parcial": 5,
   "datasets_no-apto": 3,
@@ -535,6 +535,10 @@
    "name": "MITECO — Observatorio Nacional de la Sequía (informe mensual de sequía y escasez)",
    "verdict": "apto"
   },
+  "mmo_fish": {
+   "name": "UK Marine Management Organisation (MMO) — UK Sea Fisheries Annual Statistics",
+   "verdict": "apto"
+  },
   "moniteur_be": {
    "name": "Moniteur belge / Belgisch Staatsblad (decretos de pagos directos de Flandes y Valonia, PAC 2023-2027)",
    "verdict": "apto"
@@ -833,6 +837,10 @@
   },
   "world_bank_wdi": {
    "name": "World Bank Open Data (World Development Indicators)",
+   "verdict": "apto"
+  },
+  "xunta_pesca": {
+   "name": "Xunta de Galicia — Consellería do Mar, Pesca de Galicia (primera venta de pesca fresca en lonja)",
    "verdict": "apto"
   },
   "zoll_agrardiesel": {

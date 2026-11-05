@@ -662,6 +662,18 @@
     "mb_hogs"
    ]
   ],
+  "gal-lonjas.json": [
+   "gal-lonjas",
+   [
+    "gal_lonjas"
+   ]
+  ],
+  "uk-mmo-fish.json": [
+   "uk-mmo-fish",
+   [
+    "uk_mmo_fish"
+   ]
+  ],
   "ca-dfo-landings.json": [
    "ca-dfo-landings",
    [

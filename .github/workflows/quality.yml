@@ -155,6 +155,12 @@ jobs:
       - name: Canada commercial sea fisheries landings of DFO (CSV reader, suppressed cells as gaps, Atlantic/Canada sums, species sum against totals, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-ca-dfo-landings.py
 
+      - name: UK sea fisheries landings of the MMO (ODS reader on the real sheet layout, group and port blocks, units, totals, contract accepts what is published and rejects corrupted data, no network)
+        run: python3 scripts/test-uk-mmo-fish.py
+
+      - name: Galicia fish auctions (lonjas) of the Xunta (CSV parser, groups and provinces, comma decimals, year checks, contract accepts what is published and rejects corrupted data, no network)
+        run: python3 scripts/test-gal-lonjas.py
+
       - name: Manitoba sheep, goat and hogs (PDF text parsers, goat unit rule, disputed cells, date and range checks, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-smallstock.py
 
@@ -642,6 +648,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-ca-dfo-fish.mjs
+      - name: Reino Unido en Pesca (pesca.html?c=UK y ficha; cifras = data/views/fish/UK.json, 2 graficas, especies traducidas, naciones, puertos, historico, fuente MMO; 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-uk-mmo-fish.mjs
       - name: Edad de los jefes de explotacion en la ficha de pais (% calculado = data/views/farm-managers.json, barras, comparativa, fuente; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

@@ -1,0 +1,99 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Galicia: primera venta de pesca fresca por lonja y especie (Pesca de Galicia, 2003-ultimo ano)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "years",
+  "units",
+  "lonjas",
+  "species",
+  "months",
+  "cells"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "xunta_pesca"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https://www\\.pescadegalicia\\.gal/"
+    }
+   }
+  },
+  "years": {
+   "type": "array",
+   "items": {
+    "type": "integer"
+   },
+   "minItems": 15
+  },
+  "units": {
+   "type": "object"
+  },
+  "lonjas": {
+   "type": "array",
+   "minItems": 20,
+   "items": {
+    "type": "object",
+    "required": [
+     "n",
+     "p",
+     "z",
+     "kg",
+     "eur"
+    ]
+   }
+  },
+  "species": {
+   "type": "array",
+   "minItems": 100,
+   "items": {
+    "type": "object",
+    "required": [
+     "c",
+     "n",
+     "g",
+     "kg",
+     "eur"
+    ]
+   }
+  },
+  "months": {
+   "type": "object",
+   "required": [
+    "from",
+    "kg",
+    "eur"
+   ]
+  },
+  "cells": {
+   "type": "object",
+   "required": [
+    "year",
+    "rows"
+   ]
+  }
+ }
+}

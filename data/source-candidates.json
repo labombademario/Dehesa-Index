@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T06:42:59Z",
+ "generatedAt": "2026-11-05T08:02:47Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 236,
+  "total": 238,
   "byStatus": {
-   "ACTIVE": 206,
+   "ACTIVE": 208,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -7136,6 +7136,45 @@
    ]
   },
   {
+   "sourceId": "mmo_fish",
+   "registryId": "mmo_fish",
+   "country": "UK",
+   "scope": "integrated",
+   "institution": "UK Marine Management Organisation (MMO) — UK Sea Fisheries Annual Statistics",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-UK-3.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Marine Management Organisation (MMO) and the UK fisheries administrations.",
+   "lastChecked": "2026-11-05",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "moniteur_be",
    "registryId": "moniteur_be",
    "country": "BE",
@@ -10410,6 +10449,45 @@
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "xunta_pesca",
+   "registryId": "xunta_pesca",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "Xunta de Galicia — Consellería do Mar, Pesca de Galicia (primera venta de pesca fresca en lonja)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fonte: Xunta de Galicia, Consellería do Mar, Pesca de Galicia (https://www.pescadegalicia.gal), notas de primeira venda de pesca fresca.",
+   "lastChecked": "2026-11-05",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

@@ -532,6 +532,42 @@ def fish():
         write('fish/CA.json', {'schemaVersion': 1, 'generatedAt': dfo.get('generatedAt'), 'cc': 'CA', 'src': 'dfo_landings', 'series': S, 'landings': sp, 'states': pv})
         rows.append({'cc': 'CA', 'src': 'dfo_landings', 'landValueCad': _last(S['ld-total-cad']), 'landT': _last(S['ld-total-t'])})
     except Exception as e: print('fish CA', e)
+    try:
+        mm = load('uk-mmo-fish.json'); ys = [str(y) for y in mm['years']]
+        # MMO publica miles de toneladas y millones de libras: aqui toneladas y libras (exacto, solo multiplica por 1000 y por 1e6)
+        pq = lambda a: [[y, round(x * 1000, 1)] for y, x in zip(ys, a) if x is not None]
+        pv = lambda a: [[y, round(x * 1e6)] for y, x in zip(ys, a) if x is not None]
+        Tt = mm['uk']['totals']['All']
+        sp = [{'code': r[0], 'name': r[0], 'group': r[1], 'value': pv(r[3]), 'qty': pq(r[2])} for r in mm['uk']['species']]
+        sp = [o for o in sp if o['value'] and (_last(o['value']) or [0, 0])[1] > 0]; sp.sort(key=lambda o: -(_last(o['value']) or [0, 0])[1])
+        na = [{'code': n.lower().replace(' ', '-'), 'name': n, 'value': pv(v['totals']['All'][1]), 'qty': pq(v['totals']['All'][0])} for n, v in mm['nations'].items()]
+        na.sort(key=lambda o: -(_last(o['value']) or [0, 0])[1])
+        po = [{'name': r[0], 'nation': r[1], 'iom': bool(r[3]), 'value': pv(r[2]['All'][1]), 'qty': pq(r[2]['All'][0])} for r in mm['ports']]
+        po = [o for o in po if o['value'] and o['name'] != 'Others']; po.sort(key=lambda o: -(_last(o['value']) or [0, 0])[1]); po = po[:20]
+        hi = mm['history']; hy = [str(y) for y in hi['years']]
+        hist = {'years': hy, 'qty': {k: [None if x is None else round(x * 1000, 1) for x in v] for k, v in hi['qty'].items()}, 'val': {k: [None if x is None else round(x * 1e6) for x in v] for k, v in hi['val'].items()}}
+        S = {'ld-total-gbp': pv(Tt[1]), 'ld-total-t': pq(Tt[0])}
+        write('fish/UK.json', {'schemaVersion': 1, 'generatedAt': mm.get('generatedAt'), 'cc': 'UK', 'src': 'mmo_fish', 'series': S, 'landings': sp, 'states': na, 'ports': po, 'history': hist})
+        rows.append({'cc': 'UK', 'src': 'mmo_fish', 'landValueGbp': _last(S['ld-total-gbp']), 'landT': _last(S['ld-total-t'])})
+    except Exception as e: print('fish UK', e)
+    try:
+        gl = load('gal-lonjas.json'); ys = [str(y) for y in gl['years']]; k3 = len(ys) - 3
+        pts = lambda a, f=1: [[y, round(x / f, 1)] for y, x in zip(ys, a) if x is not None]
+        tot = lambda key: [sum((o[key][i] or 0) for o in gl['lonjas']) for i in range(len(ys))]
+        tk, te = tot('kg'), tot('eur')
+        lo = [{'name': o['n'], 'prov': o['p'], 'zone': o['z'], 'kg': pts([None] * k3 + o['kg'][k3:]), 'eur': pts([None] * k3 + o['eur'][k3:])} for o in gl['lonjas'][:30]]
+        cells = gl['cells']['rows']
+        for o in lo: o['top'] = [[c[0], c[1], c[2]] for c in cells.get(o['name'], [])[:5]]
+        sp = [{'code': o['c'], 'name': o['n'], 'group': o['g'], 'kg': pts([None] * k3 + o['kg'][k3:]), 'eur': pts([None] * k3 + o['eur'][k3:])} for o in gl['species'][:25]]
+        gg = {}
+        for o in gl['species']:
+            for j in (len(ys) - 1, len(ys) - 2):
+                x = gg.setdefault(o['g'], {'kg': [0, 0], 'eur': [0, 0]}); x['kg'][len(ys) - 1 - j] += o['kg'][j] or 0; x['eur'][len(ys) - 1 - j] += o['eur'][j] or 0
+        groups = [{'group': g, 'kg': round(v['kg'][0], 1), 'eur': round(v['eur'][0], 1), 'kgPrev': round(v['kg'][1], 1), 'eurPrev': round(v['eur'][1], 1)} for g, v in gg.items()]
+        groups.sort(key=lambda o: -o['eur'])
+        write('fish/ES-GA.json', {'schemaVersion': 1, 'generatedAt': gl.get('generatedAt'), 'cc': 'ES', 'region': 'GA', 'src': 'xunta_pesca', 'latestYear': gl['years'][-1], 'series': {'eur': pts(te), 'kg': pts(tk)},
+                                  'lonjas': lo, 'species': sp, 'groups': groups, 'nLonjas': sum(1 for o in gl['lonjas'] if o['eur'][-1])})
+    except Exception as e: print('fish ES-GA', e)
     if rows: write('fish/index.json', {'schemaVersion': 1, 'generatedAt': max([eu.get('generatedAt') or '']), 'countries': rows})
 
 def forest():

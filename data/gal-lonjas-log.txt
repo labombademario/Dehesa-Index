@@ -1,0 +1,24 @@
+2003 filas 139191 lonjas 57 especies 145 kg 124.7 mil t euros 334.9 M
+2004 filas 187436 lonjas 58 especies 161 kg 151.2 mil t euros 389.6 M
+2005 filas 184719 lonjas 58 especies 164 kg 161.8 mil t euros 412.6 M
+2006 filas 181762 lonjas 59 especies 166 kg 169.3 mil t euros 432.7 M
+2007 filas 182292 lonjas 59 especies 170 kg 172.2 mil t euros 463.4 M
+2008 filas 179126 lonjas 58 especies 177 kg 173.6 mil t euros 451.3 M
+2009 filas 178962 lonjas 61 especies 178 kg 195.8 mil t euros 422.4 M
+2010 filas 186597 lonjas 61 especies 188 kg 187.4 mil t euros 458.4 M
+2011 filas 191304 lonjas 62 especies 187 kg 183.5 mil t euros 474.8 M
+2012 filas 191092 lonjas 61 especies 188 kg 175.0 mil t euros 440.5 M
+2013 filas 183727 lonjas 60 especies 193 kg 163.4 mil t euros 413.4 M
+2014 filas 183005 lonjas 61 especies 198 kg 187.2 mil t euros 432.3 M
+2015 filas 189918 lonjas 61 especies 205 kg 180.5 mil t euros 458.2 M
+2016 filas 196493 lonjas 62 especies 213 kg 188.6 mil t euros 491.7 M
+2017 filas 197914 lonjas 62 especies 216 kg 212.8 mil t euros 508.7 M
+2018 filas 195533 lonjas 64 especies 240 kg 174.3 mil t euros 491.0 M
+2019 filas 196716 lonjas 62 especies 250 kg 158.2 mil t euros 464.9 M
+2020 filas 191845 lonjas 62 especies 253 kg 150.3 mil t euros 413.0 M
+2021 filas 196790 lonjas 63 especies 255 kg 132.8 mil t euros 425.0 M
+2022 filas 190503 lonjas 63 especies 259 kg 134.3 mil t euros 437.4 M
+2023 filas 193542 lonjas 61 especies 273 kg 125.8 mil t euros 412.4 M
+2024 filas 192798 lonjas 60 especies 287 kg 102.5 mil t euros 383.0 M
+2025 filas 189448 lonjas 60 especies 276 kg 107.6 mil t euros 407.8 M
+escrito /tmp/gal-lonjas.json 225190 bytes; 67 lonjas, 351 especies, 23 anos

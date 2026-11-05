@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-04T20:04:49Z",
+ "generatedAt": "2026-11-05T08:02:48Z",
  "policy": {
   "es": "Lectura mecánica de data/license-registry.json. Apto: fuente VERIFIED con uso comercial, derivados y redistribución permitidos. Condiciones: VERIFIED con alguna condición concreta (se citan). No apto: licencia pendiente, restringida, bloqueada o con algún permiso negado o sin confirmar. No es asesoramiento jurídico.",
   "en": "Mechanical reading of data/license-registry.json. Fit: VERIFIED source with commercial use, derivatives and redistribution allowed. Conditions: VERIFIED with specific conditions (quoted). Not fit: licence pending, restricted, blocked, or with a denied or unconfirmed permission. Not legal advice."
  },
  "summary": {
-  "sources": 206,
-  "sourcesApto": 190,
+  "sources": 208,
+  "sourcesApto": 192,
   "sourcesCondiciones": 9,
   "sourcesNoApto": 7,
-  "datasets": 437,
-  "datasets_apto": 296,
+  "datasets": 439,
+  "datasets_apto": 298,
   "datasets_condiciones": 129,
   "datasets_parcial": 5,
   "datasets_no-apto": 3,
@@ -2237,6 +2237,23 @@
    "conditions": "Citar la fuente; no sugerir que el ministerio patrocina la reutilización; conservar la fecha del informe."
   },
   {
+   "id": "mmo_fish",
+   "name": "UK Marine Management Organisation (MMO) — UK Sea Fisheries Annual Statistics",
+   "url": "https://www.gov.uk/government/collections/uk-sea-fisheries-annual-statistics",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.data.gov.uk/dataset/c6db55f3-d2ed-4704-9ebf-5f514f081031/agricultural_price_index",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Marine Management Organisation (MMO) and the UK fisheries administrations.",
+   "conditions": "Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Solo la Sección 2 (desembarques) de las estadísticas anuales de pesca del Reino Unido; las demás secciones y los ficheros de rectángulos ICES no se usan."
+  },
+  {
    "id": "moniteur_be",
    "name": "Moniteur belge / Belgisch Staatsblad (decretos de pagos directos de Flandes y Valonia, PAC 2023-2027)",
    "url": "https://www.ejustice.just.fgov.be/",
@@ -3506,6 +3523,23 @@
    "redistribution": "yes",
    "attribution": "The World Bank (World Development Indicators)",
    "conditions": "No endorsement; no World Bank names or logos without written consent."
+  },
+  {
+   "id": "xunta_pesca",
+   "name": "Xunta de Galicia — Consellería do Mar, Pesca de Galicia (primera venta de pesca fresca en lonja)",
+   "url": "https://www.pescadegalicia.gal/gl/descargas",
+   "country": "ES",
+   "licenseId": "CUSTOM",
+   "licenseName": "Aviso legal de Pesca de Galicia (Xunta de Galicia): reutilización permitida, también comercial y con modificación, citando la fuente y sin desnaturalizar el contenido",
+   "licenseUrl": "https://www.pescadegalicia.gal/gl/aviso-legal",
+   "verdict": "apto",
+   "status": "VERIFIED",
+   "legalConfidence": "HIGH",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attribution": "Fonte: Xunta de Galicia, Consellería do Mar, Pesca de Galicia (https://www.pescadegalicia.gal), notas de primeira venda de pesca fresca.",
+   "conditions": "Citar la fuente; prohibido desnaturalizar el contenido de la información (las sumas por lonja, especie y mes de Dehesa Index se rotulan como cálculo propio sobre las notas de primera venta). No cubre el diseño del portal, el código, las marcas, nombres comerciales ni logotipos."
   },
   {
    "id": "zoll_agrardiesel",
@@ -6765,6 +6799,14 @@
    ]
   },
   {
+   "path": "data/gal-lonjas.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "xunta_pesca"
+   ]
+  },
+  {
    "path": "data/gats.json",
    "scope": "fichero",
    "verdict": "apto",
@@ -8257,6 +8299,14 @@
      "sourceId": "defra",
      "verdict": "apto"
     }
+   ]
+  },
+  {
+   "path": "data/uk-mmo-fish.json",
+   "scope": "fichero",
+   "verdict": "apto",
+   "sources": [
+    "mmo_fish"
    ]
   },
   {

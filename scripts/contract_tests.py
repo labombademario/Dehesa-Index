@@ -2313,6 +2313,94 @@ def mb_grains(doc, errs, warns, stats):
     stats["mb-grains semanas"] = len(ks); stats["mb-grains valores mensuales"] = n
 
 
+def uk_mmo_fish(doc, errs, warns, stats):
+    """Reino Unido, desembarques de pesca (MMO, Seccion 2): fuente mmo_fish; 5 anos seguidos que terminan en reportYear; unidades miles de toneladas y millones de libras; Reino Unido y las cuatro
+    naciones con especies [nombre, grupo, cantidad[5], valor[5]] (grupo Demersal, Pelagic o Shellfish; null solo si la fuente pone «-»; sin negativos), totales por grupo y total general;
+    suma de especies = total del grupo (0,5 %) y grupos = total (0,5 %); suma de las naciones entre 95 y 100,5 % del Reino Unido; precio (valor/cantidad) entre 20 y 60.000 libras/t en las especies
+    con mas de 50 t; al menos 40 puertos cuya suma por bloque (todas, demersales, pelagicas, marisco) no supera el total; serie historica desde 1938 con los ultimos anos de 2.7."""
+    G = ("Demersal", "Pelagic", "Shellfish"); ys = doc["years"]
+    if doc["source"]["id"] != "mmo_fish": errs.append("uk-mmo: fuente distinta de mmo_fish"); return
+    if doc["units"] != {"qty": "thousand tonnes", "val": "GBP million"}: errs.append("uk-mmo: unidades distintas"); return
+    if len(ys) != 5 or ys != list(range(ys[0], ys[0] + 5)) or ys[-1] != doc["reportYear"]: errs.append("uk-mmo: anos no seguidos o distintos de reportYear"); return
+    def num_ok(v): return v is None or (isinstance(v, (int, float)) and not isinstance(v, bool) and v >= 0)
+    def sect(name, sec):
+        for r in sec["species"]:
+            if len(r) != 4 or r[1] not in G or len(r[2]) != 5 or len(r[3]) != 5 or not all(num_ok(x) for x in r[2] + r[3]): errs.append("uk-mmo %s %s: fila mal formada" % (name, r[0] if r else "?")); return False
+            for q, v in zip(r[2], r[3]):
+                if q is not None and v is not None and q > 0.05 and not 20 <= v * 1000 / q <= 60000: errs.append("uk-mmo %s %s: precio %.0f libras/t fuera de rango" % (name, r[0], v * 1000 / q)); return False
+        T = sec["totals"]
+        if sorted(T) != sorted(list(G) + ["All"]): errs.append("uk-mmo %s: totales distintos de los esperados" % name); return False
+        for k in (0, 1):
+            for j in range(5):
+                for g in G:
+                    s = sum((r[2 + k][j] or 0) for r in sec["species"] if r[1] == g); t = T[g][k][j]
+                    if t is None or abs(s - t) > max(0.005 * t, 0.002): errs.append("uk-mmo %s %s: especies (%.3f) no suman el total (%.3f)" % (name, g, s, t)); return False
+                s = sum(T[g][k][j] or 0 for g in G); t = T["All"][k][j]
+                if abs(s - t) > max(0.005 * t, 0.002): errs.append("uk-mmo %s: grupos (%.3f) no suman el total (%.3f)" % (name, s, t)); return False
+        return True
+    if not sect("UK", doc["uk"]): return
+    if sorted(doc["nations"]) != ["England", "Northern Ireland", "Scotland", "Wales"]: errs.append("uk-mmo: naciones distintas"); return
+    for n, sec in doc["nations"].items():
+        if not sect(n, sec): return
+    for k in (0, 1):
+        for j in range(5):
+            s = sum(doc["nations"][n]["totals"]["All"][k][j] or 0 for n in doc["nations"]); t = doc["uk"]["totals"]["All"][k][j]
+            if not 0.95 * t <= s <= 1.005 * t: errs.append("uk-mmo: las naciones (%.2f) no cuadran con el Reino Unido (%.2f)" % (s, t)); return
+    B = ("All", "Demersal", "Pelagic", "Shellfish")
+    if len(doc["ports"]) < 40 or sorted(doc["portsTotal"]) != sorted(B): errs.append("uk-mmo: pocos puertos o totales de puertos incompletos"); return
+    for p in doc["ports"]:
+        if len(p) != 4 or not isinstance(p[0], str) or p[1] not in (None, "England", "Wales", "Scotland", "Northern Ireland") or sorted(p[2]) != sorted(B): errs.append("uk-mmo puerto %s: mal formado" % (p[0] if p else "?")); return
+        for b in B:
+            if len(p[2][b][0]) != 5 or len(p[2][b][1]) != 5 or not all(num_ok(x) for x in p[2][b][0] + p[2][b][1]): errs.append("uk-mmo puerto %s: cifras mal formadas" % p[0]); return
+    for b in B:
+        for k in (0, 1):
+            s = sum((p[2][b][k][4] or 0) for p in doc["ports"]); t = doc["portsTotal"][b][k][4]
+            if s > t * 1.001 + 0.01: errs.append("uk-mmo puertos %s: suma (%.2f) mayor que el total (%.2f)" % (b, s, t)); return
+    h = doc["history"]
+    if h["years"][0] != 1938 or h["years"][-1] != ys[-1] or h["years"] != sorted(h["years"]): errs.append("uk-mmo: serie historica mal acotada"); return
+    for m in ("qty", "val"):
+        if sorted(h[m]) != sorted(list(G) + ["Total"]) or any(len(v) != len(h["years"]) or not all(num_ok(x) for x in v) for v in h[m].values()): errs.append("uk-mmo: serie historica %s mal formada" % m); return
+    stats["uk-mmo especies"] = len(doc["uk"]["species"]); stats["uk-mmo puertos"] = len(doc["ports"])
+
+def gal_lonjas(doc, errs, warns, stats):
+    """Galicia, primera venta de pesca fresca por lonja y especie (Pesca de Galicia): fuente xunta_pesca; anos seguidos desde 2003; cada lonja y cada especie con kg y euros por ano (null si no hubo ventas, nunca solo uno de los dos,
+    sin negativos); provincias A Coruña, Lugo o Pontevedra; la suma por lonja = por especie = por mes en cada ano (0,01 %); entre 70.000 y 250.000 t y entre 150 y 700 M euros al ano y precio medio entre 0,5 y 20 euros/kg;
+    el desglose lonja x especie del ultimo ano suma lo mismo que ese ano y solo usa lonjas y especies existentes."""
+    import datetime as _d
+    ys = doc["years"]; n = len(ys)
+    if doc["source"]["id"] != "xunta_pesca": errs.append("gal-lonjas: fuente distinta de xunta_pesca"); return
+    if ys[0] != 2003 or ys != list(range(ys[0], ys[-1] + 1)) or ys[-1] > _d.date.today().year: errs.append("gal-lonjas: anos no seguidos desde 2003 o en el futuro"); return
+    if ys[-1] < _d.date.today().year - 2: warns.append("gal-lonjas: el ultimo ano publicado es %d" % ys[-1])
+    def series(o, label):
+        for k in ("kg", "eur"):
+            if len(o[k]) != n or any(x is not None and (isinstance(x, bool) or not isinstance(x, (int, float)) or x < 0) for x in o[k]): errs.append("gal-lonjas %s: serie %s mal formada" % (label, k)); return False
+        if [x is None for x in o["kg"]] != [x is None for x in o["eur"]]: errs.append("gal-lonjas %s: kg y euros no coinciden en los huecos" % label); return False
+        return True
+    for o in doc["lonjas"]:
+        if o["p"] not in ("A Coruña", "Lugo", "Pontevedra") or not o["n"] or not series(o, o["n"]): errs.append("gal-lonjas %s: provincia o series no validas" % o.get("n")); return
+    for o in doc["species"]:
+        if not o["c"] or not o["n"] or not series(o, o["c"]): errs.append("gal-lonjas especie %s: series no validas" % o.get("c")); return
+    if len({o["n"] for o in doc["lonjas"]}) != len(doc["lonjas"]) or len({o["c"] for o in doc["species"]}) != len(doc["species"]): errs.append("gal-lonjas: lonjas o especies repetidas"); return
+    M = doc["months"]
+    if M["from"] != "%d-01" % ys[0] or len(M["kg"]) != 12 * n or len(M["eur"]) != 12 * n: errs.append("gal-lonjas: meses mal acotados"); return
+    for i, y in enumerate(ys):
+        tk = sum(o["kg"][i] or 0 for o in doc["lonjas"]); te = sum(o["eur"][i] or 0 for o in doc["lonjas"])
+        sk = sum(o["kg"][i] or 0 for o in doc["species"]); se = sum(o["eur"][i] or 0 for o in doc["species"])
+        mk = sum(x or 0 for x in M["kg"][12 * i:12 * i + 12]); me = sum(x or 0 for x in M["eur"][12 * i:12 * i + 12])
+        if not 70e6 <= tk <= 250e6 or not 150e6 <= te <= 700e6 or not 0.5 <= te / tk <= 20: errs.append("gal-lonjas %d: total fuera de rango (%.0f kg, %.0f euros)" % (y, tk, te)); return
+        for a, b, w in ((sk, tk, "especies"), (mk, tk, "meses"), (se, te, "especies (euros)"), (me, te, "meses (euros)")):
+            if abs(a - b) > b * 1e-4 + 5: errs.append("gal-lonjas %d: la suma por %s (%.0f) no cuadra con la de lonjas (%.0f)" % (y, w, a, b)); return
+    c = doc["cells"]; names = {o["n"] for o in doc["lonjas"]}; fao = {o["c"] for o in doc["species"]}
+    if c["year"] != ys[-1]: errs.append("gal-lonjas: el desglose no es del ultimo ano"); return
+    tk = sum(o["kg"][-1] or 0 for o in doc["lonjas"]); sk = 0
+    for lo, rows in c["rows"].items():
+        if lo not in names: errs.append("gal-lonjas: lonja %s del desglose no existe" % lo); return
+        for r in rows:
+            if len(r) != 3 or r[0] not in fao or any(not isinstance(x, (int, float)) or x < 0 for x in r[1:]): errs.append("gal-lonjas %s: fila del desglose no valida %r" % (lo, r)); return
+            sk += r[1]
+    if abs(sk - tk) > tk * 1e-4 + 5: errs.append("gal-lonjas: el desglose (%.0f kg) no suma lo del ultimo ano (%.0f)" % (sk, tk)); return
+    stats["gal-lonjas lonjas"] = len(doc["lonjas"]); stats["gal-lonjas especies"] = len(doc["species"])
+
 def ca_dfo_landings(doc, errs, warns, stats):
     """Canada, desembarques comerciales de pesca marina (DFO): fuente dfo_landings; anos seguidos desde 1990; 8 zonas fijas; cada zona con total (grand) y los de cada grupo en todos los anos y todas las especies
     con una celda [kg, C$] por ano (null en ambos si DFO la suprimio, nunca solo en uno); sin negativos; Atlantic = suma de las 5 provincias atlanticas y Canada = Atlantic + British Columbia en cantidad y

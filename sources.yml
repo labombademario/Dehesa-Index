@@ -572,6 +572,24 @@ sources:
     data: [ca-dfo-landings.json]
     log: ca-dfo-landings-log.txt
     message: Canada - desembarques comerciales de pesca marina por provincia y especie (DFO)
+  - id: uk-mmo-fish
+    name: Update UK sea fisheries landings by species, nation and port (MMO)
+    cron: ['25 7 6 * *']
+    script: scripts/update-uk-mmo-fish.py
+    timeout: 20
+    script_timeout: 10
+    data: [uk-mmo-fish.json]
+    log: uk-mmo-fish-log.txt
+    message: Reino Unido - desembarques de pesca por especie, nacion y puerto (MMO)
+  - id: gal-lonjas
+    name: Update Galicia fish first sales by lonja and species (Xunta de Galicia, Pesca de Galicia)
+    cron: ['50 6 7 * *']
+    script: scripts/update-gal-lonjas.py
+    timeout: 40
+    script_timeout: 30
+    data: [gal-lonjas.json]
+    log: gal-lonjas-log.txt
+    message: Galicia - primera venta de pesca fresca por lonja y especie (Pesca de Galicia)
   - id: us-noaa-fish
     name: Update U.S. commercial fish landings (NOAA Fisheries FOSS)
     cron: ['35 6 11 * *']

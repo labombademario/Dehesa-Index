@@ -6182,6 +6182,58 @@
    "short": "OPW Irlanda",
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "VERIFIED: aviso de licencia CC BY 4.0 de waterlevel.ie."
+  },
+  "mmo_fish": {
+   "name": "UK Marine Management Organisation (MMO) — UK Sea Fisheries Annual Statistics",
+   "url": "https://www.gov.uk/government/collections/uk-sea-fisheries-annual-statistics",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.data.gov.uk/dataset/c6db55f3-d2ed-4704-9ebf-5f514f081031/agricultural_price_index",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Marine Management Organisation (MMO) and the UK fisheries administrations.",
+   "additionalRestrictions": "Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Solo la Sección 2 (desembarques) de las estadísticas anuales de pesca del Reino Unido; las demás secciones y los ficheros de rectángulos ICES no se usan.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "OGL excludes third-party rights. The tables are published by the MMO with the UK fisheries administrations (Fisheries Administrations in the UK).",
+   "verifiedAt": "2026-11-05",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "La página de la edición «UK sea fisheries annual statistics report 2025» en GOV.UK (leída el 5 nov 2026 desde GitHub) enlaza el fichero Section_2_Landings_2025.ods y muestra «All content is available under the Open Government Licence v3.0, except where otherwise stated». Es la misma licencia que ya se aceptó para Defra (4 oct 2026); el titular debe confirmar esta fuente nueva.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "MMO pesca (Reino Unido)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
+  },
+  "xunta_pesca": {
+   "name": "Xunta de Galicia — Consellería do Mar, Pesca de Galicia (primera venta de pesca fresca en lonja)",
+   "url": "https://www.pescadegalicia.gal/gl/descargas",
+   "country": "ES",
+   "licenseId": "CUSTOM",
+   "licenseName": "Aviso legal de Pesca de Galicia (Xunta de Galicia): reutilización permitida, también comercial y con modificación, citando la fuente y sin desnaturalizar el contenido",
+   "licenseUrl": "https://www.pescadegalicia.gal/gl/aviso-legal",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fonte: Xunta de Galicia, Consellería do Mar, Pesca de Galicia (https://www.pescadegalicia.gal), notas de primeira venda de pesca fresca.",
+   "additionalRestrictions": "Citar la fuente; prohibido desnaturalizar el contenido de la información (las sumas por lonja, especie y mes de Dehesa Index se rotulan como cálculo propio sobre las notas de primera venta). No cubre el diseño del portal, el código, las marcas, nombres comerciales ni logotipos.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Excluidos el diseño del portal, el código fuente, las marcas, nombres comerciales y logotipos (derechos exclusivos de la Xunta).",
+   "verifiedAt": "2026-11-05",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Aviso legal del portal (https://www.pescadegalicia.gal/gl/aviso-legal, leído el 5 nov 2026 desde el sandbox): «A información dispoñible neste Portal, salvo indicación expresa en contrario, é susceptible de reutilización, quedando autorizada a súa reprodución total ou parcial, modificación, distribución e comunicación, para usos comerciais e non comerciais», con dos condiciones: no desnaturalizar el contenido y citar la fuente. Los CSV anuales de notas de primera venta se descargan de la sección Descargas > Pesca fresca (sin indicación en contrario). Contraste: el total de 2003 (124,7 mil t) coincide con la tabla 5861 del IGE (124.666 t, fuente Consellería do Mar).",
+   "used": true,
+   "aliases": [],
+   "notes": "Notas de primera venta de pesca fresca y marisqueo de las lonjas gallegas, un CSV por año desde 2003 (fecha, grupo biológico, código FAO, especie, provincia, zona, lonja, kg, euros, euros/kg). Dehesa Index suma por lonja, especie y mes; el precio medio es euros / kg (cálculo propio).",
+   "short": "Pesca de Galicia (Xunta)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explícito que concede la reutilización (también comercial y con modificación) con dos condiciones."
   }
  },
  "files": {
@@ -9049,6 +9101,18 @@
     "gus_poland"
    ],
    "notes": "Censo Agrario 2020 de Polonia (Powszechny Spis Rolny 2020) por gmina, del Banco de Datos Locales de GUS (nivel 6; temas P4137, P4138, P4141, P4142, P4144, P4146, P4149 y P4083; scripts/update-pl-gminy.py). Valores definitivos tal cual; los ocultos por secreto estadístico quedan como hueco. Control: la suma de las gminas de cada powiat cuadra con el valor que GUS publica para el powiat. Mismo aviso de copyright de GUS que el resto de la fuente gus_poland."
+  },
+  "data/uk-mmo-fish.json": {
+   "sources": [
+    "mmo_fish"
+   ],
+   "notes": "Desembarques de pesca del Reino Unido por especie, nación (Inglaterra, Gales, Escocia, Irlanda del Norte) y puerto, 5 años, y serie histórica 1938-último año (MMO, Sección 2 de las estadísticas anuales; OGL v3.0; scripts/update-uk-mmo-fish.py). Cantidades en miles de toneladas y valores en millones de libras tal como los publica la fuente; el precio medio por tonelada es cálculo de Dehesa Index (valor / cantidad)."
+  },
+  "data/gal-lonjas.json": {
+   "sources": [
+    "xunta_pesca"
+   ],
+   "notes": "Primera venta de pesca fresca y marisqueo en las lonjas de Galicia, 2003-último año: kg y euros por lonja, por especie (código FAO), por mes y, el último año, lonja x especie (Xunta de Galicia, Pesca de Galicia; scripts/update-gal-lonjas.py). Sumas y precio medio (euros / kg): cálculo de Dehesa Index sobre las notas de primera venta."
   }
  },
  "derived": [
