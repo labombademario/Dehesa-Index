@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T01:14:00Z",
+ "generatedAt": "2026-11-06T01:37:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 336,
+  "ok": 337,
   "late": 2,
   "error": 6,
   "not_run": 0,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-05T19:55:42.064090+00:00",
   "repoGeneratedAt": "2026-11-05T19:55:42.064090+00:00",
-  "checkedAt": "2026-11-06T01:14:00Z"
+  "checkedAt": "2026-11-06T01:37:00Z"
  },
  "pipelines": [
   {
@@ -84,7 +84,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-11-05T03:51:43Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -1897,8 +1897,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42106080448"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5176,31 +5176,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-11-05T19:55:42Z"
+     "lastChange": "2026-11-06T01:32:50Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-11-05T19:55:42Z"
+     "lastChange": "2026-11-06T01:32:50Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-11-05T19:55:42Z"
+     "lastChange": "2026-11-06T01:32:50Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-11-05T19:55:42Z"
+     "lastChange": "2026-11-06T01:32:50Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-11-05T19:55:42Z"
+     "lastChange": "2026-11-06T01:32:50Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-05T19:53:50Z",
-    "durationSec": 118,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42098239808"
+    "startedAt": "2026-11-06T01:30:57Z",
+    "durationSec": 117,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42144344967"
    },
    "recent": {
     "runs": 10,
@@ -5301,6 +5301,29 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-nl-gemeenten.yml",
+   "name": "Update Netherlands farms, crops and livestock by municipality (CBS)",
+   "crons": [
+    "25 12 18 1,4,7,10 *"
+   ],
+   "nextRun": "2027-01-18T12:25:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-06T01:27:13Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42143938994"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 2208.0
   },
   {
    "workflow": "update-nl-ghg-agri.yml",
@@ -5464,14 +5487,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5488,7 +5511,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/products"
@@ -5499,19 +5522,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T00:31:59Z"
+     "lastChange": "2026-11-06T01:17:47Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-11-05T08:10:48Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-11-05T08:10:48Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/pack"
@@ -5527,15 +5550,15 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/ers-cost-reference.json",
@@ -5546,7 +5569,7 @@
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/fv-products.json",
@@ -5558,7 +5581,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-11-05T23:41:24Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5566,7 +5589,7 @@
     },
     {
      "path": "data/cap/index.json",
-     "lastChange": "2026-11-05T06:43:45Z"
+     "lastChange": "2026-11-06T01:26:23Z"
     },
     {
      "path": "data/blog/posts.json",
