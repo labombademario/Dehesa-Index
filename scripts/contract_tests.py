@@ -2454,6 +2454,33 @@ def nl_structure_province(doc, errs, warns, stats):
     stats["nl-structure valores"] = stats.get("nl-structure valores", 0) + n
 
 
+def fi_kunnat_region(doc, errs, warns, stats):
+    """Finlandia por municipio (Luke): codigo de 3 cifras; cada municipio es [nombre, un valor por cada indicador de 'ind']; sin negativos, hay explotaciones o superficie, las partes de la superficie no superan la total, vacas lecheras y de cria no superan el bovino."""
+    ind = doc["ind"]; n = 0
+    for k in ("farms", "uaa", "grass", "cattle", "dairy", "suckler", "pigs", "sows"):
+        if k not in ind: errs.append("fi-kunnat %s: falta %s en 'ind'" % (doc["region"], k)); return
+    g = {k: ind.index(k) + 1 for k in ind}
+    for code, row in doc["kunnat"].items():
+        if not re.match(r"^\d{3}$", code): errs.append("fi-kunnat %s: codigo no valido %s" % (doc["region"], code)); return
+        if not isinstance(row, list) or len(row) != len(ind) + 1 or not isinstance(row[0], str) or not row[0]: errs.append("fi-kunnat %s %s: fila mal formada" % (doc["region"], code)); return
+        for k, x in zip(ind, row[1:]):
+            if x is None: continue
+            if not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0: errs.append("fi-kunnat %s %s %s: valor no valido %r" % (doc["region"], code, k, x)); return
+            n += 1
+        if not (row[g["farms"]] or row[g["uaa"]]): errs.append("fi-kunnat %s %s: municipio sin explotaciones ni superficie" % (doc["region"], code)); return
+        if row[g["farms"]] is not None and row[g["farms"]] > 1500: errs.append("fi-kunnat %s %s: mas de 1.500 explotaciones" % (doc["region"], code)); return
+        uaa = row[g["uaa"]]
+        if uaa is not None and uaa > 150000: errs.append("fi-kunnat %s %s: mas de 150.000 ha de superficie agraria" % (doc["region"], code)); return
+        p = [row[g[k]] for k in ("wheatw", "wheats", "rye", "barleyf", "barleym", "oats", "grass", "pasture", "potato", "beet", "turnip", "rape", "peas", "fallow") if k in g]
+        if uaa is not None and sum(v or 0 for v in p) > uaa * 1.01 + 2: errs.append("fi-kunnat %s %s: los cultivos (%s) suman mas que la superficie agraria (%s)" % (doc["region"], code, sum(v or 0 for v in p), uaa)); return
+        cat = row[g["cattle"]]
+        if cat is not None:
+            for k in ("dairy", "suckler"):
+                if row[g[k]] is not None and row[g[k]] > cat: errs.append("fi-kunnat %s %s: mas %s que bovino" % (doc["region"], code, k)); return
+        if row[g["sows"]] is not None and row[g["pigs"]] is not None and row[g["sows"]] > row[g["pigs"]]: errs.append("fi-kunnat %s %s: mas cerdas que porcino" % (doc["region"], code)); return
+    stats["fi-kunnat valores"] = stats.get("fi-kunnat valores", 0) + n
+
+
 def ca_dfo_landings(doc, errs, warns, stats):
     """Canada, desembarques comerciales de pesca marina (DFO): fuente dfo_landings; anos seguidos desde 1990; 8 zonas fijas; cada zona con total (grand) y los de cada grupo en todos los anos y todas las especies
     con una celda [kg, C$] por ano (null en ambos si DFO la suprimio, nunca solo en uno); sin negativos; Atlantic = suma de las 5 provincias atlanticas y Canada = Atlantic + British Columbia en cantidad y

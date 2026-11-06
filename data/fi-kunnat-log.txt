@@ -1,0 +1,14 @@
+anio de empresas 2025
+anio comun 2025
+municipios con datos 306 NUTS 2 ['FI19', 'FI1B', 'FI1C', 'FI1D', 'FI20'] sin region [] 0
+  control uaa      municipios      2247749 nacional      2247751 (100.00 %)
+  control wheatw   municipios        72414 nacional        73038 (99.15 %)
+  control farms    municipios        39825 nacional        39825 (100.00 %)
+  control cattle   municipios       758886 nacional       764397 (99.28 %)
+  control dairy    municipios       223859 nacional       227221 (98.52 %)
+  control suckler  municipios        57185 nacional        60623 (94.33 %)
+  control pigs     municipios       849354 nacional       987890 (85.98 %)
+  control sows     municipios        42317 nacional        68613 (61.67 %)
+  control sheep    municipios        95812 nacional       110808 (86.47 %)
+  control goats    municipios         1818 nacional         3858 (47.12 %)
+escrito 5 regiones

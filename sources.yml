@@ -153,6 +153,17 @@ sources:
     data: [nl-gemeenten-log.txt]
     extra: ['!data/nl-gemeenten']
     message: Países Bajos por municipio - explotaciones, superficie por cultivo y uso, y ganado (CBS)
+  - id: fi-kunnat
+    name: Update Finland farms, crops and livestock by municipality (Luke)
+    cron: ['55 12 18 1,4,7,10 *']
+    script: scripts/update-fi-kunnat.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/fi-kunnat)
+    data: [fi-kunnat-log.txt]
+    extra: ['!data/fi-kunnat']
+    message: Finlandia por municipio - explotaciones, superficie por cultivo y ganado (Luke)
   - id: nl-structure
     name: Update Netherlands labour, farm size and diversification by province (CBS)
     cron: ['40 12 18 1,4,7,10 *']

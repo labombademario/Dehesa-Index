@@ -2543,6 +2543,16 @@
   "nl-structure/inde[x].json": [
    "nl-structure-index",
    []
+  ],
+  "fi-kunnat/FI[0-9A-Z][0-9A-Z].json": [
+   "fi-kunnat-region",
+   [
+    "fi_kunnat_region"
+   ]
+  ],
+  "fi-kunnat/inde[x].json": [
+   "fi-kunnat-index",
+   []
   ]
  },
  "derived": [

@@ -1,0 +1,64 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Finlandia por municipio: explotaciones, cultivos y ganado (Luke), un fichero por gran region NUTS 2",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "year",
+  "region",
+  "ind",
+  "kunnat"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "luke_fi"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "year": {
+   "type": "integer",
+   "minimum": 2020
+  },
+  "region": {
+   "type": "string",
+   "pattern": "^FI[0-9A-Z]{2}$"
+  },
+  "ind": {
+   "type": "array",
+   "minItems": 29,
+   "maxItems": 29,
+   "items": {
+    "type": "string"
+   }
+  },
+  "kunnat": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}

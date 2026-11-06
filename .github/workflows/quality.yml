@@ -164,6 +164,9 @@ jobs:
       - name: Netherlands by municipality (CBS table 80781NED, contract accepts what is published and rejects corrupted data, totals match the national figures, no network)
         run: python3 scripts/test-nl-gemeenten.py
 
+      - name: Finland by municipality (Luke, contract accepts what is published and rejects corrupted data, totals match the national figures, no network)
+        run: python3 scripts/test-fi-kunnat.py
+
       - name: Netherlands labour, farm size and diversification by province (CBS, contract accepts what is published and rejects corrupted data, totals match the national figures, no network)
         run: python3 scripts/test-nl-structure.py
 
