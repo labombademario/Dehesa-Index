@@ -1,3 +1,6 @@
-08:41:42 eu lineas 2315 partidas 204 capitulos 25
-08:41:46 mx lineas 1184 partidas 204 capitulos 25
-08:41:48 ca lineas 1688 partidas 204 capitulos 25
+09:20:56 eu lineas 2315 partidas 204 capitulos 25
+09:20:56   error https://www.snice.gob.mx/cs/avi/snice/ligie.info22.html HTTP Error 500: Proxy Error
+09:20:56   error https://www.snice.gob.mx/cs/avi/snice/ligie.info22.html HTTP Error 500: Proxy Error
+09:20:57   error https://www.snice.gob.mx/cs/avi/snice/ligie.info22.html HTTP Error 500: Proxy Error
+09:20:57 ERROR mexico RuntimeError('descarga fallida https://www.snice.gob.mx/cs/avi/snice/ligie.info22.html')
+09:21:00 ca lineas 1688 partidas 204 capitulos 25
