@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T12:31:00Z",
+ "generatedAt": "2026-11-06T12:47:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 340,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
   "repoGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
-  "checkedAt": "2026-11-06T12:31:00Z"
+  "checkedAt": "2026-11-06T12:47:00Z"
  },
  "pipelines": [
   {
@@ -304,14 +304,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-24T11:54:04Z",
-    "durationSec": 47,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40091740377"
+    "event": "schedule",
+    "startedAt": "2026-11-06T12:31:11Z",
+    "durationSec": 58,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42218286070"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -1562,7 +1562,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-06T02:56:17Z"
+     "lastChange": "2026-11-06T12:32:03Z"
     }
    ],
    "last": {
@@ -2002,7 +2002,7 @@
     "40 14 * * 4",
     "40 12 * * 5"
    ],
-   "nextRun": "2026-11-06T12:40:00Z",
+   "nextRun": "2026-11-12T14:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4774,7 +4774,7 @@
    "crons": [
     "45 12 * * 2,5"
    ],
-   "nextRun": "2026-11-06T12:45:00Z",
+   "nextRun": "2026-11-10T12:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5171,7 +5171,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-06T12:47:00Z",
+   "nextRun": "2026-11-06T15:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5496,7 +5496,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-06T02:56:17Z"
+     "lastChange": "2026-11-06T12:32:03Z"
     }
    ],
    "last": {
@@ -5567,7 +5567,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T12:17:49Z"
+     "lastChange": "2026-11-06T12:33:54Z"
     },
     {
      "path": "data/source-candidates.json",
