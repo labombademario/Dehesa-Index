@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T06:34:18Z",
+ "generatedAt": "2026-11-06T16:44:48Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -1050,7 +1050,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-11-05T14:50:53Z",
+   "generatedAt": "2026-11-06T14:28:22Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1233,10 +1233,10 @@
    "warnings": [],
    "stats": {
     "series": 261,
-    "points": 70790,
+    "points": 71040,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T08:19:57Z",
+   "generatedAt": "2026-11-06T15:16:09Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1478,10 +1478,10 @@
    ],
    "stats": {
     "series": 232,
-    "points": 47807,
+    "points": 47831,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T15:29:29Z",
+   "generatedAt": "2026-11-06T15:23:19Z",
    "info": [],
    "nWarnings": 5,
    "nErrors": 0
@@ -1542,10 +1542,10 @@
    "warnings": [],
    "stats": {
     "series": 55,
-    "points": 8042,
+    "points": 8093,
     "lines": 0
    },
-   "generatedAt": "2026-10-24T11:54:45Z",
+   "generatedAt": "2026-11-06T12:32:02Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1707,10 +1707,10 @@
    "warnings": [],
    "stats": {
     "series": 35,
-    "points": 4557,
+    "points": 4558,
     "lines": 0
    },
-   "generatedAt": "2026-11-05T23:39:51Z",
+   "generatedAt": "2026-11-06T06:37:26Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1798,7 +1798,7 @@
     "points": 240,
     "lines": 0
    },
-   "generatedAt": "2026-10-13T15:52:58Z",
+   "generatedAt": "2026-11-06T06:24:06Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2136,7 +2136,7 @@
     "points": 1643,
     "lines": 0
    },
-   "generatedAt": "2026-11-05T14:58:03Z",
+   "generatedAt": "2026-11-06T14:37:36Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2152,7 +2152,7 @@
     "points": 0,
     "lines": 2186
    },
-   "generatedAt": "2026-11-03T16:16:26Z",
+   "generatedAt": "2026-11-06T15:56:40Z",
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -2182,7 +2182,7 @@
     "points": 0,
     "lines": 1688
    },
-   "generatedAt": "2026-10-06T08:41:48Z",
+   "generatedAt": "2026-11-06T09:21:00Z",
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -2197,7 +2197,7 @@
     "points": 0,
     "lines": 2315
    },
-   "generatedAt": "2026-10-06T08:41:42Z",
+   "generatedAt": "2026-11-06T09:20:56Z",
    "nWarnings": 0,
    "nErrors": 0
   },
