@@ -1154,7 +1154,7 @@
         var last = d.div[String(ys[ys.length - 1])], rows = [], vv = [];
         NL_DIV.forEach(function (z) {
           var c = [L(z[1])], any = false;
-          ys.forEach(function (y) { var a = d.div[String(y)], v = a[ix[z[0]]], f = a[0]; if (v != null) any = true; c.push(v == null ? '—' : plPwF(v) + (f ? ' <span style="opacity:.6">(' + nf(v / f * 100, 1) + ' %)</span>' : '')); });
+          ys.forEach(function (y) { var a = d.div[String(y)], v = a[ix[z[0]]], f = a[0]; if (v != null) any = true; c.push(v == null ? '—' : plPwF(v) + (f ? ' ' + faint('(' + nf(v / f * 100, 1) + ' %)') : '')); });
           if (any) { rows.push(c); vv.push(last[ix[z[0]]] || 0); }
         });
         if (!rows.length) return null;
