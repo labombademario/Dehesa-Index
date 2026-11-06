@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T21:59:00Z",
+ "generatedAt": "2026-11-06T22:16:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 337,
@@ -17,7 +17,7 @@
   "lagHours": 8.5,
   "prodGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
   "repoGeneratedAt": "2026-11-06T19:21:37.660322+00:00",
-  "checkedAt": "2026-11-06T21:59:00Z"
+  "checkedAt": "2026-11-06T22:16:00Z"
  },
  "pipelines": [
   {
@@ -1563,7 +1563,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-06T20:57:18Z"
+     "lastChange": "2026-11-06T22:14:55Z"
     }
    ],
    "last": {
@@ -4942,9 +4942,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-03T22:25:50Z",
-    "durationSec": 84,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41730723881"
+    "startedAt": "2026-11-06T22:14:10Z",
+    "durationSec": 50,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42303126498"
    },
    "recent": {
     "runs": 10,
@@ -5104,7 +5104,7 @@
     "10 22 * * 5",
     "20 14 * * 3"
    ],
-   "nextRun": "2026-11-06T22:10:00Z",
+   "nextRun": "2026-11-10T20:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5499,7 +5499,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-06T20:57:18Z"
+     "lastChange": "2026-11-06T22:14:55Z"
     }
    ],
    "last": {
@@ -5570,7 +5570,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T21:45:55Z"
+     "lastChange": "2026-11-06T22:02:34Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7550,7 +7550,7 @@
    "crons": [
     "10 22 * * 1-5"
    ],
-   "nextRun": "2026-11-06T22:10:00Z",
+   "nextRun": "2026-11-09T22:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7565,7 +7565,7 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-nass-cdl.yml",
