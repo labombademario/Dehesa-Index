@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-06T16:52:40.393Z",
-  "observationCount": 563,
+  "generatedAt": "2026-11-06T19:38:31.974Z",
+  "observationCount": 565,
   "products": [
     "aceite_cacahuete",
     "aceite_coco",
@@ -1534,31 +1534,31 @@
       "product": "diesel",
       "region": "eu",
       "sourceId": "eu_oil_bulletin",
-      "observationDate": "2026-10-26",
+      "observationDate": "2026-11-02",
       "unit": "litro",
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-10-30T13:33:52.326859Z",
+      "verifiedAt": "2026-11-06T19:38:31.230351Z",
       "comparability": "directional",
-      "points": 262,
+      "points": 263,
       "coverageStart": "2005-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "diesel",
       "region": "us",
       "sourceId": "eia",
-      "observationDate": "2026-10-26",
+      "observationDate": "2026-11-02",
       "unit": "gal",
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-10-30T13:33:49.958Z",
+      "verifiedAt": "2026-11-06T19:38:28.027Z",
       "comparability": "directional",
-      "points": 392,
+      "points": 393,
       "coverageStart": "1994-03-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "electricidad_ab",
