@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T02:30:00Z",
+ "generatedAt": "2026-11-06T02:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 337,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 5.6,
-  "prodGeneratedAt": "2026-11-05T19:55:42.064090+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-11-06T01:32:49.761342+00:00",
   "repoGeneratedAt": "2026-11-06T01:32:49.761342+00:00",
-  "checkedAt": "2026-11-06T02:30:00Z"
+  "checkedAt": "2026-11-06T02:48:00Z"
  },
  "pipelines": [
   {
@@ -150,8 +150,8 @@
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-argentina.py' has timed out after 20 minutes."
    },
    "recent": {
-    "runs": 10,
-    "success": 5,
+    "runs": 9,
+    "success": 4,
     "failed": 5
    },
    "status": "error",
@@ -5522,7 +5522,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T02:15:58Z"
+     "lastChange": "2026-11-06T02:33:41Z"
     },
     {
      "path": "data/source-candidates.json",
