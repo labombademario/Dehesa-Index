@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T14:54:00Z",
+ "generatedAt": "2026-11-06T15:11:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 340,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
   "repoGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
-  "checkedAt": "2026-11-06T14:54:00Z"
+  "checkedAt": "2026-11-06T15:11:00Z"
  },
  "pipelines": [
   {
@@ -4239,7 +4239,7 @@
    "crons": [
     "10 15 * * 2,5"
    ],
-   "nextRun": "2026-11-06T15:10:00Z",
+   "nextRun": "2026-11-10T15:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4456,13 +4456,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-03T15:04:44Z",
-    "durationSec": 62,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41660094181"
+    "startedAt": "2026-11-06T14:59:54Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42238912099"
    },
    "recent": {
-    "runs": 8,
-    "success": 8,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5520,7 +5520,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-06T15:10:00Z",
+   "nextRun": "2026-11-06T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5567,7 +5567,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T14:41:11Z"
+     "lastChange": "2026-11-06T14:57:26Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5788,13 +5788,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-05T21:57:55Z",
-    "durationSec": 149,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42117332820"
+    "startedAt": "2026-11-06T14:58:37Z",
+    "durationSec": 123,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42238726849"
    },
    "recent": {
-    "runs": 8,
-    "success": 8,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
