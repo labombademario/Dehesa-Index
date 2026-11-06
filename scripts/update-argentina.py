@@ -29,8 +29,39 @@ def fetch(u, t=300):
 def dec(b):
     try: return b.decode('utf-8-sig')
     except UnicodeDecodeError: return b.decode('cp1252')
+# El portal renombro los conjuntos (nov 2026: prefijo del organismo, p. ej. «agroindustria-trigo---...»); los nombres viejos dan 404.
+# Se conservan los nombres de siempre en el codigo y se traducen aqui al nombre actual del portal (mismo conjunto, misma licencia y mismos recursos).
+RENAMED = {
+ 'trigo-siembra-cosecha-produccion-rendimiento': 'agroindustria-trigo---siembra-cosecha-produccion-rendimiento',
+ 'maiz-siembra-cosecha-rendimiento-produccion': 'agroindustria-maiz---siembra-cosecha-produccion-rendimiento',
+ 'soja-siembra-cosecha-produccion-rendimiento': 'agroindustria-soja---siembra-cosecha-produccion-rendimiento',
+ 'cebada-siembra-cosecha-produccion-rendimiento': 'agroindustria-cebada---siembra-cosecha-produccion-rendimiento',
+ 'avena-siembra-cosecha-produccion-rendimiento': 'agroindustria-avena---siembra-cosecha-produccion-rendimiento',
+ 'centeno-siembra-cosecha-produccion-rendimiento': 'agroindustria-centeno---siembra-cosecha-produccion-rendimiento',
+ 'arroz-siembra-cosecha-produccion-rendimiento': 'agroindustria-arroz---siembra-cosecha-produccion-rendimiento',
+ 'lino-siembra-cosecha-produccion-rendimiento': 'agroindustria-lino---siembra-cosecha-produccion-rendimiento',
+ 'poroto-siembra-cosecha-produccion-rendimiento': 'agroindustria-poroto---siembra-cosecha-produccion-rendimiento',
+ 'mijo-siembra-cosecha-produccion-rendimiento': 'agroindustria-mijo---siembra-cosecha-produccion-rendimiento',
+ 'yerba-mate-siembra-cosecha-produccion-rendimiento': 'agroindustria-yerba-mate---siembra-cosecha-produccion-rendimiento',
+ 'te-siembra-cosecha-produccion-rendimiento': 'agroindustria-te---siembra-cosecha-produccion-rendimiento',
+ 'estimaciones-agricolas': 'agroindustria-agricultura---estimaciones-agricolas',
+ 'precios-fob-oficiales': 'sspm-precios-fob-oficiales',
+ 'indice-novillo-sio-carnes-insc': 'agroindustria-sio-carnes---indice-novillo-insc',
+ 'indicadores-economicos-para-ganaderia-bovina': 'agroindustria-ganaderia---indicadores-economicos-bovinos',
+ 'mercado-liniers-sa-resumen-precios-cantidad-peso-promedio': 'agroindustria-ganaderia---mercado-liniers-precios-cantidad-peso-promedio',
+ 'indicadores-mensuales-sector-bovino': 'agroindustria-ganaderia---indicadores-bovinos-mensuales',
+ 'faena-aviar': 'agroindustria-aves---faena-aviar',
+ 'produccion-de-carne-aviar': 'agroindustria-aves---produccion-carne-aviar',
+ 'produccion-nacional-lactea-por-mes-y-por-anio': 'agroindustria-lacteos---produccion-nacional-leche-por-mes-por-ano',
+ 'exportaciones-fob-por-rubro': 'sspm-exportaciones-fob-por-rubro',
+ 'faena-pecuaria': 'sspm-faena-pecuaria',
+ 'indicadores-de-evolucion-del-sector-agropecuario': 'sspm-indicadores-evolucion-sector-agropecuario',
+ 'indice-de-precios-al-consumidor-nacional-ipc-base-diciembre-2016': 'sspm-indice-precios-al-consumidor-nacional-ipc-base-diciembre-2016',
+ 'indice-de-precios-al-consumidor-gba-ipc-gba-base-diciembre-2016': 'sspm-indice-precios-al-consumidor-gba-ipc-gba-base-diciembre-2016',
+ 'precios-mayoristas-resolucion-1104-04': 'energia-precios-mayoristas---resolucion-110404',
+}
 def package(name):
-    d = json.loads(fetch(CKAN + name, 90))['result']
+    d = json.loads(fetch(CKAN + RENAMED.get(name, name), 90))['result']
     if str(d.get('license_id')).upper() not in ('CC-BY-4.0', 'CREATIVE COMMONS ATTRIBUTION 4.0'): raise RuntimeError('licencia inesperada en %s: %r' % (name, d.get('license_id')))
     return d
 def csv_url(pkg, pick):
