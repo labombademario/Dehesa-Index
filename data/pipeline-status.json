@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T23:17:00Z",
+ "generatedAt": "2026-11-06T23:33:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 337,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-06T19:21:37.660322+00:00",
   "repoGeneratedAt": "2026-11-06T19:21:37.660322+00:00",
-  "checkedAt": "2026-11-06T23:17:00Z"
+  "checkedAt": "2026-11-06T23:33:00Z"
  },
  "pipelines": [
   {
@@ -717,19 +717,18 @@
    "nextRun": "2026-11-09T16:10:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-06T21:27:22Z",
-    "durationSec": 58,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42296861019",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: RuntimeError(\"https://open.alberta.ca/api/3/action/package_search?q=%22Alberta+farm+input+prices%22&rows=60: <HTTPError 403: 'Forbidden'>\")"
+    "startedAt": "2026-11-06T23:29:27Z",
+    "durationSec": 69,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42296861019"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 24.0
   },
   {
@@ -3185,18 +3184,18 @@
    "nextRun": "2026-11-11T18:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-04T23:54:52Z",
-    "durationSec": 50,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41937383055"
+    "startedAt": "2026-11-06T23:30:01Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42312293803"
    },
    "recent": {
-    "runs": 4,
+    "runs": 5,
     "success": 4,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 120.0
   },
   {
@@ -5570,7 +5569,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-06T23:20:09Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7065,7 +7064,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-06T23:30:00Z",
+   "nextRun": "2026-11-09T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7080,7 +7079,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 62.8
+   "expectedEveryHours": 14.8
   },
   {
    "workflow": "update-us-cash-receipts.yml",
