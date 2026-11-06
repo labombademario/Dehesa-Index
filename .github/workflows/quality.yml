@@ -164,6 +164,9 @@ jobs:
       - name: Netherlands by municipality (CBS table 80781NED, contract accepts what is published and rejects corrupted data, totals match the national figures, no network)
         run: python3 scripts/test-nl-gemeenten.py
 
+      - name: Netherlands labour, farm size and diversification by province (CBS, contract accepts what is published and rejects corrupted data, totals match the national figures, no network)
+        run: python3 scripts/test-nl-structure.py
+
       - name: Manitoba sheep, goat and hogs (PDF text parsers, goat unit rule, disputed cells, date and range checks, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-smallstock.py
 

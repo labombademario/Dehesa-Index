@@ -9119,6 +9119,12 @@
     "cbs_nl"
    ],
    "notes": "Países Bajos por municipio (gemeente): explotaciones, superficie de tierra de cultivo, cultivos de tierra arable (patata, cereales, remolacha), horticultura al aire libre, invernaderos y pastos, y cabezas de bovino, vacas lecheras, ovino, caprino, caballos, porcino y gallinas, de la tabla 80781NED de CBS StatLine (datos abiertos; scripts/update-nl-gemeenten.py). Relación municipio -> provincia de 'Gebieden in Nederland' (86059NED). Superficies pasadas de are a hectáreas e invernaderos de m² a hectáreas; sin otro cálculo. Cita: CBS."
+  },
+  "data/nl-structure/": {
+   "sources": [
+    "cbs_nl"
+   ],
+   "notes": "Países Bajos por provincia: mano de obra (personas y unidades de trabajo anual, por sexo; familia y no familia), tierra de cultivo por clase de tamaño de explotación y explotaciones con actividades de diversificación, de las tablas 80784NED, 80787NED y 80807NED de CBS StatLine (datos abiertos; scripts/update-nl-structure.py). Sin cálculo propio salvo mostrar porcentajes sobre los totales publicados. Cita: CBS."
   }
  },
  "derived": [

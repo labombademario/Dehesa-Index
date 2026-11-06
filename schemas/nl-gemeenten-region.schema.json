@@ -31,7 +31,7 @@
    "properties": {
     "id": {
      "enum": [
-      "ine_es"
+      "cbs_nl"
      ]
     },
     "url": {
@@ -41,7 +41,8 @@
    }
   },
   "year": {
-   "type": "integer"
+   "type": "integer",
+   "minimum": 2020
   },
   "region": {
    "type": "string",
@@ -49,7 +50,8 @@
   },
   "ind": {
    "type": "array",
-   "minItems": 15,
+   "minItems": 16,
+   "maxItems": 16,
    "items": {
     "type": "string"
    }

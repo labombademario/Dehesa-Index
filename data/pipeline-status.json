@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T05:45:00Z",
+ "generatedAt": "2026-11-06T06:03:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 338,
   "late": 2,
   "error": 5,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-06T01:32:49.761342+00:00",
   "repoGeneratedAt": "2026-11-06T01:32:49.761342+00:00",
-  "checkedAt": "2026-11-06T05:45:00Z"
+  "checkedAt": "2026-11-06T06:03:00Z"
  },
  "pipelines": [
   {
@@ -5394,6 +5394,19 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-nl-structure.yml",
+   "name": "Update Netherlands labour, farm size and diversification by province (CBS)",
+   "crons": [
+    "40 12 18 1,4,7,10 *"
+   ],
+   "nextRun": "2027-01-18T12:40:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 2208.0
+  },
+  {
    "workflow": "update-nordic-weather.yml",
    "name": "Update Sweden and Denmark observed weather against normal (SMHI and DMI open data)",
    "crons": [
@@ -5521,7 +5534,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T04:20:27Z"
+     "lastChange": "2026-11-06T05:48:28Z"
     },
     {
      "path": "data/source-candidates.json",

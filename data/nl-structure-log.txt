@@ -1,0 +1,7 @@
+anios mano de obra [2005, 2010, 2015, 2020, 2025] tamano [2005, 2010, 2015, 2020, 2025] diversificacion [1998, 1999, 2003, 2005, 2007, 2008, 2009, 2010, 2011, 2013, 2016, 2020, 2023]
+  control explotaciones por tamano 2025        provincias        47647 nacional        47647 (100.00 %)
+  control hectareas por tamano 2025            provincias      1793757 nacional      1793758 (100.00 %)
+  control personas 2025                        provincias       176853 nacional       176853 (100.00 %)
+  control aje 2025                             provincias       126349 nacional       126348 (100.00 %)
+  control explotaciones diversificacion 2023   provincias        50634 nacional        50634 (100.00 %)
+escrito 12 provincias

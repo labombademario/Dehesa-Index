@@ -1,0 +1,91 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Países Bajos: índice de mano de obra, tamaño y diversificación por provincia (CBS)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "provinces",
+  "ind",
+  "labYears",
+  "sizeYears",
+  "divYears",
+  "national"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "cbs_nl"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "provinces": {
+   "type": "array",
+   "minItems": 12,
+   "maxItems": 12,
+   "items": {
+    "type": "string"
+   }
+  },
+  "ind": {
+   "type": "object",
+   "required": [
+    "lab",
+    "size",
+    "div"
+   ]
+  },
+  "labYears": {
+   "type": "array",
+   "minItems": 2,
+   "items": {
+    "type": "integer"
+   }
+  },
+  "sizeYears": {
+   "type": "array",
+   "minItems": 2,
+   "items": {
+    "type": "integer"
+   }
+  },
+  "divYears": {
+   "type": "array",
+   "minItems": 2,
+   "items": {
+    "type": "integer"
+   }
+  },
+  "national": {
+   "type": "object",
+   "required": [
+    "lab",
+    "size",
+    "div"
+   ]
+  }
+ }
+}

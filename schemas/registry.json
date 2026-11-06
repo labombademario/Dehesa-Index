@@ -2523,6 +2523,26 @@
   "au-regional/inde[x].json": [
    "au-regional-index",
    []
+  ],
+  "nl-gemeenten/[A-Z][A-Z].json": [
+   "nl-gemeenten-region",
+   [
+    "nl_gemeenten_province"
+   ]
+  ],
+  "nl-gemeenten/inde[x].json": [
+   "nl-gemeenten-index",
+   []
+  ],
+  "nl-structure/[A-Z][A-Z].json": [
+   "nl-structure-region",
+   [
+    "nl_structure_province"
+   ]
+  ],
+  "nl-structure/inde[x].json": [
+   "nl-structure-index",
+   []
   ]
  },
  "derived": [
@@ -2578,16 +2598,6 @@
  ],
  "uk-tiff-regions.json": [
   "uk-tiff-regions",
-  []
- ],
- "nl-gemeenten/[A-Z][A-Z].json": [
-  "nl-gemeenten-region",
-  [
-   "nl_gemeenten_province"
-  ]
- ],
- "nl-gemeenten/inde[x].json": [
-  "nl-gemeenten-index",
   []
  ]
 }

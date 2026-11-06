@@ -1,0 +1,34 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update Netherlands labour, farm size and diversification by province (CBS)
+on:
+  schedule:
+    - cron: '40 12 18 1,4,7,10 *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-nl-structure
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: bash scripts/annotate-failure.sh python3 scripts/update-nl-structure.py
+        timeout-minutes: 15
+        continue-on-error: true
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/nl-structure)
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: bash scripts/publish-data.sh "Países Bajos por provincia - mano de obra, tamaño de explotación y diversificación (CBS)" data/nl-structure-log.txt data/nl-structure
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

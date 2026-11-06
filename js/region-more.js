@@ -1117,6 +1117,53 @@
         head: ['Titulares|Holders|Chefs|Conduttori', 'Edad media|Average age|Âge moyen|Età media', 'Mujeres|Women|Femmes|Donne', '< 35 años|Under 35|Moins de 35 ans|Sotto i 35', '≥ 65 años|65 or over|65 ans ou plus|65 e oltre', 'Univ. agraria|Agri. university|Études agri. univ.|Studi agrari univ.'],
         row: function (g) { var j = g('jef'), y = g('j25') == null || g('j34') == null ? null : g('j25') + g('j34'); return { s: j, c: [plPwF(j), g('edad') == null ? '—' : nf(g('edad'), 1), esMuPct(g('jefm'), j), esMuPct(y, j), esMuPct(g('j65'), j), esMuPct(g('univ'), j)] }; } });
     }
+    /* ---- Países Bajos por provincia: mano de obra, tamaño de explotación y diversificación (CBS 80784, 80787, 80807) ---- */
+    function nlStr(x) { return get('data/nl-structure/' + x.r + '.json'); }
+    function nlStrChg(a, b) { return a == null || !b ? '—' : (a >= b ? '+' : '−') + nf(Math.abs(a / b - 1) * 100, 1) + ' %'; }
+    function nlStrLab(x) {
+      return nlStr(x).then(function (d) {
+        if (!d || !d.lab) return null; var rows = [];
+        d.labYears.forEach(function (y) {
+          var g = d.lab[String(y)]; if (!g || !g.t) return; var t = g.t;
+          rows.push([String(y), plPwF(t[0]), esMuPct(t[1], t[0]), g.f && g.f[0] != null ? esMuPct(g.f[0], t[0]) : '—', plPwF(t[9]), plPwF(t[12])]);
+        });
+        if (!rows.length) return null;
+        return card(L('Mano de obra agraria|Farm labour|Main-d’œuvre agricole|Manodopera agricola'),
+          L('Personas con trabajo regular en las explotaciones de la provincia, qué parte es de la familia del titular y qué parte son mujeres, las unidades de trabajo anual (aje) y las explotaciones con mano de obra regular, según el CBS. El CBS no publica aún el reparto por sexo del último año.|People in regular work on the province’s farms, the share that is the holder’s family and the share that are women, annual work units (AWU) and farms with regular labour, according to CBS. CBS has not yet published the split by sex for the latest year.|Personnes en travail régulier dans les exploitations de la province, part de la famille du chef et part de femmes, unités de travail annuel (UTA) et exploitations avec main-d’œuvre régulière, selon le CBS. Le CBS n’a pas encore publié la répartition par sexe de la dernière année.|Persone con lavoro regolare nelle aziende della provincia, quota della famiglia del titolare e quota di donne, unità di lavoro annuo (ULA) e aziende con manodopera regolare, secondo il CBS. Il CBS non ha ancora pubblicato la ripartizione per sesso dell’ultimo anno.'),
+          table([L('Año|Year|Année|Anno'), L('Personas|People|Personnes|Persone'), L('% familia|% family|% famille|% famiglia'), L('% mujeres|% women|% femmes|% donne'), L('Unidades de trabajo (aje)|Work units (AWU)|UTA|ULA'), L('Explotaciones con mano de obra|Farms with labour|Exploitations avec main-d’œuvre|Aziende con manodopera')], rows, 520), cite('cbs_nl'));
+      });
+    }
+    function nlStrSize(x) {
+      return nlStr(x).then(function (d) {
+        if (!d || !d.size) return null; var ys = d.sizeYears, y0 = String(ys[0]), y1 = String(ys[ys.length - 1]), a = d.size[y0], b = d.size[y1]; if (!a || !b) return null;
+        var names = ['Total|Total|Total|Totale', '0,01–1 ha|0.01–1 ha|0,01–1 ha|0,01–1 ha', '1–5 ha|1–5 ha|1–5 ha|1–5 ha', '5–10 ha|5–10 ha|5–10 ha|5–10 ha', '10–30 ha|10–30 ha|10–30 ha|10–30 ha', '30 ha o más|30 ha or more|30 ha ou plus|30 ha o più'], rows = [];
+        for (var i = 0; i < 6; i++) rows.push([L(names[i]), plPwF(a.farms[i]), plPwF(b.farms[i]), nlStrChg(b.farms[i], a.farms[i]), i ? esMuPct(b.farms[i], b.farms[0]) : '100 %', plPwF(b.area[i]), i ? esMuPct(b.area[i], b.area[0]) : '100 %']);
+        return card(L('Tamaño de las explotaciones|Farm size|Taille des exploitations|Dimensione delle aziende'),
+          L('Explotaciones y tierra de cultivo de la provincia por clase de tamaño de tierra de cultivo, según el CBS; el cambio compara ' + y0 + ' con ' + y1 + ' y los porcentajes son sobre el total de ' + y1 + ' (cálculo de Dehesa Index).|Farms and farmland of the province by farmland size class, according to CBS; the change compares ' + y0 + ' with ' + y1 + ' and the shares are of the ' + y1 + ' total (Dehesa Index calculation).|Exploitations et terres cultivées de la province par classe de taille de terres cultivées, selon le CBS ; l’évolution compare ' + y0 + ' à ' + y1 + ' et les parts sont sur le total de ' + y1 + ' (calcul de Dehesa Index).|Aziende e terreno coltivato della provincia per classe di dimensione del terreno coltivato, secondo il CBS; la variazione confronta ' + y0 + ' con ' + y1 + ' e le quote sono sul totale del ' + y1 + ' (calcolo di Dehesa Index).'),
+          table([L('Clase|Class|Classe|Classe'), L('Explotaciones|Farms|Exploitations|Aziende') + ' ' + y0, L('Explotaciones|Farms|Exploitations|Aziende') + ' ' + y1, L('Cambio|Change|Évolution|Variazione'), L('% de explotaciones|% of farms|% des exploitations|% delle aziende'), L('Tierra de cultivo (ha)|Farmland (ha)|Terres cultivées (ha)|Terreno coltivato (ha)') + ' ' + y1, L('% de la superficie|% of area|% de la surface|% della superficie')], rows, 640), cite('cbs_nl', y1));
+      });
+    }
+    var NL_DIV = [['shop', 'Venta en la explotación|On-farm sales|Vente à la ferme|Vendita in azienda'], ['direct', 'Venta directa al consumidor|Direct sales to consumers|Vente directe au consommateur|Vendita diretta al consumatore'], ['agritour', 'Agroturismo|Agritourism|Agritourisme|Agriturismo'],
+      ['processing', 'Transformación de productos agrarios|Processing of farm products|Transformation de produits agricoles|Trasformazione di prodotti agricoli'], ['care', 'Agricultura social (cuidados)|Care farming|Agriculture sociale (soins)|Agricoltura sociale'], ['energy', 'Producción de energía para terceros|Energy supplied to third parties|Énergie fournie à des tiers|Energia fornita a terzi'],
+      ['contract', 'Trabajos para terceros|Contract work for others|Travaux pour des tiers|Lavori per conto terzi'], ['nature', 'Gestión de naturaleza y paisaje|Nature and landscape management|Gestion de la nature et du paysage|Gestione di natura e paesaggio'], ['childcare', 'Guardería en la explotación|On-farm childcare|Garde d’enfants à la ferme|Asilo in azienda'],
+      ['educ', 'Educación en la explotación|Farm education|Éducation à la ferme|Educazione in azienda'], ['storage', 'Almacenamiento de bienes o animales|Storage of goods or animals|Stockage de biens ou d’animaux|Stoccaggio di beni o animali'], ['aqua', 'Acuicultura|Aquaculture|Aquaculture|Acquacoltura']];
+    function nlStrDiv(x) {
+      return nlStr(x).then(function (d) {
+        if (!d || !d.div) return null; var ix = {}; d.ind.div.forEach(function (k, i) { ix[k] = i; });
+        var ys = [2010, 2016, 2020, 2023].filter(function (y) { return d.div[String(y)]; }); if (!ys.length) return null;
+        var last = d.div[String(ys[ys.length - 1])], rows = [], vv = [];
+        NL_DIV.forEach(function (z) {
+          var c = [L(z[1])], any = false;
+          ys.forEach(function (y) { var a = d.div[String(y)], v = a[ix[z[0]]], f = a[0]; if (v != null) any = true; c.push(v == null ? '—' : plPwF(v) + (f ? ' <span style="opacity:.6">(' + nf(v / f * 100, 1) + ' %)</span>' : '')); });
+          if (any) { rows.push(c); vv.push(last[ix[z[0]]] || 0); }
+        });
+        if (!rows.length) return null;
+        var ord = rows.map(function (r, i) { return i; }).sort(function (a, b) { return vv[b] - vv[a]; });
+        return card(L('Diversificación de las explotaciones|Farm diversification|Diversification des exploitations|Diversificazione delle aziende'),
+          L('Explotaciones de la provincia con cada actividad de diversificación y, entre paréntesis, su peso sobre el total de explotaciones, según el CBS. Una explotación puede tener varias actividades. El CBS pregunta por la diversificación solo algunos años y avisa de que la cifra puede quedarse corta porque cada vez más empresas dividen la explotación en varias sociedades.|Farms in the province with each diversification activity and, in brackets, their share of all farms, according to CBS. A farm can have several activities. CBS asks about diversification only in some years and warns that the figure can fall short because more and more businesses split the farm into several companies.|Exploitations de la province avec chaque activité de diversification et, entre parenthèses, leur part dans l’ensemble des exploitations, selon le CBS. Une exploitation peut avoir plusieurs activités. Le CBS ne pose la question de la diversification que certaines années et prévient que le chiffre peut être sous-estimé, car de plus en plus d’entreprises scindent l’exploitation en plusieurs sociétés.|Aziende della provincia con ciascuna attività di diversificazione e, tra parentesi, la loro quota sul totale delle aziende, secondo il CBS. Un’azienda può avere più attività. Il CBS chiede della diversificazione solo in alcuni anni e avverte che la cifra può risultare per difetto, perché sempre più imprese dividono l’azienda in più società.'),
+          table([L('Actividad|Activity|Activité|Attività')].concat(ys.map(String)), ord.map(function (i) { return rows[i]; }), 560), cite('cbs_nl', String(ys[ys.length - 1])));
+      });
+    }
     /* ---- Países Bajos: explotaciones, cultivos y ganado por municipio (gemeente, CBS 80781NED) ---- */
     var NLGM_NOTE = 'El CBS cuenta cada explotación en el municipio de su sede; una explotación con parcelas en varios municipios suma en todos. Solo municipios con explotaciones; las superficies están en hectáreas (el CBS las publica en áreas y los invernaderos en m²).|CBS counts each farm in the municipality of its head office; a farm with plots in several municipalities counts in each. Only municipalities with farms; areas are in hectares (CBS publishes them in ares and glasshouses in m²).|Le CBS compte chaque exploitation dans la commune de son siège ; une exploitation dont les parcelles sont dans plusieurs communes compte dans chacune. Seules les communes avec exploitations ; surfaces en hectares (le CBS les publie en ares et les serres en m²).|Il CBS conta ogni azienda nel comune della sede; un’azienda con parcelle in più comuni conta in ciascuno. Solo comuni con aziende; superfici in ettari (il CBS le pubblica in are e le serre in m²).';
     function nlGmNote(a) { var p = a.split('|'), q = NLGM_NOTE.split('|'); return p.map(function (t, i) { return t + ' ' + q[i]; }).join('|'); }
@@ -1255,7 +1302,7 @@
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim), C('frcms', frCmStruct), C('frcml', frCmLive), C('frcmc', frCmCrops), C('frcma', frCmLabour), C('frepc', frEpStruct), C('frepo', frEpSpec)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('dekrs', deKrStruct), C('dekrl', deKrLive), C('dekrz', deKrSize), C('dekmy', deKmYield), C('dekmc', deKmCattle), C('dekmj', deKmJobs), C('dekmh', deKmHist), C('eudr', eudr), C('clim', deClim)],
         PL: [C('plpws', plPwStruct), C('plpwl', plPwLive), C('plpwc', plPwCrops), C('plpwa', plPwLabour), C('plgms', plGmStruct), C('plgml', plGmLive), C('plgmc', plGmCrops), C('plgma', plGmLabour)],
-        NL: [C('nlcrops', nlCbs), C('clim', gridClim), C('nlgms', nlGmStruct), C('nlgmc', nlGmCrops), C('nlgml', nlGmLive)],
+        NL: [C('nlcrops', nlCbs), C('clim', gridClim), C('nllab', nlStrLab), C('nlsize', nlStrSize), C('nldiv', nlStrDiv), C('nlgms', nlGmStruct), C('nlgmc', nlGmCrops), C('nlgml', nlGmLive)],
         AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim), C('itprs', itPrStruct), C('itprl', itPrLive), C('itprc', itPrCrops), C('itpra', itPrLabour), C('itprz', itPrZone), C('itprg', itPrAge), C('itprt', itPrTenure), C('itpri', itPrIrrig)], AU: [C('aulv', auLivestock), C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('aulga', auLga), C('ausa4', auSa4), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»

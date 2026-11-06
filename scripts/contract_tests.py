@@ -2424,6 +2424,36 @@ def nl_gemeenten_province(doc, errs, warns, stats):
     stats["nl-gemeenten valores"] = stats.get("nl-gemeenten valores", 0) + n
 
 
+def nl_structure_province(doc, errs, warns, stats):
+    """Paises Bajos por provincia (CBS 80784/80787/80807): mano de obra por sexo (hombres + mujeres = total), clases de tamano que suman el total, y diversificacion con cada actividad menor o igual que las explotaciones."""
+    r = doc["region"]; ind = doc["ind"]; n = 0
+    def bad(m): errs.append("nl-structure %s: %s" % (r, m))
+    for blk, ys in (("lab", "labYears"), ("size", "sizeYears"), ("div", "divYears")):
+        if sorted(int(y) for y in doc[blk]) != sorted(doc[ys]): bad("los anios de %s no coinciden con %s" % (blk, ys)); return
+    if len(ind["lab"]) != 13 or len(ind["size"]) != 6 or len(ind["div"]) != 14: bad("indicadores incompletos"); return
+    def okv(x): return x is None or (isinstance(x, (int, float)) and not isinstance(x, bool) and x >= 0)
+    for y, g in doc["lab"].items():
+        for k in ("t", "m", "f"):
+            if len(g.get(k) or []) != 13 or not all(okv(x) for x in g[k]): bad("mano de obra %s %s mal formada" % (y, k)); return
+        for i in (0, 9):
+            t, m, f = g["t"][i], g["m"][i], g["f"][i]
+            if None not in (t, m, f) and abs(m + f - t) > t * 0.02 + 20: bad("mano de obra %s: hombres %s + mujeres %s no suman el total %s" % (y, m, f, t)); return
+        t = g["t"]
+        if None not in (t[0], t[1], t[5]) and abs(t[1] + t[5] - t[0]) > t[0] * 0.02 + 20: bad("mano de obra %s: familia + no familia no suma el total" % y); return
+        n += 13
+    for y, s in doc["size"].items():
+        for k, tl in (("area", 0.01), ("farms", 0.02)):
+            a = s.get(k) or []
+            if len(a) != 6 or not all(okv(x) for x in a): bad("tamano %s %s mal formado" % (y, k)); return
+            if a[0] and None not in a[1:] and abs(sum(a[1:]) - a[0]) > a[0] * tl + 2: bad("tamano %s %s: las clases suman %s y el total es %s" % (y, k, sum(a[1:]), a[0])); return
+        n += 12
+    for y, a in doc["div"].items():
+        if len(a) != 14 or not all(okv(x) for x in a): bad("diversificacion %s mal formada" % y); return
+        if a[0] and any(x is not None and x > a[0] for x in a[1:]): bad("diversificacion %s: una actividad supera el total de explotaciones" % y); return
+        n += 14
+    stats["nl-structure valores"] = stats.get("nl-structure valores", 0) + n
+
+
 def ca_dfo_landings(doc, errs, warns, stats):
     """Canada, desembarques comerciales de pesca marina (DFO): fuente dfo_landings; anos seguidos desde 1990; 8 zonas fijas; cada zona con total (grand) y los de cada grupo en todos los anos y todas las especies
     con una celda [kg, C$] por ano (null en ambos si DFO la suprimio, nunca solo en uno); sin negativos; Atlantic = suma de las 5 provincias atlanticas y Canada = Atlantic + British Columbia en cantidad y
