@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T17:17:00Z",
+ "generatedAt": "2026-11-06T18:13:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 338,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
   "repoGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
-  "checkedAt": "2026-11-06T17:17:00Z"
+  "checkedAt": "2026-11-06T18:13:00Z"
  },
  "pipelines": [
   {
@@ -806,7 +806,7 @@
    "crons": [
     "50 17 * * 2,5"
    ],
-   "nextRun": "2026-11-06T17:50:00Z",
+   "nextRun": "2026-11-10T17:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2490,9 +2490,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-05T18:47:51Z",
-    "durationSec": 47,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42087689851"
+    "startedAt": "2026-11-06T18:02:07Z",
+    "durationSec": 56,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42267019338"
    },
    "recent": {
     "runs": 10,
@@ -3480,7 +3480,7 @@
    "crons": [
     "40 17 * * 2,5"
    ],
-   "nextRun": "2026-11-06T17:40:00Z",
+   "nextRun": "2026-11-10T17:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3503,7 +3503,7 @@
    "crons": [
     "10 18 * * 2,5"
    ],
-   "nextRun": "2026-11-06T18:10:00Z",
+   "nextRun": "2026-11-10T18:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4936,7 +4936,7 @@
    "crons": [
     "25 17 * * 2,5"
    ],
-   "nextRun": "2026-11-06T17:25:00Z",
+   "nextRun": "2026-11-10T17:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5522,7 +5522,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-06T18:10:00Z",
+   "nextRun": "2026-11-06T21:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5569,7 +5569,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T17:03:33Z"
+     "lastChange": "2026-11-06T17:21:12Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5808,7 +5808,7 @@
    "crons": [
     "45 17 * * 2,5"
    ],
-   "nextRun": "2026-11-06T17:45:00Z",
+   "nextRun": "2026-11-10T17:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
