@@ -2401,6 +2401,29 @@ def gal_lonjas(doc, errs, warns, stats):
     if abs(sk - tk) > tk * 1e-4 + 5: errs.append("gal-lonjas: el desglose (%.0f kg) no suma lo del ultimo ano (%.0f)" % (sk, tk)); return
     stats["gal-lonjas lonjas"] = len(doc["lonjas"]); stats["gal-lonjas especies"] = len(doc["species"])
 
+def nl_gemeenten_province(doc, errs, warns, stats):
+    """Paises Bajos por municipio (CBS 80781NED): codigo GM + 4 cifras; cada municipio es [nombre, un valor por cada indicador de 'ind']; sin negativos, explotaciones > 0, las partes de la superficie no superan la tierra de cultivo."""
+    ind = doc["ind"]; n = 0
+    for k in ("farms", "land", "arable", "grass", "cattle", "dairy", "pigs"):
+        if k not in ind: errs.append("nl-gemeenten %s: falta %s en 'ind'" % (doc["region"], k)); return
+    g = {k: ind.index(k) + 1 for k in ind}
+    for code, row in doc["gemeenten"].items():
+        if not re.match(r"^GM\d{4}$", code): errs.append("nl-gemeenten %s: codigo no valido %s" % (doc["region"], code)); return
+        if not isinstance(row, list) or len(row) != len(ind) + 1 or not isinstance(row[0], str) or not row[0]: errs.append("nl-gemeenten %s %s: fila mal formada" % (doc["region"], code)); return
+        for k, x in zip(ind, row[1:]):
+            if x is None: continue
+            if not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0: errs.append("nl-gemeenten %s %s %s: valor no valido %r" % (doc["region"], code, k, x)); return
+            n += 1
+        if not row[g["farms"]]: errs.append("nl-gemeenten %s %s: municipio sin explotaciones" % (doc["region"], code)); return
+        if row[g["farms"]] > 2000: errs.append("nl-gemeenten %s %s: mas de 2.000 explotaciones" % (doc["region"], code)); return
+        land = row[g["land"]]
+        if land is not None and land > 60000: errs.append("nl-gemeenten %s %s: mas de 60.000 ha de tierra de cultivo" % (doc["region"], code)); return
+        p = [row[g[k]] for k in ("arable", "hort", "grass") if k in g]
+        if land is not None and None not in p and sum(p) > land * 1.01 + 1: errs.append("nl-gemeenten %s %s: los usos (%s) suman mas que la tierra de cultivo (%s)" % (doc["region"], code, sum(p), land)); return
+        if row[g["dairy"]] is not None and row[g["cattle"]] is not None and row[g["dairy"]] > row[g["cattle"]]: errs.append("nl-gemeenten %s %s: mas vacas lecheras que bovino" % (doc["region"], code)); return
+    stats["nl-gemeenten valores"] = stats.get("nl-gemeenten valores", 0) + n
+
+
 def ca_dfo_landings(doc, errs, warns, stats):
     """Canada, desembarques comerciales de pesca marina (DFO): fuente dfo_landings; anos seguidos desde 1990; 8 zonas fijas; cada zona con total (grand) y los de cada grupo en todos los anos y todas las especies
     con una celda [kg, C$] por ano (null en ambos si DFO la suprimio, nunca solo en uno); sin negativos; Atlantic = suma de las 5 provincias atlanticas y Canada = Atlantic + British Columbia en cantidad y

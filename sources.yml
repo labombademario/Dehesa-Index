@@ -142,6 +142,17 @@ sources:
     data: [es-municipios-log.txt]
     extra: ['!data/es-municipios']
     message: Censo agrario 2020 de España por municipio - explotaciones, superficie por uso, ganado, titulares y formación (INE)
+  - id: nl-gemeenten
+    name: Update Netherlands farms, crops and livestock by municipality (CBS)
+    cron: ['25 12 18 1,4,7,10 *']
+    script: scripts/update-nl-gemeenten.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/nl-gemeenten)
+    data: [nl-gemeenten-log.txt]
+    extra: ['!data/nl-gemeenten']
+    message: Países Bajos por municipio - explotaciones, superficie por cultivo y uso, y ganado (CBS)
   - id: land-pl
     name: Update Poland farmland prices (GUS, BDL)
     cron: ['10 8 4 * *']

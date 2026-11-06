@@ -2579,5 +2579,15 @@
  "uk-tiff-regions.json": [
   "uk-tiff-regions",
   []
+ ],
+ "nl-gemeenten/[A-Z][A-Z].json": [
+  "nl-gemeenten-region",
+  [
+   "nl_gemeenten_province"
+  ]
+ ],
+ "nl-gemeenten/inde[x].json": [
+  "nl-gemeenten-index",
+  []
  ]
 }

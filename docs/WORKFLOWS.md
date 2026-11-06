@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-356 workflows (306 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+357 workflows (307 generados desde `sources.yml`, 50 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -256,6 +256,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-nl-cbs.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-nl-cbs.py | netherlands-farm.json | finish, validate-files |
 | update-nl-diesel.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-nl-diesel.py | nl-diesel.json | finish, validate-files |
 | update-nl-drought.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-nl-drought.py | nl-drought.json | finish, validate-files |
+| update-nl-gemeenten.yml | generado | mensual | gen-workflows.py, update-nl-gemeenten.py, validate-data.py | - | finish |
 | update-nl-ghg-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-eu-ghg-agri.py | nl-ghg-agri.json | finish, validate-files |
 | update-nl-nitrates.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-nl-nitrates.py | nl-nitrates.json | finish, validate-files |
 | update-nl-rvo.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-nl-rvo.py | netherlands-markets.json | finish, validate-files |

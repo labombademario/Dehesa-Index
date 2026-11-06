@@ -1,0 +1,62 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Países Bajos: indice por municipio (CBS)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "year",
+  "gemeenten",
+  "ind",
+  "regions"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "ine_es"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "year": {
+   "type": "integer"
+  },
+  "ind": {
+   "type": "array",
+   "minItems": 15
+  },
+  "regions": {
+   "type": "object",
+   "minProperties": 17
+  },
+  "totals": {
+   "type": "object"
+  },
+  "gemeenten": {
+   "type": "integer",
+   "minimum": 7500
+  }
+ }
+}

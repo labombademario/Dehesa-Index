@@ -1,0 +1,19 @@
+anio 2025 filas 742
+municipios con datos 329 provincias 12 sin provincia conocida 0 []
+  control farms     municipios          49260 nacional          49080 (100.37 %)
+  control land      municipios     1793541.77 nacional     1793757.74 (99.99 %)
+  control arable    municipios      544512.62 nacional      544530.41 (100.00 %)
+  control potato    municipios      163741.87 nacional      163741.96 (100.00 %)
+  control cereal    municipios      165255.85 nacional      165269.17 (99.99 %)
+  control beet      municipios       79564.82 nacional       79564.82 (100.00 %)
+  control hort      municipios       91501.54 nacional       91506.23 (99.99 %)
+  control glass     municipios       10026.97 nacional       10028.92 (99.98 %)
+  control grass     municipios      950224.62 nacional      950414.69 (99.98 %)
+  control cattle    municipios        3643713 nacional        3643796 (100.00 %)
+  control dairy     municipios        1526821 nacional        1526837 (100.00 %)
+  control sheep     municipios         675740 nacional         676021 (99.96 %)
+  control goats     municipios         627642 nacional         628018 (99.94 %)
+  control horses    municipios         103253 nacional         103337 (99.92 %)
+  control pigs      municipios        9765589 nacional        9765589 (100.00 %)
+  control chickens  municipios       87721700 nacional       87721700 (100.00 %)
+escrito 12 provincias

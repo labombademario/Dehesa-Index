@@ -1117,6 +1117,39 @@
         head: ['Titulares|Holders|Chefs|Conduttori', 'Edad media|Average age|Âge moyen|Età media', 'Mujeres|Women|Femmes|Donne', '< 35 años|Under 35|Moins de 35 ans|Sotto i 35', '≥ 65 años|65 or over|65 ans ou plus|65 e oltre', 'Univ. agraria|Agri. university|Études agri. univ.|Studi agrari univ.'],
         row: function (g) { var j = g('jef'), y = g('j25') == null || g('j34') == null ? null : g('j25') + g('j34'); return { s: j, c: [plPwF(j), g('edad') == null ? '—' : nf(g('edad'), 1), esMuPct(g('jefm'), j), esMuPct(y, j), esMuPct(g('j65'), j), esMuPct(g('univ'), j)] }; } });
     }
+    /* ---- Países Bajos: explotaciones, cultivos y ganado por municipio (gemeente, CBS 80781NED) ---- */
+    var NLGM_NOTE = 'El CBS cuenta cada explotación en el municipio de su sede; una explotación con parcelas en varios municipios suma en todos. Solo municipios con explotaciones; las superficies están en hectáreas (el CBS las publica en áreas y los invernaderos en m²).|CBS counts each farm in the municipality of its head office; a farm with plots in several municipalities counts in each. Only municipalities with farms; areas are in hectares (CBS publishes them in ares and glasshouses in m²).|Le CBS compte chaque exploitation dans la commune de son siège ; une exploitation dont les parcelles sont dans plusieurs communes compte dans chacune. Seules les communes avec exploitations ; surfaces en hectares (le CBS les publie en ares et les serres en m²).|Il CBS conta ogni azienda nel comune della sede; un’azienda con parcelle in più comuni conta in ciascuno. Solo comuni con aziende; superfici in ettari (il CBS le pubblica in are e le serre in m²).';
+    function nlGmNote(a) { var p = a.split('|'), q = NLGM_NOTE.split('|'); return p.map(function (t, i) { return t + ' ' + q[i]; }).join('|'); }
+    function nlGmCard(x, o) {
+      return get('data/nl-gemeenten/' + x.r + '.json').then(function (d) {
+        if (!d || !d.gemeenten || !d.ind) return null;
+        var ix = {}; d.ind.forEach(function (k, i) { ix[k] = i + 1; });
+        var ks = Object.keys(d.gemeenten).map(function (id) {
+          var row = d.gemeenten[id], g = function (k) { var v = ix[k] ? row[ix[k]] : null; return v == null ? null : v; }, r = o.row(g); if (r) r.n = esc(row[0]); return r;
+        }).filter(function (r) { return r && r.s != null; });
+        if (!ks.length) return null; ks.sort(function (a, b) { return b.s - a.s; });
+        ks = ks.slice(0, 100);
+        return card(L(o.title) + ' (' + d.year + ')', L(o.intro), usCountyList(ks.map(function (r) { return [r.n].concat(r.c); }), [L('Municipio|Municipality|Commune|Comune')].concat(o.head.map(function (h) { return L(h); })), 440, 10, L('Los 100 primeros|Top 100|Les 100 premiers|I primi 100')), cite('cbs_nl', String(d.year)));
+      });
+    }
+    function nlGmStruct(x) {
+      return nlGmCard(x, { title: 'Municipios: explotaciones y superficie|Municipalities: farms and farmland|Communes : exploitations et surface|Comuni: aziende e superficie',
+        intro: nlGmNote('Explotaciones y tierra de cultivo de cada municipio según el CBS, ordenados por tierra de cultivo; el tamaño medio es la tierra de cultivo entre las explotaciones (cálculo de Dehesa Index).|Farms and farmland of each municipality according to CBS, ranked by farmland; the average size is farmland divided by farms (Dehesa Index calculation).|Exploitations et terres cultivées de chaque commune selon le CBS, classées par terres cultivées ; la taille moyenne est les terres cultivées divisées par les exploitations (calcul de Dehesa Index).|Aziende e terreno coltivato di ogni comune secondo il CBS, in ordine di terreno coltivato; la dimensione media è il terreno coltivato diviso per le aziende (calcolo di Dehesa Index).'),
+        head: ['Explotaciones|Farms|Exploitations|Aziende', 'Tierra de cultivo (ha)|Farmland (ha)|Terres cultivées (ha)|Terreno coltivato (ha)', 'Tamaño medio (ha)|Average size (ha)|Taille moyenne (ha)|Dimensione media (ha)', '% pastos|% grassland|% prairies|% prati', '% tierra arable|% arable land|% terres arables|% seminativi'],
+        row: function (g) { var f = g('farms'), l = g('land'); return { s: l, c: [plPwF(f), plPwF(l), f && l != null ? nf(l / f, 1) : '—', esMuPct(g('grass'), l), esMuPct(g('arable'), l)] }; } });
+    }
+    function nlGmCrops(x) {
+      return nlGmCard(x, { title: 'Municipios: cultivos y pastos|Municipalities: crops and grassland|Communes : cultures et prairies|Comuni: colture e prati',
+        intro: nlGmNote('Superficie de cultivos de tierra arable (patata, cereales, remolacha azucarera), de horticultura al aire libre, de invernaderos y de pastos de cada municipio según el CBS; ordenados por tierra arable más horticultura.|Area of arable crops (potatoes, cereals, sugar beet), open-air horticulture, glasshouses and grassland of each municipality according to CBS; ranked by arable plus horticulture.|Surface des cultures de terres arables (pommes de terre, céréales, betterave sucrière), de l’horticulture de plein air, des serres et des prairies de chaque commune selon le CBS ; classées par terres arables plus horticulture.|Superficie delle colture di seminativi (patate, cereali, barbabietola da zucchero), dell’orticoltura in piena aria, delle serre e dei prati di ogni comune secondo il CBS; in ordine di seminativi più orticoltura.'),
+        head: ['Tierra arable (ha)|Arable land (ha)|Terres arables (ha)|Seminativi (ha)', 'Patata (ha)|Potatoes (ha)|Pommes de terre (ha)|Patate (ha)', 'Cereales (ha)|Cereals (ha)|Céréales (ha)|Cereali (ha)', 'Remolacha (ha)|Sugar beet (ha)|Betterave (ha)|Barbabietola (ha)', 'Horticultura al aire libre (ha)|Open-air horticulture (ha)|Horticulture de plein air (ha)|Orticoltura in piena aria (ha)', 'Invernaderos (ha)|Glasshouses (ha)|Serres (ha)|Serre (ha)', 'Pastos (ha)|Grassland (ha)|Prairies (ha)|Prati (ha)'],
+        row: function (g) { var a = g('arable'), h = g('hort'); return { s: a == null && h == null ? null : (a || 0) + (h || 0), c: [plPwF(a), plPwF(g('potato')), plPwF(g('cereal')), plPwF(g('beet')), plPwF(h), plPwF(g('glass')), plPwF(g('grass'))] }; } });
+    }
+    function nlGmLive(x) {
+      return nlGmCard(x, { title: 'Municipios: ganado|Municipalities: livestock|Communes : élevage|Comuni: allevamento',
+        intro: nlGmNote('Cabezas de ganado de cada municipio según el CBS; ordenados por bovino y porcino sumados.|Head of livestock of each municipality according to CBS; ranked by cattle and pigs combined.|Têtes de bétail de chaque commune selon le CBS ; classées par bovins et porcins réunis.|Capi di bestiame di ogni comune secondo il CBS; in ordine di bovini e suini insieme.'),
+        head: ['Bovino|Cattle|Bovins|Bovini', 'Vacas lecheras|Dairy cows|Vaches laitières|Vacche da latte', 'Porcino|Pigs|Porcins|Suini', 'Gallinas y pollos|Chickens|Poulets et poules|Polli e galline', 'Ovino|Sheep|Ovins|Ovini', 'Caprino|Goats|Caprins|Caprini', 'Caballos y ponis|Horses and ponies|Chevaux et poneys|Cavalli e pony'],
+        row: function (g) { var b = g('cattle'), p = g('pigs'); return { s: b == null && p == null ? null : (b || 0) + (p || 0), c: [plPwF(b), plPwF(g('dairy')), plPwF(p), plPwF(g('chickens')), plPwF(g('sheep')), plPwF(g('goats')), plPwF(g('horses'))] }; } });
+    }
     /* ---- Francia: censo agrario 2020 por intercomunalidad (EPCI) y orientación técnico-económica ---- */
     var FR_OTEX = { 1516: 'Grandes cultivos|Field crops|Grandes cultures|Seminativi', 2829: 'Horticultura y hortalizas|Horticulture and vegetables|Maraîchage et horticulture|Orticoltura e floricoltura', 3500: 'Viñedo|Vineyards|Viticulture|Viticoltura',
       3900: 'Frutales y otros cultivos permanentes|Fruit and other permanent crops|Fruits et autres cultures permanentes|Frutta e altre colture permanenti', 4500: 'Bovino de leche|Dairy cattle|Bovins lait|Bovini da latte', 4600: 'Bovino de carne|Beef cattle|Bovins viande|Bovini da carne',
@@ -1222,7 +1255,7 @@
         FR: [C('eslonjas', esLonjas), C('frcrops', frCrops), C('frqual', frQuality), C('vig', frVig), C('cere', frCere), C('clim', frClim), C('frcms', frCmStruct), C('frcml', frCmLive), C('frcmc', frCmCrops), C('frcma', frCmLabour), C('frepc', frEpStruct), C('frepo', frEpSpec)],
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('dekrs', deKrStruct), C('dekrl', deKrLive), C('dekrz', deKrSize), C('dekmy', deKmYield), C('dekmc', deKmCattle), C('dekmj', deKmJobs), C('dekmh', deKmHist), C('eudr', eudr), C('clim', deClim)],
         PL: [C('plpws', plPwStruct), C('plpwl', plPwLive), C('plpwc', plPwCrops), C('plpwa', plPwLabour), C('plgms', plGmStruct), C('plgml', plGmLive), C('plgmc', plGmCrops), C('plgma', plGmLabour)],
-        NL: [C('nlcrops', nlCbs), C('clim', gridClim)],
+        NL: [C('nlcrops', nlCbs), C('clim', gridClim), C('nlgms', nlGmStruct), C('nlgmc', nlGmCrops), C('nlgml', nlGmLive)],
         AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim), C('itprs', itPrStruct), C('itprl', itPrLive), C('itprc', itPrCrops), C('itpra', itPrLabour), C('itprz', itPrZone), C('itprg', itPrAge), C('itprt', itPrTenure), C('itpri', itPrIrrig)], AU: [C('aulv', auLivestock), C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('aulga', auLga), C('ausa4', auSa4), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»

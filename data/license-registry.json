@@ -9113,6 +9113,12 @@
     "xunta_pesca"
    ],
    "notes": "Primera venta de pesca fresca y marisqueo en las lonjas de Galicia, 2003-último año: kg y euros por lonja, por especie (código FAO), por mes y, el último año, lonja x especie (Xunta de Galicia, Pesca de Galicia; scripts/update-gal-lonjas.py). Sumas y precio medio (euros / kg): cálculo de Dehesa Index sobre las notas de primera venta."
+  },
+  "data/nl-gemeenten/": {
+   "sources": [
+    "cbs_nl"
+   ],
+   "notes": "Países Bajos por municipio (gemeente): explotaciones, superficie de tierra de cultivo, cultivos de tierra arable (patata, cereales, remolacha), horticultura al aire libre, invernaderos y pastos, y cabezas de bovino, vacas lecheras, ovino, caprino, caballos, porcino y gallinas, de la tabla 80781NED de CBS StatLine (datos abiertos; scripts/update-nl-gemeenten.py). Relación municipio -> provincia de 'Gebieden in Nederland' (86059NED). Superficies pasadas de are a hectáreas e invernaderos de m² a hectáreas; sin otro cálculo. Cita: CBS."
   }
  },
  "derived": [
