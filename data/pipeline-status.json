@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T16:03:00Z",
+ "generatedAt": "2026-11-06T16:20:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 340,
+  "ok": 339,
   "late": 2,
-  "error": 5,
+  "error": 6,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
   "repoGeneratedAt": "2026-11-06T10:49:20.465140+00:00",
-  "checkedAt": "2026-11-06T16:03:00Z"
+  "checkedAt": "2026-11-06T16:20:00Z"
  },
  "pipelines": [
   {
@@ -714,7 +714,7 @@
    "crons": [
     "10 16 * * 1-5"
    ],
-   "nextRun": "2026-11-06T16:10:00Z",
+   "nextRun": "2026-11-09T16:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -729,7 +729,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-ca-boc-bcpi.yml",
@@ -2536,9 +2536,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-05T16:39:33Z",
-    "durationSec": 44,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42066691836"
+    "startedAt": "2026-11-06T16:07:19Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42249380714"
    },
    "recent": {
     "runs": 10,
@@ -5402,18 +5402,19 @@
    "nextRun": "2026-11-10T08:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-03T16:28:40Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41674588530"
+    "startedAt": "2026-11-06T16:12:31Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42250195272",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · excel descubiertos: {\"pig_price\": \"/sites/default/files/2026-11/Prijswaarneming-vleesvarkens-en-biggen-tm-week-44-2026.xlsx\", \"pig_slaughter\": \"/sites/default/files/2026-11/Varkensslachtingen-tm-week-44-2026.xlsx\"} · excel descubiertos"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 8,
+    "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 96.0
   },
   {
@@ -5567,7 +5568,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-06T15:49:34Z"
+     "lastChange": "2026-11-06T16:06:23Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5783,7 +5784,7 @@
    "crons": [
     "15 7,10,13,16,19 * * 4,5"
    ],
-   "nextRun": "2026-11-06T16:15:00Z",
+   "nextRun": "2026-11-06T19:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6733,13 +6734,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-30T09:29:22Z",
-    "durationSec": 28,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41033792652"
+    "startedAt": "2026-11-06T16:17:02Z",
+    "durationSec": 27,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42250913981"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -7294,7 +7295,7 @@
    "crons": [
     "10 16 * * 5"
    ],
-   "nextRun": "2026-11-06T16:10:00Z",
+   "nextRun": "2026-11-13T16:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
