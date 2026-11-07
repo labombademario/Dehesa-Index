@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-07T02:31:00Z",
+ "generatedAt": "2026-11-07T02:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 338,
+  "ok": 339,
   "late": 2,
-  "error": 7,
+  "error": 6,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-07T00:54:51.273863+00:00",
   "repoGeneratedAt": "2026-11-07T00:54:51.273863+00:00",
-  "checkedAt": "2026-11-07T02:31:00Z"
+  "checkedAt": "2026-11-07T02:48:00Z"
  },
  "pipelines": [
   {
@@ -1434,19 +1434,18 @@
    "nextRun": "2026-11-13T21:50:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-11-07T02:24:38Z",
-    "durationSec": 31,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42329105261",
-    "reason": "hubo datos invalidos descartados · datos invalidos: se descarta el cambio de data/cattle-on-feed.json · ERROR    cattle-on-feed.json                $.reports[21].url: 'https://release.nass.usda.gov/reports/co' no cumple ^https://www\\.nass\\.usda\\.gov/; $.reports[22].url: 'https://release.nass.usda.go"
+    "startedAt": "2026-11-07T02:31:53Z",
+    "durationSec": 25,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42329707651"
    },
    "recent": {
-    "runs": 9,
-    "success": 3,
+    "runs": 10,
+    "success": 4,
     "failed": 4
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -5568,7 +5567,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-07T02:18:51Z"
+     "lastChange": "2026-11-07T02:34:30Z"
     },
     {
      "path": "data/source-candidates.json",
