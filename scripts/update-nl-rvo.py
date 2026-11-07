@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://www.rvo.nl"
 PAGES = ["/onderwerpen/marktinformatie/statistieken"]
-FILES = {"pig_price": r"Prijswaarneming-vleesvarkens", "cattle_price": r"Prijswaarneming-runderen", "pig_slaughter": r"Varkensslachtingen"}
+FILES = {"pig_price": r"Prijswaarneming-vleesvarkens", "cattle_price": r"Prijswaarneming[-_]runderen", "pig_slaughter": r"Varkensslachtingen"}
 LOG = []; FIX = os.environ.get("RVO_FIXTURES")
 def log(*a):
     s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)

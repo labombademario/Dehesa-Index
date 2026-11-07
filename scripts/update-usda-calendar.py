@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Calendario oficial de publicaciones de USDA (NASS + WASDE) -> data/usda-calendar.json.
 Fuentes (paginas publicas, dominio publico de EE. UU.):
- - NASS, "Reports by Date": https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php?view=l&month=MM&year=YYYY
+ - NASS, "Reports by Date": https://www.nass.usda.gov/publications/calendar/reports-by-date?view=l&month=MM&year=YYYY
+   (nov-2026: NASS rehizo su web; la pagina antigua reports_by_date.php redirige aqui y ahora es una rejilla mensual con
+   <time datetime="AAAA-MM-DD"> por dia y <li><span>hora</span><a>informe</a></li> por publicacion; se leen ambos formatos)
  - WASDE (Office of the Chief Economist): fechas del ano en la pagina del informe.
 Reglas: solo se escribe lo que la fuente publica (ninguna fecha calculada ni inventada); si un mes no se puede leer o devuelve 0 filas,
 se conserva lo que ya habia de ese mes; si NINGUNA fuente responde, el fichero no se toca y el proceso sale en rojo.
@@ -11,7 +13,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "usda-calendar.json"
-NASS = "https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php?view=l&month=%02d&year=%d"
+NASS = "https://www.nass.usda.gov/publications/calendar/reports-by-date?view=l&month=%02d&year=%d"
 WASDE_URL = "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report"
 H = {"User-Agent": "Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)", "Accept": "text/html,text/plain"}
 DATE_RE = re.compile(r"^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*,\s*(\d{2})/(\d{2})/(\d{2})$")
@@ -38,8 +40,28 @@ def tokens(raw):
             if c: out.append(c)
     return out
 def slug(name): return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+GRID_DAY = re.compile(r'nass-release-month-calendar__date"\s+datetime="(\d{4}-\d{2}-\d{2})"')
+GRID_LI = re.compile(r"<li>\s*<span>([^<]*)</span>\s*<a[^>]*>(.*?)</a>\s*</li>", re.S)
+def parse_nass_grid(raw, year, month):
+    """Formato nuevo (nov-2026): rejilla mensual. Solo se toman publicaciones con hora y nombre legibles; lo demas se ignora."""
+    import html as _h
+    rows, bad = [], 0
+    marks = list(GRID_DAY.finditer(raw))
+    for i, md in enumerate(marks):
+        cell = raw[md.end():marks[i + 1].start() if i + 1 < len(marks) else len(raw)]
+        cell = cell.split("</td>", 1)[0]
+        for tm, nm in GRID_LI.findall(cell):
+            m = TIME_RE.match(re.sub(r"\s+", " ", _h.unescape(tm)).strip())
+            name = re.sub(r"\s+", " ", _h.unescape(re.sub(r"<[^>]+>", " ", nm))).strip()
+            if not m or not name: continue
+            h = int(m.group(1)) % 12 + (12 if m.group(3).lower() == "p" else 0)
+            r = {"date": md.group(1), "time": "%02d:%s" % (h, m.group(2)), "agency": "NASS", "id": slug(name), "name": name}
+            if r["date"][:7] == "%04d-%02d" % (year, month): rows.append(r)
+            else: bad += 1
+    return rows, bad
 def parse_nass(raw, year, month):
     """Devuelve (filas, filas_fuera_de_mes). Cada fila: {date, time, agency, id, name[, qs]}."""
+    if GRID_DAY.search(raw): return parse_nass_grid(raw, year, month)
     rows, bad, cur, ent = [], 0, None, None
     def close():
         nonlocal ent
@@ -122,6 +144,8 @@ def main():
     for _ in range(6):  # el mes anterior y los cinco siguientes
         try:
             rows, bad = parse_nass(get(NASS % (m, y)), y, m)
+            for r in rows:  # la rejilla nueva no marca "Quick Stats": se conserva la marca que la fuente dio antes para la misma publicacion
+                if any(p.get("qs") and p["agency"] == "NASS" and p["date"] == r["date"] and p["id"] == r["id"] for p in prev): r["qs"] = True
             if rows: got_nass[(y, m)] = rows; print("NASS %d-%02d: %d filas%s" % (y, m, len(rows), " (%d fuera de mes)" % bad if bad else ""))
             else: notes.append("NASS %d-%02d: 0 filas, se conserva lo anterior" % (y, m)); print(notes[-1])
         except Exception as e: notes.append("NASS %d-%02d: %s" % (y, m, e)); print(notes[-1])
@@ -134,7 +158,7 @@ def main():
     cutoff = (today - datetime.timedelta(days=75)).isoformat()
     rel = [r for r in rel if r["date"] >= cutoff]
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-           "source": {"name": "USDA NASS (Reports by Date) y USDA OCE (WASDE)", "url": "https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php", "license": "US Government work (public domain); credit: U.S. Department of Agriculture"},
+           "source": {"name": "USDA NASS (Reports by Date) y USDA OCE (WASDE)", "url": "https://www.nass.usda.gov/publications/calendar/reports-by-date", "license": "US Government work (public domain); credit: U.S. Department of Agriculture"},
            "timezone": "America/New_York", "notes": notes, "releases": rel}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print("escrito", OUT.name, len(rel), "publicaciones")

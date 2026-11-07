@@ -20,6 +20,10 @@ eq([r["date"] for r in r12 if r["id"] == "hogs-and-pigs"], ["2026-12-23"], "hogs
 h, off = C.parse_nass((F / "nass-calendar-html-sample.html").read_text(), 2026, 10)
 eq([(r["id"], r["date"], r["time"]) for r in h], [("cattle-on-feed", "2026-10-23", "15:00"), ("slaughter-weekly", "2026-10-23", "15:00"), ("crop-progress", "2026-10-26", "16:00")], "HTML")
 _, off = C.parse_nass((F / "nass-calendar-2026-10.txt").read_text(), 2026, 11); eq(off, 19, "mes equivocado se descarta")
+# Rejilla mensual de la web nueva de NASS (nov-2026), muestra real recortada
+g, off = C.parse_nass((F / "nass-calendar-grid-2026-11-sample.html").read_text(), 2026, 11)
+eq(off, 0, "rejilla: fuera de mes"); eq([(r["date"], r["time"], r["id"], r["name"]) for r in g], [("2026-11-02", "15:00", "cotton-system", "Cotton System"), ("2026-11-02", "15:00", "fats-oils", "Fats & Oils"), ("2026-11-02", "15:00", "flour-milling", "Flour Milling"), ("2026-11-02", "15:00", "grain-crushings", "Grain Crushings"), ("2026-11-02", "16:00", "crop-progress", "Crop Progress")], "rejilla")
+g, off = C.parse_nass((F / "nass-calendar-grid-2026-11-sample.html").read_text(), 2026, 12); eq((len(g), off), (0, 5), "rejilla: mes equivocado se descarta")
 y, t, d = C.parse_wasde((F / "wasde-page.txt").read_text())
 eq((y, t, len(d), d[9]), (2026, "12:00", 12, "2026-10-09"), "WASDE")
 # Pagina desde oct-2026: dos anos seguidos (texto real de usda.gov/wasde, 9-oct-2026). Antes se leian 24 fechas como un solo ano y fallaba.

@@ -324,7 +324,7 @@ CASES = [
  ("france-vigieau.json", "zonas de un departamento que no existe", lambda d: d["farm"]["departments"].__setitem__("99X", {"z": 1, "irr": [0, 0, 0], "wat": [0, 0, 0]})),
  ("france-vigieau.json", "historial con fechas que no crecen", lambda d: d["history"].append(dict(d["history"][-1]))),
  ("france-cereobs.json", "porcentaje por encima de 100", lambda d: d["national"][-1].__setitem__(1, 140)),
- ("france-cereobs.json", "clases de estado que no suman 100", lambda d: d["national"][-1].__setitem__(-1, 60)),
+ ("france-cereobs.json", "clases de estado que no suman 100", lambda d: [r for r in d["national"] if all(v is not None for v in r[-5:])][-1].__setitem__(-1, 60)),  # ultima semana con las 5 clases (al final de campana la fuente ya no da estado)
  ("france-cereobs.json", "region vacia", lambda d: d["regions"].__setitem__("Bretagne", [])),
  ("coverage-gaps.json", "NOT_APPLICABLE sin entrada en overrides", lambda d: d["matrix"]["ES"]["wheat"]["production"].__setitem__("state", "NOT_APPLICABLE")),
  ("coverage-gaps.json", "INDEX_ONLY sin indice", lambda d: d["matrix"]["AT"]["cheese"]["price"].update(state="INDEX_ONLY", basis=None) or d["matrix"]["AT"]["cheese"]["price"].pop("basis")),

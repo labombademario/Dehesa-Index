@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """USDA NASS Cattle on Feed (informe mensual, texto plano) -> data/cattle-on-feed.json.
-URL: https://www.nass.usda.gov/Publications/Todays_Reports/reports/cofdMMYY.txt  (MM/YY = mes de publicacion).
+URL: https://release.nass.usda.gov/reports/cofdMMYY.txt  (MM/YY = mes de publicacion; NASS movio sus informes aqui en nov-2026).
 Por informe se guardan SOLO cifras publicadas (miles de cabezas, cebaderos de 1.000+ cabezas): existencias al inicio y al final del mes,
 entradas, salidas (fed cattle marketed) y otras bajas, con la misma fila del ano anterior; y la tabla por estado. Nada se calcula ni se rellena:
 lo que no se lee con seguridad se descarta y el informe NO se guarda.
@@ -11,7 +11,7 @@ import datetime, json, re, sys, time, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "cattle-on-feed.json"
-BASE = "https://www.nass.usda.gov/Publications/Todays_Reports/reports/cofd%02d%02d.txt"
+BASE = "https://release.nass.usda.gov/reports/cofd%02d%02d.txt"
 H = {"User-Agent": "Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)", "Accept": "text/plain"}
 MONTHS = {m: i + 1 for i, m in enumerate("January February March April May June July August September October November December".split())}
 ROW = re.compile(r"^(On feed (\w+) 1|Placed on feed during (\w+)|Fed cattle marketed during (\w+)|Other disappearance during (\w+)) \.+:\s+(\S+)\s+(\S+)\s+(\S+)\s*$")
@@ -104,7 +104,7 @@ def main():
     if not got: print("ningun informe leido: no se escribe nada"); return 1
     rep = merge(prev, got)
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-           "source": {"name": "USDA NASS, Cattle on Feed", "url": "https://www.nass.usda.gov/Publications/Todays_Reports/reports/", "license": "US Government work (public domain); credit: USDA NASS"},
+           "source": {"name": "USDA NASS, Cattle on Feed", "url": "https://release.nass.usda.gov/reports/", "license": "US Government work (public domain); credit: USDA NASS"},
            "unit": "1,000 head", "scope": "Feedlots with capacity of 1,000 or more head", "notes": notes, "reports": rep}
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print("escrito", OUT.name, len(rep), "informes")

@@ -22,7 +22,7 @@ const env = { today: '2026-10-01', products, tokScore: S._tokScore, href: u => u
 const arg = k => (process.argv.find(a => a.startsWith('--' + k + '=')) || '').split('=')[1];
 const cases = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/search-bench.json'), 'utf8'))
   // y unas 100 preguntas escritas a mano, revisadas una a una (scripts/search-natural-cases.json): destino exacto, o ninguna respuesta para las que no son del sitio
-  .concat(JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/search-natural-cases.json'), 'utf8')).map(c => ({ cat: 'natural', q: c.q, lang: c.lang, exp: c.noAnswer ? { noAnswer: true } : { exact: c.u } })));
+  .concat(JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/search-natural-cases.json'), 'utf8')).map(c => ({ cat: 'natural', q: c.q, lang: c.lang, exp: c.noAnswer ? { noAnswer: true } : c.topMover ? { topMover: c.topMover } : { exact: c.u } })));
 const clean = u => String(u || '').replace(/#.*$/, '');
 async function dest(q, lang) {
   let a = null; try { a = await A.answer(q, lang, env); } catch (e) { a = null; }
@@ -34,6 +34,8 @@ const bare = s => S._norm(s);
 function sameLead(u, want, l) { const a = byU[u], w = idx.find(e => e.u === want); if (!a || !w || w.t !== 'section') return false; const t = bare(a.n[l]), q = bare(w.n[l]); return t.indexOf(q) === 0; }
 function judge(c, r) {
   const e = c.exp, u = r.u;
+  // «qué ha bajado más esta semana»: el producto cambia con los datos de cada semana; Enter debe abrir la primera tarjeta de la respuesta de movimientos
+  if (e.topMover) { if (!r.a || r.a.kind !== 'movers' || !(r.a.cards || []).length) return 'no responde con movimientos (' + (r.a ? r.a.kind : 'nada') + ')'; const top = clean(r.a.cards[0].href); return u === top && /^producto\.html\?p=/.test(u) ? null : 'abre ' + (u || '(nada)') + ' (esperado ' + top + ')'; }
   if (e.noAnswer) return r.a ? 'respondió (' + r.a.kind + ') a una pregunta que no es del sitio' : null;
   if (e.exact) { const k = x => x.replace(/([?&]s=)[^&]*/, '$1*'); return k(u) === k(e.exact) ? null : 'abre ' + (u || '(nada)') + ' (esperado ' + e.exact + ')'; }
   if (e.urls) { if (!e.urls.map(clean).includes(u) && !(c.cat === 'page' && sameLead(u, e.urls[0], c.lang))) return 'abre ' + (u || '(nada)'); if (e.region && r.a && (r.a.cards || []).some(k => k.region && k.region !== e.region)) return 'muestra otra región'; return null; }
