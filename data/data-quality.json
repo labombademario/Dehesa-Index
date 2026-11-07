@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-06T23:05:45Z",
+ "generatedAt": "2026-11-07T05:53:15Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -738,10 +738,10 @@
    ],
    "stats": {
     "series": 2891,
-    "points": 186411,
+    "points": 186525,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T23:16:37Z",
+   "generatedAt": "2026-11-06T23:04:18Z",
    "info": [
     "BG/bg-es-crop-i1100-area: salto 22500.0 -> 772010.0 en 2007 (mediana previa 2.11e+04) [KNOWN_VERIFIED_ANOMALY]",
     "BG/bg-es-crop-i1100-area: salto 772010.0 -> 797400.0 en 2008 (mediana previa 2.19e+04) [KNOWN_VERIFIED_ANOMALY]",
@@ -787,10 +787,10 @@
    ],
    "stats": {
     "series": 2223,
-    "points": 188472,
+    "points": 188475,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T23:16:37Z",
+   "generatedAt": "2026-11-06T23:04:18Z",
    "info": [
     "DE/de-es-meatm-b1210-ths_hd: salto 14660.0 -> 43310.0 en 1979-10 (mediana previa 1.58e+03) [KNOWN_VERIFIED_ANOMALY]",
     "DE/de-es-meatm-b1210-ths_hd: salto 15830.0 -> 44720.0 en 1980-10 (mediana previa 1.34e+03) [KNOWN_VERIFIED_ANOMALY]",
@@ -837,10 +837,10 @@
    ],
    "stats": {
     "series": 1619,
-    "points": 88666,
+    "points": 88696,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T23:16:37Z",
+   "generatedAt": "2026-11-06T23:04:18Z",
    "info": [
     "CZ/cz-es-meatm-b7490-ths_hd: salto 2030.0 -> 5920.0 en 2022-11 (mediana previa 160) [KNOWN_VERIFIED_ANOMALY]",
     "CZ/cz-es-meatm-b7490-ths_hd: salto 3040.0 -> 5230.0 en 2023-11 (mediana previa 170) [KNOWN_VERIFIED_ANOMALY]"
@@ -876,11 +876,11 @@
     "MT/mt-es-meatm-b7300-ths_t: salto 2800.0 -> 2800.0 en 2002-08 (mediana previa 70)"
    ],
    "stats": {
-    "series": 1978,
-    "points": 122732,
+    "series": 1984,
+    "points": 122752,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T23:16:37Z",
+   "generatedAt": "2026-11-06T23:04:18Z",
    "info": [
     "RO/ro-es-meatm-b4110-ths_hd: salto 90.0 -> 83410.0 en 2010-03 (mediana previa 770) [KNOWN_VERIFIED_ANOMALY]",
     "RO/ro-es-meatm-b4110-ths_hd: salto 0 -> 38530.0 en 2012-03 (mediana previa 630) [KNOWN_VERIFIED_ANOMALY]",
@@ -987,10 +987,10 @@
    "warnings": [],
    "stats": {
     "series": 54,
-    "points": 1805,
+    "points": 1858,
     "lines": 0
    },
-   "generatedAt": "2026-11-05T21:58:15Z",
+   "generatedAt": "2026-11-06T23:30:24Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1782,7 +1782,7 @@
     "points": 6857,
     "lines": 0
    },
-   "generatedAt": "2026-10-30T21:57:13Z",
+   "generatedAt": "2026-11-07T01:00:10Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0

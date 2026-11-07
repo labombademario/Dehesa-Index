@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-07T03:45:00Z",
+ "generatedAt": "2026-11-07T05:53:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 339,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-07T00:54:51.273863+00:00",
   "repoGeneratedAt": "2026-11-07T00:54:51.273863+00:00",
-  "checkedAt": "2026-11-07T03:45:00Z"
+  "checkedAt": "2026-11-07T05:53:00Z"
  },
  "pipelines": [
   {
@@ -1454,7 +1454,7 @@
    "crons": [
     "20 4 * * 2-6"
    ],
-   "nextRun": "2026-11-07T04:20:00Z",
+   "nextRun": "2026-11-10T04:20:00Z",
    "files": [
     {
      "path": "data/cl"
@@ -1473,7 +1473,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-chile.yml",
@@ -1886,7 +1886,7 @@
    "crons": [
     "25 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-07T05:25:00Z",
+   "nextRun": "2026-11-07T13:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5171,7 +5171,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-07T03:47:00Z",
+   "nextRun": "2026-11-07T06:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5532,14 +5532,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5567,19 +5567,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-07T03:31:58Z"
+     "lastChange": "2026-11-07T03:48:08Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/commercial-catalog.json",
-     "lastChange": "2026-11-06T12:15:01Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/commercial-summary.json",
-     "lastChange": "2026-11-06T12:15:01Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/pack"
@@ -5595,26 +5595,26 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/fv-products.json",
@@ -5626,7 +5626,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5634,7 +5634,7 @@
     },
     {
      "path": "data/cap/index.json",
-     "lastChange": "2026-11-06T01:26:23Z"
+     "lastChange": "2026-11-07T05:55:05Z"
     },
     {
      "path": "data/blog/posts.json",
@@ -5655,8 +5655,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42309302794"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -6083,7 +6083,7 @@
    "crons": [
     "40 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-07T05:40:00Z",
+   "nextRun": "2026-11-07T13:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6106,7 +6106,7 @@
    "crons": [
     "10 5 * * *"
    ],
-   "nextRun": "2026-11-07T05:10:00Z",
+   "nextRun": "2026-11-08T05:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
