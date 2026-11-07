@@ -225,7 +225,7 @@
 3510 OK 31 series, 2189 filas, ultimo 2026-11-06, 62 KB, dims=commodity,variety,protein,trade Loc,freight,sale_type,trans_mode
 3511 OK 74 series, 6884 filas, ultimo 2026-11-06, 202 KB, dims=commodity,variety,protein,category,market_location_name,trade Loc,trade_loc,Section,freight,quote_type,sale_type,trans_mode
 3512 OK 20 series, 1831 filas, ultimo 2026-11-06, 51 KB, dims=commodity,variety,protein,category,trade Loc,freight,sale_type,trans_mode
-3616 OK 58 series, 5425 filas, ultimo 2026-11-06, 146 KB, dims=commodity,variety,application,cat,shipping_point,region,state/Province,sale Type,trans_mode
+3616 ERROR The operation was aborted due to timeout
 3617 OK 12 series, 1092 filas, ultimo 2026-11-06, 37 KB, dims=region,state/Province
 3618 OK 51 series, 6033 filas, ultimo 2026-10-30, 145 KB, dims=commodity,class,variety,grade,application,cat,delivery_point,grp,shipping_point,trade_loc,Section,freight sin_precio={"Report Detail":285,"Report EPV":1024}
 3621 OK 16 series, 822 filas, ultimo 2026-10-30, 23 KB, dims=commod,class,material_type,shipping_point
