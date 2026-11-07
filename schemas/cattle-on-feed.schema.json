@@ -80,7 +80,7 @@
      },
      "url": {
       "type": "string",
-      "pattern": "^https://www\\.nass\\.usda\\.gov/"
+      "pattern": "^https://(www|release)\\.nass\\.usda\\.gov/"
      },
      "national": {
       "type": "object",
