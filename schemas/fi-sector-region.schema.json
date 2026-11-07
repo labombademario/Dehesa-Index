@@ -51,19 +51,7 @@
   },
   "sec": {
    "type": "object",
-   "minProperties": 10,
-   "additionalProperties": {
-    "type": "array",
-    "minItems": 12,
-    "maxItems": 12,
-    "items": {
-     "type": [
-      "integer",
-      "null"
-     ],
-     "minimum": 0
-    }
-   }
+   "minProperties": 10
   },
   "dairy": {
    "type": "object",
