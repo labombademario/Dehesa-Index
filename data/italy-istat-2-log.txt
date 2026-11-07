@@ -1,7 +1,9 @@
 cultivos: 202 cultivos, 23 areas, 2018 -> 2026
 escrito crops.json 417 KB
-lacteos: 29 productos, 5 tipos de establecimiento, 21 areas, 2015 -> 2021
-escrito milk.json 31 KB
+cultivos por provincia: 190 cultivos, 111 provincias en 20 regiones, 2018 -> 2026
+escrito crops-prov.json 1477 KB
+lacteos: 29 productos, 5 tipos de establecimiento, 21 areas, 2015 -> 2022
+escrito milk.json 36 KB
 agriturismo: 66 series, 21 areas, 2018 -> 2024 ; dinamica ['ACT', 'CLOSED', 'NEW'] altimetria ['HI', 'MO', 'PL'] sexo ['1', '2']
 escrito agritourism.json 83 KB
   censo DF_DCAT_CENSAGRIC2020_SURF_IRR_CONS 780 filas
@@ -18,6 +20,4 @@ riego src : 16 series
 riego crop : 42 series
 escrito irrigation.json 232 KB
   municipios en el catalogo: 9380
-  prefijos de provincia emparejados: 107 de 107 ; sin emparejar: [] ; regiones: ['ITC1', 'ITC2', 'ITC3', 'ITC4', 'ITD3', 'ITD4', 'ITD5', 'ITDA', 'ITE1', 'ITE2', 'ITE3', 'ITE4', 'ITF1', 'ITF2', 'ITF3', 'ITF4', 'ITF5', 'ITF6', 'ITG1', 'ITG2']
-municipios con dato: 7752
-escrito comuni.json 553 KB
+ERROR comuni oradati.istat.it/SDMXWS/rest/data/DF_DCAT_CENSAGRIC2020_SURF_IRR_CONS/A..?&detail=dataonly: <urlopen error [Errno 110] Connection timed out>
