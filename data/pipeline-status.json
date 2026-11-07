@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-07T12:55:00Z",
+ "generatedAt": "2026-11-07T13:07:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 339,
+  "ok": 340,
   "late": 2,
-  "error": 7,
+  "error": 6,
   "not_run": 0,
   "unknown": 0
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 9.1,
-  "prodGeneratedAt": "2026-11-07T00:54:51.273863+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-11-07T10:01:19.815439+00:00",
   "repoGeneratedAt": "2026-11-07T10:01:19.815439+00:00",
-  "checkedAt": "2026-11-07T12:55:00Z"
+  "checkedAt": "2026-11-07T13:07:00Z"
  },
  "pipelines": [
   {
@@ -4364,9 +4364,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-06T14:17:13Z",
-    "durationSec": 31,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42232565736"
+    "startedAt": "2026-11-07T13:01:33Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42375048032"
    },
    "recent": {
     "runs": 10,
@@ -5551,18 +5551,18 @@
      "series": 35,
      "points": 4558,
      "lines": 0,
-     "lastChange": "2026-11-06T06:38:27Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5579,7 +5579,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-07T03:10:21Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/products"
@@ -5590,11 +5590,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-07T12:36:00Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -5618,30 +5618,30 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-11-06T23:10:02Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -5649,7 +5649,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-11-07T05:55:05Z"
+     "lastChange": "2026-11-07T12:59:26Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5671,19 +5671,18 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-07T10:39:17Z",
-    "durationSec": 818,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42344528457",
-    "reason": "no se pudo publicar el estado · no se pudo publicar tras 10 intentos"
+    "startedAt": "2026-11-07T12:53:42Z",
+    "durationSec": 352,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42374476387"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 3.0
   },
   {
@@ -8270,7 +8269,7 @@
    "crons": [
     "0 13 * * *"
    ],
-   "nextRun": "2026-11-07T13:00:00Z",
+   "nextRun": "2026-11-08T13:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
