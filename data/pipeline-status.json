@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-07T18:06:00Z",
+ "generatedAt": "2026-11-07T18:24:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 340,
@@ -17,7 +17,7 @@
   "lagHours": 7.7,
   "prodGeneratedAt": "2026-11-07T10:01:19.815439+00:00",
   "repoGeneratedAt": "2026-11-07T17:45:34.844592+00:00",
-  "checkedAt": "2026-11-07T18:06:00Z"
+  "checkedAt": "2026-11-07T18:24:00Z"
  },
  "pipelines": [
   {
@@ -88,19 +88,19 @@
     },
     {
      "path": "data/ams-grain-daily.json",
-     "lastChange": "2026-11-07T03:21:17Z"
+     "lastChange": "2026-11-07T18:18:21Z"
     },
     {
      "path": "data/us-fertilizers.json",
-     "lastChange": "2026-11-07T03:21:17Z"
+     "lastChange": "2026-11-07T18:18:21Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-07T03:11:39Z",
-    "durationSec": 585,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42332851721"
+    "startedAt": "2026-11-07T18:07:50Z",
+    "durationSec": 636,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42399717538"
    },
    "recent": {
     "runs": 10,
@@ -5217,7 +5217,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-07T18:17:00Z",
+   "nextRun": "2026-11-07T21:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5543,7 +5543,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-07T18:10:00Z",
+   "nextRun": "2026-11-07T21:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-07T17:06:39Z"
+     "lastChange": "2026-11-07T18:10:45Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6116,8 +6116,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42370196821"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
