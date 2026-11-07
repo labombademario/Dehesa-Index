@@ -57,3 +57,25 @@
 /fr/prix/*/calendario.html /calendario 301
 /fr/prix/*/metodologia.html /metodologia 301
 /fr/prix/*/blog.html /blog 301
+
+# Mas enlaces relativos antiguos bajo carpetas de region (Search Console, 23-oct): se llevan a la pagina correcta (301). Reglas con comodin: 75 de las 100 que admite Cloudflare.
+/regiones/*/paises.html /paises 301
+/regiones/*/oferta-demanda.html /oferta-demanda 301
+/regiones/*/relaciones.html /relaciones 301
+/regiones/*/catalogo.html /catalogo 301
+/regiones/*/status.html /status 301
+/en/regions/*/paises.html /paises 301
+/en/regions/*/oferta-demanda.html /oferta-demanda 301
+/en/regions/*/relaciones.html /relaciones 301
+/en/regions/*/catalogo.html /catalogo 301
+/en/regions/*/status.html /status 301
+/it/regioni/*/paises.html /paises 301
+/it/regioni/*/oferta-demanda.html /oferta-demanda 301
+/it/regioni/*/relaciones.html /relaciones 301
+/it/regioni/*/catalogo.html /catalogo 301
+/it/regioni/*/status.html /status 301
+/fr/regions/*/paises.html /paises 301
+/fr/regions/*/oferta-demanda.html /oferta-demanda 301
+/fr/regions/*/relaciones.html /relaciones 301
+/fr/regions/*/catalogo.html /catalogo 301
+/fr/regions/*/status.html /status 301
