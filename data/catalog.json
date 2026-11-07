@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-06T23:10:53.444Z",
-  "observationCount": 626,
+  "generatedAt": "2026-11-07T01:06:38.752Z",
+  "observationCount": 635,
   "products": [
     "aceite_cacahuete",
     "aceite_coco",
@@ -439,16 +439,16 @@
       "product": "avena_pienso_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "tonelada",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 20,
+      "points": 21,
       "coverageStart": "2025-03-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "avena",
@@ -679,16 +679,16 @@
       "product": "canola_elevador",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "tonelada",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 22,
+      "points": 23,
       "coverageStart": "2025-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "caucho_rss3",
@@ -724,16 +724,16 @@
       "product": "cebada_pienso_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "tonelada",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 22,
+      "points": 23,
       "coverageStart": "2025-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "cebada",
@@ -799,16 +799,16 @@
       "product": "cerdo_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "kg",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 22,
+      "points": 23,
       "coverageStart": "2025-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "cerdo_base_us",
@@ -1774,16 +1774,16 @@
       "product": "guisante_verde_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "tonelada",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 22,
+      "points": 23,
       "coverageStart": "2025-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "harina_pescado",
@@ -2119,16 +2119,16 @@
       "product": "lenteja_laird_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "tonelada",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 22,
+      "points": 23,
       "coverageStart": "2025-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "lenteja",
@@ -2404,16 +2404,16 @@
       "product": "novillo_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "cwt",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 22,
+      "points": 23,
       "coverageStart": "2025-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "novillo_canal_us",
@@ -3004,16 +3004,16 @@
       "product": "trigo_cwrs_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "tonelada",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 22,
+      "points": 23,
       "coverageStart": "2025-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "trigo_duro",
@@ -3049,16 +3049,16 @@
       "product": "trigo_pienso_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "tonelada",
       "currency": "CAD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-01T00:20:44Z",
+      "verifiedAt": "2026-11-07T01:06:38Z",
       "comparability": "directional",
-      "points": 22,
+      "points": 23,
       "coverageStart": "2025-01-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "trigo_srw_us",

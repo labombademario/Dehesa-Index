@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-06T23:10:55.756Z",
+  "generatedAt": "2026-11-07T01:06:40.640Z",
   "status": "informational",
   "rules": [
     {
@@ -651,21 +651,39 @@
     },
     {
       "type": "period_move",
-      "product": "cerdo_ab",
+      "product": "canola_elevador",
       "region": "ca",
       "sourceId": "alberta_ag",
       "severity": "watch",
-      "changePct": -7.87,
-      "observationDate": "2026-10-01"
+      "changePct": -7.85,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
-      "product": "lenteja_laird_ab",
+      "product": "cerdo_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
       "severity": "high",
-      "changePct": 20.23,
-      "observationDate": "2026-10-01"
+      "changePct": -17.5,
+      "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "high",
+      "changePct": 13.06,
+      "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "watch",
+      "changePct": 5.07,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
