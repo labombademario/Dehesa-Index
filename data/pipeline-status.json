@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-07T05:53:00Z",
+ "generatedAt": "2026-11-07T06:09:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 339,
   "late": 2,
-  "error": 6,
+  "error": 7,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-07T00:54:51.273863+00:00",
   "repoGeneratedAt": "2026-11-07T00:54:51.273863+00:00",
-  "checkedAt": "2026-11-07T05:53:00Z"
+  "checkedAt": "2026-11-07T06:09:00Z"
  },
  "pipelines": [
   {
@@ -3682,6 +3682,29 @@
    "expectedEveryHours": 2208.0
   },
   {
+   "workflow": "update-fi-sector.yml",
+   "name": "Update Finland farms by production sector and herd size (Luke)",
+   "crons": [
+    "5 13 18 1,4,7,10 *"
+   ],
+   "nextRun": "2027-01-18T13:05:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-07T05:55:37Z",
+    "durationSec": 23,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42344756065"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 2208.0
+  },
+  {
    "workflow": "update-finland-fmi.yml",
    "name": "Update Finland (Finnish Meteorological Institute, monthly temperature and rainfall at farming stations)",
    "crons": [
@@ -5567,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-07T03:48:08Z"
+     "lastChange": "2026-11-07T05:56:54Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5648,18 +5671,18 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-06T23:04:10Z",
-    "durationSec": 360,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42309302794"
+    "startedAt": "2026-11-07T05:52:16Z",
+    "durationSec": 341,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42344528457"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 3.0
   },
   {
