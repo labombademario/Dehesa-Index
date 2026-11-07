@@ -1,0 +1,95 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "luke_fi"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "region": {
+   "type": "string",
+   "pattern": "^FI[0-9A-Z]{2}$"
+  },
+  "years": {
+   "type": "array",
+   "minItems": 10,
+   "items": {
+    "type": "integer"
+   }
+  },
+  "ind": {
+   "type": "array",
+   "minItems": 12,
+   "maxItems": 12,
+   "items": {
+    "type": "string"
+   }
+  },
+  "sec": {
+   "type": "object",
+   "minProperties": 10,
+   "additionalProperties": {
+    "type": "array",
+    "minItems": 12,
+    "maxItems": 12,
+    "items": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 0
+    }
+   }
+  },
+  "dairy": {
+   "type": "object",
+   "required": [
+    "classes",
+    "years"
+   ]
+  },
+  "pigs": {
+   "type": "object",
+   "required": [
+    "classes",
+    "years"
+   ]
+  }
+ },
+ "title": "Dehesa Index - Finlandia por orientacion productiva y tamano de rebano (Luke), un fichero por gran region NUTS 2",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "region",
+  "years",
+  "ind",
+  "sec",
+  "dairy",
+  "pigs"
+ ]
+}

@@ -2481,6 +2481,25 @@ def fi_kunnat_region(doc, errs, warns, stats):
     stats["fi-kunnat valores"] = stats.get("fi-kunnat valores", 0) + n
 
 
+def fi_sector_region(doc, errs, warns, stats):
+    """Finlandia por orientacion productiva (Luke): las orientaciones no suman mas que el total, las clases de rebano no suman mas que el total de su cuadro, sin negativos."""
+    r = doc["region"]; n = 0
+    for y, v in doc["sec"].items():
+        if v[0] is not None and sum(x or 0 for x in v[1:]) > v[0] * 1.001: errs.append("fi-sector %s %s: las orientaciones suman mas que el total" % (r, y)); return
+        n += 1
+    for key in ("dairy", "pigs"):
+        blk = doc[key]
+        for y in blk["years"]:
+            b = blk.get(str(y))
+            if not b: errs.append("fi-sector %s %s: falta el anio %s" % (r, key, y)); return
+            for k in ("head", "farms"):
+                a = b[k]
+                if len(a) != len(blk["classes"]): errs.append("fi-sector %s %s %s: %s clases y %s valores" % (r, key, y, len(blk["classes"]), len(a))); return
+                if any(x is not None and (not isinstance(x, int) or x < 0) for x in a): errs.append("fi-sector %s %s %s: valor no valido" % (r, key, y)); return
+                if a[0] is not None and sum(x or 0 for x in a[1:]) > a[0] * 1.001: errs.append("fi-sector %s %s %s: las clases suman mas que el total" % (r, key, y)); return
+    stats["fi-sector anios"] = stats.get("fi-sector anios", 0) + n
+
+
 def ca_dfo_landings(doc, errs, warns, stats):
     """Canada, desembarques comerciales de pesca marina (DFO): fuente dfo_landings; anos seguidos desde 1990; 8 zonas fijas; cada zona con total (grand) y los de cada grupo en todos los anos y todas las especies
     con una celda [kg, C$] por ano (null en ambos si DFO la suprimio, nunca solo en uno); sin negativos; Atlantic = suma de las 5 provincias atlanticas y Canada = Atlantic + British Columbia en cantidad y

@@ -1,0 +1,69 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "luke_fi"
+     ]
+    },
+    "url": {
+     "type": "string",
+     "minLength": 8
+    }
+   }
+  },
+  "regions": {
+   "type": "array",
+   "minItems": 5,
+   "items": {
+    "type": "string"
+   }
+  },
+  "years": {
+   "type": "array",
+   "minItems": 10,
+   "items": {
+    "type": "integer"
+   }
+  },
+  "ind": {
+   "type": "array",
+   "minItems": 12,
+   "items": {
+    "type": "string"
+   }
+  },
+  "national": {
+   "type": "object",
+   "minProperties": 10
+  }
+ },
+ "title": "Dehesa Index - Finlandia por orientacion productiva, indice nacional",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "regions",
+  "years",
+  "ind",
+  "national"
+ ]
+}

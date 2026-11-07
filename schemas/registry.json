@@ -2553,6 +2553,16 @@
   "fi-kunnat/inde[x].json": [
    "fi-kunnat-index",
    []
+  ],
+  "fi-sector/FI[0-9A-Z][0-9A-Z].json": [
+   "fi-sector-region",
+   [
+    "fi_sector_region"
+   ]
+  ],
+  "fi-sector/inde[x].json": [
+   "fi-sector-index",
+   []
   ]
  },
  "derived": [

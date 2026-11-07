@@ -9131,6 +9131,12 @@
     "luke_fi"
    ],
    "notes": "Finlandia por municipio (kunta): explotaciones, superficie agraria por cultivo (trigo, centeno, cebada, avena, hierba de forraje, pasto, patata, remolacha, colza, guisante, horticultura, barbecho, invernadero) y cabezas de bovino, vacas lecheras y de cría, porcino, cerdas, ovino y caprino, de las bases de Luke (yrirak, kamama, kotlkm; scripts/update-fi-kunnat.py). Relación municipio -> gran región NUTS 2 de la tabla de correspondencia de Estadísticas de Finlandia. Los valores ocultos por secreto estadístico quedan vacíos; sin otro cálculo. Cita: Luke."
+  },
+  "data/fi-sector/": {
+   "sources": [
+    "luke_fi"
+   ],
+   "notes": "Finlandia por gran región NUTS 2: explotaciones por orientación productiva (2011-último año) y vacas lecheras y cerdos de cebo por tamaño del rebaño, de las bases de Luke por maakunta (yrirak 0400, kotlkm 0300 y 0500; scripts/update-fi-sector.py), sumadas por región. Los valores ocultos por secreto estadístico quedan vacíos y arrastran el hueco a la suma. Cita: Luke."
   }
  },
  "derived": [

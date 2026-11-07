@@ -1230,6 +1230,36 @@
         head: ['Bovino|Cattle|Bovins|Bovini', 'Vacas lecheras|Dairy cows|Vaches laitières|Vacche da latte', 'Vacas de cría|Suckler cows|Vaches allaitantes|Vacche nutrici', 'Porcino|Pigs|Porcins|Suini', 'Cerdas de cría|Breeding sows|Truies|Scrofe', 'Ovino|Sheep|Ovins|Ovini', 'Caprino|Goats|Caprins|Caprini'],
         row: function (g) { var b = g('cattle'), p = g('pigs'); return { s: b == null && p == null ? null : (b || 0) + (p || 0), c: [plPwF(b), plPwF(g('dairy')), plPwF(g('suckler')), plPwF(p), plPwF(g('sows')), plPwF(g('sheep')), plPwF(g('goats'))] }; } });
     }
+    /* ---- Finlandia: orientaciones productivas y tamaño de los rebaños por gran región (Luke) ---- */
+    function fiSec(x) { return get('data/fi-sector/' + x.r + '.json'); }
+    var FISEC_NOTE = 'Luke deja en blanco lo que protege el secreto estadístico; un guion es dato no publicado, no un cero, y una suma que incluye un hueco también queda en blanco.|Luke leaves blank what statistical confidentiality protects; a dash means not published, not zero, and a sum that includes a gap is also left blank.|Luke laisse en blanc ce que protège le secret statistique ; un tiret signifie non publié, pas zéro, et une somme qui inclut un trou reste aussi en blanc.|Luke lascia in bianco ciò che protegge il segreto statistico; un trattino significa non pubblicato, non zero, e una somma che include un vuoto resta anch’essa in bianco.';
+    function fiSecNote(a) { var p = a.split('|'), q = FISEC_NOTE.split('|'); return p.map(function (t, i) { return t + ' ' + q[i]; }).join('|'); }
+    function fiSector(x) {
+      return fiSec(x).then(function (d) {
+        if (!d || !d.sec || !d.years) return null;
+        var ys = d.years, pick = [ys[0]]; [2015, 2020].forEach(function (y) { if (ys.indexOf(y) >= 0) pick.push(y); }); pick.push(ys[ys.length - 1]);
+        var ix = {}; d.ind.forEach(function (k, i) { ix[k] = i; });
+        var rows = pick.map(function (y) { var v = d.sec[String(y)]; if (!v) return null; var t = v[0], sh = function (k) { return esMuPct(v[ix[k]], t); };
+          return [String(y), plPwF(t), sh('cereal'), sh('plant'), sh('glass') === '—' && sh('open') === '—' ? '—' : esMuPct(v[ix.glass] == null || v[ix.open] == null ? null : v[ix.glass] + v[ix.open], t), sh('milk'), sh('beef'), sh('pigs'), sh('poultry'), sh('mixed')]; }).filter(Boolean);
+        if (!rows.length) return null;
+        return card(L('Explotaciones por orientación productiva|Farms by production sector|Exploitations par orientation productive|Aziende per orientamento produttivo'),
+          L(fiSecNote('Número de explotaciones de la región y qué parte se dedica a cada orientación principal (Luke). Se suman las provincias que forman la región; «Horticultura» agrupa invernadero y aire libre (cálculo de Dehesa Index).|Number of farms in the region and the share in each main production sector (Luke). The provinces that make up the region are added up; “Horticulture” groups greenhouse and open-air (Dehesa Index calculation).|Nombre d’exploitations de la région et part de chaque orientation principale (Luke). Les provinces qui forment la région sont additionnées ; « Horticulture » regroupe serre et plein air (calcul de Dehesa Index).|Numero di aziende della regione e quota di ciascun orientamento principale (Luke). Si sommano le province che formano la regione; «Orticoltura» raggruppa serra e pieno campo (calcolo di Dehesa Index).')),
+          table([L('Año|Year|Année|Anno'), L('Explotaciones|Farms|Exploitations|Aziende'), L('% cereal|% cereals|% céréales|% cereali'), L('% otros cultivos|% other crops|% autres cultures|% altre colture'), L('% horticultura|% horticulture|% horticulture|% orticoltura'), L('% leche|% milk|% lait|% latte'), L('% vacuno de carne|% beef|% bovins viande|% carne bovina'), L('% porcino|% pigs|% porcins|% suini'), L('% aves|% poultry|% volailles|% avicoli'), L('% mixta|% mixed|% mixte|% mista')], rows),
+          cite('luke_fi', String(ys[ys.length - 1])));
+      });
+    }
+    function fiDairy(x) {
+      return fiSec(x).then(function (d) {
+        if (!d || !d.dairy || !d.dairy.years) return null;
+        var ys = d.dairy.years, a = d.dairy[String(ys[ys.length - 1])], cl = d.dairy.classes; if (!a) return null;
+        var rows = []; for (var i = 1; i < cl.length; i++) rows.push([cl[i], plPwF(a.farms[i]), plPwF(a.head[i])]);
+        if (!rows.some(function (r) { return r[1] !== '—'; })) return null;
+        return card(L('Vacas lecheras por tamaño del rebaño|Dairy cows by herd size|Vaches laitières par taille de troupeau|Vacche da latte per dimensione della mandria') + ' (' + ys[ys.length - 1] + ')',
+          L(fiSecNote('Explotaciones y vacas lecheras según el número de vacas del rebaño, suma de las provincias de la región (Luke). Total de la región, explotaciones y vacas:|Farms and dairy cows by number of cows in the herd, adding up the provinces of the region (Luke). Region total, farms and cows:|Exploitations et vaches laitières selon le nombre de vaches du troupeau, somme des provinces de la région (Luke). Total de la région, exploitations et vaches :|Aziende e vacche da latte per numero di vacche nella mandria, somma delle province della regione (Luke). Totale della regione, aziende e vacche:')) + ' ' + plPwF(a.farms[0]) + ' / ' + plPwF(a.head[0]) + '.',
+          table([L('Vacas por rebaño|Cows per herd|Vaches par troupeau|Vacche per mandria'), L('Explotaciones|Farms|Exploitations|Aziende'), L('Vacas|Cows|Vaches|Vacche')], rows),
+          cite('luke_fi', String(ys[ys.length - 1])));
+      });
+    }
     /* ---- Francia: censo agrario 2020 por intercomunalidad (EPCI) y orientación técnico-económica ---- */
     var FR_OTEX = { 1516: 'Grandes cultivos|Field crops|Grandes cultures|Seminativi', 2829: 'Horticultura y hortalizas|Horticulture and vegetables|Maraîchage et horticulture|Orticoltura e floricoltura', 3500: 'Viñedo|Vineyards|Viticulture|Viticoltura',
       3900: 'Frutales y otros cultivos permanentes|Fruit and other permanent crops|Fruits et autres cultures permanentes|Frutta e altre colture permanenti', 4500: 'Bovino de leche|Dairy cattle|Bovins lait|Bovini da latte', 4600: 'Bovino de carne|Beef cattle|Bovins viande|Bovini da carne',
@@ -1336,7 +1366,7 @@
         DE: [C('eslonjas', esLonjas), C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('delzs', deLzStruct), C('delzc', deLzCrops), C('delzl', deLzLive), C('dekrs', deKrStruct), C('dekrl', deKrLive), C('dekrz', deKrSize), C('dekmy', deKmYield), C('dekmc', deKmCattle), C('dekmj', deKmJobs), C('dekmh', deKmHist), C('eudr', eudr), C('clim', deClim)],
         PL: [C('plpws', plPwStruct), C('plpwl', plPwLive), C('plpwc', plPwCrops), C('plpwa', plPwLabour), C('plgms', plGmStruct), C('plgml', plGmLive), C('plgmc', plGmCrops), C('plgma', plGmLabour)],
         NL: [C('nlcrops', nlCbs), C('clim', gridClim), C('nllab', nlStrLab), C('nlsize', nlStrSize), C('nldiv', nlStrDiv), C('nlgms', nlGmStruct), C('nlgmc', nlGmCrops), C('nlgml', nlGmLive)],
-        FI: [C('fikus', fiKuStruct), C('fikuc', fiKuCrops), C('fikul', fiKuLive)],
+        FI: [C('fisec', fiSector), C('fidai', fiDairy), C('fikus', fiKuStruct), C('fikuc', fiKuCrops), C('fikul', fiKuLive)],
         AT: [C('eudr', eudr), C('clim', gridClim)], IT: [C('eslonjas', esLonjas), C('eudr', eudr), C('clim', gridClim), C('itprs', itPrStruct), C('itprl', itPrLive), C('itprc', itPrCrops), C('itpra', itPrLabour), C('itprz', itPrZone), C('itprg', itPrAge), C('itprt', itPrTenure), C('itpri', itPrIrrig)], AU: [C('aulv', auLivestock), C('ausa2c', auSa2Crops), C('ausa2h', auSa2Hort), C('aulga', auLga), C('ausa4', auSa4), C('clim', clim)], BE: [C('eudr', eudr), C('clim', gridClim)], DK: [C('clim', gridClim)], RO: [C('clim', gridClim)], HU: [C('clim', gridClim)], SK: [C('clim', gridClim)], EL: [C('elagri', elAgri), C('eudr', eudr), C('clim', gridClim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
