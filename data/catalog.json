@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-07T01:06:38.752Z",
-  "observationCount": 635,
+  "generatedAt": "2026-11-07T02:06:38.308Z",
+  "observationCount": 637,
   "products": [
     "aceite_cacahuete",
     "aceite_coco",
@@ -1819,16 +1819,16 @@
       "product": "harina_soja",
       "region": "us",
       "sourceId": "usda_ams_mars",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "ton_corta",
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-02T13:40:16.850Z",
+      "verifiedAt": "2026-11-07T02:06:37.606Z",
       "comparability": "directional",
-      "points": 26,
+      "points": 27,
       "coverageStart": "2024-09-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "heno_ab",
@@ -2029,16 +2029,16 @@
       "product": "leche_polvo",
       "region": "us",
       "sourceId": "usda_ams_mars",
-      "observationDate": "2026-10-30",
+      "observationDate": "2026-11-06",
       "unit": "lb",
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-02T13:40:16.925Z",
+      "verifiedAt": "2026-11-07T02:06:37.663Z",
       "comparability": "directional",
-      "points": 24,
+      "points": 25,
       "coverageStart": "2024-11-01",
-      "coverageEnd": "2026-10-01"
+      "coverageEnd": "2026-11-01"
     },
     {
       "product": "leche_ternero_ab",
