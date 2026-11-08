@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-08T15:56:00Z",
+ "generatedAt": "2026-11-08T17:16:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 340,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-08T13:19:08.726813+00:00",
   "repoGeneratedAt": "2026-11-08T13:19:08.726813+00:00",
-  "checkedAt": "2026-11-08T15:56:00Z"
+  "checkedAt": "2026-11-08T17:16:00Z"
  },
  "pipelines": [
   {
@@ -2490,9 +2490,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-07T16:52:13Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42393450937"
+    "startedAt": "2026-11-08T17:05:48Z",
+    "durationSec": 38,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42503216124"
    },
    "recent": {
     "runs": 10,
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-08T15:43:10Z"
+     "lastChange": "2026-11-08T15:58:43Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7639,7 +7639,7 @@
    "crons": [
     "40 16 1-8,20 * *"
    ],
-   "nextRun": "2026-11-08T16:40:00Z",
+   "nextRun": "2026-11-20T16:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7654,7 +7654,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 288.0
+   "expectedEveryHours": 264.0
   },
   {
    "workflow": "update-us-noaa-fish.yml",
