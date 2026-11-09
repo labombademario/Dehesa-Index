@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-02T08:46:44Z",
+ "generatedAt": "2026-11-09T17:48:42Z",
  "sourceIds": [
   "eur_lex"
  ],
@@ -9,9 +9,9 @@
   "celex": "02021R2115-20260818",
   "consolidatedVersion": "2026-08-18",
   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02021R2115-20260818",
-  "legalNoticeExcerpt": "",
+  "legalNoticeExcerpt": "Copyright notice © European Union, 1998-2026 The Commission’s document reuse policy is based on Decision 2011/833/EU .",
   "reuseDecisionExcerpt": "Article 4 General principle All documents shall be available for reuse: (a) for commercial or non-commercial purposes under the conditions laid down in Article 6; (b) without charge, subject to the provisions laid down in Article 9; and (c) without the need to make an individual application, unless otherwise provided in Article 7. This Decision shall be implemented in full respect of the rules on the protection of individuals with regard to the processing of personal data, and in particular Regulation (EC) No 45/2001.",
-  "readVia": "Cellar (Publications Office)",
+  "readVia": "EUR-Lex",
   "note": "Allocations set in the Regulation (current prices). They are ceilings/allocations, not payments made, and not amounts per hectare. Only the Official Journal text is authentic."
  },
  "unit": "EUR (current prices)",
