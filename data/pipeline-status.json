@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-09T21:38:00Z",
+ "generatedAt": "2026-11-09T22:09:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 339,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-09T11:26:24.162247+00:00",
   "repoGeneratedAt": "2026-11-09T11:26:24.162247+00:00",
-  "checkedAt": "2026-11-09T21:38:00Z"
+  "checkedAt": "2026-11-09T22:09:00Z"
  },
  "pipelines": [
   {
@@ -5153,14 +5153,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-02T12:51:01Z",
-    "durationSec": 94,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41448033254"
+    "startedAt": "2026-11-09T21:57:59Z",
+    "durationSec": 78,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42707442140"
    },
    "recent": {
     "runs": 10,
-    "success": 7,
-    "failed": 3
+    "success": 8,
+    "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -5194,7 +5194,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-09T21:47:00Z",
+   "nextRun": "2026-11-10T00:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5579,7 +5579,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-09T19:51:53Z"
+     "lastChange": "2026-11-09T21:59:06Z"
     },
     {
      "path": "data/products"
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-09T20:20:31Z"
+     "lastChange": "2026-11-09T21:42:20Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6106,7 +6106,7 @@
    "crons": [
     "40 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-09T21:40:00Z",
+   "nextRun": "2026-11-10T05:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7224,7 +7224,7 @@
     "40 21 * * 1",
     "40 13 * * 2"
    ],
-   "nextRun": "2026-11-09T21:40:00Z",
+   "nextRun": "2026-11-10T13:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7800,7 +7800,7 @@
    "crons": [
     "45 21 * * 1-5"
    ],
-   "nextRun": "2026-11-09T21:45:00Z",
+   "nextRun": "2026-11-10T21:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
