@@ -3,7 +3,7 @@
  "country": "EL",
  "source": "agrotikianaptixi_gr",
  "status": "OK",
- "checkedAt": "2026-11-02",
+ "checkedAt": "2026-11-09",
  "baseline": {
   "fingerprints": {},
   "acknowledged": []
@@ -22,13 +22,20 @@
     "title": "6η Συνεδρίαση Εθνικού Διαλόγου για τη νέα ΚΑΠ 2028-2034, 31-10-2026",
     "date": "2026-10-29",
     "url": "https://www.agrotikianaptixi.gr/6i-synedriasi-ethnikou-dialogou-gia-ti-nea-kap-2028-2034-31-10-2026/"
+   },
+   {
+    "id": "https://www.agrotikianaptixi.gr/?p=27011",
+    "title": "17η Γραπτή Διαδικασία Επιτροπή Παρακολούθησης ΣΣ ΚΑΠ",
+    "date": "2026-11-06",
+    "url": "https://www.agrotikianaptixi.gr/17i-grapti-diadikasia-epitropi-parakolouthisis-ss-kap/"
    }
   ],
   "lastScanned": "2026-10-25"
  },
  "reviewNeeded": [
   "texto nuevo: ΥΠΑΑΤ: Παραγωγική συζήτηση στη Νάξο για τη νέα ΚΑΠ 2028–2034 – Στο επίκεντρο οι ανάγκες της νησιωτικής Ελλάδας (2026-11-02)",
-  "texto nuevo: 6η Συνεδρίαση Εθνικού Διαλόγου για τη νέα ΚΑΠ 2028-2034, 31-10-2026 (2026-10-29)"
+  "texto nuevo: 6η Συνεδρίαση Εθνικού Διαλόγου για τη νέα ΚΑΠ 2028-2034, 31-10-2026 (2026-10-29)",
+  "texto nuevo: 17η Γραπτή Διαδικασία Επιτροπή Παρακολούθησης ΣΣ ΚΑΠ (2026-11-06)"
  ],
  "note": "Vigilancia del RSS de la web oficial del Plan Estratégico de la PAC (agrotikianaptixi.gr) desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan."
 }
