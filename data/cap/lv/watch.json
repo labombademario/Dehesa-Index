@@ -3,7 +3,7 @@
  "country": "LV",
  "source": "lad_lv",
  "status": "OK",
- "checkedAt": "2026-11-02",
+ "checkedAt": "2026-11-09",
  "baseline": {
   "fingerprints": {
    "sia2026": {
@@ -24,14 +24,14 @@
  "current": {
   "fingerprints": {
    "sia2026": {
-    "sha256": "84844ba0f8d4bd916a2807e46180081bac6b7d884a81a69c45a1e0489b627284",
-    "chars": 17073,
+    "sha256": "e8d34a543e5cbd7069823761e41e994c71a72cbbceeef7db7dd7193948db70e4",
+    "chars": 17102,
     "label": "LAD: ficha de ayudas a la renta ligadas a la superficie 2026",
     "url": "https://www.lad.gov.lv/lv/katalogs/saistitie-ienakumu-atbalsti-par-platibam-2026-gada"
    },
    "mls2026": {
-    "sha256": "ab57ecea608c71e4efc0e6438b9010f69ddca86b3e0abda3b6d7b479ec458220",
-    "chars": 5278,
+    "sha256": "147042c914c067c2b7c0b162050a2a9de8c9500f292a3d8ef78de937cae4b176",
+    "chars": 5307,
     "label": "LAD: ficha del pago a pequeños agricultores 2026",
     "url": "https://www.lad.gov.lv/lv/katalogs/maksajums-mazajiem-lauksaimniekiem-mls-2026-gada"
    }
