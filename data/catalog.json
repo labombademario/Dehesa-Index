@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-09T21:58:55.361Z",
-  "observationCount": 513,
+  "generatedAt": "2026-11-09T22:37:29.959Z",
+  "observationCount": 515,
   "products": [
     "aceite_cacahuete",
     "aceite_coco",
@@ -1824,7 +1824,7 @@
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-07T02:06:37.606Z",
+      "verifiedAt": "2026-11-09T22:37:29.465Z",
       "comparability": "directional",
       "points": 27,
       "coverageStart": "2024-09-01",
@@ -2034,7 +2034,7 @@
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-11-07T02:06:37.663Z",
+      "verifiedAt": "2026-11-09T22:37:29.516Z",
       "comparability": "directional",
       "points": 25,
       "coverageStart": "2024-11-01",
