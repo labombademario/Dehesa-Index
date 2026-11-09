@@ -28,7 +28,7 @@
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048",
     "sourceId": "boe_es"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "INGESTED",
@@ -69,7 +69,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "es/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 0
     }
    }
@@ -84,7 +84,7 @@
     "url": "https://www.retsinformation.dk/eli/lta/2025/1363",
     "sourceId": "retsinformation"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -119,7 +119,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "dk/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 0
     }
    }
@@ -134,7 +134,7 @@
     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02021R2115-20260818",
     "sourceId": "eur_lex"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -217,7 +217,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "de/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 3,
      "note": "Huella de tres páginas del Ministerio federal (BMLEH) sobre la GAP y páginas nuevas en su sección; no vigila el texto de la GAPDZV (gesetze-im-internet.de no responde desde GitHub) ni los Bekanntmachungen del Bundesanzeiger"
     }
@@ -233,7 +233,7 @@
     "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535",
     "sourceId": "dila_jorf"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -272,7 +272,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "fr/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 7
     }
    }
@@ -287,7 +287,7 @@
     "url": "https://www.masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1%252F5%252F9%252FD.3bd073940c7de327f98e/P/BLOB%3AID%3D19035/E/pdf?mode=download",
     "sourceId": "masaf_it"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -320,7 +320,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "it/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 0
     }
    }
@@ -335,7 +335,7 @@
     "url": "https://api.sejm.gov.pl/eli/acts/DU/2023/412",
     "sourceId": "sejm_eli"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -376,8 +376,8 @@
     "watch": {
      "state": "INGESTED",
      "file": "pl/watch.json",
-     "checkedAt": "2026-11-02",
-     "reviewNeeded": 3
+     "checkedAt": "2026-11-09",
+     "reviewNeeded": 7
     }
    }
   },
@@ -391,7 +391,7 @@
     "url": "https://files.dre.pt/1s/2023/02/04101/0014700163.pdf",
     "sourceId": "dre_pt"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -424,7 +424,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "pt/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 0
     }
    }
@@ -532,7 +532,7 @@
     "url": "https://www.forin.gr/articles/article/70797/ua-520-135074-2023",
     "sourceId": "fek_gr"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -564,8 +564,8 @@
     "watch": {
      "state": "INGESTED",
      "file": "el/watch.json",
-     "checkedAt": "2026-11-02",
-     "reviewNeeded": 2
+     "checkedAt": "2026-11-09",
+     "reviewNeeded": 3
     }
    }
   },
@@ -579,7 +579,7 @@
     "url": "https://wetten.overheid.nl/BWBR0047444/2026-01-21",
     "sourceId": "wetten_nl"
    },
-   "updatedAt": "2026-10-26",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -610,11 +610,10 @@
      "note": "Fecha general de la norma; las prorrogas de cada campana figuran como excepcion cuando se han leido"
     },
     "watch": {
-     "state": "PARTIAL",
+     "state": "INGESTED",
      "file": "nl/watch.json",
-     "checkedAt": "2026-10-26",
-     "reviewNeeded": 0,
-     "note": "la ultima lectura no llego a la fuente oficial"
+     "checkedAt": "2026-11-09",
+     "reviewNeeded": 1
     }
    }
   },
@@ -910,7 +909,7 @@
     "url": "https://www.finlex.fi/fi/lainsaadanto/2022/1332",
     "sourceId": "finlex_fi"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -943,7 +942,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "fi/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 0
     }
    }
@@ -958,7 +957,7 @@
     "url": "https://static.slov-lex.sk/static/SK/ZZ/2022/436/20260315.html",
     "sourceId": "slov_lex"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -991,7 +990,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "sk/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 0
     }
    }
@@ -1006,7 +1005,7 @@
     "url": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2023-01-0311",
     "sourceId": "uradni_list_rs"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -1039,7 +1038,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "si/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 0
     }
    }
@@ -1054,7 +1053,7 @@
     "url": "https://www.riigiteataja.ee/akt/102082025007",
     "sourceId": "riigi_teataja_ee"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -1087,7 +1086,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "ee/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 0
     }
    }
@@ -1102,7 +1101,7 @@
     "url": "https://www.mzh.government.bg/media/filer_public/2026/01/21/naredba_3_ot_10032023_g_za_usloviqta_i_reda_za_prilagane_na_intervenciite_pod_formata_na_direktni_pl.pdf",
     "sourceId": "mzh_naredba_3_4_2023"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -1135,8 +1134,8 @@
     "watch": {
      "state": "INGESTED",
      "file": "bg/watch.json",
-     "checkedAt": "2026-11-02",
-     "reviewNeeded": 2
+     "checkedAt": "2026-11-09",
+     "reviewNeeded": 3
     }
    }
   },
@@ -1150,7 +1149,7 @@
     "url": "https://likumi.lv/ta/id/341260-tieso-maksajumu-pieskirsanas-kartiba-lauksaimniekiem",
     "sourceId": "likumi_lv"
    },
-   "updatedAt": "2026-11-02",
+   "updatedAt": "2026-11-09",
    "components": {
     "strategicPlan": {
      "state": "NOT_INGESTED",
@@ -1183,7 +1182,7 @@
     "watch": {
      "state": "INGESTED",
      "file": "lv/watch.json",
-     "checkedAt": "2026-11-02",
+     "checkedAt": "2026-11-09",
      "reviewNeeded": 2
     }
    }
@@ -1203,85 +1202,127 @@
     "type": "RULE_CHANGED",
     "cc": "FR",
     "detail": "texto nuevo: Arrêté du 14 octobre 2026 relatif aux dispositions de l'avenant à l'accord interprofessionnel triennal relatif aux cotisations destinées à f (2026-10-20)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "FR",
     "detail": "texto nuevo: Arrêté du 14 octobre 2026 relatif aux dispositions de l'accord interprofessionnel relatif à la cotisation professionnelle destinée à finance (2026-10-21)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "FR",
     "detail": "texto nuevo: Arrêté du 20 octobre 2026 relatif aux dispositions de l'accord interprofessionnel relatif à la cotisation professionnelle destinée à finance (2026-10-23)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "FR",
     "detail": "texto nuevo: Décret n° 2026-991 du 23 octobre 2026 relatif à la mise en œuvre de la norme relative aux bonnes conditions agricoles et environnementales d (2026-10-25)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "FR",
     "detail": "texto nuevo: Arrêté du 12 octobre 2026 modifiant l'arrêté du 22 mars 2023 fixant les conditions d'accès à l'aide aux bovins de plus de 16 mois dans les d (2026-10-25)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "FR",
     "detail": "texto nuevo: Arrêté du 23 octobre 2026 relatif au champ d'application de la dérogation prévue par le décret n° 2026-991 du 23 octobre 2026 relatif à la m (2026-10-25)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "FR",
     "detail": "texto nuevo: Arrêté du 22 mars 2023 fixant les conditions d'accès à l'aide aux bovins de plus de 16 mois dans les départements de Corse mise en œuvre à p (2026-10-25)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046847535"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "PL",
     "detail": "cambia: ley del Plan Estratégico, metadatos y referencias (DU/2023/412)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
+    "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+   },
+   {
+    "type": "RULE_CHANGED",
+    "cc": "PL",
+    "detail": "cambia: ley del Plan Estratégico, metadatos y referencias (DU/2024/1741)",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "PL",
     "detail": "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 23 października 2026 r. w sprawie procentowej stawki stosowanej do ustalenia wysokośc (2026-10-23)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "PL",
     "detail": "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 października 2026 r. zmieniające rozporządzenie w sprawie szczegółowych warunków p (2026-10-22)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
+    "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+   },
+   {
+    "type": "RULE_CHANGED",
+    "cc": "PL",
+    "detail": "texto nuevo: Rozporządzenie Prezydenta Rzeczypospolitej Polskiej z dnia 7 listopada 2026 r. w sprawie wprowadzenia żałoby narodowej na terytorium Rzeczyp (2026-11-07)",
+    "detectedAt": "2026-11-09",
+    "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+   },
+   {
+    "type": "RULE_CHANGED",
+    "cc": "PL",
+    "detail": "texto nuevo: Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 4 listopada 2026 r. w sprawie wprowadzenia czasowego zakazu noszenia broni (2026-11-04)",
+    "detectedAt": "2026-11-09",
+    "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
+   },
+   {
+    "type": "RULE_CHANGED",
+    "cc": "PL",
+    "detail": "texto nuevo: Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 października 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy o Plani (2026-10-09)",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://api.sejm.gov.pl/eli/acts/DU/2023/412"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "EL",
     "detail": "texto nuevo: ΥΠΑΑΤ: Παραγωγική συζήτηση στη Νάξο για τη νέα ΚΑΠ 2028–2034 – Στο επίκεντρο οι ανάγκες της νησιωτικής Ελλάδας (2026-11-02)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.forin.gr/articles/article/70797/ua-520-135074-2023"
    },
    {
     "type": "RULE_CHANGED",
     "cc": "EL",
     "detail": "texto nuevo: 6η Συνεδρίαση Εθνικού Διαλόγου για τη νέα ΚΑΠ 2028-2034, 31-10-2026 (2026-10-29)",
-    "detectedAt": "2026-11-02",
+    "detectedAt": "2026-11-09",
     "officialUrl": "https://www.forin.gr/articles/article/70797/ua-520-135074-2023"
+   },
+   {
+    "type": "RULE_CHANGED",
+    "cc": "EL",
+    "detail": "texto nuevo: 17η Γραπτή Διαδικασία Επιτροπή Παρακολούθησης ΣΣ ΚΑΠ (2026-11-06)",
+    "detectedAt": "2026-11-09",
+    "officialUrl": "https://www.forin.gr/articles/article/70797/ua-520-135074-2023"
+   },
+   {
+    "type": "RULE_CHANGED",
+    "cc": "NL",
+    "detail": "texto nuevo: Melding voorgenomen concentratie BAM, GLB en VLST, Autoriteit Consument en Markt (2026-11-04)",
+    "detectedAt": "2026-11-09",
+    "officialUrl": "https://wetten.overheid.nl/BWBR0047444/2026-01-21"
    }
   ],
   "deadlines": [
