@@ -3,7 +3,7 @@
  "country": "BG",
  "source": "mzh_bg",
  "status": "OK",
- "checkedAt": "2026-11-02",
+ "checkedAt": "2026-11-09",
  "baseline": {
   "fingerprints": {
    "naredba3": {
@@ -58,6 +58,12 @@
     "title": "МЗХ публикува за обществено обсъждане Наредбата за извънредна финансова подкрепа на земеделските стопани, чиито разходи за торове са значително завишени от кризата в Близкия изток",
     "date": "2026-11-02",
     "url": "https://www.mzh.government.bg/bg/press-center/novini/mzh-publikuva-za-obshestveno-obszhdane-n/"
+   },
+   {
+    "id": "https://www.mzh.government.bg/bg/press-center/novini/v-mzh-se-provede-prvoto-zasedanie-na-nacionalnoto/",
+    "title": "В МЗХ се проведе първото заседание на Националното координационно звено за наблюдение и контрол на веригата на доставки на хранителни стоки",
+    "date": "2026-11-09",
+    "url": "https://www.mzh.government.bg/bg/press-center/novini/v-mzh-se-provede-prvoto-zasedanie-na-nacionalnoto/"
    }
   ],
   "lastScanned": "2026-10-28",
@@ -67,7 +73,8 @@
  },
  "reviewNeeded": [
   "texto nuevo: Земеделските стопани ще получат отстъпка от акциза за литър закупен газьол в размер на 0,21 евро за Кампания 2026 (2026-11-02)",
-  "texto nuevo: МЗХ публикува за обществено обсъждане Наредбата за извънредна финансова подкрепа на земеделските стопани, чиито разходи за торове са значите (2026-11-02)"
+  "texto nuevo: МЗХ публикува за обществено обсъждане Наредбата за извънредна финансова подкрепа на земеделските стопани, чиито разходи за торове са значите (2026-11-02)",
+  "texto nuevo: В МЗХ се проведе първото заседание на Националното координационно звено за наблюдение и контрол на веригата на доставки на хранителни стоки (2026-11-09)"
  ],
  "note": "Huella del texto de páginas oficiales de la PAC (naredba3) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
 }
