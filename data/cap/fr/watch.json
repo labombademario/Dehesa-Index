@@ -3,7 +3,7 @@
  "country": "FR",
  "source": "dila_jorf",
  "status": "OK",
- "checkedAt": "2026-11-02",
+ "checkedAt": "2026-11-09",
  "baseline": {
   "fingerprints": {},
   "acknowledged": [
@@ -91,7 +91,7 @@
     "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047396318"
    }
   ],
-  "lastScanned": "2026-11-01"
+  "lastScanned": "2026-11-08"
  },
  "reviewNeeded": [
   "texto nuevo: Arrêté du 14 octobre 2026 relatif aux dispositions de l'avenant à l'accord interprofessionnel triennal relatif aux cotisations destinées à f (2026-10-20)",
