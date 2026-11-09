@@ -3,7 +3,7 @@
  "country": "PL",
  "source": "sejm_eli",
  "status": "OK",
- "checkedAt": "2026-11-02",
+ "checkedAt": "2026-11-09",
  "baseline": {
   "fingerprints": {
    "DU/2023/412": {
@@ -31,11 +31,11 @@
  "current": {
   "fingerprints": {
    "DU/2023/412": {
-    "sha256": "08b43526c0ab169c9d538b2dad229611bf7284359d720b18aa77d65afb94bd46",
+    "sha256": "9e5fa48934cc64590ed129eb4596ae51869f4463f3bc39530f7ec8a492d1de8a",
     "label": "ley del Plan Estratégico, metadatos y referencias (DU/2023/412)"
    },
    "DU/2024/1741": {
-    "sha256": "7524ef0617575a3d516b1d95e82a6aaddb8b22c720df3328872d69e9007b1b85",
+    "sha256": "f6de8162223875ae32a7fe32d892e9a004e498104ab720c2e46d13be330a78ab",
     "label": "ley del Plan Estratégico, metadatos y referencias (DU/2024/1741)"
    }
   },
@@ -57,6 +57,24 @@
     "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 października 2026 r. zmieniające rozporządzenie w sprawie szczegółowych warunków przyznawania i wypłaty pomocy finansowej na realizację operacji w ramach Priorytetu 2. Wspieranie zrównoważonej działalności w zakresie akwakultury oraz przetwarzania i wprowadzania do obrotu produktów rybołówstwa i akwakultury, przyczyniając się w ten sposób do bezpieczeństwa żywnościowego w Unii objętego programem Fundusze Europejskie dla Rybactwa na lata 2021-2027 oraz wysokości tej pomocy",
     "date": "2026-10-22",
     "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1402"
+   },
+   {
+    "id": "DU/2026/1471",
+    "title": "Rozporządzenie Prezydenta Rzeczypospolitej Polskiej z dnia 7 listopada 2026 r. w sprawie wprowadzenia żałoby narodowej na terytorium Rzeczypospolitej Polskiej",
+    "date": "2026-11-07",
+    "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1471"
+   },
+   {
+    "id": "DU/2026/1467",
+    "title": "Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 4 listopada 2026 r. w sprawie wprowadzenia czasowego zakazu noszenia broni lub przemieszczania jej w stanie rozładowanym",
+    "date": "2026-11-04",
+    "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1467"
+   },
+   {
+    "id": "DU/2026/1462",
+    "title": "Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 października 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy o Planie Strategicznym dla Wspólnej Polityki Rolnej na lata 2023-2027",
+    "date": "2026-10-09",
+    "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1462"
    }
   ],
   "lastScanned": null,
@@ -64,8 +82,12 @@
  },
  "reviewNeeded": [
   "cambia: ley del Plan Estratégico, metadatos y referencias (DU/2023/412)",
+  "cambia: ley del Plan Estratégico, metadatos y referencias (DU/2024/1741)",
   "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 23 października 2026 r. w sprawie procentowej stawki stosowanej do ustalenia wysokośc (2026-10-23)",
-  "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 października 2026 r. zmieniające rozporządzenie w sprawie szczegółowych warunków p (2026-10-22)"
+  "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 października 2026 r. zmieniające rozporządzenie w sprawie szczegółowych warunków p (2026-10-22)",
+  "texto nuevo: Rozporządzenie Prezydenta Rzeczypospolitej Polskiej z dnia 7 listopada 2026 r. w sprawie wprowadzenia żałoby narodowej na terytorium Rzeczyp (2026-11-07)",
+  "texto nuevo: Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 4 listopada 2026 r. w sprawie wprowadzenia czasowego zakazu noszenia broni (2026-11-04)",
+  "texto nuevo: Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 października 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy o Plani (2026-10-09)"
  ],
  "note": "Vigilancia de la ley del Plan Estratégico y búsqueda de reglamentos nuevos en el Dziennik Ustaw desde el 1 de septiembre de 2026. Los textos que aparecen son candidatos: no se interpretan."
 }
