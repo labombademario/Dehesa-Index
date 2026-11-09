@@ -2,8 +2,8 @@
  "schemaVersion": 1,
  "country": "NL",
  "source": "wetten_nl",
- "status": "UNREACHABLE",
- "checkedAt": "2026-10-26",
+ "status": "OK",
+ "checkedAt": "2026-11-09",
  "baseline": {
   "fingerprints": {
    "uitvoeringsregeling": {
@@ -22,11 +22,19 @@
     "label": "Uitvoeringsregeling GLB 2023 (BWBR0047444), vigente desde 11-07-2026"
    }
   },
-  "candidates": [],
+  "candidates": [
+   {
+    "id": "stcrt-2026-39146",
+    "title": "Melding voorgenomen concentratie BAM, GLB en VLST, Autoriteit Consument en Markt",
+    "date": "2026-11-04",
+    "url": "https://zoek.officielebekendmakingen.nl/stcrt-2026-39146.html"
+   }
+  ],
   "lastScanned": "2026-10-25",
   "searchErrors": []
  },
- "reviewNeeded": [],
- "note": "Huella del texto consolidado de la Uitvoeringsregeling GLB 2023 (wetten.overheid.nl) y, cuando responde, búsqueda de Staatscourant/Staatsblad con GLB en el título desde el 25 de octubre de 2026. Lo que aparece son candidatos: no se interpretan.",
- "lastError": "HTTPError: HTTP Error 403: Forbidden"
+ "reviewNeeded": [
+  "texto nuevo: Melding voorgenomen concentratie BAM, GLB en VLST, Autoriteit Consument en Markt (2026-11-04)"
+ ],
+ "note": "Huella del texto consolidado de la Uitvoeringsregeling GLB 2023 (wetten.overheid.nl) y, cuando responde, búsqueda de Staatscourant/Staatsblad con GLB en el título desde el 25 de octubre de 2026. Lo que aparece son candidatos: no se interpretan."
 }
