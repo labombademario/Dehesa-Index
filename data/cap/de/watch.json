@@ -3,7 +3,7 @@
  "country": "DE",
  "source": "bmleh_de",
  "status": "OK",
- "checkedAt": "2026-11-02",
+ "checkedAt": "2026-11-09",
  "baseline": {
   "fingerprints": {
    "anpassungen": {
@@ -55,8 +55,8 @@
     "label": "BMLEH: Öko-Regelungen"
    },
    "gap": {
-    "sha256": "3dda4f350f4c2308c435cf096ee743b8846c668a4047bbee2a9bd3650b3c179f",
-    "chars": 9540,
+    "sha256": "df36ec2004a1beaa0a757a83ca86ae2f16b2098e2814243705504a14263d240a",
+    "chars": 9513,
     "label": "BMLEH: Gemeinsame Agrarpolitik (GAP)"
    }
   },
