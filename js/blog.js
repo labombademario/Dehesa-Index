@@ -10,16 +10,19 @@
     moncloa: 'https://www.moncloa.com/2026/09/26/contratos-leche-vacuno-revision-alza-precios-3438213/',
     eiasteo: 'https://www.eia.gov/outlooks/steo/',
     dtnfert: 'https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/10/14/uan32-leads-fertilizer-prices-higher',
-    spglobal: 'https://press.spglobal.com/2026-10-19-Out-of-Hormuz-Energy-Shocks,-the-Ingredients-for-a-Global-Food-Crisis'
+    spglobal: 'https://press.spglobal.com/2026-10-19-Out-of-Hormuz-Energy-Shocks,-the-Ingredients-for-a-Global-Food-Crisis',
+    agronewscyl: 'https://www.agronewscastillayleon.com/precios-agrarios-2-6-noviembre-2026-porcino-cereales-vacuno',
+    pigsitecme: 'https://www.thepigsite.com/news/2026/11/cattle-futures-fall-for-an-eighth-session-on-weak-cash-prices-cme',
+    pigsiteweekly: 'https://www.thepigsite.com/articles/weekly-pig-report-lean-hog-futures-extend-losses-as-cash-hog-prices-weaken'
   };
 
   // Categorías: mismas etiquetas que el resto del sitio para el mismo grupo
   // de producto (Precios, Dehesa Market Map).
   var CAT = {
-    es: { cereales: 'Cereales', fertilizantes: 'Fertilizantes', lacteos: 'Lácteos', energia: 'Energía' },
-    en: { cereales: 'Grains', fertilizantes: 'Fertilizer', lacteos: 'Dairy', energia: 'Energy' },
-    fr: { cereales: 'Céréales', fertilizantes: 'Engrais', lacteos: 'Produits laitiers', energia: 'Énergie' },
-    it: { cereales: 'Cereali', fertilizantes: 'Fertilizzanti', lacteos: 'Lattiero-caseario', energia: 'Energia' }
+    es: { cereales: 'Cereales', fertilizantes: 'Fertilizantes', lacteos: 'Lácteos', energia: 'Energía', porcino: 'Porcino' },
+    en: { cereales: 'Grains', fertilizantes: 'Fertilizer', lacteos: 'Dairy', energia: 'Energy', porcino: 'Pork' },
+    fr: { cereales: 'Céréales', fertilizantes: 'Engrais', lacteos: 'Produits laitiers', energia: 'Énergie', porcino: 'Porc' },
+    it: { cereales: 'Cereali', fertilizantes: 'Fertilizzanti', lacteos: 'Lattiero-caseario', energia: 'Energia', porcino: 'Suini' }
   };
 
   function buildStrings() {
@@ -28,11 +31,18 @@
     Object.keys(CAT).forEach(function (lg) { langCat[lg] = CAT[lg]; });
 
     STRINGS.es = {
-      title: 'Blog: qué mueve los mercados agrícolas | Dehesa Index', badge: 'NOTAS REALES', updated: 'Actualizado 21 oct 2026',
+      title: 'Blog: qué mueve los mercados agrícolas | Dehesa Index', badge: 'NOTAS REALES', updated: 'Actualizado 9 nov 2026',
       h1: 'Blog',
       sub: 'Contexto corto sobre qué mueve estos mercados esta semana, con cifras y fuentes reales — no un resumen de titulares, sino la lectura de Dehesa Index sobre lo que hay detrás.',
       disclaimer: 'Cada nota cita datos y fechas reales, verificables en las fuentes enlazadas al pie. Cuando un dato concreto no está disponible (por ejemplo, un precio objetivo aún no publicado), se dice explícitamente en vez de estimarlo.',
       posts: [
+        {
+          category: CAT.es.porcino, date: '2026-11-09', dateLabel: '9 nov 2026',
+          title: 'El cerdo encadena semanas a la baja a ambos lados del Atlántico',
+          para1: 'En España, la canal de cerdo de clase S —la referencia española que publica la Comisión Europea y sigue Dehesa Index— cotizó a 160,25 €/100 kg la semana del 1 de noviembre: es la sexta bajada semanal seguida y un 10,3% menos que los 178,56 € del 20 de septiembre. Las lonjas cuentan lo mismo en vivo: en Segovia, el cerdo selecto cerró la sesión del 5 de noviembre en 1,147 €/kg, 3,5 céntimos menos que la semana anterior y 21 céntimos por debajo del 17 de septiembre (1,357 €/kg), y el lechón de 20 kg bajó a 35 € la unidad. La crónica de Agronews Castilla y León habla de una trayectoria descendente que viene de octubre, pero no atribuye la caída a una causa concreta, y aquí tampoco se le pone una. El ibérico va a contracorriente: en Salamanca subió 10 céntimos, con el cebo de campo a 3,16 €/kg.',
+          para2: 'En Estados Unidos el ajuste es más brusco. El precio base de la canal en compra directa que publica el USDA (informe LM_HG201) bajó de 78,79 $/cwt el 5 de octubre a 63,66 $ el 6 de noviembre, un 19,2% menos en un mes, y ese mismo día el futuro de cerdo magro de diciembre en Chicago cerró en 55,10 centavos por libra, tras tocar un mínimo de contrato de 54,225. Los operadores citados por Reuters lo achacan a una demanda floja de carne de cerdo y a una oferta abundante de animales, con canales más pesadas: 293,5 libras de media la semana del 31 de octubre, frente a 291,6 hace un año. En exportación, las ventas netas de la última semana sumaron 37.300 toneladas, un 12% menos que la semana anterior, y México se llevó cerca del 45%. Para el cebadero, que compró el lechón y el pienso meses antes, la bajada se nota primero en el margen; esto describe lo ocurrido, no es una previsión de hacia dónde irá el precio.',
+          sources: [{ label: 'Agronews Castilla y León (7 nov 2026)', url: SRC.agronewscyl }, { label: 'The Pig Site (6 nov 2026)', url: SRC.pigsitecme }, { label: 'The Pig Site, informe semanal (6 nov 2026)', url: SRC.pigsiteweekly }]
+        },
         {
           category: CAT.es.energia, date: '2026-10-21', dateLabel: '21 oct 2026',
           title: 'Del petróleo al abono: la factura energética llega al campo',
@@ -57,11 +67,18 @@
       ]
     };
     STRINGS.en = {
-      title: 'Blog: what moves farm markets | Dehesa Index', badge: 'REAL NOTES', updated: 'Updated Oct 21, 2026',
+      title: 'Blog: what moves farm markets | Dehesa Index', badge: 'REAL NOTES', updated: 'Updated Nov 9, 2026',
       h1: 'Blog',
       sub: "Short context on what's moving these markets this week, with real figures and sources — not a headline roundup, but Dehesa Index's own read on what's behind them.",
       disclaimer: 'Each note cites real, dated facts, verifiable at the sources linked below. When a specific figure isn’t available (a target price not yet published, say), that’s stated outright rather than estimated.',
       posts: [
+        {
+          category: CAT.en.porcino, date: '2026-11-09', dateLabel: 'Nov 9, 2026',
+          title: 'Pig prices keep sliding on both sides of the Atlantic',
+          para1: 'In Spain, the class S pig carcass price — the Spanish reference published by the European Commission and tracked by Dehesa Index — stood at €160.25/100 kg in the week of November 1: its sixth weekly drop in a row and 10.3% below the €178.56 of September 20. Livestock exchanges tell the same story for live pigs: in Segovia, top-grade pigs closed the November 5 session at €1.147/kg, 3.5 cents down on the week and 21 cents below September 17 (€1.357/kg), while 20 kg piglets fell to €35 a head. The Agronews Castilla y León market report describes a downward trend running since October but does not pin the drop on a specific cause, and neither do we here. Iberian pigs bucked the trend: in Salamanca they rose 10 cents, with free-range finished pigs at €3.16/kg.',
+          para2: 'In the United States the correction is sharper. The USDA\'s negotiated base carcass price (report LM_HG201) fell from $78.79/cwt on October 5 to $63.66 on November 6, down 19.2% in a month, and that same day December lean hog futures in Chicago settled at 55.10 cents per pound after hitting a contract low of 54.225. Traders cited by Reuters blame poor demand for pork and plentiful hog supplies, with heavier carcasses: an average of 293.5 lb in the week ending October 31, against 291.6 a year earlier. On the export side, net sales for the latest week came to 37,300 tonnes, 12% less than the week before, with Mexico taking about 45%. For finishers, who bought piglets and feed months ago, the drop shows up first in margins; this describes what has happened and is not a forecast of where prices will go.',
+          sources: [{ label: 'Agronews Castilla y León (Nov 7, 2026)', url: SRC.agronewscyl }, { label: 'The Pig Site (Nov 6, 2026)', url: SRC.pigsitecme }, { label: 'The Pig Site, weekly report (Nov 6, 2026)', url: SRC.pigsiteweekly }]
+        },
         {
           category: CAT.en.energia, date: '2026-10-21', dateLabel: 'Oct 21, 2026',
           title: 'From oil to fertilizer: the energy bill reaches the farm',
@@ -86,11 +103,18 @@
       ]
     };
     STRINGS.fr = {
-      title: 'Blog : ce qui fait bouger les marchés agricoles | Dehesa Index', badge: 'NOTES RÉELLES', updated: 'Mis à jour le 21 oct. 2026',
+      title: 'Blog : ce qui fait bouger les marchés agricoles | Dehesa Index', badge: 'NOTES RÉELLES', updated: 'Mis à jour le 9 nov. 2026',
       h1: 'Blog',
       sub: "Un contexte court sur ce qui fait bouger ces marchés cette semaine, avec des chiffres et des sources réels — pas un résumé de titres, mais la lecture de Dehesa Index sur ce qu'il y a derrière.",
       disclaimer: "Chaque note cite des faits réels et datés, vérifiables sur les sources indiquées ci-dessous. Quand un chiffre précis n'est pas disponible (un prix cible pas encore publié, par exemple), cela est dit explicitement plutôt qu'estimé.",
       posts: [
+        {
+          category: CAT.fr.porcino, date: '2026-11-09', dateLabel: '9 nov. 2026',
+          title: 'Le porc enchaîne les semaines de baisse des deux côtés de l’Atlantique',
+          para1: 'En Espagne, la carcasse de porc de classe S — la référence espagnole publiée par la Commission européenne et suivie par Dehesa Index — s’est établie à 160,25 €/100 kg la semaine du 1er novembre : c’est la sixième baisse hebdomadaire d’affilée, soit 10,3 % de moins que les 178,56 € du 20 septembre. Les marchés au cadran racontent la même chose pour le porc vif : à Ségovie, le porc « selecto » a clôturé la séance du 5 novembre à 1,147 €/kg, 3,5 centimes de moins que la semaine précédente et 21 centimes sous son niveau du 17 septembre (1,357 €/kg), tandis que le porcelet de 20 kg est descendu à 35 € pièce. La chronique d’Agronews Castilla y León évoque une tendance baissière entamée en octobre sans l’attribuer à une cause précise, et nous ne lui en prêtons pas non plus. Le porc ibérique va à contre-courant : à Salamanque, il a gagné 10 centimes, le « cebo de campo » s’établissant à 3,16 €/kg.',
+          para2: 'Aux États-Unis, l’ajustement est plus brutal. Le prix de base de la carcasse en achat direct publié par l’USDA (rapport LM_HG201) est passé de 78,79 $/cwt le 5 octobre à 63,66 $ le 6 novembre, soit 19,2 % de moins en un mois, et le même jour le contrat à terme de porc maigre de décembre à Chicago a clôturé à 55,10 cents la livre, après un plus bas de contrat à 54,225. Les opérateurs cités par Reuters l’attribuent à une demande de viande porcine faible et à une offre abondante d’animaux, avec des carcasses plus lourdes : 293,5 livres en moyenne la semaine close le 31 octobre, contre 291,6 un an plus tôt. À l’export, les ventes nettes de la dernière semaine ont atteint 37 300 tonnes, 12 % de moins que la semaine précédente, le Mexique en absorbant environ 45 %. Pour l’engraisseur, qui a acheté porcelets et aliments des mois plus tôt, la baisse se lit d’abord dans la marge ; il s’agit d’un constat, pas d’une prévision sur l’évolution des prix.',
+          sources: [{ label: 'Agronews Castilla y León (7 nov. 2026)', url: SRC.agronewscyl }, { label: 'The Pig Site (6 nov. 2026)', url: SRC.pigsitecme }, { label: 'The Pig Site, rapport hebdomadaire (6 nov. 2026)', url: SRC.pigsiteweekly }]
+        },
         {
           category: CAT.fr.energia, date: '2026-10-21', dateLabel: '21 oct. 2026',
           title: 'Du pétrole aux engrais : la facture énergétique arrive à la ferme',
@@ -115,11 +139,18 @@
       ]
     };
     STRINGS.it = {
-      title: 'Blog: cosa muove i mercati agricoli | Dehesa Index', badge: 'NOTE REALI', updated: 'Aggiornato 21 ott 2026',
+      title: 'Blog: cosa muove i mercati agricoli | Dehesa Index', badge: 'NOTE REALI', updated: 'Aggiornato 9 nov 2026',
       h1: 'Blog',
       sub: 'Un contesto breve su cosa muove questi mercati questa settimana, con cifre e fonti reali — non un riassunto di titoli, ma la lettura di Dehesa Index su cosa c’è dietro.',
       disclaimer: 'Ogni nota cita fatti reali e datati, verificabili nelle fonti collegate in fondo. Quando un dato preciso non è disponibile (un prezzo obiettivo non ancora pubblicato, ad esempio), questo viene dichiarato esplicitamente invece di essere stimato.',
       posts: [
+        {
+          category: CAT.it.porcino, date: '2026-11-09', dateLabel: '9 nov 2026',
+          title: 'Il suino continua a scendere su entrambe le sponde dell’Atlantico',
+          para1: 'In Spagna la carcassa suina di classe S — il riferimento spagnolo pubblicato dalla Commissione europea e seguito da Dehesa Index — ha quotato 160,25 €/100 kg nella settimana del 1° novembre: è il sesto calo settimanale di fila e il 10,3% in meno rispetto ai 178,56 € del 20 settembre. Le borse merci raccontano lo stesso per il suino vivo: a Segovia il suino «selecto» ha chiuso la seduta del 5 novembre a 1,147 €/kg, 3,5 centesimi in meno della settimana precedente e 21 centesimi sotto il 17 settembre (1,357 €/kg), mentre il lattonzolo da 20 kg è sceso a 35 € a capo. La cronaca di Agronews Castilla y León parla di una tendenza al ribasso iniziata a ottobre, ma non la attribuisce a una causa precisa, e nemmeno noi lo facciamo qui. Il suino iberico va in controtendenza: a Salamanca è salito di 10 centesimi, con il «cebo de campo» a 3,16 €/kg.',
+          para2: 'Negli Stati Uniti la correzione è più brusca. Il prezzo base della carcassa in acquisto diretto pubblicato dall’USDA (rapporto LM_HG201) è sceso da 78,79 $/cwt il 5 ottobre a 63,66 $ il 6 novembre, il 19,2% in meno in un mese, e lo stesso giorno il future sul suino magro di dicembre a Chicago ha chiuso a 55,10 centesimi per libbra, dopo aver toccato un minimo di contratto a 54,225. Gli operatori citati da Reuters lo attribuiscono alla domanda debole di carne suina e all’ampia offerta di capi, con carcasse più pesanti: 293,5 libbre di media nella settimana chiusa il 31 ottobre, contro 291,6 un anno prima. Sul fronte export, le vendite nette dell’ultima settimana sono state 37.300 tonnellate, il 12% in meno della settimana precedente, con il Messico a circa il 45%. Per l’ingrassatore, che ha comprato lattonzoli e mangime mesi prima, il calo si vede prima di tutto nel margine; è una descrizione di quanto accaduto, non una previsione su dove andranno i prezzi.',
+          sources: [{ label: 'Agronews Castilla y León (7 nov 2026)', url: SRC.agronewscyl }, { label: 'The Pig Site (6 nov 2026)', url: SRC.pigsitecme }, { label: 'The Pig Site, rapporto settimanale (6 nov 2026)', url: SRC.pigsiteweekly }]
+        },
         {
           category: CAT.it.energia, date: '2026-10-21', dateLabel: '21 ott 2026',
           title: 'Dal petrolio ai concimi: la bolletta energetica arriva nei campi',
