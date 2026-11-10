@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-10T01:51:00Z",
+ "generatedAt": "2026-11-10T02:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 340,
+  "ok": 341,
   "late": 2,
-  "error": 6,
+  "error": 5,
   "not_run": 0,
   "unknown": 0
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 10.9,
-  "prodGeneratedAt": "2026-11-09T11:26:24.162247+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-11-09T22:18:30.958122+00:00",
   "repoGeneratedAt": "2026-11-09T22:18:30.958122+00:00",
-  "checkedAt": "2026-11-10T01:51:00Z"
+  "checkedAt": "2026-11-10T02:48:00Z"
  },
  "pipelines": [
   {
@@ -5181,9 +5181,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42146486824"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 7,
-    "failed": 2
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-10T00:50:42Z"
+     "lastChange": "2026-11-10T01:54:55Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7534,8 +7534,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42317011004"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -7892,7 +7892,7 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-11-10T02:30:00Z",
+   "nextRun": "2026-11-11T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7964,19 +7964,18 @@
    "nextRun": "2026-11-10T17:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-11-10T01:40:34Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42737461828",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ya en el libro: 2026-10"
+    "startedAt": "2026-11-10T02:38:05Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42744110741"
    },
    "recent": {
-    "runs": 4,
-    "success": 1,
+    "runs": 5,
+    "success": 2,
     "failed": 3
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 24.0
   },
   {
