@@ -1,6 +1,6 @@
 agriprices ['https://statbel.fgov.be/sites/default/files/files/documents/landbouw/8.3%20Landbouwprijzen%20%28output-%20en%20input-%29/agriprices_BY2020_STATBEL_en.xlsx']
-output 47 series columnas mensuales 200
-input 31 series columnas mensuales 200
+output 47 series columnas mensuales 201
+input 31 series columnas mensuales 201
 leche ficheros 9
 leche 102 meses
 sacrificio ficheros 13
