@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-10T14:11:00Z",
+ "generatedAt": "2026-11-10T14:30:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 341,
@@ -17,7 +17,7 @@
   "lagHours": 8.9,
   "prodGeneratedAt": "2026-11-09T22:18:30.958122+00:00",
   "repoGeneratedAt": "2026-11-10T07:12:33.930225+00:00",
-  "checkedAt": "2026-11-10T14:11:00Z"
+  "checkedAt": "2026-11-10T14:30:00Z"
  },
  "pipelines": [
   {
@@ -829,7 +829,7 @@
    "crons": [
     "20 14 * * 2"
    ],
-   "nextRun": "2026-11-10T14:20:00Z",
+   "nextRun": "2026-11-17T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1978,7 +1978,7 @@
    "crons": [
     "20 14 * * 2,5"
    ],
-   "nextRun": "2026-11-10T14:20:00Z",
+   "nextRun": "2026-11-13T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-10T13:57:49Z"
+     "lastChange": "2026-11-10T14:15:38Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7085,7 +7085,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-10T14:15:00Z",
+   "nextRun": "2026-11-10T23:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7100,7 +7100,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 14.8
+   "expectedEveryHours": 62.8
   },
   {
    "workflow": "update-us-cash-receipts.yml",
@@ -7754,7 +7754,7 @@
    "crons": [
     "25 14 * * *"
    ],
-   "nextRun": "2026-11-10T14:25:00Z",
+   "nextRun": "2026-11-11T14:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
