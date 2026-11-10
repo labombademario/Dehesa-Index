@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-10T20:12:08.950Z",
+  "generatedAt": "2026-11-10T22:34:37.574Z",
   "status": "informational",
   "rules": [
     {
@@ -525,30 +525,21 @@
     },
     {
       "type": "period_move",
-      "product": "amoniaco_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": 6.94,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
       "product": "diesel_agr_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
       "severity": "watch",
-      "changePct": 8.87,
-      "observationDate": "2026-09-01"
+      "changePct": 7.91,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
-      "product": "gas_natural_ab",
+      "product": "urea_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "severity": "high",
-      "changePct": -20.76,
-      "observationDate": "2026-09-01"
+      "severity": "watch",
+      "changePct": 5.45,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -691,35 +682,8 @@
       "region": "ca",
       "sourceId": "alberta_ag",
       "severity": "watch",
-      "changePct": -5.69,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "leche_ternero_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": 6.11,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "mineral_vacuno_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": 5.67,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "suplemento_cebo_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": -6.31,
-      "observationDate": "2026-09-01"
+      "changePct": 9.19,
+      "observationDate": "2026-10-01"
     }
   ],
   "policy": {
