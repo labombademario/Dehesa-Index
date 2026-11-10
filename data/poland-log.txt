@@ -22,5 +22,5 @@ produccion 13 series
   var 218073 descartados 1 valores con atributo distinto de 1
   var 218074 descartados 1 valores con atributo distinto de 1
   var 218075 descartados 1 valores con atributo distinto de 1
-acopio mensual 13 series
+ERROR procurement RuntimeError('https://bdl.stat.gov.pl/api/v1/data/by-unit/000000000000?format=json&lang=en&page-size=100&page=0&var-id=64246&var-id=64243&var-id=64240&var -> HTTP Error 500: Internal Server Error')
 farm-shop 3 pares
