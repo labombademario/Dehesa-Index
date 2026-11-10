@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 205 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41282 series en el catalogo unificado.
+Resumen: 205 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41285 series en el catalogo unificado.
 
 ## VERIFIED (205)
 
@@ -18,7 +18,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `abares` | Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences) | AU | CC-BY-4.0 | si/si | si | 58 | Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth C… |
 | `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 220 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
 | `agence_bio` | Agence BIO — historique détaillé des surfaces, cheptels et opérateurs par département (data.gouv.fr) | FR | etalab-2.0 | si/si | si | 155 | Citar la fuente y la fecha de la última actualización. Solo se usan los ficheros por departamento: la ficha «par région» de data.gouv.fr no … |
-| `agreste_bulconj` | France — Agreste / SSP, Bulletin de conjoncture mensuel (BulConj) | FR | etalab-1.0 | si/si | si | 69 | Citar Agreste/SSP; el boletín recoge cotizaciones y datos de terceros (FranceAgriMer, Eurostat, INSEE, bolsas), que se publican tal cual los… |
+| `agreste_bulconj` | France — Agreste / SSP, Bulletin de conjoncture mensuel (BulConj) | FR | etalab-1.0 | si/si | si | 70 | Citar Agreste/SSP; el boletín recoge cotizaciones y datos de terceros (FranceAgriMer, Eurostat, INSEE, bolsas), que se publican tal cual los… |
 | `agreste_comex` | France — Agreste / SSP con datos de la DGDDI (aduanas), Échanges extérieurs de céréales, produits laitiers, œufs et produits des IAA | FR | etalab-1.0 | si/si | si | 152 | Citar Agreste/SSP y la DGDDI; las cifras de aduanas se revisan, por eso cada edición sustituye a la anterior. |
 | `agreste_infosrapides` | France — Agreste / SSP, Infos Rapides (lait, grandes cultures, commerce extérieur) | FR | etalab-1.0 | si/si | si | 63 | Citar Agreste/SSP; la leche procede de la encuesta mensual lechera FranceAgriMer/SSP y el comercio exterior de aduanas, que Agreste publica … |
 | `agreste_more` | France — Agreste / SSP, empleo agrícola, TERUTI, IPAMPA y coyuntura vitivinícola | FR | etalab-1.0 | si/si | si | 29 | Citar Agreste/SSP. |
@@ -176,7 +176,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `spw_sigec_anon` | Service public de Wallonie (SPW) — Parcellaire agricole anonyme (SIGEC, Organisme payeur de Wallonie) | BE | CC-BY-4.0 | si/si | si | 0 | Citar al SPW como fuente. Se publican sumas por cultivo y campaña (no se redistribuyen geometrías ni parcelas). Desglose por provincia y reg… |
 | `stat_ee` | Estonia — Statistics Estonia: statistical database (agricultural prices, balances, crops, dairy) | EE | CC-BY-SA-4.0 | si/si | si | 42 | ShareAlike: adaptations of the database must be shared under the same licence. Dehesa Index republishes individual published values with att… |
 | `statbel` | Statbel (Statistics Belgium) | BE | CC-BY-4.0 | si/si | si | 213 | Credit the source, link the licence and indicate modifications. Data from third-party producers is excluded: follow those producers' own ter… |
-| `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 1016 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
+| `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 1018 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
 | `statfin_fi` | Finland — Statistics Finland (StatFin database): agricultural producer prices, input prices, CPI and PPI | FI | CC-BY-4.0 | si/si | si | 185 | Statistics Finland's open data is CC BY 4.0 but excludes third-party data; API limit 40 calls per 60 s and 120,000 cells. |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `statistik_austria_vb` | Austria - Statistik Austria, Versorgungsbilanzen (supply balance PDF publications) | AT | STATISTIK-AUSTRIA-REUSE | si/si | si | 11 | Citar «STATISTIK AUSTRIA» y, al usar extractos o datos modificados, indicar que se han tomado/editado. El pipeline comprueba la clausula en … |
