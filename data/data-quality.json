@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-10T14:48:51Z",
+ "generatedAt": "2026-11-10T21:17:46Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -34,7 +34,7 @@
     "points": 58767,
     "lines": 0
    },
-   "generatedAt": "2026-11-06T20:31:15Z",
+   "generatedAt": "2026-11-10T20:58:12Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -160,7 +160,7 @@
     "points": 65812,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T09:06:36Z",
+   "generatedAt": "2026-11-10T16:28:16Z",
    "info": [],
    "nWarnings": 13,
    "nErrors": 0
@@ -226,7 +226,7 @@
     "points": 47950,
     "lines": 0
    },
-   "generatedAt": "2026-11-06T16:48:36Z",
+   "generatedAt": "2026-11-10T17:05:52Z",
    "info": [
     "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86) [KNOWN_VERIFIED_ANOMALY]",
     "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3) [KNOWN_VERIFIED_ANOMALY]",
@@ -970,11 +970,11 @@
     "CA/ca-sc-aqua-canada-other-shellfish-cad-a: salto 69.0 -> 1783.0 en 2000 (mediana previa 69)"
    ],
    "stats": {
-    "series": 264,
-    "points": 56136,
+    "series": 266,
+    "points": 56374,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T15:00:50Z",
+   "generatedAt": "2026-11-10T20:50:29Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
@@ -1050,7 +1050,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-11-09T16:41:41Z",
+   "generatedAt": "2026-11-10T15:05:56Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1268,7 +1268,7 @@
     "points": 592,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T10:23:08Z",
+   "generatedAt": "2026-11-10T17:13:18Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1478,10 +1478,10 @@
    ],
    "stats": {
     "series": 232,
-    "points": 47831,
+    "points": 47832,
     "lines": 0
    },
-   "generatedAt": "2026-11-06T15:23:19Z",
+   "generatedAt": "2026-11-10T15:47:56Z",
    "info": [],
    "nWarnings": 5,
    "nErrors": 0
@@ -1707,10 +1707,10 @@
    "warnings": [],
    "stats": {
     "series": 35,
-    "points": 4559,
+    "points": 4564,
     "lines": 0
    },
-   "generatedAt": "2026-11-07T12:58:09Z",
+   "generatedAt": "2026-11-10T14:53:09Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1933,10 +1933,10 @@
    "warnings": [],
    "stats": {
     "series": 4,
-    "points": 4888,
+    "points": 4892,
     "lines": 0
    },
-   "generatedAt": "2026-11-03T14:22:16Z",
+   "generatedAt": "2026-11-10T20:27:42Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2136,7 +2136,7 @@
     "points": 1643,
     "lines": 0
    },
-   "generatedAt": "2026-11-09T16:52:19Z",
+   "generatedAt": "2026-11-10T15:15:18Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2152,7 +2152,7 @@
     "points": 0,
     "lines": 2186
    },
-   "generatedAt": "2026-11-06T15:56:40Z",
+   "generatedAt": "2026-11-10T16:26:26Z",
    "nWarnings": 0,
    "nErrors": 0
   },
