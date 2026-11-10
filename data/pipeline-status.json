@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-10T03:25:00Z",
+ "generatedAt": "2026-11-10T03:31:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 341,
+  "ok": 340,
   "late": 2,
-  "error": 5,
+  "error": 6,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-09T22:18:30.958122+00:00",
   "repoGeneratedAt": "2026-11-09T22:18:30.958122+00:00",
-  "checkedAt": "2026-11-10T03:25:00Z"
+  "checkedAt": "2026-11-10T03:31:00Z"
  },
  "pipelines": [
   {
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-10T03:11:00Z"
+     "lastChange": "2026-11-10T03:29:15Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5678,8 +5678,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42686317456"
    },
    "recent": {
-    "runs": 10,
-    "success": 7,
+    "runs": 9,
+    "success": 6,
     "failed": 3
    },
    "status": "ok",
@@ -7527,18 +7527,19 @@
    "nextRun": "2026-11-10T20:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-07T00:14:33Z",
-    "durationSec": 34,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42317011004"
+    "startedAt": "2026-11-10T03:28:04Z",
+    "durationSec": 130,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42745660503",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: HTTP Error 500: Internal Server Error"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 24.0
   },
   {
