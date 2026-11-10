@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-11-10T22:34:36.844Z",
+  "generatedAt": "2026-11-10T23:24:03.540Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -2337,7 +2337,7 @@
       "observationDate": "2026-11-01",
       "periodChangePct": -0.4711307137129195,
       "yoyPct": null,
-      "volatility": 0.041975797364417464,
+      "volatility": 0.041965269673595144,
       "points": 121,
       "coverageStart": "2016-11-01",
       "coverageEnd": "2026-11-01",
@@ -2356,7 +2356,7 @@
       "observationDate": "2026-11-01",
       "periodChangePct": -1.2008234217749214,
       "yoyPct": null,
-      "volatility": 0.03254690466825131,
+      "volatility": 0.032527431088593524,
       "points": 121,
       "coverageStart": "2016-11-01",
       "coverageEnd": "2026-11-01",
