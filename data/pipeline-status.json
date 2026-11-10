@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-10T22:00:00Z",
+ "generatedAt": "2026-11-10T22:18:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 340,
+  "ok": 339,
   "late": 2,
-  "error": 6,
+  "error": 7,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-10T17:02:30.472661+00:00",
   "repoGeneratedAt": "2026-11-10T17:02:30.472661+00:00",
-  "checkedAt": "2026-11-10T22:00:00Z"
+  "checkedAt": "2026-11-10T22:18:00Z"
  },
  "pipelines": [
   {
@@ -4313,13 +4313,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T00:28:36Z",
-    "durationSec": 109,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42728582895"
+    "startedAt": "2026-11-10T21:59:51Z",
+    "durationSec": 102,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42910347571"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -5591,7 +5591,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-10T21:46:13Z"
+     "lastChange": "2026-11-10T22:03:30Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5902,18 +5902,19 @@
    "nextRun": "2026-11-13T16:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-06T21:44:27Z",
-    "durationSec": 929,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42299188249"
+    "startedAt": "2026-11-10T21:55:54Z",
+    "durationSec": 1540,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42909753089",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-portugal.py ' has timed out after 25 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 96.0
   },
   {
@@ -7571,7 +7572,7 @@
    "crons": [
     "10 22 * * 1-5"
    ],
-   "nextRun": "2026-11-10T22:10:00Z",
+   "nextRun": "2026-11-11T22:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7586,7 +7587,7 @@
     "failed": 1
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-nass-cdl.yml",
