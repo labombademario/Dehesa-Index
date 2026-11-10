@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-09T23:08:49.399Z",
+  "generatedAt": "2026-11-10T04:46:14.465Z",
   "status": "informational",
   "rules": [
     {
@@ -561,15 +561,6 @@
     },
     {
       "type": "period_move",
-      "product": "harina_soja",
-      "region": "us",
-      "sourceId": "usda_ams_mars",
-      "severity": "watch",
-      "changePct": -8.94,
-      "observationDate": "2026-11-01"
-    },
-    {
-      "type": "period_move",
       "product": "cerdo_base_us",
       "region": "us",
       "sourceId": "usda_ams_lmr",
@@ -602,6 +593,15 @@
       "sourceId": "usda_ams_lmr",
       "severity": "high",
       "changePct": -15.25,
+      "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "severity": "watch",
+      "changePct": -8.94,
       "observationDate": "2026-11-01"
     },
     {
