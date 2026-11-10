@@ -1,2 +1,3 @@
-escaneo: 162 numeros probados, 0 ediciones,  0 sin respuesta
-sin ediciones nuevas: se conserva lo publicado
+escaneo: 162 numeros probados, 1 ediciones,  0 sin respuesta
+EDICION ILEGIBLE IraLai25147 la ficha no trae el fichero esperado; ficheros: ['2025_147inforaplait.pdf', '2025_147donneeslait.xlsx', '2025_147-DonneesLaitComplementaires.xlsx']
+series de catalogo: 63
