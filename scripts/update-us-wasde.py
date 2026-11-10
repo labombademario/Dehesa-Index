@@ -220,11 +220,20 @@ def main():
         if not names: raise ValueError("no hay XML del WASDE en la pagina")
         if len(names) < 2: U.log("solo un informe en la pagina:", names)
         done = set(ledger.get("reports", []))
+        # la pagina enlaza el XML del mes siguiente antes de su publicacion y usda.gov sirve entonces una pagina HTML
+        # «This file is not yet available»: ese informe aun no existe y se deja fuera (el actual sigue siendo el anterior)
+        cache = {}
+        if names and local is None:
+            raw0 = U.get(BASE + "wasde%s.xml" % names[-1])
+            if b"not yet available" in raw0[:2000].lower() and b"<html" in raw0[:200].lower():
+                U.log("aun no publicado (pagina provisional de usda.gov):", names[-1]); names = names[:-1]
+            else: cache[names[-1]] = raw0
+        if not names: raise ValueError("no hay XML del WASDE publicado")
         last_ym = None
         for nm in names[-2:]:
             ym = "20%s-%s" % (nm[2:], nm[:2])
             if ym in done and nm != names[-1]: U.log("ya en el libro:", ym); continue   # el informe actual se relee siempre (puede haber version corregida)
-            raw = U.get(BASE + "wasde%s.xml" % nm)
+            raw = cache.get(nm) or U.get(BASE + "wasde%s.xml" % nm)
             rep_ym, rows = extract(raw)
             if rep_ym != ym: raise ValueError("el XML %s dice ser del mes %s" % (nm, rep_ym))
             merge(ledger, rep_ym, rows); last_ym = rep_ym
