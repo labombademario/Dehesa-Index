@@ -1,14 +1,14 @@
-OK ch-foag-milk-price-total 328 pts 1999-05..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT. FOAG publica centimos/kg (1 centimo/kg = 1 CHF/100 kg).
-OK ch-foag-milk-price-dairy-conv 328 pts 1999-05..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT. FOAG publica centimos/kg (1 centimo/kg = 1 CHF/100 kg).
-OK ch-foag-milk-price-organic 328 pts 1999-05..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
-OK ch-foag-milk-price-cheese-conv 328 pts 1999-05..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
-OK ch-foag-milk-price-ipsuisse 54 pts 2022-03..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
+OK ch-foag-milk-price-total 329 pts 1999-05..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT. FOAG publica centimos/kg (1 centimo/kg = 1 CHF/100 kg).
+OK ch-foag-milk-price-dairy-conv 329 pts 1999-05..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT. FOAG publica centimos/kg (1 centimo/kg = 1 CHF/100 kg).
+OK ch-foag-milk-price-organic 329 pts 1999-05..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
+OK ch-foag-milk-price-cheese-conv 329 pts 1999-05..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
+OK ch-foag-milk-price-ipsuisse 55 pts 2022-03..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
 OK ch-foag-milk-prod-total 320 pts 2000-01..2026-08 FOAG: etapa Ex-farm (production stage) / Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
 OK ch-foag-milk-prod-organic 200 pts 2010-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: NA. Convertido de kg a toneladas.
-OK ch-foag-egg-price-all 128 pts 2016-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
-OK ch-foag-egg-price-barn 128 pts 2016-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
-OK ch-foag-egg-price-freerange 128 pts 2016-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
-OK ch-foag-egg-price-organic 128 pts 2016-01..2026-08 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
+OK ch-foag-egg-price-all 129 pts 2016-01..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
+OK ch-foag-egg-price-barn 129 pts 2016-01..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
+OK ch-foag-egg-price-freerange 129 pts 2016-01..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
+OK ch-foag-egg-price-organic 129 pts 2016-01..2026-09 FOAG: etapa Ex-farm (production stage); base de IVA: incl. VAT.
 OK ch-foag-feed-wheat 159 pts 2013-07..2026-09 FOAG: etapa Franco mill; base de IVA: excl. VAT.
 OK ch-foag-feed-barley 159 pts 2013-07..2026-09 FOAG: etapa Franco mill; base de IVA: excl. VAT.
 OK ch-foag-feed-maize 159 pts 2013-07..2026-09 FOAG: etapa Franco mill; base de IVA: excl. VAT.
@@ -47,8 +47,8 @@ OK ch-foag-cereal-mill-wheat1-conv 113 pts 2016-10..2026-09 FOAG: etapa Franco m
 OK ch-foag-cereal-mill-topwheat-ip 110 pts 2017-07..2026-09 FOAG: etapa Franco mill; base de IVA: excl. VAT.
 OK ch-foag-cereal-mill-wheat-organic 118 pts 2016-07..2026-09 FOAG: etapa Franco mill; base de IVA: excl. VAT.
 OK ch-foag-cereal-mill-flour 90 pts 2018-07..2026-09 FOAG: etapa Ex-processing/industry; base de IVA: excl. VAT.
-OK ch-foag-oil-retail-rapeseed-oil 20 pts 2020-01..2026-04 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
-OK ch-foag-oil-retail-sunflower-oil 20 pts 2020-01..2026-04 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
+OK ch-foag-oil-retail-rapeseed-oil 22 pts 2020-01..2026-10 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
+OK ch-foag-oil-retail-sunflower-oil 22 pts 2020-01..2026-10 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
 OK ch-foag-meat-supply-beef 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
 OK ch-foag-meat-supply-pork 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
 OK ch-foag-meat-supply-poultry 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
