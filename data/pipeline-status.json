@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-11T14:27:00Z",
+ "generatedAt": "2026-11-11T14:36:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 340,
@@ -11,13 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 8.2,
-  "prodGeneratedAt": "2026-11-11T06:12:45.616673+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-11-11T14:24:21.744726+00:00",
   "repoGeneratedAt": "2026-11-11T14:24:21.744726+00:00",
-  "checkedAt": "2026-11-11T14:27:00Z"
+  "checkedAt": "2026-11-11T14:36:00Z"
  },
  "pipelines": [
   {
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-11T14:21:16Z"
+     "lastChange": "2026-11-11T14:31:24Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5678,8 +5678,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43036154564"
    },
    "recent": {
-    "runs": 10,
-    "success": 6,
+    "runs": 9,
+    "success": 5,
     "failed": 4
    },
    "status": "error",
@@ -6618,13 +6618,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-04T14:41:36Z",
-    "durationSec": 70,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41850103279"
+    "startedAt": "2026-11-11T14:33:02Z",
+    "durationSec": 63,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43039540352"
    },
    "recent": {
-    "runs": 6,
-    "success": 6,
+    "runs": 7,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -7598,9 +7598,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T15:04:50Z",
-    "durationSec": 73,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42840623814"
+    "startedAt": "2026-11-11T14:36:03Z",
+    "durationSec": 42,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43040034290"
    },
    "recent": {
     "runs": 10,
