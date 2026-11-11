@@ -7558,9 +7558,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42903751574"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 9,
-    "failed": 1
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 72.0
