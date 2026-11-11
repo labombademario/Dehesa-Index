@@ -11602,5 +11602,713 @@
   "es": "Precio de suministros a la agricultura: Pienso compuesto para corderos ČOJ 2, OV-02 (EUR/t, ŠÚ SR)",
   "fr": "Prix des fournitures agricoles : Aliment composé pour agneaux ČOJ 2, OV-02 (EUR/t, ŠÚ SR)",
   "it": "Prezzo delle forniture agricole: Mangime composto per agnelli ČOJ 2, OV-02 (EUR/t, ŠÚ SR)"
+ },
+ "Federally inspected slaughter: calves, female (weekly, head)": {
+  "en": "Federally inspected slaughter: calves, female (weekly, head)",
+  "es": "Sacrificio con inspección federal: terneros, hembras (semanal, cabezas)",
+  "fr": "Abattages sous inspection fédérale : veaux, femelles (hebdomadaire, têtes)",
+  "it": "Macellazioni con ispezione federale: vitelli, femmine (settimanale, capi)"
+ },
+ "Federally inspected slaughter: calves, male (weekly, head)": {
+  "en": "Federally inspected slaughter: calves, male (weekly, head)",
+  "es": "Sacrificio con inspección federal: terneros, machos (semanal, cabezas)",
+  "fr": "Abattages sous inspection fédérale : veaux, mâles (hebdomadaire, têtes)",
+  "it": "Macellazioni con ispezione federale: vitelli, maschi (settimanale, capi)"
+ },
+ "Federally inspected slaughter: cattle, bulls (weekly, head)": {
+  "en": "Federally inspected slaughter: cattle, bulls (weekly, head)",
+  "es": "Sacrificio con inspección federal: vacuno, toros (semanal, cabezas)",
+  "fr": "Abattages sous inspection fédérale : bovins, taureaux (hebdomadaire, têtes)",
+  "it": "Macellazioni con ispezione federale: bovini, tori (settimanale, capi)"
+ },
+ "Federally inspected slaughter: cattle, cows (weekly, head)": {
+  "en": "Federally inspected slaughter: cattle, cows (weekly, head)",
+  "es": "Sacrificio con inspección federal: vacuno, vacas (semanal, cabezas)",
+  "fr": "Abattages sous inspection fédérale : bovins, vaches (hebdomadaire, têtes)",
+  "it": "Macellazioni con ispezione federale: bovini, vacche (settimanale, capi)"
+ },
+ "Federally inspected slaughter: cattle, heifers (weekly, head)": {
+  "en": "Federally inspected slaughter: cattle, heifers (weekly, head)",
+  "es": "Sacrificio con inspección federal: vacuno, novillas (semanal, cabezas)",
+  "fr": "Abattages sous inspection fédérale : bovins, génisses (hebdomadaire, têtes)",
+  "it": "Macellazioni con ispezione federale: bovini, manze (settimanale, capi)"
+ },
+ "Federally inspected slaughter: cattle, steers (weekly, head)": {
+  "en": "Federally inspected slaughter: cattle, steers (weekly, head)",
+  "es": "Sacrificio con inspección federal: vacuno, novillos (semanal, cabezas)",
+  "fr": "Abattages sous inspection fédérale : bovins, bouvillons (hebdomadaire, têtes)",
+  "it": "Macellazioni con ispezione federale: bovini, manzi castrati (settimanale, capi)"
+ },
+ "Federally inspected slaughter: hogs, boars (weekly, head)": {
+  "en": "Federally inspected slaughter: hogs, boars (weekly, head)",
+  "es": "Sacrificio con inspección federal: porcino, verracos (semanal, cabezas)",
+  "fr": "Abattages sous inspection fédérale : porcins, verrats (hebdomadaire, têtes)",
+  "it": "Macellazioni con ispezione federale: suini, verri (settimanale, capi)"
+ },
+ "Federally inspected slaughter: hogs, market hogs (weekly, head)": {
+  "en": "Federally inspected slaughter: hogs, market hogs (weekly, head)",
+  "es": "Sacrificio con inspección federal: porcino, cerdos de mercado (semanal, cabezas)",
+  "fr": "Abattages sous inspection fédérale : porcins, porcs de marché (hebdomadaire, têtes)",
+  "it": "Macellazioni con ispezione federale: suini, suini da macello (settimanale, capi)"
+ },
+ "Bank of Canada commodity price index (BCPI), agriculture, weekly": {
+  "en": "Bank of Canada commodity price index (BCPI), agriculture, weekly",
+  "es": "Índice de precios de materias primas del Banco de Canadá (BCPI), agricultura, semanal",
+  "fr": "Indice des prix des produits de base de la Banque du Canada (IPPB), agriculture, hebdomadaire",
+  "it": "Indice dei prezzi delle materie prime della Banca del Canada (BCPI), agricoltura, settimanale"
+ },
+ "Bank of Canada commodity price index (BCPI), agriculture, monthly": {
+  "en": "Bank of Canada commodity price index (BCPI), agriculture, monthly",
+  "es": "Índice de precios de materias primas del Banco de Canadá (BCPI), agricultura, mensual",
+  "fr": "Indice des prix des produits de base de la Banque du Canada (IPPB), agriculture, mensuel",
+  "it": "Indice dei prezzi delle materie prime della Banca del Canada (BCPI), agricoltura, mensile"
+ },
+ "Bank of Canada commodity price index (BCPI), total excluding energy, weekly": {
+  "en": "Bank of Canada commodity price index (BCPI), total excluding energy, weekly",
+  "es": "Índice de precios de materias primas del Banco de Canadá (BCPI), total sin energía, semanal",
+  "fr": "Indice des prix des produits de base de la Banque du Canada (IPPB), total hors énergie, hebdomadaire",
+  "it": "Indice dei prezzi delle materie prime della Banca del Canada (BCPI), totale esclusa energia, settimanale"
+ },
+ "Bank of Canada commodity price index (BCPI), total excluding energy, monthly": {
+  "en": "Bank of Canada commodity price index (BCPI), total excluding energy, monthly",
+  "es": "Índice de precios de materias primas del Banco de Canadá (BCPI), total sin energía, mensual",
+  "fr": "Indice des prix des produits de base de la Banque du Canada (IPPB), total hors énergie, mensuel",
+  "it": "Indice dei prezzi delle materie prime della Banca del Canada (BCPI), totale esclusa energia, mensile"
+ },
+ "Bank of Canada commodity price index (BCPI), total, weekly": {
+  "en": "Bank of Canada commodity price index (BCPI), total, weekly",
+  "es": "Índice de precios de materias primas del Banco de Canadá (BCPI), total, semanal",
+  "fr": "Indice des prix des produits de base de la Banque du Canada (IPPB), total, hebdomadaire",
+  "it": "Indice dei prezzi delle materie prime della Banca del Canada (BCPI), totale, settimanale"
+ },
+ "Bank of Canada commodity price index (BCPI), energy, weekly": {
+  "en": "Bank of Canada commodity price index (BCPI), energy, weekly",
+  "es": "Índice de precios de materias primas del Banco de Canadá (BCPI), energía, semanal",
+  "fr": "Indice des prix des produits de base de la Banque du Canada (IPPB), énergie, hebdomadaire",
+  "it": "Indice dei prezzi delle materie prime della Banca del Canada (BCPI), energia, settimanale"
+ },
+ "Bank of Canada commodity price index (BCPI), forestry, weekly": {
+  "en": "Bank of Canada commodity price index (BCPI), forestry, weekly",
+  "es": "Índice de precios de materias primas del Banco de Canadá (BCPI), productos forestales, semanal",
+  "fr": "Indice des prix des produits de base de la Banque du Canada (IPPB), produits forestiers, hebdomadaire",
+  "it": "Indice dei prezzi delle materie prime della Banca del Canada (BCPI), prodotti forestali, settimanale"
+ },
+ "Bank of Canada commodity price index (BCPI), metals and minerals, weekly": {
+  "en": "Bank of Canada commodity price index (BCPI), metals and minerals, weekly",
+  "es": "Índice de precios de materias primas del Banco de Canadá (BCPI), metales y minerales, semanal",
+  "fr": "Indice des prix des produits de base de la Banque du Canada (IPPB), métaux et minéraux, hebdomadaire",
+  "it": "Indice dei prezzi delle materie prime della Banca del Canada (BCPI), metalli e minerali, settimanale"
+ },
+ "Aquaculture, Canada: clams, production in tonnes (annual)": {
+  "en": "Aquaculture, Canada: clams, production in tonnes (annual)",
+  "es": "Acuicultura, Canadá: almejas, producción en toneladas (anual)",
+  "fr": "Aquaculture, Canada : palourdes, production en tonnes (annuel)",
+  "it": "Acquacoltura, Canada: vongole, produzione in tonnellate (annuale)"
+ },
+ "Aquaculture, Canada: clams, value in thousand CAD (annual)": {
+  "en": "Aquaculture, Canada: clams, value in thousand CAD (annual)",
+  "es": "Acuicultura, Canadá: almejas, valor en miles de CAD (anual)",
+  "fr": "Aquaculture, Canada : palourdes, valeur en milliers de CAD (annuel)",
+  "it": "Acquacoltura, Canada: vongole, valore in migliaia di CAD (annuale)"
+ },
+ "Aquaculture, Canada: mussels, production in tonnes (annual)": {
+  "en": "Aquaculture, Canada: mussels, production in tonnes (annual)",
+  "es": "Acuicultura, Canadá: mejillones, producción en toneladas (anual)",
+  "fr": "Aquaculture, Canada : moules, production en tonnes (annuel)",
+  "it": "Acquacoltura, Canada: cozze, produzione in tonnellate (annuale)"
+ },
+ "Aquaculture, Canada: mussels, value in thousand CAD (annual)": {
+  "en": "Aquaculture, Canada: mussels, value in thousand CAD (annual)",
+  "es": "Acuicultura, Canadá: mejillones, valor en miles de CAD (anual)",
+  "fr": "Aquaculture, Canada : moules, valeur en milliers de CAD (annuel)",
+  "it": "Acquacoltura, Canada: cozze, valore in migliaia di CAD (annuale)"
+ },
+ "Aquaculture, Canada: other finfish, production in tonnes (annual)": {
+  "en": "Aquaculture, Canada: other finfish, production in tonnes (annual)",
+  "es": "Acuicultura, Canadá: otros peces, producción en toneladas (anual)",
+  "fr": "Aquaculture, Canada : autres poissons, production en tonnes (annuel)",
+  "it": "Acquacoltura, Canada: altri pesci, produzione in tonnellate (annuale)"
+ },
+ "Aquaculture, Canada: other finfish, value in thousand CAD (annual)": {
+  "en": "Aquaculture, Canada: other finfish, value in thousand CAD (annual)",
+  "es": "Acuicultura, Canadá: otros peces, valor en miles de CAD (anual)",
+  "fr": "Aquaculture, Canada : autres poissons, valeur en milliers de CAD (annuel)",
+  "it": "Acquacoltura, Canada: altri pesci, valore in migliaia di CAD (annuale)"
+ },
+ "Aquaculture, Canada: other shellfish, value in thousand CAD (annual)": {
+  "en": "Aquaculture, Canada: other shellfish, value in thousand CAD (annual)",
+  "es": "Acuicultura, Canadá: otros mariscos, valor en miles de CAD (anual)",
+  "fr": "Aquaculture, Canada : autres mollusques et crustacés, valeur en milliers de CAD (annuel)",
+  "it": "Acquacoltura, Canada: altri molluschi e crostacei, valore in migliaia di CAD (annuale)"
+ },
+ "Aquaculture, British Columbia: total aquaculture, production in tonnes (annual)": {
+  "en": "Aquaculture, British Columbia: total aquaculture, production in tonnes (annual)",
+  "es": "Acuicultura, Columbia Británica: acuicultura total, producción en toneladas (anual)",
+  "fr": "Aquaculture, Colombie-Britannique : aquaculture totale, production en tonnes (annuel)",
+  "it": "Acquacoltura, Columbia Britannica: acquacoltura totale, produzione in tonnellate (annuale)"
+ },
+ "Wheat milling: wheat flour produced (quarterly)": {
+  "en": "Wheat milling: wheat flour produced (quarterly)",
+  "es": "Molienda de trigo: harina de trigo producida (trimestral)",
+  "fr": "Meunerie du blé : farine de blé produite (trimestriel)",
+  "it": "Macinazione del frumento: farina di frumento prodotta (trimestrale)"
+ },
+ "Agricultural productivity: Capital (ERS International, index)": {
+  "en": "Agricultural productivity: Capital (ERS International, index)",
+  "es": "Productividad agraria: capital (ERS International, índice)",
+  "fr": "Productivité agricole : capital (ERS International, indice)",
+  "it": "Produttività agricola: capitale (ERS International, indice)"
+ },
+ "Agricultural productivity: Input (ERS International, index)": {
+  "en": "Agricultural productivity: Input (ERS International, index)",
+  "es": "Productividad agraria: insumos totales (ERS International, índice)",
+  "fr": "Productivité agricole : intrants totaux (ERS International, indice)",
+  "it": "Produttività agricola: input totali (ERS International, indice)"
+ },
+ "Agricultural productivity: Labor (ERS International, index)": {
+  "en": "Agricultural productivity: Labor (ERS International, index)",
+  "es": "Productividad agraria: trabajo (ERS International, índice)",
+  "fr": "Productivité agricole : travail (ERS International, indice)",
+  "it": "Produttività agricola: lavoro (ERS International, indice)"
+ },
+ "Agricultural productivity: Land (ERS International, index)": {
+  "en": "Agricultural productivity: Land (ERS International, index)",
+  "es": "Productividad agraria: tierra (ERS International, índice)",
+  "fr": "Productivité agricole : terre (ERS International, indice)",
+  "it": "Produttività agricola: terra (ERS International, indice)"
+ },
+ "Agricultural productivity: Materials (ERS International, index)": {
+  "en": "Agricultural productivity: Materials (ERS International, index)",
+  "es": "Productividad agraria: materiales (ERS International, índice)",
+  "fr": "Productivité agricole : matériaux (ERS International, indice)",
+  "it": "Produttività agricola: materiali (ERS International, indice)"
+ },
+ "Agricultural productivity: Outall (ERS International, index)": {
+  "en": "Agricultural productivity: Outall (ERS International, index)",
+  "es": "Productividad agraria: producción total (ERS International, índice)",
+  "fr": "Productivité agricole : production totale (ERS International, indice)",
+  "it": "Produttività agricola: produzione totale (ERS International, indice)"
+ },
+ "Agricultural productivity: TFP (ERS International, index)": {
+  "en": "Agricultural productivity: TFP (ERS International, index)",
+  "es": "Productividad agraria: productividad total de los factores (PTF) (ERS International, índice)",
+  "fr": "Productivité agricole : productivité totale des facteurs (PTF) (ERS International, indice)",
+  "it": "Produttività agricola: produttività totale dei fattori (PTF) (ERS International, indice)"
+ },
+ "Consumer price index (HICP, 2025=100): All items, Germany": {
+  "en": "Consumer price index (HICP, 2025=100): All items, Germany",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): índice general, Alemania",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : ensemble des produits, Allemagne",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): indice generale, Germania"
+ },
+ "Consumer price index (HICP, 2025=100): Cereals, Germany": {
+  "en": "Consumer price index (HICP, 2025=100): Cereals, Germany",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): cereales, Alemania",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : céréales, Allemagne",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): cereali, Germania"
+ },
+ "Consumer price index (HICP, 2025=100): Flour of cereals, Germany": {
+  "en": "Consumer price index (HICP, 2025=100): Flour of cereals, Germany",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): harina de cereales, Alemania",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : farines de céréales, Allemagne",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): farine di cereali, Germania"
+ },
+ "Consumer price index (HICP, 2025=100): Bread and bakery products, Germany": {
+  "en": "Consumer price index (HICP, 2025=100): Bread and bakery products, Germany",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): pan y productos de panadería, Alemania",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : pain et produits de boulangerie, Allemagne",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): pane e prodotti di panetteria, Germania"
+ },
+ "Consumer price index (HICP, 2025=100): Breakfast cereals, Germany": {
+  "en": "Consumer price index (HICP, 2025=100): Breakfast cereals, Germany",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): cereales de desayuno, Alemania",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : céréales pour petit-déjeuner, Allemagne",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): cereali per la colazione, Germania"
+ },
+ "Consumer price index (HICP, 2025=100): Macaroni, noodles, couscous and similar pasta products, Germany": {
+  "en": "Consumer price index (HICP, 2025=100): Macaroni, noodles, couscous and similar pasta products, Germany",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): macarrones, fideos, cuscús y pastas similares, Alemania",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : pâtes alimentaires, nouilles, couscous et produits similaires, Allemagne",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): pasta, noodles, couscous e prodotti simili, Germania"
+ },
+ "Consumer price index (HICP, 2025=100): Other milled cereal and grain products, Germany": {
+  "en": "Consumer price index (HICP, 2025=100): Other milled cereal and grain products, Germany",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): otros productos de molienda de cereales, Alemania",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : autres produits céréaliers de mouture, Allemagne",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): altri prodotti della macinazione dei cereali, Germania"
+ },
+ "Consumer price index (HICP, 2025=100): Meat, fresh, chilled or frozen, Germany": {
+  "en": "Consumer price index (HICP, 2025=100): Meat, fresh, chilled or frozen, Germany",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): carne fresca, refrigerada o congelada, Alemania",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : viande fraîche, réfrigérée ou congelée, Allemagne",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): carne fresca, refrigerata o congelata, Germania"
+ },
+ "Consumer price index (HICP, 2025=100): All items, Greece": {
+  "en": "Consumer price index (HICP, 2025=100): All items, Greece",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): índice general, Grecia",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : ensemble des produits, Grèce",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): indice generale, Grecia"
+ },
+ "Consumer price index (HICP, 2025=100): Cereals, Greece": {
+  "en": "Consumer price index (HICP, 2025=100): Cereals, Greece",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): cereales, Grecia",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : céréales, Grèce",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): cereali, Grecia"
+ },
+ "Consumer price index (HICP, 2025=100): Flour of cereals, Greece": {
+  "en": "Consumer price index (HICP, 2025=100): Flour of cereals, Greece",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): harina de cereales, Grecia",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : farines de céréales, Grèce",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): farine di cereali, Grecia"
+ },
+ "Consumer price index (HICP, 2025=100): Bread and bakery products, Greece": {
+  "en": "Consumer price index (HICP, 2025=100): Bread and bakery products, Greece",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): pan y productos de panadería, Grecia",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : pain et produits de boulangerie, Grèce",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): pane e prodotti di panetteria, Grecia"
+ },
+ "Consumer price index (HICP, 2025=100): Breakfast cereals, Greece": {
+  "en": "Consumer price index (HICP, 2025=100): Breakfast cereals, Greece",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): cereales de desayuno, Grecia",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : céréales pour petit-déjeuner, Grèce",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): cereali per la colazione, Grecia"
+ },
+ "Consumer price index (HICP, 2025=100): Macaroni, noodles, couscous and similar pasta products, Greece": {
+  "en": "Consumer price index (HICP, 2025=100): Macaroni, noodles, couscous and similar pasta products, Greece",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): macarrones, fideos, cuscús y pastas similares, Grecia",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : pâtes alimentaires, nouilles, couscous et produits similaires, Grèce",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): pasta, noodles, couscous e prodotti simili, Grecia"
+ },
+ "Consumer price index (HICP, 2025=100): Other milled cereal and grain products, Greece": {
+  "en": "Consumer price index (HICP, 2025=100): Other milled cereal and grain products, Greece",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): otros productos de molienda de cereales, Grecia",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : autres produits céréaliers de mouture, Grèce",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): altri prodotti della macinazione dei cereali, Grecia"
+ },
+ "Consumer price index (HICP, 2025=100): Meat, fresh, chilled or frozen, Greece": {
+  "en": "Consumer price index (HICP, 2025=100): Meat, fresh, chilled or frozen, Greece",
+  "es": "Índice de precios de consumo (IPCA, 2025=100): carne fresca, refrigerada o congelada, Grecia",
+  "fr": "Indice des prix à la consommation (IPCH, 2025=100) : viande fraîche, réfrigérée ou congelée, Grèce",
+  "it": "Indice dei prezzi al consumo (IPCA, 2025=100): carne fresca, refrigerata o congelata, Grecia"
+ },
+ "IPC (base 2025=100): Cereales": {
+  "en": "CPI (base 2025=100): Cereals",
+  "es": "IPC (base 2025=100): Cereales",
+  "fr": "IPC (base 2025=100) : Céréales",
+  "it": "IPC (base 2025=100): Cereali"
+ },
+ "IPC (base 2025=100): Pan y productos de panadería": {
+  "en": "CPI (base 2025=100): Bread and bakery products",
+  "es": "IPC (base 2025=100): Pan y productos de panadería",
+  "fr": "IPC (base 2025=100) : Pain et produits de boulangerie",
+  "it": "IPC (base 2025=100): Pane e prodotti di panetteria"
+ },
+ "IPC (base 2025=100): Macarrones, tallarines, cuscús y pastas alimenticias similares": {
+  "en": "CPI (base 2025=100): Macaroni, noodles, couscous and similar pasta products",
+  "es": "IPC (base 2025=100): Macarrones, tallarines, cuscús y pastas alimenticias similares",
+  "fr": "IPC (base 2025=100) : Pâtes alimentaires, nouilles, couscous et produits similaires",
+  "it": "IPC (base 2025=100): Pasta, noodles, couscous e prodotti simili"
+ },
+ "IPC (base 2025=100): Carne, fresca, refrigerada o congelada": {
+  "en": "CPI (base 2025=100): Meat, fresh, chilled or frozen",
+  "es": "IPC (base 2025=100): Carne, fresca, refrigerada o congelada",
+  "fr": "IPC (base 2025=100) : Viande fraîche, réfrigérée ou congelée",
+  "it": "IPC (base 2025=100): Carne fresca, refrigerata o congelata"
+ },
+ "IPC (base 2025=100): Carne, seca, salada, en salmuera o ahumada": {
+  "en": "CPI (base 2025=100): Meat, dried, salted, in brine or smoked",
+  "es": "IPC (base 2025=100): Carne, seca, salada, en salmuera o ahumada",
+  "fr": "IPC (base 2025=100) : Viande séchée, salée, en saumure ou fumée",
+  "it": "IPC (base 2025=100): Carne essiccata, salata, in salamoia o affumicata"
+ },
+ "IPC (base 2025=100): Preparados de carne y despojos": {
+  "en": "CPI (base 2025=100): Meat preparations and offal",
+  "es": "IPC (base 2025=100): Preparados de carne y despojos",
+  "fr": "IPC (base 2025=100) : Préparations de viande et abats",
+  "it": "IPC (base 2025=100): Preparazioni di carne e frattaglie"
+ },
+ "IPC (base 2025=100): Queso": {
+  "en": "CPI (base 2025=100): Cheese",
+  "es": "IPC (base 2025=100): Queso",
+  "fr": "IPC (base 2025=100) : Fromage",
+  "it": "IPC (base 2025=100): Formaggio"
+ },
+ "IPC (base 2025=100): Huevos": {
+  "en": "CPI (base 2025=100): Eggs",
+  "es": "IPC (base 2025=100): Huevos",
+  "fr": "IPC (base 2025=100) : Œufs",
+  "it": "IPC (base 2025=100): Uova"
+ },
+ "Ocupados en agricultura (EPA, miles de personas): España": {
+  "en": "Employed in agriculture (EPA labour force survey, thousand people): Spain",
+  "es": "Ocupados en agricultura (EPA, miles de personas): España",
+  "fr": "Actifs occupés dans l'agriculture (enquête EPA, milliers de personnes) : Espagne",
+  "it": "Occupati in agricoltura (indagine EPA, migliaia di persone): Spagna"
+ },
+ "Ocupados en agricultura (EPA, miles de personas): Andalucía": {
+  "en": "Employed in agriculture (EPA labour force survey, thousand people): Andalucía",
+  "es": "Ocupados en agricultura (EPA, miles de personas): Andalucía",
+  "fr": "Actifs occupés dans l'agriculture (enquête EPA, milliers de personnes) : Andalucía",
+  "it": "Occupati in agricoltura (indagine EPA, migliaia di persone): Andalucía"
+ },
+ "Ocupados en agricultura (EPA, miles de personas): Aragón": {
+  "en": "Employed in agriculture (EPA labour force survey, thousand people): Aragón",
+  "es": "Ocupados en agricultura (EPA, miles de personas): Aragón",
+  "fr": "Actifs occupés dans l'agriculture (enquête EPA, milliers de personnes) : Aragón",
+  "it": "Occupati in agricoltura (indagine EPA, migliaia di persone): Aragón"
+ },
+ "Ocupados en agricultura (EPA, miles de personas): Asturias": {
+  "en": "Employed in agriculture (EPA labour force survey, thousand people): Asturias",
+  "es": "Ocupados en agricultura (EPA, miles de personas): Asturias",
+  "fr": "Actifs occupés dans l'agriculture (enquête EPA, milliers de personnes) : Asturias",
+  "it": "Occupati in agricoltura (indagine EPA, migliaia di persone): Asturias"
+ },
+ "Ocupados en agricultura (EPA, miles de personas): Illes Balears": {
+  "en": "Employed in agriculture (EPA labour force survey, thousand people): Illes Balears",
+  "es": "Ocupados en agricultura (EPA, miles de personas): Illes Balears",
+  "fr": "Actifs occupés dans l'agriculture (enquête EPA, milliers de personnes) : Illes Balears",
+  "it": "Occupati in agricoltura (indagine EPA, migliaia di persone): Illes Balears"
+ },
+ "Ocupados en agricultura (EPA, miles de personas): Canarias": {
+  "en": "Employed in agriculture (EPA labour force survey, thousand people): Canarias",
+  "es": "Ocupados en agricultura (EPA, miles de personas): Canarias",
+  "fr": "Actifs occupés dans l'agriculture (enquête EPA, milliers de personnes) : Canarias",
+  "it": "Occupati in agricoltura (indagine EPA, migliaia di persone): Canarias"
+ },
+ "Ocupados en agricultura (EPA, miles de personas): Cantabria": {
+  "en": "Employed in agriculture (EPA labour force survey, thousand people): Cantabria",
+  "es": "Ocupados en agricultura (EPA, miles de personas): Cantabria",
+  "fr": "Actifs occupés dans l'agriculture (enquête EPA, milliers de personnes) : Cantabria",
+  "it": "Occupati in agricoltura (indagine EPA, migliaia di persone): Cantabria"
+ },
+ "Ocupados en agricultura (EPA, miles de personas): Castilla y León": {
+  "en": "Employed in agriculture (EPA labour force survey, thousand people): Castilla y León",
+  "es": "Ocupados en agricultura (EPA, miles de personas): Castilla y León",
+  "fr": "Actifs occupés dans l'agriculture (enquête EPA, milliers de personnes) : Castilla y León",
+  "it": "Occupati in agricoltura (indagine EPA, migliaia di persone): Castilla y León"
+ },
+ "Area: barley (1,000 ha), Finland (Luke)": {
+  "en": "Area: barley (1,000 ha), Finland (Luke)",
+  "es": "Superficie: cebada (miles de ha), Finlandia (Luke)",
+  "fr": "Surface : orge (milliers d’ha), Finlande (Luke)",
+  "it": "Superficie: orzo (migliaia di ha), Finlandia (Luke)"
+ },
+ "Area: cultivated area (1,000 ha), Finland (Luke)": {
+  "en": "Area: cultivated area (1,000 ha), Finland (Luke)",
+  "es": "Superficie: superficie cultivada (miles de ha), Finlandia (Luke)",
+  "fr": "Surface : surface cultivée (milliers d’ha), Finlande (Luke)",
+  "it": "Superficie: superficie coltivata (migliaia di ha), Finlandia (Luke)"
+ },
+ "Area: fallow area (1,000 ha), Finland (Luke)": {
+  "en": "Area: fallow area (1,000 ha), Finland (Luke)",
+  "es": "Superficie: barbecho (miles de ha), Finlandia (Luke)",
+  "fr": "Surface : jachère (milliers d’ha), Finlande (Luke)",
+  "it": "Superficie: maggese (migliaia di ha), Finlandia (Luke)"
+ },
+ "Area: grassland crops (1,000 ha), Finland (Luke)": {
+  "en": "Area: grassland crops (1,000 ha), Finland (Luke)",
+  "es": "Superficie: cultivos forrajeros herbáceos (miles de ha), Finlandia (Luke)",
+  "fr": "Surface : cultures fourragères herbagères (milliers d’ha), Finlande (Luke)",
+  "it": "Superficie: colture foraggere prative (migliaia di ha), Finlandia (Luke)"
+ },
+ "Area: oats (1,000 ha), Finland (Luke)": {
+  "en": "Area: oats (1,000 ha), Finland (Luke)",
+  "es": "Superficie: avena (miles de ha), Finlandia (Luke)",
+  "fr": "Surface : avoine (milliers d’ha), Finlande (Luke)",
+  "it": "Superficie: avena (migliaia di ha), Finlandia (Luke)"
+ },
+ "Area: potatoes (1,000 ha), Finland (Luke)": {
+  "en": "Area: potatoes (1,000 ha), Finland (Luke)",
+  "es": "Superficie: patatas (miles de ha), Finlandia (Luke)",
+  "fr": "Surface : pommes de terre (milliers d’ha), Finlande (Luke)",
+  "it": "Superficie: patate (migliaia di ha), Finlandia (Luke)"
+ },
+ "Area: rye (1,000 ha), Finland (Luke)": {
+  "en": "Area: rye (1,000 ha), Finland (Luke)",
+  "es": "Superficie: centeno (miles de ha), Finlandia (Luke)",
+  "fr": "Surface : seigle (milliers d’ha), Finlande (Luke)",
+  "it": "Superficie: segale (migliaia di ha), Finlandia (Luke)"
+ },
+ "Area: total (cultivated area and fallow) (1,000 ha), Finland (Luke)": {
+  "en": "Area: total (cultivated area and fallow) (1,000 ha), Finland (Luke)",
+  "es": "Superficie: total (superficie cultivada y barbecho) (miles de ha), Finlandia (Luke)",
+  "fr": "Surface : total (surface cultivée et jachère) (milliers d’ha), Finlande (Luke)",
+  "it": "Superficie: totale (superficie coltivata e maggese) (migliaia di ha), Finlandia (Luke)"
+ },
+ "Slaughterings: broilers (heads), Finland (Luke)": {
+  "en": "Slaughterings: broilers (heads), Finland (Luke)",
+  "es": "Sacrificio: pollos de engorde (cabezas), Finlandia (Luke)",
+  "fr": "Abattages : poulets de chair (têtes), Finlande (Luke)",
+  "it": "Macellazioni: polli da carne (capi), Finlandia (Luke)"
+ },
+ "Slaughterings: bulls, over 12 months (heads), Finland (Luke)": {
+  "en": "Slaughterings: bulls, over 12 months (heads), Finland (Luke)",
+  "es": "Sacrificio: toros de más de 12 meses (cabezas), Finlandia (Luke)",
+  "fr": "Abattages : taureaux de plus de 12 mois (têtes), Finlande (Luke)",
+  "it": "Macellazioni: tori di oltre 12 mesi (capi), Finlandia (Luke)"
+ },
+ "Slaughterings: cattle (heads), Finland (Luke)": {
+  "en": "Slaughterings: cattle (heads), Finland (Luke)",
+  "es": "Sacrificio: vacuno (cabezas), Finlandia (Luke)",
+  "fr": "Abattages : bovins (têtes), Finlande (Luke)",
+  "it": "Macellazioni: bovini (capi), Finlandia (Luke)"
+ },
+ "Slaughterings: cows (heads), Finland (Luke)": {
+  "en": "Slaughterings: cows (heads), Finland (Luke)",
+  "es": "Sacrificio: vacas (cabezas), Finlandia (Luke)",
+  "fr": "Abattages : vaches (têtes), Finlande (Luke)",
+  "it": "Macellazioni: vacche (capi), Finlandia (Luke)"
+ },
+ "Slaughterings: fattening pigs (heads), Finland (Luke)": {
+  "en": "Slaughterings: fattening pigs (heads), Finland (Luke)",
+  "es": "Sacrificio: cerdos de cebo (cabezas), Finlandia (Luke)",
+  "fr": "Abattages : porcs d’engraissement (têtes), Finlande (Luke)",
+  "it": "Macellazioni: suini da ingrasso (capi), Finlandia (Luke)"
+ },
+ "Slaughterings: heifers, over 12 months (heads), Finland (Luke)": {
+  "en": "Slaughterings: heifers, over 12 months (heads), Finland (Luke)",
+  "es": "Sacrificio: novillas de más de 12 meses (cabezas), Finlandia (Luke)",
+  "fr": "Abattages : génisses de plus de 12 mois (têtes), Finlande (Luke)",
+  "it": "Macellazioni: manze di oltre 12 mesi (capi), Finlandia (Luke)"
+ },
+ "Slaughterings: pigs (heads), Finland (Luke)": {
+  "en": "Slaughterings: pigs (heads), Finland (Luke)",
+  "es": "Sacrificio: porcino (cabezas), Finlandia (Luke)",
+  "fr": "Abattages : porcins (têtes), Finlande (Luke)",
+  "it": "Macellazioni: suini (capi), Finlandia (Luke)"
+ },
+ "Slaughterings: poultry (heads), Finland (Luke)": {
+  "en": "Slaughterings: poultry (heads), Finland (Luke)",
+  "es": "Sacrificio: aves de corral (cabezas), Finlandia (Luke)",
+  "fr": "Abattages : volailles (têtes), Finlande (Luke)",
+  "it": "Macellazioni: pollame (capi), Finlandia (Luke)"
+ },
+ "Average pig carcass weight, Finland (Luke)": {
+  "en": "Average pig carcass weight, Finland (Luke)",
+  "es": "Peso medio de la canal de cerdo, Finlandia (Luke)",
+  "fr": "Poids moyen de la carcasse de porc, Finlande (Luke)",
+  "it": "Peso medio della carcassa suina, Finlandia (Luke)"
+ },
+ "Grain, factory purchase price: feed barley at Koskenkorva, Finland (Luke)": {
+  "en": "Grain, factory purchase price: feed barley at Koskenkorva, Finland (Luke)",
+  "es": "Cereal, precio de compra en fábrica: cebada forrajera en Koskenkorva, Finlandia (Luke)",
+  "fr": "Céréales, prix d’achat en usine : orge fourragère à Koskenkorva, Finlande (Luke)",
+  "it": "Cereali, prezzo di acquisto in stabilimento: orzo da foraggio a Koskenkorva, Finlandia (Luke)"
+ },
+ "Grain, factory purchase price: feed barley at Raisio, Finland (Luke)": {
+  "en": "Grain, factory purchase price: feed barley at Raisio, Finland (Luke)",
+  "es": "Cereal, precio de compra en fábrica: cebada forrajera en Raisio, Finlandia (Luke)",
+  "fr": "Céréales, prix d’achat en usine : orge fourragère à Raisio, Finlande (Luke)",
+  "it": "Cereali, prezzo di acquisto in stabilimento: orzo da foraggio a Raisio, Finlandia (Luke)"
+ },
+ "Grain, factory purchase price: feed wheat at Koskenkorva, Finland (Luke)": {
+  "en": "Grain, factory purchase price: feed wheat at Koskenkorva, Finland (Luke)",
+  "es": "Cereal, precio de compra en fábrica: trigo forrajero en Koskenkorva, Finlandia (Luke)",
+  "fr": "Céréales, prix d’achat en usine : blé fourrager à Koskenkorva, Finlande (Luke)",
+  "it": "Cereali, prezzo di acquisto in stabilimento: frumento da foraggio a Koskenkorva, Finlandia (Luke)"
+ },
+ "Grain, factory purchase price: feed wheat at Raisio, Finland (Luke)": {
+  "en": "Grain, factory purchase price: feed wheat at Raisio, Finland (Luke)",
+  "es": "Cereal, precio de compra en fábrica: trigo forrajero en Raisio, Finlandia (Luke)",
+  "fr": "Céréales, prix d’achat en usine : blé fourrager à Raisio, Finlande (Luke)",
+  "it": "Cereali, prezzo di acquisto in stabilimento: frumento da foraggio a Raisio, Finlandia (Luke)"
+ },
+ "Grain, factory purchase price: bread wheat at Raisio, Finland (Luke)": {
+  "en": "Grain, factory purchase price: bread wheat at Raisio, Finland (Luke)",
+  "es": "Cereal, precio de compra en fábrica: trigo panificable en Raisio, Finlandia (Luke)",
+  "fr": "Céréales, prix d’achat en usine : blé panifiable à Raisio, Finlande (Luke)",
+  "it": "Cereali, prezzo di acquisto in stabilimento: frumento panificabile a Raisio, Finlandia (Luke)"
+ },
+ "Grain, factory purchase price: feed oats at Koskenkorva, Finland (Luke)": {
+  "en": "Grain, factory purchase price: feed oats at Koskenkorva, Finland (Luke)",
+  "es": "Cereal, precio de compra en fábrica: avena forrajera en Koskenkorva, Finlandia (Luke)",
+  "fr": "Céréales, prix d’achat en usine : avoine fourragère à Koskenkorva, Finlande (Luke)",
+  "it": "Cereali, prezzo di acquisto in stabilimento: avena da foraggio a Koskenkorva, Finlandia (Luke)"
+ },
+ "Grain, factory purchase price: feed oats at Raisio, Finland (Luke)": {
+  "en": "Grain, factory purchase price: feed oats at Raisio, Finland (Luke)",
+  "es": "Cereal, precio de compra en fábrica: avena forrajera en Raisio, Finlandia (Luke)",
+  "fr": "Céréales, prix d’achat en usine : avoine fourragère à Raisio, Finlande (Luke)",
+  "it": "Cereali, prezzo di acquisto in stabilimento: avena da foraggio a Raisio, Finlandia (Luke)"
+ },
+ "Egg selling price (packing plants): barn hen house, sizes M and L, Finland (Luke)": {
+  "en": "Egg selling price (packing plants): barn hen house, sizes M and L, Finland (Luke)",
+  "es": "Precio de venta del huevo (centros de embalaje): gallinas en suelo, tallas M y L, Finlandia (Luke)",
+  "fr": "Prix de vente des œufs (centres d’emballage) : poules au sol, calibres M et L, Finlande (Luke)",
+  "it": "Prezzo di vendita delle uova (centri di imballaggio): galline allevate a terra, calibri M e L, Finlandia (Luke)"
+ },
+ "Milk received by dairies: total, Finland (Luke)": {
+  "en": "Milk received by dairies: total, Finland (Luke)",
+  "es": "Leche recogida por las industrias lácteas: total, Finlandia (Luke)",
+  "fr": "Lait collecté par les laiteries : total, Finlande (Luke)",
+  "it": "Latte raccolto dai caseifici: totale, Finlandia (Luke)"
+ },
+ "Milk received by dairies: organic milk, Finland (Luke)": {
+  "en": "Milk received by dairies: organic milk, Finland (Luke)",
+  "es": "Leche recogida por las industrias lácteas: leche ecológica, Finlandia (Luke)",
+  "fr": "Lait collecté par les laiteries : lait biologique, Finlande (Luke)",
+  "it": "Latte raccolto dai caseifici: latte biologico, Finlandia (Luke)"
+ },
+ "Carcass price, young bull carcass: class EUROP average, Finland (Luke)": {
+  "en": "Carcass price, young bull carcass: class EUROP average, Finland (Luke)",
+  "es": "Precio de la canal, canal de toro joven: media de clases EUROP, Finlandia (Luke)",
+  "fr": "Prix de la carcasse, carcasse de jeune bovin : moyenne des classes EUROP, Finlande (Luke)",
+  "it": "Prezzo della carcassa, carcassa di vitellone: media delle classi EUROP, Finlandia (Luke)"
+ },
+ "Carcass price, young bull carcass: class O3, Finland (Luke)": {
+  "en": "Carcass price, young bull carcass: class O3, Finland (Luke)",
+  "es": "Precio de la canal, canal de toro joven: clase O3, Finlandia (Luke)",
+  "fr": "Prix de la carcasse, carcasse de jeune bovin : classe O3, Finlande (Luke)",
+  "it": "Prezzo della carcassa, carcassa di vitellone: classe O3, Finlandia (Luke)"
+ },
+ "Carcass price, cow carcass: class EUROP average, Finland (Luke)": {
+  "en": "Carcass price, cow carcass: class EUROP average, Finland (Luke)",
+  "es": "Precio de la canal, canal de vaca: media de clases EUROP, Finlandia (Luke)",
+  "fr": "Prix de la carcasse, carcasse de vache : moyenne des classes EUROP, Finlande (Luke)",
+  "it": "Prezzo della carcassa, carcassa di vacca: media delle classi EUROP, Finlandia (Luke)"
+ },
+ "Carcass price, cow carcass: class O3, Finland (Luke)": {
+  "en": "Carcass price, cow carcass: class O3, Finland (Luke)",
+  "es": "Precio de la canal, canal de vaca: clase O3, Finlandia (Luke)",
+  "fr": "Prix de la carcasse, carcasse de vache : classe O3, Finlande (Luke)",
+  "it": "Prezzo della carcassa, carcassa di vacca: classe O3, Finlandia (Luke)"
+ },
+ "Carcass price, cow carcass: class P2, Finland (Luke)": {
+  "en": "Carcass price, cow carcass: class P2, Finland (Luke)",
+  "es": "Precio de la canal, canal de vaca: clase P2, Finlandia (Luke)",
+  "fr": "Prix de la carcasse, carcasse de vache : classe P2, Finlande (Luke)",
+  "it": "Prezzo della carcassa, carcassa di vacca: classe P2, Finlandia (Luke)"
+ },
+ "Carcass price, pig carcass: class SEUROP average, Finland (Luke)": {
+  "en": "Carcass price, pig carcass: class SEUROP average, Finland (Luke)",
+  "es": "Precio de la canal, canal de cerdo: media de clases SEUROP, Finlandia (Luke)",
+  "fr": "Prix de la carcasse, carcasse de porc : moyenne des classes SEUROP, Finlande (Luke)",
+  "it": "Prezzo della carcassa, carcassa suina: media delle classi SEUROP, Finlandia (Luke)"
+ },
+ "Carcass price, pig carcass: class E, Finland (Luke)": {
+  "en": "Carcass price, pig carcass: class E, Finland (Luke)",
+  "es": "Precio de la canal, canal de cerdo: clase E, Finlandia (Luke)",
+  "fr": "Prix de la carcasse, carcasse de porc : classe E, Finlande (Luke)",
+  "it": "Prezzo della carcassa, carcassa suina: classe E, Finlandia (Luke)"
+ },
+ "Carcass price, pig carcass: class U, Finland (Luke)": {
+  "en": "Carcass price, pig carcass: class U, Finland (Luke)",
+  "es": "Precio de la canal, canal de cerdo: clase U, Finlandia (Luke)",
+  "fr": "Prix de la carcasse, carcasse de porc : classe U, Finlande (Luke)",
+  "it": "Prezzo della carcassa, carcassa suina: classe U, Finlandia (Luke)"
+ },
+ "Consumer price index (COICOP): food and non-alcoholic beverages, Finland (Statistics Finland, 2025=100)": {
+  "en": "Consumer price index (COICOP): food and non-alcoholic beverages, Finland (Statistics Finland, 2025=100)",
+  "es": "Índice de precios de consumo (COICOP): alimentos y bebidas no alcohólicas, Finlandia (Statistics Finland, 2025=100)",
+  "fr": "Indice des prix à la consommation (COICOP) : produits alimentaires et boissons non alcoolisées, Finlande (Statistics Finland, 2025=100)",
+  "it": "Indice dei prezzi al consumo (COICOP): prodotti alimentari e bevande analcoliche, Finlandia (Statistics Finland, 2025=100)"
+ },
+ "Consumer price index (COICOP): food, Finland (Statistics Finland, 2025=100)": {
+  "en": "Consumer price index (COICOP): food, Finland (Statistics Finland, 2025=100)",
+  "es": "Índice de precios de consumo (COICOP): alimentos, Finlandia (Statistics Finland, 2025=100)",
+  "fr": "Indice des prix à la consommation (COICOP) : produits alimentaires, Finlande (Statistics Finland, 2025=100)",
+  "it": "Indice dei prezzi al consumo (COICOP): prodotti alimentari, Finlandia (Statistics Finland, 2025=100)"
+ },
+ "Consumer price index (COICOP): cereals and cereal products, Finland (Statistics Finland, 2025=100)": {
+  "en": "Consumer price index (COICOP): cereals and cereal products, Finland (Statistics Finland, 2025=100)",
+  "es": "Índice de precios de consumo (COICOP): cereales y productos a base de cereales, Finlandia (Statistics Finland, 2025=100)",
+  "fr": "Indice des prix à la consommation (COICOP) : céréales et produits à base de céréales, Finlande (Statistics Finland, 2025=100)",
+  "it": "Indice dei prezzi al consumo (COICOP): cereali e prodotti a base di cereali, Finlandia (Statistics Finland, 2025=100)"
+ },
+ "Consumer price index (COICOP): live animals, and meat and other parts of slaughtered land animals, Finland (Statistics Finland, 2025=100)": {
+  "en": "Consumer price index (COICOP): live animals, and meat and other parts of slaughtered land animals, Finland (Statistics Finland, 2025=100)",
+  "es": "Índice de precios de consumo (COICOP): animales vivos, carne y otras partes de animales terrestres sacrificados, Finlandia (Statistics Finland, 2025=100)",
+  "fr": "Indice des prix à la consommation (COICOP) : animaux vivants, viande et autres parties d’animaux terrestres abattus, Finlande (Statistics Finland, 2025=100)",
+  "it": "Indice dei prezzi al consumo (COICOP): animali vivi, carne e altre parti di animali terrestri macellati, Finlandia (Statistics Finland, 2025=100)"
+ },
+ "Consumer price index (COICOP): fish and other seafood, Finland (Statistics Finland, 2025=100)": {
+  "en": "Consumer price index (COICOP): fish and other seafood, Finland (Statistics Finland, 2025=100)",
+  "es": "Índice de precios de consumo (COICOP): pescado y otros productos del mar, Finlandia (Statistics Finland, 2025=100)",
+  "fr": "Indice des prix à la consommation (COICOP) : poissons et autres produits de la mer, Finlande (Statistics Finland, 2025=100)",
+  "it": "Indice dei prezzi al consumo (COICOP): pesce e altri prodotti ittici, Finlandia (Statistics Finland, 2025=100)"
+ },
+ "Consumer price index (COICOP): milk, other dairy products and eggs, Finland (Statistics Finland, 2025=100)": {
+  "en": "Consumer price index (COICOP): milk, other dairy products and eggs, Finland (Statistics Finland, 2025=100)",
+  "es": "Índice de precios de consumo (COICOP): leche, otros productos lácteos y huevos, Finlandia (Statistics Finland, 2025=100)",
+  "fr": "Indice des prix à la consommation (COICOP) : lait, autres produits laitiers et œufs, Finlande (Statistics Finland, 2025=100)",
+  "it": "Indice dei prezzi al consumo (COICOP): latte, altri prodotti lattiero-caseari e uova, Finlandia (Statistics Finland, 2025=100)"
+ },
+ "Consumer price index (COICOP): oils and fats, Finland (Statistics Finland, 2025=100)": {
+  "en": "Consumer price index (COICOP): oils and fats, Finland (Statistics Finland, 2025=100)",
+  "es": "Índice de precios de consumo (COICOP): aceites y grasas, Finlandia (Statistics Finland, 2025=100)",
+  "fr": "Indice des prix à la consommation (COICOP) : huiles et graisses, Finlande (Statistics Finland, 2025=100)",
+  "it": "Indice dei prezzi al consumo (COICOP): oli e grassi, Finlandia (Statistics Finland, 2025=100)"
+ },
+ "Consumer price index (COICOP): fruits and nuts, Finland (Statistics Finland, 2025=100)": {
+  "en": "Consumer price index (COICOP): fruits and nuts, Finland (Statistics Finland, 2025=100)",
+  "es": "Índice de precios de consumo (COICOP): frutas y frutos secos, Finlandia (Statistics Finland, 2025=100)",
+  "fr": "Indice des prix à la consommation (COICOP) : fruits et fruits à coque, Finlande (Statistics Finland, 2025=100)",
+  "it": "Indice dei prezzi al consumo (COICOP): frutta e frutta a guscio, Finlandia (Statistics Finland, 2025=100)"
+ },
+ "Monthly precipitation: Jokioinen (south-west), Finland (FMI)": {
+  "en": "Monthly precipitation: Jokioinen (south-west), Finland (FMI)",
+  "es": "Precipitación mensual: Jokioinen (suroeste), Finlandia (FMI)",
+  "fr": "Précipitations mensuelles : Jokioinen (sud-ouest), Finlande (FMI)",
+  "it": "Precipitazioni mensili: Jokioinen (sud-ovest), Finlandia (FMI)"
+ },
+ "Mean air temperature: Jokioinen (south-west), Finland (FMI)": {
+  "en": "Mean air temperature: Jokioinen (south-west), Finland (FMI)",
+  "es": "Temperatura media del aire: Jokioinen (suroeste), Finlandia (FMI)",
+  "fr": "Température moyenne de l'air : Jokioinen (sud-ouest), Finlande (FMI)",
+  "it": "Temperatura media dell'aria: Jokioinen (sud-ovest), Finlandia (FMI)"
+ },
+ "Monthly precipitation: Sodankylä (Lapland), Finland (FMI)": {
+  "en": "Monthly precipitation: Sodankylä (Lapland), Finland (FMI)",
+  "es": "Precipitación mensual: Sodankylä (Laponia), Finlandia (FMI)",
+  "fr": "Précipitations mensuelles : Sodankylä (Laponie), Finlande (FMI)",
+  "it": "Precipitazioni mensili: Sodankylä (Lapponia), Finlandia (FMI)"
+ },
+ "Mean air temperature: Sodankylä (Lapland), Finland (FMI)": {
+  "en": "Mean air temperature: Sodankylä (Lapland), Finland (FMI)",
+  "es": "Temperatura media del aire: Sodankylä (Laponia), Finlandia (FMI)",
+  "fr": "Température moyenne de l'air : Sodankylä (Laponie), Finlande (FMI)",
+  "it": "Temperatura media dell'aria: Sodankylä (Lapponia), Finlandia (FMI)"
+ },
+ "Mean air temperature: Oulu (north Ostrobothnia), Finland (FMI)": {
+  "en": "Mean air temperature: Oulu (north Ostrobothnia), Finland (FMI)",
+  "es": "Temperatura media del aire: Oulu (Ostrobotnia del Norte), Finlandia (FMI)",
+  "fr": "Température moyenne de l'air : Oulu (Ostrobotnie du Nord), Finlande (FMI)",
+  "it": "Temperatura media dell'aria: Oulu (Ostrobotnia settentrionale), Finlandia (FMI)"
+ },
+ "Monthly precipitation: Kuopio (Savonia), Finland (FMI)": {
+  "en": "Monthly precipitation: Kuopio (Savonia), Finland (FMI)",
+  "es": "Precipitación mensual: Kuopio (Savonia), Finlandia (FMI)",
+  "fr": "Précipitations mensuelles : Kuopio (Savonie), Finlande (FMI)",
+  "it": "Precipitazioni mensili: Kuopio (Savonia), Finlandia (FMI)"
+ },
+ "Mean air temperature: Kuopio (Savonia), Finland (FMI)": {
+  "en": "Mean air temperature: Kuopio (Savonia), Finland (FMI)",
+  "es": "Temperatura media del aire: Kuopio (Savonia), Finlandia (FMI)",
+  "fr": "Température moyenne de l'air : Kuopio (Savonie), Finlande (FMI)",
+  "it": "Temperatura media dell'aria: Kuopio (Savonia), Finlandia (FMI)"
+ },
+ "Mozzarella: retail price (FOAG)": {
+  "en": "Mozzarella: retail price (FOAG)",
+  "es": "Mozzarella: precio al consumo (OFAG)",
+  "fr": "Mozzarella : prix de détail (OFAG)",
+  "it": "Mozzarella: prezzo al dettaglio (UFAG)"
+ },
+ "Plain yoghurt: retail price (FOAG)": {
+  "en": "Plain yoghurt: retail price (FOAG)",
+  "es": "Yogur natural: precio al consumo (OFAG)",
+  "fr": "Yaourt nature : prix de détail (OFAG)",
+  "it": "Yogurt bianco: prezzo al dettaglio (UFAG)"
+ },
+ "Emmentaler, mild: retail price (FOAG)": {
+  "en": "Emmentaler, mild: retail price (FOAG)",
+  "es": "Emmental suave: precio al consumo (OFAG)",
+  "fr": "Emmental doux : prix de détail (OFAG)",
+  "it": "Emmental dolce: prezzo al dettaglio (UFAG)"
+ },
+ "Gruyere, mild: retail price (FOAG)": {
+  "en": "Gruyere, mild: retail price (FOAG)",
+  "es": "Gruyère suave: precio al consumo (OFAG)",
+  "fr": "Gruyère doux : prix de détail (OFAG)",
+  "it": "Gruyère dolce: prezzo al dettaglio (UFAG)"
  }
 }
