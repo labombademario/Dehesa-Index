@@ -1,5 +1,5 @@
 ERS historical-monthly-price-spread-data-for-beef-pork-broilers 13080 filas
-ERS choice-beef-values-and-spreads-and-the-all-fresh-retail-value 547 filas
+ERS choice-beef-values-and-spreads-and-the-all-fresh-retail-value 546 filas
 ERS pork-values-and-spreads 504 filas
 ERS retail-prices-for-beef-pork-poultry-cuts-eggs-and-dairy-products 800 filas
 dairy saltada: Consumer Price Indexes
@@ -33,7 +33,7 @@ descartada por antigua us-ers-wheat-px-no-1-hard-amber-durum-minneapolis-mn-aver
 descartada por antigua us-ers-wheat-px-no-1-dark-northern-spring-13-protein-chicago-il-average-cash
 descartada por antigua us-ers-wheat-px-no-1-dark-northern-spring-14-protein-chicago-il-average-cash
 descartada por antigua us-ers-wheat-px-no-1-dark-northern-spring-14-protein-rotterdam-average-cash
-TTB vino 336 filas
+ERROR TTB RuntimeError('sin enlace al CSV anual')
 id duplicado descartado us-ers-wheat-px-no-1-hard-red-winter-ordinary-protein-kansas-city-mo-average-cash
 us-ers-stats.json series 298
-us-ttb-stats.json series 7
+sin series para us-ttb-stats.json (se conserva el fichero anterior)
