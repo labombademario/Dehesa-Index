@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-11T13:33:00Z",
+ "generatedAt": "2026-11-11T13:51:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 338,
+  "ok": 340,
   "late": 2,
-  "error": 8,
+  "error": 6,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-11T06:12:45.616673+00:00",
   "repoGeneratedAt": "2026-11-11T06:12:45.616673+00:00",
-  "checkedAt": "2026-11-11T13:33:00Z"
+  "checkedAt": "2026-11-11T13:51:00Z"
  },
  "pipelines": [
   {
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-11T13:11:50Z"
+     "lastChange": "2026-11-11T13:36:46Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6107,7 +6107,7 @@
    "crons": [
     "40 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-11T13:40:00Z",
+   "nextRun": "2026-11-11T21:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7528,19 +7528,18 @@
    "nextRun": "2026-11-11T20:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-11-11T00:48:46Z",
-    "durationSec": 26,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42934264312",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: HTTP Error 500: Internal Server Error"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-11T13:40:28Z",
+    "durationSec": 50,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43031255046"
    },
    "recent": {
     "runs": 10,
     "success": 8,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 72.0
   },
   {
@@ -7575,19 +7574,18 @@
    "nextRun": "2026-11-11T22:10:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-11-11T07:06:42Z",
-    "durationSec": 1699,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42942211369",
-    "reason": "no se pudo publicar tras 10 intentos"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-11T13:40:30Z",
+    "durationSec": 265,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43031259537"
    },
    "recent": {
     "runs": 10,
     "success": 8,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 72.0
   },
   {
