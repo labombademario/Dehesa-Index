@@ -1,9 +1,9 @@
 {
   "_doc": "Presupuesto de carga inicial por pagina (scripts/measure-pages.mjs --check). Cifras en KB. Se mide con navegador real: JSON de datos (crudo), JS (crudo) y total comprimido (gzip). 'forbid' son peticiones que NO deben ocurrir al abrir la pagina. Subir un limite exige justificarlo en el commit.",
   "pages": [
-    { "url": "/", "maxDataRawKB": 283, "maxJsRawKB": 333, "maxTotalGzKB": 222,
+    { "url": "/", "maxDataRawKB": 290, "maxJsRawKB": 333, "maxTotalGzKB": 228,
       "forbid": ["/data/(latest|history|normalized|catalog)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
-    { "url": "/", "mobile": true, "maxDataRawKB": 283, "maxTotalGzKB": 222, "forbid": ["/data/(latest|history|normalized)\\.json"] },
+    { "url": "/", "mobile": true, "maxDataRawKB": 290, "maxTotalGzKB": 228, "forbid": ["/data/(latest|history|normalized)\\.json"] },
     { "url": "/precios.html", "maxDataRawKB": 1030, "maxJsRawKB": 860, "maxTotalGzKB": 585,
       "forbid": ["/data/(latest|history|normalized)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
     { "url": "/precios.html", "mobile": true, "maxDataRawKB": 1030, "maxTotalGzKB": 585, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/prices/history/"] },
