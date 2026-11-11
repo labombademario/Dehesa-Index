@@ -1,4 +1,4 @@
-Series: {'DK': 59, 'NL': 67, 'AU': 89}
+Series: {'DK': 59, 'NL': 67, 'AU': 60}
   dk-cattle-prod | Cattle: meat production (total) | 2026-08 10.3 | n= 380 | first 1995-01
   dk-cattle-slaught | Cattle: slaughterings and live exports (total) | 2026-08 40.0 | n= 380 | first 1995-01
   dk-pig-prod | Pigs: meat production (total) | 2026-08 156.2 | n= 380 | first 1995-01
@@ -140,14 +140,14 @@ Series: {'DK': 59, 'NL': 67, 'AU': 89}
   au-mutton-prod | Mutton produced | 2026-Q2 34205.0 | n= 146 | first 1990-Q1
   au-lamb-prod | Lamb produced | 2026-Q2 140995.0 | n= 146 | first 1990-Q1
   au-redmeat-prod | Total red meat produced | 2026-Q2 1083455.0 | n= 146 | first 1990-Q1
-  au-exp-wheat | Exports: wheat | 2026-08 635.356 | n= 374 | first 1995-07
-  au-exp-barley | Exports: barley | 2026-08 229.806 | n= 374 | first 1995-07
-  au-exp-maize | Exports: maize | 2026-08 1.375 | n= 374 | first 1995-07
-  au-exp-oilseeds | Exports: oilseeds (canola etc.) | 2026-08 236.011 | n= 374 | first 1995-07
-  au-exp-beef | Exports: bovine meat | 2026-08 1670.364 | n= 374 | first 1995-07
-  au-exp-sheepmeat | Exports: other meat (incl. sheep meat) | 2026-08 643.8 | n= 374 | first 1995-07
-  au-exp-cheese | Exports: cheese and curd | 2026-08 95.344 | n= 374 | first 1995-07
-  au-exp-live | Exports: live animals | 2026-08 116.284 | n= 374 | first 1995-07
+  au-exp-wheat | Exports: wheat | 2026-09 612.948 | n= 375 | first 1995-07
+  au-exp-barley | Exports: barley | 2026-09 146.696 | n= 375 | first 1995-07
+  au-exp-maize | Exports: maize | 2026-09 1.756 | n= 375 | first 1995-07
+  au-exp-oilseeds | Exports: oilseeds (canola etc.) | 2026-09 271.461 | n= 375 | first 1995-07
+  au-exp-beef | Exports: bovine meat | 2026-09 1634.629 | n= 375 | first 1995-07
+  au-exp-sheepmeat | Exports: other meat (incl. sheep meat) | 2026-09 667.843 | n= 375 | first 1995-07
+  au-exp-cheese | Exports: cheese and curd | 2026-09 86.423 | n= 375 | first 1995-07
+  au-exp-live | Exports: live animals | 2026-09 98.933 | n= 375 | first 1995-07
   au-xpi-fruit | Export price index: edible fruit and nuts | 2026-Q3 215.7 | n= 149 | first 1989-Q3
   au-xpi-cereals | Export price index: cereals | 2026-Q3 119.2 | n= 149 | first 1989-Q3
   au-xpi-meat | Export price index: meat and offal | 2026-Q3 235.3 | n= 149 | first 1989-Q3
@@ -185,35 +185,6 @@ Series: {'DK': 59, 'NL': 67, 'AU': 89}
   au-chicken-slaught-qld | Chickens slaughtered - Queensland | 2026-Q2 37106.8 | n= 146 | first 1990-Q1
   au-chicken-slaught-sa | Chickens slaughtered - South Australia | 1997-Q2 7110.3 | n= 30 | first 1990-Q1
   au-chicken-slaught-wa | Chickens slaughtered - Western Australia | 1997-Q2 8769.1 | n= 30 | first 1990-Q1
-  au-beef-prod-nsw | Beef produced - New South Wales | 2026-Q2 171257.0 | n= 146 | first 1990-Q1
-  au-beef-prod-vic | Beef produced - Victoria | 2026-Q2 171059.0 | n= 146 | first 1990-Q1
-  au-beef-prod-qld | Beef produced - Queensland | 2026-Q2 355529.0 | n= 146 | first 1990-Q1
-  au-beef-prod-sa | Beef produced - South Australia | 2026-Q2 30147.0 | n= 146 | first 1990-Q1
-  au-beef-prod-wa | Beef produced - Western Australia | 2026-Q2 34791.0 | n= 146 | first 1990-Q1
-  au-beef-prod-tas | Beef produced - Tasmania | 2026-Q2 17838.0 | n= 146 | first 1990-Q1
-  au-lamb-prod-nsw | Lamb produced - New South Wales | 2026-Q2 36715.0 | n= 146 | first 1990-Q1
-  au-lamb-prod-vic | Lamb produced - Victoria | 2026-Q2 73712.0 | n= 146 | first 1990-Q1
-  au-lamb-prod-qld | Lamb produced - Queensland | 2026-Q2 345.0 | n= 146 | first 1990-Q1
-  au-lamb-prod-sa | Lamb produced - South Australia | 2026-Q2 11986.0 | n= 146 | first 1990-Q1
-  au-lamb-prod-wa | Lamb produced - Western Australia | 2026-Q2 16065.0 | n= 146 | first 1990-Q1
-  au-lamb-prod-tas | Lamb produced - Tasmania | 2026-Q2 2171.0 | n= 146 | first 1990-Q1
-  au-mutton-prod-nsw | Mutton produced - New South Wales | 2026-Q2 14109.0 | n= 146 | first 1990-Q1
-  au-mutton-prod-vic | Mutton produced - Victoria | 2026-Q2 12147.0 | n= 146 | first 1990-Q1
-  au-mutton-prod-qld | Mutton produced - Queensland | 2026-Q2 18.0 | n= 146 | first 1990-Q1
-  au-mutton-prod-sa | Mutton produced - South Australia | 2026-Q2 2146.0 | n= 146 | first 1990-Q1
-  au-mutton-prod-wa | Mutton produced - Western Australia | 2026-Q2 4820.0 | n= 146 | first 1990-Q1
-  au-mutton-prod-tas | Mutton produced - Tasmania | 2026-Q2 965.0 | n= 146 | first 1990-Q1
-  au-pig-meat-prod-nsw | Pig meat produced - New South Wales | 2026-Q2 17298.0 | n= 146 | first 1990-Q1
-  au-pig-meat-prod-vic | Pig meat produced - Victoria | 2026-Q2 30317.0 | n= 146 | first 1990-Q1
-  au-pig-meat-prod-qld | Pig meat produced - Queensland | 2026-Q2 32753.0 | n= 146 | first 1990-Q1
-  au-pig-meat-prod-sa | Pig meat produced - South Australia | 2026-Q2 24347.0 | n= 146 | first 1990-Q1
-  au-pig-meat-prod-wa | Pig meat produced - Western Australia | 2026-Q2 17899.0 | n= 146 | first 1990-Q1
-  au-pig-meat-prod-tas | Pig meat produced - Tasmania | 2026-Q2 635.0 | n= 146 | first 1990-Q1
-  au-chicken-meat-prod-nsw | Chicken meat produced - New South Wales | 2026-Q2 162152.0 | n= 146 | first 1990-Q1
-  au-chicken-meat-prod-vic | Chicken meat produced - Victoria | 2026-Q2 76854.0 | n= 146 | first 1990-Q1
-  au-chicken-meat-prod-qld | Chicken meat produced - Queensland | 2026-Q2 69566.0 | n= 146 | first 1990-Q1
-  au-chicken-meat-prod-sa | Chicken meat produced - South Australia | 1997-Q2 10269.0 | n= 30 | first 1990-Q1
-  au-chicken-meat-prod-wa | Chicken meat produced - Western Australia | 1997-Q2 11052.0 | n= 30 | first 1990-Q1
 LOG JORD1 sin partida para seed
 LOG JORD1 sin partida para pest
 LOG JORD1 sin partida para wages
@@ -226,4 +197,4 @@ LOG KORN H145: origen 004
 LOG OMITIDA nl-butter-prod (menos de 3 puntos)
 LOG ABS slaughter cols: STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,LSTOCK_SLAUGHT,Livestock slaughtered,STATE,State,TSEST,Adjustment Type,FREQ,Frequency,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,UNIT_MULT,Unit of Multiplier,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
 LOG OMITIDA au-chicken-slaught-tas (menos de 3 puntos)
-LOG OMITIDA au-chicken-meat-prod-tas (menos de 3 puntos)
+LOG ERROR AU states LSTOCK_MEAT: HTTP Error 502: Bad Gateway
