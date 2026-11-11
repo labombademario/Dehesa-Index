@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-11T02:09:00Z",
+ "generatedAt": "2026-11-11T02:24:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 340,
+  "ok": 339,
   "late": 2,
-  "error": 6,
+  "error": 7,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 6.2,
   "prodGeneratedAt": "2026-11-10T17:02:30.472661+00:00",
   "repoGeneratedAt": "2026-11-10T23:17:08.458647+00:00",
-  "checkedAt": "2026-11-11T02:09:00Z"
+  "checkedAt": "2026-11-11T02:24:00Z"
  },
  "pipelines": [
   {
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-11T01:56:37Z"
+     "lastChange": "2026-11-11T02:12:37Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7574,18 +7574,19 @@
    "nextRun": "2026-11-11T22:10:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-11-10T13:40:17Z",
-    "durationSec": 291,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42826642950"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-11-11T01:53:54Z",
+    "durationSec": 1239,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42942211369",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-us-markets.py' has timed out after 20 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 8,
-    "failed": 1
+    "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 72.0
   },
   {
