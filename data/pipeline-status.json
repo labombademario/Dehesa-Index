@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-11T22:20:00Z",
+ "generatedAt": "2026-11-11T22:37:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 340,
+  "ok": 339,
   "late": 2,
-  "error": 6,
+  "error": 7,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 7.9,
   "prodGeneratedAt": "2026-11-11T14:24:21.744726+00:00",
   "repoGeneratedAt": "2026-11-11T22:16:19.269636+00:00",
-  "checkedAt": "2026-11-11T22:20:00Z"
+  "checkedAt": "2026-11-11T22:37:00Z"
  },
  "pipelines": [
   {
@@ -3207,18 +3207,19 @@
    "nextRun": "2026-11-18T09:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-04T17:16:19Z",
-    "durationSec": 44,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41875945624"
+    "startedAt": "2026-11-11T22:14:28Z",
+    "durationSec": 565,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43065498019",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · File \"/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-eu-organic.py\", line 55, in <module>"
    },
    "recent": {
-    "runs": 4,
+    "runs": 5,
     "success": 4,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -5591,7 +5592,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-11T22:06:44Z"
+     "lastChange": "2026-11-11T22:24:21Z"
     },
     {
      "path": "data/source-candidates.json",
