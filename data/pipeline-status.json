@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-11T14:17:00Z",
+ "generatedAt": "2026-11-11T14:27:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 340,
@@ -11,13 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "error",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 0.0,
+  "lagHours": 8.2,
   "prodGeneratedAt": "2026-11-11T06:12:45.616673+00:00",
-  "repoGeneratedAt": "2026-11-11T06:12:45.616673+00:00",
-  "checkedAt": "2026-11-11T14:17:00Z"
+  "repoGeneratedAt": "2026-11-11T14:24:21.744726+00:00",
+  "checkedAt": "2026-11-11T14:27:00Z"
  },
  "pipelines": [
   {
@@ -2932,13 +2932,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-04T14:36:45Z",
-    "durationSec": 31,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/41849300846"
+    "startedAt": "2026-11-11T14:26:56Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43038561411"
    },
    "recent": {
-    "runs": 8,
-    "success": 6,
+    "runs": 9,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -4364,9 +4364,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T14:53:16Z",
-    "durationSec": 122,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42838658918"
+    "startedAt": "2026-11-11T14:23:45Z",
+    "durationSec": 70,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43038047407"
    },
    "recent": {
     "runs": 10,
@@ -5125,7 +5125,7 @@
     "10 22 * * 5",
     "20 14 * * 3"
    ],
-   "nextRun": "2026-11-11T14:20:00Z",
+   "nextRun": "2026-11-13T22:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5221,35 +5221,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-11-11T06:12:46Z"
+     "lastChange": "2026-11-11T14:24:22Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-11-11T06:12:46Z"
+     "lastChange": "2026-11-11T14:24:22Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-11-11T06:12:46Z"
+     "lastChange": "2026-11-11T14:24:22Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-11-11T06:12:46Z"
+     "lastChange": "2026-11-11T14:24:22Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-11-11T06:12:46Z"
+     "lastChange": "2026-11-11T14:24:22Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-11T06:06:57Z",
-    "durationSec": 353,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42970158197"
+    "startedAt": "2026-11-11T14:12:41Z",
+    "durationSec": 705,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43036279055"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -5590,7 +5590,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-11T14:13:03Z"
+     "lastChange": "2026-11-11T14:21:16Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5673,15 +5673,14 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-11T07:06:41Z",
-    "durationSec": 842,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42969998238",
-    "reason": "no se pudo publicar el estado · no se pudo publicar tras 10 intentos"
+    "startedAt": "2026-11-11T14:11:55Z",
+    "durationSec": 637,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43036154564"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 6,
-    "failed": 3
+    "failed": 4
    },
    "status": "error",
    "expectedEveryHours": 3.0
@@ -7755,7 +7754,7 @@
    "crons": [
     "25 14 * * *"
    ],
-   "nextRun": "2026-11-11T14:25:00Z",
+   "nextRun": "2026-11-12T14:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
