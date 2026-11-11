@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-11T14:54:03Z",
+ "generatedAt": "2026-11-11T21:55:11Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -14,11 +14,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 215,
-    "points": 21510,
+    "series": 186,
+    "points": 17516,
     "lines": 0
    },
-   "generatedAt": "2026-11-04T21:01:51Z",
+   "generatedAt": "2026-11-11T21:38:47Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -382,7 +382,7 @@
     "points": 4463,
     "lines": 0
    },
-   "generatedAt": "2026-11-04T15:48:35Z",
+   "generatedAt": "2026-11-11T15:39:05Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -400,7 +400,7 @@
     "points": 18194,
     "lines": 0
    },
-   "generatedAt": "2026-11-04T15:49:33Z",
+   "generatedAt": "2026-11-11T15:40:01Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
@@ -921,10 +921,10 @@
    ],
    "stats": {
     "series": 298,
-    "points": 46227,
+    "points": 46243,
     "lines": 0
    },
-   "generatedAt": "2026-11-04T20:54:57Z",
+   "generatedAt": "2026-11-11T21:31:06Z",
    "info": [],
    "nWarnings": 23,
    "nErrors": 0
@@ -1204,7 +1204,7 @@
     "points": 29326,
     "lines": 0
    },
-   "generatedAt": "2026-11-04T17:30:35Z",
+   "generatedAt": "2026-11-11T17:40:02Z",
    "info": [],
    "nWarnings": 59,
    "nErrors": 0
@@ -1252,7 +1252,7 @@
     "points": 798,
     "lines": 0
    },
-   "generatedAt": "2026-11-04T15:47:33Z",
+   "generatedAt": "2026-11-11T15:38:06Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1707,10 +1707,10 @@
    "warnings": [],
    "stats": {
     "series": 35,
-    "points": 4564,
+    "points": 4565,
     "lines": 0
    },
-   "generatedAt": "2026-11-10T14:53:09Z",
+   "generatedAt": "2026-11-11T14:57:59Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
