@@ -342,13 +342,24 @@ def eu_regions(doc, errs, warns, stats):
     # las regiones suman el total nacional publicado por Eurostat (misma tabla de cuentas, otro fichero)
     try: N = load("eu-farm-economics.json")
     except Exception: N = None
+    # Eurostat revisa las cuentas nacionales (aact_eaa01) antes que las regionales (aact_eaa01_r): si el total nacional es de una edicion
+    # posterior a la de las regiones, una diferencia de hasta un 10 % es de edicion y no de nuestros datos; se avisa en vez de fallar hasta que Eurostat actualice las regionales.
+    def _ts(x):
+        try: return datetime.datetime.strptime(str(x).replace("Z", "+0000"), "%Y-%m-%dT%H:%M:%S%z")
+        except Exception: return None
+    nat_v = _ts((N or {}).get("eurostatUpdated", {}).get("eaa01")) if N else None
+    reg_v = _ts(doc.get("eurostatUpdated", {}).get("eaa01_r")) or _ts(doc.get("generatedAt"))
+    vint = bool(nat_v and reg_v and nat_v > reg_v)
     if N and cc in N["geos"] and "eaa" not in _skip:
         for key, it in (("ic", "AM200000"), ("gva", "AM260000"), ("output", "AM180000")):
             ys = [y for y in N["years"] if all(y in dict(b["eaa"].get(it, [])) for b in R.values())][-1:]  # solo el ultimo anio comun: los anos antiguos de algunas regiones (p. ej. NL antes de 2021) siguen sin revisar y suman ~89 %
             for y in ys:
                 su = sum(dict(b["eaa"][it])[y] for b in R.values()); nv = N["geos"][cc][key][N["years"].index(y)]
                 tol = 0.03 if cc == "FR" else 0.015 if cc == "PT" else 0.012  # PT: las regiones de 2022 suman un 1,2 % mas que el total nacional (version distinta de la revision de Eurostat); Francia: Eurostat publica ademas los territorios de ultramar, que no estan en el mapa
-                if nv and abs(su / nv - 1) > tol: errs.append("%s %s %s: las regiones suman %.0f y el total nacional es %.0f (>%.1f %%)" % (cc, it, y, su, nv, tol * 100))
+                if nv and abs(su / nv - 1) > tol:
+                    msg = "%s %s %s: las regiones suman %.0f y el total nacional es %.0f (>%.1f %%)" % (cc, it, y, su, nv, tol * 100)
+                    if vint and abs(su / nv - 1) <= 0.10: warns.append(msg + "; el total nacional es de una edicion de Eurostat posterior a la de las regiones")   # una revision no mueve mas de un 10 %: por encima sigue siendo error
+                    else: errs.append(msg)
     stats["regions"] = len(R)
 
 def au_states(doc, errs, warns, stats):

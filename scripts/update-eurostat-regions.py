@@ -116,9 +116,11 @@ def geos(reg):
         if own: g.add(own)
         g.update(kids)
     return sorted(g)
+EAA_UPDATED = {}
 def build(cc, reg):
     G = geos(reg); out = {r: {"nuts": ([s[0]] if s[0] else []) + s[1]} for r, s in reg.items()}
     j = fetch("aact_eaa01_r", am_item=EAA, indic_agr="PRD_BP", unit="MIO_EUR", geo=G); t = collect(j, lambda c: c["am_item"])
+    if isinstance(j, dict) and j.get("updated"): EAA_UPDATED[cc] = j["updated"]   # edicion de Eurostat de las cuentas regionales (el contrato la compara con la del total nacional)
     for r, s in reg.items():
         if cc == "bg": break   # Bulgaria: las cuentas regionales en «EUR» de Eurostat doblan el total nacional (cifras en leva, 1,956 por euro): no se publican
         for it in EAA:
@@ -185,6 +187,7 @@ def main():
                "source": {"name": "Eurostat (aact_eaa01_r, apro_cpshr, apro_mt_ls_r, agr_r_milkpr, ef_m_farmleg, ef_m_farmang)", "url": "https://ec.europa.eu/eurostat/", "license": "Eurostat reuse policy (Commission Decision 2011/833/EU)"},
                "units": {"eaa": "EUR million, current prices", "area": "thousand ha", "prod": "thousand t", "animals": "thousand head", "milk": "thousand t", "HLD": "holdings", "HA": "ha", "EUR": "EUR standard output", "LSU": "livestock units", "AWU": "annual work units", "managers": "holdings by age band of the manager (TOTAL, Y_*) and holdings managed by women (F)"},
                "regions": out}
+        if EAA_UPDATED.get(cc): doc["eurostatUpdated"] = {"eaa01_r": EAA_UPDATED[cc]}
         p = outdir / ("eu-regions-%s.json" % cc)
         p.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); log("escrito", p.name, p.stat().st_size // 1024, "KB")
     (outdir / "eu-regions-log.txt").write_text("\n".join(LOG[-200:]) + "\n", encoding="utf-8")
