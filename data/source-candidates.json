@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-10T21:22:30Z",
+ "generatedAt": "2026-11-11T14:58:48Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -5275,7 +5275,7 @@
    "country": "PL",
    "scope": "integrated",
    "institution": "Statistics Poland (GUS) - Local Data Bank (BDL)",
-   "dataset": "Ya integrada (263 series en el catalogo unificado)",
+   "dataset": "Ya integrada (250 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
