@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-12T14:34:00Z",
+ "generatedAt": "2026-11-12T15:14:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 338,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-12T07:12:35.817972+00:00",
   "repoGeneratedAt": "2026-11-12T07:12:35.817972+00:00",
-  "checkedAt": "2026-11-12T14:34:00Z"
+  "checkedAt": "2026-11-12T15:14:00Z"
  },
  "pipelines": [
   {
@@ -2003,7 +2003,7 @@
     "40 14 * * 4",
     "40 12 * * 5"
    ],
-   "nextRun": "2026-11-12T14:40:00Z",
+   "nextRun": "2026-11-13T12:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4366,9 +4366,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-11T14:23:45Z",
-    "durationSec": 70,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43038047407"
+    "startedAt": "2026-11-12T15:15:31Z",
+    "durationSec": 38,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43245832955"
    },
    "recent": {
     "runs": 10,
@@ -5034,9 +5034,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-11T14:07:28Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43035445065"
+    "startedAt": "2026-11-12T15:03:55Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43243734608"
    },
    "recent": {
     "runs": 10,
@@ -5545,7 +5545,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-12T15:10:00Z",
+   "nextRun": "2026-11-12T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5592,7 +5592,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-12T14:16:05Z"
+     "lastChange": "2026-11-12T14:37:42Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6038,7 +6038,7 @@
    "crons": [
     "50 14 * * 4"
    ],
-   "nextRun": "2026-11-12T14:50:00Z",
+   "nextRun": "2026-11-19T14:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7156,7 +7156,7 @@
    "crons": [
     "40 14 * * 4"
    ],
-   "nextRun": "2026-11-12T14:40:00Z",
+   "nextRun": "2026-11-19T14:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7342,7 +7342,7 @@
    "crons": [
     "50 14 * * 4"
    ],
-   "nextRun": "2026-11-12T14:50:00Z",
+   "nextRun": "2026-11-19T14:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
