@@ -3,5 +3,7 @@ Erlöspreisstatistik Preise años 1985 .. 2024 (estimacion descartada: nota 3) p
 Erlöspreisstatistik: series 60 de https://dam-api.bfs.admin.ch/hub/api/dam/assets/36210423/master
 T 7.2.3.2.1 series 14 años 1994 .. 2025 de https://dam-api.bfs.admin.ch/hub/api/dam/assets/36840036/master
 T 7.2.3.2.2 series 13 años 1994 .. 2025 de https://dam-api.bfs.admin.ch/hub/api/dam/assets/36840035/master
-apro_mk_pobta CH: ['D6100', 'D7100']
-escrito switzerland-bfs-stats.json 89 series
+descartada ch-es-dairy-butter 0
+descartada ch-es-dairy-cheese 0
+apro_mk_pobta CH: []
+escrito switzerland-bfs-stats.json 87 series
