@@ -1,9 +1,9 @@
 leche 23 combinaciones
 sacrificio 23 series 3764 filas; regionales 29
 fruta-hortaliza candidatas 196 incluidas 45
-GENESIS API 61211-0001 49 series; periodos 1968 .. 2025
+AVISO GENESIS API fallo, se usa la descarga estatica: 61211-0001 GENESIS 61211-0001: respuesta inesperada {"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":7000,"Content":"Für die Teiltabelle mit der Metadatenkombination:\nIndex der Erzeugerpreise l
 destatis 61211-0001 49 series
-GENESIS API 61211-0003 49 series; periodos 1968-01 .. 2026-08
+AVISO GENESIS API fallo, se usa la descarga estatica: 61211-0003 GENESIS 61211-0003: respuesta inesperada {"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":7000,"Content":"Für die Teiltabelle mit der Metadatenkombination:\nIndex der Erzeugerpreise l
 destatis 61211-0003 49 series
 GENESIS API 61221-0003 38 series; periodos 1968-01 .. 2026-07
 destatis 61221-0003 38 series
