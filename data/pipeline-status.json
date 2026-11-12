@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-12T07:56:00Z",
+ "generatedAt": "2026-11-12T08:10:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 335,
@@ -17,7 +17,7 @@
   "lagHours": 8.9,
   "prodGeneratedAt": "2026-11-11T22:16:19.269636+00:00",
   "repoGeneratedAt": "2026-11-12T07:12:35.817972+00:00",
-  "checkedAt": "2026-11-12T07:56:00Z"
+  "checkedAt": "2026-11-12T08:10:00Z"
  },
  "pipelines": [
   {
@@ -2049,7 +2049,7 @@
    "crons": [
     "2 8 * * *"
    ],
-   "nextRun": "2026-11-12T08:02:00Z",
+   "nextRun": "2026-11-13T08:02:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4637,7 +4637,7 @@
    "crons": [
     "5 8 * * *"
    ],
-   "nextRun": "2026-11-12T08:05:00Z",
+   "nextRun": "2026-11-13T08:05:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4753,7 +4753,7 @@
    "crons": [
     "58 7 * * *"
    ],
-   "nextRun": "2026-11-12T07:58:00Z",
+   "nextRun": "2026-11-13T07:58:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5332,7 +5332,7 @@
    "crons": [
     "10 8 * * *"
    ],
-   "nextRun": "2026-11-12T08:10:00Z",
+   "nextRun": "2026-11-13T08:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5592,7 +5592,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-12T07:11:05Z"
+     "lastChange": "2026-11-12T07:59:36Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6315,7 +6315,7 @@
    "crons": [
     "5 8 * * 4"
    ],
-   "nextRun": "2026-11-12T08:05:00Z",
+   "nextRun": "2026-11-19T08:05:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6597,13 +6597,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-12T07:10:28Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/38216282696"
+    "startedAt": "2026-11-12T07:59:03Z",
+    "durationSec": 42,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43179277863"
    },
    "recent": {
-    "runs": 4,
-    "success": 4,
+    "runs": 5,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
@@ -7133,7 +7133,7 @@
    "crons": [
     "10 8 12 * *"
    ],
-   "nextRun": "2026-11-12T08:10:00Z",
+   "nextRun": "2026-12-12T08:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
