@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-12T09:37:00Z",
+ "generatedAt": "2026-11-12T10:18:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 335,
@@ -17,7 +17,7 @@
   "lagHours": 8.9,
   "prodGeneratedAt": "2026-11-11T22:16:19.269636+00:00",
   "repoGeneratedAt": "2026-11-12T07:12:35.817972+00:00",
-  "checkedAt": "2026-11-12T09:37:00Z"
+  "checkedAt": "2026-11-12T10:18:00Z"
  },
  "pipelines": [
   {
@@ -5196,7 +5196,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-12T09:47:00Z",
+   "nextRun": "2026-11-12T12:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5592,7 +5592,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-12T09:21:28Z"
+     "lastChange": "2026-11-12T09:40:42Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5808,7 +5808,7 @@
    "crons": [
     "15 7,10,13,16,19 * * 4,5"
    ],
-   "nextRun": "2026-11-12T10:15:00Z",
+   "nextRun": "2026-11-12T13:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5823,7 +5823,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 3.0
+   "expectedEveryHours": 12.0
   },
   {
    "workflow": "update-poland-eurostat.yml",
@@ -5992,7 +5992,7 @@
    "crons": [
     "40 9 * * 4"
    ],
-   "nextRun": "2026-11-12T09:40:00Z",
+   "nextRun": "2026-11-19T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6684,7 +6684,7 @@
    "crons": [
     "50 9 3,12 * *"
    ],
-   "nextRun": "2026-11-12T09:50:00Z",
+   "nextRun": "2026-12-03T09:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7902,9 +7902,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-11T09:45:42Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42997879499"
+    "startedAt": "2026-11-12T10:07:48Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43197593085"
    },
    "recent": {
     "runs": 10,
@@ -8089,7 +8089,7 @@
    "crons": [
     "40 9 * * 4"
    ],
-   "nextRun": "2026-11-12T09:40:00Z",
+   "nextRun": "2026-11-19T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
