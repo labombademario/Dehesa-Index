@@ -1,4 +1,4 @@
-nacional cea-resultados-nacionales--1990-2025-marzo-2026-.xlsx 1990 2025 42 filas
+nacional cea-resultados-nacionales-1990-2025--octubre-2026-.xlsx 1990 2025 42 filas
 regional 2014 18 territorios 42 filas
 regional 2015 18 territorios 42 filas
 regional 2016 18 territorios 42 filas
@@ -9,3 +9,4 @@ regional 2020 18 territorios 42 filas
 regional 2021 18 territorios 42 filas
 regional 2022 18 territorios 42 filas
 regional 2023 18 territorios 42 filas
+regional 2024 18 territorios 42 filas
