@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-11-12T20:38:26.381Z",
+  "generatedAt": "2026-11-12T21:05:44.504Z",
   "methodology": {
     "method": "Pearson correlation of period returns on common dates after tested lag offsets.",
     "minimumPeriods": 6,
@@ -78,9 +78,9 @@
       },
       "frequency": "monthly",
       "lagPeriods": 2,
-      "commonPeriods": 499,
+      "commonPeriods": 500,
       "window": "24+ periods",
-      "correlationReturns": 0.1143,
+      "correlationReturns": 0.1129,
       "direction": "positive",
       "strength": "weak",
       "confidence": "low",
@@ -88,7 +88,7 @@
       "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
       "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
       "coverageStart": "1985-02-01",
-      "coverageEnd": "2026-08-01"
+      "coverageEnd": "2026-09-01"
     },
     {
       "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__trigo|ca|statcan|monthly",
@@ -105,17 +105,17 @@
       },
       "frequency": "monthly",
       "lagPeriods": 3,
-      "commonPeriods": 168,
+      "commonPeriods": 169,
       "window": "24+ periods",
-      "correlationReturns": 0.1956,
+      "correlationReturns": 0.1873,
       "direction": "positive",
       "strength": "weak",
       "confidence": "low",
-      "confidenceScore": 20,
+      "confidenceScore": 19,
       "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
       "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
       "coverageStart": "2012-09-01",
-      "coverageEnd": "2026-08-01"
+      "coverageEnd": "2026-09-01"
     },
     {
       "id": "energy_to_cereal__eurostat_energy_input_index|eu|eurostat|quarterly__eurostat_cereals_output_index|eu|eurostat|quarterly",
