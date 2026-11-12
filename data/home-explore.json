@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-05T23:40:52Z",
+ "generatedAt": "2026-11-12T23:38:18Z",
  "facts": [
   {
    "id": "eu",
@@ -12,8 +12,8 @@
   {
    "id": "drought",
    "file": "drought.json",
-   "date": "2026-11-03",
-   "pctD1": 43.98
+   "date": "2026-11-10",
+   "pctD1": 41.68
   },
   {
    "id": "cattle",
