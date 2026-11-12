@@ -1,2 +1,2 @@
 fr-rnm-potato-consumption-monthly 2026-10 528.0 12
-fr-rnm-potato-consumption-weekly 2026-11-05 510.0 23
+fr-rnm-potato-consumption-weekly 2026-11-12 510.0 24
