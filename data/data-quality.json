@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-12T07:05:36Z",
+ "generatedAt": "2026-11-12T17:34:06Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -483,10 +483,10 @@
    ],
    "stats": {
     "series": 1867,
-    "points": 66852,
+    "points": 67128,
     "lines": 0
    },
-   "generatedAt": "2026-10-19T13:32:00Z",
+   "generatedAt": "2026-11-12T07:45:35Z",
    "info": [
     "ES/es-mo-irspec-exp-cfir-thsm3: salto 24.87 -> 117.29 en 2014 (mediana previa 1.46) [KNOWN_VERIFIED_ANOMALY]",
     "ES/es-mo-irspec-exp-cfir-thsm3: salto 42.32 -> 1271.18 en 2024 (mediana previa 24.9) [KNOWN_VERIFIED_ANOMALY]"
@@ -1050,7 +1050,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-11-11T14:36:40Z",
+   "generatedAt": "2026-11-12T15:35:14Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1364,7 +1364,7 @@
     "points": 180,
     "lines": 0
    },
-   "generatedAt": "2026-11-05T15:47:15Z",
+   "generatedAt": "2026-11-12T16:12:10Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1439,11 +1439,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 89,
-    "points": 3182,
+    "series": 87,
+    "points": 3150,
     "lines": 0
    },
-   "generatedAt": "2026-10-12T07:10:49Z",
+   "generatedAt": "2026-11-12T07:59:39Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1625,10 +1625,10 @@
    "warnings": [],
    "stats": {
     "series": 100,
-    "points": 14997,
+    "points": 15036,
     "lines": 0
    },
-   "generatedAt": "2026-11-05T16:47:04Z",
+   "generatedAt": "2026-11-12T17:03:43Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1843,10 +1843,10 @@
    "warnings": [],
    "stats": {
     "series": 149,
-    "points": 29949,
+    "points": 30098,
     "lines": 0
    },
-   "generatedAt": "2026-10-28T02:02:32Z",
+   "generatedAt": "2026-11-12T09:06:52Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2136,7 +2136,7 @@
     "points": 1643,
     "lines": 0
    },
-   "generatedAt": "2026-11-11T14:44:08Z",
+   "generatedAt": "2026-11-12T15:36:35Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
