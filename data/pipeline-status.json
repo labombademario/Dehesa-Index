@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-12T14:11:00Z",
+ "generatedAt": "2026-11-12T14:34:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 338,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-12T07:12:35.817972+00:00",
   "repoGeneratedAt": "2026-11-12T07:12:35.817972+00:00",
-  "checkedAt": "2026-11-12T14:11:00Z"
+  "checkedAt": "2026-11-12T14:34:00Z"
  },
  "pipelines": [
   {
@@ -2740,7 +2740,7 @@
    "crons": [
     "20 14 * * 4"
    ],
-   "nextRun": "2026-11-12T14:20:00Z",
+   "nextRun": "2026-11-19T14:20:00Z",
    "files": [
     {
      "path": "data/eu"
@@ -3643,7 +3643,7 @@
     "30 14 * * 4",
     "30 12 * * 5"
    ],
-   "nextRun": "2026-11-12T14:30:00Z",
+   "nextRun": "2026-11-13T12:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4241,7 +4241,7 @@
    "crons": [
     "20 14 * * 4,5"
    ],
-   "nextRun": "2026-11-12T14:20:00Z",
+   "nextRun": "2026-11-13T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5592,7 +5592,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-12T13:56:02Z"
+     "lastChange": "2026-11-12T14:16:05Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6113,13 +6113,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T02:31:12Z",
-    "durationSec": 1672,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43141977965"
+    "startedAt": "2026-11-12T13:58:49Z",
+    "durationSec": 1496,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43232492307"
    },
    "recent": {
-    "runs": 8,
-    "success": 8,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -7087,7 +7087,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-12T14:15:00Z",
+   "nextRun": "2026-11-12T23:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7250,7 +7250,7 @@
     "20 20 * * 3",
     "20 14 * * 4"
    ],
-   "nextRun": "2026-11-12T14:20:00Z",
+   "nextRun": "2026-11-18T20:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7710,7 +7710,7 @@
    "crons": [
     "20 14 * * 4"
    ],
-   "nextRun": "2026-11-12T14:20:00Z",
+   "nextRun": "2026-11-19T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7733,7 +7733,7 @@
    "crons": [
     "15 14 * * 1,4"
    ],
-   "nextRun": "2026-11-12T14:15:00Z",
+   "nextRun": "2026-11-16T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7756,7 +7756,7 @@
    "crons": [
     "25 14 * * *"
    ],
-   "nextRun": "2026-11-12T14:25:00Z",
+   "nextRun": "2026-11-13T14:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
