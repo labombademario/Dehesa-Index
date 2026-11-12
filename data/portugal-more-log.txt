@@ -1,7 +1,7 @@
-pesca: leido (edicion 2025 (actualizado 2026-05-28), 7 tablas, 211 series)
-balances: leido (edicion actualizado 2026-10-16, 8 tablas, 42 series)
-leche: leido (edicion actualizado 2026-09-29, 2 tablas, 10 series)
-carne: leido (edicion actualizado 2026-02-21, 3 tablas, 9 series)
+pesca: NO se pudo leer (json_indicador/pindica.jsp?op=2&Dim1=T&lang=EN&varcd=0001066 -> <urlopen error timed out>); se conserva lo publicado
+balances: NO se pudo leer (json_indicador/pindica.jsp?op=2&Dim1=T&lang=EN&varcd=0000212 -> <urlopen error timed out>); se conserva lo publicado
+leche: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
+carne: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
 ipc: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
 incendios: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
 cultivos: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
