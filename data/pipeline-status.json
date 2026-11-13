@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T15:56:00Z",
+ "generatedAt": "2026-11-13T16:14:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 335,
+  "ok": 336,
   "late": 3,
-  "error": 10,
+  "error": 9,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
   "repoGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
-  "checkedAt": "2026-11-13T15:56:00Z"
+  "checkedAt": "2026-11-13T16:14:00Z"
  },
  "pipelines": [
   {
@@ -714,7 +714,7 @@
    "crons": [
     "10 16 * * 1-5"
    ],
-   "nextRun": "2026-11-13T16:10:00Z",
+   "nextRun": "2026-11-16T16:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -729,7 +729,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-ca-boc-bcpi.yml",
@@ -2053,13 +2053,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T16:37:58Z",
-    "durationSec": 38,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43260780393"
+    "startedAt": "2026-11-13T15:57:08Z",
+    "durationSec": 52,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43457740489"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 1
    },
    "status": "ok",
@@ -4174,19 +4174,18 @@
    "nextRun": "2026-11-16T06:15:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-13T14:29:56Z",
-    "durationSec": 68,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43443258914",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: RuntimeError VigiEau: HTTP Error 404: Not Found"
+    "startedAt": "2026-11-13T16:12:13Z",
+    "durationSec": 45,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43443258914"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 72.0
   },
   {
@@ -4642,9 +4641,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T16:45:22Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43262108471"
+    "startedAt": "2026-11-13T16:12:18Z",
+    "durationSec": 51,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43460332393"
    },
    "recent": {
     "runs": 10,
@@ -5338,9 +5337,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T16:45:18Z",
-    "durationSec": 42,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43262095990"
+    "startedAt": "2026-11-13T16:12:26Z",
+    "durationSec": 46,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43460358622"
    },
    "recent": {
     "runs": 10,
@@ -5593,7 +5592,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-13T15:42:22Z"
+     "lastChange": "2026-11-13T16:00:37Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5814,15 +5813,15 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-13T15:20:14Z",
-    "durationSec": 942,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43451584267",
+    "startedAt": "2026-11-13T01:00:56Z",
+    "durationSec": 943,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43317960025",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-pl-zsrir.py' has timed out after 15 minutes."
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 7,
-    "failed": 3
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 132.0
@@ -7322,7 +7321,7 @@
    "crons": [
     "10 16 * * 5"
    ],
-   "nextRun": "2026-11-13T16:10:00Z",
+   "nextRun": "2026-11-20T16:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -8012,7 +8011,7 @@
    "crons": [
     "0 16 13,17 * *"
    ],
-   "nextRun": "2026-11-13T16:00:00Z",
+   "nextRun": "2026-11-17T16:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -8027,7 +8026,7 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 624.0
+   "expectedEveryHours": 648.0
   },
   {
    "workflow": "update-wb-panel-prices.yml",
