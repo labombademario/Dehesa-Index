@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-11-13T17:22:32.775Z",
+  "generatedAt": "2026-11-13T19:59:10.290Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -1706,11 +1706,11 @@
       "frequency": "weekly",
       "unit": "litro",
       "currency": "EUR",
-      "latest": 2.1539358162767477,
+      "latest": 2.153318760476133,
       "observationDate": "2026-11-01",
-      "periodChangePct": 0.25174718201399493,
+      "periodChangePct": 0.223027235183193,
       "yoyPct": null,
-      "volatility": 0.03831206148319791,
+      "volatility": 0.03831210488616996,
       "points": 263,
       "coverageStart": "2005-01-01",
       "coverageEnd": "2026-11-01",
