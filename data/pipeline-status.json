@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T18:44:00Z",
+ "generatedAt": "2026-11-13T20:03:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 336,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
   "repoGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
-  "checkedAt": "2026-11-13T18:44:00Z"
+  "checkedAt": "2026-11-13T20:03:00Z"
  },
  "pipelines": [
   {
@@ -1562,7 +1562,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-13T17:15:42Z"
+     "lastChange": "2026-11-13T19:59:17Z"
     }
    ],
    "last": {
@@ -2007,9 +2007,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T21:33:38Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43311441204"
+    "startedAt": "2026-11-13T20:01:58Z",
+    "durationSec": 52,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43497736965"
    },
    "recent": {
     "runs": 10,
@@ -2214,9 +2214,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-06T19:38:03Z",
-    "durationSec": 46,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42281344977"
+    "startedAt": "2026-11-13T19:57:25Z",
+    "durationSec": 121,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43497024933"
    },
    "recent": {
     "runs": 10,
@@ -3646,10 +3646,10 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-11-13T01:00:56Z",
-    "durationSec": 2611,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43341610738"
+    "event": "schedule",
+    "startedAt": "2026-11-13T19:54:09Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43496522377"
    },
    "recent": {
     "runs": 10,
@@ -4015,9 +4015,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-11T19:44:03Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43089939296"
+    "startedAt": "2026-11-13T19:52:24Z",
+    "durationSec": 42,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43496252431"
    },
    "recent": {
     "runs": 10,
@@ -4809,8 +4809,8 @@
     "note": "cancelled"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "late",
@@ -5196,14 +5196,14 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-13T18:47:00Z",
+   "nextRun": "2026-11-13T21:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-13T11:35:47Z",
-    "durationSec": 143,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43418331914"
+    "startedAt": "2026-11-13T20:03:31Z",
+    "durationSec": 66,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43497977394"
    },
    "recent": {
     "runs": 10,
@@ -5521,7 +5521,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-13T17:15:42Z"
+     "lastChange": "2026-11-13T19:59:17Z"
     }
    ],
    "last": {
@@ -5581,7 +5581,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-13T17:22:34Z"
+     "lastChange": "2026-11-13T19:59:17Z"
     },
     {
      "path": "data/products"
@@ -5592,7 +5592,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-13T18:06:42Z"
+     "lastChange": "2026-11-13T18:48:30Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5808,7 +5808,7 @@
    "crons": [
     "15 7,10,13,16,19 * * 4,5"
    ],
-   "nextRun": "2026-11-13T19:15:00Z",
+   "nextRun": "2026-11-19T07:15:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
@@ -5824,7 +5824,7 @@
     "failed": 3
    },
    "status": "error",
-   "expectedEveryHours": 132.0
+   "expectedEveryHours": 3.0
   },
   {
    "workflow": "update-poland-eurostat.yml",
