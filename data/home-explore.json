@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-12T23:38:18Z",
+ "generatedAt": "2026-11-13T23:36:14Z",
  "facts": [
   {
    "id": "eu",
@@ -26,10 +26,10 @@
   {
    "id": "exports",
    "file": "export-sales.json",
-   "date": "2026-10-29",
+   "date": "2026-11-05",
    "commodity": "All Wheat",
    "unit": "Metric Tons",
-   "netSales": 538028
+   "netSales": 182844
   }
  ]
 }

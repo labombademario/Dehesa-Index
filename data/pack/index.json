@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76546
+  "rows": 76549
  },
  "files": [
   {
@@ -511,10 +511,10 @@
    "frequency": "weekly",
    "rows": 1556,
    "first": "1997-01-10",
-   "last": "2026-11-03",
+   "last": "2026-11-11",
    "csv": "data/pack/us/gas_natural.csv",
    "xlsx": "data/pack/us/gas_natural.xlsx",
-   "csvBytes": 279994,
+   "csvBytes": 279991,
    "xlsxBytes": 75548
   },
   {
@@ -571,13 +571,13 @@
    "unit": "gal",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 1703,
+   "rows": 1704,
    "first": "1994-03-21",
-   "last": "2026-11-02",
+   "last": "2026-11-09",
    "csv": "data/pack/us/diesel.csv",
    "xlsx": "data/pack/us/diesel.xlsx",
-   "csvBytes": 314976,
-   "xlsxBytes": 82330
+   "csvBytes": 315161,
+   "xlsxBytes": 82371
   },
   {
    "product": "ddgs_us",
@@ -2814,13 +2814,13 @@
    "unit": "litro",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1091,
+   "rows": 1092,
    "first": "2005-01-03",
-   "last": "2026-11-02",
+   "last": "2026-11-09",
    "csv": "data/pack/eu/diesel.csv",
    "xlsx": "data/pack/eu/diesel.xlsx",
-   "csvBytes": 233306,
-   "xlsxBytes": 65234
+   "csvBytes": 233519,
+   "xlsxBytes": 65285
   },
   {
    "product": "harina_pescado",
@@ -3093,13 +3093,13 @@
    "unit": "barril",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 2060,
+   "rows": 2061,
    "first": "1987-05-15",
-   "last": "2026-10-30",
+   "last": "2026-11-06",
    "csv": "data/pack/eu/petroleo_brent.csv",
    "xlsx": "data/pack/eu/petroleo_brent.xlsx",
-   "csvBytes": 364688,
-   "xlsxBytes": 99877
+   "csvBytes": 364866,
+   "xlsxBytes": 99925
   },
   {
    "product": "pollo",
