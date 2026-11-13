@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-13T20:17:59.370Z",
+  "generatedAt": "2026-11-13T21:28:23.212Z",
   "status": "informational",
   "rules": [
     {
@@ -124,8 +124,8 @@
       "region": "eu",
       "sourceId": "eia",
       "severity": "high",
-      "changePct": 21.13,
-      "observationDate": "2026-10-01"
+      "changePct": -16.35,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
@@ -270,15 +270,6 @@
       "severity": "watch",
       "changePct": -9.17,
       "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "gas_natural",
-      "region": "us",
-      "sourceId": "eia",
-      "severity": "high",
-      "changePct": -13.77,
-      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
