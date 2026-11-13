@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T15:04:00Z",
+ "generatedAt": "2026-11-13T15:22:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 335,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
   "repoGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
-  "checkedAt": "2026-11-13T15:04:00Z"
+  "checkedAt": "2026-11-13T15:22:00Z"
  },
  "pipelines": [
   {
@@ -737,7 +737,7 @@
    "crons": [
     "20 15 * * 5"
    ],
-   "nextRun": "2026-11-13T15:20:00Z",
+   "nextRun": "2026-11-20T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2186,7 +2186,7 @@
    "crons": [
     "15 15 * * 3,5"
    ],
-   "nextRun": "2026-11-13T15:15:00Z",
+   "nextRun": "2026-11-18T15:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4264,7 +4264,7 @@
    "crons": [
     "10 15 * * 2,5"
    ],
-   "nextRun": "2026-11-13T15:10:00Z",
+   "nextRun": "2026-11-17T15:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4481,9 +4481,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T15:33:54Z",
-    "durationSec": 58,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42845648775"
+    "startedAt": "2026-11-13T15:22:09Z",
+    "durationSec": 55,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43451915127"
    },
    "recent": {
     "runs": 10,
@@ -5220,7 +5220,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-13T15:17:00Z",
+   "nextRun": "2026-11-13T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5546,7 +5546,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-13T15:10:00Z",
+   "nextRun": "2026-11-13T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5593,7 +5593,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-13T14:50:05Z"
+     "lastChange": "2026-11-13T15:08:20Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5820,8 +5820,8 @@
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-pl-zsrir.py' has timed out after 15 minutes."
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "error",
@@ -7276,7 +7276,7 @@
    "crons": [
     "20 15 * * 5"
    ],
-   "nextRun": "2026-11-13T15:20:00Z",
+   "nextRun": "2026-11-20T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7552,7 +7552,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-11-13T15:20:00Z",
+   "nextRun": "2026-11-16T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7567,7 +7567,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-markets.yml",
