@@ -65,8 +65,8 @@ Grilla anr 2017_120: celdas sin dato, mes omitido
 Grilla anr 2018_120: celdas sin dato, mes omitido
 Grilla anr 2019_120: celdas sin dato, mes omitido
 Grilla anr 2020_120: celdas sin dato, mes omitido
-BOSQUE 2018: 18817 poligonos, 78326 ha en total; especies: Eucalyptus grandis (inc. híbridos y clon=42480; Eucalyptus globulus, E. maidenii y E. bi=15102; Montes de abrigo y Cortinas=11204; Eucalyptus dunnii=7436; Mezcla de especies=842; Otros Eucalyptus=666; Pinus elliotti y Pinus taeda=324; Pinus pinaster=272
-BOSQUE total fuera de rango (78326 ha, 18817 poligonos): no se publica
+BOSQUE 2018: 22410 poligonos, 81790 ha en total; especies: Eucalyptus grandis (inc. híbridos y clon=42880; Eucalyptus globulus, E. maidenii y E. bi=15102; Montes de abrigo y Cortinas=14268; Eucalyptus dunnii=7436; Mezcla de especies=842; Otros Eucalyptus=666; Pinus elliotti y Pinus taeda=324; Pinus pinaster=272
+BOSQUE total fuera de rango (81790 ha, 22410 poligonos): no se publica
 BOSQUE 2021: 166425 poligonos, 845031 ha en total; especies: Eucalyptus grandis (inc. híbridos y clon=250964; Eucalyptus dunnii=216581; Pinus elliottii y Pinus taeda=150908; Eucalyptus globulus, E. maidenii y E. bi=103639; Montes de abrigo y Cortinas=81956; Otros Eucalyptus=23356; Mezcla de especies=10699; Pinus pinaster=3790; Salix sp. y Populus sp.=3137
 BOSQUE 2021 publicado: 19 departamentos, 845028 ha
 CATALOGO [org:ine] ine-presupuesto_ine | Presupuesto | org=ine | lic=odc-uy | CSV,JSON | mod=2018-07-06
@@ -111,8 +111,8 @@ CATALOGO [org:mgap] mgap-fae-sp-diciembre-2020 | Seccionales policiales declarad
 CATALOGO [org:mgap] mgap-fae-sp-marzo-2020 | Seccionales policiales declaradas en Emergencia agropecuaria Marzo 2020 | org=mgap | lic=odc-uy | GEOJSON,GEOPACKAGE,JSON,XML | mod=2021-11-01
 CATALOGO [q:censo 2023] intendencia-de-san-jose-mapa-social-de-san-jose | Mapa social de San José | org=intendencia-de-san-jose | lic=odc-uy | CSV | mod=2024-03-20
 CATALOGO [q:poblacion] inau-poblacion_y_proyectos | Población y Proyectos | org=inau | lic=odc-uy | CSV,JSON,XLS,XLSX,XML | mod=2022-03-07
-CATALOGO [q:poblacion] poblacion-por-zona-censal-en-montevideo | Población por zona censal en Montevideo censos 85-96-04 | org=intendencia-montevideo | lic=odc-uy | TXT,ZIP | mod=2025-02-26
-CATALOGO [q:poblacion] poblacion-atendida-por-las-policlinicas-de-las-intendencia-de-montevid | Población atendida por las policlínicas de las Intendencia de Montevideo | org=intendencia-montevideo | lic=odc-uy | CSV,TXT | mod=2026-09-21
+CATALOGO [q:poblacion] intendencia-montevideo-poblacion-por-zona-censal-en-montevideo1 | Población por zona censal en Montevideo censos 85-96-04 | org=intendencia-montevideo | lic=odc-uy | TXT,ZIP | mod=2026-11-10
+CATALOGO [q:poblacion] intendencia-montevideo-poblacion-atendida-por-las-policlinicas-de-las- | Población atendida por las policlínicas de las Intendencia de Montevideo | org=intendencia-montevideo | lic=odc-uy | CSV,TXT | mod=2026-11-10
 CATALOGO [q:agropecuario] miem-indicadores-de-eficiencia-energetica-por-sector | Indicadores de Eficiencia Energética | org=miem | lic=odc-uy | CSV | mod=2020-07-29
 CATALOGO: 45 conjuntos distintos
 series guardadas: 43
