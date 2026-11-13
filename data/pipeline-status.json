@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T20:21:00Z",
+ "generatedAt": "2026-11-13T20:38:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 337,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
   "repoGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
-  "checkedAt": "2026-11-13T20:21:00Z"
+  "checkedAt": "2026-11-13T20:38:00Z"
  },
  "pipelines": [
   {
@@ -1891,9 +1891,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-13T13:14:14Z",
-    "durationSec": 75,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43431923111"
+    "startedAt": "2026-11-13T20:31:57Z",
+    "durationSec": 73,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43502410711"
    },
    "recent": {
     "runs": 10,
@@ -5591,7 +5591,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-13T20:07:16Z"
+     "lastChange": "2026-11-13T20:24:53Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6119,8 +6119,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43433582340"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 8,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -6805,13 +6805,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T20:31:27Z",
-    "durationSec": 30,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42896116804"
+    "startedAt": "2026-11-13T20:34:14Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43502763991"
    },
    "recent": {
-    "runs": 7,
-    "success": 7,
+    "runs": 8,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -7527,7 +7527,7 @@
    "crons": [
     "30 20 * * 1-5"
    ],
-   "nextRun": "2026-11-13T20:30:00Z",
+   "nextRun": "2026-11-16T20:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7542,7 +7542,7 @@
     "failed": 4
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-local-markets.yml",
