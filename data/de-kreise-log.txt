@@ -1,18 +1,1 @@
-41141-01-01-4 13224 filas, 490 distritos, 16 Länder
-41141-02-02-4 28101 filas, 490 distritos, 16 Länder
-41141-03-02-4 24795 filas, 490 distritos, 16 Länder
-41141-04-02-4 13224 filas, 490 distritos, 16 Länder
-41141-05-01-4 26448 filas, 490 distritos, 16 Länder
-41141-06-01-4 4959 filas, 490 distritos, 16 Länder
-41141-07-01-4 9918 filas, 490 distritos, 16 Länder
-41141-09-01-4 3306 filas, 490 distritos, 16 Länder
-ceros contradictorios con el Land marcados como hueco: 2
-DESCUADRE crops SL Ölfrüchte FLC004 2010 4461.0 4353.0 7 7
-DESCUADRE crops SL Winterweizen (einschließlich Dinkel und Einkorn) FLC004 2010 9728.0 9430.0 7 7
-DESCUADRE crops SL Weizen FLC004 2010 9988.0 9668.0 7 7
-DESCUADRE crops SL Winterraps FLC004 2010 4378.0 4271.0 7 7
-DESCUADRE size SL 5 bis unter 10 ha FLC017 2010 1468.0 1432.0 7 7
-DESCUADRE size SL 200 und mehr ha FLC017 2010 16638.0 15898.0 7 7
-DESCUADRE size SL 20 bis unter 50 ha FLC017 2010 9125.0 8865.0 7 7
-control distritos frente a Land: 622 de 629 cuadran, 0 desbordes
-OK: 490 distritos en 16 Länder, 1300 KB
+ERROR 41141-01-01-4 41141-01-01-4: HTTP Error 404: 
