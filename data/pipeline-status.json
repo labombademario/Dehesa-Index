@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T00:30:00Z",
+ "generatedAt": "2026-11-13T01:54:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 335,
+  "ok": 333,
   "late": 2,
-  "error": 11,
+  "error": 13,
   "not_run": 0,
   "unknown": 0
  },
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 6.0,
-  "prodGeneratedAt": "2026-11-12T17:41:10.977416+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-11-12T23:40:29.396570+00:00",
   "repoGeneratedAt": "2026-11-12T23:40:29.396570+00:00",
-  "checkedAt": "2026-11-13T00:30:00Z"
+  "checkedAt": "2026-11-13T01:54:00Z"
  },
  "pipelines": [
   {
@@ -144,8 +144,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-12T23:31:06Z",
-    "durationSec": 1240,
+    "startedAt": "2026-11-13T01:00:53Z",
+    "durationSec": 1248,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43329518380",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-argentina.py' has timed out after 20 minutes."
    },
@@ -2747,18 +2747,18 @@
     }
    ],
    "last": {
-    "conclusion": "cancelled",
-    "event": "schedule",
-    "startedAt": "2026-11-12T21:28:40Z",
-    "durationSec": 82,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43310623590"
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-13T01:00:54Z",
+    "durationSec": 2570,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43341607878"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 0
+    "success": 8,
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -3646,11 +3646,11 @@
    "nextRun": "2026-11-13T12:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "cancelled",
-    "event": "schedule",
-    "startedAt": "2026-11-12T21:30:00Z",
-    "durationSec": 369,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43310832484"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-13T01:00:56Z",
+    "durationSec": 2611,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43341610738"
    },
    "recent": {
     "runs": 10,
@@ -5197,7 +5197,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-13T00:47:00Z",
+   "nextRun": "2026-11-13T03:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5593,7 +5593,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-12T23:38:36Z"
+     "lastChange": "2026-11-13T00:33:31Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5814,8 +5814,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-12T22:13:50Z",
-    "durationSec": 954,
+    "startedAt": "2026-11-13T01:00:56Z",
+    "durationSec": 943,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43317960025",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-pl-zsrir.py' has timed out after 15 minutes."
    },
@@ -7532,18 +7532,19 @@
    "nextRun": "2026-11-13T20:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-11-12T13:41:11Z",
-    "durationSec": 31,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43229647367"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-11-13T01:23:11Z",
+    "durationSec": 148,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43344523296",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: The read operation timed out"
    },
    "recent": {
     "runs": 10,
-    "success": 7,
-    "failed": 3
+    "success": 6,
+    "failed": 4
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 72.0
   },
   {
