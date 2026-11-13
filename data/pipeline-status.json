@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T15:22:00Z",
+ "generatedAt": "2026-11-13T15:39:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 335,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
   "repoGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
-  "checkedAt": "2026-11-13T15:22:00Z"
+  "checkedAt": "2026-11-13T15:39:00Z"
  },
  "pipelines": [
   {
@@ -2891,8 +2891,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43255823908"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4061,13 +4061,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-06T15:15:19Z",
-    "durationSec": 58,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42241318089"
+    "startedAt": "2026-11-13T15:33:27Z",
+    "durationSec": 67,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43453794040"
    },
    "recent": {
-    "runs": 8,
-    "success": 8,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -4619,9 +4619,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T15:41:42Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42847020698"
+    "startedAt": "2026-11-13T15:32:53Z",
+    "durationSec": 38,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43453697116"
    },
    "recent": {
     "runs": 10,
@@ -5315,9 +5315,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T15:41:29Z",
-    "durationSec": 35,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42846981752"
+    "startedAt": "2026-11-13T15:31:13Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43453412433"
    },
    "recent": {
     "runs": 10,
@@ -5593,7 +5593,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-13T15:08:20Z"
+     "lastChange": "2026-11-13T15:25:46Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5768,9 +5768,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T16:06:03Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43254954979"
+    "startedAt": "2026-11-13T15:33:27Z",
+    "durationSec": 29,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43453794139"
    },
    "recent": {
     "runs": 10,
@@ -5814,15 +5814,15 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-13T01:00:56Z",
-    "durationSec": 943,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43317960025",
+    "startedAt": "2026-11-13T15:20:14Z",
+    "durationSec": 942,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43451584267",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-pl-zsrir.py' has timed out after 15 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 7,
-    "failed": 2
+    "failed": 3
    },
    "status": "error",
    "expectedEveryHours": 132.0
@@ -5930,13 +5930,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T15:45:35Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42847700864"
+    "startedAt": "2026-11-13T15:39:43Z",
+    "durationSec": 34,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43454835564"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -7782,7 +7782,7 @@
    "crons": [
     "35 15 * * 5"
    ],
-   "nextRun": "2026-11-13T15:35:00Z",
+   "nextRun": "2026-11-20T15:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
