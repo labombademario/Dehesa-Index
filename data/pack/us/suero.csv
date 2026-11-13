@@ -1,5 +1,4 @@
 ﻿product_key,product,market,date,value,unit,currency,frequency,source,license,attribution
-suero,Suero seco,US,2016-11-19,0.3743,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 suero,Suero seco,US,2016-11-26,0.3769,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 suero,Suero seco,US,2016-12-03,0.3838,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 suero,Suero seco,US,2016-12-10,0.3932,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
@@ -519,3 +518,4 @@ suero,Suero seco,US,2026-10-10,0.7189,lb,USD,weekly,USDA AMS Market News (MARS A
 suero,Suero seco,US,2026-10-17,0.725,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 suero,Suero seco,US,2026-10-24,0.7373,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
 suero,Suero seco,US,2026-10-31,0.7325,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))
+suero,Suero seco,US,2026-11-07,0.7354,lb,USD,weekly,USDA AMS Market News (MARS API),US-PD,Source: U.S. Department of Agriculture (AMS Market News (MARS))

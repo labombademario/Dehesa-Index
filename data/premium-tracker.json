@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-12T23:38:18Z",
+ "generatedAt": "2026-11-13T06:39:34Z",
  "sourceIds": [
   "usda_ams_mars"
  ],
@@ -20,23 +20,23 @@
    "unit": "bu",
    "saleType": "Bid",
    "organicReportId": 3802,
-   "organicSeries": 66,
-   "conventionalSeries": 111,
-   "date": "2026-10-23",
+   "organicSeries": 67,
+   "conventionalSeries": 114,
+   "date": "2026-11-06",
    "organic": {
-    "median": 10.125,
+    "median": 9.75,
     "min": 9.75,
     "max": 13.5,
-    "n": 8
+    "n": 7
    },
    "conventional": {
-    "median": 4.3575,
-    "min": 3.5725,
-    "max": 5.53,
-    "n": 111
+    "median": 4.314,
+    "min": 3.4275,
+    "max": 5.265,
+    "n": 114
    },
-   "premium": 5.7675,
-   "premiumPct": 132.4,
+   "premium": 5.436,
+   "premiumPct": 126.0,
    "reason": null
   },
   {
@@ -49,22 +49,22 @@
    "saleType": "Bid",
    "organicReportId": 3802,
    "organicSeries": 50,
-   "conventionalSeries": 102,
-   "date": "2026-10-23",
+   "conventionalSeries": 100,
+   "date": "2026-11-06",
    "organic": {
-    "median": 23.25,
+    "median": 23.3,
     "min": 23,
     "max": 25.1,
     "n": 8
    },
    "conventional": {
-    "median": 12.0995,
-    "min": 11.465,
+    "median": 11.5382,
+    "min": 10.8075,
     "max": 22.0,
-    "n": 102
+    "n": 100
    },
-   "premium": 11.1505,
-   "premiumPct": 92.2,
+   "premium": 11.7618,
+   "premiumPct": 101.9,
    "reason": null
   },
   {
@@ -77,8 +77,8 @@
    "saleType": "Bid",
    "organicReportId": 3802,
    "organicSeries": 22,
-   "conventionalSeries": 58,
-   "date": "2026-10-23",
+   "conventionalSeries": 59,
+   "date": "2026-11-06",
    "organic": {
     "median": 15.5,
     "min": 15.5,
@@ -86,13 +86,13 @@
     "n": 4
    },
    "conventional": {
-    "median": 5.6867,
-    "min": 4.959,
-    "max": 6.4825,
-    "n": 58
+    "median": 5.4417,
+    "min": 4.7625,
+    "max": 6.1875,
+    "n": 59
    },
-   "premium": 9.8133,
-   "premiumPct": 172.6,
+   "premium": 10.0583,
+   "premiumPct": 184.8,
    "reason": null
   },
   {
