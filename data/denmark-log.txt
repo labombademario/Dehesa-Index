@@ -1,4 +1,4 @@
-Dinamarca: 30 series {'LPRIS10': {'ok': True, 'products': 27, 'updated': '2026-10-15T08:00:00'}, 'ANI71': {'ok': True, 'series': 3, 'updated': '2026-10-14T08:00:00'}}
+Dinamarca: 30 series {'LPRIS10': {'ok': True, 'products': 27, 'updated': '2026-10-15T08:00:00'}, 'ANI71': {'ok': True, 'series': 3, 'updated': '2026-11-13T08:00:00'}}
   LPRIS10:1000 | Soft wheat (DKK per 100 kg) | 2026-08 145.0 | n= 260
   LPRIS10:1005 | Rye (DKK per 100 kg) | 2026-08 131.0 | n= 260
   LPRIS10:1010 | Barley (DKK per 100 kg) | 2026-08 140.0 | n= 260
@@ -26,6 +26,6 @@ Dinamarca: 30 series {'LPRIS10': {'ok': True, 'products': 27, 'updated': '2026-1
   LPRIS10:1320 | Raw cows milk actual fat content-prices (per 100 kg) | 2026-08 375.0 | n= 260
   LPRIS10:1325 | Raw cows milk, 4.2 pct. fat and 3.4 pct. protein (DKK per 100 kg) | 2026-08 356.0 | n= 260
   LPRIS10:1360 | Mink (DKK per hide) | 2018-12 141.0 | n= 168
-  ANI71:MAELK21 | Milk ex farm with 4,2% fat content and 3,4%protein content (DK øre pr. kg) | 2026-08 356.4 | n= 380
-  ANI71:MAELK2 | Milk ex farm, total (DK øre per kg) | 2026-08 374.98 | n= 380
-  ANI71:MAELK11 | Delivered milk to dairies (m kg) | 2026-08 513.5 | n= 380
+  ANI71:MAELK21 | Milk ex farm with 4,2% fat content and 3,4%protein content (DK øre pr. kg) | 2026-09 362.73 | n= 381
+  ANI71:MAELK2 | Milk ex farm, total (DK øre per kg) | 2026-09 390.03 | n= 381
+  ANI71:MAELK11 | Delivered milk to dairies (m kg) | 2026-09 483.3 | n= 381
