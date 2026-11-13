@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-13T22:56:03.393Z",
+  "generatedAt": "2026-11-13T23:37:25.583Z",
   "status": "informational",
   "rules": [
     {
@@ -530,15 +530,6 @@
       "sourceId": "alberta_ag",
       "severity": "watch",
       "changePct": 5.45,
-      "observationDate": "2026-10-01"
-    },
-    {
-      "type": "period_move",
-      "product": "corderos_ni",
-      "region": "uk",
-      "sourceId": "daera_ni",
-      "severity": "watch",
-      "changePct": 5.21,
       "observationDate": "2026-10-01"
     },
     {
