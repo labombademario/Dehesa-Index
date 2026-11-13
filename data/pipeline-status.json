@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T23:14:00Z",
+ "generatedAt": "2026-11-13T23:31:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -17,7 +17,7 @@
   "lagHours": 15.5,
   "prodGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
   "repoGeneratedAt": "2026-11-13T22:10:17.916976+00:00",
-  "checkedAt": "2026-11-13T23:14:00Z"
+  "checkedAt": "2026-11-13T23:31:00Z"
  },
  "pipelines": [
   {
@@ -3510,9 +3510,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T23:09:58Z",
-    "durationSec": 269,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42921034329"
+    "startedAt": "2026-11-13T23:27:51Z",
+    "durationSec": 255,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43527294972"
    },
    "recent": {
     "runs": 10,
@@ -5254,8 +5254,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43516762488"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -5555,7 +5555,7 @@
      "path": "data/us-weekly-stats.json",
      "valid": "ok",
      "series": 35,
-     "points": 4573,
+     "points": 4574,
      "lines": 0,
      "lastChange": "2026-11-13T17:21:36Z"
     },
@@ -5596,7 +5596,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-13T22:59:44Z"
+     "lastChange": "2026-11-13T23:18:37Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5684,9 +5684,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43469966427"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 7,
-    "failed": 3
+    "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 3.0
@@ -7094,7 +7094,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-13T23:30:00Z",
+   "nextRun": "2026-11-16T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7109,7 +7109,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 62.8
+   "expectedEveryHours": 14.8
   },
   {
    "workflow": "update-us-cash-receipts.yml",
