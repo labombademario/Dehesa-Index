@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-12T21:05:44.755Z",
+  "generatedAt": "2026-11-13T03:34:05.128Z",
   "status": "informational",
   "rules": [
     {
@@ -438,18 +438,18 @@
       "product": "cheddar",
       "region": "us",
       "sourceId": "usda_ams_mars",
-      "severity": "watch",
-      "changePct": -9.57,
-      "observationDate": "2026-10-01"
+      "severity": "high",
+      "changePct": 12.47,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
-      "product": "mantequilla",
+      "product": "suero",
       "region": "us",
       "sourceId": "usda_ams_mars",
       "severity": "watch",
-      "changePct": -7.35,
-      "observationDate": "2026-10-01"
+      "changePct": 7.92,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
