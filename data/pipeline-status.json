@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T22:24:00Z",
+ "generatedAt": "2026-11-13T22:40:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 333,
+  "ok": 332,
   "late": 2,
-  "error": 13,
+  "error": 14,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 15.5,
   "prodGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
   "repoGeneratedAt": "2026-11-13T22:10:17.916976+00:00",
-  "checkedAt": "2026-11-13T22:24:00Z"
+  "checkedAt": "2026-11-13T22:40:00Z"
  },
  "pipelines": [
   {
@@ -5056,7 +5056,7 @@
     "30 22 * * 5",
     "30 12 * * 1"
    ],
-   "nextRun": "2026-11-13T22:30:00Z",
+   "nextRun": "2026-11-16T12:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5080,7 +5080,7 @@
     "30 22 * * 5",
     "10 14 * * 1"
    ],
-   "nextRun": "2026-11-13T22:30:00Z",
+   "nextRun": "2026-11-16T14:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5595,7 +5595,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-13T22:09:50Z"
+     "lastChange": "2026-11-13T22:27:39Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5907,18 +5907,19 @@
    "nextRun": "2026-11-17T16:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-11T00:36:24Z",
-    "durationSec": 1068,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42909753089"
+    "startedAt": "2026-11-13T22:08:03Z",
+    "durationSec": 1540,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43516717211",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-portugal.py ' has timed out after 25 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 96.0
   },
   {
