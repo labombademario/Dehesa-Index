@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T20:03:00Z",
+ "generatedAt": "2026-11-13T20:21:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 336,
-  "late": 3,
+  "ok": 337,
+  "late": 2,
   "error": 9,
   "not_run": 0,
   "unknown": 0
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
   "repoGeneratedAt": "2026-11-13T06:42:18.761671+00:00",
-  "checkedAt": "2026-11-13T20:03:00Z"
+  "checkedAt": "2026-11-13T20:21:00Z"
  },
  "pipelines": [
   {
@@ -4801,19 +4801,18 @@
    "nextRun": "2026-11-17T12:45:00Z",
    "files": [],
    "last": {
-    "conclusion": "cancelled",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-11T00:36:23Z",
-    "durationSec": 1185,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42891083359",
-    "note": "cancelled"
+    "startedAt": "2026-11-13T20:03:43Z",
+    "durationSec": 641,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43498012481"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 0
    },
-   "status": "late",
+   "status": "ok",
    "expectedEveryHours": 96.0
   },
   {
@@ -5581,7 +5580,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-13T19:59:17Z"
+     "lastChange": "2026-11-13T20:18:17Z"
     },
     {
      "path": "data/products"
@@ -5592,7 +5591,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-13T18:48:30Z"
+     "lastChange": "2026-11-13T20:07:16Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -8277,9 +8276,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T20:37:48Z",
-    "durationSec": 59,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43302202578"
+    "startedAt": "2026-11-13T20:17:28Z",
+    "durationSec": 57,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43500182657"
    },
    "recent": {
     "runs": 10,
