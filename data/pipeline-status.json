@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-14T10:38:00Z",
+ "generatedAt": "2026-11-14T10:59:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-14T06:18:38.821584+00:00",
   "repoGeneratedAt": "2026-11-14T06:18:38.821584+00:00",
-  "checkedAt": "2026-11-14T10:38:00Z"
+  "checkedAt": "2026-11-14T10:59:00Z"
  },
  "pipelines": [
   {
@@ -4460,14 +4460,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-26T23:51:33Z",
-    "durationSec": 51,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40422590785"
+    "event": "schedule",
+    "startedAt": "2026-11-14T10:47:48Z",
+    "durationSec": 100,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43586957630"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -5204,9 +5204,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-14T01:48:33Z",
-    "durationSec": 183,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43542767022"
+    "startedAt": "2026-11-14T10:57:14Z",
+    "durationSec": 106,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43587681339"
    },
    "recent": {
     "runs": 10,
@@ -5595,7 +5595,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-14T10:25:37Z"
+     "lastChange": "2026-11-14T10:41:42Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7439,7 +7439,7 @@
    "crons": [
     "40 10 8,10,14 * *"
    ],
-   "nextRun": "2026-11-14T10:40:00Z",
+   "nextRun": "2026-12-08T10:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7454,7 +7454,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 576.0
+   "expectedEveryHours": 600.0
   },
   {
    "workflow": "update-us-fmmo.yml",
