@@ -20,17 +20,17 @@ PEAS 2908 filas 488 utiles
 HONEY 1729 filas 144 utiles
 WOOL 669 filas 137 utiles
 MOHAIR 662 filas 130 utiles
-GOATS 3615 filas 290 utiles
+GOATS 3616 filas 290 utiles
   rechazadas por dominio/practica []
 TOBACCO 6580 filas 2057 utiles
 MUSHROOMS 1083 filas 201 utiles
 HEMP 633 filas 10 utiles
   rechazadas por dominio/practica []
-TURKEYS 25021 filas 435 utiles
+TURKEYS 25024 filas 435 utiles
 AG LAND 98 filas 81 utiles
 RENT 2693 filas 54 utiles
 FARM OPERATIONS 989 filas 78 utiles
-CHICKENS 47605 filas 594 utiles
+CHICKENS 47607 filas 594 utiles
 EGGS 6294 filas 777 utiles
 descartada ('APPLES',) production value sin dato desde 2003
 descartada ('BLUEBERRIES',) price received sin dato desde 2016
