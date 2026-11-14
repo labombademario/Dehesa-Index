@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-14T09:36:00Z",
+ "generatedAt": "2026-11-14T10:22:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -17,7 +17,7 @@
   "lagHours": 8.1,
   "prodGeneratedAt": "2026-11-13T22:10:17.916976+00:00",
   "repoGeneratedAt": "2026-11-14T06:18:38.821584+00:00",
-  "checkedAt": "2026-11-14T09:36:00Z"
+  "checkedAt": "2026-11-14T10:22:00Z"
  },
  "pipelines": [
   {
@@ -1043,11 +1043,11 @@
     }
    ],
    "last": {
-    "conclusion": "cancelled",
-    "event": "schedule",
-    "startedAt": "2026-11-14T03:33:18Z",
-    "durationSec": 277,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43552234140"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-14T10:11:55Z",
+    "durationSec": 38,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43584121180"
    },
    "recent": {
     "runs": 10,
@@ -3112,18 +3112,18 @@
    "crons": [
     "40 9 14 * *"
    ],
-   "nextRun": "2026-11-14T09:40:00Z",
+   "nextRun": "2026-12-14T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-19T15:15:11Z",
+    "event": "schedule",
+    "startedAt": "2026-11-14T10:18:40Z",
     "durationSec": 30,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/39276325200"
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43584661758"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -4456,7 +4456,7 @@
    "crons": [
     "15 10 14 * *"
    ],
-   "nextRun": "2026-11-14T10:15:00Z",
+   "nextRun": "2026-12-14T10:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5199,7 +5199,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-14T09:47:00Z",
+   "nextRun": "2026-11-14T12:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5595,7 +5595,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-14T09:22:59Z"
+     "lastChange": "2026-11-14T09:38:28Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5788,7 +5788,7 @@
    "crons": [
     "40 9 14 * *"
    ],
-   "nextRun": "2026-11-14T09:40:00Z",
+   "nextRun": "2026-12-14T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7924,7 +7924,7 @@
    "crons": [
     "20 10 8,10,14 * *"
    ],
-   "nextRun": "2026-11-14T10:20:00Z",
+   "nextRun": "2026-12-08T10:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7939,7 +7939,7 @@
     "failed": 1
    },
    "status": "ok",
-   "expectedEveryHours": 576.0
+   "expectedEveryHours": 600.0
   },
   {
    "workflow": "update-us-tariffs.yml",
