@@ -1,12 +1,2 @@
 clave BDL_CLIENT_ID: presente
-peticiones hechas: 128
-tema P4122 listo
-tema P4124 listo
-tema P4125 listo
-tema P4127 listo
-tema P4129 listo
-tema P4131 listo
-tema P4134 listo
-tema P4084 listo
-control: 816 de 816 cuadran, 0 desbordes
-OK: 380 powiaty en 16 voivodias, 64 indicadores, 389 KB
+ERROR (1633347, 5) https://bdl.stat.gov.pl/api/v1/data/by-variable/1633347?unit-level=5&year=2020&format=json&lang=en&page-size=100&page=2 -> HTTP Error 500: Internal Server Error
