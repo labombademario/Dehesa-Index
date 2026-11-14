@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-13T23:31:14Z",
+ "generatedAt": "2026-11-14T06:13:24Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -247,7 +247,7 @@
     "points": 24356,
     "lines": 0
    },
-   "generatedAt": "2026-11-11T00:54:04Z",
+   "generatedAt": "2026-11-14T02:03:14Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -737,11 +737,11 @@
     "BG/bg-es-meatm-b4200-ths_hd: salto 66580.0 -> 150990.0 en 2008-05 (mediana previa 3.39e+03)"
    ],
    "stats": {
-    "series": 2891,
-    "points": 186528,
+    "series": 2897,
+    "points": 186714,
     "lines": 0
    },
-   "generatedAt": "2026-11-10T23:14:12Z",
+   "generatedAt": "2026-11-13T23:31:44Z",
    "info": [
     "BG/bg-es-crop-i1100-area: salto 22500.0 -> 772010.0 en 2007 (mediana previa 2.11e+04) [KNOWN_VERIFIED_ANOMALY]",
     "BG/bg-es-crop-i1100-area: salto 772010.0 -> 797400.0 en 2008 (mediana previa 2.19e+04) [KNOWN_VERIFIED_ANOMALY]",
@@ -787,10 +787,10 @@
    ],
    "stats": {
     "series": 2223,
-    "points": 188475,
+    "points": 188610,
     "lines": 0
    },
-   "generatedAt": "2026-11-10T23:14:12Z",
+   "generatedAt": "2026-11-13T23:31:44Z",
    "info": [
     "DE/de-es-meatm-b1210-ths_hd: salto 14660.0 -> 43310.0 en 1979-10 (mediana previa 1.58e+03) [KNOWN_VERIFIED_ANOMALY]",
     "DE/de-es-meatm-b1210-ths_hd: salto 15830.0 -> 44720.0 en 1980-10 (mediana previa 1.34e+03) [KNOWN_VERIFIED_ANOMALY]",
@@ -836,11 +836,11 @@
     "LV/lv-es-meatm-b7490-ths_hd: salto 260.0 -> 1470.0 en 2017-01 (mediana previa 50)"
    ],
    "stats": {
-    "series": 1619,
-    "points": 88696,
+    "series": 1639,
+    "points": 88840,
     "lines": 0
    },
-   "generatedAt": "2026-11-10T23:14:12Z",
+   "generatedAt": "2026-11-13T23:31:44Z",
    "info": [
     "CZ/cz-es-meatm-b7490-ths_hd: salto 2030.0 -> 5920.0 en 2022-11 (mediana previa 160) [KNOWN_VERIFIED_ANOMALY]",
     "CZ/cz-es-meatm-b7490-ths_hd: salto 3040.0 -> 5230.0 en 2023-11 (mediana previa 170) [KNOWN_VERIFIED_ANOMALY]"
@@ -877,10 +877,10 @@
    ],
    "stats": {
     "series": 1984,
-    "points": 122752,
+    "points": 122874,
     "lines": 0
    },
-   "generatedAt": "2026-11-10T23:14:12Z",
+   "generatedAt": "2026-11-13T23:31:44Z",
    "info": [
     "RO/ro-es-meatm-b4110-ths_hd: salto 90.0 -> 83410.0 en 2010-03 (mediana previa 770) [KNOWN_VERIFIED_ANOMALY]",
     "RO/ro-es-meatm-b4110-ths_hd: salto 0 -> 38530.0 en 2012-03 (mediana previa 630) [KNOWN_VERIFIED_ANOMALY]",
@@ -1707,10 +1707,10 @@
    "warnings": [],
    "stats": {
     "series": 35,
-    "points": 4574,
+    "points": 4588,
     "lines": 0
    },
-   "generatedAt": "2026-11-13T17:20:17Z",
+   "generatedAt": "2026-11-13T23:35:15Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1782,7 +1782,7 @@
     "points": 6857,
     "lines": 0
    },
-   "generatedAt": "2026-11-07T01:00:10Z",
+   "generatedAt": "2026-11-14T01:31:32Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
