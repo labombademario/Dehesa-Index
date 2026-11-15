@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-15T20:18:00Z",
+ "generatedAt": "2026-11-15T22:08:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 333,
@@ -17,7 +17,7 @@
   "lagHours": 8.0,
   "prodGeneratedAt": "2026-11-15T10:47:15.415667+00:00",
   "repoGeneratedAt": "2026-11-15T18:49:05.148161+00:00",
-  "checkedAt": "2026-11-15T20:18:00Z"
+  "checkedAt": "2026-11-15T22:08:00Z"
  },
  "pipelines": [
   {
@@ -1887,7 +1887,7 @@
    "crons": [
     "25 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-15T21:25:00Z",
+   "nextRun": "2026-11-16T05:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5199,7 +5199,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-15T21:47:00Z",
+   "nextRun": "2026-11-16T00:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5222,7 +5222,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-15T21:17:00Z",
+   "nextRun": "2026-11-16T00:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5548,7 +5548,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-15T21:10:00Z",
+   "nextRun": "2026-11-16T00:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5595,7 +5595,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-15T20:03:55Z"
+     "lastChange": "2026-11-15T20:22:27Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6113,7 +6113,7 @@
    "crons": [
     "40 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-15T21:40:00Z",
+   "nextRun": "2026-11-16T05:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7973,14 +7973,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-14T21:37:59Z",
-    "durationSec": 49,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43643844847"
+    "startedAt": "2026-11-15T21:57:09Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43766504032"
    },
    "recent": {
     "runs": 10,
-    "success": 7,
-    "failed": 3
+    "success": 8,
+    "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 528.0
