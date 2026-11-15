@@ -75,6 +75,6 @@ if (sm.includes(A)) sm = sm.replace(new RegExp(A + '[\\s\\S]*?' + B), block); el
 fs.writeFileSync('sitemap.xml', sm);
 // blog.html: enlaces rastreables a las ediciones aprobadas (el resto de la pagina se pinta con JS)
 let bl = read('blog.html'); const BA = '<!--blog-editions:start-->', BB = '<!--blog-editions:end-->';
-const lst = ok.length ? '<nav aria-label="Blog"><ul>' + ok.map(e => '<li><a href="blog/' + e.week + '/">' + esc(e.languages.es.title) + '</a></li>').join('') + '</ul></nav>' : '';
+const lst = ok.length ? '<nav class="bl-eds" aria-label="Blog"><ul>' + ok.map(e => '<li><a href="blog/' + e.week + '/">' + esc(e.languages.es.title) + '</a></li>').join('') + '</ul></nav>' : '';
 if (bl.includes(BA)) { const nb = bl.replace(new RegExp(BA + '[\\s\\S]*?' + BB), BA + lst + BB); if (nb !== bl) fs.writeFileSync('blog.html', nb); }
 console.log('paginas de blog', urls.length, '(ediciones aprobadas: ' + ok.length + ' de ' + eds.length + ')');
