@@ -3,11 +3,11 @@
  "week": "2026-W45",
  "from": "2026-11-02",
  "to": "2026-11-08",
- "status": "DRAFT",
+ "status": "APPROVED",
  "canonicalUrl": "https://dehesaindex.com/blog.html#2026-W45",
  "editorial": {
-  "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedBy": "Mario",
+  "reviewedAt": "2026-11-14"
  },
  "distribution": {
   "substack": {
