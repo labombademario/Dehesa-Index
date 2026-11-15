@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-14T18:38:38.718Z",
+  "generatedAt": "2026-11-15T01:14:10.821Z",
   "scope": {
     "latestObservations": 209,
     "historyObservations": 49393,
@@ -8,9 +8,9 @@
     "pending": 0,
     "stale": 2,
     "freshness": {
-      "LIVE": 169,
+      "LIVE": 168,
       "FRESH": 34,
-      "EXPECTED_DELAY": 3,
+      "EXPECTED_DELAY": 4,
       "HISTORICAL": 1,
       "DELAYED": 1,
       "STALE": 1
@@ -212,7 +212,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -228,7 +228,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -244,7 +244,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 297,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -260,7 +260,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 292,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -276,7 +276,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -292,7 +292,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 370,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -308,7 +308,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -324,7 +324,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -340,7 +340,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 58,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -356,7 +356,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 436,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -372,7 +372,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -388,7 +388,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -404,7 +404,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 264,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -420,7 +420,7 @@
       "verifiedAt": "2026-11-05T20:58:18.539Z",
       "frequency": "weekly",
       "historyPoints": 228,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -436,7 +436,7 @@
       "verifiedAt": "2026-11-09T21:58:27.895Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -449,10 +449,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 21,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -468,7 +468,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -484,7 +484,7 @@
       "verifiedAt": "2026-11-05T20:58:28.920Z",
       "frequency": "weekly",
       "historyPoints": 133,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -500,7 +500,7 @@
       "verifiedAt": "2026-11-09T21:58:31.640Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -516,7 +516,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -532,7 +532,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -548,7 +548,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -564,7 +564,7 @@
       "verifiedAt": "2026-11-05T20:58:16.446Z",
       "frequency": "monthly",
       "historyPoints": 242,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -580,7 +580,7 @@
       "verifiedAt": "2026-10-21T17:19:54.000Z",
       "frequency": "monthly",
       "historyPoints": 797,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -596,7 +596,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -612,7 +612,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 358,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -628,7 +628,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -644,7 +644,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -660,7 +660,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -676,7 +676,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -692,7 +692,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -705,10 +705,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 23,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -724,7 +724,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -740,7 +740,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 334,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -753,10 +753,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 23,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -772,7 +772,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -788,7 +788,7 @@
       "verifiedAt": "2026-11-05T20:58:23.723Z",
       "frequency": "weekly",
       "historyPoints": 132,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -804,7 +804,7 @@
       "verifiedAt": "2026-11-09T21:58:29.855Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -820,7 +820,7 @@
       "verifiedAt": "2026-11-05T20:58:34.730Z",
       "frequency": "weekly",
       "historyPoints": 133,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -833,10 +833,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 23,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -852,7 +852,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -868,7 +868,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -884,7 +884,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -900,7 +900,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -916,7 +916,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -932,7 +932,7 @@
       "verifiedAt": "2026-11-05T20:58:11.049Z",
       "frequency": "weekly",
       "historyPoints": 149,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -948,7 +948,7 @@
       "verifiedAt": "2026-11-09T21:58:41.000Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -964,7 +964,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "weekly",
       "historyPoints": 121,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -980,7 +980,7 @@
       "verifiedAt": "2026-11-04T23:55:20Z",
       "frequency": "weekly",
       "historyPoints": 66,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -996,7 +996,7 @@
       "verifiedAt": "2026-11-04T23:55:20Z",
       "frequency": "weekly",
       "historyPoints": 65,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1012,7 +1012,7 @@
       "verifiedAt": "2026-11-04T23:55:20Z",
       "frequency": "weekly",
       "historyPoints": 70,
-      "ageDays": 20,
+      "ageDays": 21,
       "freshness": "EXPECTED_DELAY",
       "stale": false
     },
@@ -1028,7 +1028,7 @@
       "verifiedAt": "2026-11-04T23:55:20Z",
       "frequency": "weekly",
       "historyPoints": 70,
-      "ageDays": 20,
+      "ageDays": 21,
       "freshness": "EXPECTED_DELAY",
       "stale": false
     },
@@ -1044,7 +1044,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1060,7 +1060,7 @@
       "verifiedAt": "2026-11-05T20:58:29.534Z",
       "frequency": "weekly",
       "historyPoints": 68,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1076,7 +1076,7 @@
       "verifiedAt": "2026-11-09T21:58:33.042Z",
       "frequency": "monthly",
       "historyPoints": 229,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1092,7 +1092,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1108,7 +1108,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1124,7 +1124,7 @@
       "verifiedAt": "2026-11-05T20:58:14.460Z",
       "frequency": "weekly",
       "historyPoints": 143,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1140,7 +1140,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 48,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1156,7 +1156,7 @@
       "verifiedAt": "2026-11-09T21:58:54.531Z",
       "frequency": "monthly",
       "historyPoints": 333,
-      "ageDays": 5524,
+      "ageDays": 5525,
       "freshness": "HISTORICAL",
       "stale": false
     },
@@ -1172,7 +1172,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "monthly",
       "historyPoints": 360,
-      "ageDays": 137,
+      "ageDays": 138,
       "freshness": "DELAYED",
       "stale": true
     },
@@ -1188,7 +1188,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1204,7 +1204,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1220,7 +1220,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1236,7 +1236,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1252,7 +1252,7 @@
       "verifiedAt": "2026-11-05T20:58:38.772Z",
       "frequency": "monthly",
       "historyPoints": 93,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1268,7 +1268,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "monthly",
       "historyPoints": 313,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1284,7 +1284,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1300,7 +1300,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1316,7 +1316,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1332,7 +1332,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1348,7 +1348,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1364,7 +1364,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1380,7 +1380,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1396,7 +1396,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1412,7 +1412,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1428,7 +1428,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1444,7 +1444,7 @@
       "verifiedAt": "2026-11-13T17:22:19.660469Z",
       "frequency": "monthly",
       "historyPoints": 152,
-      "ageDays": 75,
+      "ageDays": 76,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1460,7 +1460,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 58,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1476,7 +1476,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 441,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1492,7 +1492,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 441,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1508,7 +1508,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 441,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1524,7 +1524,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 441,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1540,7 +1540,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 429,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1556,7 +1556,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 441,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1572,7 +1572,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 121,
-      "ageDays": 5,
+      "ageDays": 6,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1588,7 +1588,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 441,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1604,7 +1604,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 441,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1620,7 +1620,7 @@
       "verifiedAt": "2026-11-13T19:59:08.142462Z",
       "frequency": "weekly",
       "historyPoints": 263,
-      "ageDays": 5,
+      "ageDays": 6,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1636,7 +1636,7 @@
       "verifiedAt": "2026-11-13T19:59:04.910Z",
       "frequency": "weekly",
       "historyPoints": 393,
-      "ageDays": 5,
+      "ageDays": 6,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1652,7 +1652,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 58,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1668,7 +1668,7 @@
       "verifiedAt": "2026-11-05T14:32:37.486Z",
       "frequency": "quarterly",
       "historyPoints": 24,
-      "ageDays": 137,
+      "ageDays": 138,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1684,7 +1684,7 @@
       "verifiedAt": "2026-11-05T14:32:37.486Z",
       "frequency": "quarterly",
       "historyPoints": 24,
-      "ageDays": 137,
+      "ageDays": 138,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1700,7 +1700,7 @@
       "verifiedAt": "2026-11-05T14:32:37.486Z",
       "frequency": "quarterly",
       "historyPoints": 24,
-      "ageDays": 137,
+      "ageDays": 138,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1716,7 +1716,7 @@
       "verifiedAt": "2026-11-05T14:32:37.486Z",
       "frequency": "quarterly",
       "historyPoints": 24,
-      "ageDays": 137,
+      "ageDays": 138,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1732,7 +1732,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 58,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1748,7 +1748,7 @@
       "verifiedAt": "2026-11-13T21:28:20Z",
       "frequency": "monthly",
       "historyPoints": 562,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1764,7 +1764,7 @@
       "verifiedAt": "2026-11-13T21:26:44.406Z",
       "frequency": "weekly",
       "historyPoints": 359,
-      "ageDays": 3,
+      "ageDays": 4,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1780,7 +1780,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1796,7 +1796,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "monthly",
       "historyPoints": 277,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1812,7 +1812,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 249,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1828,7 +1828,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 121,
-      "ageDays": 5,
+      "ageDays": 6,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1844,7 +1844,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 475,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1860,7 +1860,7 @@
       "verifiedAt": "2026-11-09T21:58:51.010Z",
       "frequency": "monthly",
       "historyPoints": 285,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -1873,10 +1873,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 23,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1892,7 +1892,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1908,7 +1908,7 @@
       "verifiedAt": "2026-11-05T20:58:40.258Z",
       "frequency": "weekly",
       "historyPoints": 70,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1924,7 +1924,7 @@
       "verifiedAt": "2026-11-14T02:33:34.966Z",
       "frequency": "weekly",
       "historyPoints": 26,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1940,7 +1940,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 58,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1956,7 +1956,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "quarterly",
       "historyPoints": 115,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1972,7 +1972,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -1988,7 +1988,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "quarterly",
       "historyPoints": 115,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2004,7 +2004,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "quarterly",
       "historyPoints": 115,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2020,7 +2020,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2036,7 +2036,7 @@
       "verifiedAt": "2026-11-05T20:58:15.674Z",
       "frequency": "weekly",
       "historyPoints": 203,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2052,7 +2052,7 @@
       "verifiedAt": "2026-11-09T21:58:38.336Z",
       "frequency": "monthly",
       "historyPoints": 310,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -2068,7 +2068,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2084,7 +2084,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2100,7 +2100,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2116,7 +2116,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2132,7 +2132,7 @@
       "verifiedAt": "2026-11-05T20:58:38.335Z",
       "frequency": "weekly",
       "historyPoints": 242,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2148,7 +2148,7 @@
       "verifiedAt": "2026-11-14T02:33:35.018Z",
       "frequency": "weekly",
       "historyPoints": 25,
-      "ageDays": 8,
+      "ageDays": 9,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2164,7 +2164,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2180,7 +2180,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 362,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2196,7 +2196,7 @@
       "verifiedAt": "2026-11-05T20:58:39.665Z",
       "frequency": "monthly",
       "historyPoints": 262,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2212,7 +2212,7 @@
       "verifiedAt": "2026-11-13T17:22:17.668274Z",
       "frequency": "monthly",
       "historyPoints": 679,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2228,7 +2228,7 @@
       "verifiedAt": "2026-11-09T21:58:36.710Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -2241,10 +2241,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 23,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2260,7 +2260,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 477,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2276,7 +2276,7 @@
       "verifiedAt": "2026-11-09T21:58:49.367Z",
       "frequency": "monthly",
       "historyPoints": 284,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -2292,7 +2292,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2308,7 +2308,7 @@
       "verifiedAt": "2026-11-09T21:58:52.967Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -2324,7 +2324,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2340,7 +2340,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2356,7 +2356,7 @@
       "verifiedAt": "2026-11-05T20:58:19.605Z",
       "frequency": "weekly",
       "historyPoints": 131,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2372,7 +2372,7 @@
       "verifiedAt": "2026-11-09T21:58:25.590Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -2388,7 +2388,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2404,7 +2404,7 @@
       "verifiedAt": "2026-11-05T20:58:36.470Z",
       "frequency": "weekly",
       "historyPoints": 242,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2420,7 +2420,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "weekly",
       "historyPoints": 121,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2436,7 +2436,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2452,7 +2452,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2468,7 +2468,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2484,7 +2484,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2500,8 +2500,8 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 5,
-      "freshness": "LIVE",
+      "ageDays": 6,
+      "freshness": "EXPECTED_DELAY",
       "stale": false
     },
     {
@@ -2516,7 +2516,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 59,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2532,7 +2532,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 59,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2545,10 +2545,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 23,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2564,7 +2564,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2580,7 +2580,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2596,7 +2596,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 59,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2612,7 +2612,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 59,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2628,7 +2628,7 @@
       "verifiedAt": "2026-11-05T20:58:17.955Z",
       "frequency": "weekly",
       "historyPoints": 242,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2644,7 +2644,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2660,7 +2660,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2676,7 +2676,7 @@
       "verifiedAt": "2026-11-13T21:26:44.406Z",
       "frequency": "weekly",
       "historyPoints": 475,
-      "ageDays": 8,
+      "ageDays": 9,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2692,7 +2692,7 @@
       "verifiedAt": "2026-11-13T21:26:44.406Z",
       "frequency": "weekly",
       "historyPoints": 490,
-      "ageDays": 15,
+      "ageDays": 16,
       "freshness": "EXPECTED_DELAY",
       "stale": false
     },
@@ -2708,7 +2708,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2724,7 +2724,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2740,7 +2740,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2756,7 +2756,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2772,7 +2772,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2788,7 +2788,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2804,7 +2804,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 501,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2820,7 +2820,7 @@
       "verifiedAt": "2026-11-05T20:58:15.064Z",
       "frequency": "weekly",
       "historyPoints": 242,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2836,7 +2836,7 @@
       "verifiedAt": "2026-11-09T21:58:45.801Z",
       "frequency": "monthly",
       "historyPoints": 429,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -2852,7 +2852,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2868,7 +2868,7 @@
       "verifiedAt": "2026-11-05T20:58:39.200Z",
       "frequency": "monthly",
       "historyPoints": 93,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2884,7 +2884,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2900,7 +2900,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2916,7 +2916,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2932,7 +2932,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 417,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2948,7 +2948,7 @@
       "verifiedAt": "2026-11-09T21:58:47.873Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -2964,7 +2964,7 @@
       "verifiedAt": "2026-11-09T21:58:34.693Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -2980,7 +2980,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "weekly",
       "historyPoints": 121,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -2996,7 +2996,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3012,7 +3012,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3028,7 +3028,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 17,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3044,7 +3044,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 439,
-      "ageDays": 106,
+      "ageDays": 107,
       "freshness": "STALE",
       "stale": true
     },
@@ -3060,7 +3060,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3076,7 +3076,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3092,7 +3092,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3108,7 +3108,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3124,7 +3124,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3140,7 +3140,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3156,7 +3156,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 59,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3172,7 +3172,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 59,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3185,10 +3185,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 23,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3204,7 +3204,7 @@
       "verifiedAt": "2026-11-05T20:58:22.794Z",
       "frequency": "weekly",
       "historyPoints": 111,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3220,7 +3220,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3233,10 +3233,10 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T01:40:22Z",
+      "verifiedAt": "2026-11-15T01:14:08Z",
       "frequency": "weekly",
       "historyPoints": 23,
-      "ageDays": 1,
+      "ageDays": 2,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3252,7 +3252,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3268,7 +3268,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 170,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3284,7 +3284,7 @@
       "verifiedAt": "2026-11-05T20:58:21.899Z",
       "frequency": "weekly",
       "historyPoints": 109,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3300,7 +3300,7 @@
       "verifiedAt": "2026-11-09T21:58:23.903Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -3316,7 +3316,7 @@
       "verifiedAt": "2026-11-04T10:43:24Z",
       "frequency": "monthly",
       "historyPoints": 442,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3332,7 +3332,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 58,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3348,7 +3348,7 @@
       "verifiedAt": "2026-11-14T18:38:35Z",
       "frequency": "monthly",
       "historyPoints": 562,
-      "ageDays": 14,
+      "ageDays": 15,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3364,7 +3364,7 @@
       "verifiedAt": "2026-11-14T03:31:48.946957Z",
       "frequency": "monthly",
       "historyPoints": 393,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3380,7 +3380,7 @@
       "verifiedAt": "2026-11-14T03:31:48.943079Z",
       "frequency": "monthly",
       "historyPoints": 69,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -3396,7 +3396,7 @@
       "verifiedAt": "2026-11-14T03:31:48.942910Z",
       "frequency": "monthly",
       "historyPoints": 69,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -3412,7 +3412,7 @@
       "verifiedAt": "2026-11-14T03:31:48.946533Z",
       "frequency": "monthly",
       "historyPoints": 393,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3428,7 +3428,7 @@
       "verifiedAt": "2026-11-12T21:05:38Z",
       "frequency": "monthly",
       "historyPoints": 417,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3444,7 +3444,7 @@
       "verifiedAt": "2026-11-05T20:58:13.900Z",
       "frequency": "weekly",
       "historyPoints": 242,
-      "ageDays": 13,
+      "ageDays": 14,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3460,7 +3460,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 59,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3476,7 +3476,7 @@
       "verifiedAt": "2026-11-13T23:37:21Z",
       "frequency": "weekly",
       "historyPoints": 59,
-      "ageDays": 7,
+      "ageDays": 8,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3492,7 +3492,7 @@
       "verifiedAt": "2026-11-09T21:58:44.182Z",
       "frequency": "monthly",
       "historyPoints": 561,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "FRESH",
       "stale": false
     },
@@ -3508,7 +3508,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3524,7 +3524,7 @@
       "verifiedAt": "2026-11-14T03:31:48Z",
       "frequency": "daily",
       "historyPoints": 26,
-      "ageDays": 2,
+      "ageDays": 3,
       "freshness": "LIVE",
       "stale": false
     },
@@ -3540,7 +3540,7 @@
       "verifiedAt": "2026-11-13T22:56:00Z",
       "frequency": "monthly",
       "historyPoints": 117,
-      "ageDays": 45,
+      "ageDays": 46,
       "freshness": "LIVE",
       "stale": false
     }
