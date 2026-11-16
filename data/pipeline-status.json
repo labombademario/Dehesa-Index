@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-16T21:56:00Z",
+ "generatedAt": "2026-11-16T22:13:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -11,13 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "error",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 0.0,
+  "lagHours": 10.9,
   "prodGeneratedAt": "2026-11-16T11:08:09.865714+00:00",
-  "repoGeneratedAt": "2026-11-16T11:08:09.865714+00:00",
-  "checkedAt": "2026-11-16T21:56:00Z"
+  "repoGeneratedAt": "2026-11-16T21:59:24.807841+00:00",
+  "checkedAt": "2026-11-16T22:13:00Z"
  },
  "pipelines": [
   {
@@ -5226,35 +5226,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-11-16T11:08:10Z"
+     "lastChange": "2026-11-16T21:59:25Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-11-16T11:08:10Z"
+     "lastChange": "2026-11-16T21:59:25Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-11-16T11:08:10Z"
+     "lastChange": "2026-11-16T21:59:25Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-11-16T11:08:10Z"
+     "lastChange": "2026-11-16T21:59:25Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-11-16T11:08:10Z"
+     "lastChange": "2026-11-16T21:59:25Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-16T11:06:15Z",
-    "durationSec": 120,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43854749774"
+    "startedAt": "2026-11-16T21:57:24Z",
+    "durationSec": 126,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43965249756"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -5595,7 +5595,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-16T21:19:18Z"
+     "lastChange": "2026-11-16T21:59:51Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7577,7 +7577,7 @@
    "crons": [
     "10 22 * * 1-5"
    ],
-   "nextRun": "2026-11-16T22:10:00Z",
+   "nextRun": "2026-11-17T22:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
