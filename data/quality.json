@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-16T21:45:39.911Z",
+  "generatedAt": "2026-11-16T22:25:48.938Z",
   "scope": {
     "latestObservations": 209,
     "historyObservations": 49393,
@@ -8,8 +8,8 @@
     "pending": 0,
     "stale": 2,
     "freshness": {
-      "LIVE": 147,
-      "FRESH": 55,
+      "LIVE": 148,
+      "FRESH": 54,
       "EXPECTED_DELAY": 4,
       "HISTORICAL": 1,
       "STALE": 2
@@ -1920,7 +1920,7 @@
       "comparability": "directional",
       "observationDate": "2026-11-13",
       "publicationDate": "2026-11-13",
-      "verifiedAt": "2026-11-14T02:33:34.966Z",
+      "verifiedAt": "2026-11-16T22:25:46.153Z",
       "frequency": "weekly",
       "historyPoints": 26,
       "ageDays": 3,
@@ -2142,13 +2142,13 @@
       "sourceId": "usda_ams_mars",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-11-06",
-      "publicationDate": "2026-11-06",
-      "verifiedAt": "2026-11-14T02:33:35.018Z",
+      "observationDate": "2026-11-13",
+      "publicationDate": "2026-11-13",
+      "verifiedAt": "2026-11-16T22:25:46.233Z",
       "frequency": "weekly",
       "historyPoints": 25,
-      "ageDays": 10,
-      "freshness": "FRESH",
+      "ageDays": 3,
+      "freshness": "LIVE",
       "stale": false
     },
     {
