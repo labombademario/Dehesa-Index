@@ -1,3 +1,5 @@
+intento 1 sin lista de versiones; respuesta: 
+intento 2 sin lista de versiones; respuesta: 
 version consolidada 02021R2115-20260818
 texto leido via EUR-Lex
 nota: el total 2023-2027 del anexo XI difiere en 1 EUR de la suma de paises (redondeo del propio Reglamento); no se usa
