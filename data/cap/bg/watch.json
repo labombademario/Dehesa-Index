@@ -3,7 +3,7 @@
  "country": "BG",
  "source": "mzh_bg",
  "status": "OK",
- "checkedAt": "2026-11-09",
+ "checkedAt": "2026-11-16",
  "baseline": {
   "fingerprints": {
    "naredba3": {
@@ -64,6 +64,18 @@
     "title": "В МЗХ се проведе първото заседание на Националното координационно звено за наблюдение и контрол на веригата на доставки на хранителни стоки",
     "date": "2026-11-09",
     "url": "https://www.mzh.government.bg/bg/press-center/novini/v-mzh-se-provede-prvoto-zasedanie-na-nacionalnoto/"
+   },
+   {
+    "id": "https://www.mzh.government.bg/bg/press-center/novini/izvrshvat-se-doplnitelni-proverki-na-stopanite-nep/",
+    "title": "Извършват се допълнителни проверки на стопаните, неполучили авансово плащане по обвързаната подкрепа",
+    "date": "2026-11-16",
+    "url": "https://www.mzh.government.bg/bg/press-center/novini/izvrshvat-se-doplnitelni-proverki-na-stopanite-nep/"
+   },
+   {
+    "id": "https://www.mzh.government.bg/bg/press-center/novini/opredelena-e-stavkata-za-prehodnata-nacionalna-pom/",
+    "title": "Определена е ставката за преходната национална помощ за овце-майки и кози-майки за Кампания 2026 г.",
+    "date": "2026-11-16",
+    "url": "https://www.mzh.government.bg/bg/press-center/novini/opredelena-e-stavkata-za-prehodnata-nacionalna-pom/"
    }
   ],
   "lastScanned": "2026-10-28",
@@ -74,7 +86,9 @@
  "reviewNeeded": [
   "texto nuevo: Земеделските стопани ще получат отстъпка от акциза за литър закупен газьол в размер на 0,21 евро за Кампания 2026 (2026-11-02)",
   "texto nuevo: МЗХ публикува за обществено обсъждане Наредбата за извънредна финансова подкрепа на земеделските стопани, чиито разходи за торове са значите (2026-11-02)",
-  "texto nuevo: В МЗХ се проведе първото заседание на Националното координационно звено за наблюдение и контрол на веригата на доставки на хранителни стоки (2026-11-09)"
+  "texto nuevo: В МЗХ се проведе първото заседание на Националното координационно звено за наблюдение и контрол на веригата на доставки на хранителни стоки (2026-11-09)",
+  "texto nuevo: Извършват се допълнителни проверки на стопаните, неполучили авансово плащане по обвързаната подкрепа (2026-11-16)",
+  "texto nuevo: Определена е ставката за преходната национална помощ за овце-майки и кози-майки за Кампания 2026 г. (2026-11-16)"
  ],
  "note": "Huella del texto de páginas oficiales de la PAC (naredba3) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
 }
