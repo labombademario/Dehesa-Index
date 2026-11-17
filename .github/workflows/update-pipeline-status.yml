@@ -62,7 +62,9 @@ jobs:
       - name: Catalogo unificado (manifiesto, catalogos y trozos de series)
         run: python3 scripts/build-data-catalog.py
       - name: Frescura (Freshness Engine 2.0) de latest.json y del catalogo
-        run: python3 scripts/build-freshness.py
+        # quality.json (JS) y freshness.json (Python) dependen de la fecha de hoy: se rehacen juntos, como en price-engine,
+        # para que la comprobacion de consistencia no falle cuando cambia el dia desde la ultima pasada del motor de precios
+        run: node scripts/build-data-quality.mjs && python3 scripts/build-freshness.py
       - name: Comercio de EE. UU. por producto y socio (derivado de GATS)
         run: python3 scripts/build-us-trade-products.py
       - name: Comercio de Canada y Argentina por producto (derivado de Statistics Canada e INDEC)
@@ -150,7 +152,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/us-weekly-stats.json data/series-registry.json data/watch data/daily-brief.json data/product-compare.json data/catalog data/series data/views data/freshness.json data/products data/relationships.json data/observatory.json data/source-candidates.json data/commercial-catalog.json data/commercial-summary.json data/pack data/api data/digest data/indices data/coverage-gaps.json data/country-pending.json data/premium-tracker.json data/ers-cost-reference.json data/sowing data/dehesa.json data/fv-products.json data/fv-farm.json data/home-tape.json data/home-explore.json data/cap/index.json data/blog/posts.json data/app data/snapshots README.md DATA_SOURCES.md
+          git add data/us-weekly-stats.json data/series-registry.json data/watch data/daily-brief.json data/product-compare.json data/catalog data/series data/views data/quality.json data/freshness.json data/products data/relationships.json data/observatory.json data/source-candidates.json data/commercial-catalog.json data/commercial-summary.json data/pack data/api data/digest data/indices data/coverage-gaps.json data/country-pending.json data/premium-tracker.json data/ers-cost-reference.json data/sowing data/dehesa.json data/fv-products.json data/fv-farm.json data/home-tape.json data/home-explore.json data/cap/index.json data/blog/posts.json data/app data/snapshots README.md DATA_SOURCES.md
           git diff --cached --quiet && exit 0
           git commit -qm "Datos derivados: catalogo, registro, watchlist, comparador y brief"
           for i in 1 2 3 4 5 6; do git pull -q --rebase --autostash && git push && exit 0; sleep $((i * 5 + RANDOM % 10)); done
