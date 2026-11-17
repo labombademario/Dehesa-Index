@@ -300,7 +300,8 @@
   },
   "data/news.json": {
    "class": "RUNTIME",
-   "note": "search.js y la pagina de noticias (ventana movil de ~4 dias)."
+   "note": "search.js y la pagina de noticias (ventana movil de ~4 dias). Su tamano sube y baja de 500 KB segun cuantas fuentes respondan.",
+   "sizeVaries": true
   },
   "data/supply-demand.json": {
    "class": "RUNTIME",

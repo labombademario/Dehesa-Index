@@ -47,6 +47,7 @@ for f, sz in sorted(big.items(), key=lambda x: -x[1]):
     if not d.get('note'): errs.append('%s: falta nota' % f)
     rows.append((f, sz, d['class'], rt, bd, d.get('note', '')))
 for f in list(CLS['files']):
+    if f not in big and CLS['files'][f].get('sizeVaries'): continue   # ventana movil (p. ej. noticias): baja de 500 KB si caen fuentes, y vuelve
     if f not in big: errs.append('%s: declarado en data-file-classes.json pero ya no supera 500 KB o no existe: quitarlo' % f)
 if '--report' in sys.argv:
     for f, sz, c, rt, bd, n in rows: print('%-9s %6.2f MB  %-42s navegador:%d scripts/workflows:%d' % (c, sz / 1048576, f, len(rt), len(bd)))
