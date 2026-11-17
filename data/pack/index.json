@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-15",
+ "generatedAt": "2026-11-16",
  "policy": "Solo fuentes con veredicto comercial apto o con condiciones (data/commercial-summary.json). Sin estimaciones ni relleno.",
  "columns": [
   "product_key",
@@ -789,12 +789,12 @@
    "currency": "USD",
    "frequency": "weekly",
    "rows": 104,
-   "first": "2024-11-15",
-   "last": "2026-11-06",
+   "first": "2024-11-22",
+   "last": "2026-11-13",
    "csv": "data/pack/us/leche_polvo.csv",
    "xlsx": "data/pack/us/leche_polvo.xlsx",
    "csvBytes": 18032,
-   "xlsxBytes": 11688
+   "xlsxBytes": 11691
   },
   {
    "product": "lenteja",
