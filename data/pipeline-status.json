@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-17T22:03:00Z",
+ "generatedAt": "2026-11-17T22:20:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 332,
@@ -17,7 +17,7 @@
   "lagHours": 10.6,
   "prodGeneratedAt": "2026-11-17T07:58:09.732064+00:00",
   "repoGeneratedAt": "2026-11-17T18:33:13.772598+00:00",
-  "checkedAt": "2026-11-17T22:03:00Z"
+  "checkedAt": "2026-11-17T22:20:00Z"
  },
  "pipelines": [
   {
@@ -5600,7 +5600,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-17T21:49:15Z"
+     "lastChange": "2026-11-17T22:06:27Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7107,8 +7107,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44022154701"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -7582,7 +7582,7 @@
    "crons": [
     "10 22 * * 1-5"
    ],
-   "nextRun": "2026-11-17T22:10:00Z",
+   "nextRun": "2026-11-18T22:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7597,7 +7597,7 @@
     "failed": 4
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-nass-cdl.yml",
