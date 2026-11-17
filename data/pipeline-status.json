@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-17T14:51:00Z",
+ "generatedAt": "2026-11-17T15:29:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 333,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-17T07:58:09.732064+00:00",
   "repoGeneratedAt": "2026-11-17T07:58:09.732064+00:00",
-  "checkedAt": "2026-11-17T14:51:00Z"
+  "checkedAt": "2026-11-17T15:29:00Z"
  },
  "pipelines": [
   {
@@ -4266,7 +4266,7 @@
    "crons": [
     "10 15 * * 2,5"
    ],
-   "nextRun": "2026-11-17T15:10:00Z",
+   "nextRun": "2026-11-20T15:10:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
@@ -5222,7 +5222,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-17T15:17:00Z",
+   "nextRun": "2026-11-17T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5548,7 +5548,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-17T15:10:00Z",
+   "nextRun": "2026-11-17T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5599,7 +5599,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-17T14:35:14Z"
+     "lastChange": "2026-11-17T14:55:34Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6122,13 +6122,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-17T04:10:35Z",
-    "durationSec": 1303,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44015332368"
+    "startedAt": "2026-11-17T14:53:31Z",
+    "durationSec": 1539,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44108088503"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -7558,7 +7558,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-11-17T15:20:00Z",
+   "nextRun": "2026-11-18T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7573,7 +7573,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-markets.yml",
