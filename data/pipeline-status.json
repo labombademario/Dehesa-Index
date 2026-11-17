@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-17T19:17:00Z",
+ "generatedAt": "2026-11-17T19:34:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 332,
@@ -17,7 +17,7 @@
   "lagHours": 10.6,
   "prodGeneratedAt": "2026-11-17T07:58:09.732064+00:00",
   "repoGeneratedAt": "2026-11-17T18:33:13.772598+00:00",
-  "checkedAt": "2026-11-17T19:17:00Z"
+  "checkedAt": "2026-11-17T19:34:00Z"
  },
  "pipelines": [
   {
@@ -1637,8 +1637,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-17T16:15:16Z",
-    "durationSec": 79,
+    "startedAt": "2026-11-17T19:23:41Z",
+    "durationSec": 96,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44123633973",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · Traceback (most recent call last):"
    },
@@ -2354,14 +2354,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T18:14:47Z",
-    "durationSec": 61,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42873216119"
+    "startedAt": "2026-11-17T19:22:55Z",
+    "durationSec": 59,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44157963349"
    },
    "recent": {
     "runs": 10,
-    "success": 7,
-    "failed": 3
+    "success": 8,
+    "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -3257,13 +3257,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-10T18:18:48Z",
-    "durationSec": 73,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/42873912576"
+    "startedAt": "2026-11-17T19:26:52Z",
+    "durationSec": 76,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44158672709"
    },
    "recent": {
-    "runs": 6,
-    "success": 5,
+    "runs": 7,
+    "success": 6,
     "failed": 1
    },
    "status": "ok",
@@ -5600,7 +5600,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-17T19:04:02Z"
+     "lastChange": "2026-11-17T19:20:57Z"
     },
     {
      "path": "data/source-candidates.json",
