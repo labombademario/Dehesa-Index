@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-17T05:52:00Z",
+ "generatedAt": "2026-11-17T07:10:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 333,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-16T21:59:24.807841+00:00",
   "repoGeneratedAt": "2026-11-16T21:59:24.807841+00:00",
-  "checkedAt": "2026-11-17T05:52:00Z"
+  "checkedAt": "2026-11-17T07:10:00Z"
  },
  "pipelines": [
   {
@@ -645,7 +645,7 @@
    "crons": [
     "40 6 * * *"
    ],
-   "nextRun": "2026-11-17T06:40:00Z",
+   "nextRun": "2026-11-18T06:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1632,7 +1632,7 @@
    "crons": [
     "25 6 * * 2"
    ],
-   "nextRun": "2026-11-17T06:25:00Z",
+   "nextRun": "2026-11-24T06:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3804,7 +3804,7 @@
    "crons": [
     "50 6 * * *"
    ],
-   "nextRun": "2026-11-17T06:50:00Z",
+   "nextRun": "2026-11-18T06:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4359,7 +4359,7 @@
    "crons": [
     "17 6 * * *"
    ],
-   "nextRun": "2026-11-17T06:17:00Z",
+   "nextRun": "2026-11-18T06:17:00Z",
    "files": [
     {
      "path": "data/gats.json",
@@ -4733,7 +4733,7 @@
    "crons": [
     "45 6 * * 1-5"
    ],
-   "nextRun": "2026-11-17T06:45:00Z",
+   "nextRun": "2026-11-18T06:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4748,7 +4748,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-it-drought.yml",
@@ -5032,7 +5032,7 @@
    "crons": [
     "10 6 * * *"
    ],
-   "nextRun": "2026-11-17T06:10:00Z",
+   "nextRun": "2026-11-18T06:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5199,7 +5199,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-17T06:47:00Z",
+   "nextRun": "2026-11-17T09:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5222,7 +5222,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-17T06:17:00Z",
+   "nextRun": "2026-11-17T09:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5473,7 +5473,7 @@
    "crons": [
     "50 6 * * *"
    ],
-   "nextRun": "2026-11-17T06:50:00Z",
+   "nextRun": "2026-11-18T06:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5548,7 +5548,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-17T06:10:00Z",
+   "nextRun": "2026-11-17T09:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5599,7 +5599,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-17T05:39:44Z"
+     "lastChange": "2026-11-17T05:55:26Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7061,7 +7061,7 @@
    "crons": [
     "35 6 3,17 * *"
    ],
-   "nextRun": "2026-11-17T06:35:00Z",
+   "nextRun": "2026-12-03T06:35:00Z",
    "files": [
     {
      "path": "data/source-status.json",
@@ -7604,7 +7604,7 @@
    "crons": [
     "30 6 * * *"
    ],
-   "nextRun": "2026-11-17T06:30:00Z",
+   "nextRun": "2026-11-18T06:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7907,10 +7907,10 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-11-16T10:04:44Z",
-    "durationSec": 38,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43845547514"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-17T06:59:16Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44035231847"
    },
    "recent": {
     "runs": 10,
@@ -7995,7 +7995,7 @@
    "crons": [
     "40 6 * * 1-5"
    ],
-   "nextRun": "2026-11-17T06:40:00Z",
+   "nextRun": "2026-11-18T06:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -8010,7 +8010,7 @@
     "failed": 4
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-usda-psd.yml",
