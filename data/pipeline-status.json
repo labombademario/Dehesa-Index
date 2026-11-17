@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-17T23:28:00Z",
+ "generatedAt": "2026-11-17T23:46:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -17,7 +17,7 @@
   "lagHours": 10.6,
   "prodGeneratedAt": "2026-11-17T07:58:09.732064+00:00",
   "repoGeneratedAt": "2026-11-17T18:33:13.772598+00:00",
-  "checkedAt": "2026-11-17T23:28:00Z"
+  "checkedAt": "2026-11-17T23:46:00Z"
  },
  "pipelines": [
   {
@@ -77,7 +77,7 @@
     "45 23 * * 1-5",
     "30 13 * * 6"
    ],
-   "nextRun": "2026-11-17T23:45:00Z",
+   "nextRun": "2026-11-18T23:45:00Z",
    "files": [
     {
      "path": "data/ams"
@@ -466,9 +466,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-13T22:01:54Z",
-    "durationSec": 42,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43515829545"
+    "startedAt": "2026-11-17T23:34:17Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44200526979"
    },
    "recent": {
     "runs": 10,
@@ -719,13 +719,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-17T00:10:56Z",
-    "durationSec": 68,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43985526833"
+    "startedAt": "2026-11-17T23:28:25Z",
+    "durationSec": 74,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44199658351"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -1037,7 +1037,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-11-17T23:40:00Z",
+   "nextRun": "2026-11-18T23:40:00Z",
    "files": [
     {
      "path": "data/ca"
@@ -1056,7 +1056,7 @@
     "failed": 1
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-canada.yml",
@@ -1563,7 +1563,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-17T22:35:17Z"
+     "lastChange": "2026-11-17T23:40:57Z"
     }
    ],
    "last": {
@@ -4320,9 +4320,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-17T00:32:26Z",
-    "durationSec": 153,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43988442153"
+    "startedAt": "2026-11-17T23:41:13Z",
+    "durationSec": 104,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44201527110"
    },
    "recent": {
     "runs": 10,
@@ -5526,7 +5526,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-17T22:35:17Z"
+     "lastChange": "2026-11-17T23:40:57Z"
     }
    ],
    "last": {
@@ -5601,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-17T23:14:23Z"
+     "lastChange": "2026-11-17T23:32:28Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5892,9 +5892,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-13T22:15:07Z",
-    "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43517721281"
+    "startedAt": "2026-11-17T23:40:22Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44201404958"
    },
    "recent": {
     "runs": 10,
@@ -5920,8 +5920,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43542274388"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 1
    },
    "status": "ok",
@@ -7098,7 +7098,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-17T23:30:00Z",
+   "nextRun": "2026-11-18T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7698,7 +7698,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-11-17T23:40:00Z",
+   "nextRun": "2026-11-18T23:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7713,7 +7713,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-ppi.yml",
