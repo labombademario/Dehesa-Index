@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-17T22:38:00Z",
+ "generatedAt": "2026-11-17T22:55:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -17,7 +17,7 @@
   "lagHours": 10.6,
   "prodGeneratedAt": "2026-11-17T07:58:09.732064+00:00",
   "repoGeneratedAt": "2026-11-17T18:33:13.772598+00:00",
-  "checkedAt": "2026-11-17T22:38:00Z"
+  "checkedAt": "2026-11-17T22:55:00Z"
  },
  "pipelines": [
   {
@@ -4273,15 +4273,15 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-13T22:08:20Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43510165864",
+    "startedAt": "2026-11-17T22:50:27Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44193904624",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · cereales ficheros []"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 8,
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 96.0
@@ -5601,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-17T22:23:27Z"
+     "lastChange": "2026-11-17T22:42:46Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7565,9 +7565,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-16T23:44:29Z",
-    "durationSec": 43,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43981869152"
+    "startedAt": "2026-11-17T22:53:34Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44194387815"
    },
    "recent": {
     "runs": 10,
