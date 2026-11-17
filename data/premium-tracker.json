@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-17T03:54:29Z",
+ "generatedAt": "2026-11-17T16:00:06Z",
  "sourceIds": [
   "usda_ams_mars"
  ],
@@ -48,7 +48,7 @@
    "unit": "bu",
    "saleType": "Bid",
    "organicReportId": 3802,
-   "organicSeries": 50,
+   "organicSeries": 48,
    "conventionalSeries": 100,
    "date": "2026-11-06",
    "organic": {
