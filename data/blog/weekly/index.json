@@ -2,12 +2,21 @@
  "schemaVersion": 1,
  "weeks": [
   {
+   "week": "2026-W47",
+   "from": "2026-11-16",
+   "to": "2026-11-22",
+   "complete": false,
+   "items": 996,
+   "sources": 275,
+   "coverageFrom": "2026-11-16"
+  },
+  {
    "week": "2026-W46",
    "from": "2026-11-09",
    "to": "2026-11-15",
    "complete": true,
-   "items": 3008,
-   "sources": 514,
+   "items": 3010,
+   "sources": 515,
    "coverageFrom": "2026-11-09"
   },
   {
@@ -65,5 +74,5 @@
    "coverageFrom": "2026-09-29"
   }
  ],
- "generatedAt": "2026-11-17T05:24:44Z"
+ "generatedAt": "2026-11-18T04:53:45Z"
 }
