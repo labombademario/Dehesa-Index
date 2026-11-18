@@ -1,6 +1,10 @@
-17:23:17 BLS lumber (WPU081): 441 meses, ultimo 2026-09
-17:23:17 BLS softwood (WPU0811): 441 meses, ultimo 2026-09
-17:23:17 BLS hardwood (WPU0812): 441 meses, ultimo 2026-09
-17:23:17 BLS plywood (WPU083): 441 meses, ultimo 2026-09
-17:23:17 BLS logs (WPU085): 441 meses, ultimo 2026-09
-17:23:18 FALLO Canada: JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+16:37:59 BLS lumber (WPU081): 442 meses, ultimo 2026-10
+16:37:59 BLS softwood (WPU0811): 442 meses, ultimo 2026-10
+16:37:59 BLS hardwood (WPU0812): 442 meses, ultimo 2026-10
+16:37:59 BLS plywood (WPU083): 442 meses, ultimo 2026-10
+16:37:59 BLS logs (WPU085): 442 meses, ultimo 2026-10
+16:38:00   error https://www150.statcan.gc.ca/n1/tbl/csv/18100266-eng.zip <HTTPError 403: 'Forbidden'>
+16:38:05   error https://www150.statcan.gc.ca/n1/tbl/csv/18100266-eng.zip <HTTPError 403: 'Forbidden'>
+16:38:15   error https://www150.statcan.gc.ca/n1/tbl/csv/18100266-eng.zip <HTTPError 403: 'Forbidden'>
+16:38:30   error https://www150.statcan.gc.ca/n1/tbl/csv/18100266-eng.zip <HTTPError 403: 'Forbidden'>
+16:38:50 FALLO Canada: RuntimeError('https://www150.statcan.gc.ca/n1/tbl/csv/18100266-eng.zip -> HTTP Error 403: Forbidden')
