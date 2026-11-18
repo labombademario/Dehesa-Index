@@ -1,4 +1,4 @@
-2026-11-13T21:26:44.406Z
-OK Henry Hub gas RNGWHHD: 2026-11-11 = 3 (1556 pts) (diario)
-OK WTI crude RWTC: 2026-10-30 = 105.59 (2131 pts)
-OK Brent crude RBRTE: 2026-11-06 = 100.41 (2061 pts)
+2026-11-18T22:37:24.083Z
+OK Henry Hub gas RNGWHHD: 2026-11-17 = 3.1 (1558 pts) (diario)
+OK WTI crude RWTC: 2026-11-13 = 90.78 (2133 pts)
+OK Brent crude RBRTE: 2026-11-13 = 92.78 (2062 pts)
