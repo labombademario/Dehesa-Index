@@ -1,2 +1,2 @@
 sin cambios en sheep-goat.json
-sin cambios en hogs.json
+escrito hogs.json 101 semanas; 3 informes leidos
