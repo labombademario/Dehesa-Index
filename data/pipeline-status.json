@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-18T02:59:00Z",
+ "generatedAt": "2026-11-18T03:16:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-17T18:33:13.772598+00:00",
   "repoGeneratedAt": "2026-11-17T18:33:13.772598+00:00",
-  "checkedAt": "2026-11-18T02:59:00Z"
+  "checkedAt": "2026-11-18T03:16:00Z"
  },
  "pipelines": [
   {
@@ -5248,14 +5248,14 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "cancelled",
     "event": "schedule",
-    "startedAt": "2026-11-17T18:31:15Z",
-    "durationSec": 125,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44148729932"
+    "startedAt": "2026-11-18T02:52:20Z",
+    "durationSec": 618,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44226377253"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
     "failed": 0
    },
@@ -5550,7 +5550,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-18T03:10:00Z",
+   "nextRun": "2026-11-18T06:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5601,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-18T02:46:46Z"
+     "lastChange": "2026-11-18T03:02:36Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6129,8 +6129,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44108088503"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -7818,9 +7818,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-17T04:11:27Z",
-    "durationSec": 25,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44015431389"
+    "startedAt": "2026-11-18T03:08:11Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44228249618"
    },
    "recent": {
     "runs": 10,
