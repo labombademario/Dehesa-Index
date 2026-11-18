@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-18T16:01:00Z",
+ "generatedAt": "2026-11-18T16:19:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 331,
+  "ok": 330,
   "late": 2,
-  "error": 15,
+  "error": 16,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-18T11:40:13.519493+00:00",
   "repoGeneratedAt": "2026-11-18T11:40:13.519493+00:00",
-  "checkedAt": "2026-11-18T16:01:00Z"
+  "checkedAt": "2026-11-18T16:19:00Z"
  },
  "pipelines": [
   {
@@ -714,7 +714,7 @@
    "crons": [
     "10 16 * * 1-5"
    ],
-   "nextRun": "2026-11-18T16:10:00Z",
+   "nextRun": "2026-11-19T16:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1613,18 +1613,19 @@
    "nextRun": "2026-11-25T06:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-11T14:40:13Z",
-    "durationSec": 32,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43040687149"
+    "startedAt": "2026-11-18T15:55:33Z",
+    "durationSec": 412,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44341220956",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · corte en 0 KB <HTTPError 403: 'Forbidden'>"
    },
    "recent": {
-    "runs": 8,
+    "runs": 9,
     "success": 7,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -5601,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-18T15:47:12Z"
+     "lastChange": "2026-11-18T16:05:12Z"
     },
     {
      "path": "data/source-candidates.json",
