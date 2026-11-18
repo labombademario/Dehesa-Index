@@ -1,4 +1,4 @@
-FALLO cereal: https://api.tech.ec.europa.eu/agrifood/api/cereal/production: <HTTPError 500: 'Internal Server Error'>
+FALLO cereal: https://api.tech.ec.europa.eu/agrifood/api/cereal/production: <HTTPError 500: ''>
 FALLO oilseeds: https://api.tech.ec.europa.eu/agrifood/api/oilseeds/production: <HTTPError 500: ''>
 FALLO rice: https://api.tech.ec.europa.eu/agrifood/api/rice/production: <HTTPError 500: ''>
 FALLO sugar: https://api.tech.ec.europa.eu/agrifood/api/sugar/production: <HTTPError 500: ''>
