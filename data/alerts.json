@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-17T21:29:41.796Z",
+  "generatedAt": "2026-11-18T00:01:52.199Z",
   "status": "informational",
   "rules": [
     {
@@ -180,69 +180,6 @@
     },
     {
       "type": "period_move",
-      "product": "diesel_calgary",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": 14.34,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel_edmonton",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": 14.84,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel_montreal",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": 11.89,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel_regina",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": 15.26,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel_toronto",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": 12.8,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel_vancouver",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": 13.35,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel_winnipeg",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": 13.82,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
       "product": "naranja",
       "region": "eu",
       "sourceId": "world_bank",
@@ -267,15 +204,6 @@
       "severity": "watch",
       "changePct": -6.57,
       "observationDate": "2026-10-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel_saskatoon",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": 15.01,
-      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -347,15 +275,6 @@
       "sourceId": "usda_ers",
       "severity": "high",
       "changePct": 17.09,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "gasolina_ca",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "watch",
-      "changePct": 6.04,
       "observationDate": "2026-09-01"
     },
     {
