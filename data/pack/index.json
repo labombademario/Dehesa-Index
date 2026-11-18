@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76566
+  "rows": 76565
  },
  "files": [
   {
@@ -45,12 +45,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/paleta_cerdo.csv",
    "xlsx": "data/pack/us/paleta_cerdo.xlsx",
-   "csvBytes": 139590,
-   "xlsxBytes": 30510
+   "csvBytes": 139588,
+   "xlsxBytes": 30521
   },
   {
    "product": "arroz",
@@ -231,12 +231,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/cerdo_base_us.csv",
    "xlsx": "data/pack/us/cerdo_base_us.xlsx",
    "csvBytes": 146879,
-   "xlsxBytes": 30704
+   "xlsxBytes": 30707
   },
   {
    "product": "cerdo_neto_us",
@@ -262,12 +262,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/cerdo_neto_us.csv",
    "xlsx": "data/pack/us/cerdo_neto_us.xlsx",
    "csvBytes": 146877,
-   "xlsxBytes": 30696
+   "xlsxBytes": 30700
   },
   {
    "product": "colza",
@@ -355,12 +355,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/cutout_cerdo.csv",
    "xlsx": "data/pack/us/cutout_cerdo.xlsx",
    "csvBytes": 136652,
-   "xlsxBytes": 30464
+   "xlsxBytes": 30465
   },
   {
    "product": "cutout_vacuno_choice",
@@ -386,12 +386,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/cutout_vacuno_choice.csv",
    "xlsx": "data/pack/us/cutout_vacuno_choice.xlsx",
    "csvBytes": 139078,
-   "xlsxBytes": 30899
+   "xlsxBytes": 30901
   },
   {
    "product": "cutout_vacuno_select",
@@ -417,12 +417,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/cutout_vacuno_select.csv",
    "xlsx": "data/pack/us/cutout_vacuno_select.xlsx",
    "csvBytes": 139082,
-   "xlsxBytes": 30886
+   "xlsxBytes": 30901
   },
   {
    "product": "coste_maiz_etanol_us",
@@ -479,12 +479,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/costilla_cerdo.csv",
    "xlsx": "data/pack/us/costilla_cerdo.xlsx",
    "csvBytes": 135501,
-   "xlsxBytes": 30734
+   "xlsxBytes": 30747
   },
   {
    "product": "gas_natural",
@@ -727,12 +727,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/jamon_cerdo.csv",
    "xlsx": "data/pack/us/jamon_cerdo.xlsx",
    "csvBytes": 135594,
-   "xlsxBytes": 30497
+   "xlsxBytes": 30492
   },
   {
    "product": "leche",
@@ -882,12 +882,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/lomo_cerdo.csv",
    "xlsx": "data/pack/us/lomo_cerdo.xlsx",
    "csvBytes": 130338,
-   "xlsxBytes": 30232
+   "xlsxBytes": 30234
   },
   {
    "product": "mantequilla",
@@ -1005,13 +1005,13 @@
    "unit": "cwt",
    "currency": "USD",
    "frequency": "daily",
-   "rows": 345,
-   "first": "2024-11-07",
+   "rows": 344,
+   "first": "2024-11-08",
    "last": "2026-11-16",
    "csv": "data/pack/us/novilla_vivo_us.csv",
    "xlsx": "data/pack/us/novilla_vivo_us.xlsx",
-   "csvBytes": 96760,
-   "xlsxBytes": 22960
+   "csvBytes": 96482,
+   "xlsxBytes": 22918
   },
   {
    "product": "novillo_canal_us",
@@ -1099,12 +1099,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/picnic_cerdo.csv",
    "xlsx": "data/pack/us/picnic_cerdo.xlsx",
    "csvBytes": 142174,
-   "xlsxBytes": 30923
+   "xlsxBytes": 30931
   },
   {
    "product": "panceta_cerdo",
@@ -1130,12 +1130,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 515,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/panceta_cerdo.csv",
    "xlsx": "data/pack/us/panceta_cerdo.xlsx",
-   "csvBytes": 138013,
-   "xlsxBytes": 30577
+   "csvBytes": 138012,
+   "xlsxBytes": 30574
   },
   {
    "product": "petroleo_wti",
@@ -1440,12 +1440,12 @@
    "currency": "USD",
    "frequency": "daily",
    "rows": 430,
-   "first": "2024-11-07",
-   "last": "2026-11-16",
+   "first": "2024-11-08",
+   "last": "2026-11-17",
    "csv": "data/pack/us/vacuno_vivo_us.csv",
    "xlsx": "data/pack/us/vacuno_vivo_us.xlsx",
    "csvBytes": 119339,
-   "xlsxBytes": 26953
+   "xlsxBytes": 26948
   },
   {
    "product": "us_cereals_output_index",
@@ -3663,12 +3663,12 @@
    "currency": "GBP",
    "frequency": "weekly",
    "rows": 520,
-   "first": "2016-11-28",
-   "last": "2026-11-09",
+   "first": "2016-12-05",
+   "last": "2026-11-16",
    "csv": "data/pack/uk/gasolina_uk.csv",
    "xlsx": "data/pack/uk/gasolina_uk.xlsx",
    "csvBytes": 169550,
-   "xlsxBytes": 31374
+   "xlsxBytes": 31369
   },
   {
    "product": "diesel_uk",
@@ -3694,12 +3694,12 @@
    "currency": "GBP",
    "frequency": "weekly",
    "rows": 520,
-   "first": "2016-11-28",
-   "last": "2026-11-09",
+   "first": "2016-12-05",
+   "last": "2026-11-16",
    "csv": "data/pack/uk/diesel_uk.csv",
    "xlsx": "data/pack/uk/diesel_uk.xlsx",
    "csvBytes": 163318,
-   "xlsxBytes": 30768
+   "xlsxBytes": 30762
   },
   {
    "product": "huevos_campero_uk",
