@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-17",
+ "generatedAt": "2026-11-18",
  "policy": "Solo fuentes con veredicto comercial apto o con condiciones (data/commercial-summary.json). Sin estimaciones ni relleno.",
  "columns": [
   "product_key",
@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76557
+  "rows": 76566
  },
  "files": [
   {
@@ -4781,17 +4781,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 441,
+   "rows": 442,
    "first": "1990-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/diesel_calgary.csv",
    "xlsx": "data/pack/ca/diesel_calgary.xlsx",
-   "csvBytes": 100174,
-   "xlsxBytes": 26340
+   "csvBytes": 100401,
+   "xlsxBytes": 26382
   },
   {
    "product": "diesel_edmonton",
@@ -4812,17 +4812,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 441,
+   "rows": 442,
    "first": "1990-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/diesel_edmonton.csv",
    "xlsx": "data/pack/ca/diesel_edmonton.xlsx",
-   "csvBytes": 101048,
-   "xlsxBytes": 26371
+   "csvBytes": 101277,
+   "xlsxBytes": 26411
   },
   {
    "product": "diesel_montreal",
@@ -4843,17 +4843,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 441,
+   "rows": 442,
    "first": "1990-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/diesel_montreal.csv",
    "xlsx": "data/pack/ca/diesel_montreal.xlsx",
-   "csvBytes": 101049,
-   "xlsxBytes": 26416
+   "csvBytes": 101278,
+   "xlsxBytes": 26456
   },
   {
    "product": "diesel_regina",
@@ -4874,17 +4874,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 441,
+   "rows": 442,
    "first": "1990-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/diesel_regina.csv",
    "xlsx": "data/pack/ca/diesel_regina.xlsx",
-   "csvBytes": 99287,
-   "xlsxBytes": 26225
+   "csvBytes": 99512,
+   "xlsxBytes": 26264
   },
   {
    "product": "diesel_saskatoon",
@@ -4905,17 +4905,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 429,
+   "rows": 430,
    "first": "1991-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/diesel_saskatoon.csv",
    "xlsx": "data/pack/ca/diesel_saskatoon.xlsx",
-   "csvBytes": 99166,
-   "xlsxBytes": 25758
+   "csvBytes": 99397,
+   "xlsxBytes": 25796
   },
   {
    "product": "diesel_toronto",
@@ -4936,17 +4936,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 441,
+   "rows": 442,
    "first": "1990-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/diesel_toronto.csv",
    "xlsx": "data/pack/ca/diesel_toronto.xlsx",
-   "csvBytes": 100159,
-   "xlsxBytes": 26381
+   "csvBytes": 100386,
+   "xlsxBytes": 26426
   },
   {
    "product": "diesel_vancouver",
@@ -4967,17 +4967,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 441,
+   "rows": 442,
    "first": "1990-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/diesel_vancouver.csv",
    "xlsx": "data/pack/ca/diesel_vancouver.xlsx",
-   "csvBytes": 101929,
-   "xlsxBytes": 26337
+   "csvBytes": 102160,
+   "xlsxBytes": 26376
   },
   {
    "product": "diesel_winnipeg",
@@ -4998,17 +4998,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 441,
+   "rows": 442,
    "first": "1990-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/diesel_winnipeg.csv",
    "xlsx": "data/pack/ca/diesel_winnipeg.xlsx",
-   "csvBytes": 101052,
-   "xlsxBytes": 26266
+   "csvBytes": 101281,
+   "xlsxBytes": 26306
   },
   {
    "product": "electricidad_ab",
@@ -5153,17 +5153,17 @@
    "sourceName": "Statistics Canada",
    "license": "CUSTOM",
    "verdict": "apto",
-   "attribution": "Adapted from Statistics Canada, 2026-09. This does not constitute an endorsement by Statistics Canada of this product.",
+   "attribution": "Adapted from Statistics Canada, 2026-10. This does not constitute an endorsement by Statistics Canada of this product.",
    "unit": "litro",
    "currency": "CAD",
    "frequency": "monthly",
-   "rows": 249,
+   "rows": 250,
    "first": "2006-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/ca/gasolina_ca.csv",
    "xlsx": "data/pack/ca/gasolina_ca.xlsx",
-   "csvBytes": 58077,
-   "xlsxBytes": 18044
+   "csvBytes": 58310,
+   "xlsxBytes": 18082
   },
   {
    "product": "diesel_agr_ab",
