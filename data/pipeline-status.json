@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T01:30:00Z",
+ "generatedAt": "2026-11-19T01:53:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 331,
+  "ok": 332,
   "late": 2,
-  "error": 15,
+  "error": 14,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 8.9,
   "prodGeneratedAt": "2026-11-18T11:40:13.519493+00:00",
   "repoGeneratedAt": "2026-11-18T20:33:58.367606+00:00",
-  "checkedAt": "2026-11-19T01:30:00Z"
+  "checkedAt": "2026-11-19T01:53:00Z"
  },
  "pipelines": [
   {
@@ -832,19 +832,18 @@
    "nextRun": "2026-11-24T14:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-11-18T01:51:12Z",
-    "durationSec": 698,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44190015891",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · intento 2 tabla 18100268: RuntimeError(\"https://www150.statcan.gc.ca/t1/wds/rest/getFullTableDownloadCSV/18100268/en: <HTTPError 403: 'Forbidden'>\")"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-19T01:53:06Z",
+    "durationSec": 46,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44440220119"
    },
    "recent": {
-    "runs": 6,
-    "success": 5,
+    "runs": 7,
+    "success": 6,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -1556,8 +1555,8 @@
     {
      "path": "data/country-stats.json",
      "valid": "ok",
-     "series": 186,
-     "points": 17516,
+     "series": 215,
+     "points": 21597,
      "lines": 0,
      "lastChange": "2026-11-18T22:26:50Z"
     },
@@ -5601,7 +5600,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-19T01:17:02Z"
+     "lastChange": "2026-11-19T01:34:18Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5689,9 +5688,9 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44390979557"
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 6,
-    "failed": 4
+    "failed": 3
    },
    "status": "ok",
    "expectedEveryHours": 3.0
@@ -7266,9 +7265,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T21:29:35Z",
-    "durationSec": 31,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43310762735"
+    "startedAt": "2026-11-19T01:53:46Z",
+    "durationSec": 46,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44440301854"
    },
    "recent": {
     "runs": 10,
