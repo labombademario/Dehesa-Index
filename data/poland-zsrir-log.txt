@@ -1,8 +1,8 @@
-cereales: sin cambios (semana 2026-10-11)
-colza: sin cambios (semana 2026-10-18)
-carne: sin cambios (semana 2026-10-18)
+cereales: leido (semana 2026-11-08, 2 tablas, 14 series)
+colza: leido (semana 2026-11-08, 2 tablas, 2 series)
+carne: leido (semana 2026-11-08, 5 tablas, 8 series)
 lacteos-semanal: pl-dairy-wmp-w y pl-dairy-edam-w tienen 204 valores identicos hasta 2025-W48; se recortan a lo posterior
-lacteos: sin cambios (semana 2026-10-18)
+lacteos: leido (semana 2026-11-08, 3 tablas, 8 series)
 piensos: sin cambios (mes 2026-09)
 fecha fuera de orden 2025-02-02 tras 2026-01-25 (año mal escrito en la hoja): fila omitida
 fecha fuera de orden 2025-02-09 tras 2026-01-25 (año mal escrito en la hoja): fila omitida
@@ -10,7 +10,7 @@ fecha fuera de orden 2025-02-16 tras 2026-01-25 (año mal escrito en la hoja): f
 fecha fuera de orden 2025-02-02 tras 2026-01-25 (año mal escrito en la hoja): fila omitida
 fecha fuera de orden 2025-02-09 tras 2026-01-25 (año mal escrito en la hoja): fila omitida
 fecha fuera de orden 2025-02-16 tras 2026-01-25 (año mal escrito en la hoja): fila omitida
-fruta: sin cambios (semana 2026-10-18)
-mayorista: leido (semana 2026-10-22, 2 tablas, 8 series)
-azucar: sin cambios (mes 2026-08)
+fruta: leido (semana 2026-11-08, 2 tablas, 7 series)
+mayorista: leido (semana 2026-11-12, 2 tablas, 8 series)
+azucar: NO se pudo leer ('Worksheet SPRZEDAŻ KRAJ WYKRES does not exist.'); se conserva lo publicado
 escrito: 8 ficheros, 12 series en las estadisticas
