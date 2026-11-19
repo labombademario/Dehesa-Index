@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T17:32:00Z",
+ "generatedAt": "2026-11-19T17:51:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 330,
+  "ok": 329,
   "late": 3,
-  "error": 15,
+  "error": 16,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
   "repoGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
-  "checkedAt": "2026-11-19T17:32:00Z"
+  "checkedAt": "2026-11-19T17:51:00Z"
  },
  "pipelines": [
   {
@@ -165,18 +165,19 @@
    "nextRun": "2026-11-26T08:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-12T17:02:05Z",
-    "durationSec": 105,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43265094049"
+    "startedAt": "2026-11-19T17:36:52Z",
+    "durationSec": 592,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44579069124",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR: https://www.ama.at/marktinformationen/rinder/marktbericht: <urlopen error timed out> ; no se escribe nada"
    },
    "recent": {
-    "runs": 4,
+    "runs": 5,
     "success": 4,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -5601,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-19T17:17:37Z"
+     "lastChange": "2026-11-19T17:37:48Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6492,13 +6493,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T17:11:23Z",
-    "durationSec": 184,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43266753246"
+    "startedAt": "2026-11-19T17:47:57Z",
+    "durationSec": 208,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44581018196"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 2
    },
    "status": "ok",
@@ -6515,13 +6516,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T17:03:18Z",
-    "durationSec": 156,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43265310928"
+    "startedAt": "2026-11-19T17:36:50Z",
+    "durationSec": 171,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44579064615"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 1
    },
    "status": "ok",
