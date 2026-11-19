@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T15:50:00Z",
+ "generatedAt": "2026-11-19T16:06:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 331,
+  "ok": 330,
   "late": 3,
-  "error": 14,
+  "error": 15,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
   "repoGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
-  "checkedAt": "2026-11-19T15:50:00Z"
+  "checkedAt": "2026-11-19T16:06:00Z"
  },
  "pipelines": [
   {
@@ -650,9 +650,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T15:55:49Z",
-    "durationSec": 70,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44341271196"
+    "startedAt": "2026-11-19T15:59:50Z",
+    "durationSec": 78,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44561061731"
    },
    "recent": {
     "runs": 10,
@@ -3304,14 +3304,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T15:33:43Z",
-    "durationSec": 105,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43249123520"
+    "startedAt": "2026-11-19T16:01:20Z",
+    "durationSec": 182,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44561354997"
    },
    "recent": {
     "runs": 10,
-    "success": 8,
-    "failed": 2
+    "success": 9,
+    "failed": 1
    },
    "status": "ok",
    "expectedEveryHours": 168.0
@@ -3811,9 +3811,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T15:58:53Z",
-    "durationSec": 60,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44341844808"
+    "startedAt": "2026-11-19T16:05:36Z",
+    "durationSec": 79,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44562163300"
    },
    "recent": {
     "runs": 10,
@@ -4740,9 +4740,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T15:58:08Z",
-    "durationSec": 45,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44341702023"
+    "startedAt": "2026-11-19T16:03:54Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44561841581"
    },
    "recent": {
     "runs": 10,
@@ -5485,8 +5485,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44341918507"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5601,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-19T15:32:04Z"
+     "lastChange": "2026-11-19T15:53:41Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6221,8 +6221,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43249711515"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
@@ -7611,9 +7611,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T15:51:29Z",
-    "durationSec": 57,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44340446478"
+    "startedAt": "2026-11-19T15:55:17Z",
+    "durationSec": 48,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44560228896"
    },
    "recent": {
     "runs": 10,
@@ -8000,18 +8000,19 @@
    "nextRun": "2026-11-20T06:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-18T15:56:30Z",
-    "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44341395730"
+    "startedAt": "2026-11-19T16:01:13Z",
+    "durationSec": 53,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44561332281",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · NASS 2026-10: 37 filas"
    },
    "recent": {
     "runs": 10,
     "success": 8,
     "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 72.0
   },
   {
