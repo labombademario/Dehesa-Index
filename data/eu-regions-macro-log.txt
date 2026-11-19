@@ -1,6 +1,3 @@
-fr IDF {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-fr CVL {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
-fr BFC {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
 fr NOR {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
 fr HDF {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
 fr GES {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
@@ -100,11 +97,14 @@ pl LU {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
 pl PK {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
 pl PD {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
 pl MZ {'gdp': 25, 'pop': 12, 'unemp': 26, 'gdppc': 11}
+pt CEN pop la suma NUTS 3 no coincide con el dato oficial en [2023] -> no se usa
+pt LIS pop la suma NUTS 3 no coincide con el dato oficial en [2022, 2023] -> no se usa
+pt ALE pop la suma NUTS 3 no coincide con el dato oficial en [2022, 2023] -> no se usa
 pt NOR {'gdp': 25, 'pop': 26, 'unemp': 26, 'gdppc': 25}
 pt ALG {'gdp': 25, 'pop': 26, 'unemp': 24, 'gdppc': 25}
-pt CEN {'pop': 26, 'unemp': 19, 'gdp': 25, 'via': 2, 'gdppc': 25}
-pt LIS {'pop': 26, 'unemp': 19, 'gdp': 25, 'via': 2, 'gdppc': 25}
-pt ALE {'pop': 26, 'unemp': 19, 'gdp': 25, 'via': 2, 'gdppc': 25}
+pt CEN {'pop': 24, 'unemp': 19, 'gdp': 25, 'via': 1, 'gdppc': 24}
+pt LIS {'pop': 24, 'unemp': 19, 'gdp': 25, 'via': 1, 'gdppc': 24}
+pt ALE {'pop': 24, 'unemp': 19, 'gdp': 25, 'via': 1, 'gdppc': 24}
 pt AZO {'gdp': 25, 'pop': 26, 'unemp': 19, 'gdppc': 25}
 pt MAD {'gdp': 25, 'pop': 26, 'unemp': 21, 'gdppc': 25}
 ie NW {'gdp': 25, 'pop': 14, 'unemp': 14, 'gdppc': 13}
@@ -197,4 +197,4 @@ uk UKK {'pop': 20, 'unemp': 20}
 uk UKL {'pop': 20, 'unemp': 20}
 uk UKM {'pop': 20, 'unemp': 20}
 uk UKN {'pop': 19, 'unemp': 20}
-escrito eu-regions-macro.json 283 KB
+escrito eu-regions-macro.json 282 KB
