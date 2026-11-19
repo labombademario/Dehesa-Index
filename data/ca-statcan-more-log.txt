@@ -23,7 +23,7 @@ tabla 18100265 11579 filas
 ippi 23 series
 tabla 18100268 29253 filas
 rmpi 74 series
-tabla 18100004 1154918 filas
+tabla 18100004 1156923 filas
 cpi 15 series
 tabla 32100107 9710 filas
 descartada ca-sc-aqua-alberta-total-aquaculture-cad-a: 7 puntos, ultimo 1997
