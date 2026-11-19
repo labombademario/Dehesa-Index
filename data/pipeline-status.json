@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T15:09:00Z",
+ "generatedAt": "2026-11-19T15:28:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 331,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
   "repoGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
-  "checkedAt": "2026-11-19T15:09:00Z"
+  "checkedAt": "2026-11-19T15:28:00Z"
  },
  "pipelines": [
   {
@@ -2980,14 +2980,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-26T03:48:41Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40265890041"
+    "event": "schedule",
+    "startedAt": "2026-11-19T15:17:29Z",
+    "durationSec": 45,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44553114636"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -5224,7 +5224,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-19T15:17:00Z",
+   "nextRun": "2026-11-19T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5550,7 +5550,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-19T15:10:00Z",
+   "nextRun": "2026-11-19T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5601,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-19T14:55:51Z"
+     "lastChange": "2026-11-19T15:14:30Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7121,7 +7121,7 @@
    "crons": [
     "25 15 * * 4"
    ],
-   "nextRun": "2026-11-19T15:25:00Z",
+   "nextRun": "2026-11-26T15:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7560,7 +7560,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-11-19T15:20:00Z",
+   "nextRun": "2026-11-20T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
