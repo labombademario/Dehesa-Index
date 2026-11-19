@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T18:08:00Z",
+ "generatedAt": "2026-11-19T18:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 329,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
   "repoGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
-  "checkedAt": "2026-11-19T18:08:00Z"
+  "checkedAt": "2026-11-19T18:25:00Z"
  },
  "pipelines": [
   {
@@ -139,7 +139,7 @@
    "crons": [
     "10 18 * * 4"
    ],
-   "nextRun": "2026-11-19T18:10:00Z",
+   "nextRun": "2026-11-26T18:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -167,8 +167,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T17:36:52Z",
-    "durationSec": 592,
+    "startedAt": "2026-11-19T18:11:26Z",
+    "durationSec": 637,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44579069124",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR: https://www.ama.at/marktinformationen/rinder/marktbericht: <urlopen error timed out> ; no se escribe nada"
    },
@@ -513,9 +513,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T18:12:12Z",
-    "durationSec": 42,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44367096137"
+    "startedAt": "2026-11-19T18:23:34Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44587296535"
    },
    "recent": {
     "runs": 10,
@@ -605,13 +605,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T19:51:21Z",
-    "durationSec": 113,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43271629114"
+    "startedAt": "2026-11-19T18:22:53Z",
+    "durationSec": 87,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44587178312"
    },
    "recent": {
-    "runs": 4,
-    "success": 4,
+    "runs": 5,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
@@ -2147,14 +2147,14 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-28T01:29:15Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40615335198"
+    "event": "schedule",
+    "startedAt": "2026-11-19T18:10:23Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44584949219"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -3074,13 +3074,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T17:38:41Z",
-    "durationSec": 39,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43271609209"
+    "startedAt": "2026-11-19T18:23:30Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44587285046"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -4948,9 +4948,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-16T19:43:00Z",
-    "durationSec": 35,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43942219079"
+    "startedAt": "2026-11-19T18:24:43Z",
+    "durationSec": 34,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44587500106"
    },
    "recent": {
     "runs": 10,
@@ -5225,7 +5225,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-19T18:17:00Z",
+   "nextRun": "2026-11-19T21:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5551,7 +5551,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-19T18:10:00Z",
+   "nextRun": "2026-11-19T21:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-19T17:54:52Z"
+     "lastChange": "2026-11-19T18:11:23Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6423,13 +6423,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T17:32:00Z",
-    "durationSec": 44,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43270433855"
+    "startedAt": "2026-11-19T18:12:23Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44585310436"
    },
    "recent": {
-    "runs": 8,
-    "success": 8,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -6446,8 +6446,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T17:30:07Z",
-    "durationSec": 43,
+    "startedAt": "2026-11-19T18:11:28Z",
+    "durationSec": 49,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44577836580",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR de validacion: 2026-08 ovino heads: las comunidades suman 515310.0 y el nacional 509527.0"
    },
@@ -7195,8 +7195,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T17:28:04Z",
-    "durationSec": 45,
+    "startedAt": "2026-11-19T18:11:28Z",
+    "durationSec": 38,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44577477063",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · sob 2021 condados 2822 capital 136685205293 prima 13719114375 indemnizacion 9610434268"
    },
@@ -8003,10 +8003,10 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:01:13Z",
-    "durationSec": 53,
+    "startedAt": "2026-11-19T18:11:29Z",
+    "durationSec": 579,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44561332281",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · NASS 2026-10: 37 filas"
+    "reason": "no se pudo publicar tras 10 intentos"
    },
    "recent": {
     "runs": 10,
