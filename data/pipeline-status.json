@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T00:40:00Z",
+ "generatedAt": "2026-11-19T00:57:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 330,
@@ -17,7 +17,7 @@
   "lagHours": 8.9,
   "prodGeneratedAt": "2026-11-18T11:40:13.519493+00:00",
   "repoGeneratedAt": "2026-11-18T20:33:58.367606+00:00",
-  "checkedAt": "2026-11-19T00:40:00Z"
+  "checkedAt": "2026-11-19T00:57:00Z"
  },
  "pipelines": [
   {
@@ -1564,7 +1564,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-19T00:34:11Z"
+     "lastChange": "2026-11-19T00:47:57Z"
     }
    ],
    "last": {
@@ -3189,14 +3189,14 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-14T02:40:07Z",
-    "durationSec": 112,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43530180351"
+    "startedAt": "2026-11-19T00:43:47Z",
+    "durationSec": 56,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44431335247"
    },
    "recent": {
-    "runs": 7,
+    "runs": 8,
     "success": 4,
-    "failed": 3
+    "failed": 4
    },
    "status": "error",
    "expectedEveryHours": 120.0
@@ -3604,13 +3604,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-12T00:58:16Z",
-    "durationSec": 229,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43131165115"
+    "startedAt": "2026-11-19T00:42:49Z",
+    "durationSec": 313,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44431204058"
    },
    "recent": {
-    "runs": 7,
-    "success": 7,
+    "runs": 8,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -5202,7 +5202,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-19T00:47:00Z",
+   "nextRun": "2026-11-19T03:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5527,7 +5527,7 @@
     },
     {
      "path": "data/revisions.json",
-     "lastChange": "2026-11-19T00:34:11Z"
+     "lastChange": "2026-11-19T00:47:57Z"
     }
    ],
    "last": {
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-18T23:54:54Z"
+     "lastChange": "2026-11-19T00:43:55Z"
     },
     {
      "path": "data/source-candidates.json",
