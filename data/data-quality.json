@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T11:32:46Z",
+ "generatedAt": "2026-11-19T20:30:45Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -82,7 +82,7 @@
     "points": 1593,
     "lines": 0
    },
-   "generatedAt": "2026-11-12T17:45:56Z",
+   "generatedAt": "2026-11-19T18:39:36Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1050,7 +1050,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T15:52:19Z",
+   "generatedAt": "2026-11-19T15:55:58Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1329,10 +1329,10 @@
    "warnings": [],
    "stats": {
     "series": 125,
-    "points": 14032,
+    "points": 14091,
     "lines": 0
    },
-   "generatedAt": "2026-11-04T18:51:31Z",
+   "generatedAt": "2026-11-19T19:37:44Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1361,10 +1361,10 @@
    "warnings": [],
    "stats": {
     "series": 18,
-    "points": 180,
+    "points": 144,
     "lines": 0
    },
-   "generatedAt": "2026-11-12T16:12:10Z",
+   "generatedAt": "2026-11-19T16:46:02Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1691,10 +1691,10 @@
    "warnings": [],
    "stats": {
     "series": 206,
-    "points": 11957,
+    "points": 12016,
     "lines": 0
    },
-   "generatedAt": "2026-10-28T01:29:50Z",
+   "generatedAt": "2026-11-19T18:10:59Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1707,10 +1707,10 @@
    "warnings": [],
    "stats": {
     "series": 35,
-    "points": 4605,
+    "points": 4609,
     "lines": 0
    },
-   "generatedAt": "2026-11-19T02:35:25Z",
+   "generatedAt": "2026-11-19T11:35:59Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1766,7 +1766,7 @@
     "points": 183,
     "lines": 0
    },
-   "generatedAt": "2026-11-12T17:39:15Z",
+   "generatedAt": "2026-11-19T18:24:05Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2136,7 +2136,7 @@
     "points": 1643,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T15:58:48Z",
+   "generatedAt": "2026-11-19T16:04:25Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
