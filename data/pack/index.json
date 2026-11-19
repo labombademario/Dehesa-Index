@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76565
+  "rows": 76570
  },
  "files": [
   {
@@ -509,13 +509,13 @@
    "unit": "mmbtu",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 1556,
+   "rows": 1558,
    "first": "1997-01-10",
-   "last": "2026-11-11",
+   "last": "2026-11-17",
    "csv": "data/pack/us/gas_natural.csv",
    "xlsx": "data/pack/us/gas_natural.xlsx",
-   "csvBytes": 279991,
-   "xlsxBytes": 75548
+   "csvBytes": 280353,
+   "xlsxBytes": 75635
   },
   {
    "product": "gasolina_base_us",
@@ -1160,13 +1160,13 @@
    "unit": "barril",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 2131,
+   "rows": 2133,
    "first": "1986-01-03",
-   "last": "2026-10-30",
+   "last": "2026-11-13",
    "csv": "data/pack/us/petroleo_wti.csv",
    "xlsx": "data/pack/us/petroleo_wti.xlsx",
-   "csvBytes": 385675,
-   "xlsxBytes": 102889
+   "csvBytes": 386037,
+   "xlsxBytes": 102978
   },
   {
    "product": "pollo",
@@ -3093,13 +3093,13 @@
    "unit": "barril",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 2061,
+   "rows": 2062,
    "first": "1987-05-15",
-   "last": "2026-11-06",
+   "last": "2026-11-13",
    "csv": "data/pack/eu/petroleo_brent.csv",
    "xlsx": "data/pack/eu/petroleo_brent.xlsx",
-   "csvBytes": 364866,
-   "xlsxBytes": 99925
+   "csvBytes": 365043,
+   "xlsxBytes": 99971
   },
   {
    "product": "pollo",
