@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T18:25:00Z",
+ "generatedAt": "2026-11-19T18:41:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 329,
+  "ok": 328,
   "late": 3,
-  "error": 16,
+  "error": 17,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
   "repoGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
-  "checkedAt": "2026-11-19T18:25:00Z"
+  "checkedAt": "2026-11-19T18:41:00Z"
  },
  "pipelines": [
   {
@@ -2171,9 +2171,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T18:16:29Z",
-    "durationSec": 131,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44367889956"
+    "startedAt": "2026-11-19T18:26:37Z",
+    "durationSec": 88,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44587842510"
    },
    "recent": {
     "runs": 10,
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-19T18:11:23Z"
+     "lastChange": "2026-11-19T18:28:12Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7040,7 +7040,7 @@
    "crons": [
     "40 18 * * 4"
    ],
-   "nextRun": "2026-11-19T18:40:00Z",
+   "nextRun": "2026-11-26T18:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -8102,18 +8102,19 @@
    "nextRun": "2026-11-26T09:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-12T17:42:57Z",
-    "durationSec": 183,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43272343497"
+    "startedAt": "2026-11-19T18:36:54Z",
+    "durationSec": 166,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44589674232",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · AVISO boletin no leido: 032023boletinpreciosdelvinodel16al22deenero.pdf sin cifras"
    },
    "recent": {
-    "runs": 7,
+    "runs": 8,
     "success": 7,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
