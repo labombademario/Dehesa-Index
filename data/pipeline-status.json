@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T00:57:00Z",
+ "generatedAt": "2026-11-19T01:14:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 330,
+  "ok": 331,
   "late": 2,
-  "error": 16,
+  "error": 15,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 8.9,
   "prodGeneratedAt": "2026-11-18T11:40:13.519493+00:00",
   "repoGeneratedAt": "2026-11-18T20:33:58.367606+00:00",
-  "checkedAt": "2026-11-19T00:57:00Z"
+  "checkedAt": "2026-11-19T01:14:00Z"
  },
  "pipelines": [
   {
@@ -717,19 +717,18 @@
    "nextRun": "2026-11-19T16:10:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T22:55:36Z",
-    "durationSec": 53,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44416142068",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: RuntimeError(\"https://open.alberta.ca/api/3/action/package_search?q=%22Alberta+farm+input+prices%22&rows=60: <HTTPError 500: 'Internal Server Error'>\")"
+    "startedAt": "2026-11-19T01:06:15Z",
+    "durationSec": 75,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44416142068"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 72.0
   },
   {
@@ -3189,8 +3188,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T00:43:47Z",
-    "durationSec": 56,
+    "startedAt": "2026-11-19T01:06:16Z",
+    "durationSec": 39,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44431335247"
    },
    "recent": {
@@ -5602,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-19T00:43:55Z"
+     "lastChange": "2026-11-19T01:00:30Z"
     },
     {
      "path": "data/source-candidates.json",
