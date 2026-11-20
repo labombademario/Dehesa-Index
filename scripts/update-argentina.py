@@ -10,7 +10,7 @@ Todos los conjuntos se descubren en tiempo de ejecucion con la API CKAN (package
   INDEC SIPM (series_sipm_dic2015.xls): indices de precios al productor (IPP) y mayoristas (IPIM) por grupo de productos; Secretaria de Energia (Res. 1104/04): gasoil al canal agro;
   Direccion Nacional de Lecheria (magyp.gob.ar, CC BY 4.0 via Terminos de argentina.gob.ar): elaboracion, existencias y exportaciones de productos lacteos.
 Sin estimaciones: una serie con menos de 3 puntos o sin dato en los ultimos 3 anos se descarta y se anota en el log; los valores vacios no se rellenan."""
-import csv, datetime, io, json, re, sys, time, urllib.request
+import csv, datetime, io, json, re, sys, time, urllib.error, urllib.request
 from collections import defaultdict
 CKAN = 'https://datos.gob.ar/api/3/action/package_show?id='
 UA = {'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)', 'Accept': '*/*'}
@@ -60,8 +60,26 @@ RENAMED = {
  'indice-de-precios-al-consumidor-gba-ipc-gba-base-diciembre-2016': 'sspm-indice-precios-al-consumidor-gba-ipc-gba-base-diciembre-2016',
  'precios-mayoristas-resolucion-1104-04': 'energia-precios-mayoristas---resolucion-110404',
 }
+def show(pid, t=90):
+    """package_show de un nombre; None si el portal responde 404 (un nombre que no existe no se reintenta)."""
+    last = None
+    for i in range(4):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(CKAN + pid, headers=UA), timeout=t) as r: return json.loads(r.read())['result']
+        except urllib.error.HTTPError as e:
+            if e.code == 404: return None
+            last = e
+        except Exception as e: last = e
+        time.sleep(8 * (i + 1))
+    raise RuntimeError('%s -> %s' % ((CKAN + pid)[:120], last))
 def package(name):
-    d = json.loads(fetch(CKAN + RENAMED.get(name, name), 90))['result']
+    # El portal ha alternado entre los nombres de siempre y los prefijados (nov 2026): se prueba el
+    # nombre actual conocido y, si da 404, el otro. Es el mismo conjunto; la licencia se comprueba igual.
+    d = None
+    for pid in dict.fromkeys((RENAMED.get(name, name), name)):
+        d = show(pid)
+        if d is not None: break
+    if d is None: raise RuntimeError('%s: conjunto no encontrado en datos.gob.ar (404 con nombre nuevo y viejo)' % name)
     if str(d.get('license_id')).upper() not in ('CC-BY-4.0', 'CREATIVE COMMONS ATTRIBUTION 4.0'): raise RuntimeError('licencia inesperada en %s: %r' % (name, d.get('license_id')))
     return d
 def csv_url(pkg, pick):
