@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T23:27:00Z",
+ "generatedAt": "2026-11-20T01:05:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 327,
@@ -17,7 +17,7 @@
   "lagHours": 9.0,
   "prodGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
   "repoGeneratedAt": "2026-11-19T20:37:29.924331+00:00",
-  "checkedAt": "2026-11-19T23:27:00Z"
+  "checkedAt": "2026-11-20T01:05:00Z"
  },
  "pipelines": [
   {
@@ -77,7 +77,7 @@
     "45 23 * * 1-5",
     "30 13 * * 6"
    ],
-   "nextRun": "2026-11-19T23:45:00Z",
+   "nextRun": "2026-11-20T23:45:00Z",
    "files": [
     {
      "path": "data/ams"
@@ -142,18 +142,19 @@
    "nextRun": "2026-11-26T18:10:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-11-13T13:42:49Z",
-    "durationSec": 946,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43436047416"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-11-20T00:34:30Z",
+    "durationSec": 1244,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44646946736",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-argentina.py' has timed out after 20 minutes."
    },
    "recent": {
     "runs": 10,
     "success": 4,
     "failed": 6
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -718,19 +719,18 @@
    "nextRun": "2026-11-20T16:10:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T23:01:06Z",
-    "durationSec": 61,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44633902408",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: RuntimeError(\"https://open.alberta.ca/api/3/action/package_search?q=%22Alberta+farm+input+prices%22&rows=60: <HTTPError 403: 'Forbidden'>\")"
+    "startedAt": "2026-11-20T00:53:23Z",
+    "durationSec": 93,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44633902408"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 72.0
   },
   {
@@ -1038,7 +1038,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-11-19T23:40:00Z",
+   "nextRun": "2026-11-20T23:40:00Z",
    "files": [
     {
      "path": "data/ca"
@@ -2759,8 +2759,8 @@
     "note": "cancelled"
    },
    "recent": {
-    "runs": 10,
-    "success": 7,
+    "runs": 9,
+    "success": 6,
     "failed": 1
    },
    "status": "late",
@@ -3658,8 +3658,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44627474614"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -4252,8 +4252,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T22:10:16Z",
-    "durationSec": 29,
+    "startedAt": "2026-11-20T00:53:26Z",
+    "durationSec": 38,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44625995268",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · File \"/usr/lib/python3.12/urllib/request.py\", line 630, in http_response"
    },
@@ -5204,7 +5204,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-20T00:47:00Z",
+   "nextRun": "2026-11-20T03:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5227,7 +5227,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-20T00:17:00Z",
+   "nextRun": "2026-11-20T03:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5553,7 +5553,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-20T00:10:00Z",
+   "nextRun": "2026-11-20T03:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5604,7 +5604,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-19T23:14:23Z"
+     "lastChange": "2026-11-19T23:30:55Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7052,8 +7052,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43332208151"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -7100,7 +7100,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-19T23:30:00Z",
+   "nextRun": "2026-11-20T14:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7701,7 +7701,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-11-19T23:40:00Z",
+   "nextRun": "2026-11-20T23:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -8071,7 +8071,7 @@
     "55 23 * * *",
     "40 6 * * 1"
    ],
-   "nextRun": "2026-11-19T23:55:00Z",
+   "nextRun": "2026-11-20T23:55:00Z",
    "files": [
     {
      "path": "data/news-archive"
