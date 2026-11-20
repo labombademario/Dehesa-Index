@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-19T21:48:05.466Z",
+  "generatedAt": "2026-11-20T04:14:35.373Z",
   "status": "informational",
   "rules": [
     {
@@ -193,18 +193,18 @@
       "product": "us_cereals_output_index",
       "region": "us",
       "sourceId": "bls",
-      "severity": "high",
-      "changePct": 17.15,
-      "observationDate": "2026-09-01"
+      "severity": "watch",
+      "changePct": -9.34,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
       "product": "us_milk_output_index",
       "region": "us",
       "sourceId": "bls",
-      "severity": "watch",
-      "changePct": -9.17,
-      "observationDate": "2026-09-01"
+      "severity": "high",
+      "changePct": 10.8,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
