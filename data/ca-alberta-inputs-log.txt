@@ -1,6 +1,5 @@
 PDF: 58
-PDF saltado agi-itrb-monthly-farm-input-prices-2024-01.pdf: RuntimeError("https://open.alberta.ca/dataset/2acf92e7-f5c5-410e-b517-0a49c1ed2ed2/resource/4bd8a4f6-627b-4c1d-b50b-3ab49629dbbc/download/agi-itrb-monthly-farm-input-prices-2024-01.pdf: <HTTPError 500: 'Internal Server Error'>")
-meses leidos: 57 saltados: 1 rango: 2022-01 2026-10
+meses leidos: 58 saltados: 0 rango: 2022-01 2026-10
 descartada ca-ab-inputs-air-drill-50-60-400-500-bushels-double-shoot-variable-rate-sectional-c-m: 2 puntos, ultimo 2026-10
 descartada ca-ab-inputs-assert-300-sc-liquid-10-8-litre-m: 14 puntos, ultimo 2023-02
 descartada ca-ab-inputs-ivermectin-injection-for-cattle-sheep-and-swine-200-ml-injectable-m: 9 puntos, ultimo 2026-10
@@ -37,4 +36,4 @@ producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-tractor-4w
 producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-tractor-fwd-105-130-hp-6-cylinder-diesel-12-24-speed-transmission-new-m (ultimo 2025-05)
 producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-v-belt-implement-1-2-x-70-fibre-each-m (ultimo 2025-05)
 producto descontinuado o con otra especificacion, fuera: ca-ab-inputs-vitamin-a-d-and-e-injectable-iu-cc-a-500-000-d-75-000-e-50-250-ml-m (ultimo 2025-05)
-OK: 54 series, 57 meses
+OK: 54 series, 58 meses
