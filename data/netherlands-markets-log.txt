@@ -1,5 +1,5 @@
-excel descubiertos: {"pig_price": "/sites/default/files/2026-11/Prijswaarneming-vleesvarkens-en-biggen-tm-week-45.xlsx", "pig_slaughter": "/sites/default/files/2026-11/Varkensslachtingen-tm-week-45-2026.xlsx", "cattle_price": "/sites/default/files/2026-11/Prijswaarneming-runderen-tm-week-45-2026.xlsx"}
-precio cerdo 566 semanas; 565 lechones
+excel descubiertos: {"pig_price": "/sites/default/files/2026-11/Prijswaarneming-vleesvarkens-en-biggen-tm-week-45-2026.xlsx", "pig_slaughter": "/sites/default/files/2026-11/Varkensslachtingen-tm-week-46-2026.xlsx", "cattle_price": "/sites/default/files/2026-11/Prijswaarneming-runderen-tm-week-46-2026.xlsx"}
+precio cerdo 567 semanas; 566 lechones
 precio vacuno 3 series
-sacrificios cerdo 932 semanas
+sacrificios cerdo 933 semanas
 escrito netherlands-markets.json 202 KB
