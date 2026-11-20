@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-20T15:31:00Z",
+ "generatedAt": "2026-11-20T15:49:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 328,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-20T11:37:58.587399+00:00",
   "repoGeneratedAt": "2026-11-20T11:37:58.587399+00:00",
-  "checkedAt": "2026-11-20T15:31:00Z"
+  "checkedAt": "2026-11-20T15:49:00Z"
  },
  "pipelines": [
   {
@@ -651,9 +651,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T15:59:50Z",
-    "durationSec": 78,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44561061731"
+    "startedAt": "2026-11-20T15:42:46Z",
+    "durationSec": 91,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44766013723"
    },
    "recent": {
     "runs": 10,
@@ -669,7 +669,7 @@
    "crons": [
     "45 15 * * 2,5"
    ],
-   "nextRun": "2026-11-20T15:45:00Z",
+   "nextRun": "2026-11-24T15:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3812,9 +3812,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:05:36Z",
-    "durationSec": 79,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44562163300"
+    "startedAt": "2026-11-20T15:46:18Z",
+    "durationSec": 60,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44766607617"
    },
    "recent": {
     "runs": 10,
@@ -4741,9 +4741,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:03:54Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44561841581"
+    "startedAt": "2026-11-20T15:45:58Z",
+    "durationSec": 51,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44766551839"
    },
    "recent": {
     "runs": 10,
@@ -5202,7 +5202,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-20T15:47:00Z",
+   "nextRun": "2026-11-20T18:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5481,9 +5481,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:05:59Z",
-    "durationSec": 176,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44562231454"
+    "startedAt": "2026-11-20T15:46:45Z",
+    "durationSec": 158,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44766679538"
    },
    "recent": {
     "runs": 10,
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-20T14:51:54Z"
+     "lastChange": "2026-11-20T15:35:12Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7309,7 +7309,7 @@
    "crons": [
     "40 15 * * 5"
    ],
-   "nextRun": "2026-11-20T15:40:00Z",
+   "nextRun": "2026-11-27T15:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7613,9 +7613,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T15:55:17Z",
-    "durationSec": 48,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44560228896"
+    "startedAt": "2026-11-20T15:38:48Z",
+    "durationSec": 47,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44765355916"
    },
    "recent": {
     "runs": 10,
@@ -7792,7 +7792,7 @@
    "crons": [
     "35 15 * * 5"
    ],
-   "nextRun": "2026-11-20T15:35:00Z",
+   "nextRun": "2026-11-27T15:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -8003,10 +8003,10 @@
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-11-20T01:43:29Z",
-    "durationSec": 37,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44655685461"
+    "event": "schedule",
+    "startedAt": "2026-11-20T15:43:55Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44766206937"
    },
    "recent": {
     "runs": 10,
