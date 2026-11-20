@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-20T02:05:00Z",
+ "generatedAt": "2026-11-20T02:17:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 327,
@@ -11,13 +11,13 @@
  },
  "global": "error",
  "deploy": {
-  "status": "error",
+  "status": "ok",
   "site": "https://dehesaindex.com",
   "build": null,
-  "lagHours": 9.0,
-  "prodGeneratedAt": "2026-11-19T11:39:29.210541+00:00",
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-11-19T20:37:29.924331+00:00",
   "repoGeneratedAt": "2026-11-19T20:37:29.924331+00:00",
-  "checkedAt": "2026-11-20T02:05:00Z"
+  "checkedAt": "2026-11-20T02:17:00Z"
  },
  "pipelines": [
   {
@@ -150,9 +150,9 @@
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-argentina.py' has timed out after 20 minutes."
    },
    "recent": {
-    "runs": 10,
+    "runs": 9,
     "success": 4,
-    "failed": 6
+    "failed": 5
    },
    "status": "error",
    "expectedEveryHours": 168.0
@@ -5257,8 +5257,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44609227747"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -5603,7 +5603,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-20T01:52:14Z"
+     "lastChange": "2026-11-20T02:08:42Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5684,15 +5684,15 @@
     }
    ],
    "last": {
-    "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-11-19T20:29:12Z",
-    "durationSec": 398,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44609152878"
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-20T02:16:36Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44659609523"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",

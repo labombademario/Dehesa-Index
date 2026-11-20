@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-19T20:30:45Z",
+ "generatedAt": "2026-11-20T02:17:39Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -173,10 +173,10 @@
    "warnings": [],
    "stats": {
     "series": 265,
-    "points": 63840,
+    "points": 63931,
     "lines": 0
    },
-   "generatedAt": "2026-11-16T23:52:06Z",
+   "generatedAt": "2026-11-19T22:47:34Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -956,7 +956,7 @@
     "points": 28400,
     "lines": 0
    },
-   "generatedAt": "2026-11-12T21:36:37Z",
+   "generatedAt": "2026-11-19T22:28:08Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -987,10 +987,10 @@
    "warnings": [],
    "stats": {
     "series": 54,
-    "points": 1858,
+    "points": 1835,
     "lines": 0
    },
-   "generatedAt": "2026-11-19T01:07:24Z",
+   "generatedAt": "2026-11-20T00:54:49Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1006,7 +1006,7 @@
     "points": 5720,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T22:42:43Z",
+   "generatedAt": "2026-11-19T22:46:41Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2024,7 +2024,7 @@
     "points": 96893,
     "lines": 0
    },
-   "generatedAt": "2026-11-16T23:50:18Z",
+   "generatedAt": "2026-11-19T22:46:51Z",
    "info": [
     "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1) [KNOWN_VERIFIED_ANOMALY]",
     "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [KNOWN_VERIFIED_ANOMALY]",
