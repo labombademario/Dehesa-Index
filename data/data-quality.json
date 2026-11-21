@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-20T20:07:25Z",
+ "generatedAt": "2026-11-21T01:50:21Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -30,11 +30,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 219,
-    "points": 58815,
+    "series": 218,
+    "points": 50923,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T22:35:15Z",
+   "generatedAt": "2026-11-20T21:56:15Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -192,7 +192,7 @@
     "points": 21056,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T23:10:06Z",
+   "generatedAt": "2026-11-20T22:21:53Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -205,10 +205,10 @@
    "warnings": [],
    "stats": {
     "series": 254,
-    "points": 9272,
+    "points": 9287,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T23:34:52Z",
+   "generatedAt": "2026-11-20T22:43:14Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -244,10 +244,10 @@
    "warnings": [],
    "stats": {
     "series": 547,
-    "points": 24356,
+    "points": 24695,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T23:54:18Z",
+   "generatedAt": "2026-11-20T23:01:26Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -259,11 +259,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 284,
-    "points": 11949,
+    "series": 285,
+    "points": 11966,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T23:40:56Z",
+   "generatedAt": "2026-11-20T22:51:15Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -302,10 +302,10 @@
    ],
    "stats": {
     "series": 952,
-    "points": 56230,
+    "points": 56259,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T23:54:41Z",
+   "generatedAt": "2026-11-20T23:15:15Z",
    "info": [
     "IT/it-es-eaa-am021100: salto 6.44 -> 21.84 en 1986 (mediana previa 0.27) [KNOWN_VERIFIED_ANOMALY]",
     "IT/it-es-eaa-am021100: salto 21.84 -> 23.12 en 1987 (mediana previa 0.27) [KNOWN_VERIFIED_ANOMALY]"
@@ -544,10 +544,10 @@
    ],
    "stats": {
     "series": 822,
-    "points": 39593,
+    "points": 39614,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T23:57:17Z",
+   "generatedAt": "2026-11-20T23:20:02Z",
    "info": [
     "BE/be-eus-poultry-exp_xeu-a5130pn: salto 53300.0 -> 1245700.0 en 2007 (mediana previa 2.9e+04) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -693,10 +693,10 @@
    ],
    "stats": {
     "series": 922,
-    "points": 33675,
+    "points": 33703,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T23:58:01Z",
+   "generatedAt": "2026-11-20T23:21:24Z",
    "info": [
     "PL/pl-es-crop-i1130-area: salto 6200.0 -> 7600.0 en 2016 (mediana previa 300) [KNOWN_VERIFIED_ANOMALY]",
     "PL/pl-es-crop-i1130-area: salto 7600.0 -> 9330.0 en 2017 (mediana previa 300) [KNOWN_VERIFIED_ANOMALY]"
@@ -738,10 +738,10 @@
    ],
    "stats": {
     "series": 2899,
-    "points": 186842,
+    "points": 186961,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T00:59:02Z",
+   "generatedAt": "2026-11-20T23:59:49Z",
    "info": [
     "BG/bg-es-crop-i1100-area: salto 22500.0 -> 772010.0 en 2007 (mediana previa 2.11e+04) [KNOWN_VERIFIED_ANOMALY]",
     "BG/bg-es-crop-i1100-area: salto 772010.0 -> 797400.0 en 2008 (mediana previa 2.19e+04) [KNOWN_VERIFIED_ANOMALY]",
@@ -787,10 +787,10 @@
    ],
    "stats": {
     "series": 2227,
-    "points": 188702,
+    "points": 188767,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T00:59:02Z",
+   "generatedAt": "2026-11-20T23:59:49Z",
    "info": [
     "DE/de-es-meatm-b1210-ths_hd: salto 14660.0 -> 43310.0 en 1979-10 (mediana previa 1.58e+03) [KNOWN_VERIFIED_ANOMALY]",
     "DE/de-es-meatm-b1210-ths_hd: salto 15830.0 -> 44720.0 en 1980-10 (mediana previa 1.34e+03) [KNOWN_VERIFIED_ANOMALY]",
@@ -837,10 +837,10 @@
    ],
    "stats": {
     "series": 1639,
-    "points": 88882,
+    "points": 88956,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T00:59:02Z",
+   "generatedAt": "2026-11-20T23:59:49Z",
    "info": [
     "CZ/cz-es-meatm-b7490-ths_hd: salto 2030.0 -> 5920.0 en 2022-11 (mediana previa 160) [KNOWN_VERIFIED_ANOMALY]",
     "CZ/cz-es-meatm-b7490-ths_hd: salto 3040.0 -> 5230.0 en 2023-11 (mediana previa 170) [KNOWN_VERIFIED_ANOMALY]"
@@ -877,10 +877,10 @@
    ],
    "stats": {
     "series": 1984,
-    "points": 122896,
+    "points": 123039,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T00:59:02Z",
+   "generatedAt": "2026-11-20T23:59:49Z",
    "info": [
     "RO/ro-es-meatm-b4110-ths_hd: salto 90.0 -> 83410.0 en 2010-03 (mediana previa 770) [KNOWN_VERIFIED_ANOMALY]",
     "RO/ro-es-meatm-b4110-ths_hd: salto 0 -> 38530.0 en 2012-03 (mediana previa 630) [KNOWN_VERIFIED_ANOMALY]",
@@ -987,10 +987,10 @@
    "warnings": [],
    "stats": {
     "series": 54,
-    "points": 1835,
+    "points": 1858,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T00:54:49Z",
+   "generatedAt": "2026-11-20T23:20:36Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1006,7 +1006,7 @@
     "points": 5720,
     "lines": 0
    },
-   "generatedAt": "2026-11-19T22:46:41Z",
+   "generatedAt": "2026-11-20T22:22:58Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1022,7 +1022,7 @@
     "points": 7726,
     "lines": 0
    },
-   "generatedAt": "2026-11-13T21:28:03Z",
+   "generatedAt": "2026-11-20T22:16:12Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1066,7 +1066,7 @@
     "points": 20254,
     "lines": 0
    },
-   "generatedAt": "2026-11-13T22:06:14Z",
+   "generatedAt": "2026-11-20T22:46:24Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1079,10 +1079,10 @@
    "warnings": [],
    "stats": {
     "series": 704,
-    "points": 23034,
+    "points": 23040,
     "lines": 0
    },
-   "generatedAt": "2026-11-13T21:57:12Z",
+   "generatedAt": "2026-11-20T22:39:08Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1098,7 +1098,7 @@
     "points": 5755,
     "lines": 0
    },
-   "generatedAt": "2026-11-13T21:33:58Z",
+   "generatedAt": "2026-11-20T22:19:46Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1130,7 +1130,7 @@
     "points": 9683,
     "lines": 0
    },
-   "generatedAt": "2026-11-13T21:27:29Z",
+   "generatedAt": "2026-11-20T22:16:05Z",
    "info": [],
    "nWarnings": 15,
    "nErrors": 0
@@ -1146,7 +1146,7 @@
     "points": 2501,
     "lines": 0
    },
-   "generatedAt": "2026-11-08T20:45:26Z",
+   "generatedAt": "2026-11-20T22:49:11Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1965,10 +1965,10 @@
    "warnings": [],
    "stats": {
     "series": 14,
-    "points": 3412,
+    "points": 3426,
     "lines": 0
    },
-   "generatedAt": "2026-11-13T20:53:06Z",
+   "generatedAt": "2026-11-20T21:46:36Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
