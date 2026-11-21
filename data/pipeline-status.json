@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-21T15:55:00Z",
+ "generatedAt": "2026-11-21T16:11:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 327,
@@ -17,7 +17,7 @@
   "lagHours": 8.8,
   "prodGeneratedAt": "2026-11-21T02:16:03.913632+00:00",
   "repoGeneratedAt": "2026-11-21T11:04:42.656278+00:00",
-  "checkedAt": "2026-11-21T15:55:00Z"
+  "checkedAt": "2026-11-21T16:11:00Z"
  },
  "pipelines": [
   {
@@ -2056,9 +2056,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-20T16:45:59Z",
-    "durationSec": 39,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44776634872"
+    "startedAt": "2026-11-21T15:56:20Z",
+    "durationSec": 38,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44921813555"
    },
    "recent": {
     "runs": 10,
@@ -4648,9 +4648,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-20T16:54:43Z",
-    "durationSec": 35,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44778067257"
+    "startedAt": "2026-11-21T16:05:45Z",
+    "durationSec": 39,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44922661372"
    },
    "recent": {
     "runs": 10,
@@ -5343,9 +5343,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-20T16:54:34Z",
-    "durationSec": 35,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44778046350"
+    "startedAt": "2026-11-21T16:05:42Z",
+    "durationSec": 51,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44922656981"
    },
    "recent": {
     "runs": 10,
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-21T15:42:46Z"
+     "lastChange": "2026-11-21T15:58:26Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5966,8 +5966,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44779193658"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
