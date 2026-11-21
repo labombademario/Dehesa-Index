@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-21T02:59:00Z",
+ "generatedAt": "2026-11-21T03:17:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 328,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-21T02:16:03.913632+00:00",
   "repoGeneratedAt": "2026-11-21T02:16:03.913632+00:00",
-  "checkedAt": "2026-11-21T02:59:00Z"
+  "checkedAt": "2026-11-21T03:17:00Z"
  },
  "pipelines": [
   {
@@ -5064,9 +5064,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-16T22:25:20Z",
-    "durationSec": 47,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43969889170"
+    "startedAt": "2026-11-21T03:18:50Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44860469024"
    },
    "recent": {
     "runs": 10,
@@ -5088,9 +5088,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-16T23:19:45Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43978316446"
+    "startedAt": "2026-11-21T03:17:50Z",
+    "durationSec": 68,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44860381608"
    },
    "recent": {
     "runs": 10,
@@ -5113,9 +5113,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T22:16:38Z",
-    "durationSec": 59,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44409994077"
+    "startedAt": "2026-11-21T03:15:32Z",
+    "durationSec": 45,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44860179367"
    },
    "recent": {
     "runs": 10,
@@ -5138,9 +5138,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T22:04:44Z",
-    "durationSec": 88,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44407995682"
+    "startedAt": "2026-11-21T03:10:27Z",
+    "durationSec": 61,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44859729951"
    },
    "recent": {
     "runs": 10,
@@ -5225,7 +5225,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-21T03:17:00Z",
+   "nextRun": "2026-11-21T06:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5551,7 +5551,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-21T03:10:00Z",
+   "nextRun": "2026-11-21T06:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5587,11 +5587,11 @@
     },
     {
      "path": "data/quality.json",
-     "lastChange": "2026-11-21T02:54:21Z"
+     "lastChange": "2026-11-21T03:19:26Z"
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-21T02:54:21Z"
+     "lastChange": "2026-11-21T03:19:26Z"
     },
     {
      "path": "data/products"
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-21T02:54:21Z"
+     "lastChange": "2026-11-21T03:03:12Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6124,13 +6124,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-20T14:21:44Z",
-    "durationSec": 1004,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44752705160"
+    "startedAt": "2026-11-21T02:50:01Z",
+    "durationSec": 1024,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44857994304"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -7590,9 +7590,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-20T03:05:41Z",
-    "durationSec": 117,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44665338054"
+    "startedAt": "2026-11-21T03:10:17Z",
+    "durationSec": 74,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44859713735"
    },
    "recent": {
     "runs": 10,
