@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-21T02:44:20.951Z",
+  "generatedAt": "2026-11-21T03:19:20.046Z",
   "region": "us",
   "base": {
     "period": "2024-10",
     "value": 100
   },
   "lastPeriod": "2026-09",
-  "value": 100.95,
-  "changeMoMPct": 3.46,
-  "changeYoYPct": 6.34,
+  "value": 100.96,
+  "changeMoMPct": 3.47,
+  "changeYoYPct": 6.35,
   "weights": {
     "cereales": 27.78,
     "ganaderia": 27.78,
@@ -50,7 +50,7 @@
     {
       "id": "pienso",
       "weightPct": 16.67,
-      "value": 113.87,
+      "value": 113.91,
       "members": [
         "harina_soja"
       ]
@@ -154,7 +154,7 @@
       "unit": "ton_corta",
       "currency": "USD",
       "basePeriod": "2024-10",
-      "baseValue": 322.0667,
+      "baseValue": 321.95,
       "gapFilledMonths": []
     },
     {
@@ -225,7 +225,7 @@
         "cereales": 100.99,
         "ganaderia": 105.22,
         "lacteos": 96.41,
-        "pienso": 93.33,
+        "pienso": 93.37,
         "energia": 96.03
       }
     },
@@ -236,18 +236,18 @@
         "cereales": 102.35,
         "ganaderia": 117.77,
         "lacteos": 92.83,
-        "pienso": 86.9,
+        "pienso": 86.93,
         "energia": 108.18
       }
     },
     {
       "period": "2025-01",
-      "value": 111.99,
+      "value": 112,
       "groups": {
         "cereales": 104.82,
         "ganaderia": 136.75,
         "lacteos": 96.02,
-        "pienso": 88.2,
+        "pienso": 88.23,
         "energia": 127.66
       }
     },
@@ -258,40 +258,40 @@
         "cereales": 106.33,
         "ganaderia": 146.39,
         "lacteos": 94.02,
-        "pienso": 83.27,
+        "pienso": 83.3,
         "energia": 129.78
       }
     },
     {
       "period": "2025-03",
-      "value": 109.4,
+      "value": 109.41,
       "groups": {
         "cereales": 106.31,
         "ganaderia": 133.65,
         "lacteos": 87.65,
-        "pienso": 85.46,
+        "pienso": 85.49,
         "energia": 125.06
       }
     },
     {
       "period": "2025-04",
-      "value": 102.07,
+      "value": 102.08,
       "groups": {
         "cereales": 105.45,
         "ganaderia": 114.6,
         "lacteos": 84.06,
-        "pienso": 85.6,
+        "pienso": 85.63,
         "energia": 114.03
       }
     },
     {
       "period": "2025-05",
-      "value": 101.12,
+      "value": 101.13,
       "groups": {
         "cereales": 104.31,
         "ganaderia": 114.39,
         "lacteos": 85.26,
-        "pienso": 85.82,
+        "pienso": 85.85,
         "energia": 106.73
       }
     },
@@ -302,7 +302,7 @@
         "cereales": 102.4,
         "ganaderia": 113.97,
         "lacteos": 84.86,
-        "pienso": 82.17,
+        "pienso": 82.2,
         "energia": 109.24
       }
     },
@@ -313,7 +313,7 @@
         "cereales": 97.71,
         "ganaderia": 114.51,
         "lacteos": 82.87,
-        "pienso": 75.94,
+        "pienso": 75.97,
         "energia": 113.83
       }
     },
@@ -324,7 +324,7 @@
         "cereales": 93.67,
         "ganaderia": 105.69,
         "lacteos": 83.27,
-        "pienso": 82.78,
+        "pienso": 82.81,
         "energia": 108.01
       }
     },
@@ -335,29 +335,29 @@
         "cereales": 91.51,
         "ganaderia": 101.44,
         "lacteos": 81.27,
-        "pienso": 94.78,
+        "pienso": 94.81,
         "energia": 107.88
       }
     },
     {
       "period": "2025-10",
-      "value": 90.16,
+      "value": 90.17,
       "groups": {
         "cereales": 89.4,
         "ganaderia": 92.09,
         "lacteos": 79.28,
-        "pienso": 86.7,
+        "pienso": 86.73,
         "energia": 108.8
       }
     },
     {
       "period": "2025-11",
-      "value": 93.6,
+      "value": 93.61,
       "groups": {
         "cereales": 90.4,
         "ganaderia": 94.95,
         "lacteos": 78.09,
-        "pienso": 95,
+        "pienso": 95.04,
         "energia": 119.38
       }
     },
@@ -368,7 +368,7 @@
         "cereales": 94.88,
         "ganaderia": 89.66,
         "lacteos": 75.7,
-        "pienso": 91.17,
+        "pienso": 91.2,
         "energia": 121.64
       }
     },
@@ -379,62 +379,62 @@
         "cereales": 95.07,
         "ganaderia": 85.76,
         "lacteos": 69.72,
-        "pienso": 89.36,
+        "pienso": 89.39,
         "energia": 165.74
       }
     },
     {
       "period": "2026-02",
-      "value": 91.26,
+      "value": 91.27,
       "groups": {
         "cereales": 92.42,
         "ganaderia": 89.23,
         "lacteos": 72.91,
-        "pienso": 93.91,
+        "pienso": 93.95,
         "energia": 116.99
       }
     },
     {
       "period": "2026-03",
-      "value": 96.05,
+      "value": 96.06,
       "groups": {
         "cereales": 95.04,
         "ganaderia": 92.84,
         "lacteos": 78.49,
-        "pienso": 96.65,
+        "pienso": 96.69,
         "energia": 132.09
       }
     },
     {
       "period": "2026-04",
-      "value": 96.62,
+      "value": 96.63,
       "groups": {
         "cereales": 96.24,
         "ganaderia": 87.05,
         "lacteos": 82.87,
-        "pienso": 99.22,
+        "pienso": 99.26,
         "energia": 138.22
       }
     },
     {
       "period": "2026-05",
-      "value": 99.28,
+      "value": 99.29,
       "groups": {
         "cereales": 98.54,
         "ganaderia": 89.8,
         "lacteos": 84.86,
-        "pienso": 102.45,
+        "pienso": 102.48,
         "energia": 141.75
       }
     },
     {
       "period": "2026-06",
-      "value": 96.43,
+      "value": 96.44,
       "groups": {
         "cereales": 96.67,
         "ganaderia": 89.8,
         "lacteos": 84.06,
-        "pienso": 95.68,
+        "pienso": 95.71,
         "energia": 132.13
       }
     },
@@ -445,7 +445,7 @@
         "cereales": 98.69,
         "ganaderia": 90.18,
         "lacteos": 80.88,
-        "pienso": 99.59,
+        "pienso": 99.63,
         "energia": 125.67
       }
     },
@@ -456,18 +456,18 @@
         "cereales": 103.78,
         "ganaderia": 87.57,
         "lacteos": 78.88,
-        "pienso": 100.88,
+        "pienso": 100.92,
         "energia": 130.07
       }
     },
     {
       "period": "2026-09",
-      "value": 100.95,
+      "value": 100.96,
       "groups": {
         "cereales": 106.99,
         "ganaderia": 83.18,
         "lacteos": 77.69,
-        "pienso": 113.87,
+        "pienso": 113.91,
         "energia": 145.78
       }
     }
