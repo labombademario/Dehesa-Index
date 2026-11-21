@@ -2,4 +2,54 @@ perc: 79320 filas
 pag: 21900 filas
 esmapaindicespreciosindicepercibido: 17508 filas; columnas _id,anio,mes,anio_base,categoria_general,indice_mensual_general,indice_anual_general,categoria,indice_mensual_categoria,indice_anual_categoria,grupo,indice_mensual_grupo,indice_anual_grupo,subgrupo,indice_mensual_subgrupo,indice_anual_subgrupo,producto,indice_mensual_producto,indice_anual_producto
 esmapaindicespreciosindicepagado: 17620 filas; columnas _id,anio,mes,anio_base,categoria_general,indice_mensual_general,indice_anual_general,categoria,indice_mensual_categoria,indice_anual_categoria,grupo,indice_mensual_grupo,indice_anual_grupo,subgrupo,indice_mensual_subgrupo,indice_anual_subgrupo,producto,indice_mensual_producto,indice_anual_producto
-218 series
+AVISO es-pag-cloruro-potasico-60: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-complejo-0-14-7: la fuente ya no sirve 163 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-complejo-12-12-24: la fuente ya no sirve 163 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-complejo-12-24-8: la fuente ya no sirve 163 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-complejo-15-15-15: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-complejo-4-12-8: la fuente ya no sirve 163 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-complejo-7-14-7: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-complejo-8-15-15: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-complejo-8-24-16: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-complejo-8-24-8: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-complejo-8-8-8: la fuente ya no sirve 163 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-complejo-9-18-27: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-d-a-p-fosfato-diamonico: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-nitrato-amonico-33-5: la fuente ya no sirve 169 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-nitrato-amonico-calcico-20-5: la fuente ya no sirve 162 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-nitrato-amonico-calcico-26: la fuente ya no sirve 169 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-nitrosulfato-amonico-26: la fuente ya no sirve 169 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-solucion-nitrogenada-32: la fuente ya no sirve 7 meses publicados (2026-01..2026-07); se conserva la serie publicada
+AVISO es-pag-sulfato-amonico-21: la fuente ya no sirve 169 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-sulfato-potasico-50: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-superfosfato-de-cal-18-grano: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-superfosfato-de-cal-18-polvo: la fuente ya no sirve 163 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-superfosfato-de-cal-triple: la fuente ya no sirve 163 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-urea-46: la fuente ya no sirve 169 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-acido-fosforico: la fuente ya no sirve 7 meses publicados (2026-01..2026-07); se conserva la serie publicada
+AVISO es-pag-alfalfa-deshidratada: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-avena-pienso: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-cebada-pienso: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-cerdas-gestacion-y-lactacion: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-cerdos-crecimiento-y-cebo: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-concentrado-vacuno-de-carne: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-concentrado-vacuno-de-leche: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-conejos: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-corderos-y-chivos-cria: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-corderos-y-chivos-recria-engorde: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-gallinas-ponedoras: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-harina-de-carne: la fuente ya no sirve 133 meses publicados (1990-01..2001-01); se conserva la serie publicada
+AVISO es-pag-harina-de-pescado: la fuente ya no sirve 163 meses publicados (1990-01..2003-12); se conserva la serie publicada
+AVISO es-pag-lactorremplazantes-20-proteina: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-lechones: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-maiz-pienso: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-ovejas-y-cabras-lactantes: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-paja-cereales: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-pollitas-cria-recria: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-pollos-carne: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-pulpa-de-remolacha: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-terneros-cria: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-terneros-recria-y-cebo: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-torta-de-girasol: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+AVISO es-pag-trigo-pienso: la fuente ya no sirve 170 meses publicados (1990-01..2026-07); se conserva la serie publicada
+219 series

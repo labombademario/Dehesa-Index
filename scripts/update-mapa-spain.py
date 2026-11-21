@@ -47,6 +47,10 @@ def classify(grupo, prod):
 
 ACC = {'acido': 'ácido', 'potasico': 'potásico', 'amonico': 'amónico', 'diamonico': 'diamónico', 'calcico': 'cálcico', 'fosforico': 'fosfórico', 'iberica': 'ibérica', 'azafran': 'azafrán', 'melocoton': 'melocotón', 'limon': 'limón', 'platano': 'plátano', 'sandia': 'sandía', 'melon': 'melón', 'maiz': 'maíz', 'judia': 'judía', 'judias': 'judías', 'esparrago': 'espárrago', 'calabacin': 'calabacín', 'nispero': 'níspero', 'algodon': 'algodón', 'subvencion': 'subvención', 'gestacion': 'gestación', 'lactacion': 'lactación', 'recria': 'recría', 'cria': 'cría', 'proteina': 'proteína', 'champiñon': 'champiñón', 'ros-clar': 'rosado/clarete', 'brocoli': 'brócoli', 'freson': 'fresón'}
 
+def slug(s):
+    # el MAPA servia la Ñ como caracter de reemplazo y ahora la sirve bien: las dos formas dan la misma «n» para que el id de la serie no cambie
+    return re.sub(r'[^a-z0-9]+', '-', s.lower().replace('\ufffd', 'n').replace('ñ', 'n')).strip('-')
+
 def title(s):
     s = s.replace('�', 'Ñ').strip().lower()
     s = re.sub(r'\s+', ' ', s)
@@ -89,7 +93,7 @@ def series_from(rows, kind):
         lab = title(p) if kind == 'perc' else title(p)
         if kind == 'pag' and grp == 'inputs_a': lab = 'Pienso/alimento: ' + lab.lower()
         if kind == 'pag' and grp == 'inputs_f': lab = 'Fertilizante: ' + lab
-        out.append({'id': 'es-%s-%s' % (kind, re.sub(r'[^a-z0-9]+', '-', p.lower().replace('�', 'n')).strip('-')),
+        out.append({'id': 'es-%s-%s' % (kind, slug(p)),
                     'group': grp, 'label': lab, 'unit': unit, 'frequency': 'monthly',
                     'latestPeriod': pts[-1][0], 'latest': last,
                     'changePct': round((last - prev) / prev * 100, 2) if prev else None, 'points': pts,
@@ -164,6 +168,28 @@ def incubation_series():
                       'incub', '%s: %s (%s)' % (nm, tp, sp), 'unidades', pts))
     return out
 
+def keep_published(series):
+    """Nunca se pierde lo ya publicado: si el MAPA deja de servir meses que ya publicamos de una serie de precios
+    percibidos o pagados (p. ej. recorta el historico o retira meses recientes), se conserva esa serie tal como
+    estaba publicada, entera y sin mezclar, y se anota. Las series nuevas y las que solo ganan meses o revisan
+    valores se toman de la fuente."""
+    try: old = json.load(open('data/spain-stats.json', encoding='utf-8'))['countries']['ES']['series']
+    except Exception: return series
+    new = {s['id']: s for s in series}
+    kept = []
+    for o in old:
+        if not o['id'].startswith(('es-perc-', 'es-pag-')): continue
+        n = new.get(o['id'])
+        lost = sorted(set(p[0] for p in o['points']) - set(p[0] for p in (n['points'] if n else [])))
+        if not lost: continue
+        new[o['id']] = o; kept.append(o['id'])
+        LOG.append('AVISO %s: la fuente ya no sirve %d meses publicados (%s..%s); se conserva la serie publicada' % (o['id'], len(lost), lost[0], lost[-1]))
+    if kept: print('::warning::MAPA dejo de servir meses ya publicados en %d series; se conservan las publicadas' % len(kept))
+    out = list(new.values())
+    order = {'idx_perc': 5, 'idx_pag': 6, 'prices': 0, 'prices_lv': 1, 'prices_fv': 2, 'inputs_f': 3, 'inputs_a': 4}
+    out.sort(key=lambda s: (order[s['group']], s['label']))
+    return out
+
 def main():
     series = []
     for kind in ('perc', 'pag'):
@@ -178,6 +204,7 @@ def main():
     order = {'idx_perc': 5, 'idx_pag': 6, 'prices': 0, 'prices_lv': 1, 'prices_fv': 2, 'inputs_f': 3, 'inputs_a': 4}
     series.sort(key=lambda s: (order[s['group']], s['label']))
     if len(series) < 50: sys.exit('demasiado pocas series: %d' % len(series))
+    series = keep_published(series)
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
            'countries': {'ES': {'name': 'Spain', 'source': {'name': 'MAPA — Precios percibidos y pagados por agricultores y ganaderos', 'url': 'https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido', 'license': 'CC BY 4.0'}, 'series': series}},
            'log': LOG}
