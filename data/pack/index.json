@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-20",
+ "generatedAt": "2026-11-21",
  "policy": "Solo fuentes con veredicto comercial apto o con condiciones (data/commercial-summary.json). Sin estimaciones ni relleno.",
  "columns": [
   "product_key",
@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76581
+  "rows": 76601
  },
  "files": [
   {
@@ -571,13 +571,13 @@
    "unit": "gal",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 1704,
+   "rows": 1705,
    "first": "1994-03-21",
-   "last": "2026-11-09",
+   "last": "2026-11-16",
    "csv": "data/pack/us/diesel.csv",
    "xlsx": "data/pack/us/diesel.xlsx",
-   "csvBytes": 315161,
-   "xlsxBytes": 82371
+   "csvBytes": 315346,
+   "xlsxBytes": 82417
   },
   {
    "product": "ddgs_us",
@@ -2814,13 +2814,13 @@
    "unit": "litro",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 1092,
+   "rows": 1093,
    "first": "2005-01-03",
-   "last": "2026-11-09",
+   "last": "2026-11-16",
    "csv": "data/pack/eu/diesel.csv",
    "xlsx": "data/pack/eu/diesel.xlsx",
-   "csvBytes": 233519,
-   "xlsxBytes": 65285
+   "csvBytes": 233733,
+   "xlsxBytes": 65338
   },
   {
    "product": "harina_pescado",
@@ -3631,13 +3631,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 191,
+   "rows": 192,
    "first": "2022-04-09",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/corderos_ni.csv",
    "xlsx": "data/pack/uk/corderos_ni.xlsx",
-   "csvBytes": 48583,
-   "xlsxBytes": 15944
+   "csvBytes": 48837,
+   "xlsxBytes": 15989
   },
   {
    "product": "gasolina_uk",
@@ -3848,13 +3848,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 253,
+   "rows": 254,
    "first": "2022-01-08",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/novillas_r3_ni.csv",
    "xlsx": "data/pack/uk/novillas_r3_ni.xlsx",
-   "csvBytes": 65584,
-   "xlsxBytes": 18393
+   "csvBytes": 65843,
+   "xlsxBytes": 18435
   },
   {
    "product": "novillas_ni",
@@ -3879,13 +3879,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 253,
+   "rows": 254,
    "first": "2022-01-08",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/novillas_ni.csv",
    "xlsx": "data/pack/uk/novillas_ni.xlsx",
-   "csvBytes": 64229,
-   "xlsxBytes": 18508
+   "csvBytes": 64482,
+   "xlsxBytes": 18551
   },
   {
    "product": "novillos_r3_ni",
@@ -3910,13 +3910,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 253,
+   "rows": 254,
    "first": "2022-01-08",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/novillos_r3_ni.csv",
    "xlsx": "data/pack/uk/novillos_r3_ni.xlsx",
-   "csvBytes": 65590,
-   "xlsxBytes": 18373
+   "csvBytes": 65848,
+   "xlsxBytes": 18417
   },
   {
    "product": "novillos_ni",
@@ -3941,13 +3941,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 253,
+   "rows": 254,
    "first": "2022-01-08",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/novillos_ni.csv",
    "xlsx": "data/pack/uk/novillos_ni.xlsx",
-   "csvBytes": 64227,
-   "xlsxBytes": 18502
+   "csvBytes": 64480,
+   "xlsxBytes": 18547
   },
   {
    "product": "toros_r3_ni",
@@ -3972,13 +3972,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 253,
+   "rows": 254,
    "first": "2022-01-08",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/toros_r3_ni.csv",
    "xlsx": "data/pack/uk/toros_r3_ni.xlsx",
-   "csvBytes": 66352,
-   "xlsxBytes": 18405
+   "csvBytes": 66614,
+   "xlsxBytes": 18448
   },
   {
    "product": "toros_ni",
@@ -4003,13 +4003,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 253,
+   "rows": 254,
    "first": "2022-01-08",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/toros_ni.csv",
    "xlsx": "data/pack/uk/toros_ni.xlsx",
-   "csvBytes": 64985,
-   "xlsxBytes": 18550
+   "csvBytes": 65241,
+   "xlsxBytes": 18592
   },
   {
    "product": "vacas_r3_ni",
@@ -4034,13 +4034,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 253,
+   "rows": 254,
    "first": "2022-01-08",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/vacas_r3_ni.csv",
    "xlsx": "data/pack/uk/vacas_r3_ni.xlsx",
-   "csvBytes": 64081,
-   "xlsxBytes": 18411
+   "csvBytes": 64334,
+   "xlsxBytes": 18454
   },
   {
    "product": "vacas_ni",
@@ -4065,13 +4065,13 @@
    "unit": "kg",
    "currency": "GBP",
    "frequency": "weekly",
-   "rows": 253,
+   "rows": 254,
    "first": "2022-01-08",
-   "last": "2026-11-07",
+   "last": "2026-11-14",
    "csv": "data/pack/uk/vacas_ni.csv",
    "xlsx": "data/pack/uk/vacas_ni.xlsx",
-   "csvBytes": 62703,
-   "xlsxBytes": 18442
+   "csvBytes": 62950,
+   "xlsxBytes": 18485
   },
   {
    "product": "defra_energy_input_index",
@@ -4444,13 +4444,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 86,
+   "rows": 87,
    "first": "2025-03-14",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/avena_pienso_ab.csv",
    "xlsx": "data/pack/ca/avena_pienso_ab.xlsx",
-   "csvBytes": 21840,
-   "xlsxBytes": 10849
+   "csvBytes": 22093,
+   "xlsxBytes": 10895
   },
   {
    "product": "bacon_ca",
@@ -4506,13 +4506,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 95,
+   "rows": 96,
    "first": "2025-01-10",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/canola_elevador.csv",
    "xlsx": "data/pack/ca/canola_elevador.xlsx",
-   "csvBytes": 23358,
-   "xlsxBytes": 11548
+   "csvBytes": 23603,
+   "xlsxBytes": 11595
   },
   {
    "product": "ternera_picada_ca",
@@ -4599,13 +4599,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 95,
+   "rows": 96,
    "first": "2025-01-10",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/cebada_pienso_ab.csv",
    "xlsx": "data/pack/ca/cebada_pienso_ab.xlsx",
-   "csvBytes": 24397,
-   "xlsxBytes": 11513
+   "csvBytes": 24653,
+   "xlsxBytes": 11558
   },
   {
    "product": "cerdo",
@@ -4661,13 +4661,13 @@
    "unit": "kg",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 89,
+   "rows": 90,
    "first": "2025-01-10",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/cerdo_ab.csv",
    "xlsx": "data/pack/ca/cerdo_ab.xlsx",
-   "csvBytes": 21264,
-   "xlsxBytes": 11108
+   "csvBytes": 21502,
+   "xlsxBytes": 11150
   },
   {
    "product": "potasa_ab",
@@ -5219,13 +5219,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 95,
+   "rows": 96,
    "first": "2025-01-10",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/guisante_verde_ab.csv",
    "xlsx": "data/pack/ca/guisante_verde_ab.xlsx",
-   "csvBytes": 24876,
-   "xlsxBytes": 11428
+   "csvBytes": 25137,
+   "xlsxBytes": 11472
   },
   {
    "product": "guisante_seco",
@@ -5467,13 +5467,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 95,
+   "rows": 96,
    "first": "2025-01-10",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/lenteja_laird_ab.csv",
    "xlsx": "data/pack/ca/lenteja_laird_ab.xlsx",
-   "csvBytes": 24709,
-   "xlsxBytes": 11471
+   "csvBytes": 24968,
+   "xlsxBytes": 11518
   },
   {
    "product": "lenteja",
@@ -5715,13 +5715,13 @@
    "unit": "cwt",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 92,
+   "rows": 93,
    "first": "2025-01-17",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/novillo_ab.csv",
    "xlsx": "data/pack/ca/novillo_ab.xlsx",
-   "csvBytes": 21605,
-   "xlsxBytes": 11303
+   "csvBytes": 21839,
+   "xlsxBytes": 11348
   },
   {
    "product": "cerdo_paleta_ca",
@@ -6242,13 +6242,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 94,
+   "rows": 95,
    "first": "2025-01-10",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/trigo_cwrs_ab.csv",
    "xlsx": "data/pack/ca/trigo_cwrs_ab.xlsx",
-   "csvBytes": 23302,
-   "xlsxBytes": 11470
+   "csvBytes": 23549,
+   "xlsxBytes": 11516
   },
   {
    "product": "trigo_pienso_ab",
@@ -6273,13 +6273,13 @@
    "unit": "tonelada",
    "currency": "CAD",
    "frequency": "weekly",
-   "rows": 95,
+   "rows": 96,
    "first": "2025-01-10",
-   "last": "2026-11-13",
+   "last": "2026-11-20",
    "csv": "data/pack/ca/trigo_pienso_ab.csv",
    "xlsx": "data/pack/ca/trigo_pienso_ab.xlsx",
-   "csvBytes": 24200,
-   "xlsxBytes": 11228
+   "csvBytes": 24454,
+   "xlsxBytes": 11269
   },
   {
    "product": "urea_ab",
