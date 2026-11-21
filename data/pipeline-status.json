@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-21T02:16:00Z",
+ "generatedAt": "2026-11-21T02:43:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 327,
@@ -17,7 +17,7 @@
   "lagHours": 6.1,
   "prodGeneratedAt": "2026-11-20T20:12:57.560737+00:00",
   "repoGeneratedAt": "2026-11-21T02:16:03.913632+00:00",
-  "checkedAt": "2026-11-21T02:16:00Z"
+  "checkedAt": "2026-11-21T02:43:00Z"
  },
  "pipelines": [
   {
@@ -40,8 +40,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43662009873"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -1894,9 +1894,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-20T14:09:44Z",
-    "durationSec": 100,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44750795542"
+    "startedAt": "2026-11-21T02:31:59Z",
+    "durationSec": 73,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44856411325"
    },
    "recent": {
     "runs": 10,
@@ -5587,11 +5587,11 @@
     },
     {
      "path": "data/quality.json",
-     "lastChange": "2026-11-20T23:59:52Z"
+     "lastChange": "2026-11-21T02:44:27Z"
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-20T23:59:52Z"
+     "lastChange": "2026-11-21T02:44:27Z"
     },
     {
      "path": "data/products"
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-21T02:13:38Z"
+     "lastChange": "2026-11-21T02:19:20Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7636,13 +7636,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-14T01:29:28Z",
-    "durationSec": 130,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/43540887087"
+    "startedAt": "2026-11-21T02:30:37Z",
+    "durationSec": 260,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44856282055"
    },
    "recent": {
     "runs": 10,
-    "success": 8,
+    "success": 9,
     "failed": 1
    },
    "status": "ok",
@@ -7907,7 +7907,7 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-11-21T02:30:00Z",
+   "nextRun": "2026-11-22T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
