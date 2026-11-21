@@ -1,6 +1,6 @@
 {
  "schemaVersion": "1.0",
- "generatedAt": "2026-11-21T04:26:02.386Z",
+ "generatedAt": "2026-11-21T20:21:12.382Z",
  "source": "USDA AMS Market News (MARS API)",
  "reports": [
   {
@@ -4643,7 +4643,7 @@
    "title": "National Weekly Ethanol Report",
    "fam": "bio",
    "freq": "w",
-   "lastDate": "2026-11-13",
+   "lastDate": "2026-11-20",
    "series": 58,
    "kb": 146
   },
