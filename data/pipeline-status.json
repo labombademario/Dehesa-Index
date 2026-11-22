@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-22T14:39:00Z",
+ "generatedAt": "2026-11-22T15:02:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 327,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-22T11:19:41.819134+00:00",
   "repoGeneratedAt": "2026-11-22T11:19:41.819134+00:00",
-  "checkedAt": "2026-11-22T14:39:00Z"
+  "checkedAt": "2026-11-22T15:02:00Z"
  },
  "pipelines": [
   {
@@ -651,9 +651,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-21T14:53:44Z",
-    "durationSec": 71,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44916284387"
+    "startedAt": "2026-11-22T14:50:44Z",
+    "durationSec": 88,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45035020014"
    },
    "recent": {
     "runs": 10,
@@ -3812,14 +3812,14 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-21T14:56:41Z",
-    "durationSec": 75,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44916532994"
+    "startedAt": "2026-11-22T14:55:01Z",
+    "durationSec": 54,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45035397754"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 10,
+    "failed": 0
    },
    "status": "ok",
    "expectedEveryHours": 24.0
@@ -5481,9 +5481,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-21T14:57:13Z",
-    "durationSec": 131,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44916573308"
+    "startedAt": "2026-11-22T14:55:19Z",
+    "durationSec": 158,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45035426957"
    },
    "recent": {
     "runs": 10,
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-22T14:11:46Z"
+     "lastChange": "2026-11-22T14:42:44Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7613,15 +7613,15 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-21T20:02:36Z",
-    "durationSec": 81,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44915891699",
+    "startedAt": "2026-11-22T14:45:06Z",
+    "durationSec": 79,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45034504820",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · sin CDL de 2026 RuntimeError(\"https://nassgeodata.gmu.edu/axis2/services/CDLService/GetCDLStat?y"
    },
    "recent": {
     "runs": 10,
-    "success": 9,
-    "failed": 1
+    "success": 8,
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 24.0
