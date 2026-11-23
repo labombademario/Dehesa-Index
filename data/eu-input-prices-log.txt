@@ -1,3 +1,3 @@
-19:05:57 imp: 20 productos con serie, 359 series
-19:06:19 exp: 20 productos con serie, 265 series
-19:06:41 eu-input-prices.json: 20 productos, ultimo mes 2026-09, origenes de 20 productos UE-27 y 400 paises (2025)
+22:08:58 imp: 20 productos con serie, 359 series
+22:09:24 exp: 20 productos con serie, 265 series
+22:09:47 eu-input-prices.json: 20 productos, ultimo mes 2026-09, origenes de 20 productos UE-27 y 400 paises (2025)
