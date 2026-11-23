@@ -3,7 +3,7 @@
  "country": "SK",
  "source": "apa_sk",
  "status": "OK",
- "checkedAt": "2026-11-16",
+ "checkedAt": "2026-11-23",
  "baseline": {
   "fingerprints": {
    "sadzby": {
@@ -36,7 +36,7 @@
  "current": {
   "fingerprints": {
    "sadzby": {
-    "sha256": "1f94a71f27cd2552d8f16e7d6eb3d8e3fe67f2ad21e50a04dff1c3f65c423524",
+    "sha256": "b2cbbbd7dbb42054d0c1e9c3de1dd4858b4f418a512cd0e9498224eb2cb034a6",
     "chars": 735,
     "label": "APA: tasas de ayudas directas",
     "url": "https://apa.sk/priame-podpory/sadzby"
@@ -64,6 +64,8 @@
   "lastScanned": "2026-10-28",
   "searchErrors": []
  },
- "reviewNeeded": [],
+ "reviewNeeded": [
+  "cambia: APA: tasas de ayudas directas"
+ ],
  "note": "Huella del texto de páginas oficiales de la PAC (sadzby, z435, z436, z120) desde el 28 de octubre de 2026 y, donde hay listado de noticias, enlaces nuevos sobre pagos directos o campaña. Solo avisa de que algo cambió: no se interpreta qué. Lo que aparece son candidatos."
 }
