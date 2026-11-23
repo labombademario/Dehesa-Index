@@ -3,7 +3,7 @@
  "country": "PL",
  "source": "sejm_eli",
  "status": "OK",
- "checkedAt": "2026-11-16",
+ "checkedAt": "2026-11-23",
  "baseline": {
   "fingerprints": {
    "DU/2023/412": {
@@ -75,6 +75,12 @@
     "title": "Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 października 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy o Planie Strategicznym dla Wspólnej Polityki Rolnej na lata 2023-2027",
     "date": "2026-10-09",
     "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1462"
+   },
+   {
+    "id": "DU/2026/1529",
+    "title": "Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 13 listopada 2026 r. w sprawie stawek opłat za czynności przeprowadzone w ramach kontroli jakości handlowej artykułów rolno-spożywczych oraz prawidłowości wprowadzania do obrotu i oznakowania materiałów i wyrobów przeznaczonych do kontaktu z żywnością",
+    "date": "2026-11-13",
+    "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1529"
    }
   ],
   "lastScanned": null,
@@ -87,7 +93,8 @@
   "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 22 października 2026 r. zmieniające rozporządzenie w sprawie szczegółowych warunków p (2026-10-22)",
   "texto nuevo: Rozporządzenie Prezydenta Rzeczypospolitej Polskiej z dnia 7 listopada 2026 r. w sprawie wprowadzenia żałoby narodowej na terytorium Rzeczyp (2026-11-07)",
   "texto nuevo: Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 4 listopada 2026 r. w sprawie wprowadzenia czasowego zakazu noszenia broni (2026-11-04)",
-  "texto nuevo: Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 października 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy o Plani (2026-10-09)"
+  "texto nuevo: Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 9 października 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy o Plani (2026-10-09)",
+  "texto nuevo: Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi z dnia 13 listopada 2026 r. w sprawie stawek opłat za czynności przeprowadzone w ramach kont (2026-11-13)"
  ],
  "note": "Vigilancia de la ley del Plan Estratégico y búsqueda de reglamentos nuevos en el Dziennik Ustaw desde el 1 de septiembre de 2026. Los textos que aparecen son candidatos: no se interpretan."
 }
