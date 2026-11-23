@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "country": "DE",
  "source": "bmleh_de",
- "status": "OK",
+ "status": "UNREACHABLE",
  "checkedAt": "2026-11-16",
  "baseline": {
   "fingerprints": {
@@ -171,5 +171,6 @@
   "cambia: BMLEH: Gemeinsame Agrarpolitik (GAP)",
   "cambia: BMLEH: Öko-Regelungen"
  ],
- "note": "Huella de tres páginas del Ministerio federal (BMLEH) sobre la GAP y vigilancia de páginas nuevas en su sección de política agraria europea. No vigila el texto de la GAPDZV (gesetze-im-internet.de no responde desde GitHub). Lo que aparece son candidatos: no se interpretan."
+ "note": "Huella de tres páginas del Ministerio federal (BMLEH) sobre la GAP y vigilancia de páginas nuevas en su sección de política agraria europea. No vigila el texto de la GAPDZV (gesetze-im-internet.de no responde desde GitHub). Lo que aparece son candidatos: no se interpretan.",
+ "lastError": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
 }
