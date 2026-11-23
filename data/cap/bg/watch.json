@@ -3,7 +3,7 @@
  "country": "BG",
  "source": "mzh_bg",
  "status": "OK",
- "checkedAt": "2026-11-16",
+ "checkedAt": "2026-11-23",
  "baseline": {
   "fingerprints": {
    "naredba3": {
@@ -80,7 +80,8 @@
   ],
   "lastScanned": "2026-10-28",
   "searchErrors": [
-   "naredba3: FileNotFoundError: [Errno 2] No such file or directory: 'pdftotext'"
+   "naredba3: FileNotFoundError: [Errno 2] No such file or directory: 'pdftotext'",
+   "lista sin enlaces: https://www.mzh.government.bg/bg/press-center/novini/"
   ]
  },
  "reviewNeeded": [
