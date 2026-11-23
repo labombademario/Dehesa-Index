@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-22T21:12:00Z",
+ "generatedAt": "2026-11-23T01:39:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 327,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-22T19:37:41.990947+00:00",
   "repoGeneratedAt": "2026-11-22T19:37:41.990947+00:00",
-  "checkedAt": "2026-11-22T21:12:00Z"
+  "checkedAt": "2026-11-23T01:39:00Z"
  },
  "pipelines": [
   {
@@ -1889,7 +1889,7 @@
    "crons": [
     "25 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-22T21:25:00Z",
+   "nextRun": "2026-11-23T05:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5202,7 +5202,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-22T21:47:00Z",
+   "nextRun": "2026-11-23T03:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5225,7 +5225,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-22T21:17:00Z",
+   "nextRun": "2026-11-23T03:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5256,8 +5256,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45061246843"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5551,7 +5551,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-23T00:10:00Z",
+   "nextRun": "2026-11-23T03:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-22T20:58:49Z"
+     "lastChange": "2026-11-22T21:15:00Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5690,8 +5690,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45061163209"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
@@ -6119,7 +6119,7 @@
    "crons": [
     "40 5,13,21 * * *"
    ],
-   "nextRun": "2026-11-22T21:40:00Z",
+   "nextRun": "2026-11-23T05:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -8070,7 +8070,7 @@
     "55 23 * * *",
     "40 6 * * 1"
    ],
-   "nextRun": "2026-11-22T23:55:00Z",
+   "nextRun": "2026-11-23T06:40:00Z",
    "files": [
     {
      "path": "data/news-archive"
