@@ -5,9 +5,9 @@
    "week": "2026-W47",
    "from": "2026-11-16",
    "to": "2026-11-22",
-   "complete": false,
-   "items": 2713,
-   "sources": 478,
+   "complete": true,
+   "items": 2943,
+   "sources": 501,
    "coverageFrom": "2026-11-16"
   },
   {
@@ -74,5 +74,5 @@
    "coverageFrom": "2026-09-29"
   }
  ],
- "generatedAt": "2026-11-22T03:31:53Z"
+ "generatedAt": "2026-11-23T04:04:08Z"
 }
