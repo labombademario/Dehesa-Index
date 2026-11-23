@@ -3,7 +3,7 @@
  "country": "EL",
  "source": "agrotikianaptixi_gr",
  "status": "OK",
- "checkedAt": "2026-11-16",
+ "checkedAt": "2026-11-23",
  "baseline": {
   "fingerprints": {},
   "acknowledged": []
@@ -34,6 +34,12 @@
     "title": "8η Συνεδρίαση Επιτροπής Παρακολούθησης ΣΣ ΚΑΠ (19 ΝΟΕΜΒΡΙΟΥ 2026, ΠΤΟΛΕΜΑΪΔΑ)",
     "date": "2026-11-10",
     "url": "https://www.agrotikianaptixi.gr/8i-synedriasi-epitropis-parakolouthisis-ss-kap-19-noemvriou-2026-ptolemaida/"
+   },
+   {
+    "id": "https://www.agrotikianaptixi.gr/?p=27132",
+    "title": "Με επιτυχία ολοκληρώθηκε η 8η Συνεδρίαση της Επιτροπής Παρακολούθησης του ΣΣ ΚΑΠ 2023-2027 στην Πτολεμαΐδα",
+    "date": "2026-11-20",
+    "url": "https://www.agrotikianaptixi.gr/me-epitychia-oloklirothike-i-8i-synedriasi-tis-epitropis-parakolouthisis-tou-ss-kap-2023-2027-stin-ptolemaida/"
    }
   ],
   "lastScanned": "2026-10-25"
@@ -42,7 +48,8 @@
   "texto nuevo: ΥΠΑΑΤ: Παραγωγική συζήτηση στη Νάξο για τη νέα ΚΑΠ 2028–2034 – Στο επίκεντρο οι ανάγκες της νησιωτικής Ελλάδας (2026-11-02)",
   "texto nuevo: 6η Συνεδρίαση Εθνικού Διαλόγου για τη νέα ΚΑΠ 2028-2034, 31-10-2026 (2026-10-29)",
   "texto nuevo: 17η Γραπτή Διαδικασία Επιτροπή Παρακολούθησης ΣΣ ΚΑΠ (2026-11-06)",
-  "texto nuevo: 8η Συνεδρίαση Επιτροπής Παρακολούθησης ΣΣ ΚΑΠ (19 ΝΟΕΜΒΡΙΟΥ 2026, ΠΤΟΛΕΜΑΪΔΑ) (2026-11-10)"
+  "texto nuevo: 8η Συνεδρίαση Επιτροπής Παρακολούθησης ΣΣ ΚΑΠ (19 ΝΟΕΜΒΡΙΟΥ 2026, ΠΤΟΛΕΜΑΪΔΑ) (2026-11-10)",
+  "texto nuevo: Με επιτυχία ολοκληρώθηκε η 8η Συνεδρίαση της Επιτροπής Παρακολούθησης του ΣΣ ΚΑΠ 2023-2027 στην Πτολεμαΐδα (2026-11-20)"
  ],
  "note": "Vigilancia del RSS de la web oficial del Plan Estratégico de la PAC (agrotikianaptixi.gr) desde el 25 de octubre de 2026. Los textos que aparecen son candidatos: no se interpretan."
 }
