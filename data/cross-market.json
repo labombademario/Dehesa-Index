@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-11-22T20:07:52.819Z",
+  "generatedAt": "2026-11-23T23:32:05.273Z",
   "methodology": {
     "method": "Pearson correlation of period returns on common dates after tested lag offsets.",
     "minimumPeriods": 6,
