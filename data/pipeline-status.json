@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T22:54:00Z",
+ "generatedAt": "2026-11-24T23:11:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 329,
+  "ok": 328,
   "late": 3,
-  "error": 16,
+  "error": 17,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
   "repoGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
-  "checkedAt": "2026-11-24T22:54:00Z"
+  "checkedAt": "2026-11-24T23:11:00Z"
  },
  "pipelines": [
   {
@@ -4807,18 +4807,19 @@
    "nextRun": "2026-11-27T12:45:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-20T20:44:32Z",
-    "durationSec": 626,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44814079918"
+    "startedAt": "2026-11-24T22:46:00Z",
+    "durationSec": 632,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45503963873",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-it-fuel.py' has timed out after 10 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 8,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 96.0
   },
   {
@@ -5601,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T21:41:12Z"
+     "lastChange": "2026-11-24T22:58:03Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6791,13 +6792,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-17T21:45:07Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44183053898"
+    "startedAt": "2026-11-24T23:00:11Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45506075392"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -6814,9 +6815,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-20T21:23:36Z",
-    "durationSec": 33,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44819918633"
+    "startedAt": "2026-11-24T23:10:03Z",
+    "durationSec": 34,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45507583054"
    },
    "recent": {
     "runs": 10,
