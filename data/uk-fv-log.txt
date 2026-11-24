@@ -1,2 +1,2 @@
-CSV https://assets.publishing.service.gov.uk/media/6adb512cd798ae11e9bc5c36/fruitvegprices-261026.csv
-series 72 ultimo dato 2026-10-26
+CSV https://assets.publishing.service.gov.uk/media/6b001ada2c7ef31e8b207901/fruitvegprices-261123.csv
+series 72 ultimo dato 2026-11-23
