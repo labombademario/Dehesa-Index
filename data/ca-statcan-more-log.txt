@@ -19,9 +19,9 @@ descartada ca-sc-lumber-qc-all-other-softwood-not-elsewhere-specified-shipments-
 descartada ca-sc-lumber-qc-all-other-softwood-not-elsewhere-specified-stocks-m: 4 puntos, ultimo 2025-11
 descartada ca-sc-lumber-qc-hemlock-fir-shipments-m: 16 puntos, ultimo 2025-11
 lumber 116 series
-tabla 18100265 11579 filas
+tabla 18100265 11603 filas
 ippi 23 series
-tabla 18100268 29253 filas
+tabla 18100268 29337 filas
 rmpi 74 series
 tabla 18100004 1156923 filas
 cpi 15 series
