@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T20:28:00Z",
+ "generatedAt": "2026-11-24T20:45:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 329,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
   "repoGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
-  "checkedAt": "2026-11-24T20:28:00Z"
+  "checkedAt": "2026-11-24T20:45:00Z"
  },
  "pipelines": [
   {
@@ -1510,9 +1510,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-17T19:01:30Z",
-    "durationSec": 83,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44154103116"
+    "startedAt": "2026-11-24T20:34:01Z",
+    "durationSec": 72,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45482139655"
    },
    "recent": {
     "runs": 10,
@@ -3857,13 +3857,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-17T18:46:12Z",
-    "durationSec": 148,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44151399112"
+    "startedAt": "2026-11-24T20:22:51Z",
+    "durationSec": 877,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45480198793"
    },
    "recent": {
-    "runs": 6,
-    "success": 6,
+    "runs": 7,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -4042,13 +4042,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-17T18:44:51Z",
-    "durationSec": 64,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44151157129"
+    "startedAt": "2026-11-24T20:19:56Z",
+    "durationSec": 591,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45479670875"
    },
    "recent": {
-    "runs": 6,
-    "success": 6,
+    "runs": 7,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -5132,7 +5132,7 @@
     "10 22 * * 5",
     "20 14 * * 3"
    ],
-   "nextRun": "2026-11-24T20:40:00Z",
+   "nextRun": "2026-11-25T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5601,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T20:14:42Z"
+     "lastChange": "2026-11-24T20:31:36Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7538,7 +7538,7 @@
    "crons": [
     "30 20 * * 1-5"
    ],
-   "nextRun": "2026-11-24T20:30:00Z",
+   "nextRun": "2026-11-25T20:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7553,7 +7553,7 @@
     "failed": 2
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-local-markets.yml",
