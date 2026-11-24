@@ -1,7 +1,2 @@
-escaneo: 162 numeros probados, 5 ediciones,  0 sin respuesta
-EDICION ILEGIBLE IraFru26145 la ficha no trae el fichero esperado; ficheros: ['2026_145inforapPoire.pdf']
-ok IraFru26146 {'kind': 'Fru', 'tries': 1, 'published': '2026-11-13', 'status': 'ok', 'series': 22}
-ok IraLai26147 {'kind': 'Lai', 'tries': 1, 'published': '2026-11-13', 'status': 'ok', 'series': 89}
-ok IraCex26148 {'kind': 'Cex', 'tries': 1, 'published': '2026-11-17', 'status': 'ok', 'series': 8}
-ok IraGcu26149 {'kind': 'Gcu', 'tries': 1, 'published': '2026-11-17', 'status': 'ok', 'edition': '2026-11'}
-series de catalogo: 63
+escaneo: 163 numeros probados, 0 ediciones,  163 sin respuesta
+sin ediciones nuevas: se conserva lo publicado
