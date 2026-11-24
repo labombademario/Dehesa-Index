@@ -1,5 +1,5 @@
-CSV https://assets.publishing.service.gov.uk/media/6afb1224ccb3ea58ac8743ad/CSV__2018_-__.csv
-uk-fuel-diesel-pump 1224 ['2026-11-16', 196.77]
-uk-fuel-petrol-pump 1224 ['2026-11-16', 167.07]
-uk-fuel-diesel-duty 1224 ['2026-11-16', 52.95]
-uk-fuel-diesel-vat 1224 ['2026-11-16', 20.0]
+CSV https://assets.publishing.service.gov.uk/media/6b044e1987fd9efe822cc25f/CSV__2018_-__.csv
+uk-fuel-diesel-pump 1225 ['2026-11-23', 193.29]
+uk-fuel-petrol-pump 1225 ['2026-11-23', 161.96]
+uk-fuel-diesel-duty 1225 ['2026-11-23', 52.95]
+uk-fuel-diesel-vat 1225 ['2026-11-23', 20.0]
