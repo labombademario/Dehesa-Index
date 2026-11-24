@@ -1,8 +1,64 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-23T23:32:05.389Z",
+  "generatedAt": "2026-11-24T00:11:43.697Z",
   "status": "informational",
   "rules": [
+    {
+      "type": "stale_data",
+      "product": "arroz",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "avena",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "cebada",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "centeno",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "colza_de",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "colza_fr",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
     {
       "type": "stale_data",
       "product": "colza_hu",
@@ -21,6 +77,22 @@
     },
     {
       "type": "stale_data",
+      "product": "colza",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "cordero",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
       "product": "coste_maiz_etanol_us",
       "region": "us",
       "sourceId": "usda_ers",
@@ -29,9 +101,97 @@
     },
     {
       "type": "stale_data",
+      "product": "harina_soja",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "leche_polvo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "maiz",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "mantequilla",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "novilla_canal_us",
+      "region": "us",
+      "sourceId": "usda_ams_lmr",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "oliva",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "pollo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
       "product": "tabaco_us",
       "region": "eu",
       "sourceId": "world_bank",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "trigo_duro",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "trigo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "vaca",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
