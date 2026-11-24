@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T07:25:00Z",
+ "generatedAt": "2026-11-24T07:42:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 328,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T02:16:23.620927+00:00",
   "repoGeneratedAt": "2026-11-24T02:16:23.620927+00:00",
-  "checkedAt": "2026-11-24T07:25:00Z"
+  "checkedAt": "2026-11-24T07:42:00Z"
  },
  "pipelines": [
   {
@@ -531,7 +531,7 @@
    "crons": [
     "40 7 * * *"
    ],
-   "nextRun": "2026-11-24T07:40:00Z",
+   "nextRun": "2026-11-25T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2650,7 +2650,7 @@
    "crons": [
     "40 7 * * 2,4"
    ],
-   "nextRun": "2026-11-24T07:40:00Z",
+   "nextRun": "2026-11-26T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2885,7 +2885,7 @@
    "crons": [
     "40 7 * * *"
    ],
-   "nextRun": "2026-11-24T07:40:00Z",
+   "nextRun": "2026-11-25T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3738,7 +3738,7 @@
    "crons": [
     "40 7 * * 2,5"
    ],
-   "nextRun": "2026-11-24T07:40:00Z",
+   "nextRun": "2026-11-27T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5315,7 +5315,7 @@
    "crons": [
     "30 7 * * 2,5"
    ],
-   "nextRun": "2026-11-24T07:30:00Z",
+   "nextRun": "2026-11-27T07:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T07:12:21Z"
+     "lastChange": "2026-11-24T07:28:49Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5772,7 +5772,7 @@
    "crons": [
     "30 7 * * *"
    ],
-   "nextRun": "2026-11-24T07:30:00Z",
+   "nextRun": "2026-11-25T07:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5933,7 +5933,7 @@
    "crons": [
     "40 7 * * 2,5"
    ],
-   "nextRun": "2026-11-24T07:40:00Z",
+   "nextRun": "2026-11-27T07:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
