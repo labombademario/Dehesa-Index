@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T23:45:00Z",
+ "generatedAt": "2026-11-24T23:53:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 328,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
   "repoGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
-  "checkedAt": "2026-11-24T23:45:00Z"
+  "checkedAt": "2026-11-24T23:53:00Z"
  },
  "pipelines": [
   {
@@ -4273,15 +4273,15 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-20T23:19:37Z",
-    "durationSec": 33,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44827084438",
+    "startedAt": "2026-11-24T23:50:31Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45513305911",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · cereales ficheros []"
    },
    "recent": {
     "runs": 10,
-    "success": 7,
-    "failed": 3
+    "success": 6,
+    "failed": 4
    },
    "status": "error",
    "expectedEveryHours": 96.0
@@ -5256,8 +5256,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45405026957"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -5557,7 +5557,7 @@
      "path": "data/us-weekly-stats.json",
      "valid": "ok",
      "series": 35,
-     "points": 4625,
+     "points": 4630,
      "lines": 0,
      "lastChange": "2026-11-24T13:40:19Z"
     },
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T23:29:51Z"
+     "lastChange": "2026-11-24T23:49:53Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5690,8 +5690,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45404876344"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -7567,9 +7567,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-24T02:13:57Z",
-    "durationSec": 57,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45310843024"
+    "startedAt": "2026-11-24T23:54:39Z",
+    "durationSec": 55,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45513861941"
    },
    "recent": {
     "runs": 10,

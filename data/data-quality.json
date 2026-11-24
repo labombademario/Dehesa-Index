@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T13:36:08Z",
+ "generatedAt": "2026-11-24T23:53:13Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -34,7 +34,7 @@
     "points": 58991,
     "lines": 0
    },
-   "generatedAt": "2026-11-21T02:12:01Z",
+   "generatedAt": "2026-11-24T23:36:34Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -160,7 +160,7 @@
     "points": 65812,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T17:39:44Z",
+   "generatedAt": "2026-11-24T19:32:13Z",
    "info": [],
    "nWarnings": 13,
    "nErrors": 0
@@ -226,7 +226,7 @@
     "points": 47988,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T17:52:07Z",
+   "generatedAt": "2026-11-24T20:12:51Z",
    "info": [
     "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86) [KNOWN_VERIFIED_ANOMALY]",
     "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3) [KNOWN_VERIFIED_ANOMALY]",
@@ -442,7 +442,7 @@
     "points": 25772,
     "lines": 0
    },
-   "generatedAt": "2026-11-09T07:31:32Z",
+   "generatedAt": "2026-11-24T17:37:36Z",
    "info": [
     "FR/fr-fish-ca-area-47: salto 343.1 -> 1391.9 en 2016 (mediana previa 20) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -971,10 +971,10 @@
    ],
    "stats": {
     "series": 266,
-    "points": 56374,
+    "points": 56415,
     "lines": 0
    },
-   "generatedAt": "2026-11-19T01:53:44Z",
+   "generatedAt": "2026-11-24T23:29:39Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
@@ -1050,7 +1050,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-11-23T18:35:18Z",
+   "generatedAt": "2026-11-24T18:00:22Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1268,7 +1268,7 @@
     "points": 592,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T18:42:52Z",
+   "generatedAt": "2026-11-24T20:18:02Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1707,10 +1707,10 @@
    "warnings": [],
    "stats": {
     "series": 35,
-    "points": 4625,
+    "points": 4630,
     "lines": 0
    },
-   "generatedAt": "2026-11-21T02:53:17Z",
+   "generatedAt": "2026-11-24T13:39:16Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1933,10 +1933,10 @@
    "warnings": [],
    "stats": {
     "series": 4,
-    "points": 4896,
+    "points": 4900,
     "lines": 0
    },
-   "generatedAt": "2026-11-17T21:45:31Z",
+   "generatedAt": "2026-11-24T23:00:36Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1949,10 +1949,10 @@
    "warnings": [],
    "stats": {
     "series": 72,
-    "points": 17486,
+    "points": 17558,
     "lines": 0
    },
-   "generatedAt": "2026-10-27T14:13:44Z",
+   "generatedAt": "2026-11-24T23:10:32Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2136,7 +2136,7 @@
     "points": 1643,
     "lines": 0
    },
-   "generatedAt": "2026-11-23T18:45:33Z",
+   "generatedAt": "2026-11-24T18:20:33Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2152,7 +2152,7 @@
     "points": 0,
     "lines": 2186
    },
-   "generatedAt": "2026-11-20T16:59:11Z",
+   "generatedAt": "2026-11-24T19:31:22Z",
    "nWarnings": 0,
    "nErrors": 0
   },
