@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T14:18:00Z",
+ "generatedAt": "2026-11-24T14:58:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 327,
+  "ok": 328,
   "late": 3,
-  "error": 18,
+  "error": 17,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
   "repoGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
-  "checkedAt": "2026-11-24T14:18:00Z"
+  "checkedAt": "2026-11-24T14:58:00Z"
  },
  "pipelines": [
   {
@@ -830,7 +830,7 @@
    "crons": [
     "20 14 * * 2"
    ],
-   "nextRun": "2026-11-24T14:20:00Z",
+   "nextRun": "2026-12-01T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1469,8 +1469,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44905707351"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -1981,7 +1981,7 @@
    "crons": [
     "20 14 * * 2,5"
    ],
-   "nextRun": "2026-11-24T14:20:00Z",
+   "nextRun": "2026-11-27T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2077,19 +2077,18 @@
    "nextRun": "2026-12-24T09:50:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-11-24T10:41:03Z",
-    "durationSec": 40,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45377104272",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · milk: 11628 filas, 81 meses (2020-01..2026-09)"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-24T14:47:05Z",
+    "durationSec": 68,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45417958466"
    },
    "recent": {
-    "runs": 3,
-    "success": 1,
+    "runs": 4,
+    "success": 2,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
@@ -5603,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T14:03:33Z"
+     "lastChange": "2026-11-24T14:22:08Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6535,7 +6534,7 @@
    "crons": [
     "35 14 * * 2,5"
    ],
-   "nextRun": "2026-11-24T14:35:00Z",
+   "nextRun": "2026-11-27T14:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7770,7 +7769,7 @@
    "crons": [
     "25 14 * * *"
    ],
-   "nextRun": "2026-11-24T14:25:00Z",
+   "nextRun": "2026-11-25T14:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
