@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T16:01:00Z",
+ "generatedAt": "2026-11-24T16:19:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 328,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
   "repoGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
-  "checkedAt": "2026-11-24T16:01:00Z"
+  "checkedAt": "2026-11-24T16:19:00Z"
  },
  "pipelines": [
   {
@@ -715,7 +715,7 @@
    "crons": [
     "10 16 * * 1-5"
    ],
-   "nextRun": "2026-11-24T16:10:00Z",
+   "nextRun": "2026-11-25T16:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -730,7 +730,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-ca-boc-bcpi.yml",
@@ -1894,13 +1894,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-24T05:22:06Z",
-    "durationSec": 87,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45332817507"
+    "startedAt": "2026-11-24T16:01:06Z",
+    "durationSec": 76,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45432184926"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T15:01:58Z"
+     "lastChange": "2026-11-24T16:04:45Z"
     },
     {
      "path": "data/source-candidates.json",
