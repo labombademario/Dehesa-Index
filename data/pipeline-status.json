@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T13:58:00Z",
+ "generatedAt": "2026-11-24T14:18:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 327,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
   "repoGeneratedAt": "2026-11-24T13:41:47.716965+00:00",
-  "checkedAt": "2026-11-24T13:58:00Z"
+  "checkedAt": "2026-11-24T14:18:00Z"
  },
  "pipelines": [
   {
@@ -5208,9 +5208,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-24T02:35:32Z",
-    "durationSec": 148,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45313514413"
+    "startedAt": "2026-11-24T14:17:42Z",
+    "durationSec": 129,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45412478214"
    },
    "recent": {
     "runs": 10,
@@ -5603,7 +5603,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T13:40:19Z"
+     "lastChange": "2026-11-24T14:03:33Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7100,7 +7100,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-24T14:15:00Z",
+   "nextRun": "2026-11-24T23:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7115,7 +7115,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 14.8
+   "expectedEveryHours": 62.8
   },
   {
    "workflow": "update-us-cash-receipts.yml",
