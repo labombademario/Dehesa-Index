@@ -59,7 +59,7 @@ SPECIES = {"Βόειο": ("cattle", "adult-cattle"), "Βόειο Νεαρό Ζώ
            "Χοίρος": ("pigs", "pig"), "Χοιρομητέρες": ("pigs", "sow"), "Χοιρίδια": ("pigs", "piglet"), "Αγριόχοιρος (εκμ)": ("pigs", "farmed-boar"),
            "Αρνί": ("lamb", "lamb"), "Αρνί Γάλακτος": ("lamb", "milk-lamb"), "Πρόβειο": ("sheep", "sheep"), "Ζυγούρι": ("sheep", "yearling"), "Βετούλι": ("sheep", "vetouli"),
            "Ερίφιο": ("kid", "kid"), "Ερίφιο Γάλακτος": ("kid", "milk-kid"), "Αίγειο": ("goat", "goat")}
-GAME = {"Ζαρκάδι", "Ελάφι", "¶λλα θηράματα", "Αγριογούρουνο (θηρ)"}   # caza: minima, fuera
+GAME = {"Ζαρκάδι", "Ελάφι", "¶λλα θηράματα", "Άλλα θηράματα", "Αγριογούρουνο (θηρ)"}   # caza: minima, fuera
 POULTRY = {"Απλό Κοτόπουλο": "broiler", "Βιολογικό Κοτόπουλο": "organic-broiler", "Ειδικής Εκτροφής": "special-breed", "Κότα": "hen", "Γαλοπούλα Λευκή": "white-turkey", "Γαλοπούλα Μαύρη": "black-turkey"}
 GROUPS = {"ΓΑΛΑ ΠΑΣΤΕΡΙΩΜΕΝΟ": "milk-pasteurised", "ΓΑΛΑ ΥΨΗΛΗΣ ΘΕΡΜΙΚΗΣ ΕΠΕΞΕΡΓΑΣΙΑΣ": "milk-uht", "ΓΑΛΑ ΟΞΙΝΙΣΘΕΝΤΑ": "milk-fermented", "ΓΑΛΑ ΣΥΜΠΥΚΝΩΜΕΝΟ": "milk-condensed",
           "ΓΙΑΟΥΡΤΙ ΑΠΛΟ ΑΓΕΛΑΔΙΝΟ": "yogurt-cow", "ΓΙΑΟΥΡΤΙ ΑΠΛΟ ΠΡΟΒΕΙΟ": "yogurt-sheep", "ΓΙΑΟΥΡΤΙ ΑΠΛΟ ΓΙΔΙΝΟ": "yogurt-goat", "ΓΙΑΟΥΡΤΙ ΣΤΡΑΓΓΙΣΤΟ": "yogurt-strained", "ΓΙΑΟΥΡΤΙ ΔΙΑΦΟΡΑ": "yogurt-other",
