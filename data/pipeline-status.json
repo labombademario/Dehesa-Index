@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T07:42:00Z",
+ "generatedAt": "2026-11-24T13:01:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 328,
+  "ok": 327,
   "late": 3,
-  "error": 17,
+  "error": 18,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T02:16:23.620927+00:00",
   "repoGeneratedAt": "2026-11-24T02:16:23.620927+00:00",
-  "checkedAt": "2026-11-24T07:42:00Z"
+  "checkedAt": "2026-11-24T13:01:00Z"
  },
  "pipelines": [
   {
@@ -186,7 +186,7 @@
    "crons": [
     "45 12 * * 2"
    ],
-   "nextRun": "2026-11-24T12:45:00Z",
+   "nextRun": "2026-12-01T12:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -209,7 +209,7 @@
    "crons": [
     "50 7 * * *"
    ],
-   "nextRun": "2026-11-24T07:50:00Z",
+   "nextRun": "2026-11-25T07:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -508,7 +508,7 @@
    "crons": [
     "20 9 * * 1-5"
    ],
-   "nextRun": "2026-11-24T09:20:00Z",
+   "nextRun": "2026-11-25T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -523,7 +523,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-be-drought.yml",
@@ -922,7 +922,7 @@
    "crons": [
     "20 8 * * 2,4"
    ],
-   "nextRun": "2026-11-24T08:20:00Z",
+   "nextRun": "2026-11-26T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1505,7 +1505,7 @@
    "crons": [
     "0 10 * * 2"
    ],
-   "nextRun": "2026-11-24T10:00:00Z",
+   "nextRun": "2026-12-01T10:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1727,7 +1727,7 @@
    "crons": [
     "35 12 * * 2"
    ],
-   "nextRun": "2026-11-24T12:35:00Z",
+   "nextRun": "2026-12-01T12:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2051,7 +2051,7 @@
    "crons": [
     "2 8 * * *"
    ],
-   "nextRun": "2026-11-24T08:02:00Z",
+   "nextRun": "2026-11-25T08:02:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2074,21 +2074,22 @@
    "crons": [
     "50 9 24 * *"
    ],
-   "nextRun": "2026-11-24T09:50:00Z",
+   "nextRun": "2026-12-24T09:50:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-28T06:52:24Z",
-    "durationSec": 52,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/40646511267"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-11-24T10:41:03Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45377104272",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · milk: 11628 filas, 81 meses (2020-01..2026-09)"
    },
    "recent": {
-    "runs": 2,
+    "runs": 3,
     "success": 1,
-    "failed": 1
+    "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 744.0
   },
   {
@@ -2281,7 +2282,7 @@
    "crons": [
     "15 9 * * 2,5"
    ],
-   "nextRun": "2026-11-24T09:15:00Z",
+   "nextRun": "2026-11-27T09:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2350,7 +2351,7 @@
    "crons": [
     "40 10 * * 2"
    ],
-   "nextRun": "2026-11-24T10:40:00Z",
+   "nextRun": "2026-12-01T10:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2488,7 +2489,7 @@
    "crons": [
     "20 11 * * *"
    ],
-   "nextRun": "2026-11-24T11:20:00Z",
+   "nextRun": "2026-11-25T11:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2534,7 +2535,7 @@
    "crons": [
     "30 8 * * *"
    ],
-   "nextRun": "2026-11-24T08:30:00Z",
+   "nextRun": "2026-11-25T08:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2697,7 +2698,7 @@
    "crons": [
     "20 9 * * 2,5"
    ],
-   "nextRun": "2026-11-24T09:20:00Z",
+   "nextRun": "2026-11-27T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2816,7 +2817,7 @@
    "crons": [
     "50 7 * * 2,5"
    ],
-   "nextRun": "2026-11-24T07:50:00Z",
+   "nextRun": "2026-11-27T07:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2839,7 +2840,7 @@
    "crons": [
     "20 8 * * 2"
    ],
-   "nextRun": "2026-11-24T08:20:00Z",
+   "nextRun": "2026-12-01T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2862,7 +2863,7 @@
    "crons": [
     "25 8 * * *"
    ],
-   "nextRun": "2026-11-24T08:25:00Z",
+   "nextRun": "2026-11-25T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3254,7 +3255,7 @@
    "crons": [
     "50 10 * * 2"
    ],
-   "nextRun": "2026-11-24T10:50:00Z",
+   "nextRun": "2026-12-01T10:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3853,7 +3854,7 @@
    "crons": [
     "50 9 * * 2"
    ],
-   "nextRun": "2026-11-24T09:50:00Z",
+   "nextRun": "2026-12-01T09:50:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3876,7 +3877,7 @@
    "crons": [
     "20 9 * * 2"
    ],
-   "nextRun": "2026-11-24T09:20:00Z",
+   "nextRun": "2026-12-01T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3946,7 +3947,7 @@
    "crons": [
     "0 9 * * 2"
    ],
-   "nextRun": "2026-11-24T09:00:00Z",
+   "nextRun": "2026-12-01T09:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4038,7 +4039,7 @@
    "crons": [
     "40 9 * * 2"
    ],
-   "nextRun": "2026-11-24T09:40:00Z",
+   "nextRun": "2026-12-01T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4107,7 +4108,7 @@
    "crons": [
     "40 9 * * 2"
    ],
-   "nextRun": "2026-11-24T09:40:00Z",
+   "nextRun": "2026-12-01T09:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4130,7 +4131,7 @@
    "crons": [
     "40 8 * * 2"
    ],
-   "nextRun": "2026-11-24T08:40:00Z",
+   "nextRun": "2026-12-01T08:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4153,7 +4154,7 @@
    "crons": [
     "20 8 * * 2"
    ],
-   "nextRun": "2026-11-24T08:20:00Z",
+   "nextRun": "2026-12-01T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4505,7 +4506,7 @@
    "crons": [
     "55 7 * * *"
    ],
-   "nextRun": "2026-11-24T07:55:00Z",
+   "nextRun": "2026-11-25T07:55:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4643,7 +4644,7 @@
    "crons": [
     "5 8 * * *"
    ],
-   "nextRun": "2026-11-24T08:05:00Z",
+   "nextRun": "2026-11-25T08:05:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4759,7 +4760,7 @@
    "crons": [
     "58 7 * * *"
    ],
-   "nextRun": "2026-11-24T07:58:00Z",
+   "nextRun": "2026-11-25T07:58:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4805,7 +4806,7 @@
    "crons": [
     "45 12 * * 2,5"
    ],
-   "nextRun": "2026-11-24T12:45:00Z",
+   "nextRun": "2026-11-27T12:45:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5202,7 +5203,7 @@
    "crons": [
     "47 */3 * * *"
    ],
-   "nextRun": "2026-11-24T09:47:00Z",
+   "nextRun": "2026-11-24T15:47:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5225,7 +5226,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-24T09:17:00Z",
+   "nextRun": "2026-11-24T15:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5338,7 +5339,7 @@
    "crons": [
     "10 8 * * *"
    ],
-   "nextRun": "2026-11-24T08:10:00Z",
+   "nextRun": "2026-11-25T08:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5430,7 +5431,7 @@
    "crons": [
     "40 8 * * 2,5"
    ],
-   "nextRun": "2026-11-24T08:40:00Z",
+   "nextRun": "2026-11-27T08:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5551,7 +5552,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-24T09:10:00Z",
+   "nextRun": "2026-11-24T15:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5602,7 +5603,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T07:28:49Z"
+     "lastChange": "2026-11-24T07:46:46Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5703,7 +5704,7 @@
    "crons": [
     "40 12 * * 2"
    ],
-   "nextRun": "2026-11-24T12:40:00Z",
+   "nextRun": "2026-12-01T12:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -5956,7 +5957,7 @@
    "crons": [
     "20 8 * * *"
    ],
-   "nextRun": "2026-11-24T08:20:00Z",
+   "nextRun": "2026-11-25T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6280,7 +6281,7 @@
    "crons": [
     "25 8 * * 2"
    ],
-   "nextRun": "2026-11-24T08:25:00Z",
+   "nextRun": "2026-12-01T08:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6395,7 +6396,7 @@
    "crons": [
     "35 9 * * 2"
    ],
-   "nextRun": "2026-11-24T09:35:00Z",
+   "nextRun": "2026-12-01T09:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -6718,7 +6719,7 @@
    "crons": [
     "20 9 * * 2,5"
    ],
-   "nextRun": "2026-11-24T09:20:00Z",
+   "nextRun": "2026-11-27T09:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7912,9 +7913,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-23T11:05:38Z",
-    "durationSec": 40,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45161988420"
+    "startedAt": "2026-11-24T12:50:11Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45397367227"
    },
    "recent": {
     "runs": 10,
@@ -7953,7 +7954,7 @@
    "crons": [
     "20 8 * * 2,5"
    ],
-   "nextRun": "2026-11-24T08:20:00Z",
+   "nextRun": "2026-11-27T08:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -8284,7 +8285,7 @@
    "crons": [
     "0 13 * * *"
    ],
-   "nextRun": "2026-11-24T13:00:00Z",
+   "nextRun": "2026-11-25T13:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
