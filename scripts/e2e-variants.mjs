@@ -128,9 +128,13 @@ if (want('fresh')) {
   await run('catalogo: 6 estados de frescura', 1280, async (page) => {
     await page.goto(BASE + '/catalogo.html', { waitUntil: 'load' }); await page.waitForSelector('#ct-f', { timeout: 10000 });
     const labels = await page.evaluate(() => Object.fromEntries(['LIVE', 'FRESH', 'EXPECTED_DELAY', 'DELAYED', 'STALE', 'HISTORICAL'].map(s => [s, DIFreshness.label[s].es])));
+    // Recuento real por estado (mismo campo fs del catalogo, agregado por build-freshness.py): un estado puede quedarse a 0 de forma legitima segun la fecha (p. ej. EXPECTED_DELAY entre ventanas de publicacion)
+    const byState = await page.evaluate(async () => { try { const r = await fetch('data/observatory.json', { cache: 'no-store' }); return (await r.json()).freshness.catalog.byState || null; } catch (e) { return null; } });
     for (const s of STATES) {
       await page.selectOption('#ct-f', s); await page.waitForFunction(() => !/Cargando/.test(document.getElementById('ct-list').innerText), null, { timeout: 8000 }); await page.waitForTimeout(150);
-      const rows = await page.$$eval('#ct-list tr[data-i]', e => e.length); if (!rows) throw new Error('ningun resultado para ' + s + ' (el catalogo real tiene series en ese estado)');
+      const rows = await page.$$eval('#ct-list tr[data-i]', e => e.length);
+      if (byState && !(byState[s] > 0)) { if (rows) throw new Error(rows + ' filas para ' + s + ' pero el catalogo no tiene series en ese estado'); continue; }
+      if (!rows) throw new Error('ningun resultado para ' + s + ' (el catalogo real tiene ' + (byState ? byState[s] : '?') + ' series en ese estado)');
       const bad = await page.$$eval('#ct-list tr[data-i] .pt-badge', (e, l) => e.filter(x => x.textContent.trim() !== l).length, labels[s]); if (bad) throw new Error(bad + ' filas con una etiqueta distinta de ' + labels[s]);
       const cls = await page.$$eval('#ct-list tr[data-i] .pt-badge', (e, s) => e.filter(x => !x.classList.contains('pt-fs-' + s)).length, s); if (cls) throw new Error('clase CSS pt-fs-' + s + ' ausente en ' + cls + ' filas');
     }
