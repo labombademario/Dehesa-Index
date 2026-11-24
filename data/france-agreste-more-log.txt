@@ -1,11 +1,26 @@
-Dos2702: 0 enlaces de descarga, ninguno casa con Donn.*\.zip$ (intento 1/4)
-Dos2702: 0 enlaces de descarga, ninguno casa con Donn.*\.zip$ (intento 2/4)
-Dos2702: 0 enlaces de descarga, ninguno casa con Donn.*\.zip$ (intento 3/4)
-Dos2702: 0 enlaces de descarga, ninguno casa con Donn.*\.zip$ (intento 4/4)
+agreste: intento 1/6 fallido (HTTP 200 text/html;charset=UTF-8 4149 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
+agreste: intento 2/6 fallido (HTTP 200 text/html;charset=UTF-8 4148 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
+agreste: intento 3/6 fallido (HTTP 200 text/html;charset=UTF-8 4149 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
+agreste: intento 4/6 fallido (HTTP 200 text/html;charset=UTF-8 4149 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
+agreste: intento 5/6 fallido (HTTP 200 text/html;charset=UTF-8 4149 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
+agreste: intento 6/6 fallido (HTTP 200 text/html;charset=UTF-8 4148 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
+Dos2702: https://agreste.agriculture.gouv.fr/agreste-web/disaron/Dos2702/detail/ -> HTTP 200 text/html;charset=UTF-8 4148 bytes  
+agreste: intento 1/6 fallido (HTTP 200 text/html;charset=UTF-8 4149 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
+agreste: intento 2/6 fallido (HTTP 200 text/html;charset=UTF-8 4149 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
+agreste: intento 3/6 fallido (HTTP 200 text/html;charset=UTF-8 4150 bytes  Accès non autorisé|Agreste, la statistique agricole <div role="img" aria-descri)
 descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Dos2602/Dossiers2026-2_EEA2024-Donn%C3%A9es.zip
-empleo: leido (Dos2602)
+agreste: intento 1/4 fallido (HTTP Error 400: Bad Request)
+agreste: intento 2/4 fallido (HTTP Error 400: Bad Request)
+agreste: intento 3/4 fallido (HTTP Error 400: Bad Request)
+agreste: intento 4/4 fallido (HTTP Error 400: Bad Request)
+empleo: NO se pudo leer (https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/Dos2602/Dossiers2026-2_EEA2024-Donn%C3%A9es.zip -> HTTP Error 400: Bad Request); se conserva lo publicado
 descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/TERUTI-SeriesLongues/Series_longues_Teruti_depuis1982-v2.xlsx
+agreste: intento 1/4 fallido (HTTP Error 400: Bad Request)
+agreste: intento 2/4 fallido (HTTP Error 400: Bad Request)
 teruti: leido (TERUTI)
+VINCONJ: 0 enlaces de descarga, ninguno casa con \.zip$ (intento 1/4)
+VINCONJ: 0 enlaces de descarga, ninguno casa con \.zip$ (intento 2/4)
+VINCONJ: 0 enlaces de descarga, ninguno casa con \.zip$ (intento 3/4)
 descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/VINCONJ/FDS_VINCONJ.zip
 vinconj: leido (VINCONJ)
 descargando https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/IPAMPA/FDS_IPAMPA.zip
