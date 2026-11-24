@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T02:25:00Z",
+ "generatedAt": "2026-11-24T02:28:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 328,
@@ -15,9 +15,9 @@
   "site": "https://dehesaindex.com",
   "build": null,
   "lagHours": 0.0,
-  "prodGeneratedAt": "2026-11-23T12:30:21.169757+00:00",
-  "repoGeneratedAt": "2026-11-23T12:30:21.169757+00:00",
-  "checkedAt": "2026-11-24T02:25:00Z"
+  "prodGeneratedAt": "2026-11-24T02:16:23.620927+00:00",
+  "repoGeneratedAt": "2026-11-24T02:16:23.620927+00:00",
+  "checkedAt": "2026-11-24T02:28:00Z"
  },
  "pipelines": [
   {
@@ -4446,8 +4446,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44631264696"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
