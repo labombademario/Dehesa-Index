@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-24T02:28:00Z",
+ "generatedAt": "2026-11-24T02:46:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 328,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-24T02:16:23.620927+00:00",
   "repoGeneratedAt": "2026-11-24T02:16:23.620927+00:00",
-  "checkedAt": "2026-11-24T02:28:00Z"
+  "checkedAt": "2026-11-24T02:46:00Z"
  },
  "pipelines": [
   {
@@ -1019,9 +1019,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T22:44:24Z",
-    "durationSec": 157,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44631413411"
+    "startedAt": "2026-11-24T02:31:16Z",
+    "durationSec": 95,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45312983037"
    },
    "recent": {
     "runs": 10,
@@ -4441,13 +4441,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T22:43:25Z",
-    "durationSec": 255,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44631264696"
+    "startedAt": "2026-11-24T02:28:18Z",
+    "durationSec": 245,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45312610113"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -5189,8 +5189,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44852337596"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -5207,9 +5207,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-23T13:40:21Z",
-    "durationSec": 139,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45186229577"
+    "startedAt": "2026-11-24T02:35:32Z",
+    "durationSec": 148,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45313514413"
    },
    "recent": {
     "runs": 10,
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-24T02:15:08Z"
+     "lastChange": "2026-11-24T02:32:39Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7907,7 +7907,7 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-11-24T02:30:00Z",
+   "nextRun": "2026-11-25T02:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
