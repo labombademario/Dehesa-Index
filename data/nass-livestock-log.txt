@@ -30,7 +30,7 @@ ovino SHEEP, INCL LAMBS - INVENTORY filas 96 usadas 7
 ovino SHEEP, EWES, BREEDING, GE 1 YEAR - INVENTORY filas 6 usadas 6
 ovino SHEEP - LAMB CROP, MEASURED IN HEAD filas 5 usadas 0
 cordero y cordero adulto producción filas 465 usadas 70
-huevos producción filas 1072 usadas 69
+huevos producción filas 1082 usadas 70
 BUTTER producción filas 79 usadas 69
 CHEESE producción filas 1884 usadas 69
  • BEEF, BONE-IN, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
@@ -79,7 +79,7 @@ CHEESE producción filas 1884 usadas 69
  • CHICKENS, WINGS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • CHICKENS, YOUNG, WHOLE, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • EGGS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
- • EGGS, TABLE - PRODUCTION, MEASURED IN EGGS | EGGS | nac 69 2026-09 | estados 0
+ • EGGS, TABLE - PRODUCTION, MEASURED IN EGGS | EGGS | nac 70 2026-10 | estados 0
  • EGGS, UNCLASSIFIED, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • EGGS, WHITE, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
  • EGGS, WHOLE OR MIXED, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 69 2026-09 | estados 0
