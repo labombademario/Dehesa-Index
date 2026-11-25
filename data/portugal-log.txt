@@ -11,10 +11,10 @@
 0001337 poultry-weight 11 series
 0000019 crop-area 95 series
 0000021 crop-prod 95 series
-0000023 crop-yield 95 series
+ERROR 0000023 RuntimeError('0000023: HTTP Error 503: Service Unavailable')
 0000704 olive 1 series
 0000537 cattle 17 series
-0000538 pigs 14 series
+0000538 pigs sin total nacional; geos: []
 0000539 sheep 5 series
 0000540 goats 5 series
 azeite 4 series
