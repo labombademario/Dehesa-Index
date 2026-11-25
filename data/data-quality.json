@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-25T08:24:11Z",
+ "generatedAt": "2026-11-25T19:13:05Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -382,7 +382,7 @@
     "points": 4582,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T16:44:51Z",
+   "generatedAt": "2026-11-25T18:13:09Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -400,7 +400,7 @@
     "points": 18251,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T16:45:22Z",
+   "generatedAt": "2026-11-25T18:14:01Z",
    "info": [],
    "nWarnings": 1,
    "nErrors": 0
@@ -524,7 +524,7 @@
     "points": 2708,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T15:55:22Z",
+   "generatedAt": "2026-11-25T17:32:07Z",
    "info": [],
    "nWarnings": 2,
    "nErrors": 0
@@ -1050,7 +1050,7 @@
     "points": 9086,
     "lines": 0
    },
-   "generatedAt": "2026-11-24T18:00:22Z",
+   "generatedAt": "2026-11-25T17:28:39Z",
    "info": [],
    "nWarnings": 11,
    "nErrors": 0
@@ -1252,7 +1252,7 @@
     "points": 798,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T16:43:43Z",
+   "generatedAt": "2026-11-25T18:12:09Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1424,10 +1424,10 @@
    ],
    "stats": {
     "series": 118,
-    "points": 9900,
+    "points": 9929,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T15:49:26Z",
+   "generatedAt": "2026-11-25T17:25:17Z",
    "info": [],
    "nWarnings": 4,
    "nErrors": 0
@@ -1707,10 +1707,10 @@
    "warnings": [],
    "stats": {
     "series": 35,
-    "points": 4630,
+    "points": 4631,
     "lines": 0
    },
-   "generatedAt": "2026-11-24T13:39:16Z",
+   "generatedAt": "2026-11-25T08:27:06Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -2136,7 +2136,7 @@
     "points": 1643,
     "lines": 0
    },
-   "generatedAt": "2026-11-24T18:20:33Z",
+   "generatedAt": "2026-11-25T17:38:17Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
