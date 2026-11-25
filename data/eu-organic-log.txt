@@ -1,4 +1,4 @@
-filas 4536, descartadas 0, series candidatas 114
+filas 4576, descartadas 0, series candidatas 114
 descartada eu-org-at-fruit-and-vegetables-organic-apples-fuji-vs-apples-fuji-organic: 2 puntos, ultimo 2023-02
 descartada eu-org-at-fruit-and-vegetables-organic-apples-fuji-vs-apples-fuji-overall: 2 puntos, ultimo 2023-02
 descartada eu-org-at-fruit-and-vegetables-organic-apples-fuji-vs-apples-fuji-premium: 2 puntos, ultimo 2023-02
@@ -17,9 +17,6 @@ descartada eu-org-be-poultrymeat-class-a-chicken-premium: 1 puntos, ultimo 2025-
 descartada eu-org-bg-eggs-organic-eggs-vs-free-range-organic: 2 puntos, ultimo 2024-02
 descartada eu-org-bg-eggs-organic-eggs-vs-free-range-overall: 2 puntos, ultimo 2024-02
 descartada eu-org-bg-eggs-organic-eggs-vs-free-range-premium: 2 puntos, ultimo 2024-02
-descartada eu-org-cz-beef-and-veal-heifers-organic: 5 puntos, ultimo 2026-08
-descartada eu-org-cz-beef-and-veal-heifers-overall: 5 puntos, ultimo 2026-08
-descartada eu-org-cz-beef-and-veal-heifers-premium: 5 puntos, ultimo 2026-08
 descartada eu-org-cz-eggs-organic-eggs-vs-free-range-organic: 1 puntos, ultimo 2026-09
 descartada eu-org-cz-eggs-organic-eggs-vs-free-range-overall: 1 puntos, ultimo 2026-09
 descartada eu-org-cz-eggs-organic-eggs-vs-free-range-premium: 1 puntos, ultimo 2026-09
