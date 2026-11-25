@@ -326,6 +326,8 @@ jobs:
         run: python3 scripts/test-belgium-more.py
       - name: Portugal INE blocks (scale guard from the metadata sheet, periods, geography levels, series kept when a block fails; no network)
         run: python3 scripts/test-portugal-more.py
+      - name: Portugal INE main pipeline keeps a failed block's published series (503 and the 200 «Sucesso/Falso» error; no network)
+        run: python3 scripts/test-update-portugal.py
       - name: Poland ZSRIR bulletins (messy cells, ISO weeks, bulletin date wins over the title, cross-check with the summary, series kept when a block fails; no network)
         run: pip install openpyxl && python3 scripts/test-pl-zsrir.py
 

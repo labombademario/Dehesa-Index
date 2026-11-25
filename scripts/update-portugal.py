@@ -13,7 +13,10 @@ def fetch(v):
     for i in range(2):
         try:
             with urllib.request.urlopen(urllib.request.Request(BASE + v, headers={'User-Agent': 'Mozilla/5.0 DehesaIndex'}), timeout=100) as r:
-                return json.loads(r.read().decode('utf-8'))[0]
+                j = json.loads(r.read().decode('utf-8'))[0]
+            if 'Dados' not in j and 'Sucesso' in j:   # INE responde 200 con {"Sucesso": {"Falso": [...]}} cuando su base de datos falla
+                raise RuntimeError('INE devuelve error: %s' % json.dumps(j['Sucesso'], ensure_ascii=False)[:200])
+            return j
         except Exception as e: last = e
     raise RuntimeError('%s: %s' % (v, last))
 MON = {m: i + 1 for i, m in enumerate('january february march april may june july august september october november december'.split())}
@@ -41,6 +44,16 @@ def rows(v):
             out.append((p, r.get('geodsg', ''), r.get('dim_3_t', ''), val, r.get('dim_4_t', ''), r.get('dim_5_t', '')))
     return out
 OUT = {}
+FAILED = set()   # prefijos de id de los bloques que fallaron en esta ejecucion
+def keep_failed():
+    """Un bloque que falla (caida o error de INE) no borra lo publicado: sus series se mantienen tal cual (mismos puntos, nada estimado)."""
+    if not FAILED: return
+    try: prev = json.load(open('data/portugal-stats.json'))['countries']['PT']['series']
+    except Exception as e: log('FALLO no se pudo leer lo publicado para mantener los bloques caidos:', repr(e)); return
+    for pre in sorted(FAILED):
+        kept = [x for x in prev if x.get('id', '').startswith(pre) and x['id'] not in OUT]
+        for x in kept: OUT[x['id']] = x
+        log('FALLO bloque %s*: se mantienen %d series ya publicadas' % (pre, len(kept)))
 def put(sid, group, label, unit, freq, pts, extra=None):
     d = dict(pts); pts = [[p, round(v, 3)] for p, v in sorted(d.items())]
     if len(pts) < 3 or int(pts[-1][0][:4]) < datetime.date.today().year - 2: return
@@ -79,7 +92,7 @@ def run(spec):
     rs = rows(v)
     geos = sorted({r[1] for r in rs})
     nat = [g for g in geos if g.lower().startswith('portugal')]
-    if not nat: log(v, tag, 'sin total nacional; geos:', geos[:8]); return
+    if not nat: log(v, tag, 'sin total nacional; geos:', geos[:8]); FAILED.add('pt-%s-' % tag); return
     g0 = nat[0]; by = {}
     for p, g, c, val, *_ in rs:
         if g == g0: by.setdefault(c, {})[p] = val
@@ -118,9 +131,10 @@ def main():
         merge_only(olive); return
     for s in SPECS:
         try: run(s)
-        except Exception as e: log('ERROR', s[0], repr(e))
+        except Exception as e: log('ERROR', s[0], repr(e)); FAILED.add('pt-%s-' % s[1])
     try: olive()
-    except Exception as e: log('ERROR olive', repr(e))
+    except Exception as e: log('ERROR olive', repr(e)); FAILED.add('pt-oliveoil-')
+    keep_failed()
     if UNPARSED: log('periodos no reconocidos:', sorted(UNPARSED)[:8])
     if len(OUT) < 30:
         log('demasiado pocas series'); open('data/portugal-log.txt', 'w').write('\n'.join(LOG)); sys.exit(1)
