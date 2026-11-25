@@ -1,8 +1,8 @@
 omzet: 520 combinaciones region x tipo
 omzet: leido (fuente al 2026-09-11, 4 tablas, 182 series)
 horticultura: 81302NED 27 anos
-horticultura: 80783NED 26 anos
-horticultura: leido (fuente al 2026-09-30, 6 tablas, 37 series)
+horticultura: 80783NED 27 anos
+horticultura: leido (fuente al 2026-11-23, 6 tablas, 37 series)
 nitrogeno: balance 2 minerales
 nitrogeno: estiercol 83983NED 78 combinaciones
 nitrogeno: por animal 83982NED 7 categorias
