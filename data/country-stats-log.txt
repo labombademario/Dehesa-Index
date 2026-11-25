@@ -1,15 +1,15 @@
 Series: {'DK': 59, 'NL': 67, 'AU': 89}
-  dk-cattle-prod | Cattle: meat production (total) | 2026-08 10.3 | n= 380 | first 1995-01
-  dk-cattle-slaught | Cattle: slaughterings and live exports (total) | 2026-08 40.0 | n= 380 | first 1995-01
-  dk-pig-prod | Pigs: meat production (total) | 2026-08 156.2 | n= 380 | first 1995-01
-  dk-pig-slaught | Pigs: slaughterings and live exports (total) | 2026-08 2693.2 | n= 380 | first 1995-01
+  dk-cattle-prod | Cattle: meat production (total) | 2026-09 12.1 | n= 381 | first 1995-01
+  dk-cattle-slaught | Cattle: slaughterings and live exports (total) | 2026-09 45.9 | n= 381 | first 1995-01
+  dk-pig-prod | Pigs: meat production (total) | 2026-09 166.8 | n= 381 | first 1995-01
+  dk-pig-slaught | Pigs: slaughterings and live exports (total) | 2026-09 2865.9 | n= 381 | first 1995-01
   dk-milk-prod | Milk ex farm, total | 2026-09 489.75 | n= 381 | first 1995-01
   dk-butter-prod | Butter production | 2026-09 7.8 | n= 381 | first 1995-01
   dk-cheese-prod | Cheese production | 2026-09 42.0 | n= 381 | first 1995-01
-  dk-poultry-prod | Poultry: meat production (total) | 2026-Q2 44.9 | n= 126 | first 1995-Q1
-  dk-poultry-slaught | Poultry: slaughterings (total) | 2026-Q2 27327.9 | n= 126 | first 1995-Q1
-  dk-chicken-slaught | Chickens: slaughterings | 2026-Q2 27275.8 | n= 126 | first 1995-Q1
-  dk-chicken-quote | Chickens: quotation (live weight) | 2026-Q2 932.0 | n= 126 | first 1995-Q1
+  dk-poultry-prod | Poultry: meat production (total) | 2026-Q3 47.6 | n= 127 | first 1995-Q1
+  dk-poultry-slaught | Poultry: slaughterings (total) | 2026-Q3 28640.7 | n= 127 | first 1995-Q1
+  dk-chicken-slaught | Chickens: slaughterings | 2026-Q3 28587.0 | n= 127 | first 1995-Q1
+  dk-chicken-quote | Chickens: quotation (live weight) | 2026-Q3 932.0 | n= 127 | first 1995-Q1
   dk-eggs-consumption | Eggs for consumption, total | 2026-Q3 21.3 | n= 127 | first 1995-Q1
   dk-eggs-caged | Eggs: caged layers | 2026-Q3 1.0 | n= 123 | first 1996-Q1
   dk-eggs-freerange | Eggs: free-range | 2026-Q3 1.8 | n= 123 | first 1996-Q1
@@ -23,9 +23,9 @@ Series: {'DK': 59, 'NL': 67, 'AU': 89}
   dk-area-rape | Rapeseed: area (4.1 Rape) | 2025 160711.0 | n= 44 | first 1982
   dk-area-potatoes | Potatoes: area (3.1 Potatoes) | 2025 72073.0 | n= 44 | first 1982
   dk-area-sugarbeet | Sugar beet: area (3.2 Sugar beets) | 2025 31725.0 | n= 44 | first 1982
-  dk-harvarea-winter-wheat | Winter wheat: harvested area | 2025 462.0 | n= 26 | first 2000
-  dk-harvarea-winter-barley | Winter barley: harvested area | 2025 66.0 | n= 26 | first 2000
-  dk-harvarea-winter-rape | Winter rapeseed: harvested area | 2025 160.0 | n= 26 | first 2000
+  dk-harvarea-winter-wheat | Winter wheat: harvested area | 2026 443.0 | n= 27 | first 2000
+  dk-harvarea-winter-barley | Winter barley: harvested area | 2026 7.0 | n= 27 | first 2000
+  dk-harvarea-winter-rape | Winter rapeseed: harvested area | 2026 188.0 | n= 27 | first 2000
   dk-farmgate-wheat | Wheat: farm gate price (all Denmark, KAPIT1) | 2025 137.15 | n= 41 | first 1985
   dk-farmgate-barley | Barley: farm gate price (all Denmark, KAPIT1) | 2025 137.65 | n= 41 | first 1985
   dk-farm-fert | Farm accounts: 10.3. Fertilizers (costs), DKK 1 000 | 2025 177.0 | n= 18 | first 2008
