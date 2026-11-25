@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-25T22:18:00Z",
+ "generatedAt": "2026-11-25T22:38:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 329,
@@ -17,7 +17,7 @@
   "lagHours": 10.8,
   "prodGeneratedAt": "2026-11-25T08:29:28.342767+00:00",
   "repoGeneratedAt": "2026-11-25T19:19:27.399748+00:00",
-  "checkedAt": "2026-11-25T22:18:00Z"
+  "checkedAt": "2026-11-25T22:38:00Z"
  },
  "pipelines": [
   {
@@ -2607,8 +2607,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-25T18:04:19Z",
-    "durationSec": 39,
+    "startedAt": "2026-11-25T22:26:58Z",
+    "durationSec": 40,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45671330502",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · File \"/usr/lib/python3.12/urllib/request.py\", line 532, in _open"
    },
@@ -3234,8 +3234,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-25T19:34:19Z",
-    "durationSec": 47,
+    "startedAt": "2026-11-25T22:26:59Z",
+    "durationSec": 36,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45686512005",
     "reason": "hubo datos invalidos descartados · datos invalidos: se descarta el cambio de data/eu-production-stats.json · ERROR    eu-production-stats.json           HR/eu-prod-hr-olive-oil-monthly: fecha futura 2026-12; BG/eu-prod-bg-oilseeds-field-peas-area: salto 18.7 -> 46.6 en 2017 (mediana previa 1.4)"
    },
@@ -5601,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-25T22:04:49Z"
+     "lastChange": "2026-11-25T22:21:59Z"
     },
     {
      "path": "data/source-candidates.json",
