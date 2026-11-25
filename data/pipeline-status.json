@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-25T19:13:00Z",
+ "generatedAt": "2026-11-25T19:18:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 329,
+  "ok": 330,
   "late": 3,
-  "error": 16,
+  "error": 15,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-25T08:29:28.342767+00:00",
   "repoGeneratedAt": "2026-11-25T08:29:28.342767+00:00",
-  "checkedAt": "2026-11-25T19:13:00Z"
+  "checkedAt": "2026-11-25T19:18:00Z"
  },
  "pipelines": [
   {
@@ -3209,19 +3209,18 @@
    "nextRun": "2026-12-02T09:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-18T18:49:13Z",
-    "durationSec": 130,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44366021609",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · File \"/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-eu-organic.py\", line 55, in <module>"
+    "startedAt": "2026-11-25T19:18:52Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45683948999"
    },
    "recent": {
-    "runs": 6,
-    "success": 4,
+    "runs": 7,
+    "success": 5,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -5228,35 +5227,35 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-11-25T08:29:31Z"
+     "lastChange": "2026-11-25T19:19:28Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-11-25T08:29:31Z"
+     "lastChange": "2026-11-25T19:19:28Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-11-25T08:29:31Z"
+     "lastChange": "2026-11-25T19:19:28Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-11-25T08:29:31Z"
+     "lastChange": "2026-11-25T19:19:28Z"
     },
     {
      "path": "data/views/news-product.json",
-     "lastChange": "2026-11-25T08:29:31Z"
+     "lastChange": "2026-11-25T19:19:28Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-25T08:24:14Z",
-    "durationSec": 322,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45575956180"
+    "startedAt": "2026-11-25T19:12:28Z",
+    "durationSec": 427,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45682880407"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -5562,14 +5561,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/product-compare.json",
@@ -5586,11 +5585,11 @@
     },
     {
      "path": "data/quality.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/products"
@@ -5601,11 +5600,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-25T19:04:21Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/commercial-catalog.json",
@@ -5629,30 +5628,30 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/country-pending.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/dehesa.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -5660,7 +5659,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-11-25T08:28:09Z"
+     "lastChange": "2026-11-25T19:17:42Z"
     },
     {
      "path": "data/home-explore.json",
@@ -5684,13 +5683,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-25T08:22:37Z",
-    "durationSec": 340,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45575721271"
+    "startedAt": "2026-11-25T19:11:36Z",
+    "durationSec": 373,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45682734369"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
