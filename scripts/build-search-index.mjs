@@ -63,8 +63,10 @@ for (const cat of D.RAW) {
   for (const p of FV.products) {
     const nm = Object.fromEntries(L.map(l => [l, p.name[l] || p.name.es]));
     const kw = [...new Set(L.map(l => p.name[l]).concat(L.map(l => deacc(p.name[l] || ''))).concat(L.map(l => (p.name[l] || '') + 's')))].join(' ').toLowerCase() + ' frutas hortalizas verduras fruit vegetables precio price';
-    add({ t: 'product', u: 'producto.html?p=' + p.id, n: nm, s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + SUBT[l]])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') });
+    add({ t: 'product', b: p.group === 'nut' ? 0.15 : 0, u: 'producto.html?p=' + p.id, n: nm, s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + SUBT[l]])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') + (p.group === 'nut' ? ' nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca' : '') });
   }
+  // Frutos secos: quien busca «nuts» quiere almendra, avellana, nuez o pistacho, no los informes de mercado terminal de EE. UU.
+  add({ t: 'category', b: 0.2, u: 'producto.html?p=almendra', n: tri('Frutos secos', 'Nuts', 'Fruits à coque', 'Frutta secca'), s: tri('Almendra y avellana: precio semanal por país. Producción mundial de almendra, nuez y pistacho', 'Almond and hazelnut: weekly price by country. World production of almonds, walnuts and pistachios', 'Amande et noisette : prix hebdomadaire par pays. Production mondiale d’amandes, de noix et de pistaches', 'Mandorla e nocciola: prezzo settimanale per paese. Produzione mondiale di mandorle, noci e pistacchi'), k: 'nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca almendra almond avellana hazelnut nuez walnut noix noci pistacho pistachio pistache pistacchio mandorla nocciola amande noisette' });
   add({ t: 'category', u: 'precios.html?tab=hortalizas&region=eu', n: tri('Frutas y hortalizas', 'Fruit and vegetables', 'Fruits et légumes', 'Frutta e verdura'), s: tri(FV.products.length + ' productos: precio semanal por país', FV.products.length + ' products: weekly price by country', FV.products.length + ' produits : prix hebdomadaire par pays', FV.products.length + ' prodotti: prezzo settimanale per paese'), k: 'frutas hortalizas verduras fruta fruit vegetables legumes ortaggi frutta verdura precios prices' });
 }
 add({ t: 'product', u: 'precios.html?tab=energia&product=' + encodeURIComponent('energia:diesel'), n: Object.fromEntries(L.map(l => [l, D.NAMES[l].diesel || 'Diesel'])), s: Object.fromEntries(L.map(l => [l, catLabel(l, 'energia')])), k: SYN.diesel });
@@ -129,7 +131,7 @@ if (existsSync(new URL('../data/ams/index.json', import.meta.url))) {
   for (const r of ams.reports) {
     let words = '';
     try { const d = JSON.parse(read('data/ams/' + r.id + '.json')); const seen = new Set(); for (let i = 0; i < Math.min(2, d.dn.length); i++) for (const sr of d.series) if (sr.v[i]) seen.add(sr.v[i]); words = [...seen].slice(0, 60).join(' '); } catch (e) {}
-    add({ t: 'market', u: 'mercados.html?r=' + r.id, n: Object.fromEntries(L.map(l => [l, MK[l] + ' · ' + r.title])), s: tri('EE. UU. · USDA AMS Market News', 'U.S. · USDA AMS Market News', 'États-Unis · USDA AMS Market News', 'USA · USDA AMS Market News'), k: (FAMK[r.fam] || '') + ' ' + r.title + ' ' + words });
+    add({ t: 'market', b: /Nuts Prices/.test(r.title) ? -0.3 : 0, u: 'mercados.html?r=' + r.id, n: Object.fromEntries(L.map(l => [l, MK[l] + ' · ' + r.title])), s: tri('EE. UU. · USDA AMS Market News', 'U.S. · USDA AMS Market News', 'États-Unis · USDA AMS Market News', 'USA · USDA AMS Market News'), k: (FAMK[r.fam] || '') + ' ' + r.title + ' ' + words });
   }
 }
 // --- clima
