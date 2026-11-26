@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-26T19:19:00Z",
+ "generatedAt": "2026-11-26T19:37:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 319,
+  "ok": 318,
   "late": 4,
-  "error": 25,
+  "error": 26,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-26T03:37:34.846163+00:00",
   "repoGeneratedAt": "2026-11-26T03:37:34.846163+00:00",
-  "checkedAt": "2026-11-26T19:19:00Z"
+  "checkedAt": "2026-11-26T19:37:00Z"
  },
  "pipelines": [
   {
@@ -5603,7 +5603,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-26T19:04:34Z"
+     "lastChange": "2026-11-26T19:23:09Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6008,13 +6008,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T18:37:23Z",
-    "durationSec": 1209,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44589757509"
+    "startedAt": "2026-11-26T19:15:58Z",
+    "durationSec": 539,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45882340563"
    },
    "recent": {
-    "runs": 8,
-    "success": 5,
+    "runs": 9,
+    "success": 6,
     "failed": 3
    },
    "status": "ok",
@@ -6476,18 +6476,19 @@
    "nextRun": "2026-12-03T09:05:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T17:58:51Z",
-    "durationSec": 43,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44582908409"
+    "startedAt": "2026-11-26T18:50:45Z",
+    "durationSec": 2076,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45879121182",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR al leer los balances: GET https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/balance-del-vino -> <urlopen error _ssl.c:983: The handshake operation timed out>"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 7,
-    "failed": 2
+    "failed": 3
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -8114,15 +8115,15 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T18:36:54Z",
-    "durationSec": 166,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44589674232",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · AVISO boletin no leido: 032023boletinpreciosdelvinodel16al22deenero.pdf sin cifras"
+    "startedAt": "2026-11-26T19:15:09Z",
+    "durationSec": 610,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45882232183",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR España: RuntimeError('https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivinicultura/boletines_semanales_precio_vino/boletines_semanales_precio_vino_2022_2023 -> <urlopen error _ssl.c:983"
    },
    "recent": {
-    "runs": 8,
+    "runs": 9,
     "success": 7,
-    "failed": 1
+    "failed": 2
    },
    "status": "error",
    "expectedEveryHours": 168.0
