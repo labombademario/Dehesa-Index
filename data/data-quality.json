@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-26T01:47:05Z",
+ "generatedAt": "2026-11-26T03:31:55Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -325,11 +325,11 @@
     "IT/it-es-st-orgprod-r2000: salto 51651 -> 48091 en 2022 (mediana previa 1.57e+03)"
    ],
    "stats": {
-    "series": 632,
-    "points": 6634,
+    "series": 634,
+    "points": 6720,
     "lines": 0
    },
-   "generatedAt": "2026-11-19T00:30:15Z",
+   "generatedAt": "2026-11-26T01:50:11Z",
    "info": [
     "ES/es-es-st-orgprod-r2000: salto 57 -> 2098 en 2018 (mediana previa 57) [KNOWN_VERIFIED_ANOMALY]",
     "ES/es-es-st-orgprod-r2000: salto 2098 -> 2030 en 2019 (mediana previa 57) [KNOWN_VERIFIED_ANOMALY]"
@@ -360,10 +360,10 @@
    ],
    "stats": {
     "series": 1587,
-    "points": 16866,
+    "points": 16912,
     "lines": 0
    },
-   "generatedAt": "2026-11-19T00:47:55Z",
+   "generatedAt": "2026-11-26T02:00:31Z",
    "info": [
     "BG/bg-es-st-orgprod-p0000: salto 30154 -> 33296 en 2019 (mediana previa 1.08e+03) [KNOWN_VERIFIED_ANOMALY]",
     "BG/bg-es-st-orgprod-p0000: salto 33296 -> 29289 en 2020 (mediana previa 1.08e+03) [KNOWN_VERIFIED_ANOMALY]"
@@ -594,7 +594,7 @@
     "points": 4347,
     "lines": 0
    },
-   "generatedAt": "2026-11-19T00:34:10Z",
+   "generatedAt": "2026-11-26T01:52:44Z",
    "info": [],
    "nWarnings": 12,
    "nErrors": 0
@@ -1006,7 +1006,7 @@
     "points": 5720,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T22:22:58Z",
+   "generatedAt": "2026-11-26T01:46:02Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
