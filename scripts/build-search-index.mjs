@@ -80,13 +80,28 @@ for (const cat of D.RAW) {
     fr: n => [/[sxz]$/.test(n) ? n : n + 's'],
     it: n => [/[cg]a$/.test(n) ? n.slice(0, -2) + (n.at(-2) === 'c' ? 'che' : 'ghe') : /[cg]ia$/.test(n) ? n.slice(0, -2) + 'e' : /a$/.test(n) ? n.slice(0, -1) + 'e' : /[cg]o$/.test(n) ? n.slice(0, -1) + 'hi' : /[oe]$/.test(n) ? n.slice(0, -1) + 'i' : n],
   };
+  // Sinónimos regionales y nombres comerciales (Latinoamérica, EE. UU., Reino Unido…): cuentan casi como el nombre (js/search.js, campo `a`), no como una palabra clave suelta.
+  // Solo se alias lo que es el mismo producto; «alubias» y «frijoles» (judía seca, que no seguimos) NO van aquí.
+  const ALIAS = {
+    patata: 'papa papas spud spuds', 'judia-verde': 'habichuela habichuelas ejote ejotes vainita vainitas chaucha chauchas green bean string bean snap bean french bean runner bean haricot vert haricots verts fagiolino fagiolini',
+    melocoton: 'durazno duraznos peach peaches', nectarina: 'nectarine nectarines', calabacin: 'zucchini zucchinis courgette courgettes calabacita calabacitas zapallito zucchina zucchine',
+    berenjena: 'eggplant eggplants aubergine aubergines melanzana melanzane', cilantro: 'coriander coriandre coriandolo culantro', fresa: 'frutilla frutillas strawberry strawberries',
+    platano: 'banana bananas banano bananos guineo guineos', aguacate: 'palta paltas avocado avocados avocat avocats', 'maiz-dulce': 'elote elotes choclo choclos sweetcorn sweet corn mais doux',
+    'guisante-verde': 'arveja arvejas chicharo chicharos green pea green peas petit pois piselli', 'haba-verde': 'broad bean broad beans fava fava beans feves', sandia: 'patilla watermelon pasteque anguria',
+    melon: 'cantaloupe cantalupo', pimiento: 'morron morrones chile bell pepper peppers capsicum peperone peperoni poivron', tomate: 'jitomate jitomates', col: 'repollo repollos berza cabbage chou cavolo',
+    'col-rizada': 'kale chou frise cavolo riccio berza', brocoli: 'brecol brocoli broculi broccoli', champinon: 'mushroom mushrooms champignon champignons seta setas hongo hongos funghi',
+    mora: 'zarzamora zarzamoras blackberry blackberries', remolacha: 'betabel betabeles beet beets beetroot betterave barbabietola', zanahoria: 'carrot carrots carotte carottes carota carote',
+    nuez: 'nuez de castilla nueces de castilla walnut walnuts', cereza: 'cherry cherries', arandano: 'blueberry blueberries myrtille myrtilles mirtillo mirtilli', lechuga: 'lettuce lettuces',
+    cebolla: 'onion onions oignon oignons cipolla cipolle', ajo: 'garlic ail aglio', apio: 'celery celeri sedano', esparrago: 'asparagus asperge asparagi', alcachofa: 'artichoke artichokes artichaut carciofo carciofi',
+    limon: 'lemon lemons citron citrons limone limoni', mandarina: 'tangerine tangerines mandarin mandarins mandarine mandarino', pina: 'ananas pineapple pineapples'
+  };
   for (const p of FV.products) {
     const nm = Object.fromEntries(L.map(l => [l, p.name[l] || p.name.es]));
     // nombre sin paréntesis, en singular y plural de cada idioma (strawberries, cherries, coles, mele, fichi…)
     const forms = [];
     for (const l of L) { const base = (p.name[l] || '').replace(/ \(.*\)/, '').toLowerCase(); forms.push(base, deacc(base), ...PLU[l](base).map(deacc), ...PLU[l](base)); }
     const kw = [...new Set(L.map(l => p.name[l]).concat(L.map(l => deacc(p.name[l] || ''))).concat(forms))].join(' ').toLowerCase() + (p.group === 'veg' ? ' hortalizas verduras vegetables veggies légumes verdura ortaggi' : p.group === 'fruit' ? ' fruta frutas fruit fruits frutta' : '') + ' precio price' + (SUBK[p.id] ? ' ' + SUBK[p.id] : '');
-    add({ t: 'product', b: 0.15, u: 'producto.html?p=' + p.id, n: nm, s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + (p.annual && !p.eu && !p.perc ? SUBA[l] : p.uk && !p.eu && !p.perc ? SUBU[l] : SUBT[l])])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') + (p.group === 'nut' ? ' nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca' : '') });
+    add({ t: 'product', b: 0.15, u: 'producto.html?p=' + p.id, n: nm, a: ALIAS[p.id], s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + (p.annual && !p.eu && !p.perc ? SUBA[l] : p.uk && !p.eu && !p.perc ? SUBU[l] : SUBT[l])])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') + (p.group === 'nut' ? ' nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca' : '') });
   }
   // Frutos secos: quien busca «nuts» quiere almendra, avellana, nuez o pistacho, no los informes de mercado terminal de EE. UU.
   add({ t: 'category', b: 0.2, u: 'producto.html?p=almendra', n: tri('Frutos secos', 'Nuts', 'Fruits à coque', 'Frutta secca'), s: tri('Almendra y avellana: precio semanal por país. Producción mundial de almendra, nuez y pistacho', 'Almond and hazelnut: weekly price by country. World production of almonds, walnuts and pistachios', 'Amande et noisette : prix hebdomadaire par pays. Production mondiale d’amandes, de noix et de pistaches', 'Mandorla e nocciola: prezzo settimanale per paese. Produzione mondiale di mandorle, noci e pistacchi'), k: 'nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca almendra almond avellana hazelnut nuez walnut noix noci pistacho pistachio pistache pistacchio mandorla nocciola amande noisette' });
@@ -441,5 +456,8 @@ for (const [u, n, k] of CON) add({ t: 'concept', u, n, s: tri('Cómo se calcula'
   if (!grp) throw new Error('search: no se pudo leer NAV_GROUPS de js/shared.js');
   console.log('menu -> buscador: ' + n + ' paginas nuevas');
 }
+// Sinónimos de las materias primas principales (mismo campo `a`): «puerco» es cerdo (no puerro), «corn» es maíz (no maíz dulce), «blanquillos» son huevos
+const COMALIAS = { maiz: 'corn maize', cerdo: 'puerco cochino marrano chancho hog hogs pig pigs', vaca: 'res bovino bovinos beef cattle', huevos: 'blanquillos', soja_grano: 'soya', cordero: 'borrego borregos' };
+for (const e of out) { const m = /^(?:precios\.html\?[^#]*?)?product=[a-z]+%3A([a-z_0-9]+)/.exec(e.u || ''); if (m && COMALIAS[m[1]] && e.t === 'product') e.a = COMALIAS[m[1]]; }
 fs.writeFileSync('data/search-index.json', JSON.stringify({ schemaVersion: '1.0', generatedAt: new Date().toISOString().slice(0, 10), entries: out.map((e, i) => ({ i, ...e })) }) + '\n');
 console.log('entradas', out.length, Object.entries(out.reduce((a, e) => (a[e.t] = (a[e.t] || 0) + 1, a), {})).map(x => x.join(':')).join(' '));

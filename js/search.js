@@ -61,7 +61,7 @@
     entries.forEach(function (e) {
       e._t = {}; L.forEach(function (l) { e._t[l] = toks(e.n[l]); });
       e._b = {}; L.forEach(function (l) { e._b[l] = e._t[l].filter(function (t) { return !STOP[t]; }).join(' '); });
-      e._k = toks(e.k || ''); e._s = {}; L.forEach(function (l) { e._s[l] = toks((e.s || {})[l] || ''); });
+      e._k = toks(e.k || ''); e._a = toks(e.a || ''); e._s = {}; L.forEach(function (l) { e._s[l] = toks((e.s || {})[l] || ''); });
     });
   }
   var L = ['es', 'en', 'fr', 'it'];
@@ -69,7 +69,7 @@
   function voc() {
     var map = Object.create(null);
     IDX.forEach(function (e, i) { var seen = Object.create(null), add = function (w) { if (!seen[w]) { seen[w] = 1; (map[w] || (map[w] = [])).push(i); } };
-      L.forEach(function (l) { e._t[l].forEach(add); e._s[l].forEach(add); }); e._k.forEach(add); });
+      L.forEach(function (l) { e._t[l].forEach(add); e._s[l].forEach(add); }); e._k.forEach(add); e._a.forEach(add); });
     VOC = { words: Object.keys(map), map: map };
   }
   // MEMO: durante una búsqueda, la puntuación de cada término frente a cada palabra se calcula una sola vez (las palabras se repiten en miles de entradas)
@@ -80,6 +80,7 @@
     var total = 0, hit = 0, i;
     for (i = 0; i < qs.length; i++) {
       var q = qs[i], best = fieldBest(q, e._t[lang]);
+      if (best < 1 && e._a.length) best = Math.max(best, fieldBest(q, e._a) * (/^producto\.html/.test(e.u) ? 0.9 : 1.12));   // sinónimo regional (papa = patata): casi como el nombre, antes que un prefijo de otra palabra (papa → papaya)
       if (best < 1) { var o = 0, k; for (k = 0; k < L.length; k++) if (L[k] !== lang) o = Math.max(o, fieldBest(q, e._t[L[k]]) * 0.7); best = Math.max(best, o); }  // 0.7: «pesca» (es) es la pesca, no el melocotón italiano
       if (best < 1) best = Math.max(best, fieldBest(q, e._k) * 0.7, fieldBest(q, e._s[lang]) * 0.3);
       if (strict && best < 0.65) best = 0;   // resultados parciales (no encajan todas las palabras): solo palabras que coinciden de verdad, no erratas («mañana» no es «manzana»)
@@ -103,6 +104,7 @@
   }
   function search(query, lang) {
     var all = toks(query).filter(function (t) { return !STOP[t]; });
+    if (!all.length) all = toks(query).filter(function (t) { return t.length >= 3; });   // «thé» (fr) se escribe como «the» (en), una palabra vacía: si solo hay palabras vacías, se busca tal cual
     if (!all.length) return { list: [], partial: false };
     var qs = all.filter(function (t) { return !GEN[t]; }), gen = all.filter(function (t) { return GEN[t]; });
     if (!qs.length) { qs = all; gen = []; }   // «precios» a secas: se busca tal cual

@@ -29,5 +29,24 @@ for (const c of cases) {
   }
   console.log(n + ' nombres de fichas de fruta, hortaliza y fruto seco comprobados');
 }
+// Cada país, producto, categoría, oferta/demanda y sección debe salir entre los 3 primeros al buscarlo por su título (hasta 3 palabras) en los 4 idiomas
+{
+  const E = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/search-index.json'), 'utf8')).entries; let n = 0; const cnt = {}; for (const e of E) for (const l of ['es', 'en', 'fr', 'it']) { const k = l + '|' + (e.n[l] || '').replace(/ \(.*\)/, ''); cnt[k] = (cnt[k] || 0) + 1; }
+  const many = (l, q) => E.filter(e => (e.n[l] || '').toLowerCase().startsWith(q.toLowerCase() + ',')).length > 3;   // «Gasolio alla pompa, Regina…»: familia con muchas variantes
+  for (const t of ['country', 'product', 'category', 'supply', 'section']) for (const e of E) { if (e.t !== t) continue;
+    for (const l of ['es', 'en', 'fr', 'it']) { const q = (e.n[l] || '').replace(/ \(.*\)/, ''); if (!q || q.split(/\s+/).length > 3 || q.length < 3 || cnt[l + '|' + q] > 1 || many(l, q)) continue;   // títulos repetidos (p. ej. «Gasolio alla pompa» de varias ciudades) son ambiguos
+      n++; const top = S._search(q, l).list.slice(0, 3);
+      if (!top.some(x => x.u === e.u || x.n[l] === e.n[l])) { fail++; console.log('FALLA', JSON.stringify(q), '(' + l + ', ' + t + ') no trae su propia entrada:', top.map(x => (x.n[l] || x.n.es).slice(0, 25)).join(' ; ')); } } }
+  console.log(n + ' títulos de países, productos, categorías, secciones y oferta/demanda comprobados');
+}
+// Erratas: cada ficha de fruta/hortaliza/fruto seco (nombres de una palabra, 6+ letras) debe salir en las 3 primeras con una letra cambiada de orden, quitada o repetida (tolerancia: 1 % de fallos)
+{
+  const FV = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/fv-products.json'), 'utf8')).products; let n = 0, bad = [];
+  for (const p of FV) for (const l of ['es', 'en', 'fr', 'it']) { const w = p.name[l].replace(/ \(.*\)/, '').toLowerCase(); if (w.includes(' ') || w.length < 6) continue;
+    const m = Math.floor(w.length / 2), v = [w.slice(0, m) + w[m + 1] + w[m] + w.slice(m + 2), w.slice(0, m) + w.slice(m + 1), w.slice(0, m) + w[m] + w.slice(m)];
+    for (const q of v) { if (q === w) continue; n++; if (!S._search(q, l).list.slice(0, 3).some(e => e.u === 'producto.html?p=' + p.id)) bad.push(l + ':' + q + '→' + w); } }
+  if (bad.length > Math.ceil(n * 0.01)) { fail++; console.log('FALLA erratas: ' + bad.length + ' de ' + n + ':', bad.join(' | ')); }
+  console.log(n + ' erratas de nombres de fichas comprobadas (' + bad.length + ' sin resolver, tolerancia 1 %)');
+}
 console.log(cases.length + ' consultas, ' + fail + ' fallos');
 process.exit(fail ? 1 : 0);

@@ -729,23 +729,73 @@
   // Productos del índice del buscador: fichas de precios (precios.html?…product=tab:slug) y de fruta y hortaliza (producto.html?p=slug, fv)
   function productsFrom(entries) {
     return (entries || []).filter(function (e) { return e.t === 'product'; }).map(function (e) {
-      var m = /product=([^&]+)/.exec(e.u); if (m) return { slug: decodeURIComponent(m[1]).split(':')[1], names: e.n, kw: e.k, u: e.u };
-      var f = /^producto\.html\?p=([^&#]+)/.exec(e.u); return f ? { slug: decodeURIComponent(f[1]), names: e.n, kw: e.k, u: e.u, fv: true, sub: e.s } : null;
+      var m = /product=([^&]+)/.exec(e.u); if (m) return { slug: decodeURIComponent(m[1]).split(':')[1], names: e.n, kw: e.k + (e.a ? ' ' + e.a : ''), u: e.u };
+      var f = /^producto\.html\?p=([^&#]+)/.exec(e.u); return f ? { slug: decodeURIComponent(f[1]), names: e.n, kw: e.k + (e.a ? ' ' + e.a : ''), u: e.u, fv: true, sub: e.s } : null;
     }).filter(function (p) { return p && p.slug; });
   }
   // Fruta y hortaliza: el precio semanal por país está en su ficha; no hay una cifra única que dar aquí
   var FVT = { es: 'Precio semanal por país, lo que cobra el agricultor y dónde se cultiva.', en: 'Weekly price by country, what farmers get and where it is grown.', fr: 'Prix hebdomadaire par pays, prix agricole et lieux de culture.', it: 'Prezzo settimanale per paese, prezzo agricolo e dove si coltiva.' };
   var FVL = { es: 'Abrir la ficha de {p}', en: 'Open the {p} page', fr: 'Ouvrir la fiche : {p}', it: 'Apri la scheda: {p}' };
+  var FVX = {
+    prev: { es: 'frente al dato anterior', en: 'versus the previous data point', fr: 'par rapport à la donnée précédente', it: 'rispetto al dato precedente' },
+    ago: { es: 'hace un año', en: 'a year ago', fr: 'il y a un an', it: 'un anno fa' },
+    none: { es: 'No tenemos precio publicado de {p} en {c} con fecha reciente.', en: 'We have no recently dated published price for {p} in {c}.', fr: 'Nous n’avons pas de prix publié récent pour {p} en {c}.', it: 'Non abbiamo un prezzo pubblicato recente per {p} in {c}.' },
+    stg: { pack: { es: 'salida de almacén', en: 'packing-house price', fr: 'sortie de station', it: 'uscita magazzino' }, farm: { es: 'en finca', en: 'farm-gate', fr: 'à la ferme', it: 'in azienda' }, retail: { es: 'compra del minorista', en: 'retailer buying price', fr: 'achat du détaillant', it: 'acquisto del dettagliante' } },
+    perc: { es: 'precio percibido por el agricultor (mensual)', en: 'price received by farmers (monthly)', fr: 'prix perçu par l’agriculteur (mensuel)', it: 'prezzo percepito dall’agricoltore (mensile)' },
+    ann: { es: 'precio anual al productor', en: 'annual producer price', fr: 'prix annuel au producteur', it: 'prezzo annuale al produttore' },
+    uk: { es: 'precio mayorista (semanal)', en: 'wholesale price (weekly)', fr: 'prix de gros (hebdomadaire)', it: 'prezzo all’ingrosso (settimanale)' },
+    src: { eu: { es: 'Comisión Europea · Agri-food Data Portal', en: 'European Commission · Agri-food Data Portal', fr: 'Commission européenne · Agri-food Data Portal', it: 'Commissione europea · Agri-food Data Portal' }, mapa: 'MAPA', defra: 'Defra', usda_nass: 'USDA NASS', eurostat: 'Eurostat', ksh_hu: 'KSH' }
+  };
+  function cname(cc, lang) { try { var c = cc === 'EL' ? 'GR' : cc === 'UK' ? 'GB' : cc, r = new Intl.DisplayNames([lang], { type: 'region' }).of(c); return r && r !== c ? r : cc; } catch (e) { return cc; } }
+  function ageDays(s, env) { var p = String(s || '').split('-'); if (p.length < 2) return 1e9; return (Date.parse(env.today || new Date().toISOString().slice(0, 10)) - Date.UTC(+p[0], +p[1] - 1, p[2] ? +p[2] : 15)) / 864e5; }
+  function fvCards(fp, uk, lang, env, href) {   // todo dato ya publicado, con su unidad y fecha; ninguna cifra se convierte ni se estima
+    var out = [], mk = function (kind, o) {
+      var lines = []; if (o.sub) lines.push(o.sub);
+      if (typeof o.ch === 'number') lines.push(pct(o.ch, lang) + ' ' + FVX.prev[lang]);
+      if (typeof o.ago === 'number') lines.push(FVX.ago[lang] + ': ' + numFmt(o.ago, lang) + ' ' + o.unit);
+      return { kv: true, kind: kind, cc: o.cc, d: o.d, value: o.v, id: o.id, title: o.title, big: numFmt(o.v, lang), bigUnit: o.unit, lines: lines, dateTxt: dateTxt(o.d, lang), source: o.source, sid: o.sid, href: href };
+    };
+    var eu = fp.eu && fp.eu.latest || {}, ccs = Object.keys(eu).filter(function (c) { return typeof eu[c].v === 'number' && ageDays(eu[c].d, env) <= 400; });
+    ccs.sort(function (a, b) { return (b === 'ES') - (a === 'ES') || (eu[a].d < eu[b].d ? 1 : eu[a].d > eu[b].d ? -1 : 0); });
+    ccs.forEach(function (c) { var e = eu[c], st = (FVX.stg[e.stage] || {})[lang] || e.stage || ''; out.push(mk('eu', { cc: c === 'EL' ? 'GR' : c, d: e.d, v: e.v, unit: '€/kg', id: e.series, title: cname(c, lang), sub: [e.variant, st].filter(Boolean).join(' · '), ch: typeof e.p === 'number' && e.p > 0 ? (e.v / e.p - 1) * 100 : null, ago: typeof e.y === 'number' ? e.y : null, source: FVX.src.eu[lang], sid: 'eu_agrifood' })); });
+    if (fp.perc && typeof fp.perc.v === 'number' && ageDays(fp.perc.m, env) <= 400) out.push(mk('perc', { cc: 'ES', d: fp.perc.m, v: fp.perc.v, unit: '€/kg', title: cname('ES', lang) + ' · ' + FVX.perc[lang], ago: typeof fp.perc.y === 'number' ? fp.perc.y : null, source: FVX.src.mapa, sid: 'mapa_es' }));
+    (fp.uk || []).forEach(function (u) { var s = uk && uk[u.id]; if (s && typeof s.v === 'number' && ageDays(s.d, env) <= 400) out.push(mk('uk', { cc: 'GB', d: s.d, v: s.v, unit: 'GBP/kg', title: cname('GB', lang) + ' · ' + FVX.uk[lang] + (u.label && u.label[lang] ? ' · ' + u.label[lang] : ''), ch: typeof s.p === 'number' && s.p > 0 ? (s.v / s.p - 1) * 100 : null, ago: typeof s.y === 'number' ? s.y : null, source: FVX.src.defra, sid: 'defra' })); });
+    (fp.annual || []).forEach(function (a) { var l = a.pts && a.pts[a.pts.length - 1], pv = a.pts && a.pts[a.pts.length - 2]; if (!l || typeof l[1] !== 'number') return; out.push(mk('ann', { cc: a.cc, d: String(l[0]), v: l[1], unit: a.unit, title: cname(a.cc, lang) + ' · ' + FVX.ann[lang] + (a.label && a.label[lang] ? ' · ' + a.label[lang] : ''), ago: pv ? pv[1] : null, source: FVX.src[a.src] || a.src, sid: a.src })); });
+    return out;
+  }
   function rFV(intent, lang, env) {
-    var p = intent.product, pn = pname(p, lang);
-    return Promise.resolve({ kind: 'fv', heading: pn, cards: [], notes: [FVT[lang] || FVT.es], link: { href: env.href(p.u), label: fmt(FVL[lang] || FVL.es, { p: lang === 'en' ? pn : pn.toLowerCase() }) } });
+    var p = intent.product, pn = pname(p, lang), href = env.href(p.u), link = { href: href, label: fmt(FVL[lang] || FVL.es, { p: lang === 'en' ? pn : pn.toLowerCase() }) };
+    var base = { kind: 'fv', heading: pn, cards: [], notes: [FVT[lang] || FVT.es], link: link };
+    return Promise.all([J(env, 'fv-products.json'), J(env, 'views/fv-uk.json')]).then(function (r) {
+      var fp = r[0] && (r[0].products || []).filter(function (x) { return x.id === p.slug; })[0]; if (!fp) return base;
+      var uk = {}; try { r[1].items.forEach(function (s) { uk[s.id] = s; }); } catch (e) { /* sin Reino Unido */ }
+      var all = fvCards(fp, uk, lang, env, href), cc = (intent.countries || [])[0], rg = (intent.regions || [])[0], want = cc ? (cc === 'UK' ? 'GB' : cc) : rg === 'uk' ? 'GB' : rg === 'us' ? 'US' : null, cards;
+      if (want) {
+        cards = all.filter(function (c) { return c.cc === want; });
+        if (!cards.length) { base.notes = [fmt(FVX.none[lang], { p: lang === 'en' ? pn : pn.toLowerCase(), c: cname(want, lang) })].concat(base.notes); return base; }
+      } else if (rg === 'eu') cards = all.filter(function (c) { return c.kind === 'eu'; }).slice(0, 3);
+      else cards = all.slice(0, 3);
+      base.cards = cards.slice(0, 4); return base;
+    }, function () { return base; });
+  }
+  // «en dólares», «en euros», «por bushel», «por tonelada»: se entiende como el mercado que publica en esa moneda o unidad (EE. UU., UE, Canadá, Reino Unido). Nunca se convierte una cifra.
+  var UH_CUR = [['us', 'dolares dolar dollars dollar usd dollari dollaro'], ['eu', 'euros euro eur euri'], ['uk', 'gbp sterling esterlinas sterline'], ['ca', 'cad']], UH_UNIT = [['us', 'bushel bushels cwt quintal quintales hundredweight'], ['eu', 'tonelada toneladas tonne tonnes tonnellata tonnellate']];
+  var UH_NOTE = { es: 'Cada mercado publica en su moneda y unidad (EE. UU.: USD y bushel; UE: EUR y tonelada…). Mostramos las cifras tal como las publica la fuente, sin convertir.', en: 'Each market publishes in its own currency and unit (US: USD and bushel; EU: EUR and tonne…). Figures are shown as the source publishes them, without conversion.', fr: 'Chaque marché publie dans sa devise et son unité (États-Unis : USD et boisseau ; UE : EUR et tonne…). Chiffres tels que publiés par la source, sans conversion.', it: 'Ogni mercato pubblica nella propria valuta e unità (USA: USD e bushel; UE: EUR e tonnellata…). Cifre come le pubblica la fonte, senza conversione.' };
+  function unitHint(qn) {
+    var words = qn.trim().split(' '), cur = null, unit = null, drop = {};
+    words.forEach(function (w) { UH_CUR.forEach(function (r) { if (r[1].split(' ').indexOf(w) >= 0) { cur = cur || r[0]; drop[w] = 1; } }); UH_UNIT.forEach(function (r) { if (r[1].split(' ').indexOf(w) >= 0) { unit = unit || r[0]; drop[w] = 1; } }); });
+    if (/ \$ | us dollars? /.test(' ' + qn + ' ') && !cur) cur = 'us';
+    var region = cur || unit; if (!region) return null;
+    return { region: region, q: words.filter(function (w) { return !drop[w]; }).join(' ') };
   }
   function answer(query, lang, env) {
     lang = LANGS.indexOf(lang) >= 0 ? lang : 'es';
     var qn = ' ' + norm(query) + ' ', durum = DURUM_RE.test(qn) && !DURUM_NOT.test(qn);
     if (durum) query = qn.replace(DURUM_RE, ' trigo ').replace(/ +/g, ' ').trim();
+    var uh = unitHint(qn); if (uh && uh.q) query = uh.q; else uh = null;
     var intent; try { intent = parse(query, lang, env); } catch (e) { return Promise.resolve(null); }
     if (!intent) return Promise.resolve(null);
+    if (uh && (intent.kind === 'price' || intent.kind === 'change') && !(intent.regions && intent.regions.length) && !(intent.states && intent.states.length) && !(intent.countries && intent.countries.length)) intent.regions = [uh.region]; else uh = null;
     if (durum) {
       var RC = { us: 'US', ca: 'CA', uk: 'UK' };
       if (intent.kind === 'price' && intent.regions && intent.regions.length === 1 && RC[intent.regions[0]] && !(intent.states && intent.states.length)) intent = { kind: 'country', countries: [RC[intent.regions[0]]], product: intent.product, durum: true };
@@ -775,7 +825,7 @@
       case 'compare': p = rCompare(intent, lang, env); break;
       default: p = Promise.resolve(null);
     }
-    return p.then(function (a) { if (a) a.intent = { kind: intent.kind, product: intent.product && intent.product.slug, pair: intent.pair && intent.pair.map(function (x) { return x.slug; }), lands: intent.lands, crop: intent.crop, scopes: intent.scopes, attrs: intent.attrs, dir: intent.dir, regions: intent.regions, states: intent.states, countries: intent.countries, full: !!intent.full }; return a; }, function () { return null; });
+    return p.then(function (a) { if (a && uh) (a.notes = a.notes || []).push(UH_NOTE[lang] || UH_NOTE.es); if (a) a.intent = { kind: intent.kind, product: intent.product && intent.product.slug, pair: intent.pair && intent.pair.map(function (x) { return x.slug; }), lands: intent.lands, crop: intent.crop, scopes: intent.scopes, attrs: intent.attrs, dir: intent.dir, regions: intent.regions, states: intent.states, countries: intent.countries, full: !!intent.full }; return a; }, function () { return null; });
   }
 
   /* ---------- HTML ---------- */

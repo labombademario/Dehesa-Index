@@ -963,5 +963,176 @@
    "product": "urea",
    "noCards": true
   }
+ },
+ {
+  "q": "precio del tomate",
+  "lang": "es",
+  "expect": {
+   "kind": "fv",
+   "product": "tomate",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "tomate Francia",
+  "lang": "es",
+  "expect": {
+   "kind": "fv",
+   "product": "tomate",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "precio de la almendra",
+  "lang": "es",
+  "expect": {
+   "kind": "fv",
+   "product": "almendra",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "tomato price in the UK",
+  "lang": "en",
+  "expect": {
+   "kind": "fv",
+   "product": "tomate",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "frambuesa Reino Unido",
+  "lang": "es",
+  "expect": {
+   "kind": "fv",
+   "product": "frambuesa",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "prix de la pomme de terre",
+  "lang": "fr",
+  "expect": {
+   "kind": "fv",
+   "product": "patata",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "prezzo del pomodoro",
+  "lang": "it",
+  "expect": {
+   "kind": "fv",
+   "product": "tomate",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "precio de la papa",
+  "lang": "es",
+  "expect": {
+   "kind": "fv",
+   "product": "patata",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "precio del durazno",
+  "lang": "es",
+  "expect": {
+   "kind": "fv",
+   "product": "melocoton",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "eggplant price",
+  "lang": "en",
+  "expect": {
+   "kind": "fv",
+   "product": "berenjena",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "precio de la nuez",
+  "lang": "es",
+  "expect": {
+   "kind": "fv",
+   "product": "nuez",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "precio del pistacho",
+  "lang": "es",
+  "expect": {
+   "kind": "fv",
+   "product": "pistacho",
+   "fvCheck": true
+  }
+ },
+ {
+  "q": "precio del puerco",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "cerdo"
+  }
+ },
+ {
+  "q": "wheat price in dollars per bushel",
+  "lang": "en",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "regions": [
+    "us"
+   ]
+  }
+ },
+ {
+  "q": "precio del maiz en euros por tonelada",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "maiz",
+   "regions": [
+    "eu"
+   ]
+  }
+ },
+ {
+  "q": "precio del trigo en dolares",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "regions": [
+    "us"
+   ]
+  }
+ },
+ {
+  "q": "prix du blé en euros",
+  "lang": "fr",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "regions": [
+    "eu"
+   ]
+  }
+ },
+ {
+  "q": "prezzo del mais in dollari",
+  "lang": "it",
+  "expect": {
+   "kind": "price",
+   "product": "maiz",
+   "regions": [
+    "us"
+   ]
+  }
  }
 ]

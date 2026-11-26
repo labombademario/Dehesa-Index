@@ -32,6 +32,18 @@ for (const c of cases) {
   if (e.mustMatchData && a.cards.length) { // cada cifra mostrada es la observación original
     for (const k of a.cards) { const o = latest(k.region).find(x => x.id === k.id); if (!o || o.value !== k.value || o.observationDate !== k.date) bad(c, 'cifra distinta de la del dato ' + k.id); }
   }
+  if (e.fvCheck) { // fruta y hortaliza: cada cifra mostrada es la del fichero de datos (europea, MAPA, anual o Reino Unido) y lleva fecha
+    const FV = JSON.parse(fs.readFileSync(D('fv-products.json'), 'utf8')).products.find(x => x.id === i.product), UKV = JSON.parse(fs.readFileSync(D('views/fv-uk.json'), 'utf8')).items;
+    if (!a.cards.length) bad(c, 'esperaba tarjetas con datos');
+    for (const k of a.cards) {
+      let v, d;
+      if (k.kind === 'eu') { const x = FV.eu.latest[k.cc === 'GR' ? 'EL' : k.cc]; v = x && x.v; d = x && x.d; }
+      else if (k.kind === 'perc') { v = FV.perc.v; d = FV.perc.m; }
+      else if (k.kind === 'ann') { const x = FV.annual.find(y => y.cc === k.cc && String(y.pts[y.pts.length - 1][0]) === k.d); v = x && x.pts[x.pts.length - 1][1]; d = x && String(x.pts[x.pts.length - 1][0]); }
+      else if (k.kind === 'uk') { const x = FV.uk.map(y => UKV.find(z => z.id === y.id)).find(z => z && z.d === k.d && z.v === k.value); v = x && x.v; d = x && x.d; }
+      if (v === undefined || v !== k.value || d !== k.d) bad(c, 'cifra o fecha distinta de la del dato (' + k.kind + ' ' + k.cc + ')');
+    }
+  }
   if (e.nCards !== undefined && a.cards.length !== e.nCards) bad(c, 'tarjetas ' + a.cards.length + ' != ' + e.nCards);
   if (e.tradeCheck) { // cada cifra de comercio es la última observación del catálogo del país
     for (const k of a.cards) { const cat = JSON.parse(fs.readFileSync(D('catalog/' + k.cc + '.json'), 'utf8')).series.find(x => x.id === k.id); if (!cat || cat.latest !== k.value || cat.latestPeriod !== k.date) bad(c, 'cifra de comercio distinta del dato ' + k.id); }
