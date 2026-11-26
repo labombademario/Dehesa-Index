@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 205 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41325 series en el catalogo unificado.
+Resumen: 205 VERIFIED, 19 PENDING, 7 RESTRICTED, 6 BLOCKED; 41329 series en el catalogo unificado.
 
 ## VERIFIED (205)
 
@@ -27,7 +27,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `agreste_saa` | France — Agreste / SSP (ministère de l'Agriculture), Statistique agricole annuelle (SAA), séries longues par région et département | FR | etalab-1.0 | si/si | si | 4100 | Citar Agreste/SSP y la edición; el último año es provisional y se marca como tal. |
 | `agreste_ssp` | France — Agreste / SSP (ministère de l'Agriculture), Valeur vénale des terres (con la FNSafer) | FR | etalab-1.0 | si/si | si | 0 | Citar la fuente (Agreste/SSP y FNSafer) y la edición; los precios son del observatorio del mercado rural de las Safer. |
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 27 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
-| `alberta_inputs` | Alberta Agriculture and Irrigation — Alberta Farm Input Prices | CA | OGL-Alberta | si/si | si | 54 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
+| `alberta_inputs` | Alberta Agriculture and Irrigation — Alberta Farm Input Prices | CA | OGL-Alberta | si/si | si | 55 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `ama_agrardiesel` | AMA — Agrardieselrückvergütung (hoja informativa) y § 7 MinStG | AT | PUBLIC-LAW | si/si | si | 0 |  |
 | `ama_at` | AMA (Agrarmarkt Austria) — Marktinformation: Preisberichte Vieh und Fleisch, Eier, Geflügel, Düngemittelpreise | AT | CC-BY-4.0 | si/si | si | 100 | La licencia cubre solo los datos que publica la propia AMA (fuente «AMA»); los de terceros que la AMA muestra en sus aplicaciones quedan fue… |
 | `apprrr_hr` | Croatia — APPRRR (Agencija za plaćanja u poljoprivredi, ribarstvu i ruralnom razvoju), datos abiertos en data.gov.hr | HR | HR-OTVORENA-DOZVOLA | si/si | si | 0 | Citar la fuente. Datos agregados por provincia (suma de los asentamientos del fichero); un PG con parcelas en varias provincias cuenta en ca… |
@@ -78,7 +78,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `epa_ie` | Environmental Protection Agency (EPA) Irlanda — indicadores ambientales EIIA13 y EIIA14, publicados por el CSO | IE | CC-BY-4.0 | si/si | si | 0 |  |
 | `esbirka_cz` | Sbírka zákonů (e-Sbírka) — nařízení vlády č. 83/2023 Sb. y novelas 45/2026 y 167/2026 Sb. | CZ | PUBLIC-LAW | si/si | si | 0 | Las reglas son un resumen propio hecho a mano; manda la Sbírka zákonů. El texto se leyó en una copia editorial (epravo.cz), no en e-Sbírka, … |
 | `etalab_geo` | France — API Découpage administratif (Etalab, DINUM; COG INSEE y DGCL) | FR | Etalab-2.0 | si/si | si | 0 | Citar la fuente; no alterar el sentido de la información. |
-| `eu_agrifood` | European Commission — Agri-food Data Portal (DG AGRI) | EU | EU-REUSE-2011-833 | si/conditional | si | 5602 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
+| `eu_agrifood` | European Commission — Agri-food Data Portal (DG AGRI) | EU | EU-REUSE-2011-833 | si/conditional | si | 5605 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_oil_bulletin` | European Commission — Weekly Oil Bulletin (DG ENER) | EU | EU-REUSE-2011-833 | si/conditional | si | 1 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eu_pdo_candiago` | Candiago et al. (2022) - EU-PDO: inventario geoespacial de las DOP de vino de Europa (Scientific Data; figshare) | EU | CC0-1.0 | si/si | si | 0 | El contorno se deriva de municipios de EuroRegionalMap (EuroGeographics) y del registro eAmbrosia a nov-2021: es orientativo. Solo DOP de vi… |
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |

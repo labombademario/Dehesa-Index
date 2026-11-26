@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76587
+  "rows": 76588
  },
  "files": [
   {
@@ -509,13 +509,13 @@
    "unit": "mmbtu",
    "currency": "USD",
    "frequency": "weekly",
-   "rows": 1558,
+   "rows": 1559,
    "first": "1997-01-10",
-   "last": "2026-11-17",
+   "last": "2026-11-24",
    "csv": "data/pack/us/gas_natural.csv",
    "xlsx": "data/pack/us/gas_natural.xlsx",
-   "csvBytes": 280353,
-   "xlsxBytes": 75635
+   "csvBytes": 280533,
+   "xlsxBytes": 75683
   },
   {
    "product": "gasolina_base_us",
