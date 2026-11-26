@@ -1,18 +1,18 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-26T01:50:19.478Z",
+  "generatedAt": "2026-11-26T01:57:21.012Z",
   "scope": {
     "latestObservations": 209,
-    "historyObservations": 49403,
+    "historyObservations": 49405,
     "verified": 209,
     "pending": 0,
-    "stale": 23,
+    "stale": 19,
     "freshness": {
       "FRESH": 106,
-      "LIVE": 79,
-      "DELAYED": 19,
-      "STALE": 4,
-      "HISTORICAL": 1
+      "LIVE": 83,
+      "DELAYED": 17,
+      "HISTORICAL": 1,
+      "STALE": 2
     },
     "regions": [
       "eu",
@@ -974,14 +974,14 @@
       "sourceId": "eu_agrifood",
       "status": "verified",
       "comparability": "not_comparable",
-      "observationDate": "2026-11-01",
-      "publicationDate": "2026-11-04",
-      "verifiedAt": "2026-11-04T23:55:20Z",
+      "observationDate": "2026-11-22",
+      "publicationDate": "2026-11-26",
+      "verifiedAt": "2026-11-26T01:57:17Z",
       "frequency": "weekly",
       "historyPoints": 66,
-      "ageDays": 25,
-      "freshness": "DELAYED",
-      "stale": true
+      "ageDays": 4,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_pienso_colza_fr_eu",
@@ -990,14 +990,14 @@
       "sourceId": "eu_agrifood",
       "status": "verified",
       "comparability": "not_comparable",
-      "observationDate": "2026-11-01",
-      "publicationDate": "2026-11-04",
-      "verifiedAt": "2026-11-04T23:55:20Z",
+      "observationDate": "2026-11-22",
+      "publicationDate": "2026-11-26",
+      "verifiedAt": "2026-11-26T01:57:17Z",
       "frequency": "weekly",
       "historyPoints": 65,
-      "ageDays": 25,
-      "freshness": "DELAYED",
-      "stale": true
+      "ageDays": 4,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_pienso_colza_hu_eu",
@@ -1006,14 +1006,14 @@
       "sourceId": "eu_agrifood",
       "status": "verified",
       "comparability": "not_comparable",
-      "observationDate": "2026-10-25",
-      "publicationDate": "2026-11-04",
-      "verifiedAt": "2026-11-04T23:55:20Z",
+      "observationDate": "2026-11-15",
+      "publicationDate": "2026-11-26",
+      "verifiedAt": "2026-11-26T01:57:17Z",
       "frequency": "weekly",
-      "historyPoints": 70,
-      "ageDays": 32,
-      "freshness": "STALE",
-      "stale": true
+      "historyPoints": 71,
+      "ageDays": 11,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_pienso_colza_pl_eu",
@@ -1022,14 +1022,14 @@
       "sourceId": "eu_agrifood",
       "status": "verified",
       "comparability": "not_comparable",
-      "observationDate": "2026-10-25",
-      "publicationDate": "2026-11-04",
-      "verifiedAt": "2026-11-04T23:55:20Z",
+      "observationDate": "2026-11-15",
+      "publicationDate": "2026-11-26",
+      "verifiedAt": "2026-11-26T01:57:17Z",
       "frequency": "weekly",
-      "historyPoints": 70,
-      "ageDays": 32,
-      "freshness": "STALE",
-      "stale": true
+      "historyPoints": 71,
+      "ageDays": 11,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_cereales_colza_ca",
