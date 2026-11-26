@@ -1,10 +1,10 @@
 tabla HST77 34200 celdas actualizada 2025-09-08T08:00:00
 tabla HST88 1152 celdas actualizada 2026-11-18T08:00:00
 cosecha 12337 valores
-tabla ANI41 24700 celdas actualizada 2026-10-23T08:00:00
-tabla ANI51 17100 celdas actualizada 2026-10-23T08:00:00
+tabla ANI41 24765 celdas actualizada 2026-11-23T08:00:00
+tabla ANI51 17145 celdas actualizada 2026-11-23T08:00:00
 tabla ANI71 5715 celdas actualizada 2026-11-13T08:00:00
 tabla SVIN 1508 celdas actualizada 2026-11-06T08:00:00
-AVISO KVAEG5 no disponible: RuntimeError StatBank tableinfo: HTTP Error 400: Bad Request - se conserva el censo de vacuno publicado
+tabla KVAEG5 18000 celdas actualizada 2026-11-25T08:00:00
 tabla TILSKUD2 115 celdas actualizada 2026-05-19T08:00:00
-escrito denmark-depth.json 471 KB
+escrito denmark-depth.json 472 KB
