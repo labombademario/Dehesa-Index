@@ -1,9 +1,9 @@
 pesca: leido (edicion 2025 (actualizado 2026-05-28), 7 tablas, 211 series)
 balances: leido (edicion actualizado 2026-10-16, 8 tablas, 42 series)
-leche: leido (edicion actualizado 2026-09-29, 2 tablas, 10 series)
+leche: NO se pudo leer (0004753: sin datos ({'Falso': [{'IndicadorCod': '0004753', 'Lingua': 'EN', 'DataExtracao': '2026-11-)); se conserva lo publicado
 carne: leido (edicion actualizado 2026-02-21, 3 tablas, 9 series)
 ipc: leido (edicion October 2026 (actualizado 2026-11-11), 1 tablas, 30 series)
-incendios: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
-cultivos: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
-insumos: NO se pudo leer (presupuesto de tiempo agotado); se conserva lo publicado
+incendios: NO se pudo leer (0013510: sin datos ({'Falso': [{'IndicadorCod': '0013510', 'Lingua': 'EN', 'DataExtracao': '2026-11-)); se conserva lo publicado
+cultivos: leido (edicion 2025 (actualizado 2026-08-01), 11 tablas, 795 series)
+insumos: leido (edicion actualizado 2026-07-10, 2 tablas, 2 series)
 escrito: 8 ficheros, 51 series en las estadisticas
