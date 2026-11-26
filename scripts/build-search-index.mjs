@@ -60,14 +60,39 @@ for (const cat of D.RAW) {
   const GL = { veg: tri('Hortaliza', 'Vegetable', 'Légume', 'Ortaggio'), fruit: tri('Fruta', 'Fruit', 'Fruit', 'Frutta'), nut: tri('Fruto seco', 'Nut', 'Fruit à coque', 'Frutta secca') };
   const SUBT = tri('precio semanal por país, lo que cobra el agricultor y dónde se cultiva', 'weekly price by country, what farmers get and where it is grown', 'prix hebdomadaire par pays, prix agricole et lieux de culture', 'prezzo settimanale per paese, prezzo agricolo e dove si coltiva');
   const deacc = x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const SUBG = [
+    [['naranja', 'mandarina', 'clementina', 'satsuma', 'limon'], 'citrus citrus fruit cítricos citricos agrios agrumes agrumi'],
+    [['fresa'], 'berries berry soft fruit frutos rojos frutas del bosque fruits rouges baies frutti di bosco bacche'],
+    [['melocoton', 'nectarina', 'albaricoque', 'cereza', 'ciruela'], 'stone fruit stone fruits fruta de hueso frutas de hueso fruits à noyau fruits a noyau frutta a nocciolo'],
+    [['manzana', 'pera'], 'pome fruit fruta de pepita fruits à pépins frutta a semi'],
+    [['mango', 'chirimoya', 'papaya', 'pina', 'aguacate', 'platano', 'caqui', 'granada', 'nispero', 'higo'], 'tropical fruit tropical fruits exotic frutas tropicales fruta tropical fruits tropicaux frutta tropicale'],
+    [['lechuga', 'escarola', 'espinaca', 'acelga', 'col'], 'leafy greens verduras de hoja hortalizas de hoja légumes feuilles verdure a foglia'],
+    [['col', 'coliflor', 'brocoli'], 'brassica cruciferous crucíferas crucifères brassicacee'],
+    [['cebolla', 'ajo', 'puerro'], 'alliums bulbos bulb vegetables'],
+  ];
+  const SUBK = {}; for (const [ids, k] of SUBG) for (const i of ids) SUBK[i] = (SUBK[i] ? SUBK[i] + ' ' : '') + k;
+  const PLU = {
+    es: n => [/z$/.test(n) ? n.slice(0, -1) + 'ces' : /[aeiouáéíóú]$/.test(n) ? n + 's' : /[sx]$/.test(n) ? n : n + 'es'],
+    en: n => /(s|x|ch|sh)$/.test(n) ? [n + 'es'] : /o$/.test(n) ? [n + 'es', n + 's'] : /[^aeiou]y$/.test(n) ? [n.slice(0, -1) + 'ies'] : [n + 's'],
+    fr: n => [/[sxz]$/.test(n) ? n : n + 's'],
+    it: n => [/[cg]a$/.test(n) ? n.slice(0, -2) + (n.at(-2) === 'c' ? 'che' : 'ghe') : /[cg]ia$/.test(n) ? n.slice(0, -2) + 'e' : /a$/.test(n) ? n.slice(0, -1) + 'e' : /[cg]o$/.test(n) ? n.slice(0, -1) + 'hi' : /[oe]$/.test(n) ? n.slice(0, -1) + 'i' : n],
+  };
   for (const p of FV.products) {
     const nm = Object.fromEntries(L.map(l => [l, p.name[l] || p.name.es]));
-    const kw = [...new Set(L.map(l => p.name[l]).concat(L.map(l => deacc(p.name[l] || ''))).concat(L.map(l => (p.name[l] || '') + 's')))].join(' ').toLowerCase() + ' frutas hortalizas verduras fruit vegetables precio price';
-    add({ t: 'product', b: p.group === 'nut' ? 0.15 : 0, u: 'producto.html?p=' + p.id, n: nm, s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + SUBT[l]])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') + (p.group === 'nut' ? ' nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca almonds hazelnuts walnuts pistachios nueces pistachos amandes noisettes noix pistaches mandorle nocciole noci pistacchi' : '') });
+    // nombre sin paréntesis, en singular y plural de cada idioma (strawberries, cherries, coles, mele, fichi…)
+    const forms = [];
+    for (const l of L) { const base = (p.name[l] || '').replace(/ \(.*\)/, '').toLowerCase(); forms.push(base, deacc(base), ...PLU[l](base).map(deacc), ...PLU[l](base)); }
+    const kw = [...new Set(L.map(l => p.name[l]).concat(L.map(l => deacc(p.name[l] || ''))).concat(forms))].join(' ').toLowerCase() + (p.group === 'veg' ? ' hortalizas verduras vegetables veggies légumes verdura ortaggi' : p.group === 'fruit' ? ' fruta frutas fruit fruits frutta' : '') + ' precio price' + (SUBK[p.id] ? ' ' + SUBK[p.id] : '');
+    add({ t: 'product', b: 0.15, u: 'producto.html?p=' + p.id, n: nm, s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + SUBT[l]])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') + (p.group === 'nut' ? ' nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca almonds hazelnuts walnuts pistachios nueces pistachos amandes noisettes noix pistaches mandorle nocciole noci pistacchi' : '') });
   }
   // Frutos secos: quien busca «nuts» quiere almendra, avellana, nuez o pistacho, no los informes de mercado terminal de EE. UU.
   add({ t: 'category', b: 0.2, u: 'producto.html?p=almendra', n: tri('Frutos secos', 'Nuts', 'Fruits à coque', 'Frutta secca'), s: tri('Almendra y avellana: precio semanal por país. Producción mundial de almendra, nuez y pistacho', 'Almond and hazelnut: weekly price by country. World production of almonds, walnuts and pistachios', 'Amande et noisette : prix hebdomadaire par pays. Production mondiale d’amandes, de noix et de pistaches', 'Mandorla e nocciola: prezzo settimanale per paese. Produzione mondiale di mandorle, noci e pistacchi'), k: 'nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca almendra almond avellana hazelnut nuez walnut noix noci pistacho pistachio pistache pistacchio mandorla nocciola amande noisette' });
-  add({ t: 'category', u: 'precios.html?tab=hortalizas&region=eu', n: tri('Frutas y hortalizas', 'Fruit and vegetables', 'Fruits et légumes', 'Frutta e verdura'), s: tri(FV.products.length + ' productos: precio semanal por país', FV.products.length + ' products: weekly price by country', FV.products.length + ' produits : prix hebdomadaire par pays', FV.products.length + ' prodotti: prezzo settimanale per paese'), k: 'frutas hortalizas verduras fruta fruit vegetables legumes ortaggi frutta verdura precios prices' });
+  add({ t: 'category', b: 0.3, u: 'precios.html?tab=hortalizas&region=eu', n: tri('Frutas y hortalizas', 'Fruit and vegetables', 'Fruits et légumes', 'Frutta e verdura'), s: tri(FV.products.length + ' productos: precio semanal por país', FV.products.length + ' products: weekly price by country', FV.products.length + ' produits : prix hebdomadaire par pays', FV.products.length + ' prodotti: prezzo settimanale per paese'), k: 'frutas hortalizas verduras fruta fruit fruits vegetables veggies produce legumes légumes ortaggi frutta verdura precios prices' });
+  // Productos del precio recibido por el agricultor en EE. UU. (USDA NASS) que no tienen ficha propia: se encuentran y llevan a esa tabla
+  {
+    const US = JSON.parse(read('data/views/fv-us.json')).items, have = { grapefruit: 'pomelo grapefruits pamplemousse pamplemousses pompelmo pompelmi', blueberry: 'arándano arándanos blueberry blueberries myrtille myrtilles mirtillo mirtilli frutos rojos berries', cranberry: 'arándano rojo arándanos rojos cranberry cranberries canneberge canneberges mirtillo rosso mirtilli rossi berries', pecan: 'nuez pecana nueces pecanas pecan pecans noix de pécan noci pecan noce pecan nuts frutos secos' };
+    for (const it of US) if (have[it.id]) add({ t: 'product', b: 0.1, u: 'precios.html?tab=hortalizas&region=us', n: Object.fromEntries(L.map((l, x) => [l, it.n[x]])), s: tri('EE. UU.: precio que recibe el agricultor (USDA NASS)', 'US: price received by farmers (USDA NASS)', 'États-Unis : prix perçu par l’agriculteur (USDA NASS)', 'Stati Uniti: prezzo incassato dall’agricoltore (USDA NASS)'), k: have[it.id] + ' precio price usda nass' });
+  }
 }
 add({ t: 'product', u: 'precios.html?tab=energia&product=' + encodeURIComponent('energia:diesel'), n: Object.fromEntries(L.map(l => [l, D.NAMES[l].diesel || 'Diesel'])), s: Object.fromEntries(L.map(l => [l, catLabel(l, 'energia')])), k: SYN.diesel });
 for (const [id, kw] of [['seguro', 'insurance agroseguro assurance seguro agrario'], ['vino', 'wine vin vino granel'], ['madera', 'wood timber lumber bois legno'], ['energia', 'energy energia energía combustible']]) {
