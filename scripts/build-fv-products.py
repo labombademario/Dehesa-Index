@@ -67,6 +67,9 @@ P = [
  ('avellana', 'nut', 'Avellana|Hazelnut|Noisette|Nocciola', None, None, 'es-perc-avellana-negretta', ('frutales', 'NC5300')),
  ('nuez', 'nut', 'Nuez|Walnut|Noix|Noce', None, None, None, None),
  ('pistacho', 'nut', 'Pistacho|Pistachio|Pistache|Pistacchio', None, None, None, None),
+ ('pecana', 'nut', 'Nuez pecana|Pecan|Noix de pécan|Noce pecan', None, None, None, None),
+ ('arandano', 'fruit', 'Arándano|Blueberry|Myrtille|Mirtillo', None, None, None, None),
+ ('arandano-rojo', 'fruit', 'Arándano rojo|Cranberry|Canneberge|Mirtillo rosso', None, None, None, None),
 ]
 # Precio ANUAL al productor por pais (nueces y pistachos no tienen cotizacion semanal con licencia clara). Se copian series ya publicadas, sin cambiar valores:
 # (pais, fichero, id de la serie, fuente del registro de licencias, enlace a la fuente). Ultimos 15 anyos.
@@ -77,20 +80,27 @@ ANNUAL = {
           ('PT', 'data/portugal-eurostat-stats.json', 'pt-es-crop-06194110', 'eurostat', 'https://ec.europa.eu/eurostat/databrowser/view/apri_ap_crpouta'),
           ('HU', 'data/hu-ksh-stats.json', 'hu-ksh-a0020-walnuts-in-shell-weight', 'ksh_hu', 'https://www.ksh.hu/stadat_eng')],
  'pistacho': [('US', 'data/us-nass-extra-stats.json', 'us-nass-x-pistachios-price-received-usd-lb', 'usda_nass', 'https://quickstats.nass.usda.gov/')],
+ 'pecana': [('US', 'data/us-nass-extra-stats.json', 'us-nass-x-pecans-price-received-usd-lb', 'usda_nass', 'https://quickstats.nass.usda.gov/')],
+ 'arandano-rojo': [('US', 'data/us-nass-extra-stats.json', 'us-nass-x-cranberries-price-received-usd-barrel', 'usda_nass', 'https://quickstats.nass.usda.gov/')],
+ # arandano: dos series del mismo pais; la etiqueta (es|en|fr|it) distingue el tipo
+ 'arandano': [('US', 'data/us-nass-extra-stats.json', 'us-nass-x-blueberries-tame-price-received-usd-lb', 'usda_nass', 'https://quickstats.nass.usda.gov/', 'cultivado|cultivated|cultivée|coltivato'),
+              ('US', 'data/us-nass-extra-stats.json', 'us-nass-x-blueberries-wild-price-received-usd-lb', 'usda_nass', 'https://quickstats.nass.usda.gov/', 'silvestre|wild|sauvage|selvatico')],
 }
-UNITS = {'USD/short ton': 'USD/short ton', 'USD/lb': 'USD/lb', 'EUR per 100 kg': 'EUR/100 kg', 'HUF/kilogramme': 'HUF/kg'}
+UNITS = {'USD/short ton': 'USD/short ton', 'USD/lb': 'USD/lb', 'USD/barrel': 'USD/barrel', 'EUR per 100 kg': 'EUR/100 kg', 'HUF/kilogramme': 'HUF/kg'}
 def annual(pid):
     out = []
-    for cc, f, sid, src, url in ANNUAL[pid]:
+    for cc, f, sid, src, url, *lab in ANNUAL[pid]:
         d = json.loads((ROOT / f).read_text(encoding='utf-8'))
         s = [x for x in d['countries'][cc]['series'] if x['id'] == sid]
         if not s: raise SystemExit('serie anual no encontrada: %s' % sid)
         s = s[0]; pts = [[str(a), b] for a, b in s['points'] if b is not None][-15:]
         if s['unit'] not in UNITS: raise SystemExit('unidad sin traducir: %s' % s['unit'])
-        out.append({'cc': cc, 'id': sid, 'unit': UNITS[s['unit']], 'src': src, 'url': url, 'pts': pts})
+        o = {'cc': cc, 'id': sid, 'unit': UNITS[s['unit']], 'src': src, 'url': url, 'pts': pts}
+        if lab: o['label'] = dict(zip(['es', 'en', 'fr', 'it'], lab[0].split('|')))
+        out.append(o)
     return out
 # icono de cada producto (el más parecido que existe; si no hay, un círculo del color de la fruta)
-EMOJI = {"tomate": "🍅", "pimiento": "🫑", "pepino": "🥒", "calabacin": "🥒", "berenjena": "🍆", "lechuga": "🥬", "escarola": "🥬", "espinaca": "🥬", "acelga": "🥬", "col": "🥬", "coliflor": "🥦", "brocoli": "🥦", "alcachofa": "🌿", "esparrago": "🌱", "cebolla": "🧅", "ajo": "🧄", "puerro": "🌱", "zanahoria": "🥕", "judia-verde": "🫛", "guisante-verde": "🫛", "haba-verde": "🫛", "champinon": "🍄", "patata": "🥔", "melon": "🍈", "sandia": "🍉", "fresa": "🍓", "manzana": "🍎", "pera": "🍐", "melocoton": "🍑", "nectarina": "🍑", "albaricoque": "🍑", "cereza": "🍒", "ciruela": "🟣", "uva-mesa": "🍇", "kiwi": "🥝", "aguacate": "🥑", "platano": "🍌", "naranja": "🍊", "mandarina": "🍊", "clementina": "🍊", "satsuma": "🍊", "limon": "🍋", "nispero": "🟠", "higo": "🟣", "chirimoya": "🍈", "mango": "🥭", "caqui": "🟠", "granada": "🔴", "papaya": "🥭", "pina": "🍍", "almendra": "🌰", "avellana": "🌰"}
+EMOJI = {"tomate": "🍅", "pimiento": "🫑", "pepino": "🥒", "calabacin": "🥒", "berenjena": "🍆", "lechuga": "🥬", "escarola": "🥬", "espinaca": "🥬", "acelga": "🥬", "col": "🥬", "coliflor": "🥦", "brocoli": "🥦", "alcachofa": "🌿", "esparrago": "🌱", "cebolla": "🧅", "ajo": "🧄", "puerro": "🌱", "zanahoria": "🥕", "judia-verde": "🫛", "guisante-verde": "🫛", "haba-verde": "🫛", "champinon": "🍄", "patata": "🥔", "melon": "🍈", "sandia": "🍉", "fresa": "🍓", "manzana": "🍎", "pera": "🍐", "melocoton": "🍑", "nectarina": "🍑", "albaricoque": "🍑", "cereza": "🍒", "ciruela": "🟣", "uva-mesa": "🍇", "kiwi": "🥝", "aguacate": "🥑", "platano": "🍌", "naranja": "🍊", "mandarina": "🍊", "clementina": "🍊", "satsuma": "🍊", "limon": "🍋", "nispero": "🟠", "higo": "🟣", "chirimoya": "🍈", "mango": "🥭", "caqui": "🟠", "granada": "🔴", "papaya": "🥭", "pina": "🍍", "almendra": "🌰", "pecana": "🌰", "arandano": "🫐", "avellana": "🌰"}
 # desglose extra del tomate en la ficha (fresco / industria / invernadero)
 EXTRA = {'tomate': {'fresh': 'HO2510', 'ind': 'HO2520', 'glass': 'HO2512'}}
 STAGE = {'Ex-packaging station price': 'pack', 'Farmgate price': 'farm', 'Retail buying price': 'retail'}
