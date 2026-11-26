@@ -98,8 +98,19 @@
   {"q":"sequía Grecia por unidad regional","lang":"es","top":3,"u":"elsq"},
   {"q":"siccità Grecia","lang":"it","top":3,"u":"elsq"},
   {"q":"nuts","lang":"en","top":3,"u":"producto\\.html\\?p=almendra"},
-  {"q":"nuts","lang":"en","top":3,"u":"producto\\.html\\?p=avellana"},
+  {"q":"nuts","lang":"en","top":5,"u":"producto\\.html\\?p=avellana"},
+  {"q":"nuts","lang":"en","top":5,"u":"producto\\.html\\?p=nuez"},
+  {"q":"nuts","lang":"en","top":5,"u":"producto\\.html\\?p=pistacho"},
   {"q":"frutos secos","lang":"es","top":3,"u":"producto\\.html\\?p=almendra"},
   {"q":"fruits à coque","lang":"fr","top":3,"u":"producto\\.html\\?p=almendra"},
-  {"q":"frutta secca","lang":"it","top":3,"u":"producto\\.html\\?p=almendra"}
+  {"q":"frutta secca","lang":"it","top":3,"u":"producto\\.html\\?p=almendra"},
+  {"q": "walnut", "lang": "en", "top": 3, "u": "producto\\.html\\?p=nuez"},
+  {"q": "walnuts", "lang": "en", "top": 3, "u": "producto\\.html\\?p=nuez"},
+  {"q": "nuez", "lang": "es", "top": 3, "u": "producto\\.html\\?p=nuez"},
+  {"q": "noix", "lang": "fr", "top": 3, "u": "producto\\.html\\?p=nuez"},
+  {"q": "noci", "lang": "it", "top": 3, "u": "producto\\.html\\?p=nuez"},
+  {"q": "pistachio", "lang": "en", "top": 3, "u": "producto\\.html\\?p=pistacho"},
+  {"q": "pistacho", "lang": "es", "top": 3, "u": "producto\\.html\\?p=pistacho"},
+  {"q": "pistache", "lang": "fr", "top": 3, "u": "producto\\.html\\?p=pistacho"},
+  {"q": "pistacchio", "lang": "it", "top": 3, "u": "producto\\.html\\?p=pistacho"}
 ]

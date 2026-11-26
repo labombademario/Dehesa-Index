@@ -65,7 +65,30 @@ P = [
  ('pina', 'fruit', 'Piña|Pineapple|Ananas|Ananas', None, None, 'es-perc-pina-tropical', None),
  ('almendra', 'nut', 'Almendra|Almond|Amande|Mandorla', None, None, 'es-perc-almendra', ('frutales', 'NC5100')),
  ('avellana', 'nut', 'Avellana|Hazelnut|Noisette|Nocciola', None, None, 'es-perc-avellana-negretta', ('frutales', 'NC5300')),
+ ('nuez', 'nut', 'Nuez|Walnut|Noix|Noce', None, None, None, None),
+ ('pistacho', 'nut', 'Pistacho|Pistachio|Pistache|Pistacchio', None, None, None, None),
 ]
+# Precio ANUAL al productor por pais (nueces y pistachos no tienen cotizacion semanal con licencia clara). Se copian series ya publicadas, sin cambiar valores:
+# (pais, fichero, id de la serie, fuente del registro de licencias, enlace a la fuente). Ultimos 15 anyos.
+ANNUAL = {
+ 'nuez': [('US', 'data/us-nass-extra-stats.json', 'us-nass-x-walnuts-english-price-received-usd-short-ton', 'usda_nass', 'https://quickstats.nass.usda.gov/'),
+          ('AT', 'data/austria-stats.json', 'at-crop-06194110', 'eurostat', 'https://ec.europa.eu/eurostat/databrowser/view/apri_ap_crpouta'),
+          ('IT', 'data/italy-eurostat-stats.json', 'it-es-crop-06194110', 'eurostat', 'https://ec.europa.eu/eurostat/databrowser/view/apri_ap_crpouta'),
+          ('PT', 'data/portugal-eurostat-stats.json', 'pt-es-crop-06194110', 'eurostat', 'https://ec.europa.eu/eurostat/databrowser/view/apri_ap_crpouta'),
+          ('HU', 'data/hu-ksh-stats.json', 'hu-ksh-a0020-walnuts-in-shell-weight', 'ksh_hu', 'https://www.ksh.hu/stadat_eng')],
+ 'pistacho': [('US', 'data/us-nass-extra-stats.json', 'us-nass-x-pistachios-price-received-usd-lb', 'usda_nass', 'https://quickstats.nass.usda.gov/')],
+}
+UNITS = {'USD/short ton': 'USD/short ton', 'USD/lb': 'USD/lb', 'EUR per 100 kg': 'EUR/100 kg', 'HUF/kilogramme': 'HUF/kg'}
+def annual(pid):
+    out = []
+    for cc, f, sid, src, url in ANNUAL[pid]:
+        d = json.loads((ROOT / f).read_text(encoding='utf-8'))
+        s = [x for x in d['countries'][cc]['series'] if x['id'] == sid]
+        if not s: raise SystemExit('serie anual no encontrada: %s' % sid)
+        s = s[0]; pts = [[str(a), b] for a, b in s['points'] if b is not None][-15:]
+        if s['unit'] not in UNITS: raise SystemExit('unidad sin traducir: %s' % s['unit'])
+        out.append({'cc': cc, 'id': sid, 'unit': UNITS[s['unit']], 'src': src, 'url': url, 'pts': pts})
+    return out
 # icono de cada producto (el más parecido que existe; si no hay, un círculo del color de la fruta)
 EMOJI = {"tomate": "🍅", "pimiento": "🫑", "pepino": "🥒", "calabacin": "🥒", "berenjena": "🍆", "lechuga": "🥬", "escarola": "🥬", "espinaca": "🥬", "acelga": "🥬", "col": "🥬", "coliflor": "🥦", "brocoli": "🥦", "alcachofa": "🌿", "esparrago": "🌱", "cebolla": "🧅", "ajo": "🧄", "puerro": "🌱", "zanahoria": "🥕", "judia-verde": "🫛", "guisante-verde": "🫛", "haba-verde": "🫛", "champinon": "🍄", "patata": "🥔", "melon": "🍈", "sandia": "🍉", "fresa": "🍓", "manzana": "🍎", "pera": "🍐", "melocoton": "🍑", "nectarina": "🍑", "albaricoque": "🍑", "cereza": "🍒", "ciruela": "🟣", "uva-mesa": "🍇", "kiwi": "🥝", "aguacate": "🥑", "platano": "🍌", "naranja": "🍊", "mandarina": "🍊", "clementina": "🍊", "satsuma": "🍊", "limon": "🍋", "nispero": "🟠", "higo": "🟣", "chirimoya": "🍈", "mango": "🥭", "caqui": "🟠", "granada": "🔴", "papaya": "🥭", "pina": "🍍", "almendra": "🌰", "avellana": "🌰"}
 # desglose extra del tomate en la ficha (fresco / industria / invernadero)
@@ -135,6 +158,7 @@ def main():
             camp, cc, status = crops[cr[0]]; c = cc[cr[1]]
             doc['crops'] = {'group': cr[0], 'code': cr[1], 'campaign': camp, 'status': status, 'area': c['t'][0], 'production': c['t'][4]}
             if pid in EXTRA: doc['crops']['extra'] = EXTRA[pid]
+        if pid in ANNUAL: doc['annual'] = annual(pid)
         out.append(doc)
     left = sorted(set(fams) - used)
     if left: print('AVISO familias de la Comision sin producto:', left)
