@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-25T19:13:05Z",
+ "generatedAt": "2026-11-26T01:47:05Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -15,10 +15,10 @@
    "warnings": [],
    "stats": {
     "series": 215,
-    "points": 21597,
+    "points": 21608,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T22:26:49Z",
+   "generatedAt": "2026-11-25T23:25:02Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -565,7 +565,7 @@
     "points": 929,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T23:41:18Z",
+   "generatedAt": "2026-11-26T01:15:07Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -924,7 +924,7 @@
     "points": 46268,
     "lines": 0
    },
-   "generatedAt": "2026-11-18T22:18:04Z",
+   "generatedAt": "2026-11-25T23:17:36Z",
    "info": [],
    "nWarnings": 23,
    "nErrors": 0
@@ -986,11 +986,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 54,
-    "points": 1858,
+    "series": 55,
+    "points": 1923,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T00:36:34Z",
+   "generatedAt": "2026-11-26T00:15:35Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1158,11 +1158,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 285,
-    "points": 13368,
+    "series": 288,
+    "points": 13503,
     "lines": 0
    },
-   "generatedAt": "2026-11-04T17:16:56Z",
+   "generatedAt": "2026-11-25T19:19:23Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0

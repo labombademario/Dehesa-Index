@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-26T01:25:00Z",
+ "generatedAt": "2026-11-26T01:47:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 328,
+  "ok": 329,
   "late": 3,
-  "error": 17,
+  "error": 16,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 10.8,
   "prodGeneratedAt": "2026-11-25T08:29:28.342767+00:00",
   "repoGeneratedAt": "2026-11-25T19:19:27.399748+00:00",
-  "checkedAt": "2026-11-26T01:25:00Z"
+  "checkedAt": "2026-11-26T01:47:00Z"
  },
  "pipelines": [
   {
@@ -695,19 +695,18 @@
    "nextRun": "2026-11-26T15:50:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-11-25T23:48:00Z",
-    "durationSec": 52,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45724079905",
-    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: RuntimeError(\"https://od-do.agr.gc.ca/WeeklyRedMeatSlaughter_AbattageAnimauxViandeRougeHebdomadaire.json: <HTTPError 502: 'Bad Gateway'>\")"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-11-26T01:45:30Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45737893612"
    },
    "recent": {
     "runs": 10,
     "success": 8,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 120.0
   },
   {
@@ -1558,7 +1557,7 @@
      "path": "data/country-stats.json",
      "valid": "ok",
      "series": 215,
-     "points": 21597,
+     "points": 21608,
      "lines": 0,
      "lastChange": "2026-11-25T23:25:03Z"
     },
@@ -5602,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-26T00:54:14Z"
+     "lastChange": "2026-11-26T01:28:50Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5690,8 +5689,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45682734369"
    },
    "recent": {
-    "runs": 10,
-    "success": 10,
+    "runs": 9,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
