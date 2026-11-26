@@ -1,17 +1,2 @@
-MAPA campaña 2022/2023: 52 boletines
-MAPA campaña 2023/2024: 52 boletines
-MAPA campaña 2024/2025: 52 boletines
-MAPA campaña 2025/2026: 53 boletines
-MAPA campaña 2026/2027: 15 boletines
-AVISO boletin no leido: 012023boletinpreciosdelvinodel2al8deenero.pdf sin cifras
-AVISO boletin no leido: 022023boletinpreciosdelvinodel9al15deenero.pdf sin cifras
-AVISO boletin no leido: 032023boletinpreciosdelvinodel16al22deenero.pdf sin cifras
-AVISO boletin no leido: 042023boletinpreciosdelvinodel23al29deenero.pdf sin cifras
-AVISO boletin no leido: 052023boletinpreciosdelvinodel30deeneroal5defebrero.pdf sin cifras
-AVISO boletin no leido: 062023boletinpreciosdelvinodel6al12defebrero.pdf sin cifras
-AVISO boletin no leido: 072023boletinpreciosdelvinodel13al19defebrero.pdf sin cifras
-AVISO boletin no leido: 082023boletinpreciosdelvinodel20al26defebrero.pdf sin cifras
-AVISO boletin no leido: 092023boletinpreciosdelvinodel27defebreroal5demarzo.pdf sin cifras
-AVISO boletin no leido: 102023boletinpreciosdelvinodel6al12demarzo.pdf sin cifras
-España: 100 semanas (1 nuevas), 121 boletines sin leer
+ERROR España: RuntimeError('https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivinicultura/boletines_semanales_precio_vino/boletines_semanales_precio_vino_2022_2023 -> <urlopen error _ssl.c:983
 ERROR Francia: RuntimeError('FranceAgriMer: sin fichero de precios a granel')
