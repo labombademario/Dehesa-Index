@@ -1,9 +1,9 @@
-23:10:18 05420500 Mississippi Clinton, IA: 42300.0 cfs el 2026-11-24, media 7 dias 44514, percentil del mes 59.2 (26 años)
-23:10:18 05586100 Illinois Valley City, IL: 9490.0 cfs el 2026-11-24, media 7 dias 8491, percentil del mes 28.5 (26 años)
-23:10:18 07010000 Mississippi St. Louis, MO: 137000.0 cfs el 2026-11-24, media 7 dias 144000, percentil del mes 59.6 (26 años)
-23:10:18 07020500 Mississippi Chester, IL: 137000.0 cfs el 2026-11-24, media 7 dias 149143, percentil del mes 58.6 (26 años)
-23:10:19 07022000 Mississippi Thebes, IL: 135000.0 cfs el 2026-11-24, media 7 dias 151429, percentil del mes 57.6 (26 años)
-23:10:19 03612600 Ohio Olmsted, IL: 68000.0 cfs el 2026-11-24, media 7 dias 89043, percentil del mes 17.9 (12 años)
-23:10:19 07032000 Mississippi Memphis, TN: 249000.0 cfs el 2026-11-24, media 7 dias 271571, percentil del mes 28.3 (11 años)
-23:10:19 07289000 Mississippi Vicksburg, MS: 306000.0 cfs el 2026-11-24, media 7 dias 324571, percentil del mes 39.4 (18 años)
-23:10:19 rivers.json: 8 estaciones, ultimo dia 2026-11-24
+23:05:59 05420500 Mississippi Clinton, IA: 39100.0 cfs el 2026-11-25, media 7 dias 43186, percentil del mes 56.2 (26 años)
+23:05:59 05586100 Illinois Valley City, IL: 7920.0 cfs el 2026-11-25, media 7 dias 8437, percentil del mes 28.2 (26 años)
+23:05:59 07010000 Mississippi St. Louis, MO: 136000.0 cfs el 2026-11-25, media 7 dias 140000, percentil del mes 56.3 (26 años)
+23:05:59 07020500 Mississippi Chester, IL: 138000.0 cfs el 2026-11-25, media 7 dias 144571, percentil del mes 55.6 (26 años)
+23:05:59 07022000 Mississippi Thebes, IL: 138000.0 cfs el 2026-11-25, media 7 dias 146429, percentil del mes 54.2 (26 años)
+23:05:59 03612600 Ohio Olmsted, IL: 70400.0 cfs el 2026-11-25, media 7 dias 86914, percentil del mes 15.9 (12 años)
+23:05:59 07032000 Mississippi Memphis, TN: 235000.0 cfs el 2026-11-25, media 7 dias 263429, percentil del mes 26.4 (11 años)
+23:05:59 07289000 Mississippi Vicksburg, MS: 299000.0 cfs el 2026-11-25, media 7 dias 320000, percentil del mes 37.4 (18 años)
+23:05:59 rivers.json: 8 estaciones, ultimo dia 2026-11-25
