@@ -145,6 +145,7 @@ if (sm.includes(A)) sm = sm.replace(new RegExp(A + '[\\s\\S]*?' + B), block); el
 fs.writeFileSync('sitemap.xml', sm);
 console.log('paginas SEO', n);
 await import('./build-product-pages.mjs');  // paginas de producto (precios/<producto>/) con el ultimo precio real
+await import('./build-fv-pages.mjs');  // fichas de fruta, hortaliza y fruto seco (precios/frutas-hortalizas/<id>/) con datos oficiales y fecha
 await import('./build-region-pages.mjs');  // paginas por region (regiones/<pais>/<region>/) con las cifras reales de data/
 await import('./build-gi-pages.mjs');  // denominaciones de origen por pais (vinos y quesos, registro eAmbrosia) en 4 idiomas
 await import('./build-home-pages.mjs');  // portadas /en/, /fr/, /it/ con hreflang a la portada

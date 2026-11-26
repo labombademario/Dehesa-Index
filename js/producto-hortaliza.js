@@ -116,7 +116,9 @@
   function file(f) { return FILES[f] || (FILES[f] = get(f)); }
   var ST = { from: 2021, cc: null };
   // título, descripción, canonical y og:* propios de cada ficha (la página es una sola con ?p=): cada URL del mapa del sitio se declara a sí misma
-  function seoTags(P, nm, t) {
+  var STATIC_ROOT = { es: 'precios/frutas-hortalizas/', en: 'en/prices/fruit-vegetables/', fr: 'fr/prix/fruits-legumes/', it: 'it/prezzi/frutta-verdura/' };
+  function staticSlug(P, lg) { return lg === 'es' ? P.id : String(P.name[lg] || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\u0153/g, 'oe').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  function seoTags(P, nm, t, lg) {
     var parts = [];
     if (P.eu && P.eu.latest && Object.keys(P.eu.latest).length) parts.push(t.seoEu);
     if (P.perc) parts.push(t.seoPerc);
@@ -124,6 +126,8 @@
     if (P.annual) parts.push(t.seoAnn);
     if (P.crops) parts.push(t.seoCrop);
     var ti = t.seoT.replace('{n}', nm) + ' | Dehesa Index', de = t.seoD.replace('{n}', nm).replace('{x}', parts.slice(0, 3).join(', ')), u = 'https://dehesaindex.com/producto?p=' + P.id;
+    // si el producto tiene datos, existe su página estática indexable (scripts/build-fv-pages.mjs): la ficha interactiva la declara como canónica
+    if ((P.eu || (P.perc && P.perc.m >= new Date(Date.now() - 400 * 864e5).toISOString().slice(0, 7)) || P.annual || P.uk) && STATIC_ROOT[lg] && P.name && P.name[lg]) u = 'https://dehesaindex.com/' + STATIC_ROOT[lg] + staticSlug(P, lg) + '/';
     document.title = ti;
     function set(sel, attr, v) { var e = document.querySelector(sel); if (e) e.setAttribute(attr, v); }
     set('link[rel="canonical"]', 'href', u); set('meta[property="og:url"]', 'content', u); set('meta[name="description"]', 'content', de);
@@ -264,7 +268,7 @@
         h += '<section class="di-card ps-rm vg-card"><p style="margin:0 0 6px"><a href="precios.html?tab=hortalizas&region=eu">' + esc(t.allTxt) + '</a> · <a href="catalogo.html?q=' + encodeURIComponent(P.name.es) + '">' + esc(t.cat) + '</a></p>' +
           '<p class="di-field-hint" style="margin:10px 0 0">' + esc(t.src) + (ccs.length || !annSrc ? ' <a href="https://agridata.ec.europa.eu/" target="_blank" rel="noopener noreferrer">' + esc(t.sEU) + '</a>' : '') + (ccs.length || !annSrc ? annSrc : ' ' + annSrc.slice(2)) + (isES && P.perc ? '; <a href="https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido" target="_blank" rel="noopener noreferrer">' + esc(t.sMAPA) + '</a>' : '') + (isES && P.crops ? '; <a href="https://www.mapa.gob.es/es/estadistica/temas/estadisticas-agrarias/agricultura/superficies-producciones-anuales-cultivos/" target="_blank" rel="noopener noreferrer">' + esc(t.sCrop) + '</a>' : '') + '</p></section>';
         el.innerHTML = h;
-        var h1 = document.getElementById('pg-h1'), sb = document.getElementById('pg-sub'); if (h1) h1.textContent = (P.emoji ? P.emoji + ' ' : '') + nm; if (sb) sb.textContent = P.uk && !P.annual && !P.perc && !ccs.length ? t.ukSub : P.annual && !ccs.length ? t.subA : isES ? t.sub : (t.subX || t.sub).replace('{c}', cN); seoTags(P, nm, t);
+        var h1 = document.getElementById('pg-h1'), sb = document.getElementById('pg-sub'); if (h1) h1.textContent = (P.emoji ? P.emoji + ' ' : '') + nm; if (sb) sb.textContent = P.uk && !P.annual && !P.perc && !ccs.length ? t.ukSub : P.annual && !ccs.length ? t.subA : isES ? t.sub : (t.subX || t.sub).replace('{c}', cN); seoTags(P, nm, t, lg);
         binds.forEach(function (b) { bind(el, b[0], t, F, b[1]); });
         if (!el.getAttribute('data-vg')) {
           el.setAttribute('data-vg', '1');

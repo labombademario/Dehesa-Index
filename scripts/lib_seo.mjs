@@ -38,7 +38,7 @@ export function socialMeta(lg) {
 // (utiles para quien llega desde el sitio), pero lleva noindex,follow y no va en el sitemap. Se reevalua en cada regeneracion:
 // cuando los datos crecen, la pagina vuelve sola al indice.
 export const GATE = { minRows: 3, minWords: 150, minHubLinks: 3, product: { minRows: 1, minWords: 150 } };   // producto: una pagina de precio con un dato real, fecha, fuente y FAQ es util aunque tenga una fila
-export const isProduct = u => /\/(precios|prices|prix|prezzi)\/[^/]+\/$/.test(String(u));
+export const isProduct = u => /\/(precios|prices|prix|prezzi)\/([^/]+\/)?[^/]+\/$/.test(String(u)) && !/\/(precios|prices|prix|prezzi)\/(frutas-hortalizas|fruit-vegetables|fruits-legumes|frutta-verdura)\/$/.test(String(u));
 export const NOINDEX = '<meta name="robots" content="noindex,follow">';
 export function pageQuality(html) {
   const art = (/<article[\s\S]*?<\/article>/.exec(html) || [html])[0];
