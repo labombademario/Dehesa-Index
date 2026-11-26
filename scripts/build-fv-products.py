@@ -222,6 +222,15 @@ def main():
            'note': 'Precios de la Comision Europea (semanal, por pais) y del MAPA (precio percibido, mensual, España) convertidos de €/100 kg a €/kg. stage: pack = salida de almacen de confeccion, farm = en finca, retail = compra del minorista.',
            'countries': sorted(ccs), 'products': out}
     OUT.write_text(json.dumps(res, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    # mapa del sitio: una entrada por ficha (producto?p=<id>), en un bloque marcado; la ficha declara esa misma URL como canonical (js/producto-hortaliza.js)
+    sm = (ROOT / 'sitemap.xml').read_text(encoding='utf-8'); A, B = '  <!-- fv-fichas:start -->\n', '\n  <!-- fv-fichas:end -->'
+    blk = A + '\n'.join('  <url><loc>https://dehesaindex.com/producto?p=%s</loc></url>' % x['id'] for x in out) + B
+    if A in sm and B in sm: i = sm.index(A); j = sm.index(B) + len(B); sm = sm[:i] + blk + sm[j:]
+    else:
+        anchor = '  <url><loc>https://dehesaindex.com/producto?p=diesel</loc></url>'
+        if anchor not in sm: raise SystemExit('sitemap.xml: no encuentro donde poner las fichas')
+        sm = sm.replace(anchor, anchor + '\n' + blk, 1)
+    (ROOT / 'sitemap.xml').write_text(sm, encoding='utf-8')
     print('fv-products.json: %d productos (%d con precio de la Comision, %d con precio del MAPA, %d con cultivo), %d paises' % (
         len(out), sum(1 for x in out if 'eu' in x), sum(1 for x in out if 'perc' in x), sum(1 for x in out if 'crops' in x), len(ccs)))
 if __name__ == '__main__': main()
