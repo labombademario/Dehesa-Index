@@ -7911,9 +7911,10 @@
     "mapa_es",
     "usda_nass",
     "eurostat",
-    "ksh_hu"
+    "ksh_hu",
+    "defra"
    ],
-   "notes": "Frutas, hortalizas y frutos secos (pestaña de precios.html y fichas de producto): derivado de data/eu/fruta.json (Comisión Europea), data/series/ES/*.json (precios percibidos del MAPA) y data/spain-crops/ (MAPA) ya publicados, y precio anual al productor de nuez y pistacho copiado sin cambios de data/us-nass-extra-stats.json (USDA NASS), Eurostat apri_ap_crpouta (AT, IT, PT) y KSH (HU) (build-fv-products.py)."
+   "notes": "Frutas, hortalizas y frutos secos (pestaña de precios.html y fichas de producto): derivado de data/eu/fruta.json (Comisión Europea), data/series/ES/*.json (precios percibidos del MAPA) y data/spain-crops/ (MAPA) ya publicados, y precio anual al productor de nuez y pistacho copiado sin cambios de data/us-nass-extra-stats.json (USDA NASS), Eurostat apri_ap_crpouta (AT, IT, PT) y KSH (HU) (build-fv-products.py). Las fichas leen además el precio mayorista semanal de Inglaterra y Gales (Defra, OGL v3.0) directamente de data/uk-fv-stats.json."
   },
   "data/es-basins.json": {
    "sources": [

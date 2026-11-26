@@ -59,16 +59,18 @@ for (const cat of D.RAW) {
   const FV = JSON.parse(read('data/fv-products.json'));
   const GL = { veg: tri('Hortaliza', 'Vegetable', 'Légume', 'Ortaggio'), fruit: tri('Fruta', 'Fruit', 'Fruit', 'Frutta'), nut: tri('Fruto seco', 'Nut', 'Fruit à coque', 'Frutta secca') };
   const SUBT = tri('precio semanal por país, lo que cobra el agricultor y dónde se cultiva', 'weekly price by country, what farmers get and where it is grown', 'prix hebdomadaire par pays, prix agricole et lieux de culture', 'prezzo settimanale per paese, prezzo agricolo e dove si coltiva');
+  const SUBU = tri('precio semanal mayorista en Inglaterra y Gales', 'weekly wholesale price in England and Wales', 'prix de gros hebdomadaire en Angleterre et au pays de Galles', 'prezzo settimanale all’ingrosso in Inghilterra e Galles');
   const SUBA = tri('precio anual al productor por país', 'annual producer price by country', 'prix annuel à la production par pays', 'prezzo annuale alla produzione per paese');
   const deacc = x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const SUBG = [
     [['naranja', 'mandarina', 'clementina', 'satsuma', 'limon'], 'citrus citrus fruit cítricos citricos agrios agrumes agrumi'],
-    [['fresa', 'arandano', 'arandano-rojo'], 'berries berry soft fruit frutos rojos frutas del bosque fruits rouges baies frutti di bosco bacche'],
+    [['fresa', 'arandano', 'arandano-rojo', 'frambuesa', 'mora', 'grosella', 'grosella-espinosa'], 'berries berry soft fruit frutos rojos frutas del bosque fruits rouges baies frutti di bosco bacche'],
     [['melocoton', 'nectarina', 'albaricoque', 'cereza', 'ciruela'], 'stone fruit stone fruits fruta de hueso frutas de hueso fruits à noyau fruits a noyau frutta a nocciolo'],
     [['manzana', 'pera'], 'pome fruit fruta de pepita fruits à pépins frutta a semi'],
     [['mango', 'chirimoya', 'papaya', 'pina', 'aguacate', 'platano', 'caqui', 'granada', 'nispero', 'higo'], 'tropical fruit tropical fruits exotic frutas tropicales fruta tropical fruits tropicaux frutta tropicale'],
-    [['lechuga', 'escarola', 'espinaca', 'acelga', 'col'], 'leafy greens verduras de hoja hortalizas de hoja légumes feuilles verdure a foglia'],
-    [['col', 'coliflor', 'brocoli'], 'brassica cruciferous crucíferas crucifères brassicacee'],
+    [['lechuga', 'escarola', 'espinaca', 'acelga', 'col', 'rucula', 'col-rizada', 'pak-choi', 'col-china'], 'leafy greens verduras de hoja hortalizas de hoja légumes feuilles verdure a foglia'],
+    [['col', 'coliflor', 'brocoli', 'col-de-bruselas', 'col-rizada', 'col-china', 'pak-choi', 'colinabo', 'nabo'], 'brassica cruciferous crucíferas crucifères brassicacee'],
+    [['zanahoria', 'remolacha', 'chirivia', 'colinabo', 'nabo', 'apionabo'], 'root vegetables roots hortalizas de raíz raices légumes racines ortaggi a radice'],
     [['cebolla', 'ajo', 'puerro'], 'alliums bulbos bulb vegetables'],
   ];
   const SUBK = {}; for (const [ids, k] of SUBG) for (const i of ids) SUBK[i] = (SUBK[i] ? SUBK[i] + ' ' : '') + k;
@@ -84,7 +86,7 @@ for (const cat of D.RAW) {
     const forms = [];
     for (const l of L) { const base = (p.name[l] || '').replace(/ \(.*\)/, '').toLowerCase(); forms.push(base, deacc(base), ...PLU[l](base).map(deacc), ...PLU[l](base)); }
     const kw = [...new Set(L.map(l => p.name[l]).concat(L.map(l => deacc(p.name[l] || ''))).concat(forms))].join(' ').toLowerCase() + (p.group === 'veg' ? ' hortalizas verduras vegetables veggies légumes verdura ortaggi' : p.group === 'fruit' ? ' fruta frutas fruit fruits frutta' : '') + ' precio price' + (SUBK[p.id] ? ' ' + SUBK[p.id] : '');
-    add({ t: 'product', b: 0.15, u: 'producto.html?p=' + p.id, n: nm, s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + (p.annual && !p.eu && !p.perc ? SUBA[l] : SUBT[l])])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') + (p.group === 'nut' ? ' nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca almonds hazelnuts walnuts pistachios nueces pistachos amandes noisettes noix pistaches mandorle nocciole noci pistacchi' : '') });
+    add({ t: 'product', b: 0.15, u: 'producto.html?p=' + p.id, n: nm, s: Object.fromEntries(L.map(l => [l, GL[p.group][l] + ' · ' + (p.annual && !p.eu && !p.perc ? SUBA[l] : p.uk && !p.eu && !p.perc ? SUBU[l] : SUBT[l])])), k: kw + (p.id === 'tomate' ? ' cherry rama invernadero almeria industria pomodori' : '') + (p.group === 'nut' ? ' nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca almonds hazelnuts walnuts pistachios nueces pistachos amandes noisettes noix pistaches mandorle nocciole noci pistacchi' : '') });
   }
   // Frutos secos: quien busca «nuts» quiere almendra, avellana, nuez o pistacho, no los informes de mercado terminal de EE. UU.
   add({ t: 'category', b: 0.2, u: 'producto.html?p=almendra', n: tri('Frutos secos', 'Nuts', 'Fruits à coque', 'Frutta secca'), s: tri('Almendra y avellana: precio semanal por país. Producción mundial de almendra, nuez y pistacho', 'Almond and hazelnut: weekly price by country. World production of almonds, walnuts and pistachios', 'Amande et noisette : prix hebdomadaire par pays. Production mondiale d’amandes, de noix et de pistaches', 'Mandorla e nocciola: prezzo settimanale per paese. Produzione mondiale di mandorle, noci e pistacchi'), k: 'nuts nut tree nuts frutos secos fruto seco fruits a coque fruit a coque frutta secca almendra almond avellana hazelnut nuez walnut noix noci pistacho pistachio pistache pistacchio mandorla nocciola amande noisette' });

@@ -69,6 +69,24 @@ P = [
  ('pistacho', 'nut', 'Pistacho|Pistachio|Pistache|Pistacchio', None, None, None, None),
  ('pecana', 'nut', 'Nuez pecana|Pecan|Noix de pécan|Noce pecan', None, None, None, None),
  ('arandano', 'fruit', 'Arándano|Blueberry|Myrtille|Mirtillo', None, None, None, None),
+ ('frambuesa', 'fruit', 'Frambuesa|Raspberry|Framboise|Lampone', None, None, None, None),
+ ('mora', 'fruit', 'Mora|Blackberry|Mûre|Mora', None, None, None, None),
+ ('grosella', 'fruit', 'Grosella|Currant|Groseille|Ribes', None, None, None, None),
+ ('grosella-espinosa', 'fruit', 'Grosella espinosa|Gooseberry|Groseille à maquereau|Uva spina', None, None, None, None),
+ ('ruibarbo', 'veg', 'Ruibarbo|Rhubarb|Rhubarbe|Rabarbaro', None, None, None, None),
+ ('remolacha', 'veg', 'Remolacha de mesa|Beetroot|Betterave rouge|Barbabietola rossa', None, None, None, None),
+ ('col-de-bruselas', 'veg', 'Col de Bruselas|Brussels sprout|Chou de Bruxelles|Cavolo di Bruxelles', None, None, None, None),
+ ('apio', 'veg', 'Apio|Celery|Céleri|Sedano', None, None, None, None),
+ ('apionabo', 'veg', 'Apionabo|Celeriac|Céleri-rave|Sedano rapa', None, None, None, None),
+ ('chirivia', 'veg', 'Chirivía|Parsnip|Panais|Pastinaca', None, None, None, None),
+ ('colinabo', 'veg', 'Colinabo|Swede|Rutabaga|Rapa svedese', None, None, None, None),
+ ('nabo', 'veg', 'Nabo|Turnip|Navet|Rapa', None, None, None, None),
+ ('maiz-dulce', 'veg', 'Maíz dulce|Sweetcorn|Maïs doux|Mais dolce', None, None, None, None),
+ ('col-rizada', 'veg', 'Col rizada (kale)|Kale|Chou frisé|Cavolo riccio', None, None, None, None),
+ ('pak-choi', 'veg', 'Pak choi|Pak choi|Pak-choï|Pak choi', None, None, None, None),
+ ('rucula', 'veg', 'Rúcula|Rocket|Roquette|Rucola', None, None, None, None),
+ ('cilantro', 'veg', 'Cilantro|Coriander|Coriandre|Coriandolo', None, None, None, None),
+ ('col-china', 'veg', 'Col china|Chinese leaf|Chou chinois|Cavolo cinese', None, None, None, None),
  ('arandano-rojo', 'fruit', 'Arándano rojo|Cranberry|Canneberge|Mirtillo rosso', None, None, None, None),
 ]
 # Precio ANUAL al productor por pais (nueces y pistachos no tienen cotizacion semanal con licencia clara). Se copian series ya publicadas, sin cambiar valores:
@@ -87,6 +105,30 @@ ANNUAL = {
               ('US', 'data/us-nass-extra-stats.json', 'us-nass-x-blueberries-wild-price-received-usd-lb', 'usda_nass', 'https://quickstats.nass.usda.gov/', 'silvestre|wild|sauvage|selvatico')],
 }
 UNITS = {'USD/short ton': 'USD/short ton', 'USD/lb': 'USD/lb', 'USD/barrel': 'USD/barrel', 'EUR per 100 kg': 'EUR/100 kg', 'HUF/kilogramme': 'HUF/kg'}
+# Precio mayorista semanal del Reino Unido (Defra, Inglaterra y Gales): producto -> prefijos de las series de data/uk-fv-stats.json que se muestran en su ficha.
+# La ficha lee la serie directamente de ese fichero (se actualiza solo); aqui solo se guarda cuales y como se llaman.
+UK = {'manzana': ['apples-'], 'pera': ['pears-'], 'cereza': ['cherries-'], 'ciruela': ['plums-'], 'fresa': ['strawberries-'], 'arandano': ['blueberries-'], 'esparrago': ['asparagus-'],
+ 'haba-verde': ['beans-broad'], 'judia-verde': ['beans-dwarf'], 'col': ['cabbage-'], 'brocoli': ['calabrese-'], 'pimiento': ['capsicum-'], 'zanahoria': ['carrots-'], 'coliflor': ['cauliflower-'],
+ 'puerro': ['leeks-'], 'lechuga': ['lettuce-'], 'cebolla': ['onion-'], 'guisante-verde': ['peas-'], 'espinaca': ['spinach-'], 'tomate': ['tomatoes-'], 'calabacin': ['courgettes-'], 'pepino': ['cucumbers-'],
+ 'frambuesa': ['raspberries-'], 'mora': ['blackberries-'], 'grosella': ['currants-'], 'grosella-espinosa': ['gooseberries-'], 'ruibarbo': ['rhubarb-'], 'remolacha': ['beetroot-'],
+ 'col-de-bruselas': ['brussels-sprouts-'], 'apio': ['celery-'], 'apionabo': ['celeriac-'], 'chirivia': ['parsnips-'], 'colinabo': ['swede-'], 'nabo': ['turnip-'], 'maiz-dulce': ['sweetcorn-'],
+ 'col-rizada': ['curly-kale-'], 'pak-choi': ['pak-choi-'], 'rucula': ['rocket-'], 'cilantro': ['coriander-'], 'col-china': ['chinese-leaf-']}
+def uk_series(pid, ukst, ukv):
+    pre = ['uk-fv-' + x for x in UK.get(pid, [])]
+    c = [s for s in ukst if any(s['id'].startswith(x) for x in pre) and len([q for q in s['points'] if q[1] is not None]) > 8]
+    if not c: return None
+    c.sort(key=lambda s: (s['latestPeriod'] or '', len(s['points'])), reverse=True)
+    ref = c[0]['latestPeriod']
+    c = [s for s in c if (s['latestPeriod'] or '') >= str(int(ref[:4]) - 1) + ref[4:]][:3]   # solo las publicadas en el último año
+    out = []
+    for s in c:
+        n = ukv.get(s['id'], {}).get('n')
+        lab = None
+        if n and ' · ' in n[0]: lab = dict(zip(['es', 'en', 'fr', 'it'], [x.split(' · ', 1)[1] for x in n]))
+        o = {'id': s['id'], 'unit': s['unit']}
+        if lab: o['label'] = lab
+        out.append(o)
+    return out
 def annual(pid):
     out = []
     for cc, f, sid, src, url, *lab in ANNUAL[pid]:
@@ -138,6 +180,8 @@ def main():
         camps = sorted(d.get('campaigns', {}))
         if camps: crops[g] = (camps[-1], {c['c']: c for c in d['campaigns'][camps[-1]]['crops']}, d['campaigns'][camps[-1]].get('status'))
     used = set(); out = []; ccs = set()
+    ukst = json.loads((ROOT / 'data' / 'uk-fv-stats.json').read_text(encoding='utf-8'))['countries']['UK']['series']
+    ukv = {i['id']: i for i in json.loads((ROOT / 'data' / 'views' / 'fv-uk.json').read_text(encoding='utf-8'))['items']}
     for pid, grp, names, fam, dvar, pc, cr in P:
         nm = dict(zip(['es', 'en', 'fr', 'it'], names.split('|')))
         doc = {'id': pid, 'group': grp, 'name': nm, 'emoji': EMOJI.get(pid, '')}
@@ -169,6 +213,8 @@ def main():
             doc['crops'] = {'group': cr[0], 'code': cr[1], 'campaign': camp, 'status': status, 'area': c['t'][0], 'production': c['t'][4]}
             if pid in EXTRA: doc['crops']['extra'] = EXTRA[pid]
         if pid in ANNUAL: doc['annual'] = annual(pid)
+        u = uk_series(pid, ukst, ukv)
+        if u: doc['uk'] = u
         out.append(doc)
     left = sorted(set(fams) - used)
     if left: print('AVISO familias de la Comision sin producto:', left)
