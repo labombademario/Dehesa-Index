@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-26T22:34:30.545Z",
+  "generatedAt": "2026-11-26T22:55:08.197Z",
   "region": "eu",
   "base": {
     "period": "2024-10",
     "value": 100
   },
   "lastPeriod": "2026-10",
-  "value": 109.08,
-  "changeMoMPct": 1.2,
-  "changeYoYPct": 11.71,
+  "value": 109.42,
+  "changeMoMPct": 1.51,
+  "changeYoYPct": 12.05,
   "weights": {
     "cereales": 27.78,
     "ganaderia": 27.78,
@@ -43,7 +43,7 @@
     {
       "id": "lacteos",
       "weightPct": 16.67,
-      "value": 97.34,
+      "value": 99.39,
       "members": [
         "leche"
       ]
@@ -484,11 +484,11 @@
     },
     {
       "period": "2026-10",
-      "value": 109.08,
+      "value": 109.42,
       "groups": {
         "cereales": 95.54,
         "ganaderia": 106.47,
-        "lacteos": 97.34,
+        "lacteos": 99.39,
         "pienso": 104.29,
         "energia": 174.23
       }
