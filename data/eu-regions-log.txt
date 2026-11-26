@@ -1,3 +1,16 @@
+fr PAC {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 10, 'managers': 2}
+fr COR {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 9, 'managers': 2}
+escrito eu-regions-fr.json 273 KB
+it PIE {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it VDA {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it LIG {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it LOM {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it ABR {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it MOL {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it CAM {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it PUG {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it BAS {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
+it CAL {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
 it SIC {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
 it SAR {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 4}
 it TAA {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 23, 'farms': 10, 'managers': 4}
@@ -138,8 +151,8 @@ hr HR03 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 10, 'manager
 hr HR05 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 5, 'farms': 10, 'managers': 2}
 hr HR06 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 5, 'farms': 10, 'managers': 2}
 escrito eu-regions-hr.json 50 KB
-lt LT01 {'eaa': 31, 'crops': 19, 'animals': 6, 'milk': 12, 'farms': 10, 'managers': 1}
-lt LT02 {'eaa': 31, 'crops': 19, 'animals': 6, 'milk': 12, 'farms': 10, 'managers': 1}
+lt LT01 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 12, 'farms': 10, 'managers': 1}
+lt LT02 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 12, 'farms': 10, 'managers': 1}
 escrito eu-regions-lt.json 18 KB
 sk SK01 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 22, 'farms': 10, 'managers': 5}
 sk SK02 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 22, 'farms': 10, 'managers': 5}
@@ -172,7 +185,7 @@ ro RO31 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 21, 'farms': 10, 'manager
 ro RO32 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 21, 'farms': 10, 'managers': 5}
 ro RO41 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 21, 'farms': 10, 'managers': 5}
 ro RO42 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 21, 'farms': 10, 'managers': 5}
-escrito eu-regions-ro.json 193 KB
+escrito eu-regions-ro.json 195 KB
 se SE11 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 5}
 se SE12 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 5}
 se SE21 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10, 'managers': 5}
@@ -185,16 +198,3 @@ escrito eu-regions-se.json 193 KB
 si SI03 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 18, 'farms': 10, 'managers': 2}
 si SI04 {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 18, 'farms': 10, 'managers': 2}
 escrito eu-regions-si.json 22 KB
-uk UKC {'crops': 20, 'animals': 6, 'milk': 17}
-uk UKD {'crops': 20, 'animals': 6, 'milk': 18}
-uk UKE {'crops': 20, 'animals': 6, 'milk': 19}
-uk UKF {'crops': 20, 'animals': 6, 'milk': 19}
-uk UKG {'crops': 20, 'animals': 6, 'milk': 18}
-uk UKH {'crops': 20, 'animals': 6, 'milk': 18}
-uk UKI {'crops': 20, 'animals': 6, 'milk': 7}
-uk UKJ {'crops': 20, 'animals': 6, 'milk': 18}
-uk UKK {'crops': 20, 'animals': 6, 'milk': 19}
-uk UKL {'crops': 20, 'animals': 6, 'milk': 19}
-uk UKM {'crops': 20, 'animals': 6, 'milk': 19}
-uk UKN {'crops': 20, 'animals': 6, 'milk': 19}
-escrito eu-regions-uk.json 74 KB
