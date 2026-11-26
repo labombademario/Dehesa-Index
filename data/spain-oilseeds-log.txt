@@ -1,1 +1,1 @@
-OK: campañas 2016/17, 2017/18, 2018/19, 2019/20, 2020/21, 2021/22, 2022/23, 2023/24; 18 series
+ERROR: no se pudo leer la pagina: https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/leguminosas-y-oleaginosas/balances-gestion -> <urlopen error timed out>
