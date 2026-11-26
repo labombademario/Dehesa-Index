@@ -32,10 +32,10 @@ BE tierra 3
 BE estructura 42
 BE plaguicidas 6
 BE emisiones 5
-BE selvicultura 3
+BE selvicultura 5
 BE ecologico 29
 fertilizantes 2 series
-BE series 90
+BE series 92
 NL tierra 3
 NL estructura 40
 NL plaguicidas 7
