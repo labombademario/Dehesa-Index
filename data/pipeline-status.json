@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-26T17:54:00Z",
+ "generatedAt": "2026-11-26T18:10:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 328,
+  "ok": 323,
   "late": 3,
-  "error": 17,
+  "error": 22,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-26T03:37:34.846163+00:00",
   "repoGeneratedAt": "2026-11-26T03:37:34.846163+00:00",
-  "checkedAt": "2026-11-26T17:54:00Z"
+  "checkedAt": "2026-11-26T18:10:00Z"
  },
  "pipelines": [
   {
@@ -139,7 +139,7 @@
    "crons": [
     "10 18 * * 4"
    ],
-   "nextRun": "2026-11-26T18:10:00Z",
+   "nextRun": "2026-12-03T18:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -214,13 +214,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-25T18:11:48Z",
-    "durationSec": 47,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45672621828"
+    "startedAt": "2026-11-26T17:54:05Z",
+    "durationSec": 45,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45871576101"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -375,13 +375,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:56:31Z",
-    "durationSec": 46,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44571709486"
+    "startedAt": "2026-11-26T17:58:56Z",
+    "durationSec": 64,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45872209000"
    },
    "recent": {
-    "runs": 7,
-    "success": 6,
+    "runs": 8,
+    "success": 7,
     "failed": 1
    },
    "status": "ok",
@@ -973,13 +973,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:50:01Z",
-    "durationSec": 69,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44570526595"
+    "startedAt": "2026-11-26T17:54:07Z",
+    "durationSec": 73,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45871580841"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 2
    },
    "status": "ok",
@@ -2652,18 +2652,19 @@
    "nextRun": "2026-12-01T07:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-24T19:05:20Z",
-    "durationSec": 46,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45466472241"
+    "startedAt": "2026-11-26T17:53:18Z",
+    "durationSec": 671,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45871472472",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · Traceback (most recent call last):"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 120.0
   },
   {
@@ -4764,9 +4765,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-25T18:16:19Z",
-    "durationSec": 44,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45673421705"
+    "startedAt": "2026-11-26T17:57:29Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45872024267"
    },
    "recent": {
     "runs": 10,
@@ -5551,7 +5552,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-26T18:10:00Z",
+   "nextRun": "2026-11-26T21:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5602,7 +5603,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-26T17:41:03Z"
+     "lastChange": "2026-11-26T17:57:12Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -5653,7 +5654,7 @@
     },
     {
      "path": "data/fv-products.json",
-     "lastChange": "2026-11-26T17:50:50Z"
+     "lastChange": "2026-11-26T18:07:55Z"
     },
     {
      "path": "data/fv-farm.json",
@@ -6191,18 +6192,19 @@
    "nextRun": "2026-12-03T07:35:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:44:18Z",
-    "durationSec": 136,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44569459237"
+    "startedAt": "2026-11-26T17:51:21Z",
+    "durationSec": 417,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45871210337",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR: no se pudo leer la pagina: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/cereales/balances-de-gestion-de-cereales -> <urlopen error timed out>"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -6307,18 +6309,19 @@
    "nextRun": "2026-12-03T07:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:37:42Z",
-    "durationSec": 57,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44568230173"
+    "startedAt": "2026-11-26T17:46:16Z",
+    "durationSec": 1244,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45870519078",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-spain-livestock.py' has timed out after 20 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 8,
-    "failed": 1
+    "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -6353,18 +6356,19 @@
    "nextRun": "2026-12-03T07:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:44:58Z",
-    "durationSec": 71,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44569585736"
+    "startedAt": "2026-11-26T17:52:29Z",
+    "durationSec": 428,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45871362184",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR: no se pudo leer la pagina: https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/cultivos-herbaceos/leguminosas-y-oleaginosas/balances-gestion -> <urlopen error timed out>"
    },
    "recent": {
-    "runs": 8,
+    "runs": 9,
     "success": 7,
-    "failed": 1
+    "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -6376,18 +6380,19 @@
    "nextRun": "2026-12-03T07:50:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-19T16:50:09Z",
-    "durationSec": 82,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44570552551"
+    "startedAt": "2026-11-26T17:54:02Z",
+    "durationSec": 681,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45871570369",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · ERROR: no se pudo leer la pagina: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/aceite-oliva-y-aceituna-mesa/balances -> <urlopen error timed out>"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 7,
-    "failed": 2
+    "failed": 3
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
