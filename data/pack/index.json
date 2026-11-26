@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-25",
+ "generatedAt": "2026-11-26",
  "policy": "Solo fuentes con veredicto comercial apto o con condiciones (data/commercial-summary.json). Sin estimaciones ni relleno.",
  "columns": [
   "product_key",
@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76588
+  "rows": 76600
  },
  "files": [
   {
@@ -2597,13 +2597,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 177,
+   "rows": 180,
    "first": "2021-05-02",
-   "last": "2026-11-01",
+   "last": "2026-11-22",
    "csv": "data/pack/eu/colza_fr.csv",
    "xlsx": "data/pack/eu/colza_fr.xlsx",
-   "csvBytes": 35177,
-   "xlsxBytes": 15105
+   "csvBytes": 35773,
+   "xlsxBytes": 15245
   },
   {
    "product": "colza_de",
@@ -2628,13 +2628,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 271,
+   "rows": 274,
    "first": "2021-06-06",
-   "last": "2026-11-01",
+   "last": "2026-11-22",
    "csv": "data/pack/eu/colza_de.csv",
    "xlsx": "data/pack/eu/colza_de.xlsx",
-   "csvBytes": 57217,
-   "xlsxBytes": 19824
+   "csvBytes": 57850,
+   "xlsxBytes": 19962
   },
   {
    "product": "colza_hu",
@@ -2659,13 +2659,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 269,
+   "rows": 272,
    "first": "2021-01-10",
-   "last": "2026-10-25",
+   "last": "2026-11-15",
    "csv": "data/pack/eu/colza_hu.csv",
    "xlsx": "data/pack/eu/colza_hu.xlsx",
-   "csvBytes": 56816,
-   "xlsxBytes": 19778
+   "csvBytes": 57449,
+   "xlsxBytes": 19917
   },
   {
    "product": "colza_pl",
@@ -2690,13 +2690,13 @@
    "unit": "tonelada",
    "currency": "EUR",
    "frequency": "weekly",
-   "rows": 266,
+   "rows": 269,
    "first": "2021-01-10",
-   "last": "2026-10-25",
+   "last": "2026-11-15",
    "csv": "data/pack/eu/colza_pl.csv",
    "xlsx": "data/pack/eu/colza_pl.xlsx",
-   "csvBytes": 55930,
-   "xlsxBytes": 19622
+   "csvBytes": 56560,
+   "xlsxBytes": 19769
   },
   {
    "product": "cordero",
