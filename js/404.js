@@ -16,7 +16,6 @@
       err: 'Pensi che sia un nostro errore?', write: 'Scrivici', err2: 'con l’indirizzo che non funziona.' }
   };
   var pm = /^\/(en|fr|it)(\/|$)/.exec(window.location.pathname || '');
-  if (pm) { try { window.localStorage.setItem('dehesaIndexLang', pm[1]); } catch (e) { } }
   function $(id) { return document.getElementById(id); }
   function lang() { var l = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return T[l] ? l : 'es'; }
   function href(f) { return window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath(f) : '/' + f; }
@@ -29,6 +28,8 @@
     $('e4-err').innerHTML = esc(t.err) + ' <a href="' + esc(href('contacto.html')) + '">' + esc(t.write) + '</a> ' + esc(t.err2);
   }
   if (window.DehesaShared && window.DehesaShared.init) window.DehesaShared.init('404');
+  /* /en/, /fr/, /it/ delante de una direccion que no existe: se muestra en ese idioma */
+  if (pm && window.DehesaShared && window.DehesaShared.getLang() !== pm[1] && window.DehesaShared.setLang) window.DehesaShared.setLang(pm[1], { skipReload: true });
   render();
   if (window.DehesaShared) window.DehesaShared.onLangChange = render;
   $('e4-form').addEventListener('submit', function (e) {
