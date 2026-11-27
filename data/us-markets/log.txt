@@ -1,4 +1,4 @@
-2026-11-26T04:19:05Z
+2026-11-27T04:18:47Z
 CFTC 002602 corn 262 semanas, ultima 2026-11-17
 CFTC 005602 soybeans 262 semanas, ultima 2026-11-17
 CFTC 026603 soymeal 262 semanas, ultima 2026-11-17
@@ -19,16 +19,13 @@ AgTransport indicadores 263 semanas, ultima 2026-11-25
 AgTransport barcaza % tarifa 7 tramos
 AgTransport barcaza USD/t 26 tramos
 OK transport
-EIA gasoleo 11 areas, ultima 2026-11-23
-EIA propano residential FALLO HTTP 504
-EIA propano wholesale 33 areas
-OK fuel
+FALLO fuel HTTP 504 (se conserva el fichero anterior)
 FALLO ethanol HTTP 504 (se conserva el fichero anterior)
 vacuno 5 zonas, series: ['all_beef_type|dressed_delivered', 'all_beef_type|dressed_fob', 'all_beef_type|live_delivered', 'all_beef_type|live_fob', 'heifer|dressed_delivered', 'heifer|dressed_fob', 'heifer|live_delivered', 'heifer|live_fob', 'mixed_steer_heifer|dressed_delivered', 'mixed_steer_heifer|dressed_fob', 'mixed_steer_heifer|live_delivered', 'mixed_steer_heifer|live_fob', 'steer|dressed_delivered', 'steer|dressed_fob', 'steer|live_delivered', 'steer|live_fob']
 LMR beef 515 ultimo 2026-11-25
 LMR pork 515 ultimo 2026-11-25
 LMR hogs 515 ultimo 2026-11-25
-LMR cattle 16 ultimo {'all_beef_type|dressed_delivered': '2026-11-25', 'all_beef_type|dressed_fob': '2026-11-23', 'all_beef_type|live_delivered': '2026-11-23', 'all_beef_type|live_fob': '2026-11-25', 'heifer|dressed_delivered': '2026-11-23', 'heifer|live_delivered': '2026-11-20', 'heifer|live_fob': '2026-11-23', 'mixed_steer_heifer|dressed_delivered': '2026-11-25', 'mixed_steer_heifer|live_delivered': '2026-11-23', 'mixed_steer_heifer|live_fob': '2026-11-25', 'steer|dressed_delivered': '2026-11-25', 'steer|dressed_fob': '2026-11-23', 'steer|live_delivered': '2026-11-23', 'steer|live_fob': '2026-11-25', 'heifer|dressed_fob': '2026-11-16', 'mixed_steer_heifer|dressed_fob': '2026-11-23'}
+LMR cattle 16 ultimo {'all_beef_type|dressed_delivered': '2026-11-25', 'all_beef_type|live_delivered': '2026-11-23', 'all_beef_type|live_fob': '2026-11-25', 'heifer|live_delivered': '2026-11-20', 'heifer|live_fob': '2026-11-23', 'mixed_steer_heifer|live_delivered': '2026-11-23', 'mixed_steer_heifer|live_fob': '2026-11-25', 'steer|dressed_delivered': '2026-11-25', 'steer|live_delivered': '2026-11-23', 'steer|live_fob': '2026-11-25', 'all_beef_type|dressed_fob': '2026-11-23', 'heifer|dressed_delivered': '2026-11-23', 'mixed_steer_heifer|dressed_delivered': '2026-11-25', 'steer|dressed_fob': '2026-11-23', 'heifer|dressed_fob': '2026-11-16', 'mixed_steer_heifer|dressed_fob': '2026-11-23'}
 OK lmr
 FGIS 2025 11781707 bytes, 25230 filas de ['CORN', 'SOYBEANS', 'WHEAT', 'SORGHUM']
 FGIS 2026 11019961 bytes, 23750 filas de ['CORN', 'SOYBEANS', 'WHEAT', 'SORGHUM']
