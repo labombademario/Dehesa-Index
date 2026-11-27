@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-27T05:18:53.468Z",
+  "generatedAt": "2026-11-27T19:07:49.893Z",
   "status": "informational",
   "rules": [
     {
@@ -27,6 +27,15 @@
       "severity": "watch",
       "changePct": 6.81,
       "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "changePct": 5.22,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
@@ -285,9 +294,9 @@
       "product": "defra_barley_output_index",
       "region": "uk",
       "sourceId": "defra",
-      "severity": "watch",
-      "changePct": 6.08,
-      "observationDate": "2026-08-01"
+      "severity": "high",
+      "changePct": 11.52,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -295,17 +304,8 @@
       "region": "uk",
       "sourceId": "defra",
       "severity": "watch",
-      "changePct": 9.4,
-      "observationDate": "2026-08-01"
-    },
-    {
-      "type": "period_move",
-      "product": "defra_sheep_output_index",
-      "region": "uk",
-      "sourceId": "defra",
-      "severity": "high",
-      "changePct": -11.6,
-      "observationDate": "2026-08-01"
+      "changePct": 5.11,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -313,8 +313,8 @@
       "region": "uk",
       "sourceId": "defra",
       "severity": "watch",
-      "changePct": 6.05,
-      "observationDate": "2026-08-01"
+      "changePct": 5.73,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
