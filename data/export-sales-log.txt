@@ -1,16 +1,16 @@
-107 OK All Wheat MY2027 semana 2026-11-12 destinos 47 exportado acumulado 8420076 pendiente 4164158
-101 OK Wheat - HRW MY2027 semana 2026-11-12 destinos 23 exportado acumulado 1834646 pendiente 801446
-102 OK Wheat - SRW MY2027 semana 2026-11-12 destinos 29 exportado acumulado 1240042 pendiente 523086
-103 OK Wheat - HRS MY2027 semana 2026-11-12 destinos 31 exportado acumulado 2500254 pendiente 1385122
-104 OK Wheat - White MY2027 semana 2026-11-12 destinos 22 exportado acumulado 2610831 pendiente 1274784
-105 OK Wheat - Durum MY2027 semana 2026-11-12 destinos 8 exportado acumulado 234303 pendiente 179720
-401 OK Corn MY2027 semana 2026-11-12 destinos 39 exportado acumulado 12937966 pendiente 16322754
-701 OK Sorghum MY2027 semana 2026-11-12 destinos 6 exportado acumulado 47682 pendiente 74239
-301 OK Barley MY2027 semana 2026-11-12 destinos 3 exportado acumulado 22275 pendiente 30510
-801 OK Soybeans MY2027 semana 2026-11-12 destinos 39 exportado acumulado 15741937 pendiente 17147615
-901 OK Soybean cake & meal MY2027 semana 2026-11-12 destinos 45 exportado acumulado 1994142 pendiente 5015997
-902 OK Soybean Oil MY2027 semana 2026-11-12 destinos 11 exportado acumulado 11771 pendiente 28766
-1404 OK All Upland Cotton MY2027 semana 2026-11-12 destinos 29 exportado acumulado 2453371 pendiente 3765357
-1505 OK All Rice MY2027 semana 2026-11-12 destinos 59 exportado acumulado 678561 pendiente 669125
-1701 OK Fresh, Chilled, or Frozen Muscle Cuts of Beef MY2026 semana 2026-11-12 destinos 79 exportado acumulado 574577 pendiente 108437
-1702 OK Fresh, Chilled, or Frozen Muscle Cuts of Pork MY2026 semana 2026-11-12 destinos 59 exportado acumulado 1533553 pendiente 214999
+107 OK All Wheat MY2027 semana 2026-11-19 destinos 47 exportado acumulado 8777361 pendiente 4371556
+101 OK Wheat - HRW MY2027 semana 2026-11-19 destinos 23 exportado acumulado 1860429 pendiente 947940
+102 OK Wheat - SRW MY2027 semana 2026-11-19 destinos 30 exportado acumulado 1287761 pendiente 572586
+103 OK Wheat - HRS MY2027 semana 2026-11-19 destinos 32 exportado acumulado 2585006 pendiente 1481891
+104 OK Wheat - White MY2027 semana 2026-11-19 destinos 22 exportado acumulado 2791646 pendiente 1207635
+105 OK Wheat - Durum MY2027 semana 2026-11-19 destinos 8 exportado acumulado 252519 pendiente 161504
+401 OK Corn MY2027 semana 2026-11-19 destinos 39 exportado acumulado 14131326 pendiente 17057273
+701 OK Sorghum MY2027 semana 2026-11-19 destinos 6 exportado acumulado 51619 pendiente 74764
+301 OK Barley MY2027 semana 2026-11-19 destinos 3 exportado acumulado 22819 pendiente 29966
+801 OK Soybeans MY2027 semana 2026-11-19 destinos 39 exportado acumulado 17204979 pendiente 16440389
+901 OK Soybean cake & meal MY2027 semana 2026-11-19 destinos 47 exportado acumulado 2357736 pendiente 5195950
+902 OK Soybean Oil MY2027 semana 2026-11-19 destinos 12 exportado acumulado 13422 pendiente 27373
+1404 OK All Upland Cotton MY2027 semana 2026-11-19 destinos 29 exportado acumulado 2566780 pendiente 3982282
+1505 OK All Rice MY2027 semana 2026-11-19 destinos 59 exportado acumulado 700198 pendiente 695993
+1701 OK Fresh, Chilled, or Frozen Muscle Cuts of Beef MY2026 semana 2026-11-19 destinos 79 exportado acumulado 587546 pendiente 100406
+1702 OK Fresh, Chilled, or Frozen Muscle Cuts of Pork MY2026 semana 2026-11-19 destinos 58 exportado acumulado 1569928 pendiente 213268
