@@ -138,7 +138,7 @@ img { max-width: 100%; }
   font-size: 16px; min-height: 44px; font-weight: 500; color: var(--nav-inactive); border-bottom: 1px solid var(--border);
 }
 .di-nav-mobile-panel button.active { font-weight: 700; color: var(--accent); }
-@media (max-width: 900px) {
+@media (max-width: 1130px) {
   .di-nav-links { display: none; }
   .di-nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--surface-alt); border: 1px solid var(--border-strong); border-radius: 10px; padding: 0; margin: 0; cursor: pointer; font-size: 18px; line-height: 1; color: var(--text); }
   .di-nav-logo img { height: 36px; }
@@ -3231,3 +3231,19 @@ a.di-nav-chip { min-width: 0; gap: 7px; padding-left: 10px; padding-right: 10px;
 .di-emp-wait input { margin-top: 3px; }
 /* enlaces a ediciones del blog en blog.html: objetivo tactil de 24 px (WCAG 2.5.8) */
 .bl-eds a{display:inline-block;padding:3px 0;min-height:24px}
+
+/* Pagina 404 (404.html) */
+.di-404-search { margin: 0 0 28px; }
+.di-404-search label { display: block; font-size: 13px; color: var(--text-muted, #5f5944); margin-bottom: 6px; }
+.di-404-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.di-404-row input { flex: 1; min-width: 240px; box-sizing: border-box; padding: 12px 14px; font: inherit; font-size: 16px; border: 1px solid var(--border, #c9c1a8); border-radius: 8px; background: var(--surface, #fffdf7); color: inherit; }
+.di-404-row .di-btn-gold { min-height: 44px; }
+.di-404-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 24px; }
+.di-404-card { display: block; text-decoration: none; color: inherit; padding: 16px 18px; }
+.di-404-card b { display: block; font-size: 16px; margin-bottom: 3px; }
+.di-404-card span { font-size: 13px; line-height: 1.4; color: var(--text-muted, #5f5944); }
+.di-404-card:hover b, .di-404-card:focus-visible b { text-decoration: underline; }
+@media (max-width: 560px) { .di-404-grid { grid-template-columns: 1fr; } }
+
+/* Con siete grupos en el menu (27-nov) la barra no cabe por debajo de 1280 px; bajo 1130 px pasa al menu movil: menos espacio y letra algo menor */
+@media (min-width: 1131px) and (max-width: 1280px) { .di-nav-links { gap: 12px; } .di-nav-links button { font-size: 14px; } }

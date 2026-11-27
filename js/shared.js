@@ -79,7 +79,7 @@
   function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
   function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
   var BIZ_ITEMS = [];   // paginas para empresas: las pinta empresas.js (no caben todas en el menu)
-  var NAV_ORDER = ['g:prices', 'g:countries', 'g:mine', 'g:compare', 'g:today', 'g:more'];
+  var NAV_ORDER = ['g:prices', 'g:countries', 'g:mine', 'g:compare', 'g:today', 'g:tools', 'g:more'];
   function pd(file, label, d, query) { var o = pg(file, label, query); o.d = d; return o; }
   function cd(c, es, en, fr, it) { var o = ctry(c, es, en, fr, it); o.chip = 1; return o; }
   var NAV_GROUPS = {
@@ -206,7 +206,7 @@
     G.prices.label = L('Buscar precios', 'Find prices', 'Trouver un prix', 'Trova prezzi');
     G.today.label = L('Noticias y calendario', 'News and calendar', 'Actualités et calendrier', 'Notizie e calendario');
     /* 18-oct: el grupo vuelve a llamarse «Mi espacio» («Mi mercado» es solo la página y el botón destacado) y la calculadora va junto a «Mi explotación» */
-    G.mine.items = (function (it) { var by = {}; it.forEach(function (i) { by[i.file] = i; }); return ['mi-mercado.html', 'mi-explotacion.html', 'calculadora.html', 'mi-seguimiento.html', 'siembra.html'].map(function (f) { return by[f]; }).filter(Boolean); })(G.mine.items.concat(pick('costs', ['calculadora.html'])));
+    G.mine.items = (function (it) { var by = {}; it.forEach(function (i) { by[i.file] = i; }); return ['mi-mercado.html', 'mi-explotacion.html', 'mi-seguimiento.html', 'siembra.html'].map(function (f) { return by[f]; }).filter(Boolean); })(G.mine.items.concat(pick('costs', ['calculadora.html'])));
     G.compare = { label: L('Comparar', 'Compare', 'Comparer', 'Confrontare'), items: pick('prices', ['comparador.html']).concat(pick('countries', ['perfiles.html']), pick('production', ['oferta-demanda.html']), G.prices.items.filter(function (i) { return i.items; })[0].items.filter(function (i) { return i.file === 'relaciones.html'; })) };
     /* 15-oct: el comparador y las relaciones viven en «Comparar»; se quitan de «Buscar precios» para no repetirlos */
     var noCmp = function (i) { return i.file !== 'comparador.html' && i.file !== 'relaciones.html'; };
@@ -216,11 +216,15 @@
     var BIZ_MENU = ['liquidacion.html', 'monitor-insumos.html']; // el resto (informe, descargas, condiciones) se enlaza desde empresas.html
     var BIZ = ['liquidacion.html', 'monitor-insumos.html', 'informe-cooperativas.html', 'datos-descargables.html', 'api.html', 'informe-negociacion.html', 'comparador-facturas.html', 'mis-compras.html', 'modelo-costes.html', 'avisos.html', 'conector-ia.html', 'widgets.html', 'cestas.html', 'condiciones.html'];
     BIZ_ITEMS = BIZ.map(function (f) { return G.data.items.filter(function (i) { return i.file === f; })[0]; }).filter(Boolean);
-    G.more = { label: L('Más herramientas', 'More tools', 'Plus d’outils', 'Altri strumenti'), mega: 1, items: [
-      { label: L('Clima, mapa y comercio', 'Weather, map and trade', 'Météo, carte et commerce', 'Meteo, mappa e commercio'), items: prod.filter(function (i) { return /^(sequia|clima|mapa|produccion-mundial)\./.test(i.file); }).concat(one('aranceles.html')) },
-      { label: L('Datos e información avanzada', 'Data and advanced information', 'Données et informations avancées', 'Dati e informazioni avanzate'), items: G.data.items.filter(function (i) { return BIZ.indexOf(i.file) < 0; }) },
-      { label: L('Para empresas', 'For business', 'Pour les entreprises', 'Per le aziende'), items: [pd('empresas.html', L('Datos para empresas', 'Data for business', 'Données pour les entreprises', 'Dati per le aziende'), L('Descargas, informe de muestra, condiciones de uso y contacto', 'Downloads, sample report, terms of use and contact', 'Téléchargements, rapport d’exemple, conditions d’usage et contact', 'Download, rapporto di esempio, condizioni d’uso e contatto'))].concat(G.data.items.filter(function (i) { return BIZ_MENU.indexOf(i.file) > -1; })) },
-      { label: L('Apps', 'Apps', 'Apps', 'App'), items: [pd('app.html', L('App para iPhone, iPad y Mac', 'App for iPhone, iPad and Mac', 'App pour iPhone, iPad et Mac', 'App per iPhone, iPad e Mac'), L('Estado y descarga de las apps', 'Status and download of the apps', 'État et téléchargement des apps', 'Stato e download delle app'))] }
+    /* 27-nov: «Más herramientas» se parte en dos: «Herramientas» (lo que se usa con datos propios) y «Datos y descargas» (descargar, confiar, clima y mapa) */
+    var dat = function (files) { return files.map(function (f) { return G.data.items.filter(function (i) { return i.file === f; })[0]; }).filter(Boolean); };
+    var sub = function (es, en, fr, it, items) { return { label: L(es, en, fr, it), items: items }; };
+    G.tools = { label: L('Herramientas', 'Tools', 'Outils', 'Strumenti'), items: dat(['comparador-facturas.html', 'liquidacion.html']).concat(pick('costs', ['calculadora.html']), dat(['monitor-insumos.html', 'mis-compras.html', 'informe-negociacion.html', 'modelo-costes.html'])) };
+    G.more = { label: L('Datos', 'Data', 'Données', 'Dati'), mega: 1, items: [
+      sub('Descargar y conectar', 'Download and connect', 'Télécharger et connecter', 'Scarica e collega', dat(['catalogo.html', 'datos-descargables.html', 'api.html', 'conector-ia.html', 'widgets.html'])),
+      sub('Confianza y método', 'Trust and method', 'Confiance et méthode', 'Fiducia e metodo', dat(['metodologia.html', 'status.html', 'revisiones.html', 'condiciones.html', 'observatorio.html'])),
+      sub('Clima, mapa y comercio', 'Weather, map and trade', 'Météo, carte et commerce', 'Meteo, mappa e commercio', prod.filter(function (i) { return /^(sequia|clima|mapa|produccion-mundial)\./.test(i.file); }).concat(one('aranceles.html'))),
+      sub('Más', 'More', 'Plus', 'Altro', dat(['avisos.html', 'cestas.html', 'informe-cooperativas.html']).concat([pd('empresas.html', L('Datos para empresas', 'Data for business', 'Données pour les entreprises', 'Dati per le aziende'), L('Descargas, informe de muestra, condiciones de uso y contacto', 'Downloads, sample report, terms of use and contact', 'Téléchargements, rapport d’exemple, conditions d’usage et contact', 'Download, rapporto di esempio, condizioni d’uso e contatto')), pd('app.html', L('App para iPhone, iPad y Mac', 'App for iPhone, iPad and Mac', 'App pour iPhone, iPad et Mac', 'App per iPhone, iPad e Mac'), L('Estado y descarga de las apps', 'Status and download of the apps', 'État et téléchargement des apps', 'Stato e download delle app'))], dat(['informacion.html'])))
     ] };
     var dl = function (es, en, fr, it, items, cc) { return { label: L(es, en, fr, it), items: items, cc: cc }; };
     G.countries.chipsFirst = 1;
@@ -499,7 +503,7 @@
     });
   }
   var REL_T = L('Relacionado', 'Related', 'Voir aussi', 'Correlati');
-  var REL_X = { compare: ['precios.html', 'catalogo.html'], more: ['precios.html', 'mi-mercado.html'], today: ['precios.html', 'mi-seguimiento.html'], prices: ['mi-mercado.html', 'calendario.html'], countries: ['comparador.html', 'catalogo.html'], production: ['precios.html', 'calendario.html'], trade: ['precios.html', 'oferta-demanda.html'], costs: ['mi-explotacion.html', 'precios.html'], mine: ['precios.html', 'brief.html'], data: ['catalogo.html', 'status.html'] };
+  var REL_X = { compare: ['precios.html', 'catalogo.html'], more: ['precios.html', 'mi-mercado.html'], tools: ['mi-mercado.html', 'precios.html'], today: ['precios.html', 'mi-seguimiento.html'], prices: ['mi-mercado.html', 'calendario.html'], countries: ['comparador.html', 'catalogo.html'], production: ['precios.html', 'calendario.html'], trade: ['precios.html', 'oferta-demanda.html'], costs: ['mi-explotacion.html', 'precios.html'], mine: ['precios.html', 'brief.html'], data: ['catalogo.html', 'status.html'] };
   function findLeaf(file) {
     var found = null;
     NAV_ORDER.forEach(function (k) { var g = NAV_GROUPS[k.slice(2)]; (function walk(list, col) { list.forEach(function (i) { if (i.items) walk(i.items, i.items); else if (!found && i.file === file && !i.chip && !i.hash) found = i; }); })(g.items, null); });
