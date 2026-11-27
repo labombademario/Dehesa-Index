@@ -1,305 +1,305 @@
-serie 010777276 IPAMPA d0 IPAMPA_0 Overall index 261 2026-09
-serie 010777277 IPAMPA d1 IPAMPA_01 Goods and services currently consumed 261 2026-09
-serie 010777278 IPAMPA d2 IPAMPA_0101 Seeds and planting stock 261 2026-09
-serie 010777279 IPAMPA d3 IPAMPA_010101 Straw cereal seed 261 2026-09
-serie 010777280 IPAMPA d4 IPAMPA_01010101 Soft wheat seed 261 2026-09
-omitida 010777281 IPAMPA d5 IPAMPA_0101010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Soft wheat seed (standard treatment 261 2026-09
-omitida 010777282 IPAMPA d5 IPAMPA_0101010102 Monthly agricultural means of production purchasing price index (IPAMPA) - Soft wheat seed (premium treatment) 261 2026-09
-omitida 010777283 IPAMPA d5 IPAMPA_0101010103 Monthly agricultural means of production purchasing price index (IPAMPA) - Soft wheat seed (fly treatment) 261 2026-09
-serie 010777285 IPAMPA d4 IPAMPA_01010102 Durum wheat seed 261 2026-09
-serie 010777286 IPAMPA d4 IPAMPA_01010103 Barley seed 261 2026-09
-omitida 010777287 IPAMPA d5 IPAMPA_0101010301 Monthly agricultural means of production purchasing price index (IPAMPA) - Barley seed (standard and premium t 261 2026-09
-serie 010777290 IPAMPA d3 IPAMPA_010102 Durum wheat seed 261 2026-09
-serie 010777291 IPAMPA d4 IPAMPA_01010201 Barley seed 261 2026-09
-serie 010777292 IPAMPA d4 IPAMPA_01010202 Barley seed (standard and premium treatment) 261 2026-09
-serie 010777294 IPAMPA d3 IPAMPA_010103 Fodder crop seed 261 2026-09
-serie 010777295 IPAMPA d3 IPAMPA_010104 Oil plant and protein plant seed 261 2026-09
-serie 010777296 IPAMPA d4 IPAMPA_01010401 Rape seeds 261 2026-09
-serie 010777297 IPAMPA d4 IPAMPA_01010402 Sunflower seed (oleic and inoleic) 261 2026-09
-serie 010777300 IPAMPA d3 IPAMPA_010105 Fallow land and soil cover crop seed 261 2026-09
-serie 010777303 IPAMPA d3 IPAMPA_010106 Vegetable, flower and textile seeds 261 2026-09
-serie 010777304 IPAMPA d3 IPAMPA_010107 Other seeds and seedlings 261 2026-09
-serie 010777305 IPAMPA d4 IPAMPA_01010701 Seed potatoes 261 2026-09
-serie 010777306 IPAMPA d4 IPAMPA_01010702 Industrial beetroot seed 261 2026-09
-serie 010777308 IPAMPA d2 IPAMPA_0102 Energy and lubricants 261 2026-09
-serie 010777309 IPAMPA d3 IPAMPA_010201 Combustible fuels 261 2026-09
-serie 010777312 IPAMPA d4 IPAMPA_01020103 Gas 261 2026-09
-serie 010777313 IPAMPA d3 IPAMPA_010202 Automotive fuel 261 2026-09
-serie 010777314 IPAMPA d4 IPAMPA_01020201 Petrol 261 2026-09
-serie 010777315 IPAMPA d4 IPAMPA_01020202 Diesel 261 2026-09
-serie 010777316 IPAMPA d4 IPAMPA_01020203 Non-road diesel 261 2026-09
-serie 010777317 IPAMPA d3 IPAMPA_010203 Electricity 261 2026-09
-serie 010777318 IPAMPA d3 IPAMPA_010204 Lubricants 261 2026-09
-serie 010777319 IPAMPA d2 IPAMPA_0103 Fertilisers and soil improvers 261 2026-09
-serie 010777320 IPAMPA d3 IPAMPA_010301 Straight fertilizers 261 2026-09
-serie 010777321 IPAMPA d4 IPAMPA_01030101 Straight nitrogen-based fertilizers 261 2026-09
-serie 010777322 IPAMPA d5 IPAMPA_0103010101 Ammonitrates 261 2026-09
-serie 010777323 IPAMPA d5 IPAMPA_0103010102 Nitrogen solutions 261 2026-09
-serie 010777324 IPAMPA d5 IPAMPA_0103010103 Urea 261 2026-09
-serie 010777325 IPAMPA d5 IPAMPA_0103010104 Ammonium sulphate 261 2026-09
-serie 010777326 IPAMPA d5 IPAMPA_0103010105 Other straight nitrogen fertilisers (ammoniac, anhydrous, other ..) 261 2026-09
-serie 010777327 IPAMPA d4 IPAMPA_01030102 Straight phosphate-based fertilizers 261 2026-09
-serie 010777328 IPAMPA d5 IPAMPA_0103010201 Triple superphosphate (P2O5 > 38%) 261 2026-09
-serie 010777330 IPAMPA d4 IPAMPA_01030103 Straight potassium-based fertilizers (including muriate of potash and potassium sulfate) 261 2026-09
-serie 010777331 IPAMPA d3 IPAMPA_010302 Compound fertilizers 261 2026-09
-serie 010777332 IPAMPA d4 IPAMPA_01030201 binary fertilisers 261 2026-09
-serie 010777333 IPAMPA d5 IPAMPA_0103020101 NP fertilizers 261 2026-09
-serie 010777334 IPAMPA d6 IPAMPA_010302010101 Ammonium phosphate 261 2026-09
-omitida 010777335 IPAMPA d6 IPAMPA_010302010102 Monthly agricultural means of production purchasing price index (IPAMPA) - Other solid or liquid NP 261 2026-09
-serie 010777336 IPAMPA d5 IPAMPA_0103020102 PK fertilizers 261 2026-09
-omitida 010777337 IPAMPA d6 IPAMPA_010302010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Superpotassium 261 2026-09
-serie 010777341 IPAMPA d4 IPAMPA_01030202 Ternary fertilizers 261 2026-09
-omitida 010777343 IPAMPA d5 IPAMPA_0103020202 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 02 (n+p+k 261 2026-09
-omitida 010777346 IPAMPA d5 IPAMPA_0103020205 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 05 (40<=n 261 2026-09
-omitida 010777347 IPAMPA d5 IPAMPA_0103020206 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 06 (40<=n 261 2026-09
-omitida 010777351 IPAMPA d5 IPAMPA_0103020210 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 10 (n+p+k 261 2026-09
-omitida 010777352 IPAMPA d5 IPAMPA_0103020211 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 11 (n+p+k 261 2026-09
-omitida 010777353 IPAMPA d5 IPAMPA_0103020212 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 12 (n+p+k 261 2026-09
-serie 010777354 IPAMPA d3 IPAMPA_010303 Other fertilizers, soil amendments and cultivation media 261 2026-09
-serie 010777355 IPAMPA d4 IPAMPA_01030301 Other fertilizers 261 2026-09
-serie 010777356 IPAMPA d5 IPAMPA_0103030101 Organic or organo-mineral fertilisers 261 2026-09
-serie 010777359 IPAMPA d4 IPAMPA_01030302 Soil amendments 261 2026-09
-serie 010777360 IPAMPA d5 IPAMPA_0103030201 Calciferous soil amendments 261 2026-09
-omitida 010777363 IPAMPA d6 IPAMPA_010303020103 Monthly agricultural means of production purchasing price index (IPAMPA) - Basic mineral soil amendments 261 2026-09
-serie 010777364 IPAMPA d5 IPAMPA_0103030202 Organic amendments (manure, compost, and other organic amendments) 261 2026-09
-serie 010777366 IPAMPA d3 IPAMPA_010304 Bio-stimulant products 261 2026-09
-serie 010777367 IPAMPA d2 IPAMPA_0104 Plant protection products 261 2026-09
-serie 010777368 IPAMPA d3 IPAMPA_010401 Fungicides 261 2026-09
-serie 010777369 IPAMPA d4 IPAMPA_01040101 Fungicides on annual crops 261 2026-09
-omitida 010777370 IPAMPA d5 IPAMPA_0104010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Arable crop fungicides (cereals, fo 261 2026-09
-omitida 010777372 IPAMPA d5 IPAMPA_0104010103 Monthly agricultural means of production purchasing price index (IPAMPA) - Fungicides on potatoes 261 2026-09
-omitida 010777373 IPAMPA d5 IPAMPA_0104010104 Monthly agricultural means of production purchasing price index (IPAMPA) - Fungicides on oil crops 261 2026-09
-serie 010777375 IPAMPA d4 IPAMPA_01040102 Fungicides on perennial crops 261 2026-09
-omitida 010777376 IPAMPA d5 IPAMPA_0104010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Fungicides on vines 261 2026-09
-serie 010777380 IPAMPA d3 IPAMPA_010402 Herbicides 261 2026-09
-serie 010777381 IPAMPA d4 IPAMPA_01040201 Herbicides on annual crops 261 2026-09
-omitida 010777382 IPAMPA d5 IPAMPA_0104020101 Monthly agricultural means of production purchasing price index (IPAMPA) - Herbicides on cereals, excluding ma 261 2026-09
-omitida 010777383 IPAMPA d5 IPAMPA_0104020102 Monthly agricultural means of production purchasing price index (IPAMPA) - Herbicides on maize 261 2026-09
-omitida 010777384 IPAMPA d5 IPAMPA_0104020103 Monthly agricultural means of production purchasing price index (IPAMPA) - Industrial beetroot herbicides 261 2026-09
-omitida 010777386 IPAMPA d5 IPAMPA_0104020105 Monthly agricultural means of production purchasing price index (IPAMPA) - Herbicides on oil crops 261 2026-09
-serie 010777389 IPAMPA d4 IPAMPA_01040202 Herbicides on perennial crops 261 2026-09
-omitida 010777390 IPAMPA d5 IPAMPA_0104020201 Monthly agricultural means of production purchasing price index (IPAMPA) - Herbicides on vines 261 2026-09
-serie 010777394 IPAMPA d3 IPAMPA_010403 Insecticides 261 2026-09
-serie 010777395 IPAMPA d4 IPAMPA_01040301 Insecticides on annual crops 261 2026-09
-omitida 010777396 IPAMPA d5 IPAMPA_0104030101 Monthly agricultural means of production purchasing price index (IPAMPA) - Insecticides on cereals, excluding  261 2026-09
-omitida 010777397 IPAMPA d5 IPAMPA_0104030102 Monthly agricultural means of production purchasing price index (IPAMPA) - Insecticides on maize 261 2026-09
-serie 010777402 IPAMPA d4 IPAMPA_01040302 Insecticides on perennial crops 261 2026-09
-serie 010777406 IPAMPA d3 IPAMPA_010404 Other protection products 261 2026-09
-serie 010777407 IPAMPA d4 IPAMPA_01040401 Seed processing for propagation 261 2026-09
-serie 010777408 IPAMPA d4 IPAMPA_01040402 Growth regulators 261 2026-09
-serie 010777411 IPAMPA d4 IPAMPA_01040403 Other protection products 261 2026-09
-serie 010777412 IPAMPA d3 IPAMPA_010405 Bio-control products 261 2026-09
-serie 010777414 IPAMPA d4 IPAMPA_01040502 Bio-control products for perennial crops : vines and fruits 261 2026-09
-serie 010777417 IPAMPA d2 IPAMPA_0105 Animal feedingstuffs 261 2026-09
-serie 010777418 IPAMPA d3 IPAMPA_010501 straight feedingstuffs in animal nutrition 261 2026-09
-serie 010777419 IPAMPA d4 IPAMPA_01050101 Cereal feedingstuffs and by-products 261 2026-09
-serie 010777420 IPAMPA d5 IPAMPA_0105010101 Feedingstuffs : Cereals 261 2026-09
-omitida 010777421 IPAMPA d6 IPAMPA_010501010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuffs : Maize 261 2026-09
-serie 010777425 IPAMPA d5 IPAMPA_0105010102 Feedingstuffs : by-products derived from cereals (bran and other products excluding wheat) 261 2026-09
-serie 010777426 IPAMPA d4 IPAMPA_01050102 Oil-cakes 261 2026-09
-serie 010777427 IPAMPA d5 IPAMPA_0105010201 Soya cake 261 2026-09
-serie 010777428 IPAMPA d5 IPAMPA_0105010202 Other oil cakes 261 2026-09
-serie 010777429 IPAMPA d4 IPAMPA_01050103 Other simple feedingstuffs and nutritional products for animals 261 2026-09
-serie 010777430 IPAMPA d5 IPAMPA_0105010301 Other straight feedingstuffs for animals 261 2026-09
-omitida 010777432 IPAMPA d6 IPAMPA_010501030102 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuffs : Beet pulp 261 2026-09
-serie 010777434 IPAMPA d5 IPAMPA_0105010302 Supplements, food additives and nutritional products 261 2026-09
-omitida 010777435 IPAMPA d6 IPAMPA_010501030201 Monthly agricultural means of production purchasing price index (IPAMPA) - Mineral and liquid foods 261 2026-09
-omitida 010777436 IPAMPA d6 IPAMPA_010501030202 Monthly agricultural means of production purchasing price index (IPAMPA) - Nutritional supplements 261 2026-09
-serie 010777437 IPAMPA d3 IPAMPA_010502 Compound feedingstuffs 261 2026-09
-serie 010777438 IPAMPA d4 IPAMPA_01050201 Feedingstuff for calves 261 2026-09
-serie 010777439 IPAMPA d5 IPAMPA_0105020101 Milk replacer feed for calves 261 2026-09
-serie 010777440 IPAMPA d5 IPAMPA_0105020102 Other feedingstuffs for calves 261 2026-09
-serie 010777441 IPAMPA d4 IPAMPA_01050202 Feedingstuff for adult bovines 261 2026-09
-serie 010777442 IPAMPA d5 IPAMPA_0105020201 Feed for fattening cattle TNM up to 20% 261 2026-09
-serie 010777443 IPAMPA d5 IPAMPA_0105020202 Feed for fattening cattle TNM over 20% 261 2026-09
-serie 010777444 IPAMPA d5 IPAMPA_0105020203 Feed for dairy cows TNM up to 20% 261 2026-09
-serie 010777445 IPAMPA d5 IPAMPA_0105020204 Feed for dairy cows TNM 20-35% 261 2026-09
-serie 010777446 IPAMPA d5 IPAMPA_0105020205 Feed for dairy cows TNM 35% or more 261 2026-09
-serie 010777447 IPAMPA d5 IPAMPA_0105020206 Mash 261 2026-09
-serie 010777448 IPAMPA d4 IPAMPA_01050203 Feedingstuff for pigs 261 2026-09
-serie 010777449 IPAMPA d5 IPAMPA_0105020301 Starter feed for piglets 261 2026-09
-serie 010777450 IPAMPA d5 IPAMPA_0105020302 Second-stage feed for piglets 261 2026-09
-serie 010777451 IPAMPA d5 IPAMPA_0105020303 Feed for fattening pigs, growth 261 2026-09
-serie 010777452 IPAMPA d5 IPAMPA_0105020304 Feedingstuff for pigs, finishing fattening 261 2026-09
-serie 010777453 IPAMPA d5 IPAMPA_0105020305 Feed for fattening pigs, complete 261 2026-09
-serie 010777454 IPAMPA d5 IPAMPA_0105020306 Feed for fattening pigs, supplement 261 2026-09
-serie 010777455 IPAMPA d5 IPAMPA_0105020307 Feed for awaiting or nuring sowes 261 2026-09
-serie 010777456 IPAMPA d4 IPAMPA_01050204 Feedingstuff for poultry 261 2026-09
-serie 010777457 IPAMPA d5 IPAMPA_0105020401 Feedingstuff for rooster 261 2026-09
-omitida 010777458 IPAMPA d6 IPAMPA_010502040101 Monthly agricultural means of production purchasing price index (IPAMPA) - Starter feed for chicks 261 2026-09
-serie 010777459 IPAMPA d6 IPAMPA_010502040102 Feed for broilers, growth 261 2026-09
-omitida 010777460 IPAMPA d6 IPAMPA_010502040103 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for standard chickens, finishi 261 2026-09
-omitida 010777461 IPAMPA d6 IPAMPA_010502040104 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for quality chickens, finishin 261 2026-09
-omitida 010777462 IPAMPA d6 IPAMPA_010502040105 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for pullets 261 2026-09
-serie 010777463 IPAMPA d6 IPAMPA_010502040106 Feedingstuff for hens kept on the floor 261 2026-09
-serie 010777464 IPAMPA d6 IPAMPA_010502040107 Feedingstuff for hens kept in battery cages 261 2026-09
-serie 010777465 IPAMPA d5 IPAMPA_0105020402 Feedingstuff for other poultry 261 2026-09
-omitida 010777466 IPAMPA d6 IPAMPA_010502040201 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for turkey and turkey poults 261 2026-09
-omitida 010777467 IPAMPA d6 IPAMPA_010502040202 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for other palmipeds 261 2026-09
-omitida 010777468 IPAMPA d6 IPAMPA_010502040203 Monthly agricultural means of production purchasing price index (IPAMPA) - Other feedingstuff for poultry 261 2026-09
-serie 010777469 IPAMPA d4 IPAMPA_01050205 other compound feed 261 2026-09
-serie 010777470 IPAMPA d5 IPAMPA_0105020501 Feedingstuff for rabbits 261 2026-09
-serie 010777471 IPAMPA d5 IPAMPA_0105020502 Feedingstuff for ovine and caprine animals 261 2026-09
-omitida 010777472 IPAMPA d6 IPAMPA_010502050201 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for lambs 261 2026-09
-omitida 010777473 IPAMPA d6 IPAMPA_010502050202 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for ewes 261 2026-09
-omitida 010777474 IPAMPA d6 IPAMPA_010502050203 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for goats 261 2026-09
-serie 010777476 IPAMPA d2 IPAMPA_0106 Material and small tools 261 2026-09
-serie 010777477 IPAMPA d3 IPAMPA_010601 Plastic films and nets for husbandry 261 2026-09
-serie 010777478 IPAMPA d3 IPAMPA_010602 Plastic films and nets for crop farming 261 2026-09
-serie 010777479 IPAMPA d3 IPAMPA_010603 Area closure and staking 261 2026-09
-serie 010777480 IPAMPA d3 IPAMPA_010604 Other products (packages, containers, tools and small equipemnets) 261 2026-09
-serie 010777481 IPAMPA d2 IPAMPA_0107 Maintenance and repair 261 2026-09
-serie 010777482 IPAMPA d3 IPAMPA_010701 Maintenance and repair of vehicles 261 2026-09
-serie 010777483 IPAMPA d3 IPAMPA_010702 Maintenance and repair of buildings 261 2026-09
-serie 010777484 IPAMPA d2 IPAMPA_0108 Veterinary products and services 261 2026-09
-serie 010777485 IPAMPA d3 IPAMPA_010801 Veterinary products 261 2026-09
-serie 010777486 IPAMPA d4 IPAMPA_01080101 Immunity : Vaccines and serums 261 2026-09
-serie 010777487 IPAMPA d4 IPAMPA_01080102 Antibacterial drugs 261 2026-09
-omitida 010777488 IPAMPA d5 IPAMPA_0108010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Antibacterials for Systemic Use 261 2026-09
-omitida 010777489 IPAMPA d5 IPAMPA_0108010202 Monthly agricultural means of production purchasing price index (IPAMPA) - Topical products 261 2026-09
-serie 010777490 IPAMPA d4 IPAMPA_01080103 Antiparasitics 261 2026-09
-omitida 010777491 IPAMPA d5 IPAMPA_0108010301 Monthly agricultural means of production purchasing price index (IPAMPA) – Internal antiparasitics 261 2026-09
-omitida 010777492 IPAMPA d5 IPAMPA_0108010302 Monthly agricultural means of production purchasing price index (IPAMPA) – External antiparasitics 261 2026-09
-omitida 010777493 IPAMPA d5 IPAMPA_0108010303 Monthly agricultural means of production purchasing price index (IPAMPA) – Endectocides 261 2026-09
-serie 010777495 IPAMPA d4 IPAMPA_01080105 Other products grouped by apparatus or system 261 2026-09
-serie 010777496 IPAMPA d3 IPAMPA_010802 Veterinary services 261 2026-09
-serie 010777497 IPAMPA d4 IPAMPA_01080201 Standard visit 261 2026-09
-serie 010777500 IPAMPA d2 IPAMPA_0109 General expenses 261 2026-09
-serie 010777501 IPAMPA d3 IPAMPA_010901 Postal services 261 2026-09
-serie 010777502 IPAMPA d3 IPAMPA_010902 Drinking water for non-domestic use 261 2026-09
-serie 010777503 IPAMPA d3 IPAMPA_010903 Studies and consultancy 261 2026-09
-serie 010777504 IPAMPA d3 IPAMPA_010904 Transport and telecommunications 261 2026-09
-serie 010777505 IPAMPA d1 IPAMPA_02 Capital goods 261 2026-09
-serie 010777506 IPAMPA d2 IPAMPA_0201 Monthly agricultural machinery 261 2026-09
-serie 010777507 IPAMPA d3 IPAMPA_020101 Cultivation equipment 261 2026-09
-serie 010777508 IPAMPA d4 IPAMPA_02010101 Rotavators 261 2026-09
-serie 010777509 IPAMPA d4 IPAMPA_02010102 Seeding, planting and distribution equipment 261 2026-09
-serie 010777510 IPAMPA d4 IPAMPA_02010103 Soil tillage and land development equipment 261 2026-09
-serie 010777511 IPAMPA d4 IPAMPA_02010104 Crop protection equipment 261 2026-09
-serie 010777512 IPAMPA d3 IPAMPA_020102 Harvesting equipment 261 2026-09
-serie 010777513 IPAMPA d3 IPAMPA_020103 Tractors 261 2026-09
-serie 010777514 IPAMPA d3 IPAMPA_020104 Trailers 261 2026-09
-serie 010777515 IPAMPA d3 IPAMPA_020105 Goods vehicles 261 2026-09
-serie 010777516 IPAMPA d2 IPAMPA_0202 Buildings 261 2026-09
-serie 010777517 IPAMPA d3 IPAMPA_020201 Farm buildings 261 2026-09
-serie 010777518 IPAMPA d3 IPAMPA_020202 Civil engineering 261 2026-09
-serie 010776593 IPPAP d0 IPPAP_0 General Index 81 2026-09
-serie 010776594 IPPAP d1 IPPAP_01 General Index, except fruits and vegetables, potatoes, cut flowers and potted plants 81 2026-09
-serie 010776595 IPPAP d2 IPPAP_0101 Plant products except fruits and vegetables, potatoes, cut flowers and potted plants 381 2026-09
-serie 010776596 IPPAP d3 IPPAP_010101 Cereals 381 2026-09
-serie 010776597 IPPAP d4 IPPAP_01010101 Barley 381 2026-09
-serie 010776598 IPPAP d5 IPPAP_0101010101 Barley for milling 381 2026-09
-serie 010776599 IPPAP d5 IPPAP_0101010102 Malting barley 381 2026-09
-serie 010776600 IPPAP d4 IPPAP_01010102 Soft wheat 381 2026-09
-serie 010776601 IPPAP d4 IPPAP_01010103 Durum wheat 381 2026-09
-serie 010776602 IPPAP d4 IPPAP_01010104 Oats 381 2026-09
-serie 010776603 IPPAP d4 IPPAP_01010105 Sorghum 381 2026-09
-serie 010776604 IPPAP d4 IPPAP_01010106 Triticale 381 2026-09
-serie 010776605 IPPAP d4 IPPAP_01010107 Maize 381 2026-09
-serie 010776606 IPPAP d3 IPPAP_010102 Oil seeds and oleaginous fruits and fats 381 2026-09
-serie 010776607 IPPAP d4 IPPAP_01010201 Rape 381 2026-09
-serie 010776608 IPPAP d4 IPPAP_01010202 Sunflower 381 2026-09
-serie 010776609 IPPAP d4 IPPAP_01010203 Soya 381 2026-09
-serie 010776610 IPPAP d3 IPPAP_010103 Potatoes 381 2026-09
-serie 010776611 IPPAP d4 IPPAP_01010301 Fresh potatoes for consumption 261 2026-09
+serie 010777276 IPAMPA d0 IPAMPA_0 Overall index 262 2026-10
+serie 010777277 IPAMPA d1 IPAMPA_01 Goods and services currently consumed 262 2026-10
+serie 010777278 IPAMPA d2 IPAMPA_0101 Seeds and planting stock 262 2026-10
+serie 010777279 IPAMPA d3 IPAMPA_010101 Straw cereal seed 262 2026-10
+serie 010777280 IPAMPA d4 IPAMPA_01010101 Soft wheat seed 262 2026-10
+omitida 010777281 IPAMPA d5 IPAMPA_0101010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Soft wheat seed (standard treatment 262 2026-10
+omitida 010777282 IPAMPA d5 IPAMPA_0101010102 Monthly agricultural means of production purchasing price index (IPAMPA) - Soft wheat seed (premium treatment) 262 2026-10
+omitida 010777283 IPAMPA d5 IPAMPA_0101010103 Monthly agricultural means of production purchasing price index (IPAMPA) - Soft wheat seed (fly treatment) 262 2026-10
+serie 010777285 IPAMPA d4 IPAMPA_01010102 Durum wheat seed 262 2026-10
+serie 010777286 IPAMPA d4 IPAMPA_01010103 Barley seed 262 2026-10
+omitida 010777287 IPAMPA d5 IPAMPA_0101010301 Monthly agricultural means of production purchasing price index (IPAMPA) - Barley seed (standard and premium t 262 2026-10
+serie 010777290 IPAMPA d3 IPAMPA_010102 Durum wheat seed 262 2026-10
+serie 010777291 IPAMPA d4 IPAMPA_01010201 Barley seed 262 2026-10
+serie 010777292 IPAMPA d4 IPAMPA_01010202 Barley seed (standard and premium treatment) 262 2026-10
+serie 010777294 IPAMPA d3 IPAMPA_010103 Fodder crop seed 262 2026-10
+serie 010777295 IPAMPA d3 IPAMPA_010104 Oil plant and protein plant seed 262 2026-10
+serie 010777296 IPAMPA d4 IPAMPA_01010401 Rape seeds 262 2026-10
+serie 010777297 IPAMPA d4 IPAMPA_01010402 Sunflower seed (oleic and inoleic) 262 2026-10
+serie 010777300 IPAMPA d3 IPAMPA_010105 Fallow land and soil cover crop seed 262 2026-10
+serie 010777303 IPAMPA d3 IPAMPA_010106 Vegetable, flower and textile seeds 262 2026-10
+serie 010777304 IPAMPA d3 IPAMPA_010107 Other seeds and seedlings 262 2026-10
+serie 010777305 IPAMPA d4 IPAMPA_01010701 Seed potatoes 262 2026-10
+serie 010777306 IPAMPA d4 IPAMPA_01010702 Industrial beetroot seed 262 2026-10
+serie 010777308 IPAMPA d2 IPAMPA_0102 Energy and lubricants 262 2026-10
+serie 010777309 IPAMPA d3 IPAMPA_010201 Combustible fuels 262 2026-10
+serie 010777312 IPAMPA d4 IPAMPA_01020103 Gas 262 2026-10
+serie 010777313 IPAMPA d3 IPAMPA_010202 Automotive fuel 262 2026-10
+serie 010777314 IPAMPA d4 IPAMPA_01020201 Petrol 262 2026-10
+serie 010777315 IPAMPA d4 IPAMPA_01020202 Diesel 262 2026-10
+serie 010777316 IPAMPA d4 IPAMPA_01020203 Non-road diesel 262 2026-10
+serie 010777317 IPAMPA d3 IPAMPA_010203 Electricity 262 2026-10
+serie 010777318 IPAMPA d3 IPAMPA_010204 Lubricants 262 2026-10
+serie 010777319 IPAMPA d2 IPAMPA_0103 Fertilisers and soil improvers 262 2026-10
+serie 010777320 IPAMPA d3 IPAMPA_010301 Straight fertilizers 262 2026-10
+serie 010777321 IPAMPA d4 IPAMPA_01030101 Straight nitrogen-based fertilizers 262 2026-10
+serie 010777322 IPAMPA d5 IPAMPA_0103010101 Ammonitrates 262 2026-10
+serie 010777323 IPAMPA d5 IPAMPA_0103010102 Nitrogen solutions 262 2026-10
+serie 010777324 IPAMPA d5 IPAMPA_0103010103 Urea 262 2026-10
+serie 010777325 IPAMPA d5 IPAMPA_0103010104 Ammonium sulphate 262 2026-10
+serie 010777326 IPAMPA d5 IPAMPA_0103010105 Other straight nitrogen fertilisers (ammoniac, anhydrous, other ..) 262 2026-10
+serie 010777327 IPAMPA d4 IPAMPA_01030102 Straight phosphate-based fertilizers 262 2026-10
+serie 010777328 IPAMPA d5 IPAMPA_0103010201 Triple superphosphate (P2O5 > 38%) 262 2026-10
+serie 010777330 IPAMPA d4 IPAMPA_01030103 Straight potassium-based fertilizers (including muriate of potash and potassium sulfate) 262 2026-10
+serie 010777331 IPAMPA d3 IPAMPA_010302 Compound fertilizers 262 2026-10
+serie 010777332 IPAMPA d4 IPAMPA_01030201 binary fertilisers 262 2026-10
+serie 010777333 IPAMPA d5 IPAMPA_0103020101 NP fertilizers 262 2026-10
+serie 010777334 IPAMPA d6 IPAMPA_010302010101 Ammonium phosphate 262 2026-10
+omitida 010777335 IPAMPA d6 IPAMPA_010302010102 Monthly agricultural means of production purchasing price index (IPAMPA) - Other solid or liquid NP 262 2026-10
+serie 010777336 IPAMPA d5 IPAMPA_0103020102 PK fertilizers 262 2026-10
+omitida 010777337 IPAMPA d6 IPAMPA_010302010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Superpotassium 262 2026-10
+serie 010777341 IPAMPA d4 IPAMPA_01030202 Ternary fertilizers 262 2026-10
+omitida 010777343 IPAMPA d5 IPAMPA_0103020202 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 02 (n+p+k 262 2026-10
+omitida 010777346 IPAMPA d5 IPAMPA_0103020205 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 05 (40<=n 262 2026-10
+omitida 010777347 IPAMPA d5 IPAMPA_0103020206 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 06 (40<=n 262 2026-10
+omitida 010777351 IPAMPA d5 IPAMPA_0103020210 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 10 (n+p+k 262 2026-10
+omitida 010777352 IPAMPA d5 IPAMPA_0103020211 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 11 (n+p+k 262 2026-10
+omitida 010777353 IPAMPA d5 IPAMPA_0103020212 Monthly agricultural means of production purchasing price index (IPAMPA) - Ternary fertilizers class 12 (n+p+k 262 2026-10
+serie 010777354 IPAMPA d3 IPAMPA_010303 Other fertilizers, soil amendments and cultivation media 262 2026-10
+serie 010777355 IPAMPA d4 IPAMPA_01030301 Other fertilizers 262 2026-10
+serie 010777356 IPAMPA d5 IPAMPA_0103030101 Organic or organo-mineral fertilisers 262 2026-10
+serie 010777359 IPAMPA d4 IPAMPA_01030302 Soil amendments 262 2026-10
+serie 010777360 IPAMPA d5 IPAMPA_0103030201 Calciferous soil amendments 262 2026-10
+omitida 010777363 IPAMPA d6 IPAMPA_010303020103 Monthly agricultural means of production purchasing price index (IPAMPA) - Basic mineral soil amendments 262 2026-10
+serie 010777364 IPAMPA d5 IPAMPA_0103030202 Organic amendments (manure, compost, and other organic amendments) 262 2026-10
+serie 010777366 IPAMPA d3 IPAMPA_010304 Bio-stimulant products 262 2026-10
+serie 010777367 IPAMPA d2 IPAMPA_0104 Plant protection products 262 2026-10
+serie 010777368 IPAMPA d3 IPAMPA_010401 Fungicides 262 2026-10
+serie 010777369 IPAMPA d4 IPAMPA_01040101 Fungicides on annual crops 262 2026-10
+omitida 010777370 IPAMPA d5 IPAMPA_0104010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Arable crop fungicides (cereals, fo 262 2026-10
+omitida 010777372 IPAMPA d5 IPAMPA_0104010103 Monthly agricultural means of production purchasing price index (IPAMPA) - Fungicides on potatoes 262 2026-10
+omitida 010777373 IPAMPA d5 IPAMPA_0104010104 Monthly agricultural means of production purchasing price index (IPAMPA) - Fungicides on oil crops 262 2026-10
+serie 010777375 IPAMPA d4 IPAMPA_01040102 Fungicides on perennial crops 262 2026-10
+omitida 010777376 IPAMPA d5 IPAMPA_0104010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Fungicides on vines 262 2026-10
+serie 010777380 IPAMPA d3 IPAMPA_010402 Herbicides 262 2026-10
+serie 010777381 IPAMPA d4 IPAMPA_01040201 Herbicides on annual crops 262 2026-10
+omitida 010777382 IPAMPA d5 IPAMPA_0104020101 Monthly agricultural means of production purchasing price index (IPAMPA) - Herbicides on cereals, excluding ma 262 2026-10
+omitida 010777383 IPAMPA d5 IPAMPA_0104020102 Monthly agricultural means of production purchasing price index (IPAMPA) - Herbicides on maize 262 2026-10
+omitida 010777384 IPAMPA d5 IPAMPA_0104020103 Monthly agricultural means of production purchasing price index (IPAMPA) - Industrial beetroot herbicides 262 2026-10
+omitida 010777386 IPAMPA d5 IPAMPA_0104020105 Monthly agricultural means of production purchasing price index (IPAMPA) - Herbicides on oil crops 262 2026-10
+serie 010777389 IPAMPA d4 IPAMPA_01040202 Herbicides on perennial crops 262 2026-10
+omitida 010777390 IPAMPA d5 IPAMPA_0104020201 Monthly agricultural means of production purchasing price index (IPAMPA) - Herbicides on vines 262 2026-10
+serie 010777394 IPAMPA d3 IPAMPA_010403 Insecticides 262 2026-10
+serie 010777395 IPAMPA d4 IPAMPA_01040301 Insecticides on annual crops 262 2026-10
+omitida 010777396 IPAMPA d5 IPAMPA_0104030101 Monthly agricultural means of production purchasing price index (IPAMPA) - Insecticides on cereals, excluding  262 2026-10
+omitida 010777397 IPAMPA d5 IPAMPA_0104030102 Monthly agricultural means of production purchasing price index (IPAMPA) - Insecticides on maize 262 2026-10
+serie 010777402 IPAMPA d4 IPAMPA_01040302 Insecticides on perennial crops 262 2026-10
+serie 010777406 IPAMPA d3 IPAMPA_010404 Other protection products 262 2026-10
+serie 010777407 IPAMPA d4 IPAMPA_01040401 Seed processing for propagation 262 2026-10
+serie 010777408 IPAMPA d4 IPAMPA_01040402 Growth regulators 262 2026-10
+serie 010777411 IPAMPA d4 IPAMPA_01040403 Other protection products 262 2026-10
+serie 010777412 IPAMPA d3 IPAMPA_010405 Bio-control products 262 2026-10
+serie 010777414 IPAMPA d4 IPAMPA_01040502 Bio-control products for perennial crops : vines and fruits 262 2026-10
+serie 010777417 IPAMPA d2 IPAMPA_0105 Animal feedingstuffs 262 2026-10
+serie 010777418 IPAMPA d3 IPAMPA_010501 straight feedingstuffs in animal nutrition 262 2026-10
+serie 010777419 IPAMPA d4 IPAMPA_01050101 Cereal feedingstuffs and by-products 262 2026-10
+serie 010777420 IPAMPA d5 IPAMPA_0105010101 Feedingstuffs : Cereals 262 2026-10
+omitida 010777421 IPAMPA d6 IPAMPA_010501010101 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuffs : Maize 262 2026-10
+serie 010777425 IPAMPA d5 IPAMPA_0105010102 Feedingstuffs : by-products derived from cereals (bran and other products excluding wheat) 262 2026-10
+serie 010777426 IPAMPA d4 IPAMPA_01050102 Oil-cakes 262 2026-10
+serie 010777427 IPAMPA d5 IPAMPA_0105010201 Soya cake 262 2026-10
+serie 010777428 IPAMPA d5 IPAMPA_0105010202 Other oil cakes 262 2026-10
+serie 010777429 IPAMPA d4 IPAMPA_01050103 Other simple feedingstuffs and nutritional products for animals 262 2026-10
+serie 010777430 IPAMPA d5 IPAMPA_0105010301 Other straight feedingstuffs for animals 262 2026-10
+omitida 010777432 IPAMPA d6 IPAMPA_010501030102 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuffs : Beet pulp 262 2026-10
+serie 010777434 IPAMPA d5 IPAMPA_0105010302 Supplements, food additives and nutritional products 262 2026-10
+omitida 010777435 IPAMPA d6 IPAMPA_010501030201 Monthly agricultural means of production purchasing price index (IPAMPA) - Mineral and liquid foods 262 2026-10
+omitida 010777436 IPAMPA d6 IPAMPA_010501030202 Monthly agricultural means of production purchasing price index (IPAMPA) - Nutritional supplements 262 2026-10
+serie 010777437 IPAMPA d3 IPAMPA_010502 Compound feedingstuffs 262 2026-10
+serie 010777438 IPAMPA d4 IPAMPA_01050201 Feedingstuff for calves 262 2026-10
+serie 010777439 IPAMPA d5 IPAMPA_0105020101 Milk replacer feed for calves 262 2026-10
+serie 010777440 IPAMPA d5 IPAMPA_0105020102 Other feedingstuffs for calves 262 2026-10
+serie 010777441 IPAMPA d4 IPAMPA_01050202 Feedingstuff for adult bovines 262 2026-10
+serie 010777442 IPAMPA d5 IPAMPA_0105020201 Feed for fattening cattle TNM up to 20% 262 2026-10
+serie 010777443 IPAMPA d5 IPAMPA_0105020202 Feed for fattening cattle TNM over 20% 262 2026-10
+serie 010777444 IPAMPA d5 IPAMPA_0105020203 Feed for dairy cows TNM up to 20% 262 2026-10
+serie 010777445 IPAMPA d5 IPAMPA_0105020204 Feed for dairy cows TNM 20-35% 262 2026-10
+serie 010777446 IPAMPA d5 IPAMPA_0105020205 Feed for dairy cows TNM 35% or more 262 2026-10
+serie 010777447 IPAMPA d5 IPAMPA_0105020206 Mash 262 2026-10
+serie 010777448 IPAMPA d4 IPAMPA_01050203 Feedingstuff for pigs 262 2026-10
+serie 010777449 IPAMPA d5 IPAMPA_0105020301 Starter feed for piglets 262 2026-10
+serie 010777450 IPAMPA d5 IPAMPA_0105020302 Second-stage feed for piglets 262 2026-10
+serie 010777451 IPAMPA d5 IPAMPA_0105020303 Feed for fattening pigs, growth 262 2026-10
+serie 010777452 IPAMPA d5 IPAMPA_0105020304 Feedingstuff for pigs, finishing fattening 262 2026-10
+serie 010777453 IPAMPA d5 IPAMPA_0105020305 Feed for fattening pigs, complete 262 2026-10
+serie 010777454 IPAMPA d5 IPAMPA_0105020306 Feed for fattening pigs, supplement 262 2026-10
+serie 010777455 IPAMPA d5 IPAMPA_0105020307 Feed for awaiting or nuring sowes 262 2026-10
+serie 010777456 IPAMPA d4 IPAMPA_01050204 Feedingstuff for poultry 262 2026-10
+serie 010777457 IPAMPA d5 IPAMPA_0105020401 Feedingstuff for rooster 262 2026-10
+omitida 010777458 IPAMPA d6 IPAMPA_010502040101 Monthly agricultural means of production purchasing price index (IPAMPA) - Starter feed for chicks 262 2026-10
+serie 010777459 IPAMPA d6 IPAMPA_010502040102 Feed for broilers, growth 262 2026-10
+omitida 010777460 IPAMPA d6 IPAMPA_010502040103 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for standard chickens, finishi 262 2026-10
+omitida 010777461 IPAMPA d6 IPAMPA_010502040104 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for quality chickens, finishin 262 2026-10
+omitida 010777462 IPAMPA d6 IPAMPA_010502040105 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for pullets 262 2026-10
+serie 010777463 IPAMPA d6 IPAMPA_010502040106 Feedingstuff for hens kept on the floor 262 2026-10
+serie 010777464 IPAMPA d6 IPAMPA_010502040107 Feedingstuff for hens kept in battery cages 262 2026-10
+serie 010777465 IPAMPA d5 IPAMPA_0105020402 Feedingstuff for other poultry 262 2026-10
+omitida 010777466 IPAMPA d6 IPAMPA_010502040201 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for turkey and turkey poults 262 2026-10
+omitida 010777467 IPAMPA d6 IPAMPA_010502040202 Monthly agricultural means of production purchasing price index (IPAMPA) - Feed for other palmipeds 262 2026-10
+omitida 010777468 IPAMPA d6 IPAMPA_010502040203 Monthly agricultural means of production purchasing price index (IPAMPA) - Other feedingstuff for poultry 262 2026-10
+serie 010777469 IPAMPA d4 IPAMPA_01050205 other compound feed 262 2026-10
+serie 010777470 IPAMPA d5 IPAMPA_0105020501 Feedingstuff for rabbits 262 2026-10
+serie 010777471 IPAMPA d5 IPAMPA_0105020502 Feedingstuff for ovine and caprine animals 262 2026-10
+omitida 010777472 IPAMPA d6 IPAMPA_010502050201 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for lambs 262 2026-10
+omitida 010777473 IPAMPA d6 IPAMPA_010502050202 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for ewes 262 2026-10
+omitida 010777474 IPAMPA d6 IPAMPA_010502050203 Monthly agricultural means of production purchasing price index (IPAMPA) - Feedingstuff for goats 262 2026-10
+serie 010777476 IPAMPA d2 IPAMPA_0106 Material and small tools 262 2026-10
+serie 010777477 IPAMPA d3 IPAMPA_010601 Plastic films and nets for husbandry 262 2026-10
+serie 010777478 IPAMPA d3 IPAMPA_010602 Plastic films and nets for crop farming 262 2026-10
+serie 010777479 IPAMPA d3 IPAMPA_010603 Area closure and staking 262 2026-10
+serie 010777480 IPAMPA d3 IPAMPA_010604 Other products (packages, containers, tools and small equipemnets) 262 2026-10
+serie 010777481 IPAMPA d2 IPAMPA_0107 Maintenance and repair 262 2026-10
+serie 010777482 IPAMPA d3 IPAMPA_010701 Maintenance and repair of vehicles 262 2026-10
+serie 010777483 IPAMPA d3 IPAMPA_010702 Maintenance and repair of buildings 262 2026-10
+serie 010777484 IPAMPA d2 IPAMPA_0108 Veterinary products and services 262 2026-10
+serie 010777485 IPAMPA d3 IPAMPA_010801 Veterinary products 262 2026-10
+serie 010777486 IPAMPA d4 IPAMPA_01080101 Immunity : Vaccines and serums 262 2026-10
+serie 010777487 IPAMPA d4 IPAMPA_01080102 Antibacterial drugs 262 2026-10
+omitida 010777488 IPAMPA d5 IPAMPA_0108010201 Monthly agricultural means of production purchasing price index (IPAMPA) - Antibacterials for Systemic Use 262 2026-10
+omitida 010777489 IPAMPA d5 IPAMPA_0108010202 Monthly agricultural means of production purchasing price index (IPAMPA) - Topical products 262 2026-10
+serie 010777490 IPAMPA d4 IPAMPA_01080103 Antiparasitics 262 2026-10
+omitida 010777491 IPAMPA d5 IPAMPA_0108010301 Monthly agricultural means of production purchasing price index (IPAMPA) – Internal antiparasitics 262 2026-10
+omitida 010777492 IPAMPA d5 IPAMPA_0108010302 Monthly agricultural means of production purchasing price index (IPAMPA) – External antiparasitics 262 2026-10
+omitida 010777493 IPAMPA d5 IPAMPA_0108010303 Monthly agricultural means of production purchasing price index (IPAMPA) – Endectocides 262 2026-10
+serie 010777495 IPAMPA d4 IPAMPA_01080105 Other products grouped by apparatus or system 262 2026-10
+serie 010777496 IPAMPA d3 IPAMPA_010802 Veterinary services 262 2026-10
+serie 010777497 IPAMPA d4 IPAMPA_01080201 Standard visit 262 2026-10
+serie 010777500 IPAMPA d2 IPAMPA_0109 General expenses 262 2026-10
+serie 010777501 IPAMPA d3 IPAMPA_010901 Postal services 262 2026-10
+serie 010777502 IPAMPA d3 IPAMPA_010902 Drinking water for non-domestic use 262 2026-10
+serie 010777503 IPAMPA d3 IPAMPA_010903 Studies and consultancy 262 2026-10
+serie 010777504 IPAMPA d3 IPAMPA_010904 Transport and telecommunications 262 2026-10
+serie 010777505 IPAMPA d1 IPAMPA_02 Capital goods 262 2026-10
+serie 010777506 IPAMPA d2 IPAMPA_0201 Monthly agricultural machinery 262 2026-10
+serie 010777507 IPAMPA d3 IPAMPA_020101 Cultivation equipment 262 2026-10
+serie 010777508 IPAMPA d4 IPAMPA_02010101 Rotavators 262 2026-10
+serie 010777509 IPAMPA d4 IPAMPA_02010102 Seeding, planting and distribution equipment 262 2026-10
+serie 010777510 IPAMPA d4 IPAMPA_02010103 Soil tillage and land development equipment 262 2026-10
+serie 010777511 IPAMPA d4 IPAMPA_02010104 Crop protection equipment 262 2026-10
+serie 010777512 IPAMPA d3 IPAMPA_020102 Harvesting equipment 262 2026-10
+serie 010777513 IPAMPA d3 IPAMPA_020103 Tractors 262 2026-10
+serie 010777514 IPAMPA d3 IPAMPA_020104 Trailers 262 2026-10
+serie 010777515 IPAMPA d3 IPAMPA_020105 Goods vehicles 262 2026-10
+serie 010777516 IPAMPA d2 IPAMPA_0202 Buildings 262 2026-10
+serie 010777517 IPAMPA d3 IPAMPA_020201 Farm buildings 262 2026-10
+serie 010777518 IPAMPA d3 IPAMPA_020202 Civil engineering 262 2026-10
+serie 010776593 IPPAP d0 IPPAP_0 General Index 82 2026-10
+serie 010776594 IPPAP d1 IPPAP_01 General Index, except fruits and vegetables, potatoes, cut flowers and potted plants 82 2026-10
+serie 010776595 IPPAP d2 IPPAP_0101 Plant products except fruits and vegetables, potatoes, cut flowers and potted plants 382 2026-10
+serie 010776596 IPPAP d3 IPPAP_010101 Cereals 382 2026-10
+serie 010776597 IPPAP d4 IPPAP_01010101 Barley 382 2026-10
+serie 010776598 IPPAP d5 IPPAP_0101010101 Barley for milling 382 2026-10
+serie 010776599 IPPAP d5 IPPAP_0101010102 Malting barley 382 2026-10
+serie 010776600 IPPAP d4 IPPAP_01010102 Soft wheat 382 2026-10
+serie 010776601 IPPAP d4 IPPAP_01010103 Durum wheat 382 2026-10
+serie 010776602 IPPAP d4 IPPAP_01010104 Oats 382 2026-10
+serie 010776603 IPPAP d4 IPPAP_01010105 Sorghum 382 2026-10
+serie 010776604 IPPAP d4 IPPAP_01010106 Triticale 382 2026-10
+serie 010776605 IPPAP d4 IPPAP_01010107 Maize 382 2026-10
+serie 010776606 IPPAP d3 IPPAP_010102 Oil seeds and oleaginous fruits and fats 382 2026-10
+serie 010776607 IPPAP d4 IPPAP_01010201 Rape 382 2026-10
+serie 010776608 IPPAP d4 IPPAP_01010202 Sunflower 382 2026-10
+serie 010776609 IPPAP d4 IPPAP_01010203 Soya 382 2026-10
+serie 010776610 IPPAP d3 IPPAP_010103 Potatoes 382 2026-10
+serie 010776611 IPPAP d4 IPPAP_01010301 Fresh potatoes for consumption 262 2026-10
 serie 010776612 IPPAP d5 IPPAP_0101030101 Early potatoes 117 2026-08
-serie 010776613 IPPAP d5 IPPAP_0101030102 Potatoes for winter storage 337 2026-09
-serie 010776616 IPPAP d4 IPPAP_01010302 Potatoes for starch 381 2026-09
-serie 010776617 IPPAP d4 IPPAP_01010303 Potatoes for industry 367 2026-09
-serie 010776618 IPPAP d3 IPPAP_010104 Wine 381 2026-09
-serie 010776619 IPPAP d4 IPPAP_01010401 Protected Designation of Origin (PDO) wines except wines for Champagne 381 2026-09
-serie 010776621 IPPAP d4 IPPAP_01010403 Wines with PGI and without PGI 381 2026-09
-serie 010776622 IPPAP d5 IPPAP_0101040301 Protectted Geographical Indication (PGI) wines 381 2026-09
-serie 010776623 IPPAP d5 IPPAP_0101040302 Wines without PGI 381 2026-09
-serie 010776625 IPPAP d3 IPPAP_010105 Products of horticulture 381 2026-09
-serie 010776654 IPPAP d3 IPPAP_010106 Other crop products 381 2026-09
-serie 010776655 IPPAP d4 IPPAP_01010601 Seeds and planting stock 381 2026-09
-serie 010776657 IPPAP d5 IPPAP_0101060102 Fodder seeds and others 381 2026-09
-serie 010776659 IPPAP d4 IPPAP_01010602 Sugar beets 381 2026-09
-serie 010776660 IPPAP d4 IPPAP_01010603 Fodder 381 2026-09
-serie 010776661 IPPAP d4 IPPAP_01010604 Pulses 381 2026-09
-serie 010776662 IPPAP d4 IPPAP_01010605 Field peas 381 2026-09
-serie 010776663 IPPAP d4 IPPAP_01010606 Flax 381 2026-09
-serie 010776665 IPPAP d2 IPPAP_0102 Animals and animal products 381 2026-09
-serie 010776666 IPPAP d3 IPPAP_010201 Animals and animal products 261 2026-09
-serie 010776667 IPPAP d4 IPPAP_01020101 Adult cattle 381 2026-09
-serie 010776668 IPPAP d5 IPPAP_0102010101 Store cattle 381 2026-09
-serie 010776669 IPPAP d5 IPPAP_0102010102 Beef cattle 381 2026-09
-serie 010776675 IPPAP d4 IPPAP_01020102 Calves 381 2026-09
-serie 010776676 IPPAP d5 IPPAP_0102010201 Calves for slaughter 381 2026-09
-serie 010776677 IPPAP d5 IPPAP_0102010202 Eight-day old calves 381 2026-09
-serie 010776678 IPPAP d4 IPPAP_01020103 Pigs 381 2026-09
-serie 010776679 IPPAP d4 IPPAP_01020104 Sheep 381 2026-09
-serie 010776680 IPPAP d4 IPPAP_01020105 Other livestock 381 2026-09
-serie 010776681 IPPAP d5 IPPAP_0102010501 Poultry 381 2026-09
-serie 010776690 IPPAP d5 IPPAP_0102010502 Rabbits 381 2026-09
-serie 010776691 IPPAP d3 IPPAP_010202 Animal products 381 2026-09
-serie 010776692 IPPAP d4 IPPAP_01020201 Milk 381 2026-09
-serie 010776693 IPPAP d5 IPPAP_0102020101 Cows’ milk 381 2026-09
-serie 010776695 IPPAP d5 IPPAP_0102020103 Goats’ milk 261 2026-09
-serie 010776696 IPPAP d4 IPPAP_01020202 Eggs 381 2026-09
-serie 010776697 IPPAP d1 IPPAP_02 Fruits and vegetables 261 2026-09
-serie 010776698 IPPAP d2 IPPAP_0201 Fresh fruits and vegetables 381 2026-09
-serie 010776699 IPPAP d3 IPPAP_020101 Fresh fruits 381 2026-09
+serie 010776613 IPPAP d5 IPPAP_0101030102 Potatoes for winter storage 338 2026-10
+serie 010776616 IPPAP d4 IPPAP_01010302 Potatoes for starch 382 2026-10
+serie 010776617 IPPAP d4 IPPAP_01010303 Potatoes for industry 368 2026-10
+serie 010776618 IPPAP d3 IPPAP_010104 Wine 382 2026-10
+serie 010776619 IPPAP d4 IPPAP_01010401 Protected Designation of Origin (PDO) wines except wines for Champagne 382 2026-10
+serie 010776621 IPPAP d4 IPPAP_01010403 Wines with PGI and without PGI 382 2026-10
+serie 010776622 IPPAP d5 IPPAP_0101040301 Protectted Geographical Indication (PGI) wines 382 2026-10
+serie 010776623 IPPAP d5 IPPAP_0101040302 Wines without PGI 382 2026-10
+serie 010776625 IPPAP d3 IPPAP_010105 Products of horticulture 382 2026-10
+serie 010776654 IPPAP d3 IPPAP_010106 Other crop products 382 2026-10
+serie 010776655 IPPAP d4 IPPAP_01010601 Seeds and planting stock 382 2026-10
+serie 010776657 IPPAP d5 IPPAP_0101060102 Fodder seeds and others 382 2026-10
+serie 010776659 IPPAP d4 IPPAP_01010602 Sugar beets 382 2026-10
+serie 010776660 IPPAP d4 IPPAP_01010603 Fodder 382 2026-10
+serie 010776661 IPPAP d4 IPPAP_01010604 Pulses 382 2026-10
+serie 010776662 IPPAP d4 IPPAP_01010605 Field peas 382 2026-10
+serie 010776663 IPPAP d4 IPPAP_01010606 Flax 382 2026-10
+serie 010776665 IPPAP d2 IPPAP_0102 Animals and animal products 382 2026-10
+serie 010776666 IPPAP d3 IPPAP_010201 Animals and animal products 262 2026-10
+serie 010776667 IPPAP d4 IPPAP_01020101 Adult cattle 382 2026-10
+serie 010776668 IPPAP d5 IPPAP_0102010101 Store cattle 382 2026-10
+serie 010776669 IPPAP d5 IPPAP_0102010102 Beef cattle 382 2026-10
+serie 010776675 IPPAP d4 IPPAP_01020102 Calves 382 2026-10
+serie 010776676 IPPAP d5 IPPAP_0102010201 Calves for slaughter 382 2026-10
+serie 010776677 IPPAP d5 IPPAP_0102010202 Eight-day old calves 382 2026-10
+serie 010776678 IPPAP d4 IPPAP_01020103 Pigs 382 2026-10
+serie 010776679 IPPAP d4 IPPAP_01020104 Sheep 382 2026-10
+serie 010776680 IPPAP d4 IPPAP_01020105 Other livestock 382 2026-10
+serie 010776681 IPPAP d5 IPPAP_0102010501 Poultry 382 2026-10
+serie 010776690 IPPAP d5 IPPAP_0102010502 Rabbits 382 2026-10
+serie 010776691 IPPAP d3 IPPAP_010202 Animal products 382 2026-10
+serie 010776692 IPPAP d4 IPPAP_01020201 Milk 382 2026-10
+serie 010776693 IPPAP d5 IPPAP_0102020101 Cows’ milk 382 2026-10
+serie 010776695 IPPAP d5 IPPAP_0102020103 Goats’ milk 262 2026-10
+serie 010776696 IPPAP d4 IPPAP_01020202 Eggs 382 2026-10
+serie 010776697 IPPAP d1 IPPAP_02 Fruits and vegetables 262 2026-10
+serie 010776698 IPPAP d2 IPPAP_0201 Fresh fruits and vegetables 382 2026-10
+serie 010776699 IPPAP d3 IPPAP_020101 Fresh fruits 382 2026-10
 serie 010776700 IPPAP d4 IPPAP_02010101 Apricot 96 2026-08
 serie 010776701 IPPAP d4 IPPAP_02010102 Cherry 85 2026-07
-serie 010776702 IPPAP d4 IPPAP_02010103 Chestnuts 85 2026-09
+serie 010776702 IPPAP d4 IPPAP_02010103 Chestnuts 86 2026-10
 serie 010776703 IPPAP d4 IPPAP_02010104 Clementines 87 2025-12
 serie 010776704 IPPAP d4 IPPAP_02010105 Strawberries 181 2026-07
 serie 010776705 IPPAP d5 IPPAP_0201010501 Long strawberries 34 2026-06
 serie 010776706 IPPAP d5 IPPAP_0201010502 Round strawberries 35 2026-07
-serie 010776707 IPPAP d4 IPPAP_02010106 Raspberries 148 2026-09
+serie 010776707 IPPAP d4 IPPAP_02010106 Raspberries 149 2026-10
 serie 010776708 IPPAP d4 IPPAP_02010107 Kiwi fruit 213 2026-05
-serie 010776709 IPPAP d4 IPPAP_02010108 Walnuts 142 2026-03
+serie 010776709 IPPAP d4 IPPAP_02010108 Walnuts 143 2026-10
 serie 010776710 IPPAP d4 IPPAP_02010109 Peach and nectarine 129 2026-09
 serie 010776711 IPPAP d5 IPPAP_0201010901 Nectarine 129 2026-09
 serie 010776712 IPPAP d5 IPPAP_0201010902 Peach 129 2026-09
-serie 010776713 IPPAP d4 IPPAP_02010110 Pear 299 2026-09
-serie 010776714 IPPAP d5 IPPAP_0201011001 Summer pear 113 2026-09
-serie 010776715 IPPAP d5 IPPAP_0201011002 Pear (other) 46 2026-09
-serie 010776716 IPPAP d4 IPPAP_02010111 Apple 317 2026-09
-serie 010776717 IPPAP d5 IPPAP_0201011101 Gala apple 238 2026-09
-serie 010776718 IPPAP d5 IPPAP_0201011102 Golden apple 306 2026-09
-serie 010776719 IPPAP d5 IPPAP_0201011103 Apple, other varieties 296 2026-09
+serie 010776713 IPPAP d4 IPPAP_02010110 Pear 300 2026-10
+serie 010776714 IPPAP d5 IPPAP_0201011001 Summer pear 114 2026-10
+serie 010776715 IPPAP d5 IPPAP_0201011002 Pear (other) 47 2026-10
+serie 010776716 IPPAP d4 IPPAP_02010111 Apple 318 2026-10
+serie 010776717 IPPAP d5 IPPAP_0201011101 Gala apple 239 2026-10
+serie 010776718 IPPAP d5 IPPAP_0201011102 Golden apple 307 2026-10
+serie 010776719 IPPAP d5 IPPAP_0201011103 Apple, other varieties 297 2026-10
 serie 010776720 IPPAP d4 IPPAP_02010112 Plums 117 2026-09
-serie 010776721 IPPAP d4 IPPAP_02010113 Grapes 133 2026-09
-serie 010776722 IPPAP d3 IPPAP_020102 Fresh vegetables 381 2026-09
-serie 010776723 IPPAP d4 IPPAP_02010201 Garlic 184 2026-09
-serie 010776724 IPPAP d4 IPPAP_02010202 Globe artichokes 253 2026-09
+serie 010776721 IPPAP d4 IPPAP_02010113 Grapes 134 2026-10
+serie 010776722 IPPAP d3 IPPAP_020102 Fresh vegetables 382 2026-10
+serie 010776723 IPPAP d4 IPPAP_02010201 Garlic 185 2026-10
+serie 010776724 IPPAP d4 IPPAP_02010202 Globe artichokes 254 2026-10
 serie 010776725 IPPAP d4 IPPAP_02010203 Asparagus 132 2026-06
-serie 010776726 IPPAP d4 IPPAP_02010204 Eggplants 192 2026-09
-serie 010776727 IPPAP d4 IPPAP_02010205 Chard 141 2026-09
-serie 010776728 IPPAP d4 IPPAP_02010206 Beetroot 381 2026-09
-serie 010776729 IPPAP d4 IPPAP_02010207 Carrot 381 2026-09
-serie 010776730 IPPAP d4 IPPAP_02010208 Celeriac 325 2026-09
-serie 010776731 IPPAP d4 IPPAP_02010209 Mushrooms 200 2026-09
-serie 010776732 IPPAP d4 IPPAP_02010210 Cabbages 81 2026-09
-serie 010776733 IPPAP d5 IPPAP_0201021001 Brocoli 73 2026-09
-serie 010776734 IPPAP d5 IPPAP_0201021002 Cauliflowers 381 2026-09
-serie 010776735 IPPAP d5 IPPAP_0201021003 Round cabbage 275 2026-09
-serie 010776736 IPPAP d4 IPPAP_02010211 Cucumbers 301 2026-09
-serie 010776737 IPPAP d4 IPPAP_02010212 Courgettes 214 2026-09
-serie 010776738 IPPAP d4 IPPAP_02010213 Shallot 380 2026-09
-serie 010776739 IPPAP d4 IPPAP_02010214 Endives 302 2026-09
-serie 010776740 IPPAP d4 IPPAP_02010215 Spinach 141 2026-09
-serie 010776741 IPPAP d4 IPPAP_02010216 Beans for shelling 131 2026-09
+serie 010776726 IPPAP d4 IPPAP_02010204 Eggplants 193 2026-10
+serie 010776727 IPPAP d4 IPPAP_02010205 Chard 142 2026-10
+serie 010776728 IPPAP d4 IPPAP_02010206 Beetroot 382 2026-10
+serie 010776729 IPPAP d4 IPPAP_02010207 Carrot 382 2026-10
+serie 010776730 IPPAP d4 IPPAP_02010208 Celeriac 326 2026-10
+serie 010776731 IPPAP d4 IPPAP_02010209 Mushrooms 201 2026-10
+serie 010776732 IPPAP d4 IPPAP_02010210 Cabbages 82 2026-10
+serie 010776733 IPPAP d5 IPPAP_0201021001 Brocoli 74 2026-10
+serie 010776734 IPPAP d5 IPPAP_0201021002 Cauliflowers 382 2026-10
+serie 010776735 IPPAP d5 IPPAP_0201021003 Round cabbage 276 2026-10
+serie 010776736 IPPAP d4 IPPAP_02010211 Cucumbers 302 2026-10
+serie 010776737 IPPAP d4 IPPAP_02010212 Courgettes 215 2026-10
+serie 010776738 IPPAP d4 IPPAP_02010213 Shallot 381 2026-10
+serie 010776739 IPPAP d4 IPPAP_02010214 Endives 303 2026-10
+serie 010776740 IPPAP d4 IPPAP_02010215 Spinach 142 2026-10
+serie 010776741 IPPAP d4 IPPAP_02010216 Beans for shelling 132 2026-10
 serie 010776742 IPPAP d4 IPPAP_02010217 Melon 152 2026-09
-serie 010776743 IPPAP d4 IPPAP_02010218 Turnip 381 2026-09
-serie 010776744 IPPAP d4 IPPAP_02010219 Coloured onion 279 2026-09
-serie 010776745 IPPAP d4 IPPAP_02010220 Parsley 381 2026-09
-serie 010776746 IPPAP d4 IPPAP_02010221 Leek 381 2026-09
-serie 010776747 IPPAP d4 IPPAP_02010222 Capsicum 173 2026-09
-serie 010776748 IPPAP d4 IPPAP_02010223 Pumpkin 125 2026-09
-serie 010776749 IPPAP d4 IPPAP_02010224 Radish 381 2026-09
-serie 010776750 IPPAP d4 IPPAP_02010225 Lettuce and chicory 381 2026-09
-serie 010776751 IPPAP d5 IPPAP_0201022501 Chicory 349 2026-09
-serie 010776754 IPPAP d5 IPPAP_0201022502 Lettuce 381 2026-09
-serie 010776758 IPPAP d5 IPPAP_0201022503 Corn salad 369 2026-04
-serie 010776759 IPPAP d4 IPPAP_02010226 Tomatoes 345 2026-09
-serie 010776760 IPPAP d5 IPPAP_0201022601 Tomato (other) 80 2026-09
-serie 010776761 IPPAP d5 IPPAP_0201022602 Cherry tomato 53 2026-09
-serie 010776763 IPPAP d2 IPPAP_0202 Other fruits and vegetables 261 2026-09
-serie 010776764 IPPAP d3 IPPAP_020201 Fruits and vegetables for processing 261 2026-09
-serie 010776766 IPPAP d4 IPPAP_02020102 Apples for processing 81 2026-09
-serie 010776767 IPPAP d3 IPPAP_020202 Banana 261 2026-09
+serie 010776743 IPPAP d4 IPPAP_02010218 Turnip 382 2026-10
+serie 010776744 IPPAP d4 IPPAP_02010219 Coloured onion 280 2026-10
+serie 010776745 IPPAP d4 IPPAP_02010220 Parsley 382 2026-10
+serie 010776746 IPPAP d4 IPPAP_02010221 Leek 382 2026-10
+serie 010776747 IPPAP d4 IPPAP_02010222 Capsicum 174 2026-10
+serie 010776748 IPPAP d4 IPPAP_02010223 Pumpkin 126 2026-10
+serie 010776749 IPPAP d4 IPPAP_02010224 Radish 382 2026-10
+serie 010776750 IPPAP d4 IPPAP_02010225 Lettuce and chicory 382 2026-10
+serie 010776751 IPPAP d5 IPPAP_0201022501 Chicory 350 2026-10
+serie 010776754 IPPAP d5 IPPAP_0201022502 Lettuce 382 2026-10
+serie 010776758 IPPAP d5 IPPAP_0201022503 Corn salad 370 2026-10
+serie 010776759 IPPAP d4 IPPAP_02010226 Tomatoes 346 2026-10
+serie 010776760 IPPAP d5 IPPAP_0201022601 Tomato (other) 81 2026-10
+serie 010776761 IPPAP d5 IPPAP_0201022602 Cherry tomato 54 2026-10
+serie 010776763 IPPAP d2 IPPAP_0202 Other fruits and vegetables 262 2026-10
+serie 010776764 IPPAP d3 IPPAP_020201 Fruits and vegetables for processing 262 2026-10
+serie 010776766 IPPAP d4 IPPAP_02020102 Apples for processing 82 2026-10
+serie 010776767 IPPAP d3 IPPAP_020202 Banana 262 2026-10
 resumen {'total': 853, 'arretee': 61, 'no_m': 451, 'no_indice': 0, 'old': 3, 'short': 2, 'detail': 75} guardadas 261
