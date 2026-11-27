@@ -18,7 +18,7 @@
  "summary": {
   "files": 209,
   "excluded": 0,
-  "rows": 76621
+  "rows": 76633
  },
  "files": [
   {
@@ -3817,13 +3817,13 @@
    "unit": "100kg",
    "currency": "GBP",
    "frequency": "monthly",
-   "rows": 679,
+   "rows": 680,
    "first": "1970-01",
-   "last": "2026-09",
+   "last": "2026-10",
    "csv": "data/pack/uk/leche.csv",
    "xlsx": "data/pack/uk/leche.xlsx",
-   "csvBytes": 135004,
-   "xlsxBytes": 37399
+   "csvBytes": 135202,
+   "xlsxBytes": 37434
   },
   {
    "product": "novillas_r3_ni",
@@ -4091,13 +4091,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_energy_input_index.csv",
    "xlsx": "data/pack/uk/defra_energy_input_index.xlsx",
-   "csvBytes": 40920,
-   "xlsxBytes": 14516
+   "csvBytes": 41189,
+   "xlsxBytes": 14562
   },
   {
    "product": "defra_fertiliser_input_index",
@@ -4117,13 +4117,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_fertiliser_input_index.csv",
    "xlsx": "data/pack/uk/defra_fertiliser_input_index.xlsx",
-   "csvBytes": 42306,
-   "xlsxBytes": 14637
+   "csvBytes": 42584,
+   "xlsxBytes": 14684
   },
   {
    "product": "defra_feed_input_index",
@@ -4143,13 +4143,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_feed_input_index.csv",
    "xlsx": "data/pack/uk/defra_feed_input_index.xlsx",
-   "csvBytes": 40436,
-   "xlsxBytes": 14422
+   "csvBytes": 40702,
+   "xlsxBytes": 14466
   },
   {
    "product": "defra_barley_output_index",
@@ -4169,13 +4169,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_barley_output_index.csv",
    "xlsx": "data/pack/uk/defra_barley_output_index.xlsx",
-   "csvBytes": 41214,
-   "xlsxBytes": 14550
+   "csvBytes": 41485,
+   "xlsxBytes": 14597
   },
   {
    "product": "defra_oilseed_rape_output_index",
@@ -4195,13 +4195,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_oilseed_rape_output_index.csv",
    "xlsx": "data/pack/uk/defra_oilseed_rape_output_index.xlsx",
-   "csvBytes": 41953,
-   "xlsxBytes": 14628
+   "csvBytes": 42229,
+   "xlsxBytes": 14674
   },
   {
    "product": "defra_eggs_output_index",
@@ -4221,13 +4221,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_eggs_output_index.csv",
    "xlsx": "data/pack/uk/defra_eggs_output_index.xlsx",
-   "csvBytes": 40902,
-   "xlsxBytes": 13942
+   "csvBytes": 41171,
+   "xlsxBytes": 13985
   },
   {
    "product": "defra_milk_output_index",
@@ -4247,13 +4247,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_milk_output_index.csv",
    "xlsx": "data/pack/uk/defra_milk_output_index.xlsx",
-   "csvBytes": 40764,
-   "xlsxBytes": 14519
+   "csvBytes": 41032,
+   "xlsxBytes": 14565
   },
   {
    "product": "defra_sheep_output_index",
@@ -4273,13 +4273,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_sheep_output_index.csv",
    "xlsx": "data/pack/uk/defra_sheep_output_index.xlsx",
-   "csvBytes": 40887,
-   "xlsxBytes": 14514
+   "csvBytes": 41156,
+   "xlsxBytes": 14560
   },
   {
    "product": "defra_pigs_output_index",
@@ -4299,13 +4299,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_pigs_output_index.csv",
    "xlsx": "data/pack/uk/defra_pigs_output_index.xlsx",
-   "csvBytes": 41035,
-   "xlsxBytes": 14514
+   "csvBytes": 41305,
+   "xlsxBytes": 14560
   },
   {
    "product": "defra_wheat_output_index",
@@ -4325,13 +4325,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_wheat_output_index.csv",
    "xlsx": "data/pack/uk/defra_wheat_output_index.xlsx",
-   "csvBytes": 40891,
-   "xlsxBytes": 14545
+   "csvBytes": 41160,
+   "xlsxBytes": 14590
   },
   {
    "product": "defra_cattle_output_index",
@@ -4351,13 +4351,13 @@
    "unit": "index_2020_100",
    "currency": "INDEX",
    "frequency": "monthly",
-   "rows": 152,
+   "rows": 153,
    "first": "2014-01",
-   "last": "2026-08",
+   "last": "2026-09",
    "csv": "data/pack/uk/defra_cattle_output_index.csv",
    "xlsx": "data/pack/uk/defra_cattle_output_index.xlsx",
-   "csvBytes": 41202,
-   "xlsxBytes": 14489
+   "csvBytes": 41473,
+   "xlsxBytes": 14534
   },
   {
    "product": "amoniaco_ab",
