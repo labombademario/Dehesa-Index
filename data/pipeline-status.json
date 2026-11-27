@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-27T14:12:00Z",
+ "generatedAt": "2026-11-27T15:09:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 320,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-27T12:14:07.495404+00:00",
   "repoGeneratedAt": "2026-11-27T12:14:07.495404+00:00",
-  "checkedAt": "2026-11-27T14:12:00Z"
+  "checkedAt": "2026-11-27T15:09:00Z"
  },
  "pipelines": [
   {
@@ -1980,7 +1980,7 @@
    "crons": [
     "20 14 * * 2,5"
    ],
-   "nextRun": "2026-11-27T14:20:00Z",
+   "nextRun": "2026-12-01T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -3898,7 +3898,7 @@
    "crons": [
     "30 14 * * 5"
    ],
-   "nextRun": "2026-11-27T14:30:00Z",
+   "nextRun": "2026-12-04T14:30:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
@@ -4244,7 +4244,7 @@
    "crons": [
     "20 14 * * 4,5"
    ],
-   "nextRun": "2026-11-27T14:20:00Z",
+   "nextRun": "2026-12-03T14:20:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-27T12:12:54Z"
+     "lastChange": "2026-11-27T14:16:11Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -6147,9 +6147,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-26T15:06:47Z",
-    "durationSec": 40,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45845771185"
+    "startedAt": "2026-11-27T14:58:35Z",
+    "durationSec": 53,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/46020706447"
    },
    "recent": {
     "runs": 10,
@@ -6544,7 +6544,7 @@
    "crons": [
     "35 14 * * 2,5"
    ],
-   "nextRun": "2026-11-27T14:35:00Z",
+   "nextRun": "2026-12-01T14:35:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7109,7 +7109,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-11-27T14:15:00Z",
+   "nextRun": "2026-11-27T23:30:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7779,7 +7779,7 @@
    "crons": [
     "25 14 * * *"
    ],
-   "nextRun": "2026-11-27T14:25:00Z",
+   "nextRun": "2026-11-28T14:25:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
