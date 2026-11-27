@@ -30,7 +30,7 @@ const prices = read('js/precios.js');
 
 check(shared.includes('function renderContextBar'), 'shared context bar exists');
 check(shared.includes('NAV_GROUPS') && ['prices', 'countries', 'mine', 'compare', 'today', 'more'].every(g => shared.includes("'g:" + g + "'")) && shared.includes('panelHtml'), 'nav has the 8 task menus: Today, Prices, Countries, Production and weather, Trade, Costs, My space, Data');
-check(/var NAV_ORDER = \['g:prices', 'g:countries', 'g:mine', 'g:compare', 'g:today', 'g:more'\];/.test(shared), 'top navigation exposes exactly the 6 menus (Países propio) (audit 8-oct-2026)');
+check(/var NAV_ORDER = \['g:prices', 'g:countries', 'g:mine', 'g:compare', 'g:today', 'g:tools', 'g:more'\];/.test(shared), 'top navigation exposes exactly the 7 menus (Países propio; Herramientas y Datos desde 27-nov-2026)');
 {
   const groupFiles = [...shared.matchAll(/(?:file: |pg\(|pd\()'([a-z-]+\.html)'/g)].map(m => m[1]);
   check(groupFiles.length >= 12, 'submenus list their pages (' + groupFiles.length + ')');

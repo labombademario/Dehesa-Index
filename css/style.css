@@ -3247,3 +3247,16 @@ a.di-nav-chip { min-width: 0; gap: 7px; padding-left: 10px; padding-right: 10px;
 
 /* Con siete grupos en el menu (27-nov) la barra no cabe por debajo de 1280 px; bajo 1130 px pasa al menu movil: menos espacio y letra algo menor */
 @media (min-width: 1131px) and (max-width: 1280px) { .di-nav-links { gap: 12px; } .di-nav-links button { font-size: 14px; } }
+
+/* Todas las secciones (secciones.html) */
+.di-sec-filter { margin: 0 0 24px; }
+.di-sec-filter label { display: block; font-size: 13px; color: var(--text-muted, #5f5944); margin-bottom: 6px; }
+.di-sec-filter input { box-sizing: border-box; width: 100%; max-width: 420px; padding: 11px 14px; font: inherit; font-size: 16px; border: 1px solid var(--border, #c9c1a8); border-radius: 8px; background: var(--surface, #fffdf7); color: inherit; }
+.di-sec-grid { columns: 3 280px; column-gap: 36px; }
+.di-sec { break-inside: avoid; margin: 0 0 30px; }
+.di-sec h2 { margin: 0 0 10px; font-size: 20px; }
+.di-sec h3 { margin: 14px 0 6px; font-size: 14px; color: var(--text-muted, #5f5944); }
+.di-sec ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.di-sec li a { font-weight: 600; font-size: 15px; text-decoration: none; border-bottom: 1px solid var(--border, #c9c1a8); }
+.di-sec li span { display: block; font-size: 13px; line-height: 1.4; color: var(--text-muted, #5f5944); margin-top: 2px; }
+.di-sec [hidden] { display: none; }

@@ -297,7 +297,7 @@
       copyrightText: '© 2026 Dehesa Index',
       followTitle: 'Síguenos',
       methodologyLabel: 'Metodología',
-      legalLabel: 'Aviso legal y privacidad'
+      legalLabel: 'Aviso legal y privacidad', sectionsLabel: 'Todas las secciones'
     },
     en: {
       blurb: 'A daily and weekly dashboard of U.S., European, UK and Canadian farm prices: grains, dairy, livestock, feed and fertilizer, all in one place.',
@@ -308,7 +308,7 @@
       copyrightText: '© 2026 Dehesa Index',
       followTitle: 'Follow us',
       methodologyLabel: 'Methodology',
-      legalLabel: 'Legal notice & privacy'
+      legalLabel: 'Legal notice & privacy', sectionsLabel: 'All sections'
     },
     fr: {
       blurb: "Un tableau de bord quotidien et hebdomadaire des prix agricoles des États-Unis, d’Europe, du Royaume-Uni et du Canada : céréales, produits laitiers, bétail, aliments pour animaux et engrais, réunis en un seul endroit.",
@@ -319,7 +319,7 @@
       copyrightText: '© 2026 Dehesa Index',
       followTitle: 'Suivez-nous',
       methodologyLabel: 'Méthodologie',
-      legalLabel: 'Mentions légales et confidentialité'
+      legalLabel: 'Mentions légales et confidentialité', sectionsLabel: 'Toutes les sections'
     },
     it: {
       blurb: 'Un pannello giornaliero e settimanale dei prezzi agricoli di Stati Uniti, Europa, Regno Unito e Canada: cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti, tutto in un unico posto.',
@@ -330,7 +330,7 @@
       copyrightText: '© 2026 Dehesa Index',
       followTitle: 'Seguici',
       methodologyLabel: 'Metodologia',
-      legalLabel: 'Note legali e privacy'
+      legalLabel: 'Note legali e privacy', sectionsLabel: 'Tutte le sezioni'
     }
   };
   var FOOTER_URLS = {
@@ -746,7 +746,7 @@
           '</div>' +
         '</div>' +
         socialHtml(t) +
-        '<div class="di-footer-bottom">' + esc(t.copyrightText) + ' · <a href="' + sitePath('metodologia.html') + '">' + esc(t.methodologyLabel) + '</a> · <a href="' + sitePath('legal.html') + '">' + esc(t.legalLabel) + '</a></div>' +
+        '<div class="di-footer-bottom">' + esc(t.copyrightText) + ' · <a href="' + sitePath('metodologia.html') + '">' + esc(t.methodologyLabel) + '</a> · <a href="' + sitePath('legal.html') + '">' + esc(t.legalLabel) + '</a> · <a href="' + sitePath('secciones.html') + '">' + esc(t.sectionsLabel) + '</a></div>' +
       '</footer>';
   }
 
@@ -1055,6 +1055,7 @@
     loadMarkets: loadMarkets,
     fmtDate: fmtDate,
     sitePath: sitePath,
+    navGroups: function () { return NAV_GROUPS; },
     openSearch: openSearch,
     euSwitch: euSwitch, euTitle: euTitle,
     frame: { crumbs: frCrumbs, bar: frBar },

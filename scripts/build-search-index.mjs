@@ -202,6 +202,7 @@ const PAGES = [
   ['api.html', tri('API de agua: ríos de seis países y sequía europea en JSON', 'Water API: rivers of six countries and European drought as JSON', 'API de l’eau : cours d’eau de six pays et sécheresse européenne en JSON', 'API dell’acqua: fiumi di sei paesi e siccità europea in JSON'), 'api agua water rios rivers caudal discharge nivel level sequia drought json openapi percentil percentile estaciones stations edo cdi alemania paises bajos francia belgica canada estados unidos'],
   ['empresas.html', tri('Empresas', 'Business', 'Entreprises', 'Aziende'), 'empresas business companies profesionales datos api'],
   ['contacto.html', tri('Contacto', 'Contact', 'Contact', 'Contatti'), 'contacto contact contatti email correo escribir'],
+  ['secciones.html', tri('Todas las secciones', 'All sections', 'Toutes les sections', 'Tutte le sezioni'), 'secciones sections sezioni indice mapa del sitio todas las paginas site map index'],
   ['app.html', tri('App para iPhone, iPad y Mac', 'App for iPhone, iPad and Mac', 'App pour iPhone, iPad et Mac', 'App per iPhone, iPad e Mac'), 'app apps iphone ipad mac ios app store descargar download telefono móvil'],
   ['metodologia.html', tri('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), 'metodologia methodology méthodologie como se calcula how calculated fuentes verificacion'],
   ['legal.html', tri('Aviso legal y privacidad', 'Legal notice and privacy', 'Mentions légales et confidentialité', 'Note legali e privacy'), 'legal privacidad privacy cookies terminos terms rgpd gdpr aviso'],
