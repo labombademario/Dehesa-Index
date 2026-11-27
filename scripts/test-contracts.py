@@ -196,7 +196,7 @@ CASES = [
  ("premium-tracker.json", "porcentaje inventado", lambda d: next(c for c in d["cells"] if c["premium"] is not None).__setitem__("premiumPct", 500.0)),
  ("premium-tracker.json", "muestra convencional insuficiente", lambda d: next(c for c in d["cells"] if c["premium"] is not None)["conventional"].__setitem__("n", 2)),
  ("premium-tracker.json", "premium sin parte convencional", lambda d: next(c for c in d["cells"] if c["premium"] is not None).__setitem__("conventional", None)),
- ("premium-tracker.json", "celda vacia sin motivo", lambda d: next(c for c in d["cells"] if c["premium"] is None).__setitem__("reason", None)),
+ ("premium-tracker.json", "celda vacia sin motivo", lambda d: (lambda c: (c.__setitem__("premium", None), c.__setitem__("premiumPct", None), c.__setitem__("reason", None)))(next((c for c in d["cells"] if c["premium"] is None), d["cells"][0]))),  # 27-nov-2026: ya no hay celdas vacias en los datos; se vacia una sin motivo
  ("home-tape.json", "valor distinto del original", lambda d: d["rows"][0].__setitem__("value", d["rows"][0]["value"] + 1)),
  ("home-tape.json", "fila duplicada", lambda d: d["rows"].append(dict(d["rows"][0]))),
  ("home-tape.json", "moneda cambiada", lambda d: d["rows"][0].__setitem__("currency", "XXX")),
