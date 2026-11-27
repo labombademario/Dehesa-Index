@@ -1,2 +1,2 @@
-CSV: https://www.ers.usda.gov/media/6497/output-forecast-csv-file.csv?v=57281
+CSV: https://www.ers.usda.gov/media/6497/output-forecast-csv-file.csv?v=17743
 OK: 4 productos, ultima prevision 2026-11-05
