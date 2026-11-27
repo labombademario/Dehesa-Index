@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-27T23:39:00Z",
+ "generatedAt": "2026-11-27T23:56:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 320,
+  "ok": 319,
   "late": 2,
-  "error": 26,
+  "error": 27,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-27T21:12:07.082806+00:00",
   "repoGeneratedAt": "2026-11-27T21:12:07.082806+00:00",
-  "checkedAt": "2026-11-27T23:39:00Z"
+  "checkedAt": "2026-11-27T23:56:00Z"
  },
  "pipelines": [
   {
@@ -77,7 +77,7 @@
     "45 23 * * 1-5",
     "30 13 * * 6"
    ],
-   "nextRun": "2026-11-27T23:45:00Z",
+   "nextRun": "2026-11-28T13:30:00Z",
    "files": [
     {
      "path": "data/ams"
@@ -674,9 +674,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-25T00:06:08Z",
-    "durationSec": 83,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45515392595"
+    "startedAt": "2026-11-27T23:43:27Z",
+    "durationSec": 77,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/46084067636"
    },
    "recent": {
     "runs": 10,
@@ -695,18 +695,19 @@
    "nextRun": "2026-12-02T15:50:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-27T00:02:35Z",
-    "durationSec": 32,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45914399649"
+    "startedAt": "2026-11-27T23:44:59Z",
+    "durationSec": 49,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/46084201250",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · FALLO: RuntimeError(\"https://od-do.agr.gc.ca/WeeklyRedMeatSlaughter_AbattageAnimauxViandeRougeHebdomadaire.json: <HTTPError 502: 'Bad Gateway'>\")"
    },
    "recent": {
     "runs": 10,
-    "success": 8,
-    "failed": 2
+    "success": 7,
+    "failed": 3
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 120.0
   },
   {
@@ -1037,7 +1038,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-11-27T23:40:00Z",
+   "nextRun": "2026-11-30T23:40:00Z",
    "files": [
     {
      "path": "data/ca"
@@ -1056,7 +1057,7 @@
     "failed": 1
    },
    "status": "error",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-canada.yml",
@@ -3903,8 +3904,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-27T22:48:45Z",
-    "durationSec": 28,
+    "startedAt": "2026-11-27T23:42:34Z",
+    "durationSec": 33,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/46078870825",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · recurso HISTORIQUE_ÉTAT DES CULTURES_CÉRÉ'OBS_MAÏS 2026-11-19T13:11:52.047890+00:00 · recurso HISTORIQUE_ÉTAT DES CULTURES_CÉRÉ'OBS_MAÏS 2026-11-19T13:11:52.047890+00:00 | FALLO: BadZipFile File is not a zip file"
    },
@@ -4249,7 +4250,7 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-27T22:43:45Z",
+    "startedAt": "2026-11-27T23:42:35Z",
     "durationSec": 29,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/46078377639",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · File \"/usr/lib/python3.12/urllib/request.py\", line 630, in http_response"
@@ -4273,8 +4274,8 @@
    "last": {
     "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-27T23:22:24Z",
-    "durationSec": 33,
+    "startedAt": "2026-11-27T23:42:36Z",
+    "durationSec": 31,
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/46082129367",
     "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · cereales ficheros []"
    },
@@ -5601,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-27T23:10:22Z"
+     "lastChange": "2026-11-27T23:42:08Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7709,7 +7710,7 @@
    "crons": [
     "40 23 * * 1-5"
    ],
-   "nextRun": "2026-11-27T23:40:00Z",
+   "nextRun": "2026-11-30T23:40:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7724,7 +7725,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-ppi.yml",
@@ -8078,7 +8079,7 @@
     "55 23 * * *",
     "40 6 * * 1"
    ],
-   "nextRun": "2026-11-27T23:55:00Z",
+   "nextRun": "2026-11-28T23:55:00Z",
    "files": [
     {
      "path": "data/news-archive"
