@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-27T15:09:00Z",
+ "generatedAt": "2026-11-27T15:30:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 320,
@@ -17,7 +17,7 @@
   "lagHours": 0.0,
   "prodGeneratedAt": "2026-11-27T12:14:07.495404+00:00",
   "repoGeneratedAt": "2026-11-27T12:14:07.495404+00:00",
-  "checkedAt": "2026-11-27T15:09:00Z"
+  "checkedAt": "2026-11-27T15:30:00Z"
  },
  "pipelines": [
   {
@@ -738,7 +738,7 @@
    "crons": [
     "20 15 * * 5"
    ],
-   "nextRun": "2026-11-27T15:20:00Z",
+   "nextRun": "2026-12-04T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -1893,9 +1893,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-11-27T03:40:41Z",
-    "durationSec": 84,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/45935560377"
+    "startedAt": "2026-11-27T15:19:02Z",
+    "durationSec": 70,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/46023813827"
    },
    "recent": {
     "runs": 10,
@@ -2188,7 +2188,7 @@
    "crons": [
     "15 15 * * 3,5"
    ],
-   "nextRun": "2026-11-27T15:15:00Z",
+   "nextRun": "2026-12-02T15:15:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -4268,7 +4268,7 @@
    "crons": [
     "10 15 * * 2,5"
    ],
-   "nextRun": "2026-11-27T15:10:00Z",
+   "nextRun": "2026-12-01T15:10:00Z",
    "files": [],
    "last": {
     "conclusion": "failure",
@@ -5225,7 +5225,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-11-27T15:17:00Z",
+   "nextRun": "2026-11-27T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -5551,7 +5551,7 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-11-27T15:10:00Z",
+   "nextRun": "2026-11-27T18:10:00Z",
    "files": [
     {
      "path": "data/us-weekly-stats.json",
@@ -5602,7 +5602,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-27T14:16:11Z"
+     "lastChange": "2026-11-27T15:13:21Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7296,7 +7296,7 @@
    "crons": [
     "20 15 * * 5"
    ],
-   "nextRun": "2026-11-27T15:20:00Z",
+   "nextRun": "2026-12-04T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7572,7 +7572,7 @@
    "crons": [
     "20 15 * * 1-5"
    ],
-   "nextRun": "2026-11-27T15:20:00Z",
+   "nextRun": "2026-11-30T15:20:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -7587,7 +7587,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-us-markets.yml",
