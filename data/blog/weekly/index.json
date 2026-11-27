@@ -6,8 +6,8 @@
    "from": "2026-11-23",
    "to": "2026-11-29",
    "complete": false,
-   "items": 1517,
-   "sources": 358,
+   "items": 1993,
+   "sources": 416,
    "coverageFrom": "2026-11-23"
   },
   {
@@ -83,5 +83,5 @@
    "coverageFrom": "2026-09-29"
   }
  ],
- "generatedAt": "2026-11-26T05:41:34Z"
+ "generatedAt": "2026-11-27T05:32:20Z"
 }
