@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-27T21:14:50Z",
+ "generatedAt": "2026-11-28T07:41:19Z",
  "summary": {
   "files": 104,
   "errors": 0,
@@ -34,7 +34,7 @@
     "points": 58991,
     "lines": 0
    },
-   "generatedAt": "2026-11-24T23:36:34Z",
+   "generatedAt": "2026-11-27T22:53:09Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -192,7 +192,7 @@
     "points": 21092,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T00:07:15Z",
+   "generatedAt": "2026-11-27T23:44:37Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -208,7 +208,7 @@
     "points": 9287,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T00:54:39Z",
+   "generatedAt": "2026-11-28T00:07:51Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -247,7 +247,7 @@
     "points": 24695,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T01:23:54Z",
+   "generatedAt": "2026-11-28T00:13:24Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -263,7 +263,7 @@
     "points": 11966,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T01:08:35Z",
+   "generatedAt": "2026-11-28T00:16:24Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -305,7 +305,7 @@
     "points": 56259,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T01:30:05Z",
+   "generatedAt": "2026-11-28T00:37:56Z",
    "info": [
     "IT/it-es-eaa-am021100: salto 6.44 -> 21.84 en 1986 (mediana previa 0.27) [KNOWN_VERIFIED_ANOMALY]",
     "IT/it-es-eaa-am021100: salto 21.84 -> 23.12 en 1987 (mediana previa 0.27) [KNOWN_VERIFIED_ANOMALY]"
@@ -547,7 +547,7 @@
     "points": 39614,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T01:35:15Z",
+   "generatedAt": "2026-11-28T00:41:24Z",
    "info": [
     "BE/be-eus-poultry-exp_xeu-a5130pn: salto 53300.0 -> 1245700.0 en 2007 (mediana previa 2.9e+04) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -633,10 +633,10 @@
    ],
    "stats": {
     "series": 132,
-    "points": 24409,
+    "points": 24439,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T02:31:40Z",
+   "generatedAt": "2026-11-28T01:58:17Z",
    "info": [],
    "nWarnings": 26,
    "nErrors": 0
@@ -696,7 +696,7 @@
     "points": 33703,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T01:37:00Z",
+   "generatedAt": "2026-11-28T00:42:36Z",
    "info": [
     "PL/pl-es-crop-i1130-area: salto 6200.0 -> 7600.0 en 2016 (mediana previa 300) [KNOWN_VERIFIED_ANOMALY]",
     "PL/pl-es-crop-i1130-area: salto 7600.0 -> 9330.0 en 2017 (mediana previa 300) [KNOWN_VERIFIED_ANOMALY]"
@@ -741,7 +741,7 @@
     "points": 186961,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T02:22:06Z",
+   "generatedAt": "2026-11-28T01:25:22Z",
    "info": [
     "BG/bg-es-crop-i1100-area: salto 22500.0 -> 772010.0 en 2007 (mediana previa 2.11e+04) [KNOWN_VERIFIED_ANOMALY]",
     "BG/bg-es-crop-i1100-area: salto 772010.0 -> 797400.0 en 2008 (mediana previa 2.19e+04) [KNOWN_VERIFIED_ANOMALY]",
@@ -790,7 +790,7 @@
     "points": 188767,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T02:22:06Z",
+   "generatedAt": "2026-11-28T01:25:22Z",
    "info": [
     "DE/de-es-meatm-b1210-ths_hd: salto 14660.0 -> 43310.0 en 1979-10 (mediana previa 1.58e+03) [KNOWN_VERIFIED_ANOMALY]",
     "DE/de-es-meatm-b1210-ths_hd: salto 15830.0 -> 44720.0 en 1980-10 (mediana previa 1.34e+03) [KNOWN_VERIFIED_ANOMALY]",
@@ -840,7 +840,7 @@
     "points": 88956,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T02:22:06Z",
+   "generatedAt": "2026-11-28T01:25:22Z",
    "info": [
     "CZ/cz-es-meatm-b7490-ths_hd: salto 2030.0 -> 5920.0 en 2022-11 (mediana previa 160) [KNOWN_VERIFIED_ANOMALY]",
     "CZ/cz-es-meatm-b7490-ths_hd: salto 3040.0 -> 5230.0 en 2023-11 (mediana previa 170) [KNOWN_VERIFIED_ANOMALY]"
@@ -880,7 +880,7 @@
     "points": 123095,
     "lines": 0
    },
-   "generatedAt": "2026-11-25T02:22:06Z",
+   "generatedAt": "2026-11-28T01:25:22Z",
    "info": [
     "RO/ro-es-meatm-b4110-ths_hd: salto 90.0 -> 83410.0 en 2010-03 (mediana previa 770) [KNOWN_VERIFIED_ANOMALY]",
     "RO/ro-es-meatm-b4110-ths_hd: salto 0 -> 38530.0 en 2012-03 (mediana previa 630) [KNOWN_VERIFIED_ANOMALY]",
@@ -990,7 +990,7 @@
     "points": 1923,
     "lines": 0
    },
-   "generatedAt": "2026-11-27T00:32:32Z",
+   "generatedAt": "2026-11-28T00:00:42Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1022,7 +1022,7 @@
     "points": 7726,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T22:16:12Z",
+   "generatedAt": "2026-11-27T23:35:04Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1066,7 +1066,7 @@
     "points": 20254,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T22:46:24Z",
+   "generatedAt": "2026-11-28T00:11:07Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1082,7 +1082,7 @@
     "points": 23040,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T22:39:08Z",
+   "generatedAt": "2026-11-28T00:00:32Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1098,7 +1098,7 @@
     "points": 5755,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T22:19:46Z",
+   "generatedAt": "2026-11-27T23:41:28Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -1130,7 +1130,7 @@
     "points": 9683,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T22:16:05Z",
+   "generatedAt": "2026-11-27T23:31:32Z",
    "info": [],
    "nWarnings": 15,
    "nErrors": 0
@@ -1965,10 +1965,10 @@
    "warnings": [],
    "stats": {
     "series": 14,
-    "points": 3426,
+    "points": 3440,
     "lines": 0
    },
-   "generatedAt": "2026-11-20T21:46:36Z",
+   "generatedAt": "2026-11-27T22:39:35Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
