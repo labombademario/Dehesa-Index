@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-11-27T23:29:07.174Z",
+  "generatedAt": "2026-11-28T00:42:57.239Z",
   "status": "informational",
   "rules": [
     {
@@ -426,21 +426,21 @@
     },
     {
       "type": "period_move",
-      "product": "diesel_agr_ab",
+      "product": "gas_natural_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": 7.91,
-      "observationDate": "2026-10-01"
+      "severity": "high",
+      "changePct": 19.13,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
-      "product": "urea_ab",
+      "product": "heno_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
       "severity": "watch",
-      "changePct": 5.45,
-      "observationDate": "2026-10-01"
+      "changePct": -7.14,
+      "observationDate": "2026-11-01"
     },
     {
       "type": "period_move",
@@ -573,9 +573,18 @@
       "product": "gasolina_agr_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": 9.19,
-      "observationDate": "2026-10-01"
+      "severity": "high",
+      "changePct": -19.76,
+      "observationDate": "2026-11-01"
+    },
+    {
+      "type": "period_move",
+      "product": "propano_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "severity": "high",
+      "changePct": 10.12,
+      "observationDate": "2026-11-01"
     }
   ],
   "policy": {
