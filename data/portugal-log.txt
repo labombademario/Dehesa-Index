@@ -1,20 +1,40 @@
-0014466 out 77 series
-0014463 in 48 series
-0000918 milk 5 series
-0000920 cheese 5 series
-0000921 butter 1 series
-0000916 meat 24 series
-0000917 eggs 4 series
-0001330 slaughter-heads 21 series
-0001331 slaughter-weight 21 series
-0001336 poultry-heads 11 series
-0001337 poultry-weight 11 series
-0000019 crop-area 95 series
-0000021 crop-prod 95 series
-ERROR 0000023 RuntimeError('0000023: HTTP Error 503: Service Unavailable')
-0000704 olive 1 series
-0000537 cattle 17 series
-0000538 pigs sin total nacional; geos: []
-0000539 sheep 5 series
-0000540 goats 5 series
-azeite 4 series
+ERROR 0014466 RuntimeError('0014466: HTTP Error 502: Bad Gateway')
+ERROR 0014463 RuntimeError('0014463: HTTP Error 502: Bad Gateway')
+ERROR 0000918 RuntimeError('0000918: HTTP Error 502: Bad Gateway')
+ERROR 0000920 RuntimeError('0000920: HTTP Error 502: Bad Gateway')
+ERROR 0000921 RuntimeError('0000921: HTTP Error 502: Bad Gateway')
+ERROR 0000916 RuntimeError('0000916: HTTP Error 502: Bad Gateway')
+ERROR 0000917 RuntimeError('0000917: HTTP Error 502: Bad Gateway')
+ERROR 0001330 RuntimeError('0001330: HTTP Error 502: Bad Gateway')
+ERROR 0001331 RuntimeError('0001331: HTTP Error 502: Bad Gateway')
+ERROR 0001336 RuntimeError('0001336: HTTP Error 502: Bad Gateway')
+ERROR 0001337 RuntimeError('0001337: HTTP Error 502: Bad Gateway')
+ERROR 0000019 RuntimeError('0000019: HTTP Error 502: Bad Gateway')
+ERROR 0000021 RuntimeError('0000021: HTTP Error 502: Bad Gateway')
+ERROR 0000023 RuntimeError('0000023: HTTP Error 502: Bad Gateway')
+ERROR 0000704 RuntimeError('0000704: HTTP Error 502: Bad Gateway')
+ERROR 0000537 RuntimeError('0000537: HTTP Error 502: Bad Gateway')
+ERROR 0000538 RuntimeError('0000538: HTTP Error 502: Bad Gateway')
+ERROR 0000539 RuntimeError('0000539: HTTP Error 502: Bad Gateway')
+ERROR 0000540 RuntimeError('0000540: HTTP Error 502: Bad Gateway')
+ERROR olive RuntimeError('0000709: HTTP Error 502: Bad Gateway')
+FALLO bloque pt-butter-*: se mantienen 1 series ya publicadas
+FALLO bloque pt-cattle-*: se mantienen 17 series ya publicadas
+FALLO bloque pt-cheese-*: se mantienen 5 series ya publicadas
+FALLO bloque pt-crop-area-*: se mantienen 92 series ya publicadas
+FALLO bloque pt-crop-prod-*: se mantienen 92 series ya publicadas
+FALLO bloque pt-crop-yield-*: se mantienen 90 series ya publicadas
+FALLO bloque pt-eggs-*: se mantienen 4 series ya publicadas
+FALLO bloque pt-goats-*: se mantienen 5 series ya publicadas
+FALLO bloque pt-in-*: se mantienen 48 series ya publicadas
+FALLO bloque pt-meat-*: se mantienen 24 series ya publicadas
+FALLO bloque pt-milk-*: se mantienen 5 series ya publicadas
+FALLO bloque pt-olive-*: se mantienen 1 series ya publicadas
+FALLO bloque pt-oliveoil-*: se mantienen 4 series ya publicadas
+FALLO bloque pt-out-*: se mantienen 76 series ya publicadas
+FALLO bloque pt-pigs-*: se mantienen 14 series ya publicadas
+FALLO bloque pt-poultry-heads-*: se mantienen 11 series ya publicadas
+FALLO bloque pt-poultry-weight-*: se mantienen 11 series ya publicadas
+FALLO bloque pt-sheep-*: se mantienen 5 series ya publicadas
+FALLO bloque pt-slaughter-heads-*: se mantienen 21 series ya publicadas
+FALLO bloque pt-slaughter-weight-*: se mantienen 21 series ya publicadas
