@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-11-28T04:03:00Z",
+ "generatedAt": "2026-11-28T04:20:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 319,
+  "ok": 318,
   "late": 2,
-  "error": 27,
+  "error": 28,
   "not_run": 0,
   "unknown": 0
  },
@@ -17,7 +17,7 @@
   "lagHours": 6.1,
   "prodGeneratedAt": "2026-11-27T21:12:07.082806+00:00",
   "repoGeneratedAt": "2026-11-28T03:17:41.805691+00:00",
-  "checkedAt": "2026-11-28T04:03:00Z"
+  "checkedAt": "2026-11-28T04:20:00Z"
  },
  "pipelines": [
   {
@@ -1455,7 +1455,7 @@
    "crons": [
     "20 4 * * 2-6"
    ],
-   "nextRun": "2026-11-28T04:20:00Z",
+   "nextRun": "2026-12-01T04:20:00Z",
    "files": [
     {
      "path": "data/cl"
@@ -1474,7 +1474,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 72.0
+   "expectedEveryHours": 24.0
   },
   {
    "workflow": "update-chile.yml",
@@ -5601,7 +5601,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-11-28T03:53:09Z"
+     "lastChange": "2026-11-28T04:06:47Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -7897,18 +7897,19 @@
    "nextRun": "2026-12-04T21:40:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-11-21T02:48:40Z",
-    "durationSec": 612,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/44857879939"
+    "startedAt": "2026-11-28T03:29:40Z",
+    "durationSec": 3040,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/46103105647",
+    "reason": "un paso de actualizacion fallo (se publico lo que estaba bien) · The action 'Run bash scripts/annotate-failure.sh python3 scripts/update-us-states.py' has timed out after 50 minutes."
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 9,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
