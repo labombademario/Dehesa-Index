@@ -6,7 +6,7 @@ oats ok
 rye ok
 rice ok
 estimaciones ok
-fob: ficha modificada 2026-08-06T01:54:45.575898; ultimo dia con fila 2025-01-21; filas 11706
+fob: ficha modificada 2026-07-27T19:51:04.228258; ultimo dia con fila 2025-01-21; filas 11706
 descartada ar-fob-rice ultimo 2022-10
 fob ok
 descartada ar-insc-steer ultimo 2019-12
@@ -133,7 +133,7 @@ descartada ar-indec-retail-gba-vino-comun ultimo 2020-07
 descartada ar-indec-retail-gba-yerba-mate ultimo 2020-07
 precios minoristas INDEC 89
 SIPM INDEC 13
-ERROR fuel RuntimeError('http://datos.energia.gob.ar/dataset/78d29f4f-e81d-470f-be8d-a228afec3534/resource/1259e17f-aee6-4858-9811-ba8efb7f4b9f/d -> <urlopen error [Errno 110] Connection timed out>')
+ERROR fuel RuntimeError("licencia inesperada en precios-mayoristas-resolucion-1104-04: 'notspecified'")
 Lecheria: fecha repetida en la cabecera de totales; se usa la del detalle (mismas columnas)
 lecheria ok
 series 132
