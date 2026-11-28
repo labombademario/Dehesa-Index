@@ -1,37 +1,37 @@
 ALMONDS 504 filas 53 utiles
-PECANS 1089 filas 102 utiles
+PECANS 1091 filas 102 utiles
 WALNUTS 462 filas 47 utiles
 PISTACHIOS 459 filas 50 utiles
-ORANGES 5179 filas 1006 utiles
+ORANGES 5180 filas 1006 utiles
 GRAPEFRUIT 3391 filas 722 utiles
 LEMONS 3312 filas 733 utiles
-STRAWBERRIES 2586 filas 182 utiles
-BLUEBERRIES 890 filas 178 utiles
+STRAWBERRIES 2591 filas 182 utiles
+BLUEBERRIES 891 filas 178 utiles
 CRANBERRIES 584 filas 99 utiles
-PEACHES 1648 filas 104 utiles
-APPLES 1985 filas 104 utiles
+PEACHES 1649 filas 104 utiles
+APPLES 1986 filas 104 utiles
 TOMATOES 1107 filas 367 utiles
   rechazadas por dominio/practica []
-ONIONS 2410 filas 204 utiles
+ONIONS 2412 filas 204 utiles
 LETTUCE 1386 filas 383 utiles
-BEANS 5924 filas 137 utiles
+BEANS 5927 filas 137 utiles
 LENTILS 1273 filas 508 utiles
-PEAS 2908 filas 488 utiles
+PEAS 2910 filas 488 utiles
 HONEY 1729 filas 144 utiles
 WOOL 669 filas 137 utiles
 MOHAIR 662 filas 130 utiles
-GOATS 3623 filas 291 utiles
+GOATS 3624 filas 291 utiles
   rechazadas por dominio/practica []
 TOBACCO 6580 filas 2057 utiles
 MUSHROOMS 1083 filas 201 utiles
 HEMP 633 filas 10 utiles
   rechazadas por dominio/practica []
-TURKEYS 25024 filas 435 utiles
+TURKEYS 25095 filas 435 utiles
 AG LAND 98 filas 81 utiles
 RENT 2693 filas 54 utiles
 FARM OPERATIONS 989 filas 78 utiles
-CHICKENS 47609 filas 594 utiles
-EGGS 6294 filas 777 utiles
+CHICKENS 47756 filas 595 utiles
+EGGS 6309 filas 779 utiles
 descartada ('APPLES',) production value sin dato desde 2003
 descartada ('BLUEBERRIES',) price received sin dato desde 2016
 descartada ('BLUEBERRIES',) production value sin dato desde 2003
